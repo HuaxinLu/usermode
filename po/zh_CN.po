@@ -4,13 +4,14 @@
 # Copyright (C) 2002 Red Hat, Inc.
 # Sarah Smith <sarahs@redhat.com>, 2002.
 # Sarah Saiying Wang <sarahs@redhat.com>, 2003
+# Sarah Wang <sarahs@redhat.com>, 2003
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2003-07-08 16:56+1000\n"
-"Last-Translator: Sarah Saiying Wang <sarahs@redhat.com>\n"
+"PO-Revision-Date: 2003-11-21 16:30+1000\n"
+"Last-Translator: Sarah Wang <sarahs@redhat.com>\n"
 "Language-Team: Simplified Chinese <i18n@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,12 +87,11 @@ msgstr "启动不使用口令的系统范围内的配置工具。"
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "登录："
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "口令"
+msgstr "口令："
 
 #: userdialogs.h:30
 msgid "Help"
@@ -100,7 +100,7 @@ msgstr "帮助"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "无法把 exec 环境设置为 %s。\n"
 
 #: userhelper.c:431
 #, c-format
@@ -152,8 +152,7 @@ msgstr "userhelper 必须是 setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:1123
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
 
 #: userhelper-wrap.c:178
@@ -261,23 +260,20 @@ msgstr "正在改变登录 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:776
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
+msgstr "您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:778
 msgid ""
@@ -455,3 +451,4 @@ msgstr "口令"
 
 #~ msgid "Need %d responses.\n"
 #~ msgstr "需要 %d 个回应。\n"
+
