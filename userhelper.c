@@ -75,9 +75,11 @@ static struct app_data {
 	pam_handle_t *pamh;
 	gboolean fallback_allowed, fallback_chosen, cancelled;
 	FILE *input, *output;
+	char *banner, *domain;
 } app_data = {
 	NULL,
 	FALSE, FALSE, FALSE,
+	NULL, NULL,
 	NULL, NULL,
 };
 
@@ -175,13 +177,26 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		UH_FALLBACK_ALLOW, app_data->fallback_allowed ? 1 : 0);
 	if (pam_get_item(app_data->pamh, PAM_USER,
 			(const void**)&user) == PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("Sending user `%s'\n", user);
+#endif
 		fprintf(app_data->output, "%d %s\n", UH_USER, user);
 	} else {
 		user = "root";
 	}
 	if (pam_get_item(app_data->pamh, PAM_SERVICE,
 			(const void**)&service) == PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("Sending service `%s'\n", service);
+#endif
 		fprintf(app_data->output, "%d %s\n", UH_SERVICE_NAME, service);
+	}
+	if ((app_data->domain != NULL) && (app_data->banner != NULL)) {
+#ifdef DEBUG_USERHELPER
+		g_print("Sending banner `%s'\n", app_data->banner);
+#endif
+		fprintf(app_data->output, "%d %s\n", UH_BANNER,
+			dgettext(app_data->domain, app_data->banner));
 	}
 
 	/* We do first a pass on all items and output them, and then a second
@@ -315,17 +330,21 @@ converse_console(int num_msg, const struct pam_message **msg,
 	pam_get_item(app_data->pamh, PAM_USER, (const void**)&user);
 
 	if (banner == 0) {
-		if ((service != NULL) && (strlen(service) > 0)) {
-			if (app_data->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative\nprivileges, but more information is needed in order to do so."), service);
-			} else {
-				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative\nprivileges, but more information is needed in order to do so."), service);
-			}
+		if ((app_data->banner != NULL) && (app_data->domain != NULL)) {
+			text = g_strdup_printf(dgettext(app_data->domain, app_data->banner));
 		} else {
-			if (app_data->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run a command which may benefit from\nadministrative privileges, but more information is needed in order to do so."));
+			if ((service != NULL) && (strlen(service) > 0)) {
+				if (app_data->fallback_allowed) {
+					text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative\nprivileges, but more information is needed in order to do so."), service);
+				} else {
+					text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative\nprivileges, but more information is needed in order to do so."), service);
+				}
 			} else {
-				text = g_strdup_printf(_("You are attempting to run a command which requires administrative\nprivileges, but more information is needed in order to do so."));
+				if (app_data->fallback_allowed) {
+					text = g_strdup_printf(_("You are attempting to run a command which may benefit from\nadministrative privileges, but more information is needed in order to do so."));
+				} else {
+					text = g_strdup_printf(_("You are attempting to run a command which requires administrative\nprivileges, but more information is needed in order to do so."));
+				}
 			}
 		}
 		if (text != NULL) {
@@ -863,6 +882,7 @@ main(int argc, char **argv)
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
 		}
+		/* At some point this check will go away. */
 		if (strcmp(user_name, auth_user) != 0) {
 #ifdef DEBUG_USERHELPER
 			g_print("username(%s) != authuser(%s)", user_name,
@@ -1058,6 +1078,7 @@ main(int argc, char **argv)
 		char *constructed_path;
 		char *apps_filename;
 		char *user_pam = user_name, *apps_user, *auth_user;
+		char *apps_banner, *apps_domain;
 		char *retry, *noxoption;
 		char *env_home, *env_term, *env_display, *env_shell;
 		char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
@@ -1257,6 +1278,19 @@ main(int argc, char **argv)
 		app_data.fallback_allowed = svTrueValue(s, "FALLBACK", FALSE);
 		retry = svGetValue(s, "RETRY"); /* default value is "2" */
 		tryagain = retry ? atoi(retry) + 1 : 3;
+
+		/* Read any custom messages we might want to use. */
+		apps_banner = svGetValue(s, "BANNER");
+		if ((apps_banner != NULL) && (strlen(apps_banner) > 0)) {
+			app_data.banner = apps_banner;
+
+		}
+		apps_domain = svGetValue(s, "BANNER_DOMAIN");
+		if ((apps_domain != NULL) && (strlen(apps_domain) > 0)) {
+			bindtextdomain(apps_domain, DATADIR "/locale");
+			bind_textdomain_codeset(apps_domain, "UTF-8");
+			app_data.domain = apps_domain;
+		}
 
 		/* Now we're done reading the file. */
 		svCloseFile(s);

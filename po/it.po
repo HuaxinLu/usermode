@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-07-24 09:41-0400\n"
+"POT-Creation-Date: 2002-08-05 21:36-0400\n"
 "PO-Revision-Date: 2002-07-24 14:02GMT\n"
 "Last-Translator: Marisa <marisa@redhat.it>\n"
 "Language-Team:  <it@li.org>\n"
@@ -81,17 +81,17 @@ msgstr "Le password non corrispondono"
 msgid "Help"
 msgstr "Help"
 
-#: userhelper.c:97
+#: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Errore PAM %d.\n"
 
-#: userhelper.c:203
+#: userhelper.c:218
 #, c-format
 msgid "Password for %s"
 msgstr "Password per %s"
 
-#: userhelper.c:320
+#: userhelper.c:338
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Si sta tentando di eseguire \"%s\" con i privilegi di superutente\n"
 " Sono necessarie maggiori informazioni per eseguire l'operazione."
 
-#: userhelper.c:322
+#: userhelper.c:340
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -109,7 +109,7 @@ msgstr ""
 "Si sta tentando di eseguire \"%s\" che richiede i privilegi di superutente. "
 "Sono necessarie maggiori informazioni per eseguire l'operazione."
 
-#: userhelper.c:326
+#: userhelper.c:344
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -117,7 +117,7 @@ msgstr ""
 "Si sta tentando di eseguire un comando con i privilegi di superutente. Sono "
 "necessarie maggiori informazioni per eseguire l'operazione."
 
-#: userhelper.c:328
+#: userhelper.c:346
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -125,24 +125,24 @@ msgstr ""
 "Si sta tentando di eseguire un comando che richiede i privilegi di "
 "superutente. Sono necessarie maggiori informazioni per eseguire l'operazione."
 
-#: userhelper.c:346
+#: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
 msgstr "Password per %s:"
 
-#: userhelper.c:629
+#: userhelper.c:648
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper deve impostare la setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
+#: userhelper.c:730
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica o trovare il terminale di "
 "controllo.\n"
 
-#: userhelper.c:1375 userhelper.c:1413
+#: userhelper.c:1409 userhelper.c:1447
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "inizio di exec \"%s\"\n"
@@ -224,7 +224,7 @@ msgstr "Impossibile trovare il programma selezionato."
 msgid "Unknown error."
 msgstr "Errore sconosciuto."
 
-#: glade.strings:16 glade.strings:19 userhelper-wrap.c:238
+#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
 msgstr "Contenitore testo"
 
@@ -241,15 +241,15 @@ msgstr "Errore"
 msgid "Information"
 msgstr "Informazioni "
 
-#: userhelper-wrap.c:450
+#: userhelper-wrap.c:457
 msgid "Changing personal information."
 msgstr "Modifica delle informazioni personali."
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:460
 msgid "Changing login shell."
 msgstr "Modifica della shell di login."
 
-#: userhelper-wrap.c:456
+#: userhelper-wrap.c:466
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -258,7 +258,7 @@ msgstr ""
 "Tentativo di esecuzione di \"%s\" con i privilegi di superutente. Sono "
 "necessarie maggiori informazioni per eseguire l'operazione."
 
-#: userhelper-wrap.c:458
+#: userhelper-wrap.c:468
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -267,7 +267,7 @@ msgstr ""
 "Tentativo di esecuzione di \"%s\" che richiede i privilegi di superutente. "
 "Sono necessarie maggiori informazioni per eseguire l'operazione."
 
-#: userhelper-wrap.c:463
+#: userhelper-wrap.c:477
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -275,7 +275,7 @@ msgstr ""
 "Tentativo di esecuzione di un comando con i privilegi di superutente. Sono "
 "necessarie maggiori informazioni per eseguire l'operazione."
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:479
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -283,23 +283,23 @@ msgstr ""
 "Tentativo di esecuzione di un comando che richiede i privilegi di "
 "superutente. Sono necessarie maggiori informazioni per eseguire l'operazione."
 
-#: userhelper-wrap.c:480
+#: userhelper-wrap.c:495
 msgid "_Run Unprivileged"
 msgstr "_Esegui in modalità non privilegiata"
 
-#: userhelper-wrap.c:592 userhelper-wrap.c:609
+#: userhelper-wrap.c:607 userhelper-wrap.c:624
 msgid "Pipe error.\n"
 msgstr "Errore di pipe.\n"
 
-#: userhelper-wrap.c:616
+#: userhelper-wrap.c:631
 msgid "Cannot fork().\n"
 msgstr "Impossibile creare il processo figlio().\n"
 
-#: userhelper-wrap.c:662 userhelper-wrap.c:666
+#: userhelper-wrap.c:677 userhelper-wrap.c:681
 msgid "dup2() error.\n"
 msgstr "errore dup2().\n"
 
-#: userhelper-wrap.c:678
+#: userhelper-wrap.c:693
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
@@ -308,7 +308,7 @@ msgstr "execl() error, errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Identità non conosciuta.\n"
 
-#: glade.strings:26 usermount.c:61
+#: usermount.c:61 glade.strings:26
 msgid "_Mount"
 msgstr "_Monta"
 
@@ -340,20 +340,20 @@ msgstr ""
 "Contattare l'amministratore del sistema."
 
 #. Create the dialog.
-#: glade.strings:22 usermount.c:522 usermount.c:530
+#: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
 msgstr "Tool di montaggio per utenti"
 
 #. Create the other buttons.
-#: glade.strings:28 usermount.c:544
+#: usermount.c:544 glade.strings:28
 msgid "_Format"
 msgstr "_Formatta"
 
-#: glade.strings:24 usermount.c:579
+#: usermount.c:579 glade.strings:24
 msgid "Device"
 msgstr "Dispositivo"
 
-#: glade.strings:23 usermount.c:585
+#: usermount.c:585 glade.strings:23
 msgid "Directory"
 msgstr "Directory"
 
@@ -421,6 +421,32 @@ msgstr "_Smonta"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "E_sci"
+
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "Modifica delle informazioni personali."
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "Password per %s"
 
 #~ msgid "Starting \"%s\" with administrative privileges."
 #~ msgstr "Avvio di \"%s\" con privilegi di superutente."

@@ -151,6 +151,14 @@ Specifies whether or not userhelper should use consolehelper to present
 graphical dialog boxes when prompting the user for information.  This is
 the inverse of the \fI-t\fP option.
 Valid values are \fIyes\fP and \fIno\fP, with the default being \fIyes\fP.
+.TP
+.I BANNER
+Specifies specific text which userhelper should present to the user when
+userhelper prompts for information.  The default is a generic message based
+on the PAM service name.
+.TP
+.I BANNER_DOMAIN
+Specifies the text domain in which translations of the banner are stored.
 
 .SH EXIT STATUS
 A non-zero exit status indicates an error occured.  Those errors are:

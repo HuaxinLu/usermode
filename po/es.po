@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-07-24 09:41-0400\n"
+"POT-Creation-Date: 2002-08-05 21:36-0400\n"
 "PO-Revision-Date: 2002-04-03 09:00GMT\n"
 "Last-Translator: Nuria Soriano <nuria@redhat.es>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -81,17 +81,17 @@ msgstr "Lo siento, las contraseñas no coinciden"
 msgid "Help"
 msgstr "Ayuda"
 
-#: userhelper.c:97
+#: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Se ha obtenido un error de PAM %d.\n"
 
-#: userhelper.c:203
+#: userhelper.c:218
 #, c-format
 msgid "Password for %s"
 msgstr "Contraseña para %s"
 
-#: userhelper.c:320
+#: userhelper.c:338
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -101,7 +101,7 @@ msgstr ""
 "de vista de los privilegios de superusuario, pero es necesaria más "
 "información para poder realizarlo."
 
-#: userhelper.c:322
+#: userhelper.c:340
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -110,7 +110,7 @@ msgstr ""
 "Está intentando ejecutar \"%s\" que requiere los privilegios de "
 "superusuario, pero necesita más información para hacerlo. "
 
-#: userhelper.c:326
+#: userhelper.c:344
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -119,7 +119,7 @@ msgstr ""
 "Está intentando ejecutar un comando que se beneficia de los privilegios de\n"
 " superusuario, pero necesita más información para hacerlo."
 
-#: userhelper.c:328
+#: userhelper.c:346
 #, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -128,23 +128,23 @@ msgstr ""
 "Está intentando ejecutar un comando que requiere los privilegios del\n"
 "superusuario pero se necesita más información para hacerlo."
 
-#: userhelper.c:346
+#: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
 msgstr "Contraseña para %s:"
 
-#: userhelper.c:629
+#: userhelper.c:648
 msgid "userhelper must be setuid root\n"
 msgstr "El userhelper debe configurar la setuid del root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
+#: userhelper.c:730
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Imposible abrir una ventana gráfica y encontrar un terminal de control.\n"
 
-#: userhelper.c:1375 userhelper.c:1413
+#: userhelper.c:1409 userhelper.c:1447
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "inicio de exec \"%s\"\n"
@@ -225,7 +225,7 @@ msgstr "No se ha encontrado el programa seleccionado."
 msgid "Unknown error."
 msgstr "Error desconocido."
 
-#: glade.strings:16 glade.strings:19 userhelper-wrap.c:238
+#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
 msgstr "Texto que contiene espacio"
 
@@ -242,15 +242,15 @@ msgstr "Error"
 msgid "Information"
 msgstr "Información"
 
-#: userhelper-wrap.c:450
+#: userhelper-wrap.c:457
 msgid "Changing personal information."
 msgstr "Cambio de la informacion personal."
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:460
 msgid "Changing login shell."
 msgstr "Cambio de la shell de login"
 
-#: userhelper-wrap.c:456
+#: userhelper-wrap.c:466
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -260,7 +260,7 @@ msgstr ""
 "vista de los privilegios de superusuario, pero es necesaria más información "
 "para poder realizarlo."
 
-#: userhelper-wrap.c:458
+#: userhelper-wrap.c:468
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -269,7 +269,7 @@ msgstr ""
 "Ha intentado ejecutar \"%s\" que requiere los privilegios de superusuario, "
 "pero necesita más información para hacerlo. "
 
-#: userhelper-wrap.c:463
+#: userhelper-wrap.c:477
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
@@ -278,7 +278,7 @@ msgstr ""
 "Ha intentado ejecutar un comando que se beneficia de los privilegios de "
 "superusuario, pero necesita más información para hacerlo."
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:479
 #, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
@@ -287,23 +287,23 @@ msgstr ""
 "Ha intentado ejecutar un comando que requiere los privilegios del "
 "superusuario pero se necesita más información para hacerlo."
 
-#: userhelper-wrap.c:480
+#: userhelper-wrap.c:495
 msgid "_Run Unprivileged"
 msgstr "_Ejecutar sin privilegios"
 
-#: userhelper-wrap.c:592 userhelper-wrap.c:609
+#: userhelper-wrap.c:607 userhelper-wrap.c:624
 msgid "Pipe error.\n"
 msgstr "Error de canal.\n"
 
-#: userhelper-wrap.c:616
+#: userhelper-wrap.c:631
 msgid "Cannot fork().\n"
 msgstr "No se puede crear un nuevo proceso con fork().\n"
 
-#: userhelper-wrap.c:662 userhelper-wrap.c:666
+#: userhelper-wrap.c:677 userhelper-wrap.c:681
 msgid "dup2() error.\n"
 msgstr "Error dup2().\n"
 
-#: userhelper-wrap.c:678
+#: userhelper-wrap.c:693
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Error execl(), errno=%d\n"
@@ -312,7 +312,7 @@ msgstr "Error execl(), errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Identidad desconocida.\n"
 
-#: glade.strings:26 usermount.c:61
+#: usermount.c:61 glade.strings:26
 msgid "_Mount"
 msgstr "_Montar"
 
@@ -345,20 +345,20 @@ msgstr ""
 "Contacte con su administrador."
 
 #. Create the dialog.
-#: glade.strings:22 usermount.c:522 usermount.c:530
+#: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
 msgstr "Herramienta de montaje para el usuario"
 
 #. Create the other buttons.
-#: glade.strings:28 usermount.c:544
+#: usermount.c:544 glade.strings:28
 msgid "_Format"
 msgstr "_Formato"
 
-#: glade.strings:24 usermount.c:579
+#: usermount.c:579 glade.strings:24
 msgid "Device"
 msgstr "Dispositivo"
 
-#: glade.strings:23 usermount.c:585
+#: usermount.c:585 glade.strings:23
 msgid "Directory"
 msgstr "Directorio"
 
@@ -426,3 +426,29 @@ msgstr "_Desmontar"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "S_alir"
+
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "Cambio de la informacion personal."
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "Contraseña para %s"

@@ -13,6 +13,8 @@ EXTRA_DIST = 	\
 	userinfo.desktop.in \
 	usermount.desktop.in \
 	userpasswd.desktop.in \
+	pam_timestamp_init.console \
+	pam_timestamp_init.pamd \
 	wrapped.console \
 	keys.xpm \
 	usermode.glade \
@@ -55,8 +57,11 @@ install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 
 consoleappdir = $(sysconfdir)/security/console.apps
 WRAPPED_APPS = halt poweroff reboot
-consoleapp_DATA = $(WRAPPED_APPS)
+INIT_APPS = pam_timestamp_init
+consoleapp_DATA = $(WRAPPED_APPS) $(INIT_APPS)
 $(WRAPPED_APPS): wrapped.console
+	$(INSTALL) -m600 $^ $@
+$(INIT_APPS): pam_timestamp_init.console
 	$(INSTALL) -m600 $^ $@
 
 pkgdata_DATA = usermode.glade

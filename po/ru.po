@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
-"POT-Creation-Date: 2002-07-24 09:41-0400\n"
+"POT-Creation-Date: 2002-08-05 21:36-0400\n"
 "PO-Revision-Date: 2002-08-05 17:41+0300\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -78,17 +78,17 @@ msgstr "Извините, пароли не совпадают"
 msgid "Help"
 msgstr "Помощь"
 
-#: userhelper.c:97
+#: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Получена ошибка PAM %d.\n"
 
-#: userhelper.c:203
+#: userhelper.c:218
 #, c-format
 msgid "Password for %s"
 msgstr "Пароль для %s"
 
-#: userhelper.c:320
+#: userhelper.c:338
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -98,7 +98,7 @@ msgstr ""
 "определенные преимущества, будучи запущенной с административными\n"
 "привилегиями, но для этого требуется дополнительная информация."
 
-#: userhelper.c:322
+#: userhelper.c:340
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -108,7 +108,7 @@ msgstr ""
 "административных привилегий, но для этого нужна\n"
 "дополнительная информация."
 
-#: userhelper.c:326
+#: userhelper.c:344
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -117,7 +117,7 @@ msgstr ""
 "преимущества, будучи запущенной с административными правами,\n"
 "но для этого требуется дополнительная информация."
 
-#: userhelper.c:328
+#: userhelper.c:346
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -125,21 +125,22 @@ msgstr ""
 "Вы пытаетесь выполнить программу, которая требует административных\n"
 "привилегий. Для этого нужна дополнительная информация."
 
-#: userhelper.c:346
+#: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
 msgstr "Пароль для %s: "
 
-#: userhelper.c:629
+#: userhelper.c:648
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper должен быть setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:730
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Невозможно открыть графическое окно и найти управляющий терминал.\n"
 
-#: userhelper.c:1375 userhelper.c:1413
+#: userhelper.c:1409 userhelper.c:1447
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "выполнение \"%s\"\n"
@@ -237,15 +238,15 @@ msgstr "Ошибка"
 msgid "Information"
 msgstr "Информация"
 
-#: userhelper-wrap.c:450
+#: userhelper-wrap.c:457
 msgid "Changing personal information."
 msgstr "Изменение личной информации."
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:460
 msgid "Changing login shell."
 msgstr "Изменение login shell."
 
-#: userhelper-wrap.c:456
+#: userhelper-wrap.c:466
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -255,7 +256,7 @@ msgstr ""
 "определенные преимущества, будучи запущенной с административными\n"
 "привилегиями, но для этого требуется дополнительная информация."
 
-#: userhelper-wrap.c:458
+#: userhelper-wrap.c:468
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -264,41 +265,40 @@ msgstr ""
 "Вы пытаетесь выполнить программу \"%s\", которая требует административных "
 "привилегий. Для этого нужна дополнительная информация."
 
-#: userhelper-wrap.c:463
+#: userhelper-wrap.c:477
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Вы пытаетесь выполнить программу, которая получает определенные преимущества "
-"будучи запущенной с административными привилегиями. Для этого требуется дополнительная "
-"информация."
+"будучи запущенной с административными привилегиями. Для этого требуется "
+"дополнительная информация."
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:479
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу, которая требует "
-"административных привилегий. Для этого необходима "
-"дополнительная информация."
+"Вы пытаетесь выполнить программу, которая требует административных "
+"привилегий. Для этого необходима дополнительная информация."
 
-#: userhelper-wrap.c:480
+#: userhelper-wrap.c:495
 msgid "_Run Unprivileged"
 msgstr "Выполнить без привилегий"
 
-#: userhelper-wrap.c:592 userhelper-wrap.c:609
+#: userhelper-wrap.c:607 userhelper-wrap.c:624
 msgid "Pipe error.\n"
 msgstr "Ошибка потока.\n"
 
-#: userhelper-wrap.c:616
+#: userhelper-wrap.c:631
 msgid "Cannot fork().\n"
 msgstr "Невозможно вызвать fork().\n"
 
-#: userhelper-wrap.c:662 userhelper-wrap.c:666
+#: userhelper-wrap.c:677 userhelper-wrap.c:681
 msgid "dup2() error.\n"
 msgstr "ошибка dup2().\n"
 
-#: userhelper-wrap.c:678
+#: userhelper-wrap.c:693
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "ошибка execl(), код ошибки %d\n"
@@ -422,6 +422,32 @@ msgstr "Размонтировать"
 msgid "E_xit"
 msgstr "Выход"
 
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "Изменение личной информации."
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "Пароль для %s"
+
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
@@ -451,8 +477,3 @@ msgstr "Выход"
 #~ msgstr ""
 #~ "Вы пытаетесь выполнить программу, которая требует привелегий\n"
 #~ "root. Для этого нужна дополнительная информация."
-
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "Изменение личной информации."
-

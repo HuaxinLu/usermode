@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
-"POT-Creation-Date: 2002-07-24 09:41-0400\n"
+"POT-Creation-Date: 2002-08-05 21:36-0400\n"
 "PO-Revision-Date: 2002-07-24 15:20GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
@@ -83,17 +83,17 @@ msgstr "パスワードが一致していません"
 msgid "Help"
 msgstr "ヘルプ"
 
-#: userhelper.c:97
+#: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "PAMエラーが発生しました。%d\n"
 
-#: userhelper.c:203
+#: userhelper.c:218
 #, c-format
 msgid "Password for %s"
 msgstr "%sのパスワード"
 
-#: userhelper.c:320
+#: userhelper.c:338
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -103,7 +103,7 @@ msgstr ""
 "に\n"
 "は追加情報が必要です。"
 
-#: userhelper.c:322
+#: userhelper.c:340
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -112,7 +112,7 @@ msgstr ""
 "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには \n"
 "追加情報が必要です。"
 
-#: userhelper.c:326
+#: userhelper.c:344
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -120,7 +120,7 @@ msgstr ""
 "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:328
+#: userhelper.c:346
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -129,24 +129,24 @@ msgstr ""
 "は\n"
 "追加情報が必要です。"
 
-#: userhelper.c:346
+#: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
 msgstr "%s:用のパスワード"
 
-#: userhelper.c:629
+#: userhelper.c:648
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
+#: userhelper.c:730
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
 
-#: userhelper.c:1375 userhelper.c:1413
+#: userhelper.c:1409 userhelper.c:1447
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\"を実行しようとしています\n"
@@ -244,15 +244,15 @@ msgstr "エラー"
 msgid "Information"
 msgstr "情報"
 
-#: userhelper-wrap.c:450
+#: userhelper-wrap.c:457
 msgid "Changing personal information."
 msgstr "個人情報を変更しています。"
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:460
 msgid "Changing login shell."
 msgstr "ログイン シェルを変更中"
 
-#: userhelper-wrap.c:456
+#: userhelper-wrap.c:466
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -261,7 +261,7 @@ msgstr ""
 "スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
-#: userhelper-wrap.c:458
+#: userhelper-wrap.c:468
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -270,7 +270,7 @@ msgstr ""
 "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには追"
 "加情報が必要です。"
 
-#: userhelper-wrap.c:463
+#: userhelper-wrap.c:477
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -278,7 +278,7 @@ msgstr ""
 "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:479
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -286,23 +286,23 @@ msgstr ""
 "スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには"
 "追加情報が必要です。"
 
-#: userhelper-wrap.c:480
+#: userhelper-wrap.c:495
 msgid "_Run Unprivileged"
 msgstr "権限なしで実行(_R)"
 
-#: userhelper-wrap.c:592 userhelper-wrap.c:609
+#: userhelper-wrap.c:607 userhelper-wrap.c:624
 msgid "Pipe error.\n"
 msgstr "パイプエラー。\n"
 
-#: userhelper-wrap.c:616
+#: userhelper-wrap.c:631
 msgid "Cannot fork().\n"
 msgstr "fork()できません。\n"
 
-#: userhelper-wrap.c:662 userhelper-wrap.c:666
+#: userhelper-wrap.c:677 userhelper-wrap.c:681
 msgid "dup2() error.\n"
 msgstr "dup2()エラー。\n"
 
-#: userhelper-wrap.c:678
+#: userhelper-wrap.c:693
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
@@ -426,6 +426,33 @@ msgstr "マウント解除(_U)"
 msgid "E_xit"
 msgstr "終了(_x)"
 
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "¥æ¡¼¥¶¾ðÊó"
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "個人情報を変更しています。"
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr "¥Ç¥£¥¹¥¯´ÉÍý"
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr "¥Õ¥¡¥¤¥ë¥·¥¹¥Æ¥à¤Î¥Þ¥¦¥ó¥È¤È¥Þ¥¦¥ó¥È²ò½ü"
+
+#: userpasswd.desktop.in.h:1
+#, fuzzy
+msgid "Change your login password"
+msgstr "¥Ñ¥¹¥ï¡¼¥ÉÊÑ¹¹"
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "%sのパスワード"
+
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
@@ -458,25 +485,8 @@ msgstr "終了(_x)"
 #~ msgid "Starting \"%s\" with administrative privileges."
 #~ msgstr "管理者権限で\"%s\"をスタート中です。"
 
-#~ msgid "About Myself"
-#~ msgstr "¥æ¡¼¥¶¾ðÊó"
-
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "個人情報を変更しています。"
-
-#~ msgid "Disk Management"
-#~ msgstr "¥Ç¥£¥¹¥¯´ÉÍý"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "¥Õ¥¡¥¤¥ë¥·¥¹¥Æ¥à¤Î¥Þ¥¦¥ó¥È¤È¥Þ¥¦¥ó¥È²ò½ü"
-
 #, fuzzy
 #~ msgid "Change password"
-#~ msgstr "¥Ñ¥¹¥ï¡¼¥ÉÊÑ¹¹"
-
-#, fuzzy
-#~ msgid "Change your login password"
 #~ msgstr "¥Ñ¥¹¥ï¡¼¥ÉÊÑ¹¹"
 
 #~ msgid "Change account information"

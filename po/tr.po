@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-07-24 09:41-0400\n"
+"POT-Creation-Date: 2002-08-05 21:36-0400\n"
 "PO-Revision-Date: 2002-07-25 18:37+0300\n"
 "Last-Translator: Nilgün Belma Bugüner <nilgun@superonline.com>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -77,17 +77,17 @@ msgstr "Kusura bakmayın ama parolalar eşleşmedi"
 msgid "Help"
 msgstr "Yardım"
 
-#: userhelper.c:97
+#: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "PAM hatası %d alındı.\n"
 
-#: userhelper.c:203
+#: userhelper.c:218
 #, c-format
 msgid "Password for %s"
 msgstr "%s için parola"
 
-#: userhelper.c:320
+#: userhelper.c:338
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -96,7 +96,7 @@ msgstr ""
 "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper.c:322
+#: userhelper.c:340
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -105,7 +105,7 @@ msgstr ""
 "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper.c:326
+#: userhelper.c:344
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -113,7 +113,7 @@ msgstr ""
 "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper.c:328
+#: userhelper.c:346
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -121,21 +121,22 @@ msgstr ""
 "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper.c:346
+#: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
 msgstr "%s için parola: "
 
-#: userhelper.c:629
+#: userhelper.c:648
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper programı setuid root olmalıdır.\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:730
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 
-#: userhelper.c:1375 userhelper.c:1413
+#: userhelper.c:1409 userhelper.c:1447
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\" çalıştırmak üzere\n"
@@ -234,33 +235,33 @@ msgstr "Hata"
 msgid "Information"
 msgstr "Bilgi"
 
-#: userhelper-wrap.c:450
+#: userhelper-wrap.c:457
 msgid "Changing personal information."
 msgstr "Kişisel bilgiler değiştiriliyor"
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:460
 msgid "Changing login shell."
 msgstr "Giriş kabuğu değiştiriliyor."
 
-#: userhelper-wrap.c:456
+#: userhelper-wrap.c:466
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama "
-"bunu yapmak için daha fazla bilgi gerekiyor."
+"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper-wrap.c:458
+#: userhelper-wrap.c:468
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama "
-"bunu yapmak için daha fazla bilgi gerekiyor."
+"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper-wrap.c:463
+#: userhelper-wrap.c:477
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -268,31 +269,31 @@ msgstr ""
 "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama "
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:479
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama "
-"bunu yapmak için daha fazla bilgi gerekiyor."
+"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper-wrap.c:480
+#: userhelper-wrap.c:495
 msgid "_Run Unprivileged"
 msgstr "_Yetkisiz Çalıştırma"
 
-#: userhelper-wrap.c:592 userhelper-wrap.c:609
+#: userhelper-wrap.c:607 userhelper-wrap.c:624
 msgid "Pipe error.\n"
 msgstr "Veri yolu hatası.\n"
 
-#: userhelper-wrap.c:616
+#: userhelper-wrap.c:631
 msgid "Cannot fork().\n"
 msgstr "fork() çalıştırılamadı.\n"
 
-#: userhelper-wrap.c:662 userhelper-wrap.c:666
+#: userhelper-wrap.c:677 userhelper-wrap.c:681
 msgid "dup2() error.\n"
 msgstr "dup2() hatası.\n"
 
-#: userhelper-wrap.c:678
+#: userhelper-wrap.c:693
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() hatası, hatano=%d\n"
@@ -313,7 +314,8 @@ msgstr "_Ayır"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+msgstr ""
+"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
@@ -414,6 +416,32 @@ msgstr "_Ayır"
 msgid "E_xit"
 msgstr "Çı_k"
 
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "Kişisel bilgiler değiştiriliyor"
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "%s için parola"
+
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
@@ -442,8 +470,3 @@ msgstr "Çı_k"
 #~ msgstr ""
 #~ "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\n"
 #~ "bunu yapmak için daha fazla bilgi gerekiyor."
-
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "Kişisel bilgiler değiştiriliyor"
-

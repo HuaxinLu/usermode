@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
-"POT-Creation-Date: 2002-07-24 09:41-0400\n"
+"POT-Creation-Date: 2002-08-05 21:36-0400\n"
 "PO-Revision-Date: 2002-07-24 12:25+1000\n"
 "Last-Translator: Michelle Kim <mkim@brisbane.redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -82,17 +82,17 @@ msgstr "패스워드가 일치하지 않습니다"
 msgid "Help"
 msgstr "도움말"
 
-#: userhelper.c:97
+#: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "PAM 오류 %d(이)가 발생했습니다.\n"
 
-#: userhelper.c:203
+#: userhelper.c:218
 #, c-format
 msgid "Password for %s"
 msgstr "%s의 패스워드"
 
-#: userhelper.c:320
+#: userhelper.c:338
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -101,7 +101,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, \n"
 "그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: userhelper.c:322
+#: userhelper.c:340
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -110,7 +110,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper.c:326
+#: userhelper.c:344
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -118,7 +118,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper.c:328
+#: userhelper.c:346
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -126,24 +126,24 @@ msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper.c:346
+#: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
 msgstr "%s의 패스워드: "
 
-#: userhelper.c:629
+#: userhelper.c:648
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
+#: userhelper.c:730
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
 "니다.\n"
 
-#: userhelper.c:1375 userhelper.c:1413
+#: userhelper.c:1409 userhelper.c:1447
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\"(을)를 실행합니다\n"
@@ -241,15 +241,15 @@ msgstr "오류"
 msgid "Information"
 msgstr "정보"
 
-#: userhelper-wrap.c:450
+#: userhelper-wrap.c:457
 msgid "Changing personal information."
 msgstr "개인 정보를 변경합니다."
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:460
 msgid "Changing login shell."
 msgstr "로그인 쉘을 변경합니다."
 
-#: userhelper-wrap.c:456
+#: userhelper-wrap.c:466
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -258,7 +258,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, 그러"
 "나 이것을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: userhelper-wrap.c:458
+#: userhelper-wrap.c:468
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -267,7 +267,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, 그러나 이것을 "
 "실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper-wrap.c:463
+#: userhelper-wrap.c:477
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -275,7 +275,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, 그러나 이것"
 "을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:479
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -283,23 +283,23 @@ msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 이것을 실행하"
 "기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper-wrap.c:480
+#: userhelper-wrap.c:495
 msgid "_Run Unprivileged"
 msgstr "권한없이 실행 (_R)"
 
-#: userhelper-wrap.c:592 userhelper-wrap.c:609
+#: userhelper-wrap.c:607 userhelper-wrap.c:624
 msgid "Pipe error.\n"
 msgstr "파이프 오류입니다.\n"
 
-#: userhelper-wrap.c:616
+#: userhelper-wrap.c:631
 msgid "Cannot fork().\n"
 msgstr "fork() 할 수 없습니다.\n"
 
-#: userhelper-wrap.c:662 userhelper-wrap.c:666
+#: userhelper-wrap.c:677 userhelper-wrap.c:681
 msgid "dup2() error.\n"
 msgstr "dup2() 오류입니다.\n"
 
-#: userhelper-wrap.c:678
+#: userhelper-wrap.c:693
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 오류입니다, 오류코드(errno)=%d\n"
@@ -423,6 +423,32 @@ msgstr "장치연결 해제 (_U)"
 msgid "E_xit"
 msgstr "종료 (_x)"
 
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "개인 정보를 변경합니다."
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "%s의 패스워드"
+
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
@@ -454,7 +480,3 @@ msgstr "종료 (_x)"
 
 #~ msgid "Starting \"%s\" with administrative privileges."
 #~ msgstr "슈퍼유저의 권한으로 \"%s\"을(를) 시작합니다."
-
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "개인 정보를 변경합니다."

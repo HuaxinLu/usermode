@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.56
-Release: 4
+Version: 1.57
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -59,6 +59,11 @@ for wrappedapp in halt reboot poweroff ; do
 	cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %endif
 done
+%if ! %{build6x}
+install -m644 pam_timestamp_init.console $RPM_BUILD_ROOT/etc/security/console.apps/pam_timestamp_init
+install -m644 pam_timestamp_init.pamd    $RPM_BUILD_ROOT/etc/pam.d/pam_timestamp_init
+ln -sf consolehelper $RPM_BUILD_ROOT/%{_bindir}/pam_timestamp_init
+%endif
 
 %find_lang %{name}
 
@@ -84,6 +89,11 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/security/console.apps/halt
 %config /etc/security/console.apps/reboot
 %config /etc/security/console.apps/poweroff
+%if ! %{build6x}
+%{_bindir}/pam_timestamp_init
+%config /etc/security/console.apps/pam_timestamp_init
+%config(noreplace) /etc/pam.d/pam_timestamp_init
+%endif
 
 %files gtk
 %defattr(-,root,root)
@@ -102,6 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Mon Aug  5 2002 Nalin Dahyabhai <nalin@redhat.com> 1.57-1
+- add support for BANNER and BANNER_DOMAIN in the userhelper configuration
+
 * Mon Aug  5 2002 Nalin Dahyabhai <nalin@redhat.com> 1.56-4
 - mark strings in the .glade file as translatable (#70278)
 - translation updates

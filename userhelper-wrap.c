@@ -410,6 +410,13 @@ userhelper_parse_childout(char *outline)
 					g_list_append(resp->message_list, msg);
 				resp->rows++;
 				break;
+			/* An informative banner. */
+			case UH_BANNER:
+				if (resp->banner != NULL) {
+					g_free(resp->banner);
+				}
+				resp->banner = g_strdup(prompt);
+				break;
 			/* Sanity-check the number of expected responses. */
 			case UH_EXPECT_RESP:
 				g_free(msg); /* We don't need this after all. */
@@ -452,17 +459,25 @@ userhelper_parse_childout(char *outline)
 			if (strcmp(resp->service, "chsh") == 0) {
 				text = g_strdup_printf(_("Changing login shell."));
 			} else {
-				if (resp->fallback_allowed) {
-					text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."), resp->service);
+				if (resp->banner) {
+					text = g_strdup(resp->banner);
 				} else {
-					text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."), resp->service);
+					if (resp->fallback_allowed) {
+						text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."), resp->service);
+					} else {
+						text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."), resp->service);
+					}
 				}
 			}
 		} else {
-			if (resp->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."));
+			if (resp->banner) {
+				text = g_strdup(resp->banner);
 			} else {
-				text = g_strdup_printf(_("You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."));
+				if (resp->fallback_allowed) {
+					text = g_strdup_printf(_("You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."));
+				} else {
+					text = g_strdup_printf(_("You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."));
+				}
 			}
 		}
 		label = (GTK_MESSAGE_DIALOG(resp->dialog))->label;

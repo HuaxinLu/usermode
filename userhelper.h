@@ -36,6 +36,7 @@
 #define UH_SERVICE_NAME 7
 #define UH_FALLBACK_ALLOW 8
 #define UH_USER 9
+#define UH_BANNER 10
 
 /* Consolehelper response types. */
 #define UH_TEXT 1

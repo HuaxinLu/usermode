@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
-"POT-Creation-Date: 2002-07-24 09:41-0400\n"
+"POT-Creation-Date: 2002-08-05 21:36-0400\n"
 "PO-Revision-Date: 2002-06-29 21:27+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -76,17 +76,17 @@ msgstr "Beklager, passordene er ikke de samme"
 msgid "Help"
 msgstr "Hjelp"
 
-#: userhelper.c:97
+#: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Mottok PAM-feil %d.\n"
 
-#: userhelper.c:203
+#: userhelper.c:218
 #, c-format
 msgid "Password for %s"
 msgstr "Passord for %s"
 
-#: userhelper.c:320
+#: userhelper.c:338
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -95,7 +95,7 @@ msgstr ""
 "Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med "
 "superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
-#: userhelper.c:322
+#: userhelper.c:340
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -104,7 +104,7 @@ msgstr ""
 "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi "
 "mer informasjon for å gjøre dette."
 
-#: userhelper.c:326
+#: userhelper.c:344
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -113,7 +113,7 @@ msgstr ""
 "Du prøver å kjøre en kommando som med fordel kan kjøres med "
 "superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
-#: userhelper.c:328
+#: userhelper.c:346
 #, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -122,24 +122,24 @@ msgstr ""
 "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må "
 "oppgi mer informasjon for å gjøre dette."
 
-#: userhelper.c:346
+#: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
 msgstr "Passord for %s: "
 
-#: userhelper.c:629
+#: userhelper.c:648
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper må være setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
+#: userhelper.c:730
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kunne ikke åpne grafisk vindu; og er ute av stand til å finne en "
 "kontrollerende terminal.\n"
 
-#: userhelper.c:1375 userhelper.c:1413
+#: userhelper.c:1409 userhelper.c:1447
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "i ferd med å kjøre \"%s\"\n"
@@ -237,15 +237,15 @@ msgstr "Feil"
 msgid "Information"
 msgstr "Informasjon"
 
-#: userhelper-wrap.c:450
+#: userhelper-wrap.c:457
 msgid "Changing personal information."
 msgstr "Endrer personlig informasjon."
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:460
 msgid "Changing login shell."
 msgstr "Endrer innloggingsskall."
 
-#: userhelper-wrap.c:456
+#: userhelper-wrap.c:466
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -254,7 +254,7 @@ msgstr ""
 "Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med "
 "superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:458
+#: userhelper-wrap.c:468
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -263,7 +263,7 @@ msgstr ""
 "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi "
 "mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:463
+#: userhelper-wrap.c:477
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -271,7 +271,7 @@ msgstr ""
 "Du prøver å kjøre en kommando som med fordel kan kjøres med "
 "superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:479
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -279,23 +279,23 @@ msgstr ""
 "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må "
 "oppgi mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:480
+#: userhelper-wrap.c:495
 msgid "_Run Unprivileged"
 msgstr "Kjø_r upriviligert"
 
-#: userhelper-wrap.c:592 userhelper-wrap.c:609
+#: userhelper-wrap.c:607 userhelper-wrap.c:624
 msgid "Pipe error.\n"
 msgstr "Feil med rør.\n"
 
-#: userhelper-wrap.c:616
+#: userhelper-wrap.c:631
 msgid "Cannot fork().\n"
 msgstr "Kan ikke kjøre fork().\n"
 
-#: userhelper-wrap.c:662 userhelper-wrap.c:666
+#: userhelper-wrap.c:677 userhelper-wrap.c:681
 msgid "dup2() error.\n"
 msgstr "feil ved kjøring av dup2().\n"
 
-#: userhelper-wrap.c:678
+#: userhelper-wrap.c:693
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() feil, errno=%d\n"
@@ -419,6 +419,32 @@ msgstr "_Avmonter"
 msgid "E_xit"
 msgstr "A_vslutt"
 
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "Endrer personlig informasjon."
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "Passord for %s"
+
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
@@ -446,7 +472,3 @@ msgstr "A_vslutt"
 #~ msgstr ""
 #~ "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du "
 #~ "må oppgi mer informasjon for å gjøre dette."
-
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "Endrer personlig informasjon."
