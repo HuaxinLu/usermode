@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
-"POT-Creation-Date: 2001-12-10 16:03-0500\n"
+"POT-Creation-Date: 2002-01-31 05:38-0500\n"
 "PO-Revision-Date: 2001-02-13 15:24GMT\n"
 "Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
 "Language-Team: danish <dansk@klid.dk>\n"
@@ -9,11 +9,6 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.8\n"
-
-#: consolehelper.c:94
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -82,21 +77,27 @@ msgstr "Undskyld, adgangskoder er ikke ens"
 msgid "Help"
 msgstr "Hjælp"
 
-#: userhelper.c:93
+#: userhelper.c:95
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Fik fejl %d.\n"
 
-#: userhelper.c:186
+#: userhelper.c:198
 #, c-format
 msgid "Password for %s"
 msgstr "Adgangskode for %s"
 
-#: userhelper.c:457
+#: userhelper.c:555
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper skal være setuid root\n"
 
-#: userhelper.c:1117 userhelper.c:1156
+#. FIXME: print a warning here?
+#: userhelper.c:637
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+
+#: userhelper.c:1297 userhelper.c:1335
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "parat til at køre \"%s\"\n"
@@ -178,73 +179,81 @@ msgstr "Det lykkedes ikke at finde det valgte program"
 msgid "Unknown error."
 msgstr "Ukendt fejl."
 
-#: glade.strings:16 glade.strings:19 userhelper-wrap.c:235
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:234
 msgid "Placeholder text."
 msgstr ""
 
-#: userhelper-wrap.c:349
+#: userhelper-wrap.c:348
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Behøver %d svar.\n"
 
-#: userhelper-wrap.c:382
+#: userhelper-wrap.c:381
 msgid "Error"
 msgstr "Fejl"
 
-#: userhelper-wrap.c:395
+#: userhelper-wrap.c:394
 #, fuzzy
 msgid "Information"
 msgstr "Brugerinformation"
 
-#: userhelper-wrap.c:436
+#: userhelper-wrap.c:438
+msgid "Changing personal information."
+msgstr ""
+
+#: userhelper-wrap.c:441
+msgid "Changing login shell."
+msgstr ""
+
+#: userhelper-wrap.c:444
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:438
+#: userhelper-wrap.c:446
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:442
+#: userhelper-wrap.c:451
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:444
+#: userhelper-wrap.c:453
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:454
+#: userhelper-wrap.c:463
 #, fuzzy
 msgid "_Run Unprivileged"
 msgstr "Kør upriviligeret"
 
-#: userhelper-wrap.c:561 userhelper-wrap.c:578
+#: userhelper-wrap.c:575 userhelper-wrap.c:592
 msgid "Pipe error.\n"
 msgstr "Rør fejl.\n"
 
-#: userhelper-wrap.c:585
+#: userhelper-wrap.c:599
 msgid "Cannot fork().\n"
 msgstr "Kan ikke fork()\n"
 
-#: userhelper-wrap.c:631 userhelper-wrap.c:635
+#: userhelper-wrap.c:645 userhelper-wrap.c:649
 msgid "dup2() error.\n"
 msgstr "dup2() fejl.\n"
 
-#: userhelper-wrap.c:647
+#: userhelper-wrap.c:661
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() fejl, errno=%d\n"
 
-#: userinfo.c:295
+#: userinfo.c:299
 msgid "You don't exist.  Go away.\n"
 msgstr ""
 

@@ -12,7 +12,7 @@ Requires: util-linux, pam >= 0.66-5
 Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
 %endif
 Conflicts: SysVinit < 2.74-14
-BuildPrereq: glib-devel, gtk2-devel, libglade2-devel, pam-devel, util-linux
+BuildPrereq: glib-devel, gtk2-devel, libglade2-devel, libuser-devel, pam-devel, util-linux
 BuildRoot: %{_tmppath}/%{name}-root
 
 %package gtk

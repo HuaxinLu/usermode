@@ -5,20 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-12-10 16:03-0500\n"
+"POT-Creation-Date: 2002-01-31 05:38-0500\n"
 "PO-Revision-Date: 2002-01-24 16:53+0900\n"
 "Last-Translator: Jong-Hoon Ryu <redhat4u@netian.com>\n"
 "Language-Team: GNU Translation project <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=EUC-KR\n"
 "Content-Transfer-Encoding: 8-bit\n"
-
-#: consolehelper.c:94
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
-"니다.\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -87,21 +80,29 @@ msgstr "패스워드가 일치하지 않습니다"
 msgid "Help"
 msgstr "도움말"
 
-#: userhelper.c:93
+#: userhelper.c:95
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "PAM 오류 %d (이)가 발생했습니다.\n"
 
-#: userhelper.c:186
+#: userhelper.c:198
 #, c-format
 msgid "Password for %s"
 msgstr "%s의 패스워드"
 
-#: userhelper.c:457
+#: userhelper.c:555
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 
-#: userhelper.c:1117 userhelper.c:1156
+#. FIXME: print a warning here?
+#: userhelper.c:637
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
+"니다.\n"
+
+#: userhelper.c:1297 userhelper.c:1335
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\" (을)를 실행합니다\n"
@@ -182,24 +183,32 @@ msgstr "선택하신 프로그램을 찾는데 실패했습니다."
 msgid "Unknown error."
 msgstr "알 수 없는 오류입니다."
 
-#: glade.strings:16 glade.strings:19 userhelper-wrap.c:235
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:234
 msgid "Placeholder text."
 msgstr "Placeholder 형식의 text 입니다."
 
-#: userhelper-wrap.c:349
+#: userhelper-wrap.c:348
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "%d의 응답이 필요합니다.\n"
 
-#: userhelper-wrap.c:382
+#: userhelper-wrap.c:381
 msgid "Error"
 msgstr "오류"
 
-#: userhelper-wrap.c:395
+#: userhelper-wrap.c:394
 msgid "Information"
 msgstr "정보"
 
-#: userhelper-wrap.c:436
+#: userhelper-wrap.c:438
+msgid "Changing personal information."
+msgstr ""
+
+#: userhelper-wrap.c:441
+msgid "Changing login shell."
+msgstr ""
+
+#: userhelper-wrap.c:444
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
@@ -208,7 +217,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\" (을)를 실행하였습니다, 그러"
 "나 이 것을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: userhelper-wrap.c:438
+#: userhelper-wrap.c:446
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
@@ -217,7 +226,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 \"%s\" (을)를 실행하였습니다, 그러나 이 것"
 "을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: userhelper-wrap.c:442
+#: userhelper-wrap.c:451
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
@@ -225,7 +234,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, 그러나 이 것"
 "을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: userhelper-wrap.c:444
+#: userhelper-wrap.c:453
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
@@ -233,28 +242,28 @@ msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 이 것을 실행"
 "하기 위해서는 정보가 더 필요합니다."
 
-#: userhelper-wrap.c:454
+#: userhelper-wrap.c:463
 msgid "_Run Unprivileged"
 msgstr "권한없이 실행 (_R)"
 
-#: userhelper-wrap.c:561 userhelper-wrap.c:578
+#: userhelper-wrap.c:575 userhelper-wrap.c:592
 msgid "Pipe error.\n"
 msgstr "파이프 오류입니다.\n"
 
-#: userhelper-wrap.c:585
+#: userhelper-wrap.c:599
 msgid "Cannot fork().\n"
 msgstr "fork() 할 수 없습니다.\n"
 
-#: userhelper-wrap.c:631 userhelper-wrap.c:635
+#: userhelper-wrap.c:645 userhelper-wrap.c:649
 msgid "dup2() error.\n"
 msgstr "dup2() 오류입니다.\n"
 
-#: userhelper-wrap.c:647
+#: userhelper-wrap.c:661
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 오류입니다, 오류코드(errno)=%d\n"
 
-#: userinfo.c:295
+#: userinfo.c:299
 msgid "You don't exist.  Go away.\n"
 msgstr "등록되어 있지 않은 사용자 이군요.  어서 나가세요.\n"
 
