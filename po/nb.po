@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: usermode 1.71\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-08-29 10:30+0200\n"
+"PO-Revision-Date: 2004-10-05 14:46+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgstr "Passord: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Kunne ikke gi slipp på administratorrettigheter: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -133,23 +133,23 @@ msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Feil"
+msgstr "Feil: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Feil under kjøring av kommando «%s»: %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Kunne ikke sette IU-kanal til å ikke blokkere: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: kunne ikke koble til sesjonshåndtereren\n"
 
 #: userdialogs.h:30
 msgid "Help"
