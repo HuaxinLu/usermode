@@ -1,13 +1,13 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.19
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
 Requires: util-linux pam >= 0.66-5
 Conflicts: SysVinit < 2.74-14
-BuildRoot: /var/tmp/usermode-root
+BuildRoot: %{_tmppath}/usermode-root
 
 %description
 The usermode package contains several graphical tools for users:
@@ -45,16 +45,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 /usr/bin/usermount
-/usr/man/man1/usermount.1
+/usr/man/man1/usermount.1*
 /usr/bin/userinfo
-/usr/man/man1/userinfo.1
-%attr(4755, root, root) /usr/sbin/userhelper
-/usr/man/man8/userhelper.8
+/usr/man/man1/userinfo.1*
+%attr(4755,root,root) /usr/sbin/userhelper
+/usr/man/man8/userhelper.8*
 /usr/bin/userpasswd
-/usr/man/man1/userpasswd.1
+/usr/man/man1/userpasswd.1*
 /usr/bin/consolehelper
-/usr/man/man8/consolehelper.8
-/etc/X11/applnk/System/*
+/usr/man/man8/consolehelper.8*
+%config /etc/X11/applnk/System/*
 # PAM console wrappers
 /usr/bin/shutdown
 /usr/bin/halt
@@ -71,6 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Feb  3 2000 Nalin Dahyabhai <nalin@redhat.com>
+- free trip through the build system
+
 * Tue Jan 11 2000 Nalin Dahyabhai <nalin@redhat.com>
 - grab keyboard input focus for dialogs
 
