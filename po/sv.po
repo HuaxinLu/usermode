@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-07-24 09:41-0400\n"
-"PO-Revision-Date: 2002-07-19 17:01+0200\n"
+"PO-Revision-Date: 2002-07-25 11:24+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,7 @@ msgid "Password for %s"
 msgstr "Lösenord för %s"
 
 #: userhelper.c:320
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -101,7 +101,7 @@ msgstr ""
 "men mer information krävs för att kunna göra det."
 
 #: userhelper.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -110,7 +110,6 @@ msgstr ""
 "information krävs för att kunna göra det."
 
 #: userhelper.c:326
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -119,13 +118,12 @@ msgstr ""
 "rättigheter, men mer information krävs för att kunna göra det."
 
 #: userhelper.c:328
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du försöker köra ett kommando som kräver administrativa rättigheter, men mer "
-"information krävs för att kunna göra det."
+"Du försöker köra ett kommando som kräver administrativa rättigheter, men "
+"mer information krävs för att kunna göra det."
 
 #: userhelper.c:346
 #, c-format
@@ -456,9 +454,8 @@ msgstr "A_vsluta"
 #~ msgid "About Myself"
 #~ msgstr "Om mig själv"
 
-#, fuzzy
 #~ msgid "Change personal information"
-#~ msgstr "Ändrar personlig information."
+#~ msgstr "Ändra personlig information"
 
 #~ msgid "Disk Management"
 #~ msgstr "Diskhantering"
@@ -466,13 +463,11 @@ msgstr "A_vsluta"
 #~ msgid "Mount and unmount filesystems"
 #~ msgstr "Montera och avmontera filsystem"
 
-#, fuzzy
 #~ msgid "Change password"
 #~ msgstr "Byt lösenord"
 
-#, fuzzy
 #~ msgid "Change your login password"
-#~ msgstr "Byt lösenord"
+#~ msgstr "Byt ditt inloggningslösenord"
 
 #~ msgid "about to authenticate \"%s\"\n"
 #~ msgstr "kommer att autentisera \"%s\"\n"
