@@ -202,9 +202,10 @@ create_shell_menu(UserInfo* userinfo)
     {
       if(strcmp(shell_curr, userinfo->shell) != 0)
 	{
-	  menuitem = gtk_menu_item_new_with_label(shell_curr);
+          char *s = g_strdup(shell_curr);
+	  menuitem = gtk_menu_item_new_with_label(s);
 	  gtk_signal_connect(GTK_OBJECT(menuitem), "activate", 
-			     (GtkSignalFunc) shell_select, shell_curr);
+			     (GtkSignalFunc) shell_select, s);
 	  gtk_menu_append(GTK_MENU(menu), menuitem);
 	  gtk_widget_show(menuitem);
 	}

@@ -361,12 +361,15 @@ static int gecos_size(void)
  */
 static int get_shell_list(char* shell_name)
 {
-    int found;
+    gboolean found;
     char *shell;
 
     found = FALSE;
     setusershell();
     for(shell = getusershell(); shell != NULL; shell = getusershell()) {
+#ifdef DEBUG_USERHELPER
+	fprintf(stderr, "got shell \"%s\"\n", shell);
+#endif
         if (shell_name) {
             if (! strcmp (shell_name, shell)) {
 	        found = TRUE;
@@ -478,6 +481,9 @@ int main(int argc, char *argv[])
 	    exit (ERR_UNK_ERROR);
 	}
     }
+#ifdef DEBUG_USERHELPER
+    fprintf(stderr, "user is %s\n", user_name);
+#endif
 
     /* if we got -w, argv[optind] can't be a user */
     if (!w_flg) {
@@ -705,8 +711,7 @@ int main(int argc, char *argv[])
 	}
 
     } else { /* we are changing some gecos fields */
-
-	char	new_gecos[GECOS_LENGTH+10]; 
+	char new_gecos[GECOS_LENGTH+10]; 
 	pwdb_type user_unix[2] = { PWDB_UNIX, _PWDB_MAX_TYPES };
 	const struct pwdb *_pwdb = NULL;
 	const struct pwdb_entry *_pwe = NULL;
@@ -726,10 +731,10 @@ int main(int argc, char *argv[])
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
 
-	retval = !PAM_SUCCESS;
-	while (try-- && retval != PAM_SUCCESS) {
+	do {
 	    retval = pam_authenticate(pamh, 0);
-	}
+	} while (--try && retval != PAM_SUCCESS);
+
 	if (retval != PAM_SUCCESS) {
 	    pam_end(pamh, retval);
 	    fail_error(retval);
@@ -787,14 +792,18 @@ int main(int argc, char *argv[])
 	/* if we change the shell too ... */
 	if (s_flg != 0) {
 
-	  /* check that the users current shell is valid... */
-	  retval = pwdb_get_entry(_pwdb, "shell", &_pwe);
-	  if(!get_shell_list(shell_path) || 
-	     !get_shell_list((char*)_pwe->value) ||
-	     retval != PWDB_SUCCESS) {
-	    fail_error(ERR_SHELL_INVALID);
-	    pwdb_entry_delete(&_pwe);
-	  }
+	    /* check that the users current shell is valid... */
+	    retval = pwdb_get_entry(_pwdb, "shell", &_pwe);
+#ifdef DEBUG_USERHELPER
+	    fprintf(stderr, "current shell \"%s\"\n", (char*)_pwe->value);
+	    fprintf(stderr, "new shell \"%s\"\n", shell_path);
+#endif
+	    if(!get_shell_list(shell_path) || 
+	       !get_shell_list((char*)_pwe->value) ||
+	       retval != PWDB_SUCCESS) {
+	        fail_error(ERR_SHELL_INVALID);
+	        pwdb_entry_delete(&_pwe);
+	    }
 	    pwdb_entry_delete(&_pwe);
 
 	    retval = pwdb_set_entry(_pwdb, "shell", shell_path, 1+strlen(shell_path),

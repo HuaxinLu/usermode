@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.31
+Version: 1.32
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -85,6 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Sun Aug 20 2000 Nalin Dahyabhia <nalin@redhat.com>
+- previous fix, part two
+
 * Sat Aug 19 2000 Nalin Dahyabhia <nalin@redhat.com>
 - fix inadvertent breakage of the shell-changing code
 
