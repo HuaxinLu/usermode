@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.42
-Release: 3
+Version: 1.43
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.bz2
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Tue Aug 28 2001 Trond Eivind Glomsrød <teg@redhat.com> 1.43-1
+- Update translations
+
 * Mon Aug  6 2001 Nalin Dahyabhai <nalin@redhat.com>
 - add build requirements on glib-devel, gtk+-devel, pam-devel (#49726)
 
