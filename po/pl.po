@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2004-01-17 23:47+0100\n"
-"Last-Translator: Radosław Zawartko <radzaw@radzaw.one.pl>\n"
+"PO-Revision-Date: 2004-03-20 15:10+0100\n"
+"Last-Translator: Rados�aw Zawartko <radzaw@lnet.szn.pl>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -51,7 +51,7 @@ msgstr "Anuluj"
 #: userdialogs.h:33
 #, fuzzy
 msgid "Run Unprivileged"
-msgstr "Uruchom GnomeCard"
+msgstr "Uruchom program"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -98,9 +98,9 @@ msgid "Help"
 msgstr "Pomoc"
 
 #: userhelper.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Nie można ustawić katalogu roboczego na \"%s\": %s\n"
+msgstr "Nie można ustawić kontekstu exec na %s.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -139,11 +139,10 @@ msgid "Password for %s: "
 msgstr "Hasło dla %s: "
 
 #: userhelper.c:1039
-#, fuzzy
 msgid "userhelper must be setuid root\n"
-msgstr "Musisz być użytkownikiem root aby uruchomić %s.\n"
+msgstr "userhelper musi być uruchamiany jako root\n"
 
-#. FIXME: print a warning here?
+#  FIXME: print a warning here?
 #: userhelper.c:1123
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
@@ -172,15 +171,16 @@ msgid ""
 msgstr ""
 
 #: userhelper-wrap.c:186
-#, fuzzy
 msgid "Password resetting error."
-msgstr "Błąd przy zmianie hasła %s:"
+msgstr "Błąd podczas zmiany hasła."
 
 #: userhelper-wrap.c:188
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Niektóre pliki systemowe są zablokowane.\n"
+"Spróbuj ponownie za chwilę."
 
 #: userhelper-wrap.c:190
 msgid "Unknown user."
@@ -210,9 +210,8 @@ msgid "The exec() call failed."
 msgstr "The exec() call failed."
 
 #: userhelper-wrap.c:203
-#, fuzzy
 msgid "Failed to find selected program."
-msgstr "Nie można uruchomić programu pomocniczego"
+msgstr "Nie znaleziono wybranego programu."
 
 #: userhelper-wrap.c:207
 msgid "Unknown error."
@@ -239,7 +238,7 @@ msgstr "Informacja"
 #: usermode.glade.h:8
 #, fuzzy
 msgid "Placeholder text."
-msgstr "tekst-hasła"
+msgstr "Tylko napisy"
 
 #: userhelper-wrap.c:756
 msgid "Changing personal information."
@@ -270,7 +269,7 @@ msgstr ""
 #: userhelper-wrap.c:795
 #, fuzzy
 msgid "_Run Unprivileged"
-msgstr "Uruchom GnomeCard"
+msgstr "Uruchom program"
 
 #: userhelper-wrap.c:931
 msgid "Pipe error.\n"
@@ -305,30 +304,31 @@ msgstr "Od_montuj"
 
 #: usermount.c:321
 msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr ""
+msgstr "Czy aby napewno chcesz sformatować dysk? Zniszczysz wszystkie dane na nim zawarte."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
 msgstr "Przeprowadź formatowanie nisko-poziomowe."
 
 #: usermount.c:375
-#, fuzzy
 msgid "Select a _filesystem type to create:"
-msgstr "Nie można utworzyć obiektu typu \"%s\""
+msgstr "Wybierz sytem _plików do utworzenia:"
 
 #: usermount.c:543
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
+"Brak systemów plików do których montowania/odmontowania miałbyś prawo.\n"
+"Skontaktuj się z administratorem."
 
-#. Create the dialog.
+#  Create the dialog.
 #: usermount.c:544
 #: usermount.c:555
 #: glade.strings:22
 #, fuzzy
 msgid "User Mount Tool"
-msgstr "Narzędzie KDE do obsługi archiwów"
+msgstr "Narzędzie konfiguracji czasu"
 
 #. Create the other buttons.
 #: usermount.c:569
@@ -437,9 +437,8 @@ msgid "Mount and unmount filesystems"
 msgstr "Zamontuj i odmontuj systemy plików"
 
 #: userpasswd.desktop.in.h:1
-#, fuzzy
 msgid "Change your login password"
-msgstr "Zmiana hasłą przebiegła pomyślnie."
+msgstr "Zmień hasło"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
