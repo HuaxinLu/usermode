@@ -37,14 +37,14 @@ install:	$(PROGS)
 	mkdir -p $(PREFIX)/usr/bin $(PREFIX)/usr/sbin
 	mkdir -p $(PREFIX)/etc/X11/applnk/System
 	mkdir -p $(PREFIX)/usr/man/man1 $(PREFIX)/usr/man/man8
-	$(INSTALL) -m 755 -s userinfo $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 userinfo $(PREFIX)/usr/bin
 	$(INSTALL) -m 644 userinfo.desktop $(PREFIX)/etc/X11/applnk/System/
-	$(INSTALL) -m 755 -s usermount $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 usermount $(PREFIX)/usr/bin
 	$(INSTALL) -m 644 usermount.desktop $(PREFIX)/etc/X11/applnk/System/
-	$(INSTALL) -m 755 -s userpasswd $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 userpasswd $(PREFIX)/usr/bin
 	$(INSTALL) -m 644 userpasswd.desktop $(PREFIX)/etc/X11/applnk/System/
-	$(INSTALL) -m 755 -s consolehelper $(PREFIX)/usr/bin
-	$(INSTALL) -m 4755 -s userhelper $(PREFIX)/usr/sbin
+	$(INSTALL) -m 755 consolehelper $(PREFIX)/usr/bin
+	$(INSTALL) -m 4755 userhelper $(PREFIX)/usr/sbin
 
 install-man: 	$(MANS)
 	$(INSTALL) -m 644 userinfo.1 $(PREFIX)/usr/man/man1
@@ -61,6 +61,6 @@ archive:
 	@rm -rf /tmp/usermode-$(VERSION) /tmp/usermode
 	@cd /tmp; cvs export -r$(CVSTAG) usermode
 	@mv /tmp/usermode /tmp/usermode-$(VERSION)
-	@dir=$$PWD; cd /tmp; tar cvzf $$dir/usermode-$(VERSION).tar.gz usermode-$(VERSION)
+	@dir=$$PWD; cd /tmp; tar cvIf $$dir/usermode-$(VERSION).tar.bz2 usermode-$(VERSION)
 	@rm -rf /tmp/usermode-$(VERSION)
-	@echo "The archive is in usermode-$(VERSION).tar.gz"
+	@echo "The archive is in usermode-$(VERSION).tar.bz2"

@@ -73,6 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Thu Jun  1 2000 Nalin Dahyabhai <nalin@redhat.com>
 - modify PAM setup to use system-auth
+- bzip2 compress tarball
 
 * Fri Mar 17 2000 Ngo Than <than@redhat.de>
 - fix problem with LANG and LC_ALL
