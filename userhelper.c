@@ -333,7 +333,7 @@ static int get_shell_list(char* shell_name)
     found = FALSE;
     fp = fopen ("/etc/shells", "r");
     if (! fp) {
-        if (! shell_name) printf ("No known shells.\n");
+        if (! shell_name) fprintf (stderr, "No known shells.\n");
         return FALSE;
     }
     while (fgets (buf, sizeof (buf), fp) != NULL) {
