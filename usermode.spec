@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.76
+Version: 1.77
 Release: 1
 License: GPL
 Group: Applications/System
@@ -18,7 +18,7 @@ Requires: util-linux, pam >= 0.75-37, /etc/pam.d/system-auth, passwd
 Conflicts: SysVinit < 2.74-14
 BuildPrereq: desktop-file-utils, glib2-devel, gtk2-devel
 BuildPrereq: libglade2-devel, libuser-devel, pam-devel, util-linux
-BuildPrereq: Perl-XML-Parser
+BuildPrereq: perl-XML-Parser
 %if %{WITH_SELINUX}
 BuildPrereq: libselinux-devel >= 1.17.13-2
 %endif
@@ -115,6 +115,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Jan 20 2005 Jindrich Novy <jnovy@redhat.com> 1.77-1
+- preserve LANGUAGE environment variable in userhelper (#82300)
+- use badge instead of keyring icon for pam-panel-icon (#122487)
+- icon is not showed in the panel when logged as root (#75234)
+- use new environment variable USERHELPER_UID to identify
+  an user who executed an application via userhelper  (#116186)
+
 * Thu Dec 02 2004 Jindrich Novy <jnovy@redhat.com> 1.76-1
 - fix dependencies to Perl-XML-Parser #124170
 - use pamconsole instead of user in /etc/fstab to let
