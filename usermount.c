@@ -45,8 +45,6 @@ GtkWidget* create_mount_table();
 int
 main(int argc, char* argv[])
 {
-  MountInfo* mountinfo
-
   /* gtk_set_locale(); */		/* this is new... */
   gtk_init(&argc, &argv);
   /* put this back in when I've decided I need it... */
@@ -61,7 +59,7 @@ main(int argc, char* argv[])
 }
 
 void
-create_usermount_window(MountInfo* mountinfo)
+create_usermount_window()
 {
   GtkWidget* main;
   GtkWidget* ok;
@@ -70,7 +68,7 @@ create_usermount_window(MountInfo* mountinfo)
   GtkWidget* mount_table;
   
   main = gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(main), "User Mount Tool")
+  gtk_window_set_title(GTK_WINDOW(main), "User Mount Tool");
   gtk_signal_connect(GTK_OBJECT(main), "destroy",
 		     (GtkSignalFunc) gtk_exit, NULL);
 
@@ -86,7 +84,7 @@ create_usermount_window(MountInfo* mountinfo)
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
 		     help, FALSE, FALSE, 0);
 
-  mount_table = create_mount_table(mountinfo);
+  mount_table = create_mount_table();
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->vbox), mount_table,
 		     TRUE, TRUE, 0);
@@ -95,12 +93,12 @@ create_usermount_window(MountInfo* mountinfo)
   gtk_widget_show(ok);
   gtk_widget_show(cancel);
   gtk_widget_show(help);
-
+  gtk_widget_show(main);
 
 }
 
 GtkWidget*
-create_mount_table(MountInfo* mountinfo)
+create_mount_table()
 {
   GtkWidget* mount_table;
   GtkWidget* mountpoint;
@@ -109,16 +107,19 @@ create_mount_table(MountInfo* mountinfo)
   GtkWidget* mount;
 
   struct mntent* fstab_entry;
-  struct mntent* mtab_entry;
+/*   struct mntent* mtab_entry; */
   FILE* fstab;
 /*   FILE* mtab; */
   int row = 0;
 
-a  /* hardcoded limit of 20 user mountable filesystems.  Shouldn't ever
+  /* hardcoded limit of 20 user mountable filesystems.  Shouldn't ever
    * get that high, but it's possible... it will be much easier to fix
    * when gtk tables can resize themselves, or something of the sort.
    */
-  mount_table = gtk_table_new(20, 4, FALSE);
+  mount_table = gtk_table_new(5, 4, FALSE);
+  gtk_container_border_width(GTK_CONTAINER(mount_table), 5);
+  gtk_table_set_row_spacings(GTK_TABLE(mount_table), 5);
+  gtk_table_set_col_spacings(GTK_TABLE(mount_table), 5);
 
   /* this is a little trickier than I had hoped... it's going to be
    * hard to figure out the current status of the filesystems... it
@@ -128,12 +129,21 @@ a  /* hardcoded limit of 20 user mountable filesystems.  Shouldn't ever
    * figure out the status after building the table.  Ugh!
    */
 
-  fstab = setmntent(MNTTAB, 'r');
+  fstab = setmntent(MNTTAB, "r");
 /*   mtab = setmntent("/etc/mtab", 'r'); */
 
-  do
+/*   fstab_entry = getmntent(fstab); */
+
+  /* DEBUG */
+  printf("got here.\n");
+
+  while((fstab_entry = getmntent(fstab)) != NULL)
     {
-      fstab_entry = getmntent(fstab);
+/*       fstab_entry = getmntent(fstab); */
+
+      /* DEBUG */
+      printf("got here.\n");
+      printf("fstab_entry->mnt_opts is: %s\n", fstab_entry->mnt_opts);
 
       /* not sure if user is a valid "real" option... I think it might
        * just be translated into equivalent other options... reason is
@@ -178,7 +188,6 @@ a  /* hardcoded limit of 20 user mountable filesystems.  Shouldn't ever
 	  row++;
 	}
     }
-  while(fstab_entry != NULL);
 
   return mount_table;
 }
