@@ -34,7 +34,6 @@
 typedef struct message {
 	int type;
 	char *message;
-	char *data;
 	GtkWidget *entry;
 	GtkWidget *label;
 } message;
