@@ -1,20 +1,20 @@
 # translation of it.po to Italian
 # Copyright (C) 2001 Red Hat, Inc.
 # Bettina De Monti <bdemonti@redhat.it>, 2001.
-# Francesco Valente <fvalen@redhat.com>, 2003
+# Francesco Valente <fvalen@redhat.com>, 2003, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2003-12-03 13:55+1000\n"
+"PO-Revision-Date: 2004-10-11 14:52+1000\n"
 "Last-Translator: Francesco Valente <fvalen@redhat.com>\n"
 "Language-Team: Italian <i18n-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0\n"
+"X-Generator: KBabel 1.0.2\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -94,7 +94,7 @@ msgstr "Password: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "I privilegi di amministratore non sono stati abbandonati: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -102,6 +102,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"I privilegi di amministratore non sono stati abbandonati: pam_timestamp_check ha "
+"ritornato un codice d'errore %d"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -109,53 +111,56 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"Siete attualmente autorizzati a configurare tutte le impostazioni del sistema (che influenzano "
+"tutti gli utenti), senza dover digitare nuovamente la password dell'amministratore. Potete "
+"annullare questa autorizzazione."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Mantieni l'autorizzazione"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Salta l'autorizzazione"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check non è un root setuid"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "nessun controllo tty per pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "utente sconosciuto per pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "errore nei permessi in pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "controllo tty invalido in pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Errore"
+msgstr "Errore: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Impossibile eseguire il comando \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Impossibile impostare IO channel nonblocking: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: impossibile collegarsi al session manager\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -218,8 +223,7 @@ msgstr "userhelper deve impostare la setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2347
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica o trovare il terminale di "
 "controllo.\n"
@@ -406,8 +410,7 @@ msgstr "_Smonta"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Formattare il disco? La formattazione distruggerà tutti i dati sul disco."
+msgstr "Formattare il disco? La formattazione distruggerà tutti i dati sul disco."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -530,3 +533,4 @@ msgstr "Password"
 
 #~ msgid "Need %d responses.\n"
 #~ msgstr "Necessarie %d risposte.\n"
+
