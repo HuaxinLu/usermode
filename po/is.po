@@ -74,7 +74,7 @@ msgstr "Lykilorðin stemma því miður ekki"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without login."
-msgstr ""
+msgstr "Keyra stillingatól fyrir allt kerfið án auðkenningar."
 
 #: userdialogs.h:30
 msgid "Help"
@@ -421,26 +421,24 @@ msgstr "Hæ_tta"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Um mig"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Breyti persónuupplýsingum."
+msgstr "Breyta persónuupplýsingum"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Sýsla með diska"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Tengja og aftengja skráarkerfi"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Breyta lykilorði þínu"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Aðgangsorð fyrir %s"
+msgstr "Lykilorð"
