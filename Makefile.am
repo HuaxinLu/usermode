@@ -4,7 +4,7 @@ CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
 
 SUBDIRS=intl po
 
-CFLAGS = -DDEBUG_USERHELPER @LIBGLADE_CFLAGS@ @CFLAGS@
+CFLAGS = @LIBGLADE_CFLAGS@ @CFLAGS@
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper
 bin_SCRIPTS = shutdown
