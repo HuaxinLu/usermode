@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2000-08-03 15:08-0400\n"
-"PO-Revision-Date: 2000-08-05 17:08+0200\n"
+"PO-Revision-Date: 2000-08-05 17:11+0200\n"
 "Last-Translator: László Németh <nemeth@qwertynet.hu>\n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
@@ -218,11 +218,11 @@ msgstr "Ez lészen itt a súgó, majd ha piros hó esik."
 
 #: ../usermount.c:56
 msgid "Mount"
-msgstr ""
+msgstr "Mount"
 
 #: ../usermount.c:57
 msgid "Unmount"
-msgstr ""
+msgstr "Unmount"
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
