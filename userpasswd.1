@@ -14,43 +14,19 @@
 .\" along with this program; if not, write to the Free Software
 .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 .\"
-.TH USERMOUNT 1 "3 October 1997" "Red Hat Software"
+.TH USERPASSWD 1 "17 October 1997" "Red Hat Software"
 .SH NAME
-usermount \- A graphical tool to mount, unmount and format filesystems.
+userpasswd \- A graphical tool to allow users to change their passwords.
 .SH SYNOPSIS
-.B usermount
+.B userpasswd
 [
 .I options
 ]
 .SH DESCRIPTION
-.B usermount
-is a graphical tool to allow users to easily manage removable media,
-such as floppy disks or zip disks.  When the tool starts up, it scans
-.I /etc/fstab
-for all filesystems that have been configured to allow users to mount
-and unmount them.  The filesystem can be mounted or unmounted by
-pressing the toggle button labeled
-.I Mount.
-.PP
-Also, if the user has the appropriate permissions for the device, the 
-.I Format
-button will be active.  This allows the user to format disks using
-.B fdformat
-and create a new filesystem of the type listed (using
-.B mkfs
-with the appropriate option).  Naturally, the user will be prompted for
-confirmation before actually destroying data on the device.
-.PP
-Note that if a device is already mounted, the format button is
-inactive for all entries that share the same device.
-.PP
-When run as root, 
-.B usermount
-displays all of the entries in 
-.I /etc/fstab
-rather than just the ones with the 
-.I user
-option.
+.B userpasswd
+is a graphical tool to allow users to easily change their passwords.
+Aside from being a nice GUI frontend, this program does the right
+thing when the pam configuration has changed.
 .SH OPTIONS
 This program has no command line options of it's own, but it does take
 the standard X program options like
@@ -58,22 +34,12 @@ the standard X program options like
 and such.  See the 
 .IR X (1)
 man page for some of the common options.
-.SH FILES
-.TP 25
-.I /etc/fstab
-The system file describing the mountable filesystems.
 .SH "SEE ALSO"
-.IR mount (8), 
-.IR fdformat (8), 
-.IR mkfs (8),
-.IR fstab (5)
-.IR X (1)
+.IR userhelper (8)
 .SH BUGS
-Mount entries with a filesystem type of iso9660 are outright
-considered CD-ROMs and the format button is always disabled.  
-.PP
-Mount entries for swap files or partitions are also ignored.  A nice
-feature might be to allow root to turn swap on and off for swap
-partitions.
+No known bugs, but compatability with bizarre changes in the pam
+configuration have not been tested aggressively.  If you have a
+non-standard pam configuration, I'd be interested to hear whether it
+worked and what kind of configuration you have.
 .SH AUTHOR
 Otto Hammersmith <otto@redhat.com>
