@@ -3,7 +3,7 @@ CC=gcc
 # mostly and totally crappy makefile... better one to come.
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
-CVSTAG = um$(subst .,-,$(VERSION))$(subst .,-,$(REVISION))
+CVSTAG = um$(subst .,-,$(VERSION))$(subst .,-,$(RELEASE))
 
 #CFLAGS=-O2 -Wall
 CFLAGS=-g -Wall $(shell gtk-config --cflags) # -DDEBUG_USERHELPER
