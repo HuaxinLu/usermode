@@ -120,7 +120,7 @@ rm -rf $RPM_BUILD_ROOT
 * Thu Oct 23 2003 Nalin Dahyabhai <nalin@redhat.com> 1.69-1
 - all around: cleanups
 - consolehelper: coalesce multiple messages from PAM again
-- usermount: handle user-not-allowed-to-control-mounts error correctly
+- usermount: handle user-not-allowed-to-control-mounts error correctly (#100457)
 - userhelper: trim off terminating commas when changing chfn info
 
 * Mon Oct 6 2003 Dan Walsh <dwalsh@redhat.com> 1.68-8
