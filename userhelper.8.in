@@ -144,7 +144,7 @@ but which are still useful when run without them.
 .I NOXOPTION
 The name of an option which, if passed to userhelper as an argument for the
 program it will run, will cause userhelper to behave as if the \fI-t\fP flag
-had been pased to it.
+had been passed to it.
 .TP
 .I GUI
 Specifies whether or not userhelper should use consolehelper to present
