@@ -330,92 +330,36 @@ create_gecos_table(UserInfo* userinfo)
 UserInfo* 
 parse_userinfo()
 {
-  /* FIXME: do serious error checking */
-
   UserInfo* retval;
   struct passwd* pwent;
 
   char* gecos_raw;
   char* gecos_tok;
-  char gecos_sep = ',';
-  int gecos_more_fields = TRUE;
 
-  retval = malloc(sizeof(UserInfo));
+  retval = calloc(sizeof(UserInfo), 1);
 
   pwent = getpwuid(getuid());
 
   retval->shell = strdup(pwent->pw_shell);
   gecos_raw = strdup(pwent->pw_gecos);
+  gecos_tok = gecos_raw;
+  retval->office = "";
+  retval->office_phone = "";
+  retval->home_phone = "";
   
-  if(strchr(gecos_raw, gecos_sep) == NULL)
-    {
-      retval->full_name = gecos_raw;
-      retval->office = "";
-      retval->office_phone = "";
-      retval->home_phone = "";
-      return retval;
-    }
+  retval->full_name = gecos_raw;
 
-  if(gecos_more_fields)
-    {
-      gecos_tok = gecos_raw;
-      gecos_raw = strchr(gecos_raw, gecos_sep);
-      gecos_raw[0] = '\0';
-      gecos_raw++;
-      retval->full_name = gecos_tok;
-    }
-  else
-    {
-      retval->full_name = "";
-    }
+  while (*gecos_tok && (*gecos_tok != ',')) gecos_tok++;
+  if (*gecos_tok) *(gecos_tok++) = '\0';
+  if (*gecos_tok && (*gecos_tok != ',')) retval->office = gecos_tok;
 
-  if(strchr(gecos_raw, gecos_sep) == NULL)
-    gecos_more_fields = FALSE;
+  while (*gecos_tok && (*gecos_tok != ',')) gecos_tok++;
+  if (*gecos_tok) *(gecos_tok++) = '\0';
+  if (*gecos_tok && (*gecos_tok != ',')) retval->office_phone = gecos_tok;
 
-  if(gecos_more_fields)
-    {
-      gecos_tok = gecos_raw;
-      gecos_raw = strchr(gecos_raw, gecos_sep);
-      gecos_raw[0] = '\0';
-      gecos_raw++;
-      retval->office = gecos_tok;
-    }
-  else
-    {
-      retval->office = "";
-    }
-
-  if(strchr(gecos_raw, gecos_sep) == NULL)
-    gecos_more_fields = FALSE;
-
-  if(gecos_more_fields)
-    {
-      gecos_tok = gecos_raw;
-      gecos_raw = strchr(gecos_raw, gecos_sep);
-      gecos_raw[0] = '\0';
-      gecos_raw++;
-      retval->office_phone = gecos_tok;
-    }
-  else
-    {
-      retval->office_phone = "";
-    }
-
-  if(strchr(gecos_raw, gecos_sep) == NULL)
-    gecos_more_fields = FALSE;
-
-  if(gecos_more_fields)
-    {
-      gecos_tok = gecos_raw;
-      gecos_raw = strchr(gecos_raw, gecos_sep);
-      gecos_raw[0] = '\0';
-      gecos_raw++;
-      retval->home_phone = gecos_tok;
-    }
-  else
-    {
-      retval->home_phone = "";
-    }
+  while (*gecos_tok && (*gecos_tok != ',')) gecos_tok++;
+  if (*gecos_tok) *(gecos_tok++) = '\0';
+  if (*gecos_tok && (*gecos_tok != ',')) retval->home_phone = gecos_tok;
 
   return retval;
 }
