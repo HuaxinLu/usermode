@@ -1,6 +1,6 @@
 Summary: User Tools
 Name: usermode
-Version: 1.4.1
+Version: 1.4.2
 Release: 1
 Copyright: GPL
 Group: X11/Applications
@@ -14,6 +14,9 @@ Several graphical tools, including a tool to help users manage floppies
 her finger information.
 
 %changelog
+
+* Tue Oct 06 1998 Preston Brown <pbrown@redhat.com>
+- fixed so that the close button on window managers quits the program properly
 
 * Thu Apr 16 1998 Erik Troan <ewt@redhat.com>
 
