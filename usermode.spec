@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.28
-Release: 3
+Version: 1.29
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -85,6 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Mon Aug 14 2000 Nalin Dahyabhia <nalin@redhat.com>
+- actually use the right set of translations
+
 * Fri Aug 11 2000 Nalin Dahyabhia <nalin@redhat.com>
 - remove the shutdown command from the list of honored commands
 

@@ -416,8 +416,8 @@ int main(int argc, char *argv[])
 
     /* first set up our locale info for gettext. */
     setlocale(LC_ALL, "");
-    bindtextdomain("userhelper", "/usr/share/locale");
-    textdomain("userhelper");
+    bindtextdomain("usermode", "/usr/share/locale");
+    textdomain("usermode");
 
     if (geteuid() != 0) {
 	fprintf(stderr, i18n("userhelper must be setuid root\n"));
