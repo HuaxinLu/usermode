@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.42\n"
 "POT-Creation-Date: 2001-02-05 10:35-0500\n"
-"PO-Revision-Date: 2001-03-14 10:05+0900\n"
+"PO-Revision-Date: 2001-03-20 17:35+0900\n"
 "Last-Translator: Jong-Hoon Ryu <queenrjh@chollian.net>\n"
 "Language-Team: Korean Linux Extension project <kle@kldp.org>\n"
 "MIME-Version: 1.0\n"
@@ -318,15 +318,15 @@ msgstr "권한없이 실행"
 
 #: ../dummy.h:24
 msgid "(current) UNIX password: "
-msgstr "(현재) 유닉스 패스워드: "
+msgstr "(현재) UNIX 패스워드: "
 
 #: ../dummy.h:25
 msgid "New UNIX password: "
-msgstr "새로운 유닉스 패스워드: "
+msgstr "새로운 UNIX 패스워드: "
 
 #: ../dummy.h:26
 msgid "Retype new UNIX password: "
-msgstr "새로운 유닉스 패스워드 (확인): "
+msgstr "새로운 UNIX 패스워드 (확인): "
 
 #: ../dummy.h:27
 msgid "BAD PASSWORD: it's WAY too short"
