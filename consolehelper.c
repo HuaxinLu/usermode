@@ -16,6 +16,8 @@
  */
 
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
 #include <gtk/gtk.h>
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
@@ -35,7 +37,7 @@ main(int argc, char* argv[])
   else progname = argv[0];
 
   display = getenv("DISPLAY");
-  if (display && *display) {
+  if (display && *display && !getuid()) { /* root won't be authed anyway */
     int fake_argc = 1;
     char **fake_argv;
 
