@@ -2,7 +2,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.36
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -88,6 +88,10 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Thu Oct  5 2000 Nalin Dahyabhai <nalin@redhat.com>
+- fix the /usr/bin/shutdown wrapper so that root can call shutdown
+- also sanitize LC_MESSAGES
+
 * Wed Oct  4 2000 Jakub Jelinek <jakub@redhat.com>
 - fix a security bug with LC_ALL/LANG variables (#18046)
 

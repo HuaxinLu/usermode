@@ -1,9 +1,12 @@
 #!/bin/sh
+prog=/usr/sbin/shutdown
 for flag in $* ; do
 	if test ${flag} = "-h" ; then
-		exec /usr/bin/halt
-	fi
-	if test ${flag} = "-r" ; then
-		exec /usr/bin/reboot
+		prog=/usr/bin/halt
+	elif test ${flag} = "-r" ; then
+		prog=/usr/bin/reboot
+	else
+		args="$args $flag"
 	fi
 done
+exec $prog $args

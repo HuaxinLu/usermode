@@ -556,7 +556,7 @@ int main(int argc, char *argv[])
 	char *user, *apps_user;
 	char *retry;
 	char *env_home, *env_term, *env_display, *env_shell;
-        char *env_user, *env_logname, *env_lang, *env_lcall;
+        char *env_user, *env_logname, *env_lang, *env_lcall, *env_lcmsgs;
 	char *env_xauthority;
 	int session, fallback, try;
 	size_t aft;
@@ -574,6 +574,7 @@ int main(int argc, char *argv[])
 	env_logname = getenv("LOGNAME");
         env_lang = getenv("LANG");
         env_lcall = getenv("LC_ALL");
+        env_lcmsgs = getenv("LC_MESSAGES");
         env_xauthority = getenv("XAUTHORITY");
 
 	if (env_home && strstr(env_home, ".."))
@@ -586,6 +587,8 @@ int main(int argc, char *argv[])
 	    env_lang=NULL;
 	if (env_lcall && strchr(env_lcall, '/'))
 	    env_lcall=NULL;
+	if (env_lcmsgs && strchr(env_lcmsgs, '/'))
+	    env_lcmsgs=NULL;
 
 	environ = (char **) calloc (1, 2 * sizeof (char *));
 	/* note that XAUTHORITY not copied -- do not let attackers get at
@@ -600,6 +603,7 @@ int main(int argc, char *argv[])
         /* we want I18n, but only if it is safe */
         if (env_lang) setenv("LANG", env_lang, 1);
         if (env_lcall) setenv("LC_ALL", env_lcall, 1);
+        if (env_lcmsgs) setenv("LC_MESSAGES", env_lcmsgs, 1);
 
 	setenv("PATH",
 	       "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin:/root/bin", 1);
