@@ -1,12 +1,16 @@
+# Copyright (C) 2002
+# This file is distributed under the same license as the PACKAGE package.
+# Richard Allen <ra@ra.is>, 2002.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.6\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
 "PO-Revision-Date: 2002-04-06 20:50+0000\n"
-"Last-Translator: Richard Allen <ra@hp.is>\n"
+"Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #.
@@ -30,65 +34,65 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "Í lagi"
+msgstr "Ã lagi"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr "Hætta"
+msgstr "HÃ¦tta"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Hætta viğ"
+msgstr "HÃ¦tta viÃ°"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Keyra án rótarheimilda"
+msgstr "Keyra Ã¡n rÃ³tarheimilda"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(núverandi) UNIX lykilorğ: "
+msgstr "(nÃºverandi) UNIX lykilorÃ°: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Sláğu inn nıtt UNIX lykilorğ: "
+msgstr "SlÃ¡Ã°u inn nÃ½tt UNIX lykilorÃ°: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Sláğu aftur inn nıja UNIX lykilorğiğ: "
+msgstr "SlÃ¡Ã°u aftur inn nÃ½ja UNIX lykilorÃ°iÃ°: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "SLÆMT LYKILORĞ: şağ er ALLT OF stutt"
+msgstr "SLÃ†MT LYKILORÃ: Ã¾aÃ° er ALLT OF stutt"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "SLÆMT LYKILORĞ: Şağ er of stutt"
+msgstr "SLÃ†MT LYKILORÃ: ÃaÃ° er of stutt"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "Lykilorği ekki breytt"
+msgstr "LykilorÃ°i ekki breytt"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Lykilorğin stemma şví miğur ekki"
+msgstr "LykilorÃ°in stemma Ã¾vÃ­ miÃ°ur ekki"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Keyra stillingatól fyrir allt kerfiğ án auğkenningar."
+msgstr "Keyra stillingatÃ³l fyrir allt kerfiÃ° Ã¡n auÃ°kenningar."
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr "Hjálp"
+msgstr "HjÃ¡lp"
 
 #: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Fékk PAM villu %d.\n"
+msgstr "FÃ©kk PAM villu %d.\n"
 
 #: userhelper.c:225
 #, c-format
 msgid "Password for %s"
-msgstr "Ağgangsorğ fyrir %s"
+msgstr "AÃ°gangsorÃ° fyrir %s"
 
 #: userhelper.c:346
 #, c-format
@@ -96,8 +100,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Şú ert ağ fara ağ keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér\n"
-"er şörf á frekari upplısingum svo şağ sé hægt."
+"ÃÃº ert aÃ° fara aÃ° keyra \"%s\" sem gÃ¦ti haft gagn af rÃ³tarheimildum, en hÃ©r\n"
+"er Ã¾Ã¶rf Ã¡ frekari upplÃ½singum svo Ã¾aÃ° sÃ© hÃ¦gt."
 
 #: userhelper.c:348
 #, c-format
@@ -105,59 +109,59 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Şú ert ağ fara ağ keyra \"%s\" sem şarf rótarheimildir, en hér er şörf á\n"
-"frekari upplısingum svo şağ sé hægt."
+"ÃÃº ert aÃ° fara aÃ° keyra \"%s\" sem Ã¾arf rÃ³tarheimildir, en hÃ©r er Ã¾Ã¶rf Ã¡\n"
+"frekari upplÃ½singum svo Ã¾aÃ° sÃ© hÃ¦gt."
 
 #: userhelper.c:352
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Şú ert ağ fara ağ keyra skipun sem gæti haft gagn af rótarheimildum, en hér\n"
-"er şörf á frekari upplısingum svo şağ sé hægt."
+"ÃÃº ert aÃ° fara aÃ° keyra skipun sem gÃ¦ti haft gagn af rÃ³tarheimildum, en hÃ©r\n"
+"er Ã¾Ã¶rf Ã¡ frekari upplÃ½singum svo Ã¾aÃ° sÃ© hÃ¦gt."
 
 #: userhelper.c:354
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Şú ert ağ fara ağ keyra skipun sem şarf rótarheimildir, en hér er şörf á\n"
-"frekari upplısingum svo şağ sé hægt."
+"ÃÃº ert aÃ° fara aÃ° keyra skipun sem Ã¾arf rÃ³tarheimildir, en hÃ©r er Ã¾Ã¶rf Ã¡\n"
+"frekari upplÃ½singum svo Ã¾aÃ° sÃ© hÃ¦gt."
 
 #: userhelper.c:373
 #, c-format
 msgid "Password for %s: "
-msgstr "Ağgangsorğ fyrir %s: "
+msgstr "AÃ°gangsorÃ° fyrir %s: "
 
 #: userhelper.c:647
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper verğur ağ vera 'setuid' ofurpaur\n"
+msgstr "userhelper verÃ°ur aÃ° vera 'setuid' ofurpaur\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:729
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Get ekki opnağ grafískann skjá eğa fundiğ stjórnskjáinn.\n"
+msgstr "Get ekki opnaÃ° grafÃ­skann skjÃ¡ eÃ°a fundiÃ° stjÃ³rnskjÃ¡inn.\n"
 
 #: userhelper.c:1434 userhelper.c:1480
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "alveg ağ fara ağ keyra \"%s\"\n"
+msgstr "alveg aÃ° fara aÃ° keyra \"%s\"\n"
 
 #: userhelper-wrap.c:61
 msgid "Unknown exit code."
-msgstr "Óşekkt skilagildi."
+msgstr "Ã“Ã¾ekkt skilagildi."
 
 #: userhelper-wrap.c:63
 msgid "Information updated."
-msgstr "Upplısingar uppfærğar."
+msgstr "UpplÃ½singar uppfÃ¦rÃ°ar."
 
 #: userhelper-wrap.c:65
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Lykilorğiğ sem şú gafst upp er ógilt.\n"
+"LykilorÃ°iÃ° sem Ã¾Ãº gafst upp er Ã³gilt.\n"
 "Vinsamlegast reyndu aftur."
 
 #: userhelper-wrap.c:67
@@ -166,33 +170,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Ein eğa fleiri af færslunum sem var breytt eru ógildar.\n"
-"Orsökin er líklega ağ ein af færslunum inniheldur tvípunkt eğa kommu.\n"
-"Fjarlægğu şær og reyndu aftur."
+"Ein eÃ°a fleiri af fÃ¦rslunum sem var breytt eru Ã³gildar.\n"
+"OrsÃ¶kin er lÃ­klega aÃ° ein af fÃ¦rslunum inniheldur tvÃ­punkt eÃ°a kommu.\n"
+"FjarlÃ¦gÃ°u Ã¾Ã¦r og reyndu aftur."
 
 #: userhelper-wrap.c:69
 msgid "Password resetting error."
-msgstr "Villa viğ ağ frumstilla ağgangsorğ."
+msgstr "Villa viÃ° aÃ° frumstilla aÃ°gangsorÃ°."
 
 #: userhelper-wrap.c:71
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Sumar kerfisskrárnar eru læstar.\n"
-"Reyndu aftur eftir smá stund."
+"Sumar kerfisskrÃ¡rnar eru lÃ¦star.\n"
+"Reyndu aftur eftir smÃ¡ stund."
 
 #: userhelper-wrap.c:73
 msgid "Unknown user."
-msgstr "Óşekktur notandi."
+msgstr "Ã“Ã¾ekktur notandi."
 
 #: userhelper-wrap.c:75
 msgid "Insufficient rights."
-msgstr "Ekki nægar heimildir."
+msgstr "Ekki nÃ¦gar heimildir."
 
 #: userhelper-wrap.c:77
 msgid "Invalid call to subprocess."
-msgstr "Ógilt kall í undirferli."
+msgstr "Ã“gilt kall Ã­ undirferli."
 
 #: userhelper-wrap.c:79
 msgid ""
@@ -200,25 +204,25 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Skélin şín er ekki í skránni /etc/shells.\n"
-"Şú mátt ekki skipta um skél.\n"
-"Hafğu samband viğ kerfisstjórann şinn."
+"SkÃ©lin Ã¾Ã­n er ekki Ã­ skrÃ¡nni /etc/shells.\n"
+"ÃÃº mÃ¡tt ekki skipta um skÃ©l.\n"
+"HafÃ°u samband viÃ° kerfisstjÃ³rann Ã¾inn."
 
 #: userhelper-wrap.c:82
 msgid "Out of memory."
-msgstr "Minniğ er búiğ."
+msgstr "MinniÃ° er bÃºiÃ°."
 
 #: userhelper-wrap.c:84
 msgid "The exec() call failed."
-msgstr "exec() kerfisfalliğ brást."
+msgstr "exec() kerfisfalliÃ° brÃ¡st."
 
 #: userhelper-wrap.c:86
 msgid "Failed to find selected program."
-msgstr "Gat ekki fundiğ forritiğ sem şú valdir."
+msgstr "Gat ekki fundiÃ° forritiÃ° sem Ã¾Ãº valdir."
 
 #: userhelper-wrap.c:90
 msgid "Unknown error."
-msgstr "Óşekkt villa."
+msgstr "Ã“Ã¾ekkt villa."
 
 #: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
 msgid "Query"
@@ -227,7 +231,7 @@ msgstr "Fyrirspurn"
 #: userhelper-wrap.c:342
 #, c-format
 msgid "Need %d responses.\n"
-msgstr "Şarfnast %d svara.\n"
+msgstr "Ãarfnast %d svara.\n"
 
 #: userhelper-wrap.c:374 userhelper-wrap.c:443
 msgid "Error"
@@ -235,19 +239,19 @@ msgstr "Villa"
 
 #: userhelper-wrap.c:386
 msgid "Information"
-msgstr "Upplısingar"
+msgstr "UpplÃ½singar"
 
 #: userhelper-wrap.c:441 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
-msgstr "Şetta pláss autt."
+msgstr "Ãetta plÃ¡ss autt."
 
 #: userhelper-wrap.c:482
 msgid "Changing personal information."
-msgstr "Breyti persónuupplısingum."
+msgstr "Breyti persÃ³nuupplÃ½singum."
 
 #: userhelper-wrap.c:485
 msgid "Changing login shell."
-msgstr "Breyti skél."
+msgstr "Breyti skÃ©l."
 
 #: userhelper-wrap.c:491
 #, c-format
@@ -255,8 +259,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Şú ert ağ fara ağ keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér "
-"er şörf á frekari upplısingum svo şağ sé hægt."
+"ÃÃº ert aÃ° fara aÃ° keyra \"%s\" sem gÃ¦ti haft gagn af rÃ³tarheimildum, en hÃ©r "
+"er Ã¾Ã¶rf Ã¡ frekari upplÃ½singum svo Ã¾aÃ° sÃ© hÃ¦gt."
 
 #: userhelper-wrap.c:493
 #, c-format
@@ -264,40 +268,40 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Şú ert ağ fara ağ keyra \"%s\" sem şarf rótarheimildir, en hér er şörf á "
-"frekari upplısingum svo şağ sé hægt."
+"ÃÃº ert aÃ° fara aÃ° keyra \"%s\" sem Ã¾arf rÃ³tarheimildir, en hÃ©r er Ã¾Ã¶rf Ã¡ "
+"frekari upplÃ½singum svo Ã¾aÃ° sÃ© hÃ¦gt."
 
 #: userhelper-wrap.c:502
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Şú ert ağ fara ağ keyra skipun sem gæti haft gagn af rótarheimildum, en hér "
-"er şörf á frekari upplısingum svo şağ sé hægt."
+"ÃÃº ert aÃ° fara aÃ° keyra skipun sem gÃ¦ti haft gagn af rÃ³tarheimildum, en hÃ©r "
+"er Ã¾Ã¶rf Ã¡ frekari upplÃ½singum svo Ã¾aÃ° sÃ© hÃ¦gt."
 
 #: userhelper-wrap.c:504
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Şú ert ağ fara ağ keyra skipun sem şarf rótarheimildir, en hér er şörf á "
-"frekari upplısingum svo şağ sé hægt."
+"ÃÃº ert aÃ° fara aÃ° keyra skipun sem Ã¾arf rÃ³tarheimildir, en hÃ©r er Ã¾Ã¶rf Ã¡ "
+"frekari upplÃ½singum svo Ã¾aÃ° sÃ© hÃ¦gt."
 
 #: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
-msgstr "_Keyra án rótarheimilda"
+msgstr "_Keyra Ã¡n rÃ³tarheimilda"
 
 #: userhelper-wrap.c:622
 msgid "Pipe error.\n"
-msgstr "Pípuvilla.\n"
+msgstr "PÃ­puvilla.\n"
 
 #: userhelper-wrap.c:629
 msgid "Cannot fork().\n"
-msgstr "Get ekki notağ fork().\n"
+msgstr "Get ekki notaÃ° fork().\n"
 
 #: userhelper-wrap.c:696 userhelper-wrap.c:700
 msgid "dup2() error.\n"
-msgstr "villa í dup2().\n"
+msgstr "villa Ã­ dup2().\n"
 
 #: userhelper-wrap.c:712
 #, c-format
@@ -306,7 +310,7 @@ msgstr "execl() villa, errno=%d\n"
 
 #: userinfo.c:321
 msgid "You don't exist.  Go away.\n"
-msgstr "Şú ert ekki til. Farğu burt.\n"
+msgstr "ÃÃº ert ekki til. FarÃ°u burt.\n"
 
 #: usermount.c:61 glade.strings:26
 msgid "_Mount"
@@ -321,38 +325,38 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Ertu viss um ağ şú viljir forsníğa şennan disk? Şú munt eyğa öllum gögnum "
-"sem á honum eru."
+"Ertu viss um aÃ° Ã¾Ãº viljir forsnÃ­Ã°a Ã¾ennan disk? ÃÃº munt eyÃ°a Ã¶llum gÃ¶gnum "
+"sem Ã¡ honum eru."
 
 #: usermount.c:331
 msgid "Perform a _low-level format."
-msgstr "Ekki _lágforsníğa."
+msgstr "Ekki _lÃ¡gforsnÃ­Ã°a."
 
 #: usermount.c:374
 msgid "Select a _filesystem type to create:"
-msgstr "Veldu skráarkerfi sem şú vilt búa til:"
+msgstr "Veldu skrÃ¡arkerfi sem Ã¾Ãº vilt bÃºa til:"
 
 #: usermount.c:542
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Şağ eru engin skráarkerfi sem şú mátt tengja eğa aftengja.\n"
-"Hafğu samband viğ kerfisstjórann."
+"ÃaÃ° eru engin skrÃ¡arkerfi sem Ã¾Ãº mÃ¡tt tengja eÃ°a aftengja.\n"
+"HafÃ°u samband viÃ° kerfisstjÃ³rann."
 
 #. Create the dialog.
 #: usermount.c:543 usermount.c:554 glade.strings:22
 msgid "User Mount Tool"
-msgstr "Tengitól fyrir notendur"
+msgstr "TengitÃ³l fyrir notendur"
 
 #. Create the other buttons.
 #: usermount.c:568 glade.strings:28
 msgid "_Format"
-msgstr "_Forsníğa"
+msgstr "_ForsnÃ­Ã°a"
 
 #: usermount.c:604 glade.strings:24
 msgid "Device"
-msgstr "Tæki"
+msgstr "TÃ¦ki"
 
 #: usermount.c:610 glade.strings:23
 msgid "Directory"
@@ -360,7 +364,7 @@ msgstr "Mappa"
 
 #: usermount.c:616
 msgid "Filesystem"
-msgstr "Skráarkerfi"
+msgstr "SkrÃ¡arkerfi"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -369,7 +373,7 @@ msgstr "Skráarkerfi"
 #.
 #: glade.strings:7 usermode.glade.h:10
 msgid "User Information"
-msgstr "Notendaupplısingar"
+msgstr "NotendaupplÃ½singar"
 
 #: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
@@ -381,27 +385,27 @@ msgstr "Skrifstofa:"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "Vinnusími:"
+msgstr "VinnusÃ­mi:"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr "Heimasími:"
+msgstr "HeimasÃ­mi:"
 
 #: glade.strings:12 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr "Skél:"
+msgstr "SkÃ©l:"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr "Í _lagi"
+msgstr "Ã _lagi"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
-msgstr "Hætta _viğ"
+msgstr "HÃ¦tta _viÃ°"
 
 #: glade.strings:15 usermode.glade.h:5
 msgid "Message"
-msgstr "Skilaboğ"
+msgstr "SkilaboÃ°"
 
 #: glade.strings:17
 msgid "_Close"
@@ -417,7 +421,7 @@ msgstr "_Aftengja"
 
 #: glade.strings:29
 msgid "E_xit"
-msgstr "Hæ_tta"
+msgstr "HÃ¦_tta"
 
 #: usermode.glade.h:1
 msgid "*"
@@ -429,20 +433,20 @@ msgstr "Um mig"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Breyta persónuupplısingum"
+msgstr "Breyta persÃ³nuupplÃ½singum"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Sısla meğ diska"
+msgstr "SÃ½sla meÃ° diska"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Tengja og aftengja skráarkerfi"
+msgstr "Tengja og aftengja skrÃ¡arkerfi"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Breyta lykilorği şínu"
+msgstr "Breyta lykilorÃ°i Ã¾Ã­nu"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
-msgstr "Lykilorğ"
+msgstr "LykilorÃ°"
