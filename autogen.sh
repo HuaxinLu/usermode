@@ -5,10 +5,10 @@ if test -x /bin/rpm ; then
 	fi
 fi
 set -x -e
-CFLAGS="$DEFINES $RPM_OPT_FLAGS -O0 -g3 $CFLAGS" ; export CFLAGS
+CFLAGS="$DEFINES $RPM_OPT_FLAGS -g3 $CFLAGS" ; export CFLAGS
 libtoolize --force
 (cat /dev/null ChangeLog) > ChangeLog.old
-test -d intl || gettextize -f -c --intl
+glib-gettextize -f -c
 cat ChangeLog.old > ChangeLog
 aclocal
 automake -a
