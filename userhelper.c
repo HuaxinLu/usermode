@@ -505,16 +505,19 @@ int main(int argc, char *argv[])
 	    fail_error(PAM_ABORT);
 	}
 
-	retval = pwdb_get_entry(_pwdb, "shell", &_pwe);
-	if(!get_shell_list(shell_path) || 
-	   !get_shell_list((char*)_pwe->value) ||
-	   retval != PWDB_SUCCESS) {
-	  fail_error(ERR_SHELL_INVALID);
-	  pwdb_entry_delete(&_pwe);
-	}
-
 	/* if we change the shell too ... */
 	if (s_flg != 0) {
+
+	  /* check that the users current shell is valid... */
+	  retval = pwdb_get_entry(_pwdb, "shell", &_pwe);
+	  if(!get_shell_list(shell_path) || 
+	     !get_shell_list((char*)_pwe->value) ||
+	     retval != PWDB_SUCCESS) {
+	    fail_error(ERR_SHELL_INVALID);
+	    pwdb_entry_delete(&_pwe);
+	  }
+	    pwdb_entry_delete(&_pwe);
+
 	    retval = pwdb_set_entry(_pwdb, "shell", shell_path, 1+strlen(shell_path),
 				    NULL, NULL, 0);
 	    if (retval != PWDB_SUCCESS) {

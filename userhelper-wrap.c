@@ -92,6 +92,7 @@ userhelper_run_chfn(char* fullname, char* office, char* officephone,
 		    char* homephone, char* shell)
 {
   pid_t pid;
+  int retval;
 
   signal(SIGCHLD, userhelper_sigchld);
 
@@ -137,13 +138,27 @@ userhelper_run_chfn(char* fullname, char* office, char* officephone,
 	}
       setbuf(stdout, NULL);
 
-      if(execl(UH_PATH, UH_PATH, 
-	       UH_FULLNAME_OPT, fullname,
-	       UH_OFFICE_OPT, office, 
-	       UH_OFFICEPHONE_OPT, officephone,
-	       UH_HOMEPHONE_OPT, homephone,
-	       UH_SHELL_OPT, shell,
-	       0) < 0)
+      if(shell != NULL)
+	{
+	  retval = execl(UH_PATH, UH_PATH, 
+			 UH_FULLNAME_OPT, fullname,
+			 UH_OFFICE_OPT, office, 
+			 UH_OFFICEPHONE_OPT, officephone,
+			 UH_HOMEPHONE_OPT, homephone,
+			 UH_SHELL_OPT, shell,
+			 0);
+	}
+      else
+	{
+	  retval = execl(UH_PATH, UH_PATH, 
+			 UH_FULLNAME_OPT, fullname,
+			 UH_OFFICE_OPT, office, 
+			 UH_OFFICEPHONE_OPT, officephone,
+			 UH_HOMEPHONE_OPT, homephone,
+			 0);
+	}
+
+      if(retval < 0)
 	{
 	  fprintf(stderr, "execl() error, errno=%d\n", errno);
 	}
