@@ -7,12 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.37\n"
 "POT-Creation-Date: 2002-01-31 05:38-0500\n"
-"PO-Revision-Date:  2001-07-23 11:30 CET\n"
-"Last-Translator: Bettina De Monti\n"
-"Language-Team: French <FR@li.org>\n"
+"PO-Revision-Date: 2002-02-28 17:57GMT\n"
+"Last-Translator:  <bettina@srldev.it>\n"
+"Language-Team:  <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -82,9 +83,9 @@ msgid "Help"
 msgstr "Aide"
 
 #: userhelper.c:95
-#, fuzzy, c-format
+#, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Erreur %d.\n"
+msgstr "Erreur PAM %d.\n"
 
 #: userhelper.c:198
 #, c-format
@@ -100,6 +101,8 @@ msgstr "userhelper doit être setuid root\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
+"Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
+"contrôle.\n"
 
 #: userhelper.c:1297 userhelper.c:1335
 #, c-format
@@ -119,8 +122,8 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Votre mot de passe n'est pas valide.\n"
-"Veuillez réessayer."
+"Le mot de passe n'est pas valide.\n"
+"Réessayer."
 
 #: userhelper-wrap.c:56
 msgid ""
@@ -143,7 +146,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Certains fichiers système sont verrouillés.\n"
-"Veuillez réessayer plus tard."
+"Réessayer plus tard."
 
 #: userhelper-wrap.c:62
 msgid "Unknown user."
@@ -154,9 +157,8 @@ msgid "Insufficient rights."
 msgstr "Droits insuffisants."
 
 #: userhelper-wrap.c:66
-#, fuzzy
 msgid "Invalid call to subprocess.."
-msgstr "Appel non valide à un sous-processus."
+msgstr "Appel non valide à un sous-processus. "
 
 #: userhelper-wrap.c:68
 msgid ""
@@ -186,7 +188,7 @@ msgstr "Erreur inconnue."
 
 #: glade.strings:16 glade.strings:19 userhelper-wrap.c:234
 msgid "Placeholder text."
-msgstr ""
+msgstr "Conteneur de texte"
 
 #: userhelper-wrap.c:348
 #, c-format
@@ -198,17 +200,16 @@ msgid "Error"
 msgstr "Erreur"
 
 #: userhelper-wrap.c:394
-#, fuzzy
 msgid "Information"
-msgstr "Informations utilisateur"
+msgstr "Information"
 
 #: userhelper-wrap.c:438
 msgid "Changing personal information."
-msgstr ""
+msgstr "Changement des informations personnelles."
 
 #: userhelper-wrap.c:441
 msgid "Changing login shell."
-msgstr ""
+msgstr "Changement du shell de connexion."
 
 #: userhelper-wrap.c:444
 #, c-format
@@ -216,6 +217,9 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Vous essayez d'exécuter \"%s\" qui pourrait nécessiter des privilèges "
+"desuper-utilisateur. De plus amples informations sont toutefois requises "
+"pour cette opération."
 
 #: userhelper-wrap.c:446
 #, c-format
@@ -223,23 +227,31 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Vous essayez d'exécuter \"%s\" qui nécessite des privilèges de "
+"super-utilisateur. De plus amples informations sont toutefois requises pour "
+"cette opération."
 
 #: userhelper-wrap.c:451
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges "
+"de super-utilisateur. De plus amples informations sont toutefois requises "
+"pour cette opération."
 
 #: userhelper-wrap.c:453
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Vous essayez d'exécuter une commande qui nécessite des privilèges "
+"desuper-utilisateur. De plus amples informations sont toutefois requises "
+"pour cette opération."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid "_Run Unprivileged"
-msgstr "Exécuter sans privilèges"
+msgstr "_Exécuter sans privilèges"
 
 #: userhelper-wrap.c:575 userhelper-wrap.c:592
 msgid "Pipe error.\n"
@@ -260,43 +272,39 @@ msgstr "Erreur execl(), errno=%d\n"
 
 #: userinfo.c:299
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "Identité inexistante. Partir.\n"
 
 #: glade.strings:26 usermount.c:61
-#, fuzzy
 msgid "_Mount"
-msgstr "Monter"
+msgstr "_Monter"
 
 #: usermount.c:62
-#, fuzzy
 msgid "Un_mount"
-msgstr "Démonter"
+msgstr "Dé_monter"
 
 #: usermount.c:310
-#, fuzzy
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Etes-vous sûr de vous ?\n"
-"Vous détruirez toutes les données sur ce disque.\n"
+"Etes-vous sûr de vouloir formater ce disque ? Vous détruirez toutes les "
+"données qu'il contient."
 
 #: usermount.c:321
-#, fuzzy
 msgid "Perform a _low-level format."
-msgstr "Effectuer un formatage de bas niveau."
+msgstr "Effectuer un formatage de _bas niveau."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Sélectionner un type de _système de fichiers à créer :"
 
 #: usermount.c:521
-#, fuzzy
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Il n'y a pas de système de fichiers montable par les utilisateurs.\n"
+"Il n'y a pas de système de fichiers montable ou démontable par les "
+"utilisateurs.\n"
 "Contactez votre administrateur."
 
 #. Create the dialog.
@@ -306,9 +314,8 @@ msgstr "Outil de montage de l'utilisateur"
 
 #. Create the other buttons.
 #: glade.strings:28 usermount.c:544
-#, fuzzy
 msgid "_Format"
-msgstr "Format"
+msgstr "_Formater"
 
 #: glade.strings:24 usermount.c:579
 msgid "Device"
@@ -320,7 +327,7 @@ msgstr "Répertoire"
 
 #: usermount.c:591
 msgid "Filesystem"
-msgstr ""
+msgstr "Système de fichiers"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -340,28 +347,24 @@ msgid "Office:"
 msgstr "Bureau :"
 
 #: glade.strings:10
-#, fuzzy
 msgid "Office Phone Number"
-msgstr "Téléphone bureau :"
+msgstr "Téléphone bureau "
 
 #: glade.strings:11
-#, fuzzy
 msgid "Home Phone Number"
-msgstr "Téléphone domicile :"
+msgstr "Téléphone domicile "
 
 #: glade.strings:12
-#, fuzzy
 msgid "Login Shell"
-msgstr "Shell : "
+msgstr "Shell de connexion "
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr ""
+msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
-#, fuzzy
 msgid "_Cancel"
-msgstr "Supprimer"
+msgstr "_Supprimer"
 
 #: glade.strings:15
 msgid "Message"
@@ -369,72 +372,20 @@ msgstr "Message"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr ""
+msgstr "_Fermer"
 
 #: glade.strings:18
 msgid "Query"
-msgstr ""
+msgstr "Interroger"
 
 #: glade.strings:25
 msgid "Type"
 msgstr "Type"
 
 #: glade.strings:27
-#, fuzzy
 msgid "_Unmount"
-msgstr "Démonter"
+msgstr "_Démonter"
 
 #: glade.strings:29
-#, fuzzy
 msgid "E_xit"
-msgstr "Quitter"
-
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "début de l'authentification de \"%s\"\n"
-
-#, fuzzy
-#~ msgid "PAM retval = %d (%s)\n"
-#~ msgstr "Retour de PAM = %d\n"
-
-#~ msgid "Yes"
-#~ msgstr "Oui"
-
-#~ msgid "No"
-#~ msgstr "Non"
-
-#~ msgid "Prompt"
-#~ msgstr "Invite"
-
-#~ msgid "Input"
-#~ msgstr "Saisie"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "Plus d'informations sont nécessaires pour exécuter \"%s\" avec les "
-#~ "privilèges de root."
-
-#~ msgid "Changing password for %s"
-#~ msgstr "Changement de mot de passe pour %s"
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "Vous voulez %d réponse(s) pour %d champs d'entrée!?!?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "Le contrôle de cohérence n'est pas enclenché."
-
-#~ msgid "Block is fine."
-#~ msgstr "Le bloc est correct."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Bloc libéré deux fois."
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "Mémoire avant la destruction du bloc."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "Mémoire après la destruction du bloc."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Ceci sera un texte d'aide."
+msgstr "Q_uitter"

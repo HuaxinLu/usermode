@@ -6,12 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-01-31 05:38-0500\n"
-"PO-Revision-Date:  2001-01-29 17:50-0100\n"
-"Last-Translator: Bettina De Monti\n"
-"Language-Team: Italian\n"
+"PO-Revision-Date: 2002-02-01 15:34GMT\n"
+"Last-Translator:  <bettina@srldev.it>\n"
+"Language-Team:  <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -46,7 +47,7 @@ msgstr "Cancella"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Esegui in modalità non privilegiata"
+msgstr "Eseguire in modalità non privilegiata"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -58,7 +59,7 @@ msgstr "Nuova password UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Ridigita nuova password UNIX: "
+msgstr "Ridigitare nuova password UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -81,9 +82,9 @@ msgid "Help"
 msgstr "Help"
 
 #: userhelper.c:95
-#, fuzzy, c-format
+#, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Errore %d.\n"
+msgstr "Errore PAM %d.\n"
 
 #: userhelper.c:198
 #, c-format
@@ -99,6 +100,8 @@ msgstr "userhelper deve impostare la setuid root\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
+"Impossibile aprire una finestra grafica o trovare il terminale di "
+"controllo.\n"
 
 #: userhelper.c:1297 userhelper.c:1335
 #, c-format
@@ -142,7 +145,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Alcuni file di sistema sono bloccati.\n"
-"Riprovare più avanti."
+"Riprovare più tardi."
 
 #: userhelper-wrap.c:62
 msgid "Unknown user."
@@ -153,7 +156,6 @@ msgid "Insufficient rights."
 msgstr "Diritti insufficienti."
 
 #: userhelper-wrap.c:66
-#, fuzzy
 msgid "Invalid call to subprocess.."
 msgstr "Chiamata non valida al sotto-processo."
 
@@ -164,8 +166,8 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "La shell corrente non è elencata in /etc/shells.\n"
-"Non vi è permesso cambiare la shell.\n"
-"Rivolgetevi all'amministratore del sistema."
+"Non è permesso cambiare la shell.\n"
+"Rivolgersi all'amministratore del sistema."
 
 #: userhelper-wrap.c:71
 msgid "Out of memory."
@@ -185,29 +187,28 @@ msgstr "Errore sconosciuto."
 
 #: glade.strings:16 glade.strings:19 userhelper-wrap.c:234
 msgid "Placeholder text."
-msgstr ""
+msgstr "Contenitore testo"
 
 #: userhelper-wrap.c:348
 #, c-format
 msgid "Need %d responses.\n"
-msgstr "Necessarie risposte %d.\n"
+msgstr "Necessarie %d risposte.\n"
 
 #: userhelper-wrap.c:381
 msgid "Error"
 msgstr "Errore"
 
 #: userhelper-wrap.c:394
-#, fuzzy
 msgid "Information"
-msgstr "Informazioni utente"
+msgstr "Informazioni "
 
 #: userhelper-wrap.c:438
 msgid "Changing personal information."
-msgstr ""
+msgstr "Modifica delle informazioni personali."
 
 #: userhelper-wrap.c:441
 msgid "Changing login shell."
-msgstr ""
+msgstr "Modifica della shell di login."
 
 #: userhelper-wrap.c:444
 #, c-format
@@ -215,6 +216,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Tentativo di esecuzione di  \"%s\" con i privilegi di superutente. Sono "
+"necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:446
 #, c-format
@@ -222,23 +225,28 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Tentativo di esecuzione di \"%s\" che richiede i privilegi di superutente. "
+"Sono necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:451
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Tentativo di esecuzione di un comando con i privilegi di superutente. Sono "
+"necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:453
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Tentativo di esecuzione di un comando che richiede i privilegi di "
+"superutente. Sono necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid "_Run Unprivileged"
-msgstr "Esegui in modalità non privilegiata"
+msgstr "_Esegui in modalità non privilegiata"
 
 #: userhelper-wrap.c:575 userhelper-wrap.c:592
 msgid "Pipe error.\n"
@@ -255,47 +263,41 @@ msgstr "errore dup2().\n"
 #: userhelper-wrap.c:661
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "errore execl(), errno=%d\n"
+msgstr "execl() error, errno=%d\n"
 
 #: userinfo.c:299
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "Identità non conosciuta.\n"
 
 #: glade.strings:26 usermount.c:61
-#, fuzzy
 msgid "_Mount"
-msgstr "Monta"
+msgstr "_Monta"
 
 #: usermount.c:62
-#, fuzzy
 msgid "Un_mount"
-msgstr "Smonta"
+msgstr "_Smonta"
 
 #: usermount.c:310
-#, fuzzy
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Siete sicuri?\n"
-"Tutti i dati su quel disco verranno distrutti.\n"
+"Formattare il disco? La formattazione distruggerà tutti i dati sul disco."
 
 #: usermount.c:321
-#, fuzzy
 msgid "Perform a _low-level format."
-msgstr "Esegui formato di basso livello."
+msgstr "Esegui formato di _basso livello."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Selezionare un typo di _filesystem da creare:"
 
 #: usermount.c:521
-#, fuzzy
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Non esistono filesystem montabili dagli utenti.\n"
+"I privilegi attuali non permettono di montare o smontare alcun filesystem.\n"
 "Contattare l'amministratore del sistema."
 
 #. Create the dialog.
@@ -305,9 +307,8 @@ msgstr "Tool di montaggio per utenti"
 
 #. Create the other buttons.
 #: glade.strings:28 usermount.c:544
-#, fuzzy
 msgid "_Format"
-msgstr "Formato"
+msgstr "_Formatta"
 
 #: glade.strings:24 usermount.c:579
 msgid "Device"
@@ -319,7 +320,7 @@ msgstr "Directory"
 
 #: usermount.c:591
 msgid "Filesystem"
-msgstr ""
+msgstr "Filesystem"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -339,28 +340,24 @@ msgid "Office:"
 msgstr "Ufficio:"
 
 #: glade.strings:10
-#, fuzzy
 msgid "Office Phone Number"
-msgstr "Telefono ufficio:"
+msgstr "Telefono ufficio"
 
 #: glade.strings:11
-#, fuzzy
 msgid "Home Phone Number"
-msgstr "Telefono casa:"
+msgstr "Telefono casa"
 
 #: glade.strings:12
-#, fuzzy
 msgid "Login Shell"
-msgstr "Shell:"
+msgstr "Shell di login"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr ""
+msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
-#, fuzzy
 msgid "_Cancel"
-msgstr "Cancella"
+msgstr "_Cancella"
 
 #: glade.strings:15
 msgid "Message"
@@ -368,72 +365,20 @@ msgstr "Messaggio"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr ""
+msgstr "_Chiudi"
 
 #: glade.strings:18
 msgid "Query"
-msgstr ""
+msgstr "Interrogazione"
 
 #: glade.strings:25
 msgid "Type"
 msgstr "Tipo"
 
 #: glade.strings:27
-#, fuzzy
 msgid "_Unmount"
-msgstr "Smonta"
+msgstr "_Smonta"
 
 #: glade.strings:29
-#, fuzzy
 msgid "E_xit"
-msgstr "Esci"
-
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "inizio di autenticazione \"%s\"\n"
-
-#, fuzzy
-#~ msgid "PAM retval = %d (%s)\n"
-#~ msgstr "PAM restituito = %d\n"
-
-#~ msgid "Yes"
-#~ msgstr "Sì"
-
-#~ msgid "No"
-#~ msgstr "No"
-
-#~ msgid "Prompt"
-#~ msgstr "Prompt"
-
-#~ msgid "Input"
-#~ msgstr "Input"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "Per potere eseguire \"%s\" con i privilegi di root, sono richieste "
-#~ "ulteriori informazioni."
-
-#~ msgid "Changing password for %s"
-#~ msgstr "Modifica della password per %s"
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "Volete una o più risposte %d dai campi di immissione %d !?!?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "La verifica della consistenza non è attivata."
-
-#~ msgid "Block is fine."
-#~ msgstr "Il blocco è OK."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Blocco liberato due volte."
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "Memoria prima della distruzione del blocco."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "Memoria dopo la distruzione del blocco."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Questo sarà un testo di help."
+msgstr "E_sci"
