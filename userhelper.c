@@ -46,6 +46,7 @@
 #include <selinux/selinux.h>
 #include <selinux/context.h>
 #include <selinux/get_context_list.h>
+#define CONTEXT_FILE "/etc/security/userhelper_context"
 #endif
 
 #include "shvar.h"
@@ -108,21 +109,25 @@ static struct app_data {
 };
 
 #ifdef WITH_SELINUX
-static void setupSELinuxExec(char *constructed_path) {
-  if (selinux_enabled) {
+static void
+setup_selinux_exec(char *constructed_path)
+{
+	if (selinux_enabled) {
 #ifdef DEBUG_USERHELPER
-    g_print("userhelper: exec \"%s\" with %s context\n",
-	    constructed_path,new_context);
+		g_print("userhelper: exec \"%s\" with %s context\n",
+			constructed_path, new_context);
 #endif
-    if (setexeccon(new_context) < 0) {
-      fprintf(stderr, "Could not set exec context to %s.\n", new_context);
-      exit(-1);
-    }
-    if (new_context) 
-      freecon(new_context);
-  }
+		if (setexeccon(new_context) < 0) {
+			fprintf(stderr,
+				_("Could not set exec context to %s.\n"),
+				new_context);
+			exit(-1);
+		}
+		if (new_context) {
+			freecon(new_context);
+		}
+	}
 }
-#define CONTEXT_FILE "/etc/security/userhelper_context"
 
 /*
  * get_init_context()
@@ -133,45 +138,48 @@ static void setupSELinuxExec(char *constructed_path) {
  * out:		The CONTEXT associated with the context.
  * return:	0 on success, -1 on failure.
  */
-int get_init_context(const char *context_file, security_context_t *context) {
+int
+get_init_context(const char *context_file, security_context_t *context)
+{
+	FILE *fp;
+	char buf[LINE_MAX], *bufp;
+	int buf_len;
 
-  FILE* fp;
-  char  buf[255], *bufp;
-  int buf_len;
-  
-  fp = fopen(context_file, "r");
-  if (!fp) {
-    return -1;
-  }
+	fp = fopen(context_file, "r");
+	if (fp == NULL) {
+		return -1;
+	}
 
-  while (1) {           /* loop until we find a non-empty line */
+	while ((fgets(buf, sizeof(buf), fp)) != NULL) {
+		buf_len = strlen(buf);
 
-    if (!fgets(buf, sizeof buf, fp))
-      break;
+		if ((buf_len > 0) && (buf[buf_len - 1] == '\n')) {
+			buf[buf_len - 1] = '\0';
+		}
 
-    buf_len = strlen(buf);
-    if (buf[buf_len-1] == '\n')
-      buf[buf_len-1] = 0;
+		bufp = buf;
+		while ((bufp < buf + sizeof(buf)) &&
+		       (*bufp != '\0') &&
+		       g_ascii_isspace(*bufp)) {
+			bufp++;
+		}
 
-    bufp = buf;
-    while (*bufp && isspace(*bufp))
-      bufp++;
-
-    if( *bufp ) {
-      *context = strdup(bufp);
-      if (!(*context))
-	goto out;
-      return 0;
-    }
-  }
+		if (*bufp != '\0') {
+			*context = strdup(bufp);
+			if (*context == NULL) {
+				goto out;
+			}
+			fclose(fp);
+			return 0;
+		}
+	}
 out:
-  fclose(fp);
-  errno=EBADF;
-  return -1;
-
-} /* get_init_context() */
-
+	fclose(fp);
+	errno = EBADF;
+	return -1;
+}
 #endif /* WITH_SELINUX */
+
 /* Exit, returning the proper status code based on a PAM error code. */
 static int
 fail_exit(int retval)
@@ -1866,7 +1874,7 @@ main(int argc, char **argv)
 				}
 #endif
 #ifdef WITH_SELINUX
-				setupSELinuxExec(constructed_path);
+				setup_selinux_exec(constructed_path);
 #endif
 				execv(constructed_path, argv + optind - 1);
 				pipe_conv_exec_fail(conv);
@@ -1974,7 +1982,7 @@ main(int argc, char **argv)
 				}
 #endif
 #ifdef WITH_SELINUX
-				setupSELinuxExec(constructed_path);
+				setup_selinux_exec(constructed_path);
 #endif
 				execv(constructed_path, argv + optind - 1);
 				pipe_conv_exec_fail(conv);
@@ -2035,7 +2043,7 @@ main(int argc, char **argv)
 			}
 #endif
 #ifdef WITH_SELINUX
-			setupSELinuxExec(constructed_path);
+			setup_selinux_exec(constructed_path);
 #endif
 			execv(constructed_path, argv + optind - 1);
 			pipe_conv_exec_fail(conv);
