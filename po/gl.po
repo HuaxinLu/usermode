@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2001-02-05 10:35-0500\n"
-"PO-Revision-Date: 2001-01-27 03:16+0100\n"
+"PO-Revision-Date: 2001-03-17 20:04+0100\n"
 "Last-Translator: Jesús Bravo Álvarez <jba@pobox.com>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
 "MIME-Version: 1.0\n"
@@ -82,13 +82,14 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Un ou máis dos campos cambiados non é válido.\n"
-"Probablemente débese a algunha coma ou dous puntos nalgún dos campos.\n"
-"Bórreos e tente de novo."
+"Un ou máis dos campos modificados non son válido.\n"
+"Isto é probablemente por mor dalgunha coma ou dous puntos nalgún dos "
+"campos.\n"
+"Quíteos e tente de novo."
 
 #: ../userhelper-wrap.c:150
 msgid "Password resetting error."
-msgstr "Erro reiniciando o contrasinal."
+msgstr "Erro ó reiniciar o contrasinal."
 
 #: ../userhelper-wrap.c:153
 msgid ""
@@ -104,11 +105,11 @@ msgstr "Usuario descoñecido."
 
 #: ../userhelper-wrap.c:159
 msgid "Insufficient rights."
-msgstr "Dereitos insuficientes."
+msgstr "Permisos insuficientes."
 
 #: ../userhelper-wrap.c:162
 msgid "Invalid call to sub process."
-msgstr "Chamada inválida ó subproceso."
+msgstr "Chamada ó subproceso non válida."
 
 #: ../userhelper-wrap.c:165
 msgid ""
@@ -117,7 +118,7 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "A súa shell actual non está listada en /etc/shells.\n"
-"Non lle está permitido mudar a súa shell.\n"
+"Non lle está permitido mudar a shell.\n"
 "Consulte co administrador do seu sistema."
 
 #. well, this is unlikely to work either, but at least we tried...
@@ -139,7 +140,7 @@ msgstr "Erro descoñecido."
 
 #: ../userhelper-wrap.c:181
 msgid "Unknown exit code."
-msgstr "Erro de saída descoñecido."
+msgstr "Código de saída descoñecido."
 
 #: ../userhelper-wrap.c:237
 msgid "Input"
@@ -148,7 +149,7 @@ msgstr "Entrada"
 #: ../userhelper-wrap.c:346
 #, c-format
 msgid "Need %d responses.\n"
-msgstr "Necesita %d respostas.\n"
+msgstr "Necesítanse %d respostas.\n"
 
 #: ../userhelper-wrap.c:371
 #, c-format
@@ -193,11 +194,11 @@ msgstr "Bloque liberado dúas veces."
 
 #: ../userhelper.c:404
 msgid "Memory before the block was clobbered."
-msgstr "A memoria antes do bloque estaba esmagada."
+msgstr "A memoria antes do bloque estaba estragada."
 
 #: ../userhelper.c:406
 msgid "Memory after the block was clobbered."
-msgstr "A memoria tralo bloque estaba esmagada."
+msgstr "A memoria tralo bloque estaba estragada."
 
 #: ../userhelper.c:435
 msgid "userhelper must be setuid root\n"
@@ -220,7 +221,7 @@ msgstr "a piques de executar \"%s\"\n"
 
 #: ../userinfo.c:124
 msgid "User Information"
-msgstr "Información de Usuario"
+msgstr "Información do usuario"
 
 #: ../userinfo.c:153
 msgid "Help"
@@ -228,7 +229,7 @@ msgstr "Axuda"
 
 #: ../userinfo.c:242
 msgid "Full Name:"
-msgstr "Nome Completo:"
+msgstr "Nome completo:"
 
 #: ../userinfo.c:260
 msgid "Office:"
@@ -236,11 +237,11 @@ msgstr "Oficina:"
 
 #: ../userinfo.c:279
 msgid "Office Phone:"
-msgstr "Teléfono da Oficina:"
+msgstr "Teléfono da oficina:"
 
 #: ../userinfo.c:297
 msgid "Home Phone:"
-msgstr "Teléfono da Casa:"
+msgstr "Teléfono da casa:"
 
 #: ../userinfo.c:315
 msgid "Shell:"
@@ -260,14 +261,14 @@ msgstr "Desmontar"
 
 #: ../usermount.c:119
 msgid "User Mount Tool"
-msgstr "Ferramenta de Montaxe de Usuario"
+msgstr "Ferramenta de montaxe de usuario"
 
 #: ../usermount.c:136
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
-"Non hai ningún sistema de ficheiro montable polo usuario.\n"
+"Non hai ningún sistema de ficheiros montable polo usuario.\n"
 "Contacte co seu administrador."
 
 #: ../usermount.c:177
