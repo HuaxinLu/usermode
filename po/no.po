@@ -219,11 +219,11 @@ msgstr "Dette vil være en hjelpetekst."
 
 #: ../usermount.c:56
 msgid "Mount"
-msgstr ""
+msgstr "Montér"
 
 #: ../usermount.c:57
 msgid "Unmount"
-msgstr ""
+msgstr "Avmontér"
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
