@@ -213,7 +213,6 @@ create_shell_menu(UserInfo* userinfo)
 	  /* The user's shell is a valid one.  Turn the option menu on. */
 	  gtk_widget_set_sensitive(shell_menu, TRUE);
 	}
-      shell_curr = getusershell();
     }
   endusershell();
 
