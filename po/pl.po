@@ -48,7 +48,7 @@ msgstr "Anuluj"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Uruchom Bez Dodatkowych Uprawnień"
+msgstr "Uruchom bez dodatkowych uprawnień"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -60,7 +60,7 @@ msgstr "Nowe hasło UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Ponownie nowe hasło UNIX: "
+msgstr "Ponownie wpisz nowe hasło UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -116,11 +116,11 @@ msgstr ""
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr "Zachowaj Autoryzacje"
+msgstr "Zachowaj autoryzację"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr "Zapomnij Autoryzacje"
+msgstr "Rezygnuj z autoryzacji"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
@@ -159,7 +159,7 @@ msgstr "Nie powiodło się ustawienie kanału IO w tryb bezblokowania: %s\n"
 
 #: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr "pam-panel-icon: nie powiodło się połączenie do menadżera sesji\n"
+msgstr "pam-panel-icon: nie powiodło się połączenie do menedżera sesji\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -182,7 +182,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Próbujesz uruchomić program \"%s\" który może wykorzystywać uprawnienia\n"
-" administratora, niezbędne są jednak dodatkowe informacje w celu "
+"administratora, niezbędne są jednak dodatkowe informacje w celu "
 "uruchomienia."
 
 #: userhelper.c:751
@@ -199,7 +199,7 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz wykonać polecenie, które może korzystać z uprawnień \n"
+"Próbujesz wykonać polecenie, które może korzystać z uprawnień\n"
 "administratora, niezbędne są jednak dodatkowe informacje w celu wykonania."
 
 #: userhelper.c:757
@@ -241,7 +241,7 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Podane hasło jest niepoprawne.\n"
+"Podane hasło jest nieprawidłowe.\n"
 "Proszę spróbować jeszcze raz."
 
 #: userhelper-wrap.c:185
@@ -253,7 +253,7 @@ msgstr ""
 "Jedno lub więcej ze zmienionych pól ma niepoprawną wartość.\n"
 "Prawdopodobną przyczyną jest wystąpienie w jednym z nich dwukropków lub "
 "przecinków.\n"
-"Proszę je usunąć i spróbować ponownie."
+"Proszę je usunąć i spróbuj ponownie."
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
@@ -342,7 +342,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Próbujesz uruchomić program \"%s\" który może korzystać z "
-"uprawnieńadministratora, niezbędne są dodatkowe informacje w celu "
+"uprawnień administratora, niezbędne są dodatkowe informacje w celu "
 "uruchomienia."
 
 #: userhelper-wrap.c:794
@@ -351,7 +351,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Próbujesz uruchomić program \"%s\" który wymaga uprawnieńadministratora, "
+"Próbujesz uruchomić program \"%s\" który wymaga uprawnień administratora, "
 "niezbędne są dodatkowe informacje w celu uruchomienia."
 
 #: userhelper-wrap.c:803
@@ -360,19 +360,19 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Próbujesz wykonać polecenie, które może korzystać z przywilejów "
-"administratora,niezbędne są dodatkowe informacje w celu wykonania."
+"administratora, niezbędne są dodatkowe informacje w celu wykonania."
 
 #: userhelper-wrap.c:805
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz wykonać polecenie, które wymaga uprawnień administratora,niezbędne "
+"Próbujesz wykonać polecenie, które wymaga uprawnień administratora, niezbędne "
 "są dodatkowe informacje w celu wykonania."
 
 #: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
-msgstr "_Uruchom Bez Dodatkowych Uprawnień"
+msgstr "_Uruchom bez dodatkowych uprawnień"
 
 #: userhelper-wrap.c:974
 #, c-format
@@ -435,12 +435,12 @@ msgstr ""
 #. Create the dialog.
 #: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
-msgstr "Narzędzie Montujące Systemy Plików"
+msgstr "Narzędzie montujące systemy plików"
 
 #. Create the other buttons.
 #: usermount.c:576
 msgid "_Format"
-msgstr "_Sformatuj"
+msgstr "S_formatuj"
 
 #: usermount.c:612
 msgid "Device"
@@ -489,7 +489,7 @@ msgstr "Powłoka:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr "O Tobie"
+msgstr "O tobie"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
