@@ -92,6 +92,15 @@ struct app_data {
 };
 
 #ifdef WITH_SELINUX
+/*
+ * setup_selinux_exec()
+ *
+ * Set the new context to be transitioned to after the next exec(), or exit.
+ *
+ * in:		The name of a path, used in a debugging message.
+ * out:		nothing
+ * return:	0 on success, -1 on failure.
+ */
 static void
 setup_selinux_exec(char *constructed_path)
 {
@@ -108,6 +117,7 @@ setup_selinux_exec(char *constructed_path)
 		}
 		if (new_context) {
 			freecon(new_context);
+			new_context = NULL;
 		}
 	}
 }
@@ -115,10 +125,10 @@ setup_selinux_exec(char *constructed_path)
 /*
  * get_init_context()
  *
- * Get the init CONTEXT for this program 
+ * Read the name of a context from the given file.
  *
- * in:		nothing
- * out:		The CONTEXT associated with the context.
+ * in:		The name of a file.
+ * out:		The CONTEXT name listed in the file.
  * return:	0 on success, -1 on failure.
  */
 static int
@@ -1041,8 +1051,9 @@ become_normal(const char *user)
 	}
 }
 
-/* Determine the name of the user whose ruid we're executing under.  For
- * SELinux, this is the user from the previous context. */
+/* Determine the name of the user who ran userhelper.  For SELinux, this is the
+ * user from the previous context, but for everyone else, it's the user under
+ * whose ruid we're running in. */
 static char *
 get_user_from_ruid(void)
 {
@@ -1052,7 +1063,7 @@ get_user_from_ruid(void)
 	ret = NULL;
 
 #ifdef WITH_SELINUX
-	selinux_enabled = is_selinux_enabled()>0;
+	selinux_enabled = (is_selinux_enabled() > 0);
 	if (selinux_enabled) {
 		context_t ctx;
 		if (getprevcon(&old_context) < 0) {
@@ -1105,31 +1116,43 @@ get_user_for_auth(shvarFile *s)
 		context_t ctx;
 		struct passwd *pwd;
 
+		/* Assume userhelper's default context, if the context file
+		 * contains one.  Just in case policy changes, we read the
+		 * default context from a file instead of hard-coding it. */
 		defcontext = NULL;
 		if (get_init_context(CONTEXT_FILE, &defcontext) == 0) {
 			ctx = context_new(defcontext);
 		} else {
 			ctx = context_new(old_context);
 		}
+		/* Switch the user portion of the next context to the invoking
+		 * user.  */
 		context_user_set(ctx, ruid_user);
+		/* Optionally change the role and type of the next context, per
+		 * the service-specific userhelper configuration file. */
 		apps_role = svGetValue(s, "ROLE");
 		apps_type = svGetValue(s, "TYPE");
-		if (apps_role != NULL) { 
-			context_type_set(ctx, apps_role); /* XXX */
+		if (apps_role != NULL) {
+			context_role_set(ctx, apps_role);
 		}
 		if (apps_type != NULL) {
-			context_role_set(ctx, apps_type); /* XXX */
+			context_type_set(ctx, apps_type);
 		}
 		freecon(defcontext);
 		defcontext = NULL;
 		freecon(old_context);
 		old_context = NULL;
 
+		/* Ensure that the system knows who the user is before
+		 * returning the user's name. */
 		new_context = strdup(context_str(ctx));
 		context_free(ctx);
 		pwd = getpwnam(ruid_user);
-		if (pwd != NULL) 
-		  ret = ruid_user;
+		if (pwd != NULL) {
+			ret = ruid_user;
+		} else {
+			ret = NULL;
+		}
 	}
 #endif
 	if (ret == NULL) {
@@ -2091,13 +2114,34 @@ wrap(const char *user, const char *program,
 #endif
 		cmdline = construct_cmdline(constructed_path,
 					    argv + optind - 1);
+#ifdef WITH_SELINUX
+		if (new_context != NULL) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: running '%s' with root privileges on "
-			"behalf of '%s'\n", cmdline, user);
+			g_print("userhelper: running '%s' with root privileges "
+				"in context '%s' on behalf of '%s'\n", cmdline,
+				context_str(new_context), user);
+#endif
+			syslog(LOG_NOTICE, "running '%s' with root privileges "
+			       "in '%s' context on behalf of '%s'", cmdline,
+			       context_str(new_context), user);
+		} else {
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: running '%s' with root privileges "
+				"on behalf of '%s'\n", cmdline, user);
+#endif
+			syslog(LOG_NOTICE, "running '%s' with "
+			       "root privileges on behalf of '%s'",
+			       cmdline, user);
+		}
+#else
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: running '%s' with root privileges "
+			"on behalf of '%s'\n", cmdline, user);
 #endif
 		syslog(LOG_NOTICE, "running '%s' with "
 		       "root privileges on behalf of '%s'",
 		       cmdline, user);
+#endif
 		execv(constructed_path, argv + optind - 1);
 		syslog(LOG_ERR, "could not run '%s' with "
 		       "root privileges on behalf of '%s': %s",

@@ -5,8 +5,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.69
-Release: 5
+Version: 1.70
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -117,6 +117,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Mar 31 2004 Nalin Dahyabhai <nalin@redhat.com> 1.70-1
+- fix accidental mixup of role and type setting up new selinux context
+- log the new selinux context if we're running an app in a new selinux context
+
 * Sat Feb 21 2004 Dan Walsh <dwalsh@redhat.com> 1.69-5
 - Change to fall back to root auth if selinux user does not exist
 
