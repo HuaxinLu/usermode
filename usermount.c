@@ -265,7 +265,7 @@ user_mount(GtkWidget* widget, char* file)
 	 if(read(tmperr, errline, stat_buf.st_size) !=
 	    stat_buf.st_size)
 	   {
-	     fprintf(stderr, "read() error.");
+	     fprintf(stderr, "read() error, errno=%d.", errno);
 	     exit(2);
 	   }
 	 printf("errline is: %s", errline);
@@ -278,7 +278,7 @@ user_mount(GtkWidget* widget, char* file)
 	 if(read(tmpout, outline, stat_buf.st_size) !=
 	    stat_buf.st_size)
 	   {
-	     fprintf(stderr, "read() error.");
+	     fprintf(stderr, "read() errord, errno=%d.", errno);
 	     exit(2);
 	   }
 	 printf("outline is: %s", outline);
@@ -286,6 +286,8 @@ user_mount(GtkWidget* widget, char* file)
 
      close(tmperr);
      close(tmpout);
+
+     return;
     }
   else				/* child */
     {
@@ -310,10 +312,12 @@ user_mount(GtkWidget* widget, char* file)
 	    }
 	}
 
-/*       system(cmd_buf); */
+      system(cmd_buf);
       fprintf(stderr, "Get some output on stderr.\n");
       fprintf(stdout, "Get some output on stdout.\n");
-
+      fprintf(stdout, "Get some more output on stdout.\n");
     }
+
+  printf("Leaving user_mount().");
 
 }
