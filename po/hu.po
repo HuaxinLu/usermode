@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-08-05 21:36-0400\n"
+"POT-Creation-Date: 2002-08-07 15:05-0400\n"
 "PO-Revision-Date: 2000-08-05 17:11+0200\n"
 "Last-Translator: László Németh <nemeth@qwertynet.hu>\n"
 "Language-Team: Hungarian\n"
@@ -70,6 +70,10 @@ msgstr ""
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
+msgstr ""
+
+#: dummy.h:32
+msgid "Launch system-wide configuration tools without login."
 msgstr ""
 
 #: userdialogs.h:30

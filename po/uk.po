@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.35\n"
-"POT-Creation-Date: 2002-08-05 21:36-0400\n"
+"POT-Creation-Date: 2002-08-07 15:05-0400\n"
 "PO-Revision-Date: 1999-12-29 12:36+0200\n"
 "Last-Translator: Yuriy Syrota <rasta@renome.rovno.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -71,6 +71,10 @@ msgstr "Пароль не зм╕нено"
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "Вибачте, але парол╕ не сп╕впадають"
+
+#: dummy.h:32
+msgid "Launch system-wide configuration tools without login."
+msgstr ""
 
 #: userdialogs.h:30
 msgid "Help"

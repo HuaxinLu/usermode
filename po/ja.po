@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
-"POT-Creation-Date: 2002-08-05 21:36-0400\n"
+"POT-Creation-Date: 2002-08-07 15:05-0400\n"
 "PO-Revision-Date: 2002-08-06 17:59GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
@@ -79,6 +79,10 @@ msgstr "パスワードが変更されていません"
 msgid "Sorry, passwords do not match"
 msgstr "パスワードが一致していません"
 
+#: dummy.h:32
+msgid "Launch system-wide configuration tools without login."
+msgstr ""
+
 #: userdialogs.h:30
 msgid "Help"
 msgstr "ヘルプ"
@@ -99,8 +103,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、\n "
-"実行するには追加情報が必要です。"
+"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
 
 #: userhelper.c:340
 #, c-format
@@ -108,8 +112,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、\n "
-"実行するには追加情報が必要です。"
+"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
 
 #: userhelper.c:344
 msgid ""
@@ -124,7 +128,8 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには\n"
+"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するに"
+"は\n"
 "追加情報が必要です。"
 
 #: userhelper.c:365
@@ -138,7 +143,8 @@ msgstr "ユーザヘルパーはrootにsetuidされていなければなりま�
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
@@ -204,8 +210,8 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"現在選択されているシェルは/etc/shellsの中にありません。\n "
-"したがってシェルを変更することはできません。\n"
+"現在選択されているシェルは/etc/shellsの中にありません。\n"
+" したがってシェルを変更することはできません。\n"
 "システム管理者に相談してみてください。"
 
 #: userhelper-wrap.c:71
@@ -485,4 +491,3 @@ msgstr "パスワード"
 
 #~ msgid "Change account information"
 #~ msgstr "¥¢¥«¥¦¥ó¥È¾ðÊó¤ÎÊÑ¹¹¥Ä¡¼¥ë"
-

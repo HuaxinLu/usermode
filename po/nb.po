@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
-"POT-Creation-Date: 2002-08-05 21:36-0400\n"
+"POT-Creation-Date: 2002-08-07 15:05-0400\n"
 "PO-Revision-Date: 2002-06-29 21:27+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -71,6 +71,10 @@ msgstr "Passord ikke endret"
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "Beklager, passordene er ikke de samme"
+
+#: dummy.h:32
+msgid "Launch system-wide configuration tools without login."
+msgstr ""
 
 #: userdialogs.h:30
 msgid "Help"

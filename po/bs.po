@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop files\n"
-"POT-Creation-Date: 2002-08-05 21:36-0400\n"
+"POT-Creation-Date: 2002-08-07 15:05-0400\n"
 "PO-Revision-Date: 31.07.2002. 12:51\n"
 "Last-Translator: Amila Akagiæ <bono@linux.org.ba>\n"
 "Language-Team: Bosnian <lokal@lugbih.org>\n"
@@ -87,6 +87,10 @@ msgstr "©ifra nepromijenjena"
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "®alim, ¹ifre se ne podudaraju"
+
+#: dummy.h:32
+msgid "Launch system-wide configuration tools without login."
+msgstr ""
 
 # ../userinfo.c:153
 #: userdialogs.h:30
