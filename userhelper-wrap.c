@@ -23,6 +23,7 @@
 int childout[2];
 int childin[2];
 
+
 /* the only difference between this and userhelper_run_chfn() is the
  * final exec() call... I want to avoid all duplication, but I can't
  * think of a clean way to do it right now...
@@ -49,9 +50,6 @@ userhelper_run_passwd()
       close(childout[1]);
       close(childin[0]);
 
-      /* switch to gdk_input() */
-/*       retval = select(childout[0] + 1, &rfds, &wfds, NULL, NULL);
- */
       gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
 
     }
@@ -93,7 +91,67 @@ void
 userhelper_run_chfn(char* fullname, char* office, char* officephone,
 		    char* homephone, char* shell)
 {
+  pid_t pid;
 
+  signal(SIGCHLD, userhelper_sigchld);
+
+  if(pipe(childout) < 0 || pipe(childin) < 0)
+    {
+      fprintf(stderr, "Pipe error.\n");
+      exit(1);
+    }
+
+  if((pid = fork()) < 0)
+    {
+      fprintf(stderr, "Cannot fork().\n");
+    }
+  else if(pid > 0)		/* parent */
+    {
+      close(childout[1]);
+      close(childin[0]);
+
+      gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
+
+    }
+  else				/* child */
+    {
+      close(childout[0]);
+      close(childin[1]);
+
+      if(childout[1] != STDOUT_FILENO)
+	{
+	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
+	    {
+	      fprintf(stderr, "dup2() error.\n");
+	      exit(2);
+	    }
+	  close(childout[1]);
+	}
+      if(childin[0] != STDIN_FILENO)
+	{
+	  if(dup2(childin[0], STDIN_FILENO) != STDIN_FILENO)
+	    {
+	      fprintf(stderr, "dup2() error.\n");
+	      exit(2);
+	    }
+	}
+      setbuf(stdout, NULL);
+
+      if(execl(UH_PATH, UH_PATH, 
+	       UH_FULLNAME_OPT, fullname,
+	       UH_OFFICE_OPT, office, 
+	       UH_OFFICEPHONE_OPT, officephone,
+	       UH_HOMEPHONE_OPT, homephone,
+/* FIXME: !!!  userhelper doesn't do the shell!  arrrgh! */
+/* 	       UH_SHELL_OPT, shell, */
+	       0) < 0)
+	{
+	  fprintf(stderr, "execl() error, errno=%d\n", errno);
+	}
+
+      _exit(0);
+
+    }
 }
 
 void
@@ -104,7 +162,7 @@ userhelper_parse_exitstatus(int exitstatus)
   switch(exitstatus)
     {
     case 0:
-      message_box = create_message_box("Password changed.", NULL);
+      message_box = create_message_box("Information uptdated.", NULL);
       break;
     case ERR_PASSWD_INVALID:
       message_box = create_error_box("The password you typed is invalid.\nPlease try again.", NULL);

@@ -34,6 +34,7 @@
 #define UH_OFFICE_OPT "-o"
 #define UH_OFFICEPHONE_OPT "-p"
 #define UH_HOMEPHONE_OPT "-h"
+/* #define UH_SHELL_OPT "" */
 
 /* fix userhelper so these match the pam.h defines. */
 #define UH_ECHO_ON_PROMPT 1
