@@ -12,7 +12,9 @@ msgstr ""
 #: consolehelper.c:94
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Kunne ikke åpne grafisk vindu; og er ute av stand til å finne en kontrollerende terminal.\n"
+msgstr ""
+"Kunne ikke åpne grafisk vindu; og er ute av stand til å finne en "
+"kontrollerende terminal.\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -198,26 +200,34 @@ msgstr "Informasjon"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
-msgstr "Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
+msgstr ""
+"Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med "
+"superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
 #: userhelper-wrap.c:438
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
-msgstr "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
+msgstr ""
+"Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi "
+"mer informasjon for å gjøre dette."
 
 #: userhelper-wrap.c:442
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
-msgstr "Du prøver å kjøre en kommando har fordeler hvis den kjøres med superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
+msgstr ""
+"Du prøver å kjøre en kommando har fordeler hvis den kjøres med "
+"superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
 #: userhelper-wrap.c:444
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
-msgstr "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
+msgstr ""
+"Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må "
+"oppgi mer informasjon for å gjøre dette."
 
 #: userhelper-wrap.c:454
 msgid "_Run Unprivileged"
@@ -256,7 +266,9 @@ msgstr "Av_monter"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Er du sikker på at du vil formatere denne disken? Du vil ødelegge alle data på den disken."
+msgstr ""
+"Er du sikker på at du vil formatere denne disken? Du vil ødelegge alle data "
+"på den disken."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
