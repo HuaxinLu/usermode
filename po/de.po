@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-12-04 18:02-0500\n"
+"POT-Creation-Date: 2001-12-04 18:12-0500\n"
 "PO-Revision-Date:  2001-07-25 15:40-0500\n"
 "Last-Translator: Claudia Krug <fhonig@redhat.it>\n"
 "Language-Team: German\n"
@@ -99,7 +99,7 @@ msgstr "Passwort für %s"
 msgid "userhelper must be setuid root\n"
 msgstr "usermode muss Setuid-Root sein\n"
 
-#: userhelper.c:1100 userhelper.c:1139
+#: userhelper.c:1117 userhelper.c:1156
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\" exec wird gerade ausgeführt\n"

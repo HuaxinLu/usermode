@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
-"POT-Creation-Date: 2001-12-04 18:02-0500\n"
+"POT-Creation-Date: 2001-12-04 18:12-0500\n"
 "PO-Revision-Date: 2001-04-02 02:51+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -95,7 +95,7 @@ msgstr "Heslo pro u¾ivatele %s"
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí být SUID root\n"
 
-#: userhelper.c:1100 userhelper.c:1139
+#: userhelper.c:1117 userhelper.c:1156
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "spou¹tím \"%s\"\n"

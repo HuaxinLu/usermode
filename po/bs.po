@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop files\n"
-"POT-Creation-Date: 2001-12-04 18:02-0500\n"
+"POT-Creation-Date: 2001-12-04 18:12-0500\n"
 "PO-Revision-Date: 2001-09-09 20:03GMT\n"
 "Last-Translator: Amila Akagiæ <bono@lugbih.org>\n"
 "Language-Team: Bosnian <lokal-subscribe@lugbih.org>\n"
@@ -116,7 +116,7 @@ msgid "userhelper must be setuid root\n"
 msgstr "userhelper mora biti setuid root\n"
 
 # ../userhelper.c:722 ../userhelper.c:763
-#: userhelper.c:1100 userhelper.c:1139
+#: userhelper.c:1117 userhelper.c:1156
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr ""

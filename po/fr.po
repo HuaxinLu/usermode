@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.37\n"
-"POT-Creation-Date: 2001-12-04 18:02-0500\n"
+"POT-Creation-Date: 2001-12-04 18:12-0500\n"
 "PO-Revision-Date:  2001-07-23 11:30 CET\n"
 "Last-Translator: Bettina De Monti\n"
 "Language-Team: French <FR@li.org>\n"
@@ -100,7 +100,7 @@ msgstr "Mot de passe pour %s"
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper doit être setuid root\n"
 
-#: userhelper.c:1100 userhelper.c:1139
+#: userhelper.c:1117 userhelper.c:1156
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "début de l'exécution de \"%s\"\n"

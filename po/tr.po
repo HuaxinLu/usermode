@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-12-04 18:02-0500\n"
+"POT-Creation-Date: 2001-12-04 18:12-0500\n"
 "PO-Revision-Date: 2001-02-11 11:42+0200\n"
 "Last-Translator: Nilgun Belma Buguner <nilgun@technologist.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -95,7 +95,7 @@ msgstr "%s için parola"
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper programý setuid root olmalýdýr.\n"
 
-#: userhelper.c:1100 userhelper.c:1139
+#: userhelper.c:1117 userhelper.c:1156
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\" çalýþtýrma hakkýnda\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-12-04 18:02-0500\n"
+"POT-Creation-Date: 2001-12-04 18:12-0500\n"
 "PO-Revision-Date: 2001-08-15 22:16+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -100,7 +100,7 @@ msgstr "Lösenord för %s"
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper måste vara setuid root\n"
 
-#: userhelper.c:1100 userhelper.c:1139
+#: userhelper.c:1117 userhelper.c:1156
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "kommer att köra \"%s\"\n"
