@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-04-01 11:46-0500\n"
+"POT-Creation-Date: 2002-04-15 18:05-0400\n"
 "PO-Revision-Date: 2002-04-03 09:00GMT\n"
 "Last-Translator: Nuria Soriano <nuria@redhat.es>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -62,17 +62,17 @@ msgstr "Lo siento, las contraseñas no coinciden"
 msgid "Help"
 msgstr "Ayuda"
 
-#: userhelper.c:96
+#: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Se ha obtenido un error de PAM %d.\n"
 
-#: userhelper.c:202
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "Contraseña para %s"
 
-#: userhelper.c:317
+#: userhelper.c:320
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
@@ -82,7 +82,7 @@ msgstr ""
 "de vista de los privilegios de superusuario, pero es necesaria más "
 "información para poder realizarlo."
 
-#: userhelper.c:319
+#: userhelper.c:322
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
@@ -91,7 +91,7 @@ msgstr ""
 "Está intentando ejecutar \"%s\" que requiere los privilegios de "
 "superusuario, pero necesita más información para hacerlo. "
 
-#: userhelper.c:323
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
@@ -99,7 +99,7 @@ msgstr ""
 "Está intentando ejecutar un comando que se beneficia de los privilegios de\n"
 " superusuario, pero necesita más información para hacerlo."
 
-#: userhelper.c:325
+#: userhelper.c:328
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -107,22 +107,22 @@ msgstr ""
 "Está intentando ejecutar un comando que requiere los privilegios del\n"
 "superusuario pero se necesita más información para hacerlo."
 
-#: userhelper.c:343
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "Contraseña para %s:"
 
-#: userhelper.c:626
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "El userhelper debe configurar la setuid del root\n"
 
-#: userhelper.c:708
+#: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Imposible abrir una ventana gráfica y encontrar un terminal de control.\n"
 
-#: userhelper.c:1369 userhelper.c:1407
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "inicio de exec \"%s\"\n"
@@ -203,7 +203,7 @@ msgstr "No se ha encontrado el programa seleccionado."
 msgid "Unknown error."
 msgstr "Error desconocido."
 
-#: glade.strings:16 glade.strings:19 userhelper-wrap.c:234
+#: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
 msgstr "Texto que contiene espacio"
 
@@ -288,7 +288,7 @@ msgstr "Error execl(), errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Identidad desconocida.\n"
 
-#: glade.strings:26 usermount.c:61
+#: usermount.c:61 glade.strings:26
 msgid "_Mount"
 msgstr "_Montar"
 
@@ -320,19 +320,19 @@ msgstr ""
 "No existen sistemas de ficheros que los usuarios puedan montar o desmontar. "
 "Contacte con su administrador."
 
-#: glade.strings:22 usermount.c:522 usermount.c:530
+#: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
 msgstr "Herramienta de montaje para el usuario"
 
-#: glade.strings:28 usermount.c:544
+#: usermount.c:544 glade.strings:28
 msgid "_Format"
 msgstr "_Formato"
 
-#: glade.strings:24 usermount.c:579
+#: usermount.c:579 glade.strings:24
 msgid "Device"
 msgstr "Dispositivo"
 
-#: glade.strings:23 usermount.c:585
+#: usermount.c:585 glade.strings:23
 msgid "Directory"
 msgstr "Directorio"
 

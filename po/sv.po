@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-04-01 11:46-0500\n"
+"POT-Creation-Date: 2002-04-15 18:05-0400\n"
 "PO-Revision-Date: 2002-04-09 15:46+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -62,17 +62,17 @@ msgstr "Tyvärr, lösenorden stämmer inte överens"
 msgid "Help"
 msgstr "Hjälp"
 
-#: userhelper.c:96
+#: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Tog emot PAM-fel %d.\n"
 
-#: userhelper.c:202
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "Lösenord för %s"
 
-#: userhelper.c:317
+#: userhelper.c:320
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
@@ -82,7 +82,7 @@ msgstr ""
 "superanvändarrättigheter, men mer information krävs\n"
 "för att kunna göra det."
 
-#: userhelper.c:319
+#: userhelper.c:322
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
@@ -91,7 +91,7 @@ msgstr ""
 "Du försöker köra \"%s\" som kräver superanvändarrättigheter,\n"
 "men mer information krävs för att kunna göra det."
 
-#: userhelper.c:323
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
@@ -100,7 +100,7 @@ msgstr ""
 "superanvändarrättigheter, men mer information krävs för\n"
 "att kunna göra det."
 
-#: userhelper.c:325
+#: userhelper.c:328
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -108,22 +108,22 @@ msgstr ""
 "Du försöker köra ett kommando som kräver superanvändarrättigheter,\n"
 "men mer information krävs för att kunna göra det."
 
-#: userhelper.c:343
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "Lösenord för %s: "
 
-#: userhelper.c:626
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper måste vara setuid root\n"
 
-#: userhelper.c:708
+#: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kan inte öppna grafiskt fönster och kan inte hitta kontrollerande terminal.\n"
 
-#: userhelper.c:1369 userhelper.c:1407
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "kommer att köra \"%s\"\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-04-01 11:46-0500\n"
+"POT-Creation-Date: 2002-04-15 18:05-0400\n"
 "PO-Revision-Date: 2002-04-02 09:47GMT\n"
 "Last-Translator: Ben Wu <hpwu@brisbane.redhat.com>\n"
 "Language-Team:  <zh@li.org>\n"
@@ -62,17 +62,17 @@ msgstr "抱歉, 密碼不符"
 msgid "Help"
 msgstr "求助"
 
-#: userhelper.c:96
+#: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "有 PAM 錯誤 %d. \n"
 
-#: userhelper.c:202
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "%s 的密碼"
 
-#: userhelper.c:317
+#: userhelper.c:320
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
@@ -81,7 +81,7 @@ msgstr ""
 "您試著要執行 \"%s\", 這將使您有 superuser\n"
 "的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:319
+#: userhelper.c:322
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
@@ -90,7 +90,7 @@ msgstr ""
 "您試著要執行 \"%s\", 您需要有 superuser\n"
 "的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:323
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
@@ -98,7 +98,7 @@ msgstr ""
 "您試著要執行一個指令, 這將使您有\n"
 "superuser 的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:325
+#: userhelper.c:328
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -106,20 +106,21 @@ msgstr ""
 "您試著要執行一個指令, 您需要有 superuser\n"
 "的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:343
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "%s 的密碼： "
 
-#: userhelper.c:626
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必須 setuid root\n"
 
-#: userhelper.c:708
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:711
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗,且找不到控制終端機。\n"
 
-#: userhelper.c:1369 userhelper.c:1407
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "即將執行(exec) \"%s\"\n"
@@ -389,4 +390,3 @@ msgstr "卸載(_U)"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "離開(_x)"
-

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 7.3\n"
-"POT-Creation-Date: 2002-04-01 11:46-0500\n"
+"POT-Creation-Date: 2002-04-15 18:05-0400\n"
 "PO-Revision-Date: 2002-02-15 16:00+0200\n"
 "Last-Translator: Roman Maurer <roman.maurer@amis.net>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -63,17 +63,17 @@ msgstr "®al se gesli ne ujemata"
 msgid "Help"
 msgstr "Pomoè"
 
-#: userhelper.c:96
+#: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Dobil napako PAM %d.\n"
 
-#: userhelper.c:202
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "Geslo za %s"
 
-#: userhelper.c:317
+#: userhelper.c:320
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
@@ -82,7 +82,7 @@ msgstr ""
 "Sku¹ate pognati \"%s\", ki lahko pridobi, èe ga pozenete kot skrbnik "
 "sistema, a za to je treba veè podatkov."
 
-#: userhelper.c:319
+#: userhelper.c:322
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
@@ -91,7 +91,7 @@ msgstr ""
 "Sku¹ate pognati \"%s\", ki zahteva, da ga pozenete kot skrbnik sistema, a za "
 "to je treba veè podatkov."
 
-#: userhelper.c:323
+#: userhelper.c:326
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Sku¹ate pognati ukaz, ki lahko pridobi, èe ga pozenete kot skrbnik sistema, "
 "a za to je treba veè podatkov."
 
-#: userhelper.c:325
+#: userhelper.c:328
 #, fuzzy
 msgid ""
 "You are attempting to run a command which requires superuser\n"
@@ -109,21 +109,21 @@ msgstr ""
 "Sku¹ate pognati ukaz, ki zahteva, da ga pozenete kot skrbnik sistema, a za "
 "to je treba veè podatkov."
 
-#: userhelper.c:343
+#: userhelper.c:346
 #, fuzzy, c-format
 msgid "Password for %s: "
 msgstr "Geslo za %s"
 
-#: userhelper.c:626
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mora biti setuid root\n"
 
-#: userhelper.c:708
+#: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Ni moè odpreti grafiènega okna in ni moè najti nadzornega terminala.\n"
 
-#: userhelper.c:1369 userhelper.c:1407
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "nameravam izvesti \"%s\"\n"

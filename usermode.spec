@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.53
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -102,6 +102,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Mon Apr 15 2002 Nalin Dahyabhai <nalin@redhat.com> 1.53-2
+- refresh translations
+
 * Thu Apr 11 2002 Nalin Dahyabhai <nalin@redhat.com> 1.53-1
 - refresh shell variable code from authconfig (#63175)
 

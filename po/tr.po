@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-04-01 11:46-0500\n"
+"POT-Creation-Date: 2002-04-15 18:05-0400\n"
 "PO-Revision-Date: 2002-04-04 15:06+0300\n"
 "Last-Translator: Nilgün Belma Bugüner <nilgun@fide.org>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -58,17 +58,17 @@ msgstr "Kusura bakmayın ama parolalar eşleşmedi"
 msgid "Help"
 msgstr "Yardım"
 
-#: userhelper.c:96
+#: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "PAM hatası %d alındı.\n"
 
-#: userhelper.c:202
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "%s için parola"
 
-#: userhelper.c:317
+#: userhelper.c:320
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
@@ -77,7 +77,7 @@ msgstr ""
 "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper.c:319
+#: userhelper.c:322
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
@@ -86,7 +86,7 @@ msgstr ""
 "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper.c:323
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
@@ -94,7 +94,7 @@ msgstr ""
 "root yetkilerinden yararlanarak bir komut çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper.c:325
+#: userhelper.c:328
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -102,20 +102,21 @@ msgstr ""
 "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper.c:343
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "%s için parola: "
 
-#: userhelper.c:626
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper programı setuid root olmalıdır.\n"
 
-#: userhelper.c:708
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:711
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 
-#: userhelper.c:1369 userhelper.c:1407
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\" çalıştırmak üzere\n"
@@ -293,7 +294,8 @@ msgstr "_Ayır"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+msgstr ""
+"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
@@ -386,4 +388,3 @@ msgstr "_Ayır"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "Çı_k"
-

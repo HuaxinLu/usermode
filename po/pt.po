@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-04-01 11:46-0500\n"
+"POT-Creation-Date: 2002-04-15 18:05-0400\n"
 "PO-Revision-Date: 2002-02-13 12:31+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
@@ -60,17 +60,17 @@ msgstr "Desculpe, as senhas não são iguais"
 msgid "Help"
 msgstr "Ajuda"
 
-#: userhelper.c:96
+#: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Encontrei o erro PAM %d.\n"
 
-#: userhelper.c:202
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "Senha para %s"
 
-#: userhelper.c:317
+#: userhelper.c:320
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
@@ -80,7 +80,7 @@ msgstr ""
 "super-utilizador. No entanto, para os obter são necessárias algumas "
 "informações."
 
-#: userhelper.c:319
+#: userhelper.c:322
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
@@ -89,7 +89,7 @@ msgstr ""
 "Está a tentar executar \"%s\", o qual necessita de privilégios de super-"
 "utilizador. No entanto, para os obter são necessárias algumas informações."
 
-#: userhelper.c:323
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
@@ -98,7 +98,7 @@ msgstr ""
 "super-utilizador. No entanto, para os obter são necessárias algumas "
 "informações."
 
-#: userhelper.c:325
+#: userhelper.c:328
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -106,22 +106,22 @@ msgstr ""
 "Está a tentar executar um comando que necessita de privilégios de super-"
 "utilizador. No entanto, para os obter são necessárias algumas informações."
 
-#: userhelper.c:343
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "Senha para %s: "
 
-#: userhelper.c:626
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper tem que ser setuid root\n"
 
-#: userhelper.c:708
+#: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Não consegui abrir janela e não consegui encontrar terminal de controle.\n"
 
-#: userhelper.c:1369 userhelper.c:1407
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "prestes a executar \"%s\"\n"
