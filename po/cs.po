@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
-"POT-Creation-Date: 2000-08-02 12:47-0400\n"
-"PO-Revision-Date: 2000-08-02 01:07+0100\n"
+"POT-Creation-Date: 2000-08-03 15:08-0400\n"
+"PO-Revision-Date: 2000-08-06 23:11+0100\n"
 "Last-Translator: Milan Kerslager <milan.kerslager@spsselib.hiedu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -212,6 +212,14 @@ msgstr "Shell:"
 #: ../userinfo.c:379
 msgid "This will be some help text."
 msgstr "Toto bude nápovìda."
+
+#: ../usermount.c:56
+msgid "Mount"
+msgstr ""
+
+#: ../usermount.c:57
+msgid "Unmount"
+msgstr ""
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
