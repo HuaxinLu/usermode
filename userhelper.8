@@ -14,32 +14,109 @@
 .\" along with this program; if not, write to the Free Software
 .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 .\"
-.TH USERPASSWD 1 "17 October 1997" "Red Hat Software"
+.TH USERHELPER 1 "17 October 1997" "Red Hat Software"
 .SH NAME
-userpasswd \- A graphical tool to allow users to change their passwords.
+userhelper \- A helper interface to pam.
 .SH SYNOPSIS
-.B userpasswd
-[
-.I options
-]
+.B userhelper
+[\ -c\ ] [\ \-f\ full-name\ ] [\ \-o\ office\ ] [\ \-p\ office-phone\ ] [\ \-h\ home-phone\ ] [\ \-s\ shell\ ] [\ username \]
+
 .SH DESCRIPTION
-.B userpasswd
-is a graphical tool to allow users to easily change their passwords.
-Aside from being a nice GUI frontend, this program does the right
-thing when the pam configuration has changed.
+NOTE this program is NOT intended to be run interactively.  If you
+want to change this information on the command line use
+.IR passwd (1),
+.IR chfn (1), 
+or
+.IR chsh (1).
+.PP
+This program provides a basic interface to change a user's password, gecos
+information, and shell.  The main differnce between this program and
+it's traditional equivilents is that prompts come out on standard out
+to make it easy for a GUI program to interface it as a child process.
+.PP
+The output is in the form of:
+.TP
+<number> <string>
+.PP
+Where the number is the type of prompt returned from pamlib, and the
+string is the prompt to give the user.
+.PP
+The prompt numbers are as follows:
+.TP
+1
+Prompt with visible input.
+.TP
+2
+Prompt with invisible input.
+.TP
+3
+Informational message.
+.TP
+4
+Error message.
 .SH OPTIONS
-This program has no command line options of it's own, but it does take
-the standard X program options like
-.B -display
-and such.  See the 
-.IR X (1)
-man page for some of the common options.
+.TP
+.I -c 
+Change the current user's password.  Note that this option cannot be
+used with any of the other options.  This is due to the limitation in
+the interface to pamlib.
+.TP
+.I -f
+Specify a new Full Name.
+.TP
+.I -o
+Specify a new Office.
+.TP
+.I -p
+Specify a new Office Phone.
+.TP
+.I -h
+Specify a new Home Phone.
+.TP
+.I -s
+Specify a new shell.
+.SH EXIT STATUS
+A non-zero exit status indicates an error occured.  Those errors are:
+.TP
+1
+The authentication passwords was incorrect.
+.TP
+2
+One or more of the GECOS fields is invalid.  This occurs when there is
+a colon supplied in one of the fields.
+.TP
+3
+Password resetting error.
+.TP
+4
+Some system files are locked.
+.TP
+5
+User unknown.
+.TP
+6
+Insufficent rights.
+.TP
+7
+Invalid call to this program.
+.TP
+8
+The shell provided is not valid (i.e., does not exist in /etc/shells).
+.TP
+255
+Unknown error.
+.SH FILES
+.TP 25
+.I /etc/passwd
+The gecos and shell information is stored in this file.
+.TP 25
+.I /etc/shells
+This file is checked to see if the new shell supplied is valid.
 .SH "SEE ALSO"
-.IR userhelper (8)
-.SH BUGS
-No known bugs, but compatability with bizarre changes in the pam
-configuration have not been tested aggressively.  If you have a
-non-standard pam configuration, I'd be interested to hear whether it
-worked and what kind of configuration you have.
+.IR userpasswd (1),
+.IR userinfo (1),
+.IR chfn (1),
+.IR chsh (1),
+.IR passwd (5)
 .SH AUTHOR
 Otto Hammersmith <otto@redhat.com>
