@@ -1,4 +1,4 @@
 USER=root
 PROGRAM=/bin/true
-BANNER=spoo
+BANNER=Ha! How you like that, dingleberry?
 BANNER_DOMAIN=usermode
