@@ -1,8 +1,9 @@
+# Miloslav Trmac <mitr@volny.cz>, 2002, 2003.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2002-09-15 01:24+0200\n"
+"PO-Revision-Date: 2003-09-27 15:24+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -78,12 +79,11 @@ msgstr "Spustí systémové konfigurační nástroje bez hesla."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "login: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Heslo"
+msgstr "Heslo: "
 
 #: userdialogs.h:30
 msgid "Help"
@@ -92,7 +92,7 @@ msgstr "Nápověda"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Nemohu nastavit kontext exec na %s.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -448,12 +448,3 @@ msgstr "Změnit vaše přihlašovací heslo"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Heslo"
-
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "Chyba PAM %d.\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "spouštím \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Potřebuji %d odpovědi.\n"
