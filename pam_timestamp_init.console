@@ -1,0 +1,4 @@
+USER=root
+PROGRAM=/bin/true
+BANNER=spoo
+BANNER_DOMAIN=usermode
