@@ -77,7 +77,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/halt
 %{_bindir}/reboot
 %{_bindir}/poweroff
+%if %{build6x}
 %{_bindir}/shutdown
+%endif
 %{_datadir}/pixmaps/*
 %{_datadir}/locale/*/*/*
 %config(noreplace) /etc/pam.d/halt
@@ -90,6 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Thu Oct  5 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix the /usr/bin/shutdown wrapper so that root can call shutdown
+- only include the /usr/bin/shutdown wrapper on 6.x
 - also sanitize LC_MESSAGES
 
 * Wed Oct  4 2000 Jakub Jelinek <jakub@redhat.com>
