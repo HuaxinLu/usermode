@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.50
-Release: 6
+Version: 1.51
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -102,6 +102,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Mar 27 2002 Nalin Dahyabhai <nalin@redhat.com> 1.51-1
+- patch to make gettext give us UTF-8 strings (which GTK needs) from ynakai
+
 * Fri Mar 22 2002 Nalin Dahyabhai <nalin@redhat.com> 1.50-6
 - update translations
 - actually include the glade files (#61665)

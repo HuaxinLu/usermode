@@ -552,6 +552,7 @@ main(int argc, char **argv)
 
 	setlocale(LC_ALL, "");
 	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 
 	if (geteuid() != 0) {

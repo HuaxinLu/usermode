@@ -59,6 +59,7 @@ main(int argc, char *argv[])
 	/* Set up locales. */
 	setlocale(LC_ALL, "");
 	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 
 	/* Find the basename of the program we were invoked as. */

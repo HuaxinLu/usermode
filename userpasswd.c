@@ -26,6 +26,7 @@ int
 main(int argc, char *argv[])
 {
 	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 
 	gtk_set_locale();

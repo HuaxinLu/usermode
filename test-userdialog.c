@@ -25,6 +25,7 @@ main(int argc, char *argv[])
 	GtkWidget *msg;
 
 	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 
 	gtk_set_locale();
