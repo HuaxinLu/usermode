@@ -1,4 +1,5 @@
 USER=root
 PROGRAM=/bin/true
+SESSION=true
 BANNER=Ha! How you like that, dingleberry?
 BANNER_DOMAIN=usermode
