@@ -16,13 +16,16 @@ EXTRA_DIST = config.rpath  \
 	keys.xpm \
 	usermode.glade \
 	shutdown.pamd \
-	shutdown.pamd.6x
+	shutdown.pamd.6x \
+	update-from-egg.sh \
+	egg-marshalers.list \
+	$(pixmap_DATA)
 
-SUBDIRS= intl m4  intl m4  m4 intl po
+SUBDIRS= m4 intl po
 
-CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@
+CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\"
 
-bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk
+bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk pam-panel-icon
 bin_SCRIPTS = shutdown
 sbin_PROGRAMS = userhelper
 noinst_PROGRAMS = test-userdialog
@@ -68,6 +71,10 @@ consolehelper_LDADD = @GLIB_LIBS@ @LIBS@
 consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userhelper-wrap.c
 consolehelper_gtk_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
+pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) egg-marshal.c
+pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@
+pam-panel-icon.c: egg-marshal.c
+
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c
 test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
@@ -80,3 +87,30 @@ tag:
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 
 ACLOCAL_AMFLAGS = -I m4
+
+pixmapdir=$(datadir)/pixmaps
+pixmap_DATA=status_lock.png
+
+## libegg goo - "make regenerate-built-sources EGGDIR=foo"
+EGGFILES=			\
+	eggtrayicon.h		\
+	eggtrayicon.c
+
+EGGDIR="you need to set EGGDIR variable"
+
+regenerate-built-sources:
+	EGGFILES="$(EGGFILES)" EGGDIR="$(EGGDIR)" $(srcdir)/update-from-egg.sh
+
+eggmarshalers.h:
+	cd $(srcdir)										\
+	&& $(GLIB_GENMARSHAL) --prefix=_egg_marshal eggmarshalers.list --header > xgen-emh	\
+	&& cp xgen-emh eggmarshalers.h								\
+	&& rm -f xgen-emh xgen-emh~
+
+eggmarshalers.c:
+	cd $(srcdir)										\
+	&& $(GLIB_GENMARSHAL) --prefix=_egg_marshal eggmarshalers.list --body > xgen-emc	\
+	&& cp xgen-emc eggmarshalers.c								\
+	&& rm -f xgen-emc xgen-emc~
+
+egg-marshal.c: eggmarshalers.h eggmarshalers.c
