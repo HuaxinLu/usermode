@@ -99,7 +99,7 @@ msgstr "Passwort: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Fehler beim Abgeben der Administrator-Privilegien: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -107,6 +107,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"Fehler beim Abgeben der Administrator-Privilegien: "
+"pam_timestamp_check meldet Fehler-Code %d"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -114,6 +116,9 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"Sie sind gegenwärtig berechtigt Systemeinstellungen (die alle Benutzer betreffen) "
+"zu konfigurieren, ohne das Administrator-Passwort noch einmal einzugeben. "
+"Sie können diese Autorisierung aufgeben."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
