@@ -209,6 +209,14 @@ The gecos and shell information is stored in this file.
 .TP 25
 .I /etc/shells
 This file is checked to see if the new shell supplied is valid.
+.TP 25
+.I /etc/security/console.apps/\fIprog\fP
+This file contains the values which will be used for the variables when
+userhelper is used with the \fI-w\fP flag.
+.TP 25
+.I /etc/pam.d/\fIprog\fP
+This file contains the PAM configuration used when userhelper is used with
+the \fI-w\fP flag.
 .SH "SEE ALSO"
 .IR userpasswd (1),
 .IR userinfo (1),
