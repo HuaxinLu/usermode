@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.19
-Release: 2
+Version: 1.20
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
@@ -71,7 +71,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Fri Feb  3 2000 Nalin Dahyabhai <nalin@redhat.com>
+* Tue Mar 07 2000 Nalin Dahyabhai <nalin@redhat.com>
+- queue notice messages until we get prompts in userhelper
+
+* Fri Feb 03 2000 Nalin Dahyabhai <nalin@redhat.com>
 - free trip through the build system
 
 * Tue Jan 11 2000 Nalin Dahyabhai <nalin@redhat.com>

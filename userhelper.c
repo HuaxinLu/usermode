@@ -141,7 +141,9 @@ static char *read_string(void)
 static int conv_func(int num_msg, const struct pam_message **msg,
 		     struct pam_response **resp, void *appdata_ptr)
 {
-    int 	count = 0;
+    int count = 0;
+    gboolean need_reply = FALSE;
+    static int old_msgs = 0;
     struct pam_response *reply = NULL;
     char *noecho_message;
 
@@ -159,6 +161,7 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 	switch (msg[count]->msg_style) {
 	    case PAM_PROMPT_ECHO_ON:
 		printf("%d %s\n", UH_ECHO_ON_PROMPT, msg[count]->msg);
+		need_reply = TRUE;
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
 		if (the_username && !strncasecmp(msg[count]->msg, "password", 8)) {
@@ -169,6 +172,7 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		    noecho_message = msg[count]->msg;
 		}
 		printf("%d %s\n", UH_ECHO_OFF_PROMPT, noecho_message);
+		need_reply = TRUE;
 		break;
 	    case PAM_TEXT_INFO:
 		printf("%d %s\n", UH_INFO_MSG, msg[count]->msg);
@@ -184,7 +188,13 @@ static int conv_func(int num_msg, const struct pam_message **msg,
     /* tell the other side how many messages we sent and how many
      * responses we expect (ignoring messages, which we fudge here).
      */
-    printf("%d %d", UH_EXPECT_RESP, num_msg);
+    if(need_reply) {
+        printf("%d %d", UH_EXPECT_RESP, num_msg + old_msgs);
+        fflush(NULL);
+	old_msgs = 0;
+    } else {
+	old_msgs += num_msg;
+    }
 
     /* now the second pass */
     for (count = 0; count < num_msg; count++) {
