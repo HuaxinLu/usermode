@@ -15,7 +15,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
-
+#include <locale.h>
+#include <libintl.h>
+#define i18n(String) gettext(String)
 #include "userdialogs.h"
 
 GtkWidget*
@@ -30,7 +32,7 @@ create_message_box(gchar* message, gchar* title)
   gtk_window_position(GTK_WINDOW(message_box), GTK_WIN_POS_CENTER);
   gtk_container_set_border_width(GTK_CONTAINER(message_box), 5);
   if(title == NULL)
-    gtk_window_set_title(GTK_WINDOW(message_box), "Message");
+    gtk_window_set_title(GTK_WINDOW(message_box), i18n("Message"));
   else
     gtk_window_set_title(GTK_WINDOW(message_box), title);
 
@@ -76,7 +78,7 @@ create_error_box(gchar* error, gchar* title)
   gtk_window_position(GTK_WINDOW(error_box), GTK_WIN_POS_CENTER);
   gtk_container_set_border_width(GTK_CONTAINER(error_box), 5);
   if(title == NULL)
-    gtk_window_set_title(GTK_WINDOW(error_box), "Error");
+    gtk_window_set_title(GTK_WINDOW(error_box), i18n("Error"));
   else
     gtk_window_set_title(GTK_WINDOW(error_box), title);
 
@@ -119,9 +121,9 @@ create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   gtk_window_position(GTK_WINDOW(query_box), GTK_WIN_POS_CENTER);
   gtk_container_set_border_width(GTK_CONTAINER(query_box), 5);
   if(title == NULL)
-    gtk_window_set_title(GTK_WINDOW(query_box), "Prompt");
+    gtk_window_set_title(GTK_WINDOW(query_box), i18n("Prompt"));
   else
-    gtk_window_set_title(GTK_WINDOW(query_box), "Prompt");
+    gtk_window_set_title(GTK_WINDOW(query_box), i18n("Prompt"));
   
   label = gtk_label_new(prompt);
   entry = gtk_entry_new();
@@ -180,7 +182,7 @@ create_invisible_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   query_box = gtk_dialog_new();
   gtk_window_position(GTK_WINDOW(query_box), GTK_WIN_POS_CENTER);
   gtk_container_set_border_width(GTK_CONTAINER(query_box), 5);
-  gtk_window_set_title(GTK_WINDOW(query_box), "Prompt");
+  gtk_window_set_title(GTK_WINDOW(query_box), i18n("Prompt"));
 /*   gtk_container_border_width(GTK_CONTAINER(GTK_DIALOG(query_box)->vbox), 5); */
   label = gtk_label_new(prompt);
   entry = gtk_entry_new();
@@ -188,7 +190,7 @@ create_invisible_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
 
   hbox = gtk_hbox_new(TRUE, 5);
 
-  ok = gtk_button_new_with_label("OK");
+  ok = gtk_button_new_with_label(i18n("OK"));
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
 
   gtk_signal_connect_object(GTK_OBJECT(entry), "activate", 

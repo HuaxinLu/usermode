@@ -23,6 +23,11 @@
 int
 main(int argc, char* argv[])
 {
+  /* first set up our locale info for gettext. */
+  setlocale(LC_ALL, "");
+  bindtextdomain("userhelper", "/usr/share/locale");
+  textdomain("userhelper");
+
   gtk_init(&argc, &argv);
 
   signal(SIGCHLD, userhelper_sigchld);

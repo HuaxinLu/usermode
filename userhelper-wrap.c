@@ -17,6 +17,8 @@
  */
 
 #include <unistd.h>
+#include <locale.h>
+#include <libintl.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,13 +41,13 @@ userhelper_runv(char *path, char **args)
 
   if(pipe(childout) < 0 || pipe(childin) < 0)
     {
-      fprintf(stderr, "Pipe error.\n");
+      fprintf(stderr, i18n("Pipe error.\n"));
       exit(1);
     }
 
   if((pid = fork()) < 0)
     {
-      fprintf(stderr, "Cannot fork().\n");
+      fprintf(stderr, i18n("Cannot fork().\n"));
     }
   else if(pid > 0)		/* parent */
     {
@@ -64,7 +66,7 @@ userhelper_runv(char *path, char **args)
 	{
 	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
 	    {
-	      fprintf(stderr, "dup2() error.\n");
+	      fprintf(stderr, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	  close(childout[1]);
@@ -73,7 +75,7 @@ userhelper_runv(char *path, char **args)
 	{
 	  if(dup2(childin[0], STDIN_FILENO) != STDIN_FILENO)
 	    {
-	      fprintf(stderr, "dup2() error.\n");
+	      fprintf(stderr, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	}
@@ -82,7 +84,7 @@ userhelper_runv(char *path, char **args)
       retval = execv(path, args);
 
       if(retval < 0) {
-	fprintf(stderr, "execl() error, errno=%d\n", errno);
+	fprintf(stderr, i18n("execl() error, errno=%d\n"), errno);
       }
 
       _exit(0);
@@ -111,47 +113,47 @@ userhelper_parse_exitstatus(int exitstatus)
   switch(exitstatus)
     {
     case 0:
-      message_box = create_message_box("Information updated.", NULL);
+      message_box = create_message_box(i18n("Information updated."), NULL);
       break;
     case ERR_PASSWD_INVALID:
-      message_box = create_error_box("The password you typed is invalid.\nPlease try again.", NULL);
+      message_box = create_error_box(i18n("The password you typed is invalid.\nPlease try again."), NULL);
       break;
     case ERR_FIELDS_INVALID:
-      message_box = create_error_box("One or more of the changed fields is invalid.\nThis is probably due to either colons or commas in one of the fields.\nPlease remove those and try again.", NULL);
+      message_box = create_error_box(i18n("One or more of the changed fields is invalid.\nThis is probably due to either colons or commas in one of the fields.\nPlease remove those and try again."), NULL);
       break;
     case ERR_SET_PASSWORD:
-      message_box = create_error_box("Password resetting error.", NULL);
+      message_box = create_error_box(i18n("Password resetting error."), NULL);
       break;
     case ERR_LOCKS:
-      message_box = create_error_box("Some systems files are locked.\nPlease try again in a few moments.", NULL);
+      message_box = create_error_box(i18n("Some systems files are locked.\nPlease try again in a few moments."), NULL);
       break;
     case ERR_NO_USER:
-      message_box = create_error_box("Unknown user.", NULL);
+      message_box = create_error_box(i18n("Unknown user."), NULL);
       break;
     case ERR_NO_RIGHTS:
-      message_box = create_error_box("Insufficient rights.", NULL);
+      message_box = create_error_box(i18n("Insufficient rights."), NULL);
       break;
     case ERR_INVALID_CALL:
-      message_box = create_error_box("Invalid call to sub process.", NULL);
+      message_box = create_error_box(i18n("Invalid call to sub process."), NULL);
       break;
     case ERR_SHELL_INVALID:
-      message_box = create_error_box("Your current shell is not listed in /etc/shells.\nYou are not allowed to change your shell.\nConsult your system administrator.", NULL);
+      message_box = create_error_box(i18n("Your current shell is not listed in /etc/shells.\nYou are not allowed to change your shell.\nConsult your system administrator."), NULL);
       break;
     case ERR_NO_MEMORY:
       /* well, this is unlikely to work either, but at least we tried... */
-      message_box = create_error_box("Out of memory.", NULL);
+      message_box = create_error_box(i18n("Out of memory."), NULL);
       break;
     case ERR_EXEC_FAILED:
-      message_box = create_error_box("The exec() call failed.", NULL);
+      message_box = create_error_box(i18n("The exec() call failed."), NULL);
       break;
     case ERR_NO_PROGRAM:
-      message_box = create_error_box("Failed to find selected program.", NULL);
+      message_box = create_error_box(i18n("Failed to find selected program."), NULL);
       break;
     case ERR_UNK_ERROR:
-      message_box = create_error_box("Unknown error.", NULL);
+      message_box = create_error_box(i18n("Unknown error."), NULL);
       break;
     default:
-      message_box = create_error_box("Unknown exit code.", NULL);
+      message_box = create_error_box(i18n("Unknown exit code."), NULL);
       break;
     }
 
@@ -316,7 +318,7 @@ userhelper_parse_childout(char* outline)
 	resp->responses++;
 	resp->rows++;
 #ifdef DEBUG_USERHELPER
-	printf("Need %d responses.\n", resp->responses);
+	printf(i18n("Need %d responses.\n"), resp->responses);
 #endif
 	break;
 
@@ -341,8 +343,9 @@ userhelper_parse_childout(char* outline)
 	break;
 
       case UH_SERVICE_NAME:
-	title = g_strdup_printf("In order to run \"%s\" with %s's privileges,"
-                                " additional information is required.",
+	title = g_strdup_printf(i18n("In order to run \"%s\" with %s's "
+				"privileges, additional information is "
+				"required."),
 				prompt, resp->user);
 	msg->label = gtk_label_new(title);
 	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
@@ -353,7 +356,7 @@ userhelper_parse_childout(char* outline)
 	break;
 
       case UH_ERROR_MSG:
-	gtk_window_set_title(GTK_WINDOW(resp->top), "Error");
+	gtk_window_set_title(GTK_WINDOW(resp->top), i18n("Error"));
 	/* fall through */
       case UH_INFO_MSG:
 	msg->label = gtk_label_new(prompt);
@@ -367,7 +370,7 @@ userhelper_parse_childout(char* outline)
       case UH_EXPECT_RESP:
 	g_free(msg); /* useless */
 	if (resp->responses != atoi(prompt)) {
-          printf("You want %d response(s) from %d entry fields!?!?!\n",
+          printf(i18n("You want %d response(s) from %d entry fields!?!?!\n"),
                  atoi(prompt), resp->responses);
           exit (1);
 	}

@@ -17,6 +17,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
+#include <libintl.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <gtk/gtk.h>
@@ -39,6 +41,11 @@ main(int argc, char* argv[])
   int graphics_available = 0;
   int fake_gtk_argc = 1;
   char **fake_gtk_argv;
+
+  /* first set up our locale info for gettext. */
+  setlocale(LC_ALL, "");
+  bindtextdomain("userhelper", "/usr/share/locale");
+  textdomain("userhelper");
 
   constructed_argv = g_malloc0((argc+4) * sizeof(char *));
 

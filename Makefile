@@ -64,6 +64,9 @@ install-man: 	$(MANS)
 	$(INSTALL) -m 644 consolehelper.8 $(PREFIX)$(mandir)/man8
 	$(INSTALL) -m 644 userpasswd.1 $(PREFIX)$(mandir)/man1
 
+install-po:
+	$(MAKE) -C po $@
+
 clean:	
 	rm -f *~ *.o $(PROGS)
 

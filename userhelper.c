@@ -35,6 +35,8 @@
 #include <mcheck.h>
 #endif
 
+#include <locale.h>
+#include <libintl.h>
 #include <unistd.h>
 #include <pwd.h>
 #include <sys/types.h>
@@ -97,7 +99,7 @@ static int fail_error(int retval)
 
     if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-	printf("Got error %d.\n", retval);
+	printf(i18n("Got error %d.\n"), retval);
 #endif
 	switch(retval) {
 	    case PAM_AUTH_ERR:
@@ -192,7 +194,7 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
 		if (the_username && !strncasecmp(msg[count]->msg, "password", 8)) {
-		    noecho_message = g_strdup_printf("%s's password",
+		    noecho_message = g_strdup_printf(i18n("%s's password"),
                                                      the_username);
 		} else {
 		    noecho_message = g_strdup(msg[count]->msg);
@@ -382,15 +384,15 @@ mcheck_out(enum mcheck_status reason) {
 
     switch (reason) {
 	case MCHECK_DISABLED:
-	    explanation = "Consistency checking is not turned on."; break;
+	    explanation = i18n("Consistency checking is not turned on."); break;
 	case MCHECK_OK:
-	    explanation = "Block is fine."; break;
+	    explanation = i18n("Block is fine."); break;
 	case MCHECK_FREE:
-	    explanation = "Block freed twice."; break;
+	    explanation = i18n("Block freed twice."); break;
 	case MCHECK_HEAD:
-	    explanation = "Memory before the block was clobbered."; break;
+	    explanation = i18n("Memory before the block was clobbered."); break;
 	case MCHECK_TAIL:
-	    explanation = "Memory after the block was clobbered."; break;
+	    explanation = i18n("Memory after the block was clobbered."); break;
     }
     printf("%d %s\n", UH_ERROR_MSG, explanation);
     printf("%d 1\n", UH_EXPECT_RESP);
@@ -412,12 +414,17 @@ int main(int argc, char *argv[])
     mcheck(mcheck_out);
 #endif
 
+    /* first set up our locale info for gettext. */
+    setlocale(LC_ALL, "");
+    bindtextdomain("userhelper", "/usr/share/locale");
+    textdomain("userhelper");
+
     /* for lack of a better place to put it... */
     setbuf(stdout, NULL);
     setbuf(stdin, NULL);
 
     if (geteuid() != 0) {
-	fprintf(stderr, "userhelper must be setuid root\n");
+	fprintf(stderr, i18n("userhelper must be setuid root\n"));
 	exit(ERR_NO_RIGHTS);
     }
 
@@ -653,7 +660,7 @@ int main(int argc, char *argv[])
 		if (pw) setenv("HOME", pw->pw_dir, 1);
 		argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
-		printf("about to exec \"%s\"\n", constructed_path);
+		printf(i18n("about to exec \"%s\"\n"), constructed_path);
 #endif
 		execv(constructed_path, argv+optind-1);
 		exit (ERR_EXEC_FAILED);
@@ -685,7 +692,7 @@ int main(int argc, char *argv[])
 	    setuid(0);
 	    argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
-            printf("about to exec \"%s\"\n", constructed_path);
+            printf(i18n("about to exec \"%s\"\n"), constructed_path);
 #endif
 	    execv(constructed_path, argv+optind-1);
 	    exit (ERR_EXEC_FAILED);

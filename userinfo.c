@@ -28,6 +28,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <locale.h>
+#include <libintl.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <pwd.h>
@@ -87,6 +89,11 @@ main(int argc, char* argv[])
 {
   UserInfo* userinfo;
 
+  /* first set up our locale info for gettext. */
+  setlocale(LC_ALL, "");
+  bindtextdomain("userhelper", "/usr/share/locale");
+  textdomain("userhelper");
+
   /* gtk_set_locale(); */		/* this is new... */
   gtk_init(&argc, &argv);
   /* put this back in when I've decided I need it... */
@@ -115,7 +122,7 @@ create_userinfo_window(UserInfo* userinfo)
   /* create the widgets */
   mainwindow = gtk_dialog_new();
   gtk_container_set_border_width(GTK_CONTAINER(mainwindow), 5);
-  gtk_window_set_title(GTK_WINDOW(mainwindow), "User Information");
+  gtk_window_set_title(GTK_WINDOW(mainwindow), i18n("User Information"));
   gtk_signal_connect(GTK_OBJECT(mainwindow), "destroy",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
   gtk_signal_connect(GTK_OBJECT(mainwindow), "delete_event",
@@ -130,7 +137,7 @@ create_userinfo_window(UserInfo* userinfo)
 		   0, 0, 0, 0);
   gtk_widget_show(shell_field);
 
-  ok = gtk_button_new_with_label("OK");
+  ok = gtk_button_new_with_label(i18n("OK"));
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
 
 /*   GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT); */
@@ -144,7 +151,7 @@ create_userinfo_window(UserInfo* userinfo)
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
 		     (GtkSignalFunc) gtk_main_quit, NULL);
   gtk_widget_show(cancel);
-  help = gtk_button_new_with_label("Help");
+  help = gtk_button_new_with_label(i18n("Help"));
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(help)->child), 4, 0);
   gtk_signal_connect(GTK_OBJECT(help), "clicked",
 		     (GtkSignalFunc) show_help_dialog, NULL);
@@ -233,7 +240,7 @@ create_gecos_table(UserInfo* userinfo)
 
   i = GECOS_FULLNAME;
 
-  label = gtk_label_new("Full Name:");
+  label = gtk_label_new(i18n("Full Name:"));
   gtk_table_attach(GTK_TABLE(gecos), label, 
 		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
@@ -251,7 +258,7 @@ create_gecos_table(UserInfo* userinfo)
 
   i = GECOS_OFFICE;
 
-  label = gtk_label_new("Office:");
+  label = gtk_label_new(i18n("Office:"));
   gtk_table_attach(GTK_TABLE(gecos), label, 
 		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
@@ -270,7 +277,7 @@ create_gecos_table(UserInfo* userinfo)
 
   i = GECOS_OFFICEPHONE;
 
-  label = gtk_label_new("Office Phone:");
+  label = gtk_label_new(i18n("Office Phone:"));
   gtk_table_attach(GTK_TABLE(gecos), label, 
 		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
@@ -288,7 +295,7 @@ create_gecos_table(UserInfo* userinfo)
 
   i = GECOS_HOMEPHONE;
 
-  label = gtk_label_new("Home Phone:");
+  label = gtk_label_new(i18n("Home Phone:"));
   gtk_table_attach(GTK_TABLE(gecos), label, 
 		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
@@ -306,7 +313,7 @@ create_gecos_table(UserInfo* userinfo)
 
   i = GECOS_SHELL;
 
-  label = gtk_label_new("Shell:");
+  label = gtk_label_new(i18n("Shell:"));
   gtk_table_attach(GTK_TABLE(gecos), label,
 		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL,
@@ -369,7 +376,7 @@ create_help_dialog()
 
   help_dialog = gtk_dialog_new();
   gtk_container_set_border_width(GTK_CONTAINER(help_dialog), 5);
-  label = gtk_label_new("This will be some help text.");
+  label = gtk_label_new(i18n("This will be some help text."));
   ok = gtk_button_new_with_label("OK");
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
   gtk_signal_connect(GTK_OBJECT(ok), "clicked", 

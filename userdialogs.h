@@ -21,6 +21,9 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
+#include <locale.h>
+#include <libintl.h>
+#define i18n(String) gettext(String)
 
 #define UD_OK_TEXT "OK"
 #define UD_HELP_TEXT "Help"

@@ -18,6 +18,8 @@
 #ifndef __USERHELPER_H__
 #define __USERHELPER_H__
 
+#define i18n(String) gettext(String)
+
 #define UH_ECHO_ON_PROMPT 1
 #define UH_ECHO_OFF_PROMPT 2
 #define UH_INFO_MSG 3

@@ -87,6 +87,11 @@ void user_format(char* device, char* fstype, int lowlevel);
 int
 main(int argc, char* argv[])
 {
+  /* first set up our locale info for gettext. */
+  setlocale(LC_ALL, "");
+  bindtextdomain("userhelper", "/usr/share/locale");
+  textdomain("userhelper");
+
   /* gtk_set_locale(); */		/* this is new... */
   gtk_init(&argc, &argv);
   /* put this back in when I've decided I need it... */
@@ -111,7 +116,7 @@ create_usermount_window()
   dialog = gtk_dialog_new();
   gtk_window_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
   gtk_container_set_border_width(GTK_CONTAINER(dialog), 5);
-  gtk_window_set_title(GTK_WINDOW(dialog), "User Mount Tool");
+  gtk_window_set_title(GTK_WINDOW(dialog), i18n("User Mount Tool"));
   gtk_signal_connect(GTK_OBJECT(dialog), "destroy",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
   gtk_signal_connect(GTK_OBJECT(dialog), "delete_event",
@@ -128,7 +133,7 @@ create_usermount_window()
   info = build_mountinfo_list();
   if(info == NULL)
     {
-      mount_table = gtk_label_new("There are no user mountable filesystems.\nContact your administrator.");
+      mount_table = gtk_label_new(i18n("There are no user mountable filesystems.\nContact your administrator."));
       gtk_box_set_spacing(GTK_BOX(GTK_DIALOG(dialog)->vbox), 5);
     }
   else
@@ -169,7 +174,7 @@ create_mount_table(struct mountinfo* list)
   gtk_table_set_row_spacings(GTK_TABLE(mount_table), 5);
   gtk_table_set_col_spacings(GTK_TABLE(mount_table), 5);
 
-  headings = gtk_label_new("Directory");
+  headings = gtk_label_new(i18n("Directory"));
   gtk_table_attach(GTK_TABLE(mount_table), headings,
 		   0, 1, row, row+1,
 		   GTK_EXPAND | GTK_FILL, 
@@ -177,7 +182,7 @@ create_mount_table(struct mountinfo* list)
 		   0, 0);
   gtk_widget_show(headings);
 
-  headings = gtk_label_new("Device");
+  headings = gtk_label_new(i18n("Device"));
   gtk_table_attach(GTK_TABLE(mount_table), headings,
 		   1, 2, row, row+1,
 		   GTK_EXPAND | GTK_FILL, 
@@ -185,7 +190,7 @@ create_mount_table(struct mountinfo* list)
 		   0, 0);
   gtk_widget_show(headings);
 
-  headings = gtk_label_new("Type");
+  headings = gtk_label_new(i18n("Type"));
   gtk_table_attach(GTK_TABLE(mount_table), headings,
 		   2, 3, row, row+1,
 		   GTK_EXPAND | GTK_FILL, 
@@ -260,7 +265,7 @@ create_mount_table(struct mountinfo* list)
 		       0, 0);
       gtk_widget_show(mount);
 
-      format = gtk_button_new_with_label("Format");
+      format = gtk_button_new_with_label(i18n("Format"));
       gtk_misc_set_padding(GTK_MISC(GTK_BIN(format)->child), 4, 0);
       gtk_widget_set_usize(format, 60, 0);
       current->format = format;
@@ -354,9 +359,9 @@ format_button(GtkWidget* widget, struct mountinfo* info)
   gtk_window_set_title(GTK_WINDOW(dialog), "Confirm");
   gtk_container_border_width(GTK_CONTAINER(GTK_DIALOG(dialog)->vbox), 5);
   
-  label = gtk_label_new("Are you sure?\nYou will destroy any data on that disk.\n");
+  label = gtk_label_new(i18n("Are you sure?\nYou will destroy any data on that disk.\n"));
 
-  confirm_button = gtk_button_new_with_label("Yes");
+  confirm_button = gtk_button_new_with_label(i18n("Yes"));
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(confirm_button)->child), 4, 0);
   gtk_widget_set_usize(confirm_button, 50, 0);
   gtk_signal_connect_object(GTK_OBJECT(confirm_button), "clicked",
@@ -366,14 +371,14 @@ format_button(GtkWidget* widget, struct mountinfo* info)
 			    (GtkSignalFunc) gtk_widget_destroy,
 			    (gpointer) dialog);
 
-  cancel_button = gtk_button_new_with_label("No");
+  cancel_button = gtk_button_new_with_label(i18n("No"));
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(cancel_button)->child), 4, 0);
   gtk_widget_set_usize(cancel_button, 50, 0);
   gtk_signal_connect_object(GTK_OBJECT(cancel_button), "clicked",
 			    (GtkSignalFunc) gtk_widget_destroy,
 			    (gpointer) dialog);
 
-  fdformat_check = gtk_check_button_new_with_label("Do low level format.");
+  fdformat_check = gtk_check_button_new_with_label(i18n("Do low level format."));
   gtk_signal_connect(GTK_OBJECT(fdformat_check), "toggled",
 		     (GtkSignalFunc) fdformat_check_button,
 		     info);
@@ -572,13 +577,13 @@ user_mount_toggle(char* file, int bool)
   
   if(pipe(childout) < 0 || pipe(childerr) < 0)
     {
-      fprintf(stderr, "Pipe error.\n");
+      fprintf(stderr, i18n("Pipe error.\n"));
       exit(1);
     }
 
   if((pid = fork()) < 0)
     {
-      fprintf(stderr, "Cannot fork().\n");
+      fprintf(stderr, i18n("Cannot fork().\n"));
     }
   else if(pid > 0)		/* parent */
     {
@@ -618,7 +623,7 @@ user_mount_toggle(char* file, int bool)
 	{
 	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
 	    {
-	      fprintf(stdout, "dup2() error.\n");
+	      fprintf(stdout, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	}
@@ -626,14 +631,14 @@ user_mount_toggle(char* file, int bool)
 	{
 	  if(dup2(childerr[1], STDERR_FILENO) != STDERR_FILENO)
 	    {
-	      fprintf(stdout, "dup2() error.\n");
+	      fprintf(stdout, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	}
 
       if(execl(cmd, cmd, file, 0) < 0)
 	{
-	  fprintf(stderr, "execl() error, errno=%d\n", errno);
+	  fprintf(stderr, i18n("execl() error, errno=%d\n"), errno);
 	}
 
       _exit(0);
@@ -667,7 +672,7 @@ user_format(char* device, char* fstype, int lowlevel)
 
   if(pipe(childout) < 0 || pipe(childerr) < 0)
     {
-      fprintf(stderr, "Pipe error.\n");
+      fprintf(stderr, i18n("Pipe error.\n"));
       exit(1);
     }
 
@@ -678,7 +683,7 @@ user_format(char* device, char* fstype, int lowlevel)
     }
   else if((pid = fork()) < 0)
     {
-      fprintf(stderr, "Cannot fork().\n");
+      fprintf(stderr, i18n("Cannot fork().\n"));
     }
   else if(pid > 0)
     {
@@ -730,7 +735,7 @@ user_format(char* device, char* fstype, int lowlevel)
 	{
 	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
 	    {
-	      fprintf(stdout, "dup2() error.\n");
+	      fprintf(stdout, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	}
@@ -738,14 +743,14 @@ user_format(char* device, char* fstype, int lowlevel)
 	{
 	  if(dup2(childerr[1], STDERR_FILENO) != STDERR_FILENO)
 	    {
-	      fprintf(stdout, "dup2() error.\n");
+	      fprintf(stdout, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	}
 
       if(execl(fdformat_cmd, fdformat_cmd, device, 0) < 0)
 	{
-	  fprintf(stderr, "execl() error, errno=%d\n", errno);
+	  fprintf(stderr, i18n("execl() error, errno=%d\n"), errno);
 	}
 
       _exit(0);
@@ -755,13 +760,13 @@ user_format(char* device, char* fstype, int lowlevel)
   /* mkfs */
   if(pipe(childout) < 0 || pipe(childerr) < 0)
     {
-      fprintf(stderr, "Pipe error.\n");
+      fprintf(stderr, i18n("Pipe error.\n"));
       exit(1);
     }
 
   if((pid = fork()) < 0)
     {
-      fprintf(stderr, "Cannot fork().\n");
+      fprintf(stderr, i18n("Cannot fork().\n"));
     }
   else if(pid > 0)
     {
@@ -800,7 +805,7 @@ user_format(char* device, char* fstype, int lowlevel)
 	{
 	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
 	    {
-	      fprintf(stdout, "dup2() error.\n");
+	      fprintf(stdout, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	}
@@ -808,14 +813,14 @@ user_format(char* device, char* fstype, int lowlevel)
 	{
 	  if(dup2(childerr[1], STDERR_FILENO) != STDERR_FILENO)
 	    {
-	      fprintf(stdout, "dup2() error.\n");
+	      fprintf(stdout, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	}
 
       if(execl(mkfs_cmd, mkfs_cmd, mkfs_fstype, fstype, device, 0) < 0)
 	{
-	  fprintf(stderr, "execl() error, errno=%d\n", errno);
+	  fprintf(stderr, i18n("execl() error, errno=%d\n"), errno);
 	}
 
       _exit(0);
