@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
+"POT-Creation-Date: 2001-01-25 15:50-0500\n"
 "PO-Revision-Date: 2000-08-09 16:39+02:00\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -135,17 +135,18 @@ msgid "Need %d responses.\n"
 msgstr "Trenger %d svar.\n"
 
 #: ../userhelper-wrap.c:371
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
-"For å kjøre \"%s\" med rettigheter som %s, er mer informasjon nødvendig."
+"For å kjøre \"%s\" med rettigheter som root er det  nødvendig med mer "
+"informasjon."
 
 #: ../userhelper-wrap.c:389
-#, fuzzy, c-format
+#, c-format
 msgid "Changing password for %s"
-msgstr "Passord for %s"
+msgstr "Endrer passord for %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
@@ -189,12 +190,12 @@ msgstr "userhelper må være setuid root\n"
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "PAM returnerte = %d\n"
 
 #: ../userhelper.c:673
-#, fuzzy, c-format
+#, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr "i ferd med å kjøre \"%s\"\n"
+msgstr "i ferd med å autentisere \"%s\"\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
@@ -291,40 +292,40 @@ msgstr "Utfør lavnivå formatering."
 
 #: ../dummy.h:4
 msgid "Exit"
-msgstr ""
+msgstr "Avslutt"
 
 #: ../dummy.h:5
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: ../dummy.h:6
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Kjør upriviligert"
 
 #: ../dummy.h:7
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(nåværende) UNIX passord: "
 
 #: ../dummy.h:8
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Nytt UNIX passord:"
 
 #: ../dummy.h:9
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Tast inn nytt UNIX passord på nytt: "
 
 #: ../dummy.h:10
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "DÅRLIG PASSORD: det er altfor kort"
 
 #: ../dummy.h:11
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "DÅRLIG PASSORD: det er for kort"
 
 #: ../dummy.h:12
 msgid "Password unchanged"
-msgstr ""
+msgstr "Passord ikke endret"
 
 #: ../dummy.h:13
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Beklager, passordene er ikke de samme"
