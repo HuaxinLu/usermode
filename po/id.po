@@ -5,48 +5,48 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-07-19 07:35+0700\n"
-"Last-Translator: Alexander Agung <redtux@sby.dnet.net.id>\n"
+"PO-Revision-Date: 2004-10-06 13:07+0700\n"
+"Last-Translator: Erwien Samantha Y <erwiensamantha@sederhana.or.id>\n"
 "Language-Team: Bahasa Indonesia <viribus@traderweb.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
 
-#.
-#. * Copyright (C) 2001 Red Hat, Inc.
-#. *
-#. * This is free software; you can redistribute it and/or modify it
-#. * under the terms of the GNU General Public License as published by
-#. * the Free Software Foundation; either version 2 of the License, or
-#. * (at your option) any later version.
-#. *
-#. * This program is distributed in the hope that it will be useful, but
-#. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-#. * General Public License for more details.
-#. *
-#. * You should have received a copy of the GNU General Public License
-#. * along with this program; if not, write to the Free Software
-#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
-#. Just a dummy file for gettext, containing messages emmitted by various
-#. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#  * Copyright (C) 2001 Red Hat, Inc.
+#  *
+#  * This is free software; you can redistribute it and/or modify it
+#  * under the terms of the GNU General Public License as published by
+#  * the Free Software Foundation; either version 2 of the License, or
+#  * (at your option) any later version.
+#  *
+#  * This program is distributed in the hope that it will be useful, but
+#  * WITHOUT ANY WARRANTY; without even the implied warranty of
+#  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#  * General Public License for more details.
+#  *
+#  * You should have received a copy of the GNU General Public License
+#  * along with this program; if not, write to the Free Software
+#  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#  Just a dummy file for gettext, containing messages emmitted by various
+#  * commonly-used PAM modules.
+#: dummy.h:21
+#: userdialogs.h:29
 msgid "OK"
 msgstr "OKE"
 
-#: dummy.h:22 userdialogs.h:32
+#: dummy.h:22
+#: userdialogs.h:32
 msgid "Exit"
 msgstr "Keluar"
 
-#: dummy.h:23 userdialogs.h:31
+#: dummy.h:23
+#: userdialogs.h:31
 msgid "Cancel"
 msgstr "Batalkan"
 
-#: dummy.h:24 userdialogs.h:33
+#: dummy.h:24
+#: userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Jalan Tanpa Kewenangan"
 
@@ -93,74 +93,70 @@ msgstr "Password: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Gagal untuk mendrop privilege administrator: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Gagal mendrop privilege administrator:pam_timestamp_check kode pengembalian kesalahan %d"
 
 #: pam-panel-icon.c:148
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Anda diperkenankan untuk mengkonfigur seting system-wide (semua user) tanpa harus mengetikan password administrator lagi, Anda dapat menolak autorisasi ini."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Pertahankan Autorisasi"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Lupakan Autorisasi"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check bukan setuid root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "tidak ada kontrol tty untuk pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "user tidak diketahui untuk pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "permisi terjadi kesalahan di pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "terjadi kesalahan kontrol tty di pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Kesalahan"
+msgstr "Kesalahan: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Gagal menjalankan perintah \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Gagal untuk menseting channel IO nonblocking: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: gagal melakukan koneksi sesi manager\n"
 
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Bantuan"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:138
+#: userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Tidak dapat set konteks exec untuk %s.\n"
@@ -217,11 +213,8 @@ msgstr "userhelper harus setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2347
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Tidak dapat membuka jendela grafis, dan tidak dapat menemukan terminal "
-"pengontrol.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Tidak dapat membuka jendela grafis, dan tidak dapat menemukan terminal pengontrol.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -304,11 +297,14 @@ msgstr "Kesalahan tidak diketahui."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:472
+#: glade.strings.h:7
+#: usermode.glade.h:9
 msgid "Query"
 msgstr "Query"
 
-#: userhelper-wrap.c:564 userhelper-wrap.c:744
+#: userhelper-wrap.c:564
+#: userhelper-wrap.c:744
 msgid "Error"
 msgstr "Kesalahan"
 
@@ -316,7 +312,9 @@ msgstr "Kesalahan"
 msgid "Information"
 msgstr "Informasi"
 
-#: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:736
+#: glade.strings.h:8
+#: glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Penempatan teks."
@@ -331,37 +329,21 @@ msgstr "Merubah login shell."
 
 #: userhelper-wrap.c:791
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda mencoba menjalankan \"%s\" yang mungkin diperlukan kewenangan "
-"administratif, tapi diperlukan informasi lebihuntuk melaksanakannya."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Anda mencoba menjalankan \"%s\" yang mungkin diperlukan kewenangan administratif, tapi diperlukan informasi lebihuntuk melaksanakannya."
 
 #: userhelper-wrap.c:793
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan administratif, "
-"Tapi diperlukan informasi lebih untuk melaksanakannya."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan administratif, Tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: userhelper-wrap.c:802
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda mencoba menjalankan sebuah perintah yang mungkin diperlukan kewenangan "
-"administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Anda mencoba menjalankan sebuah perintah yang mungkin diperlukan kewenangan administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: userhelper-wrap.c:804
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda mencoba menjalankan sebuah perintah yang memerlukan kewenangan "
-"administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Anda mencoba menjalankan sebuah perintah yang memerlukan kewenangan administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
@@ -377,7 +359,8 @@ msgstr "Kesalahan pipe.\n"
 msgid "Cannot fork().\n"
 msgstr "Tidak dapat fork().\n"
 
-#: userhelper-wrap.c:1058 userhelper-wrap.c:1062
+#: userhelper-wrap.c:1058
+#: userhelper-wrap.c:1062
 #, c-format
 msgid "dup2() error.\n"
 msgstr "kesalahan dup2().\n"
@@ -401,12 +384,8 @@ msgid "Un_mount"
 msgstr "L_epaskan"
 
 #: usermount.c:321
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"Anda yakin ingin format disk ini?  Anda akan menghancurkan data yang ada "
-"didalamnya."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Anda yakin ingin format disk ini?  Anda akan menghancurkan data yang ada didalamnya."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -425,7 +404,8 @@ msgstr ""
 "Hubungi administrator anda."
 
 #. Create the dialog.
-#: usermount.c:545 usermount.c:557
+#: usermount.c:545
+#: usermount.c:557
 msgid "User Mount Tool"
 msgstr "Alat Pemasang Pengguna"
 
@@ -446,36 +426,47 @@ msgstr "Direktori"
 msgid "Filesystem"
 msgstr "Filesystem"
 
-#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:9
+#: glade.strings.h:18
+#: glade.strings.h:19
+#: glade.strings.h:20
+#: glade.strings.h:21
+#: usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10
+#: usermode.glade.h:5
 msgid "Message"
 msgstr "Pesan"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12
+#: usermode.glade.h:10
 msgid "User Information"
 msgstr "Informasi Pemakai"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13
+#: usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Nama Lengkap:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14
+#: usermode.glade.h:7
 msgid "Office:"
 msgstr "Kantor:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15
+#: usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Nomor Telepon Kantor:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16
+#: usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Nomor Telepon Rumah:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17
+#: usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Login Shell:"
 
@@ -502,3 +493,4 @@ msgstr "Ubah login password anda"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Password"
+
