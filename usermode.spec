@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.11
+Version: 1.12
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -70,6 +70,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Sep 20 1999 Michael K. Johnson <johnsonm@redhat.com>
+- rebuild against new pwdb
+
 * Tue Sep 14 1999 Michael K. Johnson <johnsonm@redhat.com>
 - honor "owner" flag to mount
 - ask for passwords with username
