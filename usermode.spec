@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.14
+Version: 1.15
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -72,6 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Tue Sep 21 1999 Michael K. Johnson <johnsonm@redhat.com>
 - fix memory leak and failure to close in error condition (#3614)
+- fix various bugs where not all elements in userinfo got set
 
 * Mon Sep 20 1999 Michael K. Johnson <johnsonm@redhat.com>
 - set $HOME when acting as consolehelper
