@@ -41,13 +41,73 @@
 #include <security/pam_misc.h>
 
 #include <libuser/user.h>
+
 #ifdef WITH_SELINUX
 #include <selinux/selinux.h>
 #include <selinux/context.h>
 #include <selinux/get_context_list.h>
-static int selinux_enabled=FALSE;
-static  security_context_t old_context=NULL;   /* our original securiy context */
-static security_context_t new_context=NULL;    /* our target security context */
+#endif
+
+#include "shvar.h"
+#include "userhelper.h"
+
+/* A maximum GECOS field length.  There's no hard limit, so we guess. */
+#define GECOS_LENGTH			127
+
+static char *full_name = NULL;		/* full user name */
+static char *office = NULL;		/* office */
+static char *office_phone = NULL;	/* office phone */
+static char *home_phone = NULL;		/* home phone */
+static char *site_info = NULL;		/* other stuff */
+static char *user_name = NULL;		/* the account name */
+static char *shell_path = NULL;		/* shell path */
+
+/* we manipulate the environment directly, so we have to declare (but not
+ * define) the right variable here */
+extern char **environ;
+static char **environ_save;
+
+/* command line flags */
+static int f_flag = 0;		/* -f flag = change full name */
+static int o_flag = 0;		/* -o flag = change office name */
+static int p_flag = 0;		/* -p flag = change office phone */
+static int h_flag = 0;		/* -h flag = change home phone number */
+static int c_flag = 0;		/* -c flag = change password */
+static int s_flag = 0;		/* -s flag = change shell */
+static int t_flag = 0;		/* -t flag = direct text-mode -- exec'ed */
+static int w_flag = 0;		/* -w flag = act as a wrapper for next
+				 * args */
+
+#ifdef WITH_SELINUX
+static gboolean selinux_enabled = FALSE;
+static security_context_t old_context = NULL; /* our original securiy context */
+static security_context_t new_context = NULL; /* our target security context */
+#endif
+
+/* A structure type which we use to carry psuedo-global data around with us. */
+static struct app_data {
+	pam_handle_t *pamh;
+	gboolean fallback_allowed, fallback_chosen, canceled;
+	FILE *input, *output;
+	char *banner, *domain;
+#ifdef USE_STARTUP_NOTIFICATION
+	char *sn_name, *sn_description, *sn_wmclass;
+	char *sn_binary_name, *sn_icon_name, *sn_id;
+	int sn_workspace;
+#endif
+} app_data = {
+	NULL,
+	FALSE, FALSE, FALSE,
+	NULL, NULL,
+	NULL, NULL,
+#ifdef USE_STARTUP_NOTIFICATION
+	NULL, NULL, NULL,
+	NULL, NULL, NULL,
+	-1,
+#endif
+};
+
+#ifdef WITH_SELINUX
 static void setupSELinuxExec(char *constructed_path) {
   if (selinux_enabled) {
 #ifdef DEBUG_USERHELPER
@@ -112,59 +172,6 @@ out:
 } /* get_init_context() */
 
 #endif /* WITH_SELINUX */
-#include "shvar.h"
-#include "userhelper.h"
-
-/* A maximum GECOS field length.  There's no hard limit, so we guess. */
-#define GECOS_LENGTH			127
-
-static char *full_name = NULL;		/* full user name */
-static char *office = NULL;		/* office */
-static char *office_phone = NULL;	/* office phone */
-static char *home_phone = NULL;		/* home phone */
-static char *site_info = NULL;		/* other stuff */
-static char *user_name = NULL;		/* the account name */
-static char *shell_path = NULL;		/* shell path */
-
-/* we manipulate the environment directly, so we have to declare (but not
- * define) the right variable here */
-extern char **environ;
-static char **environ_save;
-
-/* command line flags */
-static int f_flag = 0;		/* -f flag = change full name */
-static int o_flag = 0;		/* -o flag = change office name */
-static int p_flag = 0;		/* -p flag = change office phone */
-static int h_flag = 0;		/* -h flag = change home phone number */
-static int c_flag = 0;		/* -c flag = change password */
-static int s_flag = 0;		/* -s flag = change shell */
-static int t_flag = 0;		/* -t flag = direct text-mode -- exec'ed */
-static int w_flag = 0;		/* -w flag = act as a wrapper for next
-				 * args */
-
-/* A structure type which we use to carry psuedo-global data around with us. */
-static struct app_data {
-	pam_handle_t *pamh;
-	gboolean fallback_allowed, fallback_chosen, canceled;
-	FILE *input, *output;
-	char *banner, *domain;
-#ifdef USE_STARTUP_NOTIFICATION
-	char *sn_name, *sn_description, *sn_wmclass;
-	char *sn_binary_name, *sn_icon_name, *sn_id;
-	int sn_workspace;
-#endif
-} app_data = {
-	NULL,
-	FALSE, FALSE, FALSE,
-	NULL, NULL,
-	NULL, NULL,
-#ifdef USE_STARTUP_NOTIFICATION
-	NULL, NULL, NULL,
-	NULL, NULL, NULL,
-	-1,
-#endif
-};
-
 /* Exit, returning the proper status code based on a PAM error code. */
 static int
 fail_exit(int retval)
