@@ -101,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{WITH_SELINUX}
 %config /etc/security/userhelper_context
 %endif
+
 %files gtk
 %defattr(-,root,root)
 %{_bindir}/usermount
@@ -116,7 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
-* Mon Sep 8 2003 Dan Walsh <dwalsh@redhat.com> 1.68-6.sel
+* Thu Sep 25 2003 Dan Walsh <dwalsh@redhat.com> 1.68-6.sel
 - turn on selinux
 - add default userhelper context file
 
