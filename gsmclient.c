@@ -35,11 +35,15 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include <gobject/gmarshal.h>
 
 #include <libintl.h>
 #define _(x) dgettext (GETTEXT_PACKAGE, x)
 
+#ifdef  G_LOG_DOMAIN
+#undef  G_LOG_DOMAIN
+#endif
 #define G_LOG_DOMAIN "GsmClient"
 
 static void
@@ -928,7 +932,7 @@ gsm_client_create_save_id (GsmClient *client)
   
   return g_strdup_printf ("%d-%d-%u",
                           (int) getpid (),
-                          (int) time (),
+                          (int) time (NULL),
                           g_random_int ());
                           
 }
