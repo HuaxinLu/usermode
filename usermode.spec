@@ -43,9 +43,15 @@ rm -rf $RPM_BUILD_ROOT
 /usr/man/man1/userpasswd.1
 /usr/bin/consolehelper
 /usr/man/man8/consolehelper.8
-/etc/X11/applink/System/*
+/etc/X11/applnk/System/*
 
 %changelog
+* Wed Apr 07 1999 Michael K. Johnson <johnsonm@redhat.com>
+- better check for X availability
+- center windows to make authentication easier (improve later with
+  transients and embedded windows where possible)
+- applink -> applnk
+
 * Wed Mar 31 1999 Michael K. Johnson <johnsonm@redhat.com>
 - hm, need to be root...
 
