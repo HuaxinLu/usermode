@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.54
+Version: 1.55
 Release: 1
 License: GPL
 Group: Applications/System
@@ -97,11 +97,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/userpasswd.1*
 %{_bindir}/consolehelper-gtk
 %{_datadir}/%{name}
-%{_datadir}/pixmaps/*
 
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed May 15 2002 Nalin Dahyabhai <nalin@redhat.com> 1.55-1
+- remove the pixmap we don't use any more (we use stock pixmaps now)
+- update translations
+
 * Thu Apr 16 2002 Nalin Dahyabhai <nalin@redhat.com> 1.54-1
 - suppress even error messages from Xlib when consolehelper calls
   gtk_init_check() to see if the display is available
