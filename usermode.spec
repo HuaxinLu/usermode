@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.57
+Version: 1.58
 Release: 1
 License: GPL
 Group: Applications/System
@@ -112,6 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Tue Aug  6 2002 Jonathan Blandford <jrb@redhat.com>
+- New version.
+
 * Mon Aug  5 2002 Nalin Dahyabhai <nalin@redhat.com> 1.57-1
 - add support for BANNER and BANNER_DOMAIN in the userhelper configuration
 
