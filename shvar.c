@@ -291,6 +291,9 @@ svSetValue(shvarFile *s, char *key, char *value)
 	goto end;
     }
 
+    /* deal with a whole line of noops */
+    if (val1 && !strcmp(val1, value)) goto end;
+
     /* At this point, val1 && val1 != value */
     if (val2 && !strcmp(val2, value)) {
 	/* delete line */
@@ -300,7 +303,8 @@ svSetValue(shvarFile *s, char *key, char *value)
 	goto bail; /* do not need keyValue */
     } else {
 	/* change line */
-	s->current->data = keyValue;
+	if (s->current) s->current->data = keyValue;
+	else s->lineList = g_list_append(s->lineList, keyValue);
 	s->freeList = g_list_append(s->freeList, keyValue);
 	s->modified = 1;
     }
