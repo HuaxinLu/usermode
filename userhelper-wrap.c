@@ -432,10 +432,14 @@ userhelper_parse_childout(char *outline)
 
 		/* Customize the label. */
 		if(resp->service) {
-			if(resp->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from superuser privileges, but more information is needed in order to do so."), resp->service);
+			if (strcmp(resp->service, "passwd") != 0) {
+				if(resp->fallback_allowed) {
+					text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from superuser privileges, but more information is needed in order to do so."), resp->service);
+				} else {
+					text = g_strdup_printf(_("You are attempting to run \"%s\" which requires superuser privileges, but more information is needed in order to do so."), resp->service);
+				}
 			} else {
-				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires superuser privileges, but more information is needed in order to do so."), resp->service);
+				text = g_strdup_printf(_("Changing passwords."));
 			}
 		} else {
 			if(resp->fallback_allowed) {
