@@ -51,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 - center windows to make authentication easier (improve later with
   transients and embedded windows where possible)
 - applink -> applnk
+- added a little padding, especially important when running without
+  a window manager, as happens when running from session manager at
+  logout time
 
 * Wed Mar 31 1999 Michael K. Johnson <johnsonm@redhat.com>
 - hm, need to be root...

@@ -110,6 +110,7 @@ create_usermount_window()
   
   main = gtk_dialog_new();
   gtk_window_position(GTK_WINDOW(main), GTK_WIN_POS_CENTER);
+  gtk_container_set_border_width(GTK_CONTAINER(main), 5);
   gtk_window_set_title(GTK_WINDOW(main), "User Mount Tool");
   gtk_signal_connect(GTK_OBJECT(main), "destroy",
 		     (GtkSignalFunc) gtk_main_quit, NULL);

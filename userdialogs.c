@@ -28,6 +28,7 @@ create_message_box(gchar* message, gchar* title)
 
   message_box = gtk_dialog_new();
   gtk_window_position(GTK_WINDOW(message_box), GTK_WIN_POS_CENTER);
+  gtk_container_set_border_width(GTK_CONTAINER(message_box), 5);
   if(title == NULL)
     gtk_window_set_title(GTK_WINDOW(message_box), "Message");
   else
@@ -72,6 +73,7 @@ create_error_box(gchar* error, gchar* title)
 
   error_box = gtk_dialog_new();
   gtk_window_position(GTK_WINDOW(error_box), GTK_WIN_POS_CENTER);
+  gtk_container_set_border_width(GTK_CONTAINER(error_box), 5);
   if(title == NULL)
     gtk_window_set_title(GTK_WINDOW(error_box), "Error");
   else
@@ -113,6 +115,7 @@ create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
 
   query_box = gtk_dialog_new();
   gtk_window_position(GTK_WINDOW(query_box), GTK_WIN_POS_CENTER);
+  gtk_container_set_border_width(GTK_CONTAINER(query_box), 5);
   if(title == NULL)
     gtk_window_set_title(GTK_WINDOW(query_box), "Prompt");
   else
@@ -173,6 +176,7 @@ create_invisible_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   
   query_box = gtk_dialog_new();
   gtk_window_position(GTK_WINDOW(query_box), GTK_WIN_POS_CENTER);
+  gtk_container_set_border_width(GTK_CONTAINER(query_box), 5);
   gtk_window_set_title(GTK_WINDOW(query_box), "Prompt");
 /*   gtk_container_border_width(GTK_CONTAINER(GTK_DIALOG(query_box)->vbox), 5); */
   label = gtk_label_new(prompt);

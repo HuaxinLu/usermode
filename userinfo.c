@@ -114,6 +114,7 @@ create_userinfo_window(UserInfo* userinfo)
   
   /* create the widgets */
   mainwindow = gtk_dialog_new();
+  gtk_container_set_border_width(GTK_CONTAINER(mainwindow), 5);
   gtk_window_set_title(GTK_WINDOW(mainwindow), "User Information");
   gtk_signal_connect(GTK_OBJECT(mainwindow), "destroy",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
@@ -432,6 +433,7 @@ create_help_dialog()
     }
 
   help_dialog = gtk_dialog_new();
+  gtk_container_set_border_width(GTK_CONTAINER(help_dialog), 5);
   label = gtk_label_new("This will be some help text.");
   ok = gtk_button_new_with_label("OK");
   gtk_signal_connect(GTK_OBJECT(ok), "clicked", 
