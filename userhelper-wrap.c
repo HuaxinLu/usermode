@@ -211,6 +211,7 @@ userhelper_parse_exitstatus(int exitstatus)
     }
 
   gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) userhelper_fatal_error, NULL);
+  gtk_signal_connect(GTK_OBJECT(message_box), "delete-event", (GtkSignalFunc) userhelper_fatal_error, NULL);
   gtk_widget_show(message_box);
 
 }
