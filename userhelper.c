@@ -122,7 +122,7 @@ static char *read_string(void)
     char *check = NULL;
     int slen = 0;
     
-    buffer = (char *) malloc(BUFSIZ);
+    buffer = g_malloc(BUFSIZ);
     if (buffer == NULL)
 	return NULL;
     
@@ -165,13 +165,13 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
 		if (the_username && !strncasecmp(msg[count]->msg, "password", 8)) {
-		    noecho_message = alloca (strlen (the_username) + 14);
-		    assert(noecho_message);
+		    noecho_message = g_malloc(strlen (the_username) + 14);
 		    sprintf(noecho_message, "%s's password:", the_username);
 		} else {
-		    noecho_message = msg[count]->msg;
+		    noecho_message = g_strdup(msg[count]->msg);
 		}
 		printf("%d %s\n", UH_ECHO_OFF_PROMPT, noecho_message);
+		g_free(noecho_message);
 		need_reply = TRUE;
 		break;
 	    case PAM_TEXT_INFO:
@@ -332,41 +332,27 @@ static int gecos_size(void)
  * a bit and possibly merge with the code in userinfo that parses to
  * get a list.  -Otto
  *
- *  get_shell_list () -- if the given shell appears in /etc/shells,
+ *  get_shell_list () -- if the given shell appears in the list of valid shells,
  *      return true.  if not, return false.
- *      if the given shell is NULL, /etc/shells is outputted to stdout.
+ *      if the given shell is NULL, the list of shells is outputted to stdout.
  */
 static int get_shell_list(char* shell_name)
 {
-    FILE *fp;
     int found;
-    int len;
-    static char buf[1024];
+    char *shell;
 
     found = FALSE;
-    fp = fopen ("/etc/shells", "r");
-    if (! fp) {
-        if (! shell_name) fprintf (stderr, "No known shells.\n");
-        return FALSE;
-    }
-    while (fgets (buf, sizeof (buf), fp) != NULL) {
-        /* ignore comments */
-        if (*buf == '#') continue;
-        len = strlen (buf);
-        /* strip the ending newline */
-        if (buf[len - 1] == '\n') buf[len - 1] = 0;
-        /* ignore lines that are too damn long */
-        else continue;
-        /* check or output the shell */
+    setusershell();
+    for(shell = getusershell(); shell != NULL; shell = getusershell()) {
         if (shell_name) {
-            if (! strcmp (shell_name, buf)) {
+            if (! strcmp (shell_name, shell)) {
 	        found = TRUE;
                 break;
             }
         }
-        else printf ("%s\n", buf);
+        else printf ("%s\n", shell);
     }
-    fclose (fp);
+    endusershell();
     return found;
 }
 
@@ -454,6 +440,11 @@ int main(int argc, char *argv[])
 
     /* point to the right conversation function */
     conv = t_flg ? &text_conv : &pipe_conv;
+
+    /* if we're a wrapper, tell the wrapper what we are */
+    if(w_flg && progname) {
+        printf("%d %s\n", UH_SERVICE_NAME, progname);
+    }
     
     /* now try to identify the username we are doing all this work for */
     user_name = getlogin();
@@ -574,7 +565,7 @@ int main(int argc, char *argv[])
 
 	constructed_path = svGetValue(s, "PROGRAM");
 	if (!constructed_path || constructed_path[0] != '/') {
-	    constructed_path = malloc(strlen(progname) + sizeof("/usr/sbin/") + 2);
+	    constructed_path = g_malloc(strlen(progname) + sizeof("/usr/sbin/") + 2);
 	    if (!constructed_path) exit (ERR_NO_MEMORY);
 
 	    strcpy(constructed_path, "/usr/sbin/");
