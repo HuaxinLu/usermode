@@ -199,8 +199,8 @@ msgid "Insufficient rights."
 msgstr "Premalo pravic."
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
-msgstr "Neveljavni klic podprocesa.."
+msgid "Invalid call to subprocess."
+msgstr "Neveljavni klic podprocesa."
 
 #: userhelper-wrap.c:79
 msgid ""

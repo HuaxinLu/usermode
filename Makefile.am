@@ -30,7 +30,7 @@ EXTRA_DIST = 	\
 
 SUBDIRS=po
 
-CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
+CFLAGS = @SN_WNCK_CFLAGS@ @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk pam-panel-icon
 bin_SCRIPTS = shutdown
@@ -85,7 +85,7 @@ consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_LDADD = @GLIB_LIBS@ @LIBS@
 
 consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userdialogs.h userhelper-wrap.c userhelper-wrap.h reaper.c reaper.h marshal.c marshal.h
-consolehelper_gtk_LDADD = @LIBGLADE_LIBS@ @LIBS@
+consolehelper_gtk_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@
 
 pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) egg-marshal.c gsmclient.c gsmclient.h props.h props.c
 pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ $(X_LIBS) -lICE -lSM

@@ -195,8 +195,8 @@ msgid "Insufficient rights."
 msgstr "Utilstrækkelige rettigheder-"
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
-msgstr "Ugyldigt kald til underproces.."
+msgid "Invalid call to subprocess."
+msgstr "Ugyldigt kald til underproces."
 
 #: userhelper-wrap.c:79
 msgid ""

@@ -195,7 +195,7 @@ msgid "Insufficient rights."
 msgstr "沒有足夠的權力。"
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr "無效的子程序呼叫.."
 
 #: userhelper-wrap.c:79

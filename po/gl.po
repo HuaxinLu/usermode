@@ -185,7 +185,7 @@ msgstr "Permisos insuficientes."
 
 #: userhelper-wrap.c:77
 #, fuzzy
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr "Chamada ó subproceso non válida."
 
 #: userhelper-wrap.c:79

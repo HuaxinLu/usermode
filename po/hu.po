@@ -192,7 +192,7 @@ msgid "Insufficient rights."
 msgstr "Nincs megfelelõ jogosultság."
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr "Érvénytelen hívási kísérlet történt egy alfolyamatra."
 
 #: userhelper-wrap.c:79

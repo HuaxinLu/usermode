@@ -165,8 +165,8 @@ msgid "Insufficient rights."
 msgstr "Ανεπαρκή δικαιώματα."
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
-msgstr "Μη έγκυρη κλήση σε θυγατρική διεργασία.."
+msgid "Invalid call to subprocess."
+msgstr "Μη έγκυρη κλήση σε θυγατρική διεργασία."
 
 #: userhelper-wrap.c:79
 msgid ""

@@ -180,7 +180,7 @@ msgid "Insufficient rights."
 msgstr ""
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr ""
 
 #: userhelper-wrap.c:79

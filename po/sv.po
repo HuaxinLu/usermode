@@ -197,7 +197,7 @@ msgid "Insufficient rights."
 msgstr "Otillräckliga rättigheter."
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr "Ogiltigt anrop av underprocess."
 
 #: userhelper-wrap.c:79
@@ -531,9 +531,6 @@ msgstr "Lösenord"
 
 #~ msgid "This will be some help text."
 #~ msgstr "Det här kommer att vara någon hjälptext."
-
-#~ msgid "Invalid call to subprocess."
-#~ msgstr "Ogiltigt anrop av underprocess."
 
 #~ msgid "Full Name"
 #~ msgstr "Fullständigt namn"

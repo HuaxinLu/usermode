@@ -200,7 +200,7 @@ msgid "Insufficient rights."
 msgstr "権限がありません。"
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr "サブプロセスの呼び出し方が間違っています。"
 
 #: userhelper-wrap.c:79

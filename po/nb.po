@@ -193,8 +193,8 @@ msgid "Insufficient rights."
 msgstr "Utilstrekkelige rettigheter."
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
-msgstr "Ugyldig kall til underprosess.."
+msgid "Invalid call to subprocess."
+msgstr "Ugyldig kall til underprosess."
 
 #: userhelper-wrap.c:79
 msgid ""

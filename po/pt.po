@@ -196,8 +196,8 @@ msgid "Insufficient rights."
 msgstr "Privilégios insuficientes."
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
-msgstr "Chamada inválida a um sub-processo.."
+msgid "Invalid call to subprocess."
+msgstr "Chamada inválida a um sub-processo."
 
 #: userhelper-wrap.c:79
 msgid ""

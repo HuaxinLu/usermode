@@ -193,7 +193,7 @@ msgid "Insufficient rights."
 msgstr "Yetersiz hak."
 
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr "Alt sürece hatalı çağrı."
 
 #: userhelper-wrap.c:79

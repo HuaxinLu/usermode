@@ -184,7 +184,7 @@ msgstr "Недостатньо прав."
 
 #: userhelper-wrap.c:77
 #, fuzzy
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr "Нев╕рний виклик саб-процесу"
 
 #: userhelper-wrap.c:79

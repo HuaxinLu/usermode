@@ -214,7 +214,7 @@ msgstr "Nedovoljna prava."
 
 # ../userhelper-wrap.c:162
 #: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
+msgid "Invalid call to subprocess."
 msgstr "Pogre¹an poziv do podprocesa..."
 
 # ../userhelper-wrap.c:165
