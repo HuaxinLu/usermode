@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2004-08-05 23:56+0300\n"
+"PO-Revision-Date: 2004-08-24 00:51+0300\n"
 "Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
 "MIME-Version: 1.0\n"
@@ -54,15 +54,15 @@ msgstr "Изпълнение без привилегии"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(текуща) UNIX парола: "
+msgstr "(текуща) ЮНИКС парола: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Нова UNIX парола: "
+msgstr "Нова ЮНИКС парола: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Повторете новата UNIX парола: "
+msgstr "Повторете новата ЮНИКС парола: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -113,7 +113,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Опитвате се да стартирате \"%s\". В случая от полза могат да бъдат\n"
-"административни права, но за това се изисква повече информация."
+"административни права, но за това е нужна повече информация."
 
 #: userhelper.c:676
 #, c-format
@@ -122,7 +122,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Опитвате се да стартирате \"%s\". За целта са необходими административни\n"
-"права, но за това се изисква повече информация."
+"права, но за това е нужна повече информация."
 
 #: userhelper.c:680
 msgid ""
@@ -130,7 +130,7 @@ msgid ""
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Опитвате се да стартирате команда, която може да се възползва\n"
-"от административни права, но за това се изисква повече информация."
+"от административни права, но за това е нужна повече информация."
 
 #: userhelper.c:682
 msgid ""
@@ -138,7 +138,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Опитвате се да стартирате команда, която изисква административни\n"
-"права, но за това се изисква повече информация."
+"права, но за това е нужна повече информация."
 
 #: userhelper.c:701
 #, c-format
@@ -178,8 +178,8 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Едно или повече от променените полета е невалидно.\n"
-"Това вероятно се дължи на двоеточия или кавички в някое поле.\n"
+"Едно или повече от променените полета не е валидно.\n"
+"Това вероятно се дължи на двоеточия или кавички в някое от тях.\n"
 "Моля премахнете ги и опитайте отново."
 
 #: userhelper-wrap.c:187
@@ -269,7 +269,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Опитвате се да стартирате \"%s\". В случая от полза могат да бъдат "
-"административни права, но за това се изисква повече информация."
+"административни права, но за това е нужна повече информация."
 
 #: userhelper-wrap.c:793
 #, c-format
@@ -278,7 +278,7 @@ msgid ""
 "but more information is needed in order to do so."
 msgstr ""
 "Опитвате се да стартирате \"%s\". За целта са необходими административни "
-"права, но за това се изисква повече информация."
+"права, но за това е нужна повече информация."
 
 #: userhelper-wrap.c:802
 msgid ""
@@ -286,7 +286,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Опитвате се да стартирате команда, която може да се възползва "
-"от административни права, но за това се изисква повече информация."
+"от административни права, но за това е нужна повече информация."
 
 #: userhelper-wrap.c:804
 msgid ""
@@ -294,7 +294,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Опитвате се да стартирате команда, която изисква административни "
-"права, но за това се изисква повече информация."
+"права, но за това е нужна повече информация."
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
@@ -354,7 +354,7 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Няма файлови системи разрешени Ви за монтиране или демонтиране.\n"
+"Няма разрешени Ви за монтиране или демонтиране файлови системи.\n"
 "Свържете се със своя администратор."
 
 #. Create the dialog.
@@ -390,7 +390,7 @@ msgstr "Съобщение"
 
 #: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
-msgstr "Информация за потребителя"
+msgstr "Потребителска информация"
 
 #: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
