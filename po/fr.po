@@ -100,7 +100,7 @@ msgstr "Aide"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Impossible de définir le contexte d'exec à %s.\n"
+msgstr "Impossible de au contexte d'exec la valeur %s.\n"
 
 #: userhelper.c:431
 #, c-format
