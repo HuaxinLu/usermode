@@ -76,4 +76,4 @@ install: all
 install-po: install
 
 %.mo: %.po
-	msgfmt -o $@ $<
+	msgfmt -v -o $@ $<

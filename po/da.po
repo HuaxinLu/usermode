@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
-"POT-Creation-Date: 2000-08-03 15:08-0400\n"
+"POT-Creation-Date: 2001-01-25 15:31-0500\n"
 "PO-Revision-Date: 2000-08-19 00:38+01:00\n"
 "Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: Danish/Dansk <dansk@klid.dk>\n"
@@ -13,7 +13,7 @@ msgstr ""
 msgid "Message"
 msgstr "Besked"
 
-#: ../userdialogs.c:81 ../userhelper-wrap.c:358
+#: ../userdialogs.c:81 ../userhelper-wrap.c:384
 msgid "Error"
 msgstr "Fejl"
 
@@ -21,37 +21,38 @@ msgstr "Fejl"
 msgid "Prompt"
 msgstr "Prompt"
 
-#: ../userdialogs.c:193 ../userinfo.c:140
+#. Just a dummy file for gettext
+#: ../dummy.h:3 ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
 msgstr "Ok"
 
-#: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
+#: ../userhelper-wrap.c:49 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
 msgstr "Rør fejl.\n"
 
-#: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
+#: ../userhelper-wrap.c:55 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
 msgid "Cannot fork().\n"
 msgstr "Kan ikke fork()\n"
 
-#: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
+#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:627
 #: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
 #: ../usermount.c:817
 msgid "dup2() error.\n"
 msgstr "dup2() fejl.\n"
 
-#: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
+#: ../userhelper-wrap.c:112 ../usermount.c:642 ../usermount.c:754
 #: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() fejl, errno=%d\n"
 
-#: ../userhelper-wrap.c:115
+#: ../userhelper-wrap.c:141
 msgid "Information updated."
 msgstr "Information opdateret."
 
-#: ../userhelper-wrap.c:118
+#: ../userhelper-wrap.c:144
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -59,7 +60,7 @@ msgstr ""
 "Adgangskoden som du indtastede er ugyldig.\n"
 "Venligst prøv igen."
 
-#: ../userhelper-wrap.c:121
+#: ../userhelper-wrap.c:147
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -69,11 +70,11 @@ msgstr ""
 "Dette er nok grundet enten kolonner eller kommaer i et af felterne,\n"
 "Fjern venligst disse og prøv igen."
 
-#: ../userhelper-wrap.c:124
+#: ../userhelper-wrap.c:150
 msgid "Password resetting error."
 msgstr "Fejl ved nulstilling af adgangskode."
 
-#: ../userhelper-wrap.c:127
+#: ../userhelper-wrap.c:153
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -81,19 +82,19 @@ msgstr ""
 "Nogle systemfiler er låst.\n"
 "Prøv venligst igen om et øjeblik."
 
-#: ../userhelper-wrap.c:130
+#: ../userhelper-wrap.c:156
 msgid "Unknown user."
 msgstr "Ukendt bruger."
 
-#: ../userhelper-wrap.c:133
+#: ../userhelper-wrap.c:159
 msgid "Insufficient rights."
 msgstr "Utilstrækkelige rettigheder-"
 
-#: ../userhelper-wrap.c:136
+#: ../userhelper-wrap.c:162
 msgid "Invalid call to sub process."
 msgstr "Ugyldigt kald til underproces."
 
-#: ../userhelper-wrap.c:139
+#: ../userhelper-wrap.c:165
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -104,83 +105,98 @@ msgstr ""
 "Henvend dig til din systemadministrator."
 
 #. well, this is unlikely to work either, but at least we tried...
-#: ../userhelper-wrap.c:143
+#: ../userhelper-wrap.c:169
 msgid "Out of memory."
 msgstr "Tør for hukommelse"
 
-#: ../userhelper-wrap.c:146
+#: ../userhelper-wrap.c:172
 msgid "The exec() call failed."
 msgstr "exec()-kaldet mislykkedes"
 
-#: ../userhelper-wrap.c:149
+#: ../userhelper-wrap.c:175
 msgid "Failed to find selected program."
 msgstr "Det lykkedes ikke at finde det valgte program"
 
-#: ../userhelper-wrap.c:152
+#: ../userhelper-wrap.c:178
 msgid "Unknown error."
 msgstr "Ukendt fejl."
 
-#: ../userhelper-wrap.c:155
+#: ../userhelper-wrap.c:181
 msgid "Unknown exit code."
 msgstr "Ukendt afslutningskode."
 
-#: ../userhelper-wrap.c:211
+#: ../userhelper-wrap.c:237
 msgid "Input"
 msgstr "Inddata"
 
-#: ../userhelper-wrap.c:320
+#: ../userhelper-wrap.c:346
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Behøver %d svar.\n"
 
-#: ../userhelper-wrap.c:345
-#, c-format
+#: ../userhelper-wrap.c:371
+#, fuzzy, c-format
 msgid ""
-"In order to run \"%s\" with %s's privileges, additional information is "
+"In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
 "For at køre '%s' med %s's rettigheder er yderligere information nødvendig."
 
-#: ../userhelper-wrap.c:372
+#: ../userhelper-wrap.c:389
+#, fuzzy, c-format
+msgid "Changing password for %s"
+msgstr "Adgangskode for %s"
+
+#: ../userhelper-wrap.c:403
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
 msgstr "Du ønsker %d svar fra %d indgangsfelter!?!?!\n"
 
-#: ../userhelper.c:102
+#: ../userhelper.c:103
 #, c-format
 msgid "Got error %d.\n"
 msgstr "Fik fejl %d.\n"
 
-#: ../userhelper.c:197
+#: ../userhelper.c:199
 #, c-format
 msgid "Password for %s"
 msgstr "Adgangskode for %s"
 
-#: ../userhelper.c:387
+#: ../userhelper.c:398
 msgid "Consistency checking is not turned on."
 msgstr "Konsistenstjek er ikke tilsluttet."
 
-#: ../userhelper.c:389
+#: ../userhelper.c:400
 msgid "Block is fine."
 msgstr "Blok er fint."
 
-#: ../userhelper.c:391
+#: ../userhelper.c:402
 msgid "Block freed twice."
 msgstr "Blok frigivet to gange"
 
-#: ../userhelper.c:393
+#: ../userhelper.c:404
 msgid "Memory before the block was clobbered."
 msgstr "Hukommelse før blokken var griset til."
 
-#: ../userhelper.c:395
+#: ../userhelper.c:406
 msgid "Memory after the block was clobbered."
 msgstr "Hukommelse efter blokken var griset til."
 
-#: ../userhelper.c:423
+#: ../userhelper.c:435
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper skal være setuid root\n"
 
-#: ../userhelper.c:659 ../userhelper.c:691
+#: ../userhelper.c:672
+#, c-format
+msgid "PAM returned = %d\n"
+msgstr ""
+
+#: ../userhelper.c:673
+#, fuzzy, c-format
+msgid "about to authenticate \"%s\"\n"
+msgstr "parat til at køre \"%s\"\n"
+
+#: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "parat til at køre \"%s\"\n"
@@ -272,3 +288,43 @@ msgstr "Nej"
 #: ../usermount.c:382
 msgid "Do low level format."
 msgstr "Lav en formatering på lavniveau"
+
+#: ../dummy.h:4
+msgid "Exit"
+msgstr ""
+
+#: ../dummy.h:5
+msgid "Cancel"
+msgstr ""
+
+#: ../dummy.h:6
+msgid "Run Unprivileged"
+msgstr ""
+
+#: ../dummy.h:7
+msgid "(current) UNIX password: "
+msgstr ""
+
+#: ../dummy.h:8
+msgid "New UNIX password: "
+msgstr ""
+
+#: ../dummy.h:9
+msgid "Retype new UNIX password: "
+msgstr ""
+
+#: ../dummy.h:10
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr ""
+
+#: ../dummy.h:11
+msgid "BAD PASSWORD: it is too short"
+msgstr ""
+
+#: ../dummy.h:12
+msgid "Password unchanged"
+msgstr ""
+
+#: ../dummy.h:13
+msgid "Sorry, passwords do not match"
+msgstr ""

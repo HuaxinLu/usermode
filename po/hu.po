@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2000-08-03 15:08-0400\n"
+"POT-Creation-Date: 2001-01-25 15:31-0500\n"
 "PO-Revision-Date: 2000-08-05 17:11+0200\n"
 "Last-Translator: László Németh <nemeth@qwertynet.hu>\n"
 "Language-Team: Hungarian\n"
@@ -13,7 +13,7 @@ msgstr ""
 msgid "Message"
 msgstr "Üzenet"
 
-#: ../userdialogs.c:81 ../userhelper-wrap.c:358
+#: ../userdialogs.c:81 ../userhelper-wrap.c:384
 msgid "Error"
 msgstr "Hiba"
 
@@ -21,37 +21,38 @@ msgstr "Hiba"
 msgid "Prompt"
 msgstr "Prompt"
 
-#: ../userdialogs.c:193 ../userinfo.c:140
+#. Just a dummy file for gettext
+#: ../dummy.h:3 ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
 msgstr "OK"
 
-#: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
+#: ../userhelper-wrap.c:49 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
 msgstr "Pipe hiba.\n"
 
-#: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
+#: ../userhelper-wrap.c:55 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
 msgid "Cannot fork().\n"
 msgstr "Nem lehet fork()-olni.\n"
 
-#: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
+#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:627
 #: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
 #: ../usermount.c:817
 msgid "dup2() error.\n"
 msgstr "dup2() hiba.\n"
 
-#: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
+#: ../userhelper-wrap.c:112 ../usermount.c:642 ../usermount.c:754
 #: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() hiba, errno=%d\n"
 
-#: ../userhelper-wrap.c:115
+#: ../userhelper-wrap.c:141
 msgid "Information updated."
 msgstr "Információ frissítve."
 
-#: ../userhelper-wrap.c:118
+#: ../userhelper-wrap.c:144
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -59,7 +60,7 @@ msgstr ""
 "A megadott jelszó érvénytelen.\n"
 "Kérem próbálja újra."
 
-#: ../userhelper-wrap.c:121
+#: ../userhelper-wrap.c:147
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -69,11 +70,11 @@ msgstr ""
 "Ez valószínûleg pontok vagy vesszõk jelenlétét jelenti valamelyik mezõben.\n"
 "Kérem távolítsa el ezeket, és próbálkozzon újra."
 
-#: ../userhelper-wrap.c:124
+#: ../userhelper-wrap.c:150
 msgid "Password resetting error."
 msgstr "Jelszó törlési hiba."
 
-#: ../userhelper-wrap.c:127
+#: ../userhelper-wrap.c:153
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -81,19 +82,19 @@ msgstr ""
 "Néhány rendszerfile zárolva van.\n"
 "Kérem próbálja újra nehány pillanat múlva."
 
-#: ../userhelper-wrap.c:130
+#: ../userhelper-wrap.c:156
 msgid "Unknown user."
 msgstr "Ismeretlen felhasználó."
 
-#: ../userhelper-wrap.c:133
+#: ../userhelper-wrap.c:159
 msgid "Insufficient rights."
 msgstr "Nincs elegendõ jogosultság."
 
-#: ../userhelper-wrap.c:136
+#: ../userhelper-wrap.c:162
 msgid "Invalid call to sub process."
 msgstr "Érvénytelen al-feladat hívás."
 
-#: ../userhelper-wrap.c:139
+#: ../userhelper-wrap.c:165
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -104,82 +105,97 @@ msgstr ""
 "Beszéljen a rendszergazdával."
 
 #. well, this is unlikely to work either, but at least we tried...
-#: ../userhelper-wrap.c:143
+#: ../userhelper-wrap.c:169
 msgid "Out of memory."
 msgstr "Kevés a memória."
 
-#: ../userhelper-wrap.c:146
+#: ../userhelper-wrap.c:172
 msgid "The exec() call failed."
 msgstr "Az exec() hívás sikertelen."
 
-#: ../userhelper-wrap.c:149
+#: ../userhelper-wrap.c:175
 msgid "Failed to find selected program."
 msgstr "Nem találom a kiválasztott programot."
 
-#: ../userhelper-wrap.c:152
+#: ../userhelper-wrap.c:178
 msgid "Unknown error."
 msgstr "Légy van a levesben."
 
-#: ../userhelper-wrap.c:155
+#: ../userhelper-wrap.c:181
 msgid "Unknown exit code."
 msgstr "Ismeretlen kilépési kód."
 
-#: ../userhelper-wrap.c:211
+#: ../userhelper-wrap.c:237
 msgid "Input"
 msgstr "Bevitel"
 
-#: ../userhelper-wrap.c:320
+#: ../userhelper-wrap.c:346
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "%d válaszra van szükség.\n"
 
-#: ../userhelper-wrap.c:345
-#, c-format
+#: ../userhelper-wrap.c:371
+#, fuzzy, c-format
 msgid ""
-"In order to run \"%s\" with %s's privileges, additional information is "
+"In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr "\"%s\" futtatásához %s jogaival, további információra van szükség."
 
-#: ../userhelper-wrap.c:372
+#: ../userhelper-wrap.c:389
+#, fuzzy, c-format
+msgid "Changing password for %s"
+msgstr "%s jelszava"
+
+#: ../userhelper-wrap.c:403
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
 msgstr "%d választ akar %d bemeneti mezõbõl!?!?!?\n"
 
-#: ../userhelper.c:102
+#: ../userhelper.c:103
 #, c-format
 msgid "Got error %d.\n"
 msgstr "Bekaptam egy %d hibát.\n"
 
-#: ../userhelper.c:197
+#: ../userhelper.c:199
 #, c-format
 msgid "Password for %s"
 msgstr "%s jelszava"
 
-#: ../userhelper.c:387
+#: ../userhelper.c:398
 msgid "Consistency checking is not turned on."
 msgstr "A hibaellenõrzés nincs bekapcsolva."
 
-#: ../userhelper.c:389
+#: ../userhelper.c:400
 msgid "Block is fine."
 msgstr "A blokk rendben van."
 
-#: ../userhelper.c:391
+#: ../userhelper.c:402
 msgid "Block freed twice."
 msgstr "A blokk kétszer lett felszabadítva."
 
-#: ../userhelper.c:393
+#: ../userhelper.c:404
 msgid "Memory before the block was clobbered."
 msgstr "A blokk elõtti memória fel volt dúlva."
 
-#: ../userhelper.c:395
+#: ../userhelper.c:406
 msgid "Memory after the block was clobbered."
 msgstr "A blokk utáni memória fel volt dúlva."
 
-#: ../userhelper.c:423
+#: ../userhelper.c:435
 msgid "userhelper must be setuid root\n"
 msgstr "a userhelper-nek setuid root-nak kell lenni\n"
 
-#: ../userhelper.c:659 ../userhelper.c:691
+#: ../userhelper.c:672
+#, c-format
+msgid "PAM returned = %d\n"
+msgstr ""
+
+#: ../userhelper.c:673
+#, fuzzy, c-format
+msgid "about to authenticate \"%s\"\n"
+msgstr "\"%s\" végrehajtása következik\n"
+
+#: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\" végrehajtása következik\n"
@@ -271,3 +287,43 @@ msgstr "Nem"
 #: ../usermount.c:382
 msgid "Do low level format."
 msgstr "Alacsony szintû formázás végrehajtása."
+
+#: ../dummy.h:4
+msgid "Exit"
+msgstr ""
+
+#: ../dummy.h:5
+msgid "Cancel"
+msgstr ""
+
+#: ../dummy.h:6
+msgid "Run Unprivileged"
+msgstr ""
+
+#: ../dummy.h:7
+msgid "(current) UNIX password: "
+msgstr ""
+
+#: ../dummy.h:8
+msgid "New UNIX password: "
+msgstr ""
+
+#: ../dummy.h:9
+msgid "Retype new UNIX password: "
+msgstr ""
+
+#: ../dummy.h:10
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr ""
+
+#: ../dummy.h:11
+msgid "BAD PASSWORD: it is too short"
+msgstr ""
+
+#: ../dummy.h:12
+msgid "Password unchanged"
+msgstr ""
+
+#: ../dummy.h:13
+msgid "Sorry, passwords do not match"
+msgstr ""
