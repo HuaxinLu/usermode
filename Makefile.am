@@ -89,7 +89,12 @@ test_userdialog_SOURCES = test-userdialog.c userdialogs.c
 test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 tag:
+	cvs tag -cR $(CVSTAG) .
+
+forcetag:
 	cvs tag -cFR $(CVSTAG) .
+
+archive:
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 	CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r $(CVSTAG) -d $(PACKAGE)-export-tmp $(PACKAGE)
 	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh ; make dist
