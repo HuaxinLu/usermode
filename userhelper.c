@@ -72,7 +72,6 @@ extern char **environ;
 
 #ifdef WITH_SELINUX
 static gboolean selinux_enabled = FALSE;
-static security_context_t old_context = NULL; /* our original securiy context */
 static security_context_t new_context = NULL; /* our target security context */
 #endif
 
@@ -183,6 +182,65 @@ out:
 	fclose(fp);
 	errno = EBADF;
 	return -1;
+}
+static char *selinux_init(shvarFile *s) {
+	char *selinux_user, *ret=NULL;
+	security_context_t defcontext=NULL;
+	char *apps_role, *apps_type;
+	context_t ctx;
+	struct passwd *pwd;
+	char context_file[PATH_MAX];
+	
+	security_context_t old_context = NULL; /* our original securiy context */
+	if (getprevcon(&old_context) < 0) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: i have no name\n");
+#endif
+		exit(ERR_UNK_ERROR);
+	}
+	ctx = context_new(old_context);
+	freecon(old_context);
+	selinux_user=strdup(context_user_get(ctx));
+	
+	/* Assume userhelper's default context, if the context file
+	 * contains one.  Just in case policy changes, we read the
+	 * default context from a file instead of hard-coding it. */
+	snprintf(context_file, PATH_MAX, "%s/%s",selinux_policy_root(), "contexts/userhelper_context");
+	
+	if (get_init_context(context_file, &defcontext) == 0) {
+		context_free(ctx);
+		ctx = context_new(defcontext);
+		freecon(defcontext);
+		defcontext = NULL;
+	} 
+	/* Optionally change the role and type of the next context, per
+	 * the service-specific userhelper configuration file. */
+	apps_role = svGetValue(s, "ROLE");
+	apps_type = svGetValue(s, "TYPE");
+	if (apps_role != NULL) {
+		context_role_set(ctx, apps_role);
+	}
+	if (apps_type != NULL) {
+		context_type_set(ctx, apps_type);
+	}
+	pwd = getpwnam(selinux_user);
+	if (pwd != NULL) {
+		/* Switch the user portion of the next context to the 
+		   selinux_user.  */
+		context_user_set(ctx, selinux_user);
+		ret = selinux_user;
+		
+	} else {
+		context_user_set(ctx, "root");
+		free(selinux_user);
+		ret = NULL;
+	}
+	new_context = strdup(context_str(ctx));
+	context_free(ctx);
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: context = '%s'\n", new_context);
+#endif
+	return ret;
 }
 #endif /* WITH_SELINUX */
 
@@ -1062,37 +1120,18 @@ static char *
 get_invoking_user(void)
 {
 	struct passwd *pwd;
-	char *ret;
+	char *ret=NULL;
 
-	ret = NULL;
-
-#ifdef WITH_SELINUX
-	selinux_enabled = (is_selinux_enabled() > 0);
-	if (selinux_enabled) {
-		context_t ctx;
-		if (getprevcon(&old_context) < 0) {
+	/* Now try to figure out who called us. */
+	pwd = getpwuid(getuid());
+	if ((pwd != NULL) && (pwd->pw_name != NULL)) {
+		ret = g_strdup(pwd->pw_name);
+	} else {
+		/* I have no name and I must have one. */
 #ifdef DEBUG_USERHELPER
-			g_print("userhelper: i have no name\n");
+		g_print("userhelper: i have no name\n");
 #endif
-			exit(ERR_UNK_ERROR);
-		}
-		ctx = context_new(old_context);
-		ret = g_strdup(context_user_get(ctx));
-		context_free(ctx);
-	}
-#endif
-	if (ret == NULL) {
-		/* Now try to figure out who called us. */
-		pwd = getpwuid(getuid());
-		if ((pwd != NULL) && (pwd->pw_name != NULL)) {
-			ret = g_strdup(pwd->pw_name);
-		} else {
-			/* I have no name and I must have one. */
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: i have no name\n");
-#endif
-			exit(ERR_UNK_ERROR);
-		}
+		exit(ERR_UNK_ERROR);
 	}
 
 #ifdef DEBUG_USERHELPER
@@ -1115,56 +1154,7 @@ get_user_for_auth(shvarFile *s)
 
 #ifdef WITH_SELINUX
 	if (selinux_enabled) {
-		security_context_t defcontext;
-		char *apps_role, *apps_type;
-		context_t ctx;
-		struct passwd *pwd;
-		char context_file[PATH_MAX];
-
-		/* Assume userhelper's default context, if the context file
-		 * contains one.  Just in case policy changes, we read the
-		 * default context from a file instead of hard-coding it. */
-		defcontext = NULL;
-
-		snprintf(context_file, PATH_MAX, "%s/%s",selinux_policy_root(), "contexts/userhelper_context");
-
-		if (get_init_context(context_file, &defcontext) == 0) {
-			ctx = context_new(defcontext);
-		} else {
-			ctx = context_new(old_context);
-		}
-		/* Switch the user portion of the next context to the invoking
-		 * user.  */
-		context_user_set(ctx, invoking_user);
-		/* Optionally change the role and type of the next context, per
-		 * the service-specific userhelper configuration file. */
-		apps_role = svGetValue(s, "ROLE");
-		apps_type = svGetValue(s, "TYPE");
-		if (apps_role != NULL) {
-			context_role_set(ctx, apps_role);
-		}
-		if (apps_type != NULL) {
-			context_type_set(ctx, apps_type);
-		}
-		freecon(defcontext);
-		defcontext = NULL;
-		freecon(old_context);
-		old_context = NULL;
-
-		/* Ensure that the system knows who the user is before
-		 * returning the user's name. */
-		pwd = getpwnam(invoking_user);
-		if (pwd != NULL) {
-			ret = invoking_user;
-		} else {
-		        context_user_set(ctx, "root");
-		        ret = NULL;
-		}
-		new_context = strdup(context_str(ctx));
-		context_free(ctx);
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: context = '%s'\n", new_context);
-#endif
+		ret=selinux_init(s);
 	}
 #endif
 	if (ret == NULL) {
@@ -2228,6 +2218,10 @@ main(int argc, char **argv)
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 	openlog("userhelper", LOG_PID, LOG_AUTHPRIV);
+
+#ifdef WITH_SELINUX
+	selinux_enabled = (is_selinux_enabled() > 0);
+#endif
 
 	if (geteuid() != 0) {
 		fprintf(stderr, _("userhelper must be setuid root\n"));

@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.70
-Release: 5
+Release: 6
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -114,6 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue Jul 1 2004 Dan Walsh <dwalsh@redhat.com> 1.70-6
+- More fixes to make targeted policy work correctly
+
 * Tue Jul 1 2004 Dan Walsh <dwalsh@redhat.com> 1.70-5
 - Fix to use root if user not defined
 
