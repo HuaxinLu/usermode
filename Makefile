@@ -2,7 +2,7 @@ CC=gcc
 
 # mostly and totally crappy makefile... better one to come.
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
-REVISION=$(shell awk '/^Revision:/ { print $$2 }' < usermode.spec)
+RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = um$(subst .,-,$(VERSION))$(subst .,-,$(REVISION))
 
 #CFLAGS=-O2 -Wall

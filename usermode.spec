@@ -1,11 +1,11 @@
-%define build6x 0
+%define build6x 1
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.36
-Release: 4
+Release: 3.6.x
 Copyright: GPL
 Group: Applications/System
-Source: usermode-%{PACKAGE_VERSION}.tar.bz2
+Source: usermode-%{version}-%{release}.tar.bz2
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else
