@@ -136,7 +136,6 @@ static char *read_string(void)
     if(buffer[0] == UH_TEXT) {
         memmove(buffer, buffer + 1, BUFSIZ - 1);
     }
-    fprintf(stderr, "returning \"%s\"\n", buffer);
     return buffer;
 }
 

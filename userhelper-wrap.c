@@ -280,7 +280,7 @@ userhelper_parse_childout(char* outline)
 	rest = NULL;
       }
     }
-    printf("(%d) \"%s\"\n", prompt_type, prompt);
+    /* printf("(%d) \"%s\"\n", prompt_type, prompt); */
 
     msg->type = prompt_type;
     msg->message = prompt;
