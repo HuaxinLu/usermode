@@ -323,7 +323,7 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
   output = userhelper_malloc(sizeof(char) * MAXLINE);
 
   count = read(source, output, MAXLINE);
-  if (count < 1)
+  if (count < 0)
     {
       exit (0);
     }
