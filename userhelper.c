@@ -1169,6 +1169,8 @@ main(int argc, char **argv)
 	t_flag = 0;
 	w_flag = 0;
 	shell_path = NULL;
+	memset(&parsed_gecos, 0, sizeof(parsed_gecos));
+
 	while ((w_flag == 0) &&
 	       (arg = getopt(argc, argv, "f:o:p:h:s:ctw:")) != -1) {
 		/* We process no arguments after -w progname; those are passed
@@ -1235,10 +1237,10 @@ main(int argc, char **argv)
 
 	/* Determine which conversation function to use. */
 	if (t_flag) {
-		/* We're in text mode. */
+		/* We were told to use text mode. */
 		if (isatty(STDIN_FILENO)) {
-			/* We have a controlling tty which we can disable
-			 * echoing on. */
+			/* We have a controlling tty on which we can disable
+			 * echoing, so use the text conversation method. */
 			conv = &text_conv;
 		} else {
 			/* We have no controlling terminal -- being run from
@@ -1279,6 +1281,10 @@ main(int argc, char **argv)
 			/* We were started by the superuser, so accept the
 			 * user's name. */
 			user_name = g_strdup(argv[optind]);
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: modifying account data for %s\n",
+				user_name);
+#endif
 		}
 
 		/* Verify that the user exists. */
