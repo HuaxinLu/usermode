@@ -22,7 +22,7 @@
 
 int childout[2];
 int childin[2];
-
+int childout_tag;
 
 /* the only difference between this and userhelper_run_chfn() is the
  * final exec() call... I want to avoid all duplication, but I can't
@@ -50,7 +50,7 @@ userhelper_run_passwd()
       close(childout[1]);
       close(childin[0]);
 
-      gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
+      childout_tag = gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
 
     }
   else				/* child */
@@ -111,7 +111,7 @@ userhelper_run_chfn(char* fullname, char* office, char* officephone,
       close(childout[1]);
       close(childin[0]);
 
-      gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
+      childout_tag = gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
 
     }
   else				/* child */
@@ -176,7 +176,7 @@ userhelper_parse_exitstatus(int exitstatus)
   switch(exitstatus)
     {
     case 0:
-      message_box = create_message_box("Information uptdated.", NULL);
+      message_box = create_message_box("Information updated.", NULL);
       break;
     case ERR_PASSWD_INVALID:
       message_box = create_error_box("The password you typed is invalid.\nPlease try again.", NULL);
@@ -348,6 +348,7 @@ userhelper_sigchld()
   
   if(WIFEXITED(status))
     {
+      gdk_input_remove(childout_tag);
       userhelper_parse_exitstatus(WEXITSTATUS(status));
     }
 }
