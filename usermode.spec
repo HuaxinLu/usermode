@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.5
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
@@ -47,6 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Fri Mar 19 1999 Michael Johnson <johnsonm@redhat.com>
+- updated userhelper.8 man page for consolehelper capabilities
 - moved from wmconfig to desktop entries
 
 * Thu Mar 18 1999 Michael Johnson <johnsonm@redhat.com>
