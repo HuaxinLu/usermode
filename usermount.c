@@ -395,12 +395,12 @@ format(struct mountinfo *info)
 				command[0] = PATH_FDFORMAT;
 				command[1] = info->dev;
 				command[2] = NULL;
-				if(g_spawn_async("/",
-						 command, NULL,
-						 G_SPAWN_DO_NOT_REAP_CHILD |
-						 G_SPAWN_STDOUT_TO_DEV_NULL,
-						 NULL, NULL,
-						 &child, &error)) {
+				if (g_spawn_async("/",
+						  command, NULL,
+						  G_SPAWN_DO_NOT_REAP_CHILD |
+						  G_SPAWN_STDOUT_TO_DEV_NULL,
+						  NULL, NULL,
+						  &child, &error)) {
 					while(waitpid(child, &status, WNOHANG) == 0) {
 						gtk_main_iteration_do(FALSE);
 					}
@@ -429,12 +429,12 @@ format(struct mountinfo *info)
 		command[2] = fstype;
 		command[3] = info->dev;
 		command[4] = NULL;
-		if(g_spawn_async("/",
-				 command, NULL,
-				 G_SPAWN_DO_NOT_REAP_CHILD |
-				 G_SPAWN_STDOUT_TO_DEV_NULL,
-				 NULL, NULL,
-				 &child, &error)) {
+		if (g_spawn_async("/",
+				  command, NULL,
+				  G_SPAWN_DO_NOT_REAP_CHILD |
+				  G_SPAWN_STDOUT_TO_DEV_NULL,
+				  NULL, NULL,
+				  &child, &error)) {
 			while(waitpid(child, &status, WNOHANG) == 0) {
 				gtk_main_iteration_do(FALSE);
 			}
@@ -480,12 +480,12 @@ response_callback(GtkWidget *emitter, GtkResponseType response)
 			command[0] = info->mounted ?  PATH_UMOUNT : PATH_MOUNT;
 			command[1] = info->dir;
 			command[2] = NULL;
-			if(g_spawn_async("/",
-					 command, NULL,
-					 G_SPAWN_DO_NOT_REAP_CHILD |
-					 G_SPAWN_STDOUT_TO_DEV_NULL,
-					 NULL, NULL,
-					 &child, &error)) {
+			if (g_spawn_async("/",
+					  command, NULL,
+					  G_SPAWN_DO_NOT_REAP_CHILD |
+					  G_SPAWN_STDOUT_TO_DEV_NULL,
+					  NULL, NULL,
+					  &child, &error)) {
 				while(waitpid(child, &status, WNOHANG) == 0) {
 					gtk_main_iteration_do(FALSE);
 				}

@@ -32,7 +32,7 @@
 void
 userhelper_fatal_error(int signal)
 {
-	if(gtk_main_level() > 0) {
+	if (gtk_main_level() > 0) {
 		gtk_main_quit();
 	} else {
 		_exit(0);
@@ -75,13 +75,15 @@ main(int argc, char *argv[])
 	/* If DISPLAY is set, or if stdin isn't a TTY, we have to check if we
 	 * can display in a window.  Otherwise, all is probably lost.  */
 	display = getenv("DISPLAY");
-	if(((display != NULL) && (strlen(display) > 0)) ||
+	if (((display != NULL) && (strlen(display) > 0)) ||
 	   !isatty(STDIN_FILENO)) {
 		int fake_argc, stderrfd, fd;
 		char **fake_argv;
 		fake_argc = 1;
 		fake_argv = g_malloc0((fake_argc + 1) * sizeof(char *));
 		fake_argv[0] = argv[0];
+		/* Redirect stderr to silence Xlib's "can't open display"
+		 * warning, which we don't mind. */
 		stderrfd = dup(STDERR_FILENO);
 		if (stderrfd != -1) {
 			close(STDERR_FILENO);
@@ -89,10 +91,11 @@ main(int argc, char *argv[])
 				fd = open("/dev/null", O_WRONLY | O_APPEND);
 			} while((fd != -1) && (fd != STDERR_FILENO));
 		}
-		if(gtk_init_check(&fake_argc, &fake_argv)) {
+		if (gtk_init_check(&fake_argc, &fake_argv)) {
 			gtk_set_locale();
 			graphics_available = TRUE;
 		}
+		/* Restore stderr. */
 		if (stderrfd != -1) {
 			dup2(stderrfd, STDERR_FILENO);
 			close(stderrfd);
@@ -103,7 +106,7 @@ main(int argc, char *argv[])
 	/* Allocate space for a new argv array, with room for up to 3 more
 	 * items than we have in argv, plus the NULL-terminator. */
 	constructed_argv = g_malloc0((argc + 3 + 1) * sizeof(char *));
-	if(graphics_available) {
+	if (graphics_available) {
 		/* Set up args to tell userhelper to wrap the named program
 		 * using a consolehelper window to interact with the user. */
 		constructed_argv[0] = UH_PATH;
@@ -121,12 +124,12 @@ main(int argc, char *argv[])
 	}
 
 	/* Copy the command-line arguments, except for the program name. */
-	for(i = 1; i < argc; i++) {
+	for (i = 1; i < argc; i++) {
 		constructed_argv[i + offset] = argv[i];
 	}
 
 	/* If we can open a window, use the graphical wrapper routine. */
-	if(graphics_available) {
+	if (graphics_available) {
 #ifndef DISABLE_X11
 		signal(SIGCHLD, userhelper_fatal_error);
 		userhelper_runv(UH_PATH, (const char**) constructed_argv);

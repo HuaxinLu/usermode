@@ -32,10 +32,9 @@ main(int argc, char *argv[])
 	gtk_init(&argc, &argv);
 	glade_init();
 
-	msg =
-	    create_message_box
-	    ("Hello world!\nLet's make this a really big message box.",
-	     "Hello");
+	msg = create_message_box("Hello world!\n"
+				 "Let's make this a really big message box.",
+				 "Hello");
 
 	gtk_signal_connect_object(GTK_OBJECT(msg), "destroy",
 				  GTK_SIGNAL_FUNC(gtk_main_quit), NULL);
@@ -49,7 +48,9 @@ main(int argc, char *argv[])
 	msg = create_invisible_query_box("Hello world!", "Hi!",
 					 GTK_SIGNAL_FUNC(hello_world2));
 
-	msg = create_error_box("ERROR!\nLet's make this a really big message box.", NULL);
+	msg = create_error_box("ERROR!\n"
+			       "Let's make this a really big message box.",
+			       NULL);
 
 	gtk_main();
 
