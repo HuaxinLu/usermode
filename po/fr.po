@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.37\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
-"PO-Revision-Date: 2002-09-03 09:48+0200\n"
-"Last-Translator: \n"
-"Language-Team:  <en@li.org>\n"
+"PO-Revision-Date: 2003-03-19 10:07+0100\n"
+"Last-Translator: Audrey Simons <asimons@redhat.com>\n"
+"Language-Team: french <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +44,7 @@ msgstr "Quitter"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Supprimer"
+msgstr "Annuler"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
@@ -52,23 +52,23 @@ msgstr "Exécuter sans privilèges"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "Mot de passe UNIX (courant) :"
+msgstr "Mot de passe UNIX (courant):"
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Nouveau mot de passe UNIX :"
+msgstr "Nouveau mot de passe UNIX:"
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Retaper le nouveau mot de passe UNIX :"
+msgstr "Retaper le nouveau mot de passe UNIX:"
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "MOT DE PASSE INCORRECT : VRAIMENT trop court"
+msgstr "MOT DE PASSE INCORRECT: VRAIMENT trop court"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "MOT DE PASSE INCORRECT : trop court"
+msgstr "MOT DE PASSE INCORRECT: trop court"
 
 #: dummy.h:30
 msgid "Password unchanged"
@@ -169,7 +169,7 @@ msgid ""
 "Please try again."
 msgstr ""
 "Le mot de passe n'est pas valide.\n"
-"Réessayer."
+"Veuillez réessayer."
 
 #: userhelper-wrap.c:67
 msgid ""
@@ -301,7 +301,7 @@ msgstr ""
 
 #: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
-msgstr "_Exécuter sans privilèges"
+msgstr "Exécute_r sans privilèges"
 
 #: userhelper-wrap.c:622
 msgid "Pipe error.\n"
@@ -337,7 +337,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Etes-vous sûr de vouloir formater ce disque ? Vous détruirez toutes les "
+"Êtes-vous sûr de vouloir formater ce disque ? Vous détruirez toutes les "
 "données qu'il contient."
 
 #: usermount.c:331
@@ -346,7 +346,7 @@ msgstr "Effectuer un formatage de _bas niveau."
 
 #: usermount.c:374
 msgid "Select a _filesystem type to create:"
-msgstr "Sélectionner un type de _système de fichiers à créer :"
+msgstr "Sélectionner un type de système de _fichiers à créer:"
 
 #: usermount.c:542
 msgid ""
@@ -390,23 +390,23 @@ msgstr "Informations utilisateur"
 
 #: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
-msgstr "Nom complet :"
+msgstr "Nom complet:"
 
 #: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
-msgstr "Bureau :"
+msgstr "Bureau:"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "Téléphone bureau :"
+msgstr "Téléphone bureau:"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr "Téléphone domicile :"
+msgstr "Téléphone domicile:"
 
 #: glade.strings:12 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr "Shell de connexion :"
+msgstr "Shell de connexion:"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
@@ -414,7 +414,7 @@ msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
-msgstr "_Supprimer"
+msgstr "_Annuler"
 
 #: glade.strings:15 usermode.glade.h:5
 msgid "Message"
@@ -434,7 +434,7 @@ msgstr "_Démonter"
 
 #: glade.strings:29
 msgid "E_xit"
-msgstr "Q_uitter"
+msgstr "_Quitter"
 
 #: usermode.glade.h:1
 msgid "*"
