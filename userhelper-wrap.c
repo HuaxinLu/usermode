@@ -669,6 +669,11 @@ userhelper_parse_childout(char *outline)
 		fprintf(stderr, "ERROR: unused data: `%s'.\n", outline);
 	}
 
+#ifdef USE_STARTUP_NOTIFICATION
+	/* Complete startup notification for consolehelper. */
+	userhelper_startup_notification_launchee(NULL);
+#endif
+
 	/* If we're ready, do some last-minute changes and run the dialog. */
 	if ((resp->ready) && (resp->responses == 0)) {
 		/* No queries means that we've just processed a sync request
@@ -950,14 +955,16 @@ userhelper_runv(gboolean dialog_success, char *path, const char **args)
 		fprintf(stderr, "Running child pid=%ld.\n", (long) childpid);
 #endif
 
-#ifdef USE_STARTUP_NOTIFICATION
-		/* Complete startup notification for consolehelper. */
-		userhelper_startup_notification_launchee(NULL);
-#endif
-
 		/* Tell the child we're ready for it to run. */
 		write(childin[1], "Go", 1);
 		gtk_main();
+
+#ifdef USE_STARTUP_NOTIFICATION
+		/* If we're doing startup notification, clean it up just in
+		 * case the child didn't complete startup. */
+		userhelper_startup_notification_launchee(sn_id);
+#endif
+
 #ifdef DEBUG_USERHELPER
 		fprintf(stderr, "Child exited, continuing.\n");
 #endif
