@@ -85,27 +85,9 @@ msgstr "Starta systemglobala konfigurationsverktyg utan lösenord."
 msgid "login: "
 msgstr "inloggning: "
 
-msgid "login"
-msgstr "inloggning"
-
-msgid "login:"
-msgstr "inloggning:"
-
-msgid "Login: "
-msgstr "Inloggning: "
-
-msgid "Login:"
-msgstr "Inloggning:"
-
-msgid "Login"
-msgstr "Inloggning"
-
 #: dummy.h:34
 msgid "Password: "
 msgstr "Lösenord: "
-
-msgid "Password:"
-msgstr "Lösenord:"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -468,6 +450,24 @@ msgstr "Byt ditt inloggningslösenord"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lösenord"
+
+#~ msgid "login"
+#~ msgstr "inloggning"
+
+#~ msgid "login:"
+#~ msgstr "inloggning:"
+
+#~ msgid "Login: "
+#~ msgstr "Inloggning: "
+
+#~ msgid "Login:"
+#~ msgstr "Inloggning:"
+
+#~ msgid "Login"
+#~ msgstr "Inloggning"
+
+#~ msgid "Password:"
+#~ msgstr "Lösenord:"
 
 #~ msgid "Got PAM error %d.\n"
 #~ msgstr "Fick PAM-fel %d.\n"
