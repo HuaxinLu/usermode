@@ -91,7 +91,7 @@ struct app_data {
 };
 
 #ifdef WITH_SELINUX
-static int checkAccess(int selaccess) {
+static int checkAccess(unsigned int selaccess) {
   int status=-1;
   security_context_t user_context;
   if( getprevcon(&user_context)==0 ) {
@@ -140,7 +140,8 @@ setup_selinux_exec(char *constructed_path)
       fprintf(stderr,
 	      _("Could not set exec context to %s.\n"),
 	      new_context);
-      status=-1;
+      if (security_getenforce() > 0)
+	status=-1;
     }
     if (new_context) {
       freecon(new_context);
@@ -1948,8 +1949,7 @@ wrap(const char *user, const char *program,
 						exit(ERR_EXEC_FAILED);
 				}
 				if (setup_selinux_exec(constructed_path)) {
-					if (security_getenforce()>0) 
-						exit(ERR_EXEC_FAILED);
+					exit(ERR_EXEC_FAILED);
 				}
 			}
 #endif
@@ -2060,7 +2060,7 @@ wrap(const char *user, const char *program,
 #endif
 #ifdef WITH_SELINUX
 			if (setup_selinux_exec(constructed_path)) {
-			  exit(-1);
+			  exit(ERR_EXEC_FAILED);
 			}
 #endif
 			cmdline = construct_cmdline(constructed_path,
@@ -2138,7 +2138,7 @@ wrap(const char *user, const char *program,
 #endif
 #ifdef WITH_SELINUX
 		if (setup_selinux_exec(constructed_path)) {
-		  exit(-1);
+		  exit(ERR_EXEC_FAILED);
 		}
 #endif
 		cmdline = construct_cmdline(constructed_path,
@@ -2204,6 +2204,7 @@ main(int argc, char **argv)
 	const char *new_office_phone;
 	const char *new_home_phone;
 	const char *new_shell;
+	unsigned perm;
 
 	/* State variable we pass around. */
 	struct app_data app_data = {
@@ -2377,15 +2378,22 @@ main(int argc, char **argv)
 			user_name = g_strdup(argv[optind]);
 
 #ifdef WITH_SELINUX
+			if (c_flag) 
+			  perm = PASSWD__PASSWD;
+			else if (s_flag)
+			  perm = PASSWD__CHSH;
+			else
+			  perm = PASSWD__CHFN;
+
 			if (selinux_enabled && 
-			    checkAccess(PASSWD__ROOTOK)!= 0) {
+			    checkAccess(perm)!= 0) {
+				security_context_t context = NULL;
+				getprevcon(&context);
 				syslog(LOG_NOTICE, 
-				       "SELinux user not have proper access to change to \"%s\"\n",
-					user_name);
-				if (security_getenforce()>0) {
-					g_free(user_name);
-					exit(ERR_NO_USER);
-				}
+				       "SELinux context %s is not allowed to change information for user \"%s\"\n",
+				       context, user_name);
+				g_free(user_name);
+				exit(ERR_NO_USER);
 			}
 #endif
 #ifdef DEBUG_USERHELPER
