@@ -212,7 +212,7 @@ msgstr "код возврата PAM %d\n"
 #: ../userhelper.c:673
 #, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr ""
+msgstr "готовность к аутентификации \"%s\"\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
