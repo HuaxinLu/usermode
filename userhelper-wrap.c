@@ -78,13 +78,13 @@ userhelper_parse_exitstatus(int exitstatus)
 	};
 
 	message_box = NULL;
-	for(i = 1; i < (sizeof(codes) / sizeof(codes[0])); i++) {
-		if(codes[i].code == exitstatus) {
+	for (i = 1; i < (sizeof(codes) / sizeof(codes[0])); i++) {
+		if (codes[i].code == exitstatus) {
 			message_box = codes[i].create(codes[i].message, NULL);
 			break;
 		}
 	}
-	if(message_box == NULL) {
+	if (message_box == NULL) {
 		message_box = codes[0].create(codes[0].message, NULL);
 	}
 
@@ -120,7 +120,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		case PAD:
 			/* Run unprivileged. */
 			byte = UH_FALLBACK;
-			for(message_list = resp->message_list;
+			for (message_list = resp->message_list;
 			    (message_list != NULL) &&
 			    (message_list->data != NULL);
 			    message_list = g_list_next(message_list)) {
@@ -139,7 +139,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		case GTK_RESPONSE_CANCEL:
 			/* Abort. */
 			byte = UH_ABORT;
-			for(message_list = resp->message_list;
+			for (message_list = resp->message_list;
 			    (message_list != NULL) &&
 			    (message_list->data != NULL);
 			    message_list = g_list_next(message_list)) {
@@ -205,15 +205,15 @@ userhelper_parse_childout(char *outline)
 
 	/* Attempt to reuse a response structure (which may contain incomplete
 	 * messages we've already received) unless the dialog is bogus. */
-	if(resp != NULL) {
-		if(!GTK_IS_WINDOW(resp->dialog)) {
+	if (resp != NULL) {
+		if (!GTK_IS_WINDOW(resp->dialog)) {
 			g_free(resp->user);
 			g_free(resp);
 			resp = NULL;
 		}
 	}
 
-	if(resp == NULL) {
+	if (resp == NULL) {
 		GtkWidget *vbox;
 
 		/* Allocate the response structure. */
@@ -221,7 +221,7 @@ userhelper_parse_childout(char *outline)
 
 		/* Figure out who the invoking user is. */
 		pwd = getpwuid(getuid());
-		if(pwd == NULL) {
+		if (pwd == NULL) {
 			pwd = getpwuid(0);
 		}
 		resp->user = pwd ? g_strdup(pwd->pw_name) : g_strdup("root");
@@ -229,8 +229,12 @@ userhelper_parse_childout(char *outline)
 		/* Create a new GTK dialog box. */
 		resp->dialog = gtk_message_dialog_new(NULL,
 						      0,
-						      GTK_MESSAGE_QUESTION,
-						      GTK_BUTTONS_OK_CANCEL,
+						      resp->responses > 0 ?
+						      GTK_MESSAGE_QUESTION :
+						      GTK_MESSAGE_INFO,
+						      resp->responses > 0 ?
+						      GTK_BUTTONS_OK_CANCEL :
+						      GTK_BUTTONS_CLOSE,
 						      _("Placeholder text."));
 
 		/* Force GTK+ to try to center this dialog. */
@@ -258,7 +262,7 @@ userhelper_parse_childout(char *outline)
 	}
 
 	/* Now process items from the child. */
-	while((outline != NULL) && isdigit(outline[0])) {
+	while ((outline != NULL) && isdigit(outline[0])) {
 		gboolean echo = TRUE;
 
 		/* Allocate a structure to hold the message data. */
@@ -270,7 +274,7 @@ userhelper_parse_childout(char *outline)
 		/* The first character which wasn't a digit might be whitespace,
 		 * so skip over any whitespace before settling on the actual
 		 * prompt. */
-		if((prompt != NULL) && (strlen(prompt) > 0)) {
+		if ((prompt != NULL) && (strlen(prompt) > 0)) {
 			while ((isspace(prompt[0]) && (prompt[0] != '\0')
 				&& (prompt[0] != '\n'))) {
 				prompt++;
@@ -280,10 +284,10 @@ userhelper_parse_childout(char *outline)
 		/* Snip off terminating newlines in the prompt string and save
 		 * a pointer to interate the parser along. */
 		outline = strchr(prompt, '\n');
-		if(outline != NULL) {
+		if (outline != NULL) {
 			outline[0] = '\0';
 			outline++;
-			if(outline[0] == '\0') {
+			if (outline[0] == '\0') {
 				outline = NULL;
 			}
 		}
@@ -313,7 +317,7 @@ userhelper_parse_childout(char *outline)
 				msg->entry = gtk_entry_new();
 				gtk_entry_set_visibility(GTK_ENTRY(msg->entry),
 							 echo);
-				if(resp->suggestion) {
+				if (resp->suggestion) {
 					gtk_entry_set_text(GTK_ENTRY(msg->entry),
 							   resp->suggestion);
 					g_free(resp->suggestion);
@@ -322,8 +326,9 @@ userhelper_parse_childout(char *outline)
 
 				/* Keep track of the first entry field in the
 				 * dialog box. */
-				if(resp->first == NULL)
+				if (resp->first == NULL) {
 					resp->first = msg->entry;
+				}
 
 				/* Keep track of the last entry field in the
 				 * dialog box. */
@@ -354,7 +359,7 @@ userhelper_parse_childout(char *outline)
 #endif
 				break;
 			case UH_PROMPT_SUGGESTION:
-				if(resp->suggestion) {
+				if (resp->suggestion) {
 					g_free(resp->suggestion);
 				}
 				resp->suggestion = g_strdup(prompt);
@@ -365,8 +370,8 @@ userhelper_parse_childout(char *outline)
 				break;
 			/* User name. Read it and save it for later. */
 			case UH_USER:
-				if(strstr(prompt, "<user>") == NULL) {
-					if(resp->user) {
+				if (strstr(prompt, "<user>") == NULL) {
+					if (resp->user) {
 						g_free(resp->user);
 					}
 					resp->user = g_strdup(prompt);
@@ -374,7 +379,7 @@ userhelper_parse_childout(char *outline)
 				break;
 			/* Service name. Read it and save it for later. */
 			case UH_SERVICE_NAME:
-				if(resp->service) {
+				if (resp->service) {
 					g_free(resp->service);
 				}
 				resp->service = g_strdup(prompt);
@@ -408,7 +413,7 @@ userhelper_parse_childout(char *outline)
 			/* Sanity-check the number of expected responses. */
 			case UH_EXPECT_RESP:
 				g_free(msg); /* We don't need this after all. */
-				if(resp->responses != atoi(prompt)) {
+				if (resp->responses != atoi(prompt)) {
 					fprintf(stderr,
 						"Protocol error (%d responses "
 						"expected from %d prompts)!\n",
@@ -423,20 +428,23 @@ userhelper_parse_childout(char *outline)
 	}
 
 	/* Check that we used up all of the data. */
-	if(outline && (strlen(outline) > 0)) {
+	if (outline && (strlen(outline) > 0)) {
 		fprintf(stderr, "ERROR: unused data: `%s'.\n", outline);
 	}
 
 	/* If we're ready, do some last-minute changes and run the dialog. */
-	if(resp->ready) {
+	if (resp->ready) {
 		char *text;
 		GtkWidget *label;
 		GtkResponseType response;
 
 		/* Customize the label. */
-		if(resp->service) {
+		if (resp->responses == 0) {
+			text = NULL;
+		} else
+		if (resp->service) {
 			if (strcmp(resp->service, "passwd") == 0) {
-				text = "";
+				text = NULL;
 			} else
 			if (strcmp(resp->service, "chfn") == 0) {
 				text = g_strdup_printf(_("Changing personal information."));
@@ -444,32 +452,37 @@ userhelper_parse_childout(char *outline)
 			if (strcmp(resp->service, "chsh") == 0) {
 				text = g_strdup_printf(_("Changing login shell."));
 			} else {
-				if(resp->fallback_allowed) {
-					text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from superuser privileges, but more information is needed in order to do so."), resp->service);
+				if (resp->fallback_allowed) {
+					text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."), resp->service);
 				} else {
-					text = g_strdup_printf(_("You are attempting to run \"%s\" which requires superuser privileges, but more information is needed in order to do so."), resp->service);
+					text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."), resp->service);
 				}
 			}
 		} else {
-			if(resp->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run a command which may benefit from superuser privileges, but more information is needed in order to do so."));
+			if (resp->fallback_allowed) {
+				text = g_strdup_printf(_("You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."));
 			} else {
-				text = g_strdup_printf(_("You are attempting to run a command which requires superuser privileges, but more information is needed in order to do so."));
+				text = g_strdup_printf(_("You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."));
 			}
 		}
 		label = (GTK_MESSAGE_DIALOG(resp->dialog))->label;
-		gtk_label_set_text(GTK_LABEL(label), text);
+		if (text != NULL) {
+			gtk_label_set_text(GTK_LABEL(label), text);
+			g_free(text);
+		} else {
+			gtk_label_set_text(GTK_LABEL(label), "");
+		}
 
 		/* Add an "unprivileged" button if we're allowed to offer
 		 * unprivileged execution as an option. */
-		if(resp->fallback_allowed) {
+		if ((resp->fallback_allowed) && (resp->responses > 0)) {
 			gtk_dialog_add_button(GTK_DIALOG(resp->dialog),
 					      _("_Run Unprivileged"), PAD);
 		}
 
 		/* Have the activation signal for the last entry field be
 		 * equivalent to hitting the default button. */
-		if(resp->last) {
+		if (resp->last) {
 			g_signal_connect(G_OBJECT(resp->last), "activate",
 					 GTK_SIGNAL_FUNC(respond_ok),
 					 resp->dialog);
@@ -477,7 +490,7 @@ userhelper_parse_childout(char *outline)
 
 		/* Show the dialog and grab focus. */
 		gtk_widget_show_all(resp->dialog);
-		if(GTK_IS_ENTRY(resp->first)) {
+		if (GTK_IS_ENTRY(resp->first)) {
 			gtk_widget_grab_focus(resp->first);
 		}
 
@@ -488,11 +501,11 @@ userhelper_parse_childout(char *outline)
 		gdk_keyboard_ungrab(GDK_CURRENT_TIME);
 		/* Destroy the dialog box. */
 		gtk_widget_destroy(resp->dialog);
-		if(resp->service)
+		if (resp->service)
 			g_free(resp->service);
-		if(resp->suggestion)
+		if (resp->suggestion)
 			g_free(resp->suggestion);
-		if(resp->user)
+		if (resp->user)
 			g_free(resp->user);
 		g_free(resp);
 		resp = NULL;
@@ -515,12 +528,12 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 	/* Allocate room to store the data, and store it. */
 	output = g_malloc0(LINE_MAX + 1);
 	count = read(source, output, LINE_MAX);
-	if(count == -1) {
+	if (count == -1) {
 		/* Error of some kind.  Because the pipe's blocking, even
 		 * EAGAIN is unexpected, so we bail. */
 		_exit(0);
 	}
-	if(count == 0) {
+	if (count == 0) {
 		/* EOF from the child. */
 		gdk_input_remove(childout_tag);
 		childout_tag = -1;
@@ -538,12 +551,12 @@ userhelper_read_signal(gpointer data, int source, GdkInputCondition cond)
 	pid_t pid;
 	int status;
 
-	if(cond != GDK_INPUT_READ) {
+	if (cond != GDK_INPUT_READ) {
 		/* Serious error, this is.  Panic, we must. */
 		_exit(1);
 	}
 
-	if(read(source, &u, 1) <= 0) {
+	if (read(source, &u, 1) <= 0) {
 		/* Error reading signals?  Stop reading them. */
 		gdk_input_remove(signal_tag);
 		return;
@@ -552,7 +565,7 @@ userhelper_read_signal(gpointer data, int source, GdkInputCondition cond)
 	/* Reap a child. */
 	if (u == SIGCHLD) {
 		pid = waitpid(0, &status, WNOHANG);
-		if((pid != 0) && (pid != -1) && WIFEXITED(status)) {
+		if ((pid != 0) && (pid != -1) && WIFEXITED(status)) {
 			userhelper_parse_exitstatus(WEXITSTATUS(status));
 		}
 	}
@@ -566,7 +579,7 @@ userhelper_sigchld(int signum)
 
 	/* If the signal number wasn't 0 (the special "set up" signal), write
 	 * it to the pipe and continue on. */
-	if(signum != 0) {
+	if (signum != 0) {
 		u = signum;
 		write(sigpipe[1], &u, 1);
 		signal(SIGCHLD, userhelper_sigchld);
@@ -575,7 +588,7 @@ userhelper_sigchld(int signum)
 
 	/* If this is our first time in, then we need to allocate a pipe and
 	 * set ourselves up as the handler for signals. */
-	if(pipe(sigpipe) == -1) {
+	if (pipe(sigpipe) == -1) {
 		fprintf(stderr, _("Pipe error.\n"));
 		_exit(1);
 	}
@@ -592,19 +605,19 @@ userhelper_runv(char *path, const char **args)
 	int i, fd[4];
 
 	/* Create pipes with which to interact with the userhelper child. */
-	if((pipe(childout) == -1) || (pipe(childin) == -1)) {
+	if ((pipe(childout) == -1) || (pipe(childin) == -1)) {
 		fprintf(stderr, _("Pipe error.\n"));
 		_exit(1);
 	}
 
 	/* Start up a new process. */
 	pid = fork();
-	if(pid == -1) {
+	if (pid == -1) {
 		fprintf(stderr, _("Cannot fork().\n"));
 		_exit(0);
 	}
 
-	if(pid > 0) {
+	if (pid > 0) {
 		/* We're the parent; close the write-end of the reading pipe,
 		 * and the read-end of the writing pipe. */
 		close(childout[1]);
@@ -621,8 +634,8 @@ userhelper_runv(char *path, const char **args)
 
 		/* Close all of descriptors which aren't stdio or the two
 		 * pipe descriptors we'll be using. */
-		for(i = 3; i < sysconf(_SC_OPEN_MAX); i++) {
-			if((i != childout[1]) && (i != childin[0])) {
+		for (i = 3; i < sysconf(_SC_OPEN_MAX); i++) {
+			if ((i != childout[1]) && (i != childin[0])) {
 				close(i);
 			}
 		}
@@ -645,11 +658,11 @@ userhelper_runv(char *path, const char **args)
 		close(childout[1]);
 
 		/* and move the pipe descriptors to their now homes. */
-		if(dup2(fd[2], UH_INFILENO) == -1) {
+		if (dup2(fd[2], UH_INFILENO) == -1) {
 			fprintf(stderr, _("dup2() error.\n"));
 			_exit(2);
 		}
-		if(dup2(fd[3], UH_OUTFILENO) == -1) {
+		if (dup2(fd[3], UH_OUTFILENO) == -1) {
 			fprintf(stderr, _("dup2() error.\n"));
 			_exit(2);
 		}
@@ -677,7 +690,7 @@ userhelper_run(char *path, ...)
 
 	/* Count the number of arguments. */
 	va_start(ap, path);
-	while(va_arg(ap, char *) != NULL) {
+	while (va_arg(ap, char *) != NULL) {
 		argc++;
 	}
 	va_end(ap);
@@ -685,7 +698,7 @@ userhelper_run(char *path, ...)
 	/* Copy the arguments into a normal array. */
 	argv = g_malloc0((argc + 1) * sizeof(char*));
 	va_start(ap, path);
-	for(i = 0; i < argc; i++) {
+	for (i = 0; i < argc; i++) {
 		argv[i] = g_strdup(va_arg(ap, char *));
 	}
 	va_end(ap);
