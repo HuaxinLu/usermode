@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode CVS\n"
+"Project-Id-Version: ja\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
-"PO-Revision-Date: 2002-08-14 12:43GMT+10:00\n"
+"PO-Revision-Date: 2002-09-04 08:08GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -143,8 +143,7 @@ msgstr "ユーザヘルパーはrootにsetuidされていなければなりま�
 
 #. FIXME: print a warning here?
 #: userhelper.c:729
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
@@ -431,7 +430,7 @@ msgstr "終了(_x)"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -456,3 +455,4 @@ msgstr "ログインパスワードを変更"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "パスワード"
+
