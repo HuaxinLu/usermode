@@ -511,7 +511,8 @@ int main(int argc, char *argv[])
 	char *apps_filename;
 	char *user, *apps_user;
 	char *retry;
-	char *env_home, *env_term, *env_display, *env_shell, *env_user, *env_logname;
+	char *env_home, *env_term, *env_display, *env_shell;
+        char *env_user, *env_logname, *env_lang, *env_lcall;
 	int session, fallback, try;
 	size_t aft;
 	struct stat sbuf;
@@ -529,6 +530,8 @@ int main(int argc, char *argv[])
 	env_shell = getenv("SHELL");
 	env_user = getenv("USER");
 	env_logname = getenv("LOGNAME");
+        env_lang = getenv("LANG");
+        env_lcall = getenv("LC_ALL");
 
 	if (strstr(env_home, ".."))
 	    env_home=NULL;
@@ -544,6 +547,10 @@ int main(int argc, char *argv[])
 	if (env_shell) setenv("SHELL", env_shell, 1);
 	if (env_user) setenv("USER", env_user, 1);
 	if (env_logname) setenv("LOGNAME", env_logname, 1);
+        /* we want I18n */
+        if (env_lang) setenv("LANG", env_lang, 1);
+        if (env_lcall) setenv("LC_ALL", env_lcall, 1);
+
 	setenv("PATH",
 	       "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin:/root/bin", 1);
 
