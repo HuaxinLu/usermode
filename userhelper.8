@@ -73,8 +73,10 @@ PROGRAM=\fIvalue\fP (\fIvalue\fP \fBmust\fP be an absolute path or it
 will be ignored).  If USER is not specified, the current user is used,
 and if PROGRAM is not specified, userhelper looks for \fIprogramname\fP
 in /sbin and /usr/sbin/.  userhelper will then authenticate the user via
-pam and then exec the named program.  userhelper is normally called from
-consolehelper via a symlink.
+pam and then run the named program.  If SESSION=true is specified, then
+userhelper establishes a pam session and forks and execs, then waits
+around for the child to exit; otherwise, it simply execs the child.
+userhelper is normally called from consolehelper via a symlink.
 .TP
 .I -c 
 Change the current user's password.  Note that this option cannot be

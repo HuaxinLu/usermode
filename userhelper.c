@@ -38,7 +38,9 @@
 #include <unistd.h>
 #include <pwd.h>
 #include <sys/types.h>
+#include <sys/resource.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 #include <unistd.h>
 
 #include <security/pam_appl.h>
@@ -494,6 +496,7 @@ int main(int argc, char *argv[])
 	char *constructed_path;
 	char *apps_filename;
 	char *user, *apps_user;
+	int session;
 	size_t aft;
 	struct stat sbuf;
 	shvarFile *s;
@@ -532,6 +535,8 @@ int main(int argc, char *argv[])
 	    }
 	}
 
+	session = svTrueValue(s, "SESSION", 0);
+
 	svCloseFile(s);
 
 	the_username = user;
@@ -551,15 +556,46 @@ int main(int argc, char *argv[])
 	    fail_error(retval);
 	}
 
-	/* this is not a session, so do not do session management */
+	if (session) {
+	    int child, status;
 
-	pam_end(pamh, PAM_SUCCESS);
+	    retval = pam_open_session(pamh, 0);
+	    if (retval != PAM_SUCCESS) {
+		pam_end(pamh, retval);
+		fail_error(retval);
+	    }
+	    retval = pam_close_session(pamh, 0);
+	    if (retval != PAM_SUCCESS) {
+		pam_end(pamh, retval);
+		fail_error(retval);
+	    }
 
-	/* time for an exec */
-	setuid(0);
-	argv[optind-1] = progname;
-	execv(constructed_path, argv+optind-1);
-	exit (ERR_EXEC_FAILED);
+	    if (!(child = fork())) {
+		setuid(0);
+		argv[optind-1] = progname;
+		execv(constructed_path, argv+optind-1);
+		exit (ERR_EXEC_FAILED);
+	    }
+
+	    wait4 (child, &status, 0, NULL);
+	    if (WIFEXITED(status) && (WEXITSTATUS(status) == 0)) {
+		pam_end(pamh, PAM_SUCCESS);
+		exit(1);
+	    } else {
+		pam_end(pamh, PAM_SUCCESS);
+		exit(ERR_EXEC_FAILED);
+	    }
+	} else {
+	    /* this is not a session, so do not do session management */
+
+	    pam_end(pamh, PAM_SUCCESS);
+
+	    /* time for an exec */
+	    setuid(0);
+	    argv[optind-1] = progname;
+	    execv(constructed_path, argv+optind-1);
+	    exit (ERR_EXEC_FAILED);
+	}
 
     } else { /* we are changing some gecos fields */
 
