@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
 "POT-Creation-Date: 2000-08-03 15:08-0400\n"
-"PO-Revision-Date: 2000-08-04 02:02+02:00\n"
+"PO-Revision-Date: 2000-08-09 16:39+02:00\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -126,7 +126,7 @@ msgstr "Ukjent avsluttingskode."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Inndata"
 
 #: ../userhelper-wrap.c:320
 #, c-format
