@@ -50,7 +50,7 @@ typedef struct _UserInfo UserInfo;
 
 void create_userinfo_window(UserInfo* userinfo);
 GtkWidget* create_shell_menu(UserInfo* userinfo);
-GtkWidget* create_gecos_table(int rows, int cols);
+GtkWidget* create_gecos_table(UserInfo* userinfo, int rows, int cols);
 UserInfo* parse_userinfo();
 
 int
@@ -91,17 +91,17 @@ create_userinfo_window(UserInfo* userinfo)
   GtkWidget* help;		/* GtkButton */
   
   /* create the widgets */
-/*   main = gtk_window_new(GTK_WINDOW_TOPLEVEL); */
+  /*   main = gtk_window_new(GTK_WINDOW_TOPLEVEL); */
   main = gtk_dialog_new();
   gtk_window_set_title(GTK_WINDOW(main), "User Info");
-/*   gtk_container_border_width(GTK_CONTAINER(main), 5); */
+  /*   gtk_container_border_width(GTK_CONTAINER(main), 5); */
   gtk_signal_connect(GTK_OBJECT(main), "destroy",
 		     (GtkSignalFunc) gtk_exit, NULL);
 
   notebook = gtk_notebook_new();
   gtk_container_border_width(GTK_CONTAINER(notebook), 5);
 
-  gecos = create_gecos_table(NUM_GECOS_FIELDS, 2);
+  gecos = create_gecos_table(userinfo, NUM_GECOS_FIELDS, 2);
 
   shell_field = create_shell_menu(userinfo);
 
@@ -245,72 +245,149 @@ create_shell_menu(UserInfo* userinfo)
 }
 
 GtkWidget*
-create_gecos_table(int rows, int cols)
+create_gecos_table(UserInfo* userinfo, int rows, int cols)
 {
   GtkWidget* gecos;		/* GtkTable */
   GtkWidget* gecos_fields[NUM_GECOS_FIELDS];
   GtkWidget* label;
+  struct passwd* pwent;
+  char* gecos_raw;
+  char* gecos_sep = ",";
+  int gecos_name_only = FALSE;
   int i;
 
+  pwent = getpwuid(getuid());
+
+  gecos_raw = strdup(pwent->pw_gecos);
+
+  if(strchr(gecos_raw, gecos_sep[0]) == NULL)
+    {
+      gecos_name_only = TRUE;
+    }
+    
   gecos = gtk_table_new(rows + 1, cols, FALSE);
   gtk_container_border_width(GTK_CONTAINER(gecos), 5);
 
   gtk_table_set_row_spacings(GTK_TABLE(gecos), 5);
   gtk_table_set_col_spacings(GTK_TABLE(gecos), 5);
 
+  i = 0;
+
   label = gtk_label_new("Full Name:");
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
   gtk_table_attach(GTK_TABLE(gecos), label, 
-		   0, 1, 0, 1,
+		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
 		   GTK_EXPAND | GTK_FILL, 
 		   0, 0);
   gtk_widget_show(label);
+  gecos_fields[i] = gtk_entry_new();
+  gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(gecos_raw, gecos_sep));
+  gtk_widget_show(gecos_fields[i]);
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
+  gtk_table_attach(GTK_TABLE(gecos), gecos_fields[i], 
+		   1, 2, i, i+1,
+		   GTK_EXPAND | GTK_FILL, 
+		   GTK_EXPAND | GTK_FILL, 
+		   0, 0);
+  i++;
 
   label = gtk_label_new("Office:");
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
   gtk_table_attach(GTK_TABLE(gecos), label, 
-		   0, 1, 1, 2,
+		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
 		   GTK_EXPAND | GTK_FILL, 
 		   0, 0);
   gtk_widget_show(label);
+  gecos_fields[i] = gtk_entry_new();
+  if(!gecos_name_only)
+    {
+      gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(NULL, gecos_sep));
+    }
+  gtk_widget_show(gecos_fields[i]);
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
+  gtk_table_attach(GTK_TABLE(gecos), gecos_fields[i], 
+		   1, 2, i, i+1,
+		   GTK_EXPAND | GTK_FILL, 
+		   GTK_EXPAND | GTK_FILL, 
+		   0, 0);
+  i++;
 
   label = gtk_label_new("Office Phone:");
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
   gtk_table_attach(GTK_TABLE(gecos), label, 
-		   0, 1, 2, 3,
+		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
 		   GTK_EXPAND | GTK_FILL, 
 		   0, 0);
   gtk_widget_show(label);
+  gecos_fields[i] = gtk_entry_new();
+  if(!gecos_name_only)
+    {
+      gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(NULL, gecos_sep));
+    }
+  gtk_widget_show(gecos_fields[i]);
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
+  gtk_table_attach(GTK_TABLE(gecos), gecos_fields[i], 
+		   1, 2, i, i+1,
+		   GTK_EXPAND | GTK_FILL, 
+		   GTK_EXPAND | GTK_FILL, 
+		   0, 0);
+  i++;
 
   label = gtk_label_new("Home Phone:");
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
   gtk_table_attach(GTK_TABLE(gecos), label, 
-		   0, 1, 3, 4,
+		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
 		   GTK_EXPAND | GTK_FILL, 
 		   0, 0);
   gtk_widget_show(label);
+  gecos_fields[i] = gtk_entry_new();
+  if(!gecos_name_only)
+    {
+      gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(NULL, gecos_sep));
+    }
+  gtk_widget_show(gecos_fields[i]);
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
+  gtk_table_attach(GTK_TABLE(gecos), gecos_fields[i], 
+		   1, 2, i, i+1,
+		   GTK_EXPAND | GTK_FILL, 
+		   GTK_EXPAND | GTK_FILL, 
+		   0, 0);
+  i++;
 
   label = gtk_label_new("Shell:");
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
   gtk_table_attach(GTK_TABLE(gecos), label,
-		   0, 1, 4, 5,
+		   0, 1, i, i+1,
 		   GTK_EXPAND | GTK_FILL,
 		   GTK_EXPAND | GTK_FILL,
 		   0, 0);
   gtk_widget_show(label);
-
-  for(i = 0; i < rows; i++)
+  gecos_fields[i] = gtk_entry_new();
+  if(!gecos_name_only)
     {
-      GtkWidget* field;
-      field = gtk_entry_new();
-      gtk_widget_show(field);
-      gecos_fields[i] = field;
-      gtk_table_attach(GTK_TABLE(gecos), gecos_fields[i], 
-		       1, 2, 0+i, 1+i,
-		       GTK_EXPAND | GTK_FILL, 
-		       GTK_EXPAND | GTK_FILL, 
-		       0, 0);
-      gtk_widget_show(gecos_fields[i]);
+      gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(NULL, gecos_sep));
     }
+  gtk_widget_show(gecos_fields[i]);
+  /* DEBUG */
+  printf("got here... (%d)\n", i);
+  gtk_table_attach(GTK_TABLE(gecos), gecos_fields[i], 
+		   1, 2, i, i+1,
+		   GTK_EXPAND | GTK_FILL, 
+		   GTK_EXPAND | GTK_FILL, 
+		   0, 0);
 
   return gecos;
 }
@@ -353,4 +430,3 @@ parse_userinfo()
 
   return retval;
 }
-
