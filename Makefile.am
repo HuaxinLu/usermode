@@ -29,10 +29,10 @@ noinst_PROGRAMS = test-userdialog
 man1_MANS = userinfo.1 usermount.1 userpasswd.1
 man8_MANS = consolehelper.8 userhelper.8
 install-data-local:
-	$(INSTALL) -m755 -d $(mandir)/man1
-	$(INSTALL) -m644 $(man1_MANS) $(mandir)/man1/
-	$(INSTALL) -m755 -d $(mandir)/man8
-	$(INSTALL) -m644 $(man8_MANS) $(mandir)/man8/
+	$(INSTALL) -m755 -d $(DESTDIR)/$(mandir)/man1
+	$(INSTALL) -m644 $(man1_MANS) $(DESTDIR)/$(mandir)/man1/
+	$(INSTALL) -m755 -d $(DESTDIR)/$(mandir)/man8
+	$(INSTALL) -m644 $(man8_MANS) $(DESTDIR)/$(mandir)/man8/
 
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = keys.xpm
