@@ -1,26 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: usermode 1.27\n"
 "POT-Creation-Date: 2000-07-31 10:41-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2000-08-02 01:07+0100\n"
+"Last-Translator: Milan Kerslager <milan.kerslager@spsselib.hiedu.cz>\n"
+"Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: ../userdialogs.c:35
 msgid "Message"
-msgstr ""
+msgstr "Zpráva"
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:359
 msgid "Error"
-msgstr ""
+msgstr "Chyba"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
@@ -28,39 +23,41 @@ msgstr ""
 
 #: ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../userhelper-wrap.c:44 ../usermount.c:580 ../usermount.c:675
 #: ../usermount.c:763
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Chyba trubky.\n"
 
 #: ../userhelper-wrap.c:50 ../usermount.c:586 ../usermount.c:686
 #: ../usermount.c:769
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Nemohu provést fork().\n"
 
 #: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:626
 #: ../usermount.c:634 ../usermount.c:738 ../usermount.c:746 ../usermount.c:808
 #: ../usermount.c:816
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "Chyba pøi dup2().\n"
 
 #: ../userhelper-wrap.c:87 ../usermount.c:641 ../usermount.c:753
 #: ../usermount.c:823
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "Chyba pøi execl(), errno=%d\n"
 
 #: ../userhelper-wrap.c:116
 msgid "Information updated."
-msgstr ""
+msgstr "Informace aktualizovány."
 
 #: ../userhelper-wrap.c:119
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Vlo¾eno neplatné heslo.\n"
+"Zkuste to znovu."
 
 #: ../userhelper-wrap.c:122
 msgid ""
@@ -78,18 +75,20 @@ msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Nìkteré systémové soubory jsou uzamèeny.\n"
+"Zkuste to prosím za chvíli znovu."
 
 #: ../userhelper-wrap.c:131
 msgid "Unknown user."
-msgstr ""
+msgstr "Neznámý u¾ivatel."
 
 #: ../userhelper-wrap.c:134
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Nedostateèná práva."
 
 #: ../userhelper-wrap.c:137
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Neplatné volání subprocesu."
 
 #: ../userhelper-wrap.c:140
 msgid ""
@@ -97,27 +96,30 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"Vá¹ souèasný shell není uveden v souboru /etc/shells.\n"
+"Nemù¾ete svùj shell zmìnit.\n"
+"Chybu konzultujte s administrátorem systému."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:144
 msgid "Out of memory."
-msgstr ""
+msgstr "Nedostatek pamìti."
 
 #: ../userhelper-wrap.c:147
 msgid "The exec() call failed."
-msgstr ""
+msgstr "Volání exec() selhalo."
 
 #: ../userhelper-wrap.c:150
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Nemohu najít vybraný progra."
 
 #: ../userhelper-wrap.c:153
 msgid "Unknown error."
-msgstr ""
+msgstr "Neznámá chyba."
 
 #: ../userhelper-wrap.c:156
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Neznámý návratový kód."
 
 #: ../userhelper-wrap.c:321
 #, c-format
@@ -139,12 +141,12 @@ msgstr ""
 #: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Chyba %d.\n"
 
 #: ../userhelper.c:197
 #, c-format
 msgid "%s's password"
-msgstr ""
+msgstr "heslo u¾ivatele %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
@@ -168,7 +170,7 @@ msgstr ""
 
 #: ../userhelper.c:427
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "program userhelper musí být SUID root\n"
 
 #: ../userhelper.c:663 ../userhelper.c:695
 #, c-format
@@ -177,15 +179,15 @@ msgstr ""
 
 #: ../userinfo.c:125
 msgid "User Information"
-msgstr ""
+msgstr "Informace o u¾ivateli"
 
 #: ../userinfo.c:154
 msgid "Help"
-msgstr ""
+msgstr "Nápovìda"
 
 #: ../userinfo.c:243
 msgid "Full Name:"
-msgstr ""
+msgstr "Plné jméno:"
 
 #: ../userinfo.c:261
 msgid "Office:"
@@ -197,15 +199,15 @@ msgstr ""
 
 #: ../userinfo.c:298
 msgid "Home Phone:"
-msgstr ""
+msgstr "Domácí telefon:"
 
 #: ../userinfo.c:316
 msgid "Shell:"
-msgstr ""
+msgstr "Shell:"
 
 #: ../userinfo.c:379
 msgid "This will be some help text."
-msgstr ""
+msgstr "Toto bude nápovìda."
 
 #: ../usermount.c:119
 msgid "User Mount Tool"
@@ -216,37 +218,41 @@ msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
+"Nejsou k dispozici ¾ádné systémy pøipojitelné u¾ivatelem.\n"
+"Kontaktujte administrátora systému."
 
 #: ../usermount.c:177
 msgid "Directory"
-msgstr ""
+msgstr "Adresáø"
 
 #: ../usermount.c:185
 msgid "Device"
-msgstr ""
+msgstr "Zaøízení"
 
 #: ../usermount.c:193
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: ../usermount.c:268
 msgid "Format"
-msgstr ""
+msgstr "Formátovat"
 
 #: ../usermount.c:362
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
+"Jste si jist?\n"
+"Znièíte tak v¹echna data na tomto disku.\n"
 
 #: ../usermount.c:364
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
 #: ../usermount.c:374
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: ../usermount.c:381
 msgid "Do low level format."
-msgstr ""
+msgstr "Proveïte low level formátování."
