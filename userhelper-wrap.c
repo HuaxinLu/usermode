@@ -273,23 +273,26 @@ userhelper_parse_childout(char* outline)
 	case UH_ECHO_ON_PROMPT:
 	  message_box = create_query_box(prompt, NULL, 
 					 (GtkSignalFunc)userhelper_write_childin);
-	  gtk_widget_show(message_box);
 	  break;
 	case UH_ECHO_OFF_PROMPT:
 	  message_box = create_invisible_query_box(prompt, NULL,
 						   (GtkSignalFunc)userhelper_write_childin);
-	  gtk_widget_show(message_box);
 	  break;
 	case UH_INFO_MSG:
 	  message_box = create_message_box(prompt, NULL);
-	  gtk_widget_show(message_box);
 	  break;
 	case UH_ERROR_MSG:
 	  message_box = create_error_box(prompt, NULL);
-	  gtk_widget_show(message_box);
 	  break;
 	}
     }
+
+  gtk_signal_connect(GTK_OBJECT(message_box), "destroy", 
+		     (GtkSignalFunc) userhelper_fatal_error, NULL);
+  gtk_signal_connect(GTK_OBJECT(message_box), "delete_event", 
+		     (GtkSignalFunc) userhelper_fatal_error, NULL);
+
+  gtk_widget_show(message_box);
 
   if(rest != NULL)
     {
