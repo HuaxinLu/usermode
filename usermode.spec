@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.55
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -60,7 +60,7 @@ for wrappedapp in halt reboot poweroff ; do
 done
 
 # Strip it!  Strip it good!
-strip $RPM_BUILD_ROOT%{_bindir}/* $RPM_BUILD_ROOT%{_sbindir}/* || :
+strip $RPM_BUILD_ROOT%{_sbindir}/* || :
 %find_lang %{name}
 
 %clean
@@ -101,6 +101,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Mon May 20 2002 Nalin Dahyabhai <nalin@redhat.com> 1.55-2
+- don't strip binaries which have no special privileges
+
 * Wed May 15 2002 Nalin Dahyabhai <nalin@redhat.com> 1.55-1
 - remove the pixmap we don't use any more (we use stock pixmaps now)
 - update translations
