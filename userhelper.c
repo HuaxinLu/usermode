@@ -793,6 +793,15 @@ main(int argc, char **argv)
 			fail_exit(retval);
 		}
 
+		/* Set the requesting user. */
+		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
+		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_set_item() failed\n");
+#endif
+			fail_exit(retval);
+		}
+
 		/* Now try to change the user's password. */
 		do {
 #ifdef DEBUG_USERHELPER
@@ -858,6 +867,15 @@ main(int argc, char **argv)
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 			g_print("pam_start() failed\n");
+#endif
+			fail_exit(retval);
+		}
+
+		/* Set the requesting user. */
+		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
+		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_set_item() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -1317,6 +1335,15 @@ main(int argc, char **argv)
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 			g_print("pam_start() failed\n");
+#endif
+			fail_exit(retval);
+		}
+
+		/* Set the requesting user. */
+		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
+		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_set_item() failed\n");
 #endif
 			fail_exit(retval);
 		}

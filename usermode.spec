@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.63
-Release: 2
+Version: 1.64
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -104,6 +104,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Jan  6 2003 Nalin Dahyabhai <nalin@redhat.com> 1.64-1
+- set the requesting user PAM item to the invoking user's name (#81255)
+
 * Mon Nov 11 2002 Nalin Dahyabhai <nalin@redhat.com> 1.63-2
 - remove directory names from PAM config files, allowing the same config
   files to work for both arches on multilib boxes
