@@ -12,7 +12,8 @@ BuildRoot: /var/tmp/usermode-root
 The usermode package contains several graphical tools for users:
 userinfo, usermount and userpasswd.  Userinfo allows users to change
 their finger information.  Usermount lets users mount, unmount, and
-format filesystems.  Userpasswd allows users to change their passwords.
+format filesystems.  Userpasswd allows users to change their
+passwords.
 
 Install the usermode package if you would like to provide users with
 graphical tools for certain account management tasks.
