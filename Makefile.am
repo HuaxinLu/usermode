@@ -67,5 +67,12 @@ test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 tag:
 	cvs tag -cFR $(CVSTAG) .
+	rm -fr /tmp/$(PACKAGE)-export-tmp
+	CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r $(CVSTAG) -d
+ $(PACKAGE)-export-tmp $(PACKAGE)
+	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh --without-sasl --without-lda
+p; make dist
+	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.gz .
+	rm -fr /tmp/$(PACKAGE)-export-tmp
 
 ACLOCAL_AMFLAGS = -I m4
