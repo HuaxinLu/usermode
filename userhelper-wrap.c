@@ -92,7 +92,8 @@ userhelper_parse_exitstatus(int exitstatus)
 			   GTK_SIGNAL_FUNC(userhelper_fatal_error), NULL);
 	gtk_signal_connect(GTK_OBJECT(message_box), "delete_event",
 			   GTK_SIGNAL_FUNC(userhelper_fatal_error), NULL);
-	gtk_widget_show(message_box);
+	gtk_dialog_run(GTK_DIALOG(message_box));
+	gtk_widget_destroy(message_box);
 }
 
 /* Attempt to grab focus for the toplevel of this widget, so that peers can
@@ -121,9 +122,9 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 			/* Run unprivileged. */
 			byte = UH_FALLBACK;
 			for (message_list = resp->message_list;
-			    (message_list != NULL) &&
-			    (message_list->data != NULL);
-			    message_list = g_list_next(message_list)) {
+			     (message_list != NULL) &&
+			     (message_list->data != NULL);
+			     message_list = g_list_next(message_list)) {
 				message *m = (message *) message_list->data;
 #ifdef DEBUG_USERHELPER
 				fprintf(stderr, "message %d, \"%s\"\n", m->type,
@@ -140,9 +141,9 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 			/* Abort. */
 			byte = UH_ABORT;
 			for (message_list = resp->message_list;
-			    (message_list != NULL) &&
-			    (message_list->data != NULL);
-			    message_list = g_list_next(message_list)) {
+			     (message_list != NULL) &&
+			     (message_list->data != NULL);
+			     message_list = g_list_next(message_list)) {
 				message *m = (message *) message_list->data;
 #ifdef DEBUG_USERHELPER
 				fprintf(stderr, "message %d, \"%s\"\n", m->type,
@@ -158,8 +159,8 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		case GTK_RESPONSE_OK:
 			byte = UH_TEXT;
 			for (message_list = resp->message_list;
-			     (message_list != NULL)
-			     && (message_list->data != NULL);
+			     (message_list != NULL) &&
+			     (message_list->data != NULL);
 			     message_list = g_list_next(message_list)) {
 				message *m = (message *) message_list->data;
 #ifdef DEBUG_USERHELPER
@@ -492,6 +493,7 @@ userhelper_parse_childout(char *outline)
 		if (text != NULL) {
 			gtk_label_set_text(GTK_LABEL(label), text);
 			g_free(text);
+			text = NULL;
 		} else {
 			gtk_label_set_text(GTK_LABEL(label), "");
 		}
@@ -726,8 +728,11 @@ userhelper_run(char *path, ...)
 	for (i = 0; i < argc; i++) {
 		argv[i] = g_strdup(va_arg(ap, char *));
 	}
+	argv[i] = NULL;
 	va_end(ap);
 
 	/* Pass the array into userhelper_runv() to actually run it. */
 	userhelper_runv(path, argv);
+
+	g_free(argv);
 }
