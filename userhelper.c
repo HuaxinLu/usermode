@@ -643,11 +643,7 @@ int main(int argc, char *argv[])
 	session = svTrueValue(s, "SESSION", 0);
 	fallback = svTrueValue(s, "FALLBACK", 0);
 	retry = svGetValue(s, "RETRY");
-	if (retry) {
-	    try = atoi(retry) + 1;
-	} else {
-	    try = 3;
-	}
+	try = retry ? (atoi(retry) + 1) : 3;
 
 	svCloseFile(s);
 
@@ -722,7 +718,7 @@ int main(int argc, char *argv[])
 		setgid(0);
 		setuid(0);
 		pw = getpwuid(getuid());
-		if (pw) setenv("HOME", strdup(pw->pw_dir), 1);
+		if (pw) setenv("HOME", pw->pw_dir, 1);
 		argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
 		g_print(i18n("about to exec \"%s\"\n"), constructed_path);
