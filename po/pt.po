@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
-"PO-Revision-Date: 2001-01-21 20:03+00:00\n"
+"POT-Creation-Date: 2001-01-25 15:50-0500\n"
+"PO-Revision-Date: 2001-01-27 19:27+00:00\n"
 "Last-Translator: Pedro Morais <morais@poli.org>\n"
 "Language-Team: pt <morais@poli.org>\n"
 "MIME-Version: 1.0\n"
@@ -136,18 +136,18 @@ msgid "Need %d responses.\n"
 msgstr "Necessárias %d respostas.\n"
 
 #: ../userhelper-wrap.c:371
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
-"Para poder executar \"%s\" com os privilégios de %s, são necessárias mais "
+"Para poder executar \"%s\" com os privilégios de root, são necessárias mais "
 "informações."
 
 #: ../userhelper-wrap.c:389
-#, fuzzy, c-format
+#, c-format
 msgid "Changing password for %s"
-msgstr "Senha para %s"
+msgstr "A mudar a senha de %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
@@ -191,12 +191,12 @@ msgstr "userhelper tem que ser setuid root\n"
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "PAM retornou = %d\n"
 
 #: ../userhelper.c:673
-#, fuzzy, c-format
+#, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr "prestes a executar \"%s\"\n"
+msgstr "prestes a autenticar \"%s\"\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
@@ -293,40 +293,40 @@ msgstr "Formatação de baixo nível."
 
 #: ../dummy.h:4
 msgid "Exit"
-msgstr ""
+msgstr "Sair"
 
 #: ../dummy.h:5
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../dummy.h:6
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Executar sem privilégios"
 
 #: ../dummy.h:7
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "Senha UNIX (actual): "
 
 #: ../dummy.h:8
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Nova senha UNIX: "
 
 #: ../dummy.h:9
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Repita a nova senha UNIX: "
 
 #: ../dummy.h:10
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "SENHA INVÁLIDA: é demasiado curta"
 
 #: ../dummy.h:11
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "SENHA INVÁLIDA: é demasiado curta"
 
 #: ../dummy.h:12
 msgid "Password unchanged"
-msgstr ""
+msgstr "A senha não foi modificada"
 
 #: ../dummy.h:13
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Desculpe, as senhas não são iguais"
