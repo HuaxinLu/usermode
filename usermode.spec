@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.62
+Version: 1.63
 Release: 1
 License: GPL
 Group: Applications/System
@@ -107,6 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Sep  4 2002 Nalin Dahyabhai <nalin@redhat.com> 1.63-1
+- userhelper: swallow the exec'd program's exit stauts, which would be
+  misinterpreted by consolehelper anyway
+
 * Tue Sep  3 2002 Nalin Dahyabhai <nalin@redhat.com> 1.62-1
 - consolehelper: suppress dialog on successful execution
 - userhelper: return 0 on success, not 1 (what was I *thinking*?)

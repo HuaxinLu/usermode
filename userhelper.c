@@ -1462,12 +1462,12 @@ main(int argc, char **argv)
 
 			/* Use the exit status fo the child to determine our
 			 * exit value. */
-			if (WIFEXITED(status) && (WEXITSTATUS(status) == 0)) {
+			if (WIFEXITED(status)) {
 				pam_end(app_data.pamh, PAM_SUCCESS);
 				retval = 0;
 			} else {
 				pam_end(app_data.pamh, PAM_SUCCESS);
-				retval = ERR_EXEC_FAILED;
+				retval = ERR_UNK_ERROR;
 			}
 			exit(retval);
 		} else {
