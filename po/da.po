@@ -438,7 +438,7 @@ msgstr "Ændrer personlige oplysninger."
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Administrationaf disk"
+msgstr "Administration af disk"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
