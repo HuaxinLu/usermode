@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.37\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date:  2001-07-23 11:30 CET\n"
 "Last-Translator: Bettina De Monti\n"
 "Language-Team: French <FR@li.org>\n"
@@ -86,31 +86,21 @@ msgstr "Désolé, les mots de passe ne correspondent pas"
 msgid "Help"
 msgstr "Aide"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Erreur %d.\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "Mot de passe pour %s"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper doit être setuid root\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "début de l'authentification de \"%s\"\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "Retour de PAM = %d\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "début de l'exécution de \"%s\"\n"
@@ -389,6 +379,13 @@ msgstr "Démonter"
 #, fuzzy
 msgid "E_xit"
 msgstr "Quitter"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "début de l'authentification de \"%s\"\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "Retour de PAM = %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "Oui"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date:  2001-01-29 17:50-0100\n"
 "Last-Translator: Bettina De Monti\n"
 "Language-Team: Italian\n"
@@ -85,31 +85,21 @@ msgstr "Le password non corrispondono"
 msgid "Help"
 msgstr "Help"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Errore %d.\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "Password per %s"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper deve impostare la setuid root\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "inizio di autenticazione \"%s\"\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "PAM restituito = %d\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "inizio di exec \"%s\"\n"
@@ -388,6 +378,13 @@ msgstr "Smonta"
 #, fuzzy
 msgid "E_xit"
 msgstr "Esci"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "inizio di autenticazione \"%s\"\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "PAM restituito = %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "Sì"

@@ -800,7 +800,7 @@ main(int argc, char **argv)
 		 * execute the command given in the console.apps file. */
 		char *constructed_path;
 		char *apps_filename;
-		char *user = user_name, *apps_user, *auth_user;
+		char *user_pam = user_name, *apps_user, *auth_user;
 		char *retry, *noxoption;
 		char *env_home, *env_term, *env_display, *env_shell;
 		char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
@@ -874,26 +874,6 @@ main(int argc, char **argv)
 		 * as the invoking user. */
 		if(env_display) setenv("DISPLAY", env_display, 1);
 
-		pw = getpwnam(user);
-		if(pw == NULL) {
-#ifdef DEBUG_USERHELPER
-			g_print("no user named %s exists\n", user);
-#endif
-			exit(ERR_NO_USER);
-		}
-		if(pw->pw_uid == 0) {
-			setenv("HOME", g_strdup(pw->pw_dir), 1);
-		} else {
-			if(env_home) {
-				setenv("HOME", env_home, 1);
-			} else {
-				pw = getpwuid(getuid());
-				if((pw != NULL) && (pw->pw_dir != NULL)) {
-					setenv("HOME", g_strdup(pw->pw_dir), 1);
-				}
-			}
-		}
-
 		/* The rest of the environment variables are simpler. */
 		if(env_lang) setenv("LANG", env_lang, 1);
 		if(env_lcall) setenv("LC_ALL", env_lcall, 1);
@@ -935,9 +915,9 @@ main(int argc, char **argv)
 		 * is usually root, but could conceivably be something else). */
 		apps_user = svGetValue(s, "USER");
 		if((apps_user == NULL) || (strcmp(apps_user, "<user>") == 0)) {
-			user = user_name;
+			user_pam = user_name;
 		} else {
-			user = g_strdup(apps_user);
+			user_pam = g_strdup(apps_user);
 		}
 
 		/* Read the path to the program to run. */
@@ -985,6 +965,33 @@ main(int argc, char **argv)
 			}
 		}
 
+		/* Verify that the user we need to authenticate as has a home
+		 * directory. */
+		pw = getpwnam(user_pam);
+		if(pw == NULL) {
+#ifdef DEBUG_USERHELPER
+			g_print("no user named %s exists\n", user_pam);
+#endif
+			exit(ERR_NO_USER);
+		}
+		/* If the user we're authenticating as has root's UID, then it's
+		 * safe to let them use HOME=~root. */
+		if(pw->pw_uid == 0) {
+			setenv("HOME", g_strdup(pw->pw_dir), 1);
+		} else {
+			/* Otherwise, if they had a reasonable value for HOME,
+			 * let them use it. */
+			if(env_home) {
+				setenv("HOME", env_home, 1);
+			} else {
+				/* Otherwise, punt. */
+				pw = getpwuid(getuid());
+				if((pw != NULL) && (pw->pw_dir != NULL)) {
+					setenv("HOME", g_strdup(pw->pw_dir), 1);
+				}
+			}
+		}
+
 		/* Read other settings. */
 		session = svTrueValue(s, "SESSION", FALSE);
 		app_data.fallback_allowed = svTrueValue(s, "FALLBACK", FALSE);
@@ -995,7 +1002,7 @@ main(int argc, char **argv)
 		svCloseFile(s);
 
 		/* Start up PAM to authenticate the specified user. */
-		retval = pam_start(progname, user, conv, &app_data.pamh);
+		retval = pam_start(progname, user_pam, conv, &app_data.pamh);
 		if(retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 			g_print("pam_start() failed\n");
@@ -1006,7 +1013,7 @@ main(int argc, char **argv)
 		/* Try to authenticate the user. */
 		do {
 #ifdef DEBUG_USERHELPER
-			g_print("about to authenticate \"%s\"\n", user);
+			g_print("about to authenticate \"%s\"\n", user_pam);
 #endif
 			retval = pam_authenticate(app_data.pamh, 0);
 #ifdef DEBUG_USERHELPER
@@ -1045,7 +1052,7 @@ main(int argc, char **argv)
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
 		}
-		if(strcmp(user, auth_user) != 0) {
+		if(strcmp(user_pam, auth_user) != 0) {
 			exit(ERR_UNK_ERROR);
 		}
 
@@ -1055,6 +1062,16 @@ main(int argc, char **argv)
 		if (retval != PAM_SUCCESS) {
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
+		}
+
+		/* We need to re-read the user's information -- libpam doesn't
+		 * guarantee that these won't be nuked. */
+		pw = getpwnam(user_pam);
+		if(pw == NULL) {
+#ifdef DEBUG_USERHELPER
+			g_print("no user named %s exists\n", user_pam);
+#endif
+			exit(ERR_NO_USER);
 		}
 
 		/* What we do now depends on whether or not we need to open

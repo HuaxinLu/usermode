@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date:  2001-07-25 15:40-0500\n"
 "Last-Translator: Claudia Krug <fhonig@redhat.it>\n"
 "Language-Team: German\n"
@@ -85,31 +85,21 @@ msgstr "Sorry, die Passwörter stimmen nicht überein"
 msgid "Help"
 msgstr "Hilfe"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "%d Fehler aufgetreten.\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "Passwort für %s"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "usermode muss Setuid-Root sein\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "\"%s\" wird gerade authentifiziert\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "PAM lieferte %d zurück\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\" exec wird gerade ausgeführt\n"
@@ -388,6 +378,13 @@ msgstr "Unmount"
 #, fuzzy
 msgid "E_xit"
 msgstr "Beenden"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "\"%s\" wird gerade authentifiziert\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "PAM lieferte %d zurück\n"
 
 #~ msgid "Yes"
 #~ msgstr "Ja"

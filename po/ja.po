@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date: 2001-01-18 15:55+0500\n"
 "Last-Translator: Adrian Havill <havill@redhat.com>\n"
 "Language-Team: Red Hat Japan\n"
@@ -85,31 +85,21 @@ msgstr "パスワードが一致していません"
 msgid "Help"
 msgstr "ヘルプ"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "エラーが発生しました。%d\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "%sのパスワード"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "\"%s\"を認証しようとしています\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "PAMの返り値 = %d\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\"を実行しようとしています\n"
@@ -387,6 +377,13 @@ msgstr "マウント解除"
 #, fuzzy
 msgid "E_xit"
 msgstr "終了"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "\"%s\"を認証しようとしています\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "PAMの返り値 = %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "はい"

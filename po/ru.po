@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date: 2000-08-08 01:20+0300\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
 "Language-Team: Black Cat Linux Team <blackcat-support@blackcatlinux.com>\n"
@@ -82,31 +82,21 @@ msgstr "Извините, пароли не совпадают"
 msgid "Help"
 msgstr "Помощь"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Получена ошибка %d.\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "Пароль для %s"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper должен быть setuid root\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "готовность к аутентификации \"%s\"\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "код возврата PAM %d\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "выполнение \"%s\"\n"
@@ -384,6 +374,13 @@ msgstr "Отмонтирование"
 #, fuzzy
 msgid "E_xit"
 msgstr "Выход"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "готовность к аутентификации \"%s\"\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "код возврата PAM %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "Да"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date: 2001-04-02 02:51+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -81,31 +81,21 @@ msgstr "Promiòte, vlo¾ená hesla nebyla stejná"
 msgid "Help"
 msgstr "Nápovìda"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Chyba %d.\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "Heslo pro u¾ivatele %s"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí být SUID root\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "autentizuji \"%s\"\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "PAM vrátil = %d\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "spou¹tím \"%s\"\n"
@@ -384,6 +374,13 @@ msgstr "Odpojit"
 #, fuzzy
 msgid "E_xit"
 msgstr "Konec"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "autentizuji \"%s\"\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "PAM vrátil = %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "Ano"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 7.2\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date: 2001-09-05 22:33+0200\n"
 "Last-Translator: Roman Maurer <roman.maurer@amis.net>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -87,31 +87,21 @@ msgstr "®al se gesli ne ujemata"
 msgid "Help"
 msgstr "Pomoè"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Dobili napako %d.\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "Geslo za %s"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mora biti setuid root\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "nameravam avtenticirati \"%s\"\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "PAM vrnil = %d\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "nameravam izvesti \"%s\"\n"
@@ -389,6 +379,13 @@ msgstr "Odklopi"
 #, fuzzy
 msgid "E_xit"
 msgstr "Izhod"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "nameravam avtenticirati \"%s\"\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "PAM vrnil = %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "Da"

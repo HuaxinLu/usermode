@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date: 2001-02-13 15:24GMT\n"
 "Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
 "Language-Team: danish <dansk@klid.dk>\n"
@@ -82,31 +82,21 @@ msgstr "Undskyld, adgangskoder er ikke ens"
 msgid "Help"
 msgstr "Hjælp"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Fik fejl %d.\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "Adgangskode for %s"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper skal være setuid root\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "skal til at verificere identiteten af \"%s\"\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "PAM returnerede = %d\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "parat til at køre \"%s\"\n"
@@ -384,6 +374,13 @@ msgstr "Afmontér"
 #, fuzzy
 msgid "E_xit"
 msgstr "Afslut"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "skal til at verificere identiteten af \"%s\"\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "PAM returnerede = %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "Ja"

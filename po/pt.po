@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-12-04 17:34-0500\n"
+"POT-Creation-Date: 2001-12-04 18:02-0500\n"
 "PO-Revision-Date: 2001-01-27 19:27+00:00\n"
 "Last-Translator: Pedro Morais <morais@poli.org>\n"
 "Language-Team: pt <morais@poli.org>\n"
@@ -81,31 +81,21 @@ msgstr "Desculpe, as senhas não são iguais"
 msgid "Help"
 msgstr "Ajuda"
 
-#: userhelper.c:92
+#: userhelper.c:93
 #, fuzzy, c-format
 msgid "Got PAM error %d.\n"
 msgstr "Encontrei o erro %d.\n"
 
-#: userhelper.c:185
+#: userhelper.c:186
 #, c-format
 msgid "Password for %s"
 msgstr "Senha para %s"
 
-#: userhelper.c:447
+#: userhelper.c:457
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper tem que ser setuid root\n"
 
-#: userhelper.c:601 userhelper.c:927
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "prestes a autenticar \"%s\"\n"
-
-#: userhelper.c:606 userhelper.c:932
-#, fuzzy, c-format
-msgid "PAM retval = %d (%s)\n"
-msgstr "PAM retornou = %d\n"
-
-#: userhelper.c:1019 userhelper.c:1058
+#: userhelper.c:1100 userhelper.c:1139
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "prestes a executar \"%s\"\n"
@@ -384,6 +374,13 @@ msgstr "Desmontar"
 #, fuzzy
 msgid "E_xit"
 msgstr "Sair"
+
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "prestes a autenticar \"%s\"\n"
+
+#, fuzzy
+#~ msgid "PAM retval = %d (%s)\n"
+#~ msgstr "PAM retornou = %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "Sim"
