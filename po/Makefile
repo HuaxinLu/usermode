@@ -1,3 +1,4 @@
+# Generated automatically from Makefile.in.in by configure.
 # Makefile for PO directory in any package using GNU gettext.
 # Copyright (C) 1995-1997, 2000-2002 by Ulrich Drepper <drepper@gnu.ai.mit.edu>
 #
@@ -16,7 +17,6 @@ SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = ..
-
 
 prefix = /usr
 exec_prefix = /usr

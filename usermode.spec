@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.52
-Release: 2
+Version: 1.53
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -102,6 +102,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Thu Apr 11 2002 Nalin Dahyabhai <nalin@redhat.com> 1.53-1
+- refresh shell variable code from authconfig (#63175)
+
 * Tue Apr  9 2002 Nalin Dahyabhai <nalin@redhat.com> 1.52-2
 - refresh translations
 
