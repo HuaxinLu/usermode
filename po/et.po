@@ -1,5 +1,6 @@
 # 
 #
+#
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Allan Sims <allsi@eau.ee>, 2004.
@@ -9,7 +10,7 @@ msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2004-02-28 16:48+0200\n"
+"PO-Revision-Date: 2004-03-02 23:10+0200\n"
 "Last-Translator: Allan Sims <allsi@eau.ee>\n"
 "Language-Team: Estonian <Eesti>\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +83,7 @@ msgstr "Vabandust, kuid paroolid ei ühti"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "Lase süsteemi seadistus vahendid käiku ilma paroolita."
 
 #: dummy.h:33
 msgid "login: "
@@ -99,7 +100,7 @@ msgstr "Abi"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Ei saa seada exec konteksti %s-le.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -148,7 +149,7 @@ msgstr "Parool %s jaoks: "
 
 #: userhelper.c:1039
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "userhelper peab olema seatud kui juurkasutaja\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:1123
