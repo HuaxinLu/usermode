@@ -24,8 +24,10 @@
 #define _(String) gettext(String)
 
 /* Descriptors used to communicate between userhelper and consolhelper. */
-#define UH_INFILENO 3
-#define UH_OUTFILENO 4
+//#define UH_INFILENO 3
+//#define UH_OUTFILENO 4
+#define UH_INFILENO 1
+#define UH_OUTFILENO 2
 
 /* Synchronization point code. */
 #define UH_SYNC_POINT 32

@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.68
-Release: 6.sel
+Release: 7.sel
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -46,7 +46,7 @@ graphical tools for certain account management tasks.
 %build
 %configure \
 %if %{WITH_SELINUX}
-	--with-selinux
+	--with-selinux --sysconfdir=/etc
 %endif
 
 make
@@ -117,6 +117,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Oct 1 2003 Dan Walsh <dwalsh@redhat.com> 1.68-7.sel
+- Fix to use /etc instead of /usr/etc
+
 * Thu Sep 25 2003 Dan Walsh <dwalsh@redhat.com> 1.68-6.sel
 - turn on selinux
 - add default userhelper context file
