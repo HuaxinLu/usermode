@@ -440,8 +440,8 @@ main(int argc, char **argv)
 	struct pam_conv *conv;
 
 	setlocale(LC_ALL, "");
-	bindtextdomain("usermode", "/usr/share/locale");
-	textdomain("usermode");
+	bindtextdomain(PACKAGE, DATADIR "/locale");
+	textdomain(PACKAGE);
 
 	if(geteuid() != 0) {
 		fprintf(stderr, _("userhelper must be setuid root\n"));
@@ -733,8 +733,7 @@ main(int argc, char **argv)
 		char *user, *apps_user, *auth_user;
 		char *retry, *noxoption;
 		char *env_home, *env_term, *env_display, *env_shell;
-		char *env_user, *env_logname, *env_lang, *env_lcall;
-		char *env_lcmsgs, *env_xauthority;
+		char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
 		int session, tryagain, gui;
 		struct stat sbuf;
 		shvarFile *s;
@@ -751,10 +750,8 @@ main(int argc, char **argv)
 		env_lang = getenv("LANG");
 		env_lcall = getenv("LC_ALL");
 		env_lcmsgs = getenv("LC_MESSAGES");
-		env_logname = getenv("LOGNAME");
 		env_shell = getenv("SHELL");
 		env_term = getenv("TERM");
-		env_user = getenv("USER");
 		env_xauthority = getenv("XAUTHORITY");
 
 		/* Sanity-check the environment variables as best we can: those
@@ -783,10 +780,6 @@ main(int argc, char **argv)
 		    strstr(env_lcmsgs, "..") ||
 		    strchr(env_lcmsgs, '%')))
 			env_lcmsgs = NULL;
-		if(env_logname &&
-		   (strstr(env_logname, "..") ||
-		    strchr(env_logname, '%')))
-			env_logname = NULL;
 		if (env_shell &&
 		   (strstr(env_shell, "..") ||
 		    strchr(env_shell, '%')))
@@ -795,10 +788,6 @@ main(int argc, char **argv)
 		   (strstr(env_term, "..") ||
 		    strchr(env_term, '%')))
 			env_term = "dumb";
-		if(env_user &&
-		   (strstr(env_user, "..") ||
-		    strchr(env_user, '%')))
-			env_user = NULL;
 		if(env_xauthority &&
 		   (strstr(env_xauthority , "..") ||
 		    strchr(env_xauthority , '%')))
@@ -814,26 +803,39 @@ main(int argc, char **argv)
 		 * abandoning authentication in order to run the wrapped program
 		 * as the invoking user. */
 		if(env_display) setenv("DISPLAY", env_display, 1);
-		if(env_home) {
-			setenv("HOME", env_home, 1);
+
+		pw = getpwnam(user);
+		if(pw == NULL) {
+			exit(ERR_NO_USER);
+		}
+		if(pw->pw_uid == 0) {
+			setenv("HOME", g_strdup(pw->pw_dir), 1);
 		} else {
-			pw = getpwuid(getuid());
-			if((pw != NULL) && (pw->pw_dir != NULL)) {
-				setenv("HOME", g_strdup(pw->pw_dir), 1);
+			if(env_home) {
+				setenv("HOME", env_home, 1);
+			} else {
+				pw = getpwuid(getuid());
+				if((pw != NULL) && (pw->pw_dir != NULL)) {
+					setenv("HOME", g_strdup(pw->pw_dir), 1);
+				}
 			}
 		}
+
+		/* The rest of the environment variables are simpler. */
 		if(env_lang) setenv("LANG", env_lang, 1);
 		if(env_lcall) setenv("LC_ALL", env_lcall, 1);
 		if(env_lcmsgs) setenv("LC_MESSAGES", env_lcmsgs, 1);
-		if(env_logname) setenv("LOGNAME", env_logname, 1);
 		if(env_shell) setenv("SHELL", env_shell, 1);
 		if(env_term) setenv("TERM", env_term, 1);
-		if(env_user) setenv("USER", env_user, 1);
 
 		/* Set the PATH to a reasonaly safe list of directories. */
 		setenv("PATH",
 		       "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin:/root/bin",
 		       1);
+
+		/* Set the LOGNAME and USER variables to the executing name. */
+		setenv("LOGNAME", g_strdup("root"), 1);
+		setenv("USER", g_strdup("root"), 1);
 
 		/* Open the console.apps configuration file for this wrapped
 		 * program, and read settings from it. */

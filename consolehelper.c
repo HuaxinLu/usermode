@@ -23,9 +23,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <gtk/gtk.h>
+#include "config.h"
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
 
+#ifndef DISABLE_X11
 void
 userhelper_fatal_error(int signal)
 {
@@ -35,20 +37,29 @@ userhelper_fatal_error(int signal)
 		_exit(0);
 	}
 }
+#endif
 
 int
 main(int argc, char *argv[])
 {
-	char *display;
 	char **constructed_argv;
 	int offset, i;
 	char *progname;
 	gboolean graphics_available = FALSE;
+#ifndef DISABLE_X11
+	char *display;
+#endif
+
+#ifdef DISABLE_X11
+	/* We're in the non-X11 version.  If we have the X11-capable version
+	 * installed, try to let it worry about all of this. */
+	execv(UH_CONSOLEHELPER_X11_PATH, argv);
+#endif
 
 	/* Set up locales. */
 	setlocale(LC_ALL, "");
-	bindtextdomain("usermode", "/usr/share/locale");
-	textdomain("usermode");
+	bindtextdomain(PACKAGE, DATADIR "/locale");
+	textdomain(PACKAGE);
 
 	/* Find the basename of the program we were invoked as. */
 	progname = strrchr(argv[0], '/');
@@ -58,6 +69,7 @@ main(int argc, char *argv[])
 		progname = argv[0];
 	}
 
+#ifndef DISABLE_X11
 	/* If DISPLAY is set, or if stdin isn't a TTY, we have to check if we
 	 * can display in a window.  Otherwise, all is probably lost.  */
 	display = getenv("DISPLAY");
@@ -73,6 +85,7 @@ main(int argc, char *argv[])
 			graphics_available = TRUE;
 		}
 	}
+#endif
 
 	/* If we're not on a TTY, and we can't display a window, we're
 	 * screwed. */
@@ -109,9 +122,11 @@ main(int argc, char *argv[])
 
 	/* If we can open a window, use the graphical wrapper routine. */
 	if(graphics_available) {
+#ifndef DISABLE_X11
 		signal(SIGCHLD, userhelper_fatal_error);
 		userhelper_runv(UH_PATH, (const char**) constructed_argv);
 		gtk_main();
+#endif
 	} else {
 		/* Text mode doesn't need the whole pipe thing. */
 		execv(UH_PATH, constructed_argv);

@@ -75,7 +75,7 @@ just described; only used with -w.
 .TP
 .I -w
 Specify a program name and arguments to be passed through.  userhelper
-will look up in the file /etc/security/console.apps/\fIprogramname\fP
+will look up in the file @SYSCONFDIR@/security/console.apps/\fIprogramname\fP
 the username to authenticate stored as USER=\fIvalue\fP (\fIvalue\fP
 is normally "root" or the magic token "<user>" which indicates
 to authenticate the current user) and the program to run stored as

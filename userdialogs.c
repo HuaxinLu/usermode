@@ -39,7 +39,7 @@ create_message_box(gchar *message, gchar *title)
 		gtk_window_set_title(GTK_WINDOW(dialog), title);
 	}
 	g_signal_connect_object(G_OBJECT(dialog), "response",
-				(GtkSignalFunc)gtk_widget_destroy, dialog, 0);
+				GTK_SIGNAL_FUNC(gtk_widget_destroy), dialog, 0);
 	gtk_widget_show_all(dialog);
 	return dialog;
 }
@@ -56,7 +56,7 @@ create_error_box(gchar * error, gchar * title)
 		gtk_window_set_title(GTK_WINDOW(dialog), title);
 	}
 	g_signal_connect_object(G_OBJECT(dialog), "response",
-				(GtkSignalFunc)gtk_widget_destroy, dialog, 0);
+				GTK_SIGNAL_FUNC(gtk_widget_destroy), dialog, 0);
 	gtk_widget_show_all(dialog);
 	return dialog;
 }
@@ -82,7 +82,7 @@ create_message_box(gchar *message, gchar *title)
 	gtk_label_set_text(GTK_LABEL(label), message);
 
 	gtk_signal_connect_object(GTK_OBJECT(button), "clicked",
-				  (GtkSignalFunc) gtk_widget_destroy,
+				  GTK_SIGNAL_FUNC(gtk_widget_destroy),
 				  (gpointer) window);
 
 	return window;
@@ -131,9 +131,9 @@ create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
 	gtk_box_pack_start_defaults(GTK_BOX(box), entry);
 
 	g_signal_connect(G_OBJECT(dialog), "response",
-			 (GtkSignalFunc)relay_value, func);
+			 GTK_SIGNAL_FUNC(relay_value), func);
 	g_signal_connect_object(G_OBJECT(dialog), "response",
-				(GtkSignalFunc)gtk_widget_destroy, NULL,
+				GTK_SIGNAL_FUNC(gtk_widget_destroy), NULL,
 				G_CONNECT_AFTER);
 
 	gtk_widget_show_all(dialog);
@@ -166,13 +166,13 @@ create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
 	gtk_entry_set_visibility(GTK_ENTRY(entry), visible);
 
 	gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
-				  (GtkSignalFunc) gtk_widget_hide,
+				  GTK_SIGNAL_FUNC(gtk_widget_hide),
 				  (gpointer) window);
 	gtk_signal_connect(GTK_OBJECT(ok), "clicked",
-			   (GtkSignalFunc) func, (gpointer) entry);
+			   GTK_SIGNAL_FUNC(func), (gpointer) entry);
 
 	gtk_signal_connect_object(GTK_OBJECT(cancel), "clicked",
-				  (GtkSignalFunc) gtk_widget_destroy,
+				  GTK_SIGNAL_FUNC(gtk_widget_destroy),
 				  (gpointer) window);
 
 	/* FIXME: close the dialog when the cancel button is clicked, and

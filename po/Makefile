@@ -1,79 +1,205 @@
-INSTALL= /usr/bin/install -c
-INSTALL_PROGRAM= ${INSTALL}
-INSTALL_DATA= ${INSTALL} -m 644
-datadir=/usr/share
-INSTALLNLSDIR=$(PREFIX)$(datadir)/locale
+# Makefile for program source directory in GNU NLS utilities package.
+# Copyright (C) 1995-1997, 2000, 2001 by Ulrich Drepper <drepper@gnu.ai.mit.edu>
+#
+# This file file be copied and used freely without restrictions.  It can
+# be used in projects which are not available under the GNU Public License
+# but which still want to provide support for the GNU gettext functionality.
+# Please note that the actual code is *not* freely available.
 
+PACKAGE = usermode
+VERSION = Version:
+
+# These two variables depend on the location of this directory.
+subdir = po
+top_builddir = ..
+
+SHELL = /bin/sh
+
+
+srcdir = .
+top_srcdir = ..
+
+
+prefix = /usr
+exec_prefix = /usr
+datadir = ${prefix}/share
+localedir = $(datadir)/locale
+gettextsrcdir = $(datadir)/gettext/po
+
+INSTALL = /usr/bin/install -c
+INSTALL_DATA = ${INSTALL} -m 644
+MKINSTALLDIRS = ./mkinstalldirs
+mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) echo "$(MKINSTALLDIRS)" ;; *) echo "$(top_builddir)/$(MKINSTALLDIRS)" ;; esac`
+
+CC = gcc
+GMSGFMT = /usr/bin/msgfmt
+MSGFMT = /usr/bin/msgfmt
+XGETTEXT = /usr/bin/xgettext
 MSGMERGE = msgmerge
 
-NLSPACKAGE = usermode
+DEFS = -DHAVE_CONFIG_H
+CFLAGS = -Wall -Wunused -Wmissing-prototypes -Wmissing-declarations -g3
+CPPFLAGS = 
 
-CATALOGS = $(shell ls *.po | sed 's/po/mo/')
+INCLUDES = -I.. -I$(top_srcdir)/intl
 
-POTFILES  = ../consolehelper.c ../userdialogs.c ../userhelper-wrap.c \
-	    ../userhelper.c ../userinfo.c ../usermount.c ../userpasswd.c \
-	    ../userhelper.h ../userdialogs.h ../dummy.h \
-	    ../userhelper-wrap.c
+COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS)
 
-all: $(NLSPACKAGE).pot $(CATALOGS)
+POFILES =  bs.po cs.po da.po de.po es.po eu_ES.po fi.po fr.po gl.po hu.po id.po is.po it.po ja.po ko.po no.po pl.po pt_BR.po pt.po ro.po ru.po sk.po sl.po sr.po sv.po tr.po uk.po wa.po zh_CN.GB2312.po zh.po
+GMOFILES =  bs.gmo cs.gmo da.gmo de.gmo es.gmo eu_ES.gmo fi.gmo fr.gmo gl.gmo hu.gmo id.gmo is.gmo it.gmo ja.gmo ko.gmo no.gmo pl.gmo pt_BR.gmo pt.gmo ro.gmo ru.gmo sk.gmo sl.gmo sr.gmo sv.gmo tr.gmo uk.gmo wa.gmo zh_CN.GB2312.gmo zh.gmo
+DISTFILES = ChangeLog Makefile.in.in POTFILES.in $(PACKAGE).pot \
+$(POFILES) $(GMOFILES)
 
-$(NLSPACKAGE).pot: $(POTFILES)
-	xgettext --default-domain=$(NLSPACKAGE) \
-		--add-comments --keyword=i18n --keyword=N_ $(POTFILES)
-	if cmp -s $(NLSPACKAGE).po $(NLSPACKAGE).pot; then \
-	    rm -f $(NLSPACKAGE).po; \
+POTFILES = \
+     ../consolehelper.c \
+     ../dummy.h \
+     ../userdialogs.h \
+     ../userhelper.c \
+     ../userhelper-wrap.c \
+     ../userinfo.c \
+     ../usermount.c \
+     ../userhelper.h \
+     ../glade.strings
+
+CATALOGS =  bs.gmo cs.gmo da.gmo de.gmo es.gmo eu_ES.gmo fi.gmo fr.gmo gl.gmo hu.gmo id.gmo is.gmo it.gmo ja.gmo ko.gmo no.gmo pl.gmo pt_BR.gmo pt.gmo ro.gmo ru.gmo sk.gmo sl.gmo sr.gmo sv.gmo tr.gmo uk.gmo wa.gmo zh_CN.GB2312.gmo zh.gmo
+
+.SUFFIXES:
+.SUFFIXES: .c .o .po .pox .gmo .mo
+
+.c.o:
+	$(COMPILE) $<
+
+.po.pox:
+	$(MAKE) $(PACKAGE).pot
+	$(MSGMERGE) $< $(srcdir)/$(PACKAGE).pot -o $*.pox
+
+.po.mo:
+	$(MSGFMT) -o $@ $<
+
+.po.gmo:
+	file=$(srcdir)/`echo $* | sed 's,.*/,,'`.gmo \
+	  && rm -f $$file && $(GMSGFMT) --statistics -o $$file $<
+
+
+all: all-yes
+
+all-yes: $(CATALOGS)
+all-no:
+
+# Note: Target 'all' must not depend on target '$(srcdir)/$(PACKAGE).pot',
+# otherwise packages like GCC can not be built if only parts of the source
+# have been downloaded.
+
+$(srcdir)/$(PACKAGE).pot: $(POTFILES) $(srcdir)/POTFILES.in
+	$(XGETTEXT) --default-domain=$(PACKAGE) --directory=$(top_srcdir) \
+	  --add-comments --keyword=_ --keyword=N_ \
+	  --files-from=$(srcdir)/POTFILES.in \
+	&& test ! -f $(PACKAGE).po \
+	   || ( rm -f $(srcdir)/$(PACKAGE).pot \
+		&& mv $(PACKAGE).po $(srcdir)/$(PACKAGE).pot )
+
+
+install: install-exec install-data
+install-exec:
+install-data: install-data-yes
+	if test "$(PACKAGE)" = "gettext"; then \
+	  $(mkinstalldirs) $(DESTDIR)$(gettextsrcdir); \
+	  $(INSTALL_DATA) $(srcdir)/Makefile.in.in \
+			  $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
 	else \
-	    mv $(NLSPACKAGE).po $(NLSPACKAGE).pot; \
+	  : ; \
+	fi
+install-data-no: all
+install-data-yes: all
+	$(mkinstalldirs) $(DESTDIR)$(datadir)
+	@catalogs='$(CATALOGS)'; \
+	for cat in $$catalogs; do \
+	  cat=`basename $$cat`; \
+	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
+	  dir=$(localedir)/$$lang/LC_MESSAGES; \
+	  $(mkinstalldirs) $(DESTDIR)$$dir; \
+	  if test -r $$cat; then \
+	    $(INSTALL_DATA) $$cat $(DESTDIR)$$dir/$(PACKAGE).mo; \
+	    echo "installing $$cat as $(DESTDIR)$$dir/$(PACKAGE).mo"; \
+	  else \
+	    $(INSTALL_DATA) $(srcdir)/$$cat $(DESTDIR)$$dir/$(PACKAGE).mo; \
+	    echo "installing $(srcdir)/$$cat as" \
+		 "$(DESTDIR)$$dir/$(PACKAGE).mo"; \
+	  fi; \
+	done
+
+# Define this as empty until I found a useful application.
+installcheck:
+
+uninstall:
+	catalogs='$(CATALOGS)'; \
+	for cat in $$catalogs; do \
+	  cat=`basename $$cat`; \
+	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
+	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE).mo; \
+	done
+	if test "$(PACKAGE)" = "gettext"; then \
+	  rm -f $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
+	else \
+	  : ; \
 	fi
 
+check: all
 
-update-po: Makefile
-	$(MAKE) $(NLSPACKAGE).pot
-	catalogs='$(CATALOGS)'; \
-	for cat in $$catalogs; do \
-		lang=`echo $$cat | sed 's/.mo//'`; \
-		if $(MSGMERGE) $$lang.po $(NLSPACKAGE).pot > $$lang.pot ; then \
-			echo "$(MSGMERGE) of $$lang succeeded" ; \
-			mv -f $$lang.pot $$lang.po ; \
-		else \
-			echo "$(MSGMERGE) of $$lang failed" ; \
-			rm -f $$lang.pot ; \
-		fi \
-	done
+dvi info tags TAGS ID:
 
-refresh-po: Makefile
-	catalogs='$(CATALOGS)'; \
-	for cat in $$catalogs; do \
-		lang=`echo $$cat | sed 's/.mo//'`; \
-		if $(MSGMERGE) $$lang.po $(NLSPACKAGE).pot > $$lang.pot ; then \
-			echo "$(MSGMERGE) of $$lang succeeded" ; \
-			mv -f $$lang.pot $$lang.po ; \
-		else \
-			echo "$(MSGMERGE) of $$lang failed" ; \
-			rm -f $$lang.pot ; \
-		fi \
-	done
+mostlyclean:
+	rm -f core core.* *.pox $(PACKAGE).po *.new.po
+	rm -fr *.o
 
-clean:
-	rm -f *.mo $(NLSPACKAGE).pot
+clean: mostlyclean
 
 distclean: clean
-	rm -f .depend Makefile
+	rm -f Makefile Makefile.in POTFILES *.mo
 
-depend:
+maintainer-clean: distclean
+	@echo "This command is intended for maintainers to use;"
+	@echo "it deletes files that may require special tools to rebuild."
+	rm -f $(GMOFILES)
 
-install: all
-	catalogs='$(CATALOGS)'; \
-	for cat in $$catalogs ; do \
-		[ -z "$$cat" ] && continue; \
-		l=`basename $$cat .mo`; \
-		if [ -f $$cat ]; then \
-			mkdir -p $(INSTALLNLSDIR)/$$l/LC_MESSAGES; \
-		        $(INSTALL) -m 644 $$cat $(INSTALLNLSDIR)/$$l/LC_MESSAGES/$(NLSPACKAGE).mo; \
-		fi \
+distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+dist distdir:
+	$(MAKE) update-po
+	@$(MAKE) dist2
+# This is a separate target because 'update-po' must be executed before.
+dist2: $(DISTFILES)
+	dists="$(DISTFILES)"; \
+	for file in $$dists; do \
+	  if test -f $$file; then dir=.; else dir=$(srcdir); fi; \
+	  cp -p $$dir/$$file $(distdir); \
 	done
 
-install-po: install
+update-po: Makefile
+	$(MAKE) $(PACKAGE).pot
+	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; fi; \
+	cd $(srcdir); \
+	catalogs='$(GMOFILES)'; \
+	for cat in $$catalogs; do \
+	  cat=`basename $$cat`; \
+	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
+	  echo "$$lang:"; \
+	  if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
+	    mv -f $$lang.new.po $$lang.po; \
+	  else \
+	    echo "msgmerge for $$cat failed!"; \
+	    rm -f $$lang.new.po; \
+	  fi; \
+	done
+	$(MAKE) update-gmo
 
-%.mo: %.po
-	msgfmt -v -o $@ $<
+update-gmo: Makefile $(GMOFILES)
+	@:
+
+Makefile: Makefile.in.in $(top_builddir)/config.status POTFILES.in
+	cd $(top_builddir) \
+	  && CONFIG_FILES=$(subdir)/$@.in CONFIG_HEADERS= \
+	       $(SHELL) ./config.status
+
+# Tell versions [3.59,3.63) of GNU make not to export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

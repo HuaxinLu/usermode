@@ -1,5 +1,5 @@
 %define build6x 0
-Summary: Graphical tools for certain user account management tasks.
+Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.49
 Release: 1
@@ -15,49 +15,51 @@ Conflicts: SysVinit < 2.74-14
 BuildPrereq: glib-devel, gtk+-devel, libglade-devel, pam-devel
 BuildRoot: %{_tmppath}/%{name}-root
 
+%package X11
+Requires: %{name} = %{version}-%{release}
+Summary: Graphical tools for certain user account management tasks.
+
 %description
-The usermode package contains several graphical tools for users:
+The usermode package contains the userhelper program, which can be
+used to allow configured programs to be run with superuser privileges
+by ordinary users.
+
+%description X11
+The usermode-X11 package contains several graphical tools for users:
 userinfo, usermount and userpasswd.  Userinfo allows users to change
 their finger information.  Usermount lets users mount, unmount, and
 format filesystems.  Userpasswd allows users to change their
 passwords.
 
-Install the usermode package if you would like to provide users with
+Install the usermode-X11 package if you would like to provide users with
 graphical tools for certain account management tasks.
 
 %prep
 %setup -q
 
 %build
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make PREFIX=$RPM_BUILD_ROOT \
-	bindir=%{_bindir} \
-	mandir=%{_mandir} \
-	sbindir=%{_sbindir} \
-	datadir=%{_datadir} \
-	install install-man install-po
+make install DESTDIR=$RPM_BUILD_ROOT
 
-# Stuff from pam_console, for sysvinit. Here for lack of a better
-# place....
+# We set up the shutdown programs to be wrapped in this package.  Other
+# packages are on their own....
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
-for wrapapp in halt reboot poweroff ; do
-  ln -s consolehelper $RPM_BUILD_ROOT/usr/bin/${wrapapp}
-  touch $RPM_BUILD_ROOT/etc/security/console.apps/${wrapapp}
+for wrappedapp in halt reboot poweroff ; do
+	ln -s consolehelper $RPM_BUILD_ROOT/usr/bin/${wrappedapp}
+	touch $RPM_BUILD_ROOT/etc/security/console.apps/${wrappedapp}
 %if %{build6x}
-  cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/${wrapapp}
+	cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %else
-  cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrapapp}
+	cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrapapp}
 %endif
 done
 
-install -m755 shutdown $RPM_BUILD_ROOT%{_bindir}/
-
-# Strip it!
+# Strip it!  Strip it good!
 strip $RPM_BUILD_ROOT%{_bindir}/* $RPM_BUILD_ROOT%{_sbindir}/* || :
-      
 %find_lang %{name}
 
 %clean
@@ -65,17 +67,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%{_bindir}/usermount
-%{_mandir}/man1/usermount.1*
-%{_bindir}/userinfo
-%{_mandir}/man1/userinfo.1*
 %attr(4711,root,root) /usr/sbin/userhelper
-%{_mandir}/man8/userhelper.8*
-%{_bindir}/userpasswd
-%{_mandir}/man1/userpasswd.1*
 %{_bindir}/consolehelper
+%{_mandir}/man8/userhelper.8*
 %{_mandir}/man8/consolehelper.8*
-%config /etc/X11/applnk/System/*
 # PAM console wrappers
 %{_bindir}/halt
 %{_bindir}/reboot
@@ -83,7 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %if %{build6x}
 %{_bindir}/shutdown
 %endif
-%{_datadir}/pixmaps/*
 %config(noreplace) /etc/pam.d/halt
 %config(noreplace) /etc/pam.d/reboot
 %config(noreplace) /etc/pam.d/poweroff
@@ -91,10 +85,26 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/reboot
 %config(missingok) /etc/security/console.apps/poweroff
 
+%files X11
+%defattr(-,root,root)
+%config /etc/X11/applnk/System/*
+%{_bindir}/usermount
+%{_mandir}/man1/usermount.1*
+%{_bindir}/userinfo
+%{_mandir}/man1/userinfo.1*
+%{_bindir}/userpasswd
+%{_mandir}/man1/userpasswd.1*
+%{_bindir}/consolehelper-x11
+%{_datadir}/pixmaps/*
+
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
-* Wed Nov 28 2001 Nalin Dahyabhai <nalin@redhat.com> 1.49-1
+* Tue Dec  4 2001 Nalin Dahyabhai <nalin@redhat.com> 1.49-1
+- more gtk2 changes
+- split off a -X11 subpackage with all of the X11-specific functionality
+
+* Wed Nov 28 2001 Nalin Dahyabhai <nalin@redhat.com>
 - the grand libglade/gtk2 overhaul
 - allow disabling display of GUI windows by setting "GUI=false" in the
   console.apps configuration file (default: TRUE)

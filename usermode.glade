@@ -77,7 +77,7 @@
 
             <child>
               <widget class="GtkLabel" id="label3">
-                <property name="label" translatable="yes">Office Phone Number</property>
+                <property name="label" translatable="yes">Office Phone Number:</property>
                 <property name="justify">GTK_JUSTIFY_CENTER</property>
                 <property name="wrap">no</property>
                 <property name="xalign">1</property>
@@ -100,7 +100,7 @@
 
             <child>
               <widget class="GtkLabel" id="label4">
-                <property name="label" translatable="yes">Home Phone Number</property>
+                <property name="label" translatable="yes">Home Phone Number:</property>
                 <property name="justify">GTK_JUSTIFY_CENTER</property>
                 <property name="wrap">no</property>
                 <property name="xalign">1</property>
@@ -123,7 +123,7 @@
 
             <child>
               <widget class="GtkLabel" id="label5">
-                <property name="label" translatable="yes">Login Shell</property>
+                <property name="label" translatable="yes">Login Shell:</property>
                 <property name="justify">GTK_JUSTIFY_CENTER</property>
                 <property name="wrap">no</property>
                 <property name="xalign">1</property>

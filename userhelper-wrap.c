@@ -89,9 +89,9 @@ userhelper_parse_exitstatus(int exitstatus)
 	}
 
 	gtk_signal_connect(GTK_OBJECT(message_box), "destroy",
-			   (GtkSignalFunc) userhelper_fatal_error, NULL);
+			   GTK_SIGNAL_FUNC(userhelper_fatal_error), NULL);
 	gtk_signal_connect(GTK_OBJECT(message_box), "delete_event",
-			   (GtkSignalFunc) userhelper_fatal_error, NULL);
+			   GTK_SIGNAL_FUNC(userhelper_fatal_error), NULL);
 	gtk_widget_show(message_box);
 }
 
@@ -101,10 +101,11 @@ static void
 userhelper_grab_focus(GtkWidget * widget, GdkEvent * map_event,
 		      gpointer data)
 {
-	int ret;
 	GtkWidget *toplevel;
 	toplevel = gtk_widget_get_toplevel(widget);
-	ret = gdk_keyboard_grab(toplevel->window, TRUE, GDK_CURRENT_TIME);
+	if(GTK_WIDGET_TOPLEVEL(toplevel)) {
+		gdk_keyboard_grab(toplevel->window, TRUE, GDK_CURRENT_TIME);
+	}
 }
 
 /* Handle the executed dialog, writing responses back to the child when
@@ -246,7 +247,7 @@ userhelper_parse_childout(char *outline)
 
 		/* If the user closes the window, we bail. */
 		gtk_signal_connect(GTK_OBJECT(resp->dialog), "delete_event",
-				   (GtkSignalFunc) userhelper_fatal_error,
+				   GTK_SIGNAL_FUNC(userhelper_fatal_error),
 				   NULL);
 
 		/* Set the resp structure as the data item for the dialog. */
@@ -457,7 +458,7 @@ userhelper_parse_childout(char *outline)
 		 * equivalent to hitting the default button. */
 		if(resp->last) {
 			g_signal_connect(G_OBJECT(resp->last), "activate",
-					 (GtkSignalFunc)respond_ok,
+					 GTK_SIGNAL_FUNC(respond_ok),
 					 resp->dialog);
 		}
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-02-05 10:35-0500\n"
+"POT-Creation-Date: 2001-11-29 15:16-0500\n"
 "PO-Revision-Date: 2001-08-15 22:16+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -14,66 +14,69 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../userdialogs.c:35
-msgid "Message"
-msgstr "Meddelande"
+#: consolehelper.c:92
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
 
-#: ../userdialogs.c:81 ../userhelper-wrap.c:384
-msgid "Error"
-msgstr "Fel"
-
-#: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
-msgid "Prompt"
-msgstr "Fråga"
-
-#. Copyright (C) 2001 Red Hat, Inc.
-#. *
-#. * This is free software; you can redistribute it and/or modify it
-#. * under the terms of the GNU General Public License as published by
-#. * the Free Software Foundation; either version 2 of the License, or
-#. * (at your option) any later version.
-#. *
-#. * This program is distributed in the hope that it will be useful, but
-#. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-#. * General Public License for more details.
-#. *
-#. * You should have received a copy of the GNU General Public License
-#. * along with this program; if not, write to the Free Software
-#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
-#. Just a dummy file for gettext
-#: ../dummy.h:20 ../userdialogs.c:193 ../userinfo.c:139
+#: userdialogs.h:29
 msgid "OK"
 msgstr "OK"
 
-#: ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
-#: ../usermount.c:761
-msgid "Pipe error.\n"
-msgstr "Rörfel.\n"
+#: userdialogs.h:30
+msgid "Help"
+msgstr "Hjälp"
 
-#: ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
-#: ../usermount.c:767
-msgid "Cannot fork().\n"
-msgstr "Kan inte grena.\n"
+#: userdialogs.h:31
+msgid "Cancel"
+msgstr "Avbryt"
 
-#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
-#: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
-#: ../usermount.c:814
-msgid "dup2() error.\n"
-msgstr "dup2()-fel.\n"
+#: userdialogs.h:32
+msgid "Exit"
+msgstr "Avsluta"
 
-#: ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
-#: ../usermount.c:821
+#: userdialogs.h:33
+msgid "Run Unprivileged"
+msgstr "Kör oprivilegierat"
+
+#: userhelper.c:92
+#, fuzzy, c-format
+msgid "Got PAM error %d.\n"
+msgstr "Tog emot felet %d.\n"
+
+#: userhelper.c:185
 #, c-format
-msgid "execl() error, errno=%d\n"
-msgstr "execl()-fel, felnummer=%d\n"
+msgid "Password for %s"
+msgstr "Lösenord för %s"
 
-#: ../userhelper-wrap.c:141
+#: userhelper.c:447
+msgid "userhelper must be setuid root\n"
+msgstr "userhelper måste vara setuid root\n"
+
+#: userhelper.c:601 userhelper.c:925
+#, c-format
+msgid "about to authenticate \"%s\"\n"
+msgstr "kommer att autentisera \"%s\"\n"
+
+#: userhelper.c:606 userhelper.c:930
+#, fuzzy, c-format
+msgid "PAM retval = %d (%s)\n"
+msgstr "PAM returnerade = %d\n"
+
+#: userhelper.c:1017 userhelper.c:1056
+#, c-format
+msgid "about to exec \"%s\"\n"
+msgstr "kommer att köra \"%s\"\n"
+
+#: userhelper-wrap.c:50
+msgid "Unknown exit code."
+msgstr "Okänd slutkod."
+
+#: userhelper-wrap.c:52
 msgid "Information updated."
 msgstr "Informationen uppdaterad."
 
-#: ../userhelper-wrap.c:144
+#: userhelper-wrap.c:54
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -81,7 +84,7 @@ msgstr ""
 "Lösenordet du angav är ogiltigt.\n"
 "Försök igen."
 
-#: ../userhelper-wrap.c:147
+#: userhelper-wrap.c:56
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -91,11 +94,11 @@ msgstr ""
 "Detta beror antagligen på antingen kolon eller komman i ett av fälten.\n"
 "Ta bort dem och försök igen."
 
-#: ../userhelper-wrap.c:150
+#: userhelper-wrap.c:58
 msgid "Password resetting error."
 msgstr "Fel vid nollställning av lösenord."
 
-#: ../userhelper-wrap.c:153
+#: userhelper-wrap.c:60
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -103,19 +106,20 @@ msgstr ""
 "Några systemfiler är låsta.\n"
 "Försök igen om en kort stund."
 
-#: ../userhelper-wrap.c:156
+#: userhelper-wrap.c:62
 msgid "Unknown user."
 msgstr "Okänd användare."
 
-#: ../userhelper-wrap.c:159
+#: userhelper-wrap.c:64
 msgid "Insufficient rights."
 msgstr "Otillräckliga rättigheter."
 
-#: ../userhelper-wrap.c:162
-msgid "Invalid call to sub process."
+#: userhelper-wrap.c:66
+#, fuzzy
+msgid "Invalid call to subprocess.."
 msgstr "Ogiltigt anrop av underprocess."
 
-#: ../userhelper-wrap.c:165
+#: userhelper-wrap.c:68
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -125,149 +129,107 @@ msgstr ""
 "Du får inte lov att byta ditt skal.\n"
 "Tala med din systemadministratör."
 
-#. well, this is unlikely to work either, but at least we tried...
-#: ../userhelper-wrap.c:169
+#: userhelper-wrap.c:71
 msgid "Out of memory."
 msgstr "Slut på minne."
 
-#: ../userhelper-wrap.c:172
+#: userhelper-wrap.c:73
 msgid "The exec() call failed."
 msgstr "exec()-anropet misslyckades."
 
-#: ../userhelper-wrap.c:175
+#: userhelper-wrap.c:75
 msgid "Failed to find selected program."
 msgstr "Misslyckades med att hitta valt program."
 
-#: ../userhelper-wrap.c:178
+#: userhelper-wrap.c:77
 msgid "Unknown error."
 msgstr "Okänt fel."
 
-#: ../userhelper-wrap.c:181
-msgid "Unknown exit code."
-msgstr "Okänd slutkod."
+#: glade.strings:16 glade.strings:19 glade.strings:23 userhelper-wrap.c:234
+msgid "Placeholder text."
+msgstr ""
 
-#: ../userhelper-wrap.c:237
-msgid "Input"
-msgstr "Inmatning"
-
-#: ../userhelper-wrap.c:346
+#: userhelper-wrap.c:348
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Behöver %d svar.\n"
 
-#: ../userhelper-wrap.c:371
-#, c-format
-msgid ""
-"In order to run \"%s\" with root's privileges, additional information is "
-"required."
-msgstr ""
-"För att kunna köra \"%s\" med roots rättigheter krävs ytterligare "
-"information."
+#: userhelper-wrap.c:381
+msgid "Error"
+msgstr "Fel"
 
-#: ../userhelper-wrap.c:389
-#, c-format
-msgid "Changing password for %s"
-msgstr "Ändrar lösenordet för %s"
-
-#: ../userhelper-wrap.c:403
-#, c-format
-msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr "Vill du ha %d svar från %d inmatningsfält!?!?!\n"
-
-#: ../userhelper.c:103
-#, c-format
-msgid "Got error %d.\n"
-msgstr "Tog emot felet %d.\n"
-
-#: ../userhelper.c:199
-#, c-format
-msgid "Password for %s"
-msgstr "Lösenord för %s"
-
-#: ../userhelper.c:398
-msgid "Consistency checking is not turned on."
-msgstr "Konsistenskontroll är inte påslagen."
-
-#: ../userhelper.c:400
-msgid "Block is fine."
-msgstr "Blocket är okej."
-
-#: ../userhelper.c:402
-msgid "Block freed twice."
-msgstr "Blocket frigjort två gånger."
-
-#: ../userhelper.c:404
-msgid "Memory before the block was clobbered."
-msgstr "Minnet före blocket var nersablat."
-
-#: ../userhelper.c:406
-msgid "Memory after the block was clobbered."
-msgstr "Minnet efter blocket var nersablat."
-
-#: ../userhelper.c:435
-msgid "userhelper must be setuid root\n"
-msgstr "userhelper måste vara setuid root\n"
-
-#: ../userhelper.c:672
-#, c-format
-msgid "PAM returned = %d\n"
-msgstr "PAM returnerade = %d\n"
-
-#: ../userhelper.c:673
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "kommer att autentisera \"%s\"\n"
-
-#: ../userhelper.c:722 ../userhelper.c:763
-#, c-format
-msgid "about to exec \"%s\"\n"
-msgstr "kommer att köra \"%s\"\n"
-
-#: ../userinfo.c:124
-msgid "User Information"
+#: userhelper-wrap.c:394
+#, fuzzy
+msgid "Information"
 msgstr "Användarinformation"
 
-#: ../userinfo.c:153
-msgid "Help"
-msgstr "Hjälp"
+#: userhelper-wrap.c:435
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from superuser "
+"privileges, but more information is needed in order to do so."
+msgstr ""
 
-#: ../userinfo.c:242
-msgid "Full Name:"
-msgstr "Fullständigt namn:"
+#: userhelper-wrap.c:437
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires superuser privileges, but "
+"more information is needed in order to do so."
+msgstr ""
 
-#: ../userinfo.c:260
-msgid "Office:"
-msgstr "Kontor:"
+#: userhelper-wrap.c:441
+msgid ""
+"You are attempting to run a command which may benefit from superuser "
+"privileges, but more information is needed in order to do so."
+msgstr ""
 
-#: ../userinfo.c:279
-msgid "Office Phone:"
-msgstr "Kontorstelefon:"
+#: userhelper-wrap.c:443
+msgid ""
+"You are attempting to run a command which requires superuser privileges, but "
+"more information is needed in order to do so."
+msgstr ""
 
-#: ../userinfo.c:297
-msgid "Home Phone:"
-msgstr "Hemtelefon:"
+#: userhelper-wrap.c:453
+#, fuzzy
+msgid "_Run Unprivileged"
+msgstr "Kör oprivilegierat"
 
-#: ../userinfo.c:315
-msgid "Shell:"
-msgstr "Skal:"
+#: userhelper-wrap.c:560 userhelper-wrap.c:577 usermount.c:533 usermount.c:621
+#: usermount.c:699
+msgid "Pipe error.\n"
+msgstr "Rörfel.\n"
 
-#: ../userinfo.c:378
-msgid "This will be some help text."
-msgstr "Det här kommer att vara någon hjälptext."
+#: userhelper-wrap.c:584 usermount.c:538 usermount.c:629 usermount.c:704
+msgid "Cannot fork().\n"
+msgstr "Kan inte grena.\n"
 
-#: ../usermount.c:57
+#: userhelper-wrap.c:630 userhelper-wrap.c:634 usermount.c:574 usermount.c:581
+#: usermount.c:676 usermount.c:683 usermount.c:737 usermount.c:744
+msgid "dup2() error.\n"
+msgstr "dup2()-fel.\n"
+
+#: userhelper-wrap.c:646 usermount.c:587 usermount.c:689 usermount.c:752
+#, c-format
+msgid "execl() error, errno=%d\n"
+msgstr "execl()-fel, felnummer=%d\n"
+
+#: userinfo.c:291
+msgid "You don't exist.  Go away.\n"
+msgstr ""
+
+#: usermount.c:57
 msgid "Mount"
 msgstr "Montera"
 
-#: ../usermount.c:58
+#: usermount.c:58
 msgid "Unmount"
 msgstr "Avmontera"
 
-#: ../usermount.c:119
+#: usermount.c:100
 msgid "User Mount Tool"
 msgstr "Monteringsverktyg"
 
-#: ../usermount.c:136
+#: usermount.c:118
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
@@ -275,23 +237,23 @@ msgstr ""
 "Det finns inga filsystem som kan monteras av användare.\n"
 "Kontakta din systemadministratör."
 
-#: ../usermount.c:177
+#: usermount.c:157
 msgid "Directory"
 msgstr "Katalog"
 
-#: ../usermount.c:185
+#: usermount.c:164
 msgid "Device"
 msgstr "Enhet"
 
-#: ../usermount.c:193
+#: usermount.c:171
 msgid "Type"
 msgstr "Typ"
 
-#: ../usermount.c:267
+#: usermount.c:239
 msgid "Format"
 msgstr "Formatera"
 
-#: ../usermount.c:360
+#: usermount.c:332
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
@@ -299,54 +261,125 @@ msgstr ""
 "Är du säker?\n"
 "Du kommer att förstöra all data på den disken.\n"
 
-#: ../usermount.c:362
+#: usermount.c:334
 msgid "Yes"
 msgstr "Ja"
 
-#: ../usermount.c:372
+#: usermount.c:345
 msgid "No"
 msgstr "Nej"
 
-#: ../usermount.c:379
+#: usermount.c:354
 msgid "Do low level format."
 msgstr "Lågnivåformatera."
 
-#: ../dummy.h:21
-msgid "Exit"
-msgstr "Avsluta"
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
+#: glade.strings:7
+msgid "User Information"
+msgstr "Användarinformation"
 
-#: ../dummy.h:22
-msgid "Cancel"
+#: glade.strings:8
+msgid "Full Name:"
+msgstr "Fullständigt namn:"
+
+#: glade.strings:9
+msgid "Office:"
+msgstr "Kontor:"
+
+#: glade.strings:10
+#, fuzzy
+msgid "Office Phone Number:"
+msgstr "Kontorstelefon:"
+
+#: glade.strings:11
+#, fuzzy
+msgid "Home Phone Number:"
+msgstr "Hemtelefon:"
+
+#: glade.strings:12
+#, fuzzy
+msgid "Login Shell:"
+msgstr "Skal:"
+
+#: glade.strings:13 glade.strings:20 glade.strings:24
+msgid "_Ok"
+msgstr ""
+
+#: glade.strings:14 glade.strings:21 glade.strings:25
+#, fuzzy
+msgid "_Cancel"
 msgstr "Avbryt"
 
-#: ../dummy.h:23
-msgid "Run Unprivileged"
-msgstr "Kör oprivilegierat"
+#: glade.strings:15
+msgid "Message"
+msgstr "Meddelande"
 
-#: ../dummy.h:24
-msgid "(current) UNIX password: "
-msgstr "(nuvarande) UNIX-lösenord: "
+#: glade.strings:17
+msgid "_Close"
+msgstr ""
 
-#: ../dummy.h:25
-msgid "New UNIX password: "
-msgstr "Nytt UNIX-lösenord: "
+#: glade.strings:18 glade.strings:22
+msgid "Query"
+msgstr ""
 
-#: ../dummy.h:26
-msgid "Retype new UNIX password: "
-msgstr "Upprepa nytt UNIX-lösenord: "
+#~ msgid "Prompt"
+#~ msgstr "Fråga"
 
-#: ../dummy.h:27
-msgid "BAD PASSWORD: it's WAY too short"
-msgstr "DÅLIGT LÖSENORD: det är ALLDELES för kort"
+#~ msgid "Input"
+#~ msgstr "Inmatning"
 
-#: ../dummy.h:28
-msgid "BAD PASSWORD: it is too short"
-msgstr "DÅLIGT LÖSENORD: det är för kort"
+#~ msgid ""
+#~ "In order to run \"%s\" with root's privileges, additional information is "
+#~ "required."
+#~ msgstr ""
+#~ "För att kunna köra \"%s\" med roots rättigheter krävs ytterligare "
+#~ "information."
 
-#: ../dummy.h:29
-msgid "Password unchanged"
-msgstr "Lösenordet ändrades inte"
+#~ msgid "Changing password for %s"
+#~ msgstr "Ändrar lösenordet för %s"
 
-#: ../dummy.h:30
-msgid "Sorry, passwords do not match"
-msgstr "Tyvärr, lösenorden stämmer inte överens"
+#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
+#~ msgstr "Vill du ha %d svar från %d inmatningsfält!?!?!\n"
+
+#~ msgid "Consistency checking is not turned on."
+#~ msgstr "Konsistenskontroll är inte påslagen."
+
+#~ msgid "Block is fine."
+#~ msgstr "Blocket är okej."
+
+#~ msgid "Block freed twice."
+#~ msgstr "Blocket frigjort två gånger."
+
+#~ msgid "Memory before the block was clobbered."
+#~ msgstr "Minnet före blocket var nersablat."
+
+#~ msgid "Memory after the block was clobbered."
+#~ msgstr "Minnet efter blocket var nersablat."
+
+#~ msgid "This will be some help text."
+#~ msgstr "Det här kommer att vara någon hjälptext."
+
+#~ msgid "(current) UNIX password: "
+#~ msgstr "(nuvarande) UNIX-lösenord: "
+
+#~ msgid "New UNIX password: "
+#~ msgstr "Nytt UNIX-lösenord: "
+
+#~ msgid "Retype new UNIX password: "
+#~ msgstr "Upprepa nytt UNIX-lösenord: "
+
+#~ msgid "BAD PASSWORD: it's WAY too short"
+#~ msgstr "DÅLIGT LÖSENORD: det är ALLDELES för kort"
+
+#~ msgid "BAD PASSWORD: it is too short"
+#~ msgstr "DÅLIGT LÖSENORD: det är för kort"
+
+#~ msgid "Password unchanged"
+#~ msgstr "Lösenordet ändrades inte"
+
+#~ msgid "Sorry, passwords do not match"
+#~ msgstr "Tyvärr, lösenorden stämmer inte överens"

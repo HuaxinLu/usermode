@@ -192,6 +192,9 @@ on_ok_clicked(GtkWidget *widget, gpointer data)
 	GladeXML *xml;
 
 	toplevel = gtk_widget_get_toplevel(widget);
+	if(!GTK_WIDGET_TOPLEVEL(toplevel)) {
+		return FALSE;
+	}
 	userinfo = g_object_get_data(G_OBJECT(toplevel),
 				     USERINFO_DATA_NAME);
 	xml = g_object_get_data(G_OBJECT(toplevel), USERINFO_XML_NAME);
@@ -217,6 +220,7 @@ on_ok_clicked(GtkWidget *widget, gpointer data)
 	}
 
 	set_new_userinfo(userinfo);
+	return FALSE;
 }
 
 void
@@ -281,8 +285,8 @@ main(int argc, char *argv[])
 	struct UserInfo *userinfo;
 	GtkWidget *window;
 
-	bindtextdomain("usermode", "/usr/share/locale");
-	textdomain("usermode");
+	bindtextdomain(PACKAGE, DATADIR "/locale");
+	textdomain(PACKAGE);
 
 	gtk_set_locale();
 

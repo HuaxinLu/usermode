@@ -1,4 +1,5 @@
 consolehelper.c
+dummy.h
 userdialogs.h
 userhelper.c
 userhelper-wrap.c

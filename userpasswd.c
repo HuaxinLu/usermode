@@ -17,6 +17,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include "config.h"
 #include <gtk/gtk.h>
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
@@ -24,8 +25,8 @@
 int
 main(int argc, char *argv[])
 {
-	bindtextdomain("usermode", "/usr/share/locale");
-	textdomain("usermode");
+	bindtextdomain(PACKAGE, DATADIR "/locale");
+	textdomain(PACKAGE);
 
 	gtk_set_locale();
 	gtk_init(&argc, &argv);
