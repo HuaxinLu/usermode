@@ -1,17 +1,21 @@
-Summary: User Tools
+Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.4.4
 Release: 1
 Copyright: GPL
-Group: X11/Applications
+Group: User Interface/Desktops
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
 Requires: util-linux
 BuildRoot: /var/tmp/usermode-root
 
 %description
-Several graphical tools, including a tool to help users manage floppies
-(and other removable media) and a tool to help the user change his or
-her finger information.
+The usermode package contains several graphical tools for users:
+userinfo, usermount and userpasswd.  Userinfo allows users to change
+their finger information.  Usermount lets users mount, unmount, and
+format filesystems.  Userpasswd allows users to change their passwords.
+
+Install the usermode package if you would like to provide users with
+graphical tools for certain account management tasks.
 
 %prep
 %setup
