@@ -332,7 +332,7 @@ msgstr "Ekki _lágforsníða."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Veldu skráarkerfi sem þú vilt búa til:"
+msgstr "Veldu _skráarkerfi sem þú vilt búa til:"
 
 #: usermount.c:543
 msgid ""
