@@ -4,7 +4,7 @@ Version: 1.4.1
 Release: 1
 Copyright: GPL
 Group: X11/Applications
-Source: usermode-1.4.tar.gz
+Source: usermode-%{PACKAGE_VERSION}.tar.gz
 Requires: util-linux
 BuildRoot: /var/tmp/usermode-root
 
