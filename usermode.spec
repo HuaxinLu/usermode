@@ -1,11 +1,11 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.9
+Version: 1.9.1
 Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
-Requires: util-linux
+Requires: util-linux pam >= 0.66-5
 BuildRoot: /var/tmp/usermode-root
 
 %description
@@ -28,6 +28,15 @@ rm -rf $RPM_BUILD_ROOT
 make PREFIX=$RPM_BUILD_ROOT install
 make PREFIX=$RPM_BUILD_ROOT install-man
 
+# Stuff from pam_console, for sysvinit. Here for lack of a better
+# place....
+mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
+for wrapapp in shutdown halt reboot poweroff ; do
+  ln -sf consolehelper $RPM_BUILD_ROOT/usr/bin/$wrapapp
+  touch $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
+  cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
+done
+      
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -44,8 +53,25 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/consolehelper
 /usr/man/man8/consolehelper.8
 /etc/X11/applnk/System/*
+# PAM console wrappers
+/usr/bin/shutdown
+/usr/bin/halt
+/usr/bin/reboot
+/usr/bin/poweroff
+%config(noreplace) /etc/pam.d/shutdown
+%config(noreplace) /etc/pam.d/halt
+%config(noreplace) /etc/pam.d/reboot
+%config(noreplace) /etc/pam.d/poweroff
+%config(missingok) /etc/security/console.apps/shutdown
+%config(missingok) /etc/security/console.apps/halt
+%config(missingok) /etc/security/console.apps/reboot
+%config(missingok) /etc/security/console.apps/poweroff
+
 
 %changelog
+* Tue Jul 06 1999 Bill Nottingham <notting@redhat.com>
+- import pam_console wrappers from SysVinit, since they require usermode
+
 * Mon Apr 12 1999 Michael K. Johnson <johnsonm@redhat.com>
 - even better check for X availability
 
