@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
-"PO-Revision-Date: 2002-08-22 09:35GMT+10:00\n"
+"PO-Revision-Date: 2002-09-04 08:59GMT+10:00\n"
 "Last-Translator: Sarah Smith <sarahs@redhat.com>\n"
 "Language-Team: Simplified Chinese <zh@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr "无特权地运行"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "（当前）UNIX 口令："
+msgstr "(当前) UNIX 口令："
 
 #: dummy.h:26
 msgid "New UNIX password: "
@@ -102,7 +102,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"你在试图运行“%s”。它可能会得益于超级用户的特权，\n"
+"您在试图运行“%s”。它可能会得益于超级用户的特权，\n"
 "但是这需要更多信息才能做到。"
 
 #: userhelper.c:348
@@ -111,7 +111,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"你在试图运行“%s”。它要求你拥有超级用户的特权，\n"
+"您在试图运行“%s”。它要求您拥有超级用户的特权，\n"
 "但是这需要更多信息才能做到。"
 
 #: userhelper.c:352
@@ -119,7 +119,7 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"你在试图运行一个可能会得益于超级用户特权的命令，\n"
+"您在试图运行一个可能会得益于超级用户特权的命令，\n"
 "但是这需要更多信息才能做到。"
 
 #: userhelper.c:354
@@ -127,7 +127,7 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"你在试图运行一个要求超级用户特权的命令，\n"
+"您在试图运行一个要求超级用户特权的命令，\n"
 "但是需要更多信息才能做到。"
 
 #: userhelper.c:373
@@ -141,8 +141,7 @@ msgstr "userhelper 必须是 setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:729
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
 
 #: userhelper.c:1434 userhelper.c:1480
@@ -163,7 +162,7 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"你键入的口令无效。\n"
+"您键入的口令无效。\n"
 "请重试。"
 
 #: userhelper-wrap.c:67
@@ -206,9 +205,9 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"你目前使用的 shell 没有在 /etc/shells 中列出。\n"
-"你没有改变 shell 的许可。\n"
-"请向你的系统管理员咨询。"
+"您目前使用的 shell 没有在 /etc/shells 中列出。\n"
+"您没有改变 shell 的许可。\n"
+"请向您的系统管理员咨询。"
 
 #: userhelper-wrap.c:82
 msgid "Out of memory."
@@ -260,29 +259,26 @@ msgstr "正在改变登录 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"你在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:493
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"你在试图运行“%s”。它要求你拥有超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:502
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"你在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
+msgstr "您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:504
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "你在试图运行一个要求超级用户特权的命令，但是需要更多信息才能做到。"
+msgstr "您在试图运行一个要求超级用户特权的命令，但是需要更多信息才能做到。"
 
 #: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
@@ -307,7 +303,7 @@ msgstr "execl() 错误，errno=%d\n"
 
 #: userinfo.c:321
 msgid "You don't exist.  Go away.\n"
-msgstr "你不存在。   走开。\n"
+msgstr "您不存在。   走开。\n"
 
 #: usermount.c:61 glade.strings:26
 msgid "_Mount"
@@ -321,7 +317,7 @@ msgstr "卸载(_M)"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "你确信要格式化该磁盘吗？这将破坏磁盘上全部当前信息。"
+msgstr "您确信要格式化该磁盘吗？这将破坏磁盘上全部当前信息。"
 
 #: usermount.c:331
 msgid "Perform a _low-level format."
@@ -336,8 +332,8 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"没有你允许挂载或卸载的文件系统。\n"
-"请联系你的系统管理员。"
+"没有您允许挂载或卸载的文件系统。\n"
+"请联系您的系统管理员。"
 
 #. Create the dialog.
 #: usermount.c:543 usermount.c:554 glade.strings:22
@@ -420,11 +416,11 @@ msgstr "退出(_X)"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr "关于你自己"
+msgstr "关于您自己"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
@@ -440,8 +436,9 @@ msgstr "挂载和卸载文件系统"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "改变你的登录口令"
+msgstr "改变您的登录口令"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "口令"
+
