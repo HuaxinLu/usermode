@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode 7.0\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
-"PO-Revision-Date: 2000-09-08 16:00+0200\n"
+"Project-Id-Version: usermode 7.1\n"
+"POT-Creation-Date: 2001-01-25 15:50-0500\n"
+"PO-Revision-Date: 2001-02-02 19:25+0200\n"
 "Last-Translator: Roman Maurer <roman.maurer@hermes.si>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -135,18 +135,18 @@ msgid "Need %d responses.\n"
 msgstr "Potrebno je %d odgovorov.\n"
 
 #: ../userhelper-wrap.c:371
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
-"Èe ¾elite zagnati \"%s\" z dovoljenji uporabnika %s, so potrebni dodatni "
+"Èe ¾elite zagnati \"%s\" z dovoljenji uporabnika root, so potrebni dodatni "
 "podatki."
 
 #: ../userhelper-wrap.c:389
-#, fuzzy, c-format
+#, c-format
 msgid "Changing password for %s"
-msgstr "Geslo za %s"
+msgstr "Sprememba gesla za %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
@@ -190,12 +190,12 @@ msgstr "userhelper mora biti setuid root\n"
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "PAM vrnil = %d\n"
 
 #: ../userhelper.c:673
-#, fuzzy, c-format
+#, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr "nameravamo izvesti \"%s\"\n"
+msgstr "nameravamo avtentificirati \"%s\"\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
@@ -292,40 +292,40 @@ msgstr "Napravi nizko-nivojski format."
 
 #: ../dummy.h:4
 msgid "Exit"
-msgstr ""
+msgstr "Izhod"
 
 #: ../dummy.h:5
 msgid "Cancel"
-msgstr ""
+msgstr "Preklic"
 
 #: ../dummy.h:6
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Teci neprilivigiran"
 
 #: ../dummy.h:7
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(trenutno) geslo za UNIX: "
 
 #: ../dummy.h:8
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Novo geslo za UNIX: "
 
 #: ../dummy.h:9
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Vnoviè vpi¹ite novo geslo za UNIX: "
 
 #: ../dummy.h:10
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "SLABO GESLO: je ZELO prekratko"
 
 #: ../dummy.h:11
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "SLABO GESLO: je prekratko"
 
 #: ../dummy.h:12
 msgid "Password unchanged"
-msgstr ""
+msgstr "Geslo ni spremenjeno"
 
 #: ../dummy.h:13
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "®al se gesli ne ujemata"
