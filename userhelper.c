@@ -577,17 +577,17 @@ int main(int argc, char *argv[])
         env_lcmsgs = getenv("LC_MESSAGES");
         env_xauthority = getenv("XAUTHORITY");
 
-	if (env_home && strstr(env_home, ".."))
+	if (env_home && (strstr(env_home, "..") || strchr(env_home, '%'))
 	    env_home=NULL;
-	if (env_shell && strstr(env_shell, ".."))
+	if (env_shell && (strstr(env_shell, "..") || strchr(env_shell, '%'))
 	    env_shell=NULL;
-	if (env_term && strstr(env_term, ".."))
+	if (env_term && (strstr(env_term, "..") || strchr(env_term, '%'))
 	    env_term="dumb";
-	if (env_lang && strchr(env_lang, '/'))
+	if (env_lang && (strchr(env_lang, '/') || strchr(env_lang, '%'))
 	    env_lang=NULL;
-	if (env_lcall && strchr(env_lcall, '/'))
+	if (env_lcall && (strchr(env_lcall, '/') || strchr(env_lcall, '%'))
 	    env_lcall=NULL;
-	if (env_lcmsgs && strchr(env_lcmsgs, '/'))
+	if (env_lcmsgs && (strchr(env_lcmsgs, '/') || strchr(env_lcmsgs, '%'))
 	    env_lcmsgs=NULL;
 
 	environ = (char **) calloc (1, 2 * sizeof (char *));

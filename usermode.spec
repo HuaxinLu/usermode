@@ -94,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 - fix the /usr/bin/shutdown wrapper so that root can call shutdown
 - only include the /usr/bin/shutdown wrapper on 6.x
 - also sanitize LC_MESSAGES
+- tweak sanitizing checks (from mkj)
 
 * Wed Oct  4 2000 Jakub Jelinek <jakub@redhat.com>
 - fix a security bug with LC_ALL/LANG variables (#18046)
