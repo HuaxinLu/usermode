@@ -50,6 +50,6 @@ struct response {
 void userhelper_run(char *path, ...);
 void userhelper_runv(char *path, const char **args);
 void userhelper_fatal_error(int ignored);
-void userhelper_sigchld(int signum);	/* sigchld handler */
+void userhelper_main_quit(void);
 
 #endif /* __USERHELPER_WRAP_H__ */

@@ -26,14 +26,25 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <gdk/gdkx.h>
+#include "reaper.h"
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
 
 #define  PAD 8
 static int childout[2];
 static int childin[2];
+static int childpid;
 static int childout_tag = -1;
-static int signal_tag = -1;
+
+/* Call gtk_main_quit. */
+void
+userhelper_main_quit(void)
+{
+#ifdef DEBUG_USERHELPER
+	fprintf(stderr, "Quitting main loop %d.\n", gtk_main_level());
+#endif
+	gtk_main_quit();
+}
 
 /* Display a dialog explaining a child's exit status, and exit ourselves. */
 static void
@@ -73,27 +84,33 @@ userhelper_parse_exitstatus(int exitstatus)
 		  _("The exec() call failed.")},
 		{ERR_NO_PROGRAM, create_error_box, 
 		  _("Failed to find selected program.")},
+		/* special no-display dialog */
+		{ERR_CANCELED, NULL, ""},
 		{ERR_UNK_ERROR, create_error_box, 
 		  _("Unknown error.")},
 	};
 
+#ifdef DEBUG_USERHELPER
+	fprintf(stderr, "Child returned exit status %d.\n", exitstatus);
+#endif
 	message_box = NULL;
-	for (i = 1; i < (sizeof(codes) / sizeof(codes[0])); i++) {
+	for (i = 1; i < G_N_ELEMENTS(codes); i++) {
 		if (codes[i].code == exitstatus) {
-			message_box = codes[i].create(codes[i].message, NULL);
+			if (codes[i].create) {
+				message_box = codes[i].create(codes[i].message,
+							      NULL);
+			}
 			break;
 		}
 	}
-	if (message_box == NULL) {
+	if (i >= G_N_ELEMENTS(codes)) {
 		message_box = codes[0].create(codes[0].message, NULL);
 	}
 
-	gtk_signal_connect(GTK_OBJECT(message_box), "destroy",
-			   GTK_SIGNAL_FUNC(userhelper_fatal_error), NULL);
-	gtk_signal_connect(GTK_OBJECT(message_box), "delete_event",
-			   GTK_SIGNAL_FUNC(userhelper_fatal_error), NULL);
-	gtk_dialog_run(GTK_DIALOG(message_box));
-	gtk_widget_destroy(message_box);
+	if (message_box != NULL) {
+		gtk_dialog_run(GTK_DIALOG(message_box));
+		gtk_widget_destroy(message_box);
+	}
 }
 
 /* Attempt to grab focus for the toplevel of this widget, so that peers can
@@ -117,7 +134,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 	guchar byte;
 	GList *message_list = resp->message_list;
 
-	switch(response) {
+	switch (response) {
 		case PAD:
 			/* Run unprivileged. */
 			byte = UH_FALLBACK;
@@ -166,8 +183,10 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 #ifdef DEBUG_USERHELPER
 				fprintf(stderr, "message %d, \"%s\"\n", m->type,
 					m->message);
-				fprintf(stderr, "responding `%s'\n",
-					gtk_entry_get_text(GTK_ENTRY(m->entry)));
+				if (GTK_IS_ENTRY(m->entry)) {
+					fprintf(stderr, "responding `%s'\n",
+						gtk_entry_get_text(GTK_ENTRY(m->entry)));
+				}
 #endif
 				if (GTK_IS_ENTRY(m->entry)) {
 					input =
@@ -180,7 +199,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 			}
 			break;
 		default:
-			/* We were closed, deleted, cancelled, or something else
+			/* We were closed, deleted, canceled, or something else
 			 * which we can treat as a cancellation. */
 			_exit(1);
 			break;
@@ -539,6 +558,36 @@ userhelper_parse_childout(char *outline)
 	}
 }
 
+/* Handle a child-exited signal by disconnecting from its stdout. */
+static void
+userhelper_child_exited(VteReaper *reaper, guint pid, guint status,
+			gpointer data)
+{
+#ifdef DEBUG_USERHELPER
+	fprintf(stderr, "Child %d exited (looking for %d).\n", pid, childpid);
+#endif
+	if (pid == childpid) {
+		if (childout_tag != -1) {
+			g_source_remove(childout_tag);
+		}
+		if (WIFEXITED(status)) {
+			userhelper_parse_exitstatus(WEXITSTATUS(status));
+		} else {
+#ifdef DEBUG_USERHELPER
+			fprintf(stderr, "Child %d exited abnormally.\n", pid);
+#endif
+			if (WIFSIGNALED(status)) {
+#ifdef DEBUG_USERHELPER
+				fprintf(stderr, "Child %d died on signal %d.\n",
+					pid, WTERMSIG(status));
+#endif
+				userhelper_parse_exitstatus(ERR_UNK_ERROR);
+			}
+		}
+		userhelper_main_quit();
+	}
+}
+
 /* Read data sent from the child userhelper process and pass it on to
  * userhelper_parse_childout(). */
 static void
@@ -567,69 +616,20 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 	}
 
 	/* Parse the data and we're done. */
-	userhelper_parse_childout(output);
+	if (count > 0) {
+		userhelper_parse_childout(output);
+	}
+
 	g_free(output);
-}
-
-static void
-userhelper_read_signal(gpointer data, int source, GdkInputCondition cond)
-{
-	unsigned char u;
-	pid_t pid;
-	int status;
-
-	if (cond != GDK_INPUT_READ) {
-		/* Serious error, this is.  Panic, we must. */
-		_exit(1);
-	}
-
-	if (read(source, &u, 1) <= 0) {
-		/* Error reading signals?  Stop reading them. */
-		gdk_input_remove(signal_tag);
-		return;
-	}
-
-	/* Reap a child. */
-	if (u == SIGCHLD) {
-		pid = waitpid(0, &status, WNOHANG);
-		if ((pid != 0) && (pid != -1) && WIFEXITED(status)) {
-			userhelper_parse_exitstatus(WEXITSTATUS(status));
-		}
-	}
-}
-
-void
-userhelper_sigchld(int signum)
-{
-	unsigned char u;
-	static int sigpipe[2] = {-1, -1};
-
-	/* If the signal number wasn't 0 (the special "set up" signal), write
-	 * it to the pipe and continue on. */
-	if (signum != 0) {
-		u = signum;
-		write(sigpipe[1], &u, 1);
-		signal(SIGCHLD, userhelper_sigchld);
-		return;
-	}
-
-	/* If this is our first time in, then we need to allocate a pipe and
-	 * set ourselves up as the handler for signals. */
-	if (pipe(sigpipe) == -1) {
-		fprintf(stderr, _("Pipe error.\n"));
-		_exit(1);
-	}
-	signal_tag = gdk_input_add(sigpipe[0], GDK_INPUT_READ,
-				   userhelper_read_signal, NULL);
-	signal(SIGCHLD, userhelper_sigchld);
 }
 
 void
 userhelper_runv(char *path, const char **args)
 {
-	pid_t pid;
+	VteReaper *reaper;
 	int retval;
 	int i, fd[4];
+	unsigned char byte;
 
 	/* Create pipes with which to interact with the userhelper child. */
 	if ((pipe(childout) == -1) || (pipe(childin) == -1)) {
@@ -638,26 +638,47 @@ userhelper_runv(char *path, const char **args)
 	}
 
 	/* Start up a new process. */
-	pid = fork();
-	if (pid == -1) {
+	childpid = fork();
+	if (childpid == -1) {
 		fprintf(stderr, _("Cannot fork().\n"));
 		_exit(0);
 	}
 
-	if (pid > 0) {
+	if (childpid > 0) {
 		/* We're the parent; close the write-end of the reading pipe,
 		 * and the read-end of the writing pipe. */
 		close(childout[1]);
 		close(childin[0]);
+
 		/* Tell GDK to watch the reading end of the reading pipe for
 		 * data from the child. */
 		childout_tag = gdk_input_add(childout[0], GDK_INPUT_READ,
 					     userhelper_read_childout, NULL);
+
+		/* Watch for child exits. */
+		reaper = vte_reaper_get();
+		g_signal_connect(G_OBJECT(reaper), "child-exited",
+				 G_CALLBACK(userhelper_child_exited),
+				 NULL);
+#ifdef DEBUG_USERHELPER
+		fprintf(stderr, "Running child.\n");
+#endif
+
+		/* Tell the child we're ready for it to run. */
+		write(childin[1], "Go", 1);
+		gtk_main();
+#ifdef DEBUG_USERHELPER
+		fprintf(stderr, "Child exited, continuing.\n");
+#endif
 	} else {
 		/* We're the child; close the read-end of the parent's reading
 		 * pipe, and the write-end of the parent's writing pipe. */
 		close(childout[0]);
 		close(childin[1]);
+
+		/* Read one byte from the parent so that we know it's ready
+		 * to go. */
+		read(childin[0], &byte, 1);
 
 		/* Close all of descriptors which aren't stdio or the two
 		 * pipe descriptors we'll be using. */

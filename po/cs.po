@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
-"POT-Creation-Date: 2002-08-13 21:32-0400\n"
+"POT-Creation-Date: 2002-09-03 01:15-0400\n"
 "PO-Revision-Date: 2002-04-21 21:27+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -85,12 +85,12 @@ msgstr "Nápovìda"
 msgid "Got PAM error %d.\n"
 msgstr "Chyba PAM %d.\n"
 
-#: userhelper.c:218
+#: userhelper.c:225
 #, c-format
 msgid "Password for %s"
 msgstr "Heslo pro u¾ivatele %s"
 
-#: userhelper.c:338
+#: userhelper.c:346
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -99,7 +99,7 @@ msgstr ""
 "Pokou¹íte se spustit \"%s\", co¾ mù¾e pøinést administrátorská oprávnìní, "
 "ale je potøeba více informací, aby se dalo pokraèovat."
 
-#: userhelper.c:340
+#: userhelper.c:348
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -108,7 +108,7 @@ msgstr ""
 "Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrtorská práva. Je "
 "potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper.c:344
+#: userhelper.c:352
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -117,7 +117,7 @@ msgstr ""
 "Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská oprávnìní. "
 "Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper.c:346
+#: userhelper.c:354
 #, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -126,35 +126,35 @@ msgstr ""
 "Pokou¹íte se spustit pøíkaz, který poøebuje administrátorská oprávnìní. Je "
 "potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper.c:365
+#: userhelper.c:373
 #, c-format
 msgid "Password for %s: "
 msgstr "Heslo pro %s: "
 
-#: userhelper.c:648
+#: userhelper.c:647
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí být SUID root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:730
+#: userhelper.c:729
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Nelze otevøít grafické okno a nelze najít kontrolní terminál.\n"
 
-#: userhelper.c:1409 userhelper.c:1447
+#: userhelper.c:1434 userhelper.c:1480
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "spou¹tím \"%s\"\n"
 
-#: userhelper-wrap.c:50
+#: userhelper-wrap.c:61
 msgid "Unknown exit code."
 msgstr "Neznámý návratový kód."
 
-#: userhelper-wrap.c:52
+#: userhelper-wrap.c:63
 msgid "Information updated."
 msgstr "Informace aktualizovány."
 
-#: userhelper-wrap.c:54
+#: userhelper-wrap.c:65
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -162,7 +162,7 @@ msgstr ""
 "Vlo¾eno neplatné heslo.\n"
 "Zkuste to znovu."
 
-#: userhelper-wrap.c:56
+#: userhelper-wrap.c:67
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -173,11 +173,11 @@ msgstr ""
 "jedné ze vstupních polo¾ek.\n"
 "Odstraòte je prosím a zkuste to znovu."
 
-#: userhelper-wrap.c:58
+#: userhelper-wrap.c:69
 msgid "Password resetting error."
 msgstr "Chyba pøi vymazávání hesla."
 
-#: userhelper-wrap.c:60
+#: userhelper-wrap.c:71
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -185,19 +185,19 @@ msgstr ""
 "Nìkteré systémové soubory jsou uzamèeny.\n"
 "Zkuste to prosím za chvíli znovu."
 
-#: userhelper-wrap.c:62
+#: userhelper-wrap.c:73
 msgid "Unknown user."
 msgstr "Neznámý u¾ivatel."
 
-#: userhelper-wrap.c:64
+#: userhelper-wrap.c:75
 msgid "Insufficient rights."
 msgstr "Nedostateèná práva."
 
-#: userhelper-wrap.c:66
+#: userhelper-wrap.c:77
 msgid "Invalid call to subprocess.."
 msgstr "Neplatné volání subprocesu.."
 
-#: userhelper-wrap.c:68
+#: userhelper-wrap.c:79
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -207,52 +207,52 @@ msgstr ""
 "Nemù¾ete svùj shell zmìnit.\n"
 "Chybu konzultujte s administrátorem systému."
 
-#: userhelper-wrap.c:71
+#: userhelper-wrap.c:82
 msgid "Out of memory."
 msgstr "Nedostatek pamìti."
 
-#: userhelper-wrap.c:73
+#: userhelper-wrap.c:84
 msgid "The exec() call failed."
 msgstr "Volání exec() selhalo."
 
-#: userhelper-wrap.c:75
+#: userhelper-wrap.c:86
 msgid "Failed to find selected program."
 msgstr "Nemohu najít vybraný progra."
 
-#: userhelper-wrap.c:77
+#: userhelper-wrap.c:90
 msgid "Unknown error."
 msgstr "Neznámá chyba."
 
-#: userhelper-wrap.c:276 glade.strings:18
+#: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
 msgid "Query"
 msgstr "Otázka"
 
-#: userhelper-wrap.c:325
+#: userhelper-wrap.c:342
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Potøebuji %d odpovìdi.\n"
 
-#: userhelper-wrap.c:357 userhelper-wrap.c:426
+#: userhelper-wrap.c:374 userhelper-wrap.c:443
 msgid "Error"
 msgstr "Chyba"
 
-#: userhelper-wrap.c:369
+#: userhelper-wrap.c:386
 msgid "Information"
 msgstr "Informace"
 
-#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+#: userhelper-wrap.c:441 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "TextTextTextText."
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:482
 msgid "Changing personal information."
 msgstr "Zmìna informací o u¾ivateli."
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:485
 msgid "Changing login shell."
 msgstr "Zmìna pøihla¹ovacího shellu."
 
-#: userhelper-wrap.c:474
+#: userhelper-wrap.c:491
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -261,7 +261,7 @@ msgstr ""
 "Pokou¹íte se spustit \"%s\", co¾ mù¾e pøinést administrátorská oprávnìní, "
 "ale je potøeba více informací, aby se dalo pokraèovat."
 
-#: userhelper-wrap.c:476
+#: userhelper-wrap.c:493
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -270,7 +270,7 @@ msgstr ""
 "Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrtorská práva. Je "
 "potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper-wrap.c:485
+#: userhelper-wrap.c:502
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
@@ -279,7 +279,7 @@ msgstr ""
 "Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská oprávnìní. "
 "Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper-wrap.c:487
+#: userhelper-wrap.c:504
 #, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
@@ -288,28 +288,28 @@ msgstr ""
 "Pokou¹íte se spustit pøíkaz, který poøebuje administrátorská oprávnìní. Je "
 "potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper-wrap.c:503
+#: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
 msgstr "_Spustit neprivilegovanì"
 
-#: userhelper-wrap.c:617 userhelper-wrap.c:634
+#: userhelper-wrap.c:622
 msgid "Pipe error.\n"
 msgstr "Chyba trubky.\n"
 
-#: userhelper-wrap.c:641
+#: userhelper-wrap.c:629
 msgid "Cannot fork().\n"
 msgstr "Nemohu provést fork().\n"
 
-#: userhelper-wrap.c:687 userhelper-wrap.c:691
+#: userhelper-wrap.c:696 userhelper-wrap.c:700
 msgid "dup2() error.\n"
 msgstr "Chyba pøi dup2().\n"
 
-#: userhelper-wrap.c:703
+#: userhelper-wrap.c:712
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Chyba pøi execl(), errno=%d\n"
 
-#: userinfo.c:305
+#: userinfo.c:321
 msgid "You don't exist.  Go away.\n"
 msgstr "V systému neexistujete. Odejdìte.\n"
 
@@ -321,7 +321,7 @@ msgstr "_Pøipojit"
 msgid "Un_mount"
 msgstr "_Odpojit"
 
-#: usermount.c:310
+#: usermount.c:320
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -329,15 +329,15 @@ msgstr ""
 "Jste si jist ¾e chcete formátovat tento disk? Formátováním budou znièena "
 "v¹echna obsa¾ená data."
 
-#: usermount.c:321
+#: usermount.c:331
 msgid "Perform a _low-level format."
 msgstr "Provést _low-level formátování."
 
-#: usermount.c:364
+#: usermount.c:374
 msgid "Select a _filesystem type to create:"
 msgstr "Vytvoøit _systém souborù:"
 
-#: usermount.c:521
+#: usermount.c:542
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -347,24 +347,24 @@ msgstr ""
 "Kontaktujte administrátora systému."
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: usermount.c:543 usermount.c:554 glade.strings:22
 msgid "User Mount Tool"
 msgstr "Nástroj pro pøipojení u¾ivatelem"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: usermount.c:568 glade.strings:28
 msgid "_Format"
 msgstr "_Formátovat"
 
-#: usermount.c:579 glade.strings:24
+#: usermount.c:604 glade.strings:24
 msgid "Device"
 msgstr "Zaøízení"
 
-#: usermount.c:585 glade.strings:23
+#: usermount.c:610 glade.strings:23
 msgid "Directory"
 msgstr "Adresáø"
 
-#: usermount.c:591
+#: usermount.c:616
 msgid "Filesystem"
 msgstr "Systém souborù"
 
@@ -373,29 +373,29 @@ msgstr "Systém souborù"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: glade.strings:7
+#: glade.strings:7 usermode.glade.h:10
 msgid "User Information"
 msgstr "Informace o u¾ivateli"
 
-#: glade.strings:8
+#: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Plné jméno:"
 
-#: glade.strings:9
+#: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
 msgstr "Kanceláø:"
 
-#: glade.strings:10
-msgid "Office Phone Number"
-msgstr "Telefon do kanceláøe"
+#: glade.strings:10 usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "Telefon do kanceláøe:"
 
-#: glade.strings:11
-msgid "Home Phone Number"
-msgstr "Domácí telefon"
+#: glade.strings:11 usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr "Domácí telefon:"
 
-#: glade.strings:12
-msgid "Login Shell"
-msgstr "Pøihla¹ovací Shell"
+#: glade.strings:12 usermode.glade.h:4
+msgid "Login Shell:"
+msgstr "Pøihla¹ovací Shell:"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
@@ -405,7 +405,7 @@ msgstr "_Ok"
 msgid "_Cancel"
 msgstr "_Pøeru¹it"
 
-#: glade.strings:15
+#: glade.strings:15 usermode.glade.h:5
 msgid "Message"
 msgstr "Zpráva"
 
@@ -424,6 +424,10 @@ msgstr "_Odpojit"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "_Konec"
+
+#: usermode.glade.h:1
+msgid "*"
+msgstr ""
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"

@@ -37,9 +37,7 @@ create_message_box(gchar *message, gchar *title)
 	if (title) {
 		gtk_window_set_title(GTK_WINDOW(dialog), title);
 	}
-	g_signal_connect_object(G_OBJECT(dialog), "response",
-				GTK_SIGNAL_FUNC(gtk_widget_destroy), dialog, 0);
-	gtk_widget_show_all(dialog);
+	gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
 	return dialog;
 }
 
@@ -54,9 +52,7 @@ create_error_box(gchar * error, gchar * title)
 	if (title) {
 		gtk_window_set_title(GTK_WINDOW(dialog), title);
 	}
-	g_signal_connect_object(G_OBJECT(dialog), "response",
-				GTK_SIGNAL_FUNC(gtk_widget_destroy), dialog, 0);
-	gtk_widget_show_all(dialog);
+	gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
 	return dialog;
 }
 
@@ -65,10 +61,10 @@ relay_value(GtkWidget *dialog, GtkResponseType response, GtkSignalFunc func)
 {
 	void (*callback)(GtkWidget *dialog, GtkWidget *entry) = NULL;
 	callback = (void(*)(GtkWidget *dialog, GtkWidget *entry)) func;
-	if(response == GTK_RESPONSE_OK) {
+	if (response == GTK_RESPONSE_OK) {
 		GtkWidget *entry;
 		entry = g_object_get_data(G_OBJECT(dialog), "entry");
-		if(GTK_IS_WIDGET(entry)) {
+		if (GTK_IS_WIDGET(entry)) {
 			callback(dialog, entry);
 		}
 	}
@@ -86,6 +82,8 @@ create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
 	if (title) {
 		gtk_window_set_title(GTK_WINDOW(dialog), title);
 	}
+	gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
+
 	box = (GTK_DIALOG(dialog))->vbox;
 
 	entry = gtk_entry_new();
@@ -96,9 +94,6 @@ create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
 
 	g_signal_connect(G_OBJECT(dialog), "response",
 			 GTK_SIGNAL_FUNC(relay_value), func);
-	g_signal_connect_object(G_OBJECT(dialog), "response",
-				GTK_SIGNAL_FUNC(gtk_widget_destroy), NULL,
-				G_CONNECT_AFTER);
 
 	gtk_widget_show_all(dialog);
 

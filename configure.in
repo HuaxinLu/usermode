@@ -36,6 +36,7 @@ SBINDIR=`eval echo ${sbindir}`
 AC_DEFINE_UNQUOTED(SBINDIR,"$SBINDIR","/usr/sbin")
 DATADIR=`eval echo ${datadir}`
 AC_DEFINE_UNQUOTED(DATADIR,"$DATADIR","/usr/share")
+AC_DEFINE_UNQUOTED(LOCALEDIR,"$DATADIR/locale","/usr/share/locale")
 SYSCONFDIR=`eval echo ${sysconfdir}`
 AC_DEFINE_UNQUOTED(SYSCONFDIR,"$SYSCONFDIR","/etc")
 AC_SUBST(BINDIR)

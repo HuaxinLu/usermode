@@ -8,6 +8,7 @@ usermount.c
 userhelper.h
 glade.strings
 # files added by intltool-prepare
+usermode.glade
 userinfo.desktop.in
 usermount.desktop.in
 userpasswd.desktop.in

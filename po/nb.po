@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
-"POT-Creation-Date: 2002-08-13 21:32-0400\n"
+"POT-Creation-Date: 2002-09-03 01:15-0400\n"
 "PO-Revision-Date: 2002-08-19 22:21+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -85,12 +85,12 @@ msgstr "Hjelp"
 msgid "Got PAM error %d.\n"
 msgstr "Mottok PAM-feil %d.\n"
 
-#: userhelper.c:218
+#: userhelper.c:225
 #, c-format
 msgid "Password for %s"
 msgstr "Passord for %s"
 
-#: userhelper.c:338
+#: userhelper.c:346
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -99,7 +99,7 @@ msgstr ""
 "Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med\n"
 "superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
-#: userhelper.c:340
+#: userhelper.c:348
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -108,7 +108,7 @@ msgstr ""
 "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du\n"
 "må oppgi mer informasjon for å gjøre dette."
 
-#: userhelper.c:344
+#: userhelper.c:352
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -116,7 +116,7 @@ msgstr ""
 "Du prøver å kjøre en kommando som med fordel kan kjøres med\n"
 "superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
-#: userhelper.c:346
+#: userhelper.c:354
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -124,37 +124,37 @@ msgstr ""
 "Du prøver å kjøre en kommando som krever superbrukerprivilegier\n"
 "men du må oppgi mer informasjon for å gjøre dette."
 
-#: userhelper.c:365
+#: userhelper.c:373
 #, c-format
 msgid "Password for %s: "
 msgstr "Passord for %s: "
 
-#: userhelper.c:648
+#: userhelper.c:647
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper må være setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:730
+#: userhelper.c:729
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kunne ikke åpne grafisk vindu; og er ute av stand til å finne en "
 "kontrollerende terminal.\n"
 
-#: userhelper.c:1409 userhelper.c:1447
+#: userhelper.c:1434 userhelper.c:1480
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "i ferd med å kjøre \"%s\"\n"
 
-#: userhelper-wrap.c:50
+#: userhelper-wrap.c:61
 msgid "Unknown exit code."
 msgstr "Ukjent avsluttingskode."
 
-#: userhelper-wrap.c:52
+#: userhelper-wrap.c:63
 msgid "Information updated."
 msgstr "Informasjon oppdatert."
 
-#: userhelper-wrap.c:54
+#: userhelper-wrap.c:65
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -162,7 +162,7 @@ msgstr ""
 "Passordet du oppga er ugyldig.\n"
 "Vennligst prøv igjen."
 
-#: userhelper-wrap.c:56
+#: userhelper-wrap.c:67
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -172,11 +172,11 @@ msgstr ""
 "Dette skyldes sannsynligvis et kolon eller komma i ett av feltene.\n"
 "Vennligst fjern disse og prøv igjen."
 
-#: userhelper-wrap.c:58
+#: userhelper-wrap.c:69
 msgid "Password resetting error."
 msgstr "Feil under nullstilling av passord."
 
-#: userhelper-wrap.c:60
+#: userhelper-wrap.c:71
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -184,19 +184,19 @@ msgstr ""
 "Noen systemfiler er låst.\n"
 "Prøv igjen om et øyeblikk."
 
-#: userhelper-wrap.c:62
+#: userhelper-wrap.c:73
 msgid "Unknown user."
 msgstr "Ukjent bruker."
 
-#: userhelper-wrap.c:64
+#: userhelper-wrap.c:75
 msgid "Insufficient rights."
 msgstr "Utilstrekkelige rettigheter."
 
-#: userhelper-wrap.c:66
+#: userhelper-wrap.c:77
 msgid "Invalid call to subprocess.."
 msgstr "Ugyldig kall til underprosess.."
 
-#: userhelper-wrap.c:68
+#: userhelper-wrap.c:79
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -206,52 +206,52 @@ msgstr ""
 "Du kan ikke endre ditt skall.\n"
 "Kontakt systemadministratoren."
 
-#: userhelper-wrap.c:71
+#: userhelper-wrap.c:82
 msgid "Out of memory."
 msgstr "Tom for minne."
 
-#: userhelper-wrap.c:73
+#: userhelper-wrap.c:84
 msgid "The exec() call failed."
 msgstr "exec() kallet feilet."
 
-#: userhelper-wrap.c:75
+#: userhelper-wrap.c:86
 msgid "Failed to find selected program."
 msgstr "Kunne ikke finne valgt program."
 
-#: userhelper-wrap.c:77
+#: userhelper-wrap.c:90
 msgid "Unknown error."
 msgstr "Ukjent feil."
 
-#: userhelper-wrap.c:276 glade.strings:18
+#: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
 msgid "Query"
 msgstr "Spør"
 
-#: userhelper-wrap.c:325
+#: userhelper-wrap.c:342
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Trenger %d svar.\n"
 
-#: userhelper-wrap.c:357 userhelper-wrap.c:426
+#: userhelper-wrap.c:374 userhelper-wrap.c:443
 msgid "Error"
 msgstr "Feil"
 
-#: userhelper-wrap.c:369
+#: userhelper-wrap.c:386
 msgid "Information"
 msgstr "Informasjon"
 
-#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+#: userhelper-wrap.c:441 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Plassholdertekst"
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:482
 msgid "Changing personal information."
 msgstr "Endrer personlig informasjon."
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:485
 msgid "Changing login shell."
 msgstr "Endrer innloggingsskall."
 
-#: userhelper-wrap.c:474
+#: userhelper-wrap.c:491
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -260,7 +260,7 @@ msgstr ""
 "Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med "
 "superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:476
+#: userhelper-wrap.c:493
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -269,7 +269,7 @@ msgstr ""
 "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi "
 "mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:485
+#: userhelper-wrap.c:502
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -277,7 +277,7 @@ msgstr ""
 "Du prøver å kjøre en kommando som med fordel kan kjøres med "
 "superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
-#: userhelper-wrap.c:487
+#: userhelper-wrap.c:504
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -285,28 +285,28 @@ msgstr ""
 "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må "
 "oppgi mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:503
+#: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
 msgstr "Kjø_r upriviligert"
 
-#: userhelper-wrap.c:617 userhelper-wrap.c:634
+#: userhelper-wrap.c:622
 msgid "Pipe error.\n"
 msgstr "Feil med rør.\n"
 
-#: userhelper-wrap.c:641
+#: userhelper-wrap.c:629
 msgid "Cannot fork().\n"
 msgstr "Kan ikke kjøre fork().\n"
 
-#: userhelper-wrap.c:687 userhelper-wrap.c:691
+#: userhelper-wrap.c:696 userhelper-wrap.c:700
 msgid "dup2() error.\n"
 msgstr "feil ved kjøring av dup2().\n"
 
-#: userhelper-wrap.c:703
+#: userhelper-wrap.c:712
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() feil, errno=%d\n"
 
-#: userinfo.c:305
+#: userinfo.c:321
 msgid "You don't exist.  Go away.\n"
 msgstr "Du eksisterer ikke. Ha deg vekk.\n"
 
@@ -318,7 +318,7 @@ msgstr "_Monter"
 msgid "Un_mount"
 msgstr "Av_monter"
 
-#: usermount.c:310
+#: usermount.c:320
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -326,15 +326,15 @@ msgstr ""
 "Er du sikker på at du vil formatere denne disken? Du vil ødelegge alle data "
 "på den disken."
 
-#: usermount.c:321
+#: usermount.c:331
 msgid "Perform a _low-level format."
 msgstr "Utfør _lavnivå-formatering."
 
-#: usermount.c:364
+#: usermount.c:374
 msgid "Select a _filesystem type to create:"
 msgstr "Velg type _filsystem du vil opprette:"
 
-#: usermount.c:521
+#: usermount.c:542
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -343,24 +343,24 @@ msgstr ""
 "Kontakt din administrator."
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: usermount.c:543 usermount.c:554 glade.strings:22
 msgid "User Mount Tool"
 msgstr "Brukerverktøy for montering"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: usermount.c:568 glade.strings:28
 msgid "_Format"
 msgstr "_Format"
 
-#: usermount.c:579 glade.strings:24
+#: usermount.c:604 glade.strings:24
 msgid "Device"
 msgstr "Enhet"
 
-#: usermount.c:585 glade.strings:23
+#: usermount.c:610 glade.strings:23
 msgid "Directory"
 msgstr "Katalog"
 
-#: usermount.c:591
+#: usermount.c:616
 msgid "Filesystem"
 msgstr "Filsystem"
 
@@ -369,28 +369,28 @@ msgstr "Filsystem"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: glade.strings:7
+#: glade.strings:7 usermode.glade.h:10
 msgid "User Information"
 msgstr "Brukerinformasjon"
 
-#: glade.strings:8
+#: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Fullt navn:"
 
-#: glade.strings:9
+#: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
 msgstr "Kontor:"
 
-#: glade.strings:10
-msgid "Office Phone Number"
-msgstr "Jobbtelefon"
+#: glade.strings:10 usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "Jobbtelefon:"
 
-#: glade.strings:11
-msgid "Home Phone Number"
-msgstr "Hjemmetelefon"
+#: glade.strings:11 usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr "Hjemmetelefon:"
 
-#: glade.strings:12
-msgid "Login Shell"
+#: glade.strings:12 usermode.glade.h:4
+msgid "Login Shell:"
 msgstr "Loginskall:"
 
 #: glade.strings:13 glade.strings:20
@@ -401,7 +401,7 @@ msgstr "_Ok"
 msgid "_Cancel"
 msgstr "_Avbryt"
 
-#: glade.strings:15
+#: glade.strings:15 usermode.glade.h:5
 msgid "Message"
 msgstr "Melding"
 
@@ -420,6 +420,10 @@ msgstr "_Avmonter"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "A_vslutt"
+
+#: usermode.glade.h:1
+msgid "*"
+msgstr ""
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"

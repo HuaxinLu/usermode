@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
-"POT-Creation-Date: 2002-08-13 21:32-0400\n"
+"POT-Creation-Date: 2002-09-03 01:15-0400\n"
 "PO-Revision-Date: 2002-08-14 12:43GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
@@ -92,12 +92,12 @@ msgstr "ヘルプ"
 msgid "Got PAM error %d.\n"
 msgstr "PAMエラーが発生しました。%d\n"
 
-#: userhelper.c:218
+#: userhelper.c:225
 #, c-format
 msgid "Password for %s"
 msgstr "%sのパスワード"
 
-#: userhelper.c:338
+#: userhelper.c:346
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -106,7 +106,7 @@ msgstr ""
 "スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:340
+#: userhelper.c:348
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -115,7 +115,7 @@ msgstr ""
 "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:344
+#: userhelper.c:352
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -123,7 +123,7 @@ msgstr ""
 "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:346
+#: userhelper.c:354
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -132,36 +132,37 @@ msgstr ""
 "は\n"
 "追加情報が必要です。"
 
-#: userhelper.c:365
+#: userhelper.c:373
 #, c-format
 msgid "Password for %s: "
 msgstr "%s用のパスワード:"
 
-#: userhelper.c:648
+#: userhelper.c:647
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:730
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:729
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
 
-#: userhelper.c:1409 userhelper.c:1447
+#: userhelper.c:1434 userhelper.c:1480
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\"を実行しようとしています\n"
 
-#: userhelper-wrap.c:50
+#: userhelper-wrap.c:61
 msgid "Unknown exit code."
 msgstr "不明な終了コードです。"
 
-#: userhelper-wrap.c:52
+#: userhelper-wrap.c:63
 msgid "Information updated."
 msgstr "情報は更新されました。"
 
-#: userhelper-wrap.c:54
+#: userhelper-wrap.c:65
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -169,7 +170,7 @@ msgstr ""
 "入力したパスワードは間違っています。\n"
 "もう一度入力してください。"
 
-#: userhelper-wrap.c:56
+#: userhelper-wrap.c:67
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -179,11 +180,11 @@ msgstr ""
 "フィールドのどこかにコロンかコンマがあるかもしれません。\n"
 "それらを削除してもう一度入力してください。"
 
-#: userhelper-wrap.c:58
+#: userhelper-wrap.c:69
 msgid "Password resetting error."
 msgstr "パスワードのリセットでエラーが発生しました。"
 
-#: userhelper-wrap.c:60
+#: userhelper-wrap.c:71
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -191,19 +192,19 @@ msgstr ""
 "ロックされいているシステムファイルがあります。\n"
 "しばらく待ってからもう一度やってみてください。"
 
-#: userhelper-wrap.c:62
+#: userhelper-wrap.c:73
 msgid "Unknown user."
 msgstr "不明なユーザです。"
 
-#: userhelper-wrap.c:64
+#: userhelper-wrap.c:75
 msgid "Insufficient rights."
 msgstr "権限がありません。"
 
-#: userhelper-wrap.c:66
+#: userhelper-wrap.c:77
 msgid "Invalid call to subprocess.."
 msgstr "サブプロセスの呼び出し方が間違っています。"
 
-#: userhelper-wrap.c:68
+#: userhelper-wrap.c:79
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -213,52 +214,52 @@ msgstr ""
 " したがってシェルを変更することはできません。\n"
 "システム管理者に相談してみてください。"
 
-#: userhelper-wrap.c:71
+#: userhelper-wrap.c:82
 msgid "Out of memory."
 msgstr "メモリが足りません。"
 
-#: userhelper-wrap.c:73
+#: userhelper-wrap.c:84
 msgid "The exec() call failed."
 msgstr "exec()の呼び出しに失敗しました。"
 
-#: userhelper-wrap.c:75
+#: userhelper-wrap.c:86
 msgid "Failed to find selected program."
 msgstr "選択したプログラムは見つかりませんでした。"
 
-#: userhelper-wrap.c:77
+#: userhelper-wrap.c:90
 msgid "Unknown error."
 msgstr "不明なエラーです。"
 
-#: userhelper-wrap.c:276 glade.strings:18
+#: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
 msgid "Query"
 msgstr "質問"
 
-#: userhelper-wrap.c:325
+#: userhelper-wrap.c:342
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "%d 応答が必要です。\n"
 
-#: userhelper-wrap.c:357 userhelper-wrap.c:426
+#: userhelper-wrap.c:374 userhelper-wrap.c:443
 msgid "Error"
 msgstr "エラー"
 
-#: userhelper-wrap.c:369
+#: userhelper-wrap.c:386
 msgid "Information"
 msgstr "情報"
 
-#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+#: userhelper-wrap.c:441 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "プレースホルダテキスト。"
 
-#: userhelper-wrap.c:465
+#: userhelper-wrap.c:482
 msgid "Changing personal information."
 msgstr "個人情報を変更しています。"
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:485
 msgid "Changing login shell."
 msgstr "ログイン シェルを変更中"
 
-#: userhelper-wrap.c:474
+#: userhelper-wrap.c:491
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -267,7 +268,7 @@ msgstr ""
 "スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
-#: userhelper-wrap.c:476
+#: userhelper-wrap.c:493
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -276,7 +277,7 @@ msgstr ""
 "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには追"
 "加情報が必要です。"
 
-#: userhelper-wrap.c:485
+#: userhelper-wrap.c:502
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -284,7 +285,7 @@ msgstr ""
 "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
-#: userhelper-wrap.c:487
+#: userhelper-wrap.c:504
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -292,28 +293,28 @@ msgstr ""
 "スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには"
 "追加情報が必要です。"
 
-#: userhelper-wrap.c:503
+#: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
 msgstr "権限なしで実行(_R)"
 
-#: userhelper-wrap.c:617 userhelper-wrap.c:634
+#: userhelper-wrap.c:622
 msgid "Pipe error.\n"
 msgstr "パイプエラー。\n"
 
-#: userhelper-wrap.c:641
+#: userhelper-wrap.c:629
 msgid "Cannot fork().\n"
 msgstr "fork()できません。\n"
 
-#: userhelper-wrap.c:687 userhelper-wrap.c:691
+#: userhelper-wrap.c:696 userhelper-wrap.c:700
 msgid "dup2() error.\n"
 msgstr "dup2()エラー。\n"
 
-#: userhelper-wrap.c:703
+#: userhelper-wrap.c:712
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
 
-#: userinfo.c:305
+#: userinfo.c:321
 msgid "You don't exist.  Go away.\n"
 msgstr "あなたは存在しません。続けられません。\n"
 
@@ -325,7 +326,7 @@ msgstr "マウント(_M)"
 msgid "Un_mount"
 msgstr "マウント解除(_m)"
 
-#: usermount.c:310
+#: usermount.c:320
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -333,15 +334,15 @@ msgstr ""
 "本当にこのディスクをフォーマットしますか?ディスクに現在あるデータはすべて破壊"
 "されます。"
 
-#: usermount.c:321
+#: usermount.c:331
 msgid "Perform a _low-level format."
 msgstr "lowレベルフォーマットをする(_l)。"
 
-#: usermount.c:364
+#: usermount.c:374
 msgid "Select a _filesystem type to create:"
 msgstr "作成するファイルシステムタイプの選択(_f):"
 
-#: usermount.c:521
+#: usermount.c:542
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -350,24 +351,24 @@ msgstr ""
 "管理者に相談してください。"
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: usermount.c:543 usermount.c:554 glade.strings:22
 msgid "User Mount Tool"
 msgstr "ユーザーマウントツール"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: usermount.c:568 glade.strings:28
 msgid "_Format"
 msgstr "フォーマット(_F)"
 
-#: usermount.c:579 glade.strings:24
+#: usermount.c:604 glade.strings:24
 msgid "Device"
 msgstr "デバイス"
 
-#: usermount.c:585 glade.strings:23
+#: usermount.c:610 glade.strings:23
 msgid "Directory"
 msgstr "ディレクトリ"
 
-#: usermount.c:591
+#: usermount.c:616
 msgid "Filesystem"
 msgstr "ファイルシステム"
 
@@ -376,29 +377,29 @@ msgstr "ファイルシステム"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: glade.strings:7
+#: glade.strings:7 usermode.glade.h:10
 msgid "User Information"
 msgstr "ユーザー情報"
 
-#: glade.strings:8
+#: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "フルネーム:"
 
-#: glade.strings:9
+#: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
 msgstr "オフィス:"
 
-#: glade.strings:10
-msgid "Office Phone Number"
-msgstr "オフィスの電話番号"
+#: glade.strings:10 usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "オフィスの電話番号:"
 
-#: glade.strings:11
-msgid "Home Phone Number"
-msgstr "自宅の電話番号"
+#: glade.strings:11 usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr "自宅の電話番号:"
 
-#: glade.strings:12
-msgid "Login Shell"
-msgstr "ログインシェル"
+#: glade.strings:12 usermode.glade.h:4
+msgid "Login Shell:"
+msgstr "ログインシェル:"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
@@ -408,7 +409,7 @@ msgstr "OK(_O)"
 msgid "_Cancel"
 msgstr "キャンセル(_C)"
 
-#: glade.strings:15
+#: glade.strings:15 usermode.glade.h:5
 msgid "Message"
 msgstr "メッセージ"
 
@@ -427,6 +428,10 @@ msgstr "マウント解除(_U)"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "終了(_x)"
+
+#: usermode.glade.h:1
+msgid "*"
+msgstr ""
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -451,4 +456,3 @@ msgstr "ログインパスワードを変更"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "パスワード"
-

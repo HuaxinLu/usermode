@@ -85,6 +85,9 @@ struct mountinfo {
  * response callback doesn't have a userdata argument.  */
 static GtkTreeSelection *tree_selection = NULL;
 
+/* Static pointer to the dialog's buttons. */
+static GtkWidget *mount_button = NULL, *format_button = NULL;
+
 /* This function parses /etc/fstab using getmntent() and uses other tricks
  * to fill in the info for all filesystems with the 'user' option... unless,
  * of course getuid() == 0, then we get them all.  No reason root shouldn't
@@ -217,8 +220,8 @@ selected_info()
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	struct mountinfo *info = NULL;
-	if(gtk_tree_selection_get_selected(GTK_TREE_SELECTION(tree_selection),
-					   &model, &iter)) {
+	if (gtk_tree_selection_get_selected(GTK_TREE_SELECTION(tree_selection),
+					    &model, &iter)) {
 		gtk_tree_model_get(GTK_TREE_MODEL(model), &iter,
 				   3, &info,
 				   -1);
@@ -233,20 +236,24 @@ check_is_mounted(struct mountinfo *info)
 	char *parent_dir;
 	struct stat st1, st2;
 
+	if (info == NULL) {
+		return FALSE;
+	}
+
 	/* Screen out bogus mount points.  I consider "/" bogus, too. */
-	if(info->dir[0] != '/') {
+	if (info->dir[0] != '/') {
 		return FALSE;
 	}
-	if(strlen(info->dir) < 2) {
+	if (strlen(info->dir) < 2) {
 		return FALSE;
 	}
-	if(stat(info->dir, &st1) == -1) {
+	if (stat(info->dir, &st1) == -1) {
 		return FALSE;
 	}
 
 	/* Get the name of the mountpoint's parent directory. */
 	parent_dir = g_strdup(info->dir);
-	if(strrchr(parent_dir, '/') == parent_dir) {
+	if (strrchr(parent_dir, '/') == parent_dir) {
 		/* The mountpoint is a top-level directory. */
 		strcpy(parent_dir, "/");
 	} else {
@@ -256,8 +263,8 @@ check_is_mounted(struct mountinfo *info)
 	}
 
 	/* Verify that the mountpoint and its parent exist. */
-	if((stat(info->dir, &st1) == -1) ||
-	   (stat(parent_dir, &st2) == -1)) {
+	if ((stat(info->dir, &st1) == -1) ||
+	    (stat(parent_dir, &st2) == -1)) {
 		g_free(parent_dir);
 		return FALSE;
 	}
@@ -276,7 +283,7 @@ changed_callback(GtkTreeSelection *ignored, gpointer also_ignored)
 {
 	struct mountinfo *info;
 	info = selected_info();
-	if(info != NULL) {
+	if (info != NULL) {
 		/* Enable/disable buttons based on whether the filesystem is
 		 * mounted or not. */
 		check_is_mounted(info);
@@ -286,6 +293,9 @@ changed_callback(GtkTreeSelection *ignored, gpointer also_ignored)
 				     info->mounted ?
 				     UNMOUNT_TEXT : MOUNT_TEXT);
 		gtk_widget_set_sensitive(info->mount, TRUE);
+	} else {
+		gtk_widget_set_sensitive(format_button, FALSE);
+		gtk_widget_set_sensitive(mount_button, FALSE);
 	}
 }
 
@@ -317,7 +327,7 @@ format(struct mountinfo *info)
 
 	/* If it's the kind of device we low-level format, let the user
 	 * disable that step. */
-	if(info->fdformat) {
+	if (info->fdformat) {
 		format = gtk_check_button_new_with_mnemonic(_("Perform a "
 							      "_low-level "
 							      "format."));
@@ -329,7 +339,7 @@ format(struct mountinfo *info)
 
 	/* If it's a filesystem of type "auto", we also have to let the user
 	 * select a filesystem type to format it as. */
-	if(strcmp(info->fstype, "auto") == 0) {
+	if (strcmp(info->fstype, "auto") == 0) {
 		sbindir = g_path_get_dirname(PATH_MKFS);
 		mkfs = g_strdup_printf("%s/mkfs.*", sbindir);
 
@@ -337,7 +347,7 @@ format(struct mountinfo *info)
 		gtk_widget_show(menu);
 
 		defaultfs = 0;
-		if(glob(mkfs, 0, NULL, &results) == 0) {
+		if (glob(mkfs, 0, NULL, &results) == 0) {
 			for(i = 0; i < results.gl_pathc; i++) {
 				const char *text;
 				text = results.gl_pathv[i] + strlen(mkfs) - 1;
@@ -355,7 +365,7 @@ format(struct mountinfo *info)
 
 		options = gtk_option_menu_new();
 		gtk_option_menu_set_menu(GTK_OPTION_MENU(options), menu);
-		if(defaultfs > 0) {
+		if (defaultfs > 0) {
 			gtk_option_menu_set_history(GTK_OPTION_MENU(options),
 						    defaultfs);
 		}
@@ -370,11 +380,11 @@ format(struct mountinfo *info)
 	}
 
 	/* Run the dialog. */
-	if(format) {
+	if (format) {
 		gtk_table_attach_defaults(GTK_TABLE(table), format,
 					  0, 2, 0, 1);
 	}
-	if(options && label) {
+	if (options && label) {
 		gtk_table_attach_defaults(GTK_TABLE(table), label,
 					  0, 1, 1, 2);
 		gtk_table_attach_defaults(GTK_TABLE(table), options,
@@ -388,10 +398,10 @@ format(struct mountinfo *info)
 	gtk_widget_hide(dialog);
 
 	/* If the user said "yes", make a new filesystem on it. */
-	if(response == GTK_RESPONSE_YES) {
-		if(GTK_IS_CHECK_BUTTON(format)) {
+	if (response == GTK_RESPONSE_YES) {
+		if (GTK_IS_CHECK_BUTTON(format)) {
 			GtkToggleButton *toggle = GTK_TOGGLE_BUTTON(format);
-			if(gtk_toggle_button_get_active(toggle)) {
+			if (gtk_toggle_button_get_active(toggle)) {
 				command[0] = PATH_FDFORMAT;
 				command[1] = info->dev;
 				command[2] = NULL;
@@ -401,11 +411,11 @@ format(struct mountinfo *info)
 						  G_SPAWN_STDOUT_TO_DEV_NULL,
 						  NULL, NULL,
 						  &child, &error)) {
-					while(waitpid(child, &status, WNOHANG) == 0) {
+					while (waitpid(child, &status, WNOHANG) == 0) {
 						gtk_main_iteration_do(FALSE);
 					}
-					if(WIFEXITED(status)) {
-						if(WEXITSTATUS(status) == 0) {
+					if (WIFEXITED(status)) {
+						if (WEXITSTATUS(status) == 0) {
 							info->mounted = !info->mounted;
 						}
 					}
@@ -413,15 +423,15 @@ format(struct mountinfo *info)
 			}
 		}
 		fstype = NULL;
-		if(options) {
+		if (options) {
 			defaultfs = gtk_option_menu_get_history(GTK_OPTION_MENU(options));
-			if(results.gl_pathc > defaultfs) {
+			if (results.gl_pathc > defaultfs) {
 				fstype = results.gl_pathv[defaultfs] + strlen(mkfs) - 1;
 			}
 			g_free(mkfs);
 			g_free(sbindir);
 		}
-		if(fstype == NULL) {
+		if (fstype == NULL) {
 			fstype = info->fstype;
 		}
 		command[0] = PATH_MKFS;
@@ -435,11 +445,11 @@ format(struct mountinfo *info)
 				  G_SPAWN_STDOUT_TO_DEV_NULL,
 				  NULL, NULL,
 				  &child, &error)) {
-			while(waitpid(child, &status, WNOHANG) == 0) {
+			while (waitpid(child, &status, WNOHANG) == 0) {
 				gtk_main_iteration_do(FALSE);
 			}
-			if(WIFEXITED(status)) {
-				if(WEXITSTATUS(status) == 0) {
+			if (WIFEXITED(status)) {
+				if (WEXITSTATUS(status) == 0) {
 					info->mounted = !info->mounted;
 				}
 			}
@@ -454,45 +464,56 @@ response_callback(GtkWidget *emitter, GtkResponseType response)
 {
 	struct mountinfo *info;
 	char *command[3];
+	char *messages = NULL;
 	int status;
-	gint child;
 	GError *error = NULL;
-	GtkWidget *toplevel;
+	GtkWidget *toplevel, *dialog;
 
 	info = selected_info();
-	switch(response) {
+	switch (response) {
 		case GTK_RESPONSE_CLOSE:
 			gtk_main_quit();
 			break;
 		case ACTION_FORMAT:
 			/* Format. */
+			g_return_if_fail(info != NULL);
 			toplevel = gtk_widget_get_toplevel(emitter);
-			if(GTK_WIDGET_TOPLEVEL(toplevel)) {
+			if (GTK_WIDGET_TOPLEVEL(toplevel)) {
 				gtk_widget_set_sensitive(toplevel, FALSE);
 			}
 			format(info);
-			if(GTK_WIDGET_TOPLEVEL(toplevel)) {
+			if (GTK_WIDGET_TOPLEVEL(toplevel)) {
 				gtk_widget_set_sensitive(toplevel, TRUE);
 			}
 			break;
 		case ACTION_MOUNT:
 			/* Mount/unmount. */
+			g_return_if_fail(info != NULL);
 			command[0] = info->mounted ?  PATH_UMOUNT : PATH_MOUNT;
 			command[1] = info->dir;
 			command[2] = NULL;
-			if (g_spawn_async("/",
-					  command, NULL,
-					  G_SPAWN_DO_NOT_REAP_CHILD |
-					  G_SPAWN_STDOUT_TO_DEV_NULL,
-					  NULL, NULL,
-					  &child, &error)) {
-				while(waitpid(child, &status, WNOHANG) == 0) {
-					gtk_main_iteration_do(FALSE);
-				}
-				if(WIFEXITED(status)) {
-					if(WEXITSTATUS(status) == 0) {
+			if (g_spawn_sync("/",
+					 command,
+					 NULL,
+					 G_SPAWN_STDOUT_TO_DEV_NULL,
+					 NULL,
+					 NULL,
+					 NULL,
+					 &messages,
+					 &status,
+					 &error)) {
+				if (WIFEXITED(status)) {
+					if (WEXITSTATUS(status) == 0) {
 						info->mounted = !info->mounted;
 					}
+				}
+				if ((messages != NULL) &&
+				    (strlen(messages) > 0)) {
+					dialog = create_error_box(messages,
+								  NULL);
+					gtk_dialog_run(GTK_DIALOG(dialog));
+					gtk_widget_destroy(dialog);
+					g_free(messages);
 				}
 			}
 			changed_callback(NULL, NULL);
@@ -517,10 +538,13 @@ create_usermount_window()
 	 * system, by scanning /etc/fstab.  If we get an empty list back,
 	 * bail out and just display an error dialog. */
 	info = build_mountinfo_list();
-	if(info == NULL) {
+	if (info == NULL) {
 		dialog = create_error_box(_("There are no filesystems which you are allowed to mount or unmount.\nContact your administrator."),
 					  _("User Mount Tool"));
 		g_signal_connect_object(G_OBJECT(dialog), "destroy",
+					GTK_SIGNAL_FUNC(gtk_main_quit), NULL,
+					G_CONNECT_AFTER);
+		g_signal_connect_object(G_OBJECT(dialog), "delete-event",
 					GTK_SIGNAL_FUNC(gtk_main_quit), NULL,
 					G_CONNECT_AFTER);
 		return;
@@ -537,15 +561,16 @@ create_usermount_window()
 	/* Connect default signal handlers. */
 	g_signal_connect(G_OBJECT(dialog), "destroy",
 			 GTK_SIGNAL_FUNC(gtk_main_quit), NULL);
-	g_signal_connect(G_OBJECT(dialog), "delete_event",
+	g_signal_connect(G_OBJECT(dialog), "delete-event",
 			 GTK_SIGNAL_FUNC(gtk_main_quit), NULL);
 
 	/* Create the other buttons. */
-	format = gtk_button_new_with_mnemonic(_("_Format"));
+	format_button = format = gtk_button_new_with_mnemonic(_("_Format"));
 	gtk_widget_set_sensitive(format, FALSE);
 	gtk_dialog_add_action_widget(GTK_DIALOG(dialog), format, ACTION_FORMAT);
-	mount = gtk_button_new_with_mnemonic(info->mounted ?
-		      			     UNMOUNT_TEXT : MOUNT_TEXT);
+	mount_button = mount = gtk_button_new_with_mnemonic(info->mounted ?
+							    UNMOUNT_TEXT :
+							    MOUNT_TEXT);
 	gtk_widget_set_sensitive(mount, FALSE);
 	gtk_dialog_add_action_widget(GTK_DIALOG(dialog), mount, ACTION_MOUNT);
 
@@ -561,7 +586,7 @@ create_usermount_window()
 				   G_TYPE_POINTER);
 
 	/* Now add a row to the list using the data. */
-	for(i = info; i != NULL; i = i->next) {
+	for (i = info; i != NULL; i = i->next) {
 		i->format = format;
 		i->mount = mount;
 		gtk_list_store_append(model, &iter);

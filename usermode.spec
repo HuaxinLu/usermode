@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.60
+Version: 1.61
 Release: 1
 License: GPL
 Group: Applications/System
@@ -107,6 +107,16 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Mon Sep  2 2002 Nalin Dahyabhai <nalin@redhat.com> 1.61-1
+- userinfo: exit properly on escape. handle site_info field properly. go
+  insensitive while running child process.
+- userpasswd: exit properly on cancel.
+- all of the above: reap the child instead of checking for pipe close -- this
+  way is more robust.
+- usermount: run mount/umount synchronously. capture stderr and display in a
+  dialog. desensitize action buttons when no filesystems are selected.
+- translation updates
+
 * Wed Aug 14 2002 Nalin Dahyabhai <nalin@redhat.com> 1.60-1
 - reconnect the "cancel" and "ok" buttons in userinfo
 - heed the cancel button when prompting for passwords in userinfo (#68578)

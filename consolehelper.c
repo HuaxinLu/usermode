@@ -33,7 +33,7 @@ void
 userhelper_fatal_error(int signal)
 {
 	if (gtk_main_level() > 0) {
-		gtk_main_quit();
+		userhelper_main_quit();
 	} else {
 		_exit(0);
 	}
@@ -131,9 +131,7 @@ main(int argc, char *argv[])
 	/* If we can open a window, use the graphical wrapper routine. */
 	if (graphics_available) {
 #ifndef DISABLE_X11
-		signal(SIGCHLD, userhelper_fatal_error);
 		userhelper_runv(UH_PATH, (const char**) constructed_argv);
-		gtk_main();
 #endif
 	} else {
 		/* Text mode doesn't need the whole pipe thing. */

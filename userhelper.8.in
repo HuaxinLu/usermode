@@ -197,6 +197,9 @@ Could not find the program.
 11
 exec failed even though program exists.
 .TP
+12
+the user canceled the operation.
+.TP
 255
 Unknown error.
 .SH FILES

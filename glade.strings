@@ -7,9 +7,9 @@
 gchar *s = N_("User Information");
 gchar *s = N_("Full Name:");
 gchar *s = N_("Office:");
-gchar *s = N_("Office Phone Number");
-gchar *s = N_("Home Phone Number");
-gchar *s = N_("Login Shell");
+gchar *s = N_("Office Phone Number:");
+gchar *s = N_("Home Phone Number:");
+gchar *s = N_("Login Shell:");
 gchar *s = N_("_Ok");
 gchar *s = N_("_Cancel");
 gchar *s = N_("Message");

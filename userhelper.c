@@ -73,7 +73,7 @@ static int w_flag = 0;		/* -w flag = act as a wrapper for next
 /* A structure type which we use to carry psuedo-global data around with us. */
 static struct app_data {
 	pam_handle_t *pamh;
-	gboolean fallback_allowed, fallback_chosen, cancelled;
+	gboolean fallback_allowed, fallback_chosen, canceled;
 	FILE *input, *output;
 	char *banner, *domain;
 } app_data = {
@@ -102,12 +102,19 @@ fail_exit(int retval)
 			case PAM_AUTH_ERR:
 			case PAM_PERM_DENIED:
 				exit(ERR_PASSWD_INVALID);
+				break;
 			case PAM_AUTHTOK_LOCK_BUSY:
 				exit(ERR_LOCKS);
+				break;
 			case PAM_CRED_INSUFFICIENT:
 			case PAM_AUTHINFO_UNAVAIL:
 				exit(ERR_NO_RIGHTS);
+				break;
 			case PAM_ABORT:
+				if (app_data.canceled) {
+					_exit(ERR_CANCELED);
+				}
+				/* fall through */
 			default:
 				_exit(ERR_UNK_ERROR);
 		}
@@ -268,7 +275,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			if (reply[count].resp == NULL) {
 				/* EOF: the child isn't going to give us any
 				 * more information. */
-				app_data->cancelled = TRUE;
+				app_data->canceled = TRUE;
 				g_free(reply);
 				return PAM_ABORT;
 			}
@@ -287,7 +294,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 #endif
 			/* If the user chose to abort, do so. */
 			if (reply[count].resp[0] == UH_ABORT) {
-				app_data->cancelled = TRUE;
+				app_data->canceled = TRUE;
 				g_free(reply);
 				return PAM_ABORT;
 			}
@@ -436,7 +443,7 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 		if (prompts[i].value == NULL) {
 			/* EOF: the child isn't going to give us any more
 			 * information. */
-			app_data->cancelled = TRUE;
+			app_data->canceled = TRUE;
 			return PAM_ABORT;
 		}
 		prompts[i].free_value = g_free;
@@ -452,7 +459,7 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 #endif
 		/* If the user chose to abort, do so. */
 		if (prompts[i].value[0] == UH_ABORT) {
-			app_data->cancelled = TRUE;
+			app_data->canceled = TRUE;
 			return FALSE;
 		}
 
@@ -775,6 +782,7 @@ main(int argc, char **argv)
 
 	/* Time to do the heavy lifting. */
 	if (c_flag) {
+		int tryagain = 1;
 		/* We're here to change the user's password.  Start up PAM 
 		 * and tell it we're the "passwd" command. */
 		retval = pam_start("passwd", user_name, conv, &app_data.pamh);
@@ -786,7 +794,21 @@ main(int argc, char **argv)
 		}
 
 		/* Now try to change the user's password. */
-		retval = pam_chauthtok(app_data.pamh, 0);
+		do {
+#ifdef DEBUG_USERHELPER
+			g_print("about to change password for \"%s\"\n",
+				user_name);
+#endif
+			retval = pam_chauthtok(app_data.pamh, 0);
+#ifdef DEBUG_USERHELPER
+			g_print("PAM retval = %d (%s)\n", retval,
+				pam_strerror(app_data.pamh, retval));
+#endif
+			tryagain--;
+		} while ((retval != PAM_SUCCESS) &&
+			 (retval != PAM_CONV_ERR) &&
+			 !app_data.canceled &&
+			 tryagain);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 			g_print("pam_chauthtok() failed\n");
@@ -853,7 +875,7 @@ main(int argc, char **argv)
 			tryagain--;
 		} while ((retval != PAM_SUCCESS) &&
 			 (retval != PAM_CONV_ERR) &&
-			 !app_data.cancelled &&
+			 !app_data.canceled &&
 			 tryagain);
 		/* If we didn't succeed, bail. */
 		if (retval != PAM_SUCCESS) {
@@ -1063,7 +1085,7 @@ main(int argc, char **argv)
 
 		lu_ent_free(ent);
 		lu_end(context);
-		exit(0);
+		_exit(0);
 	}
 
 	if (w_flag) {
@@ -1311,11 +1333,11 @@ main(int argc, char **argv)
 #endif
 			tryagain--;
 		} while ((retval != PAM_SUCCESS) && tryagain &&
-			 !app_data.fallback_chosen && !app_data.cancelled);
+			 !app_data.fallback_chosen && !app_data.canceled);
 
 		if (retval != PAM_SUCCESS) {
 			pam_end(app_data.pamh, retval);
-			if (app_data.cancelled) {
+			if (app_data.canceled) {
 				fail_exit(retval);
 			} else if (app_data.fallback_allowed) {
 				/* Reset the user's environment so that the
@@ -1323,6 +1345,14 @@ main(int argc, char **argv)
 				argv[optind - 1] = progname;
 				environ = environ_save;
 				become_normal(user_name);
+				if (app_data.input != NULL) {
+				       fclose(app_data.input);
+				       close(UH_INFILENO);
+				}
+				if (app_data.output != NULL) {
+				       fclose(app_data.output);
+				       close(UH_OUTFILENO);
+				}
 				execv(constructed_path, argv + optind - 1);
 				exit(ERR_EXEC_FAILED);
 			} else {
@@ -1405,6 +1435,14 @@ main(int argc, char **argv)
 					constructed_path);
 #endif
 				become_super();
+				if (app_data.input != NULL) {
+				       fclose(app_data.input);
+				       close(UH_INFILENO);
+				}
+				if (app_data.output != NULL) {
+				       fclose(app_data.output);
+				       close(UH_OUTFILENO);
+				}
 				execv(constructed_path, argv + optind - 1);
 				exit(ERR_EXEC_FAILED);
 			}
@@ -1443,6 +1481,14 @@ main(int argc, char **argv)
 				constructed_path);
 #endif
 			become_super();
+			if (app_data.input != NULL) {
+			       fclose(app_data.input);
+			       close(UH_INFILENO);
+			}
+			if (app_data.output != NULL) {
+			       fclose(app_data.output);
+			       close(UH_OUTFILENO);
+			}
 			execv(constructed_path, argv + optind - 1);
 			exit(ERR_EXEC_FAILED);
 		}

@@ -44,15 +44,19 @@ main(int argc, char *argv[])
 
 	msg = create_query_box("Hello world!", "Hi!",
 			       GTK_SIGNAL_FUNC(hello_world2));
+	gtk_dialog_run(msg);
+	gtk_widget_destroy(msg);
 
 	msg = create_invisible_query_box("Hello world!", "Hi!",
 					 GTK_SIGNAL_FUNC(hello_world2));
+	gtk_dialog_run(msg);
+	gtk_widget_destroy(msg);
 
 	msg = create_error_box("ERROR!\n"
 			       "Let's make this a really big message box.",
 			       NULL);
-
-	gtk_main();
+	gtk_dialog_run(msg);
+	gtk_widget_destroy(msg);
 
 	return 0;
 }
