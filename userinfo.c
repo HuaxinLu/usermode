@@ -27,6 +27,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <pwd.h>
@@ -34,10 +35,25 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/time.h>
+#include <sys/wait.h>
 #include <gtk/gtk.h>
+#include "userdialogs.h"
+#include "userhelper-wrap.h"
 
-#define NUM_GECOS_FIELDS 4
-#define MAXLINE 512
+#define NUM_GECOS_FIELDS 5
+/* #define MAXLINE 512 */
+
+/* fix userhelper, so these match the pam.h defines... */
+/* #define ECHO_ON_PROMPT 1 */
+/* #define ECHO_OFF_PROMPT 2 */
+/* #define INFO_PROMPT 3 */
+/* #define ERROR_PROMPT 4 */
+
+#define GECOS_FULLNAME 0
+#define GECOS_OFFICE 1
+#define GECOS_OFFICEPHONE 2
+#define GECOS_HOMEPHONE 3
+#define GECOS_SHELL 4
 
 struct _UserInfo
 {
@@ -51,18 +67,20 @@ struct _UserInfo
 
 typedef struct _UserInfo UserInfo;
 
+/* global, yich... should go into the UserInfo struct... */
+GtkWidget* gecos_fields[NUM_GECOS_FIELDS];
+
 void create_userinfo_window(UserInfo* userinfo);
 GtkWidget* create_shell_menu(UserInfo* userinfo);
 GtkWidget* create_gecos_table(UserInfo* userinfo);
 GtkWidget* create_help_dialog();
-GtkWidget* create_message_box(char* message);
-GtkWidget* create_error_box(char* error);
-GtkWidget* create_query_box(char* prompt);
-GtkWidget* create_invisible_query_box(char* prompt);
-void ok_button(UserInfo* userinfo);
+
+void ok_button(GtkWidget* widget, UserInfo* userinfo);
+void shell_select();
+/* void user_input(GtkWidget* widget, GtkWidget* entry); */
 void show_help_dialog();
 UserInfo* parse_userinfo();
-void set_new_userinfo();
+void set_new_userinfo(UserInfo* userinfo);
 
 int
 main(int argc, char* argv[])
@@ -90,7 +108,6 @@ create_userinfo_window(UserInfo* userinfo)
   GtkWidget* main;		/* GtkWindow */
   GtkWidget* gecos;		/* GtkTable */
   GtkWidget* shell_field;	/* GtkOptionMenu */
-  GtkWidget* buttons;		/* GtkHBox */
   GtkWidget* ok;		/* GtkButton */
   GtkWidget* cancel;		/* GtkButton */
   GtkWidget* help;		/* GtkButton */
@@ -101,7 +118,9 @@ create_userinfo_window(UserInfo* userinfo)
   gtk_window_set_title(GTK_WINDOW(main), "User Information");
   /*   gtk_container_border_width(GTK_CONTAINER(main), 5); */
   gtk_signal_connect(GTK_OBJECT(main), "destroy",
-		     (GtkSignalFunc) gtk_exit, NULL);
+		     (GtkSignalFunc) gtk_main_quit, NULL);
+  gtk_signal_connect(GTK_OBJECT(main), "delete_event",
+		     (GtkSignalFunc) gtk_main_quit, NULL);
 
   gecos = create_gecos_table(userinfo);
 
@@ -112,32 +131,36 @@ create_userinfo_window(UserInfo* userinfo)
 		   0, 0, 0, 0);
   gtk_widget_show(shell_field);
 
-  /* the buttons at the bottom */
-  buttons = gtk_hbox_new(FALSE, 0);
   ok = gtk_button_new_with_label("OK");
+/*   GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT); */
+/*   gtk_widget_grab_default(ok); */
   gtk_signal_connect(GTK_OBJECT(ok), "clicked", 
 		     (GtkSignalFunc) ok_button, userinfo);
   gtk_widget_show(ok);
-  cancel = gtk_button_new_with_label("Cancel");
+
+  cancel = gtk_button_new_with_label("Exit");
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
-		     (GtkSignalFunc) gtk_exit, NULL);
+		     (GtkSignalFunc) gtk_main_quit, NULL);
   gtk_widget_show(cancel);
   help = gtk_button_new_with_label("Help");
   gtk_signal_connect(GTK_OBJECT(help), "clicked",
 		     (GtkSignalFunc) show_help_dialog, NULL);
-  gtk_widget_show(help);
+/*   gtk_widget_show(help); */
+
+  gtk_widget_set_usize(ok, 50, 0);
+  gtk_widget_set_usize(cancel, 50, 0);
+  gtk_widget_set_usize(help, 50, 0);
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
-		     ok, FALSE, FALSE, 0);
+		     ok, TRUE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
-		     cancel, FALSE, FALSE, 0);
+		     cancel, TRUE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
-		     help, FALSE, FALSE, 0);
+		     help, TRUE, FALSE, 0);
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->vbox), gecos, TRUE, TRUE, 0);
 
   gtk_widget_show(gecos);
-  gtk_widget_show(buttons);
   gtk_widget_show(main);
 }
 
@@ -155,8 +178,20 @@ create_shell_menu(UserInfo* userinfo)
 
   shell_menu = gtk_option_menu_new();
   menu = gtk_menu_new();
+  gtk_widget_set_sensitive(shell_menu, FALSE);
+
+  /* shell isn't technically a gecos field, so I should probably
+   * change the name of these symbols, but oh well for now... this
+   * makes my life easy elsehwere.
+   * The gtk_entry allocated here isn't ever actually shown, it's just
+   * a place to stick a string.
+   */
+  gecos_fields[GECOS_SHELL] = gtk_entry_new();
+  gtk_entry_set_text(GTK_ENTRY(gecos_fields[GECOS_SHELL]), userinfo->shell);
 
   menuitem = gtk_menu_item_new_with_label(userinfo->shell);
+  gtk_signal_connect(GTK_OBJECT(menuitem), "activate", 
+		     (GtkSignalFunc) shell_select, userinfo->shell);
   gtk_menu_append(GTK_MENU(menu), menuitem);
   gtk_widget_show(menuitem);
 
@@ -165,61 +200,24 @@ create_shell_menu(UserInfo* userinfo)
   fstat(shells_fd, &shells_stat);
   shells_buf = malloc(sizeof(char) * shells_stat.st_size);
   read(shells_fd, shells_buf, shells_stat.st_size);
-
+  
   shell_curr = strtok(shells_buf, shell_sep);
-  if(strcmp(shell_curr, userinfo->shell) != 0)
+  while(shell_curr != NULL)
     {
-      menuitem = gtk_menu_item_new_with_label(shell_curr);
-      gtk_menu_append(GTK_MENU(menu), menuitem);
-      gtk_widget_show(menuitem);
-    }
-
-  shell_curr = strtok(NULL, shell_sep);
-  if(strcmp(shell_curr, userinfo->shell) != 0)
-    {
-      menuitem = gtk_menu_item_new_with_label(shell_curr);
-      gtk_menu_append(GTK_MENU(menu), menuitem);
-      gtk_widget_show(menuitem);
-    }
-
-  shell_curr = strtok(NULL, shell_sep);
-  if(strcmp(shell_curr, userinfo->shell) != 0)
-    {
-      menuitem = gtk_menu_item_new_with_label(shell_curr);
-      gtk_menu_append(GTK_MENU(menu), menuitem);
-      gtk_widget_show(menuitem);
-    }
-
-  shell_curr = strtok(NULL, shell_sep);
-  if(strcmp(shell_curr, userinfo->shell) != 0)
-    {
-      menuitem = gtk_menu_item_new_with_label(shell_curr);
-      gtk_menu_append(GTK_MENU(menu), menuitem);
-      gtk_widget_show(menuitem);
-    }
-
-  shell_curr = strtok(NULL, shell_sep);
-  if(strcmp(shell_curr, userinfo->shell) != 0)
-    {
-      menuitem = gtk_menu_item_new_with_label(shell_curr);
-      gtk_menu_append(GTK_MENU(menu), menuitem);
-      gtk_widget_show(menuitem);
-    }
-
-  shell_curr = strtok(NULL, shell_sep);
-  if(strcmp(shell_curr, userinfo->shell) != 0)
-    {
-      menuitem = gtk_menu_item_new_with_label(shell_curr);
-      gtk_menu_append(GTK_MENU(menu), menuitem);
-      gtk_widget_show(menuitem);
-    }
-
-  shell_curr = strtok(NULL, shell_sep);
-  if(strcmp(shell_curr, userinfo->shell) != 0)
-    {
-      menuitem = gtk_menu_item_new_with_label(shell_curr);
-      gtk_menu_append(GTK_MENU(menu), menuitem);
-      gtk_widget_show(menuitem);
+      if(strcmp(shell_curr, userinfo->shell) != 0)
+	{
+	  menuitem = gtk_menu_item_new_with_label(shell_curr);
+	  gtk_signal_connect(GTK_OBJECT(menuitem), "activate", 
+			     (GtkSignalFunc) shell_select, shell_curr);
+	  gtk_menu_append(GTK_MENU(menu), menuitem);
+	  gtk_widget_show(menuitem);
+	}
+      else
+	{
+	  /* I've found current shell in /etc/shells, turn the option menu on */
+	  gtk_widget_set_sensitive(shell_menu, TRUE);
+	}
+      shell_curr = strtok(NULL, shell_sep);
     }
 
   gtk_option_menu_set_menu(GTK_OPTION_MENU(shell_menu), menu);
@@ -230,30 +228,20 @@ GtkWidget*
 create_gecos_table(UserInfo* userinfo)
 {
   GtkWidget* gecos;		/* GtkTable */
-  GtkWidget* gecos_fields[NUM_GECOS_FIELDS];
+/*   GtkWidget* gecos_fields[NUM_GECOS_FIELDS]; */
   GtkWidget* label;
   struct passwd* pwent;
-  char* gecos_raw;
-  char* gecos_sep = ",";
-  int gecos_name_only = FALSE;
   int i;
 
   pwent = getpwuid(getuid());
 
-  gecos_raw = strdup(pwent->pw_gecos);
-
-  if(strchr(gecos_raw, gecos_sep[0]) == NULL)
-    {
-      gecos_name_only = TRUE;
-    }
-    
   gecos = gtk_table_new(NUM_GECOS_FIELDS + 1, 2, FALSE);
   gtk_container_border_width(GTK_CONTAINER(gecos), 5);
 
   gtk_table_set_row_spacings(GTK_TABLE(gecos), 5);
   gtk_table_set_col_spacings(GTK_TABLE(gecos), 5);
 
-  i = 0;
+  i = GECOS_FULLNAME;
 
   label = gtk_label_new("Full Name:");
   gtk_table_attach(GTK_TABLE(gecos), label, 
@@ -263,14 +251,15 @@ create_gecos_table(UserInfo* userinfo)
 		   0, 0);
   gtk_widget_show(label);
   gecos_fields[i] = gtk_entry_new();
-  gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(gecos_raw, gecos_sep));
   gtk_widget_show(gecos_fields[i]);
   gtk_table_attach(GTK_TABLE(gecos), gecos_fields[i], 
 		   1, 2, i, i+1,
 		   GTK_EXPAND | GTK_FILL, 
 		   GTK_EXPAND | GTK_FILL, 
 		   0, 0);
-  i++;
+  gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), userinfo->full_name);
+
+  i = GECOS_OFFICE;
 
   label = gtk_label_new("Office:");
   gtk_table_attach(GTK_TABLE(gecos), label, 
@@ -287,11 +276,9 @@ create_gecos_table(UserInfo* userinfo)
 		   GTK_EXPAND | GTK_FILL, 
 		   GTK_EXPAND | GTK_FILL, 
 		   0, 0);
-  if(!gecos_name_only)
-    {
-      gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(NULL, gecos_sep));
-    }
-  i++;
+  gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), userinfo->office);
+
+  i = GECOS_OFFICEPHONE;
 
   label = gtk_label_new("Office Phone:");
   gtk_table_attach(GTK_TABLE(gecos), label, 
@@ -307,11 +294,9 @@ create_gecos_table(UserInfo* userinfo)
 		   GTK_EXPAND | GTK_FILL, 
 		   GTK_EXPAND | GTK_FILL, 
 		   0, 0);
-  if(!gecos_name_only)
-    {
-      gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(NULL, gecos_sep));
-    }
-  i++;
+  gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), userinfo->office_phone);
+
+  i = GECOS_HOMEPHONE;
 
   label = gtk_label_new("Home Phone:");
   gtk_table_attach(GTK_TABLE(gecos), label, 
@@ -327,11 +312,9 @@ create_gecos_table(UserInfo* userinfo)
 		   GTK_EXPAND | GTK_FILL, 
 		   GTK_EXPAND | GTK_FILL, 
 		   0, 0);
-  if(!gecos_name_only)
-    {
-      gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), strtok(NULL, gecos_sep));
-    }
-  i++;
+  gtk_entry_set_text(GTK_ENTRY(gecos_fields[i]), userinfo->home_phone);
+
+  i = GECOS_SHELL;
 
   label = gtk_label_new("Shell:");
   gtk_table_attach(GTK_TABLE(gecos), label,
@@ -348,37 +331,91 @@ create_gecos_table(UserInfo* userinfo)
 UserInfo* 
 parse_userinfo()
 {
-  /* do serious error checking */
+  /* FIXME: do serious error checking */
 
   UserInfo* retval;
   struct passwd* pwent;
-  char* gecos;
-  char* pwsep = ":";
+
+  char* gecos_raw;
+  char* gecos_tok;
+  char gecos_sep = ',';
+  int gecos_more_fields = TRUE;
 
   retval = malloc(sizeof(UserInfo));
 
   pwent = getpwuid(getuid());
 
   retval->shell = strdup(pwent->pw_shell);
-  gecos = strdup(pwent->pw_gecos);
-
-  if(strchr(gecos, pwsep[0]) == NULL)
+  gecos_raw = strdup(pwent->pw_gecos);
+  
+  if(strchr(gecos_raw, gecos_sep) == NULL)
     {
-      retval->full_name = gecos;
-      /* think this is valid, right? */
+      retval->full_name = gecos_raw;
       retval->office = "";
       retval->office_phone = "";
       retval->home_phone = "";
+      return retval;
+    }
+
+  if(gecos_more_fields)
+    {
+      gecos_tok = gecos_raw;
+      gecos_raw = strchr(gecos_raw, gecos_sep);
+      gecos_raw[0] = '\0';
+      gecos_raw++;
+      retval->full_name = gecos_tok;
     }
   else
     {
-      /* if, for some reason this gets threaded, wrap this in #ifdef
-       * _REENTRANT with using strtok_r, for thread saftey.
-       */
-      retval->full_name = strtok(gecos, pwsep);
-      retval->office = strtok(NULL, pwsep);
-      retval->office_phone = strtok(NULL, pwsep);
-      retval->home_phone = strtok(NULL, pwsep);
+      retval->full_name = "";
+    }
+
+  if(strchr(gecos_raw, gecos_sep) == NULL)
+    gecos_more_fields = FALSE;
+
+  if(gecos_more_fields)
+    {
+      gecos_tok = gecos_raw;
+      gecos_raw = strchr(gecos_raw, gecos_sep);
+      gecos_raw[0] = '\0';
+      gecos_raw++;
+      retval->office = gecos_tok;
+    }
+  else
+    {
+      retval->office = "";
+    }
+
+  if(strchr(gecos_raw, gecos_sep) == NULL)
+    gecos_more_fields = FALSE;
+
+  if(gecos_more_fields)
+    {
+      gecos_tok = gecos_raw;
+      gecos_raw = strchr(gecos_raw, gecos_sep);
+      gecos_raw[0] = '\0';
+      gecos_raw++;
+      retval->office_phone = gecos_tok;
+    }
+  else
+    {
+      retval->office_phone = "";
+    }
+
+  if(strchr(gecos_raw, gecos_sep) == NULL)
+    gecos_more_fields = FALSE;
+
+  if(gecos_more_fields)
+    {
+      gecos_tok = gecos_raw;
+      gecos_raw = strchr(gecos_raw, gecos_sep);
+      gecos_raw[0] = '\0';
+      gecos_raw++;
+      retval->home_phone = gecos_tok;
+    }
+  else
+    {
+      retval->home_phone = "";
     }
 
   return retval;
@@ -407,6 +444,9 @@ create_help_dialog()
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(help_dialog)->action_area),
 		     ok, FALSE, FALSE, 0); 
 
+  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
+  gtk_widget_grab_default(ok);
+
   gtk_widget_show(label);
   gtk_widget_show(ok);
   
@@ -415,9 +455,16 @@ create_help_dialog()
 }
 
 void
-ok_button(UserInfo* userinfo)
+ok_button(GtkWidget* widget, UserInfo* userinfo)
 {
-  set_new_userinfo();
+  set_new_userinfo(userinfo);
+/*   gtk_exit(0); */
+}
+
+void
+shell_select(GtkWidget* widget, char* shell)
+{
+  gtk_entry_set_text(GTK_ENTRY(gecos_fields[GECOS_SHELL]), shell);
 }
 
 void
@@ -442,168 +489,31 @@ show_help_dialog()
 }
 
 void
-set_new_userinfo()
+set_new_userinfo(UserInfo* userinfo)
 {
-  /* get the changed information... blech... how do I manage that */
-  /* fork() and exec() userhelper with the appropriate args.... */
-
-/*   char* userhelper = "/usr/sbin/userhelper"; */
-  char* userhelper = "./userhelper";
-  char* fullname_opt = "-f";
-  char* office_opt = "-o";
-  char* officephone_opt = "-p";
-  char* homephone_opt = "-h";
-
-  /* the new values... */
   char* fullname;
   char* office;
   char* officephone;
   char* homephone;
+  char* shell;
 
-  int childout[2];
-  int childin[2];
-  pid_t pid;
-  char outline[MAXLINE];
-  int count;
+  fullname = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_FULLNAME]));
+  office = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_OFFICE]));
+  officephone = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_OFFICEPHONE]));
+  homephone = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_HOMEPHONE]));
+  shell = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_SHELL]));
 
-  /* stuff for the select */
-  fd_set rfds;
-/*   struct timeval tv; */
-  int retval;
-
-  GtkWidget* message_box;
-
-  /* need to figure out the new values.. how the hell am I going to
-   * manage that? 
-   */
-  fullname = "Otto Hammersmith";
-  office = "119";
-  officephone = "x239";
-  homephone = "555-1212";
-
-  if(pipe(childout) < 0 || pipe(childin) < 0)
+  if(strcmp(userinfo->shell, shell) == 0)
     {
-      fprintf(stderr, "Pipe error.\n");
-      exit(1);
+      shell = NULL;
     }
 
-  if((pid = fork()) < 0)
-    {
-      fprintf(stderr, "Cannot fork().\n");
-    }
-  else if(pid > 0)		/* parent */
-    {
-      close(childout[1]);
-      close(childin[0]);
-
-      FD_ZERO(&rfds);
-      FD_SET(childout[0], &rfds);
-      /* may not need a timeout */
-/*       tv.tv_sec = 10; */
-/*       tv.tv_usec = 0; */
-
-      retval = select(childout[0] + 1, &rfds, NULL, NULL, NULL);
-/*       while(retval > 0) */
-      if(retval > 0)
-      {
-	if(FD_ISSET(childout[0], &rfds))
-	  {
-	    count = read(childout[0], outline, MAXLINE);
-	    outline[count] = '\0';
-	    message_box = create_message_box(outline);
-	    gtk_widget_show(message_box);
-	  }
-	retval = select(childout[0] + 1, &rfds, NULL, NULL, NULL);
-      }
-      
-    }
-  else				/* child */
-    {
-      close(childout[0]);
-      close(childin[1]);
-
-      if(childout[1] != STDOUT_FILENO)
-	{
-	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
-	    {
-	      fprintf(stderr, "dup2() error.\n");
-	      exit(2);
-	    }
-	  close(childout[1]);
-	}
-      if(childin[0] != STDIN_FILENO)
-	{
-	  if(dup2(childin[0], STDIN_FILENO) != STDIN_FILENO)
-	    {
-	      fprintf(stderr, "dup2() error.\n");
-	      exit(2);
-	    }
-	  close(childin[0]);
-	}
-      setbuf(stdout, NULL);
-
-      if(execl(userhelper, userhelper,
-	       fullname_opt, fullname,
-	       office_opt, office,
-	       officephone_opt, officephone,
-	       homephone_opt, homephone, 0) < 0)
-	{
-	  fprintf(stderr, "execl() error, errno=%d\n", errno);
-	}
-
-      _exit(0);
-
-    }
-
+  userhelper_run_chfn(fullname, office, officephone, homephone, shell);
 }
 
-GtkWidget*
-create_message_box(char* message)
+void
+userhelper_fatal_error()
 {
-  /* need to put this and other functions into a seperate file, so
-   * both usermount and userinfo can use 'em... and probably
-   * userpasswd as well.
-   */
-  GtkWidget* message_box;
-  GtkWidget* label;
-  GtkWidget* ok;
-
-  message_box = gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(message_box), "Message");
-
-  label = gtk_label_new(message);
-  ok = gtk_button_new_with_label("OK");
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
-			    (GtkSignalFunc) gtk_widget_destroy,
-			    (gpointer) message_box);
-
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->vbox), label,
-		     FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->action_area), ok,
-		     FALSE, FALSE, 0);
-  
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(message_box);
-
-  return message_box;
-
-}
-
-GtkWidget*
-create_error_box(char* error)
-{
-
-}
-
-GtkWidget*
-create_query_box(char* prompt)
-{
-
-}
-
-GtkWidget*
-create_invisible_query_box(char* prompt)
-{
-
+  /* noop */
+  return;
 }

@@ -16,6 +16,9 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "userhelper-wrap.h"
 
 #define MAXLINE 512

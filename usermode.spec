@@ -1,6 +1,6 @@
 Summary: User Tools
 Name: usermode
-Version: 1.4.3
+Version: 1.4.4
 Release: 1
 Copyright: GPL
 Group: X11/Applications
@@ -42,6 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 /etc/X11/wmconfig/usermount
 
 %changelog
+* Tue Jan 12 1999 Michael Johnson <johnsonm@redhat.com>
+- fix missing include files
+
 * Mon Oct 12 1998 Cristian Gafton <gafton@redhat.com>
 - strip binaries
 - use defattr
