@@ -1,8 +1,13 @@
+# Swedish messages for usermode.
+# Copyright (C) 2001 Christian Rose <menthos@menthos.com>.
+#
+# $Id$
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2001-02-05 10:35-0500\n"
-"PO-Revision-Date: 2001-01-31 01:43+0100\n"
+"PO-Revision-Date: 2001-08-15 22:16+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +79,7 @@ msgid ""
 "Please try again."
 msgstr ""
 "Lösenordet du angav är ogiltigt.\n"
-"Var vänlig och försök igen."
+"Försök igen."
 
 #: ../userhelper-wrap.c:147
 msgid ""
@@ -84,7 +89,7 @@ msgid ""
 msgstr ""
 "Ett eller flera av de ändrade fälten är ogiltigt.\n"
 "Detta beror antagligen på antingen kolon eller komman i ett av fälten.\n"
-"Var vänlig och ta bort dem och försök igen."
+"Ta bort dem och försök igen."
 
 #: ../userhelper-wrap.c:150
 msgid "Password resetting error."
@@ -96,7 +101,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Några systemfiler är låsta.\n"
-"Var vänlig och försök igen om en kort stund."
+"Försök igen om en kort stund."
 
 #: ../userhelper-wrap.c:156
 msgid "Unknown user."
