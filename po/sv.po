@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2003-08-14 00:06+0200\n"
+"PO-Revision-Date: 2003-10-02 20:55+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -83,12 +83,29 @@ msgstr "Starta systemglobala konfigurationsverktyg utan lösenord."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "inloggning: "
+
+msgid "login"
+msgstr "inloggning"
+
+msgid "login:"
+msgstr "inloggning:"
+
+msgid "Login: "
+msgstr "Inloggning: "
+
+msgid "Login:"
+msgstr "Inloggning:"
+
+msgid "Login"
+msgstr "Inloggning"
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Lösenord"
+msgstr "Lösenord: "
+
+msgid "Password:"
+msgstr "Lösenord:"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -97,7 +114,7 @@ msgstr "Hjälp"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Kunde inte ställa in körningssammanhang till %s.\n"
 
 #: userhelper.c:431
 #, c-format
