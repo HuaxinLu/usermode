@@ -23,7 +23,7 @@ SUBDIRS=intl po
 CFLAGS = @LIBGLADE_CFLAGS@ @CFLAGS@
 consolehelper_CFLAGS = -DDISABLE_X11 $(CFLAGS)
 
-bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-x11
+bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk
 bin_SCRIPTS = shutdown
 sbin_PROGRAMS = userhelper
 noinst_PROGRAMS = test-userdialog
@@ -59,8 +59,8 @@ userpasswd_LDADD = @LIBGLADE_LIBS@ @LIBS@
 consolehelper_SOURCES = consolehelper.c
 consolehelper_LDADD = @GLIB_LIBS@ @LIBS@
 
-consolehelper_x11_SOURCES = consolehelper.c userdialogs.c userhelper-wrap.c
-consolehelper_x11_LDADD = @LIBGLADE_LIBS@ @LIBS@
+consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userhelper-wrap.c
+consolehelper_gtk_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c
 test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@

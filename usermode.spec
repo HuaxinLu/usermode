@@ -15,7 +15,7 @@ Conflicts: SysVinit < 2.74-14
 BuildPrereq: glib-devel, gtk+-devel, libglade-devel, pam-devel
 BuildRoot: %{_tmppath}/%{name}-root
 
-%package X11
+%package gtk
 Summary: Graphical tools for certain user account management tasks.
 Group: Applications/System
 Requires: %{name} = %{version}-%{release}
@@ -25,14 +25,14 @@ The usermode package contains the userhelper program, which can be
 used to allow configured programs to be run with superuser privileges
 by ordinary users.
 
-%description X11
-The usermode-X11 package contains several graphical tools for users:
+%description gtk
+The usermode-gtk package contains several graphical tools for users:
 userinfo, usermount and userpasswd.  Userinfo allows users to change
 their finger information.  Usermount lets users mount, unmount, and
 format filesystems.  Userpasswd allows users to change their
 passwords.
 
-Install the usermode-X11 package if you would like to provide users with
+Install the usermode-gtk package if you would like to provide users with
 graphical tools for certain account management tasks.
 
 %prep
@@ -86,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/reboot
 %config(missingok) /etc/security/console.apps/poweroff
 
-%files X11
+%files gtk
 %defattr(-,root,root)
 %config /etc/X11/applnk/System/*
 %{_bindir}/usermount
@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/userinfo.1*
 %{_bindir}/userpasswd
 %{_mandir}/man1/userpasswd.1*
-%{_bindir}/consolehelper-x11
+%{_bindir}/consolehelper-gtk
 %{_datadir}/pixmaps/*
 
 # If you're updating translations, do me a favor and bump the RELEASE number,
@@ -103,7 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Tue Dec  4 2001 Nalin Dahyabhai <nalin@redhat.com> 1.49-1
 - more gtk2 changes
-- split off a -X11 subpackage with all of the X11-specific functionality
+- split off a -gtk subpackage with all of the gtk-specific functionality
 
 * Wed Nov 28 2001 Nalin Dahyabhai <nalin@redhat.com>
 - the grand libglade/gtk2 overhaul
