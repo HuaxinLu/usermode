@@ -452,6 +452,11 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
     {
       exit (0);
     }
+  if (count == 0)
+    {
+      gdk_input_remove(childout_tag);
+      childout_tag = -1;
+    }
   output[count] = '\0';
 
   userhelper_parse_childout(output);
