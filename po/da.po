@@ -1,14 +1,15 @@
+# Keld Simonsen <keld@dkuug.dk>, 2002
+
 msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
 "POT-Creation-Date: 2002-04-01 11:46-0500\n"
-"PO-Revision-Date: 2001-02-13 15:24GMT\n"
-"Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
+"PO-Revision-Date: 2002-04-02 15:24+0200\n"
+"Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.8\n"
 
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
@@ -20,7 +21,7 @@ msgstr "Afslut"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Fortryd"
+msgstr "Annullér"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
@@ -52,16 +53,16 @@ msgstr "Adgangskode uændret"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Undskyld, adgangskoder er ikke ens"
+msgstr "Desværre, adgangskoder er ikke ens"
 
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Hjælp"
 
 #: userhelper.c:96
-#, fuzzy, c-format
+#, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Fik fejl %d.\n"
+msgstr "Fik PAM-fejl %d.\n"
 
 #: userhelper.c:202
 #, c-format
@@ -74,6 +75,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Du forsøger at køre '%s', som kan have gavn af superbruger-rettigheder,\n"
+"men mere information er nødvendigt for at gøre dette."
 
 #: userhelper.c:319
 #, c-format
@@ -81,23 +84,29 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Du forsøger at køre '%s', som kræver superbruger-rettigheder,\n"
+"men mere information er nødvendigt for at gøre dette."
 
 #: userhelper.c:323
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
 msgstr ""
+"Du forsøger at køre en kommando, som kan have gavn af superbruger-rettigheder,\n"
+"men mere information er nødvendigt for at gøre dette."
 
 #: userhelper.c:325
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Du forsøger at køre en kommando, som kræver superbruger-rettigheder,\n"
+"men mere information er nødvendigt for at gøre dette."
 
 #: userhelper.c:343
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "Adgangskode for %s"
+msgstr "Adgangskode for %s:"
 
 #: userhelper.c:626
 msgid "userhelper must be setuid root\n"
@@ -107,6 +116,7 @@ msgstr "userhelper skal være setuid root\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
+"Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
 #: userhelper.c:1369 userhelper.c:1407
 #, c-format
@@ -160,9 +170,8 @@ msgid "Insufficient rights."
 msgstr "Utilstrækkelige rettigheder-"
 
 #: userhelper-wrap.c:66
-#, fuzzy
 msgid "Invalid call to subprocess.."
-msgstr "Ugyldigt kald til underproces."
+msgstr "Ugyldigt kald til underproces.."
 
 #: userhelper-wrap.c:68
 msgid ""
@@ -192,7 +201,7 @@ msgstr "Ukendt fejl."
 
 #: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
-msgstr ""
+msgstr "Keldroy war hæer."
 
 #: userhelper-wrap.c:352
 #, c-format
@@ -204,17 +213,16 @@ msgid "Error"
 msgstr "Fejl"
 
 #: userhelper-wrap.c:398
-#, fuzzy
 msgid "Information"
-msgstr "Brugerinformation"
+msgstr "Information"
 
 #: userhelper-wrap.c:442
 msgid "Changing personal information."
-msgstr ""
+msgstr "Ændrer personlige oplysninger."
 
 #: userhelper-wrap.c:445
 msgid "Changing login shell."
-msgstr ""
+msgstr "Ændrer logind-skál."
 
 #: userhelper-wrap.c:448
 #, c-format
@@ -222,6 +230,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Du forsøger at køre '%s', som kan have gavn af superbruger-rettigheder,\n"
+"men mere information er nødvendigt for at gøre dette."
 
 #: userhelper-wrap.c:450
 #, c-format
@@ -229,27 +239,32 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Du forsøger at køre '%s', som kræver superbruger-rettigheder,\n"
+"men mere information er nødvendigt for at gøre dette."
 
 #: userhelper-wrap.c:455
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Du forsøger at køre en kommando, som kan have gavn af superbruger-rettigheder,\n"
+"men mere information er nødvendigt for at gøre dette."
 
 #: userhelper-wrap.c:457
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Du forsøger at køre en kommando, som kræver superbruger-rettigheder,\n"
+"men mere information er nødvendigt for at gøre dette."
 
 #: userhelper-wrap.c:467
-#, fuzzy
 msgid "_Run Unprivileged"
-msgstr "Kør upriviligeret"
+msgstr "_Kør upriviligeret"
 
 #: userhelper-wrap.c:579 userhelper-wrap.c:596
 msgid "Pipe error.\n"
-msgstr "Rør fejl.\n"
+msgstr "Fejl ved kanal.\n"
 
 #: userhelper-wrap.c:603
 msgid "Cannot fork().\n"
@@ -266,43 +281,38 @@ msgstr "execl() fejl, errno=%d\n"
 
 #: userinfo.c:300
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "Du eksisterer ikke. Gå væk med dig.\n"
 
 #: usermount.c:61 glade.strings:26
-#, fuzzy
 msgid "_Mount"
-msgstr "Montér"
+msgstr "_Montér"
 
 #: usermount.c:62
-#, fuzzy
 msgid "Un_mount"
-msgstr "Afmontér"
+msgstr "_Afmontér"
 
 #: usermount.c:310
-#, fuzzy
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Er du sikker?\n"
-"Dette vil ødelægge alle data på disken.\n"
+"Er du sikker på at du vil formatere denne disk?\n"
+"Dette vil ødelægge alle data på disken."
 
 #: usermount.c:321
-#, fuzzy
 msgid "Perform a _low-level format."
-msgstr "Lav en formatering på lavniveau"
+msgstr "Lav en formatering på _lavniveau."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Vælg en _filsystemstype at oprette:"
 
 #: usermount.c:521
-#, fuzzy
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Der er ingen brugermontérbare filsystemer.\n"
+"Der er ingen filsystemer som du har lov at montére eller afmontére.\n"
 "Kontakt din administrator."
 
 #: usermount.c:522 usermount.c:530 glade.strings:22
@@ -310,9 +320,8 @@ msgid "User Mount Tool"
 msgstr "Bruger monteringsværktøj"
 
 #: usermount.c:544 glade.strings:28
-#, fuzzy
 msgid "_Format"
-msgstr "Formatér"
+msgstr "_Formatér"
 
 #: usermount.c:579 glade.strings:24
 msgid "Device"
@@ -324,7 +333,7 @@ msgstr "Katalog"
 
 #: usermount.c:591
 msgid "Filesystem"
-msgstr ""
+msgstr "Filsystem"
 
 #: glade.strings:7
 msgid "User Information"
@@ -339,28 +348,24 @@ msgid "Office:"
 msgstr "Kontor:"
 
 #: glade.strings:10
-#, fuzzy
 msgid "Office Phone Number"
-msgstr "Kontortelefon:"
+msgstr "Kontortelefon"
 
 #: glade.strings:11
-#, fuzzy
 msgid "Home Phone Number"
-msgstr "Hjemmetelefon:"
+msgstr "Hjemmetelefon"
 
 #: glade.strings:12
-#, fuzzy
 msgid "Login Shell"
-msgstr "Skal:"
+msgstr "Skál:"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr ""
+msgstr "_O.k."
 
 #: glade.strings:14 glade.strings:21
-#, fuzzy
 msgid "_Cancel"
-msgstr "Fortryd"
+msgstr "_Annullér"
 
 #: glade.strings:15
 msgid "Message"
@@ -368,30 +373,27 @@ msgstr "Besked"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr ""
+msgstr "_Luk"
 
 #: glade.strings:18
 msgid "Query"
-msgstr ""
+msgstr "Forespørgsel"
 
 #: glade.strings:25
 msgid "Type"
 msgstr "Type"
 
 #: glade.strings:27
-#, fuzzy
 msgid "_Unmount"
-msgstr "Afmontér"
+msgstr "_Afmontér"
 
 #: glade.strings:29
-#, fuzzy
 msgid "E_xit"
-msgstr "Afslut"
+msgstr "Af_slut"
 
 #~ msgid "about to authenticate \"%s\"\n"
 #~ msgstr "skal til at verificere identiteten af \"%s\"\n"
 
-#, fuzzy
 #~ msgid "PAM retval = %d (%s)\n"
 #~ msgstr "PAM returnerede = %d\n"
 
