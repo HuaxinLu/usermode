@@ -85,6 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Mon Aug 21 2000 Nalin Dahyabhia <nalin@redhat.com>
+- fix typo (#16664)
+
 * Sun Aug 20 2000 Nalin Dahyabhia <nalin@redhat.com>
 - previous fix, part two
 
@@ -133,7 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 - rebuilt to see if we get stripped binaries
 
 * Mon Jun  5 2000 Nalin Dahyabhai <nalin@redhat.com>
-- move man pages to %{_mandir}
+- move man pages to %%{_mandir}
 
 * Thu Jun  1 2000 Nalin Dahyabhai <nalin@redhat.com>
 - modify PAM setup to use system-auth
