@@ -139,7 +139,6 @@ msgid "Need %d responses.\n"
 msgstr "%d 応答が必要です。\n"
 
 #: ../userhelper-wrap.c:371
-#, fuzzy, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
