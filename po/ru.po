@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
 "POT-Creation-Date: 2002-07-24 09:41-0400\n"
-"PO-Revision-Date: 2002-04-12 23:34EET\n"
+"PO-Revision-Date: 2002-08-05 17:41+0300\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=KOI8-R\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Date: 1999-04-03 12:20+0200\n"
 "X-Generator: KBabel 0.9.6\n"
@@ -32,135 +32,133 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "ОК"
+msgstr "п·п "
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr "Выход"
+msgstr "п▓я▀я┘п╬п╢"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "п·я┌п╪п╣п╫п╟"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Выполнить без привелегий"
+msgstr "п▓я▀п©п╬п╩п╫п╦я┌я▄ п╠п╣п╥ п©я─п╦п╡п╦п╩п╣пЁп╦п╧"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(текущий) пароль UNIX: "
+msgstr "(я┌п╣п╨я┐я┴п╦п╧) п©п╟я─п╬п╩я▄ UNIX: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Новый пароль UNIX: "
+msgstr "п²п╬п╡я▀п╧ п©п╟я─п╬п╩я▄ UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Повторите новый пароль UNIX: "
+msgstr "п÷п╬п╡я┌п╬я─п╦я┌п╣ п╫п╬п╡я▀п╧ п©п╟я─п╬п╩я▄ UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "ПЛОХОЙ ПАРОЛЬ: пароль ОЧЕНЬ короток"
+msgstr "п÷п⌡п·п╔п·п≥ п÷п░п═п·п⌡п╛: п©п╟я─п╬п╩я▄ п·п╖п∙п²п╛ п╨п╬я─п╬я┌п╬п╨"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "ПЛОХОЙ ПАРОЛЬ: слишком короток"
+msgstr "п÷п⌡п·п╔п·п≥ п÷п░п═п·п⌡п╛: я│п╩п╦я┬п╨п╬п╪ п╨п╬я─п╬я┌п╬п╨"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "Пароль не изменен"
+msgstr "п÷п╟я─п╬п╩я▄ п╫п╣ п╦п╥п╪п╣п╫п╣п╫"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Извините, пароли не совпадают"
+msgstr "п≤п╥п╡п╦п╫п╦я┌п╣, п©п╟я─п╬п╩п╦ п╫п╣ я│п╬п╡п©п╟п╢п╟я▌я┌"
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr "Помощь"
+msgstr "п÷п╬п╪п╬я┴я▄"
 
 #: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Получена ошибка PAM %d.\n"
+msgstr "п÷п╬п╩я┐я┤п╣п╫п╟ п╬я┬п╦п╠п╨п╟ PAM %d.\n"
 
 #: userhelper.c:203
 #, c-format
 msgid "Password for %s"
-msgstr "Пароль для %s"
+msgstr "п÷п╟я─п╬п╩я▄ п╢п╩я▐ %s"
 
 #: userhelper.c:320
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу \"%s\", которая получает определенные "
-"преимущества будучи запущенной с правами root. Для этого требуется "
-"дополнительная информация."
+"п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐ \"%s\", п╨п╬я┌п╬я─п╟я▐ п©п╬п╩я┐я┤п╟п╣я┌\n"
+"п╬п©я─п╣п╢п╣п╩п╣п╫п╫я▀п╣ п©я─п╣п╦п╪я┐я┴п╣я│я┌п╡п╟, п╠я┐п╢я┐я┤п╦ п╥п╟п©я┐я┴п╣п╫п╫п╬п╧ я│ п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╦п╡п╫я▀п╪п╦\n"
+"п©я─п╦п╡п╦п╩п╣пЁп╦я▐п╪п╦, п╫п╬ п╢п╩я▐ я█я┌п╬пЁп╬ я┌я─п╣п╠я┐п╣я┌я│я▐ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #: userhelper.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу \"%s\", которая требует привилегий root. "
-"Для этого нужна дополнительная информация."
+"п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐ \"%s\", п╨п╬я┌п╬я─п╟я▐ я┌я─п╣п╠я┐п╣я┌\n"
+"п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╦п╡п╫я▀я┘ п©я─п╦п╡п╦п╩п╣пЁп╦п╧, п╫п╬ п╢п╩я▐ я█я┌п╬пЁп╬ п╫я┐п╤п╫п╟\n"
+"п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #: userhelper.c:326
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу, которая получает определенные преимущества "
-"будучи запущенной с правами root. Для этого требуется дополнительная "
-"информация."
+"п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐, п╨п╬я┌п╬я─п╟я▐ п©п╬п╩я┐я┤п╟п╣я┌ п╬п©я─п╣п╢п╣п╩п╣п╫п╫я▀п╣\n"
+"п©я─п╣п╦п╪я┐я┴п╣я│я┌п╡п╟, п╠я┐п╢я┐я┤п╦ п╥п╟п©я┐я┴п╣п╫п╫п╬п╧ я│ п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╦п╡п╫я▀п╪п╦ п©я─п╟п╡п╟п╪п╦,\n"
+"п╫п╬ п╢п╩я▐ я█я┌п╬пЁп╬ я┌я─п╣п╠я┐п╣я┌я│я▐ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #: userhelper.c:328
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу, которая требует привилегий root. Для этого "
-"нужна дополнительная информация."
+"п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐, п╨п╬я┌п╬я─п╟я▐ я┌я─п╣п╠я┐п╣я┌ п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╦п╡п╫я▀я┘\n"
+"п©я─п╦п╡п╦п╩п╣пЁп╦п╧. п■п╩я▐ я█я┌п╬пЁп╬ п╫я┐п╤п╫п╟ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
-msgstr "Пароль для %s: "
+msgstr "п÷п╟я─п╬п╩я▄ п╢п╩я▐ %s: "
 
 #: userhelper.c:629
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper должен быть setuid root\n"
+msgstr "userhelper п╢п╬п╩п╤п╣п╫ п╠я▀я┌я▄ setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:711
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Невозможно открыть графическое окно и найти управляющий терминал.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ п╬я┌п╨я─я▀я┌я▄ пЁя─п╟я└п╦я┤п╣я│п╨п╬п╣ п╬п╨п╫п╬ п╦ п╫п╟п╧я┌п╦ я┐п©я─п╟п╡п╩я▐я▌я┴п╦п╧ я┌п╣я─п╪п╦п╫п╟п╩.\n"
 
 #: userhelper.c:1375 userhelper.c:1413
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "выполнение \"%s\"\n"
+msgstr "п╡я▀п©п╬п╩п╫п╣п╫п╦п╣ \"%s\"\n"
 
 #: userhelper-wrap.c:50
 msgid "Unknown exit code."
-msgstr "Неизвестный код выхода."
+msgstr "п²п╣п╦п╥п╡п╣я│я┌п╫я▀п╧ п╨п╬п╢ п╡я▀я┘п╬п╢п╟."
 
 #: userhelper-wrap.c:52
 msgid "Information updated."
-msgstr "Информация обновлена."
+msgstr "п≤п╫я└п╬я─п╪п╟я├п╦я▐ п╬п╠п╫п╬п╡п╩п╣п╫п╟."
 
 #: userhelper-wrap.c:54
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Вы ввели неверный пароль.\n"
-"Попробуйте еще раз."
+"п▓я▀ п╡п╡п╣п╩п╦ п╫п╣п╡п╣я─п╫я▀п╧ п©п╟я─п╬п╩я▄.\n"
+"п÷п╬п©я─п╬п╠я┐п╧я┌п╣ п╣я┴п╣ я─п╟п╥."
 
 #: userhelper-wrap.c:56
 msgid ""
@@ -168,33 +166,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Одно или более из измененных полей ошибочны.\n"
-"Вероятная причина - наличие точек или запятых в одном из полей.\n"
-"Удалите их и попробуйте снова."
+"п·п╢п╫п╬ п╦п╩п╦ п╠п╬п╩п╣п╣ п╦п╥ п╦п╥п╪п╣п╫п╣п╫п╫я▀я┘ п©п╬п╩п╣п╧ п╬я┬п╦п╠п╬я┤п╫я▀.\n"
+"п▓п╣я─п╬я▐я┌п╫п╟я▐ п©я─п╦я┤п╦п╫п╟ - п╫п╟п╩п╦я┤п╦п╣ я┌п╬я┤п╣п╨ п╦п╩п╦ п╥п╟п©я▐я┌я▀я┘ п╡ п╬п╢п╫п╬п╪ п╦п╥ п©п╬п╩п╣п╧.\n"
+"пёп╢п╟п╩п╦я┌п╣ п╦я┘ п╦ п©п╬п©я─п╬п╠я┐п╧я┌п╣ я│п╫п╬п╡п╟."
 
 #: userhelper-wrap.c:58
 msgid "Password resetting error."
-msgstr "Ошибка сброса пароля"
+msgstr "п·я┬п╦п╠п╨п╟ я│п╠я─п╬я│п╟ п©п╟я─п╬п╩я▐"
 
 #: userhelper-wrap.c:60
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Некоторые системные файлы заблокированы.\n"
-"Повторите через несколько минут."
+"п²п╣п╨п╬я┌п╬я─я▀п╣ я│п╦я│я┌п╣п╪п╫я▀п╣ я└п╟п╧п╩я▀ п╥п╟п╠п╩п╬п╨п╦я─п╬п╡п╟п╫я▀.\n"
+"п÷п╬п╡я┌п╬я─п╦я┌п╣ я┤п╣я─п╣п╥ п╫п╣я│п╨п╬п╩я▄п╨п╬ п╪п╦п╫я┐я┌."
 
 #: userhelper-wrap.c:62
 msgid "Unknown user."
-msgstr "Неизвестный пользователь."
+msgstr "п²п╣п╦п╥п╡п╣я│я┌п╫я▀п╧ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩я▄."
 
 #: userhelper-wrap.c:64
 msgid "Insufficient rights."
-msgstr "Недостаточно прав."
+msgstr "п²п╣п╢п╬я│я┌п╟я┌п╬я┤п╫п╬ п©я─п╟п╡."
 
 #: userhelper-wrap.c:66
 msgid "Invalid call to subprocess.."
-msgstr "Ошибочный вызов подпроцесса.."
+msgstr "п·я┬п╦п╠п╬я┤п╫я▀п╧ п╡я▀п╥п╬п╡ п©п╬п╢п©я─п╬я├п╣я│я│п╟.."
 
 #: userhelper-wrap.c:68
 msgid ""
@@ -202,167 +200,166 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Ваша текущая оболочка не указана в /etc/shells.\n"
-"Вам не разрешено сменить вашу оболочку.\n"
-"Свяжитесь с системным администратором."
+"п▓п╟я┬п╟ я┌п╣п╨я┐я┴п╟я▐ п╬п╠п╬п╩п╬я┤п╨п╟ п╫п╣ я┐п╨п╟п╥п╟п╫п╟ п╡ /etc/shells.\n"
+"п▓п╟п╪ п╫п╣ я─п╟п╥я─п╣я┬п╣п╫п╬ я│п╪п╣п╫п╦я┌я▄ п╡п╟я┬я┐ п╬п╠п╬п╩п╬я┤п╨я┐.\n"
+"п║п╡я▐п╤п╦я┌п╣я│я▄ я│ я│п╦я│я┌п╣п╪п╫я▀п╪ п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╬я─п╬п╪."
 
 #: userhelper-wrap.c:71
 msgid "Out of memory."
-msgstr "Недостаточно памяти."
+msgstr "п²п╣п╢п╬я│я┌п╟я┌п╬я┤п╫п╬ п©п╟п╪я▐я┌п╦."
 
 #: userhelper-wrap.c:73
 msgid "The exec() call failed."
-msgstr "Ошибка вызова exec()."
+msgstr "п·я┬п╦п╠п╨п╟ п╡я▀п╥п╬п╡п╟ exec()."
 
 #: userhelper-wrap.c:75
 msgid "Failed to find selected program."
-msgstr "Невозможно найти выбранную программу."
+msgstr "п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ п╫п╟п╧я┌п╦ п╡я▀п╠я─п╟п╫п╫я┐я▌ п©я─п╬пЁя─п╟п╪п╪я┐."
 
 #: userhelper-wrap.c:77
 msgid "Unknown error."
-msgstr "Неизвестная ошибка."
+msgstr "п²п╣п╦п╥п╡п╣я│я┌п╫п╟я▐ п╬я┬п╦п╠п╨п╟."
 
 #: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
-msgstr "Место для текста."
+msgstr "п°п╣я│я┌п╬ п╢п╩я▐ я┌п╣п╨я│я┌п╟."
 
 #: userhelper-wrap.c:357
 #, c-format
 msgid "Need %d responses.\n"
-msgstr "Необходимы ответы %d.\n"
+msgstr "п²п╣п╬п╠я┘п╬п╢п╦п╪я▀ п╬я┌п╡п╣я┌я▀ %d.\n"
 
 #: userhelper-wrap.c:390
 msgid "Error"
-msgstr "Ошибка"
+msgstr "п·я┬п╦п╠п╨п╟"
 
 #: userhelper-wrap.c:403
 msgid "Information"
-msgstr "Информация"
+msgstr "п≤п╫я└п╬я─п╪п╟я├п╦я▐"
 
 #: userhelper-wrap.c:450
 msgid "Changing personal information."
-msgstr "Изменение личной информации."
+msgstr "п≤п╥п╪п╣п╫п╣п╫п╦п╣ п╩п╦я┤п╫п╬п╧ п╦п╫я└п╬я─п╪п╟я├п╦п╦."
 
 #: userhelper-wrap.c:453
 msgid "Changing login shell."
-msgstr "Изменение login shell."
+msgstr "п≤п╥п╪п╣п╫п╣п╫п╦п╣ login shell."
 
 #: userhelper-wrap.c:456
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу \"%s\", которая получает определенные "
-"преимущества будучи запущенной с правами root. Для этого требуется "
-"дополнительная информация."
+"п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐ \"%s\", п╨п╬я┌п╬я─п╟я▐ п©п╬п╩я┐я┤п╟п╣я┌\n"
+"п╬п©я─п╣п╢п╣п╩п╣п╫п╫я▀п╣ п©я─п╣п╦п╪я┐я┴п╣я│я┌п╡п╟, п╠я┐п╢я┐я┤п╦ п╥п╟п©я┐я┴п╣п╫п╫п╬п╧ я│ п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╦п╡п╫я▀п╪п╦\n"
+"п©я─п╦п╡п╦п╩п╣пЁп╦я▐п╪п╦, п╫п╬ п╢п╩я▐ я█я┌п╬пЁп╬ я┌я─п╣п╠я┐п╣я┌я│я▐ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #: userhelper-wrap.c:458
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу \"%s\", которая требует привилегий root. "
-"Для этого нужна дополнительная информация."
+"п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐ \"%s\", п╨п╬я┌п╬я─п╟я▐ я┌я─п╣п╠я┐п╣я┌ п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╦п╡п╫я▀я┘ "
+"п©я─п╦п╡п╦п╩п╣пЁп╦п╧. п■п╩я▐ я█я┌п╬пЁп╬ п╫я┐п╤п╫п╟ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу, которая получает определенные преимущества "
-"будучи запущенной с правами root. Для этого требуется дополнительная "
-"информация."
+"п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐, п╨п╬я┌п╬я─п╟я▐ п©п╬п╩я┐я┤п╟п╣я┌ п╬п©я─п╣п╢п╣п╩п╣п╫п╫я▀п╣ п©я─п╣п╦п╪я┐я┴п╣я│я┌п╡п╟ "
+"п╠я┐п╢я┐я┤п╦ п╥п╟п©я┐я┴п╣п╫п╫п╬п╧ я│ п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╦п╡п╫я▀п╪п╦ п©я─п╦п╡п╦п╩п╣пЁп╦я▐п╪п╦. п■п╩я▐ я█я┌п╬пЁп╬ я┌я─п╣п╠я┐п╣я┌я│я▐ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ "
+"п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #: userhelper-wrap.c:465
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы пытаетесь выполнить программу, которая требует привилегий root. Для этого "
-"нужна дополнительная информация."
+"п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐, п╨п╬я┌п╬я─п╟я▐ я┌я─п╣п╠я┐п╣я┌ "
+"п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╦п╡п╫я▀я┘ п©я─п╦п╡п╦п╩п╣пЁп╦п╧. п■п╩я▐ я█я┌п╬пЁп╬ п╫п╣п╬п╠я┘п╬п╢п╦п╪п╟ "
+"п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
-msgstr "Выполнить без привелегий"
+msgstr "п▓я▀п©п╬п╩п╫п╦я┌я▄ п╠п╣п╥ п©я─п╦п╡п╦п╩п╣пЁп╦п╧"
 
 #: userhelper-wrap.c:592 userhelper-wrap.c:609
 msgid "Pipe error.\n"
-msgstr "Ошибка потока.\n"
+msgstr "п·я┬п╦п╠п╨п╟ п©п╬я┌п╬п╨п╟.\n"
 
 #: userhelper-wrap.c:616
 msgid "Cannot fork().\n"
-msgstr "Невозможно вызвать fork().\n"
+msgstr "п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ п╡я▀п╥п╡п╟я┌я▄ fork().\n"
 
 #: userhelper-wrap.c:662 userhelper-wrap.c:666
 msgid "dup2() error.\n"
-msgstr "ошибка dup2().\n"
+msgstr "п╬я┬п╦п╠п╨п╟ dup2().\n"
 
 #: userhelper-wrap.c:678
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "ошибка execl(), код ошибки %d\n"
+msgstr "п╬я┬п╦п╠п╨п╟ execl(), п╨п╬п╢ п╬я┬п╦п╠п╨п╦ %d\n"
 
 #: userinfo.c:305
 msgid "You don't exist.  Go away.\n"
-msgstr "Вы не существуете. Уходите.\n"
+msgstr "п▓я▀ п╫п╣ я│я┐я┴п╣я│я┌п╡я┐п╣я┌п╣. пёя┘п╬п╢п╦я┌п╣.\n"
 
 #: usermount.c:61 glade.strings:26
 msgid "_Mount"
-msgstr "Монтировать"
+msgstr "п°п╬п╫я┌п╦я─п╬п╡п╟я┌я▄"
 
 #: usermount.c:62
 msgid "Un_mount"
-msgstr "Отмонтировать"
+msgstr "п·я┌п╪п╬п╫я┌п╦я─п╬п╡п╟я┌я▄"
 
 #: usermount.c:310
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Вы действительно хотите форматировать этот диск? Все данные на нем будут "
-"уничтожены."
+"п▓я▀ п╢п╣п╧я│я┌п╡п╦я┌п╣п╩я▄п╫п╬ я┘п╬я┌п╦я┌п╣ я└п╬я─п╪п╟я┌п╦я─п╬п╡п╟я┌я▄ я█я┌п╬я┌ п╢п╦я│п╨? п▓я│п╣ п╢п╟п╫п╫я▀п╣ п╫п╟ п╫п╣п╪ п╠я┐п╢я┐я┌ "
+"я┐п╫п╦я┤я┌п╬п╤п╣п╫я▀."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
-msgstr "Выполнить формат низкого уровня."
+msgstr "п▓я▀п©п╬п╩п╫п╦я┌я▄ я└п╬я─п╪п╟я┌ п╫п╦п╥п╨п╬пЁп╬ я┐я─п╬п╡п╫я▐."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr "Укажите тип файловой системы:"
+msgstr "пёп╨п╟п╤п╦я┌п╣ я┌п╦п© я└п╟п╧п╩п╬п╡п╬п╧ я│п╦я│я┌п╣п╪я▀:"
 
 #: usermount.c:521
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Нет файловых систем, которые вам позволено монтировать.\n"
-"Свяжитесь с системным администратором."
+"п²п╣я┌ я└п╟п╧п╩п╬п╡я▀я┘ я│п╦я│я┌п╣п╪, п╨п╬я┌п╬я─я▀п╣ п╡п╟п╪ п©п╬п╥п╡п╬п╩п╣п╫п╬ п╪п╬п╫я┌п╦я─п╬п╡п╟я┌я▄.\n"
+"п║п╡я▐п╤п╦я┌п╣я│я▄ я│ я│п╦я│я┌п╣п╪п╫я▀п╪ п╟п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╬я─п╬п╪."
 
 #. Create the dialog.
 #: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
-msgstr "Утилита монтирования для пользователей"
+msgstr "пёя┌п╦п╩п╦я┌п╟ п╪п╬п╫я┌п╦я─п╬п╡п╟п╫п╦я▐ п╢п╩я▐ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩п╣п╧"
 
 #. Create the other buttons.
 #: usermount.c:544 glade.strings:28
 msgid "_Format"
-msgstr "Форматировать"
+msgstr "п╓п╬я─п╪п╟я┌п╦я─п╬п╡п╟я┌я▄"
 
 #: usermount.c:579 glade.strings:24
 msgid "Device"
-msgstr "Устройство"
+msgstr "пёя│я┌я─п╬п╧я│я┌п╡п╬"
 
 #: usermount.c:585 glade.strings:23
 msgid "Directory"
-msgstr "Каталог"
+msgstr "п п╟я┌п╟п╩п╬пЁ"
 
 #: usermount.c:591
 msgid "Filesystem"
-msgstr "Файловая система"
+msgstr "п╓п╟п╧п╩п╬п╡п╟я▐ я│п╦я│я┌п╣п╪п╟"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -371,23 +368,23 @@ msgstr "Файловая система"
 #.
 #: glade.strings:7
 msgid "User Information"
-msgstr "Информация о пользователе"
+msgstr "п≤п╫я└п╬я─п╪п╟я├п╦я▐ п╬ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩п╣"
 
 #: glade.strings:8
 msgid "Full Name:"
-msgstr "Полное имя:"
+msgstr "п÷п╬п╩п╫п╬п╣ п╦п╪я▐:"
 
 #: glade.strings:9
 msgid "Office:"
-msgstr "Офис:"
+msgstr "п·я└п╦я│:"
 
 #: glade.strings:10
 msgid "Office Phone Number"
-msgstr "Рабочий телефон"
+msgstr "п═п╟п╠п╬я┤п╦п╧ я┌п╣п╩п╣я└п╬п╫"
 
 #: glade.strings:11
 msgid "Home Phone Number"
-msgstr "Домашний телефон"
+msgstr "п■п╬п╪п╟я┬п╫п╦п╧ я┌п╣п╩п╣я└п╬п╫"
 
 #: glade.strings:12
 msgid "Login Shell"
@@ -399,62 +396,63 @@ msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
-msgstr "Отмена"
+msgstr "п·я┌п╪п╣п╫п╟"
 
 #: glade.strings:15
 msgid "Message"
-msgstr "Сообщение"
+msgstr "п║п╬п╬п╠я┴п╣п╫п╦п╣"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr "Закрыть"
+msgstr "п≈п╟п╨я─я▀я┌я▄"
 
 #: glade.strings:18
 msgid "Query"
-msgstr "Запрос"
+msgstr "п≈п╟п©я─п╬я│"
 
 #: glade.strings:25
 msgid "Type"
-msgstr "Тип"
+msgstr "п╒п╦п©"
 
 #: glade.strings:27
 msgid "_Unmount"
-msgstr "Размонтировать"
+msgstr "п═п╟п╥п╪п╬п╫я┌п╦я─п╬п╡п╟я┌я▄"
 
 #: glade.strings:29
 msgid "E_xit"
-msgstr "Выход"
+msgstr "п▓я▀я┘п╬п╢"
 
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "Вы пытаетесь выполнить программу \"%s\", которая получает\n"
-#~ "определенные преимущества будучи запущенной с правами\n"
-#~ "root. Для этого требуется дополнительная информация."
+#~ "п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐ \"%s\", п╨п╬я┌п╬я─п╟я▐ п©п╬п╩я┐я┤п╟п╣я┌\n"
+#~ "п╬п©я─п╣п╢п╣п╩п╣п╫п╫я▀п╣ п©я─п╣п╦п╪я┐я┴п╣я│я┌п╡п╟ п╠я┐п╢я┐я┤п╦ п╥п╟п©я┐я┴п╣п╫п╫п╬п╧ я│ п©я─п╟п╡п╟п╪п╦\n"
+#~ "root. п■п╩я▐ я█я┌п╬пЁп╬ я┌я─п╣п╠я┐п╣я┌я│я▐ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which requires superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "Вы пытаетесь выполнить программу \"%s\", которая требует\n"
-#~ "привилегий root. Для этого нужна дополнительная информация."
+#~ "п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐ \"%s\", п╨п╬я┌п╬я─п╟я▐ я┌я─п╣п╠я┐п╣я┌\n"
+#~ "п©я─п╦п╡п╦п╩п╣пЁп╦п╧ root. п■п╩я▐ я█я┌п╬пЁп╬ п╫я┐п╤п╫п╟ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #~ msgid ""
 #~ "You are attempting to run a command which may benefit from\n"
 #~ "superuser privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "Вы пытаетесь выполнить программу, которая получает\n"
-#~ "определенные преимущества будучи запущенной с правами\n"
-#~ "root. Для этого требуется дополнительная информация."
+#~ "п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐, п╨п╬я┌п╬я─п╟я▐ п©п╬п╩я┐я┤п╟п╣я┌\n"
+#~ "п╬п©я─п╣п╢п╣п╩п╣п╫п╫я▀п╣ п©я─п╣п╦п╪я┐я┴п╣я│я┌п╡п╟ п╠я┐п╢я┐я┤п╦ п╥п╟п©я┐я┴п╣п╫п╫п╬п╧ я│ п©я─п╟п╡п╟п╪п╦\n"
+#~ "root. п■п╩я▐ я█я┌п╬пЁп╬ я┌я─п╣п╠я┐п╣я┌я│я▐ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #~ msgid ""
 #~ "You are attempting to run a command which requires superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "Вы пытаетесь выполнить программу, которая требует привелегий\n"
-#~ "root. Для этого нужна дополнительная информация."
+#~ "п▓я▀ п©я▀я┌п╟п╣я┌п╣я│я▄ п╡я▀п©п╬п╩п╫п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐, п╨п╬я┌п╬я─п╟я▐ я┌я─п╣п╠я┐п╣я┌ п©я─п╦п╡п╣п╩п╣пЁп╦п╧\n"
+#~ "root. п■п╩я▐ я█я┌п╬пЁп╬ п╫я┐п╤п╫п╟ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐."
 
 #, fuzzy
 #~ msgid "Change personal information"
-#~ msgstr "Изменение личной информации."
+#~ msgstr "п≤п╥п╪п╣п╫п╣п╫п╦п╣ п╩п╦я┤п╫п╬п╧ п╦п╫я└п╬я─п╪п╟я├п╦п╦."
+
