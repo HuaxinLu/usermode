@@ -564,6 +564,7 @@ int main(int argc, char *argv[])
 	char *env_home, *env_term, *env_display, *env_shell;
         char *env_user, *env_logname, *env_lang, *env_lcall, *env_lcmsgs;
 	char *env_xauthority;
+	char **env_pam;
 	int session, fallback, try;
 	size_t aft;
 	struct stat sbuf;
@@ -705,6 +706,13 @@ int main(int argc, char *argv[])
 
 	/* reset the XAUTHORITY so that X stuff will work now */
         if (env_xauthority) setenv("XAUTHORITY", env_xauthority, 1);
+
+	/* copy PAM's environment variables to the child process */
+	env_pam = pam_getenvlist(pamh);
+	while(env_pam && *env_pam) {
+            putenv(*env_pam);
+	    env_pam++;
+	}
 
 	if (session) {
 	    int child, status;
