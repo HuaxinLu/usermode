@@ -505,9 +505,12 @@ int main(int argc, char *argv[])
 	    fail_error(PAM_ABORT);
 	}
 
-	/* check that shell is in /etc/shells... */
-	if(!get_shell_list(shell_path)) {
-	    fail_error(ERR_SHELL_INVALID);
+	retval = pwdb_get_entry(_pwdb, "shell", &_pwe);
+	if(!get_shell_list(shell_path) || 
+	   !get_shell_list((char*)_pwe->value) ||
+	   retval != PWDB_SUCCESS) {
+	  fail_error(ERR_SHELL_INVALID);
+	  pwdb_entry_delete(&_pwe);
 	}
 
 	/* if we change the shell too ... */
