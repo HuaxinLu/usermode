@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2003-10-20 14:08+0200\n"
+"PO-Revision-Date: 2004-04-06 14:08+0200\n"
 "Last-Translator: Maxim Dzumanenko <mvd@mylinux.com.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "Вийти"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Відмінити"
+msgstr "Скасувати"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
@@ -325,11 +325,11 @@ msgstr "Вас немає.  Ідіть звідси.\n"
 
 #: usermount.c:62
 msgid "_Mount"
-msgstr "З_монтувати"
+msgstr "_Підключити"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "_Розмонтувати"
+msgstr "_Відключити"
 
 #: usermount.c:321
 msgid ""
@@ -432,21 +432,3 @@ msgstr "Зміна власного паролю"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Пароль"
-
-#~ msgid "_Ok"
-#~ msgstr "_Гаразд"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Відмінити"
-
-#~ msgid "_Close"
-#~ msgstr "_Закрити"
-
-#~ msgid "Type"
-#~ msgstr "Тип"
-
-#~ msgid "_Unmount"
-#~ msgstr "Р_озмонтувати"
-
-#~ msgid "E_xit"
-#~ msgstr "Ви_йти"
