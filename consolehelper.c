@@ -1,4 +1,4 @@
-/* Copyright (C) 1999-2001 Red Hat Software, Inc.
+/* Copyright (C) 1999-2001 Red Hat, Inc.  All rights reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by

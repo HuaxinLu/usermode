@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.38
+Version: 1.39
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -57,10 +57,12 @@ install -m755 shutdown $RPM_BUILD_ROOT%{_bindir}/
 # Strip it!
 strip $RPM_BUILD_ROOT%{_bindir}/* $RPM_BUILD_ROOT%{_sbindir}/* || :
       
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root)
 %{_bindir}/usermount
 %{_mandir}/man1/usermount.1*
@@ -81,7 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/shutdown
 %endif
 %{_datadir}/pixmaps/*
-%{_datadir}/locale/*/*/*
 %config(noreplace) /etc/pam.d/halt
 %config(noreplace) /etc/pam.d/reboot
 %config(noreplace) /etc/pam.d/poweroff
@@ -90,6 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Mon Jan 29 2001 Preston Brown <pbrown@redhat.com>
+- use lang finding script.
+
 * Thu Jan 25 2001 Yukihiro Nakai <ynakai@redhat.com>
 - Some fix for Japanese environment.
 - Use gtk_set_locale() instead of setlocale()

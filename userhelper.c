@@ -1,6 +1,5 @@
 /* -*-Mode: c-*- */
-/* Copyright (C) 1997 Red Hat Software, Inc.
- * Copyright (C) 2001 Red Hat, Inc.
+/* Copyright (C) 1997-2001 Red Hat, Inc.  All rights reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
