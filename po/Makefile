@@ -60,7 +60,7 @@ distclean: clean
 
 depend:
 
-install:
+install: all
 	catalogs='$(CATALOGS)'; \
 	for cat in $$catalogs ; do \
 		[ -z "$$cat" ] && continue; \
