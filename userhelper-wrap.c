@@ -835,7 +835,6 @@ userhelper_parse_childout(char *outline)
 		resp->first = NULL;
 		resp->dialog = NULL;
 		if (resp->title) {
-			g_free(resp->title);
 			resp->title = NULL;
 		}
 		if (resp->banner) {

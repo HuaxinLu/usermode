@@ -5,8 +5,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.68
-Release: 8
+Version: 1.69
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz

@@ -1,5 +1,5 @@
 AC_INIT(usermode.spec)
-AM_INIT_AUTOMAKE(usermode,`awk '/^Version:/ { print $$2 }' usermode.spec`)
+AM_INIT_AUTOMAKE(usermode,`awk '/^Version:/ { print $$2 }' ${srcdir}/usermode.spec`)
 AC_PREFIX_DEFAULT(/usr)
 AC_PROG_CC
 AC_PATH_PROG(MOUNT,mount,/bin/mount,[/sbin:/bin:/usr/sbin:/usr/bin])
