@@ -59,7 +59,6 @@ main(int argc, char* argv[])
 
   if (display && *display) {
     signal(SIGCHLD, gtk_main_quit);
-signal(SIGCHLD, userhelper_sigchld);
     userhelper_runv(UH_PATH, constructed_argv);
     gtk_main();
   } else {
