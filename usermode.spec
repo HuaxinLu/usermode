@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.66
+Version: 1.67
 Release: 1
 License: GPL
 Group: Applications/System
@@ -104,6 +104,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Feb 20 2003 Nalin Dahyabhai <nalin@redhat.com> 1.67-1
+- work around GTK+ clearing DESKTOP_STARTUP_ID at gtk_init() time, so that
+  startup notification actually works (#84684)
+
 * Wed Feb 19 2003 Nalin Dahyabhai <nalin@redhat.com> 1.66-1
 - consolehelper-gtk: complete startup notification at startup
 - userhelper: pass startup notification data to consolehelper-gtk

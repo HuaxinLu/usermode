@@ -79,6 +79,12 @@ main(int argc, char *argv[])
 	   !isatty(STDIN_FILENO)) {
 		int fake_argc, stderrfd, fd;
 		char **fake_argv;
+#ifdef USE_STARTUP_NOTIFICATION
+		/* GTK+ clears the environment variable at init-time, which
+		 * simply won't do. */
+		char *sn_id = NULL;
+		sn_id = g_strdup(getenv("DESKTOP_STARTUP_ID"));
+#endif
 		fake_argc = 1;
 		fake_argv = g_malloc0((fake_argc + 1) * sizeof(char *));
 		fake_argv[0] = argv[0];
@@ -100,6 +106,11 @@ main(int argc, char *argv[])
 			dup2(stderrfd, STDERR_FILENO);
 			close(stderrfd);
 		}
+#ifdef USE_STARTUP_NOTIFICATION
+		/* Restore DESKTOP_STARTUP_ID.  I'll think up something mean
+		 * to say about having to do this eventually. */
+		setenv("DESKTOP_STARTUP_ID", sn_id, TRUE);
+#endif
 	}
 #endif
 

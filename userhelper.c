@@ -1733,6 +1733,11 @@ main(int argc, char **argv)
 				pipe_conv_exec_start(conv);
 #ifdef USE_STARTUP_NOTIFICATION
 				if (app_data.sn_id) {
+#ifdef DEBUG_USERHELPER
+					g_print("userhelper: setting "
+						"DESKTOP_STARTUP_ID =\"%s\"\n",
+					        app_data.sn_id);
+#endif
 					setenv("DESKTOP_STARTUP_ID",
 					       app_data.sn_id, 1);
 				}
