@@ -71,7 +71,7 @@ msgid "Password for %s"
 msgstr "Senha para %s"
 
 #: userhelper.c:317
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -81,7 +81,7 @@ msgstr ""
 "informações."
 
 #: userhelper.c:319
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -90,7 +90,6 @@ msgstr ""
 "utilizador. No entanto, para os obter são necessárias algumas informações."
 
 #: userhelper.c:323
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
@@ -100,7 +99,6 @@ msgstr ""
 "informações."
 
 #: userhelper.c:325
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -109,9 +107,9 @@ msgstr ""
 "utilizador. No entanto, para os obter são necessárias algumas informações."
 
 #: userhelper.c:343
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "Senha para %s"
+msgstr "Senha para %s: "
 
 #: userhelper.c:626
 msgid "userhelper must be setuid root\n"
