@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
+"POT-Creation-Date: 2001-02-05 10:35-0500\n"
 "PO-Revision-Date: 2000-08-08 01:20+0300\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
 "Language-Team: Black Cat Linux Team <blackcat-support@blackcatlinux.com>\n"
@@ -22,29 +22,45 @@ msgstr "Ошибка"
 msgid "Prompt"
 msgstr "Приглашение"
 
+#. Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
 #. Just a dummy file for gettext
-#: ../dummy.h:3 ../userdialogs.c:193 ../userinfo.c:140
+#: ../dummy.h:20 ../userdialogs.c:193 ../userinfo.c:139
 msgid "OK"
 msgstr "ОК"
 
-#: ../userhelper-wrap.c:49 ../usermount.c:581 ../usermount.c:676
-#: ../usermount.c:764
+#: ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
+#: ../usermount.c:761
 msgid "Pipe error.\n"
 msgstr "Ошибка потока.\n"
 
-#: ../userhelper-wrap.c:55 ../usermount.c:587 ../usermount.c:687
-#: ../usermount.c:770
+#: ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
+#: ../usermount.c:767
 msgid "Cannot fork().\n"
 msgstr "Невозможно вызвать fork().\n"
 
-#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:627
-#: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
-#: ../usermount.c:817
+#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
+#: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
+#: ../usermount.c:814
 msgid "dup2() error.\n"
 msgstr "ошибка dup2().\n"
 
-#: ../userhelper-wrap.c:112 ../usermount.c:642 ../usermount.c:754
-#: ../usermount.c:824
+#: ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
+#: ../usermount.c:821
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "ошибка execl(), код ошибки %d\n"
@@ -136,18 +152,18 @@ msgid "Need %d responses.\n"
 msgstr "Необходимы ответы %d.\n"
 
 #: ../userhelper-wrap.c:371
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
-"Чтобы выполнить \"%s\" с привелегиями %s, необходима дополнительная "
+"Чтобы выполнить \"%s\" с привелегиями root, необходима дополнительная "
 "информация."
 
 #: ../userhelper-wrap.c:389
-#, fuzzy, c-format
+#, c-format
 msgid "Changing password for %s"
-msgstr "Пароль для %s"
+msgstr "Изменение пароля для %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
@@ -191,63 +207,63 @@ msgstr "userhelper должен быть setuid root\n"
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "код возврата PAM %d\n"
 
 #: ../userhelper.c:673
-#, fuzzy, c-format
+#, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr "выполнение \"%s\"\n"
+msgstr ""
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "выполнение \"%s\"\n"
 
-#: ../userinfo.c:125
+#: ../userinfo.c:124
 msgid "User Information"
 msgstr "Информация о пользователе"
 
-#: ../userinfo.c:154
+#: ../userinfo.c:153
 msgid "Help"
 msgstr "Помощь"
 
-#: ../userinfo.c:243
+#: ../userinfo.c:242
 msgid "Full Name:"
 msgstr "Полное имя:"
 
-#: ../userinfo.c:261
+#: ../userinfo.c:260
 msgid "Office:"
 msgstr "Офис:"
 
-#: ../userinfo.c:280
+#: ../userinfo.c:279
 msgid "Office Phone:"
 msgstr "Рабочий телефон:"
 
-#: ../userinfo.c:298
+#: ../userinfo.c:297
 msgid "Home Phone:"
 msgstr "Домашний телефон:"
 
-#: ../userinfo.c:316
+#: ../userinfo.c:315
 msgid "Shell:"
 msgstr "Оболочка:"
 
-#: ../userinfo.c:379
+#: ../userinfo.c:378
 msgid "This will be some help text."
 msgstr "Здесь должен быть текст помощи."
 
-#: ../usermount.c:56
+#: ../usermount.c:57
 msgid "Mount"
 msgstr "Монтирование"
 
-#: ../usermount.c:57
+#: ../usermount.c:58
 msgid "Unmount"
 msgstr "Отмонтирование"
 
-#: ../usermount.c:120
+#: ../usermount.c:119
 msgid "User Mount Tool"
 msgstr "Утилита монтирования для пользователей"
 
-#: ../usermount.c:137
+#: ../usermount.c:136
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
@@ -255,23 +271,23 @@ msgstr ""
 "Нет файловых систем, которые может монтировать пользователь.\n"
 "Свяжитесь с системным администратором."
 
-#: ../usermount.c:178
+#: ../usermount.c:177
 msgid "Directory"
 msgstr "Каталог"
 
-#: ../usermount.c:186
+#: ../usermount.c:185
 msgid "Device"
 msgstr "Устройство"
 
-#: ../usermount.c:194
+#: ../usermount.c:193
 msgid "Type"
 msgstr "Тип"
 
-#: ../usermount.c:269
+#: ../usermount.c:267
 msgid "Format"
 msgstr "Формат"
 
-#: ../usermount.c:363
+#: ../usermount.c:360
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
@@ -279,54 +295,54 @@ msgstr ""
 "Вы уверены?\n"
 "Все данные на этом диске будут уничтожены.\n"
 
-#: ../usermount.c:365
+#: ../usermount.c:362
 msgid "Yes"
 msgstr "Да"
 
-#: ../usermount.c:375
+#: ../usermount.c:372
 msgid "No"
 msgstr "Нет"
 
-#: ../usermount.c:382
+#: ../usermount.c:379
 msgid "Do low level format."
 msgstr "Выполнить формат низкого уровня."
 
-#: ../dummy.h:4
+#: ../dummy.h:21
 msgid "Exit"
-msgstr ""
+msgstr "Выход"
 
-#: ../dummy.h:5
+#: ../dummy.h:22
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
-#: ../dummy.h:6
+#: ../dummy.h:23
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Выполнить без привелегий"
 
-#: ../dummy.h:7
+#: ../dummy.h:24
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(текущий) пароль UNIX: "
 
-#: ../dummy.h:8
+#: ../dummy.h:25
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Новый пароль UNIX: "
 
-#: ../dummy.h:9
+#: ../dummy.h:26
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Повторите новый пароль UNIX: "
 
-#: ../dummy.h:10
+#: ../dummy.h:27
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "ПЛОХОЙ ПАРОЛЬ: пароль ОЧЕНЬ короток"
 
-#: ../dummy.h:11
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "ПЛОХОЙ ПАРОЛЬ: слишком короток"
 
-#: ../dummy.h:12
+#: ../dummy.h:29
 msgid "Password unchanged"
-msgstr ""
+msgstr "Пароль не изменен"
 
-#: ../dummy.h:13
+#: ../dummy.h:30
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Извините, пароли не совпадают"
