@@ -28,6 +28,7 @@ main(int argc, char* argv[])
   bindtextdomain("usermode", "/usr/share/locale");
   textdomain("usermode");
 
+  gtk_set_locale();
   gtk_init(&argc, &argv);
 
   signal(SIGCHLD, userhelper_sigchld);

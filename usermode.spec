@@ -90,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Sun Jan  7 2001 Yukihiro Nakai <ynakai@redhat.com>
+- Add gettextized
+
 * Thu Nov  2 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix segfault in userhelper (#20027)
 

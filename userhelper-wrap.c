@@ -322,7 +322,7 @@ userhelper_parse_childout(char* outline)
 	echo = FALSE;
 	/* fall through */
       case UH_ECHO_ON_PROMPT:
-	msg->label = gtk_label_new(prompt);
+	msg->label = gtk_label_new(i18n(prompt));
 	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
 	gtk_misc_set_alignment(GTK_MISC(msg->label), 1.0, 1.0);
 
@@ -384,7 +384,12 @@ userhelper_parse_childout(char* outline)
 	gtk_window_set_title(GTK_WINDOW(resp->top), i18n("Error"));
 	/* fall through */
       case UH_INFO_MSG:
-	msg->label = gtk_label_new(prompt);
+	if( !strncmp(prompt,
+	   "Changing password for ", strlen("Changing password for ")) ) {
+		prompt = g_strdup_printf(i18n("Changing password for %s"),
+		prompt+strlen("Changing password for "));
+	}
+	msg->label = gtk_label_new(i18n(prompt));
 	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
 	  resp->left + 0, resp->left + 2, resp->rows, resp->rows + 1, 0, 0, 2, 2);
