@@ -228,7 +228,7 @@ msgstr "Fehler beim Finden des ausgewählten Programms."
 msgid "Unknown error."
 msgstr "Unbekannter Fehler."
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:238
 msgid "Placeholder text."
 msgstr "Platzhalter Text."
 
@@ -312,7 +312,7 @@ msgstr "execl() Fehler, errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Benutzer-ID existiert nicht.  Verlassen Sie den Bereich.\n"
 
-#: usermount.c:61 glade.strings:26
+#: glade.strings:26 usermount.c:61
 msgid "_Mount"
 msgstr "_Mounten"
 
@@ -345,20 +345,20 @@ msgstr ""
 "Setzen Sie sich mit Ihrem Administrator in Verbindung."
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: glade.strings:22 usermount.c:522 usermount.c:530
 msgid "User Mount Tool"
 msgstr "Benutzer Mount-Tool"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: glade.strings:28 usermount.c:544
 msgid "_Format"
 msgstr "_Format"
 
-#: usermount.c:579 glade.strings:24
+#: glade.strings:24 usermount.c:579
 msgid "Device"
 msgstr "Gerät"
 
-#: usermount.c:585 glade.strings:23
+#: glade.strings:23 usermount.c:585
 msgid "Directory"
 msgstr "Verzeichnis"
 
