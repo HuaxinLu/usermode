@@ -1207,7 +1207,7 @@ main(int argc, char **argv)
 			conv = &text_conv;
 		}
 
-		/* We can use for a magic configuration file option to disable
+		/* We can use a magic configuration file option to disable
 		 * the GUI, too. */
 		if (gui) {
 			noxoption = svGetValue(s, "NOXOPTION");

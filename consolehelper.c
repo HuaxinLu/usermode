@@ -17,6 +17,7 @@
  */
 
 #include <sys/types.h>
+#include <fcntl.h>
 #include <libintl.h>
 #include <locale.h>
 #include <unistd.h>
@@ -76,14 +77,25 @@ main(int argc, char *argv[])
 	display = getenv("DISPLAY");
 	if(((display != NULL) && (strlen(display) > 0)) ||
 	   !isatty(STDIN_FILENO)) {
-		int fake_argc;
+		int fake_argc, stderrfd, fd;
 		char **fake_argv;
 		fake_argc = 1;
 		fake_argv = g_malloc0((fake_argc + 1) * sizeof(char *));
 		fake_argv[0] = argv[0];
+		stderrfd = dup(STDERR_FILENO);
+		if (stderrfd != -1) {
+			close(STDERR_FILENO);
+			do {
+				fd = open("/dev/null", O_WRONLY | O_APPEND);
+			} while((fd != -1) && (fd != STDERR_FILENO));
+		}
 		if(gtk_init_check(&fake_argc, &fake_argv)) {
 			gtk_set_locale();
 			graphics_available = TRUE;
+		}
+		if (stderrfd != -1) {
+			dup2(stderrfd, STDERR_FILENO);
+			close(stderrfd);
 		}
 	}
 #endif
