@@ -188,7 +188,7 @@ msgstr "Ekki nægar heimildir."
 
 #: userhelper-wrap.c:66
 msgid "Invalid call to subprocess.."
-msgstr "Ógilt kall í undirferli..."
+msgstr "Ógilt kall í undirferli.."
 
 #: userhelper-wrap.c:68
 msgid ""
@@ -242,7 +242,7 @@ msgid "Changing login shell."
 msgstr "Breyti skél."
 
 #: userhelper-wrap.c:456
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -251,7 +251,7 @@ msgstr ""
 "er þörf á frekari upplýsingum svo það sé hægt."
 
 #: userhelper-wrap.c:458
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
@@ -260,7 +260,6 @@ msgstr ""
 "frekari upplýsingum svo það sé hægt."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -269,7 +268,6 @@ msgstr ""
 "er þörf á frekari upplýsingum svo það sé hægt."
 
 #: userhelper-wrap.c:465
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
