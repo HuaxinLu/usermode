@@ -585,7 +585,7 @@ user_mount_toggle(char* file, int bool)
 
       waitpid(pid, &childstatus, 0);
 
-      if(WEXITSTATUS(childstatus) != 0)
+      if(!WIFEXITED(childstatus) || WEXITSTATUS(childstatus) != 0)
 	{
 	  n = 0;
 
