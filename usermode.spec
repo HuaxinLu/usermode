@@ -59,10 +59,9 @@ for wrappedapp in halt reboot poweroff ; do
 	cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %endif
 done
+
 %if ! %{build6x}
-install -m644 pam_timestamp_init.console $RPM_BUILD_ROOT/etc/security/console.apps/pam_timestamp_init
-install -m644 pam_timestamp_init.pamd    $RPM_BUILD_ROOT/etc/pam.d/pam_timestamp_init
-ln -sf consolehelper $RPM_BUILD_ROOT/%{_bindir}/pam_timestamp_init
+rm -f $RPM_BUILD_ROOT/%{_bindir}/shutdown
 %endif
 
 %find_lang %{name}
