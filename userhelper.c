@@ -906,7 +906,7 @@ gecos_parse(char *gecos, struct gecos_data *parsed)
 				g_assert_not_reached();
 				break;
 		}
-		if (*dest != NULL) {
+		if (dest != NULL) {
 			*dest = g_strdup(exploded[i]);
 		}
 	}
@@ -958,7 +958,7 @@ gecos_assemble(struct gecos_data *parsed)
 	/* Strip off terminal commas. */
 	i = strlen(ret);
 	while ((i > 0) && (ret[i - 1] == ',')) {
-		ret[i] = '\0';
+		ret[i - 1] = '\0';
 		i--;
 	}
 	return ret;
@@ -1235,6 +1235,16 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	struct app_data *data;
 	gboolean ret;
 
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: chfn(\"%s\", \"%s\", \"%s\", \"%s\", "
+		"\"%s\", \"%s\")\n", user,
+		new_full_name ? new_full_name : "(null)",
+		new_office ? new_office : "(null)",
+		new_office_phone ? new_office_phone : "(null)",
+		new_home_phone ? new_home_phone : "(null)",
+		new_shell ? new_shell : "(null)");
+#endif
+
 	/* Verify that the fields we were given on the command-line
 	 * are sane (i.e., contain no forbidden characters). */
 	if (new_full_name && strpbrk(new_full_name, ":,=")) {
@@ -1381,6 +1391,15 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 			g_assert_not_reached();
 		}
 		gecos_parse(old_gecos, &parsed_gecos);
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: old gecos string \"%s\"\n", old_gecos);
+		g_print("userhelper: old gecos \"'%s','%s','%s','%s','%s'\"\n",
+			parsed_gecos.full_name,
+			parsed_gecos.office,
+			parsed_gecos.office_phone,
+			parsed_gecos.home_phone,
+			parsed_gecos.site_info);
+#endif
 	}
 
 	/* Override any new values we have. */
@@ -1408,6 +1427,14 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 		}
 		parsed_gecos.home_phone = g_strdup(new_home_phone);
 	}
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: new gecos \"'%s','%s','%s','%s','%s'\"\n",
+		parsed_gecos.full_name ? parsed_gecos.full_name : "(null)",
+		parsed_gecos.office ? parsed_gecos.office : "(null)",
+		parsed_gecos.office_phone ? parsed_gecos.office_phone : "(null)",
+		parsed_gecos.home_phone ? parsed_gecos.home_phone : "(null)",
+		parsed_gecos.site_info ? parsed_gecos.site_info : "(null)");
+#endif
 
 	/* Verify that the strings we got passed are not too long. */
 	if (gecos_size(&parsed_gecos) > GECOS_LENGTH) {
@@ -1423,6 +1450,9 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 
 	/* Build a new value for the GECOS data. */
 	new_gecos = gecos_assemble(&parsed_gecos);
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: new gecos string \"%s\"\n", new_gecos);
+#endif
 
 	/* We don't need the user's current GECOS anymore, so clear
 	 * out the value and set our own in the in-memory structure. */
