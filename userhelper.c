@@ -42,10 +42,19 @@
 #define	ERR_NO_USER		5	/* user unknown ... */
 #define ERR_NO_RIGHTS		6	/* insufficient rights to perform operation */
 #define ERR_INVALID_CALL	7	/* invalid call to this program */
+#define ERR_SHELL_INVALID       8       /* no such line in /etc/shells */
 #define ERR_UNK_ERROR		255	/* unknown error */
 					   
 /* Total GECOS field length... is this enough ? */
 #define GECOS_LENGTH		80
+
+#ifndef TRUE
+#define TRUE 1
+#endif
+#ifndef FALSE
+#define FALSE 0
+#endif
+
 
 /* ------ some static data objects ------- */
 
@@ -69,9 +78,14 @@ static int 	s_flg = 0;	/* -s flag = change shell */
  */
 static int fail_error(int retval)
 {
-    fprintf(stderr, "failing with error: %s\n",
-	    pam_strerror(retval));
-    
+/* well behaved GUI helper programs don't print to the console! -Otto */
+/*     fprintf(stderr, "failing with error: %s\n", */
+/* 	    pam_strerror(retval)); */
+
+  /* this is a temporary kludge.. will be fixed shortly. */
+    if(retval == ERR_SHELL_INVALID)
+        exit(ERR_SHELL_INVALID);	  
+
     if (retval != PAM_SUCCESS) {
 	switch(retval) {
 	    case PAM_AUTH_ERR:
@@ -284,6 +298,48 @@ static int gecos_size(void)
     return len;
 }
 
+/* Snagged straight from the util-linux source... May want to clean up
+ * a bit and possibly merge with the code in userinfo that parses to
+ * get a list.  -Otto
+ *
+ *  get_shell_list () -- if the given shell appears in /etc/shells,
+ *      return true.  if not, return false.
+ *      if the given shell is NULL, /etc/shells is outputted to stdout.
+ */
+static int get_shell_list(char* shell_name)
+{
+    FILE *fp;
+    int found;
+    int len;
+    static char buf[1024];
+
+    found = FALSE;
+    fp = fopen ("/etc/shells", "r");
+    if (! fp) {
+        if (! shell_name) printf ("No known shells.\n");
+        return FALSE;
+    }
+    while (fgets (buf, sizeof (buf), fp) != NULL) {
+        /* ignore comments */
+        if (*buf == '#') continue;
+        len = strlen (buf);
+        /* strip the ending newline */
+        if (buf[len - 1] == '\n') buf[len - 1] = 0;
+        /* ignore lines that are too damn long */
+        else continue;
+        /* check or output the shell */
+        if (shell_name) {
+            if (! strcmp (shell_name, buf)) {
+	        found = TRUE;
+                break;
+            }
+        }
+        else printf ("%s\n", buf);
+    }
+    fclose (fp);
+    return found;
+}
+
 /* ------- the application itself -------- */
 int main(int argc, char *argv[])
 {
@@ -448,6 +504,12 @@ int main(int argc, char *argv[])
 	    pam_end(pamh, PAM_ABORT);
 	    fail_error(PAM_ABORT);
 	}
+
+	/* check that shell is in /etc/shells... */
+	if(!get_shell_list(shell_path)) {
+	    fail_error(ERR_SHELL_INVALID);
+	}
+
 	/* if we change the shell too ... */
 	if (s_flg != 0) {
 	    retval = pwdb_set_entry(_pwdb, "shell", shell_path, 1+strlen(shell_path),
@@ -479,4 +541,9 @@ int main(int argc, char *argv[])
 	fail_error(retval);
     exit (0);
 }
+
+
+
+
+
 
