@@ -102,6 +102,8 @@ rm -rf $RPM_BUILD_ROOT
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
 * Wed Jan 23 2002 Nalin Dahyabhai <nalin@redhat.com> 1.49-3
+- add default locations for certain binaries to configure.in
+
 * Thu Jan  3 2002 Nalin Dahyabhai <nalin@redhat.com> 1.49-2
 - munge glade file to use stock items for buttons where possible
 
