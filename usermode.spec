@@ -5,7 +5,7 @@ Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
-Requires: util-linux pam >= 0.66-5
+Requires: util-linux pam >= 0.66-5 SysVinit >= 2.74-14
 BuildRoot: /var/tmp/usermode-root
 
 %description
