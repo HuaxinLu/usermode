@@ -87,39 +87,37 @@ msgid "Password for %s"
 msgstr "Aðgangsorð fyrir %s"
 
 #: userhelper.c:320
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér "
+"Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér\n"
 "er þörf á frekari upplýsingum svo það sé hægt."
 
 #: userhelper.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á "
+"Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á\n"
 "frekari upplýsingum svo það sé hægt."
 
 #: userhelper.c:326
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér "
+"Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér\n"
 "er þörf á frekari upplýsingum svo það sé hægt."
 
 #: userhelper.c:328
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á "
+"Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á\n"
 "frekari upplýsingum svo það sé hægt."
 
 #: userhelper.c:346
@@ -416,40 +414,3 @@ msgstr "_Aftengja"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "Hæ_tta"
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en "
-#~ "hér\n"
-#~ "er þörf á frekari upplýsingum svo það sé hægt."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á\n"
-#~ "frekari upplýsingum svo það sé hægt."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en "
-#~ "hér\n"
-#~ "er þörf á frekari upplýsingum svo það sé hægt."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á\n"
-#~ "frekari upplýsingum svo það sé hægt."
-
-#~ msgid "Starting \"%s\" with administrative privileges."
-#~ msgstr "Keyri \"%s\" með rótarheimildum."
