@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
-"POT-Creation-Date: 2001-01-07 04:05+0900\n"
+"POT-Creation-Date: 2000-08-03 15:08-0400\n"
 "PO-Revision-Date: 2001-01-04 00:00+0900\n"
 "Last-Translator: Yukihiro Nakai <ynakai@redhat.com>\n"
 "Language-Team: Red Hat Japan\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "Message"
 msgstr "メッセージ"
 
-#: ../userdialogs.c:81 ../userhelper-wrap.c:385
+#: ../userdialogs.c:81 ../userhelper-wrap.c:358
 msgid "Error"
 msgstr "エラー"
 
@@ -25,37 +25,37 @@ msgstr "エラー"
 msgid "Prompt"
 msgstr "プロンプト"
 
-#: ../dummy.h:1 ../userdialogs.c:193 ../userinfo.c:141
+#: ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
 msgstr "OK"
 
-#: ../userhelper-wrap.c:49 ../usermount.c:583 ../usermount.c:678
-#: ../usermount.c:766
+#: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
+#: ../usermount.c:764
 msgid "Pipe error.\n"
 msgstr "パイプエラー。\n"
 
-#: ../userhelper-wrap.c:55 ../usermount.c:589 ../usermount.c:689
-#: ../usermount.c:772
+#: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
+#: ../usermount.c:770
 msgid "Cannot fork().\n"
 msgstr "fork()できません。\n"
 
-#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:629
-#: ../usermount.c:637 ../usermount.c:741 ../usermount.c:749 ../usermount.c:811
-#: ../usermount.c:819
+#: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
+#: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
+#: ../usermount.c:817
 msgid "dup2() error.\n"
 msgstr "dup2()エラー。\n"
 
-#: ../userhelper-wrap.c:112 ../usermount.c:644 ../usermount.c:756
-#: ../usermount.c:826
+#: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
+#: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
 
-#: ../userhelper-wrap.c:141
+#: ../userhelper-wrap.c:115
 msgid "Information updated."
 msgstr "情報は更新されました。"
 
-#: ../userhelper-wrap.c:144
+#: ../userhelper-wrap.c:118
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -63,7 +63,7 @@ msgstr ""
 "入力したパスワードは間違っています。\n"
 "もう一度入力してください。"
 
-#: ../userhelper-wrap.c:147
+#: ../userhelper-wrap.c:121
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -73,11 +73,11 @@ msgstr ""
 "フィールドのどこかにコロンかコンマがあるかもしれません。\n"
 "それらを削除してもう一度入力してください。"
 
-#: ../userhelper-wrap.c:150
+#: ../userhelper-wrap.c:124
 msgid "Password resetting error."
 msgstr "パスワードのリセットでエラーが発生しました。"
 
-#: ../userhelper-wrap.c:153
+#: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -85,19 +85,19 @@ msgstr ""
 "ロックされいているシステムファイルがあります。\n"
 "しばらく待ってからもう一度やってみてください。"
 
-#: ../userhelper-wrap.c:156
+#: ../userhelper-wrap.c:130
 msgid "Unknown user."
 msgstr "不明なユーザです。"
 
-#: ../userhelper-wrap.c:159
+#: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
 msgstr "権限がありません。"
 
-#: ../userhelper-wrap.c:162
+#: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
 msgstr "サブプロセスの呼び出し方が間違っています。"
 
-#: ../userhelper-wrap.c:165
+#: ../userhelper-wrap.c:139
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -108,134 +108,115 @@ msgstr ""
 "システム管理者に相談してみてください。"
 
 #. well, this is unlikely to work either, but at least we tried...
-#: ../userhelper-wrap.c:169
+#: ../userhelper-wrap.c:143
 msgid "Out of memory."
 msgstr "メモリが足りません。"
 
-#: ../userhelper-wrap.c:172
+#: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
 msgstr "exec()の呼び出しに失敗しました。"
 
-#: ../userhelper-wrap.c:175
+#: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
 msgstr "選択したプログラムは見つかりませんでした。"
 
-#: ../userhelper-wrap.c:178
+#: ../userhelper-wrap.c:152
 msgid "Unknown error."
 msgstr "不明なエラーです。"
 
-#: ../userhelper-wrap.c:181
+#: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
 msgstr "不明な終了コードです。"
 
-#: ../userhelper-wrap.c:237
+#: ../userhelper-wrap.c:211
 msgid "Input"
 msgstr "入力"
 
-#: ../userhelper-wrap.c:347
+#: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "%d 応答が必要です。\n"
 
-#: ../userhelper-wrap.c:372
-#, c-format
+#: ../userhelper-wrap.c:345
+#, fuzzy, c-format
 msgid ""
-"In order to run \"%s\" with root's privileges, additional information is "
+"In order to run \"%s\" with %s's privileges, additional information is "
 "required."
 msgstr "\"%s\"をroot権限で実行するには、追加情報が必要になります。"
 
-#: ../userhelper-wrap.c:390
-#, c-format
-msgid "Changing password for %s"
-msgstr "%sのパスワードを変更します"
-
-#: ../userhelper-wrap.c:405
+#: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
 msgstr "%d 応答を%dエントリフィールドに要求しています!?!?!\n"
 
-#: ../userhelper.c:103
+#: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
 msgstr "エラーが発生しました。%d\n"
 
-#: ../userhelper.c:199
+#: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
 msgstr "%sのパスワード"
 
-#: ../userhelper.c:398
+#: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
 msgstr "整合性のチェックはオンになっていません。"
 
-#: ../userhelper.c:400
+#: ../userhelper.c:389
 msgid "Block is fine."
 msgstr "ブロックは適切です。"
 
-#: ../userhelper.c:402
+#: ../userhelper.c:391
 msgid "Block freed twice."
 msgstr "ブロックが2度開放されました。"
 
-#: ../userhelper.c:404
+#: ../userhelper.c:393
 msgid "Memory before the block was clobbered."
 msgstr "ブロックの前にあるメモリが消耗しています。"
 
-#: ../userhelper.c:406
+#: ../userhelper.c:395
 msgid "Memory after the block was clobbered."
 msgstr "ブロックの後ろにあるメモリが消耗しています。"
 
-#: ../userhelper.c:435
+#: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
 
-#: ../userhelper.c:672
-#, c-format
-msgid "PAM returned = %d\n"
-msgstr "PAMの返り値 = %d\n"
-
-#: ../userhelper.c:673
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr "\"%s\"を認証しようとしています\n"
-
-#: ../userhelper.c:722 ../userhelper.c:763
+#: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\"を実行しようとしています\n"
 
-#: ../userinfo.c:126
+#: ../userinfo.c:125
 msgid "User Information"
 msgstr "ユーザ情報"
 
-#: ../dummy.h:2 ../userinfo.c:152
-msgid "Exit"
-msgstr "終了"
-
-#: ../userinfo.c:160
+#: ../userinfo.c:154
 msgid "Help"
 msgstr "ヘルプ"
 
-#: ../userinfo.c:251
+#: ../userinfo.c:243
 msgid "Full Name:"
 msgstr "フルネーム:"
 
-#: ../userinfo.c:269
+#: ../userinfo.c:261
 msgid "Office:"
 msgstr "会社名:"
 
-#: ../userinfo.c:288
+#: ../userinfo.c:280
 msgid "Office Phone:"
 msgstr "会社電話番号:"
 
-#: ../userinfo.c:306
+#: ../userinfo.c:298
 msgid "Home Phone:"
 msgstr "自宅電話番号:"
 
-#: ../userinfo.c:324
+#: ../userinfo.c:316
 msgid "Shell:"
 msgstr "シェル:"
 
-#: ../userinfo.c:387
+#: ../userinfo.c:379
 msgid "This will be some help text."
 msgstr "これは何か役に立つでしょう。"
 
@@ -251,7 +232,7 @@ msgstr "マウント解除"
 msgid "User Mount Tool"
 msgstr "ユーザマウントツール"
 
-#: ../usermount.c:139
+#: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
@@ -259,23 +240,23 @@ msgstr ""
 "ユーザがマウントできるファイルシステムはありません。\n"
 "管理者に相談してください。"
 
-#: ../usermount.c:180
+#: ../usermount.c:178
 msgid "Directory"
 msgstr "ディレクトリ"
 
-#: ../usermount.c:188
+#: ../usermount.c:186
 msgid "Device"
 msgstr "デバイス"
 
-#: ../usermount.c:196
+#: ../usermount.c:194
 msgid "Type"
 msgstr "タイプ"
 
-#: ../usermount.c:271
+#: ../usermount.c:269
 msgid "Format"
 msgstr "フォーマット"
 
-#: ../usermount.c:365
+#: ../usermount.c:363
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
@@ -283,50 +264,53 @@ msgstr ""
 "本当によろしいですか?\n"
 "ディスクにあるデータはすべて破壊されます。\n"
 
-#: ../usermount.c:367
+#: ../usermount.c:365
 msgid "Yes"
 msgstr "はい"
 
-#: ../usermount.c:377
+#: ../usermount.c:375
 msgid "No"
 msgstr "いいえ"
 
-#: ../usermount.c:384
+#: ../usermount.c:382
 msgid "Do low level format."
 msgstr "lowレベルフォーマットをする"
 
-#: ../dummy.h:3
-msgid "Cancel"
-msgstr "キャンセル"
+#~ msgid "Changing password for %s"
+#~ msgstr "%sのパスワードを変更します"
 
-#: ../dummy.h:4
-msgid "Run Unprivileged"
-msgstr "権限なしで実行"
+#~ msgid "PAM returned = %d\n"
+#~ msgstr "PAMの返り値 = %d\n"
 
-#: ../dummy.h:5
-msgid "(current) UNIX password: "
-msgstr "(現在の) UNIXパスワード: "
+#~ msgid "about to authenticate \"%s\"\n"
+#~ msgstr "\"%s\"を認証しようとしています\n"
 
-#: ../dummy.h:6
-msgid "New UNIX password: "
-msgstr "新規UNIXパスワード: "
+#~ msgid "Exit"
+#~ msgstr "終了"
 
-#: ../dummy.h:7
-msgid "Retype new UNIX password: "
-msgstr "新規UNIXパスワードをもう一度入力してください: "
+#~ msgid "Cancel"
+#~ msgstr "キャンセル"
 
-#: ../dummy.h:8
-msgid "BAD PASSWORD: it's WAY too short"
-msgstr "不正なパスワード: かなり短すぎます"
+#~ msgid "Run Unprivileged"
+#~ msgstr "権限なしで実行"
 
-#: ../dummy.h:9
-msgid "BAD PASSWORD: it is too short"
-msgstr "不正なパスワード: 短すぎます"
+#~ msgid "(current) UNIX password: "
+#~ msgstr "(現在の) UNIXパスワード: "
 
-#: ../dummy.h:10
-msgid "Password unchanged"
-msgstr "パスワードが変更されていません"
+#~ msgid "New UNIX password: "
+#~ msgstr "新規UNIXパスワード: "
 
-#: ../dummy.h:11
-msgid "Sorry, passwords do not match"
-msgstr "パスワードが一致していません"
+#~ msgid "Retype new UNIX password: "
+#~ msgstr "新規UNIXパスワードをもう一度入力してください: "
+
+#~ msgid "BAD PASSWORD: it's WAY too short"
+#~ msgstr "不正なパスワード: かなり短すぎます"
+
+#~ msgid "BAD PASSWORD: it is too short"
+#~ msgstr "不正なパスワード: 短すぎます"
+
+#~ msgid "Password unchanged"
+#~ msgstr "パスワードが変更されていません"
+
+#~ msgid "Sorry, passwords do not match"
+#~ msgstr "パスワードが一致していません"
