@@ -6,7 +6,7 @@ REVISION=$(shell awk '/^Revision:/ { print $$2 }' < usermode.spec)
 CVSTAG = um$(subst .,-,$(VERSION))$(subst .,-,$(REVISION))
 
 #CFLAGS=-O2 -Wall
-CFLAGS=-g -Wall $(shell gtk-config --cflags)
+CFLAGS=-g -Wall $(shell gtk-config --cflags) # -DDEBUG_USERHELPER
 LDFLAGS=$(shell gtk-config --libs)
 INSTALL=install
 

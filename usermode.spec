@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.29
+Version: 1.30
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -85,6 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Fri Aug 18 2000 Nalin Dahyabhia <nalin@redhat.com>
+- fix the "run unprivileged" option
+
 * Mon Aug 14 2000 Nalin Dahyabhia <nalin@redhat.com>
 - actually use the right set of translations
 

@@ -145,11 +145,12 @@ static char *read_string(void)
 }
 
 /* Application data with some hints. */
-struct app_data_t {
+static struct app_data_t {
      int fallback;
      char *user;
      char *service;
 } app_data = {0, NULL, NULL};
+static gboolean fallback_flag = FALSE;
 
 /*
  * Conversation function for the boring change password stuff
@@ -233,8 +234,9 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		reply[count].resp_retcode = PAM_SUCCESS;
 		reply[count].resp = read_string();
 		if(reply[count].resp[0] == UH_ABORT) {
-		  free (reply);
-		  return PAM_MAXTRIES; /* Shrug. */
+                    fallback_flag = TRUE;
+		    free (reply);
+		    return PAM_MAXTRIES; /* Shrug. */
 		}
 		break;
 	    default:
@@ -616,10 +618,13 @@ int main(int argc, char *argv[])
 	app_data.user = "root";
 	app_data.service = progname;
 
-	retval = !PAM_SUCCESS;
-	while (try-- && retval != PAM_SUCCESS) {
+	do {
+#ifdef DEBUG_USERHELPER
+	    fprintf(stderr, i18n("PAM returned = %d\n"), retval);
+	    fprintf(stderr, i18n("about to authenticate \"%s\"\n"), user);
+#endif
 	    retval = pam_authenticate(pamh, 0);
-	}
+	} while (--try && retval != PAM_SUCCESS && !fallback_flag);
 	if (retval != PAM_SUCCESS) {
 	    pam_end(pamh, retval);
 	    if (fallback) {

@@ -445,7 +445,11 @@ userhelper_write_childin(GtkWidget *widget, response *resp)
     for (message_list = resp->message_list;
          (message_list != NULL) && (message_list->data != NULL);
          message_list = g_slist_next(message_list)) {
-      if(GTK_IS_ENTRY(((message*)message_list->data)->entry)) {
+      message *m = (message*)message_list->data;
+#ifdef DEBUG_USERHELPER
+      fprintf(stderr, "message %d, \"%s\"\n", m->type, m->message);
+#endif
+      if(GTK_IS_ENTRY(m->entry)) {
         write(childin[1], &byte, 1);
         write(childin[1], "\n", 1);
       }
@@ -456,8 +460,11 @@ userhelper_write_childin(GtkWidget *widget, response *resp)
     for (message_list = resp->message_list;
          (message_list != NULL) && (message_list->data != NULL);
          message_list = g_slist_next(message_list)) {
-      if(GTK_IS_ENTRY(((message*)message_list->data)->entry)) {
-        message *m = (message*)message_list->data;
+      message *m = (message*)message_list->data;
+#ifdef DEBUG_USERHELPER
+      fprintf(stderr, "message %d, \"%s\"\n", m->type, m->message);
+#endif
+      if(GTK_IS_ENTRY(m->entry)) {
         input = gtk_entry_get_text(GTK_ENTRY(m->entry));
         len = strlen(input);
         write(childin[1], &byte, 1);
