@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
 "POT-Creation-Date: 2002-06-19 17:27-0400\n"
-"PO-Revision-Date: 2002-04-02 15:24+0200\n"
+"PO-Revision-Date: 2002-07-05 15:24+0200\n"
 "Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -245,40 +245,38 @@ msgid "Changing login shell."
 msgstr "Ændrer logind-skál."
 
 #: userhelper-wrap.c:456
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre '%s', som kan have gavn af superbruger-rettigheder,\n"
+"Du forsøger at køre '%s', som kan have gavn af adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
 #: userhelper-wrap.c:458
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre '%s', som kræver superbruger-rettigheder,\n"
+"Du forsøger at køre '%s', som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre en kommando, som kan have gavn af superbruger-"
+"Du forsøger at køre en kommando, som kan have gavn af adminstrator-"
 "rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
 #: userhelper-wrap.c:465
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre en kommando, som kræver superbruger-rettigheder,\n"
+"Du forsøger at køre en kommando, som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
 #: userhelper-wrap.c:480
