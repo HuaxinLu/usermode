@@ -65,7 +65,7 @@ install-man: 	$(MANS)
 	$(INSTALL) -m 644 userpasswd.1 $(PREFIX)$(mandir)/man1
 
 install-po:
-	$(MAKE) -C po $@ PREFIX=$(PREFIX) datadir=$(datadir) prefix=$(prefix) bindir=$(prefix)/bin mandir=$(prefix)/man sbindir=$(prefix)/sbin datadir=$(prefix)/share
+	$(MAKE) -C po install PREFIX=$(PREFIX) datadir=$(datadir) prefix=$(prefix) bindir=$(prefix)/bin mandir=$(prefix)/man sbindir=$(prefix)/sbin datadir=$(prefix)/share
 
 clean:	
 	rm -f *~ *.o $(PROGS)
