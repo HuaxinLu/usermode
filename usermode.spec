@@ -104,6 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Mon Apr  1 2002 Nalin Dahyabhai <nalin@redhat.com> 1.52-1
 - attempt to make prompts at the console more meaningful
+- when falling back, reset the entire environment to the user's
 
 * Thu Mar 28 2002 Nalin Dahyabhai <nalin@redhat.com>
 - stop giving the user chances to enter the right password if we get a

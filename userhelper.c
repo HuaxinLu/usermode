@@ -1231,6 +1231,7 @@ main(int argc, char **argv)
 #endif
 			exit(ERR_NO_USER);
 		}
+
 		/* If the user we're authenticating as has root's UID, then it's
 		 * safe to let them use HOME=~root. */
 		if (pw->pw_uid == 0) {
@@ -1286,8 +1287,8 @@ main(int argc, char **argv)
 			if (app_data.cancelled) {
 				fail_exit(retval);
 			} else if (app_data.fallback_allowed) {
-				/* Reset the user's XAUTHORITY so that the
-				 * application can open windows. */
+				/* Reset the user's environment so that the
+				 * application can run normally. */
 				argv[optind - 1] = progname;
 				environ = environ_save;
 				become_normal(user_name);
