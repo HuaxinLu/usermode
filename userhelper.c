@@ -1103,6 +1103,7 @@ get_user_for_auth(shvarFile *s)
 		security_context_t defcontext;
 		char *apps_role, *apps_type;
 		context_t ctx;
+		struct passwd *pwd;
 
 		defcontext = NULL;
 		if (get_init_context(CONTEXT_FILE, &defcontext) == 0) {
@@ -1126,7 +1127,9 @@ get_user_for_auth(shvarFile *s)
 
 		new_context = strdup(context_str(ctx));
 		context_free(ctx);
-		ret = ruid_user;
+		pwd = getpwnam(ruid_user);
+		if (pwd != NULL) 
+		  ret = ruid_user;
 	}
 #endif
 	if (ret == NULL) {

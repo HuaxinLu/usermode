@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.69
-Release: 4
+Release: 5
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -117,6 +117,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Sat Feb 21 2004 Dan Walsh <dwalsh@redhat.com> 1.69-5
+- Change to fall back to root auth if selinux user does not exist
+
 * Tue Jan 27 2004 Dan Walsh <dwalsh@redhat.com> 1.69-4
 - fix call to is_selinux_enabled
 
