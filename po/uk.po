@@ -1,12 +1,16 @@
+# Ukrainian translation of usermode
+# Previous translator: Yuriy Syrota <rasta@renome.rovno.ua
+# Maxim Dziumanenko <mvd@mylinux.com.ua>, 2003
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode 1.35\n"
+"Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 1999-12-29 12:36+0200\n"
-"Last-Translator: Yuriy Syrota <rasta@renome.rovno.ua>\n"
+"PO-Revision-Date: 2003-10-20 14:08+0200\n"
+"Last-Translator: Maxim Dzumanenko <mvd@mylinux.com.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-u\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #.
@@ -30,74 +34,73 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "Гаразд"
+msgstr "п⌠п╟я─п╟п╥п╢"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr "Вийти"
+msgstr "п▓п╦п╧я┌п╦"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "В╕дм╕нити"
+msgstr "п▓я√п╢п╪я√п╫п╦я┌п╦"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Запустити без прив╕лей"
+msgstr "п≈п╟п©я┐я│я┌п╦я┌п╦ п╠п╣п╥ п©я─п╦п╡я√п╩п╣п╧"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(поточний) пароль (UNIX): "
+msgstr "(п©п╬я┌п╬я┤п╫п╦п╧) п©п╟я─п╬п╩я▄ (UNIX): "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Новий пароль UNIX: "
+msgstr "п²п╬п╡п╦п╧ п©п╟я─п╬п╩я▄ UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "П╕дтвердження паролю UNIX: "
+msgstr "п÷я√п╢я┌п╡п╣я─п╢п╤п╣п╫п╫я▐ п©п╟я─п╬п╩я▌ UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "ПОГАНИЙ ПАРОЛЬ: в╕н НАДТО короткий"
+msgstr "п÷п·п⌠п░п²п≤п≥ п÷п░п═п·п⌡п╛: п©п╟я─п╬п╩я▄ п²п░п■п╒п· п╨п╬я─п╬я┌п╨п╦п╧"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "ПОГАНИЙ ПАРОЛЬ: в╕н надто короткий"
+msgstr "п÷п·п⌠п░п²п≤п≥ п÷п░п═п·п⌡п╛: п╫п╟п╢я┌п╬ п╨п╬я─п╬я┌п╨п╦п╧"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "Пароль не зм╕нено"
+msgstr "п÷п╟я─п╬п╩я▄ п╫п╣ п╥п╪я√п╫п╣п╫п╬"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Вибачте, але парол╕ не сп╕впадають"
+msgstr "п▓п╦п╠п╟я┤я┌п╣, п╟п╩п╣ п©п╟я─п╬п╩я√ п╫п╣ я│п©я√п╡п©п╟п╢п╟я▌я┌я▄"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "п≈п╟п©я┐я│п╨п╟я■ п╥п╟пЁп╟п╩я▄п╫п╬-я│п╦я│я┌п╣п╪п╫я√ я┐я┌п╦п╩я√я┌п╦ п╫п╟п╩п╟я┬я┌п╬п╡я┐п╡п╟п╫п╫я▐ п╠п╣п╥ п©п╟я─п╬п╩я▌."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "я─п╣я■я│я┌я─п╟я├я√п╧п╫п╣ я√п╪'я▐: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Пароль для %s"
+msgstr "п÷п╟я─п╬п╩я▄: "
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr "Дов╕дка"
+msgstr "п■п╬п╡я√п╢п╨п╟"
 
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "п²п╣п╪п╬п╤п╩п╦п╡п╬ п╡я│я┌п╟п╫п╬п╡п╦я┌п╦ п╨п╬п╫я┌п╣п╨я│я┌ п╡п╦п╨п╬п╫п╟п╫п╫я▐ я┐ %s.\n"
 
 #: userhelper.c:431
 #, c-format
 msgid "Password for %s"
-msgstr "Пароль для %s"
+msgstr "п÷п╟я─п╬п╩я▄ п╨п╬я─п╦я│я┌я┐п╡п╟я┤п╟ %s"
 
 #: userhelper.c:666
 #, c-format
@@ -105,6 +108,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"п▓п╦ п╫п╟п╪п╟пЁп╟я■я┌п╣я│я▄ п╡п╦п╨п╬п╫п╟я┌п╦ п©я─п╬пЁя─п╟п╪я┐ \"%s\", я▐п╨п╟ п╪п╬п╤п╣ п©п╬я┌я─п╣п╠я┐п╡п╟я┌п╦ п©я─п╦п╡я√п╩п╣п╧ п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟, "
+"п╟п╩п╣ п╢п╩я▐ я├я▄п╬пЁп╬ п©п╬я┌я─я√п╠п╫п╟ п╢п╬п╢п╟я┌п╨п╬п╡п╟ я√п╫я└п╬я─п╪п╟я├я√я▐."
 
 #: userhelper.c:668
 #, c-format
@@ -112,49 +117,56 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"п▓п╦ п╫п╟п╪п╟пЁп╟я■я┌п╣я│я▄ п╡п╦п╨п╬п╫п╟я┌п╦ п©я─п╬пЁя─п╟п╪я┐ \"%s\", я▐п╨п╟ п╡п╦п╪п╟пЁп╟я■ п©я─п╦п╡я√п╩п╣п╧\n"
+"п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟, п╟п╩п╣ п╢п╩я▐ я├я▄п╬пЁп╬ п©п╬я┌я─я√п╠п╫п╟ п╢п╬п╢п╟я┌п╨п╬п╡п╟ я√п╫я└п╬я─п╪п╟я├я√я▐."
 
 #: userhelper.c:672
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
+"п▓п╦ п╫п╟п╪п╟пЁп╟я■я┌п╣я│я▄ п╡п╦п╨п╬п╫п╟я┌п╦ п╨п╬п╪п╟п╫п╢я┐, я▐п╨п╟ п╪п╬п╤п╣ п©п╬я┌я─п╣п╠я┐п╡п╟я┌п╦ п©я─п╦п╡я√п╩п╣п╧ п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟, "
+"п╟п╩п╣ п╢п╩я▐ я├я▄п╬пЁп╬ п©п╬я┌я─я√п╠п╫п╟ п╢п╬п╢п╟я┌п╨п╬п╡п╟ я√п╫я└п╬я─п╪п╟я├я√я▐."
 
 #: userhelper.c:674
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"п▓п╦ п╫п╟п╪п╟пЁп╟я■я┌п╣я│я▄ п╡п╦п╨п╬п╫п╟я┌п╦ п╨п╬п╪п╟п╫п╢я┐, я▐п╨п╟ п╡п╦п╪п╟пЁп╟я■ п©я─п╦п╡я√п╩п╣п╧\n"
+"п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟, п╟п╩п╣ п╢п╩я▐ я├я▄п╬пЁп╬ п©п╬я┌я─я√п╠п╫п╟ п╢п╬п╢п╟я┌п╨п╬п╡п╟ я√п╫я└п╬я─п╪п╟я├я√я▐."
 
 #: userhelper.c:693
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "Пароль для %s"
+msgstr "п÷п╟я─п╬п╩я▄ п╨п╬я─п╦я│я┌я┐п╡п╟я┤п╟ %s: "
 
 #: userhelper.c:1039
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper ма╓ мати setuid користувача \"root\"\n"
+msgstr "userhelper п©п╬п╡п╦п╫п╣п╫ п╠я┐я┌п╦ setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:1123
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
+"п²п╣п╪п╬п╤п╩п╦п╡п╬ п╡я√п╢п╨я─п╦я┌п╦ пЁя─п╟я└я√я┤п╫п╣ п╡я√п╨п╫п╬ я┌п╟ п╥п╫п╟п╧я┌п╦ п╨п╣я─я┐я▌я┤п╦п╧ я┌п╣я─п╪я√п╫п╟п╩.\n"
 
 #: userhelper-wrap.c:178
 msgid "Unknown exit code."
-msgstr "Нев╕домий код виходу."
+msgstr "п²п╣п╡я√п╢п╬п╪п╦п╧ п╨п╬п╢ п╥п╟п╡п╣я─я┬п╣п╫п╫я▐."
 
 #: userhelper-wrap.c:180
 msgid "Information updated."
-msgstr "╤нформац╕ю поновлено."
+msgstr "п├п╫я└п╬я─п╪п╟я├я√я▌ п╬п╫п╬п╡п╩п╣п╫п╬."
 
 #: userhelper-wrap.c:182
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Ви ввели нев╕рний пароль.\n"
-"Будь ласка, спробуйте знову."
+"п▓п╦ п╡п╡п╣п╩п╦ п╫п╣п╡я√я─п╫п╦п╧ п©п╟я─п╬п╩я▄.\n"
+"п║п©я─п╬п╠я┐п╧я┌п╣ п╥п╫п╬п╡я┐."
 
 #: userhelper-wrap.c:184
 msgid ""
@@ -162,34 +174,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Одне чи б╕льше зм╕нених пол╕в не в╕рне.\n"
-"Це напевно через двокрапки чи коми в одному з пол╕в.\n"
-"Будь ласка, видал╕ть ╖х та спробуйте знову."
+"п·п╢п╫п╣ я┤п╦ п╠я√п╩я▄я┬п╣ п╥я√ п╥п╪я√п╫п╣п╫п╦я┘ п©п╬п╩я√п╡ п╫п╣п©я─п╟п╡п╦п╩я▄п╫п╣.\n"
+"п╕п╣ п╫п╟п©п╣п╡п╫п╬ я┤п╣я─п╣п╥ п╢п╡п╬п╨я─п╟п©п╨п╦ я┤п╦ п╨п╬п╪п╦ п╡ п╬п╢п╫п╬п╪я┐ п╥ п©п╬п╩я√п╡.\n"
+"п▓п╦п╢п╟п╩я√я┌я▄ я≈я┘ я┌п╟ я│п©я─п╬п╠я┐п╧я┌п╣ п╥п╫п╬п╡я┐."
 
 #: userhelper-wrap.c:186
 msgid "Password resetting error."
-msgstr "Помилка скидання паролю."
+msgstr "п÷п╬п╪п╦п╩п╨п╟ я│п╨п╦п╢п╟п╫п╫я▐ п©п╟я─п╬п╩я▌."
 
 #: userhelper-wrap.c:188
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Деяк╕ файлов╕ системи блоковано.\n"
-"Спробуйте знову через к╕лька секунд."
+"п■п╣я▐п╨я√ я└п╟п╧п╩п╬п╡я√ я│п╦я│я┌п╣п╪п╦ п╠п╩п╬п╨п╬п╡п╟п╫п╬.\n"
+"п║п©я─п╬п╠я┐п╧я┌п╣ п╥п╫п╬п╡я┐ я┤п╣я─п╣п╥ п╢п╣п╨я√п╩я▄п╨п╟ я│п╣п╨я┐п╫п╢."
 
 #: userhelper-wrap.c:190
 msgid "Unknown user."
-msgstr "Нев╕домий користувач."
+msgstr "п²п╣п╡я√п╢п╬п╪п╦п╧ п╨п╬я─п╦я│я┌я┐п╡п╟я┤."
 
 #: userhelper-wrap.c:192
 msgid "Insufficient rights."
-msgstr "Недостатньо прав."
+msgstr "п²п╣п╢п╬я│я┌п╟я┌п╫я▄п╬ п©я─п╟п╡."
 
 #: userhelper-wrap.c:194
-#, fuzzy
 msgid "Invalid call to subprocess."
-msgstr "Нев╕рний виклик саб-процесу"
+msgstr "п²п╣п╡я√я─п╫п╦п╧ п╡п╦п╨п╩п╦п╨ п©я√п╢п©я─п╬я├п╣я│я┐.."
 
 #: userhelper-wrap.c:196
 msgid ""
@@ -197,50 +208,49 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Вашу поточну оболонку не вказано в списку /etc/shells.\n"
-"Ви не можете зм╕нити свою оболонку.\n"
-"Проконсультуйтесь ╕з сво╖м системним адм╕н╕стратором."
+"п▓п╟я┬я┐ п©п╬я┌п╬я┤п╫я┐ п╬п╠п╬п╩п╬п╫п╨я┐ п╫п╣ п╡п╨п╟п╥п╟п╫п╬ п╡ я│п©п╦я│п╨я┐ /etc/shells.\n"
+"п▓п╦ п╫п╣ п╪п╬п╤п╣я┌п╣ п╥п╪я√п╫п╦я┌п╦ я│п╡п╬я▌ п╬п╠п╬п╩п╬п╫п╨я┐.\n"
+"п÷я─п╬п╨п╬п╫я│я┐п╩я▄я┌я┐п╧я┌п╣я│я▄ я√п╥ я│п╡п╬я≈п╪ я│п╦я│я┌п╣п╪п╫п╦п╪ п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╬п╪."
 
 #: userhelper-wrap.c:199
 msgid "Out of memory."
-msgstr "Недостатньо оперативно╖ пам'ят╕."
+msgstr "п²п╣п╢п╬я│я┌п╟я┌п╫я▄п╬ п╬п©п╣я─п╟я┌п╦п╡п╫п╬я≈ п©п╟п╪'я▐я┌я√."
 
 #: userhelper-wrap.c:201
 msgid "The exec() call failed."
-msgstr "Зб╕й виклику exec()."
+msgstr "п÷п╬п╪п╦п╩п╨п╟ п╡п╦п╨п╩п╦п╨я┐ exec()."
 
 #: userhelper-wrap.c:203
 msgid "Failed to find selected program."
-msgstr "Не вдалося знайти вибрану програму."
+msgstr "п²п╣п╪п╬п╤п╩п╦п╡п╬ п╥п╫п╟п╧я┌п╦ п╡п╦п╠я─п╟п╫я┐ п©я─п╬пЁя─п╟п╪я┐."
 
 #: userhelper-wrap.c:207
 msgid "Unknown error."
-msgstr "Нев╕дома помилка."
+msgstr "п²п╣п╡я√п╢п╬п╪п╟ п©п╬п╪п╦п╩п╨п╟."
 
 #: userhelper-wrap.c:458 glade.strings:18 usermode.glade.h:9
 msgid "Query"
-msgstr ""
+msgstr "п≈п╟п©п╦я┌п╟п╫п╫я▐"
 
 #: userhelper-wrap.c:548 userhelper-wrap.c:718
 msgid "Error"
-msgstr "Помилка"
+msgstr "п÷п╬п╪п╦п╩п╨п╟"
 
 #: userhelper-wrap.c:560
-#, fuzzy
 msgid "Information"
-msgstr "Користувач"
+msgstr "п├п╫я└п╬я─п╪п╟я├я√я▐"
 
 #: userhelper-wrap.c:716 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
-msgstr ""
+msgstr "п°я√я│я├п╣ п╢п╩я▐ я┌п╣п╨я│я┌я┐."
 
 #: userhelper-wrap.c:756
 msgid "Changing personal information."
-msgstr ""
+msgstr "п≈п╪я√п╫п╟ п©п╣я─я│п╬п╫п╟п╩я▄п╫п╬я≈ я√п╫я└п╬я─п╪п╟я├я√я≈."
 
 #: userhelper-wrap.c:759
 msgid "Changing login shell."
-msgstr ""
+msgstr "п≈п╪я√п╫п╟ п©п╬я┤п╟я┌п╨п╬п╡п╬я≈ п╬п╠п╬п╩п╬п╫п╨п╦."
 
 #: userhelper-wrap.c:765
 #, c-format
@@ -248,6 +258,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"п▓п╦ п╫п╟п╪п╟пЁп╟я■я┌п╣я│я▄ п╡п╦п╨п╬п╫п╟я┌п╦ п©я─п╬пЁя─п╟п╪я┐ \"%s\", я▐п╨п╟ п╪п╬п╤п╣ п©п╬я┌я─п╣п╠я┐п╡п╟я┌п╦ п©я─п╦п╡я√п╩п╣п╧ п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟, "
+"п╟п╩п╣ п╢п╩я▐ я├я▄п╬пЁп╬ п©п╬я┌я─я√п╠п╫п╟ п╢п╬п╢п╟я┌п╨п╬п╡п╟ я√п╫я└п╬я─п╪п╟я├я√я▐."
 
 #: userhelper-wrap.c:767
 #, c-format
@@ -255,104 +267,102 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
+"п▓п╦ п╫п╟п╪п╟пЁп╟я■я┌п╣я│я▄ п╡п╦п╨п╬п╫п╟я┌п╦ \"%s\", я▐п╨п╟ п╡п╦п╪п╟пЁп╟я■ п©я─п╦п╡я√п╩п╣п╧\n"
+"п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟, п╟п╩п╣ п╢п╩я▐ я├я▄п╬пЁп╬ п©п╬я┌я─я√п╠п╫п╟ п╢п╬п╢п╟я┌п╨п╬п╡п╟ я√п╫я└п╬я─п╪п╟я├я√я▐."
 
 #: userhelper-wrap.c:776
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"п▓п╦ п╫п╟п╪п╟пЁп╟я■я┌п╣я│я▄ п╡п╦п╨п╬п╫п╟я┌п╦ п╨п╬п╪п╟п╫п╢я┐,  я▐п╨п╟ п╪п╬п╤п╣ п©п╬я┌я─п╣п╠я┐п╡п╟я┌п╦ п©я─п╦п╡я√п╩п╣п╧ п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟, "
+"п╟п╩п╣ п╢п╩я▐ я├я▄п╬пЁп╬ п©п╬я┌я─я√п╠п╫п╟ п╢п╬п╢п╟я┌п╨п╬п╡п╟ я√п╫я└п╬я─п╪п╟я├я√я▐."
 
 #: userhelper-wrap.c:778
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"п▓п╦ п╫п╟п╪п╟пЁп╟я■я┌п╣я│я▄ п╡п╦п╨п╬п╫п╟я┌п╦ п╨п╬п╪п╟п╫п╢я┐, я▐п╨п╟ п╡п╦п╪п╟пЁп╟я■ п©я─п╦п╡я√п╩п╣п╧\n"
+"п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟, п╟п╩п╣ п╢п╩я▐ я├я▄п╬пЁп╬ п©п╬я┌я─я√п╠п╫п╟ п╢п╬п╢п╟я┌п╨п╬п╡п╟ я√п╫я└п╬я─п╪п╟я├я√я▐."
 
 #: userhelper-wrap.c:795
-#, fuzzy
 msgid "_Run Unprivileged"
-msgstr "Запустити без прив╕лей"
+msgstr "_п≈п╟п©я┐я│я┌п╦я┌п╦ п╠п╣п╥ п©я─п╦п╡я√п╩п╣п╧"
 
 #: userhelper-wrap.c:931
 msgid "Pipe error.\n"
-msgstr "Помилка каналу.\n"
+msgstr "п÷п╬п╪п╦п╩п╨п╟ п╨п╟п╫п╟п╩я┐.\n"
 
 #: userhelper-wrap.c:938
 msgid "Cannot fork().\n"
-msgstr "Неможливо виконати fork().\n"
+msgstr "п²п╣п╪п╬п╤п╩п╦п╡п╬ п╡п╦п╨п╬п╫п╟я┌п╦ fork().\n"
 
 #: userhelper-wrap.c:1016 userhelper-wrap.c:1020
 msgid "dup2() error.\n"
-msgstr "помилка dup2().\n"
+msgstr "п©п╬п╪п╦п╩п╨п╟ dup2().\n"
 
 #: userhelper-wrap.c:1032
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "помилка execl(), errno=%d\n"
+msgstr "п©п╬п╪п╦п╩п╨п╟ execl(), п╨п╬п╢ п©п╬п╪п╦п╩п╨п╦ %d\n"
 
 #: userinfo.c:323
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "п▓п╟я│ п╫п╣п╪п╟я■.  п├п╢я√я┌я▄ п╥п╡я√п╢я│п╦.\n"
 
 #: usermount.c:62 glade.strings:26
-#, fuzzy
 msgid "_Mount"
-msgstr "Змонтувати"
+msgstr "п≈_п╪п╬п╫я┌я┐п╡п╟я┌п╦"
 
 #: usermount.c:63
-#, fuzzy
 msgid "Un_mount"
-msgstr "Розмонтувати"
+msgstr "_п═п╬п╥п╪п╬п╫я┌я┐п╡п╟я┌п╦"
 
 #: usermount.c:321
-#, fuzzy
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Ви впевнен╕?\n"
-"Ви знищете вс╕ дан╕ на цьому диску.\n"
+"п▓п╦ п╡п©п╣п╡п╫п╣п╫я√, я┴п╬ я┘п╬я┤п╣я┌п╣ п╡я√п╢я└п╬я─п╪я┐п╡п╟я┌п╦ я├п╣п╧ п╢п╦я│п╨? п▓п╦ п╥п╫п╦я┴п╦я┌п╣ п╡я│я√ п╢п╟п╫я√ п╫п╟ п╫я▄п╬п╪я┐."
 
 #: usermount.c:332
-#, fuzzy
 msgid "Perform a _low-level format."
-msgstr "Зробити низькор╕вневе форматування."
+msgstr "п▓п╦п╨п╬п╫п╟я┌п╦ _п╫п╦п╥я▄п╨п╬пЁп╬ я─я√п╡п╫я▐ я└п╬я─п╪п╟я┌я┐п╡п╟п╫п╫я▐."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "п▓п╦п╠п╣я─я√я┌я▄ я┌п╦п© я└п╟п╧п╩п╬п╡п╬я≈ я│п╦я│я┌п╣п╪п╦:"
 
 #: usermount.c:543
-#, fuzzy
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Нема╓ файлових систем для монтування.\n"
-"Зв'яж╕ться з сво╖м системним адм╕н╕стратором."
+"п²п╣п╪п╟я■ я└п╟п╧п╩п╬п╡п╦я┘ я│п╦я│я┌п╣п╪, я▐п╨я√ п╡п╟п╪ п╢п╬п╥п╡п╬п╩п╣п╫п╬ п╪п╬п╫я┌я┐п╡п╟я┌п╦ я┤п╦ п╢п╣п╪п╬п╫я┌я┐п╡п╟я┌п╦.\n"
+"п≈п╡п╣я─п╫я√я┌я▄я│я▐ п╢п╬ я│п╦я│я┌п╣п╪п╫п╬пЁп╬ п╟п╢п╪я√п╫я√я│я┌я─п╟я┌п╬я─п╟."
 
 #. Create the dialog.
 #: usermount.c:544 usermount.c:555 glade.strings:22
 msgid "User Mount Tool"
-msgstr "Користувацький зас╕б монтування"
+msgstr "п≈п╟я│я√п╠ п╪п╬п╫я┌я┐п╡п╟п╫п╫я▐ п╢п╩я▐ п╨п╬я─п╦я│я┌я┐п╡п╟я┤я√п╡"
 
 #. Create the other buttons.
 #: usermount.c:569 glade.strings:28
-#, fuzzy
 msgid "_Format"
-msgstr "Формат"
+msgstr "_п╓п╬я─п╪п╟я┌я┐п╡п╟я┌п╦"
 
 #: usermount.c:605 glade.strings:24
 msgid "Device"
-msgstr "Пристр╕й"
+msgstr "п÷я─п╦я│я┌я─я√п╧"
 
 #: usermount.c:611 glade.strings:23
 msgid "Directory"
-msgstr "Каталог"
+msgstr "п п╟я┌п╟п╩п╬пЁ"
 
 #: usermount.c:617
 msgid "Filesystem"
-msgstr ""
+msgstr "п╓п╟п╧п╩п╬п╡п╟ я│п╦я│я┌п╣п╪п╟"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -361,147 +371,80 @@ msgstr ""
 #.
 #: glade.strings:7 usermode.glade.h:10
 msgid "User Information"
-msgstr "Користувач"
+msgstr "п п╬я─п╦я│я┌я┐п╡п╟я┤"
 
 #: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
-msgstr "Повне ╕м'я:"
+msgstr "п÷п╬п╡п╫п╣ я√п╪'я▐:"
 
 #: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
-msgstr "Оф╕с:"
+msgstr "п·я└я√я│:"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "Робочий телефон:"
+msgstr "п═п╬п╠п╬я┤п╦п╧ я┌п╣п╩п╣я└п╬п╫:"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr "Домашн╕й телефон:"
+msgstr "п■п╬п╪п╟я┬п╫я√п╧ я┌п╣п╩п╣я└п╬п╫:"
 
 #: glade.strings:12 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr "Оболонка:"
+msgstr "п·п╠п╬п╩п╬п╫п╨п╟:"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr ""
+msgstr "_п⌠п╟я─п╟п╥п╢"
 
 #: glade.strings:14 glade.strings:21
-#, fuzzy
 msgid "_Cancel"
-msgstr "В╕дм╕нити"
+msgstr "_п▓я√п╢п╪я√п╫п╦я┌п╦"
 
 #: glade.strings:15 usermode.glade.h:5
 msgid "Message"
-msgstr "Пов╕домлення"
+msgstr "п÷п╬п╡я√п╢п╬п╪п╩п╣п╫п╫я▐"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr ""
+msgstr "_п≈п╟п╨я─п╦я┌п╦"
 
 #: glade.strings:25
 msgid "Type"
-msgstr "Тип"
+msgstr "п╒п╦п©"
 
 #: glade.strings:27
-#, fuzzy
 msgid "_Unmount"
-msgstr "Розмонтувати"
+msgstr "п═_п╬п╥п╪п╬п╫я┌я┐п╡п╟я┌п╦"
 
 #: glade.strings:29
-#, fuzzy
 msgid "E_xit"
-msgstr "Вийти"
+msgstr "п▓п╦_п╧я┌п╦"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "п÷я─п╬ п╪п╣п╫п╣"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Користувач"
+msgstr "п≈п╪я√п╫п╟ п©п╣я─я│п╬п╫п╟п╩я▄п╫п╬я≈ я√п╫я└п╬я─п╪п╟я├я√я≈"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "п п╣я─я┐п╡п╟п╫п╫я▐ п╢п╦я│п╨п╟п╪п╦"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "п°п╬п╫я┌я┐п╡п╟п╫п╫я▐ я┌п╟ п╢п╣п╪п╬п╫я┌я┐п╡п╟п╫п╫я▐ я└п╟п╧п╩п╬п╡п╦я┘ я│п╦я│я┌п╣п╪"
 
 #: userpasswd.desktop.in.h:1
-#, fuzzy
 msgid "Change your login password"
-msgstr "Зм╕ню╓ться пароль для %s"
+msgstr "п≈п╪я√п╫п╟ п╡п╩п╟я│п╫п╬пЁп╬ п©п╟я─п╬п╩я▌"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Пароль для %s"
-
-#, fuzzy
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "Отримано помилку %d.\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "п╕дготування до виконання \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Потр╕бно %d в╕дпов╕дей.\n"
-
-#, fuzzy
-#~ msgid "Change password"
-#~ msgstr "Зм╕ню╓ться пароль для %s"
-
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "п╕дготування до автенф╕кац╕╖ \"%s\"\n"
-
-#, fuzzy
-#~ msgid "PAM retval = %d (%s)\n"
-#~ msgstr "PAM повернув %d\n"
-
-#~ msgid "Yes"
-#~ msgstr "Так"
-
-#~ msgid "No"
-#~ msgstr "Н╕"
-
-#~ msgid "Prompt"
-#~ msgstr "Запитання"
-
-#~ msgid "Input"
-#~ msgstr "Вв╕д:"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "Для виконання \"%s\" з прив╕леями користувача \"root\", потр╕бна "
-#~ "додаткова ╕нформац╕я."
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "Вам потр╕бно %d в╕дпов╕дей з %d пол╕в?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "Перев╕рку узгодженост╕ не ув╕мкнено."
-
-#~ msgid "Block is fine."
-#~ msgstr "Блок добрий."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Блок зв╕льнено дв╕ч╕."
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "Пам'ять перед блоком зруйновано."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "Пам'ять п╕сля блоку зруйновано."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Це буде текст дов╕дки."
+msgstr "п÷п╟я─п╬п╩я▄"
