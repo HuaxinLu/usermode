@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.49
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -101,6 +101,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Thu Jan  3 2002 Nalin Dahyabhai <nalin@redhat.com> 1.49-2
+- munge glade file to use stock items for buttons where possible
+
 * Mon Dec 10 2001 Nalin Dahyabhai <nalin@redhat.com> 1.49-1
 - the console.apps configs shouldn't be missingok
 - fix buildprereqs for gtk2/libglade2
