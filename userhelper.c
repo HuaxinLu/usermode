@@ -32,6 +32,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <syslog.h>
 #include <unistd.h>
 
 #include <glib.h>
@@ -1515,6 +1516,22 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	_exit(0);
 }
 
+static char *
+construct_cmdline(const char *argv0, char **argv)
+{
+	int i;
+	char *ret, *tmp;
+	ret = g_strdup(argv0);
+	if ((argv != NULL) && (argv[0] != NULL)) {
+		for (i = 1; argv[i] != NULL; i++) {
+			tmp = g_strconcat(ret, " ", argv[i], NULL);
+			g_free(ret);
+			ret = tmp;
+		}
+	}
+	return ret;
+}
+
 static void
 wrap(const char *user, const char *program,
      struct pam_conv *conv, lu_prompt_fn *prompt,
@@ -1915,6 +1932,7 @@ wrap(const char *user, const char *program,
 			/* We're in the child.  Make a few last-minute
 			 * preparations and exec the program. */
 			char **env_pam;
+			const char *cmdline;
 
 			env_pam = pam_getenvlist(app_data.pamh);
 			while (env_pam && *env_pam) {
@@ -1955,7 +1973,20 @@ wrap(const char *user, const char *program,
 #ifdef WITH_SELINUX
 			setup_selinux_exec(constructed_path);
 #endif
+			cmdline = construct_cmdline(constructed_path,
+						    argv + optind - 1);
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: running '%s' with "
+				"root privileges on behalf of '%s'.",
+				cmdline, user);
+#endif
+			syslog(LOG_NOTICE, "running '%s' with "
+			       "root privileges on behalf of '%s'",
+			       cmdline, user);
 			execv(constructed_path, argv + optind - 1);
+			syslog(LOG_ERR, "could not run '%s' with "
+			       "root privileges on behalf of '%s': %s",
+			       cmdline, user, strerror(errno));
 			pipe_conv_exec_fail(conv);
 			exit(ERR_EXEC_FAILED);
 		}
@@ -1984,6 +2015,8 @@ wrap(const char *user, const char *program,
 		}
 		exit(retval);
 	} else {
+		const char *cmdline;
+
 		/* We're not opening a session, so we can just exec()
 		 * the program we're wrapping. */
 		pam_end(app_data.pamh, PAM_SUCCESS);
@@ -2016,7 +2049,19 @@ wrap(const char *user, const char *program,
 #ifdef WITH_SELINUX
 		setup_selinux_exec(constructed_path);
 #endif
+		cmdline = construct_cmdline(constructed_path,
+					    argv + optind - 1);
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: running '%s' with root privileges on "
+			"behalf of '%s'", cmdline, user);
+#endif
+		syslog(LOG_NOTICE, "running '%s' with "
+		       "root privileges on behalf of '%s'",
+		       cmdline, user);
 		execv(constructed_path, argv + optind - 1);
+		syslog(LOG_ERR, "could not run '%s' with "
+		       "root privileges on behalf of '%s': %s",
+		       cmdline, user, strerror(errno));
 		pipe_conv_exec_fail(conv);
 		exit(ERR_EXEC_FAILED);
 	}
@@ -2052,6 +2097,7 @@ main(int argc, char **argv)
 	bindtextdomain(PACKAGE, DATADIR "/locale");
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
+	openlog("userhelper", LOG_PID, LOG_AUTHPRIV);
 
 	if (geteuid() != 0) {
 		fprintf(stderr, _("userhelper must be setuid root\n"));
