@@ -846,14 +846,6 @@ $(WRAPPED_APPS): /dev/null
 
 tag:
 	cvs tag -cR $(CVSTAG) .
-
-archive:
-	@rm -rf /tmp/usermode-$(VERSION) /tmp/usermode
-	@CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r$(CVSTAG) usermode
-	@mv /tmp/usermode /tmp/usermode-$(VERSION)
-	@dir=$$PWD; cd /tmp; tar cvjf $$dir/usermode-$(VERSION).tar.bz2 usermode-$(VERSION)
-	@rm -rf /tmp/usermode-$(VERSION)
-	@echo "The archive is in usermode-$(VERSION).tar.bz2"
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

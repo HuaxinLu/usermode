@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
-"POT-Creation-Date: 2001-11-29 15:16-0500\n"
+"POT-Creation-Date: 2001-12-04 17:15-0500\n"
 "PO-Revision-Date: 2000-08-08 01:20+0300\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
 "Language-Team: Black Cat Linux Team <blackcat-support@blackcatlinux.com>\n"
@@ -10,30 +10,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Date: 1999-04-03 12:20+0200\n"
 
-#: consolehelper.c:92
+#: consolehelper.c:94
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
-#: userdialogs.h:29
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext
+#: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "ОК"
+
+#: dummy.h:22 userdialogs.h:32
+msgid "Exit"
+msgstr "Выход"
+
+#: dummy.h:23 userdialogs.h:31
+msgid "Cancel"
+msgstr "Отмена"
+
+#: dummy.h:24 userdialogs.h:33
+msgid "Run Unprivileged"
+msgstr "Выполнить без привелегий"
+
+#: dummy.h:25
+msgid "(current) UNIX password: "
+msgstr "(текущий) пароль UNIX: "
+
+#: dummy.h:26
+msgid "New UNIX password: "
+msgstr "Новый пароль UNIX: "
+
+#: dummy.h:27
+msgid "Retype new UNIX password: "
+msgstr "Повторите новый пароль UNIX: "
+
+#: dummy.h:28
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr "ПЛОХОЙ ПАРОЛЬ: пароль ОЧЕНЬ короток"
+
+#: dummy.h:29
+msgid "BAD PASSWORD: it is too short"
+msgstr "ПЛОХОЙ ПАРОЛЬ: слишком короток"
+
+#: dummy.h:30
+msgid "Password unchanged"
+msgstr "Пароль не изменен"
+
+#: dummy.h:31
+msgid "Sorry, passwords do not match"
+msgstr "Извините, пароли не совпадают"
 
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Помощь"
-
-#: userdialogs.h:31
-msgid "Cancel"
-msgstr "Отмена"
-
-#: userdialogs.h:32
-msgid "Exit"
-msgstr "Выход"
-
-#: userdialogs.h:33
-msgid "Run Unprivileged"
-msgstr "Выполнить без привелегий"
 
 #: userhelper.c:92
 #, fuzzy, c-format
@@ -49,17 +95,17 @@ msgstr "Пароль для %s"
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper должен быть setuid root\n"
 
-#: userhelper.c:601 userhelper.c:925
+#: userhelper.c:601 userhelper.c:927
 #, c-format
 msgid "about to authenticate \"%s\"\n"
 msgstr "готовность к аутентификации \"%s\"\n"
 
-#: userhelper.c:606 userhelper.c:930
+#: userhelper.c:606 userhelper.c:932
 #, fuzzy, c-format
 msgid "PAM retval = %d (%s)\n"
 msgstr "код возврата PAM %d\n"
 
-#: userhelper.c:1017 userhelper.c:1056
+#: userhelper.c:1019 userhelper.c:1058
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "выполнение \"%s\"\n"
@@ -141,133 +187,135 @@ msgstr "Невозможно найти выбранную программу."
 msgid "Unknown error."
 msgstr "Неизвестная ошибка."
 
-#: glade.strings:16 glade.strings:19 glade.strings:23 userhelper-wrap.c:234
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:235
 msgid "Placeholder text."
 msgstr ""
 
-#: userhelper-wrap.c:348
+#: userhelper-wrap.c:349
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Необходимы ответы %d.\n"
 
-#: userhelper-wrap.c:381
+#: userhelper-wrap.c:382
 msgid "Error"
 msgstr "Ошибка"
 
-#: userhelper-wrap.c:394
+#: userhelper-wrap.c:395
 #, fuzzy
 msgid "Information"
 msgstr "Информация о пользователе"
 
-#: userhelper-wrap.c:435
+#: userhelper-wrap.c:436
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:437
+#: userhelper-wrap.c:438
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:441
+#: userhelper-wrap.c:442
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:443
+#: userhelper-wrap.c:444
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:454
 #, fuzzy
 msgid "_Run Unprivileged"
 msgstr "Выполнить без привелегий"
 
-#: userhelper-wrap.c:560 userhelper-wrap.c:577 usermount.c:533 usermount.c:621
-#: usermount.c:699
+#: userhelper-wrap.c:561 userhelper-wrap.c:578
 msgid "Pipe error.\n"
 msgstr "Ошибка потока.\n"
 
-#: userhelper-wrap.c:584 usermount.c:538 usermount.c:629 usermount.c:704
+#: userhelper-wrap.c:585
 msgid "Cannot fork().\n"
 msgstr "Невозможно вызвать fork().\n"
 
-#: userhelper-wrap.c:630 userhelper-wrap.c:634 usermount.c:574 usermount.c:581
-#: usermount.c:676 usermount.c:683 usermount.c:737 usermount.c:744
+#: userhelper-wrap.c:631 userhelper-wrap.c:635
 msgid "dup2() error.\n"
 msgstr "ошибка dup2().\n"
 
-#: userhelper-wrap.c:646 usermount.c:587 usermount.c:689 usermount.c:752
+#: userhelper-wrap.c:647
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "ошибка execl(), код ошибки %d\n"
 
-#: userinfo.c:291
+#: userinfo.c:295
 msgid "You don't exist.  Go away.\n"
 msgstr ""
 
-#: usermount.c:57
-msgid "Mount"
+#: glade.strings:26 usermount.c:61
+#, fuzzy
+msgid "_Mount"
 msgstr "Монтирование"
 
-#: usermount.c:58
-msgid "Unmount"
+#: usermount.c:62
+#, fuzzy
+msgid "Un_mount"
 msgstr "Отмонтирование"
 
-#: usermount.c:100
-msgid "User Mount Tool"
-msgstr "Утилита монтирования для пользователей"
-
-#: usermount.c:118
+#: usermount.c:310
+#, fuzzy
 msgid ""
-"There are no user mountable filesystems.\n"
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"Вы уверены?\n"
+"Все данные на этом диске будут уничтожены.\n"
+
+#: usermount.c:321
+#, fuzzy
+msgid "Perform a _low-level format."
+msgstr "Выполнить формат низкого уровня."
+
+#: usermount.c:364
+msgid "Select a _filesystem type to create:"
+msgstr ""
+
+#: usermount.c:521
+#, fuzzy
+msgid ""
+"There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
 "Нет файловых систем, которые может монтировать пользователь.\n"
 "Свяжитесь с системным администратором."
 
-#: usermount.c:157
-msgid "Directory"
-msgstr "Каталог"
+#. Create the dialog.
+#: glade.strings:22 usermount.c:522 usermount.c:530
+msgid "User Mount Tool"
+msgstr "Утилита монтирования для пользователей"
 
-#: usermount.c:164
+#. Create the other buttons.
+#: glade.strings:28 usermount.c:544
+#, fuzzy
+msgid "_Format"
+msgstr "Формат"
+
+#: glade.strings:24 usermount.c:579
 msgid "Device"
 msgstr "Устройство"
 
-#: usermount.c:171
-msgid "Type"
-msgstr "Тип"
+#: glade.strings:23 usermount.c:585
+msgid "Directory"
+msgstr "Каталог"
 
-#: usermount.c:239
-msgid "Format"
-msgstr "Формат"
-
-#: usermount.c:332
-msgid ""
-"Are you sure?\n"
-"You will destroy any data on that disk.\n"
+#: usermount.c:591
+msgid "Filesystem"
 msgstr ""
-"Вы уверены?\n"
-"Все данные на этом диске будут уничтожены.\n"
-
-#: usermount.c:334
-msgid "Yes"
-msgstr "Да"
-
-#: usermount.c:345
-msgid "No"
-msgstr "Нет"
-
-#: usermount.c:354
-msgid "Do low level format."
-msgstr "Выполнить формат низкого уровня."
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -288,24 +336,24 @@ msgstr "Офис:"
 
 #: glade.strings:10
 #, fuzzy
-msgid "Office Phone Number:"
+msgid "Office Phone Number"
 msgstr "Рабочий телефон:"
 
 #: glade.strings:11
 #, fuzzy
-msgid "Home Phone Number:"
+msgid "Home Phone Number"
 msgstr "Домашний телефон:"
 
 #: glade.strings:12
 #, fuzzy
-msgid "Login Shell:"
+msgid "Login Shell"
 msgstr "Оболочка:"
 
-#: glade.strings:13 glade.strings:20 glade.strings:24
+#: glade.strings:13 glade.strings:20
 msgid "_Ok"
 msgstr ""
 
-#: glade.strings:14 glade.strings:21 glade.strings:25
+#: glade.strings:14 glade.strings:21
 #, fuzzy
 msgid "_Cancel"
 msgstr "Отмена"
@@ -318,9 +366,29 @@ msgstr "Сообщение"
 msgid "_Close"
 msgstr ""
 
-#: glade.strings:18 glade.strings:22
+#: glade.strings:18
 msgid "Query"
 msgstr ""
+
+#: glade.strings:25
+msgid "Type"
+msgstr "Тип"
+
+#: glade.strings:27
+#, fuzzy
+msgid "_Unmount"
+msgstr "Отмонтирование"
+
+#: glade.strings:29
+#, fuzzy
+msgid "E_xit"
+msgstr "Выход"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "No"
+#~ msgstr "Нет"
 
 #~ msgid "Prompt"
 #~ msgstr "Приглашение"
@@ -358,24 +426,3 @@ msgstr ""
 
 #~ msgid "This will be some help text."
 #~ msgstr "Здесь должен быть текст помощи."
-
-#~ msgid "(current) UNIX password: "
-#~ msgstr "(текущий) пароль UNIX: "
-
-#~ msgid "New UNIX password: "
-#~ msgstr "Новый пароль UNIX: "
-
-#~ msgid "Retype new UNIX password: "
-#~ msgstr "Повторите новый пароль UNIX: "
-
-#~ msgid "BAD PASSWORD: it's WAY too short"
-#~ msgstr "ПЛОХОЙ ПАРОЛЬ: пароль ОЧЕНЬ короток"
-
-#~ msgid "BAD PASSWORD: it is too short"
-#~ msgstr "ПЛОХОЙ ПАРОЛЬ: слишком короток"
-
-#~ msgid "Password unchanged"
-#~ msgstr "Пароль не изменен"
-
-#~ msgid "Sorry, passwords do not match"
-#~ msgstr "Извините, пароли не совпадают"

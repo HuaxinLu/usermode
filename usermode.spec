@@ -5,7 +5,7 @@ Version: 1.49
 Release: 1
 License: GPL
 Group: Applications/System
-Source: usermode-%{version}.tar.bz2
+Source: usermode-%{version}.tar.gz
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else

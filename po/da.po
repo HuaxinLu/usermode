@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
-"POT-Creation-Date: 2001-11-29 15:16-0500\n"
+"POT-Creation-Date: 2001-12-04 17:15-0500\n"
 "PO-Revision-Date: 2001-02-13 15:24GMT\n"
 "Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
 "Language-Team: danish <dansk@klid.dk>\n"
@@ -10,30 +10,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.8\n"
 
-#: consolehelper.c:92
+#: consolehelper.c:94
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
-#: userdialogs.h:29
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext
+#: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "O.k."
+
+#: dummy.h:22 userdialogs.h:32
+msgid "Exit"
+msgstr "Afslut"
+
+#: dummy.h:23 userdialogs.h:31
+msgid "Cancel"
+msgstr "Fortryd"
+
+#: dummy.h:24 userdialogs.h:33
+msgid "Run Unprivileged"
+msgstr "Kør upriviligeret"
+
+#: dummy.h:25
+msgid "(current) UNIX password: "
+msgstr "(nuværende) UNIX-adgangskode: "
+
+#: dummy.h:26
+msgid "New UNIX password: "
+msgstr "Ny UNIX-adgangskode: "
+
+#: dummy.h:27
+msgid "Retype new UNIX password: "
+msgstr "Tast UNIX-adgangskode igen: "
+
+#: dummy.h:28
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr "DÅRLIG ADGANGSKODE: den er ALT for kort"
+
+#: dummy.h:29
+msgid "BAD PASSWORD: it is too short"
+msgstr "DÅRLIG ADGANGSKODE: den er for kort"
+
+#: dummy.h:30
+msgid "Password unchanged"
+msgstr "Adgangskode uændret"
+
+#: dummy.h:31
+msgid "Sorry, passwords do not match"
+msgstr "Undskyld, adgangskoder er ikke ens"
 
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Hjælp"
-
-#: userdialogs.h:31
-msgid "Cancel"
-msgstr "Fortryd"
-
-#: userdialogs.h:32
-msgid "Exit"
-msgstr "Afslut"
-
-#: userdialogs.h:33
-msgid "Run Unprivileged"
-msgstr "Kør upriviligeret"
 
 #: userhelper.c:92
 #, fuzzy, c-format
@@ -49,17 +95,17 @@ msgstr "Adgangskode for %s"
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper skal være setuid root\n"
 
-#: userhelper.c:601 userhelper.c:925
+#: userhelper.c:601 userhelper.c:927
 #, c-format
 msgid "about to authenticate \"%s\"\n"
 msgstr "skal til at verificere identiteten af \"%s\"\n"
 
-#: userhelper.c:606 userhelper.c:930
+#: userhelper.c:606 userhelper.c:932
 #, fuzzy, c-format
 msgid "PAM retval = %d (%s)\n"
 msgstr "PAM returnerede = %d\n"
 
-#: userhelper.c:1017 userhelper.c:1056
+#: userhelper.c:1019 userhelper.c:1058
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "parat til at køre \"%s\"\n"
@@ -141,133 +187,135 @@ msgstr "Det lykkedes ikke at finde det valgte program"
 msgid "Unknown error."
 msgstr "Ukendt fejl."
 
-#: glade.strings:16 glade.strings:19 glade.strings:23 userhelper-wrap.c:234
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:235
 msgid "Placeholder text."
 msgstr ""
 
-#: userhelper-wrap.c:348
+#: userhelper-wrap.c:349
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Behøver %d svar.\n"
 
-#: userhelper-wrap.c:381
+#: userhelper-wrap.c:382
 msgid "Error"
 msgstr "Fejl"
 
-#: userhelper-wrap.c:394
+#: userhelper-wrap.c:395
 #, fuzzy
 msgid "Information"
 msgstr "Brugerinformation"
 
-#: userhelper-wrap.c:435
+#: userhelper-wrap.c:436
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:437
+#: userhelper-wrap.c:438
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:441
+#: userhelper-wrap.c:442
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:443
+#: userhelper-wrap.c:444
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:454
 #, fuzzy
 msgid "_Run Unprivileged"
 msgstr "Kør upriviligeret"
 
-#: userhelper-wrap.c:560 userhelper-wrap.c:577 usermount.c:533 usermount.c:621
-#: usermount.c:699
+#: userhelper-wrap.c:561 userhelper-wrap.c:578
 msgid "Pipe error.\n"
 msgstr "Rør fejl.\n"
 
-#: userhelper-wrap.c:584 usermount.c:538 usermount.c:629 usermount.c:704
+#: userhelper-wrap.c:585
 msgid "Cannot fork().\n"
 msgstr "Kan ikke fork()\n"
 
-#: userhelper-wrap.c:630 userhelper-wrap.c:634 usermount.c:574 usermount.c:581
-#: usermount.c:676 usermount.c:683 usermount.c:737 usermount.c:744
+#: userhelper-wrap.c:631 userhelper-wrap.c:635
 msgid "dup2() error.\n"
 msgstr "dup2() fejl.\n"
 
-#: userhelper-wrap.c:646 usermount.c:587 usermount.c:689 usermount.c:752
+#: userhelper-wrap.c:647
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() fejl, errno=%d\n"
 
-#: userinfo.c:291
+#: userinfo.c:295
 msgid "You don't exist.  Go away.\n"
 msgstr ""
 
-#: usermount.c:57
-msgid "Mount"
+#: glade.strings:26 usermount.c:61
+#, fuzzy
+msgid "_Mount"
 msgstr "Montér"
 
-#: usermount.c:58
-msgid "Unmount"
+#: usermount.c:62
+#, fuzzy
+msgid "Un_mount"
 msgstr "Afmontér"
 
-#: usermount.c:100
-msgid "User Mount Tool"
-msgstr "Bruger monteringsværktøj"
-
-#: usermount.c:118
+#: usermount.c:310
+#, fuzzy
 msgid ""
-"There are no user mountable filesystems.\n"
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"Er du sikker?\n"
+"Dette vil ødelægge alle data på disken.\n"
+
+#: usermount.c:321
+#, fuzzy
+msgid "Perform a _low-level format."
+msgstr "Lav en formatering på lavniveau"
+
+#: usermount.c:364
+msgid "Select a _filesystem type to create:"
+msgstr ""
+
+#: usermount.c:521
+#, fuzzy
+msgid ""
+"There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
 "Der er ingen brugermontérbare filsystemer.\n"
 "Kontakt din administrator."
 
-#: usermount.c:157
-msgid "Directory"
-msgstr "Katalog"
+#. Create the dialog.
+#: glade.strings:22 usermount.c:522 usermount.c:530
+msgid "User Mount Tool"
+msgstr "Bruger monteringsværktøj"
 
-#: usermount.c:164
+#. Create the other buttons.
+#: glade.strings:28 usermount.c:544
+#, fuzzy
+msgid "_Format"
+msgstr "Formatér"
+
+#: glade.strings:24 usermount.c:579
 msgid "Device"
 msgstr "Enhed"
 
-#: usermount.c:171
-msgid "Type"
-msgstr "Type"
+#: glade.strings:23 usermount.c:585
+msgid "Directory"
+msgstr "Katalog"
 
-#: usermount.c:239
-msgid "Format"
-msgstr "Formatér"
-
-#: usermount.c:332
-msgid ""
-"Are you sure?\n"
-"You will destroy any data on that disk.\n"
+#: usermount.c:591
+msgid "Filesystem"
 msgstr ""
-"Er du sikker?\n"
-"Dette vil ødelægge alle data på disken.\n"
-
-#: usermount.c:334
-msgid "Yes"
-msgstr "Ja"
-
-#: usermount.c:345
-msgid "No"
-msgstr "Nej"
-
-#: usermount.c:354
-msgid "Do low level format."
-msgstr "Lav en formatering på lavniveau"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -288,24 +336,24 @@ msgstr "Kontor:"
 
 #: glade.strings:10
 #, fuzzy
-msgid "Office Phone Number:"
+msgid "Office Phone Number"
 msgstr "Kontortelefon:"
 
 #: glade.strings:11
 #, fuzzy
-msgid "Home Phone Number:"
+msgid "Home Phone Number"
 msgstr "Hjemmetelefon:"
 
 #: glade.strings:12
 #, fuzzy
-msgid "Login Shell:"
+msgid "Login Shell"
 msgstr "Skal:"
 
-#: glade.strings:13 glade.strings:20 glade.strings:24
+#: glade.strings:13 glade.strings:20
 msgid "_Ok"
 msgstr ""
 
-#: glade.strings:14 glade.strings:21 glade.strings:25
+#: glade.strings:14 glade.strings:21
 #, fuzzy
 msgid "_Cancel"
 msgstr "Fortryd"
@@ -318,9 +366,29 @@ msgstr "Besked"
 msgid "_Close"
 msgstr ""
 
-#: glade.strings:18 glade.strings:22
+#: glade.strings:18
 msgid "Query"
 msgstr ""
+
+#: glade.strings:25
+msgid "Type"
+msgstr "Type"
+
+#: glade.strings:27
+#, fuzzy
+msgid "_Unmount"
+msgstr "Afmontér"
+
+#: glade.strings:29
+#, fuzzy
+msgid "E_xit"
+msgstr "Afslut"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "No"
+#~ msgstr "Nej"
 
 #~ msgid "Prompt"
 #~ msgstr "Prompt"
@@ -358,24 +426,3 @@ msgstr ""
 
 #~ msgid "This will be some help text."
 #~ msgstr "Dette vil i fremtiden vise hjælp"
-
-#~ msgid "(current) UNIX password: "
-#~ msgstr "(nuværende) UNIX-adgangskode: "
-
-#~ msgid "New UNIX password: "
-#~ msgstr "Ny UNIX-adgangskode: "
-
-#~ msgid "Retype new UNIX password: "
-#~ msgstr "Tast UNIX-adgangskode igen: "
-
-#~ msgid "BAD PASSWORD: it's WAY too short"
-#~ msgstr "DÅRLIG ADGANGSKODE: den er ALT for kort"
-
-#~ msgid "BAD PASSWORD: it is too short"
-#~ msgstr "DÅRLIG ADGANGSKODE: den er for kort"
-
-#~ msgid "Password unchanged"
-#~ msgstr "Adgangskode uændret"
-
-#~ msgid "Sorry, passwords do not match"
-#~ msgstr "Undskyld, adgangskoder er ikke ens"
