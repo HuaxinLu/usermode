@@ -571,7 +571,11 @@ int main(int argc, char *argv[])
 	    }
 
 	    if (!(child = fork())) {
+		struct passwd *pw;
+
 		setuid(0);
+		pw = getpwuid(getuid());
+		if (pw) setenv("HOME", pw->pw_dir, 1);
 		argv[optind-1] = progname;
 		execv(constructed_path, argv+optind-1);
 		exit (ERR_EXEC_FAILED);

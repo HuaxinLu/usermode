@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.12
+Version: 1.13
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -71,6 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Mon Sep 20 1999 Michael K. Johnson <johnsonm@redhat.com>
+- set $HOME when acting as consolehelper
 - rebuild against new pwdb
 
 * Tue Sep 14 1999 Michael K. Johnson <johnsonm@redhat.com>
