@@ -56,19 +56,19 @@ msgstr "Mot de passe UNIX (courant):"
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Nouveau mot de passe UNIX&nbsp;:"
+msgstr "Nouveau mot de passe UNIX :"
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Retaper le nouveau mot de passe UNIX&nbsp;:"
+msgstr "Retaper le nouveau mot de passe UNIX :"
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "MOT DE PASSE INCORRECT&nbsp;: VRAIMENT trop court"
+msgstr "MOT DE PASSE INCORRECT : VRAIMENT trop court"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "MOT DE PASSE INCORRECT&nbsp;: trop court"
+msgstr "MOT DE PASSE INCORRECT : trop court"
 
 #: dummy.h:30
 msgid "Password unchanged"
@@ -137,7 +137,7 @@ msgstr ""
 #: userhelper.c:373
 #, c-format
 msgid "Password for %s: "
-msgstr "Mot de passe pour %s&nbsp;:"
+msgstr "Mot de passe pour %s :"
 
 #: userhelper.c:647
 msgid "userhelper must be setuid root\n"
@@ -337,7 +337,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Êtes-vous sûr de vouloir formater ce disque&nbsp;? Vous détruirez toutes les "
+"Êtes-vous sûr de vouloir formater ce disque ? Vous détruirez toutes les "
 "données qu'il contient."
 
 #: usermount.c:331
@@ -346,7 +346,7 @@ msgstr "Effectuer un formatage de _bas niveau."
 
 #: usermount.c:374
 msgid "Select a _filesystem type to create:"
-msgstr "Sélectionner un type de système de _fichiers à créer&nbsp;:"
+msgstr "Sélectionner un type de système de _fichiers à créer :"
 
 #: usermount.c:542
 msgid ""
@@ -390,23 +390,23 @@ msgstr "Informations utilisateur"
 
 #: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
-msgstr "Nom complet&nbsp;:"
+msgstr "Nom complet :"
 
 #: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
-msgstr "Bureau&nbsp;:"
+msgstr "Bureau :"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "Téléphone bureau&nbsp;:"
+msgstr "Téléphone bureau :"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr "Téléphone domicile&nbsp;:"
+msgstr "Téléphone domicile :"
 
 #: glade.strings:12 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr "Shell de connexion&nbsp;:"
+msgstr "Shell de connexion :"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
