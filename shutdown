@@ -15,7 +15,7 @@ for flag in $* ; do
 	fi
 done
 if [ -z "$args" -a $prog != /usr/sbin/shutdown ] ; then
-	echo exec $prog $args
+	exec $prog $args
 else
-	echo exec /usr/sbin/shutdown $args $now
+	exec /usr/sbin/shutdown $args $now
 fi
