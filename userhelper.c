@@ -123,6 +123,9 @@ read_string(FILE *fp)
 
 	memset(buffer, '\0', sizeof(buffer));
 
+	if (feof(fp)) {
+		return NULL;
+	}
 	check = fgets(buffer, sizeof(buffer), fp);
 	if (check == NULL) {
 		return NULL;
