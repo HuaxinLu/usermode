@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2000-08-02 12:47-0400\n"
-"PO-Revision-Date: 2000-08-02 17:11+0200\n"
+"POT-Creation-Date: 2000-08-03 15:08-0400\n"
+"PO-Revision-Date: 2000-08-07 13:14+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -126,7 +126,7 @@ msgstr "Okänd slutkod."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Inmatning"
 
 #: ../userhelper-wrap.c:320
 #, c-format
@@ -154,7 +154,7 @@ msgstr "Tog emot felet %d.\n"
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Lösenord för %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
@@ -217,6 +217,14 @@ msgstr "Skal:"
 msgid "This will be some help text."
 msgstr "Det här kommer att vara någon hjälptext."
 
+#: ../usermount.c:56
+msgid "Mount"
+msgstr ""
+
+#: ../usermount.c:57
+msgid "Unmount"
+msgstr ""
+
 #: ../usermount.c:120
 msgid "User Mount Tool"
 msgstr "Monteringsverktyg"
@@ -264,6 +272,3 @@ msgstr "Nej"
 #: ../usermount.c:382
 msgid "Do low level format."
 msgstr "Lågnivåformatera."
-
-#~ msgid "%s's password"
-#~ msgstr "%ss lösenord"
