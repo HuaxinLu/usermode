@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.26
-Release: 2
+Version: 1.27
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -27,8 +27,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make PREFIX=$RPM_BUILD_ROOT install bindir=%{_bindir} mandir=%{_mandir} sbindir=%{_sbindir}
-make PREFIX=$RPM_BUILD_ROOT install-man bindir=%{_bindir} mandir=%{_mandir} sbindir=%{_sbindir}
+make PREFIX=$RPM_BUILD_ROOT bindir=%{_bindir} mandir=%{_mandir} sbindir=%{_sbindir} install install-man install-po
 
 # Stuff from pam_console, for sysvinit. Here for lack of a better
 # place....
@@ -74,6 +73,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Mon Jul 31 2000 Nalin Dahyabhia <nalin@redhat.com>
+- attempt to add i18n support
+
 * Wed Jul 12 2000 Nalin Dahyabhia <nalin@redhat.com>
 - attempt to get a usable icon for userhelper-wrap (#13616, #13768)
 
