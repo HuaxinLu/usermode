@@ -1,5 +1,5 @@
 # Swedish messages for usermode.
-# Copyright (C) 2001, 2002, 2003 Christian Rose <menthos@menthos.com>.
+# Copyright (C) 2001, 2002, 2003, 2004 Christian Rose <menthos@menthos.com>.
 #
 # $Id$
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2003-10-02 20:55+0200\n"
+"PO-Revision-Date: 2004-10-05 01:29+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,7 @@ msgstr "Lösenord: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Misslyckades med att släppa administratörsprivilegier: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -101,6 +101,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"Misslyckades med att släppa administratörsprivilegier: pam_timestamp_check "
+"returnerade misslyckandekod %d"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -108,53 +110,62 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"Du är för tillfället auktoriserad att konfigurera systemvida inställningar "
+"(som påverkar alla användare) utan att behöva ange administratörslösenordet "
+"igen. Du kan ge upp denna auktorisering."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Behåll auktorisering"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Glöm auktorisering"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check är inte setuid root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "ingen kontrollerande tty för pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "användaren okänd för pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "rättighetsfel i pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "ogiltig kontrollerande tty i pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Fel"
+msgstr "Fel: %s\n"
+
+msgid "Error: %s"
+msgstr "Fel: %s"
+
+msgid "Error:"
+msgstr "Fel:"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Misslyckades med att köra kommandot \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Misslyckades med att ställa IO-kanalen till ickeblockerande: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: misslyckades med att ansluta till sessionshanteraren\n"
 
 #: userdialogs.h:30
 msgid "Help"
