@@ -46,6 +46,7 @@ static GIOChannel *child_io_channel = NULL;
 static pid_t child_pid = -1;
 static EggTrayIcon *icon = NULL;
 static GtkWidget *dialog = NULL;
+static GtkWidget *start_dialog = NULL;
 
 static void show_icon    (void);
 static void hide_icon    (void);
@@ -424,6 +425,31 @@ show_icon (void)
                         G_CALLBACK (icon_clicked_event), NULL);
     }
 
+  /* When the icon first appears show a dialog */
+  if (icon && !GTK_WIDGET_VISIBLE (icon))
+    {
+      if (start_dialog == NULL)
+        {
+          start_dialog =
+            gtk_message_dialog_new (NULL,
+                                    GTK_DIALOG_DESTROY_WITH_PARENT,
+                                    GTK_MESSAGE_INFO,
+                                    GTK_BUTTONS_CLOSE,
+                                    _("You are now authorized to modify system settings that affect all users of this computer.\nThis authorization will remain active for a short time."));
+
+          g_object_add_weak_pointer (G_OBJECT (start_dialog),
+                                     (void**) &start_dialog);
+          
+          gtk_window_set_resizable (GTK_WINDOW (start_dialog), FALSE);
+
+          g_signal_connect (G_OBJECT (start_dialog), "response",
+                            G_CALLBACK (gtk_widget_destroy),
+                            NULL);
+        }
+
+      gtk_window_present (GTK_WINDOW (start_dialog));
+    }
+  
   gtk_widget_show (GTK_WIDGET (icon));
   
   /* g_print ("showing icon status = %d child_pid = %d\n", current_status, child_pid); */
@@ -437,6 +463,9 @@ hide_icon (void)
       gtk_widget_destroy (GTK_WIDGET (icon));
       icon = NULL;
     }
+
+  if (start_dialog != NULL)
+    gtk_widget_destroy (start_dialog);
 
   /*   g_print ("hiding icon status = %d child_pid = %d\n", current_status, child_pid); */
 }
