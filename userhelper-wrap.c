@@ -185,7 +185,8 @@ userhelper_parse_exitstatus(int exitstatus)
       message_box = create_error_box("Invalid call to sub process.", NULL);
       break;
     case ERR_SHELL_INVALID:
-      message_box = create_error_box("No such shell in /etc/shells.", NULL);
+      message_box = create_error_box("Your current shell is not listed in /etc/shells.\nYou are not allowed to change your shell.\nConsult your system administrator.", NULL);
+      break;
     case ERR_UNK_ERROR:
       message_box = create_error_box("Unknown error.", NULL);
       break;
