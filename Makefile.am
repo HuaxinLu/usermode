@@ -66,6 +66,10 @@ $(WRAPPED_APPS): wrapped.console
 	$(INSTALL) -m600 $^ $@
 $(INIT_APPS): pam_timestamp_init.console
 	$(INSTALL) -m600 $^ $@
+debug-install:
+	$(INSTALL) -m4711 userhelper $(sbindir)/
+	$(INSTALL)  -m755 consolehelper $(bindir)/
+	$(INSTALL)  -m755 consolehelper-gtk $(bindir)/
 
 pkgdata_DATA = usermode.glade
 
