@@ -117,6 +117,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Fri Nov 14 2003 Nalin Dahyabhai <nalin@redhat.com>
+- don't disable use of deprecated GLib and GTK+ APIs, reported by the
+  mysterious Pierre-with-no-last-name
+
 * Thu Oct 30 2003 Dan Walsh <dwalsh@redhat.com> 1.69-2.sel
 - Turn on sleinux
 
