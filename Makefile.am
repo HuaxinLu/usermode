@@ -13,6 +13,7 @@ EXTRA_DIST = 	\
 	userinfo.desktop.in \
 	usermount.desktop.in \
 	userpasswd.desktop.in \
+	marshal.list \
 	pam_timestamp_init.console \
 	pam_timestamp_init.pamd \
 	wrapped.console \
