@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2003-01-24 11:11+0200\n"
+"PO-Revision-Date: 2003-10-17 11:11+0100\n"
 "Last-Translator: Tamas Szanto <tszanto@mol.hu>\n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
@@ -78,12 +78,11 @@ msgstr "Adminisztrátori programok indítása jelszó nélkül."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "Név: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Jelszó"
+msgstr "Jelszó: "
 
 #: userdialogs.h:30
 msgid "Help"
@@ -92,7 +91,7 @@ msgstr "Segítség"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Nem sikerült beállítani a futtatási kontextust erre: %s.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -278,7 +277,7 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai joggal próbált végrehajtani egy parancsot.A parancs "
+"Rendszergazdai joggal próbált végrehajtani egy parancsot. A parancs "
 "használatához szükség lehet erre, de nincs megadva minden szükséges "
 "információ."
 
@@ -287,13 +286,13 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai joggal próbált végrehajtani egy parancsot.A parancs csak "
+"Rendszergazdai joggal próbált végrehajtani egy parancsot. A parancs csak "
 "rendszergazdai joggal használható, de nincs megadva minden szükséges "
 "információ."
 
 #: userhelper-wrap.c:795
 msgid "_Run Unprivileged"
-msgstr "Futtatás normál jogosultsággal"
+msgstr "Futtatás n_ormál jogosultsággal"
 
 #: userhelper-wrap.c:931
 msgid "Pipe error.\n"
@@ -318,46 +317,45 @@ msgstr "Az Ön neve nem is létezik...\n"
 
 #: usermount.c:62 glade.strings:26
 msgid "_Mount"
-msgstr "Csatlakoztatás (mount)"
+msgstr "_Csatlakoztatás (mount)"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "Un_mount"
+msgstr "Le_választás"
 
 #: usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Biztosan le szeretné formázni a lemezt? A most rajta található adatok "
+"Biztosan le szeretné formázni a lemezt? A rajta található adatok "
 "véglegesen elvesznek!"
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr "Alacsony szintû formázás végrehajtása."
+msgstr "Ala_csony szintû formázás végrehajtása."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Válassza ki a kívánt fájlrendszert:"
+msgstr "Válassza ki _a kívánt fájlrendszert:"
 
 #: usermount.c:543
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Önnek nincs jogosultsága egy fájlrendszer csatlakoztatására/leválasztására "
-"sem.\n"
+"Önnek nincs jogosultsága egy fájlrendszer csatlakoztatására/leválasztására sem.\n"
 "Kérjen segítséget a rendszergazdától."
 
 #. Create the dialog.
 #: usermount.c:544 usermount.c:555 glade.strings:22
 msgid "User Mount Tool"
-msgstr "Lemezcsatlakoztatási segédeszköz"
+msgstr "Lemezcsatlakoztatási segédprogram"
 
 #. Create the other buttons.
 #: usermount.c:569 glade.strings:28
 msgid "_Format"
-msgstr "Formázás"
+msgstr "_Formázás"
 
 #: usermount.c:605 glade.strings:24
 msgid "Device"
@@ -402,11 +400,11 @@ msgstr "Bejelentkezési parancsértelmezõ:"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr "OK"
+msgstr "_OK"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
-msgstr "Mégsem"
+msgstr "_Mégsem"
 
 #: glade.strings:15 usermode.glade.h:5
 msgid "Message"
@@ -414,7 +412,7 @@ msgstr "Üzenet"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr "Bezárás"
+msgstr "Be_zárás"
 
 #: glade.strings:25
 msgid "Type"
@@ -422,11 +420,11 @@ msgstr "Típus"
 
 #: glade.strings:27
 msgid "_Unmount"
-msgstr "Leválasztás (unmount)"
+msgstr "_Leválasztás (unmount)"
 
 #: glade.strings:29
 msgid "E_xit"
-msgstr "Kilépés"
+msgstr "_Kilépés"
 
 #: usermode.glade.h:1
 msgid "*"
@@ -456,11 +454,3 @@ msgstr "A jelszó megváltoztatása"
 msgid "Password"
 msgstr "Jelszó"
 
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "PAM hiba: %d.\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "\"%s\" végrehajtása következik\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "%d válaszra van szükség.\n"
