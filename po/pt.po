@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2002-09-03 11:37+0100\n"
+"PO-Revision-Date: 2003-09-29 10:38+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -81,12 +81,11 @@ msgstr "Lança as ferramentas de configuração do sistema sem se autenticar."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "Utilizador: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Senha"
+msgstr "Senha: "
 
 #: userdialogs.h:30
 msgid "Help"
@@ -95,7 +94,7 @@ msgstr "Ajuda"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Não foi possível mudar o contexto de execução para %s.\n"
 
 #: userhelper.c:431
 #, c-format
