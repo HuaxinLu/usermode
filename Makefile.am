@@ -21,7 +21,6 @@ EXTRA_DIST = config.rpath  \
 SUBDIRS= m4 intl po
 
 CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@
-consolehelper_CFLAGS = -DDISABLE_X11 $(CFLAGS)
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk
 bin_SCRIPTS = shutdown
@@ -56,7 +55,9 @@ usermount_LDADD = @LIBGLADE_LIBS@ @LIBS@
 userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c
 userpasswd_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
-consolehelper_SOURCES = consolehelper.c
+# Aaagh! I want automake 1.5!
+consolehelper_CFLAGS = -DDISABLE_X11 $(CFLAGS)
+consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_LDADD = @GLIB_LIBS@ @LIBS@
 
 consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userhelper-wrap.c
