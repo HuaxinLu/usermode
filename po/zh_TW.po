@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-07-23 21:12-0400\n"
+"POT-Creation-Date: 2002-07-24 09:26-0400\n"
 "PO-Revision-Date: 2002-07-24 12:28+1000\n"
 "Last-Translator: Ben Wu <hpwu@redhat.com>\n"
 "Language-Team: Chinese (traditional) <i18n-list@redhat.com>\n"
@@ -86,65 +86,61 @@ msgstr "求助"
 msgid "Got PAM error %d.\n"
 msgstr "有 PAM 錯誤 %d。\n"
 
-#: userhelper.c:210
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "%s 的密碼"
 
-#: userhelper.c:351
+#: userhelper.c:320
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
+"You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"您試著要執行 \"%s\"，這將使您有管理者的權限，\n"
-"但為了要如此做您需要更多資訊。"
+"您試著要執行 \"%s\", 這將使您有 superuser\n"
+"的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:353
+#: userhelper.c:322
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
+"You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"您試著要執行 \"%s\"，您需要有管理者的權限，\n"
-"但為了要如此做您需要更多資訊。"
+"您試著要執行 \"%s\", 您需要有 superuser\n"
+"的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:357
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
+"superuser privileges, but more information is needed in order to do so."
 msgstr ""
-"您試著要執行一個指令，這將使您有管理者的權限，\n"
-"但為了要如此做您需要更多資訊。"
+"您試著要執行一個指令, 這將使您有\n"
+"superuser 的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:359
+#: userhelper.c:328
 msgid ""
-"You are attempting to run a command which requires administrative\n"
+"You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"您試著要執行一個指令，您需要有管理者的權限,\n"
-"但為了要如此做您需要更多資訊。"
+"您試著要執行一個指令, 您需要有 superuser\n"
+"的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:377
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "%s 的密碼： "
 
-#: userhelper.c:660
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必須 setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:742
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:711
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗，且找不到控制終端機。\n"
 
-#: userhelper.c:1393 userhelper.c:1454
-#, c-format
-msgid "Starting \"%s\" with administrative privileges."
-msgstr "以管理者的權限啟動 \"%s\"。"
-
-#: userhelper.c:1418 userhelper.c:1465
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "即將執行 \"%s\"\n"
@@ -255,26 +251,30 @@ msgstr "更改登入 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:458
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:463
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:465
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
@@ -414,35 +414,38 @@ msgstr "卸載(_U)"
 msgid "E_xit"
 msgstr "離開(_x)"
 
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "更改個人資訊。"
-
 #~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
+#~ "You are attempting to run \"%s\" which may benefit from administrative\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "您試著要執行 \"%s\", 這將使您有 superuser\n"
-#~ "的權限, 但為了要如此做您需要更多資訊。"
+#~ "您試著要執行 \"%s\"，這將使您有管理者的權限，\n"
+#~ "但為了要如此做您需要更多資訊。"
 
 #~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
+#~ "You are attempting to run \"%s\" which requires administrative\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "您試著要執行 \"%s\", 您需要有 superuser\n"
-#~ "的權限, 但為了要如此做您需要更多資訊。"
+#~ "您試著要執行 \"%s\"，您需要有管理者的權限，\n"
+#~ "但為了要如此做您需要更多資訊。"
 
 #~ msgid ""
 #~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
+#~ "administrative privileges, but more information is needed in order to do "
+#~ "so."
 #~ msgstr ""
-#~ "您試著要執行一個指令, 這將使您有\n"
-#~ "superuser 的權限, 但為了要如此做您需要更多資訊。"
+#~ "您試著要執行一個指令，這將使您有管理者的權限，\n"
+#~ "但為了要如此做您需要更多資訊。"
 
 #~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
+#~ "You are attempting to run a command which requires administrative\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "您試著要執行一個指令, 您需要有 superuser\n"
-#~ "的權限, 但為了要如此做您需要更多資訊。"
+#~ "您試著要執行一個指令，您需要有管理者的權限,\n"
+#~ "但為了要如此做您需要更多資訊。"
 
+#~ msgid "Starting \"%s\" with administrative privileges."
+#~ msgstr "以管理者的權限啟動 \"%s\"。"
+
+#, fuzzy
+#~ msgid "Change personal information"
+#~ msgstr "更改個人資訊。"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-07-23 21:12-0400\n"
+"POT-Creation-Date: 2002-07-24 09:26-0400\n"
 "PO-Revision-Date: 2002-07-19 17:01+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -86,69 +86,64 @@ msgstr "Hjälp"
 msgid "Got PAM error %d.\n"
 msgstr "Fick PAM-fel %d.\n"
 
-#: userhelper.c:210
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "Lösenord för %s"
 
-#: userhelper.c:351
-#, fuzzy, c-format
+#: userhelper.c:320
+#, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
+"You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, "
+"Du försöker köra \"%s\" vilket kan dra nytta av\n"
+"superanvändarrättigheter, men mer information krävs\n"
+"för att kunna göra det."
+
+#: userhelper.c:322
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires superuser\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Du försöker köra \"%s\" som kräver superanvändarrättigheter,\n"
 "men mer information krävs för att kunna göra det."
 
-#: userhelper.c:353
-#, fuzzy, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer "
-"information krävs för att kunna göra det."
-
-#: userhelper.c:357
-#, fuzzy
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
+"superuser privileges, but more information is needed in order to do so."
 msgstr ""
-"Du försöker köra ett kommando som kan dra nytta av administrativa "
-"rättigheter, men mer information krävs för att kunna göra det."
+"Du försöker köra ett kommando vilket kan dra nytta av\n"
+"superanvändarrättigheter, men mer information krävs för\n"
+"att kunna göra det."
 
-#: userhelper.c:359
-#, fuzzy
+#: userhelper.c:328
 msgid ""
-"You are attempting to run a command which requires administrative\n"
+"You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du försöker köra ett kommando som kräver administrativa rättigheter, men mer "
-"information krävs för att kunna göra det."
+"Du försöker köra ett kommando som kräver superanvändarrättigheter,\n"
+"men mer information krävs för att kunna göra det."
 
-#: userhelper.c:377
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "Lösenord för %s: "
 
-#: userhelper.c:660
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper måste vara setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:742
+#: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kan inte öppna grafiskt fönster och kan inte hitta kontrollerande terminal.\n"
 
-#: userhelper.c:1393 userhelper.c:1454
-#, c-format
-msgid "Starting \"%s\" with administrative privileges."
-msgstr ""
-
-#: userhelper.c:1418 userhelper.c:1465
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "kommer att köra \"%s\"\n"
@@ -428,6 +423,39 @@ msgstr "_Avmontera"
 msgid "E_xit"
 msgstr "A_vsluta"
 
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which may benefit from administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Du försöker köra \"%s\" vilket kan dra nytta av administrativa "
+#~ "rättigheter, men mer information krävs för att kunna göra det."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which requires administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer "
+#~ "information krävs för att kunna göra det."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run a command which may benefit from\n"
+#~ "administrative privileges, but more information is needed in order to do "
+#~ "so."
+#~ msgstr ""
+#~ "Du försöker köra ett kommando som kan dra nytta av administrativa "
+#~ "rättigheter, men mer information krävs för att kunna göra det."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run a command which requires administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Du försöker köra ett kommando som kräver administrativa rättigheter, men "
+#~ "mer information krävs för att kunna göra det."
+
 #~ msgid "About Myself"
 #~ msgstr "Om mig själv"
 
@@ -448,36 +476,6 @@ msgstr "A_vsluta"
 #, fuzzy
 #~ msgid "Change your login password"
 #~ msgstr "Byt lösenord"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du försöker köra \"%s\" vilket kan dra nytta av\n"
-#~ "superanvändarrättigheter, men mer information krävs\n"
-#~ "för att kunna göra det."
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du försöker köra \"%s\" som kräver superanvändarrättigheter,\n"
-#~ "men mer information krävs för att kunna göra det."
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du försöker köra ett kommando vilket kan dra nytta av\n"
-#~ "superanvändarrättigheter, men mer information krävs för\n"
-#~ "att kunna göra det."
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du försöker köra ett kommando som kräver superanvändarrättigheter,\n"
-#~ "men mer information krävs för att kunna göra det."
 
 #~ msgid "about to authenticate \"%s\"\n"
 #~ msgstr "kommer att autentisera \"%s\"\n"

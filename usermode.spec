@@ -52,7 +52,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
 for wrappedapp in halt reboot poweroff ; do
 	ln -s consolehelper $RPM_BUILD_ROOT%{_bindir}/${wrappedapp}
-	install -m644 wrapped.console $RPM_BUILD_ROOT/etc/security/console.apps/${wrappedapp}
+	install -m644 $wrappedapp $RPM_BUILD_ROOT/etc/security/console.apps/${wrappedapp}
 %if %{build6x}
 	cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %else

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
-"POT-Creation-Date: 2002-07-23 21:12-0400\n"
+"POT-Creation-Date: 2002-07-24 09:26-0400\n"
 "PO-Revision-Date: 2002-07-24 15:20GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
@@ -88,67 +88,63 @@ msgstr "ヘルプ"
 msgid "Got PAM error %d.\n"
 msgstr "PAMエラーが発生しました。%d\n"
 
-#: userhelper.c:210
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "%sのパスワード"
 
-#: userhelper.c:351
+#: userhelper.c:320
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
+"You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行するに\n"
-"は追加情報が必要です。"
+"スーパユーザ権限から役得を得る様な\"%s\"を実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
 
-#: userhelper.c:353
+#: userhelper.c:322
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
+"You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには \n"
-"追加情報が必要です。"
+"スーパユーザ権限が必要な\"%s\"を実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
 
-#: userhelper.c:357
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
+"superuser privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になるコマンドを実行しようとしていますが、\n "
-"実行するには追加情報が必要です。"
+"スーパユーザ権限から役得を得るようなコマンドを実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
 
-#: userhelper.c:359
+#: userhelper.c:328
 msgid ""
-"You are attempting to run a command which requires administrative\n"
+"You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには\n"
+"スーパユーザ権限が必要なコマンドを実行しようとしていますが、実行するには \n"
 "追加情報が必要です。"
 
-#: userhelper.c:377
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "%s:用のパスワード"
 
-#: userhelper.c:660
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:742
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:711
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
 
-#: userhelper.c:1393 userhelper.c:1454
-#, c-format
-msgid "Starting \"%s\" with administrative privileges."
-msgstr "管理者権限で\"%s\"をスタート中です。"
-
-#: userhelper.c:1418 userhelper.c:1465
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\"を実行しようとしています\n"
@@ -428,6 +424,41 @@ msgstr "マウント解除(_U)"
 msgid "E_xit"
 msgstr "終了(_x)"
 
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which may benefit from administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行する"
+#~ "に\n"
+#~ "は追加情報が必要です。"
+
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which requires administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するに"
+#~ "は \n"
+#~ "追加情報が必要です。"
+
+#~ msgid ""
+#~ "You are attempting to run a command which may benefit from\n"
+#~ "administrative privileges, but more information is needed in order to do "
+#~ "so."
+#~ msgstr ""
+#~ "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、\n"
+#~ " 実行するには追加情報が必要です。"
+
+#~ msgid ""
+#~ "You are attempting to run a command which requires administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するに"
+#~ "は\n"
+#~ "追加情報が必要です。"
+
+#~ msgid "Starting \"%s\" with administrative privileges."
+#~ msgstr "管理者権限で\"%s\"をスタート中です。"
+
 #~ msgid "About Myself"
 #~ msgstr "¥æ¡¼¥¶¾ðÊó"
 
@@ -449,35 +480,5 @@ msgstr "終了(_x)"
 #~ msgid "Change your login password"
 #~ msgstr "¥Ñ¥¹¥ï¡¼¥ÉÊÑ¹¹"
 
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "スーパユーザ権限から役得を得る様な\"%s\"を実行しようとしていますが、\n"
-#~ " 実行するには追加情報が必要です。"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "スーパユーザ権限が必要な\"%s\"を実行しようとしていますが、\n"
-#~ " 実行するには追加情報が必要です。"
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "スーパユーザ権限から役得を得るようなコマンドを実行しようとしていますが、\n"
-#~ " 実行するには追加情報が必要です。"
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "スーパユーザ権限が必要なコマンドを実行しようとしていますが、実行するに"
-#~ "は \n"
-#~ "追加情報が必要です。"
-
 #~ msgid "Change account information"
 #~ msgstr "¥¢¥«¥¦¥ó¥È¾ðÊó¤ÎÊÑ¹¹¥Ä¡¼¥ë"
-

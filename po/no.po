@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
-"POT-Creation-Date: 2002-07-23 21:12-0400\n"
+"POT-Creation-Date: 2002-07-24 09:26-0400\n"
 "PO-Revision-Date: 2002-06-29 21:27+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -81,70 +81,63 @@ msgstr "Hjelp"
 msgid "Got PAM error %d.\n"
 msgstr "Mottok PAM-feil %d.\n"
 
-#: userhelper.c:210
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "Passord for %s"
 
-#: userhelper.c:351
-#, fuzzy, c-format
+#: userhelper.c:320
+#, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
+"You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med "
 "superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
-#: userhelper.c:353
-#, fuzzy, c-format
+#: userhelper.c:322
+#, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
+"You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi "
 "mer informasjon for å gjøre dette."
 
-#: userhelper.c:357
-#, fuzzy
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
+"superuser privileges, but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre en kommando som med fordel kan kjøres med "
+"Du prøver å kjøre en kommando har fordeler hvis den kjøres med "
 "superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
-#: userhelper.c:359
-#, fuzzy
+#: userhelper.c:328
 msgid ""
-"You are attempting to run a command which requires administrative\n"
+"You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må "
 "oppgi mer informasjon for å gjøre dette."
 
-#: userhelper.c:377
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "Passord for %s: "
 
-#: userhelper.c:660
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper må være setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:742
+#: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kunne ikke åpne grafisk vindu; og er ute av stand til å finne en "
 "kontrollerende terminal.\n"
 
-#: userhelper.c:1393 userhelper.c:1454
-#, c-format
-msgid "Starting \"%s\" with administrative privileges."
-msgstr ""
-
-#: userhelper.c:1418 userhelper.c:1465
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "i ferd med å kjøre \"%s\"\n"
@@ -425,33 +418,38 @@ msgid "E_xit"
 msgstr "A_vslutt"
 
 #, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "Endrer personlig informasjon."
-
 #~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
+#~ "You are attempting to run \"%s\" which may benefit from administrative\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
 #~ "Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med "
 #~ "superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
+#, fuzzy
 #~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
+#~ "You are attempting to run \"%s\" which requires administrative\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
 #~ "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi "
 #~ "mer informasjon for å gjøre dette."
 
+#, fuzzy
 #~ msgid ""
 #~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
+#~ "administrative privileges, but more information is needed in order to do "
+#~ "so."
 #~ msgstr ""
-#~ "Du prøver å kjøre en kommando har fordeler hvis den kjøres med "
+#~ "Du prøver å kjøre en kommando som med fordel kan kjøres med "
 #~ "superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
+#, fuzzy
 #~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
+#~ "You are attempting to run a command which requires administrative\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
 #~ "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du "
 #~ "må oppgi mer informasjon for å gjøre dette."
+
+#, fuzzy
+#~ msgid "Change personal information"
+#~ msgstr "Endrer personlig informasjon."

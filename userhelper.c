@@ -317,15 +317,15 @@ converse_console(int num_msg, const struct pam_message **msg,
 	if (banner == 0) {
 		if ((service != NULL) && (strlen(service) > 0)) {
 			if (app_data->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from superuser\nprivileges, but more information is needed in order to do so."), service);
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative\nprivileges, but more information is needed in order to do so."), service);
 			} else {
-				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires superuser\nprivileges, but more information is needed in order to do so."), service);
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative\nprivileges, but more information is needed in order to do so."), service);
 			}
 		} else {
 			if (app_data->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run a command which may benefit from\nsuperuser privileges, but more information is needed in order to do so."), service);
+				text = g_strdup_printf(_("You are attempting to run a command which may benefit from\nadministrative privileges, but more information is needed in order to do so."));
 			} else {
-				text = g_strdup_printf(_("You are attempting to run a command which requires superuser\nprivileges, but more information is needed in order to do so."), service);
+				text = g_strdup_printf(_("You are attempting to run a command which requires administrative\nprivileges, but more information is needed in order to do so."), service);
 			}
 		}
 		if (text != NULL) {
@@ -799,7 +799,8 @@ main(int argc, char **argv)
 		 * PAM doesn't provide an interface to do this, because it's
 		 * not PAM's job to manage this stuff, so farm it out to a
 		 * different library. */
-		char *new_gecos = NULL, *auth_user, *gecos, *old_shell;
+		char *new_gecos = NULL, *auth_user, *gecos = NULL;
+		char *old_shell = NULL;
 		struct lu_context *context;
 		struct lu_ent *ent = NULL;
 		struct lu_error *error = NULL;
@@ -1157,7 +1158,8 @@ main(int argc, char **argv)
 		/* If the file is world-writable, or isn't a regular file, or
 		 * couldn't be open, just exit.  We don't want to alert an
 		 * attacker that the service name is invalid. */
-		if ((fstat(s->fd, &sbuf) == -1) ||
+		if ((s == NULL) ||
+		    (fstat(s->fd, &sbuf) == -1) ||
 		    !S_ISREG(sbuf.st_mode) ||
 		    (sbuf.st_mode & S_IWOTH)) {
 #ifdef DEBUG_USERHELPER

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.37\n"
-"POT-Creation-Date: 2002-07-23 21:12-0400\n"
+"POT-Creation-Date: 2002-07-24 09:26-0400\n"
 "PO-Revision-Date: 2002-04-02 17:33GMT\n"
 "Last-Translator: Bettina De Monti <bettina@redhat.it>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -87,74 +87,69 @@ msgstr "Aide"
 msgid "Got PAM error %d.\n"
 msgstr "Erreur PAM %d.\n"
 
-#: userhelper.c:210
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "Mot de passe pour %s"
 
-#: userhelper.c:351
+#: userhelper.c:320
 #, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
+"You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Vous essayez d'exécuter \"%s\" qui pourrait nécessiter des privilèges du "
 "super-utilisateur. De plus amples informations sont toutefois requises pour "
 "cette opération."
 
-#: userhelper.c:353
+#: userhelper.c:322
 #, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
+"You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Vous essayez d'exécuter \"%s\" qui nécessite des privilèges du super-"
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
 "opération."
 
-#: userhelper.c:357
+#: userhelper.c:326
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
+"superuser privileges, but more information is needed in order to do so."
 msgstr ""
 "Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges "
 "du super-utilisateur. De plus amples informations sont toutefois requises "
 "pour cette opération."
 
-#: userhelper.c:359
+#: userhelper.c:328
 #, fuzzy
 msgid ""
-"You are attempting to run a command which requires administrative\n"
+"You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Vous essayez d'exécuter une commande qui nécessite des privilèges du super-"
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
 "opération."
 
-#: userhelper.c:377
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "Mot de passe pour %s :"
 
-#: userhelper.c:660
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper doit être setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:742
+#: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
 "contrôle.\n"
 
-#: userhelper.c:1393 userhelper.c:1454
-#, c-format
-msgid "Starting \"%s\" with administrative privileges."
-msgstr ""
-
-#: userhelper.c:1418 userhelper.c:1465
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "début de l'exécution de \"%s\"\n"

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
-"POT-Creation-Date: 2002-07-23 21:12-0400\n"
+"POT-Creation-Date: 2002-07-24 09:26-0400\n"
 "PO-Revision-Date: 2002-07-05 15:24+0200\n"
 "Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: danish <dansk@klid.dk>\n"
@@ -82,70 +82,63 @@ msgstr "Hjælp"
 msgid "Got PAM error %d.\n"
 msgstr "Fik PAM-fejl %d.\n"
 
-#: userhelper.c:210
+#: userhelper.c:203
 #, c-format
 msgid "Password for %s"
 msgstr "Adgangskode for %s"
 
-#: userhelper.c:351
-#, fuzzy, c-format
+#: userhelper.c:320
+#, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
+"You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre '%s', som kan have gavn af adminstrator-rettigheder,\n"
+"Du forsøger at køre '%s', som kan have gavn af superbruger-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: userhelper.c:353
-#, fuzzy, c-format
+#: userhelper.c:322
+#, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
+"You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre '%s', som kræver adminstrator-rettigheder,\n"
+"Du forsøger at køre '%s', som kræver superbruger-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: userhelper.c:357
-#, fuzzy
+#: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
+"superuser privileges, but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre en kommando, som kan have gavn af adminstrator-"
+"Du forsøger at køre en kommando, som kan have gavn af superbruger-"
 "rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: userhelper.c:359
-#, fuzzy
+#: userhelper.c:328
 msgid ""
-"You are attempting to run a command which requires administrative\n"
+"You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre en kommando, som kræver adminstrator-rettigheder,\n"
+"Du forsøger at køre en kommando, som kræver superbruger-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: userhelper.c:377
+#: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
 msgstr "Adgangskode for %s:"
 
-#: userhelper.c:660
+#: userhelper.c:629
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper skal være setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:742
+#: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
-#: userhelper.c:1393 userhelper.c:1454
-#, c-format
-msgid "Starting \"%s\" with administrative privileges."
-msgstr ""
-
-#: userhelper.c:1418 userhelper.c:1465
+#: userhelper.c:1373 userhelper.c:1411
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "parat til at køre \"%s\"\n"
@@ -427,6 +420,40 @@ msgid "E_xit"
 msgstr "Af_slut"
 
 #, fuzzy
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which may benefit from administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Du forsøger at køre '%s', som kan have gavn af adminstrator-rettigheder,\n"
+#~ "men mere information er nødvendigt for at gøre dette."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which requires administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Du forsøger at køre '%s', som kræver adminstrator-rettigheder,\n"
+#~ "men mere information er nødvendigt for at gøre dette."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run a command which may benefit from\n"
+#~ "administrative privileges, but more information is needed in order to do "
+#~ "so."
+#~ msgstr ""
+#~ "Du forsøger at køre en kommando, som kan have gavn af adminstrator-"
+#~ "rettigheder,\n"
+#~ "men mere information er nødvendigt for at gøre dette."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run a command which requires administrative\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Du forsøger at køre en kommando, som kræver adminstrator-rettigheder,\n"
+#~ "men mere information er nødvendigt for at gøre dette."
+
+#, fuzzy
 #~ msgid "Change personal information"
 #~ msgstr "Ændrer personlige oplysninger."
 
@@ -437,35 +464,6 @@ msgstr "Af_slut"
 #, fuzzy
 #~ msgid "Change your login password"
 #~ msgstr "Skifter adgangskode for %s"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du forsøger at køre '%s', som kan have gavn af superbruger-rettigheder,\n"
-#~ "men mere information er nødvendigt for at gøre dette."
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du forsøger at køre '%s', som kræver superbruger-rettigheder,\n"
-#~ "men mere information er nødvendigt for at gøre dette."
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du forsøger at køre en kommando, som kan have gavn af superbruger-"
-#~ "rettigheder,\n"
-#~ "men mere information er nødvendigt for at gøre dette."
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du forsøger at køre en kommando, som kræver superbruger-rettigheder,\n"
-#~ "men mere information er nødvendigt for at gøre dette."
 
 #~ msgid "about to authenticate \"%s\"\n"
 #~ msgstr "skal til at verificere identiteten af \"%s\"\n"

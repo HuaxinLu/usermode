@@ -56,7 +56,7 @@ install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 consoleappdir = $(sysconfdir)/security/console.apps
 WRAPPED_APPS = halt poweroff reboot
 consoleapp_DATA = $(WRAPPED_APPS)
-$(WRAPPED_APPS): /dev/null
+$(WRAPPED_APPS): wrapped.console
 	$(INSTALL) -m600 $^ $@
 
 pkgdata_DATA = usermode.glade
