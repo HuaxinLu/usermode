@@ -88,6 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 * Wed Aug 23 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix stdin/stdout redirection shenanigans (#11706)
 - fix authentication and execution as users other than root
+- make sure the right descriptors are terminals before dup2()ing them
 
 * Mon Aug 21 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix typo (#16664)

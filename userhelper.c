@@ -471,6 +471,9 @@ int main(int argc, char *argv[])
 		        if(*p == ',') {
                             p++;
 			    stderr_fileno = strtol(p, &p, 10);
+			    if(isatty(stdin_fileno))
+			    if(isatty(stdout_fileno))
+			    if(isatty(stderr_fileno))
 		            if(*p == '\0') {
 #ifdef DEBUG_USERHELPER
                                 fprintf(stderr, "Using %d,%d,%d for I/O.\n",
