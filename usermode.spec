@@ -20,7 +20,7 @@ Install the usermode package if you would like to provide users with
 graphical tools for certain account management tasks.
 
 %prep
-%setup
+%setup -q
 
 %build
 make

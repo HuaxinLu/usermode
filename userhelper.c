@@ -585,6 +585,7 @@ int main(int argc, char *argv[])
 
 	retval = !PAM_SUCCESS;
 	while (try-- && retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
 	    printf("%d %d\n", UH_FALLBACK, fallback);
 	    printf("%d %s\n", UH_USER, apps_user ? apps_user : "root");
             if(strrchr(constructed_path, '/') != NULL) {
@@ -593,6 +594,7 @@ int main(int argc, char *argv[])
 	    } else {
               printf("%d %s\n", UH_SERVICE_NAME, constructed_path);
 	    }
+#endif
 	    retval = pam_authenticate(pamh, 0);
 	}
 	if (retval != PAM_SUCCESS) {

@@ -280,7 +280,9 @@ userhelper_parse_childout(char* outline)
 	rest = NULL;
       }
     }
-    /* printf("(%d) \"%s\"\n", prompt_type, prompt); */
+#ifdef DEBUG_USERHELPER
+    printf("(%d) \"%s\"\n", prompt_type, prompt);
+#endif
 
     msg->type = prompt_type;
     msg->message = prompt;
@@ -313,7 +315,9 @@ userhelper_parse_childout(char* outline)
 	resp->message_list = g_slist_append(resp->message_list, msg);
 	resp->responses++;
 	resp->rows++;
-	/* printf("Need %d responses.\n", resp->responses); */
+#ifdef DEBUG_USERHELPER
+	printf("Need %d responses.\n", resp->responses);
+#endif
 	break;
 
       case UH_FALLBACK:
