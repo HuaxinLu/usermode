@@ -72,7 +72,7 @@ clean:
 archive:
 	cvs tag -F $(CVSTAG) .
 	@rm -rf /tmp/usermode-$(VERSION) /tmp/usermode
-	@cd /tmp; cvs export -r$(CVSTAG) usermode
+	@CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r$(CVSTAG) usermode
 	@mv /tmp/usermode /tmp/usermode-$(VERSION)
 	@dir=$$PWD; cd /tmp; tar cvIf $$dir/usermode-$(VERSION).tar.bz2 usermode-$(VERSION)
 	@rm -rf /tmp/usermode-$(VERSION)
