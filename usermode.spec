@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.69
-Release: 3.sel
+Release: 4
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -117,6 +117,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue Jan 27 2004 Dan Walsh <dwalsh@redhat.com> 1.69-4
+- fix call to is_selinux_enabled
+
 * Mon Dec  8 2003 Nalin Dahyabhai <nalin@redhat.com>
 - fix warning in userinfo which would cause random early exit (#111409)
 - clean up warnings

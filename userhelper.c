@@ -1052,7 +1052,7 @@ get_user_from_ruid(void)
 	ret = NULL;
 
 #ifdef WITH_SELINUX
-	selinux_enabled = is_selinux_enabled();
+	selinux_enabled = is_selinux_enabled()>0;
 	if (selinux_enabled) {
 		context_t ctx;
 		if (getprevcon(&old_context) < 0) {
