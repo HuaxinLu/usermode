@@ -1,7 +1,15 @@
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
-EXTRA_DIST = usermode.spec dummy.h
+EXTRA_DIST = \
+	dummy.h \
+	usermode.spec \
+	shutdown \
+	userinfo.1 \
+	usermount.1 \
+	userpasswd.1 \
+	consolehelper.8 \
+	userhelper.8
 
 SUBDIRS=intl po
 
@@ -32,7 +40,7 @@ pkgdata_DATA = usermode.glade
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_LDADD = @GLIB_LIBS@ @PAM_LIBS@ @LIBS@
 
-userinfo_SOURCES = userinfo.c userdialogs.c userhelper-wrap.c
+userinfo_SOURCES = userinfo.c userdialogs.c userhelper-wrap.c userhelper-wrap.h
 userinfo_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 usermount_SOURCES = usermount.c userdialogs.c

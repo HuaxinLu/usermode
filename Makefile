@@ -99,6 +99,7 @@ install_sh = /home/devel/nalin/projects/usermode/install-sh
 VERSION = $(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE = $(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
+EXTRA_DIST = usermode.spec dummy.h
 
 SUBDIRS = intl po
 
@@ -124,7 +125,7 @@ consoleapp_DATA = $(WRAPPED_APPS)
 
 pkgdata_DATA = usermode.glade
 
-userhelper_SOURCES = userhelper.c shvar.c
+userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_LDADD =  -L/usr/lib -lglib-1.3   -lpwdb -lpam_misc -lpam -ldl 
 
 userinfo_SOURCES = userinfo.c userdialogs.c userhelper-wrap.c
@@ -133,7 +134,7 @@ userinfo_LDADD =  -L/usr/lib -L/usr/X11R6/lib -lglade-2.0 -lgtk-x11-1.3 -lgdk-x1
 usermount_SOURCES = usermount.c userdialogs.c
 usermount_LDADD =  -L/usr/lib -L/usr/X11R6/lib -lglade-2.0 -lgtk-x11-1.3 -lgdk-x11-1.3 -lXi -lgdk_pixbuf-1.3 -lm -lpangox -lpangoxft -lXft -lXrender -lXext -lX11 -lfreetype -lpango -latk -lgobject-1.3 -lgmodule-1.3 -ldl -lglib-1.3 -lxml2 -lz   
 
-userpasswd_SOURCES = userpasswd.c userdialogs.c userhelper-wrap.c
+userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c
 userpasswd_LDADD =  -L/usr/lib -L/usr/X11R6/lib -lglade-2.0 -lgtk-x11-1.3 -lgdk-x11-1.3 -lXi -lgdk_pixbuf-1.3 -lm -lpangox -lpangoxft -lXft -lXrender -lXext -lX11 -lfreetype -lpango -latk -lgobject-1.3 -lgmodule-1.3 -ldl -lglib-1.3 -lxml2 -lz   
 
 consolehelper_SOURCES = consolehelper.c
