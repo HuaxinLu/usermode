@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2001-01-25 15:50-0500\n"
+"POT-Creation-Date: 2001-02-05 10:35-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,29 +26,45 @@ msgstr ""
 msgid "Prompt"
 msgstr ""
 
+#. Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
 #. Just a dummy file for gettext
-#: ../dummy.h:3 ../userdialogs.c:193 ../userinfo.c:140
+#: ../dummy.h:20 ../userdialogs.c:193 ../userinfo.c:139
 msgid "OK"
 msgstr ""
 
-#: ../userhelper-wrap.c:49 ../usermount.c:581 ../usermount.c:676
-#: ../usermount.c:764
+#: ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
+#: ../usermount.c:761
 msgid "Pipe error.\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:55 ../usermount.c:587 ../usermount.c:687
-#: ../usermount.c:770
+#: ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
+#: ../usermount.c:767
 msgid "Cannot fork().\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:627
-#: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
-#: ../usermount.c:817
+#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
+#: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
+#: ../usermount.c:814
 msgid "dup2() error.\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:112 ../usermount.c:642 ../usermount.c:754
-#: ../usermount.c:824
+#: ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
+#: ../usermount.c:821
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr ""
@@ -195,126 +211,126 @@ msgstr ""
 msgid "about to exec \"%s\"\n"
 msgstr ""
 
-#: ../userinfo.c:125
+#: ../userinfo.c:124
 msgid "User Information"
 msgstr ""
 
-#: ../userinfo.c:154
+#: ../userinfo.c:153
 msgid "Help"
 msgstr ""
 
-#: ../userinfo.c:243
+#: ../userinfo.c:242
 msgid "Full Name:"
 msgstr ""
 
-#: ../userinfo.c:261
+#: ../userinfo.c:260
 msgid "Office:"
 msgstr ""
 
-#: ../userinfo.c:280
+#: ../userinfo.c:279
 msgid "Office Phone:"
 msgstr ""
 
-#: ../userinfo.c:298
+#: ../userinfo.c:297
 msgid "Home Phone:"
 msgstr ""
 
-#: ../userinfo.c:316
+#: ../userinfo.c:315
 msgid "Shell:"
 msgstr ""
 
-#: ../userinfo.c:379
+#: ../userinfo.c:378
 msgid "This will be some help text."
 msgstr ""
 
-#: ../usermount.c:56
+#: ../usermount.c:57
 msgid "Mount"
 msgstr ""
 
-#: ../usermount.c:57
+#: ../usermount.c:58
 msgid "Unmount"
 msgstr ""
 
-#: ../usermount.c:120
+#: ../usermount.c:119
 msgid "User Mount Tool"
 msgstr ""
 
-#: ../usermount.c:137
+#: ../usermount.c:136
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
 
-#: ../usermount.c:178
+#: ../usermount.c:177
 msgid "Directory"
 msgstr ""
 
-#: ../usermount.c:186
+#: ../usermount.c:185
 msgid "Device"
 msgstr ""
 
-#: ../usermount.c:194
+#: ../usermount.c:193
 msgid "Type"
 msgstr ""
 
-#: ../usermount.c:269
+#: ../usermount.c:267
 msgid "Format"
 msgstr ""
 
-#: ../usermount.c:363
+#: ../usermount.c:360
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
 
-#: ../usermount.c:365
+#: ../usermount.c:362
 msgid "Yes"
 msgstr ""
 
-#: ../usermount.c:375
+#: ../usermount.c:372
 msgid "No"
 msgstr ""
 
-#: ../usermount.c:382
+#: ../usermount.c:379
 msgid "Do low level format."
 msgstr ""
 
-#: ../dummy.h:4
+#: ../dummy.h:21
 msgid "Exit"
 msgstr ""
 
-#: ../dummy.h:5
+#: ../dummy.h:22
 msgid "Cancel"
 msgstr ""
 
-#: ../dummy.h:6
+#: ../dummy.h:23
 msgid "Run Unprivileged"
 msgstr ""
 
-#: ../dummy.h:7
+#: ../dummy.h:24
 msgid "(current) UNIX password: "
 msgstr ""
 
-#: ../dummy.h:8
+#: ../dummy.h:25
 msgid "New UNIX password: "
 msgstr ""
 
-#: ../dummy.h:9
+#: ../dummy.h:26
 msgid "Retype new UNIX password: "
 msgstr ""
 
-#: ../dummy.h:10
+#: ../dummy.h:27
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr ""
 
-#: ../dummy.h:11
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it is too short"
 msgstr ""
 
-#: ../dummy.h:12
+#: ../dummy.h:29
 msgid "Password unchanged"
 msgstr ""
 
-#: ../dummy.h:13
+#: ../dummy.h:30
 msgid "Sorry, passwords do not match"
 msgstr ""
