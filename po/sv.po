@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-04-15 18:05-0400\n"
-"PO-Revision-Date: 2002-04-09 15:46+0200\n"
+"PO-Revision-Date: 2002-05-05 08:48+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "Hjälp"
 #: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Tog emot PAM-fel %d.\n"
+msgstr "Fick PAM-fel %d.\n"
 
 #: userhelper.c:203
 #, c-format
@@ -206,7 +206,7 @@ msgstr "Okänt fel."
 
 #: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
-msgstr "Testtext."
+msgstr "Utfyllnadstext."
 
 #: userhelper-wrap.c:352
 #, c-format
