@@ -19,10 +19,18 @@
  * UserTool suid helper program
  */
 
+#if 0
+#define USE_MCHECK 1
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+
+#ifdef USE_MCHECK
+#include <mcheck.h>
+#endif
 
 #include <unistd.h>
 #include <pwd.h>
@@ -331,6 +339,28 @@ static int get_shell_list(char* shell_name)
     return found;
 }
 
+#ifdef USE_MCHECK
+void
+mcheck_out(enum mcheck_status reason) {
+    char *explanation;
+
+    switch (reason) {
+	case MCHECK_DISABLED:
+	    explanation = "Consistency checking is not turned on."; break;
+	case MCHECK_OK:
+	    explanation = "Block is fine."; break;
+	case MCHECK_FREE:
+	    explanation = "Block freed twice."; break;
+	case MCHECK_HEAD:
+	    explanation = "Memory before the block was clobbered."; break;
+	case MCHECK_TAIL:
+	    explanation = "Memory after the block was clobbered."; break;
+    }
+    printf("%d %s\n", UH_ERROR_MSG, explanation);
+    printf("%d 1", UH_EXPECT_RESP);
+}
+#endif
+
 /* ------- the application itself -------- */
 int main(int argc, char *argv[])
 {
@@ -340,7 +370,12 @@ int main(int argc, char *argv[])
     pam_handle_t 	*pamh = NULL;
     struct passwd	*pw;
     struct pam_conv     *conv;
-     
+
+#ifdef USE_MCHECK
+    mtrace();
+    mcheck(mcheck_out);
+#endif
+
     /* for lack of a better place to put it... */
     setbuf(stdout, NULL);
     setbuf(stdin, NULL);
