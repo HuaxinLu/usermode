@@ -30,8 +30,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <pwd.h>
+#include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 #include <gtk/gtk.h>
 
 #define NUM_GECOS_FIELDS 4
@@ -459,25 +461,27 @@ set_new_userinfo()
   char* homephone;
 
   int childout[2];
-  /* supposedly the helper doesn't put anything on stderr... */
-/*   int childerr[2]; */
+  int childin[2];
   pid_t pid;
-
   char outline[MAXLINE];
-/*   char errline[MAXLINE]; */
-  int n;
   int count;
-  int childstatus;
 
   /* stuff for the select */
-  
+  fd_set rfds;
+  struct timeval tv;
+  int retval;
+
+  GtkWidget* message_box;
 
   /* need to figure out the new values.. how the hell am I going to
    * manage that? 
    */
+  fullname = "Otto Hammersmith";
+  office = "119";
+  officephone = "x239";
+  homephone = "555-1212";
 
-/*   if(pipe(childout) < 0 || pipe(childerr) < 0) */
-  if(pipe(childout) < 0)
+  if(pipe(childout) < 0 || pipe(childin) < 0)
     {
       fprintf(stderr, "Pipe error.\n");
       exit(1);
@@ -490,57 +494,82 @@ set_new_userinfo()
   else if(pid > 0)		/* parent */
     {
       close(childout[1]);
-/*       close(childerr[1]); */
+      close(childin[0]);
 
-      n = 0;
+      FD_ZERO(&rfds);
+      FD_SET(childout[0], &rfds);
+      /* may not need a timeout */
+      tv.tv_sec = 10;
+      tv.tv_usec = 0;
 
-/*       count = read(childerr[0], errline, MAXLINE); */
-/*       if(count > 0) */
-/* 	{ */
-/* 	  errline[count] = '\0'; */
-/* 	  message_box = create_message_box(errline); */
-/* 	  gtk_widget_show(message_box); */
-/* 	} */
-      count = read(childout[0], outline, MAXLINE);
-      if(count > 0)
-	{
-	  outline[count] = '\0';
-	  message_box = create_message_box(outline);
-	  gtk_widget_show(message_box);
-	}
-      return FALSE;
+      /* this is irritating... I'm trying to figure out why I can't
+       * get anything on stdout, until I shove something down
+       * stdin... GRRRR!
+       */
+      /*DEBUG*/
+      fprintf(stderr, "Got here.\n");
+      retval = select(childout[0] + 1, &rfds, NULL, NULL, NULL);
+/*       while(select(childout[0] + 1, &rfds, NULL, NULL, &tv) > 0) */
+      /*DEBUG*/
+      fprintf(stderr, "retval is: %d\n", retval);
+      if(retval > 0)
+      {
+	if(FD_ISSET(childout[0], &rfds))
+	  {
+	    count = read(childout[0], outline, MAXLINE);
+	    outline[count] = '\0';
+	    
+	    /*DEBUG*/
+/* 	    fprintf(stderr, "outline is: %s\n", outline); */
+	    fprintf(stderr, "count is: %d\n", count);
 
+	    message_box = create_message_box(outline);
+	    gtk_widget_show(message_box);
+	  }
+      }
+      
     }
   else				/* child */
     {
-      close(childout[0]);
-/*       close(childerr[0]); */
+/*       close(childout[0]); */
+/*       close(childin[1]); */
 
       if(childout[1] != STDOUT_FILENO)
+/*       if(FALSE) */
 	{
 	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
 	    {
-	      fprintf(stdout, "dup2() error.\n");
+	      fprintf(stderr, "dup2() error.\n");
+	      exit(2);
+	    }
+	  close(childout[1]);
+	}
+      if(childin[0] != STDIN_FILENO)
+	{
+	  if(dup2(childin[0], STDIN_FILENO) != STDIN_FILENO)
+	    {
+	      fprintf(stderr, "dup2() error.\n");
 	      exit(2);
 	    }
 	}
-/*       if(childerr[1] != STDERR_FILENO) */
+      setbuf(stdout, NULL);
+/*       fprintf(stdout, "Force some output on stdout...\n"); */
+/*       fprintf(stdout, "Force some output on stdout...\n"); */
+/*       write(childout[1], "Force some output on stdout...\n", 31);       */
+/*       write(childout[1], "Force some output on stdout...\n", 31); */
+/*       write(STDOUT_FILENO, "Force some output on stdout...\n", 31); */
+/*       write(STDOUT_FILENO, "Force some output on stdout...\n", 31); */
+
+      if(execl(userhelper, userhelper,
+	       fullname_opt, fullname,
+	       office_opt, office,
+	       officephone_opt, officephone,
+	       homephone_opt, homephone, 0) < 0)
 /* 	{ */
-/* 	  if(dup2(childerr[1], STDERR_FILENO) != STDERR_FILENO) */
-/* 	    { */
-/* 	      fprintf(stdout, "dup2() error.\n"); */
-/* 	      exit(2); */
-/* 	    } */
+/* 	  fprintf(stderr, "execl() error, errno=%d\n", errno); */
 /* 	} */
 
-      if(execl(userhelper, userhelper, 
-	       fullname_opt, fullname,
-	       office_opt, office, 
-	       officephone_opt, officephone_opt, 
-	       homephone_opt, homephone, 0) < 0)
-	{
-	  fprintf(stderr, "execl() error, errno=%d\n", errno);
-	}
+      getchar();
 
       _exit(0);
 
@@ -551,6 +580,33 @@ set_new_userinfo()
 GtkWidget*
 create_message_box(char* message)
 {
+  /* need to put this and other functions into a seperate file, so
+   * both usermount and userinfo can use 'em... and probably
+   * userpasswd as well.
+   */
+  GtkWidget* message_box;
+  GtkWidget* label;
+  GtkWidget* ok;
+
+  message_box = gtk_dialog_new();
+  gtk_window_set_title(GTK_WINDOW(message_box), "Message");
+
+  label = gtk_label_new(message);
+  ok = gtk_button_new_with_label("OK");
+  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
+			    (GtkSignalFunc) gtk_widget_destroy,
+			    (gpointer) message_box);
+
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->vbox), label,
+		     FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->action_area), ok,
+		     FALSE, FALSE, 0);
+  
+  gtk_widget_show(ok);
+  gtk_widget_show(label);
+  gtk_widget_show(message_box);
+
+  return message_box;
 
 }
 
