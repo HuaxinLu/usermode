@@ -442,9 +442,7 @@ int main(int argc, char *argv[])
 	 */
 	char *constructed_path;
 
-/*sleep(60);*/
-
-	constructed_path = malloc(strlen(progname) + sizeof("/usr/sbin/" + 2));
+	constructed_path = malloc(strlen(progname) + sizeof("/usr/sbin/") + 2);
 	if (!constructed_path) exit (ERR_NO_MEMORY);
 
 	strcpy(constructed_path, "/usr/sbin/");
