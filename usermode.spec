@@ -72,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Tue Mar 07 2000 Nalin Dahyabhai <nalin@redhat.com>
-- queue notice messages until we get prompts in userhelper
+- queue notice messages until we get prompts in userhelper to fix bug #8745
 
 * Fri Feb 03 2000 Nalin Dahyabhai <nalin@redhat.com>
 - free trip through the build system
