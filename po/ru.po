@@ -2,13 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
 "POT-Creation-Date: 2002-01-31 05:38-0500\n"
-"PO-Revision-Date: 2000-08-08 01:20+0300\n"
+"PO-Revision-Date: 2002-02-03 00:44EET\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
-"Language-Team: Black Cat Linux Team <blackcat-support@blackcatlinux.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=KOI8-R\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Date: 1999-04-03 12:20+0200\n"
+"X-Generator: KBabel 0.9.5\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -78,9 +79,9 @@ msgid "Help"
 msgstr "Помощь"
 
 #: userhelper.c:95
-#, fuzzy, c-format
+#, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Получена ошибка %d.\n"
+msgstr "Получена ошибка PAM %d.\n"
 
 #: userhelper.c:198
 #, c-format
@@ -93,9 +94,8 @@ msgstr "userhelper должен быть setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:637
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Невозможно открыть графическое окно и найти управляющий терминал.\n"
 
 #: userhelper.c:1297 userhelper.c:1335
 #, c-format
@@ -149,9 +149,8 @@ msgid "Insufficient rights."
 msgstr "Недостаточно прав."
 
 #: userhelper-wrap.c:66
-#, fuzzy
 msgid "Invalid call to subprocess.."
-msgstr "Ошибочный вызов подпроцесса."
+msgstr "Ошибочный вызов подпроцесса.."
 
 #: userhelper-wrap.c:68
 msgid ""
@@ -193,17 +192,16 @@ msgid "Error"
 msgstr "Ошибка"
 
 #: userhelper-wrap.c:394
-#, fuzzy
 msgid "Information"
-msgstr "Информация о пользователе"
+msgstr "Информация"
 
 #: userhelper-wrap.c:438
 msgid "Changing personal information."
-msgstr ""
+msgstr "Изменение личной информации."
 
 #: userhelper-wrap.c:441
 msgid "Changing login shell."
-msgstr ""
+msgstr "Изменение login shell."
 
 #: userhelper-wrap.c:444
 #, c-format
@@ -232,7 +230,6 @@ msgid ""
 msgstr ""
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid "_Run Unprivileged"
 msgstr "Выполнить без привелегий"
 
@@ -258,40 +255,33 @@ msgid "You don't exist.  Go away.\n"
 msgstr ""
 
 #: glade.strings:26 usermount.c:61
-#, fuzzy
 msgid "_Mount"
-msgstr "Монтирование"
+msgstr "Монтировать"
 
 #: usermount.c:62
-#, fuzzy
 msgid "Un_mount"
-msgstr "Отмонтирование"
+msgstr "Отмонтировать"
 
 #: usermount.c:310
-#, fuzzy
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Вы уверены?\n"
-"Все данные на этом диске будут уничтожены.\n"
+msgstr "Вы действительно хотите форматировать этот диск? Все данные на нем будут уничтожены."
 
 #: usermount.c:321
-#, fuzzy
 msgid "Perform a _low-level format."
 msgstr "Выполнить формат низкого уровня."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Укажите тип файловой системы:"
 
 #: usermount.c:521
-#, fuzzy
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Нет файловых систем, которые может монтировать пользователь.\n"
+"Нет файловых систем, которые вам позволено монтировать.\n"
 "Свяжитесь с системным администратором."
 
 #. Create the dialog.
@@ -301,9 +291,8 @@ msgstr "Утилита монтирования для пользователей"
 
 #. Create the other buttons.
 #: glade.strings:28 usermount.c:544
-#, fuzzy
 msgid "_Format"
-msgstr "Формат"
+msgstr "Форматировать"
 
 #: glade.strings:24 usermount.c:579
 msgid "Device"
@@ -335,26 +324,22 @@ msgid "Office:"
 msgstr "Офис:"
 
 #: glade.strings:10
-#, fuzzy
 msgid "Office Phone Number"
-msgstr "Рабочий телефон:"
+msgstr "Рабочий телефон"
 
 #: glade.strings:11
-#, fuzzy
 msgid "Home Phone Number"
-msgstr "Домашний телефон:"
+msgstr "Домашний телефон"
 
 #: glade.strings:12
-#, fuzzy
 msgid "Login Shell"
-msgstr "Оболочка:"
+msgstr ""
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
 msgstr ""
 
 #: glade.strings:14 glade.strings:21
-#, fuzzy
 msgid "_Cancel"
 msgstr "Отмена"
 
@@ -364,7 +349,7 @@ msgstr "Сообщение"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr ""
+msgstr "Закрыть"
 
 #: glade.strings:18
 msgid "Query"
@@ -375,61 +360,10 @@ msgid "Type"
 msgstr "Тип"
 
 #: glade.strings:27
-#, fuzzy
 msgid "_Unmount"
-msgstr "Отмонтирование"
+msgstr "Размонтировать"
 
 #: glade.strings:29
-#, fuzzy
 msgid "E_xit"
 msgstr "Выход"
 
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "готовность к аутентификации \"%s\"\n"
-
-#, fuzzy
-#~ msgid "PAM retval = %d (%s)\n"
-#~ msgstr "код возврата PAM %d\n"
-
-#~ msgid "Yes"
-#~ msgstr "Да"
-
-#~ msgid "No"
-#~ msgstr "Нет"
-
-#~ msgid "Prompt"
-#~ msgstr "Приглашение"
-
-#~ msgid "Input"
-#~ msgstr "Ввод"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "Чтобы выполнить \"%s\" с привелегиями root, необходима дополнительная "
-#~ "информация."
-
-#~ msgid "Changing password for %s"
-#~ msgstr "Изменение пароля для %s"
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "Вы хотите получить %d ответ(ов) из %d полей ввода!?!?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "Проверка консистенции не включена"
-
-#~ msgid "Block is fine."
-#~ msgstr "Блок нормальный."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Блок очищен дважды."
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "Memory before the block was clobbered."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "Memory after the block was clobbered."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Здесь должен быть текст помощи."
