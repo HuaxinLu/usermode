@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2003-02-24 17:22-0500\n"
+"POT-Creation-Date: 2003-09-25 16:34-0400\n"
 "PO-Revision-Date: 2003-03-02 17:07-0000\n"
 "Last-Translator: Rhoslyn Prys <rhoslyn.prys@meddal.org.uk>\n"
 "Language-Team: Cymraeg/Welsh <rhoslyn.prys@meddal.org.uk>\n"
@@ -80,16 +80,30 @@ msgstr "Nid yw'r cyfrineiriau'n cydweddu."
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Cychwyn offer ffurfweddu'r holl system heb gyfrinair"
 
+#: dummy.h:33
+msgid "login: "
+msgstr ""
+
+#: dummy.h:34
+#, fuzzy
+msgid "Password: "
+msgstr "Cyfrinair"
+
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Cymorth"
 
-#: userhelper.c:339
+#: userhelper.c:122
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr ""
+
+#: userhelper.c:431
 #, c-format
 msgid "Password for %s"
 msgstr "Cyfrinair ar gyfer %s"
 
-#: userhelper.c:574
+#: userhelper.c:666
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -98,7 +112,7 @@ msgstr ""
 "Rydych yn ceisio rhedeg \"%s\"  fyddai'n elwa o freintiau gweinyddol,\n"
 " ond mae angen gwybodaeth ychwanegol i wneud hynny."
 
-#: userhelper.c:576
+#: userhelper.c:668
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -107,7 +121,7 @@ msgstr ""
 "Rydych yn ceisio rhedeg \"%s\"  sydd angen breintiau gweinyddol,\n"
 "ond mae angen gwybodaeth ychwanegol i wneud hynny."
 
-#: userhelper.c:580
+#: userhelper.c:672
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -115,7 +129,7 @@ msgstr ""
 "Rydych yn ceisio rhedeg gorchymyn fyddai'n elwa o freintiau\n"
 "gweinyddol, ond mae angen gwybodaeth ychwanegol i wneud hynny."
 
-#: userhelper.c:582
+#: userhelper.c:674
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -123,17 +137,17 @@ msgstr ""
 "Rydych yn ceisio rhedeg gorchymyn sydd angen breintiau gweinyddol,\n"
 "ond mae angen gwybodaeth ychwanegol i wneud hynny."
 
-#: userhelper.c:601
+#: userhelper.c:693
 #, c-format
 msgid "Password for %s: "
 msgstr "Cyfrinair ar gyfer %s:"
 
-#: userhelper.c:946
+#: userhelper.c:1039
 msgid "userhelper must be setuid root\n"
 msgstr "Rhaid i userhelper fod yn setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:1030
+#: userhelper.c:1123
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Methu agor ffenestr raffigol, ac yn methu canfod terfynell rheoli.\n"
@@ -215,31 +229,31 @@ msgstr "Methu canfod y rhaglen."
 msgid "Unknown error."
 msgstr "Gwall anhysbys"
 
-#: userhelper-wrap.c:450 glade.strings:18 usermode.glade.h:9
+#: userhelper-wrap.c:458 glade.strings:18 usermode.glade.h:9
 msgid "Query"
 msgstr "Ymholiad"
 
-#: userhelper-wrap.c:540 userhelper-wrap.c:710
+#: userhelper-wrap.c:548 userhelper-wrap.c:718
 msgid "Error"
 msgstr "Gwall"
 
-#: userhelper-wrap.c:552
+#: userhelper-wrap.c:560
 msgid "Information"
 msgstr "Gwybodaeth"
 
-#: userhelper-wrap.c:708 glade.strings:16 glade.strings:19 usermode.glade.h:8
+#: userhelper-wrap.c:716 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Testun cynhalydd"
 
-#: userhelper-wrap.c:748
+#: userhelper-wrap.c:756
 msgid "Changing personal information."
 msgstr "Newid gwybodaeth bersonol"
 
-#: userhelper-wrap.c:751
+#: userhelper-wrap.c:759
 msgid "Changing login shell."
 msgstr "Newid cragen mewngofnodi"
 
-#: userhelper-wrap.c:757
+#: userhelper-wrap.c:765
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -248,7 +262,7 @@ msgstr ""
 "Rydych yn ceisio rhedeg \"%s\"  fyddai'n elwa o freintiau gweinyddol, ond "
 "mae angen gwybodaeth ychwanegol i wneud hynny."
 
-#: userhelper-wrap.c:759
+#: userhelper-wrap.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -257,7 +271,7 @@ msgstr ""
 "Rydych yn ceisio rhedeg \"%s\"  sydd angen breintiau gweinyddol, ond mae "
 "angen gwybodaeth ychwanegol i wneud hynny."
 
-#: userhelper-wrap.c:768
+#: userhelper-wrap.c:776
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -265,7 +279,7 @@ msgstr ""
 "Rydych yn ceisio rhedeg gorchymyn fyddai'n elwa o freintiau gweinyddol, ond "
 "mae angen gwybodaeth ychwanegol i wneud hynny."
 
-#: userhelper-wrap.c:770
+#: userhelper-wrap.c:778
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -273,23 +287,23 @@ msgstr ""
 "Rydych yn ceisio rhedeg gorchymyn sydd angen breintiau gweinyddol, ond mae "
 "angen gwybodaeth ychwanegol i wneud hynny."
 
-#: userhelper-wrap.c:787
+#: userhelper-wrap.c:795
 msgid "_Run Unprivileged"
 msgstr "_Rhedeg Heb Fraint"
 
-#: userhelper-wrap.c:923
+#: userhelper-wrap.c:931
 msgid "Pipe error.\n"
 msgstr "Gwall pibell.\n"
 
-#: userhelper-wrap.c:930
+#: userhelper-wrap.c:938
 msgid "Cannot fork().\n"
 msgstr "Methu fforchio().\n"
 
-#: userhelper-wrap.c:1008 userhelper-wrap.c:1012
+#: userhelper-wrap.c:1016 userhelper-wrap.c:1020
 msgid "dup2() error.\n"
 msgstr "gwall dup1().\n"
 
-#: userhelper-wrap.c:1024
+#: userhelper-wrap.c:1032
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
