@@ -6,13 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN.GB2312\n"
 "POT-Creation-Date: 2002-06-19 17:27-0400\n"
-"PO-Revision-Date: 2002-05-31 13:47GMT+10:00\n"
+"PO-Revision-Date: 2002-06-20 13:03GMT+10:00\n"
 "Last-Translator: Sarah Smith <sarahs@redhat.com>\n"
 "Language-Team: Simplified Chinese <zh@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=GBK\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0beta1\n"
+"X-Generator: KBabel 0.9.6\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -136,8 +136,7 @@ msgstr "userhelper 必须是 setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:711
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
 
 #: userhelper.c:1373 userhelper.c:1411
@@ -247,36 +246,32 @@ msgid "Changing login shell."
 msgstr "正在改变登录 shell。"
 
 #: userhelper-wrap.c:456
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"你在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做"
+"你在试图运行“%s”。它可能会得益于管理特权，但是这需要更多信息才能做"
 "到。"
 
 #: userhelper-wrap.c:458
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"你在试图运行“%s”。它要求你拥有超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "你在试图运行“%s”。它要求你拥有管理特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"你在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
+msgstr "你在试图运行一个可能会得益于管理特权的命令，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:465
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "你在试图运行一个要求超级用户特权的命令，但是需要更多信息才能做到。"
+msgstr "你在试图运行一个要求管理特权的命令，但是需要更多信息才能做到。"
 
 #: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
@@ -415,3 +410,4 @@ msgstr "卸载(_U)"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "退出(_x)"
+
