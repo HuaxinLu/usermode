@@ -67,7 +67,7 @@ install:
 		l=`basename $$cat .mo`; \
 		if [ -f $$cat ]; then \
 			mkdir -p $(INSTALLNLSDIR)/$$l/LC_MESSAGES; \
-		        $(INSTALL) -m 644 $$cat $(INSTALLNLSDIR)/$$l/LC_MESSAGES/$(NLSPACKAGE).mo; \
+		        echo $(INSTALL) -m 644 $$cat $(INSTALLNLSDIR)/$$l/LC_MESSAGES/$(NLSPACKAGE).mo; \
 		fi \
 	done
 
