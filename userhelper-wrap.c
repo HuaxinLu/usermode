@@ -193,6 +193,7 @@ userhelper_parse_childout(char* outline)
     resp->message_list = NULL;
     resp->head = resp->tail = NULL;
     resp->top = gtk_dialog_new();
+    gtk_window_position(GTK_WINDOW(resp->top), GTK_WIN_POS_CENTER);
     gtk_window_set_title(GTK_WINDOW(resp->top), "Input");
     resp->ok = gtk_button_new_with_label(UD_OK_TEXT);
     resp->cancel = gtk_button_new_with_label(UD_CANCEL_TEXT);
