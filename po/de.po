@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-08-13 21:32-0400\n"
-"PO-Revision-Date: 2002-07-26 16:22+0000\n"
+"PO-Revision-Date: 2002-08-26 10:19+0000\n"
 "Last-Translator:  <claudia@redhat.it>\n"
 "Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr "Sorry, die Passwörter stimmen nicht überein"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "Konfigurationstools für das gesamte System ohne Passwort starten."
 
 #: userdialogs.h:30
 msgid "Help"
@@ -140,8 +140,7 @@ msgstr "userhelper muss Setuid-Root sein\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -228,7 +227,7 @@ msgstr "Fehler beim Finden des ausgewählten Programms."
 msgid "Unknown error."
 msgstr "Unbekannter Fehler."
 
-#: userhelper-wrap.c:276 glade.strings:18
+#: glade.strings:18 userhelper-wrap.c:276
 msgid "Query"
 msgstr "Abfrage"
 
@@ -245,7 +244,7 @@ msgstr "Fehler"
 msgid "Information"
 msgstr "Informationen"
 
-#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:424
 msgid "Placeholder text."
 msgstr "Platzhalter Text."
 
@@ -316,7 +315,7 @@ msgstr "execl() Fehler, errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Benutzer-ID existiert nicht.  Verlassen Sie den Bereich.\n"
 
-#: usermount.c:61 glade.strings:26
+#: glade.strings:26 usermount.c:61
 msgid "_Mount"
 msgstr "_Mounten"
 
@@ -349,20 +348,20 @@ msgstr ""
 "Setzen Sie sich mit Ihrem Administrator in Verbindung."
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: glade.strings:22 usermount.c:522 usermount.c:530
 msgid "User Mount Tool"
 msgstr "Benutzer Mount-Tool"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: glade.strings:28 usermount.c:544
 msgid "_Format"
 msgstr "_Format"
 
-#: usermount.c:579 glade.strings:24
+#: glade.strings:24 usermount.c:579
 msgid "Device"
 msgstr "Gerät"
 
-#: usermount.c:585 glade.strings:23
+#: glade.strings:23 usermount.c:585
 msgid "Directory"
 msgstr "Verzeichnis"
 
@@ -429,26 +428,25 @@ msgstr "B_eenden"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Persönliche Informationen"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Ändern der persönlichen Informationen"
+msgstr "Persönliche Informationen ändern"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Diskettenverwaltung"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Dateisysteme mounten und unmounten"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Anmelde-Passwort ändern"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Passwort für %s"
+msgstr "Passwort"
+

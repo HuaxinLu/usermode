@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-08-13 21:32-0400\n"
-"PO-Revision-Date: 2002-04-03 09:00GMT\n"
+"PO-Revision-Date: 2002-08-26 12:47GMT\n"
 "Last-Translator: Nuria Soriano <nuria@redhat.es>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.9.5\n"
 
@@ -51,35 +51,35 @@ msgstr "Ejecutar sin privilegios"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "ContraseÒa UNIX (actual):"
+msgstr "Contrase√±a UNIX (actual):"
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Nueva contraseÒa UNIX:"
+msgstr "Nueva contrase√±a UNIX:"
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Vuelva a escribir la nueva contraseÒa UNIX:"
+msgstr "Vuelva a escribir la nueva contrase√±a UNIX:"
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "CONTRASE—A INCORRECTA: SEGURAMENTE es demasiado corta"
+msgstr "CONTRASE√ëA INCORRECTA: SEGURAMENTE es demasiado corta"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "CONTRASE—A INCORRECTA: es demasiado corta"
+msgstr "CONTRASE√ëA INCORRECTA: es demasiado corta"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "ContraseÒa no modificada"
+msgstr "Contrase√±a no modificada"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Lo siento, las contraseÒas no coinciden"
+msgstr "Lo siento, las contrase√±as no coinciden"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "Lanzar las herramientas de configuraci√≥n sin una contrase√±a."
 
 #: userdialogs.h:30
 msgid "Help"
@@ -93,49 +93,47 @@ msgstr "Se ha obtenido un error de PAM %d.\n"
 #: userhelper.c:218
 #, c-format
 msgid "Password for %s"
-msgstr "ContraseÒa para %s"
+msgstr "Contrase√±a para %s"
 
 #: userhelper.c:338
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Est· intentando ejecutar \"%s\". Esto puede ser beneficioso desde el punto "
-"de vista de los privilegios de superusuario, pero es necesaria m·s "
-"informaciÛn para poder realizarlo."
+"El intento de ejecutar \"%s\" puede ser beneficioso desde el punto "
+"de vista de los privilegios a nivel administrativo, pero es necesaria m√°s "
+"informaci√≥n para poder realizarlo."
 
 #: userhelper.c:340
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Est· intentando ejecutar \"%s\" que requiere los privilegios de "
-"superusuario, pero necesita m·s informaciÛn para hacerlo. "
+"Est√° intentando ejecutar \"%s\" que requiere los privilegios de administraci√≥n, "
+" pero necesita m√°s informaci√≥n para hacerlo. "
 
 #: userhelper.c:344
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Est· intentando ejecutar un comando que se beneficia de los privilegios de\n"
-" superusuario, pero necesita m·s informaciÛn para hacerlo."
+"Est√° intentando ejecutar un comando que se beneficia de los privilegios\n"
+" administrativos, pero necesita m√°s informaci√≥n para hacerlo."
 
 #: userhelper.c:346
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Est· intentando ejecutar un comando que requiere los privilegios del\n"
-"superusuario pero se necesita m·s informaciÛn para hacerlo."
+"Est√° intentando ejecutar un comando que requiere los privilegios\n"
+" administrativos, pero se necesita m√°s informaci√≥n para hacerlo."
 
 #: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
-msgstr "ContraseÒa para %s:"
+msgstr "Contrase√±a para %s:"
 
 #: userhelper.c:648
 msgid "userhelper must be setuid root\n"
@@ -143,10 +141,8 @@ msgstr "El userhelper debe configurar la setuid del root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Imposible abrir una ventana gr·fica y encontrar un terminal de control.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Imposible abrir una ventana gr√°fica y encontrar un terminal de control.\n"
 
 #: userhelper.c:1409 userhelper.c:1447
 #, c-format
@@ -155,19 +151,19 @@ msgstr "inicio de exec \"%s\"\n"
 
 #: userhelper-wrap.c:50
 msgid "Unknown exit code."
-msgstr "CÛdigo de salida desconocido."
+msgstr "C√≥digo de salida desconocido."
 
 #: userhelper-wrap.c:52
 msgid "Information updated."
-msgstr "InformaciÛn actualizada."
+msgstr "Informaci√≥n actualizada."
 
 #: userhelper-wrap.c:54
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"La contraseÒa que ha escrito no es correcta.\n"
-"Por favor, intÈntelo de nuevo."
+"La contrase√±a que ha escrito no es correcta.\n"
+"Por favor, int√©ntelo de nuevo."
 
 #: userhelper-wrap.c:56
 msgid ""
@@ -177,19 +173,19 @@ msgid ""
 msgstr ""
 "Uno o alguno de los campos modificados no son correctos.\n"
 "Esto se debe probablemente a los dos puntos o las comas en uno de los\n"
-"campos. Por favor, suprÌmalos e intÈntelo de nuevo."
+"campos. Por favor, supr√≠malos e int√©ntelo de nuevo."
 
 #: userhelper-wrap.c:58
 msgid "Password resetting error."
-msgstr "Error al reiniciar la contraseÒa."
+msgstr "Error al reiniciar la contrase√±a."
 
 #: userhelper-wrap.c:60
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Algunos ficheros del sistema est·n bloqueados.\n"
-"Por favor, intÈntelo de nuevo m·s tarde."
+"Algunos ficheros del sistema est√°n bloqueados.\n"
+"Por favor, int√©ntelo de nuevo m√°s tarde."
 
 #: userhelper-wrap.c:62
 msgid "Unknown user."
@@ -209,8 +205,8 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Su shell actual no est· en la lista /etc/shells.\n"
-"No le est· permitido cambiar su shell.\n"
+"Su shell actual no est√° en la lista /etc/shells.\n"
+"No le est√° permitido cambiar su shell.\n"
 "Consulte con su administrador de sitema."
 
 #: userhelper-wrap.c:71
@@ -229,7 +225,7 @@ msgstr "No se ha encontrado el programa seleccionado."
 msgid "Unknown error."
 msgstr "Error desconocido."
 
-#: userhelper-wrap.c:276 glade.strings:18
+#: glade.strings:18 userhelper-wrap.c:276
 msgid "Query"
 msgstr "Preguntar"
 
@@ -244,9 +240,9 @@ msgstr "Error"
 
 #: userhelper-wrap.c:369
 msgid "Information"
-msgstr "InformaciÛn"
+msgstr "Informaci√≥n"
 
-#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:424
 msgid "Placeholder text."
 msgstr "Texto que contiene espacio"
 
@@ -259,41 +255,39 @@ msgid "Changing login shell."
 msgstr "Cambio de la shell de login"
 
 #: userhelper-wrap.c:474
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar \"%s\". Esto puede ser beneficioso desde el punto de "
-"vista de los privilegios de superusuario, pero es necesaria m·s informaciÛn "
+"El intento de ejecuci√≥n de \"%s\" puede ser beneficioso desde el punto de "
+"vista de los privilegios administrativos, pero es necesaria m√°s informaci√≥n "
 "para poder realizarlo."
 
 #: userhelper-wrap.c:476
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar \"%s\" que requiere los privilegios de superusuario, "
-"pero necesita m·s informaciÛn para hacerlo. "
+"Ha intentado ejecutar \"%s\" que requiere los privilegios administrativos, "
+"pero necesita m√°s informaci√≥n para hacerlo. "
 
 #: userhelper-wrap.c:485
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar un comando que se beneficia de los privilegios de "
-"superusuario, pero necesita m·s informaciÛn para hacerlo."
+"Ha intentado ejecutar un comando que se beneficia de los privilegios administrativos, "
+" pero necesita m√°s informaci√≥n para hacerlo."
 
 #: userhelper-wrap.c:487
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar un comando que requiere los privilegios del "
-"superusuario pero se necesita m·s informaciÛn para hacerlo."
+"Ha intentado ejecutar un comando que requiere los privilegios administrativos, "
+" pero se necesita m√°s informaci√≥n para hacerlo."
 
 #: userhelper-wrap.c:503
 msgid "_Run Unprivileged"
@@ -320,7 +314,7 @@ msgstr "Error execl(), errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Identidad desconocida.\n"
 
-#: usermount.c:61 glade.strings:26
+#: glade.strings:26 usermount.c:61
 msgid "_Mount"
 msgstr "_Montar"
 
@@ -333,7 +327,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"øEst· seguro de que querer formatear este disco?  Destruir· cualquier dato "
+"¬øEst√° seguro de que querer formatear este disco?  Destruir√° cualquier dato "
 "existente."
 
 #: usermount.c:321
@@ -342,7 +336,7 @@ msgstr "Ejecute un formato a _bajo _nivel."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr "Seleccione la creaciÛn de un tipo de sistema de ficheros:"
+msgstr "Seleccione la creaci√≥n de un tipo de sistema de ficheros:"
 
 #: usermount.c:521
 msgid ""
@@ -353,20 +347,20 @@ msgstr ""
 "Contacte con su administrador."
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: glade.strings:22 usermount.c:522 usermount.c:530
 msgid "User Mount Tool"
 msgstr "Herramienta de montaje para el usuario"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: glade.strings:28 usermount.c:544
 msgid "_Format"
 msgstr "_Formato"
 
-#: usermount.c:579 glade.strings:24
+#: glade.strings:24 usermount.c:579
 msgid "Device"
 msgstr "Dispositivo"
 
-#: usermount.c:585 glade.strings:23
+#: glade.strings:23 usermount.c:585
 msgid "Directory"
 msgstr "Directorio"
 
@@ -381,7 +375,7 @@ msgstr "Sistema de ficheros"
 #.
 #: glade.strings:7
 msgid "User Information"
-msgstr "InformaciÛn del usuario"
+msgstr "Informaci√≥n del usuario"
 
 #: glade.strings:8
 msgid "Full Name:"
@@ -393,11 +387,11 @@ msgstr "Oficina:"
 
 #: glade.strings:10
 msgid "Office Phone Number"
-msgstr "TelÈfono de la oficina"
+msgstr "Tel√©fono de la oficina"
 
 #: glade.strings:11
 msgid "Home Phone Number"
-msgstr "TelÈfono de casa"
+msgstr "Tel√©fono de casa"
 
 #: glade.strings:12
 msgid "Login Shell"
@@ -433,26 +427,25 @@ msgstr "S_alir"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Datos personales"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Cambio de la informacion personal."
+msgstr "Cambio de la informacion personal"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Gesti√≥n del disco"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Montar y desmontar sistemas de ficheros"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Cambio de su contrase√±a de registro"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "ContraseÒa para %s"
+msgstr "Contrase√±a"
+
