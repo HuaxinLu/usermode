@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-10 14:44+0100\n"
-"PO-Revision-Date: 2005-02-05 22:29+0800\n"
+"PO-Revision-Date: 2005-02-07 19:42+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,7 @@ msgstr ""
 "X-Generator: KBabel 1.0\n"
 
 #. * Copyright (C) 2001 Red Hat, Inc.
-#. * the Free Software Foundation; either version 2 of the License, or
 #. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * You should have received a copy of the GNU General Public License
 #. Just a dummy file for gettext, containing messages emmitted by various
 #: dummy.h:21
 #: userdialogs.h:29
@@ -118,11 +116,11 @@ msgstr "pengguna tidak diketahui kepada pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "ralat kebenaran dalam pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "tty pengawal tidak sah dalam pam_timestamp_check"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:129 libgnomeui/gnome-messagebox.c:262
@@ -134,16 +132,16 @@ msgstr "Ralat: %s\n"
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Gagal untuk melaksanakan arahan \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Gagal untuk menetapkan saluran IO tanpa sekatan: %s\n"
 
 #: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: gagal untuk menyambung ke pengurus sessi\n"
 
 #: userdialogs.h:30
 msgid "Help"
