@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.28
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -37,7 +37,7 @@ make PREFIX=$RPM_BUILD_ROOT \
 # Stuff from pam_console, for sysvinit. Here for lack of a better
 # place....
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
-for wrapapp in shutdown halt reboot poweroff ; do
+for wrapapp in halt reboot poweroff ; do
   ln -sf consolehelper $RPM_BUILD_ROOT/usr/bin/$wrapapp
   touch $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
   cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
@@ -63,23 +63,23 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man8/consolehelper.8*
 %config /etc/X11/applnk/System/*
 # PAM console wrappers
-%{_bindir}/shutdown
 %{_bindir}/halt
 %{_bindir}/reboot
 %{_bindir}/poweroff
 %{_datadir}/pixmaps/*
 %{_datadir}/locale/*/*/*
-%config(noreplace) /etc/pam.d/shutdown
 %config(noreplace) /etc/pam.d/halt
 %config(noreplace) /etc/pam.d/reboot
 %config(noreplace) /etc/pam.d/poweroff
-%config(missingok) /etc/security/console.apps/shutdown
 %config(missingok) /etc/security/console.apps/halt
 %config(missingok) /etc/security/console.apps/reboot
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
-* Wed Aug  8 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Fri Aug 11 2000 Nalin Dahyabhia <nalin@redhat.com>
+- remove the shutdown command from the list of honored commands
+
+* Wed Aug  9 2000 Nalin Dahyabhia <nalin@redhat.com>
 - merge in updated translations
 - set XAUTHORITY after successful authentication (#11006)
 
