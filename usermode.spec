@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.23
-Release: 3
+Release: 4
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -71,6 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Jun 18 2000 Matt Wilson <msw@redhat.com>
+- rebuilt to see if we get stripped binaries
+
 * Mon Jun  5 2000 Nalin Dahyabhai <nalin@redhat.com>
 - move man pages to %{_mandir}
 
