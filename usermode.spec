@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.10
+Version: 1.11
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -69,6 +69,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Sep 14 1999 Michael K. Johnson <johnsonm@redhat.com>
+- honor "owner" flag to mount
+- ask for passwords with username
+
 * Tue Jul 06 1999 Bill Nottingham <notting@redhat.com>
 - import pam_console wrappers from SysVinit, since they require usermode
 
