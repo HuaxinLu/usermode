@@ -90,9 +90,9 @@ static GtkTreeSelection *tree_selection = NULL;
 static GtkWidget *mount_button = NULL, *format_button = NULL;
 
 /* This function parses /etc/fstab using getmntent() and uses other tricks
- * to fill in the info for all filesystems with the 'user' option... unless,
- * of course getuid() == 0, then we get them all.  No reason root shouldn't
- * be allowed to use this, right?.  */
+ * to fill in the info for all filesystems with the 'pamconsole' option...
+ * unless, of course getuid() == 0, then we get them all.  No reason root
+ * shouldn't be allowed to use this, right?.  */
 static struct mountinfo *
 build_mountinfo_list(void)
 {
@@ -116,7 +116,7 @@ build_mountinfo_list(void)
 
 		/* Read flags. */
 		owner = (hasmntopt(fstab_entry, "owner") != NULL);
-		user = (hasmntopt(fstab_entry, "user") != NULL);
+		pamconsole = (hasmntopt(fstab_entry, "pamconsole") != NULL);
 		swap = (strcmp(fstab_entry->mnt_type, "swap") == 0);
 		superuser = (geteuid() == 0);
 		node = fstab_entry->mnt_fsname;
@@ -136,9 +136,9 @@ build_mountinfo_list(void)
 		}
 
 		/* We only process this entry if we are allowed to mount it
-		 * (it has the "user" flag, or it has the "owner" flag and
-		 * we own the device), and it's not a swap partition. */
-		if((!user && !owner && !superuser) || swap) {
+		 * (it has the "pamconsole" flag, or it has the "owner" flag
+		 * and we own the device), and it's not a swap partition. */
+		if((!pamconsole && !owner && !superuser) || swap) {
 			continue;
 		}
 

@@ -2242,7 +2242,9 @@ main(int argc, char **argv)
 	const char *new_office_phone;
 	const char *new_home_phone;
 	const char *new_shell;
+#ifdef WITH_SELINUX
 	unsigned perm;
+#endif
 
 	/* State variable we pass around. */
 	struct app_data app_data = {
