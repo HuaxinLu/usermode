@@ -1,4 +1,5 @@
-# usermode
+# translation of ja.po to Japanese
+# usermode Japanese translation
 # Copyright (C) 2001,2002 Free Software Foundation, Inc.
 # Yukihiro Nakai <ynakai@redhat.com>, 2001.
 # James Hashida <khashida@redhat.com>, 2002
@@ -7,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
 "POT-Creation-Date: 2002-07-23 21:12-0400\n"
-"PO-Revision-Date: 2002-06-28 17:19GMT+10:00\n"
+"PO-Revision-Date: 2002-07-24 15:20GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -93,39 +94,37 @@ msgid "Password for %s"
 msgstr "%sのパスワード"
 
 #: userhelper.c:351
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行するに"
+"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行するに\n"
 "は追加情報が必要です。"
 
 #: userhelper.c:353
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには追"
-"加情報が必要です。"
+"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには \n"
+"追加情報が必要です。"
 
 #: userhelper.c:357
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になるコマンドを実行しようとしていますが、実行する"
-"には追加情報が必要です。"
+"スーパユーザ権限により有効になるコマンドを実行しようとしていますが、\n "
+"実行するには追加情報が必要です。"
 
 #: userhelper.c:359
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには"
+"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには\n"
 "追加情報が必要です。"
 
 #: userhelper.c:377
@@ -139,8 +138,7 @@ msgstr "ユーザヘルパーはrootにsetuidされていなければなりま�
 
 #. FIXME: print a warning here?
 #: userhelper.c:742
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
@@ -148,7 +146,7 @@ msgstr ""
 #: userhelper.c:1393 userhelper.c:1454
 #, c-format
 msgid "Starting \"%s\" with administrative privileges."
-msgstr ""
+msgstr "管理者権限で\"%s\"をスタート中です。"
 
 #: userhelper.c:1418 userhelper.c:1465
 #, c-format
@@ -482,3 +480,4 @@ msgstr "終了(_x)"
 
 #~ msgid "Change account information"
 #~ msgstr "¥¢¥«¥¦¥ó¥È¾ðÊó¤ÎÊÑ¹¹¥Ä¡¼¥ë"
+
