@@ -37,6 +37,6 @@ GtkWidget* create_message_box(gchar* message, gchar* title);
 GtkWidget* create_error_box(gchar* error, gchar* title);
 GtkWidget* create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func);
 GtkWidget* create_invisible_query_box(gchar* prompt, gchar* title,
-				      GtkSignalFunc func); 
+				      GtkSignalFunc func);
 
 #endif /* __USERDIALOGS_H__ */

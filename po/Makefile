@@ -11,7 +11,8 @@ NLSPACKAGE = usermode
 CATALOGS = $(shell ls *.po | sed 's/po/mo/')
 
 POTFILES  = ../consolehelper.c ../userdialogs.c ../userhelper-wrap.c \
-	    ../userhelper.c ../userinfo.c ../usermount.c ../userpasswd.c
+	    ../userhelper.c ../userinfo.c ../usermount.c ../userpasswd.c \
+	    ../userhelper.h
 
 all: $(NLSPACKAGE).pot $(CATALOGS)
 
