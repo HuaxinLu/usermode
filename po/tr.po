@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-07-24 09:41-0400\n"
-"PO-Revision-Date: 2002-04-04 15:06+0300\n"
-"Last-Translator: Nilgün Belma Bugüner <nilgun@fide.org>\n"
+"PO-Revision-Date: 2002-07-25 18:37+0300\n"
+"Last-Translator: Nilgün Belma Bugüner <nilgun@superonline.com>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.5\n"
+"X-Generator: KBabel 0.9.6\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -88,7 +88,7 @@ msgid "Password for %s"
 msgstr "%s için parola"
 
 #: userhelper.c:320
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -97,7 +97,7 @@ msgstr ""
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -106,7 +106,6 @@ msgstr ""
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper.c:326
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -115,7 +114,6 @@ msgstr ""
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper.c:328
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -134,8 +132,7 @@ msgstr "userhelper programı setuid root olmalıdır.\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:711
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 
 #: userhelper.c:1375 userhelper.c:1413
@@ -246,39 +243,37 @@ msgid "Changing login shell."
 msgstr "Giriş kabuğu değiştiriliyor."
 
 #: userhelper-wrap.c:456
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
+"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama "
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper-wrap.c:458
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
+"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama "
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama\n"
+"root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama "
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper-wrap.c:465
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\n"
+"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama "
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper-wrap.c:480
@@ -318,8 +313,7 @@ msgstr "_Ayır"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
@@ -452,3 +446,4 @@ msgstr "Çı_k"
 #, fuzzy
 #~ msgid "Change personal information"
 #~ msgstr "Kişisel bilgiler değiştiriliyor"
+
