@@ -26,7 +26,6 @@
 
 #define DIALOG_XML_NAME "userdialog-xml"
 
-#if GTK_CHECK_VERSION(1,3,10)
 GtkWidget *
 create_message_box(gchar *message, gchar *title)
 {
@@ -35,7 +34,7 @@ create_message_box(gchar *message, gchar *title)
 					 GTK_MESSAGE_INFO,
 					 GTK_BUTTONS_CLOSE,
 					 "%s", message);
-	if(title) {
+	if (title) {
 		gtk_window_set_title(GTK_WINDOW(dialog), title);
 	}
 	g_signal_connect_object(G_OBJECT(dialog), "response",
@@ -52,7 +51,7 @@ create_error_box(gchar * error, gchar * title)
 					 GTK_MESSAGE_ERROR,
 					 GTK_BUTTONS_CLOSE,
 					 "%s", error);
-	if(title) {
+	if (title) {
 		gtk_window_set_title(GTK_WINDOW(dialog), title);
 	}
 	g_signal_connect_object(G_OBJECT(dialog), "response",
@@ -60,42 +59,7 @@ create_error_box(gchar * error, gchar * title)
 	gtk_widget_show_all(dialog);
 	return dialog;
 }
-#else
-GtkWidget *
-create_message_box(gchar *message, gchar *title)
-{
-	GladeXML *xml;
-	GtkWidget *window, *label, *button;
 
-	xml = glade_xml_new(DATADIR "/" PACKAGE "/" PACKAGE ".glade",
-			    "message_box", PACKAGE);
-
-	window = glade_xml_get_widget(xml, "message_box");
-	gtk_object_set_data(GTK_OBJECT(window), DIALOG_XML_NAME, xml);
-
-	label = glade_xml_get_widget(xml, "message");
-	button = glade_xml_get_widget(xml, "close");
-
-	if(title) {
-		gtk_window_set_title(GTK_WINDOW(window), title);
-	}
-	gtk_label_set_text(GTK_LABEL(label), message);
-
-	gtk_signal_connect_object(GTK_OBJECT(button), "clicked",
-				  GTK_SIGNAL_FUNC(gtk_widget_destroy),
-				  (gpointer) window);
-
-	return window;
-}
-
-GtkWidget *
-create_error_box(gchar * error, gchar * title)
-{
-	return create_message_box(error, title);
-}
-#endif
-
-#if GTK_CHECK_VERSION(1,3,10)
 static void
 relay_value(GtkWidget *dialog, GtkResponseType response, GtkSignalFunc func)
 {
@@ -119,7 +83,7 @@ create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
 					GTK_MESSAGE_QUESTION,
 					GTK_BUTTONS_OK_CANCEL,
 					"%s", prompt);
-	if(title) {
+	if (title) {
 		gtk_window_set_title(GTK_WINDOW(dialog), title);
 	}
 	box = (GTK_DIALOG(dialog))->vbox;
@@ -140,51 +104,9 @@ create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
 
 	return dialog;
 }
-#else
-static GtkWidget *
-create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
-		   gboolean visible)
-{
-	GladeXML *xml;
-	GtkWidget *window, *label, *entry, *ok, *cancel;
-
-	xml = glade_xml_new(DATADIR "/" PACKAGE "/" PACKAGE ".glade",
-			    "query_box", PACKAGE);
-
-	window = glade_xml_get_widget(xml, "query_box");
-	gtk_object_set_data(GTK_OBJECT(window), DIALOG_XML_NAME, xml);
-
-	label = glade_xml_get_widget(xml, "question");
-	entry = glade_xml_get_widget(xml, "entry");
-	ok = glade_xml_get_widget(xml, "ok");
-	cancel = glade_xml_get_widget(xml, "cancel");
-
-	if(title) {
-		gtk_window_set_title(GTK_WINDOW(window), title);
-	}
-	gtk_label_set_text(GTK_LABEL(label), prompt);
-	gtk_entry_set_visibility(GTK_ENTRY(entry), visible);
-
-	gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
-				  GTK_SIGNAL_FUNC(gtk_widget_hide),
-				  (gpointer) window);
-	gtk_signal_connect(GTK_OBJECT(ok), "clicked",
-			   GTK_SIGNAL_FUNC(func), (gpointer) entry);
-
-	gtk_signal_connect_object(GTK_OBJECT(cancel), "clicked",
-				  GTK_SIGNAL_FUNC(gtk_widget_destroy),
-				  (gpointer) window);
-
-	/* FIXME: close the dialog when the cancel button is clicked, and
-	 * attach a signal handler to the entry field */
-
-	return window;
-}
-#endif
 
 GtkWidget *
-create_invisible_query_box(gchar * prompt, gchar * title,
-			   GtkSignalFunc func)
+create_invisible_query_box(gchar *prompt, gchar *title, GtkSignalFunc func)
 {
 	return create_query_box_i(prompt, title, func, FALSE);
 }
