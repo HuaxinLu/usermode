@@ -28,7 +28,7 @@ msgstr "V redu"
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
-msgstr "Napaka zaradi velikosti"
+msgstr ""
 
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
