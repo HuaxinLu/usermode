@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
-"PO-Revision-Date: 2002-08-14 04:21+1000\n"
+"PO-Revision-Date: 2002-09-04 09:34+1000\n"
 "Last-Translator: Michelle Kim <mkim@redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -139,8 +139,7 @@ msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:729
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
 "니다.\n"
@@ -427,7 +426,7 @@ msgstr "종료 (_x)"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -484,3 +483,4 @@ msgstr "패스워드"
 
 #~ msgid "Starting \"%s\" with administrative privileges."
 #~ msgstr "슈퍼유저의 권한으로 \"%s\"을(를) 시작합니다."
+
