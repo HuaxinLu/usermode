@@ -4,13 +4,13 @@ if test -x /bin/rpm ; then
 		RPM_OPT_FLAGS=`rpm --eval '%optflags'`
 	fi
 fi
-set -x
+set -x -e
 CFLAGS="$DEFINES $RPM_OPT_FLAGS -O0 -g3 $CFLAGS" ; export CFLAGS
 libtoolize --force
 cp ChangeLog ChangeLog.old
 gettextize -f -c --intl
 cat ChangeLog.old > ChangeLog
-aclocal -I ./m4
+aclocal
 automake -a
 autoheader
 autoconf
