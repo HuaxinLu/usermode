@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2000-08-03 15:08-0400\n"
-"PO-Revision-Date: 2000-09-10 10:00+0000\n"
+"PO-Revision-Date: 2001-01-21 20:03+00:00\n"
 "Last-Translator: Pedro Morais <morais@poli.org>\n"
 "Language-Team: pt <morais@poli.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "OK"
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Erro no 'pipe'.\n"
 
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
@@ -45,17 +45,19 @@ msgstr "Erro no dup2().\n"
 #: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "erro no execl(), errno=%d\n"
 
 #: ../userhelper-wrap.c:115
 msgid "Information updated."
-msgstr ""
+msgstr "Informação actualizada."
 
 #: ../userhelper-wrap.c:118
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"A senha que inseriu é inválida.\n"
+"Tente outra vez."
 
 #: ../userhelper-wrap.c:121
 msgid ""
@@ -63,28 +65,34 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Um ou mais dos campos alterados são inválidos.\n"
+"Normalmente isto deve-se à utilização de pontos ou virgulas em um dos "
+"campos.\n"
+"Por favor remova-os e tente novamente."
 
 #: ../userhelper-wrap.c:124
 msgid "Password resetting error."
-msgstr ""
+msgstr "Erro ao reiniciar senha."
 
 #: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Alguns dos ficheiros de sistema estão trancados.\n"
+"Por favor tente novamento dentro de alguns momentos."
 
 #: ../userhelper-wrap.c:130
 msgid "Unknown user."
-msgstr ""
+msgstr "Utilizador desconhecido."
 
 #: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Privilégios insuficientes."
 
 #: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Chamada inválida a um sub-processo."
 
 #: ../userhelper-wrap.c:139
 msgid ""
@@ -92,36 +100,39 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"A sua 'shell' actual não está listada em /etc/shells.\n"
+"Não pode alterar a sua 'shell'.\n"
+"Contacte o seu administrador de sistemas."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:143
 msgid "Out of memory."
-msgstr ""
+msgstr "Falta de memória."
 
 #: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
-msgstr ""
+msgstr "A chamada exec() falhou."
 
 #: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Não consegui encontrar o programa seleccionado."
 
 #: ../userhelper-wrap.c:152
 msgid "Unknown error."
-msgstr ""
+msgstr "Erro desconhecido."
 
 #: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Código de saída desconhecido."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Entrada"
 
 #: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "Necessárias %d respostas.\n"
 
 #: ../userhelper-wrap.c:345
 #, c-format
@@ -129,131 +140,137 @@ msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
 "required."
 msgstr ""
+"Para poder executar \"%s\" com os privilégios de %s, são necessárias mais "
+"informações."
 
 #: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "Quer %d resposta(s) de %d campos de entrada!?!?!\n"
 
 #: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Encontrei o erro %d.\n"
 
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Senha para %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "Verificação de consistência não está activa."
 
 #: ../userhelper.c:389
 msgid "Block is fine."
-msgstr ""
+msgstr "Bloco está ok."
 
 #: ../userhelper.c:391
 msgid "Block freed twice."
-msgstr ""
+msgstr "Bloco libertado duas vezes."
 
 #: ../userhelper.c:393
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "A memória antes do bloco foi sobrescrita."
 
 #: ../userhelper.c:395
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "A memória depois do bloco foi sobrescrita."
 
 #: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "userhelper tem que ser setuid root\n"
 
 #: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr ""
+msgstr "prestes a executar \"%s\"\n"
 
 #: ../userinfo.c:125
 msgid "User Information"
-msgstr ""
+msgstr "Informações do Utilizador"
 
 #: ../userinfo.c:154
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: ../userinfo.c:243
 msgid "Full Name:"
-msgstr ""
+msgstr "Nome Completo:"
 
 #: ../userinfo.c:261
 msgid "Office:"
-msgstr ""
+msgstr "Escritório:"
 
 #: ../userinfo.c:280
 msgid "Office Phone:"
-msgstr ""
+msgstr "Telefone do Escritório:"
 
 #: ../userinfo.c:298
 msgid "Home Phone:"
-msgstr ""
+msgstr "Telefone de Casa:"
 
 #: ../userinfo.c:316
 msgid "Shell:"
-msgstr ""
+msgstr "'Shell':"
 
 #: ../userinfo.c:379
 msgid "This will be some help text."
-msgstr ""
+msgstr "Isto será um texto de ajuda."
 
 #: ../usermount.c:56
 msgid "Mount"
-msgstr ""
+msgstr "Montar"
 
 #: ../usermount.c:57
 msgid "Unmount"
-msgstr ""
+msgstr "Desmontar"
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Ferramenta de Montagem para Utilizadores"
 
 #: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
+"Não há sistemas de ficheiros montáveis por utilizadores.\n"
+"Contacte o seu administrador."
 
 #: ../usermount.c:178
 msgid "Directory"
-msgstr ""
+msgstr "Directoria"
 
 #: ../usermount.c:186
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
 #: ../usermount.c:194
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: ../usermount.c:269
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 #: ../usermount.c:363
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
+"Tem a certeza?\n"
+"Vai destruir todos os dados neste disco.\n"
 
 #: ../usermount.c:365
 msgid "Yes"
-msgstr ""
+msgstr "Sim"
 
 #: ../usermount.c:375
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: ../usermount.c:382
 msgid "Do low level format."
-msgstr ""
+msgstr "Formatação de baixo nível."
