@@ -1,0 +1,392 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ben Wu <hpwu@redhat.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: usermode\n"
+"POT-Creation-Date: 2002-04-01 11:46-0500\n"
+"PO-Revision-Date: 2002-04-02 09:47GMT\n"
+"Last-Translator: Ben Wu <hpwu@brisbane.redhat.com>\n"
+"Language-Team:  <zh@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=BIG5\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+
+#: dummy.h:21 userdialogs.h:29
+msgid "OK"
+msgstr "確定"
+
+#: dummy.h:22 userdialogs.h:32
+msgid "Exit"
+msgstr "離開"
+
+#: dummy.h:23 userdialogs.h:31
+msgid "Cancel"
+msgstr "取消"
+
+#: dummy.h:24 userdialogs.h:33
+msgid "Run Unprivileged"
+msgstr "無特權的執行"
+
+#: dummy.h:25
+msgid "(current) UNIX password: "
+msgstr "(目前的) UNIX 密碼："
+
+#: dummy.h:26
+msgid "New UNIX password: "
+msgstr "新設的 UNIX 密碼："
+
+#: dummy.h:27
+msgid "Retype new UNIX password: "
+msgstr "再輸入一次新設的 UNIX 密碼："
+
+#: dummy.h:28
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr "不當的密碼： 密碼太短"
+
+#: dummy.h:29
+msgid "BAD PASSWORD: it is too short"
+msgstr "不當的密碼： 密碼太短"
+
+#: dummy.h:30
+msgid "Password unchanged"
+msgstr "密碼不變"
+
+#: dummy.h:31
+msgid "Sorry, passwords do not match"
+msgstr "抱歉, 密碼不符"
+
+#: userdialogs.h:30
+msgid "Help"
+msgstr "求助"
+
+#: userhelper.c:96
+#, c-format
+msgid "Got PAM error %d.\n"
+msgstr "有 PAM 錯誤 %d. \n"
+
+#: userhelper.c:202
+#, c-format
+msgid "Password for %s"
+msgstr "%s 的密碼"
+
+#: userhelper.c:317
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from superuser\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"您試著要執行 \"%s\", 這將使您有 superuser\n"
+"的權限, 但為了要如此做您需要更多資訊。"
+
+#: userhelper.c:319
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires superuser\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"您試著要執行 \"%s\", 您需要有 superuser\n"
+"的權限, 但為了要如此做您需要更多資訊。"
+
+#: userhelper.c:323
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"superuser privileges, but more information is needed in order to do so."
+msgstr ""
+"您試著要執行一個指令, 這將使您有\n"
+"superuser 的權限, 但為了要如此做您需要更多資訊。"
+
+#: userhelper.c:325
+msgid ""
+"You are attempting to run a command which requires superuser\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"您試著要執行一個指令, 您需要有 superuser\n"
+"的權限, 但為了要如此做您需要更多資訊。"
+
+#: userhelper.c:343
+#, c-format
+msgid "Password for %s: "
+msgstr "%s 的密碼： "
+
+#: userhelper.c:626
+msgid "userhelper must be setuid root\n"
+msgstr "userhelper 必須 setuid root\n"
+
+#: userhelper.c:708
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "無法開啟圖形視窗,且找不到控制終端機。\n"
+
+#: userhelper.c:1369 userhelper.c:1407
+#, c-format
+msgid "about to exec \"%s\"\n"
+msgstr "即將執行(exec) \"%s\"\n"
+
+#: userhelper-wrap.c:50
+msgid "Unknown exit code."
+msgstr "未知的離開碼(exit code)。"
+
+#: userhelper-wrap.c:52
+msgid "Information updated."
+msgstr "已更新的資訊。"
+
+#: userhelper-wrap.c:54
+msgid ""
+"The password you typed is invalid.\n"
+"Please try again."
+msgstr ""
+"您輸入的密碼無效。\n"
+"請再試一次。"
+
+#: userhelper-wrap.c:56
+msgid ""
+"One or more of the changed fields is invalid.\n"
+"This is probably due to either colons or commas in one of the fields.\n"
+"Please remove those and try again."
+msgstr ""
+"一個或多個更改過的欄位無效。\n"
+"也許是由於有冒號或逗號在欄位裡。\n"
+"請移除它們然後再試一次。"
+
+#: userhelper-wrap.c:58
+msgid "Password resetting error."
+msgstr "重設密碼錯誤。"
+
+#: userhelper-wrap.c:60
+msgid ""
+"Some systems files are locked.\n"
+"Please try again in a few moments."
+msgstr ""
+"某些系統檔已鎖住。\n"
+"請等會再試一次。"
+
+#: userhelper-wrap.c:62
+msgid "Unknown user."
+msgstr "不知名的使用者。"
+
+#: userhelper-wrap.c:64
+msgid "Insufficient rights."
+msgstr "沒有足夠的權力。"
+
+#: userhelper-wrap.c:66
+msgid "Invalid call to subprocess.."
+msgstr "無效的子程序呼叫.."
+
+#: userhelper-wrap.c:68
+msgid ""
+"Your current shell is not listed in /etc/shells.\n"
+"You are not allowed to change your shell.\n"
+"Consult your system administrator."
+msgstr ""
+"您目前的 shell 沒有列出在 /etc/shells.\n"
+"無法更改您的 shell.\n"
+"請求助您的系統管理員。"
+
+#: userhelper-wrap.c:71
+msgid "Out of memory."
+msgstr "記憶體不足。"
+
+#: userhelper-wrap.c:73
+msgid "The exec() call failed."
+msgstr "exec() 呼叫失敗。"
+
+#: userhelper-wrap.c:75
+msgid "Failed to find selected program."
+msgstr "找不到選取的程式。"
+
+#: userhelper-wrap.c:77
+msgid "Unknown error."
+msgstr "未知的錯誤。"
+
+#: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
+msgid "Placeholder text."
+msgstr "沒有加密過的文字。"
+
+#: userhelper-wrap.c:352
+#, c-format
+msgid "Need %d responses.\n"
+msgstr "需要 %d 回應。\n"
+
+#: userhelper-wrap.c:385
+msgid "Error"
+msgstr "錯誤"
+
+#: userhelper-wrap.c:398
+msgid "Information"
+msgstr "資訊"
+
+#: userhelper-wrap.c:442
+msgid "Changing personal information."
+msgstr "更改個人資訊。"
+
+#: userhelper-wrap.c:445
+msgid "Changing login shell."
+msgstr "更改登入 shell。"
+
+#: userhelper-wrap.c:448
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from superuser "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"您試著要執行 \"%s\", 這將使您有 superuser 的權限, 但為了要如此做您需要更多資"
+"訊。"
+
+#: userhelper-wrap.c:450
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires superuser privileges, but "
+"more information is needed in order to do so."
+msgstr ""
+"您試著要執行 \"%s\", 您需要有 superuser 的權限, 但為了要如此做您需要更多資"
+"訊。"
+
+#: userhelper-wrap.c:455
+msgid ""
+"You are attempting to run a command which may benefit from superuser "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"您試著要執行一個指令, 這將使您有 superuser 的權限, 但為了要如此做您需要更多資"
+"訊。"
+
+#: userhelper-wrap.c:457
+msgid ""
+"You are attempting to run a command which requires superuser privileges, but "
+"more information is needed in order to do so."
+msgstr ""
+"您試著要執行一個指令, 您需要有 superuser 的權限, 但為了要如此做您需要更多資"
+"訊。"
+
+#: userhelper-wrap.c:467
+msgid "_Run Unprivileged"
+msgstr "無特權的執行(_R)"
+
+#: userhelper-wrap.c:579 userhelper-wrap.c:596
+msgid "Pipe error.\n"
+msgstr "程式的輸出導向錯誤.\n"
+
+#: userhelper-wrap.c:603
+msgid "Cannot fork().\n"
+msgstr "無法 fork().\n"
+
+#: userhelper-wrap.c:649 userhelper-wrap.c:653
+msgid "dup2() error.\n"
+msgstr "dup2() 錯誤.\n"
+
+#: userhelper-wrap.c:665
+#, c-format
+msgid "execl() error, errno=%d\n"
+msgstr "execl() error, errno=%d\n"
+
+#: userinfo.c:300
+msgid "You don't exist.  Go away.\n"
+msgstr "您不存在.  請離開.\n"
+
+#: usermount.c:61 glade.strings:26
+msgid "_Mount"
+msgstr "掛載(_M)"
+
+#: usermount.c:62
+msgid "Un_mount"
+msgstr "卸載（_m）"
+
+#: usermount.c:310
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr "您確定要格式化磁碟嗎？您將摧毀它原有的資料。"
+
+#: usermount.c:321
+msgid "Perform a _low-level format."
+msgstr "執行低階格式化(_l)。"
+
+#: usermount.c:364
+msgid "Select a _filesystem type to create:"
+msgstr "選取要建立的檔案系統(_f)："
+
+#: usermount.c:521
+msgid ""
+"There are no filesystems which you are allowed to mount or unmount.\n"
+"Contact your administrator."
+msgstr ""
+"沒有任何檔案系統可被您掛載或卸載。\n"
+"請聯絡系統管理員。"
+
+#: usermount.c:522 usermount.c:530 glade.strings:22
+msgid "User Mount Tool"
+msgstr "使用者掛載工具"
+
+#: usermount.c:544 glade.strings:28
+msgid "_Format"
+msgstr "格式化(_F)"
+
+#: usermount.c:579 glade.strings:24
+msgid "Device"
+msgstr "裝置"
+
+#: usermount.c:585 glade.strings:23
+msgid "Directory"
+msgstr "目錄"
+
+#: usermount.c:591
+msgid "Filesystem"
+msgstr "檔案系統"
+
+#: glade.strings:7
+msgid "User Information"
+msgstr "使用者資訊"
+
+#: glade.strings:8
+msgid "Full Name:"
+msgstr "全名："
+
+#: glade.strings:9
+msgid "Office:"
+msgstr "辦公室："
+
+#: glade.strings:10
+msgid "Office Phone Number"
+msgstr "辦公室電話號碼"
+
+#: glade.strings:11
+msgid "Home Phone Number"
+msgstr "自家電話號碼"
+
+#: glade.strings:12
+msgid "Login Shell"
+msgstr "登入的 Shell"
+
+#: glade.strings:13 glade.strings:20
+msgid "_Ok"
+msgstr "確定(_O)"
+
+#: glade.strings:14 glade.strings:21
+msgid "_Cancel"
+msgstr "取消(_C)"
+
+#: glade.strings:15
+msgid "Message"
+msgstr "信息"
+
+#: glade.strings:17
+msgid "_Close"
+msgstr "關閉(_C)"
+
+#: glade.strings:18
+msgid "Query"
+msgstr "查詢"
+
+#: glade.strings:25
+msgid "Type"
+msgstr "種類"
+
+#: glade.strings:27
+msgid "_Unmount"
+msgstr "卸載(_U)"
+
+#: glade.strings:29
+msgid "E_xit"
+msgstr "離開(_x)"
+
