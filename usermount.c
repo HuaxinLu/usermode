@@ -88,12 +88,10 @@ void user_format(char* device, char* fstype, int lowlevel);
 int
 main(int argc, char* argv[])
 {
-  /* first set up our locale info for gettext. */
-  setlocale(LC_ALL, "");
   bindtextdomain("usermode", "/usr/share/locale");
   textdomain("usermode");
 
-  /* gtk_set_locale(); */		/* this is new... */
+  gtk_set_locale();
   gtk_init(&argc, &argv);
   /* put this back in when I've decided I need it... */
   /*   gtk_rc_parse("userinforc"); */
@@ -242,7 +240,6 @@ create_mount_table(struct mountinfo* list)
       gtk_widget_show(fstype);
 
       mount = gtk_button_new();
-      gtk_widget_set_usize(mount, 60, 0);
       mount_label = gtk_label_new(i18n(UMOUNT_TEXT));
       gtk_misc_set_padding(GTK_MISC(mount_label), 4, 0);
       gtk_container_add(GTK_CONTAINER(mount), mount_label);
@@ -268,7 +265,6 @@ create_mount_table(struct mountinfo* list)
 
       format = gtk_button_new_with_label(i18n("Format"));
       gtk_misc_set_padding(GTK_MISC(GTK_BIN(format)->child), 4, 0);
-      gtk_widget_set_usize(format, 60, 0);
       current->format = format;
       gtk_widget_set_sensitive(format, current->mi_writable);
       if(current->mi_status)
