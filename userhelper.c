@@ -73,6 +73,9 @@ static char *shell_path = NULL; /* shell path */
 
 static char *the_username = NULL; /* used to mangle the conversation function */
 
+/* manipulate the environment directly */
+extern char **environ;
+
 /* command line flags */
 static int 	f_flg = 0; 	/* -f flag = change full name */
 static int	o_flg = 0;	/* -o flag = change office name */
@@ -497,6 +500,7 @@ int main(int argc, char *argv[])
 	char *apps_filename;
 	char *user, *apps_user;
 	char *retry;
+	char *env_home, *env_term, *env_display, *env_shell, *env_user, *env_logname;
 	int session, fallback, try;
 	size_t aft;
 	struct stat sbuf;
@@ -504,6 +508,31 @@ int main(int argc, char *argv[])
 
 	if (strrchr(progname, '/'))
 	    progname = strrchr(progname, '/');
+
+	env_home = getenv("HOME");
+	env_term = getenv("TERM");
+	env_display = getenv("DISPLAY");
+	/* note that XAUTHORITY not copied -- do not let attackers get at
+	 * others' X authority records
+	 */
+	env_shell = getenv("SHELL");
+	env_user = getenv("USER");
+	env_logname = getenv("LOGNAME");
+
+	if (strstr(env_home, ".."))
+	    env_home=NULL;
+	if (strstr(env_shell, ".."))
+	    env_shell=NULL;
+
+	environ = (char **) malloc (2 * sizeof (char *));
+	if (env_home) setenv("HOME", env_home, 1);
+	if (env_term) setenv("TERM", env_term, 1);
+	if (env_display) setenv("DISPLAY", env_display, 1);
+	if (env_shell) setenv("SHELL", env_shell, 1);
+	if (env_user) setenv("USER", env_user, 1);
+	if (env_logname) setenv("LOGNAME", env_logname, 1);
+	setenv("PATH",
+	       "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin:/root/bin", 1);
 
 	aft = strlen(progname) + sizeof("/etc/security/console.apps/") + 2;
 	apps_filename = alloca(aft);
