@@ -710,12 +710,11 @@ int main(int argc, char *argv[])
 
 	        /* copy PAM's environment variables to the child process */
 	        env_pam = pam_getenvlist(pamh);
-
 	        while(env_pam && *env_pam) {
 #ifdef DEBUG_USERHELPER
 	            g_print("setting %s\n", *env_pam);
 #endif
-                    putenv(*env_pam);
+                    putenv(strdup(*env_pam));
 	            env_pam++;
 	        }
 
@@ -723,7 +722,7 @@ int main(int argc, char *argv[])
 		setgid(0);
 		setuid(0);
 		pw = getpwuid(getuid());
-		if (pw) setenv("HOME", pw->pw_dir, 1);
+		if (pw) setenv("HOME", strdup(pw->pw_dir), 1);
 		argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
 		g_print(i18n("about to exec \"%s\"\n"), constructed_path);
