@@ -1,66 +1,63 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2000-08-02 12:47-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: usermode\n"
+"POT-Creation-Date: 2000-08-03 15:08-0400\n"
+"PO-Revision-Date: 2000-08-05 17:08+0200\n"
+"Last-Translator: László Németh <nemeth@qwertynet.hu>\n"
+"Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: ../userdialogs.c:35
 msgid "Message"
-msgstr ""
+msgstr "Üzenet"
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:358
 msgid "Error"
-msgstr ""
+msgstr "Hiba"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr ""
+msgstr "Prompt"
 
 #: ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Pipe hiba.\n"
 
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Nem lehet fork()-olni.\n"
 
 #: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
 #: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
 #: ../usermount.c:817
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "dup2() hiba.\n"
 
 #: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
 #: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "execl() hiba, errno=%d\n"
 
 #: ../userhelper-wrap.c:115
 msgid "Information updated."
-msgstr ""
+msgstr "Információ frissítve."
 
 #: ../userhelper-wrap.c:118
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"A megadott jelszó érvénytelen.\n"
+"Kérem próbálja újra."
 
 #: ../userhelper-wrap.c:121
 msgid ""
@@ -68,28 +65,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Egy vagy több megváltoztatott mezõ érvénytelen.\n"
+"Ez valószínûleg pontok vagy vesszõk jelenlétét jelenti valamelyik mezõben.\n"
+"Kérem távolítsa el ezeket, és próbálkozzon újra."
 
 #: ../userhelper-wrap.c:124
 msgid "Password resetting error."
-msgstr ""
+msgstr "Jelszó törlési hiba."
 
 #: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Néhány rendszerfile zárolva van.\n"
+"Kérem próbálja újra nehány pillanat múlva."
 
 #: ../userhelper-wrap.c:130
 msgid "Unknown user."
-msgstr ""
+msgstr "Ismeretlen felhasználó."
 
 #: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Nincs elegendõ jogosultság."
 
 #: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Érvénytelen al-feladat hívás."
 
 #: ../userhelper-wrap.c:139
 msgid ""
@@ -97,160 +99,175 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"A jelenegi shell nem szerepel az /etc/shells-ben.\n"
+"A shell cseréje nem megengedett.\n"
+"Beszéljen a rendszergazdával."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:143
 msgid "Out of memory."
-msgstr ""
+msgstr "Kevés a memória."
 
 #: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
-msgstr ""
+msgstr "Az exec() hívás sikertelen."
 
 #: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Nem találom a kiválasztott programot."
 
 #: ../userhelper-wrap.c:152
 msgid "Unknown error."
-msgstr ""
+msgstr "Légy van a levesben."
 
 #: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Ismeretlen kilépési kód."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Bevitel"
 
 #: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "%d válaszra van szükség.\n"
 
 #: ../userhelper-wrap.c:345
 #, c-format
 msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
 "required."
-msgstr ""
+msgstr "\"%s\" futtatásához %s jogaival, további információra van szükség."
 
 #: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "%d választ akar %d bemeneti mezõbõl!?!?!?\n"
 
 #: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Bekaptam egy %d hibát.\n"
 
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "%s jelszava"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "A hibaellenõrzés nincs bekapcsolva."
 
 #: ../userhelper.c:389
 msgid "Block is fine."
-msgstr ""
+msgstr "A blokk rendben van."
 
 #: ../userhelper.c:391
 msgid "Block freed twice."
-msgstr ""
+msgstr "A blokk kétszer lett felszabadítva."
 
 #: ../userhelper.c:393
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "A blokk elõtti memória fel volt dúlva."
 
 #: ../userhelper.c:395
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "A blokk utáni memória fel volt dúlva."
 
 #: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "a userhelper-nek setuid root-nak kell lenni\n"
 
 #: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr ""
+msgstr "\"%s\" végrehajtása következik\n"
 
 #: ../userinfo.c:125
 msgid "User Information"
-msgstr ""
+msgstr "Felhasználói információ"
 
 #: ../userinfo.c:154
 msgid "Help"
-msgstr ""
+msgstr "Súgó"
 
 #: ../userinfo.c:243
 msgid "Full Name:"
-msgstr ""
+msgstr "Teljes név:"
 
 #: ../userinfo.c:261
 msgid "Office:"
-msgstr ""
+msgstr "Iroda:"
 
 #: ../userinfo.c:280
 msgid "Office Phone:"
-msgstr ""
+msgstr "Irodai telefon:"
 
 #: ../userinfo.c:298
 msgid "Home Phone:"
-msgstr ""
+msgstr "Otthoni telefon:"
 
 #: ../userinfo.c:316
 msgid "Shell:"
-msgstr ""
+msgstr "Shell:"
 
 #: ../userinfo.c:379
 msgid "This will be some help text."
+msgstr "Ez lészen itt a súgó, majd ha piros hó esik."
+
+#: ../usermount.c:56
+msgid "Mount"
+msgstr ""
+
+#: ../usermount.c:57
+msgid "Unmount"
 msgstr ""
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Felhasználói mount segédeszköz"
 
 #: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
+"Nincsenek felhasználó által mountolható filerendszerek.\n"
+"Beszéljen a rendszergazdával."
 
 #: ../usermount.c:178
 msgid "Directory"
-msgstr ""
+msgstr "Könyvtár"
 
 #: ../usermount.c:186
 msgid "Device"
-msgstr ""
+msgstr "Eszköz"
 
 #: ../usermount.c:194
 msgid "Type"
-msgstr ""
+msgstr "Típus"
 
 #: ../usermount.c:269
 msgid "Format"
-msgstr ""
+msgstr "Formázás"
 
 #: ../usermount.c:363
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
+"Bizti?\n"
+"Az összes adat meg fog semmisülni a lemezen.\n"
 
 #: ../usermount.c:365
 msgid "Yes"
-msgstr ""
+msgstr "Igen"
 
 #: ../usermount.c:375
 msgid "No"
-msgstr ""
+msgstr "Nem"
 
 #: ../usermount.c:382
 msgid "Do low level format."
-msgstr ""
+msgstr "Alacsony szintû formázás végrehajtása."
