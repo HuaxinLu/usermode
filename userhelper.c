@@ -1145,8 +1145,6 @@ get_user_for_auth(shvarFile *s)
 
 		/* Ensure that the system knows who the user is before
 		 * returning the user's name. */
-		new_context = strdup(context_str(ctx));
-		context_free(ctx);
 		pwd = getpwnam(ruid_user);
 		if (pwd != NULL) {
 			ret = ruid_user;
@@ -1154,6 +1152,11 @@ get_user_for_auth(shvarFile *s)
 		        context_user_set(ctx, "root");
 		        ret = NULL;
 		}
+		new_context = strdup(context_str(ctx));
+		context_free(ctx);
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: context = '%s'\n", new_context);
+#endif
 	}
 #endif
 	if (ret == NULL) {
@@ -1720,7 +1723,7 @@ wrap(const char *user, const char *program,
 	    !S_ISREG(sbuf.st_mode) ||
 	    (sbuf.st_mode & S_IWOTH)) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: bad file permissions\n");
+		g_print("userhelper: bad file permissions: %s \n", apps_filename);
 #endif
 		exit(ERR_UNK_ERROR);
 	}
@@ -2120,11 +2123,11 @@ wrap(const char *user, const char *program,
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: running '%s' with root privileges "
 				"in context '%s' on behalf of '%s'\n", cmdline,
-				context_str(new_context), user);
+				new_context, user);
 #endif
 			syslog(LOG_NOTICE, "running '%s' with root privileges "
 			       "in '%s' context on behalf of '%s'", cmdline,
-			       context_str(new_context), user);
+			       new_context, user);
 		} else {
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: running '%s' with root privileges "

@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.70
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -120,6 +120,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Apr 1 2004 Dan Walsh <dwalsh@redhat.com> 1.70-1
+- Change user context to "root" if username context "user_t" not in passwd file
+
 * Wed Mar 31 2004 Nalin Dahyabhai <nalin@redhat.com> 1.70-1
 - fix accidental mixup of role and type setting up new selinux context
 - log the new selinux context if we're running an app in a new selinux context
