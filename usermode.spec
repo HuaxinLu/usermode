@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.5
-Release: 2
+Version: 1.6
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
@@ -46,18 +46,21 @@ rm -rf $RPM_BUILD_ROOT
 /etc/X11/applink/System/*
 
 %changelog
-* Fri Mar 19 1999 Michael Johnson <johnsonm@redhat.com>
+* Wed Mar 31 1999 Michael K. Johnson <johnsonm@redhat.com>
+- hm, need to be root...
+
+* Fri Mar 19 1999 Michael K. Johnson <johnsonm@redhat.com>
 - updated userhelper.8 man page for consolehelper capabilities
 - moved from wmconfig to desktop entries
 
-* Thu Mar 18 1999 Michael Johnson <johnsonm@redhat.com>
+* Thu Mar 18 1999 Michael K. Johnson <johnsonm@redhat.com>
 - added consolehelper
 - Changed conversation architecture to follow PAM spec
 
 * Wed Mar 17 1999 Bill Nottingham <notting@redhat.com>
 - remove gdk_input_remove (causing segfaults)
 
-* Tue Jan 12 1999 Michael Johnson <johnsonm@redhat.com>
+* Tue Jan 12 1999 Michael K. Johnson <johnsonm@redhat.com>
 - fix missing include files
 
 * Mon Oct 12 1998 Cristian Gafton <gafton@redhat.com>
