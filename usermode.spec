@@ -41,7 +41,7 @@ Install the usermode-gtk package if you would like to provide users with
 graphical tools for certain account management tasks.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{release}
 
 %build
 %configure \
