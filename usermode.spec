@@ -6,10 +6,11 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.71
-Release: 1
+Release: 4
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
+Patch0: usermode-mkfs.patch
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else
@@ -19,7 +20,7 @@ Conflicts: SysVinit < 2.74-14
 BuildPrereq: desktop-file-utils, glib2-devel, gtk2-devel
 BuildPrereq: libglade2-devel, libuser-devel, pam-devel, util-linux
 %if %{WITH_SELINUX}
-BuildPrereq: libselinux-devel
+BuildPrereq: libselinux-devel >= 1.17.13-2
 %endif
 BuildRoot: %{_tmppath}/%{name}-root
 
@@ -45,6 +46,8 @@ graphical tools for certain account management tasks.
 
 %prep
 %setup -q -n %{name}-%{version}-%{release}
+
+%patch0 -p1 -b .mkfs
 
 %build
 %configure \
@@ -114,6 +117,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Fri Sep 24 2004 Jindrich Novy <jnovy@redhat.com> 1.71-4
+- updated dependencies to SELinux
+
+* Wed Sep 22 2004 Jindrich Novy <jnovy@redhat.com> 1.71-3
+- installation to Preferences/More Preferences as a request
+  of Ray Strode (rstrode@redhat.com) and #131605
+
+* Mon Sep 20 2004 Jindrich Novy <jnovy@redhat.com> 1.71-2
+- added "-I" option to mkfs in the .mkfs patch (#117793)
+
 * Thu Aug 26 2004 Alexander Larsson <alexl@redhat.com> - 1.71-1
 - consolehelper: work if root is readonly
 

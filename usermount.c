@@ -306,7 +306,7 @@ format(struct mountinfo *info)
 	GtkWidget *dialog, *vbox, *format;
 	GtkWidget *label, *options, *menu, *item, *table;
 	GtkResponseType response;
-	char *command[5];
+	char *command[6];
 	int status, defaultfs;
 	GError *error = NULL;
 	char *sbindir = NULL, *mkfs = NULL, *fstype = NULL;
@@ -438,8 +438,9 @@ format(struct mountinfo *info)
 		command[0] = PATH_MKFS;
 		command[1] = "-t";
 		command[2] = fstype;
-		command[3] = info->dev;
-		command[4] = NULL;
+		command[3] = "-I";
+		command[4] = info->dev;
+		command[5] = NULL;
 		if (g_spawn_async("/",
 				  command, NULL,
 				  G_SPAWN_DO_NOT_REAP_CHILD |

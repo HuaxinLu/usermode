@@ -48,10 +48,16 @@ install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 	mkdir -p $(DESTDIR)/$(datadir)/applications
 	desktop-file-install --vendor=redhat \
 		--add-category X-Red-Hat-Base \
+		--add-category AdvancedSettings \
+		--add-category Application \
+		--dir=$(DESTDIR)/$(datadir)/applications \
+		userinfo.desktop
+	desktop-file-install --vendor=redhat \
+		--add-category X-Red-Hat-Base \
 		--add-category Settings \
 		--add-category Application \
 		--dir=$(DESTDIR)/$(datadir)/applications \
-		userinfo.desktop userpasswd.desktop
+		userpasswd.desktop
 	desktop-file-install --vendor=redhat \
 		--add-category X-Red-Hat-Base \
 		--add-category System \
