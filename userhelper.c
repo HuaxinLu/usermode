@@ -343,7 +343,7 @@ converse_console(int num_msg, const struct pam_message **msg,
 					g_strdup_printf(_("Password for %s: "),
 							user);
 			} else {
-				messages[i]->msg = g_strdup(msg[i]->msg);
+				messages[i]->msg = g_strdup(_(msg[i]->msg));
 			}
 		}
 	}
