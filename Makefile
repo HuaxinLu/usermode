@@ -110,7 +110,8 @@ EXTRA_DIST = \
 	userhelper.8 \
 	userinfo.desktop \
 	usermount.desktop \
-	userpasswd.desktop
+	userpasswd.desktop \
+	keys.xpm
 
 
 SUBDIRS = intl po

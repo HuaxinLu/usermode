@@ -50,12 +50,12 @@ make install DESTDIR=$RPM_BUILD_ROOT
 # packages are on their own....
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
 for wrappedapp in halt reboot poweroff ; do
-	ln -s consolehelper $RPM_BUILD_ROOT/usr/bin/${wrappedapp}
+	ln -s consolehelper $RPM_BUILD_ROOT%{_bindir}/${wrappedapp}
 	touch $RPM_BUILD_ROOT/etc/security/console.apps/${wrappedapp}
 %if %{build6x}
 	cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %else
-	cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrapapp}
+	cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %endif
 done
 

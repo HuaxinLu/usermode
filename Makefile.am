@@ -14,7 +14,9 @@ EXTRA_DIST = \
 	usermount.desktop \
 	userpasswd.desktop \
 	keys.xpm \
-	usermode.glade
+	usermode.glade \
+	shutdown.pamd \
+	shutdown.pamd.6x
 
 SUBDIRS=intl po
 

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 7.2\n"
-"POT-Creation-Date: 2001-12-04 17:15-0500\n"
+"POT-Creation-Date: 2001-12-04 17:34-0500\n"
 "PO-Revision-Date: 2001-09-05 22:33+0200\n"
 "Last-Translator: Roman Maurer <roman.maurer@amis.net>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -37,7 +37,8 @@ msgstr ""
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #.
-#. Just a dummy file for gettext
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "V redu"

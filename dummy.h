@@ -16,8 +16,8 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-/* Just a dummy file for gettext */
-
+/* Just a dummy file for gettext, containing messages emmitted by various
+ * commonly-used PAM modules. */
 gchar* ud_ok_text = N_("OK");
 gchar* ud_exit_text = N_("Exit");
 gchar* ud_cancel_text = N_("Cancel");
