@@ -1,14 +1,14 @@
 # Finnish messages for usermode.
 # Copyright (C) 2003 Lauri Nurmi.
 # This file is distributed under the same license as the usermode package.
-# Lauri Nurmi <lanurmi@iki.fi>, 2003.
+# Lauri Nurmi <lanurmi@iki.fi>, 2003, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-10 14:44+0100\n"
-"PO-Revision-Date:  2003-10-04 15:11+0300\n"
+"PO-Revision-Date: 2005-02-10 17:28+0200\n"
 "Last-Translator: Lauri Nurmi <lanurmi@iki.fi>\n"
 "Language-Team: Gnome Finnish Translation Team <gnome-fi-laatu@lists."
 "sourceforge.net>\n"
@@ -94,7 +94,7 @@ msgstr "Salasana: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Ylläpitäjän oikeuksista luopuminen epäonnistui: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -102,6 +102,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"Ylläpitäjän oikeuksista luopuminen epäonnistui: pam_timestamp_check "
+"palautti virhekoodin %d"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -109,14 +111,17 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"Olet tällä hetkellä valtuutettu muuttamaan järjestelmänlaajuisia (kaikkia "
+"käyttäjiä koskevia) asetuksia ilman ylläpitäjän salasanan antamista uudelleen. "
+"Voit luopua tästä valtuutuksesta."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Säilytä valtuutus"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Luovu valtuutuksesta"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
@@ -139,23 +144,23 @@ msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Virhe"
+msgstr "Virhe: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Komennon \"%s\" ajaminen epäonnistui: %s\n"
 
 #: pam-panel-icon.c:419
-#, c-format
+#, fuzzy, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "IO-kanavan asettaminen "
 
 #: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: yhdistäminen istunnonhallintaan epäonnistui\n"
 
 #: userdialogs.h:30
 msgid "Help"
