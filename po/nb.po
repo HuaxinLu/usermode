@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
 "POT-Creation-Date: 2002-04-15 18:05-0400\n"
-"PO-Revision-Date: 2002-01-31 21:05+0100\n"
+"PO-Revision-Date: 2002-04-18 02:53+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +68,7 @@ msgid "Password for %s"
 msgstr "Passord for %s"
 
 #: userhelper.c:320
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -77,7 +77,7 @@ msgstr ""
 "superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
 #: userhelper.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -86,7 +86,6 @@ msgstr ""
 "mer informasjon for å gjøre dette."
 
 #: userhelper.c:326
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
@@ -95,7 +94,6 @@ msgstr ""
 "superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
 #: userhelper.c:328
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
@@ -104,9 +102,9 @@ msgstr ""
 "oppgi mer informasjon for å gjøre dette."
 
 #: userhelper.c:346
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "Passord for %s"
+msgstr "Passord for %s: "
 
 #: userhelper.c:629
 msgid "userhelper must be setuid root\n"
@@ -391,49 +389,3 @@ msgstr "_Avmonter"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "A_vslutt"
-
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "i ferd med å autentisere \"%s\"\n"
-
-#~ msgid "Yes"
-#~ msgstr "Ja"
-
-#~ msgid "No"
-#~ msgstr "Nei"
-
-#~ msgid "Prompt"
-#~ msgstr "Spør"
-
-#~ msgid "Input"
-#~ msgstr "Inndata"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "For å kjøre \"%s\" med rettigheter som root er det  nødvendig med mer "
-#~ "informasjon."
-
-#~ msgid "Changing password for %s"
-#~ msgstr "Endrer passord for %s"
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "Du ønsker %d svar fra %d oppføringsfelt!?!?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "Konsistenssjekk er ikke slått på."
-
-#~ msgid "Block is fine."
-#~ msgstr "Blokken er bra."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Blokk frigitt to ganger."
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "Minne før blokken ble overskrevet."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "Minne etter blokken ble overskrevet."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Dette vil være en hjelpetekst."
