@@ -1,6 +1,7 @@
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
+EXTRA_DIST = usermode.spec dummy.h
 
 SUBDIRS=intl po
 
@@ -28,7 +29,7 @@ $(WRAPPED_APPS): /dev/null
 
 pkgdata_DATA = usermode.glade
 
-userhelper_SOURCES = userhelper.c shvar.c
+userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_LDADD = @GLIB_LIBS@ @PAM_LIBS@ @LIBS@
 
 userinfo_SOURCES = userinfo.c userdialogs.c userhelper-wrap.c
@@ -37,7 +38,7 @@ userinfo_LDADD = @LIBGLADE_LIBS@ @LIBS@
 usermount_SOURCES = usermount.c userdialogs.c
 usermount_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
-userpasswd_SOURCES = userpasswd.c userdialogs.c userhelper-wrap.c
+userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c
 userpasswd_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 consolehelper_SOURCES = consolehelper.c
