@@ -1,4 +1,4 @@
-# SOME DESCRIPTIVE TITLE.
+# Bangla translation of Usermode.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Runa Bhattacharjee <runab77@softhome.net>, 2003.
@@ -47,8 +47,7 @@ msgstr "বিদায়"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "বাতিল করো"
-#msgstr "বাতিল" <-- List of Standard GUI terms দেখেন
+msgstr "বাতিল"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
@@ -98,7 +97,7 @@ msgstr "সহায়িকা"
 #: userhelper.c:99
 #, c-format
 msgid "Got PAM error %d.\n"
-msgstr ""
+msgstr "PAM সমস্যা %d ধরা পরেছে।\n"
 
 #: userhelper.c:225
 #, c-format
@@ -213,7 +212,7 @@ msgstr "অজানা ব্যবহারকারি।"
 
 #: userhelper-wrap.c:75
 msgid "Insufficient rights."
-msgstr "অপর্যাপ্ত অধিকার।"
+msgstr "অপর্যাপ্ত (Insufficient) অধিকার।"
 
 #: userhelper-wrap.c:77
 msgid "Invalid call to subprocess.."
@@ -226,13 +225,13 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "আপনার বর্তমান শেলটি /etc/shells এ তালিকাভুক্ত নয়।\n"
-"আপনার শেল বদল করার অনুমোদন আপনার নেই।\n"
+"আপনার শেল বদল করার অনুমোদন নেই।\n"
 "আপনার সিস্টেম অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
 # ২য় বাক্যটা.......
 
 #: userhelper-wrap.c:82
 msgid "Out of memory."
-msgstr "মেমরি ফুরিয়া গেছে।"
+msgstr "আরো মেমরি (memory) দরকার।"
 # মেমরী
 
 #: userhelper-wrap.c:84
@@ -249,10 +248,7 @@ msgstr "অজানা সমস্যা।"
 
 #: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
 msgid "Query"
-msgstr "জিজ্ঞাসা"
-#msgstr "জিঞ্জাসা" <-- বানান
-#msgstr "অনুসন্ধান"
-# হাসপাতাল-টাতালে গেলে দেখি Enquery-এর জায়গায় লিখে অনুসন্ধান। তাই .......... ;-)
+msgstr "অনুসন্ধান"
 
 #: userhelper-wrap.c:342
 #, c-format
@@ -270,7 +266,7 @@ msgstr "তথ্য"
 
 #: userhelper-wrap.c:441 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
-msgstr ""
+msgstr "প্লেস হোল্ডার (Placeholder) টেক্সট (text)।"
 
 #: userhelper-wrap.c:482
 msgid "Changing personal information."
@@ -365,9 +361,7 @@ msgstr ""
 
 #: usermount.c:331
 msgid "Perform a _low-level format."
-msgstr "একটি নিম্ন-স্তরীয় ফরম্যাট করুন।"
-#msgstr "একটি নিম্ন-স্থরীয় ফরম্যাট করুন।" <-- বানান
-# লো-লেভেল (Low-Level) এর বাংলা না করলেও মনে হয় চলে। এটা একরকম Technical টার্ম না কি ?
+msgstr "একটি লো-লেভেল (Low-Level) ফরম্যাট করুন।"
 
 #: usermount.c:374
 msgid "Select a _filesystem type to create:"
@@ -378,9 +372,8 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"এমন কোন ফাইলসিস্টেম নেই যা আপনি মাউন্ট অথবা আনমাউন্ট করতে পারেন।\n"
+"এমন কোন ফাইলসিস্টেম নেই যা মাউন্ট বা আনমাউন্ট করার অনুমতি আপনার আছে।\n"
 "আপনার অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
-#এমন কোন ফাইলসিস্টেম নেই যা মাউন্ট বা আনমাউন্ট করার অনুমতি আপনার আছে।
 
 #. Create the dialog.
 #: usermount.c:543 usermount.c:554 glade.strings:22
@@ -399,8 +392,7 @@ msgstr "ডিভাইস"
 
 #: usermount.c:610 glade.strings:23
 msgid "Directory"
-msgstr "ডায়রেক্টরি"
-#msgstr "ডিরেক্টরি" <-- Standard term হয়ে যাচ্ছে। তাই এখনি এভাবে লেখা ভাল
+msgstr "ডিরেক্টরি"
 
 #: usermount.c:616
 msgid "Filesystem"
@@ -422,14 +414,11 @@ msgstr "সম্পূর্ণ নাম:"
 
 #: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
-msgstr "কর্মক্ষেত্র:"
-# 'অফিস'-এর বাংলা করার কোন দরকার নাই
+msgstr "অফিস:"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "কর্মক্ষেত্রের ফোননম্বর:"
-#i dont like the above two involving office.
-# [pro] আগের মতই
+msgstr "অফিসের ফোন নম্বর:"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
