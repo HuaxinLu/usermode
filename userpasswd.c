@@ -28,6 +28,7 @@
 #include <sys/time.h>
 #include <sys/wait.h>
 #include <gtk/gtk.h>
+#include "userdialogs.h"
 
 #define MAXLINE 512
 
@@ -37,12 +38,12 @@
 #define INFO_PROMPT 3
 #define ERROR_PROMPT 4
 
+/* global, not so cool... but easiest hack to use new dialogs. */
+int childout[2];
+int childin[2];
+
 void userpasswd();
-GtkWidget* create_message_box(char* message);
-GtkWidget* create_error_box(char* error);
-GtkWidget* create_query_box(char* prompt, int fd);
-GtkWidget* create_invisible_query_box(char* prompt, int fd);
-void user_input(GtkWidget* widget, int fd);
+void user_input(GtkWidget* widget, GtkWidget* entry);
 
 int
 main(int argc, char* argv[])
@@ -66,8 +67,8 @@ userpasswd()
   char* prompt;
   int prompt_type;
 
-  int childout[2];
-  int childin[2];
+/*   int childout[2]; */
+/*   int childin[2]; */
   pid_t pid;
   int childstatus;
   char outline[MAXLINE];
@@ -117,19 +118,20 @@ userpasswd()
 	    switch(prompt_type)
 	      {
 	      case ECHO_ON_PROMPT:
-		message_box = create_query_box(prompt, childin[1]);
+		message_box = create_query_box(prompt, NULL, (GtkSignalFunc)user_input);
 		gtk_widget_show(message_box);
 		break;
 	      case ECHO_OFF_PROMPT:
-		message_box = create_invisible_query_box(prompt, childin[1]);
+		message_box = create_invisible_query_box(prompt, NULL,
+							 (GtkSignalFunc)user_input);
 		gtk_widget_show(message_box);
 		break;
 	      case INFO_PROMPT:
-		message_box = create_message_box(prompt);
+		message_box = create_message_box(prompt, NULL);
 		gtk_widget_show(message_box);
 		break;
 	      case ERROR_PROMPT:
-		message_box = create_error_box(prompt);
+		message_box = create_error_box(prompt, NULL);
 		gtk_widget_show(message_box);
 		break;
 	      }
@@ -185,156 +187,18 @@ userpasswd()
 
 }
 
-GtkWidget*
-create_message_box(char* message)
-{
-  /* need to put this and other functions into a seperate file, so
-   * both usermount and userinfo can use 'em... and probably
-   * userpasswd as well.
-   */
-  GtkWidget* message_box;
-  GtkWidget* label;
-  GtkWidget* ok;
-
-  message_box = gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(message_box), "Message");
-
-  label = gtk_label_new(message);
-  ok = gtk_button_new_with_label("OK");
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
-			    (GtkSignalFunc) gtk_widget_destroy,
-			    (gpointer) message_box);
-
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->vbox), label,
-		     FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->action_area), ok,
-		     FALSE, FALSE, 0);
-  
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(message_box);
-
-  return message_box;
-
-}
-
-GtkWidget*
-create_error_box(char* error)
-{
-  GtkWidget* error_box;
-  GtkWidget* label;
-  GtkWidget* ok;
-
-  error_box = gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(error_box), "Error");
-
-  label = gtk_label_new(error);
-  ok = gtk_button_new_with_label("OK");
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
-			    (GtkSignalFunc) gtk_widget_destroy,
-			    (gpointer) error_box);
-
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(error_box)->vbox), label,
-		     FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(error_box)->action_area), ok,
-		     FALSE, FALSE, 0);
-  
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(error_box);
-
-  return error_box;
-}
-
-GtkWidget*
-create_query_box(char* prompt, int fd)
-{
-  GtkWidget* query_box;
-  GtkWidget* label;
-  GtkWidget* entry;
-  GtkWidget* ok;
-
-  query_box = gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(query_box), "Prompt");
-
-  label = gtk_label_new(prompt);
-  entry = gtk_entry_new();
-  ok = gtk_button_new_with_label("OK");
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
-			    (GtkSignalFunc) gtk_widget_destroy,
-			    (gpointer) query_box);
-
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), label,
-		     FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), entry,
-		     FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->action_area), ok,
-		     FALSE, FALSE, 0);
-  
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(entry);
-  gtk_widget_show(query_box);
-
-  return query_box;
-}
-
-GtkWidget*
-create_invisible_query_box(char* prompt, int fd)
-{
-  /* Making the text invisible by setting the bg and fg color the
-   * same... there may be an exploit by putting something in gtkrc
-   * that sets the style to something else and makes the text
-   * visible.  I'm not sure, though.. I'll have to see if I can do
-   * it... if so, I'm sure there's some workaround. (Worst case, don't
-   * parse any rc files, but that's kinda extreme and I do want other
-   * settings like users fonts and such.. )
-   */
-  GtkWidget* query_box;
-  GtkWidget* label;
-  GtkWidget* entry;
-  GtkWidget* ok;
-  
-  query_box = gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(query_box), "Prompt");
-
-  label = gtk_label_new(prompt);
-  entry = gtk_entry_new();
-  gtk_entry_set_visibility(GTK_ENTRY(entry), FALSE);
-  gtk_signal_connect(GTK_OBJECT(entry), "destroy",
-		     (GtkSignalFunc) user_input, (gpointer)fd);
-  ok = gtk_button_new_with_label("OK");
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
-			    (GtkSignalFunc) gtk_widget_destroy,
-			    (gpointer) query_box);
-
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), label,
-		     FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), entry,
-		     FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->action_area), ok,
-		     FALSE, FALSE, 0);
-  
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(entry);
-  gtk_widget_show(query_box);
-
-  return query_box;
-}
-
 /* function to take user's input and write it to a file descriptor */
 void
-user_input(GtkWidget* widget, int fd)
+user_input(GtkWidget* widget, GtkWidget* entry)
 {
   /* FIXME: aggressive error checking */
   char* input;
   int len;
 
-  input = gtk_entry_get_text(GTK_ENTRY(widget));
+  input = gtk_entry_get_text(GTK_ENTRY(entry));
 
   len = strlen(input);
-  write(fd, input, len);
-  write(fd, "\n", 1);
+  write(childin[1], input, len);
+  write(childin[1], "\n", 1);
 
 }
