@@ -64,10 +64,17 @@ Text mode authentication instead of the numbered message types
 just described; only used with -w.
 .TP
 .I -w
-Specify a program name and arguments to be passed through.
-userhelper will authenticate the user via pam and then exec
-the named program, if such a program exists in /usr/sbin or
-/sbin.  Normally called from consolehelper via a symlink.
+Specify a program name and arguments to be passed through.  userhelper
+will look up in the file /etc/security/console.apps/\fIprogramname\fP
+the username to authenticate stored as USER=\fIvalue\fP (\fIvalue\fP
+is normally "root" or the magic token "<user>" which indicates
+to authenticate the current user) and the program to run stored as
+PROGRAM=\fIvalue\fP (\fIvalue\fP \fBmust\fP be an absolute path or it
+will be ignored).  If USER is not specified, the current user is used,
+and if PROGRAM is not specified, userhelper looks for \fIprogramname\fP
+in /sbin and /usr/sbin/.  userhelper will then authenticate the user via
+pam and then exec the named program.  userhelper is normally called from
+consolehelper via a symlink.
 .TP
 .I -c 
 Change the current user's password.  Note that this option cannot be

@@ -23,6 +23,9 @@
 #define USE_MCHECK 1
 #endif
 
+#include <assert.h>
+
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -35,6 +38,8 @@
 #include <unistd.h>
 #include <pwd.h>
 #include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 #include <security/pam_appl.h>
 #include <security/pam_misc.h>
@@ -42,6 +47,7 @@
 #include <pwdb/pwdb_public.h>
 
 #include "userhelper.h"
+#include "shvar.h"
 
 /* Total GECOS field length... is this enough ? */
 #define GECOS_LENGTH		80
@@ -62,6 +68,8 @@ static char *office_ph	= NULL;	/* office phone */
 static char *home_ph	= NULL;	/* home phone */
 static char *user_name	= NULL; /* the account name */
 static char *shell_path = NULL; /* shell path */
+
+static char *the_username = NULL; /* used to mangle the conversation function */
 
 /* command line flags */
 static int 	f_flg = 0; 	/* -f flag = change full name */
@@ -130,6 +138,7 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 {
     int 	count = 0;
     struct pam_response *reply = NULL;
+    char *noecho_message;
 
     reply = (struct pam_response *)
 	calloc(num_msg, sizeof(struct pam_response));
@@ -147,7 +156,14 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		printf("%d %s\n", UH_ECHO_ON_PROMPT, msg[count]->msg);
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
-		printf("%d %s\n", UH_ECHO_OFF_PROMPT, msg[count]->msg);
+		if (the_username && !strncasecmp(msg[count]->msg, "password", 8)) {
+		    noecho_message = alloca (strlen (the_username) + 14);
+		    assert(noecho_message);
+		    sprintf(noecho_message, "%s's password:", the_username);
+		} else {
+		    noecho_message = msg[count]->msg;
+		}
+		printf("%d %s\n", UH_ECHO_OFF_PROMPT, noecho_message);
 		break;
 	    case PAM_TEXT_INFO:
 		printf("%d %s\n", UH_INFO_MSG, msg[count]->msg);
@@ -476,21 +492,50 @@ int main(int argc, char *argv[])
 	 * execv(constructed_path, argv+optind);
 	 */
 	char *constructed_path;
+	char *apps_filename;
+	char *user, *apps_user;
+	size_t aft;
+	struct stat sbuf;
+	shvarFile *s;
 
-	constructed_path = malloc(strlen(progname) + sizeof("/usr/sbin/") + 2);
-	if (!constructed_path) exit (ERR_NO_MEMORY);
+	aft = strlen(progname) + sizeof("/etc/security/console.apps/") + 2;
+	apps_filename = alloca(aft);
+	snprintf(apps_filename, aft, "/etc/security/console.apps/%s", progname);
+	s = svNewFile(apps_filename);
+	
+	if (fstat(s->fd, &sbuf) ||
+	    !S_ISREG(sbuf.st_mode) ||
+	    (sbuf.st_mode & S_IWOTH))
+		exit(ERR_UNK_ERROR); /* don't be verbose about security
+					problems; it can help the attacker */
 
-	strcpy(constructed_path, "/usr/sbin/");
-	strcat(constructed_path, progname);
-	if (access(constructed_path, X_OK)) {
-	    strcpy(constructed_path, "/sbin/");
+	apps_user = svGetValue(s, "USER");
+	if (!apps_user || !strcmp(apps_user, "<user>")) {
+	    user = user_name;
+	} else {
+	    user = apps_user;
+	}
+
+	constructed_path = svGetValue(s, "PROGRAM");
+	if (!constructed_path || constructed_path[0] != '/') {
+	    constructed_path = malloc(strlen(progname) + sizeof("/usr/sbin/") + 2);
+	    if (!constructed_path) exit (ERR_NO_MEMORY);
+
+	    strcpy(constructed_path, "/usr/sbin/");
 	    strcat(constructed_path, progname);
 	    if (access(constructed_path, X_OK)) {
-		exit (ERR_NO_PROGRAM);
+		strcpy(constructed_path, "/sbin/");
+		strcat(constructed_path, progname);
+		if (access(constructed_path, X_OK)) {
+		    exit (ERR_NO_PROGRAM);
+		}
 	    }
 	}
 
-	retval = pam_start(progname, user_name, conv, &pamh);
+	svCloseFile(s);
+
+	the_username = user;
+	retval = pam_start(progname, user, conv, &pamh);
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
 

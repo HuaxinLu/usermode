@@ -13,8 +13,8 @@ MANS=userinfo.1 usermount.1 userhelper.8 userpasswd.1 consolehelper.8
 
 all: 	$(PROGS)
 
-userhelper:	userhelper.c
-	$(CC) -ouserhelper $(CFLAGS) userhelper.c -lpwdb -lpam -lpam_misc -ldl
+userhelper:	userhelper.c shvar.o
+	$(CC) -ouserhelper $(CFLAGS) userhelper.c shvar.o -lglib -lpwdb -lpam -lpam_misc -ldl
 
 test:	test-userdialog
 
