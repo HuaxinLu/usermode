@@ -1,0 +1,3 @@
+userpasswd name "Change Password"
+userpasswd exec "userpasswd &"
+userpasswd group Administration

@@ -1,0 +1,3 @@
+userinfo name "About Myself"
+userinfo exec "userinfo &"
+userinfo group Administration
