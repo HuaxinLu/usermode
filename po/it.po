@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) 2001 Red Hat, Inc.
+# Bettina De Monti <bdemonti@redhat.it>, 2001.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
-"PO-Revision-Date:  2001-01-25 15:31-0500\n"
-"Last-Translator: Unknown\n"
+"POT-Creation-Date: 2001-02-05 10:35-0500\n"
+"PO-Revision-Date:  2001-01-29 17:50-0100\n"
+"Last-Translator: Bettina De Monti\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
@@ -15,52 +15,70 @@ msgstr ""
 
 #: ../userdialogs.c:35
 msgid "Message"
-msgstr ""
+msgstr "Messaggio"
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:384
 msgid "Error"
-msgstr ""
+msgstr "Errore"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr ""
+msgstr "Prompt"
 
+#. Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
 #. Just a dummy file for gettext
-#: ../dummy.h:3 ../userdialogs.c:193 ../userinfo.c:140
+#: ../dummy.h:20 ../userdialogs.c:193 ../userinfo.c:139
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
-#: ../userhelper-wrap.c:49 ../usermount.c:581 ../usermount.c:676
-#: ../usermount.c:764
+#: ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
+#: ../usermount.c:761
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Errore di pipe.\n"
 
-#: ../userhelper-wrap.c:55 ../usermount.c:587 ../usermount.c:687
-#: ../usermount.c:770
+#: ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
+#: ../usermount.c:767
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Impossibile creare il processo figlio().\n"
 
-#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:627
-#: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
-#: ../usermount.c:817
+#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
+#: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
+#: ../usermount.c:814
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "errore dup2().\n"
 
-#: ../userhelper-wrap.c:112 ../usermount.c:642 ../usermount.c:754
-#: ../usermount.c:824
+#: ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
+#: ../usermount.c:821
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "errore execl(), errno=%d\n"
 
 #: ../userhelper-wrap.c:141
 msgid "Information updated."
-msgstr ""
+msgstr "Informazioni aggiornate."
 
 #: ../userhelper-wrap.c:144
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"La password digitata non è corretta.\n"
+"Riprovare."
 
 #: ../userhelper-wrap.c:147
 msgid ""
@@ -68,28 +86,34 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Uno o più campi modificati non sono corretti.\n"
+"L'errore è probabilmente causato da punti e virgola o virgole in uno dei "
+"campi.\n"
+"Rimuovere la punteggiatura inutile e riprovare."
 
 #: ../userhelper-wrap.c:150
 msgid "Password resetting error."
-msgstr ""
+msgstr "Errore di resetting della password."
 
 #: ../userhelper-wrap.c:153
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Alcuni file di sistema sono bloccati.\n"
+"Riprovare più avanti."
 
 #: ../userhelper-wrap.c:156
 msgid "Unknown user."
-msgstr ""
+msgstr "Utente sconosciuto."
 
 #: ../userhelper-wrap.c:159
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Diritti insufficienti."
 
 #: ../userhelper-wrap.c:162
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Chimata invalida al sotto-processo."
 
 #: ../userhelper-wrap.c:165
 msgid ""
@@ -97,36 +121,39 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"La shell corrente non è elencata in /etc/shells.\n"
+"Non vi è permesso cambiare la shell.\n"
+"Rivolgetevi all'amministratore del sistema."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:169
 msgid "Out of memory."
-msgstr ""
+msgstr "Memoria insufficiente."
 
 #: ../userhelper-wrap.c:172
 msgid "The exec() call failed."
-msgstr ""
+msgstr "Errore della chiamata exec()."
 
 #: ../userhelper-wrap.c:175
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Impossibile trovare il programma selezionato."
 
 #: ../userhelper-wrap.c:178
 msgid "Unknown error."
-msgstr ""
+msgstr "Errore sconosciuto."
 
 #: ../userhelper-wrap.c:181
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Codice di uscita sconosciuto."
 
 #: ../userhelper-wrap.c:237
 msgid "Input"
-msgstr ""
+msgstr "Input"
 
 #: ../userhelper-wrap.c:346
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "Necessarie risposte %d.\n"
 
 #: ../userhelper-wrap.c:371
 #, c-format
@@ -134,186 +161,192 @@ msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
+"Per potere eseguire \"%s\" con i privilegi di root, sono richieste ulteriori "
+"informazioni."
 
 #: ../userhelper-wrap.c:389
 #, c-format
 msgid "Changing password for %s"
-msgstr ""
+msgstr "Modifica della password per %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "Volete una o più risposte %d dai campi di immissione %d !?!?!\n"
 
 #: ../userhelper.c:103
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Errore %d.\n"
 
 #: ../userhelper.c:199
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Password per %s"
 
 #: ../userhelper.c:398
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "La verifica della consistenza non è attivata."
 
 #: ../userhelper.c:400
 msgid "Block is fine."
-msgstr ""
+msgstr "Il blocco è OK."
 
 #: ../userhelper.c:402
 msgid "Block freed twice."
-msgstr ""
+msgstr "Blocco liberato due volte."
 
 #: ../userhelper.c:404
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "Memoria prima della distruzione del blocco."
 
 #: ../userhelper.c:406
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "Memoria dopo la distruzione del blocco."
 
 #: ../userhelper.c:435
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "userhelper deve impostare la setuid root\n"
 
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "PAM restituito = %d\n"
 
 #: ../userhelper.c:673
 #, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr ""
+msgstr "inizio di autenticazione \"%s\"\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr ""
+msgstr "inizio di exec \"%s\"\n"
 
-#: ../userinfo.c:125
+#: ../userinfo.c:124
 msgid "User Information"
-msgstr ""
+msgstr "Informazioni utente"
 
-#: ../userinfo.c:154
+#: ../userinfo.c:153
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
-#: ../userinfo.c:243
+#: ../userinfo.c:242
 msgid "Full Name:"
-msgstr ""
+msgstr "Nome completo:"
 
-#: ../userinfo.c:261
+#: ../userinfo.c:260
 msgid "Office:"
-msgstr ""
+msgstr "Ufficio:"
 
-#: ../userinfo.c:280
+#: ../userinfo.c:279
 msgid "Office Phone:"
-msgstr ""
+msgstr "Telefono ufficio:"
 
-#: ../userinfo.c:298
+#: ../userinfo.c:297
 msgid "Home Phone:"
-msgstr ""
+msgstr "Telefono casa:"
 
-#: ../userinfo.c:316
+#: ../userinfo.c:315
 msgid "Shell:"
-msgstr ""
+msgstr "Shell:"
 
-#: ../userinfo.c:379
+#: ../userinfo.c:378
 msgid "This will be some help text."
-msgstr ""
-
-#: ../usermount.c:56
-msgid "Mount"
-msgstr ""
+msgstr "Questo sarà un testo di help."
 
 #: ../usermount.c:57
+msgid "Mount"
+msgstr "Monta"
+
+#: ../usermount.c:58
 msgid "Unmount"
-msgstr ""
+msgstr "Smonta"
 
-#: ../usermount.c:120
+#: ../usermount.c:119
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Tool di montaggio per utenti"
 
-#: ../usermount.c:137
+#: ../usermount.c:136
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
+"Non esistono filesystem montabili dagli utenti.\n"
+"Contattare l'amministratore del sistema."
 
-#: ../usermount.c:178
+#: ../usermount.c:177
 msgid "Directory"
-msgstr ""
+msgstr "Directory"
 
-#: ../usermount.c:186
+#: ../usermount.c:185
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
-#: ../usermount.c:194
+#: ../usermount.c:193
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
-#: ../usermount.c:269
+#: ../usermount.c:267
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
-#: ../usermount.c:363
+#: ../usermount.c:360
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
+"Siete sicuri?\n"
+"Tutti i dati su quel disco verranno distrutti.\n"
 
-#: ../usermount.c:365
+#: ../usermount.c:362
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
-#: ../usermount.c:375
+#: ../usermount.c:372
 msgid "No"
-msgstr ""
+msgstr "No"
 
-#: ../usermount.c:382
+#: ../usermount.c:379
 msgid "Do low level format."
-msgstr ""
+msgstr "Esegui formato di basso livello."
 
-#: ../dummy.h:4
+#: ../dummy.h:21
 msgid "Exit"
-msgstr ""
+msgstr "Esci"
 
-#: ../dummy.h:5
+#: ../dummy.h:22
 msgid "Cancel"
-msgstr ""
+msgstr "Cancella"
 
-#: ../dummy.h:6
+#: ../dummy.h:23
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Esegui in modalità non privilegiata"
 
-#: ../dummy.h:7
+#: ../dummy.h:24
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "Password UNIX (corrente): "
 
-#: ../dummy.h:8
+#: ../dummy.h:25
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Nuova password UNIX: "
 
-#: ../dummy.h:9
+#: ../dummy.h:26
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Ridigita nuova password UNIX: "
 
-#: ../dummy.h:10
+#: ../dummy.h:27
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "PASSWORD ERRATA: è DAVVERO troppo corta"
 
-#: ../dummy.h:11
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "PASSWORD ERRATA: è troppo corta"
 
-#: ../dummy.h:12
+#: ../dummy.h:29
 msgid "Password unchanged"
-msgstr ""
+msgstr "Password non modificata"
 
-#: ../dummy.h:13
+#: ../dummy.h:30
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Le password non corrispondono"
