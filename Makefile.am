@@ -18,7 +18,7 @@ EXTRA_DIST = config.rpath  \
 	shutdown.pamd \
 	shutdown.pamd.6x
 
-SUBDIRS= m4 po
+SUBDIRS= m4 intl po
 
 CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@
 consolehelper_CFLAGS = -DDISABLE_X11 $(CFLAGS)
