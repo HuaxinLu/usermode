@@ -5,6 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
 "PO-Revision-Date: 2003-03-02 17:07-0000\n"
 "Last-Translator: Rhoslyn Prys <rhoslyn.prys@meddal.org.uk>\n"
@@ -82,12 +83,11 @@ msgstr "Cychwyn offer ffurfweddu'r holl system heb gyfrinair"
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "mewngofnodi: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Cyfrinair"
+msgstr "Cyfrinair: "
 
 #: userdialogs.h:30
 msgid "Help"
@@ -96,7 +96,7 @@ msgstr "Cymorth"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Methu gosod cyd-destun exec i %s.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -199,9 +199,8 @@ msgid "Insufficient rights."
 msgstr "Dim hawl digonol"
 
 #: userhelper-wrap.c:194
-#, fuzzy
 msgid "Invalid call to subprocess."
-msgstr "Galwad annilys i is broses.."
+msgstr "Galwad annilys i is broses."
 
 #: userhelper-wrap.c:196
 msgid ""
