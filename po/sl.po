@@ -1,18 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: usermode 7.0\n"
 "POT-Creation-Date: 2000-08-03 15:08-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2000-02-20 21:50+0100\n"
+"Last-Translator: Roman Maurer <roman.maurer@hermes.si>\n"
+"Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: ../userdialogs.c:35
 msgid "Message"
@@ -20,7 +15,7 @@ msgstr ""
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:358
 msgid "Error"
-msgstr ""
+msgstr "Napaka"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
@@ -28,12 +23,12 @@ msgstr ""
 
 #: ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
-msgstr ""
+msgstr "V redu"
 
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Napaka zaradi velikosti"
 
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
@@ -60,7 +55,7 @@ msgstr ""
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
+msgstr "Gesli, ki ste ju podali, se razlikujeta. Prosim poskusite ponovno."
 
 #: ../userhelper-wrap.c:121
 msgid ""
@@ -71,7 +66,7 @@ msgstr ""
 
 #: ../userhelper-wrap.c:124
 msgid "Password resetting error."
-msgstr ""
+msgstr "Dol¾ina gesel"
 
 #: ../userhelper-wrap.c:127
 msgid ""
@@ -81,7 +76,7 @@ msgstr ""
 
 #: ../userhelper-wrap.c:130
 msgid "Unknown user."
-msgstr ""
+msgstr "Neznan gostitelj"
 
 #: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
@@ -109,15 +104,15 @@ msgstr ""
 
 #: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Ne moremo zapisovati dnevnika v %s: %s"
 
 #: ../userhelper-wrap.c:152
 msgid "Unknown error."
-msgstr ""
+msgstr "Neznan gostitelj"
 
 #: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Neznan gostitelj"
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
@@ -143,12 +138,12 @@ msgstr ""
 #: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Sistemska napaka %d"
 
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Geslo"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
@@ -181,15 +176,15 @@ msgstr ""
 
 #: ../userinfo.c:125
 msgid "User Information"
-msgstr ""
+msgstr "Manjkajoèi podatki"
 
 #: ../userinfo.c:154
 msgid "Help"
-msgstr ""
+msgstr "Prika¾imo pomoè"
 
 #: ../userinfo.c:243
 msgid "Full Name:"
-msgstr ""
+msgstr "Polno ime"
 
 #: ../userinfo.c:261
 msgid "Office:"
@@ -213,7 +208,7 @@ msgstr ""
 
 #: ../usermount.c:56
 msgid "Mount"
-msgstr ""
+msgstr "Monitor"
 
 #: ../usermount.c:57
 msgid "Unmount"
@@ -221,7 +216,7 @@ msgstr ""
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Namestitev uporabni¹kega raèuna"
 
 #: ../usermount.c:137
 msgid ""
@@ -235,15 +230,15 @@ msgstr ""
 
 #: ../usermount.c:186
 msgid "Device"
-msgstr ""
+msgstr "Naprava"
 
 #: ../usermount.c:194
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #: ../usermount.c:269
 msgid "Format"
-msgstr ""
+msgstr "Formatiranje"
 
 #: ../usermount.c:363
 msgid ""
@@ -253,11 +248,11 @@ msgstr ""
 
 #: ../usermount.c:365
 msgid "Yes"
-msgstr ""
+msgstr "Da"
 
 #: ../usermount.c:375
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: ../usermount.c:382
 msgid "Do low level format."
