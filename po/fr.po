@@ -103,7 +103,7 @@ msgstr "Aide"
 #: userhelper.c:114
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Impossible de au contexte d'exec la valeur %s.\n"
+msgstr "Impossible de donner au contexte d'exec la valeur %s.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -260,7 +260,7 @@ msgstr "Information"
 #: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
-msgstr "Conteneur de texte"
+msgstr "Texte fictif."
 
 #: userhelper-wrap.c:782
 msgid "Changing personal information."
