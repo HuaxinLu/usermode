@@ -1,17 +1,19 @@
+# translation of bg.po to Български
 # translation of bg.po to Bulgarian
 # translation of usermode.po to Bulgarian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Doncho N. Gunchev <mr700@globalnet.bg>, 2004.
+# Николай Сърмаджиев <nikolayd@sarmadzhiev.tk>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-08-24 00:51+0300\n"
-"Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
-"Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
+"PO-Revision-Date: 2004-10-04 12:06-0700\n"
+"Last-Translator: Николай Сърмаджиев <nikolayd@sarmadzhiev.tk>\n"
+"Language-Team: Български <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +40,7 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "Да"
+msgstr "Добре"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
@@ -95,68 +97,68 @@ msgstr "Парола: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Провал при отнемането на администраторските привилегии: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
+msgstr "Провал при отнемането на администраторските привилегии: pam_timestamp_check върна код на грешка %d"
 
 #: pam-panel-icon.c:148
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
+msgstr "В момента сте оторизиран да настройвате системни параметри (това се отразява на всички потребители) без отново да въвеждате администраторската парола. Може да се откажете от тази привилегия."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Запазване оторизацията"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Отказване оторизацията"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check  не е setuid руут"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "няма контролно tty за pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "потребителят е непознат на pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "грешка при правата в pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "невалидно контролно tty за pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Грешка"
+msgstr "Грешка: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Провал при стартиране командата\"%s\":%s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Провал при установяването на деболкиране IO канала: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: провал при свързването с управителя на сесиите\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -219,8 +221,7 @@ msgstr "userhelper трябва да бъде setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2347
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Не може да бъде отворен графичен прозорец, а не може да бъде намерен и "
 "контролен терминал.\n"
@@ -504,3 +505,4 @@ msgstr "Промяна на паролата за вход"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Парола"
+
