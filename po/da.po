@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
-"PO-Revision-Date: 2002-08-17 11:24+0200\n"
+"PO-Revision-Date: 2002-09-03 11:24+0200\n"
 "Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -426,7 +426,7 @@ msgstr "Af_slut"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
