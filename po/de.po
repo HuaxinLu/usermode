@@ -140,7 +140,8 @@ msgstr "userhelper muss Setuid-Root sein\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -449,4 +450,3 @@ msgstr "Anmelde-Passwort ändern"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Passwort"
-

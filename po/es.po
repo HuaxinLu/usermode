@@ -101,8 +101,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"El intento de ejecutar \"%s\" puede ser beneficioso desde el punto "
-"de vista de los privilegios a nivel administrativo, pero es necesaria más "
+"El intento de ejecutar \"%s\" puede ser beneficioso desde el punto de vista "
+"de los privilegios a nivel administrativo, pero es necesaria más "
 "información para poder realizarlo."
 
 #: userhelper.c:340
@@ -111,8 +111,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Está intentando ejecutar \"%s\" que requiere los privilegios de administración, "
-" pero necesita más información para hacerlo. "
+"Está intentando ejecutar \"%s\" que requiere los privilegios de "
+"administración,  pero necesita más información para hacerlo. "
 
 #: userhelper.c:344
 msgid ""
@@ -141,8 +141,10 @@ msgstr "El userhelper debe configurar la setuid del root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Imposible abrir una ventana gráfica y encontrar un terminal de control.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Imposible abrir una ventana gráfica y encontrar un terminal de control.\n"
 
 #: userhelper.c:1409 userhelper.c:1447
 #, c-format
@@ -261,8 +263,8 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "El intento de ejecución de \"%s\" puede ser beneficioso desde el punto de "
-"vista de los privilegios administrativos, pero es necesaria más información "
-"para poder realizarlo."
+"vista de los privilegios administrativos, pero es necesaria más "
+"información para poder realizarlo."
 
 #: userhelper-wrap.c:476
 #, c-format
@@ -278,16 +280,16 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar un comando que se beneficia de los privilegios administrativos, "
-" pero necesita más información para hacerlo."
+"Ha intentado ejecutar un comando que se beneficia de los privilegios "
+"administrativos,  pero necesita más información para hacerlo."
 
 #: userhelper-wrap.c:487
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar un comando que requiere los privilegios administrativos, "
-" pero se necesita más información para hacerlo."
+"Ha intentado ejecutar un comando que requiere los privilegios "
+"administrativos,  pero se necesita más información para hacerlo."
 
 #: userhelper-wrap.c:503
 msgid "_Run Unprivileged"
@@ -327,8 +329,8 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"¿Está seguro de que querer formatear este disco?  Destruirá cualquier dato "
-"existente."
+"¿Está seguro de que querer formatear este disco?  Destruirá cualquier "
+"dato existente."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
@@ -448,4 +450,3 @@ msgstr "Cambio de su contraseña de registro"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Contraseña"
-

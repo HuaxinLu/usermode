@@ -80,7 +80,8 @@ msgstr "Désolé, les mots de passe ne correspondent pas"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Démarrer les outils de configuration de tout le système sans mot de passe."
+msgstr ""
+"Démarrer les outils de configuration de tout le système sans mot de passe."
 
 #: userdialogs.h:30
 msgid "Help"
@@ -145,7 +146,8 @@ msgstr "userhelper doit être setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
 "contrôle.\n"
@@ -459,4 +461,3 @@ msgstr "Modifier le mot de passe de connexion"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Mot de passe"
-
