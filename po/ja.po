@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
 "POT-Creation-Date: 2002-08-05 21:36-0400\n"
-"PO-Revision-Date: 2002-07-24 15:20GMT+10:00\n"
+"PO-Revision-Date: 2002-08-06 17:15GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "OK "
+msgstr "OK"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
@@ -140,8 +140,7 @@ msgstr "ユーザヘルパーはrootにsetuidされていなければなりま�
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
@@ -431,9 +430,8 @@ msgid "About Myself"
 msgstr "¥æ¡¼¥¶¾ðÊó"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "個人情報を変更しています。"
+msgstr "個人情報を変更"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
@@ -444,14 +442,12 @@ msgid "Mount and unmount filesystems"
 msgstr "¥Õ¥¡¥¤¥ë¥·¥¹¥Æ¥à¤Î¥Þ¥¦¥ó¥È¤È¥Þ¥¦¥ó¥È²ò½ü"
 
 #: userpasswd.desktop.in.h:1
-#, fuzzy
 msgid "Change your login password"
-msgstr "¥Ñ¥¹¥ï¡¼¥ÉÊÑ¹¹"
+msgstr "ログインパスワードを変更"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "%sのパスワード"
+msgstr "パスワード"
 
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
@@ -491,3 +487,4 @@ msgstr "%sのパスワード"
 
 #~ msgid "Change account information"
 #~ msgstr "¥¢¥«¥¦¥ó¥È¾ðÊó¤ÎÊÑ¹¹¥Ä¡¼¥ë"
+
