@@ -16,7 +16,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-/* Things to remeber...
+/* Things to remember...
  * -- when setting values, make sure there are no colons in what users
  * want me to set.  This is just for convenient dialog boxes to tell
  * people to remove their colons.  Presumably, the suid root helper to
@@ -452,26 +452,38 @@ set_new_userinfo(UserInfo* userinfo)
 
 
   argv[i++] = UH_PATH;
-  if (fullname && fullname[0]) {
-    argv[i++] = UH_FULLNAME_OPT;
+
+  argv[i++] = UH_FULLNAME_OPT;
+  if (fullname && fullname[0])
     argv[i++] = fullname;
-  }
-  if (office && office[0]) {
-    argv[i++] = UH_OFFICE_OPT;
+  else
+    argv[i++] = "";
+
+  argv[i++] = UH_OFFICE_OPT;
+  if (office && office[0])
     argv[i++] = office;
-  }
-  if (officephone && officephone[0]) {
-    argv[i++] = UH_OFFICEPHONE_OPT;
+  else
+    argv[i++] = "";
+
+  argv[i++] = UH_OFFICEPHONE_OPT;
+  if (officephone && officephone[0])
     argv[i++] = officephone;
-  }
-  if (homephone && homephone[0]) {
-    argv[i++] = UH_HOMEPHONE_OPT;
+  else
+    argv[i++] = "";
+
+  argv[i++] = UH_HOMEPHONE_OPT;
+  if (homephone && homephone[0])
     argv[i++] = homephone;
-  }
-  if (shell && shell[0]) {
-    argv[i++] = UH_SHELL_OPT;
+  else
+    argv[i++] = "";
+
+  argv[i++] = UH_SHELL_OPT;
+  if (shell && shell[0])
     argv[i++] = shell;
-  }
+  else
+    argv[i++] = "";
+
+  argv[i++] = NULL;
 
   signal(SIGCHLD, userhelper_sigchld);
   userhelper_runv(UH_PATH, argv);
