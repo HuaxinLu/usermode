@@ -96,8 +96,8 @@ drop_dialog_response_cb(GtkWidget *dialog, int response_id, void *data)
 
 			g_error_free(err);
 		} else {
-			if (WIFEXITED(exit_status)
-			    && WEXITSTATUS(exit_status) != 0) {
+			if (WIFEXITED(exit_status) &&
+			    (WEXITSTATUS(exit_status) != 0)) {
 				dialog = gtk_message_dialog_new(NULL,
 								GTK_DIALOG_DESTROY_WITH_PARENT,
 								GTK_MESSAGE_ERROR,
@@ -110,7 +110,7 @@ drop_dialog_response_cb(GtkWidget *dialog, int response_id, void *data)
 						 NULL);
 				gtk_window_set_resizable(GTK_WINDOW(dialog),
 							 FALSE);
-				gtk_widget_show(dialog);
+				gtk_window_present(GTK_WINDOW(dialog));
 			}
 		}
 	}
@@ -193,6 +193,7 @@ show_unlocked_icon(void)
 {
 	ensure_tray_icon();
 	gtk_image_set_from_pixbuf(GTK_IMAGE(image), NULL);
+	gtk_widget_hide(image);
 }
 
 static void
@@ -200,6 +201,7 @@ show_locked_icon(void)
 {
 	ensure_tray_icon();
 	gtk_image_set_from_pixbuf(GTK_IMAGE(image), locked_pixbuf);
+	gtk_widget_show(image);
 }
 
 static gboolean
