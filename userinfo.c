@@ -35,6 +35,7 @@
 #include <gtk/gtk.h>
 
 #define NUM_GECOS_FIELDS 4
+#define MAXLINE 512
 
 struct _UserInfo
 {
@@ -44,7 +45,6 @@ struct _UserInfo
   char* office_phone;
   char* home_phone;
   char* shell;
-  char* new_password;
 };
 
 typedef struct _UserInfo UserInfo;
@@ -52,8 +52,15 @@ typedef struct _UserInfo UserInfo;
 void create_userinfo_window(UserInfo* userinfo);
 GtkWidget* create_shell_menu(UserInfo* userinfo);
 GtkWidget* create_gecos_table(UserInfo* userinfo);
-GtkWidget* create_password_dialog(UserInfo* userinfo);
+GtkWidget* create_help_dialog();
+GtkWidget* create_message_box(char* message);
+GtkWidget* create_error_box(char* error);
+GtkWidget* create_query_box(char* prompt);
+GtkWidget* create_invisible_query_box(char* prompt);
+void ok_button(UserInfo* userinfo);
+void show_help_dialog();
 UserInfo* parse_userinfo();
+void set_new_userinfo();
 
 int
 main(int argc, char* argv[])
@@ -79,10 +86,8 @@ void
 create_userinfo_window(UserInfo* userinfo)
 {
   GtkWidget* main;		/* GtkWindow */
-  GtkWidget* notebook;		/* GtkNotebook */
   GtkWidget* gecos;		/* GtkTable */
   GtkWidget* shell_field;	/* GtkOptionMenu */
-  GtkWidget* password;		/* GtkVBox */
   GtkWidget* buttons;		/* GtkHBox */
   GtkWidget* ok;		/* GtkButton */
   GtkWidget* cancel;		/* GtkButton */
@@ -91,13 +96,10 @@ create_userinfo_window(UserInfo* userinfo)
   /* create the widgets */
   /*   main = gtk_window_new(GTK_WINDOW_TOPLEVEL); */
   main = gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(main), "User Info");
+  gtk_window_set_title(GTK_WINDOW(main), "User Information");
   /*   gtk_container_border_width(GTK_CONTAINER(main), 5); */
   gtk_signal_connect(GTK_OBJECT(main), "destroy",
 		     (GtkSignalFunc) gtk_exit, NULL);
-
-  notebook = gtk_notebook_new();
-  gtk_container_border_width(GTK_CONTAINER(notebook), 5);
 
   gecos = create_gecos_table(userinfo);
 
@@ -108,15 +110,19 @@ create_userinfo_window(UserInfo* userinfo)
 		   0, 0, 0, 0);
   gtk_widget_show(shell_field);
 
-  password = create_password_dialog(userinfo);
-
   /* the buttons at the bottom */
   buttons = gtk_hbox_new(FALSE, 0);
   ok = gtk_button_new_with_label("OK");
+  gtk_signal_connect(GTK_OBJECT(ok), "clicked", 
+		     (GtkSignalFunc) ok_button, userinfo);
   gtk_widget_show(ok);
   cancel = gtk_button_new_with_label("Cancel");
+  gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
+		     (GtkSignalFunc) gtk_exit, NULL);
   gtk_widget_show(cancel);
   help = gtk_button_new_with_label("Help");
+  gtk_signal_connect(GTK_OBJECT(help), "clicked",
+		     (GtkSignalFunc) show_help_dialog, NULL);
   gtk_widget_show(help);
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
@@ -126,16 +132,9 @@ create_userinfo_window(UserInfo* userinfo)
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
 		     help, FALSE, FALSE, 0);
 
-  /* build the notebook... */
-  gtk_notebook_append_page(GTK_NOTEBOOK(notebook), gecos, gtk_label_new("General"));
-  gtk_notebook_append_page(GTK_NOTEBOOK(notebook), password,
-			   gtk_label_new("Password"));
-
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->vbox), notebook, TRUE, TRUE, 0);
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->vbox), gecos, TRUE, TRUE, 0);
 
   gtk_widget_show(gecos);
-  gtk_widget_show(password);
-  gtk_widget_show(notebook);
   gtk_widget_show(buttons);
   gtk_widget_show(main);
 }
@@ -344,46 +343,6 @@ create_gecos_table(UserInfo* userinfo)
   return gecos;
 }
 
-GtkWidget*
-create_password_dialog(UserInfo* userinfo)
-{
-  GtkWidget* password_dialog;
-  GtkWidget* vbox;
-  GtkWidget* vbox2;
-  GtkWidget* hbox;
-  GtkWidget* pw_info;		/* GtkLabel */
-  GtkWidget* pw_field_1;	/* GtkEntry */ /* need gtk_entry_set_echo_char() */
-  GtkWidget* pw_field_2;	/* GtkEntry */ /* ditto */
-
-  password_dialog = gtk_vbox_new(FALSE, 0);
-  vbox = gtk_vbox_new(FALSE, 0);
-  vbox2 = gtk_vbox_new(FALSE, 0);
-  hbox = gtk_hbox_new(FALSE, 5);
-
-  pw_info = gtk_label_new("Type your new password twice:");
-
-  pw_field_1 = gtk_entry_new();
-  pw_field_2 = gtk_entry_new();
-/*   gtk_widget_set_sensitive(pw_field_1, FALSE); */
-  gtk_widget_set_sensitive(pw_field_2, FALSE);
-
-  gtk_box_pack_start(GTK_BOX(password_dialog), vbox, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(vbox), pw_info, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(hbox), vbox2, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(vbox2), pw_field_1, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(vbox2), pw_field_2, FALSE, FALSE, 0);
-
-  gtk_widget_show(vbox);
-  gtk_widget_show(vbox2);
-  gtk_widget_show(hbox);
-  gtk_widget_show(pw_info);
-  gtk_widget_show(pw_field_1);
-  gtk_widget_show(pw_field_2);
-
-  return password_dialog;
-}
-
 UserInfo* 
 parse_userinfo()
 {
@@ -423,8 +382,192 @@ parse_userinfo()
   return retval;
 }
 
+GtkWidget*
+create_help_dialog()
+{
+  static GtkWidget* help_dialog;
+  GtkWidget* label;
+  GtkWidget* ok;
 
+  if(help_dialog != NULL)
+    {
+      return help_dialog;
+    }
 
+  help_dialog = gtk_dialog_new();
+  label = gtk_label_new("This will be some help text.");
+  ok = gtk_button_new_with_label("OK");
+  gtk_signal_connect(GTK_OBJECT(ok), "clicked", 
+		     (GtkSignalFunc) show_help_dialog, NULL);
 
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(help_dialog)->vbox), label, 
+		     FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(help_dialog)->action_area),
+		     ok, FALSE, FALSE, 0); 
 
+  gtk_widget_show(label);
+  gtk_widget_show(ok);
+  
 
+  return help_dialog;
+}
+
+void
+ok_button(UserInfo* userinfo)
+{
+  set_new_userinfo();
+}
+
+void
+show_help_dialog()
+{
+  GtkWidget* help_dialog;
+  static int status = FALSE;
+
+  help_dialog = create_help_dialog();
+
+  if(!status)
+    {
+      gtk_widget_show(help_dialog);
+      status = !status;
+    }
+  else
+    {
+      gtk_widget_hide(help_dialog);
+      status = !status;
+    }
+
+}
+
+void
+set_new_userinfo()
+{
+  /* get the changed information... blech... how do I manage that */
+  /* fork() and exec() userhelper with the appropriate args.... */
+
+/*   char* userhelper = "/usr/sbin/userhelper"; */
+  char* userhelper = "./userhelper";
+  char* fullname_opt = "-f";
+  char* office_opt = "-o";
+  char* officephone_opt = "-p";
+  char* homephone_opt = "-h";
+
+  /* the new values... */
+  char* fullname;
+  char* office;
+  char* officephone;
+  char* homephone;
+
+  int childout[2];
+  /* supposedly the helper doesn't put anything on stderr... */
+/*   int childerr[2]; */
+  pid_t pid;
+
+  char outline[MAXLINE];
+/*   char errline[MAXLINE]; */
+  int n;
+  int count;
+  int childstatus;
+
+  /* stuff for the select */
+  
+
+  /* need to figure out the new values.. how the hell am I going to
+   * manage that? 
+   */
+
+/*   if(pipe(childout) < 0 || pipe(childerr) < 0) */
+  if(pipe(childout) < 0)
+    {
+      fprintf(stderr, "Pipe error.\n");
+      exit(1);
+    }
+
+  if((pid = fork()) < 0)
+    {
+      fprintf(stderr, "Cannot fork().\n");
+    }
+  else if(pid > 0)		/* parent */
+    {
+      close(childout[1]);
+/*       close(childerr[1]); */
+
+      n = 0;
+
+/*       count = read(childerr[0], errline, MAXLINE); */
+/*       if(count > 0) */
+/* 	{ */
+/* 	  errline[count] = '\0'; */
+/* 	  message_box = create_message_box(errline); */
+/* 	  gtk_widget_show(message_box); */
+/* 	} */
+      count = read(childout[0], outline, MAXLINE);
+      if(count > 0)
+	{
+	  outline[count] = '\0';
+	  message_box = create_message_box(outline);
+	  gtk_widget_show(message_box);
+	}
+      return FALSE;
+
+    }
+  else				/* child */
+    {
+      close(childout[0]);
+/*       close(childerr[0]); */
+
+      if(childout[1] != STDOUT_FILENO)
+	{
+	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
+	    {
+	      fprintf(stdout, "dup2() error.\n");
+	      exit(2);
+	    }
+	}
+/*       if(childerr[1] != STDERR_FILENO) */
+/* 	{ */
+/* 	  if(dup2(childerr[1], STDERR_FILENO) != STDERR_FILENO) */
+/* 	    { */
+/* 	      fprintf(stdout, "dup2() error.\n"); */
+/* 	      exit(2); */
+/* 	    } */
+/* 	} */
+
+      if(execl(userhelper, userhelper, 
+	       fullname_opt, fullname,
+	       office_opt, office, 
+	       officephone_opt, officephone_opt, 
+	       homephone_opt, homephone, 0) < 0)
+	{
+	  fprintf(stderr, "execl() error, errno=%d\n", errno);
+	}
+
+      _exit(0);
+
+    }
+
+}
+
+GtkWidget*
+create_message_box(char* message)
+{
+
+}
+
+GtkWidget*
+create_error_box(char* error)
+{
+
+}
+
+GtkWidget*
+create_query_box(char* prompt)
+{
+
+}
+
+GtkWidget*
+create_invisible_query_box(char* prompt)
+{
+
+}
