@@ -186,7 +186,7 @@ parse_userinfo()
 	retval = g_malloc0(sizeof(struct UserInfo));
 
 	retval->shell = g_strdup(pwent->pw_shell);
-	vals = g_strsplit(pwent->pw_gecos ?: "", ",", 4);
+	vals = g_strsplit(pwent->pw_gecos ?: "", ",", 5);
 	if (vals != NULL) {
 		if (vals[0]) {
 			retval->full_name = g_strdup(vals[0]);
