@@ -5,8 +5,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.70
-Release: 8
+Version: 1.71
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -114,6 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Aug 26 2004 Alexander Larsson <alexl@redhat.com> - 1.71-1
+- consolehelper: work if root is readonly
+
 * Mon Jul 12 2004 Dan Walsh <dwalsh@redhat.com> 1.70-8
 - Additional diffs from NSA
 - Clean up comments

@@ -40,6 +40,7 @@ typedef struct _shvarFile shvarFile;
 struct _shvarFile {
 	char		*fileName;	/* read-only */
 	int		fd;		/* read-only */
+	int             fdWriteable;    /* read-only */
 	char		*arena;		/* ignore */
 	GList		*lineList;	/* read-only */
 	GList		*freeList;	/* ignore */
