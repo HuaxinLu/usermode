@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #.
@@ -38,47 +38,47 @@ msgstr "Konec"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Zru¹it"
+msgstr "ZruÅ¡it"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Spustit neprivilegovanì"
+msgstr "Spustit neprivilegovanÄ›"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "Souèasné heslo do UNIXu: "
+msgstr "SouÄasnÃ© heslo do UNIXu: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Nové heslo do UNIXu: "
+msgstr "NovÃ© heslo do UNIXu: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Vlo¾te znovu své nové heslo: "
+msgstr "VloÅ¾te znovu svÃ© novÃ© heslo: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "©PATNÉ HESLO: je OPRAVDU pøíli¹ krátké"
+msgstr "Å PATNÃ‰ HESLO: je OPRAVDU pÅ™Ã­liÅ¡ krÃ¡tkÃ©"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "©PATNÉ HESLO: je pøíli¹ krátké"
+msgstr "Å PATNÃ‰ HESLO: je pÅ™Ã­liÅ¡ krÃ¡tkÃ©"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "Heslo nebylo zmìnìno"
+msgstr "Heslo nebylo zmÄ›nÄ›no"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Promiòte, vlo¾ená hesla nesouhlasí"
+msgstr "PromiÅˆte, vloÅ¾enÃ¡ hesla nesouhlasÃ­"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Spustí systémové konfiguraèní nástroje bez hesla."
+msgstr "SpustÃ­ systÃ©movÃ© konfiguraÄnÃ­ nÃ¡stroje bez hesla."
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr "Nápovìda"
+msgstr "NÃ¡povÄ›da"
 
 #: userhelper.c:99
 #, c-format
@@ -88,7 +88,7 @@ msgstr "Chyba PAM %d.\n"
 #: userhelper.c:225
 #, c-format
 msgid "Password for %s"
-msgstr "Heslo pro u¾ivatele %s"
+msgstr "Heslo pro uÅ¾ivatele %s"
 
 #: userhelper.c:346
 #, c-format
@@ -96,8 +96,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit \"%s\", co¾ mù¾e vyu¾ít administrátorská oprávnìní,\n"
-"ale k tomu je potøeba více informací."
+"PokouÅ¡Ã­te se spustit \"%s\", coÅ¾ mÅ¯Å¾e vyuÅ¾Ã­t administrÃ¡torskÃ¡ oprÃ¡vnÄ›nÃ­,\n"
+"ale k tomu je potÅ™eba vÃ­ce informacÃ­."
 
 #: userhelper.c:348
 #, c-format
@@ -105,24 +105,25 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrátorská oprávnìní.\n"
-"Je potøeba více informací, aby bylo mo¾né pokraèovat."
+"PokouÅ¡Ã­te se spustit \"%s\", k ÄemuÅ¾ jsou potÅ™eba administrÃ¡torskÃ¡ "
+"oprÃ¡vnÄ›nÃ­.\n"
+"Je potÅ™eba vÃ­ce informacÃ­, aby bylo moÅ¾nÃ© pokraÄovat."
 
 #: userhelper.c:352
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit pøíkaz, kterı mù¾e vyu¾ít administrátorská oprávnìní,\n"
-"ale k tomu je potøeba více informací."
+"PokouÅ¡Ã­te se spustit pÅ™Ã­kaz, kterÃ½ mÅ¯Å¾e vyuÅ¾Ã­t administrÃ¡torskÃ¡ oprÃ¡vnÄ›nÃ­,\n"
+"ale k tomu je potÅ™eba vÃ­ce informacÃ­."
 
 #: userhelper.c:354
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit pøíkaz, kterı potøebuje administrátorská oprávnìní.\n"
-"Je potøeba více informací, aby bylo mo¾né pokraèovat."
+"PokouÅ¡Ã­te se spustit pÅ™Ã­kaz, kterÃ½ potÅ™ebuje administrÃ¡torskÃ¡ oprÃ¡vnÄ›nÃ­.\n"
+"Je potÅ™eba vÃ­ce informacÃ­, aby bylo moÅ¾nÃ© pokraÄovat."
 
 #: userhelper.c:373
 #, c-format
@@ -131,33 +132,33 @@ msgstr "Heslo pro %s: "
 
 #: userhelper.c:647
 msgid "userhelper must be setuid root\n"
-msgstr "program userhelper musí bıt SUID root\n"
+msgstr "program userhelper musÃ­ bÃ½t SUID root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:729
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Nelze otevøít grafické okno a nelze najít øídící terminál.\n"
+msgstr "Nelze otevÅ™Ã­t grafickÃ© okno a nelze najÃ­t Å™Ã­dÃ­cÃ­ terminÃ¡l.\n"
 
 #: userhelper.c:1434 userhelper.c:1480
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "spou¹tím \"%s\"\n"
+msgstr "spouÅ¡tÃ­m \"%s\"\n"
 
 #: userhelper-wrap.c:61
 msgid "Unknown exit code."
-msgstr "Neznámı návratovı kód."
+msgstr "NeznÃ¡mÃ½ nÃ¡vratovÃ½ kÃ³d."
 
 #: userhelper-wrap.c:63
 msgid "Information updated."
-msgstr "Informace aktualizovány."
+msgstr "Informace aktualizovÃ¡ny."
 
 #: userhelper-wrap.c:65
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Vlo¾eno neplatné heslo.\n"
+"VloÅ¾eno neplatnÃ© heslo.\n"
 "Zkuste to znovu."
 
 #: userhelper-wrap.c:67
@@ -166,33 +167,34 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Jedna nebo více zmìnìnıch polo¾ek je neplatná.\n"
-"Tato chyba je pravdìpodobnì zpùsobena pøítomností znaku dvojteèka nebo èárka v jedné ze vstupních polo¾ek.\n"
-"Odstraòte je prosím a zkuste to znovu."
+"Jedna nebo vÃ­ce zmÄ›nÄ›nÃ½ch poloÅ¾ek je neplatnÃ¡.\n"
+"Tato chyba je pravdÄ›podobnÄ› zpÅ¯sobena pÅ™Ã­tomnostÃ­ znaku dvojteÄka nebo ÄÃ¡rka "
+"v jednÃ© ze vstupnÃ­ch poloÅ¾ek.\n"
+"OdstraÅˆte je prosÃ­m a zkuste to znovu."
 
 #: userhelper-wrap.c:69
 msgid "Password resetting error."
-msgstr "Chyba pøi vymazávání hesla."
+msgstr "Chyba pÅ™i vymazÃ¡vÃ¡nÃ­ hesla."
 
 #: userhelper-wrap.c:71
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Nìkteré systémové soubory jsou uzamèeny.\n"
-"Zkuste to prosím za chvíli znovu."
+"NÄ›kterÃ© systÃ©movÃ© soubory jsou uzamÄeny.\n"
+"Zkuste to prosÃ­m za chvÃ­li znovu."
 
 #: userhelper-wrap.c:73
 msgid "Unknown user."
-msgstr "Neznámı u¾ivatel."
+msgstr "NeznÃ¡mÃ½ uÅ¾ivatel."
 
 #: userhelper-wrap.c:75
 msgid "Insufficient rights."
-msgstr "Nedostateèná práva."
+msgstr "NedostateÄnÃ¡ prÃ¡va."
 
 #: userhelper-wrap.c:77
 msgid "Invalid call to subprocess.."
-msgstr "Neplatné volání subprocesu.."
+msgstr "NeplatnÃ© volÃ¡nÃ­ subprocesu.."
 
 #: userhelper-wrap.c:79
 msgid ""
@@ -200,34 +202,34 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Vá¹ souèasnı shell není uveden v souboru /etc/shells.\n"
-"Nemù¾ete svùj shell zmìnit.\n"
-"Chybu konzultujte s administrátorem systému."
+"VÃ¡Å¡ souÄasnÃ½ shell nenÃ­ uveden v souboru /etc/shells.\n"
+"NemÅ¯Å¾ete svÅ¯j shell zmÄ›nit.\n"
+"Chybu konzultujte s administrÃ¡torem systÃ©mu."
 
 #: userhelper-wrap.c:82
 msgid "Out of memory."
-msgstr "Nedostatek pamìti."
+msgstr "Nedostatek pamÄ›ti."
 
 #: userhelper-wrap.c:84
 msgid "The exec() call failed."
-msgstr "Volání exec() selhalo."
+msgstr "VolÃ¡nÃ­ exec() selhalo."
 
 #: userhelper-wrap.c:86
 msgid "Failed to find selected program."
-msgstr "Nemohu najít vybranı program."
+msgstr "Nemohu najÃ­t vybranÃ½ program."
 
 #: userhelper-wrap.c:90
 msgid "Unknown error."
-msgstr "Neznámá chyba."
+msgstr "NeznÃ¡mÃ¡ chyba."
 
 #: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
 msgid "Query"
-msgstr "Otázka"
+msgstr "OtÃ¡zka"
 
 #: userhelper-wrap.c:342
 #, c-format
 msgid "Need %d responses.\n"
-msgstr "Potøebuji %d odpovìdi.\n"
+msgstr "PotÅ™ebuji %d odpovÄ›di.\n"
 
 #: userhelper-wrap.c:374 userhelper-wrap.c:443
 msgid "Error"
@@ -243,41 +245,49 @@ msgstr "TextTextTextText."
 
 #: userhelper-wrap.c:482
 msgid "Changing personal information."
-msgstr "Zmìna informací o u¾ivateli."
+msgstr "ZmÄ›na informacÃ­ o uÅ¾ivateli."
 
 #: userhelper-wrap.c:485
 msgid "Changing login shell."
-msgstr "Zmìna pøihla¹ovacího shellu."
+msgstr "ZmÄ›na pÅ™ihlaÅ¡ovacÃ­ho shellu."
 
 #: userhelper-wrap.c:491
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Pokou¹íte se spustit \"%s\", co¾ mù¾e vyu¾ít administrátorská oprávnìní, ale k tomu je potøeba více informací."
+msgstr ""
+"PokouÅ¡Ã­te se spustit \"%s\", coÅ¾ mÅ¯Å¾e vyuÅ¾Ã­t administrÃ¡torskÃ¡ oprÃ¡vnÄ›nÃ­, ale "
+"k tomu je potÅ™eba vÃ­ce informacÃ­."
 
 #: userhelper-wrap.c:493
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrátorská oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
+msgstr ""
+"PokouÅ¡Ã­te se spustit \"%s\", k ÄemuÅ¾ jsou potÅ™eba administrÃ¡torskÃ¡ "
+"oprÃ¡vnÄ›nÃ­. Je potÅ™eba vÃ­ce informacÃ­, aby bylo moÅ¾nÃ© pokraÄovat."
 
 #: userhelper-wrap.c:502
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Pokou¹íte se spustit pøíkaz, kterı mù¾e vyu¾ít administrátorská oprávnìní, ale k tomu je potøeba více informací."
+msgstr ""
+"PokouÅ¡Ã­te se spustit pÅ™Ã­kaz, kterÃ½ mÅ¯Å¾e vyuÅ¾Ã­t administrÃ¡torskÃ¡ oprÃ¡vnÄ›nÃ­, "
+"ale k tomu je potÅ™eba vÃ­ce informacÃ­."
 
 #: userhelper-wrap.c:504
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Pokou¹íte se spustit pøíkaz, kterı potøebuje administrátorská oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
+msgstr ""
+"PokouÅ¡Ã­te se spustit pÅ™Ã­kaz, kterÃ½ potÅ™ebuje administrÃ¡torskÃ¡ oprÃ¡vnÄ›nÃ­. Je "
+"potÅ™eba vÃ­ce informacÃ­, aby bylo moÅ¾nÃ© pokraÄovat."
 
 #: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
-msgstr "_Spustit neprivilegovanì"
+msgstr "_Spustit neprivilegovanÄ›"
 
 #: userhelper-wrap.c:622
 msgid "Pipe error.\n"
@@ -285,24 +295,24 @@ msgstr "Chyba roury.\n"
 
 #: userhelper-wrap.c:629
 msgid "Cannot fork().\n"
-msgstr "Nemohu provést fork().\n"
+msgstr "Nemohu provÃ©st fork().\n"
 
 #: userhelper-wrap.c:696 userhelper-wrap.c:700
 msgid "dup2() error.\n"
-msgstr "Chyba pøi dup2().\n"
+msgstr "Chyba pÅ™i dup2().\n"
 
 #: userhelper-wrap.c:712
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "Chyba pøi execl(), errno=%d\n"
+msgstr "Chyba pÅ™i execl(), errno=%d\n"
 
 #: userinfo.c:321
 msgid "You don't exist.  Go away.\n"
-msgstr "V systému neexistujete. Odejdìte.\n"
+msgstr "V systÃ©mu neexistujete. OdejdÄ›te.\n"
 
 #: usermount.c:61 glade.strings:26
 msgid "_Mount"
-msgstr "_Pøipojit"
+msgstr "_PÅ™ipojit"
 
 #: usermount.c:62
 msgid "Un_mount"
@@ -313,46 +323,47 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Jste si jist ¾e chcete formátovat tento disk? Formátováním budou znièena "
-"v¹echna obsa¾ená data."
+"Jste si jist Å¾e chcete formÃ¡tovat tento disk? FormÃ¡tovÃ¡nÃ­m budou zniÄena "
+"vÅ¡echna obsaÅ¾enÃ¡ data."
 
 #: usermount.c:331
 msgid "Perform a _low-level format."
-msgstr "Provést _low-level formátování."
+msgstr "ProvÃ©st _low-level formÃ¡tovÃ¡nÃ­."
 
 #: usermount.c:374
 msgid "Select a _filesystem type to create:"
-msgstr "Vytvoøit _systém souborù:"
+msgstr "VytvoÅ™it _systÃ©m souborÅ¯:"
 
 #: usermount.c:542
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Nejsou k dispozici ¾ádné systémy souborù, které smíte pøipojit nebo odpojit.\n"
-"Kontaktujte administrátora systému."
+"Nejsou k dispozici Å¾Ã¡dnÃ© systÃ©my souborÅ¯, kterÃ© smÃ­te pÅ™ipojit nebo "
+"odpojit.\n"
+"Kontaktujte administrÃ¡tora systÃ©mu."
 
 #. Create the dialog.
 #: usermount.c:543 usermount.c:554 glade.strings:22
 msgid "User Mount Tool"
-msgstr "Nástroj pro pøipojení u¾ivatelem"
+msgstr "NÃ¡stroj pro pÅ™ipojenÃ­ uÅ¾ivatelem"
 
 #. Create the other buttons.
 #: usermount.c:568 glade.strings:28
 msgid "_Format"
-msgstr "_Formátovat"
+msgstr "_FormÃ¡tovat"
 
 #: usermount.c:604 glade.strings:24
 msgid "Device"
-msgstr "Zaøízení"
+msgstr "ZaÅ™Ã­zenÃ­"
 
 #: usermount.c:610 glade.strings:23
 msgid "Directory"
-msgstr "Adresáø"
+msgstr "AdresÃ¡Å™"
 
 #: usermount.c:616
 msgid "Filesystem"
-msgstr "Systém souborù"
+msgstr "SystÃ©m souborÅ¯"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -361,27 +372,27 @@ msgstr "Systém souborù"
 #.
 #: glade.strings:7 usermode.glade.h:10
 msgid "User Information"
-msgstr "Informace o u¾ivateli"
+msgstr "Informace o uÅ¾ivateli"
 
 #: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
-msgstr "Plné jméno:"
+msgstr "PlnÃ© jmÃ©no:"
 
 #: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
-msgstr "Kanceláø:"
+msgstr "KancelÃ¡Å™:"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "Telefon do kanceláøe:"
+msgstr "Telefon do kancelÃ¡Å™e:"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr "Telefon domù:"
+msgstr "Telefon domÅ¯:"
 
 #: glade.strings:12 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr "Pøihla¹ovací shell:"
+msgstr "PÅ™ihlaÅ¡ovacÃ­ shell:"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
@@ -389,15 +400,15 @@ msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
-msgstr "_Zru¹it"
+msgstr "_ZruÅ¡it"
 
 #: glade.strings:15 usermode.glade.h:5
 msgid "Message"
-msgstr "Zpráva"
+msgstr "ZprÃ¡va"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr "_Zavøít"
+msgstr "_ZavÅ™Ã­t"
 
 #: glade.strings:25
 msgid "Type"
@@ -417,23 +428,23 @@ msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr "O mì"
+msgstr "O mÄ›"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Zmìna osobních informací."
+msgstr "ZmÄ›na osobnÃ­ch informacÃ­."
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Správa diskù"
+msgstr "SprÃ¡va diskÅ¯"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Pøipojit a odpojit souborové systémy"
+msgstr "PÅ™ipojit a odpojit souborovÃ© systÃ©my"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Zmìnit va¹e pøihla¹ovací heslo"
+msgstr "ZmÄ›nit vaÅ¡e pÅ™ihlaÅ¡ovacÃ­ heslo"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
