@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.59
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -107,6 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Aug 14 2002 Nalin Dahyabhai <nalin@redhat.com> 1.59-2
+- change "forget password" to "forget authorization", because we don't actually
+  remember the password (that would be scary, #71476)
+
 * Tue Aug 13 2002 Nalin Dahyabhai <nalin@redhat.com> 1.59-1
 - pam-panel-icon: overhaul, change the 'locked' icon to keyring-small, nix the
   'unlocked' icon

@@ -144,7 +144,7 @@ icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
 					      RESPONSE_DO_NOTHING);
 
 			gtk_dialog_add_button(GTK_DIALOG(drop_dialog),
-					      _("Forget Password"),
+					      _("Forget Authorization"),
 					      RESPONSE_DROP);
 
 			g_signal_connect(G_OBJECT(drop_dialog), "response",
