@@ -15,6 +15,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -42,7 +43,12 @@ main(int argc, char* argv[])
   fake_argv = malloc(2 * sizeof(char *));
   fake_argv[0] = argv[0];
   fake_argv[1] = NULL;
-  if (gtk_init_check(&fake_argc, &fake_argv))
+
+  display = getenv("DISPLAY");
+
+  if (((display && (display[0] != '\0')) ||
+       !isatty(STDIN_FILENO)) &&
+      gtk_init_check(&fake_argc, &fake_argv))
     graphics_available = 1;
 
   if (graphics_available) {
@@ -58,7 +64,7 @@ main(int argc, char* argv[])
 
   for (cargc = 1; cargc < argc; constructed_argv[cargc+cdiff] = argv[cargc++]);
 
-  if (display && *display) {
+  if (graphics_available) {
     signal(SIGCHLD, gtk_main_quit);
     userhelper_runv(UH_PATH, constructed_argv);
     gtk_main();
