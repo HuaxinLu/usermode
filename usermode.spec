@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.18
+Version: 1.19
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -71,6 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Jan 11 2000 Nalin Dahyabhai <nalin@redhat.com>
+- grab keyboard input focus for dialogs
+
 * Fri Jan 07 2000 Michael K. Johnson <johnsonm@redhat.com>
 - The root exploit fix created a bug that only showed up in certain
   circumstances.  Unfortunately, we didn't test in those circumstances...

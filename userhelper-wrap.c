@@ -172,6 +172,16 @@ userhelper_parse_exitstatus(int exitstatus)
 
 }
 
+void
+userhelper_grab_focus(GtkWidget *widget, GdkEvent *map_event, gpointer data)
+{
+	int ret;
+	GtkWidget *toplevel;
+	/* grab focus for the toplevel of this widget, so that peers can
+	 * get events too */
+	toplevel = gtk_widget_get_toplevel(widget);
+	ret = gdk_keyboard_grab(toplevel->window, TRUE, GDK_CURRENT_TIME);
+}
 
 void
 userhelper_parse_childout(char* outline)
@@ -193,6 +203,8 @@ userhelper_parse_childout(char* outline)
     resp->message_list = NULL;
     resp->head = resp->tail = NULL;
     resp->top = gtk_dialog_new();
+    gtk_signal_connect(GTK_OBJECT(resp->top), "map",
+		       GTK_SIGNAL_FUNC(userhelper_grab_focus), NULL);
     gtk_window_position(GTK_WINDOW(resp->top), GTK_WIN_POS_CENTER);
     gtk_container_set_border_width(GTK_CONTAINER(resp->top), 5);
     gtk_window_set_title(GTK_WINDOW(resp->top), "Input");
