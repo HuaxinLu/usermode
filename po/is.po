@@ -82,12 +82,11 @@ msgstr "Keyra stillingatól fyrir allt kerfið án auðkenningar."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "notandanafn: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Lykilorð"
+msgstr "Lykilorð: "
 
 #: userdialogs.h:30
 msgid "Help"
@@ -96,7 +95,7 @@ msgstr "Hjálp"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Gat ekki breytt samhengi exec í %s.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -449,12 +448,3 @@ msgstr "Breyta lykilorði þínu"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lykilorð"
-
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "Fékk PAM villu %d.\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "alveg að fara að keyra \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Þarfnast %d svara.\n"
