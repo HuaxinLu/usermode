@@ -75,6 +75,6 @@ archive:
 	@rm -rf /tmp/usermode-$(VERSION) /tmp/usermode
 	@cd /tmp; cvs export -r$(CVSTAG) usermode
 	@mv /tmp/usermode /tmp/usermode-$(VERSION)
-	@dir=$$PWD; cd /tmp; tar cvIf $$dir/usermode-$(VERSION).tar.bz2 usermode-$(VERSION)
+	@dir=$$PWD; cd /tmp; tar cvIf $$dir/usermode-$(VERSION)-$(RELEASE).tar.bz2 usermode-$(VERSION)
 	@rm -rf /tmp/usermode-$(VERSION)
-	@echo "The archive is in usermode-$(VERSION).tar.bz2"
+	@echo "The archive is in usermode-$(VERSION)-$(RELEASE).tar.bz2"
