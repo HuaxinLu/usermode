@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.50
-Release: 5
+Release: 6
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -96,11 +96,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/userpasswd
 %{_mandir}/man1/userpasswd.1*
 %{_bindir}/consolehelper-gtk
+%{_datadir}/%{name}
 %{_datadir}/pixmaps/*
 
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Fri Mar 22 2002 Nalin Dahyabhai <nalin@redhat.com> 1.50-6
+- update translations
+- actually include the glade files (#61665)
+
 * Mon Mar 11 2002 Nalin Dahyabhai <nalin@redhat.com> 1.50-5
 - update translations
 

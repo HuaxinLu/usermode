@@ -1,7 +1,7 @@
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
-EXTRA_DIST = config.rpath  \
+EXTRA_DIST = config.rpath  config.rpath  \
 	dummy.h \
 	usermode.spec \
 	shutdown \
@@ -18,7 +18,7 @@ EXTRA_DIST = config.rpath  \
 	shutdown.pamd \
 	shutdown.pamd.6x
 
-SUBDIRS= intl m4  m4 intl po
+SUBDIRS= intl m4  intl m4  m4 intl po
 
 CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@
 
