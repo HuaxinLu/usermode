@@ -1,0 +1,9 @@
+#!/bin/sh
+for flag in $* ; do
+	if test ${flag} = "-h" ; then
+		exec /usr/bin/halt
+	fi
+	if test ${flag} = "-r" ; then
+		exec /usr/bin/reboot
+	fi
+done

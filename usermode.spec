@@ -2,7 +2,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.35
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -52,6 +52,8 @@ for wrapapp in halt reboot poweroff ; do
 %endif
 done
 
+install -m755 shutdown $RPM_BUILD_ROOT%{_bindir}/
+
 # Strip it!
 strip $RPM_BUILD_ROOT%{_bindir}/* $RPM_BUILD_ROOT%{_sbindir}/*
       
@@ -75,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/halt
 %{_bindir}/reboot
 %{_bindir}/poweroff
+%{_bindir}/shutdown
 %{_datadir}/pixmaps/*
 %{_datadir}/locale/*/*/*
 %config(noreplace) /etc/pam.d/halt
@@ -87,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Thu Aug 24 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix incorrect user name
+- add a shell wrapper version of /usr/bin/shutdown
+- build for 6.x errata
 
 * Wed Aug 23 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix stdin/stdout redirection shenanigans (#11706)
