@@ -107,7 +107,10 @@ EXTRA_DIST = \
 	usermount.1 \
 	userpasswd.1 \
 	consolehelper.8 \
-	userhelper.8
+	userhelper.8 \
+	userinfo.desktop \
+	usermount.desktop \
+	userpasswd.desktop
 
 
 SUBDIRS = intl po
