@@ -106,7 +106,7 @@ archive:
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 	CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r $(CVSTAG) -d $(PACKAGE)-export-tmp $(PACKAGE)
 	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh ; make dist
-	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.gz .
+	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION)-$(RELEASE).tar.gz .
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 
 marshal.c marshal.h: marshal.list

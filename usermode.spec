@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.68
-Release: 6
+Release: 6.sel
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -117,7 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
-* Thu Sep 25 2003 Dan Walsh <dwalsh@redhat.com> 1.68-6
+* Thu Sep 25 2003 Dan Walsh <dwalsh@redhat.com> 1.68-6.sel
 - turn on selinux
 - add default userhelper context file
 
