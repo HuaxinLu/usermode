@@ -1759,6 +1759,9 @@ wrap(const char *user, const char *program,
 	/* Set the LOGNAME and USER variables to the executing name. */
 	setenv("LOGNAME", g_strdup("root"), 1);
 	setenv("USER", g_strdup("root"), 1);
+	
+	/* Pass the original UID to the new program */
+	setenv("USERHELPER_UID", g_strdup_printf("%lu", (long)getuid()), 1);
 
 	/* Open the console.apps configuration file for this wrapped program,
 	 * and read settings from it. */
