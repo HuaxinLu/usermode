@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-09-29 19:07+0530\n"
+"PO-Revision-Date: 2004-10-04 17:37+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@redhat.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 
 #  * Copyright (C) 2001 Red Hat, Inc.
@@ -116,7 +116,7 @@ msgstr "ਗੁਪਤ-ਕੋਡ:"
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "ਪ੍ਰਬੰਧਕ ਅਧਿਕਾਰ ਹਟਾਉਣ ਵਿੱਚ ਅਸਫਲ:%s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -124,6 +124,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"ਪ੍ਰਬੰਧਕ ਅਧਿਕਾਰ ਹਟਾਉਣ ਵਿੱਚ ਅਸਫਲ: pam_timestamp_check ਨੇ ਗਲਤੀ "
+"ਕੋਡ %d ਵੇਖਾਇਆ ਹੈ"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -131,53 +133,56 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"ਤੁਸੀਂ ਇਸ ਸਮੇਂ ਵਿਆਪਕ ਸਿਸਟਮ ਵਿਵਸਥਾ (ਜੋ ਕਿ ਸਭ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਨਗੀਆਂ) "
+"ਸੰਰਚਨਾ ਲਈ ਬਿਨਾਂ ਮੁੜ ਪ੍ਰਬੰਧਕ ਗੁਪਤ-ਕੋਡ ਲਿਖੇ ਤੋਂ ਹੀ ਪ੍ਰਮਾਣਿਕਤਾ ਵਰਤ ਰਹੇ ਹੋ। ਤੁਸੀ ਇਹ ਪ੍ਰਮਾਣਕਿਤਾ "
+"ਛੱਡ ਸਕਦੇ ਹੋ।"
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "ਪ੍ਰਮਾਣਕਿਤਾ ਰੱਖੋ"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "ਪ੍ਰਮਾਣਕਿਤਾ ਭੁੱਲ ਜਾਓ"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check setuid ਪ੍ਰਬੰਧਕ(root) ਨਹੀਂ ਹੈ"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check ਲਈ ਕੰਟਰੋਲ tty ਨਹੀਂ"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check ਵਿੱਚ ਉਪਭੋਗਤਾ ਅਣਜਾਣ"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check ਵਿੱਚ ਅਧਿਕਾਰ ਗਲਤੀ"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "am_timestamp_check ਵਿੱਚ ਗਲਤ tty ਕੰਟਰੋਲ"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "ਗਲਤੀ"
+msgstr "ਗਲਤੀ: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "ਕਮਾਂਡ \"%s\" ਚਲਾਉਣ ਵਿੱਚ ਅਸਫਲ: %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "IO ਚੈਨਲ ਨਾ-ਬਲਾਕਿੰਗ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: ਅਜਲਾਸ ਪ੍ਰਬੰਧਕ ਨਾਲ ਜੁੜਨ ਵਿੱਚ ਅਸਫਲ\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -240,8 +245,7 @@ msgstr "ਉਪਭੋਗਤਾ-ਸਹਾਇਕ ਦਾ ਸੈਟ-ਸ਼ੰਨ ਨ�
 #. FIXME: print a warning here?
 #: userhelper.c:2347
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ਗਰਾਫਿਕਲ ਝਰੋਖਾ ਖੋਲਣ ਵਿੱਚ ਅਸਫਲ ਹੈ, ਅਤੇ ਕੰਟਰੋਲਿੰਗ ਟਰਿੰਨਲ ਨੂੰ ਲੱਭਚ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
 
 #: userhelper-wrap.c:179
@@ -523,3 +527,4 @@ msgstr "ਆਪਣਾ ਲਾਗਇਨ ਗੁਪਤ-ਕੋਡ ਤਬਦੀਲ ਕ�
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "ਗੁਪਤ-ਕੋਡ"
+
