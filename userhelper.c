@@ -128,7 +128,7 @@ setup_selinux_exec(char *constructed_path)
  * out:		The CONTEXT associated with the context.
  * return:	0 on success, -1 on failure.
  */
-int
+static int
 get_init_context(const char *context_file, security_context_t *context)
 {
 	FILE *fp;
@@ -172,14 +172,14 @@ out:
 
 /* Exit, returning the proper status code based on a PAM error code. */
 static int
-fail_exit(int retval)
+fail_exit(int pam_retval)
 {
 	/* This is a local error.  Bail. */
-	if (retval == ERR_SHELL_INVALID) {
+	if (pam_retval == ERR_SHELL_INVALID) {
 		exit(ERR_SHELL_INVALID);
 	}
 
-	if (retval != PAM_SUCCESS) {
+	if (pam_retval != PAM_SUCCESS) {
 		/* Map the PAM error code to a local error code and return
 		 * it to the parent process.  Trust the canceled flag before
 		 * any PAM error codes. */
@@ -191,9 +191,9 @@ fail_exit(int retval)
 			_exit(ERR_CANCELED);
 		}
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: got PAM error %d.\n", retval);
+		g_print("userhelper: got PAM error %d.\n", pam_retval);
 #endif
-		switch (retval) {
+		switch (pam_retval) {
 			case PAM_AUTH_ERR:
 			case PAM_PERM_DENIED:
 #ifdef DEBUG_USERHELPER
@@ -873,7 +873,7 @@ pipe_conv_exec_fail(const struct pam_conv *conv)
  * contents.  Note that the string *is* modified here, and the parsing is
  * performed using the convention obeyed by BSDish finger(1) under Linux.  */
 static void
-parse_gecos(char *gecos, struct gecos_data *parsed)
+gecos_parse(char *gecos, struct gecos_data *parsed)
 {
 	char **exploded, **dest;
 	int i;
@@ -924,28 +924,54 @@ gecos_size(struct gecos_data *parsed)
 {
 	int len;
 
-	len = 0;
+	len = 4; /* commas! */
 	if (parsed->full_name != NULL) {
-		len += (strlen(parsed->full_name) + 1);
+		len += strlen(parsed->full_name);
 	}
 	if (parsed->office != NULL) {
-		len += (strlen(parsed->office) + 1);
+		len += strlen(parsed->office);
 	}
 	if (parsed->office_phone != NULL) {
-		len += (strlen(parsed->office_phone) + 1);
+		len += strlen(parsed->office_phone);
 	}
 	if (parsed->home_phone != NULL) {
-		len += (strlen(parsed->home_phone) + 1);
+		len += strlen(parsed->home_phone);
 	}
 	if (parsed->site_info != NULL) {
-		len += (strlen(parsed->site_info) + 1);
+		len += strlen(parsed->site_info);
 	}
+	len++;
 
 	return len;
 }
 
+/* Assemble a new gecos string. */
+static char *
+gecos_assemble(struct gecos_data *parsed)
+{
+	char *ret;
+	int i;
+	/* Construct the basic version of the string. */
+	ret = g_strdup_printf("%s,%s,%s,%s,%s",
+			      parsed->full_name ?: "",
+			      parsed->office ?: "",
+			      parsed->office_phone ?: "",
+			      parsed->home_phone ?: "",
+			      parsed->site_info ?: "");
+	/* Strip off terminal commas. */
+	i = strlen(ret);
+	while ((i > 0) && (ret[i - 1] == ',')) {
+		ret[i] = '\0';
+		i--;
+	}
+	return ret;
+}
+
+/* Check if the passed-in shell is a valid shell according to getusershell(),
+ * which is usually back-ended by /etc/shells.  Treat NULL or the empty string
+ * as "/bin/sh", as is traditional. */
 static gboolean
-shell_valid(char *shell_name)
+shell_valid(const char *shell_name)
 {
 	gboolean found;
 	char *shell;
@@ -959,8 +985,13 @@ shell_valid(char *shell_name)
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: got shell \"%s\"\n", shell);
 #endif
-			if (shell_name) {
+			if ((shell_name != NULL) && (strlen(shell_name) > 0)) {
 				if (strcmp(shell_name, shell) == 0) {
+					found = TRUE;
+					break;
+				}
+			} else {
+				if (strcmp("/bin/sh", shell) == 0) {
 					found = TRUE;
 					break;
 				}
@@ -1121,6 +1152,363 @@ get_user_for_auth(shvarFile *s)
 	return NULL;
 }
 
+/* Change the user's password using the indicated conversation function and
+ * application data (which includes the ability to cancel if the user requests
+ * it.  For this task, we don't retry on failure. */
+static void
+passwd(const char *user, struct pam_conv *conv, struct app_data *data)
+{
+	int retval;
+	pam_handle_t *pamh;
+
+	retval = pam_start("passwd", user, conv, &pamh);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_start() failed\n");
+#endif
+		fail_exit(retval);
+	}
+
+	retval = pam_set_item(pamh, PAM_RUSER, user);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_set_item() failed\n");
+#endif
+		fail_exit(retval);
+	}
+
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: changing password for \"%s\"\n", user);
+#endif
+	retval = pam_chauthtok(pamh, 0);
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: PAM retval = %d (%s)\n", retval,
+		pam_strerror(pamh, retval));
+#endif
+
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_chauthtok() failed\n");
+#endif
+		fail_exit(retval);
+	}
+
+	retval = pam_end(pamh, PAM_SUCCESS);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_end() failed\n");
+#endif
+		fail_exit(retval);
+	}
+	exit(0);
+}
+
+/* We're here to change the user's non-security information.  PAM doesn't
+ * provide an interface to do this, because it's not PAM's job to manage this
+ * stuff, so farm it out to a different library. */
+static void
+chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
+     struct app_data *data,
+     const char *new_full_name, const char *new_office,
+     const char *new_office_phone, const char *new_home_phone,
+     const char *new_shell)
+{
+	char *new_gecos, *gecos, *old_shell;
+	struct gecos_data parsed_gecos;
+	const char *authed_user;
+	struct lu_context *context;
+	struct lu_ent *ent;
+	struct lu_error *error;
+	GValueArray *values;
+	GValue *value, val;
+	int tryagain = 3, retval;
+	gboolean ret;
+
+	/* Verify that the fields we were given on the command-line
+	 * are sane (i.e., contain no forbidden characters). */
+	if (new_full_name && strpbrk(new_full_name, ":,=")) {
+		exit(ERR_FIELDS_INVALID);
+	}
+	if (new_office && strpbrk(new_office, ":,=")) {
+		exit(ERR_FIELDS_INVALID);
+	}
+	if (new_office_phone && strpbrk(new_office_phone, ":,=")) {
+		exit(ERR_FIELDS_INVALID);
+	}
+	if (new_home_phone && strpbrk(new_home_phone, ":,=")) {
+		exit(ERR_FIELDS_INVALID);
+	}
+
+	/* Start up PAM to authenticate the user, this time pretending
+	 * we're "chfn". */
+	retval = pam_start("chfn", user, conv, &app_data.pamh);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_start() failed\n");
+#endif
+		fail_exit(retval);
+	}
+
+	/* Set the requesting user. */
+	retval = pam_set_item(app_data.pamh, PAM_RUSER, user);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_set_item() failed\n");
+#endif
+		fail_exit(retval);
+	}
+
+	/* Try to authenticate the user. */
+	do {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: about to authenticate \"%s\"\n", user);
+#endif
+		retval = pam_authenticate(app_data.pamh, 0);
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: PAM retval = %d (%s)\n", retval,
+			pam_strerror(app_data.pamh, retval));
+#endif
+		tryagain--;
+	} while ((retval != PAM_SUCCESS) &&
+		 (retval != PAM_CONV_ERR) &&
+		 !app_data.canceled &&
+		 (tryagain > 0));
+	/* If we didn't succeed, bail. */
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam authentication failed\n");
+#endif
+		pam_end(app_data.pamh, retval);
+		fail_exit(retval);
+	}
+
+	/* Verify that the authenticated user is the user we started
+	 * out trying to authenticate. */
+	retval = get_pam_string_item(app_data.pamh, PAM_USER,
+				     &authed_user);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: no pam user set\n");
+#endif
+		pam_end(app_data.pamh, retval);
+		fail_exit(retval);
+	}
+
+	/* At some point this check will go away. */
+	if (strcmp(user, authed_user) != 0) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: username(%s) != authuser(%s)\n",
+			user, authed_user);
+#endif
+		exit(ERR_UNK_ERROR);
+	}
+
+	/* Check if the user is allowed to change her information at
+	 * this time, on this machine, yadda, yadda, yadda.... */
+	retval = pam_acct_mgmt(app_data.pamh, 0);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_acct_mgmt() failed\n");
+#endif
+		pam_end(app_data.pamh, retval);
+		fail_exit(retval);
+	}
+
+	/* Let's get to it.  Start up libuser. */
+	context = lu_start(user, lu_user, NULL, NULL, prompt,
+			   (gpointer)&app_data, &error);
+	if (context == NULL) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: libuser startup error\n");
+#endif
+		pam_end(app_data.pamh, PAM_ABORT);
+		fail_exit(PAM_ABORT);
+	}
+	if (error != NULL) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: libuser startup error: %s\n",
+			lu_strerror(error));
+#endif
+		pam_end(app_data.pamh, PAM_ABORT);
+		fail_exit(PAM_ABORT);
+	}
+
+	/* Look up the user's record. */
+	ent = lu_ent_new();
+	ret = lu_user_lookup_name(context, user, ent, &error);
+	if (ret != TRUE) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: libuser doesn't know the user \"%s\"\n",
+			user);
+#endif
+		pam_end(app_data.pamh, PAM_ABORT);
+		fail_exit(PAM_ABORT);
+	}
+	if (error != NULL) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: libuser startup error: %s\n",
+			lu_strerror(error));
+#endif
+		pam_end(app_data.pamh, PAM_ABORT);
+		fail_exit(PAM_ABORT);
+	}
+
+	/* Pull up the user's GECOS data, and split it up. */
+	memset(&parsed_gecos, 0, sizeof(parsed_gecos));
+	values = lu_ent_get(ent, LU_GECOS);
+	if (values != NULL) {
+		value = g_value_array_get_nth(values, 0);
+		if (G_VALUE_HOLDS_STRING(value)) {
+			gecos = g_value_dup_string(value);
+		} else
+		if (G_VALUE_HOLDS_LONG(value)) {
+			gecos = g_strdup_printf("%ld", g_value_get_long(value));
+		} else {
+			gecos = NULL;
+			g_assert_not_reached();
+		}
+		gecos_parse(gecos, &parsed_gecos);
+	}
+
+	/* Override any new values we have. */
+	if (new_full_name != NULL) {
+		if (parsed_gecos.full_name != NULL) {
+			g_free(parsed_gecos.full_name);
+		}
+		parsed_gecos.full_name = g_strdup(new_full_name);
+	}
+	if (new_office != NULL) {
+		if (parsed_gecos.office != NULL) {
+			g_free(parsed_gecos.office);
+		}
+		parsed_gecos.office = g_strdup(new_office);
+	}
+	if (new_office_phone != NULL) {
+		if (parsed_gecos.office_phone != NULL) {
+			g_free(parsed_gecos.office_phone);
+		}
+		parsed_gecos.office_phone = g_strdup(new_office_phone);
+	}
+	if (new_home_phone != NULL) {
+		if (parsed_gecos.home_phone != NULL) {
+			g_free(parsed_gecos.home_phone);
+		}
+		parsed_gecos.home_phone = g_strdup(new_home_phone);
+	}
+
+	/* Verify that the strings we got passed are not too long. */
+	if (gecos_size(&parsed_gecos) > GECOS_LENGTH) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: user gecos too long %d > %d\n",
+			gecos_size(&parsed_gecos), GECOS_LENGTH);
+#endif
+		lu_ent_free(ent);
+		lu_end(context);
+		pam_end(app_data.pamh, PAM_ABORT);
+		exit(ERR_FIELDS_INVALID);
+	}
+
+	/* Build a new value for the GECOS data. */
+	new_gecos = gecos_assemble(&parsed_gecos);
+
+	/* We don't need the user's current GECOS anymore, so clear
+	 * out the value and set our own in the in-memory structure. */
+	memset(&val, 0, sizeof(val));
+	g_value_init(&val, G_TYPE_STRING);
+
+	lu_ent_clear(ent, LU_GECOS);
+	g_value_set_string(&val, new_gecos);
+	lu_ent_add(ent, LU_GECOS, &val);
+
+	/* While we're at it, set the individual data items as well. */
+	lu_ent_clear(ent, LU_COMMONNAME);
+	g_value_set_string(&val, parsed_gecos.full_name);
+	lu_ent_add(ent, LU_COMMONNAME, &val);
+
+	lu_ent_clear(ent, LU_ROOMNUMBER);
+	g_value_set_string(&val, parsed_gecos.office);
+	lu_ent_add(ent, LU_ROOMNUMBER, &val);
+
+	lu_ent_clear(ent, LU_TELEPHONENUMBER);
+	g_value_set_string(&val, parsed_gecos.office_phone);
+	lu_ent_add(ent, LU_TELEPHONENUMBER, &val);
+
+	lu_ent_clear(ent, LU_HOMEPHONE);
+	g_value_set_string(&val, parsed_gecos.home_phone);
+	lu_ent_add(ent, LU_HOMEPHONE, &val);
+
+	/* If we're here to change the user's shell, too, do that while we're
+	 * in here, assuming that chsh and chfn have identical PAM
+	 * configurations. */
+	if (new_shell != NULL) {
+		/* Check that the user's current shell is valid, and that she
+		 * is not attempting to change to an invalid shell. */
+		values = lu_ent_get(ent, LU_LOGINSHELL);
+		if (values != NULL) {
+			value = g_value_array_get_nth(values, 0);
+			if (G_VALUE_HOLDS_STRING(value)) {
+				old_shell= g_value_dup_string(value);
+			} else
+			if (G_VALUE_HOLDS_LONG(value)) {
+				old_shell = g_strdup_printf("%ld", g_value_get_long(value));
+			} else {
+				old_shell = NULL;
+				g_assert_not_reached();
+			}
+		} else {
+			old_shell = g_strdup("/bin/sh");
+		}
+
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: current shell \"%s\"\n", old_shell);
+		g_print("userhelper: new shell \"%s\"\n", new_shell);
+#endif
+		/* If the old or new shell are invalid, then
+		 * the user doesn't get to make the change. */
+		if (!shell_valid(new_shell) || !shell_valid(old_shell)) {
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: bad shell value\n");
+#endif
+			lu_ent_free(ent);
+			lu_end(context);
+			pam_end(app_data.pamh, PAM_ABORT);
+			fail_exit(ERR_SHELL_INVALID);
+		}
+
+		/* Set the shell to the new value. */
+		lu_ent_clear(ent, LU_LOGINSHELL);
+		g_value_set_string(&val, new_shell);
+		lu_ent_add(ent, LU_LOGINSHELL, &val);
+	}
+
+	/* Save the changes to the user's account to the password
+	 * database, whereever that is. */
+	ret = lu_user_modify(context, ent, &error);
+	if (ret != TRUE) {
+		lu_ent_free(ent);
+		lu_end(context);
+		pam_end(app_data.pamh, PAM_ABORT);
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: libuser save failed\n");
+#endif
+		fail_exit(PAM_ABORT);
+	}
+	if (error != NULL) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: libuser save error: %s\n",
+			lu_strerror(error));
+#endif
+		lu_ent_free(ent);
+		lu_end(context);
+		pam_end(app_data.pamh, PAM_ABORT);
+		fail_exit(PAM_ABORT);
+	}
+
+	lu_ent_free(ent);
+	lu_end(context);
+	_exit(0);
+}
+
 /*
  * ------- the application itself --------
  */
@@ -1129,15 +1517,12 @@ main(int argc, char **argv)
 {
 	int arg;
 	int retval;
-	gboolean ret;
 	char *progname = NULL;
 	struct passwd *pw;
 	struct pam_conv *conv;
 	lu_prompt_fn *prompt;
 	char **environ_save;
-	struct gecos_data parsed_gecos;
 	char *user_name; /* current user, as determined by real uid */
-	char *shell_path;/* requested shell in cases where s_flag > 0 */
 	int f_flag;	 /* -f flag = change full name */
 	int o_flag;	 /* -o flag = change office name */
 	int p_flag;	 /* -p flag = change office phone */
@@ -1146,6 +1531,11 @@ main(int argc, char **argv)
 	int s_flag;	 /* -s flag = change shell */
 	int t_flag;	 /* -t flag = direct text-mode -- exec'ed */
 	int w_flag;	 /* -w flag = act as a wrapper for next * args */
+	const char *new_full_name;
+	const char *new_office;
+	const char *new_office_phone;
+	const char *new_home_phone;
+	const char *new_shell;
 
 	setlocale(LC_ALL, "");
 	bindtextdomain(PACKAGE, DATADIR "/locale");
@@ -1168,8 +1558,11 @@ main(int argc, char **argv)
 	s_flag = 0;
 	t_flag = 0;
 	w_flag = 0;
-	shell_path = NULL;
-	memset(&parsed_gecos, 0, sizeof(parsed_gecos));
+	new_full_name = NULL;
+	new_office = NULL;
+	new_office_phone = NULL;
+	new_home_phone = NULL;
+	new_shell = NULL;
 
 	while ((w_flag == 0) &&
 	       (arg = getopt(argc, argv, "f:o:p:h:s:ctw:")) != -1) {
@@ -1179,27 +1572,27 @@ main(int argc, char **argv)
 			case 'f':
 				/* Full name. */
 				f_flag++;
-				parsed_gecos.full_name = optarg;
+				new_full_name = optarg;
 				break;
 			case 'o':
 				/* Office. */
 				o_flag++;
-				parsed_gecos.office = optarg;
+				new_office = optarg;
 				break;
 			case 'h':
 				/* Home phone. */
 				h_flag++;
-				parsed_gecos.home_phone = optarg;
+				new_home_phone = optarg;
 				break;
 			case 'p':
 				/* Office phone. */
 				p_flag++;
-				parsed_gecos.office_phone = optarg;
+				new_office_phone = optarg;
 				break;
 			case 's':
 				/* Change shell flag. */
 				s_flag++;
-				shell_path = optarg;
+				new_shell = optarg;
 				break;
 			case 'c':
 				/* Change password flag. */
@@ -1269,12 +1662,11 @@ main(int argc, char **argv)
 	}
 
 	user_name = get_user_from_ruid();
-
 #ifdef DEBUG_USERHELPER
 	g_print("userhelper: current user is %s\n", user_name);
 #endif
 
-	/* If we didn't get the -w flag, the last argument could be a user's
+	/* If we didn't get the -w flag, the last argument can be a user's
 	 * name. */
 	if (w_flag == 0) {
 		if ((getuid() == 0) && (argc == optind + 1)) {
@@ -1298,338 +1690,19 @@ main(int argc, char **argv)
 		}
 	}
 
-	/* Time to do the heavy lifting. */
+	/* Change password? */
 	if (c_flag) {
-		int tryagain = 1;
-		/* We're here to change the user's password.  Start up PAM
-		 * and tell it we're the "passwd" command. */
-		retval = pam_start("passwd", user_name, conv, &app_data.pamh);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_start() failed\n");
-#endif
-			fail_exit(retval);
-		}
-
-		/* Set the requesting user. */
-		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_set_item() failed\n");
-#endif
-			fail_exit(retval);
-		}
-
-		/* Now try to change the user's password. */
-		do {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: changing password for \"%s\"\n",
-				user_name);
-#endif
-			retval = pam_chauthtok(app_data.pamh, 0);
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: PAM retval = %d (%s)\n", retval,
-				pam_strerror(app_data.pamh, retval));
-#endif
-			tryagain--;
-		} while ((retval != PAM_SUCCESS) &&
-			 (retval != PAM_CONV_ERR) &&
-			 !app_data.canceled &&
-			 tryagain);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_chauthtok() failed\n");
-#endif
-			fail_exit(retval);
-		}
-
-		/* All done! */
-		retval = pam_end(app_data.pamh, PAM_SUCCESS);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_end() failed\n");
-#endif
-			fail_exit(retval);
-		}
-		exit(0);
+		passwd(user_name, conv, &app_data);
+		g_assert_not_reached();
 	}
 
+	/* Change GECOS data or shell? */
 	if (SHELL_FLAGS) {
-		/* We're here to change the user's non-security information.
-		 * PAM doesn't provide an interface to do this, because it's
-		 * not PAM's job to manage this stuff, so farm it out to a
-		 * different library. */
-		char *new_gecos = NULL, *gecos = NULL, *old_shell = NULL;
-		const char *auth_user;
-		struct lu_context *context;
-		struct lu_ent *ent = NULL;
-		struct lu_error *error = NULL;
-		GValueArray *values;
-		GValue *value, val;
-		int tryagain = 3;
-
-		/* Verify that the fields we were given on the command-line
-		 * are sane (i.e., contain no forbidden characters). */
-		if (f_flag && strpbrk(parsed_gecos.full_name, ":,=")) {
-			exit(ERR_FIELDS_INVALID);
-		}
-		if (o_flag && strpbrk(parsed_gecos.office, ":,=")) {
-			exit(ERR_FIELDS_INVALID);
-		}
-		if (p_flag && strpbrk(parsed_gecos.office_phone, ":,=")) {
-			exit(ERR_FIELDS_INVALID);
-		}
-		if (h_flag && strpbrk(parsed_gecos.home_phone, ":,=")) {
-			exit(ERR_FIELDS_INVALID);
-		}
-
-		/* Start up PAM to authenticate the user, this time pretending
-		 * we're "chfn". */
-		retval = pam_start("chfn", user_name, conv, &app_data.pamh);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_start() failed\n");
-#endif
-			fail_exit(retval);
-		}
-
-		/* Set the requesting user. */
-		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_set_item() failed\n");
-#endif
-			fail_exit(retval);
-		}
-
-		/* Try to authenticate the user. */
-		do {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: about to authenticate \"%s\"\n",
-				user_name);
-#endif
-			retval = pam_authenticate(app_data.pamh, 0);
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: PAM retval = %d (%s)\n", retval,
-				pam_strerror(app_data.pamh, retval));
-#endif
-			tryagain--;
-		} while ((retval != PAM_SUCCESS) &&
-			 (retval != PAM_CONV_ERR) &&
-			 !app_data.canceled &&
-			 tryagain);
-		/* If we didn't succeed, bail. */
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam authentication failed\n");
-#endif
-			pam_end(app_data.pamh, retval);
-			fail_exit(retval);
-		}
-
-		/* Verify that the authenticated user is the user we started
-		 * out trying to authenticate. */
-		retval = get_pam_string_item(app_data.pamh, PAM_USER,
-					     &auth_user);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: no pam user set\n");
-#endif
-			pam_end(app_data.pamh, retval);
-			fail_exit(retval);
-		}
-
-		/* At some point this check will go away. */
-		if (strcmp(user_name, auth_user) != 0) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: username(%s) != authuser(%s)\n",
-				user_name, auth_user);
-#endif
-			exit(ERR_UNK_ERROR);
-		}
-
-		/* Check if the user is allowed to change her information at
-		 * this time, on this machine, yadda, yadda, yadda.... */
-		retval = pam_acct_mgmt(app_data.pamh, 0);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_acct_mgmt() failed\n");
-#endif
-			pam_end(app_data.pamh, retval);
-			fail_exit(retval);
-		}
-
-		/* Let's get to it.  Start up libuser. */
-		context = lu_start(user_name, lu_user, NULL, NULL,
-				   prompt,
-				   (gpointer)&app_data, &error);
-		if (context == NULL) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: libuser startup error\n");
-#endif
-			pam_end(app_data.pamh, PAM_ABORT);
-			fail_exit(PAM_ABORT);
-		}
-		if (error != NULL) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: libuser startup error: %s\n",
-				lu_strerror(error));
-#endif
-			pam_end(app_data.pamh, PAM_ABORT);
-			fail_exit(PAM_ABORT);
-		}
-
-		/* Look up the user's record. */
-		ent = lu_ent_new();
-		ret = lu_user_lookup_name(context, user_name, ent, &error);
-		if (ret != TRUE) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: libuser doesn't know the user\n");
-#endif
-			pam_end(app_data.pamh, PAM_ABORT);
-			fail_exit(PAM_ABORT);
-		}
-		if (error != NULL) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: libuser startup error: %s\n",
-				lu_strerror(error));
-#endif
-			pam_end(app_data.pamh, PAM_ABORT);
-			fail_exit(PAM_ABORT);
-		}
-
-		/* Pull up the user's GECOS data, and split it up. */
-		values = lu_ent_get(ent, LU_GECOS);
-		if (values != NULL) {
-			value = g_value_array_get_nth(values, 0);
-			if (G_VALUE_HOLDS_STRING(value)) {
-				gecos = g_value_dup_string(value);
-			} else
-			if (G_VALUE_HOLDS_LONG(value)) {
-				gecos = g_strdup_printf("%ld", g_value_get_long(value));
-			} else {
-				g_assert_not_reached();
-			}
-			parse_gecos(gecos, &parsed_gecos);
-		}
-
-		/* Verify that the strings we got passed are not too long. */
-		if (gecos_size(&parsed_gecos) > GECOS_LENGTH) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: user gecos too long %d > %d\n",
-				gecos_size(&parsed_gecos), GECOS_LENGTH);
-#endif
-			lu_ent_free(ent);
-			lu_end(context);
-			pam_end(app_data.pamh, PAM_ABORT);
-			exit(ERR_FIELDS_INVALID);
-		}
-
-		/* Build a new value for the GECOS data. */
-		new_gecos = g_strdup_printf("%s,%s,%s,%s%s%s",
-					    parsed_gecos.full_name ?: "",
-					    parsed_gecos.office ?: "",
-					    parsed_gecos.office_phone ?: "",
-					    parsed_gecos.home_phone ?: "",
-					    parsed_gecos.site_info ? "," : "",
-					    parsed_gecos.site_info ?: "");
-
-		/* We don't need the user's current GECOS anymore, so clear
-		 * out the value and set our own in the in-memory structure. */
-		memset(&val, 0, sizeof(val));
-		g_value_init(&val, G_TYPE_STRING);
-
-		lu_ent_clear(ent, LU_GECOS);
-		g_value_set_string(&val, new_gecos);
-		lu_ent_add(ent, LU_GECOS, &val);
-
-		/* While we're at it, set the individual data items as well. */
-		lu_ent_clear(ent, LU_COMMONNAME);
-		g_value_set_string(&val, parsed_gecos.full_name);
-		lu_ent_add(ent, LU_COMMONNAME, &val);
-
-		lu_ent_clear(ent, LU_ROOMNUMBER);
-		g_value_set_string(&val, parsed_gecos.office);
-		lu_ent_add(ent, LU_ROOMNUMBER, &val);
-
-		lu_ent_clear(ent, LU_TELEPHONENUMBER);
-		g_value_set_string(&val, parsed_gecos.office_phone);
-		lu_ent_add(ent, LU_TELEPHONENUMBER, &val);
-
-		lu_ent_clear(ent, LU_HOMEPHONE);
-		g_value_set_string(&val, parsed_gecos.home_phone);
-		lu_ent_add(ent, LU_HOMEPHONE, &val);
-
-		/* If we're here to change the user's shell, too, do that
-		 * while we're in here, assuming that chsh and chfn have
-		 * idential PAM configurations. */
-		if (s_flag != 0) {
-			/* Check that the user's current shell is valid, and
-			 * that she is not attempting to change to an invalid
-			 * shell. */
-			values = lu_ent_get(ent, LU_LOGINSHELL);
-			if (values != NULL) {
-				value = g_value_array_get_nth(values, 0);
-				if (G_VALUE_HOLDS_STRING(value)) {
-					old_shell= g_value_dup_string(value);
-				} else
-				if (G_VALUE_HOLDS_LONG(value)) {
-					old_shell = g_strdup_printf("%ld", g_value_get_long(value));
-				} else {
-					g_assert_not_reached();
-				}
-			}
-
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: current shell \"%s\"\n",
-				old_shell);
-			g_print("userhelper: new shell \"%s\"\n", shell_path);
-#endif
-			/* If the old or new shell are invalid, then
-			 * the user doesn't get to make the change. */
-			if (!shell_valid(shell_path) ||
-			    !shell_valid(old_shell)) {
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: bad shell value\n");
-#endif
-				lu_ent_free(ent);
-				lu_end(context);
-				pam_end(app_data.pamh, PAM_ABORT);
-				fail_exit(ERR_SHELL_INVALID);
-			}
-
-			/* Set the shell to the new value. */
-			lu_ent_clear(ent, LU_LOGINSHELL);
-			g_value_set_string(&val, shell_path);
-			lu_ent_add(ent, LU_LOGINSHELL, &val);
-		}
-
-		/* Save the changes to the user's account to the password
-		 * database, whereever that is. */
-		ret = lu_user_modify(context, ent, &error);
-		if (ret != TRUE) {
-			lu_ent_free(ent);
-			lu_end(context);
-			pam_end(app_data.pamh, PAM_ABORT);
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: libuser save failed\n");
-#endif
-			fail_exit(PAM_ABORT);
-		}
-		if (error != NULL) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: libuser save error: %s\n",
-				lu_strerror(error));
-#endif
-			lu_ent_free(ent);
-			lu_end(context);
-			pam_end(app_data.pamh, PAM_ABORT);
-			fail_exit(PAM_ABORT);
-		}
-
-		lu_ent_free(ent);
-		lu_end(context);
-		_exit(0);
+		chfn(user_name, conv, prompt, &app_data,
+		     new_full_name, new_office,
+		     new_office_phone, new_home_phone,
+		     new_shell);
+		g_assert_not_reached();
 	}
 
 	if (w_flag) {
@@ -2134,5 +2207,6 @@ main(int argc, char **argv)
 	}
 
 	/* Not reached. */
+	g_assert_not_reached();
 	exit(0);
 }
