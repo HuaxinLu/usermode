@@ -23,6 +23,7 @@
 #include <string.h>
 #include <wait.h>
 #include <errno.h>
+#include <sys/stat.h>
 #include <gtk/gtk.h>
 
 #define MAXLINE 512
@@ -229,21 +230,21 @@ user_mount(GtkWidget* widget, char* file)
   /* more aggressive error checking. */
 
   char* cmd = "/bin/mount";
-  int childout[2];
-  int childerr[2];
+  char* cmd_buf;
+  int cmd_len;
+  int tmperr;
+  int tmpout;
   pid_t pid;
-
-  char outline[MAXLINE];
-  char errline[MAXLINE];
-  char* buffer;
-  int n;
   int count;
+  struct stat stat_buf;
 
-  if(pipe(childout) < 0 || pipe(childerr) < 0)
-    {
-      fprintf(stderr, "Pipe error.\n");
-      exit(1);
-    }
+/*   char outline[MAXLINE]; */
+/*   char errline[MAXLINE]; */
+  char* errline;
+  char* outline;
+
+  tmperr = mkstemp(strdup("errXXXXXX"));
+  tmpout = mkstemp(strdup("outXXXXXX"));
 
   if((pid = fork()) < 0)
     {
@@ -251,78 +252,67 @@ user_mount(GtkWidget* widget, char* file)
     }
   else if(pid > 0)		/* parent */
     {
-      if(waitpid(pid, NULL, 0) < 0)
+     if(waitpid(pid, NULL, 0) < 0)
 	{
 	  fprintf(stderr, "waitpid() error\n");
 	  exit(2);
 	}
 
-      close(childout[1]);
-      close(childerr[1]);
+     fstat(tmperr, &stat_buf);
+     if(stat_buf.st_size > 0)
+       {
+	 errline = malloc(sizeof(char) * stat_buf.st_size + 1);
+	 if(read(tmperr, errline, stat_buf.st_size) !=
+	    stat_buf.st_size)
+	   {
+	     fprintf(stderr, "read() error.");
+	     exit(2);
+	   }
+	 printf("errline is: %s", errline);
+       }
 
-      n = 0;
+     fstat(tmpout, &stat_buf);
+     if(stat_buf.st_size > 0)
+       {
+	 outline = malloc(sizeof(char) * stat_buf.st_size + 1);
+	 if(read(tmpout, outline, stat_buf.st_size) !=
+	    stat_buf.st_size)
+	   {
+	     fprintf(stderr, "read() error.");
+	     exit(2);
+	   }
+	 printf("outline is: %s", outline);
+       }
 
-/*       count = read(childerr[0], errline, MAXLINE); */
-/*       if(count >= 0) */
-/* 	{ */
-/* 	  errline[count] = '\0'; */
-/* 	  fprintf(stderr, "errline is: %s\n", errline); */
-/* 	} */
-/*       fprintf(stderr, "count=%d, errno=%d\n", count, errno); */
-/*       count = read(childout[0], outline, MAXLINE); */
-/*       if(count >= 0) */
-/* 	{ */
-/* 	  outline[count] = '\0'; */
-/* 	  fprintf(stderr, "outline is: %s\n", outline); */
-/* 	} */
-/*       fprintf(stderr, "count=%d, errno=%d\n", count, errno); */
-
-      while((count = read(childerr[0], errline, MAXLINE)) > 0)
-	{
-	  char* tmp;
-
- 	  tmp = buffer;
-
-	  buffer = malloc(sizeof(char) * MAXLINE * n + count);
-	  strncpy(buffer, tmp, MAXLINE);
-	  strncpy(buffer + MAXLINE, errline, count);
-
-	  buffer[count*n] = '\0';
-
- 	  n++;
-	}
-
-      fprintf(stderr, "hold up..");
-
+     close(tmperr);
+     close(tmpout);
     }
   else				/* child */
     {
-      close(childout[0]);
-      close(childerr[0]);
+      cmd_len = strlen(cmd) + strlen(file) + 2;
+      cmd_buf = malloc(sizeof(char) * cmd_len);
+      snprintf(cmd_buf, cmd_len, "%s %s", cmd, file);	
 
-      if(childout[1] != STDOUT_FILENO)
+      if(tmpout != STDOUT_FILENO)
 	{
-	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
+	  if(dup2(tmpout, STDOUT_FILENO) != STDOUT_FILENO)
 	    {
 	      fprintf(stdout, "dup2() error.\n");
 	      exit(2);
 	    }
 	}
-      if(childerr[1] != STDERR_FILENO)
+      if(tmperr != STDERR_FILENO)
 	{
-	  if(dup2(childerr[1], STDERR_FILENO) != STDERR_FILENO)
+	  if(dup2(tmperr, STDERR_FILENO) != STDERR_FILENO)
 	    {
 	      fprintf(stdout, "dup2() error.\n");
 	      exit(2);
 	    }
 	}
 
-      fprintf(stderr, "testing!\n");
-
-/*       if(execl(cmd, cmd, file, 0) < 0) */
-/* 	{ */
-/* 	  fprintf(stderr, "execl() error, errno=%d\n", errno); */
-/* 	} */
+/*       system(cmd_buf); */
+      fprintf(stderr, "Get some output on stderr.\n");
+      fprintf(stdout, "Get some output on stdout.\n");
 
     }
 
