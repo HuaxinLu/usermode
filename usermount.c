@@ -328,10 +328,6 @@ mount_button(GtkWidget* widget, struct mountinfo* info)
       gtk_widget_set_sensitive(info->format, sensitive && info->mi_writable);
       normalize_mountinfo_list(NULL, info);
     }
-  else
-    {
-	gtk_label_set(GTK_LABEL(info->mount_label), MOUNT_TEXT);
-    }
 
 }
 
@@ -694,7 +690,7 @@ user_format(char* device, char* fstype, int lowlevel)
        */
       waitpid(pid, &childstatus, 0);
 
-      if(WEXITSTATUS(childstatus) != 0)
+      if(!WIFEXITED(childstatus) || WEXITSTATUS(childstatus) != 0)
 	{
 	  n = 0;
 	  
