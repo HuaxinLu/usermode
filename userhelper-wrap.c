@@ -227,6 +227,12 @@ userhelper_parse_childout(char* outline)
   GtkWidget* message_box;
 
   prompt = strchr(outline, ' ');
+
+  if(prompt == NULL)
+    {
+      return;
+    }
+
   current = prompt - 1;
   if(current[0] >= '1' && current[0] <= '4')
     {
@@ -239,10 +245,7 @@ userhelper_parse_childout(char* outline)
        */
       current = prompt;
 
-      /*DEBUG*/
-      fprintf(stderr, "got here.\n");
       while(!done)
-/*       while(FALSE) */
 	{
 	  rest = strchr(current, ' ');
 	  if(rest == NULL)
