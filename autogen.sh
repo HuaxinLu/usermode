@@ -10,8 +10,8 @@ libtoolize --force
 (cat /dev/null ChangeLog) > ChangeLog.old
 glib-gettextize -f -c
 cat ChangeLog.old > ChangeLog
-aclocal
-automake -a
+aclocal-1.5
+automake-1.5 -a
 autoheader
 autoconf
 test -f config.cache && rm -f config.cache || true

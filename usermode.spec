@@ -2,14 +2,14 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.55
-Release: 2
+Release: 3
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else
-Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
+Requires: util-linux, pam >= 0.75-37, /etc/pam.d/system-auth
 %endif
 Conflicts: SysVinit < 2.74-14
 BuildPrereq: glib2-devel, gtk2-devel, libglade2-devel, libuser-devel, pam-devel, util-linux

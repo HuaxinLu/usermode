@@ -21,7 +21,7 @@ EXTRA_DIST = config.rpath  \
 	egg-marshalers.list \
 	$(pixmap_DATA)
 
-SUBDIRS= m4 intl po
+SUBDIRS=m4 po
 
 CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
 
@@ -38,7 +38,7 @@ install-data-local:
 	$(INSTALL) -m644 $(man8_MANS) $(DESTDIR)/$(mandir)/man8/
 
 pixmapdir = $(datadir)/pixmaps
-pixmap_DATA = keys.xpm
+pixmap_DATA = keys.xpm status_lock.png
 
 applnkdir = $(sysconfdir)/X11/applnk/System
 applnk_DATA = userinfo.desktop usermount.desktop userpasswd.desktop
@@ -87,9 +87,6 @@ tag:
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 
 ACLOCAL_AMFLAGS = -I m4
-
-pixmapdir=$(datadir)/pixmaps
-pixmap_DATA=status_lock.png
 
 ## libegg goo - "make regenerate-built-sources EGGDIR=foo"
 EGGFILES=			\
