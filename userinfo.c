@@ -44,13 +44,15 @@ struct _UserInfo
   char* office_phone;
   char* home_phone;
   char* shell;
+  char* new_password;
 };
 
 typedef struct _UserInfo UserInfo;
 
 void create_userinfo_window(UserInfo* userinfo);
 GtkWidget* create_shell_menu(UserInfo* userinfo);
-GtkWidget* create_gecos_table(UserInfo* userinfo, int rows, int cols);
+GtkWidget* create_gecos_table(UserInfo* userinfo);
+GtkWidget* create_password_dialog(UserInfo* userinfo);
 UserInfo* parse_userinfo();
 
 int
@@ -81,10 +83,6 @@ create_userinfo_window(UserInfo* userinfo)
   GtkWidget* gecos;		/* GtkTable */
   GtkWidget* shell_field;	/* GtkOptionMenu */
   GtkWidget* password;		/* GtkVBox */
-  GtkWidget* pw_info;		/* GtkLabel */
-  GtkWidget* pw_field_old;	/* GtkEntry */
-  GtkWidget* pw_field_1;	/* GtkEntry */ /* need gtk_entry_set_echo_char() */
-  GtkWidget* pw_field_2;	/* GtkEntry */ /* ditto */
   GtkWidget* buttons;		/* GtkHBox */
   GtkWidget* ok;		/* GtkButton */
   GtkWidget* cancel;		/* GtkButton */
@@ -101,7 +99,7 @@ create_userinfo_window(UserInfo* userinfo)
   notebook = gtk_notebook_new();
   gtk_container_border_width(GTK_CONTAINER(notebook), 5);
 
-  gecos = create_gecos_table(userinfo, NUM_GECOS_FIELDS, 2);
+  gecos = create_gecos_table(userinfo);
 
   shell_field = create_shell_menu(userinfo);
 
@@ -110,21 +108,7 @@ create_userinfo_window(UserInfo* userinfo)
 		   0, 0, 0, 0);
   gtk_widget_show(shell_field);
 
-  /* build password widgets */
-  password = gtk_vbox_new(FALSE, 0);
-
-  pw_field_old = gtk_entry_new();
-  pw_field_1 = gtk_entry_new();
-  pw_field_2 = gtk_entry_new();
-  gtk_widget_set_sensitive(pw_field_1, FALSE);
-  gtk_widget_set_sensitive(pw_field_2, FALSE);
-  /* need to when enter is hit on pw_field_old, turn the others back
-   * on... enter on 1 moves focus to 2, enter on 2 checks equality, if
-   * they're equal, then it sets the password.
-   */
-  gtk_box_pack_start(GTK_BOX(password), pw_field_old, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(password), pw_field_1, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(password), pw_field_2, FALSE, FALSE, 0);
+  password = create_password_dialog(userinfo);
 
   /* the buttons at the bottom */
   buttons = gtk_hbox_new(FALSE, 0);
@@ -150,9 +134,6 @@ create_userinfo_window(UserInfo* userinfo)
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->vbox), notebook, TRUE, TRUE, 0);
 
   gtk_widget_show(gecos);
-  gtk_widget_show(pw_field_old);
-  gtk_widget_show(pw_field_1);
-  gtk_widget_show(pw_field_2);
   gtk_widget_show(password);
   gtk_widget_show(notebook);
   gtk_widget_show(buttons);
@@ -245,7 +226,7 @@ create_shell_menu(UserInfo* userinfo)
 }
 
 GtkWidget*
-create_gecos_table(UserInfo* userinfo, int rows, int cols)
+create_gecos_table(UserInfo* userinfo)
 {
   GtkWidget* gecos;		/* GtkTable */
   GtkWidget* gecos_fields[NUM_GECOS_FIELDS];
@@ -265,7 +246,7 @@ create_gecos_table(UserInfo* userinfo, int rows, int cols)
       gecos_name_only = TRUE;
     }
     
-  gecos = gtk_table_new(rows + 1, cols, FALSE);
+  gecos = gtk_table_new(NUM_GECOS_FIELDS + 1, 2, FALSE);
   gtk_container_border_width(GTK_CONTAINER(gecos), 5);
 
   gtk_table_set_row_spacings(GTK_TABLE(gecos), 5);
@@ -363,6 +344,46 @@ create_gecos_table(UserInfo* userinfo, int rows, int cols)
   return gecos;
 }
 
+GtkWidget*
+create_password_dialog(UserInfo* userinfo)
+{
+  GtkWidget* password_dialog;
+  GtkWidget* vbox;
+  GtkWidget* vbox2;
+  GtkWidget* hbox;
+  GtkWidget* pw_info;		/* GtkLabel */
+  GtkWidget* pw_field_1;	/* GtkEntry */ /* need gtk_entry_set_echo_char() */
+  GtkWidget* pw_field_2;	/* GtkEntry */ /* ditto */
+
+  password_dialog = gtk_vbox_new(FALSE, 0);
+  vbox = gtk_vbox_new(FALSE, 0);
+  vbox2 = gtk_vbox_new(FALSE, 0);
+  hbox = gtk_hbox_new(FALSE, 5);
+
+  pw_info = gtk_label_new("Type your new password twice:");
+
+  pw_field_1 = gtk_entry_new();
+  pw_field_2 = gtk_entry_new();
+/*   gtk_widget_set_sensitive(pw_field_1, FALSE); */
+  gtk_widget_set_sensitive(pw_field_2, FALSE);
+
+  gtk_box_pack_start(GTK_BOX(password_dialog), vbox, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(vbox), pw_info, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(hbox), vbox2, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(vbox2), pw_field_1, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(vbox2), pw_field_2, FALSE, FALSE, 0);
+
+  gtk_widget_show(vbox);
+  gtk_widget_show(vbox2);
+  gtk_widget_show(hbox);
+  gtk_widget_show(pw_info);
+  gtk_widget_show(pw_field_1);
+  gtk_widget_show(pw_field_2);
+
+  return password_dialog;
+}
+
 UserInfo* 
 parse_userinfo()
 {
@@ -401,3 +422,9 @@ parse_userinfo()
 
   return retval;
 }
+
+
+
+
+
+
