@@ -290,6 +290,10 @@ int main(int argc, char *argv[])
     pam_handle_t 	*pamh = NULL;
     struct passwd	*pw;
      
+    /* for lack of a better palce to put it... */
+    setbuf(stdout, NULL);
+    setbuf(stdin, NULL);
+
     if (geteuid() != 0) {
 	fprintf(stderr, "Hmm, we need root privs for this program...\n");
 	exit(ERR_NO_RIGHTS);
