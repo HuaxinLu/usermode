@@ -1,12 +1,12 @@
 %if %{?WITH_SELINUX:0}%{!?WITH_SELINUX:1}
-%define WITH_SELINUX 1
+%define WITH_SELINUX 0
 %endif
 
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.68
-Release: 3.sel
+Release: 4
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -112,6 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Sep 8 2003 Dan Walsh <dwalsh@redhat.com> 1.68-4
+- turn off selinux
+
 * Fri Sep 5 2003 Dan Walsh <dwalsh@redhat.com> 1.68-3.sel
 - turn on selinux
 
