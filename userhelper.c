@@ -1468,16 +1468,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	values = lu_ent_get(ent, LU_GECOS);
 	if (values != NULL) {
 		value = g_value_array_get_nth(values, 0);
-		if (G_VALUE_HOLDS_STRING(value)) {
-			old_gecos = g_value_dup_string(value);
-		} else
-		if (G_VALUE_HOLDS_LONG(value)) {
-			old_gecos = g_strdup_printf("%ld",
-						    g_value_get_long(value));
-		} else {
-			old_gecos = NULL;
-			g_assert_not_reached();
-		}
+		old_gecos = lu_value_strdup(value);
 		gecos_parse(old_gecos, &parsed_gecos);
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: old gecos string \"%s\"\n", old_gecos);
@@ -1577,15 +1568,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 		values = lu_ent_get(ent, LU_LOGINSHELL);
 		if (values != NULL) {
 			value = g_value_array_get_nth(values, 0);
-			if (G_VALUE_HOLDS_STRING(value)) {
-				old_shell = g_value_dup_string(value);
-			} else
-			if (G_VALUE_HOLDS_LONG(value)) {
-				old_shell = g_strdup_printf("%ld", g_value_get_long(value));
-			} else {
-				old_shell = NULL;
-				g_assert_not_reached();
-			}
+			old_shell = lu_value_strdup(value);
 		} else {
 			old_shell = g_strdup("/bin/sh");
 		}
@@ -1668,7 +1651,10 @@ wrap(const char *user, const char *program,
 	char *apps_filename;
 	char *user_pam;
 	const char *auth_user;
-	char *apps_banner, *apps_sn;
+	char *apps_banner;
+#ifdef USE_STARTUP_NOTIFICATION
+	char *apps_sn;
+#endif
 	const char *apps_domain;
 	char *retry, *noxoption;
 	char **environ_save;
