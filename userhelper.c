@@ -861,6 +861,7 @@ main(int argc, char **argv)
 			tryagain--;
 		} while ((retval != PAM_SUCCESS) &&
 			 (retval != PAM_CONV_ERR) &&
+			 !app_data.cancelled &&
 			 tryagain);
 		/* If we didn't succeed, bail. */
 		if (retval != PAM_SUCCESS) {

@@ -149,10 +149,12 @@ create_userinfo_window(struct UserInfo *userinfo)
 		gtk_option_menu_set_history(GTK_OPTION_MENU(shell_menu), 0);
 		endusershell();
 
-		glade_xml_signal_connect(xml, "on_ok_clicked",
-					 GTK_SIGNAL_FUNC(on_ok_clicked));
-		glade_xml_signal_connect(xml, "gtk_main_quit",
-					 GTK_SIGNAL_FUNC(gtk_main_quit));
+		widget = glade_xml_get_widget(xml, "ok");
+		g_signal_connect(widget, "clicked",
+				 G_CALLBACK(on_ok_clicked), NULL);
+		widget = glade_xml_get_widget(xml, "cancel");
+		g_signal_connect(widget, "clicked",
+				 G_CALLBACK(gtk_main_quit), NULL);
 	}
 
 	return widget;
