@@ -497,6 +497,8 @@ set_new_userinfo(UserInfo* userinfo)
   char* officephone;
   char* homephone;
   char* shell;
+  char *argv[12];
+  int i = 0;
 
   fullname = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_FULLNAME]));
   office = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_OFFICE]));
@@ -504,23 +506,31 @@ set_new_userinfo(UserInfo* userinfo)
   homephone = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_HOMEPHONE]));
   shell = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_SHELL]));
 
-  signal(SIGCHLD, userhelper_sigchld);
 
-  if(strcmp(userinfo->shell, shell) == 0) {
-    /* don't touch shell */
-    userhelper_run(UH_PATH, UH_PATH,
-                   UH_FULLNAME_OPT, fullname?fullname:"",
-                   UH_OFFICE_OPT, office?office:"",
-                   UH_OFFICEPHONE_OPT, officephone?officephone:"",
-                   UH_HOMEPHONE_OPT, homephone?homephone:"", 0);
-  } else {
-    userhelper_run(UH_PATH, UH_PATH,
-                   UH_FULLNAME_OPT, fullname?fullname:"",
-                   UH_OFFICE_OPT, office?office:"",
-                   UH_OFFICEPHONE_OPT, officephone?officephone:"",
-                   UH_HOMEPHONE_OPT, homephone?homephone:"",
-                   UH_SHELL_OPT, shell, 0);
+  argv[i++] = UH_PATH;
+  if (fullname && fullname[0]) {
+    argv[i++] = UH_FULLNAME_OPT;
+    argv[i++] = fullname;
   }
+  if (office && office[0]) {
+    argv[i++] = UH_OFFICE_OPT;
+    argv[i++] = office;
+  }
+  if (officephone && officephone[0]) {
+    argv[i++] = UH_OFFICEPHONE_OPT;
+    argv[i++] = officephone;
+  }
+  if (homephone && homephone[0]) {
+    argv[i++] = UH_HOMEPHONE_OPT;
+    argv[i++] = homephone;
+  }
+  if (shell && shell[0]) {
+    argv[i++] = UH_SHELL_OPT;
+    argv[i++] = shell;
+  }
+
+  signal(SIGCHLD, userhelper_sigchld);
+  userhelper_runv(UH_PATH, argv);
 }
 
 void
