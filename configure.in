@@ -64,10 +64,10 @@ if test x$debug != xno ; then
 fi
 
 selinux=no
-AC_ARG_ENABLE(selinux,[  --enable-selinux       Enable SELinux awareness],
-	      selinux=${enableval})
+AC_ARG_WITH(selinux,[  --with-selinux         Use SELinux functionality],
+	    selinux=${withval})
 if test x$selinux != xno ; then
-	AC_DEFINE(WITH_SELINUX,1,[enable SELinux features])
+	AC_DEFINE(WITH_SELINUX,1,[use SELinux features])
 	LIBS="$LIBS -lselinux -lattr"
 fi
 
