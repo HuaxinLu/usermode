@@ -10,7 +10,7 @@ AC_DEFINE_UNQUOTED(PATH_MOUNT,"$MOUNT",[path to the mount command])
 AC_DEFINE_UNQUOTED(PATH_UMOUNT,"$UMOUNT",[path to the umount command])
 AC_DEFINE_UNQUOTED(PATH_FDFORMAT,"$FDFORMAT",[path to the fdformat command])
 AC_DEFINE_UNQUOTED(PATH_MKFS,"$MKFS",[path to the mkfs command])
-ALL_LINGUAS="bs cs cy da de es eu_ES fi fr gl hu id is it ja ko no pl pt_BR pt ro ru sk sl sr sv tr uk wa zh_CN zh_TW"
+ALL_LINGUAS="ar be bg bn bs ca cs cy da de el es et fi fr gu hi hr hu id is it ja ko mk ms nb nl no pa pl pt pt_BR ro ru sk sl sv ta tr uk vi zh_CN zh_TW"
 GETTEXT_PACKAGE=usermode
 AC_SUBST(GETTEXT_PACKAGE)
 AM_GLIB_GNU_GETTEXT
