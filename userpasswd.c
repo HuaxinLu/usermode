@@ -23,8 +23,6 @@
 int
 main(int argc, char* argv[])
 {
-  /* first set up our locale info for gettext. */
-  setlocale(LC_ALL, "");
   bindtextdomain("usermode", "/usr/share/locale");
   textdomain("usermode");
 
