@@ -55,13 +55,32 @@ AC_SUBST(BINDIR)
 AC_SUBST(SBINDIR)
 AC_SUBST(DATADIR)
 AC_SUBST(SYSCONFDIR)
-AC_ARG_ENABLE(debug,
-[  --enable-debug         Enable debugging messages],
-AC_DEFINE(DEBUG_USERHELPER,1,[enable debugging messages]))
+
+debug=no
+AC_ARG_ENABLE(debug,[  --enable-debug         Enable debugging messages],
+	      debug=${enableval})
+if test x$debug != xno ; then
+	AC_DEFINE(DEBUG_USERHELPER,1,[enable debugging messages])
+fi
+
+selinux=no
+AC_ARG_ENABLE(selinux,[  --enable-selinux       Enable SELinux awareness],
+	      selinux=${enableval})
+if test x$selinux != xno ; then
+	AC_DEFINE(WITH_SELINUX,1,[enable SELinux features])
+	LIBS="$LIBS -lselinux -lattr"
+fi
+
 AM_CONFIG_HEADER(config.h)
 
+gccwerror=no
+AC_ARG_ENABLE(gccwerror,[  --enable-gccwerror     Enable -Werror with GCC],
+	      gccwerror=${enableval})
 if test x$GCC = xyes ; then
 	CFLAGS="$CFLAGS -Wall -Wuninitialized -Wunused -std=c99 -D_GNU_SOURCE"
+	if test x$gccwerror != xno ; then
+		CFLAGS="$CFLAGS -Werror"
+	fi
 fi
 
 AC_OUTPUT([ po/Makefile.in
