@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
-"PO-Revision-Date: 2000-12-12 21:36+0100\n"
+"POT-Creation-Date: 2001-01-25 15:50-0500\n"
+"PO-Revision-Date: 2001-01-27 03:16+0100\n"
 "Last-Translator: Jesús Bravo Álvarez <jba@pobox.com>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
 "MIME-Version: 1.0\n"
@@ -135,18 +135,18 @@ msgid "Need %d responses.\n"
 msgstr "Necesita %d respostas.\n"
 
 #: ../userhelper-wrap.c:371
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
-"Para poder executar \"%s\" con privilexios de %s, requírese información "
+"Para poder executar \"%s\" con privilexios de root, precísase información "
 "adicional."
 
 #: ../userhelper-wrap.c:389
-#, fuzzy, c-format
+#, c-format
 msgid "Changing password for %s"
-msgstr "Contrasinal de %s"
+msgstr "Mudando o contrasinal de %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
@@ -190,12 +190,12 @@ msgstr "O userhelper ten que ser setuid root\n"
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "PAM devolveu = %d\n"
 
 #: ../userhelper.c:673
-#, fuzzy, c-format
+#, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr "a piques de executar \"%s\"\n"
+msgstr "a piques de autenticar a \"%s\"\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
@@ -292,40 +292,40 @@ msgstr "Facer formato de baixo nivel."
 
 #: ../dummy.h:4
 msgid "Exit"
-msgstr ""
+msgstr "Saír"
 
 #: ../dummy.h:5
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../dummy.h:6
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Executar sen privilexios"
 
 #: ../dummy.h:7
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(actual) Contrasinal de UNIX: "
 
 #: ../dummy.h:8
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Novo contrasinal de UNIX: "
 
 #: ../dummy.h:9
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Escriba outra vez o novo contrasinal de UNIX: "
 
 #: ../dummy.h:10
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "CONTRASINAL INCORRECTO: é DEMASIADO curto"
 
 #: ../dummy.h:11
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "CONTRASINAL INCORRECTO: é curto de máis"
 
 #: ../dummy.h:12
 msgid "Password unchanged"
-msgstr ""
+msgstr "Contrasinal sen modificacións"
 
 #: ../dummy.h:13
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Os contrasinais non coinciden"
