@@ -1,19 +1,21 @@
 # Dutch translation of usermode.
-# Copyright (C) 2003 The Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003.
-# 
+# Peter van Egdom <p.van.egdom@chello.nl>, 2004.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode RH8.1\n"
+"Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-10 14:44+0100\n"
-"PO-Revision-Date: 2003-02-10 17:30+0100\n"
-"Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
+"PO-Revision-Date: 2004-12-14 23:06+0100\n"
+"Last-Translator: Peter van Egdom <p.van.egdom@chello.nl>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -52,7 +54,7 @@ msgstr "Zonder privileges uitvoeren"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(huidige) UNIX-wachtwoord: "
+msgstr "(huidig) UNIX-wachtwoord: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
@@ -84,17 +86,16 @@ msgstr "Systeembrede configuratie-middelen opstarten zonder wachtwoord."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "aanmelden: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Wachtwoord"
+msgstr "Wachtwoord: "
 
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Loslaten van beheerders-privileges mislukt: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -102,6 +103,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"Loslaten van beheerders-privileges mislukt: pam_timestamp_check gaf foutcode "
+"%d terug"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -109,53 +112,56 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"Op dit moment bent u geautoriseerd om systeembrede instellingen aan te passen "
+"(die gevolgen kunnen hebben voor alle gebruikers) zonder daarbij opnieuw het "
+"beheerderswachtwoord te hoeven invoeren. U kunt deze autorisaties opheffen."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Autorisaties houden"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Autorisaties opheffen"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check is niet setuid voor root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "geen stuur-tty voor pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "gebruiker onbekend voor pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "fout met toegangsrechten in pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "ongeldige stuur-tty in pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Fout"
+msgstr "Fout: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Uitvoeren van commando \"%s\" mislukt: %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Instellen van IO channel nonblocking mislukt: %s\n"
 
 #: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: connectie maken met de sessie-manager is mislukt\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -164,7 +170,7 @@ msgstr "Hulp"
 #: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Instellen van 'exec context' naar %s mislukt.\n"
 
 #: userhelper.c:506
 #, c-format
@@ -240,7 +246,7 @@ msgid ""
 "Please try again."
 msgstr ""
 "Het wachtwoord dat u invoerde is ongeldig.\n"
-"Probeer het alstublieft opnieuw."
+"Probeer het opnieuw."
 
 #: userhelper-wrap.c:185
 msgid ""
@@ -310,7 +316,7 @@ msgstr "Onbekende fout."
 #.
 #: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
-msgstr "Zoekvraag"
+msgstr "Verzoek"
 
 #: userhelper-wrap.c:565 userhelper-wrap.c:745
 msgid "Error"
