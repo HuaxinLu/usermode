@@ -54,7 +54,7 @@ msgstr "Pipe Fehler.\n"
 #: ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
 #: ../usermount.c:767
 msgid "Cannot fork().\n"
-msgstr "Kann nicht forken().\n"
+msgstr "Kann fork() nicht aufrufen.\n"
 
 #: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
 #: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
@@ -161,7 +161,7 @@ msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
-"Um \"%s\" per Root-Zugriffsrecht zu starten, sind zusätzliche Informationen "
+"Um \"%s\" mit Root-Zugriffsrechten zu starten, sind zusätzliche Informationen "
 "erforderlich."
 
 #: ../userhelper-wrap.c:389
@@ -206,12 +206,12 @@ msgstr "Speichern, nachdem der Block zerstört wurde."
 
 #: ../userhelper.c:435
 msgid "userhelper must be setuid root\n"
-msgstr "Benutzerhilfe muss Setuid-Root sein\n"
+msgstr "usermode muss Setuid-Root sein\n"
 
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr "PAM returned = %d\n"
+msgstr "PAM lieferte %d zurück\n"
 
 #: ../userhelper.c:673
 #, c-format
@@ -221,7 +221,7 @@ msgstr "\"%s\" wird gerade authentifiziert\n"
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "\"%s\" exec wird gerade durchgeführt\n"
+msgstr "\"%s\" exec wird gerade ausgeführt\n"
 
 #: ../userinfo.c:124
 msgid "User Information"
@@ -253,7 +253,7 @@ msgstr "Shell:"
 
 #: ../userinfo.c:378
 msgid "This will be some help text."
-msgstr "Das wird ein Hilfstext."
+msgstr "Das wird ein Unterstützungstext."
 
 #: ../usermount.c:57
 msgid "Mount"
@@ -272,12 +272,12 @@ msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
-"Es stehen keine zu ladende Benutzerdateien zur Vefügung.\n"
+"Es stehen keine zu mountenden Benutzerdateien zur Verfügung.\n"
 "Setzen Sie sich mit Ihrem Administrator in Verbindung."
 
 #: ../usermount.c:177
 msgid "Directory"
-msgstr "Directory"
+msgstr "Verzeichniss"
 
 #: ../usermount.c:185
 msgid "Device"
@@ -309,7 +309,7 @@ msgstr "Nein"
 
 #: ../usermount.c:379
 msgid "Do low level format."
-msgstr "Low-Level-Format ausführen."
+msgstr "Low-Level-Formatierung ausführen."
 
 #: ../dummy.h:21
 msgid "Exit"
@@ -329,7 +329,7 @@ msgstr "(aktuelles) UNIX Passwort:"
 
 #: ../dummy.h:25
 msgid "New UNIX password: "
-msgstr "Neues UNIX Passwort:"
+msgstr "Neues UNIX Passwort nochmals eingeben:"
 
 #: ../dummy.h:26
 msgid "Retype new UNIX password: "
