@@ -5,3 +5,4 @@ _Comment=Mount and unmount filesystems
 Exec=usermount
 Terminal=0
 Type=Application
+Icon=disks.png

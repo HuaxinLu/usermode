@@ -102,6 +102,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Jul 31 2002 Nalin Dahyabhai <nalin@redhat.com> 1.56-3
+- add icons for userpasswd and usermount
+
 * Wed Jul 24 2002 Nalin Dahyabhai <nalin@redhat.com> 1.56-2
 - actually include the icons
 - translation updates
