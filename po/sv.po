@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-04-01 11:46-0500\n"
-"PO-Revision-Date: 2002-02-13 09:14+0100\n"
+"PO-Revision-Date: 2002-04-09 15:46+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -73,45 +73,45 @@ msgid "Password for %s"
 msgstr "Lösenord för %s"
 
 #: userhelper.c:317
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du försöker köra \"%s\" vilket kan dra nytta av superanvändarrättigheter, "
-"men mer information krävs för att kunna göra det."
+"Du försöker köra \"%s\" vilket kan dra nytta av\n"
+"superanvändarrättigheter, men mer information krävs\n"
+"för att kunna göra det."
 
 #: userhelper.c:319
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du försöker köra \"%s\" som kräver superanvändarrättigheter, men mer "
-"information krävs för att kunna göra det."
+"Du försöker köra \"%s\" som kräver superanvändarrättigheter,\n"
+"men mer information krävs för att kunna göra det."
 
 #: userhelper.c:323
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
 msgstr ""
-"Du försöker köra ett kommando vilket kan dra nytta av "
-"superanvändarrättigheter, men mer information krävs för att kunna göra det."
+"Du försöker köra ett kommando vilket kan dra nytta av\n"
+"superanvändarrättigheter, men mer information krävs för\n"
+"att kunna göra det."
 
 #: userhelper.c:325
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du försöker köra ett kommando som kräver superanvändarrättigheter, men mer "
-"information krävs för att kunna göra det."
+"Du försöker köra ett kommando som kräver superanvändarrättigheter,\n"
+"men mer information krävs för att kunna göra det."
 
 #: userhelper.c:343
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "Lösenord för %s"
+msgstr "Lösenord för %s: "
 
 #: userhelper.c:626
 msgid "userhelper must be setuid root\n"
