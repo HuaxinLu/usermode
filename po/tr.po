@@ -1,13 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# Görkem Çetin, gorkem@gelecek.com.tr <2000>
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
-"PO-Revision-Date: 2001-02-02 15:08-0400\n"
-"Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
+"POT-Creation-Date: 2001-02-05 10:35-0500\n"
+"PO-Revision-Date: 2001-02-11 11:42+0200\n"
+"Last-Translator: Nilgun Belma Buguner <nilgun@technologist.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-9\n"
@@ -15,7 +11,7 @@ msgstr ""
 
 #: ../userdialogs.c:35
 msgid "Message"
-msgstr "Mesaj"
+msgstr "Ýleti"
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:384
 msgid "Error"
@@ -25,32 +21,48 @@ msgstr "Hata"
 msgid "Prompt"
 msgstr "Komut istemi"
 
+#. Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
 #. Just a dummy file for gettext
-#: ../dummy.h:3 ../userdialogs.c:193 ../userinfo.c:140
+#: ../dummy.h:20 ../userdialogs.c:193 ../userinfo.c:139
 msgid "OK"
 msgstr "Tamam"
 
-#: ../userhelper-wrap.c:49 ../usermount.c:581 ../usermount.c:676
-#: ../usermount.c:764
+#: ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
+#: ../usermount.c:761
 msgid "Pipe error.\n"
-msgstr "Pipe hatasý.\n"
+msgstr "Veri yolu hatasý.\n"
 
-#: ../userhelper-wrap.c:55 ../usermount.c:587 ../usermount.c:687
-#: ../usermount.c:770
+#: ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
+#: ../usermount.c:767
 msgid "Cannot fork().\n"
 msgstr "fork() çalýþtýrýlamadý.\n"
 
-#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:627
-#: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
-#: ../usermount.c:817
+#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
+#: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
+#: ../usermount.c:814
 msgid "dup2() error.\n"
 msgstr "dup2() hatasý.\n"
 
-#: ../userhelper-wrap.c:112 ../usermount.c:642 ../usermount.c:754
-#: ../usermount.c:824
+#: ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
+#: ../usermount.c:821
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "execl() hatasý, hata numarasý=%d\n"
+msgstr "execl() hatasý, hatano=%d\n"
 
 #: ../userhelper-wrap.c:141
 msgid "Information updated."
@@ -61,7 +73,7 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Girilen parola hatalý.\n"
+"Girilen parola geçersiz.\n"
 "Lütfen tekrar deneyin."
 
 #: ../userhelper-wrap.c:147
@@ -71,7 +83,8 @@ msgid ""
 "Please remove those and try again."
 msgstr ""
 "Deðiþtirilen alanlarýn bir ya da birden fazlasý geçersiz.\n"
-"Bu sorun alanlardaki sütun ya da virgüllerden dolayý olabilir.\n"
+"Bu sorun alanlardaki iki nokta üstüsteler ya da virgüllerden dolayý "
+"olabilir.\n"
 "Bunlarý silip yeniden deneyin."
 
 #: ../userhelper-wrap.c:150
@@ -104,18 +117,18 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Þimdiki kabuðunuz /etc/shells dosyasýnda bulunmuyor.\n"
-"Kabuk deðiþtirmeniz mümkün deðil. Lütfen\n"
-"sistem yöneticinizle temasa geçin."
+"Kullandýðýnýz kabuk /etc/shells dosyasýnda bulunmuyor.\n"
+"Kabuk deðiþtirmeniz de mümkün deðil. Lütfen\n"
+"sistem yöneticinize baþvurun."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:169
 msgid "Out of memory."
-msgstr "Yetersiz belek"
+msgstr "Bellek yetersiz."
 
 #: ../userhelper-wrap.c:172
 msgid "The exec() call failed."
-msgstr "exec() çaðrý hatasý."
+msgstr "exec() çaðrýsý baþarýsýz."
 
 #: ../userhelper-wrap.c:175
 msgid "Failed to find selected program."
@@ -139,21 +152,21 @@ msgid "Need %d responses.\n"
 msgstr "%d cevap gerekli.\n"
 
 #: ../userhelper-wrap.c:371
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
-msgstr "\"%s\" komutunu %s haklarýyla çalýþtýrmak için ek bilgi gerekiyor."
+msgstr "\"%s\" komutunu root haklarýyla çalýþtýrmak için ek bilgi gerekiyor."
 
 #: ../userhelper-wrap.c:389
-#, fuzzy, c-format
+#, c-format
 msgid "Changing password for %s"
-msgstr "%s için parola"
+msgstr "%s için parola deðiþtiriliyor"
 
 #: ../userhelper-wrap.c:403
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr "%d giriþ alanýnda %d cevap istediniz!!??\n"
+msgstr "%d cevabý, %d giriþ alanýndan istediniz!?!?!\n"
 
 #: ../userhelper.c:103
 #, c-format
@@ -179,11 +192,11 @@ msgstr "Blok iki kez serbest býrakýldý."
 
 #: ../userhelper.c:404
 msgid "Memory before the block was clobbered."
-msgstr "Bloktan önce gelen bellek sorunlu"
+msgstr "Bloktan önce gelen bellek sorunlu."
 
 #: ../userhelper.c:406
 msgid "Memory after the block was clobbered."
-msgstr "Bloktan sonra gelen bellek sorunlu"
+msgstr "Bloktan sonra gelen bellek sorunlu."
 
 #: ../userhelper.c:435
 msgid "userhelper must be setuid root\n"
@@ -192,63 +205,63 @@ msgstr "userhelper programý setuid root olmalýdýr.\n"
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "PAM döndürdü = %d\n"
 
 #: ../userhelper.c:673
-#, fuzzy, c-format
+#, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr "\"%s\" çalýþtýrýlýyor\n"
+msgstr "\"%s\" kanýtlama hakkýnda\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "\"%s\" çalýþtýrýlýyor\n"
+msgstr "\"%s\" çalýþtýrma hakkýnda\n"
 
-#: ../userinfo.c:125
+#: ../userinfo.c:124
 msgid "User Information"
 msgstr "Kullanýcý Bilgisi"
 
-#: ../userinfo.c:154
+#: ../userinfo.c:153
 msgid "Help"
 msgstr "Yardým"
 
-#: ../userinfo.c:243
+#: ../userinfo.c:242
 msgid "Full Name:"
-msgstr "Ýsim:"
+msgstr "Tam isim:"
 
-#: ../userinfo.c:261
+#: ../userinfo.c:260
 msgid "Office:"
-msgstr "Ofis:"
+msgstr "Ýþ yeri:"
 
-#: ../userinfo.c:280
+#: ../userinfo.c:279
 msgid "Office Phone:"
-msgstr "Ofis Telefonu:"
+msgstr "Ýþ Telefonu:"
 
-#: ../userinfo.c:298
+#: ../userinfo.c:297
 msgid "Home Phone:"
 msgstr "Ev Telefonu:"
 
-#: ../userinfo.c:316
+#: ../userinfo.c:315
 msgid "Shell:"
 msgstr "Kabuk:"
 
-#: ../userinfo.c:379
+#: ../userinfo.c:378
 msgid "This will be some help text."
-msgstr "Yardým metni olacak..."
+msgstr "Bu yardým metni olacak."
 
-#: ../usermount.c:56
+#: ../usermount.c:57
 msgid "Mount"
 msgstr "Baðla"
 
-#: ../usermount.c:57
+#: ../usermount.c:58
 msgid "Unmount"
 msgstr "Ayýr"
 
-#: ../usermount.c:120
+#: ../usermount.c:119
 msgid "User Mount Tool"
 msgstr "Baðlama Aracý"
 
-#: ../usermount.c:137
+#: ../usermount.c:136
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
@@ -256,23 +269,23 @@ msgstr ""
 "Kullanýcýnýn baðlayabileceði dosya sistemi\n"
 "bulunmuyor. Sistem yöneticinize baþvurun."
 
-#: ../usermount.c:178
+#: ../usermount.c:177
 msgid "Directory"
 msgstr "Dizin"
 
-#: ../usermount.c:186
+#: ../usermount.c:185
 msgid "Device"
 msgstr "Aygýt"
 
-#: ../usermount.c:194
+#: ../usermount.c:193
 msgid "Type"
 msgstr "Tür"
 
-#: ../usermount.c:269
+#: ../usermount.c:267
 msgid "Format"
 msgstr "Biçimlendir"
 
-#: ../usermount.c:363
+#: ../usermount.c:360
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
@@ -280,54 +293,54 @@ msgstr ""
 "Emin misiniz?\n"
 "Diskteki tüm veri silinecektir.\n"
 
-#: ../usermount.c:365
+#: ../usermount.c:362
 msgid "Yes"
 msgstr "Evet"
 
-#: ../usermount.c:375
+#: ../usermount.c:372
 msgid "No"
 msgstr "Hayýr"
 
-#: ../usermount.c:382
+#: ../usermount.c:379
 msgid "Do low level format."
-msgstr "Düþük seviyeli biçimlendir."
+msgstr "Düþük düzeyli biçimleme yap."
 
-#: ../dummy.h:4
+#: ../dummy.h:21
 msgid "Exit"
-msgstr ""
+msgstr "Çýk"
 
-#: ../dummy.h:5
+#: ../dummy.h:22
 msgid "Cancel"
-msgstr ""
+msgstr "Ýptal"
 
-#: ../dummy.h:6
+#: ../dummy.h:23
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Yetkisiz çalýþtýrma"
 
-#: ../dummy.h:7
+#: ../dummy.h:24
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(þu anki) UNIX parolasý: "
 
-#: ../dummy.h:8
+#: ../dummy.h:25
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Yeni UNIX parolasý"
 
-#: ../dummy.h:9
+#: ../dummy.h:26
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Yeni UNIX parolanýzý tekrarlayýn: "
 
-#: ../dummy.h:10
+#: ../dummy.h:27
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "PAROLA KÖTÜ: çok kolay"
 
-#: ../dummy.h:11
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "PAROLA KÖTÜ: çok kýsa"
 
-#: ../dummy.h:12
+#: ../dummy.h:29
 msgid "Password unchanged"
-msgstr ""
+msgstr "Parola deðiþmedi"
 
-#: ../dummy.h:13
+#: ../dummy.h:30
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Kusura bakmayýn ama parolalar eþleþmedi"
