@@ -2,7 +2,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.37
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.bz2
@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
-* Mon Oct 30 2000 Nalin Dahyabhai <nalin@redhat.com>
+* Thu Nov  2 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix segfault in userhelper (#20027)
 
 * Tue Oct 24 2000 Nalin Dahyabhai <nalin@redhat.com>

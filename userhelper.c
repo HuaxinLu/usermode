@@ -234,11 +234,15 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 	    case PAM_PROMPT_ECHO_OFF:
 		reply[count].resp_retcode = PAM_SUCCESS;
 		reply[count].resp = read_string();
-		if((reply[count].resp != NULL) &&
-		   (reply[count].resp[0] == UH_ABORT)) {
-                    fallback_flag = TRUE;
-		    free (reply);
-		    return PAM_MAXTRIES; /* Shrug. */
+		if(reply[count].resp == NULL) {
+			free (reply);
+			return PAM_CONV_ERR;
+		} else {
+			if(reply[count].resp[0] == UH_ABORT) {
+				fallback_flag = TRUE;
+				free (reply);
+				return PAM_MAXTRIES; /* Shrug. */
+			}
 		}
 		break;
 	    default:
