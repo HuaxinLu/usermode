@@ -73,13 +73,13 @@ userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_LDADD = @LIBUSER_LIBS@ @GLIB_LIBS@ @PAM_LIBS@ @LIBS@
 
 userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c userhelper-wrap.h reaper.c reaper.h marshal.c marshal.h
-userinfo_LDADD = @LIBGLADE_LIBS@ @LIBS@
+userinfo_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@
 
 usermount_SOURCES = usermount.c userdialogs.c
 usermount_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c reaper.c userhelper-wrap.h reaper.h marshal.c marshal.h
-userpasswd_LDADD = @LIBGLADE_LIBS@ @LIBS@
+userpasswd_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@
 
 consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_LDADD = @GLIB_LIBS@ @LIBS@
