@@ -6,14 +6,15 @@
 # Bernd Groh <bgroh@redhat.com>, 2003.
 # Andreas Müller <redhat@andreas-mueller.com>, 2003.
 # Bernd Bartmann <Bernd.Bartmann@sohanet.de>, 2004.
+# Ronny Buchmann <ronny-vlug@vlugnet.org> 2004
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-03-03 20:25+0100\n"
-"Last-Translator: Bernd Bartmann <Bernd.Bartmann@sohanet.de>\n"
+"PO-Revision-Date: 2004-10-07 01:03+0200\n"
+"Last-Translator: Ronny Buchmann <ronny-vlug@vlugnet.org>\n"
 "Language-Team: Deutsch <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,50 +117,50 @@ msgstr ""
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Autorisierung beibehalten"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Autorisierung vergessen"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check ist nicht setuid root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "kein maßgebendes Terminal für pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "Benutzer unbekannt für pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "Berechtigungsfehler in pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "Ungültiges maßgebendes Terminal in pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Fehler"
+msgstr "Fehler: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Fehler beim Ausführen von \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Fehler beim Setz des E/A Kanals auf nicht-blockierend: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: konnte nicht mit Session-Manager verbinden\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -400,11 +401,11 @@ msgstr "Benutzer-ID existiert nicht.  Verlassen Sie den Bereich.\n"
 
 #: usermount.c:62
 msgid "_Mount"
-msgstr "_Mounten"
+msgstr "_Einhängen"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "Un_mounten"
+msgstr "_Aushängen"
 
 #: usermount.c:321
 msgid ""
@@ -438,7 +439,7 @@ msgstr "Benutzer Mount-Tool"
 #. Create the other buttons.
 #: usermount.c:571
 msgid "_Format"
-msgstr "_Format"
+msgstr "_Formatieren"
 
 #: usermount.c:607
 msgid "Device"
@@ -499,7 +500,7 @@ msgstr "Diskettenverwaltung"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Dateisysteme mounten und unmounten"
+msgstr "Dateisysteme einhängen und aushängen"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
