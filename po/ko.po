@@ -1,17 +1,19 @@
+# translation of ko.po to Korean
 #
-# ¹ø ¿ª ÀÚ: Michelle Kim ±èÁöÀº (mkim@redhat.com)
+# ë²ˆ ì—­ ì: Michelle Kim ê¹€ì§€ì€ (mkim@redhat.com)
+# Michelle Kim <mkim@brisbane.redhat.com>, 2002
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
+"Project-Id-Version: ko\n"
 "POT-Creation-Date: 2002-07-23 21:12-0400\n"
-"PO-Revision-Date: 2002-06-20 09:39GMT+10.00\n"
+"PO-Revision-Date: 2002-07-24 12:25+1000\n"
 "Last-Translator: Michelle Kim <mkim@brisbane.redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=EUC-KR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.6\n"
+"X-Generator: KBabel 1.0beta1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -34,140 +36,137 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "È®ÀÎ"
+msgstr "í™•ì¸"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr "Á¾·á"
+msgstr "ì¢…ë£Œ"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Ãë¼Ò"
+msgstr "ì·¨ì†Œ"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "±ÇÇÑ¾øÀÌ ½ÇÇà"
+msgstr "ê¶Œí•œì—†ì´ ì‹¤í–‰"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(ÇöÀç) À¯´Ğ½º ÆĞ½º¿öµå: "
+msgstr "(í˜„ì¬) ìœ ë‹‰ìŠ¤ íŒ¨ìŠ¤ì›Œë“œ: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "»õ·Î¿î À¯´Ğ½º ÆĞ½º¿öµå: "
+msgstr "ìƒˆë¡œìš´ ìœ ë‹‰ìŠ¤ íŒ¨ìŠ¤ì›Œë“œ: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "»õ·Î¿î À¯´Ğ½º ÆĞ½º¿öµå (È®ÀÎ): "
+msgstr "ìƒˆë¡œìš´ ìœ ë‹‰ìŠ¤ íŒ¨ìŠ¤ì›Œë“œ (í™•ì¸): "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "Àß¸øµÈ ÆĞ½º¿öµå: ³Ê¹« ÂªÀº Çü½ÄÀÔ´Ï´Ù"
+msgstr "ì˜ëª»ëœ íŒ¨ìŠ¤ì›Œë“œ: ë„ˆë¬´ ì§§ì€ í˜•ì‹ì…ë‹ˆë‹¤"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "Àß¸øµÈ ÆĞ½º¿öµå: ³Ê¹« Âª½À´Ï´Ù"
+msgstr "ì˜ëª»ëœ íŒ¨ìŠ¤ì›Œë“œ: ë„ˆë¬´ ì§§ìŠµë‹ˆë‹¤"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "ÆĞ½º¿öµå°¡ º¯°æµÇÁö ¾Ê¾Ò½À´Ï´Ù"
+msgstr "íŒ¨ìŠ¤ì›Œë“œê°€ ë³€ê²½ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "ÆĞ½º¿öµå°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù"
+msgstr "íŒ¨ìŠ¤ì›Œë“œê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤"
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr "µµ¿ò¸»"
+msgstr "ë„ì›€ë§"
 
 #: userhelper.c:97
 #, c-format
 msgid "Got PAM error %d.\n"
-msgstr "PAM ¿À·ù %d(ÀÌ)°¡ ¹ß»ıÇß½À´Ï´Ù.\n"
+msgstr "PAM ì˜¤ë¥˜ %d(ì´)ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.\n"
 
 #: userhelper.c:210
 #, c-format
 msgid "Password for %s"
-msgstr "%sÀÇ ÆĞ½º¿öµå"
+msgstr "%sì˜ íŒ¨ìŠ¤ì›Œë“œ"
 
 #: userhelper.c:351
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀ¸·Î ÃëÇÒ ¼ö ÀÖ´Â \"%s\"(À»)¸¦ ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯"
-"³ª ÀÌ°ÍÀ» ½ÇÇàÇÏ±â À§ÇØ¼­´Â Á¤º¸°¡ ´õ ÇÊ¿äÇÕ´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œìœ¼ë¡œ ì·¨í•  ìˆ˜ ìˆëŠ” \"%s\"(ì„)ë¥¼ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, \n"
+"ê·¸ëŸ¬ë‚˜ ì´ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ì •ë³´ê°€ ë” í•„ìš”í•©ë‹ˆë‹¤."
 
 #: userhelper.c:353
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀÌ ÇÊ¿äÇÑ \"%s\"(À»)¸¦ ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯³ª ÀÌ°ÍÀ» "
-"½ÇÇàÇÏ±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œì´ í•„ìš”í•œ \"%s\"(ì„)ë¥¼ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, \n"
+"ê·¸ëŸ¬ë‚˜ ì´ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
 
 #: userhelper.c:357
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀ¸·Î ÃëÇÒ ¼ö ÀÖ´Â ¸í·ÉÀ» ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯³ª ÀÌ°Í"
-"À» ½ÇÇàÇÏ±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œìœ¼ë¡œ ì·¨í•  ìˆ˜ ìˆëŠ” ëª…ë ¹ì„ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, \n"
+"ê·¸ëŸ¬ë‚˜ ì´ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
 
 #: userhelper.c:359
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀÌ ÇÊ¿äÇÑ ¸í·ÉÀ» ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯³ª ÀÌ°ÍÀ» ½ÇÇàÇÏ"
-"±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œì´ í•„ìš”í•œ ëª…ë ¹ì„ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, \n"
+"ê·¸ëŸ¬ë‚˜ ì´ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
 
 #: userhelper.c:377
 #, c-format
 msgid "Password for %s: "
-msgstr "%sÀÇ ÆĞ½º¿öµå: "
+msgstr "%sì˜ íŒ¨ìŠ¤ì›Œë“œ: "
 
 #: userhelper.c:660
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper´Â setuid¸¦ root·Î ÇØ¾ß ÇÕ´Ï´Ù\n"
+msgstr "userhelperëŠ” setuidë¥¼ rootë¡œ í•´ì•¼ í•©ë‹ˆë‹¤\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:742
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"±×·¡ÇÈ È­¸éÀÇ Ã¢À» ¿­ ¼ö ¾ø½À´Ï´Ù, ¶ÇÇÑ Á¦¾îÇÒ ¼ö ÀÖ´Â ÅÍ¹Ì³ÎÀ» Ã£À» ¼ö ¾ø½À"
-"´Ï´Ù.\n"
+"ê·¸ë˜í”½ í™”ë©´ì˜ ì°½ì„ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤, ë˜í•œ ì œì–´í•  ìˆ˜ ìˆëŠ” í„°ë¯¸ë„ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµ"
+"ë‹ˆë‹¤.\n"
 
 #: userhelper.c:1393 userhelper.c:1454
 #, c-format
 msgid "Starting \"%s\" with administrative privileges."
-msgstr ""
+msgstr "ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œìœ¼ë¡œ \"%s\"ì„(ë¥¼) ì‹œì‘í•©ë‹ˆë‹¤."
 
 #: userhelper.c:1418 userhelper.c:1465
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "\"%s\"(À»)¸¦ ½ÇÇàÇÕ´Ï´Ù\n"
+msgstr "\"%s\"(ì„)ë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤\n"
 
 #: userhelper-wrap.c:50
 msgid "Unknown exit code."
-msgstr "¾Ë ¼ö ¾ø´Â Á¾·á ÄÚµåÀÔ´Ï´Ù."
+msgstr "ì•Œ ìˆ˜ ì—†ëŠ” ì¢…ë£Œ ì½”ë“œì…ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:52
 msgid "Information updated."
-msgstr "Á¤º¸°¡ »õ·ÎÀÌ º¯°æµÇ¾ú½À´Ï´Ù."
+msgstr "ì •ë³´ê°€ ìƒˆë¡œì´ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤."
 
 #: userhelper-wrap.c:54
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"ÀÔ·ÂÇÏ½Å ÆĞ½º¿öµå°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.\n"
-"´Ù½Ã ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿ä."
+"ì…ë ¥í•˜ì‹  íŒ¨ìŠ¤ì›Œë“œê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤.\n"
+"ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì‹­ì‹œìš”."
 
 #: userhelper-wrap.c:56
 msgid ""
@@ -175,33 +174,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"º¯°æÇÏ½Å Ç×¸ñÀÌ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.\n"
-"º¯°æÇÏ½Å Ç×¸ñ Áß¿¡ ':' ¶Ç´Â ',' °¡ Æ÷ÇÔµÇ¾î ÀÖ´Â °Í °°½À´Ï´Ù.\n"
-"¸¸ÀÏ Æ÷ÇÔµÇ¾î ÀÖ´Ù¸é, »èÁ¦ÇÏ½Å ÈÄ ´Ù½Ã ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿ä."
+"ë³€ê²½í•˜ì‹  í•­ëª©ì´ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤.\n"
+"ë³€ê²½í•˜ì‹  í•­ëª© ì¤‘ì— ':' ë˜ëŠ” ',' ê°€ í¬í•¨ë˜ì–´ ìˆëŠ” ê²ƒ ê°™ìŠµë‹ˆë‹¤.\n"
+"ë§Œì¼ í¬í•¨ë˜ì–´ ìˆë‹¤ë©´, ì‚­ì œí•˜ì‹  í›„ ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì‹­ì‹œìš”."
 
 #: userhelper-wrap.c:58
 msgid "Password resetting error."
-msgstr "ÆĞ½º¿öµå¸¦ Àç¼³Á¤ÇÏ´Â µµÁß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù."
+msgstr "íŒ¨ìŠ¤ì›Œë“œë¥¼ ì¬ì„¤ì •í•˜ëŠ” ë„ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤."
 
 #: userhelper-wrap.c:60
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"¸î¸î ½Ã½ºÅÛ ÆÄÀÏ¿¡ Á¢±ÙÇÒ ¼ö ¾ø½À´Ï´Ù.\n"
-"Àá½Ã ÈÄ¿¡ ´Ù½Ã ½ÃµµÇØ ÁÖ½Ê½Ã¿ä."
+"ëª‡ëª‡ ì‹œìŠ¤í…œ íŒŒì¼ì— ì ‘ê·¼í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n"
+"ì ì‹œ í›„ì— ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì‹­ì‹œìš”."
 
 #: userhelper-wrap.c:62
 msgid "Unknown user."
-msgstr "¾Ë ¼ö ¾ø´Â »ç¿ëÀÚÀÔ´Ï´Ù."
+msgstr "ì•Œ ìˆ˜ ì—†ëŠ” ì‚¬ìš©ìì…ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:64
 msgid "Insufficient rights."
-msgstr "±ÇÇÑÀÌ ¾ø½À´Ï´Ù."
+msgstr "ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤."
 
 #: userhelper-wrap.c:66
 msgid "Invalid call to subprocess.."
-msgstr "ÇÏºÎ ÇÁ·Î¼¼½º È£ÃâÀÌ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.."
+msgstr "í•˜ë¶€ í”„ë¡œì„¸ìŠ¤ í˜¸ì¶œì´ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤.."
 
 #: userhelper-wrap.c:68
 msgid ""
@@ -209,50 +208,50 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"¿©·¯ºĞÀÌ »ç¿ëÇÏ½Ã·Á´Â ½©Àº /etc/shells ¸ñ·Ï¿¡ Æ÷ÇÔµÇ¾î ÀÖÁö ¾Ê±â ¶§¹®¿¡.\n"
-"¿©·¯ºĞÀÌ ¿øÇÏ½Ã´Â ½©À» »ç¿ëÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.\n"
-"ÀÚ¼¼ÇÑ »çÇ×Àº ½Ã½ºÅÛ °ü¸®ÀÚ¿¡°Ô ¹®ÀÇÇØ º¸½Ã±â ¹Ù¶ø´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì´ ì‚¬ìš©í•˜ì‹œë ¤ëŠ” ì‰˜ì€ /etc/shells ëª©ë¡ì— í¬í•¨ë˜ì–´ ìˆì§€ ì•Šê¸° ë•Œë¬¸ì—.\n"
+"ì—¬ëŸ¬ë¶„ì´ ì›í•˜ì‹œëŠ” ì‰˜ì„ ì‚¬ìš©í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n"
+"ìì„¸í•œ ì‚¬í•­ì€ ì‹œìŠ¤í…œ ê´€ë¦¬ìì—ê²Œ ë¬¸ì˜í•´ ë³´ì‹œê¸° ë°”ëë‹ˆë‹¤."
 
 #: userhelper-wrap.c:71
 msgid "Out of memory."
-msgstr "¸Ş¸ğ¸®°¡ ºÎÁ·ÇÕ´Ï´Ù."
+msgstr "ë©”ëª¨ë¦¬ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:73
 msgid "The exec() call failed."
-msgstr "exec() È£Ãâ¿¡ ½ÇÆĞÇß½À´Ï´Ù."
+msgstr "exec() í˜¸ì¶œì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤."
 
 #: userhelper-wrap.c:75
 msgid "Failed to find selected program."
-msgstr "¼±ÅÃÇÏ½Å ÇÁ·Î±×·¥À» Ã£´Âµ¥ ½ÇÆĞÇß½À´Ï´Ù."
+msgstr "ì„ íƒí•˜ì‹  í”„ë¡œê·¸ë¨ì„ ì°¾ëŠ”ë° ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤."
 
 #: userhelper-wrap.c:77
 msgid "Unknown error."
-msgstr "¾Ë ¼ö ¾ø´Â ¿À·ùÀÔ´Ï´Ù."
+msgstr "ì•Œ ìˆ˜ ì—†ëŠ” ì˜¤ë¥˜ì…ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
-msgstr "Placeholder Çü½ÄÀÇ text ÀÔ´Ï´Ù."
+msgstr "Placeholder í˜•ì‹ì˜ text ì…ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:357
 #, c-format
 msgid "Need %d responses.\n"
-msgstr "%dÀÇ ÀÀ´äÀÌ ÇÊ¿äÇÕ´Ï´Ù.\n"
+msgstr "%dì˜ ì‘ë‹µì´ í•„ìš”í•©ë‹ˆë‹¤.\n"
 
 #: userhelper-wrap.c:390
 msgid "Error"
-msgstr "¿À·ù"
+msgstr "ì˜¤ë¥˜"
 
 #: userhelper-wrap.c:403
 msgid "Information"
-msgstr "Á¤º¸"
+msgstr "ì •ë³´"
 
 #: userhelper-wrap.c:450
 msgid "Changing personal information."
-msgstr "°³ÀÎ Á¤º¸¸¦ º¯°æÇÕ´Ï´Ù."
+msgstr "ê°œì¸ ì •ë³´ë¥¼ ë³€ê²½í•©ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:453
 msgid "Changing login shell."
-msgstr "·Î±×ÀÎ ½©À» º¯°æÇÕ´Ï´Ù."
+msgstr "ë¡œê·¸ì¸ ì‰˜ì„ ë³€ê²½í•©ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:456
 #, c-format
@@ -260,8 +259,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀ¸·Î ÃëÇÒ ¼ö ÀÖ´Â \"%s\"(À»)¸¦ ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯"
-"³ª ÀÌ°ÍÀ» ½ÇÇàÇÏ±â À§ÇØ¼­´Â Á¤º¸°¡ ´õ ÇÊ¿äÇÕ´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œìœ¼ë¡œ ì·¨í•  ìˆ˜ ìˆëŠ” \"%s\"(ì„)ë¥¼ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, ê·¸ëŸ¬"
+"ë‚˜ ì´ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ì •ë³´ê°€ ë” í•„ìš”í•©ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:458
 #, c-format
@@ -269,103 +268,103 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀÌ ÇÊ¿äÇÑ \"%s\"(À»)¸¦ ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯³ª ÀÌ°ÍÀ» "
-"½ÇÇàÇÏ±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œì´ í•„ìš”í•œ \"%s\"(ì„)ë¥¼ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, ê·¸ëŸ¬ë‚˜ ì´ê²ƒì„ "
+"ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:463
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀ¸·Î ÃëÇÒ ¼ö ÀÖ´Â ¸í·ÉÀ» ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯³ª ÀÌ°Í"
-"À» ½ÇÇàÇÏ±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œìœ¼ë¡œ ì·¨í•  ìˆ˜ ìˆëŠ” ëª…ë ¹ì„ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, ê·¸ëŸ¬ë‚˜ ì´ê²ƒ"
+"ì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:465
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀÌ ÇÊ¿äÇÑ ¸í·ÉÀ» ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯³ª ÀÌ°ÍÀ» ½ÇÇàÇÏ"
-"±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+"ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œì´ í•„ìš”í•œ ëª…ë ¹ì„ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, ê·¸ëŸ¬ë‚˜ ì´ê²ƒì„ ì‹¤í–‰í•˜"
+"ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
 
 #: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
-msgstr "±ÇÇÑ¾øÀÌ ½ÇÇà (_R)"
+msgstr "ê¶Œí•œì—†ì´ ì‹¤í–‰ (_R)"
 
 #: userhelper-wrap.c:592 userhelper-wrap.c:609
 msgid "Pipe error.\n"
-msgstr "ÆÄÀÌÇÁ ¿À·ùÀÔ´Ï´Ù.\n"
+msgstr "íŒŒì´í”„ ì˜¤ë¥˜ì…ë‹ˆë‹¤.\n"
 
 #: userhelper-wrap.c:616
 msgid "Cannot fork().\n"
-msgstr "fork() ÇÒ ¼ö ¾ø½À´Ï´Ù.\n"
+msgstr "fork() í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n"
 
 #: userhelper-wrap.c:662 userhelper-wrap.c:666
 msgid "dup2() error.\n"
-msgstr "dup2() ¿À·ùÀÔ´Ï´Ù.\n"
+msgstr "dup2() ì˜¤ë¥˜ì…ë‹ˆë‹¤.\n"
 
 #: userhelper-wrap.c:678
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "execl() ¿À·ùÀÔ´Ï´Ù, ¿À·ùÄÚµå(errno)=%d\n"
+msgstr "execl() ì˜¤ë¥˜ì…ë‹ˆë‹¤, ì˜¤ë¥˜ì½”ë“œ(errno)=%d\n"
 
 #: userinfo.c:305
 msgid "You don't exist.  Go away.\n"
-msgstr "µî·ÏµÈ »ç¿ëÀÚ°¡ ¾Æ´Ï±º¿ä.  ÀÌ¿ëÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.\n"
+msgstr "ë“±ë¡ëœ ì‚¬ìš©ìê°€ ì•„ë‹ˆêµ°ìš”.  ì´ìš©í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n"
 
 #: usermount.c:61 glade.strings:26
 msgid "_Mount"
-msgstr "ÀåÄ¡¿¬°á (_M)"
+msgstr "ì¥ì¹˜ì—°ê²° (_M)"
 
 #: usermount.c:62
 msgid "Un_mount"
-msgstr "ÀåÄ¡¿¬°á ÇØÁ¦ (_m)"
+msgstr "ì¥ì¹˜ì—°ê²° í•´ì œ (_m)"
 
 #: usermount.c:310
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Á¤¸»·Î ÀÌ µå¶óÀÌºê¸¦ Æ÷¸ËÇÏ½Ã°Ú½À´Ï±î?  ÁøÇàÇÏ½Ç °æ¿ì ÇöÀç ÀúÀåµÇ¾î ÀÖ´Â ¸ğ"
-"µç ÀÚ·á´Â »èÁ¦µË´Ï´Ù."
+"ì •ë§ë¡œ ì´ ë“œë¼ì´ë¸Œë¥¼ í¬ë§·í•˜ì‹œê² ìŠµë‹ˆê¹Œ?  ì§„í–‰í•˜ì‹¤ ê²½ìš° í˜„ì¬ ì €ì¥ë˜ì–´ ìˆëŠ” ëª¨"
+"ë“  ìë£ŒëŠ” ì‚­ì œë©ë‹ˆë‹¤."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
-msgstr "·Î¿ì-·¹º§ Æ÷¸ËÀ» ½ÇÇàÇÕ´Ï´Ù (_l)."
+msgstr "ë¡œìš°-ë ˆë²¨ í¬ë§·ì„ ì‹¤í–‰í•©ë‹ˆë‹¤ (_l)."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr "»ı¼ºÇÒ ÆÄÀÏ½Ã½ºÅÛ À¯Çü ¼±ÅÃ (_f):"
+msgstr "ìƒì„±í•  íŒŒì¼ì‹œìŠ¤í…œ ìœ í˜• ì„ íƒ (_f):"
 
 #: usermount.c:521
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"ÀåÄ¡¿¡ ¿¬°á ¶Ç´Â ÇØÁ¦ÇÒ ÆÄÀÏ½Ã½ºÅÛÀÌ ¾ø½À´Ï´Ù.\n"
-"½Ã½ºÅÛ °ü¸®ÀÚ¿¡°Ô ¹®ÀÇÇÏ½Ê½Ã¿ä."
+"ì¥ì¹˜ì— ì—°ê²° ë˜ëŠ” í•´ì œí•  íŒŒì¼ì‹œìŠ¤í…œì´ ì—†ìŠµë‹ˆë‹¤.\n"
+"ì‹œìŠ¤í…œ ê´€ë¦¬ìì—ê²Œ ë¬¸ì˜í•˜ì‹­ì‹œìš”."
 
 #. Create the dialog.
 #: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
-msgstr "»ç¿ëÀÚ ÀåÄ¡¿¬°á µµ±¸"
+msgstr "ì‚¬ìš©ì ì¥ì¹˜ì—°ê²° ë„êµ¬"
 
 #. Create the other buttons.
 #: usermount.c:544 glade.strings:28
 msgid "_Format"
-msgstr "Æ÷¸Ë (_F)"
+msgstr "í¬ë§· (_F)"
 
 #: usermount.c:579 glade.strings:24
 msgid "Device"
-msgstr "ÀåÄ¡"
+msgstr "ì¥ì¹˜"
 
 #: usermount.c:585 glade.strings:23
 msgid "Directory"
-msgstr "µğ·ºÅä¸®"
+msgstr "ë””ë ‰í† ë¦¬"
 
 #: usermount.c:591
 msgid "Filesystem"
-msgstr "ÆÄÀÏ½Ã½ºÅÛ"
+msgstr "íŒŒì¼ì‹œìŠ¤í…œ"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -374,89 +373,90 @@ msgstr "ÆÄÀÏ½Ã½ºÅÛ"
 #.
 #: glade.strings:7
 msgid "User Information"
-msgstr "»ç¿ëÀÚ Á¤º¸"
+msgstr "ì‚¬ìš©ì ì •ë³´"
 
 #: glade.strings:8
 msgid "Full Name:"
-msgstr "ÀÌ¸§:"
+msgstr "ì´ë¦„:"
 
 #: glade.strings:9
 msgid "Office:"
-msgstr "»ç¹«½Ç:"
+msgstr "ì‚¬ë¬´ì‹¤:"
 
 #: glade.strings:10
 msgid "Office Phone Number"
-msgstr "»ç¹«½Ç ÀüÈ­ ¹øÈ£"
+msgstr "ì‚¬ë¬´ì‹¤ ì „í™” ë²ˆí˜¸"
 
 #: glade.strings:11
 msgid "Home Phone Number"
-msgstr "Áı ÀüÈ­ ¹øÈ£"
+msgstr "ì§‘ ì „í™” ë²ˆí˜¸"
 
 #: glade.strings:12
 msgid "Login Shell"
-msgstr "·Î±×ÀÎ ½©"
+msgstr "ë¡œê·¸ì¸ ì‰˜"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr "È®ÀÎ (_O)"
+msgstr "í™•ì¸ (_O)"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
-msgstr "Ãë¼Ò (_C)"
+msgstr "ì·¨ì†Œ (_C)"
 
 #: glade.strings:15
 msgid "Message"
-msgstr "¸Ş½ÃÁö"
+msgstr "ë©”ì‹œì§€"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr "´İ±â (_C)"
+msgstr "ë‹«ê¸° (_C)"
 
 #: glade.strings:18
 msgid "Query"
-msgstr "ÁúÀÇ"
+msgstr "ì§ˆì˜"
 
 #: glade.strings:25
 msgid "Type"
-msgstr "À¯Çü"
+msgstr "ìœ í˜•"
 
 #: glade.strings:27
 msgid "_Unmount"
-msgstr "ÀåÄ¡¿¬°á ÇØÁ¦ (_U)"
+msgstr "ì¥ì¹˜ì—°ê²° í•´ì œ (_U)"
 
 #: glade.strings:29
 msgid "E_xit"
-msgstr "Á¾·á (_x)"
+msgstr "ì¢…ë£Œ (_x)"
 
 #, fuzzy
 #~ msgid "Change personal information"
-#~ msgstr "°³ÀÎ Á¤º¸¸¦ º¯°æÇÕ´Ï´Ù."
+#~ msgstr "ê°œì¸ ì •ë³´ë¥¼ ë³€ê²½í•©ë‹ˆë‹¤."
 
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀ¸·Î ÃëÇÒ ¼ö ÀÖ´Â \"%s\"(À»)¸¦ ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×"
-#~ "·¯³ª\n"
-#~ "ÀÌ °ÍÀ» ½ÇÇàÇÏ±â À§ÇØ¼­´Â Á¤º¸°¡ ´õ ÇÊ¿äÇÕ´Ï´Ù."
+#~ "ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œìœ¼ë¡œ ì·¨í•  ìˆ˜ ìˆëŠ” \"%s\"(ì„)ë¥¼ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, ê·¸"
+#~ "ëŸ¬ë‚˜\n"
+#~ "ì´ ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ì •ë³´ê°€ ë” í•„ìš”í•©ë‹ˆë‹¤."
 
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which requires superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀÌ ÇÊ¿äÇÑ \"%s\"(À»)¸¦ ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯³ª\n"
-#~ "ÀÌ°ÍÀ» ½ÇÇàÇÏ±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+#~ "ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œì´ í•„ìš”í•œ \"%s\"(ì„)ë¥¼ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, ê·¸ëŸ¬ë‚˜\n"
+#~ "ì´ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
 
 #~ msgid ""
 #~ "You are attempting to run a command which may benefit from\n"
 #~ "superuser privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀ¸·Î ÃëÇÒ ¼ö ÀÖ´Â ¸í·ÉÀ» ½ÇÇàÇÏ¿´½À´Ï´Ù, \n"
-#~ "±×·¯³ª ÀÌ °ÍÀ» ½ÇÇàÇÏ±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+#~ "ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œìœ¼ë¡œ ì·¨í•  ìˆ˜ ìˆëŠ” ëª…ë ¹ì„ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, \n"
+#~ "ê·¸ëŸ¬ë‚˜ ì´ ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
 
 #~ msgid ""
 #~ "You are attempting to run a command which requires superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "¿©·¯ºĞÀº ½´ÆÛÀ¯ÀúÀÇ ±ÇÇÑÀÌ ÇÊ¿äÇÑ ¸í·ÉÀ» ½ÇÇàÇÏ¿´½À´Ï´Ù, ±×·¯³ª \n"
-#~ "ÀÌ °ÍÀ» ½ÇÇàÇÏ±â À§ÇØ¼­´Â ´õ ÀÚ¼¼ÇÑ Á¤º¸°¡ ÇÊ¿äÇÕ´Ï´Ù."
+#~ "ì—¬ëŸ¬ë¶„ì€ ìŠˆí¼ìœ ì €ì˜ ê¶Œí•œì´ í•„ìš”í•œ ëª…ë ¹ì„ ì‹¤í–‰í•˜ì˜€ìŠµë‹ˆë‹¤, ê·¸ëŸ¬ë‚˜ \n"
+#~ "ì´ ê²ƒì„ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ” ë” ìì„¸í•œ ì •ë³´ê°€ í•„ìš”í•©ë‹ˆë‹¤."
+
