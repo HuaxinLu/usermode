@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.34
+Version: 1.35
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -44,7 +44,7 @@ make PREFIX=$RPM_BUILD_ROOT \
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
 for wrapapp in halt reboot poweroff ; do
   ln -sf consolehelper $RPM_BUILD_ROOT/usr/bin/$wrapapp
-  touch $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
+  echo "USER=root" > $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
 %if %{build6x}
   cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
 %else
@@ -85,6 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Thu Aug 24 2000 Nalin Dahyabhai <nalin@redhat.com>
+- fix incorrect user name
+
 * Wed Aug 23 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix stdin/stdout redirection shenanigans (#11706)
 - fix authentication and execution as users other than root

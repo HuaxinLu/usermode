@@ -562,7 +562,6 @@ int main(int argc, char *argv[])
 	size_t aft;
 	struct stat sbuf;
 	shvarFile *s;
-	struct passwd *pw;
 
 	if (strrchr(progname, '/'))
 	    progname = strrchr(progname, '/');
@@ -618,7 +617,6 @@ int main(int argc, char *argv[])
 	} else {
 	    user = apps_user;
 	}
-	pw = getpwnam(user);
 
 	constructed_path = svGetValue(s, "PROGRAM");
 	if (!constructed_path || constructed_path[0] != '/') {
@@ -653,7 +651,7 @@ int main(int argc, char *argv[])
 	    fail_error(retval);
 
 	app_data.fallback = fallback;
-	app_data.user = user;
+	app_data.user = "root";
 	app_data.service = progname;
 
 	do {
@@ -702,8 +700,10 @@ int main(int argc, char *argv[])
 	    }
 
 	    if ((child = fork()) == 0) {
+                struct passwd *pw;
+		setuid(0);
+		pw = getpwuid(getuid());
 		if (pw) setenv("HOME", pw->pw_dir, 1);
-		if (pw) setuid(pw->pw_uid);
 		argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
 		g_print(i18n("about to exec \"%s\"\n"), constructed_path);
@@ -744,7 +744,7 @@ int main(int argc, char *argv[])
 	    pam_end(pamh, PAM_SUCCESS);
 
 	    /* time for an exec */
-	    if (pw) setuid(pw->pw_uid);
+	    setuid(0);
 	    argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
             g_print(i18n("about to exec \"%s\"\n"), constructed_path);
