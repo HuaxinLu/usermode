@@ -2,8 +2,7 @@ CC=gcc
 
 # mostly and totally crappy makefile... better one to come.
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
-RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
-CVSTAG = um$(subst .,-,$(VERSION))-$(subst .,-,$(RELEASE))
+CVSTAG = um$(subst .,-,$(VERSION))
 
 #CFLAGS=-O2 -Wall
 CFLAGS=-g -Wall $(shell gtk-config --cflags) # -DDEBUG_USERHELPER
@@ -75,6 +74,6 @@ archive:
 	@rm -rf /tmp/usermode-$(VERSION) /tmp/usermode
 	@cd /tmp; cvs export -r$(CVSTAG) usermode
 	@mv /tmp/usermode /tmp/usermode-$(VERSION)
-	@dir=$$PWD; cd /tmp; tar cvIf $$dir/usermode-$(VERSION)-$(RELEASE).tar.bz2 usermode-$(VERSION)
+	@dir=$$PWD; cd /tmp; tar cvIf $$dir/usermode-$(VERSION).tar.bz2 usermode-$(VERSION)
 	@rm -rf /tmp/usermode-$(VERSION)
-	@echo "The archive is in usermode-$(VERSION)-$(RELEASE).tar.bz2"
+	@echo "The archive is in usermode-$(VERSION).tar.bz2"

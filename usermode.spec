@@ -5,7 +5,7 @@ Version: 1.36
 Release: 4
 Copyright: GPL
 Group: Applications/System
-Source: usermode-%{version}-%{release}.tar.bz2
+Source: usermode-%{version}.tar.bz2
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else
