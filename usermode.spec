@@ -1,6 +1,6 @@
 Summary: User Tools
 Name: usermode
-Version: 1.4.2
+Version: 1.4.3
 Release: 1
 Copyright: GPL
 Group: X11/Applications
@@ -12,41 +12,6 @@ BuildRoot: /var/tmp/usermode-root
 Several graphical tools, including a tool to help users manage floppies
 (and other removable media) and a tool to help the user change his or
 her finger information.
-
-%changelog
-
-* Tue Oct 06 1998 Preston Brown <pbrown@redhat.com>
-- fixed so that the close button on window managers quits the program properly
-
-* Thu Apr 16 1998 Erik Troan <ewt@redhat.com>
-
-- use gtk-config during build
-- added make archive rule to Makefile
-- uses a build root
-
-* Fri Nov  7 1997 Otto Hammersmith <otto@redhat.com>
-
-new version that fixed memory leak bug.
-
-* Mon Nov  3 1997 Otto Hammersmith <otto@redhat.com>
-
-updated version to fix bugs
-
-* Fri Oct 17 1997 Otto Hammersmith <otto@redhat.com>
-
-Wrote man pages for userpasswd and userhelper.
-
-* Tue Oct 14 1997 Otto Hammersmith <otto@redhat.com>
-
-Updated the packages... now includes userpasswd for changing passwords
-and newer versions of usermount and userinfo.  No known bugs or
-misfeatures. 
-
-Fixed the file list...
-
-* Mon Oct 6 1997 Otto Hammersmith <otto@redhat.com>
-
-Created the spec file.
 
 %prep
 %setup
@@ -60,9 +25,10 @@ make PREFIX=$RPM_BUILD_ROOT install
 make PREFIX=$RPM_BUILD_ROOT install-man
 
 %clean
-rm -rf $(RPM_BUILD_ROOT)
+rm -rf $RPM_BUILD_ROOT
 
 %files
+%defattr(-,root,root)
 /usr/bin/usermount
 /usr/man/man1/usermount.1
 /usr/bin/userinfo
@@ -75,7 +41,35 @@ rm -rf $(RPM_BUILD_ROOT)
 /etc/X11/wmconfig/userinfo
 /etc/X11/wmconfig/usermount
 
+%changelog
+* Mon Oct 12 1998 Cristian Gafton <gafton@redhat.com>
+- strip binaries
+- use defattr
+- fix spec file ( rm -rf $(RPM_BUILD_ROOT) is a stupid thing to do ! )
 
+* Tue Oct 06 1998 Preston Brown <pbrown@redhat.com>
+- fixed so that the close button on window managers quits the program properly
 
+* Thu Apr 16 1998 Erik Troan <ewt@redhat.com>
+- use gtk-config during build
+- added make archive rule to Makefile
+- uses a build root
 
+* Fri Nov  7 1997 Otto Hammersmith <otto@redhat.com>
+- new version that fixed memory leak bug.
+
+* Mon Nov  3 1997 Otto Hammersmith <otto@redhat.com>
+- updated version to fix bugs
+
+* Fri Oct 17 1997 Otto Hammersmith <otto@redhat.com>
+- Wrote man pages for userpasswd and userhelper.
+
+* Tue Oct 14 1997 Otto Hammersmith <otto@redhat.com>
+- Updated the packages... now includes userpasswd for changing passwords
+  and newer versions of usermount and userinfo.  No known bugs or
+  misfeatures. 
+- Fixed the file list...
+
+* Mon Oct 6 1997 Otto Hammersmith <otto@redhat.com>
+- Created the spec file.
 

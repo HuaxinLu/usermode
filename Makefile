@@ -33,19 +33,19 @@ install:	$(PROGS)
 	mkdir -p $(PREFIX)/usr/bin $(PREFIX)/usr/sbin
 	mkdir -p $(PREFIX)/etc/X11/wmconfig 
 	mkdir -p $(PREFIX)/usr/man/man1 $(PREFIX)/usr/man/man8
-	$(INSTALL) -m 755 -o root -g root userinfo $(PREFIX)/usr/bin
-	$(INSTALL) -m 755 -o root -g root userinfo.wmconfig $(PREFIX)/etc/X11/wmconfig/userinfo
-	$(INSTALL) -m 755 -o root -g root usermount $(PREFIX)/usr/bin
-	$(INSTALL) -m 755 -o root -g root usermount.wmconfig $(PREFIX)/etc/X11/wmconfig/usermount
-	$(INSTALL) -m 755 -o root -g root userpasswd $(PREFIX)/usr/bin
-	$(INSTALL) -m 755 -o root -g root userpasswd.wmconfig $(PREFIX)/etc/X11/wmconfig/userpasswd
-	$(INSTALL) -m 755 -o root -g root userhelper $(PREFIX)/usr/sbin
+	$(INSTALL) -m 755 -s userinfo $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 userinfo.wmconfig $(PREFIX)/etc/X11/wmconfig/userinfo
+	$(INSTALL) -m 755 -s usermount $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 usermount.wmconfig $(PREFIX)/etc/X11/wmconfig/usermount
+	$(INSTALL) -m 755 -s userpasswd $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 userpasswd.wmconfig $(PREFIX)/etc/X11/wmconfig/userpasswd
+	$(INSTALL) -m 755 -s userhelper $(PREFIX)/usr/sbin
 
 install-man: 	$(MANS)
-	$(INSTALL) -m 755 -o root -g root userinfo.1 $(PREFIX)/usr/man/man1
-	$(INSTALL) -m 755 -o root -g root usermount.1 $(PREFIX)/usr/man/man1
-	$(INSTALL) -m 755 -o root -g root userhelper.8 $(PREFIX)/usr/man/man8
-	$(INSTALL) -m 755 -o root -g root userpasswd.1 $(PREFIX)/usr/man/man1
+	$(INSTALL) -m 644 userinfo.1 $(PREFIX)/usr/man/man1
+	$(INSTALL) -m 644 usermount.1 $(PREFIX)/usr/man/man1
+	$(INSTALL) -m 644 userhelper.8 $(PREFIX)/usr/man/man8
+	$(INSTALL) -m 644 userpasswd.1 $(PREFIX)/usr/man/man1
 
 clean:	
 	rm -f *~ *.o $(PROGS)
