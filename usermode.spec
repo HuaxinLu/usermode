@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.8
-Release: 3
+Version: 1.9
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
@@ -46,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 /etc/X11/applnk/System/*
 
 %changelog
+* Mon Apr 12 1999 Michael K. Johnson <johnsonm@redhat.com>
+- even better check for X availability
+
 * Wed Apr 07 1999 Michael K. Johnson <johnsonm@redhat.com>
 - better check for X availability
 - center windows to make authentication easier (improve later with
