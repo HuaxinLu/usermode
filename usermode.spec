@@ -96,11 +96,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/consolehelper-gtk
 %{_bindir}/pam-panel-icon
 %{_datadir}/%{name}
+%{_datadir}/pixmaps/*
 %{_datadir}/applications/*
 
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Jul 24 2002 Nalin Dahyabhai <nalin@redhat.com> 1.56-2
+- actually include the icons
+- translation updates
+
 * Tue Jul 23 2002 Nalin Dahyabhai <nalin@redhat.com> 1.56-1
 - userinfo: prevent users from selecting "nologin" as a shell (#68579)
 - don't strip binaries by default; leave that to the buildroot policy
