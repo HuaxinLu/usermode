@@ -117,15 +117,13 @@ create_usermount_window()
   gtk_signal_connect(GTK_OBJECT(main), "delete_event",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
 
-  cancel = gtk_button_new_with_label("Exit");
+  cancel = gtk_button_new_with_label(UD_EXIT_TEXT);
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(cancel)->child), 4, 0);
-  gtk_widget_set_usize(cancel, 50, 0);
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
 		     (GtkSignalFunc) gtk_main_quit, NULL);
-  gtk_widget_set_usize(cancel, 50, 0);
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
-		     cancel, FALSE, FALSE, 0);
+		     cancel, TRUE, TRUE, 4);
 
   info = build_mountinfo_list();
   if(info == NULL)
@@ -424,9 +422,18 @@ build_mountinfo_list()
  
   while((fstab_entry = getmntent(fstab)) != NULL)
     {
-      /* || I'm root? */
-      if((hasmntopt(fstab_entry, "user") != NULL 
-	 || euid == 0)
+      struct stat sb;
+      int owner = 0;
+
+      if (!strncmp(fstab_entry->mnt_fsname, "/dev/", 5))
+        {
+	  stat(fstab_entry->mnt_fsname, &sb);
+	  if (sb.st_uid == getuid()) owner=1;
+	}
+
+      if((hasmntopt(fstab_entry, "user") != NULL ||
+	 (hasmntopt(fstab_entry, "owner") != NULL && owner) ||
+	 euid == 0)
 	 && strcmp(fstab_entry->mnt_type, "swap") != 0)
 	{
 	  tmp = malloc(sizeof(struct mountinfo));

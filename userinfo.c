@@ -139,7 +139,7 @@ create_userinfo_window(UserInfo* userinfo)
 		     (GtkSignalFunc) ok_button, userinfo);
   gtk_widget_show(ok);
 
-  cancel = gtk_button_new_with_label("Exit");
+  cancel = gtk_button_new_with_label(UD_EXIT_TEXT);
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(cancel)->child), 4, 0);
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
 		     (GtkSignalFunc) gtk_main_quit, NULL);
@@ -150,16 +150,12 @@ create_userinfo_window(UserInfo* userinfo)
 		     (GtkSignalFunc) show_help_dialog, NULL);
 /*   gtk_widget_show(help); */
 
-  gtk_widget_set_usize(ok, 50, 0);
-  gtk_widget_set_usize(cancel, 50, 0);
-  gtk_widget_set_usize(help, 50, 0);
-
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwindow)->action_area), 
-		     ok, TRUE, FALSE, 0);
+		     ok, TRUE, TRUE, 2);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwindow)->action_area), 
-		     cancel, TRUE, FALSE, 0);
+		     cancel, TRUE, TRUE, 2);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwindow)->action_area), 
-		     help, TRUE, FALSE, 0);
+		     help, TRUE, TRUE, 2);
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwindow)->vbox), gecos, TRUE, TRUE, 0);
 

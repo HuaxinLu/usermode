@@ -202,12 +202,13 @@ userhelper_parse_childout(char* outline)
     gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->cancel)->child), 4, 0);
     resp->table = gtk_table_new(1, 2, FALSE);
 
+    gtk_box_set_homogeneous(GTK_BOX(GTK_DIALOG(resp->top)->action_area), TRUE);
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
-	resp->ok, TRUE, FALSE, 0);
+	resp->ok, TRUE, TRUE, 2);
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
-	resp->cancel, TRUE, FALSE, 0);
+	resp->cancel, TRUE, TRUE, 2);
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->vbox),
-	resp->table, FALSE, FALSE, 0);
+	resp->table, FALSE, FALSE, 5);
 
     gtk_signal_connect(GTK_OBJECT(resp->top), "delete_event", 
 		       (GtkSignalFunc) userhelper_fatal_error, NULL);
