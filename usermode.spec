@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.45
+Version: 1.46
 Release: 1
 License: GPL
 Group: Applications/System
@@ -94,6 +94,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Fri Nov  9 2001 Nalin Dahyabhai <nalin@redhat.com> 1.46-1
+- restore the previous XAUTHORITY setting before opening PAM sessions
+
 * Fri Nov  2 2001 Nalin Dahyabhai <nalin@redhat.com> 1.45-1
 - propagate environment variables from libpam to applications
 
