@@ -124,7 +124,7 @@ static char *read_string(void)
 	return NULL;
     
     check = fgets(buffer, BUFSIZ, stdin);
-    if (check != buffer)
+    if (!check)
 	return NULL;
     slen = strlen(buffer);
     if (buffer[slen-1] == '\n')
