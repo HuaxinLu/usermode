@@ -1,0 +1,13 @@
+2004-12-13  Mark McLoughlin  <mark@skynet.ie>
+
+	* userinfo.1, userinfo.c, userinfo.desktop.in:
+	Remove userinfo.
+	
+	* userhelper-wrap.[ch], userhelper.[ch],
+	  usermode.glade: remove userinfo bits.
+	
+	* Makefile.am: don't build userinfo.
+	
+	* configure.in: don't require libuser.
+
+	* autogen.sh: use gnome-autogen.sh

@@ -449,17 +449,6 @@ userhelper_parse_childout(char *outline)
 
 		echo = TRUE;
 		switch (prompt_type) {
-			/* A suggestion for the next input. */
-			case UH_PROMPT_SUGGESTION:
-				if (resp->suggestion) {
-					g_free(resp->suggestion);
-				}
-				resp->suggestion = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("Suggested response \"%s\".\n",
-					resp->suggestion);
-#endif
-				break;
 			/* Prompts.  Create a label and entry field. */
 			case UH_ECHO_OFF_PROMPT:
 				echo = FALSE;
@@ -486,14 +475,6 @@ userhelper_parse_childout(char *outline)
 							      GTK_WIDGET(msg->entry));
 				gtk_entry_set_visibility(GTK_ENTRY(msg->entry),
 							 echo);
-
-				/* If we had a suggestion, use it up. */
-				if (resp->suggestion) {
-					gtk_entry_set_text(GTK_ENTRY(msg->entry),
-							   resp->suggestion);
-					g_free(resp->suggestion);
-					resp->suggestion = NULL;
-				}
 
 				/* Keep track of the first entry field in the
 				 * dialog box. */
@@ -858,10 +839,6 @@ userhelper_parse_childout(char *outline)
 		if (resp->banner) {
 			g_free(resp->banner);
 			resp->banner = NULL;
-		}
-		if (resp->suggestion) {
-			g_free(resp->suggestion);
-			resp->suggestion = NULL;
 		}
 		if (resp->service) {
 			g_free(resp->service);

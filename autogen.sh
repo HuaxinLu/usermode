@@ -1,18 +1,23 @@
 #!/bin/sh
-if test -x /bin/rpm ; then
-	if test x${RPM_OPT_FLAGS} = x ; then
-		RPM_OPT_FLAGS=`rpm --eval '%optflags'`
-	fi
-fi
-set -x -e
-CFLAGS="$DEFINES $RPM_OPT_FLAGS -g3 $CFLAGS" ; export CFLAGS
-libtoolize --force
-glib-gettextize -f -c
-intltoolize
-touch config.h.in
-aclocal
-automake -a
-autoheader
-autoconf
-test -f config.cache && rm -f config.cache || true
-#./configure --prefix=/usr --sysconfdir=/etc --enable-maintainer-mode $@
+# Run this to generate all the initial makefiles, etc.
+
+srcdir=`dirname $0`
+test -z "$srcdir" && srcdir=.
+
+REQUIRED_AUTOMAKE_VERSION=1.7
+
+PKG_NAME="usermode"
+
+(test -f $srcdir/configure.in \
+  && test -f $srcdir/README \
+  && test -d $srcdir/po) || {
+    echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
+    echo " top-level $PKG_NAME directory"
+    exit 1
+}
+
+which gnome-autogen.sh || {
+    echo "You need to install gnome-common from the GNOME CVS"
+    exit 1
+}
+USE_GNOME2_MACROS=1 . gnome-autogen.sh
