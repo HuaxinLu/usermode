@@ -116,6 +116,17 @@ drop_dialog_response_cb(GtkWidget *dialog, int response_id, void *data)
 	}
 }
 
+static void
+add_weak_widget_pointer(GObject *object, GtkWidget **weak_pointer)
+{
+	g_object_add_weak_pointer(object, (void**)weak_pointer);
+}
+static void
+add_weak_egg_tray_icon_pointer(GObject *object, EggTrayIcon **weak_pointer)
+{
+	g_object_add_weak_pointer(object, (void**)weak_pointer);
+}
+
 /* Respond to a button press event on our icon. */
 static gboolean
 icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
@@ -136,8 +147,8 @@ icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
 							     GTK_BUTTONS_NONE,
 							     _("You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."));
 
-			g_object_add_weak_pointer(G_OBJECT(drop_dialog),
-						  (void**)&drop_dialog);
+			add_weak_widget_pointer(G_OBJECT(drop_dialog),
+						&drop_dialog);
 
 			gtk_dialog_add_button(GTK_DIALOG(drop_dialog),
 					      _("Keep Authorization"),
@@ -169,10 +180,8 @@ ensure_tray_icon(void)
 		/* If the system tray goes away, our icon will get destroyed,
 		 * and we don't want to be left with a dangling pointer to it
 		 * if that happens.  */
-		g_object_add_weak_pointer(G_OBJECT(tray_icon),
-					  (void**)&tray_icon);
-		g_object_add_weak_pointer(G_OBJECT(image),
-					  (void**)&image);
+		add_weak_egg_tray_icon_pointer(G_OBJECT(tray_icon), &tray_icon);
+		add_weak_widget_pointer(G_OBJECT(image), &image);
 
 		/* Add the image to the icon. */
 		gtk_container_add(GTK_CONTAINER(tray_icon), image);
