@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date:  2001-01-25 15:31-0500\n"
-"Last-Translator: Unknown\n"
+"PO-Revision-Date: 2004-01-17 23:47+0100\n"
+"Last-Translator: Radosław Zawartko <radzaw@radzaw.one.pl>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #.
@@ -32,49 +32,54 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#: dummy.h:21
+#: userdialogs.h:29
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
-#: dummy.h:22 userdialogs.h:32
+#: dummy.h:22
+#: userdialogs.h:32
 msgid "Exit"
-msgstr ""
+msgstr "Zakończ"
 
-#: dummy.h:23 userdialogs.h:31
+#: dummy.h:23
+#: userdialogs.h:31
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
-#: dummy.h:24 userdialogs.h:33
+#: dummy.h:24
+#: userdialogs.h:33
+#, fuzzy
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Uruchom GnomeCard"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(obecne) hasło UNIX: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Nowe hasło UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Ponownie nowe hasło UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "ZŁE HASŁO: STANOWCZO za krótkie"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "ZŁE HASŁO: za krótkie"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr ""
+msgstr "Hasło pozostało niezmienione"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Niestety, hasła nie są identyczne"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
@@ -82,25 +87,25 @@ msgstr ""
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "login: "
 
 #: dummy.h:34
 msgid "Password: "
-msgstr ""
+msgstr "Hasło: "
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr ""
+msgstr "Pomoc"
 
 #: userhelper.c:122
-#, c-format
+#, fuzzy, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Nie można ustawić katalogu roboczego na \"%s\": %s\n"
 
 #: userhelper.c:431
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Hasło dla %s"
 
 #: userhelper.c:666
 #, c-format
@@ -131,31 +136,33 @@ msgstr ""
 #: userhelper.c:693
 #, c-format
 msgid "Password for %s: "
-msgstr ""
+msgstr "Hasło dla %s: "
 
 #: userhelper.c:1039
+#, fuzzy
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "Musisz być użytkownikiem root aby uruchomić %s.\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:1123
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
 #: userhelper-wrap.c:178
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Unknown exit code."
 
 #: userhelper-wrap.c:180
 msgid "Information updated."
-msgstr ""
+msgstr "Informacje uaktualnione."
 
 #: userhelper-wrap.c:182
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Podane hasło jest niepoprawne.\n"
+"Proszę spróbować jeszcze raz."
 
 #: userhelper-wrap.c:184
 msgid ""
@@ -165,8 +172,9 @@ msgid ""
 msgstr ""
 
 #: userhelper-wrap.c:186
+#, fuzzy
 msgid "Password resetting error."
-msgstr ""
+msgstr "Błąd przy zmianie hasła %s:"
 
 #: userhelper-wrap.c:188
 msgid ""
@@ -176,15 +184,15 @@ msgstr ""
 
 #: userhelper-wrap.c:190
 msgid "Unknown user."
-msgstr ""
+msgstr "Nieznany użytkownik."
 
 #: userhelper-wrap.c:192
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Niewystarczające uprawnienia."
 
 #: userhelper-wrap.c:194
 msgid "Invalid call to subprocess."
-msgstr ""
+msgstr "Invalid call to subprocess."
 
 #: userhelper-wrap.c:196
 msgid ""
@@ -195,116 +203,118 @@ msgstr ""
 
 #: userhelper-wrap.c:199
 msgid "Out of memory."
-msgstr ""
+msgstr "Brak pamięci."
 
 #: userhelper-wrap.c:201
 msgid "The exec() call failed."
-msgstr ""
+msgstr "The exec() call failed."
 
 #: userhelper-wrap.c:203
+#, fuzzy
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Nie można uruchomić programu pomocniczego"
 
 #: userhelper-wrap.c:207
 msgid "Unknown error."
-msgstr ""
+msgstr "Nieznany błąd."
 
-#: userhelper-wrap.c:458 glade.strings:18 usermode.glade.h:9
+#: userhelper-wrap.c:458
+#: glade.strings:18
+#: usermode.glade.h:9
 msgid "Query"
-msgstr ""
+msgstr "Zapytanie"
 
-#: userhelper-wrap.c:548 userhelper-wrap.c:718
+#: userhelper-wrap.c:548
+#: userhelper-wrap.c:718
 msgid "Error"
-msgstr ""
+msgstr "Błąd"
 
 #: userhelper-wrap.c:560
 msgid "Information"
-msgstr ""
+msgstr "Informacja"
 
-#: userhelper-wrap.c:716 glade.strings:16 glade.strings:19 usermode.glade.h:8
+#: userhelper-wrap.c:716
+#: glade.strings:16
+#: glade.strings:19
+#: usermode.glade.h:8
+#, fuzzy
 msgid "Placeholder text."
-msgstr ""
+msgstr "tekst-hasła"
 
 #: userhelper-wrap.c:756
 msgid "Changing personal information."
-msgstr ""
+msgstr "Zmiana informacji osobistych."
 
 #: userhelper-wrap.c:759
 msgid "Changing login shell."
-msgstr ""
+msgstr "Zmiana powłoki."
 
 #: userhelper-wrap.c:765
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
 #: userhelper-wrap.c:767
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
 #: userhelper-wrap.c:776
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
 #: userhelper-wrap.c:778
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
 #: userhelper-wrap.c:795
+#, fuzzy
 msgid "_Run Unprivileged"
-msgstr ""
+msgstr "Uruchom GnomeCard"
 
 #: userhelper-wrap.c:931
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Pipe error.\n"
 
 #: userhelper-wrap.c:938
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Cannot fork().\n"
 
-#: userhelper-wrap.c:1016 userhelper-wrap.c:1020
+#: userhelper-wrap.c:1016
+#: userhelper-wrap.c:1020
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "dup2() error.\n"
 
 #: userhelper-wrap.c:1032
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "execl() error, errno=%d\n"
 
 #: userinfo.c:323
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "Nie istniejesz.  Odejdź stąd.\n"
 
-#: usermount.c:62 glade.strings:26
+#: usermount.c:62
+#: glade.strings:26
 msgid "_Mount"
-msgstr ""
+msgstr "Za_montuj"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr ""
+msgstr "Od_montuj"
 
 #: usermount.c:321
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
 msgstr ""
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr ""
+msgstr "Przeprowadź formatowanie nisko-poziomowe."
 
 #: usermount.c:375
+#, fuzzy
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Nie można utworzyć obiektu typu \"%s\""
 
 #: usermount.c:543
 msgid ""
@@ -313,108 +323,125 @@ msgid ""
 msgstr ""
 
 #. Create the dialog.
-#: usermount.c:544 usermount.c:555 glade.strings:22
+#: usermount.c:544
+#: usermount.c:555
+#: glade.strings:22
+#, fuzzy
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Narzędzie KDE do obsługi archiwów"
 
 #. Create the other buttons.
-#: usermount.c:569 glade.strings:28
+#: usermount.c:569
+#: glade.strings:28
 msgid "_Format"
-msgstr ""
+msgstr "_Sformatuj"
 
-#: usermount.c:605 glade.strings:24
+#: usermount.c:605
+#: glade.strings:24
 msgid "Device"
-msgstr ""
+msgstr "Urządzenie"
 
-#: usermount.c:611 glade.strings:23
+#: usermount.c:611
+#: glade.strings:23
 msgid "Directory"
-msgstr ""
+msgstr "Katalog"
 
 #: usermount.c:617
 msgid "Filesystem"
-msgstr ""
+msgstr "System plików"
 
 #.
 #. * Translatable strings file generated by Glade.
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: glade.strings:7 usermode.glade.h:10
+#: glade.strings:7
+#: usermode.glade.h:10
 msgid "User Information"
-msgstr ""
+msgstr "Informacje o użytkowniku"
 
-#: glade.strings:8 usermode.glade.h:2
+#: glade.strings:8
+#: usermode.glade.h:2
 msgid "Full Name:"
-msgstr ""
+msgstr "Pełna nazwa:"
 
-#: glade.strings:9 usermode.glade.h:7
+#: glade.strings:9
+#: usermode.glade.h:7
 msgid "Office:"
-msgstr ""
+msgstr "Biuro:"
 
-#: glade.strings:10 usermode.glade.h:6
+#: glade.strings:10
+#: usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr ""
+msgstr "Nr telefonu do biura:"
 
-#: glade.strings:11 usermode.glade.h:3
+#: glade.strings:11
+#: usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr ""
+msgstr "Nr telefonu do domu:"
 
-#: glade.strings:12 usermode.glade.h:4
+#: glade.strings:12
+#: usermode.glade.h:4
 msgid "Login Shell:"
-msgstr ""
+msgstr "Powłoka:"
 
-#: glade.strings:13 glade.strings:20
+#: glade.strings:13
+#: glade.strings:20
 msgid "_Ok"
-msgstr ""
+msgstr "_Ok"
 
-#: glade.strings:14 glade.strings:21
+#: glade.strings:14
+#: glade.strings:21
 msgid "_Cancel"
-msgstr ""
+msgstr "_Anuluj"
 
-#: glade.strings:15 usermode.glade.h:5
+#: glade.strings:15
+#: usermode.glade.h:5
 msgid "Message"
-msgstr ""
+msgstr "Wiadomość"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr ""
+msgstr "_Zamknij"
 
 #: glade.strings:25
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: glade.strings:27
 msgid "_Unmount"
-msgstr ""
+msgstr "Odmont_uj"
 
 #: glade.strings:29
 msgid "E_xit"
-msgstr ""
+msgstr "_Zakończ"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "O Tobie"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr ""
+msgstr "Zmiana informacji osobistych"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Zarządzanie dyskiem"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Zamontuj i odmontuj systemy plików"
 
 #: userpasswd.desktop.in.h:1
+#, fuzzy
 msgid "Change your login password"
-msgstr ""
+msgstr "Zmiana hasłą przebiegła pomyślnie."
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
-msgstr ""
+msgstr "Hasło"
+
