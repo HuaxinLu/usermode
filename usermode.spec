@@ -16,8 +16,9 @@ BuildPrereq: glib-devel, gtk+-devel, libglade-devel, pam-devel
 BuildRoot: %{_tmppath}/%{name}-root
 
 %package X11
-Requires: %{name} = %{version}-%{release}
 Summary: Graphical tools for certain user account management tasks.
+Group: Applications/System
+Requires: %{name} = %{version}-%{release}
 
 %description
 The usermode package contains the userhelper program, which can be
