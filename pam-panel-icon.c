@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2002 Red Hat, Inc.  All rights reserved.
+ * Copyright (C) 2002,2003 Red Hat, Inc.  All rights reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -16,6 +16,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include "config.h"
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <errno.h>
@@ -24,7 +25,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <gtk/gtk.h>
-#include "config.h"
 #include "gsmclient.h"
 #include "eggtrayicon.h"
 
