@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
 "POT-Creation-Date: 2000-08-03 15:08-0400\n"
-"PO-Revision-Date: 2000-02-17 00:38+01:00\n"
-"Last-Translator: Kenneth Christiansen <kenneth@gnu.org>\n"
+"PO-Revision-Date: 2000-08-19 00:38+01:00\n"
+"Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: Danish/Dansk <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
@@ -28,24 +28,24 @@ msgstr "Ok"
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Rør fejl.\n"
 
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Kan ikke fork()\n"
 
 #: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
 #: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
 #: ../usermount.c:817
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "dup2() fejl.\n"
 
 #: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
 #: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "execl() fejl, errno=%d\n"
 
 #: ../userhelper-wrap.c:115
 msgid "Information updated."
@@ -56,6 +56,8 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Adgangskoden som du indtastede er ugyldig.\n"
+"Venligst prøv igen."
 
 #: ../userhelper-wrap.c:121
 msgid ""
@@ -63,16 +65,21 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"En eller flere af de ændrede felter er ugyldige.\n"
+"Dette er nok grundet enten kolonner eller kommaer i et af felterne,\n"
+"Fjern venligst disse og prøv igen."
 
 #: ../userhelper-wrap.c:124
 msgid "Password resetting error."
-msgstr ""
+msgstr "Fejl ved nulstilling af adgangskode."
 
 #: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Nogle systemfiler er låst.\n"
+"Prøv venligst igen om et øjeblik."
 
 #: ../userhelper-wrap.c:130
 msgid "Unknown user."
@@ -84,7 +91,7 @@ msgstr "Utilstrækkelige rettigheder-"
 
 #: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Ugyldigt kald til underproces."
 
 #: ../userhelper-wrap.c:139
 msgid ""
@@ -92,36 +99,39 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"Din nuværende skal er ikke opført i /etc/shells.\n"
+"Du har ikke lov til at ændre din skal.\n"
+"Henvend dig til din systemadministrator."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:143
 msgid "Out of memory."
-msgstr ""
+msgstr "Tør for hukommelse"
 
 #: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
-msgstr ""
+msgstr "exec()-kaldet mislykkedes"
 
 #: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Det lykkedes ikke at finde det valgte program"
 
 #: ../userhelper-wrap.c:152
 msgid "Unknown error."
-msgstr ""
+msgstr "Ukendt fejl."
 
 #: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Ukendt afslutningskode."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Inddata"
 
 #: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "Behøver %d svar.\n"
 
 #: ../userhelper-wrap.c:345
 #, c-format
@@ -129,41 +139,42 @@ msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
 "required."
 msgstr ""
+"For at køre '%s' med %s's rettigheder er yderligere information nødvendig."
 
 #: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "Du ønsker %d svar fra %d indgangsfelter!?!?!\n"
 
 #: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Fik fejl %d.\n"
 
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Adgangskode for %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "Konsistenstjek er ikke tilsluttet."
 
 #: ../userhelper.c:389
 msgid "Block is fine."
-msgstr ""
+msgstr "Blok er fint."
 
 #: ../userhelper.c:391
 msgid "Block freed twice."
-msgstr ""
+msgstr "Blok frigivet to gange"
 
 #: ../userhelper.c:393
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "Hukommelse før blokken var griset til."
 
 #: ../userhelper.c:395
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "Hukommelse efter blokken var griset til."
 
 #: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
@@ -248,7 +259,7 @@ msgid ""
 "You will destroy any data on that disk.\n"
 msgstr ""
 "Er du sikker?\n"
-"Dette vil ødelægge alle data paa disken.\n"
+"Dette vil ødelægge alle data på disken.\n"
 
 #: ../usermount.c:365
 msgid "Yes"
@@ -260,4 +271,4 @@ msgstr "Nej"
 
 #: ../usermount.c:382
 msgid "Do low level format."
-msgstr "Lav en formatering paa lavniveau"
+msgstr "Lav en formatering på lavniveau"
