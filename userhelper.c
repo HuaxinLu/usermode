@@ -1129,7 +1129,7 @@ get_user_for_auth(shvarFile *s)
 		/* Determine who we should authenticate as.  If not specified,
 		 * or if "<user>" is specified, we authenticate as the invoking
 		 * user, otherwise we authenticate as the specified user (which
-		 * is usually root, but could conceivably be something else). */
+		 * is usually root, but could conceivably be someone else). */
 		configured_user = svGetValue(s, "USER");
 		if (configured_user == NULL) {
 			ret = ruid_user;
@@ -1509,6 +1509,510 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	_exit(0);
 }
 
+static void
+wrap(const char *user, const char *program,
+     struct pam_conv *conv, lu_prompter_fn *prompt,
+     int argc, char **argv)
+{
+	/* We're here to wrap the named program.  After authenticating as the
+	 * user given in the console.apps configuration file, execute the
+	 * command given in the console.apps file. */
+	char *constructed_path;
+	char *apps_filename;
+	char *user_pam;
+	const char *auth_user;
+	char *apps_banner, *apps_domain, *apps_sn = NULL;
+	char *retry, *noxoption;
+	char *env_home, *env_term, *env_desktop_startup_id;
+	char *env_display, *env_shell;
+	char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
+	int session, tryagain, gui;
+	struct stat sbuf;
+	shvarFile *s;
+
+	/* Find the basename of the command we're wrapping. */
+	if (strrchr(progname, '/')) {
+		progname = strrchr(progname, '/') + 1;
+	}
+
+	/* Save some of the current environment variables, because the
+	 * environment is going to be nuked shortly. */
+	env_desktop_startup_id = getenv("DESKTOP_STARTUP_ID");
+	env_display = getenv("DISPLAY");
+	env_home = getenv("HOME");
+	env_lang = getenv("LANG");
+	env_lcall = getenv("LC_ALL");
+	env_lcmsgs = getenv("LC_MESSAGES");
+	env_shell = getenv("SHELL");
+	env_term = getenv("TERM");
+	env_xauthority = getenv("XAUTHORITY");
+
+	/* Sanity-check the environment variables as best we can: those
+	 * which aren't path names shouldn't contain "/", and none of
+	 * them should contain ".." or "%". */
+	if (env_display &&
+	    (strstr(env_display, "..") ||
+	     strchr(env_display, '%')))
+		env_display = NULL;
+	if (env_home &&
+	    (strstr(env_home, "..") ||
+	     strchr(env_home, '%')))
+		env_home = NULL;
+	if (env_lang &&
+	    (strstr(env_lang, "/") ||
+	     strstr(env_lang, "..") ||
+	     strchr(env_lang, '%')))
+		env_lang = NULL;
+	if (env_lcall &&
+	    (strstr(env_lcall, "/") ||
+	     strstr(env_lcall, "..") ||
+	     strchr(env_lcall, '%')))
+		env_lcall = NULL;
+	if (env_lcmsgs &&
+	    (strstr(env_lcmsgs, "/") ||
+	     strstr(env_lcmsgs, "..") ||
+	     strchr(env_lcmsgs, '%')))
+		env_lcmsgs = NULL;
+	if (env_shell &&
+	    (strstr(env_shell, "..") ||
+	     strchr(env_shell, '%')))
+		env_shell = NULL;
+	if (env_term &&
+	    (strstr(env_term, "..") ||
+	     strchr(env_term, '%')))
+		env_term = "dumb";
+	if (env_xauthority &&
+	    (strstr(env_xauthority , "..") ||
+	     strchr(env_xauthority , '%')))
+		env_xauthority = NULL;
+
+	/* Wipe out the current environment. */
+	environ_save = environ;
+	environ = g_malloc0(2 * sizeof(char *));
+
+	/* Set just the environment variables we can trust.  Note that
+	 * XAUTHORITY is not initially copied -- we don't want to let attackers
+	 * get at others' X authority records -- we restore XAUTHORITY below
+	 * *after* successfully authenticating, or abandoning authentication in
+	 * order to run the wrapped program as the invoking user. */
+	if (env_display) setenv("DISPLAY", env_display, 1);
+
+	/* The rest of the environment variables are simpler. */
+	if (env_desktop_startup_id) setenv("DESKTOP_STARTUP_ID",
+					   env_desktop_startup_id, 1);
+	if (env_lang) setenv("LANG", env_lang, 1);
+	if (env_lcall) setenv("LC_ALL", env_lcall, 1);
+	if (env_lcmsgs) setenv("LC_MESSAGES", env_lcmsgs, 1);
+	if (env_shell) setenv("SHELL", env_shell, 1);
+	if (env_term) setenv("TERM", env_term, 1);
+
+	/* Set the PATH to a reasonaly safe list of directories. */
+	setenv("PATH",
+	       "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin:/root/bin",
+	       1);
+
+	/* Set the LOGNAME and USER variables to the executing name. */
+	setenv("LOGNAME", g_strdup("root"), 1);
+	setenv("USER", g_strdup("root"), 1);
+
+	/* Open the console.apps configuration file for this wrapped program,
+	 * and read settings from it. */
+	apps_filename = g_strdup_printf(SYSCONFDIR
+					"/security/console.apps/%s",
+					progname);
+	s = svNewFile(apps_filename);
+
+	/* If the file is world-writable, or isn't a regular file, or couldn't
+	 * be opened, just exit.  We don't want to alert an attacker that the
+	 * service name is invalid. */
+	if ((s == NULL) ||
+	    (fstat(s->fd, &sbuf) == -1) ||
+	    !S_ISREG(sbuf.st_mode) ||
+	    (sbuf.st_mode & S_IWOTH)) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: bad file permissions\n");
+#endif
+		exit(ERR_UNK_ERROR);
+	}
+
+	user_pam = get_user_for_auth(s);
+
+	/* Read the path to the program to run. */
+	constructed_path = svGetValue(s, "PROGRAM");
+	if (!constructed_path || constructed_path[0] != '/') {
+		/* Criminy....  The system administrator didn't give us an
+		 * absolute path to the program!  Guess either /usr/sbin or
+		 * /sbin, and then give up if we don't find anything by that
+		 * name in either of those directories.  FIXME: we're a setuid
+		 * app, so access() may not be correct here, as it may give
+		 * false negatives.  But then, it wasn't an absolute path. */
+		constructed_path = g_strdup_printf("/usr/sbin/%s", progname);
+		if (access(constructed_path, X_OK) != 0) {
+			/* Try the second directory. */
+			strcpy(constructed_path, "/sbin/");
+			strcat(constructed_path, progname);
+			if (access(constructed_path, X_OK)) {
+				/* Nope, not there, either. */
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: couldn't find "
+					"wrapped binary\n");
+#endif
+				exit(ERR_NO_PROGRAM);
+			}
+		}
+	}
+
+	/* We can forcefully disable the GUI from the configuration
+	 * file (a la blah-nox applications). */
+	gui = svTrueValue(s, "GUI", TRUE);
+	if (!gui) {
+		conv = &text_conv;
+	}
+
+	/* We can use a magic configuration file option to disable
+	 * the GUI, too. */
+	if (gui) {
+		noxoption = svGetValue(s, "NOXOPTION");
+		if (noxoption && (strlen(noxoption) > 1)) {
+			int i;
+			for (i = optind; i < argc; i++) {
+				if (strcmp(argv[i], noxoption) == 0) {
+					conv = &text_conv;
+					break;
+				}
+			}
+		}
+	}
+
+	/* Verify that the user we need to authenticate as has a home
+	 * directory. */
+	pw = getpwnam(user_pam);
+	if (pw == NULL) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: no user named %s exists\n", user_pam);
+#endif
+		exit(ERR_NO_USER);
+	}
+
+	/* If the user we're authenticating as has root's UID, then it's
+	 * safe to let them use HOME=~root. */
+	if (pw->pw_uid == 0) {
+		setenv("HOME", g_strdup(pw->pw_dir), 1);
+	} else {
+		/* Otherwise, if they had a reasonable value for HOME, let them
+		 * use it. */
+		if (env_home != NULL) {
+			setenv("HOME", env_home, 1);
+		} else {
+			/* Otherwise, set HOME to the user's home directory. */
+			pw = getpwuid(getuid());
+			if ((pw != NULL) && (pw->pw_dir != NULL)) {
+				setenv("HOME", g_strdup(pw->pw_dir), 1);
+			}
+		}
+	}
+
+	/* Read other settings. */
+	session = svTrueValue(s, "SESSION", FALSE);
+	app_data.fallback_allowed = svTrueValue(s, "FALLBACK", FALSE);
+	retry = svGetValue(s, "RETRY"); /* default value is "2" */
+	tryagain = retry ? atoi(retry) + 1 : 3;
+
+	/* Read any custom messages we might want to use. */
+	apps_banner = svGetValue(s, "BANNER");
+	if ((apps_banner != NULL) && (strlen(apps_banner) > 0)) {
+		app_data.banner = apps_banner;
+	}
+	apps_domain = svGetValue(s, "DOMAIN");
+	if ((apps_domain != NULL) && (strlen(apps_domain) > 0)) {
+		bindtextdomain(apps_domain, DATADIR "/locale");
+		bind_textdomain_codeset(apps_domain, "UTF-8");
+		app_data.domain = apps_domain;
+	}
+	if (app_data.domain == NULL) {
+		apps_domain = svGetValue(s, "BANNER_DOMAIN");
+		if ((apps_domain != NULL) &&
+		    (strlen(apps_domain) > 0)) {
+			bindtextdomain(apps_domain, DATADIR "/locale");
+			bind_textdomain_codeset(apps_domain, "UTF-8");
+			app_data.domain = apps_domain;
+		}
+	}
+	if (app_data.domain == NULL) {
+		app_data.domain = progname;
+	}
+#ifdef USE_STARTUP_NOTIFICATION
+	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_NAME");
+	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+		app_data.sn_name = apps_sn;
+	}
+	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_DESCRIPTION");
+	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+		app_data.sn_description = apps_sn;
+	}
+	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_WMCLASS");
+	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+		app_data.sn_wmclass = apps_sn;
+	}
+	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_BINARY_NAME");
+	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+		app_data.sn_binary_name = apps_sn;
+	}
+	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_ICON_NAME");
+	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+		app_data.sn_icon_name = apps_sn;
+	}
+	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_WORKSPACE");
+	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+		app_data.sn_workspace = atoi(apps_sn);
+	}
+#endif
+
+	/* Now we're done reading the file. Close it. */
+	svCloseFile(s);
+
+	/* Start up PAM to authenticate the specified user. */
+	retval = pam_start(progname, user_pam, conv, &app_data.pamh);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_start() failed\n");
+#endif
+		fail_exit(retval);
+	}
+
+	/* Set the requesting user. */
+	retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
+	if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: pam_set_item() failed\n");
+#endif
+		fail_exit(retval);
+	}
+
+	/* Try to authenticate the user. */
+	do {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: authenticating \"%s\"\n",
+			user_pam);
+#endif
+		retval = pam_authenticate(app_data.pamh, 0);
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: PAM retval = %d (%s)\n", retval,
+			pam_strerror(app_data.pamh, retval));
+#endif
+		tryagain--;
+	} while ((retval != PAM_SUCCESS) && tryagain &&
+		 !app_data.fallback_chosen && !app_data.canceled);
+
+	if (retval != PAM_SUCCESS) {
+		pam_end(app_data.pamh, retval);
+		if (app_data.canceled) {
+			fail_exit(retval);
+		} else
+		if (app_data.fallback_allowed) {
+			/* Reset the user's environment so that the
+			 * application can run normally. */
+			argv[optind - 1] = progname;
+			environ = environ_save;
+			become_normal(user_name);
+			if (app_data.input != NULL) {
+				fflush(app_data.input);
+				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
+			}
+			if (app_data.output != NULL) {
+				fflush(app_data.output);
+				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
+			}
+			pipe_conv_exec_start(conv);
+#ifdef USE_STARTUP_NOTIFICATION
+			if (app_data.sn_id) {
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: setting "
+					"DESKTOP_STARTUP_ID =\"%s\"\n",
+					app_data.sn_id);
+#endif
+				setenv("DESKTOP_STARTUP_ID",
+				       app_data.sn_id, 1);
+			}
+#endif
+#ifdef WITH_SELINUX
+			setup_selinux_exec(constructed_path);
+#endif
+			execv(constructed_path, argv + optind - 1);
+			pipe_conv_exec_fail(conv);
+			exit(ERR_EXEC_FAILED);
+		} else {
+			/* Well, we tried. */
+			fail_exit(retval);
+		}
+	}
+
+	/* Verify that the authenticated user is the user we started
+	 * out trying to authenticate. */
+	retval = get_pam_string_item(app_data.pamh, PAM_USER,
+				     &auth_user);
+	if (retval != PAM_SUCCESS) {
+		pam_end(app_data.pamh, retval);
+		fail_exit(retval);
+	}
+	if (strcmp(user_pam, auth_user) != 0) {
+		exit(ERR_UNK_ERROR);
+	}
+
+	/* Verify that the authenticated user is allowed to run this
+	 * service now. */
+	retval = pam_acct_mgmt(app_data.pamh, 0);
+	if (retval != PAM_SUCCESS) {
+		pam_end(app_data.pamh, retval);
+		fail_exit(retval);
+	}
+
+	/* We need to re-read the user's information -- libpam doesn't
+	 * guarantee that these won't be nuked. */
+	pw = getpwnam(user_pam);
+	if (pw == NULL) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: no user named %s exists\n",
+			user_pam);
+#endif
+		exit(ERR_NO_USER);
+	}
+
+	/* What we do now depends on whether or not we need to open
+	 * a session for the user. */
+	if (session) {
+		int child, status;
+
+		/* We're opening a session, and that may included
+		 * running graphical apps, so restore the XAUTHORITY
+		 * environment variable. */
+		if (env_xauthority) {
+			setenv("XAUTHORITY", env_xauthority, 1);
+		}
+
+		/* Open a session. */
+		retval = pam_open_session(app_data.pamh, 0);
+		if (retval != PAM_SUCCESS) {
+			pam_end(app_data.pamh, retval);
+			fail_exit(retval);
+		}
+
+		/* Start up a child process we can wait on. */
+		child = fork();
+		if (child == -1) {
+			exit(ERR_EXEC_FAILED);
+		}
+		if (child == 0) {
+			/* We're in the child.  Make a few last-minute
+			 * preparations and exec the program. */
+			char **env_pam;
+
+			env_pam = pam_getenvlist(app_data.pamh);
+			while (env_pam && *env_pam) {
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: setting %s\n",
+					*env_pam);
+#endif
+				putenv(g_strdup(*env_pam));
+				env_pam++;
+			}
+
+			argv[optind - 1] = progname;
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: about to exec \"%s\"\n",
+				constructed_path);
+#endif
+			become_super();
+			if (app_data.input != NULL) {
+				fflush(app_data.input);
+				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
+			}
+			if (app_data.output != NULL) {
+				fflush(app_data.output);
+				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
+			}
+			pipe_conv_exec_start(conv);
+#ifdef USE_STARTUP_NOTIFICATION
+			if (app_data.sn_id) {
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: setting "
+					"DESKTOP_STARTUP_ID =\"%s\"\n",
+					app_data.sn_id);
+#endif
+				setenv("DESKTOP_STARTUP_ID",
+				       app_data.sn_id, 1);
+			}
+#endif
+#ifdef WITH_SELINUX
+			setup_selinux_exec(constructed_path);
+#endif
+			execv(constructed_path, argv + optind - 1);
+			pipe_conv_exec_fail(conv);
+			exit(ERR_EXEC_FAILED);
+		}
+		/* We're in the parent.  Wait for the child to exit. */
+		close(STDIN_FILENO);
+		close(STDOUT_FILENO);
+		close(STDERR_FILENO);
+
+		wait4(child, &status, 0, NULL);
+
+		/* Close the session. */
+		retval = pam_close_session(app_data.pamh, 0);
+		if (retval != PAM_SUCCESS) {
+			pam_end(app_data.pamh, retval);
+			fail_exit(retval);
+		}
+
+		/* Use the exit status fo the child to determine our
+		 * exit value. */
+		if (WIFEXITED(status)) {
+			pam_end(app_data.pamh, PAM_SUCCESS);
+			retval = 0;
+		} else {
+			pam_end(app_data.pamh, PAM_SUCCESS);
+			retval = ERR_UNK_ERROR;
+		}
+		exit(retval);
+	} else {
+		/* We're not opening a session, so we can just exec()
+		 * the program we're wrapping. */
+		pam_end(app_data.pamh, PAM_SUCCESS);
+
+		argv[optind - 1] = progname;
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: about to exec \"%s\"\n",
+			constructed_path);
+#endif
+		become_super();
+		if (app_data.input != NULL) {
+			fflush(app_data.input);
+			fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
+		}
+		if (app_data.output != NULL) {
+			fflush(app_data.output);
+			fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
+		}
+		pipe_conv_exec_start(conv);
+#ifdef USE_STARTUP_NOTIFICATION
+		if (app_data.sn_id) {
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: setting "
+				"DESKTOP_STARTUP_ID =\"%s\"\n",
+				app_data.sn_id);
+#endif
+			setenv("DESKTOP_STARTUP_ID", app_data.sn_id, 1);
+		}
+#endif
+#ifdef WITH_SELINUX
+		setup_selinux_exec(constructed_path);
+#endif
+		execv(constructed_path, argv + optind - 1);
+		pipe_conv_exec_fail(conv);
+		exit(ERR_EXEC_FAILED);
+	}
+}
+
 /*
  * ------- the application itself --------
  */
@@ -1517,7 +2021,7 @@ main(int argc, char **argv)
 {
 	int arg;
 	int retval;
-	char *progname = NULL;
+	char *wrapped_program = NULL;
 	struct passwd *pw;
 	struct pam_conv *conv;
 	lu_prompt_fn *prompt;
@@ -1566,7 +2070,7 @@ main(int argc, char **argv)
 
 	while ((w_flag == 0) &&
 	       (arg = getopt(argc, argv, "f:o:p:h:s:ctw:")) != -1) {
-		/* We process no arguments after -w progname; those are passed
+		/* We process no arguments after -w program; those are passed
 		 * on to a wrapped program. */
 		switch (arg) {
 			case 'f':
@@ -1605,7 +2109,7 @@ main(int argc, char **argv)
 			case 'w':
 				/* Wrap flag. */
 				w_flag++;
-				progname = optarg;
+				wrapped_program = optarg;
 				break;
 			default:
 #ifdef DEBUG_USERHELPER
@@ -1705,505 +2209,11 @@ main(int argc, char **argv)
 		g_assert_not_reached();
 	}
 
+	/* Wrap some other program? */
 	if (w_flag) {
-		/* We're here to wrap the named program.  After authenticating
-		 * as the user given in the console.apps configuration file,
-		 * execute the command given in the console.apps file. */
-		char *constructed_path;
-		char *apps_filename;
-		char *user_pam = user_name;
-		const char *auth_user;
-		char *apps_banner, *apps_domain, *apps_sn = NULL;
-		char *retry, *noxoption;
-		char *env_home, *env_term, *env_desktop_startup_id;
-		char *env_display, *env_shell;
-		char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
-		int session, tryagain, gui;
-		struct stat sbuf;
-		shvarFile *s;
-
-		/* Find the basename of the command we're wrapping. */
-		if (strrchr(progname, '/')) {
-			progname = strrchr(progname, '/') + 1;
-		}
-
-		/* Save some of the current environment variables, because the
-		 * environment is going to be nuked shortly. */
-		env_desktop_startup_id = getenv("DESKTOP_STARTUP_ID");
-		env_display = getenv("DISPLAY");
-		env_home = getenv("HOME");
-		env_lang = getenv("LANG");
-		env_lcall = getenv("LC_ALL");
-		env_lcmsgs = getenv("LC_MESSAGES");
-		env_shell = getenv("SHELL");
-		env_term = getenv("TERM");
-		env_xauthority = getenv("XAUTHORITY");
-
-		/* Sanity-check the environment variables as best we can: those
-		 * which aren't path names shouldn't contain "/", and none of
-		 * them should contain ".." or "%". */
-		if (env_display &&
-		    (strstr(env_display, "..") ||
-		     strchr(env_display, '%')))
-			env_display = NULL;
-		if (env_home &&
-		    (strstr(env_home, "..") ||
-		     strchr(env_home, '%')))
-			env_home = NULL;
-		if (env_lang &&
-		    (strstr(env_lang, "/") ||
-		     strstr(env_lang, "..") ||
-		     strchr(env_lang, '%')))
-			env_lang = NULL;
-		if (env_lcall &&
-		    (strstr(env_lcall, "/") ||
-		     strstr(env_lcall, "..") ||
-		     strchr(env_lcall, '%')))
-			env_lcall = NULL;
-		if (env_lcmsgs &&
-		    (strstr(env_lcmsgs, "/") ||
-		     strstr(env_lcmsgs, "..") ||
-		     strchr(env_lcmsgs, '%')))
-			env_lcmsgs = NULL;
-		if (env_shell &&
-		    (strstr(env_shell, "..") ||
-		     strchr(env_shell, '%')))
-			env_shell = NULL;
-		if (env_term &&
-		    (strstr(env_term, "..") ||
-		     strchr(env_term, '%')))
-			env_term = "dumb";
-		if (env_xauthority &&
-		    (strstr(env_xauthority , "..") ||
-		     strchr(env_xauthority , '%')))
-			env_xauthority = NULL;
-
-		/* Wipe out the current environment. */
-		environ_save = environ;
-		environ = g_malloc0(2 * sizeof(char *));
-
-		/* Set just the environment variables we can trust.  Note that
-		 * XAUTHORITY is not initially copied -- we don't want to let
-		 * attackers get at others' X authority records -- we restore
-		 * XAUTHORITY below *after* successfully authenticating, or
-		 * abandoning authentication in order to run the wrapped program
-		 * as the invoking user. */
-		if (env_display) setenv("DISPLAY", env_display, 1);
-
-		/* The rest of the environment variables are simpler. */
-		if (env_desktop_startup_id) setenv("DESKTOP_STARTUP_ID",
-						   env_desktop_startup_id, 1);
-		if (env_lang) setenv("LANG", env_lang, 1);
-		if (env_lcall) setenv("LC_ALL", env_lcall, 1);
-		if (env_lcmsgs) setenv("LC_MESSAGES", env_lcmsgs, 1);
-		if (env_shell) setenv("SHELL", env_shell, 1);
-		if (env_term) setenv("TERM", env_term, 1);
-
-		/* Set the PATH to a reasonaly safe list of directories. */
-		setenv("PATH",
-		       "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin:/root/bin",
-		       1);
-
-		/* Set the LOGNAME and USER variables to the executing name. */
-		setenv("LOGNAME", g_strdup("root"), 1);
-		setenv("USER", g_strdup("root"), 1);
-
-		/* Open the console.apps configuration file for this wrapped
-		 * program, and read settings from it. */
-		apps_filename = g_strdup_printf(SYSCONFDIR
-						"/security/console.apps/%s",
-						progname);
-		s = svNewFile(apps_filename);
-
-		/* If the file is world-writable, or isn't a regular file, or
-		 * couldn't be open, just exit.  We don't want to alert an
-		 * attacker that the service name is invalid. */
-		if ((s == NULL) ||
-		    (fstat(s->fd, &sbuf) == -1) ||
-		    !S_ISREG(sbuf.st_mode) ||
-		    (sbuf.st_mode & S_IWOTH)) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: bad file permissions\n");
-#endif
-			exit(ERR_UNK_ERROR);
-		}
-
-		user_pam = get_user_for_auth(s);
-
-		/* Read the path to the program to run. */
-		constructed_path = svGetValue(s, "PROGRAM");
-		if (!constructed_path || constructed_path[0] != '/') {
-			/* Criminy....  The system administrator didn't give
-			 * us an absolute path to the program!  Guess either
-			 * /usr/sbin or /sbin, and then give up if there's
-			 * nothing in either of those directories. */
-			constructed_path = g_strdup_printf("/usr/sbin/%s",
-							   progname);
-			if (access(constructed_path, X_OK) != 0) {
-				/* Try the second directory. */
-				strcpy(constructed_path, "/sbin/");
-				strcat(constructed_path, progname);
-				if (access(constructed_path, X_OK)) {
-					/* Nope, not there, either. */
-#ifdef DEBUG_USERHELPER
-					g_print("userhelper: couldn't find "
-						"wrapped binary\n");
-#endif
-					exit(ERR_NO_PROGRAM);
-				}
-			}
-		}
-
-		/* We can forcefully disable the GUI from the configuration
-		 * file (a la blah-nox applications). */
-		gui = svTrueValue(s, "GUI", TRUE);
-		if (!gui) {
-			conv = &text_conv;
-		}
-
-		/* We can use a magic configuration file option to disable
-		 * the GUI, too. */
-		if (gui) {
-			noxoption = svGetValue(s, "NOXOPTION");
-			if (noxoption && (strlen(noxoption) > 1)) {
-				int i;
-				for (i = optind; i < argc; i++) {
-					if (strcmp(argv[i], noxoption) == 0) {
-						conv = &text_conv;
-						break;
-					}
-				}
-			}
-		}
-
-		/* Verify that the user we need to authenticate as has a home
-		 * directory. */
-		pw = getpwnam(user_pam);
-		if (pw == NULL) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: no user named %s exists\n",
-				user_pam);
-#endif
-			exit(ERR_NO_USER);
-		}
-
-		/* If the user we're authenticating as has root's UID, then it's
-		 * safe to let them use HOME=~root. */
-		if (pw->pw_uid == 0) {
-			setenv("HOME", g_strdup(pw->pw_dir), 1);
-		} else {
-			/* Otherwise, if they had a reasonable value for HOME,
-			 * let them use it. */
-			if (env_home) {
-				setenv("HOME", env_home, 1);
-			} else {
-				/* Otherwise, punt. */
-				pw = getpwuid(getuid());
-				if ((pw != NULL) && (pw->pw_dir != NULL)) {
-					setenv("HOME", g_strdup(pw->pw_dir), 1);
-				}
-			}
-		}
-
-		/* Read other settings. */
-		session = svTrueValue(s, "SESSION", FALSE);
-		app_data.fallback_allowed = svTrueValue(s, "FALLBACK", FALSE);
-		retry = svGetValue(s, "RETRY"); /* default value is "2" */
-		tryagain = retry ? atoi(retry) + 1 : 3;
-
-		/* Read any custom messages we might want to use. */
-		apps_banner = svGetValue(s, "BANNER");
-		if ((apps_banner != NULL) && (strlen(apps_banner) > 0)) {
-			app_data.banner = apps_banner;
-		}
-		apps_domain = svGetValue(s, "DOMAIN");
-		if ((apps_domain != NULL) && (strlen(apps_domain) > 0)) {
-			bindtextdomain(apps_domain, DATADIR "/locale");
-			bind_textdomain_codeset(apps_domain, "UTF-8");
-			app_data.domain = apps_domain;
-		}
-		if (app_data.domain == NULL) {
-			apps_domain = svGetValue(s, "BANNER_DOMAIN");
-			if ((apps_domain != NULL) &&
-			    (strlen(apps_domain) > 0)) {
-				bindtextdomain(apps_domain, DATADIR "/locale");
-				bind_textdomain_codeset(apps_domain, "UTF-8");
-				app_data.domain = apps_domain;
-			}
-		}
-		if (app_data.domain == NULL) {
-			app_data.domain = progname;
-		}
-#ifdef USE_STARTUP_NOTIFICATION
-		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_NAME");
-		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-			app_data.sn_name = apps_sn;
-		}
-		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_DESCRIPTION");
-		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-			app_data.sn_description = apps_sn;
-		}
-		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_WMCLASS");
-		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-			app_data.sn_wmclass = apps_sn;
-		}
-		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_BINARY_NAME");
-		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-			app_data.sn_binary_name = apps_sn;
-		}
-		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_ICON_NAME");
-		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-			app_data.sn_icon_name = apps_sn;
-		}
-		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_WORKSPACE");
-		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-			app_data.sn_workspace = atoi(apps_sn);
-		}
-#endif
-
-		/* Now we're done reading the file. */
-		svCloseFile(s);
-
-		/* Start up PAM to authenticate the specified user. */
-		retval = pam_start(progname, user_pam, conv, &app_data.pamh);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_start() failed\n");
-#endif
-			fail_exit(retval);
-		}
-
-		/* Set the requesting user. */
-		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
-		if (retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: pam_set_item() failed\n");
-#endif
-			fail_exit(retval);
-		}
-
-		/* Try to authenticate the user. */
-		do {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: authenticating \"%s\"\n",
-				user_pam);
-#endif
-			retval = pam_authenticate(app_data.pamh, 0);
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: PAM retval = %d (%s)\n", retval,
-				pam_strerror(app_data.pamh, retval));
-#endif
-			tryagain--;
-		} while ((retval != PAM_SUCCESS) && tryagain &&
-			 !app_data.fallback_chosen && !app_data.canceled);
-
-		if (retval != PAM_SUCCESS) {
-			pam_end(app_data.pamh, retval);
-			if (app_data.canceled) {
-				fail_exit(retval);
-			} else
-			if (app_data.fallback_allowed) {
-				/* Reset the user's environment so that the
-				 * application can run normally. */
-				argv[optind - 1] = progname;
-				environ = environ_save;
-				become_normal(user_name);
-				if (app_data.input != NULL) {
-					fflush(app_data.input);
-					fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
-				}
-				if (app_data.output != NULL) {
-					fflush(app_data.output);
-					fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
-				}
-				pipe_conv_exec_start(conv);
-#ifdef USE_STARTUP_NOTIFICATION
-				if (app_data.sn_id) {
-#ifdef DEBUG_USERHELPER
-					g_print("userhelper: setting "
-						"DESKTOP_STARTUP_ID =\"%s\"\n",
-					        app_data.sn_id);
-#endif
-					setenv("DESKTOP_STARTUP_ID",
-					       app_data.sn_id, 1);
-				}
-#endif
-#ifdef WITH_SELINUX
-				setup_selinux_exec(constructed_path);
-#endif
-				execv(constructed_path, argv + optind - 1);
-				pipe_conv_exec_fail(conv);
-				exit(ERR_EXEC_FAILED);
-			} else {
-				/* Well, we tried. */
-				fail_exit(retval);
-			}
-		}
-
-		/* Verify that the authenticated user is the user we started
-		 * out trying to authenticate. */
-		retval = get_pam_string_item(app_data.pamh, PAM_USER,
-					     &auth_user);
-		if (retval != PAM_SUCCESS) {
-			pam_end(app_data.pamh, retval);
-			fail_exit(retval);
-		}
-		if (strcmp(user_pam, auth_user) != 0) {
-			exit(ERR_UNK_ERROR);
-		}
-
-		/* Verify that the authenticated user is allowed to run this
-		 * service now. */
-		retval = pam_acct_mgmt(app_data.pamh, 0);
-		if (retval != PAM_SUCCESS) {
-			pam_end(app_data.pamh, retval);
-			fail_exit(retval);
-		}
-
-		/* We need to re-read the user's information -- libpam doesn't
-		 * guarantee that these won't be nuked. */
-		pw = getpwnam(user_pam);
-		if (pw == NULL) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: no user named %s exists\n",
-				user_pam);
-#endif
-			exit(ERR_NO_USER);
-		}
-
-		/* What we do now depends on whether or not we need to open
-		 * a session for the user. */
-		if (session) {
-			int child, status;
-
-			/* We're opening a session, and that may included
-			 * running graphical apps, so restore the XAUTHORITY
-			 * environment variable. */
-			if (env_xauthority) {
-				setenv("XAUTHORITY", env_xauthority, 1);
-			}
-
-			/* Open a session. */
-			retval = pam_open_session(app_data.pamh, 0);
-			if (retval != PAM_SUCCESS) {
-				pam_end(app_data.pamh, retval);
-				fail_exit(retval);
-			}
-
-			/* Start up a child process we can wait on. */
-			child = fork();
-			if (child == -1) {
-				exit(ERR_EXEC_FAILED);
-			}
-			if (child == 0) {
-				/* We're in the child.  Make a few last-minute
-				 * preparations and exec the program. */
-				char **env_pam;
-
-				env_pam = pam_getenvlist(app_data.pamh);
-				while (env_pam && *env_pam) {
-#ifdef DEBUG_USERHELPER
-					g_print("userhelper: setting %s\n",
-						*env_pam);
-#endif
-					putenv(g_strdup(*env_pam));
-					env_pam++;
-				}
-
-				argv[optind - 1] = progname;
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: about to exec \"%s\"\n",
-					constructed_path);
-#endif
-				become_super();
-				if (app_data.input != NULL) {
-					fflush(app_data.input);
-					fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
-				}
-				if (app_data.output != NULL) {
-					fflush(app_data.output);
-					fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
-				}
-				pipe_conv_exec_start(conv);
-#ifdef USE_STARTUP_NOTIFICATION
-				if (app_data.sn_id) {
-#ifdef DEBUG_USERHELPER
-					g_print("userhelper: setting "
-						"DESKTOP_STARTUP_ID =\"%s\"\n",
-					        app_data.sn_id);
-#endif
-					setenv("DESKTOP_STARTUP_ID",
-					       app_data.sn_id, 1);
-				}
-#endif
-#ifdef WITH_SELINUX
-				setup_selinux_exec(constructed_path);
-#endif
-				execv(constructed_path, argv + optind - 1);
-				pipe_conv_exec_fail(conv);
-				exit(ERR_EXEC_FAILED);
-			}
-			/* We're in the parent.  Wait for the child to exit. */
-			close(STDIN_FILENO);
-			close(STDOUT_FILENO);
-			close(STDERR_FILENO);
-
-			wait4(child, &status, 0, NULL);
-
-			/* Close the session. */
-			retval = pam_close_session(app_data.pamh, 0);
-			if (retval != PAM_SUCCESS) {
-				pam_end(app_data.pamh, retval);
-				fail_exit(retval);
-			}
-
-			/* Use the exit status fo the child to determine our
-			 * exit value. */
-			if (WIFEXITED(status)) {
-				pam_end(app_data.pamh, PAM_SUCCESS);
-				retval = 0;
-			} else {
-				pam_end(app_data.pamh, PAM_SUCCESS);
-				retval = ERR_UNK_ERROR;
-			}
-			exit(retval);
-		} else {
-			/* We're not opening a session, so we can just exec()
-			 * the program we're wrapping. */
-			pam_end(app_data.pamh, PAM_SUCCESS);
-
-			argv[optind - 1] = progname;
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: about to exec \"%s\"\n",
-				constructed_path);
-#endif
-			become_super();
-			if (app_data.input != NULL) {
-				fflush(app_data.input);
-				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
-			}
-			if (app_data.output != NULL) {
-				fflush(app_data.output);
-				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
-			}
-			pipe_conv_exec_start(conv);
-#ifdef USE_STARTUP_NOTIFICATION
-			if (app_data.sn_id) {
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: setting "
-					"DESKTOP_STARTUP_ID =\"%s\"\n",
-					app_data.sn_id);
-#endif
-				setenv("DESKTOP_STARTUP_ID", app_data.sn_id, 1);
-			}
-#endif
-#ifdef WITH_SELINUX
-			setup_selinux_exec(constructed_path);
-#endif
-			execv(constructed_path, argv + optind - 1);
-			pipe_conv_exec_fail(conv);
-			exit(ERR_EXEC_FAILED);
-		}
+		wrap(user_name, wrapped_program, conv, prompt, &app_data,
+		     argc, argv);
+		g_assert_not_reached();
 	}
 
 	/* Not reached. */
