@@ -118,6 +118,7 @@ create_usermount_window()
 		     (GtkSignalFunc) gtk_main_quit, NULL);
 
   cancel = gtk_button_new_with_label("Exit");
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(cancel)->child), 4, 0);
   gtk_widget_set_usize(cancel, 50, 0);
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
 		     (GtkSignalFunc) gtk_main_quit, NULL);
@@ -240,6 +241,7 @@ create_mount_table(struct mountinfo* list)
       mount = gtk_button_new();
       gtk_widget_set_usize(mount, 60, 0);
       mount_label = gtk_label_new(UMOUNT_TEXT);
+      gtk_misc_set_padding(GTK_MISC(mount_label), 4, 0);
       gtk_container_add(GTK_CONTAINER(mount), mount_label);
       gtk_widget_show(mount_label);
 
@@ -262,6 +264,7 @@ create_mount_table(struct mountinfo* list)
       gtk_widget_show(mount);
 
       format = gtk_button_new_with_label("Format");
+      gtk_misc_set_padding(GTK_MISC(GTK_BIN(format)->child), 4, 0);
       gtk_widget_set_usize(format, 60, 0);
       current->format = format;
       gtk_widget_set_sensitive(format, current->mi_writable);
@@ -361,6 +364,7 @@ format_button(GtkWidget* widget, struct mountinfo* info)
   label = gtk_label_new("Are you sure?\nYou will destroy any data on that disk.\n");
 
   confirm_button = gtk_button_new_with_label("Yes");
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(confirm_button)->child), 4, 0);
   gtk_widget_set_usize(confirm_button, 50, 0);
   gtk_signal_connect_object(GTK_OBJECT(confirm_button), "clicked",
 			    (GtkSignalFunc) format_confirm_button,
@@ -370,6 +374,7 @@ format_button(GtkWidget* widget, struct mountinfo* info)
 			    (gpointer) dialog);
 
   cancel_button = gtk_button_new_with_label("No");
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(cancel_button)->child), 4, 0);
   gtk_widget_set_usize(cancel_button, 50, 0);
   gtk_signal_connect_object(GTK_OBJECT(cancel_button), "clicked",
 			    (GtkSignalFunc) gtk_widget_destroy,

@@ -37,6 +37,7 @@ create_message_box(gchar* message, gchar* title)
   label = gtk_label_new(message);
   hbox = gtk_hbox_new(TRUE, 5);
   ok = gtk_button_new_with_label(UD_OK_TEXT);
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
   gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
 			    (GtkSignalFunc) gtk_widget_destroy,
 			    (gpointer) message_box);
@@ -82,6 +83,7 @@ create_error_box(gchar* error, gchar* title)
   label = gtk_label_new(error);
   hbox = gtk_hbox_new(TRUE, 5);
   ok = gtk_button_new_with_label(UD_OK_TEXT);
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
   gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
 			    (GtkSignalFunc) gtk_widget_destroy,
 			    (gpointer) error_box);
@@ -124,6 +126,7 @@ create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   label = gtk_label_new(prompt);
   entry = gtk_entry_new();
   ok = gtk_button_new_with_label(UD_OK_TEXT);
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
   gtk_widget_set_usize(ok, 50, 0);
 
   hbox = gtk_hbox_new(TRUE, 0);
@@ -186,6 +189,7 @@ create_invisible_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   hbox = gtk_hbox_new(TRUE, 5);
 
   ok = gtk_button_new_with_label("OK");
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
 
   gtk_signal_connect_object(GTK_OBJECT(entry), "activate", 
 			    (GtkSignalFunc) gtk_button_clicked,

@@ -131,6 +131,8 @@ create_userinfo_window(UserInfo* userinfo)
   gtk_widget_show(shell_field);
 
   ok = gtk_button_new_with_label("OK");
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
+
 /*   GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT); */
 /*   gtk_widget_grab_default(ok); */
   gtk_signal_connect(GTK_OBJECT(ok), "clicked", 
@@ -138,10 +140,12 @@ create_userinfo_window(UserInfo* userinfo)
   gtk_widget_show(ok);
 
   cancel = gtk_button_new_with_label("Exit");
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(cancel)->child), 4, 0);
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
 		     (GtkSignalFunc) gtk_main_quit, NULL);
   gtk_widget_show(cancel);
   help = gtk_button_new_with_label("Help");
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(help)->child), 4, 0);
   gtk_signal_connect(GTK_OBJECT(help), "clicked",
 		     (GtkSignalFunc) show_help_dialog, NULL);
 /*   gtk_widget_show(help); */
@@ -436,6 +440,7 @@ create_help_dialog()
   gtk_container_set_border_width(GTK_CONTAINER(help_dialog), 5);
   label = gtk_label_new("This will be some help text.");
   ok = gtk_button_new_with_label("OK");
+  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
   gtk_signal_connect(GTK_OBJECT(ok), "clicked", 
 		     (GtkSignalFunc) show_help_dialog, NULL);
 

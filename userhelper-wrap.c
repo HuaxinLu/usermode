@@ -197,7 +197,9 @@ userhelper_parse_childout(char* outline)
     gtk_container_set_border_width(GTK_CONTAINER(resp->top), 5);
     gtk_window_set_title(GTK_WINDOW(resp->top), "Input");
     resp->ok = gtk_button_new_with_label(UD_OK_TEXT);
+    gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->ok)->child), 4, 0);
     resp->cancel = gtk_button_new_with_label(UD_CANCEL_TEXT);
+    gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->cancel)->child), 4, 0);
     resp->table = gtk_table_new(1, 2, FALSE);
 
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
