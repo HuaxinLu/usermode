@@ -246,7 +246,7 @@ msgstr "쉘:"
 
 #: ../userinfo.c:378
 msgid "This will be some help text."
-msgstr "이 문구는 도움이 될 것입니다."
+msgstr "이 내용은 사용자에 대한 간략한 정보입니다."
 
 #: ../usermount.c:57
 msgid "Mount"
