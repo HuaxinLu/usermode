@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #.
@@ -42,11 +42,11 @@ msgstr "Avbryt"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Kjør upriviligert"
+msgstr "KjÃ¸r upriviligert"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(nåværende) UNIX passord: "
+msgstr "(nÃ¥vÃ¦rende) UNIX passord: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
@@ -54,15 +54,15 @@ msgstr "Nytt UNIX passord:"
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Tast inn nytt UNIX passord på nytt: "
+msgstr "Tast inn nytt UNIX passord pÃ¥ nytt: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "DÅRLIG PASSORD: det er altfor kort"
+msgstr "DÃ…RLIG PASSORD: det er altfor kort"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "DÅRLIG PASSORD: det er for kort"
+msgstr "DÃ…RLIG PASSORD: det er for kort"
 
 #: dummy.h:30
 msgid "Password unchanged"
@@ -74,7 +74,7 @@ msgstr "Beklager, passordene er ikke de samme"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Start konfigurasjonsverktøy for systemet uten passord."
+msgstr "Start konfigurasjonsverktÃ¸y for systemet uten passord."
 
 #: userdialogs.h:30
 msgid "Help"
@@ -96,8 +96,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med\n"
-"superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
+"Du prÃ¸ver Ã¥ kjÃ¸re Â«%sÂ» og dette programmet kan med fordel kjÃ¸res med\n"
+"superbrukerprivilegier, men du mÃ¥ oppgi mer informasjon for Ã¥ gjÃ¸re dette."
 
 #: userhelper.c:348
 #, c-format
@@ -105,24 +105,24 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du\n"
-"må oppgi mer informasjon for å gjøre dette."
+"Du prÃ¸ver Ã¥ kjÃ¸re Â«%sÂ» som krever superbrukerprivilegier, men du\n"
+"mÃ¥ oppgi mer informasjon for Ã¥ gjÃ¸re dette."
 
 #: userhelper.c:352
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre en kommando som med fordel kan kjøres med\n"
-"superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
+"Du prÃ¸ver Ã¥ kjÃ¸re en kommando som med fordel kan kjÃ¸res med\n"
+"superbrukerprivilegier, men mer informasjon mÃ¥ oppgis for Ã¥ gjÃ¸re dette."
 
 #: userhelper.c:354
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre en kommando som krever superbrukerprivilegier\n"
-"men du må oppgi mer informasjon for å gjøre dette."
+"Du prÃ¸ver Ã¥ kjÃ¸re en kommando som krever superbrukerprivilegier\n"
+"men du mÃ¥ oppgi mer informasjon for Ã¥ gjÃ¸re dette."
 
 #: userhelper.c:373
 #, c-format
@@ -131,20 +131,20 @@ msgstr "Passord for %s: "
 
 #: userhelper.c:647
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper må være setuid root\n"
+msgstr "userhelper mÃ¥ vÃ¦re setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:729
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Kunne ikke åpne grafisk vindu; og er ute av stand til å finne en "
+"Kunne ikke Ã¥pne grafisk vindu; og er ute av stand til Ã¥ finne en "
 "kontrollerende terminal.\n"
 
 #: userhelper.c:1434 userhelper.c:1480
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "i ferd med å kjøre \"%s\"\n"
+msgstr "i ferd med Ã¥ kjÃ¸re \"%s\"\n"
 
 #: userhelper-wrap.c:61
 msgid "Unknown exit code."
@@ -160,7 +160,7 @@ msgid ""
 "Please try again."
 msgstr ""
 "Passordet du oppga er ugyldig.\n"
-"Vennligst prøv igjen."
+"Vennligst prÃ¸v igjen."
 
 #: userhelper-wrap.c:67
 msgid ""
@@ -170,7 +170,7 @@ msgid ""
 msgstr ""
 "Ett eller flere endrede felt er ugyldige.\n"
 "Dette skyldes sannsynligvis et kolon eller komma i ett av feltene.\n"
-"Vennligst fjern disse og prøv igjen."
+"Vennligst fjern disse og prÃ¸v igjen."
 
 #: userhelper-wrap.c:69
 msgid "Password resetting error."
@@ -181,8 +181,8 @@ msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Noen systemfiler er låst.\n"
-"Prøv igjen om et øyeblikk."
+"Noen systemfiler er lÃ¥st.\n"
+"PrÃ¸v igjen om et Ã¸yeblikk."
 
 #: userhelper-wrap.c:73
 msgid "Unknown user."
@@ -202,7 +202,7 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Ditt nåværende skall er ikke listet i /etc/shells.\n"
+"Ditt nÃ¥vÃ¦rende skall er ikke listet i /etc/shells.\n"
 "Du kan ikke endre ditt skall.\n"
 "Kontakt systemadministratoren."
 
@@ -224,7 +224,7 @@ msgstr "Ukjent feil."
 
 #: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
 msgid "Query"
-msgstr "Spør"
+msgstr "SpÃ¸r"
 
 #: userhelper-wrap.c:342
 #, c-format
@@ -257,8 +257,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med "
-"superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
+"Du prÃ¸ver Ã¥ kjÃ¸re Â«%sÂ» og dette programmet kan med fordel kjÃ¸res med "
+"superbrukerprivilegier, men du mÃ¥ oppgi mer informasjon for Ã¥ gjÃ¸re dette."
 
 #: userhelper-wrap.c:493
 #, c-format
@@ -266,40 +266,40 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi "
-"mer informasjon for å gjøre dette."
+"Du prÃ¸ver Ã¥ kjÃ¸re Â«%sÂ» som krever superbrukerprivilegier, men du mÃ¥ oppgi "
+"mer informasjon for Ã¥ gjÃ¸re dette."
 
 #: userhelper-wrap.c:502
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre en kommando som med fordel kan kjøres med "
-"superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
+"Du prÃ¸ver Ã¥ kjÃ¸re en kommando som med fordel kan kjÃ¸res med "
+"superbrukerprivilegier, men mer informasjon mÃ¥ oppgis for Ã¥ gjÃ¸re dette."
 
 #: userhelper-wrap.c:504
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må "
-"oppgi mer informasjon for å gjøre dette."
+"Du prÃ¸ver Ã¥ kjÃ¸re en kommando som krever superbrukerprivilegier, men du mÃ¥ "
+"oppgi mer informasjon for Ã¥ gjÃ¸re dette."
 
 #: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
-msgstr "Kjø_r upriviligert"
+msgstr "KjÃ¸_r upriviligert"
 
 #: userhelper-wrap.c:622
 msgid "Pipe error.\n"
-msgstr "Feil med rør.\n"
+msgstr "Feil med rÃ¸r.\n"
 
 #: userhelper-wrap.c:629
 msgid "Cannot fork().\n"
-msgstr "Kan ikke kjøre fork().\n"
+msgstr "Kan ikke kjÃ¸re fork().\n"
 
 #: userhelper-wrap.c:696 userhelper-wrap.c:700
 msgid "dup2() error.\n"
-msgstr "feil ved kjøring av dup2().\n"
+msgstr "feil ved kjÃ¸ring av dup2().\n"
 
 #: userhelper-wrap.c:712
 #, c-format
@@ -323,12 +323,12 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Er du sikker på at du vil formatere denne disken? Du vil ødelegge alle data "
-"på den disken."
+"Er du sikker pÃ¥ at du vil formatere denne disken? Du vil Ã¸delegge alle data "
+"pÃ¥ den disken."
 
 #: usermount.c:331
 msgid "Perform a _low-level format."
-msgstr "Utfør _lavnivå-formatering."
+msgstr "UtfÃ¸r _lavnivÃ¥-formatering."
 
 #: usermount.c:374
 msgid "Select a _filesystem type to create:"
@@ -345,7 +345,7 @@ msgstr ""
 #. Create the dialog.
 #: usermount.c:543 usermount.c:554 glade.strings:22
 msgid "User Mount Tool"
-msgstr "Brukerverktøy for montering"
+msgstr "BrukerverktÃ¸y for montering"
 
 #. Create the other buttons.
 #: usermount.c:568 glade.strings:28
@@ -435,7 +435,7 @@ msgstr "Endre personlig informasjon"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Diskhåndtering"
+msgstr "DiskhÃ¥ndtering"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
