@@ -34,14 +34,14 @@ consolehelper:	consolehelper.o userdialogs.o userhelper-wrap.o
 
 install:	$(PROGS)
 	mkdir -p $(PREFIX)/usr/bin $(PREFIX)/usr/sbin
-	mkdir -p $(PREFIX)/etc/X11/wmconfig 
+	mkdir -p $(PREFIX)/etc/X11/applink/System
 	mkdir -p $(PREFIX)/usr/man/man1 $(PREFIX)/usr/man/man8
 	$(INSTALL) -m 755 -s userinfo $(PREFIX)/usr/bin
-	$(INSTALL) -m 755 userinfo.wmconfig $(PREFIX)/etc/X11/wmconfig/userinfo
+	$(INSTALL) -m 644 userinfo.desktop $(PREFIX)/etc/X11/applink/System/
 	$(INSTALL) -m 755 -s usermount $(PREFIX)/usr/bin
-	$(INSTALL) -m 755 usermount.wmconfig $(PREFIX)/etc/X11/wmconfig/usermount
+	$(INSTALL) -m 644 usermount.desktop $(PREFIX)/etc/X11/applink/System/
 	$(INSTALL) -m 755 -s userpasswd $(PREFIX)/usr/bin
-	$(INSTALL) -m 755 userpasswd.wmconfig $(PREFIX)/etc/X11/wmconfig/userpasswd
+	$(INSTALL) -m 644 userpasswd.desktop $(PREFIX)/etc/X11/applink/System/
 	$(INSTALL) -m 755 -s consolehelper $(PREFIX)/usr/bin
 	$(INSTALL) -m 4755 -s userhelper $(PREFIX)/usr/sbin
 

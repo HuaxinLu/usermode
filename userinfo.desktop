@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=About Myself
+Description=Change account information
+Exec=userinfo
+Terminal=0
+Type=Application

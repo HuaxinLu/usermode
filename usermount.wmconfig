@@ -1,3 +1,0 @@
-usermount name "Disk Management"
-usermount exec "usermount &"
-usermount group Administration

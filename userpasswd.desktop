@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Change Password
+Comment=Change Password
+Exec=userpasswd
+Terminal=0
+Type=Application

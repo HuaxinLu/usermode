@@ -43,11 +43,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/man/man1/userpasswd.1
 /usr/bin/consolehelper
 /usr/man/man8/consolehelper.8
-/etc/X11/wmconfig/userpasswd
-/etc/X11/wmconfig/userinfo
-/etc/X11/wmconfig/usermount
+/etc/X11/applink/System/*
 
 %changelog
+* Fri Mar 19 1999 Michael Johnson <johnsonm@redhat.com>
+- moved from wmconfig to desktop entries
+
 * Thu Mar 18 1999 Michael Johnson <johnsonm@redhat.com>
 - added consolehelper
 - Changed conversation architecture to follow PAM spec
