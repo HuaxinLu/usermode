@@ -12,7 +12,7 @@ Requires: util-linux, pam >= 0.66-5
 Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
 %endif
 Conflicts: SysVinit < 2.74-14
-BuildPrereq: glib-devel, gtk+-devel, libglade-devel, pam-devel
+BuildPrereq: glib-devel, gtk2-devel, libglade2-devel, pam-devel
 BuildRoot: %{_tmppath}/%{name}-root
 
 %package gtk
@@ -103,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Mon Dec 10 2001 Nalin Dahyabhai <nalin@redhat.com> 1.49-1
 - the console.apps configs shouldn't be missingok
+- fix buildprereqs for gtk2/libglade2
 
 * Tue Dec  4 2001 Nalin Dahyabhai <nalin@redhat.com>
 - more gtk2 changes
