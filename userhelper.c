@@ -1079,12 +1079,6 @@ get_invoking_user(void)
 		ctx = context_new(old_context);
 		ret = g_strdup(context_user_get(ctx));
 		context_free(ctx);
-		pwd = getpwnam(ret);
-		if (pwd == NULL) {
-		  free(ret);
-		  ret = NULL;
-		}
-
 	}
 #endif
 	if (ret == NULL) {
