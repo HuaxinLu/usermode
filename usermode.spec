@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.49
-Release: 2
+Release: 3
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -12,7 +12,7 @@ Requires: util-linux, pam >= 0.66-5
 Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
 %endif
 Conflicts: SysVinit < 2.74-14
-BuildPrereq: glib-devel, gtk2-devel, libglade2-devel, pam-devel
+BuildPrereq: glib-devel, gtk2-devel, libglade2-devel, pam-devel, util-linux
 BuildRoot: %{_tmppath}/%{name}-root
 
 %package gtk
@@ -101,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Jan 23 2002 Nalin Dahyabhai <nalin@redhat.com> 1.49-3
 * Thu Jan  3 2002 Nalin Dahyabhai <nalin@redhat.com> 1.49-2
 - munge glade file to use stock items for buttons where possible
 

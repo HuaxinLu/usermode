@@ -17,8 +17,8 @@ msgstr ""
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 "
-"없습니다.\n"
+"그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
+"니다.\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -205,8 +205,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\" (을)를 실행하였습니다, "
-"그러나 이 것을 실행하기 위해서는 정보가 더 필요합니다."
+"여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\" (을)를 실행하였습니다, 그러"
+"나 이 것을 실행하기 위해서는 정보가 더 필요합니다."
 
 #: userhelper-wrap.c:438
 #, c-format
@@ -214,24 +214,24 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한이 필요한 \"%s\" (을)를 실행하였습니다, 그러나 "
-"이 것을 실행하기 위해서는 정보가 더 필요합니다."
+"여러분은 슈퍼유저의 권한이 필요한 \"%s\" (을)를 실행하였습니다, 그러나 이 것"
+"을 실행하기 위해서는 정보가 더 필요합니다."
 
 #: userhelper-wrap.c:442
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, "
-"그러나 이 것을 실행하기 위해서는 정보가 더 필요합니다."
+"여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, 그러나 이 것"
+"을 실행하기 위해서는 정보가 더 필요합니다."
 
 #: userhelper-wrap.c:444
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 이 것을 "
-"실행하기 위해서는 정보가 더 필요합니다."
+"여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 이 것을 실행"
+"하기 위해서는 정보가 더 필요합니다."
 
 #: userhelper-wrap.c:454
 msgid "_Run Unprivileged"
@@ -271,8 +271,8 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"정말로 이 드라이브를 포맷하시겠습니까?  진행하실 경우 현재 저장되어 있는 "
-"모든 자료는 삭제됩니다."
+"정말로 이 드라이브를 포맷하시겠습니까?  진행하실 경우 현재 저장되어 있는 모"
+"든 자료는 삭제됩니다."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
