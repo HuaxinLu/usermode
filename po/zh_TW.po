@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-08-07 15:05-0400\n"
+"POT-Creation-Date: 2002-08-13 21:32-0400\n"
 "PO-Revision-Date: 2002-08-12 09:54+1000\n"
 "Last-Translator: Ben Wu <hpwu@redhat.com>\n"
 "Language-Team: Chinese (traditional) <i18n-list@redhat.com>\n"
@@ -78,7 +78,8 @@ msgid "Sorry, passwords do not match"
 msgstr "抱歉，密碼不符"
 
 #: dummy.h:32
-msgid "Launch system-wide configuration tools without login."
+#, fuzzy
+msgid "Launch system-wide configuration tools without a password."
 msgstr "在不登入的情況下啟動全系統性的設定工具。"
 
 #: userdialogs.h:30
@@ -140,7 +141,8 @@ msgstr "userhelper 必須 setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗，且找不到控制終端機。\n"
 
 #: userhelper.c:1409 userhelper.c:1447
@@ -224,74 +226,82 @@ msgstr "找不到選取的程式。"
 msgid "Unknown error."
 msgstr "未知的錯誤。"
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
-msgid "Placeholder text."
-msgstr "沒有加密過的文字。"
+#: userhelper-wrap.c:276 glade.strings:18
+msgid "Query"
+msgstr "查詢"
 
-#: userhelper-wrap.c:357
+#: userhelper-wrap.c:325
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "需要 %d 回應。\n"
 
-#: userhelper-wrap.c:390
+#: userhelper-wrap.c:357 userhelper-wrap.c:426
 msgid "Error"
 msgstr "錯誤"
 
-#: userhelper-wrap.c:403
+#: userhelper-wrap.c:369
 msgid "Information"
 msgstr "資訊"
 
-#: userhelper-wrap.c:457
+#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+msgid "Placeholder text."
+msgstr "沒有加密過的文字。"
+
+#: userhelper-wrap.c:465
 msgid "Changing personal information."
 msgstr "更改個人資訊。"
 
-#: userhelper-wrap.c:460
+#: userhelper-wrap.c:468
 msgid "Changing login shell."
 msgstr "更改登入 shell。"
 
-#: userhelper-wrap.c:466
+#: userhelper-wrap.c:474
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:476
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:477
+#: userhelper-wrap.c:485
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:479
+#: userhelper-wrap.c:487
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:495
+#: userhelper-wrap.c:503
 msgid "_Run Unprivileged"
 msgstr "無特權的執行(_R)"
 
-#: userhelper-wrap.c:607 userhelper-wrap.c:624
+#: userhelper-wrap.c:617 userhelper-wrap.c:634
 msgid "Pipe error.\n"
 msgstr "程式的輸出導向錯誤.\n"
 
-#: userhelper-wrap.c:631
+#: userhelper-wrap.c:641
 msgid "Cannot fork().\n"
 msgstr "無法 fork().\n"
 
-#: userhelper-wrap.c:677 userhelper-wrap.c:681
+#: userhelper-wrap.c:687 userhelper-wrap.c:691
 msgid "dup2() error.\n"
 msgstr "dup2() 錯誤.\n"
 
-#: userhelper-wrap.c:693
+#: userhelper-wrap.c:703
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
@@ -397,10 +407,6 @@ msgstr "信息"
 msgid "_Close"
 msgstr "關閉(_C)"
 
-#: glade.strings:18
-msgid "Query"
-msgstr "查詢"
-
 #: glade.strings:25
 msgid "Type"
 msgstr "種類"
@@ -467,4 +473,3 @@ msgstr "密碼"
 
 #~ msgid "Starting \"%s\" with administrative privileges."
 #~ msgstr "以管理者的權限啟動 \"%s\"。"
-

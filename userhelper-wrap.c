@@ -214,8 +214,6 @@ userhelper_parse_childout(char *outline)
 	}
 
 	if (resp == NULL) {
-		GtkWidget *vbox;
-
 		/* Allocate the response structure. */
 		resp = g_malloc0(sizeof(struct response));
 
@@ -226,39 +224,8 @@ userhelper_parse_childout(char *outline)
 		}
 		resp->user = pwd ? g_strdup(pwd->pw_name) : g_strdup("root");
 
-		/* Create a new GTK dialog box. */
-		resp->dialog = gtk_message_dialog_new(NULL,
-						      0,
-						      resp->responses > 0 ?
-						      GTK_MESSAGE_QUESTION :
-						      GTK_MESSAGE_INFO,
-						      resp->responses > 0 ?
-						      GTK_BUTTONS_OK_CANCEL :
-						      GTK_BUTTONS_CLOSE,
-						      _("Placeholder text."));
-
-		/* Force GTK+ to try to center this dialog. */
-		gtk_window_set_position(GTK_WINDOW(resp->dialog),
-					GTK_WIN_POS_CENTER_ALWAYS);
-
-		/* Create a table to put in its vbox. */
+		/* Create a table to hold the entry fields and labels. */
 		resp->table = gtk_table_new(2, 1, FALSE);
-		vbox = (GTK_DIALOG(resp->dialog))->vbox;
-		gtk_box_pack_start_defaults(GTK_BOX(vbox), resp->table);
-
-		/* Make sure we grab the keyboard focus when the window gets
-		 * an X window associated with it. */
-		gtk_signal_connect(GTK_OBJECT(resp->dialog), "map_event",
-				   GTK_SIGNAL_FUNC(userhelper_grab_focus),
-				   NULL);
-
-		/* If the user closes the window, we bail. */
-		gtk_signal_connect(GTK_OBJECT(resp->dialog), "delete_event",
-				   GTK_SIGNAL_FUNC(userhelper_fatal_error),
-				   NULL);
-
-		/* Set the resp structure as the data item for the dialog. */
-		gtk_object_set_user_data(GTK_OBJECT(resp->dialog), resp);
 	}
 
 	/* Now process items from the child. */
@@ -306,6 +273,7 @@ userhelper_parse_childout(char *outline)
 				echo = FALSE;
 				/* fall through */
 			case UH_ECHO_ON_PROMPT:
+				resp->title = _("Query");
 				/* Create a label to hold the prompt. */
 				msg->label = gtk_label_new(_(prompt));
 				gtk_label_set_line_wrap(GTK_LABEL(msg->label),
@@ -386,8 +354,7 @@ userhelper_parse_childout(char *outline)
 				break;
 			/* An error message. */
 			case UH_ERROR_MSG:
-				gtk_window_set_title(GTK_WINDOW(resp->dialog),
-						     _("Error"));
+				resp->title = _("Error");
 				msg->label = gtk_label_new(_(prompt));
 				gtk_table_attach(GTK_TABLE(resp->table),
 						 msg->label, 0, 2,
@@ -399,8 +366,7 @@ userhelper_parse_childout(char *outline)
 				break;
 			/* An informational message. */
 			case UH_INFO_MSG:
-				gtk_window_set_title(GTK_WINDOW(resp->dialog),
-						     _("Information"));
+				resp->title = _("Information");
 				msg->label = gtk_label_new(_(prompt));
 				gtk_table_attach(GTK_TABLE(resp->table),
 						 msg->label, 0, 2,
@@ -442,8 +408,50 @@ userhelper_parse_childout(char *outline)
 	/* If we're ready, do some last-minute changes and run the dialog. */
 	if (resp->ready) {
 		char *text;
-		GtkWidget *label;
+		const char *imagefile = DATADIR "/pixmaps/keyring.png";
+		GtkWidget *label, *image, *vbox;
 		GtkResponseType response;
+
+		/* Create a new GTK dialog box. */
+		resp->dialog = gtk_message_dialog_new(NULL,
+						      0,
+						      resp->responses > 0 ?
+						      GTK_MESSAGE_QUESTION :
+						      GTK_MESSAGE_INFO,
+						      resp->responses > 0 ?
+						      GTK_BUTTONS_OK_CANCEL :
+						      GTK_BUTTONS_CLOSE,
+						      _("Placeholder text."));
+		gtk_window_set_title(GTK_WINDOW(resp->dialog),
+				     resp->title ? resp->title : _("Error"));
+
+		/* Force GTK+ to try to center this dialog. */
+		gtk_window_set_position(GTK_WINDOW(resp->dialog),
+					GTK_WIN_POS_CENTER_ALWAYS);
+
+		/* If we're asking questions, change the dialog's icon. */
+		if (resp->responses > 0) {
+			image = (GTK_MESSAGE_DIALOG(resp->dialog))->image;
+			gtk_image_set_from_file(GTK_IMAGE(image), imagefile);
+		}
+
+		/* Pack the table into the dialog box. */
+		vbox = (GTK_DIALOG(resp->dialog))->vbox;
+		gtk_box_pack_start_defaults(GTK_BOX(vbox), resp->table);
+
+		/* Make sure we grab the keyboard focus when the window gets
+		 * an X window associated with it. */
+		gtk_signal_connect(GTK_OBJECT(resp->dialog), "map_event",
+				   GTK_SIGNAL_FUNC(userhelper_grab_focus),
+				   NULL);
+
+		/* If the user closes the window, we bail. */
+		gtk_signal_connect(GTK_OBJECT(resp->dialog), "delete_event",
+				   GTK_SIGNAL_FUNC(userhelper_fatal_error),
+				   NULL);
+
+		/* Set the resp structure as the data item for the dialog. */
+		gtk_object_set_user_data(GTK_OBJECT(resp->dialog), resp);
 
 		/* Customize the label. */
 		if (resp->responses == 0) {
@@ -516,12 +524,14 @@ userhelper_parse_childout(char *outline)
 		gdk_keyboard_ungrab(GDK_CURRENT_TIME);
 		/* Destroy the dialog box. */
 		gtk_widget_destroy(resp->dialog);
+		resp->dialog = NULL;
 		if (resp->service)
 			g_free(resp->service);
 		if (resp->suggestion)
 			g_free(resp->suggestion);
 		if (resp->user)
 			g_free(resp->user);
+		resp->title = NULL;
 		g_free(resp);
 		resp = NULL;
 	}

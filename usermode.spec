@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.58
-Release: 2
+Version: 1.59
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -89,11 +89,6 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/security/console.apps/halt
 %config /etc/security/console.apps/reboot
 %config /etc/security/console.apps/poweroff
-%if ! %{build6x}
-%{_bindir}/pam_timestamp_init
-%config /etc/security/console.apps/pam_timestamp_init
-%config(noreplace) /etc/pam.d/pam_timestamp_init
-%endif
 
 %files gtk
 %defattr(-,root,root)
@@ -112,6 +107,13 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Tue Aug 13 2002 Nalin Dahyabhai <nalin@redhat.com> 1.59-1
+- pam-panel-icon: overhaul, change the 'locked' icon to keyring-small, nix the
+  'unlocked' icon
+- consolehelper-gtk: properly set up the dialog buttons (should be 'cancel/ok'
+  when we're asking questions, was always 'close')
+- disappear pam_timestamp_init
+
 * Wed Aug  7 2002 Nalin Dahyabhai <nalin@redhat.com> 1.58-2
 - install the new 'unlocked' icon
 

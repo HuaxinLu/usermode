@@ -38,7 +38,7 @@ noinst_PROGRAMS = test-userdialog
 man_MANS = userinfo.1 usermount.1 userpasswd.1 consolehelper.8 userhelper.8
 
 pixmapdir = $(datadir)/pixmaps
-pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png password.png disks.png
+pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png password.png disks.png keyring.png keyring-small.png
 
 install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 	mkdir -p $(DESTDIR)/$(datadir)/applications
@@ -58,7 +58,7 @@ install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 consoleappdir = $(sysconfdir)/security/console.apps
 WRAPPED_APPS = halt poweroff reboot
 INIT_APPS = pam_timestamp_init
-consoleapp_DATA = $(WRAPPED_APPS) $(INIT_APPS)
+consoleapp_DATA = $(WRAPPED_APPS)
 $(WRAPPED_APPS): wrapped.console
 	$(INSTALL) -m600 $^ $@
 $(INIT_APPS): pam_timestamp_init.console

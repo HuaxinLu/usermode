@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop files\n"
-"POT-Creation-Date: 2002-08-07 15:05-0400\n"
+"POT-Creation-Date: 2002-08-13 21:32-0400\n"
 "PO-Revision-Date: 31.07.2002. 12:51\n"
 "Last-Translator: Amila Akagiæ <bono@linux.org.ba>\n"
 "Language-Team: Bosnian <lokal@lugbih.org>\n"
@@ -89,7 +89,7 @@ msgid "Sorry, passwords do not match"
 msgstr "®alim, ¹ifre se ne podudaraju"
 
 #: dummy.h:32
-msgid "Launch system-wide configuration tools without login."
+msgid "Launch system-wide configuration tools without a password."
 msgstr ""
 
 # ../userinfo.c:153
@@ -248,87 +248,91 @@ msgstr "Ne mogu da naðem izabrani program."
 msgid "Unknown error."
 msgstr "Nepoznata gre¹ka."
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
-msgid "Placeholder text."
+#: userhelper-wrap.c:276 glade.strings:18
+msgid "Query"
 msgstr ""
 
 # ../userhelper-wrap.c:346
-#: userhelper-wrap.c:357
+#: userhelper-wrap.c:325
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Potrebno %d odgovora.\n"
 
 # ../userdialogs.c:81 ../userhelper-wrap.c:384
-#: userhelper-wrap.c:390
+#: userhelper-wrap.c:357 userhelper-wrap.c:426
 msgid "Error"
 msgstr "Gre¹ka"
 
 # ../userinfo.c:124
-#: userhelper-wrap.c:403
+#: userhelper-wrap.c:369
 msgid "Information"
 msgstr "Informacije"
 
-#: userhelper-wrap.c:457
+#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+msgid "Placeholder text."
+msgstr ""
+
+#: userhelper-wrap.c:465
 msgid "Changing personal information."
 msgstr "Mijenjam osobne podatke."
 
-#: userhelper-wrap.c:460
+#: userhelper-wrap.c:468
 msgid "Changing login shell."
 msgstr "Mijenjam login shell."
 
-#: userhelper-wrap.c:466
+#: userhelper-wrap.c:474
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:476
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:477
+#: userhelper-wrap.c:485
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:479
+#: userhelper-wrap.c:487
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
 # ../dummy.h:23
-#: userhelper-wrap.c:495
+#: userhelper-wrap.c:503
 msgid "_Run Unprivileged"
 msgstr "_Pokreni neprivilegovan"
 
 # ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
 # ../usermount.c:761
-#: userhelper-wrap.c:607 userhelper-wrap.c:624
+#: userhelper-wrap.c:617 userhelper-wrap.c:634
 msgid "Pipe error.\n"
 msgstr "Pipe gre¹ka.\n"
 
 # ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
 # ../usermount.c:767
-#: userhelper-wrap.c:631
+#: userhelper-wrap.c:641
 msgid "Cannot fork().\n"
 msgstr "Ne mogu fork().\n"
 
 # ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
 # ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
 # ../usermount.c:814
-#: userhelper-wrap.c:677 userhelper-wrap.c:681
+#: userhelper-wrap.c:687 userhelper-wrap.c:691
 msgid "dup2() error.\n"
 msgstr "dup2() gre¹ka.\n"
 
 # ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
 # ../usermount.c:821
-#: userhelper-wrap.c:693
+#: userhelper-wrap.c:703
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
@@ -453,10 +457,6 @@ msgstr "Poruka"
 #: glade.strings:17
 msgid "_Close"
 msgstr "_Zatvori"
-
-#: glade.strings:18
-msgid "Query"
-msgstr ""
 
 # ../usermount.c:193
 #: glade.strings:25

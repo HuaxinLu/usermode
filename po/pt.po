@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-08-07 15:05-0400\n"
+"POT-Creation-Date: 2002-08-13 21:32-0400\n"
 "PO-Revision-Date: 2002-08-08 15:59+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
@@ -76,7 +76,8 @@ msgid "Sorry, passwords do not match"
 msgstr "Desculpe, as senhas não são iguais"
 
 #: dummy.h:32
-msgid "Launch system-wide configuration tools without login."
+#, fuzzy
+msgid "Launch system-wide configuration tools without a password."
 msgstr "Lança ferramentas de configuração de todo o sistema sem autenticação."
 
 #: userdialogs.h:30
@@ -225,32 +226,36 @@ msgstr "Não consegui encontrar o programa seleccionado."
 msgid "Unknown error."
 msgstr "Erro desconhecido."
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
-msgid "Placeholder text."
-msgstr "Texto para ocupar posição."
+#: userhelper-wrap.c:276 glade.strings:18
+msgid "Query"
+msgstr "Procurar"
 
-#: userhelper-wrap.c:357
+#: userhelper-wrap.c:325
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Necessárias %d respostas.\n"
 
-#: userhelper-wrap.c:390
+#: userhelper-wrap.c:357 userhelper-wrap.c:426
 msgid "Error"
 msgstr "Erro"
 
-#: userhelper-wrap.c:403
+#: userhelper-wrap.c:369
 msgid "Information"
 msgstr "Informação"
 
-#: userhelper-wrap.c:457
+#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+msgid "Placeholder text."
+msgstr "Texto para ocupar posição."
+
+#: userhelper-wrap.c:465
 msgid "Changing personal information."
 msgstr "A modificar as informações pessoais."
 
-#: userhelper-wrap.c:460
+#: userhelper-wrap.c:468
 msgid "Changing login shell."
 msgstr "A modificar a 'shell' de ligação."
 
-#: userhelper-wrap.c:466
+#: userhelper-wrap.c:474
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -259,7 +264,7 @@ msgstr ""
 "Está a tentar executar \"%s\", o qual pode beneficiar de privilégios de "
 "super-utilizador, mas para os obter são necessárias mais informações."
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:476
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -268,7 +273,7 @@ msgstr ""
 "Está a tentar executar \"%s\", o qual necessita de privilégios de super-"
 "utilizador, mas para os obter são necessárias mais informações."
 
-#: userhelper-wrap.c:477
+#: userhelper-wrap.c:485
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -276,7 +281,7 @@ msgstr ""
 "Está a tentar executar um comando que pode beneficiar de privilégios de "
 "super-utilizador, mas para os obter são necessárias mais informações."
 
-#: userhelper-wrap.c:479
+#: userhelper-wrap.c:487
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -284,23 +289,23 @@ msgstr ""
 "Está a tentar executar um comando que necessita de privilégios de super-"
 "utilizador, mas para os obter são necessárias mais informações."
 
-#: userhelper-wrap.c:495
+#: userhelper-wrap.c:503
 msgid "_Run Unprivileged"
 msgstr "Executa_r sem Privilégios"
 
-#: userhelper-wrap.c:607 userhelper-wrap.c:624
+#: userhelper-wrap.c:617 userhelper-wrap.c:634
 msgid "Pipe error.\n"
 msgstr "Erro no 'pipe'.\n"
 
-#: userhelper-wrap.c:631
+#: userhelper-wrap.c:641
 msgid "Cannot fork().\n"
 msgstr "Não consegui executar fork().\n"
 
-#: userhelper-wrap.c:677 userhelper-wrap.c:681
+#: userhelper-wrap.c:687 userhelper-wrap.c:691
 msgid "dup2() error.\n"
 msgstr "Erro no dup2().\n"
 
-#: userhelper-wrap.c:693
+#: userhelper-wrap.c:703
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "erro no execl(), errno=%d\n"
@@ -407,10 +412,6 @@ msgstr "Mensagem"
 #: glade.strings:17
 msgid "_Close"
 msgstr "Fe_char"
-
-#: glade.strings:18
-msgid "Query"
-msgstr "Procurar"
 
 #: glade.strings:25
 msgid "Type"

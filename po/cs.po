@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
-"POT-Creation-Date: 2002-08-07 15:05-0400\n"
+"POT-Creation-Date: 2002-08-13 21:32-0400\n"
 "PO-Revision-Date: 2002-04-21 21:27+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -73,7 +73,7 @@ msgid "Sorry, passwords do not match"
 msgstr "Promiòte, vlo¾ená hesla nebyla stejná"
 
 #: dummy.h:32
-msgid "Launch system-wide configuration tools without login."
+msgid "Launch system-wide configuration tools without a password."
 msgstr ""
 
 #: userdialogs.h:30
@@ -223,32 +223,36 @@ msgstr "Nemohu najít vybraný progra."
 msgid "Unknown error."
 msgstr "Neznámá chyba."
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
-msgid "Placeholder text."
-msgstr "TextTextTextText."
+#: userhelper-wrap.c:276 glade.strings:18
+msgid "Query"
+msgstr "Otázka"
 
-#: userhelper-wrap.c:357
+#: userhelper-wrap.c:325
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Potøebuji %d odpovìdi.\n"
 
-#: userhelper-wrap.c:390
+#: userhelper-wrap.c:357 userhelper-wrap.c:426
 msgid "Error"
 msgstr "Chyba"
 
-#: userhelper-wrap.c:403
+#: userhelper-wrap.c:369
 msgid "Information"
 msgstr "Informace"
 
-#: userhelper-wrap.c:457
+#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+msgid "Placeholder text."
+msgstr "TextTextTextText."
+
+#: userhelper-wrap.c:465
 msgid "Changing personal information."
 msgstr "Zmìna informací o u¾ivateli."
 
-#: userhelper-wrap.c:460
+#: userhelper-wrap.c:468
 msgid "Changing login shell."
 msgstr "Zmìna pøihla¹ovacího shellu."
 
-#: userhelper-wrap.c:466
+#: userhelper-wrap.c:474
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -257,7 +261,7 @@ msgstr ""
 "Pokou¹íte se spustit \"%s\", co¾ mù¾e pøinést administrátorská oprávnìní, "
 "ale je potøeba více informací, aby se dalo pokraèovat."
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:476
 #, fuzzy, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -266,7 +270,7 @@ msgstr ""
 "Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrtorská práva. Je "
 "potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper-wrap.c:477
+#: userhelper-wrap.c:485
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
@@ -275,7 +279,7 @@ msgstr ""
 "Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská oprávnìní. "
 "Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper-wrap.c:479
+#: userhelper-wrap.c:487
 #, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
@@ -284,23 +288,23 @@ msgstr ""
 "Pokou¹íte se spustit pøíkaz, který poøebuje administrátorská oprávnìní. Je "
 "potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper-wrap.c:495
+#: userhelper-wrap.c:503
 msgid "_Run Unprivileged"
 msgstr "_Spustit neprivilegovanì"
 
-#: userhelper-wrap.c:607 userhelper-wrap.c:624
+#: userhelper-wrap.c:617 userhelper-wrap.c:634
 msgid "Pipe error.\n"
 msgstr "Chyba trubky.\n"
 
-#: userhelper-wrap.c:631
+#: userhelper-wrap.c:641
 msgid "Cannot fork().\n"
 msgstr "Nemohu provést fork().\n"
 
-#: userhelper-wrap.c:677 userhelper-wrap.c:681
+#: userhelper-wrap.c:687 userhelper-wrap.c:691
 msgid "dup2() error.\n"
 msgstr "Chyba pøi dup2().\n"
 
-#: userhelper-wrap.c:693
+#: userhelper-wrap.c:703
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Chyba pøi execl(), errno=%d\n"
@@ -408,10 +412,6 @@ msgstr "Zpráva"
 #: glade.strings:17
 msgid "_Close"
 msgstr "_Zavøít"
-
-#: glade.strings:18
-msgid "Query"
-msgstr "Otázka"
 
 #: glade.strings:25
 msgid "Type"

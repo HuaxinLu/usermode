@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
-"POT-Creation-Date: 2002-08-07 15:05-0400\n"
+"POT-Creation-Date: 2002-08-13 21:32-0400\n"
 "PO-Revision-Date: 2002-06-29 21:27+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -73,7 +73,7 @@ msgid "Sorry, passwords do not match"
 msgstr "Beklager, passordene er ikke de samme"
 
 #: dummy.h:32
-msgid "Launch system-wide configuration tools without login."
+msgid "Launch system-wide configuration tools without a password."
 msgstr ""
 
 #: userdialogs.h:30
@@ -224,32 +224,36 @@ msgstr "Kunne ikke finne valgt program."
 msgid "Unknown error."
 msgstr "Ukjent feil."
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
-msgid "Placeholder text."
-msgstr "Plassholdertekst"
+#: userhelper-wrap.c:276 glade.strings:18
+msgid "Query"
+msgstr "Spør"
 
-#: userhelper-wrap.c:357
+#: userhelper-wrap.c:325
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Trenger %d svar.\n"
 
-#: userhelper-wrap.c:390
+#: userhelper-wrap.c:357 userhelper-wrap.c:426
 msgid "Error"
 msgstr "Feil"
 
-#: userhelper-wrap.c:403
+#: userhelper-wrap.c:369
 msgid "Information"
 msgstr "Informasjon"
 
-#: userhelper-wrap.c:457
+#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+msgid "Placeholder text."
+msgstr "Plassholdertekst"
+
+#: userhelper-wrap.c:465
 msgid "Changing personal information."
 msgstr "Endrer personlig informasjon."
 
-#: userhelper-wrap.c:460
+#: userhelper-wrap.c:468
 msgid "Changing login shell."
 msgstr "Endrer innloggingsskall."
 
-#: userhelper-wrap.c:466
+#: userhelper-wrap.c:474
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -258,7 +262,7 @@ msgstr ""
 "Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med "
 "superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:476
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -267,7 +271,7 @@ msgstr ""
 "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppgi "
 "mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:477
+#: userhelper-wrap.c:485
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -275,7 +279,7 @@ msgstr ""
 "Du prøver å kjøre en kommando som med fordel kan kjøres med "
 "superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
-#: userhelper-wrap.c:479
+#: userhelper-wrap.c:487
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -283,23 +287,23 @@ msgstr ""
 "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må "
 "oppgi mer informasjon for å gjøre dette."
 
-#: userhelper-wrap.c:495
+#: userhelper-wrap.c:503
 msgid "_Run Unprivileged"
 msgstr "Kjø_r upriviligert"
 
-#: userhelper-wrap.c:607 userhelper-wrap.c:624
+#: userhelper-wrap.c:617 userhelper-wrap.c:634
 msgid "Pipe error.\n"
 msgstr "Feil med rør.\n"
 
-#: userhelper-wrap.c:631
+#: userhelper-wrap.c:641
 msgid "Cannot fork().\n"
 msgstr "Kan ikke kjøre fork().\n"
 
-#: userhelper-wrap.c:677 userhelper-wrap.c:681
+#: userhelper-wrap.c:687 userhelper-wrap.c:691
 msgid "dup2() error.\n"
 msgstr "feil ved kjøring av dup2().\n"
 
-#: userhelper-wrap.c:693
+#: userhelper-wrap.c:703
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() feil, errno=%d\n"
@@ -406,10 +410,6 @@ msgstr "Melding"
 #: glade.strings:17
 msgid "_Close"
 msgstr "_Lukk"
-
-#: glade.strings:18
-msgid "Query"
-msgstr "Spør"
 
 #: glade.strings:25
 msgid "Type"

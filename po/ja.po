@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
-"POT-Creation-Date: 2002-08-07 15:05-0400\n"
+"POT-Creation-Date: 2002-08-13 21:32-0400\n"
 "PO-Revision-Date: 2002-08-13 20:00+0900\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
@@ -80,7 +80,8 @@ msgid "Sorry, passwords do not match"
 msgstr "パスワードが一致していません"
 
 #: dummy.h:32
-msgid "Launch system-wide configuration tools without login."
+#, fuzzy
+msgid "Launch system-wide configuration tools without a password."
 msgstr "ログインせずにシステム全体の設定ツールを開始"
 
 #: userdialogs.h:30
@@ -143,7 +144,8 @@ msgstr "ユーザヘルパーはrootにsetuidされていなければなりま�
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
@@ -229,32 +231,36 @@ msgstr "選択したプログラムは見つかりませんでした。"
 msgid "Unknown error."
 msgstr "不明なエラーです。"
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
-msgid "Placeholder text."
-msgstr "プレースホルダテキスト。"
+#: userhelper-wrap.c:276 glade.strings:18
+msgid "Query"
+msgstr "質問"
 
-#: userhelper-wrap.c:357
+#: userhelper-wrap.c:325
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "%d 応答が必要です。\n"
 
-#: userhelper-wrap.c:390
+#: userhelper-wrap.c:357 userhelper-wrap.c:426
 msgid "Error"
 msgstr "エラー"
 
-#: userhelper-wrap.c:403
+#: userhelper-wrap.c:369
 msgid "Information"
 msgstr "情報"
 
-#: userhelper-wrap.c:457
+#: userhelper-wrap.c:424 glade.strings:16 glade.strings:19
+msgid "Placeholder text."
+msgstr "プレースホルダテキスト。"
+
+#: userhelper-wrap.c:465
 msgid "Changing personal information."
 msgstr "個人情報を変更しています。"
 
-#: userhelper-wrap.c:460
+#: userhelper-wrap.c:468
 msgid "Changing login shell."
 msgstr "ログイン シェルを変更中"
 
-#: userhelper-wrap.c:466
+#: userhelper-wrap.c:474
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -263,7 +269,7 @@ msgstr ""
 "スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
-#: userhelper-wrap.c:468
+#: userhelper-wrap.c:476
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -272,7 +278,7 @@ msgstr ""
 "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには追"
 "加情報が必要です。"
 
-#: userhelper-wrap.c:477
+#: userhelper-wrap.c:485
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -280,7 +286,7 @@ msgstr ""
 "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
-#: userhelper-wrap.c:479
+#: userhelper-wrap.c:487
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -288,23 +294,23 @@ msgstr ""
 "スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには"
 "追加情報が必要です。"
 
-#: userhelper-wrap.c:495
+#: userhelper-wrap.c:503
 msgid "_Run Unprivileged"
 msgstr "権限なしで実行(_R)"
 
-#: userhelper-wrap.c:607 userhelper-wrap.c:624
+#: userhelper-wrap.c:617 userhelper-wrap.c:634
 msgid "Pipe error.\n"
 msgstr "パイプエラー。\n"
 
-#: userhelper-wrap.c:631
+#: userhelper-wrap.c:641
 msgid "Cannot fork().\n"
 msgstr "fork()できません。\n"
 
-#: userhelper-wrap.c:677 userhelper-wrap.c:681
+#: userhelper-wrap.c:687 userhelper-wrap.c:691
 msgid "dup2() error.\n"
 msgstr "dup2()エラー。\n"
 
-#: userhelper-wrap.c:693
+#: userhelper-wrap.c:703
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
@@ -412,10 +418,6 @@ msgstr "メッセージ"
 msgid "_Close"
 msgstr "閉じる(_C)"
 
-#: glade.strings:18
-msgid "Query"
-msgstr "質問"
-
 #: glade.strings:25
 msgid "Type"
 msgstr "タイプ"
@@ -451,4 +453,3 @@ msgstr "ログインパスワードを変更"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "パスワード"
-
