@@ -2,7 +2,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.35
-Release: 2
+Release: 3
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -88,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Mon Aug 28 2000 Nalin Dahyabhai <nalin@redhat.com>
+- mark defined strings translateable (#17006)
+
 * Thu Aug 24 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix incorrect user name
 - add a shell wrapper version of /usr/bin/shutdown

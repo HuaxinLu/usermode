@@ -267,11 +267,11 @@ userhelper_parse_childout(char* outline)
       }
     }
 
-    resp->ok = gtk_button_new_with_label(UD_OK_TEXT);
+    resp->ok = gtk_button_new_with_label(i18n(UD_OK_TEXT));
     gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->ok)->child), 4, 0);
     gtk_box_pack_start(GTK_BOX(hbox), resp->ok, FALSE, FALSE, 0);
 
-    resp->cancel = gtk_button_new_with_label(UD_CANCEL_TEXT);
+    resp->cancel = gtk_button_new_with_label(i18n(UD_CANCEL_TEXT));
     gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->cancel)->child), 4, 0);
     gtk_box_pack_start(GTK_BOX(hbox), resp->cancel, FALSE, FALSE, 0);
 
@@ -368,10 +368,10 @@ userhelper_parse_childout(char* outline)
 	break;
 
       case UH_SERVICE_NAME:
-	title = g_strdup_printf(i18n("In order to run \"%s\" with %s's "
+	title = g_strdup_printf(i18n("In order to run \"%s\" with root's "
 				"privileges, additional information is "
 				"required."),
-				prompt, resp->user);
+				prompt);
 	msg->label = gtk_label_new(title);
 	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
@@ -404,7 +404,7 @@ userhelper_parse_childout(char* outline)
           gpointer a = GTK_WIDGET(gtk_object_get_data(GTK_OBJECT(resp->top),
 			                              UH_ACTION_AREA));
 	  GtkWidget *hbox = GTK_WIDGET(a);
-          resp->unprivileged = gtk_button_new_with_label(UD_FALLBACK_TEXT);
+          resp->unprivileged = gtk_button_new_with_label(i18n(UD_FALLBACK_TEXT));
           gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->unprivileged)->child),
 			       4, 0);
           gtk_box_pack_start(GTK_BOX(hbox), resp->unprivileged,

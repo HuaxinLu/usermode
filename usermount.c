@@ -123,7 +123,7 @@ create_usermount_window()
   gtk_signal_connect(GTK_OBJECT(dialog), "delete_event",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
 
-  cancel = gtk_button_new_with_label(UD_EXIT_TEXT);
+  cancel = gtk_button_new_with_label(i18n(UD_EXIT_TEXT));
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(cancel)->child), 4, 0);
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
 		     (GtkSignalFunc) gtk_main_quit, NULL);

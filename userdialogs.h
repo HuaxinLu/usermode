@@ -24,12 +24,13 @@
 #include <locale.h>
 #include <libintl.h>
 #define i18n(String) gettext(String)
+#define N_(String) String
 
-#define UD_OK_TEXT "OK"
-#define UD_HELP_TEXT "Help"
-#define UD_CANCEL_TEXT "Cancel"
-#define UD_EXIT_TEXT "Exit"
-#define UD_FALLBACK_TEXT "Run Unprivileged"
+#define UD_OK_TEXT N_("OK")
+#define UD_HELP_TEXT N_("Help")
+#define UD_CANCEL_TEXT N_("Cancel")
+#define UD_EXIT_TEXT N_("Exit")
+#define UD_FALLBACK_TEXT N_("Run Unprivileged")
 
 /* consider a "has args" arg, so I can use the arg argument or not at will */
 GtkWidget* create_message_box(gchar* message, gchar* title);

@@ -146,7 +146,7 @@ create_userinfo_window(UserInfo* userinfo)
 		     (GtkSignalFunc) ok_button, userinfo);
   gtk_widget_show(ok);
 
-  cancel = gtk_button_new_with_label(UD_EXIT_TEXT);
+  cancel = gtk_button_new_with_label(i18n(UD_EXIT_TEXT));
   gtk_misc_set_padding(GTK_MISC(GTK_BIN(cancel)->child), 4, 0);
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
 		     (GtkSignalFunc) gtk_main_quit, NULL);
