@@ -52,9 +52,9 @@
 #define MAXFSTAB 30
 #define MAXLINE 512
 
-#define MOUNT_TEXT N_("Mount")
-#define UMOUNT_TEXT N_("Unmount")
 #define N_(String) String
+const char *MOUNT_TEXT = N_("Mount");
+const char *UMOUNT_TEXT = N_("Unmount");
 
 struct mountinfo
 {
