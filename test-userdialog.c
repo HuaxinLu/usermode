@@ -10,11 +10,10 @@ main(int argc, char* argv[])
 {
   GtkWidget* msg;
 
-  /* first set up our locale info for gettext. */
-  setlocale(LC_ALL, "");
   bindtextdomain("usermode", "/usr/share/locale");
   textdomain("usermode");
 
+  gtk_set_locale();
   gtk_init(&argc, &argv);
 
   msg = create_message_box("Hello world!\nLet's make this a really big message box.", "Hello");
