@@ -1,18 +1,19 @@
-# Macedonian translations for PACKAGE package.
-# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2004.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2004-03-31 15:31-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2004-06-22 14:45+0100\n"
+"Last-Translator: Tomislav Markovski <herrera@users.sourceforge.net>\n"
+"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #.
@@ -36,63 +37,63 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr ""
+msgstr "Во ред"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr ""
+msgstr "Излези"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr ""
+msgstr "Откажи"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Изврши без привилегии"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(тековна UNIX) лозинка"
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Нова лозинка (UNIX): "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Повторете ја новата лозинка (UNIX): "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "ЛОША ЛОЗИНКА: премногу е кратка"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "ЛОША ЛОЗИНКА: многу е кратка"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr ""
+msgstr "Лозинката не е променета"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Лозинките не се исти"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "Отворај ги системскита конфигурациски алатки без лозинка."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "корисник: "
 
 #: dummy.h:34
 msgid "Password: "
-msgstr ""
+msgstr "Лозинка: "
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr ""
+msgstr "Помош"
 
 #: userhelper.c:114
 #, c-format
@@ -102,7 +103,7 @@ msgstr ""
 #: userhelper.c:431
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Лозинката на %s"
 
 #: userhelper.c:674
 #, c-format
@@ -110,6 +111,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Се обидувате да ја отворите програмата \"%s\" која може да ги искористи и\n"
+"административните привилегии, но потребни се дополнителни информации."
 
 #: userhelper.c:676
 #, c-format
@@ -117,28 +120,34 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Се обидувате да ја отворите програмата \"%s\" која бара административен\n"
+"пристап. Внесете ги дополнителните информации за тоа."
 
 #: userhelper.c:680
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
+"Се обидувате да извршите команда која може да ги искористи и\n"
+"административните привилегии, но потребни се дополнителни информации."
 
 #: userhelper.c:682
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Се обидувате да извршите команда која бара администартивен пристап.\n"
+"Внесете ги дополнителните информации."
 
 #: userhelper.c:701
 #, c-format
 msgid "Password for %s: "
-msgstr ""
+msgstr "Лозинката на %s: "
 
 #: userhelper.c:2215
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "userhelper мора да биде setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2313
@@ -149,17 +158,19 @@ msgstr ""
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Непознат код за излез."
 
 #: userhelper-wrap.c:181
 msgid "Information updated."
-msgstr ""
+msgstr "Информациите се ажурирани."
 
 #: userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Лозинката што ја внесовте не е точна.\n"
+"Обидете се повторно."
 
 #: userhelper-wrap.c:185
 msgid ""
@@ -180,11 +191,11 @@ msgstr ""
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
-msgstr ""
+msgstr "Непознат корисник."
 
 #: userhelper-wrap.c:193
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Недоволно привилегии."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
@@ -199,7 +210,7 @@ msgstr ""
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
-msgstr ""
+msgstr "Нема повеќе меморија."
 
 #: userhelper-wrap.c:202
 msgid "The exec() call failed."
@@ -211,7 +222,7 @@ msgstr ""
 
 #: userhelper-wrap.c:208
 msgid "Unknown error."
-msgstr ""
+msgstr "Непозната грешка."
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -220,15 +231,15 @@ msgstr ""
 #.
 #: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
-msgstr ""
+msgstr "Слог"
 
 #: userhelper-wrap.c:564 userhelper-wrap.c:744
 msgid "Error"
-msgstr ""
+msgstr "Грешка"
 
 #: userhelper-wrap.c:576
 msgid "Information"
-msgstr ""
+msgstr "Информации"
 
 #: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
@@ -237,11 +248,11 @@ msgstr ""
 
 #: userhelper-wrap.c:782
 msgid "Changing personal information."
-msgstr ""
+msgstr "Промена на личните информации."
 
 #: userhelper-wrap.c:785
 msgid "Changing login shell."
-msgstr ""
+msgstr "Промена на школката за најава."
 
 #: userhelper-wrap.c:791
 #, c-format
@@ -249,6 +260,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Се обидувате да ја отворите програмата \"%s\" која може да ги искористи и\n"
+"административните привилегии, но потребни се дополнителни информации."
 
 #: userhelper-wrap.c:793
 #, c-format
@@ -256,22 +269,28 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
+"Се обидувате да ја отворите програмата \"%s\" која бара административен\n"
+"пристап. Внесете ги дополнителните информации за тоа."
 
 #: userhelper-wrap.c:802
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Се обидувате да извршите команда која може да ги искористи и\n"
+"административните привилегии, но потребни се дополнителни информации."
 
 #: userhelper-wrap.c:804
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Се обидувате да извршите команда која бара административен пристап.\n"
+"Внесете ги дополнителните информации."
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
-msgstr ""
+msgstr "_Изврши без привилегии"
 
 #: userhelper-wrap.c:973
 #, c-format
@@ -300,11 +319,11 @@ msgstr ""
 
 #: usermount.c:62
 msgid "_Mount"
-msgstr ""
+msgstr "_Монтирај"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr ""
+msgstr "Де_монтирај"
 
 #: usermount.c:321
 msgid ""
@@ -334,64 +353,64 @@ msgstr ""
 #. Create the other buttons.
 #: usermount.c:570
 msgid "_Format"
-msgstr ""
+msgstr "_Форматирај"
 
 #: usermount.c:606
 msgid "Device"
-msgstr ""
+msgstr "Уред"
 
 #: usermount.c:612
 msgid "Directory"
-msgstr ""
+msgstr "Директориум"
 
 #: usermount.c:618
 msgid "Filesystem"
-msgstr ""
+msgstr "Датотечен систем"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
-msgstr ""
+msgstr "Порака"
 
 #: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
-msgstr ""
+msgstr "Кориснички информации"
 
 #: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
-msgstr ""
+msgstr "Име и презиме:"
 
 #: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
-msgstr ""
+msgstr "Канцеларија:"
 
 #: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr ""
+msgstr "Тел. број (работа)"
 
 #: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr ""
+msgstr "Тел. број (дома):"
 
 #: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr ""
+msgstr "Школка:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "За мене"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr ""
+msgstr "Промени ги личните податоци"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Менаџмент на дискови"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
@@ -399,8 +418,8 @@ msgstr ""
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Променете ја лозинката за најава"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
-msgstr ""
+msgstr "Лозинка"
