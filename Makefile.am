@@ -32,7 +32,7 @@ EXTRA_DIST = 	\
 
 SUBDIRS=po
 
-CFLAGS = @SN_WNCK_CFLAGS@ @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
+AM_CFLAGS = @SN_WNCK_CFLAGS@ @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk pam-panel-icon
 bin_SCRIPTS = shutdown
