@@ -30,3 +30,5 @@ gchar* label4 = N_("BAD PASSWORD: it is too short");
 gchar* label5 = N_("Password unchanged");
 gchar* label6 = N_("Sorry, passwords do not match");
 gchar* label7 = N_("Launch system-wide configuration tools without a password.");
+gchar* ud_login_text = N_("login: ");
+gchar* ud_password_text = N_("Password: ");

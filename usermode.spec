@@ -9,7 +9,7 @@ Version: 1.68
 Release: 6.sel
 License: GPL
 Group: Applications/System
-Source: usermode-%{version}.tar.gz
+Source: usermode-%{version}-%{release}.tar.gz
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else
@@ -44,12 +44,12 @@ graphical tools for certain account management tasks.
 %setup -q
 
 %build
-%configure
-make \
+%configure \
 %if %{WITH_SELINUX}
-	WITH_SELINUX="-DWITH_SELINUX" \
-	SELINUX_LIBS="-lselinux -lattr" 
+	--with-selinux
 %endif
+
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -120,6 +120,9 @@ rm -rf $RPM_BUILD_ROOT
 * Thu Sep 25 2003 Dan Walsh <dwalsh@redhat.com> 1.68-6.sel
 - turn on selinux
 - add default userhelper context file
+
+* Thu Sep 25 2003 Nalin Dahyabhai <nalin@redhat.com> 1.68-6
+- make selinux a configure option to avoid screwing with makefiles
 
 * Thu Sep 25 2003 Nalin Dahyabhai <nalin@redhat.com> 1.68-5
 - rebuild

@@ -286,6 +286,12 @@ silent_converse(int num_msg, const struct pam_message **msg,
 	return PAM_CONV_ERR;
 }
 
+static int
+get_pam_string_item(pam_handle_t *pamh, int item, const char **ret)
+{
+	return pam_get_item(pamh, item, (const void**) ret);
+}
+
 /* A mixed-mode conversation function suitable for use with X. */
 static int
 converse_pipe(int num_msg, const struct pam_message **msg,
@@ -294,14 +300,15 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	int count = 0;
 	int responses = 0;
 	struct pam_response *reply = NULL;
-	char *noecho_message, *user, *service, *string;
+	char *noecho_message, *string;
+	const char *user, *service;
 	struct app_data *app_data = appdata_ptr;
 
 	/* Pass on any hints we have to the consolehelper. */
 
 	/* User. */
-	if ((pam_get_item(app_data->pamh, PAM_USER,
-			  (const void**)&user) != PAM_SUCCESS) ||
+	if ((get_pam_string_item(app_data->pamh, PAM_USER,
+				 &user) != PAM_SUCCESS) ||
 	    (user == NULL) ||
 	    (strlen(user) == 0)) {
 		user = "root";
@@ -312,8 +319,8 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	fprintf(app_data->output, "%d %s\n", UH_USER, user);
 
 	/* Service. */
-	if (pam_get_item(app_data->pamh, PAM_SERVICE,
-			(const void**)&service) == PAM_SUCCESS) {
+	if (get_pam_string_item(app_data->pamh, PAM_SERVICE,
+				&service) == PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: sending service `%s'\n", service);
 #endif
@@ -647,8 +654,8 @@ converse_console(int num_msg, const struct pam_message **msg,
 	g_get_charset(&codeset);
 	bind_textdomain_codeset(PACKAGE, codeset);
 
-	pam_get_item(app_data->pamh, PAM_SERVICE, (const void**)&service);
-	pam_get_item(app_data->pamh, PAM_USER, (const void**)&user);
+	get_pam_string_item(app_data->pamh, PAM_SERVICE, &service);
+	get_pam_string_item(app_data->pamh, PAM_USER, &user);
 
 	if (banner == 0) {
 		if ((app_data->banner != NULL) && (app_data->domain != NULL)) {
@@ -711,7 +718,8 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 	    gpointer callback_data, struct lu_error **error)
 {
 	int i;
-	char *user, *service, *string;
+	char *string;
+	const char *user, *service;
 	struct app_data *app_data = callback_data;
 
 	/* Pass on any hints we have to the consolehelper. */
@@ -719,8 +727,8 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 		UH_FALLBACK_ALLOW, app_data->fallback_allowed ? 1 : 0);
 
 	/* User. */
-	if ((pam_get_item(app_data->pamh, PAM_USER,
-			  (const void**)&user) != PAM_SUCCESS) ||
+	if ((get_pam_string_item(app_data->pamh, PAM_USER,
+				 &user) != PAM_SUCCESS) ||
 	    (user == NULL) ||
 	    (strlen(user) == 0)) {
 		user = "root";
@@ -731,8 +739,8 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 	fprintf(app_data->output, "%d %s\n", UH_USER, user);
 
 	/* Service. */
-	if (pam_get_item(app_data->pamh, PAM_SERVICE,
-			(const void**)&service) == PAM_SUCCESS) {
+	if (get_pam_string_item(app_data->pamh, PAM_SERVICE,
+				&service) == PAM_SUCCESS) {
 		fprintf(app_data->output, "%d %s\n", UH_SERVICE_NAME, service);
 	}
 
@@ -1133,17 +1141,18 @@ main(int argc, char **argv)
 	}
 
 #ifdef WITH_SELINUX
-	if ((selinux_enabled=is_selinux_enabled())) {
-	  context_t ctx;
-	  if (getprevcon(&old_context) < 0) {
+	selinux_enabled = is_selinux_enabled();
+	if (selinux_enabled) {
+		context_t ctx;
+		if (getprevcon(&old_context) < 0) {
 #ifdef DEBUG_USERHELPER
-	    g_print("userhelper: i have no name\n");
+			g_print("userhelper: i have no name\n");
 #endif
-	    exit(ERR_UNK_ERROR);
-	  }
-	  ctx=context_new(old_context);
-	  user_name=g_strdup(context_user_get(ctx));
-	  context_free(ctx);
+			exit(ERR_UNK_ERROR);
+		}
+		ctx = context_new(old_context);
+		user_name = g_strdup(context_user_get(ctx));
+		context_free(ctx);
 	} else {
 #endif
 	/* Now try to figure out who called us. */
@@ -1245,8 +1254,8 @@ main(int argc, char **argv)
 		 * PAM doesn't provide an interface to do this, because it's
 		 * not PAM's job to manage this stuff, so farm it out to a
 		 * different library. */
-		char *new_gecos = NULL, *auth_user, *gecos = NULL;
-		char *old_shell = NULL;
+		char *new_gecos = NULL, *gecos = NULL, *old_shell = NULL;
+		const char *auth_user;
 		struct lu_context *context;
 		struct lu_ent *ent = NULL;
 		struct lu_error *error = NULL;
@@ -1311,8 +1320,8 @@ main(int argc, char **argv)
 
 		/* Verify that the authenticated user is the user we started
 		 * out trying to authenticate. */
-		retval = pam_get_item(app_data.pamh, PAM_USER,
-				      (const void**)&auth_user);
+		retval = get_pam_string_item(app_data.pamh, PAM_USER,
+					     &auth_user);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: no pam user set\n");
@@ -1519,7 +1528,8 @@ main(int argc, char **argv)
 		 * execute the command given in the console.apps file. */
 		char *constructed_path;
 		char *apps_filename;
-		char *user_pam = user_name, *apps_user, *auth_user;
+		char *user_pam = user_name, *apps_user;
+		const char *auth_user;
 		char *apps_banner, *apps_domain, *apps_sn = NULL;
 		char *retry, *noxoption;
 		char *env_home, *env_term, *env_desktop_startup_id;
@@ -1887,8 +1897,8 @@ main(int argc, char **argv)
 
 		/* Verify that the authenticated user is the user we started
 		 * out trying to authenticate. */
-		retval = pam_get_item(app_data.pamh, PAM_USER,
-				      (const void **)&auth_user);
+		retval = get_pam_string_item(app_data.pamh, PAM_USER,
+					     &auth_user);
 		if (retval != PAM_SUCCESS) {
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);

@@ -1,6 +1,7 @@
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < $(srcdir)/usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < $(srcdir)/usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
+distdir=$(PACKAGE)-$(VERSION)-$(RELEASE)
 EXTRA_DIST = 	\
 	dummy.h \
 	usermode.spec \
