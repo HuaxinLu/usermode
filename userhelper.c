@@ -1114,10 +1114,10 @@ get_user_for_auth(shvarFile *s)
 		apps_role = svGetValue(s, "ROLE");
 		apps_type = svGetValue(s, "TYPE");
 		if (apps_role != NULL) { 
-			context_type_set(ctx, apps_type); /* XXX */
+			context_type_set(ctx, apps_role); /* XXX */
 		}
 		if (apps_type != NULL) {
-			context_role_set(ctx, apps_role); /* XXX */
+			context_role_set(ctx, apps_type); /* XXX */
 		}
 		freecon(defcontext);
 		defcontext = NULL;

@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.69
-Release: 2.sel
+Release: 3.sel
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -117,6 +117,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue Nov 25 2003 Dan Walsh <dwalsh@redhat.com> 1.69-3.sel
+- Fix handling of roles from console file
+
 * Fri Nov 14 2003 Nalin Dahyabhai <nalin@redhat.com>
 - don't disable use of deprecated GLib and GTK+ APIs, reported by the
   mysterious Pierre-with-no-last-name
