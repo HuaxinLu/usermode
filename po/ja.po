@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
 "POT-Creation-Date: 2002-08-05 21:36-0400\n"
-"PO-Revision-Date: 2002-08-06 17:15GMT+10:00\n"
+"PO-Revision-Date: 2002-08-06 17:59GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "権限なしで実行"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(現在の) UNIXパスワード: "
+msgstr "(現在の)UNIXパスワード: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
@@ -99,9 +99,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行する"
-"に\n"
-"は追加情報が必要です。"
+"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、\n "
+"実行するには追加情報が必要です。"
 
 #: userhelper.c:340
 #, c-format
@@ -109,8 +108,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには \n"
-"追加情報が必要です。"
+"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、\n "
+"実行するには追加情報が必要です。"
 
 #: userhelper.c:344
 msgid ""
@@ -125,14 +124,13 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するに"
-"は\n"
+"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには\n"
 "追加情報が必要です。"
 
 #: userhelper.c:365
 #, c-format
 msgid "Password for %s: "
-msgstr "%s:用のパスワード"
+msgstr "%s用のパスワード:"
 
 #: userhelper.c:648
 msgid "userhelper must be setuid root\n"
@@ -206,7 +204,7 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"現在選択されているシェルは/etc/shellsの中にありません。\n"
+"現在選択されているシェルは/etc/shellsの中にありません。\n "
 "したがってシェルを変更することはできません。\n"
 "システム管理者に相談してみてください。"
 
@@ -228,7 +226,7 @@ msgstr "不明なエラーです。"
 
 #: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
-msgstr "プレースホルダ テキスト。"
+msgstr "プレースホルダテキスト。"
 
 #: userhelper-wrap.c:357
 #, c-format
@@ -316,7 +314,7 @@ msgstr "マウント(_M)"
 
 #: usermount.c:62
 msgid "Un_mount"
-msgstr "マウント解除(_M)"
+msgstr "マウント解除(_m)"
 
 #: usermount.c:310
 msgid ""
@@ -328,7 +326,7 @@ msgstr ""
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
-msgstr "lowレベルフォーマットをする(_L)。"
+msgstr "lowレベルフォーマットをする(_l)。"
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
@@ -345,7 +343,7 @@ msgstr ""
 #. Create the dialog.
 #: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
-msgstr "ユーザマウントツール"
+msgstr "ユーザーマウントツール"
 
 #. Create the other buttons.
 #: usermount.c:544 glade.strings:28
@@ -375,11 +373,11 @@ msgstr "ユーザー情報"
 
 #: glade.strings:8
 msgid "Full Name:"
-msgstr "フルネーム"
+msgstr "フルネーム:"
 
 #: glade.strings:9
 msgid "Office:"
-msgstr "オフィス"
+msgstr "オフィス:"
 
 #: glade.strings:10
 msgid "Office Phone Number"
@@ -427,7 +425,7 @@ msgstr "終了(_x)"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr "¥æ¡¼¥¶¾ðÊó"
+msgstr "ユーザーの個人情報"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
