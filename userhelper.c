@@ -145,10 +145,19 @@ get_init_context(const char *context_file, security_context_t *context)
 	while ((fgets(buf, sizeof(buf), fp)) != NULL) {
 		buf_len = strlen(buf);
 
+		/* trim off terminating newline */
 		if ((buf_len > 0) && (buf[buf_len - 1] == '\n')) {
 			buf[buf_len - 1] = '\0';
 		}
 
+		/* trim off terminating whitespace */
+		buf_len = strlen(buf);
+		while ((buf_len > 0) && (g_ascii_isspace(buf[buf_len - 1]))) {
+			buf[buf_len - 1] = '\0';
+			buf_len--;
+		}
+
+		/* skip initial whitespace */
 		bufp = buf;
 		while ((bufp < buf + sizeof(buf)) &&
 		       (*bufp != '\0') &&
