@@ -42,10 +42,5 @@ install-man: 	$(MANS)
 	$(INSTALL) -m 755 -o root -g root userhelper.8 /usr/man/man8
 	$(INSTALL) -m 755 -o root -g root userpasswd.1 /usr/man/man1
 
-install-wmconfig:	$(WMCONFIG)
-	$(INSTALL) -m 644 -o root -g root userinfo.wmconfig /etc/X11/wmconfig/userinfo
-	$(INSTALL) -m 644 -o root -g root userpasswd.wmconfig /etc/X11/wmconfig/userpasswd
-	$(INSTALL) -m 644 -o root -g root usermount.wmconfig /etc/X11/wmconfig/usermount
-
 clean:	
 	rm -f *~ *.o $(PROGS)

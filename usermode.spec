@@ -1,7 +1,7 @@
 Summary: User Tools
 Name: usermode
 Version: 1.2
-Release: 1
+Release: 3
 Copyright: GPL
 Group: X11/Applications
 Source: usermode-1.2.tar.gz
@@ -46,3 +46,11 @@ make install-man
 /usr/man/man8/userhelper.8
 /usr/bin/userpasswd
 /usr/man/man1/userpasswd.1
+/etc/X11/wmconfig/userpasswd
+/etc/X11/wmconfig/userinfo
+/etc/X11/wmconfig/usermount
+
+
+
+
+
