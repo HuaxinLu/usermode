@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1997, 2001 Red Hat, Inc.
+ * Copyright (C) 1997, 2001-2003 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -16,6 +16,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include "config.h"
 #include <sys/types.h>
 #include <ctype.h>
 #include <libintl.h>
@@ -25,17 +26,132 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <gtk/gtk.h>
 #include <gdk/gdkx.h>
+#ifdef USE_STARTUP_NOTIFICATION
+#include <libsn/sn.h>
+#include <libwnck/libwnck.h>
+#endif
 #include "reaper.h"
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
 
 #define  PAD 8
+#define  RESPONSE_FALLBACK 100
 static int childout[2];
 static int childin[2];
 static int childpid;
 static int childout_tag = -1;
 static gboolean child_success_dialog = TRUE;
+static gboolean child_was_execed = FALSE;
+
+#ifdef USE_STARTUP_NOTIFICATION
+static char *sn_id = NULL;
+static char *sn_name = NULL;
+static char *sn_description = NULL;
+static int sn_workspace = -1;
+static char *sn_wmclass = NULL;
+static char *sn_binary_name = NULL;
+static char *sn_icon_name = NULL;
+
+/* Push errors for the specified display. */
+static void
+trap_push(SnDisplay *display, Display *xdisplay)
+{
+	sn_display_error_trap_push(display);
+	gdk_error_trap_push();
+}
+
+/* Pop errors for the specified display. */
+static void
+trap_pop(SnDisplay *display, Display *xdisplay)
+{
+	gdk_error_trap_pop();
+	sn_display_error_trap_pop(display);
+}
+
+/* Complete startup notification for consolehelper. */
+static void
+userhelper_startup_notification_launchee(const char *id)
+{
+	GdkDisplay *gdisp;
+	GdkScreen *gscreen;
+	SnDisplay *disp;
+	SnLauncheeContext *ctx;
+	int screen;
+
+	gdisp = gdk_display_get_default();
+	gscreen = gdk_display_get_default_screen(gdisp);
+	disp = sn_display_new(GDK_DISPLAY(), trap_push, trap_pop);
+	screen = gdk_screen_get_number(gscreen);
+	if (id == NULL) {
+		ctx = sn_launchee_context_new_from_environment(disp, screen);
+	} else {
+		ctx = sn_launchee_context_new(disp, screen, id);
+	}
+	if (ctx != NULL) {
+#ifdef DEBUG_USERHELPER
+		fprintf(stderr, "Completing startup notification for \"%s\".\n",
+			sn_launchee_context_get_startup_id(ctx) ?
+			sn_launchee_context_get_startup_id(ctx) : "?");
+#endif
+		sn_launchee_context_complete(ctx);
+		sn_launchee_context_unref(ctx);
+	}
+	sn_display_unref(disp);
+}
+
+/* Setup startup notification for our child. */
+static void
+userhelper_startup_notification_launcher(void)
+{
+	GdkDisplay *gdisp;
+	GdkScreen *gscreen;
+	SnDisplay *disp;
+	SnLauncherContext *ctx;
+	int screen;
+
+	if (sn_name == NULL) {
+		return;
+	}
+
+	gdisp = gdk_display_get_default();
+	gscreen = gdk_display_get_default_screen(gdisp);
+	disp = sn_display_new(GDK_DISPLAY(), trap_push, trap_pop);
+	screen = gdk_screen_get_number(gscreen);
+	ctx = sn_launcher_context_new(disp, screen);
+
+	if (sn_name) {
+		sn_launcher_context_set_name(ctx, sn_name);
+	}
+	if (sn_description) {
+		sn_launcher_context_set_description(ctx, sn_description);
+	}
+	if (sn_workspace != -1) {
+		sn_launcher_context_set_workspace(ctx, sn_workspace);
+	}
+	if (sn_wmclass) {
+		sn_launcher_context_set_wmclass(ctx, sn_wmclass);
+	}
+	if (sn_binary_name) {
+		sn_launcher_context_set_binary_name(ctx, sn_binary_name);
+	}
+	if (sn_icon_name) {
+		sn_launcher_context_set_binary_name(ctx, sn_icon_name);
+	}
+#ifdef DEBUG_USERHELPER
+	fprintf(stderr, "Starting launch of \"%s\", id=\"%s\".\n",
+		sn_description ? sn_description : sn_name, sn_id);
+#endif
+	sn_launcher_context_initiate(ctx, "userhelper", sn_name, CurrentTime);
+	if (sn_launcher_context_get_startup_id(ctx) != NULL) {
+		sn_id = g_strdup(sn_launcher_context_get_startup_id(ctx));
+	}
+
+	sn_launcher_context_unref(ctx);
+	sn_display_unref(disp);
+}
+#endif
 
 /* Call gtk_main_quit. */
 void
@@ -52,7 +168,7 @@ static void
 userhelper_parse_exitstatus(int exitstatus)
 {
 	GtkWidget *message_box;
-	int i;
+	int i, code;
 	struct {
 		int code;
 		GtkWidget* (*create)(gchar*, gchar*);
@@ -75,7 +191,7 @@ userhelper_parse_exitstatus(int exitstatus)
 		{ERR_NO_RIGHTS, create_error_box,
 		 _("Insufficient rights.")},
 		{ERR_INVALID_CALL, create_error_box,
-		 _("Invalid call to subprocess..")},
+		 _("Invalid call to subprocess.")},
 		{ERR_SHELL_INVALID, create_error_box,
 		 _("Your current shell is not listed in /etc/shells.\nYou are not allowed to change your shell.\nConsult your system administrator.")},
 		/* well, this is unlikely to work, but at least we tried... */
@@ -92,23 +208,35 @@ userhelper_parse_exitstatus(int exitstatus)
 	};
 
 #ifdef DEBUG_USERHELPER
-	fprintf(stderr, "Child returned exit status %d.\n", exitstatus);
+	if (child_was_execed) {
+		fprintf(stderr, "Wrapped application returned exit status %d.\n", exitstatus);
+	} else {
+		fprintf(stderr, "Child returned exit status %d.\n", exitstatus);
+	}
 #endif
+
+	/* If the exit status came from what the child execed, then we don't
+	 * care about reporting it to the user. */
+	if (child_was_execed) {
+		return;
+	}
+
+	/* Create a dialog suitable for displaying this code. */
 	message_box = NULL;
+	code = 0;
 	for (i = 1; i < G_N_ELEMENTS(codes); i++) {
-		if (codes[i].code == exitstatus) {
-			if (codes[i].create) {
-				message_box = codes[i].create(codes[i].message,
-							      NULL);
-			}
+		/* If entries past zero match this exit code, we'll use them. */
+		if ((codes[i].code == exitstatus) &&
+		    (codes[i].create != NULL)) {
+			code = i;
 			break;
 		}
 	}
-
-	if (i >= G_N_ELEMENTS(codes)) {
-		message_box = codes[0].create(codes[0].message, NULL);
+	if (code < G_N_ELEMENTS(codes)) {
+		message_box = codes[code].create(codes[code].message, NULL);
 	}
 
+	/* Run the dialog box. */
 	if (message_box != NULL) {
 		if (child_success_dialog || (exitstatus != 0)) {
 			gtk_dialog_run(GTK_DIALOG(message_box));
@@ -120,7 +248,7 @@ userhelper_parse_exitstatus(int exitstatus)
 /* Attempt to grab focus for the toplevel of this widget, so that peers can
  * get events too. */
 static void
-userhelper_grab_focus(GtkWidget *widget, GdkEventAny *event)
+userhelper_grab_keyboard(GtkWidget *widget, GdkEventAny *event)
 {
 	int ret;
 	ret = gdk_keyboard_grab(widget->window, TRUE, GDK_CURRENT_TIME);
@@ -137,47 +265,31 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 	const char *input;
 	guchar byte;
 	GList *message_list = resp->message_list;
+	gboolean startup = FALSE;
 
 	switch (response) {
-		case PAD:
-			/* Run unprivileged. */
+		case RESPONSE_FALLBACK:
+			/* The user wants to run unprivileged. */
 			byte = UH_FALLBACK;
-			for (message_list = resp->message_list;
-			     (message_list != NULL) &&
-			     (message_list->data != NULL);
-			     message_list = g_list_next(message_list)) {
-				message *m = (message *) message_list->data;
 #ifdef DEBUG_USERHELPER
-				fprintf(stderr, "message %d, \"%s\"\n", m->type,
-					m->message);
-				fprintf(stderr, "responding FALLBACK\n");
+			fprintf(stderr, "Responding FALLBACK.\n");
 #endif
-				if (GTK_IS_ENTRY(m->entry)) {
-					write(childin[1], &byte, 1);
-					write(childin[1], "\n", 1);
-				}
-			}
+			write(childin[1], &byte, 1);
+			write(childin[1], "\n", 1);
+			startup = TRUE;
 			break;
 		case GTK_RESPONSE_CANCEL:
-			/* Abort. */
-			byte = UH_ABORT;
-			for (message_list = resp->message_list;
-			     (message_list != NULL) &&
-			     (message_list->data != NULL);
-			     message_list = g_list_next(message_list)) {
-				message *m = (message *) message_list->data;
+			/* The user doesn't want to run this after all. */
+			byte = UH_CANCEL;
 #ifdef DEBUG_USERHELPER
-				fprintf(stderr, "message %d, \"%s\"\n", m->type,
-					m->message);
-				fprintf(stderr, "responding ABORT\n");
+			fprintf(stderr, "Responding CANCEL.\n");
 #endif
-				if (GTK_IS_ENTRY(m->entry)) {
-					write(childin[1], &byte, 1);
-					write(childin[1], "\n", 1);
-				}
-			}
+			write(childin[1], &byte, 1);
+			write(childin[1], "\n", 1);
+			startup = FALSE;
 			break;
 		case GTK_RESPONSE_OK:
+			/* The user answered the questions. */
 			byte = UH_TEXT;
 			for (message_list = resp->message_list;
 			     (message_list != NULL) &&
@@ -188,7 +300,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 				fprintf(stderr, "message %d, \"%s\"\n", m->type,
 					m->message);
 				if (GTK_IS_ENTRY(m->entry)) {
-					fprintf(stderr, "responding `%s'\n",
+					fprintf(stderr, "Responding `%s'.\n",
 						gtk_entry_get_text(GTK_ENTRY(m->entry)));
 				}
 #endif
@@ -201,18 +313,43 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 					write(childin[1], "\n", 1);
 				}
 			}
+			startup = TRUE;
 			break;
 		default:
 			/* We were closed, deleted, canceled, or something else
 			 * which we can treat as a cancellation. */
+			startup = FALSE;
 			_exit(1);
 			break;
 	}
+#ifdef USE_STARTUP_NOTIFICATION
+	if (startup) {
+		/* If we haven't set up notification yet, do so. */
+		if ((sn_name != NULL) && (sn_id == NULL)) {
+			userhelper_startup_notification_launcher();
+		}
+		/* Tell the child what its ID is. */
+		if ((sn_name != NULL) && (sn_id != NULL)) {
+#ifdef DEBUG_USERHELPER
+			fprintf(stderr, "Sending new window startup ID "
+				"\"%s\".\n", sn_id);
+#endif
+			byte = UH_SN_ID;
+			write(childin[1], &byte, 1);
+			write(childin[1], sn_id, strlen(sn_id));
+			write(childin[1], "\n", 1);
+		}
+	}
+#endif
+	/* Tell the child we have no more to say. */
+	byte = UH_SYNC_POINT;
+	write(childin[1], &byte, 1);
+	write(childin[1], "\n", 1);
 }
 
 /* Glue. */
 static void
-respond_ok(GtkWidget *widget, GtkWidget *dialog)
+fake_respond_ok(GtkWidget *widget, GtkWidget *dialog)
 {
 	gtk_dialog_response(GTK_DIALOG(dialog), GTK_RESPONSE_OK);
 }
@@ -254,7 +391,7 @@ userhelper_parse_childout(char *outline)
 
 	/* Now process items from the child. */
 	while ((outline != NULL) && isdigit(outline[0])) {
-		gboolean echo = TRUE;
+		gboolean echo;
 
 		/* Allocate a structure to hold the message data. */
 		message *msg = g_malloc(sizeof(message));
@@ -266,8 +403,9 @@ userhelper_parse_childout(char *outline)
 		 * so skip over any whitespace before settling on the actual
 		 * prompt. */
 		if ((prompt != NULL) && (strlen(prompt) > 0)) {
-			while ((isspace(prompt[0]) && (prompt[0] != '\0')
-				&& (prompt[0] != '\n'))) {
+			while ((isspace(prompt[0]) &&
+			       (prompt[0] != '\0') &&
+			       (prompt[0] != '\n'))) {
 				prompt++;
 			}
 		}
@@ -282,6 +420,7 @@ userhelper_parse_childout(char *outline)
 				outline = NULL;
 			}
 		}
+
 #ifdef DEBUG_USERHELPER
 		g_print("Child message: (%d)/\"%s\"\n", prompt_type, prompt);
 #endif
@@ -291,15 +430,28 @@ userhelper_parse_childout(char *outline)
 		msg->entry = NULL;
 
 		echo = TRUE;
-		switch(prompt_type) {
+		switch (prompt_type) {
+			/* A suggestion for the next input. */
+			case UH_PROMPT_SUGGESTION:
+				if (resp->suggestion) {
+					g_free(resp->suggestion);
+				}
+				resp->suggestion = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("Suggested response \"%s\".\n",
+					resp->suggestion);
+#endif
+				break;
 			/* Prompts.  Create a label and entry field. */
 			case UH_ECHO_OFF_PROMPT:
 				echo = FALSE;
 				/* fall through */
 			case UH_ECHO_ON_PROMPT:
 				resp->title = _("Query");
-				/* Create a label to hold the prompt. */
-				msg->label = gtk_label_new(_(prompt));
+				/* Create a label to hold the prompt, and make
+				   a feeble gesture at being accessible :(. */
+				msg->label =
+					gtk_label_new_with_mnemonic(_(prompt));
 				gtk_label_set_line_wrap(GTK_LABEL(msg->label),
 							TRUE);
 				gtk_misc_set_alignment(GTK_MISC(msg->label),
@@ -307,8 +459,11 @@ userhelper_parse_childout(char *outline)
 
 				/* Create an entry field to hold the answer. */
 				msg->entry = gtk_entry_new();
+				gtk_label_set_mnemonic_widget(GTK_LABEL(msg->label),
+							      GTK_WIDGET(msg->entry));
 				gtk_entry_set_visibility(GTK_ENTRY(msg->entry),
 							 echo);
+				/* If we had a suggestion, use it up. */
 				if (resp->suggestion) {
 					gtk_entry_set_text(GTK_ENTRY(msg->entry),
 							   resp->suggestion);
@@ -342,23 +497,21 @@ userhelper_parse_childout(char *outline)
 				resp->message_list =
 					g_list_append(resp->message_list, msg);
 
-				/* Mark that this one needs a response. */
+				/* Note that this one needs a response. */
 				resp->responses++;
 				resp->rows++;
 #ifdef DEBUG_USERHELPER
-				g_print(_("Need %d responses.\n"),
+				g_print("Now we need %d responses.\n",
 					resp->responses);
 #endif
-				break;
-			case UH_PROMPT_SUGGESTION:
-				if (resp->suggestion) {
-					g_free(resp->suggestion);
-				}
-				resp->suggestion = g_strdup(prompt);
 				break;
 			/* Fallback flag.  Read it and save it for later. */
 			case UH_FALLBACK_ALLOW:
 				resp->fallback_allowed = atoi(prompt) != 0;
+#ifdef DEBUG_USERHELPER
+				g_print("Fallback %sallowed.\n",
+					resp->fallback_allowed ? "" : "not ");
+#endif
 				break;
 			/* User name. Read it and save it for later. */
 			case UH_USER:
@@ -368,6 +521,9 @@ userhelper_parse_childout(char *outline)
 					}
 					resp->user = g_strdup(prompt);
 				}
+#ifdef DEBUG_USERHELPER
+				g_print("User is \"%s\".\n", resp->user);
+#endif
 				break;
 			/* Service name. Read it and save it for later. */
 			case UH_SERVICE_NAME:
@@ -375,6 +531,9 @@ userhelper_parse_childout(char *outline)
 					g_free(resp->service);
 				}
 				resp->service = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("Service is \"%s\".\n", resp->service);
+#endif
 				break;
 			/* An error message. */
 			case UH_ERROR_MSG:
@@ -406,10 +565,88 @@ userhelper_parse_childout(char *outline)
 					g_free(resp->banner);
 				}
 				resp->banner = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("Banner is \"%s\".\n", resp->banner);
+#endif
 				break;
-			/* Sanity-check the number of expected responses. */
+			/* Userhelper is trying to exec. */
+			case UH_EXEC_START:
+				child_was_execed = TRUE;
+#ifdef DEBUG_USERHELPER
+				g_print("Child started.\n");
+#endif
+				break;
+			/* Userhelper failed to exec. */
+			case UH_EXEC_FAILED:
+				child_was_execed = FALSE;
+#ifdef DEBUG_USERHELPER
+				g_print("Child failed.\n");
+#endif
+				break;
+#ifdef USE_STARTUP_NOTIFICATION
+			/* Startup notification name. */
+			case UH_SN_NAME:
+				if (sn_name != NULL) {
+					g_free(sn_name);
+				}
+				sn_name = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("SN Name is \"%s\".\n", sn_name);
+#endif
+				break;
+			/* Startup notification description. */
+			case UH_SN_DESCRIPTION:
+				if (sn_description != NULL) {
+					g_free(sn_description);
+				}
+				sn_description = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("SN Description is \"%s\".\n",
+					sn_description);
+#endif
+				break;
+			/* Startup notification workspace. */
+			case UH_SN_WORKSPACE:
+				sn_workspace = atoi(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("SN Workspace is %d.\n", sn_workspace);
+#endif
+				break;
+			/* Startup notification wmclass. */
+			case UH_SN_WMCLASS:
+				if (sn_wmclass!= NULL) {
+					g_free(sn_wmclass);
+				}
+				sn_wmclass = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("SN WMClass is \"%s\".\n", sn_wmclass);
+#endif
+				break;
+			/* Startup notification binary name. */
+			case UH_SN_BINARY_NAME:
+				if (sn_binary_name!= NULL) {
+					g_free(sn_binary_name);
+				}
+				sn_binary_name = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("SN Binary name is \"%s\".\n",
+					sn_binary_name);
+#endif
+				break;
+			/* Startup notification icon name. */
+			case UH_SN_ICON_NAME:
+				if (sn_icon_name!= NULL) {
+					g_free(sn_icon_name);
+				}
+				sn_icon_name = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+				g_print("SN Icon name is \"%s\".\n",
+					sn_icon_name);
+#endif
+				break;
+#endif
+			/* Sanity-check for the number of expected responses. */
 			case UH_EXPECT_RESP:
-				g_free(msg); /* We don't need this after all. */
 				if (resp->responses != atoi(prompt)) {
 					fprintf(stderr,
 						"Protocol error (%d responses "
@@ -417,6 +654,9 @@ userhelper_parse_childout(char *outline)
 						atoi(prompt), resp->responses);
 					_exit(1);
 				}
+				break;
+			/* Synchronization point -- no more prompts. */
+			case UH_SYNC_POINT:
 				resp->ready = TRUE;
 				break;
 			default:
@@ -430,11 +670,26 @@ userhelper_parse_childout(char *outline)
 	}
 
 	/* If we're ready, do some last-minute changes and run the dialog. */
-	if (resp->ready) {
+	if ((resp->ready) && (resp->responses == 0)) {
+		/* No queries means that we've just processed a sync request
+		 * for cases where we don't need any info for authentication. */
+		userhelper_write_childin(GTK_RESPONSE_OK, resp);
+	} else
+	if ((resp->ready) && (resp->responses > 0)) {
+		/* A non-zero number of queries demands an answer. */
 		char *text;
 		const char *imagefile = DATADIR "/pixmaps/keyring.png";
 		GtkWidget *label, *image, *vbox;
 		GtkResponseType response;
+
+#ifdef DEBUG_USERHELPER
+		{
+		int timeout = 2;
+		g_print("Ready to ask %d questions.\n", resp->responses);
+		g_print("Pausing for %d seconds for debugging.\n", timeout);
+		sleep(timeout);
+		}
+#endif
 
 		/* Create a new GTK dialog box. */
 		resp->dialog = gtk_message_dialog_new(NULL,
@@ -463,19 +718,18 @@ userhelper_parse_childout(char *outline)
 		vbox = (GTK_DIALOG(resp->dialog))->vbox;
 		gtk_box_pack_start_defaults(GTK_BOX(vbox), resp->table);
 
+#ifndef DEBUG_USERHELPER
 		/* Make sure we grab the keyboard focus when the window gets
 		 * an X window associated with it. */
-		gtk_signal_connect(GTK_OBJECT(resp->dialog), "map_event",
-				   GTK_SIGNAL_FUNC(userhelper_grab_focus),
-				   NULL);
+		g_signal_connect(G_OBJECT(resp->dialog), "map_event",
+				 G_CALLBACK(userhelper_grab_keyboard),
+				 NULL);
+#endif
 
 		/* If the user closes the window, we bail. */
-		gtk_signal_connect(GTK_OBJECT(resp->dialog), "delete_event",
-				   GTK_SIGNAL_FUNC(userhelper_fatal_error),
-				   NULL);
-
-		/* Set the resp structure as the data item for the dialog. */
-		gtk_object_set_user_data(GTK_OBJECT(resp->dialog), resp);
+		g_signal_connect(G_OBJECT(resp->dialog), "delete_event",
+				 G_CALLBACK(userhelper_fatal_error),
+				 NULL);
 
 		/* Customize the label. */
 		if (resp->responses == 0) {
@@ -525,14 +779,15 @@ userhelper_parse_childout(char *outline)
 		 * unprivileged execution as an option. */
 		if ((resp->fallback_allowed) && (resp->responses > 0)) {
 			gtk_dialog_add_button(GTK_DIALOG(resp->dialog),
-					      _("_Run Unprivileged"), PAD);
+					      _("_Run Unprivileged"),
+					      RESPONSE_FALLBACK);
 		}
 
 		/* Have the activation signal for the last entry field be
 		 * equivalent to hitting the default button. */
 		if (resp->last) {
 			g_signal_connect(G_OBJECT(resp->last), "activate",
-					 GTK_SIGNAL_FUNC(respond_ok),
+					 GTK_SIGNAL_FUNC(fake_respond_ok),
 					 resp->dialog);
 		}
 
@@ -544,18 +799,25 @@ userhelper_parse_childout(char *outline)
 
 		/* Run the dialog. */
 		response = gtk_dialog_run(GTK_DIALOG(resp->dialog));
-		userhelper_write_childin(response, resp);
+
 		/* Release the keyboard. */
 		gdk_keyboard_ungrab(GDK_CURRENT_TIME);
+
+		/* Answer the child's questions. */
+		userhelper_write_childin(response, resp);
+
 		/* Destroy the dialog box. */
 		gtk_widget_destroy(resp->dialog);
 		resp->dialog = NULL;
-		if (resp->service)
+		if (resp->service) {
 			g_free(resp->service);
-		if (resp->suggestion)
+		}
+		if (resp->suggestion) {
 			g_free(resp->suggestion);
-		if (resp->user)
+		}
+		if (resp->user) {
 			g_free(resp->user);
+		}
 		resp->title = NULL;
 		g_free(resp);
 		resp = NULL;
@@ -569,7 +831,17 @@ userhelper_child_exited(VteReaper *reaper, int pid, int status, gpointer data)
 #ifdef DEBUG_USERHELPER
 	fprintf(stderr, "Child %d exited (looking for %d).\n", pid, childpid);
 #endif
+
 	if (pid == childpid) {
+#ifdef USE_STARTUP_NOTIFICATION
+		/* If we're doing startup notification, clean it up just in
+		 * case the child didn't complete startup. */
+		if (sn_id != NULL) {
+			userhelper_startup_notification_launchee(sn_id);
+		}
+#endif
+		/* If we haven't lost the connection with the child, it's
+		 * gone now. */
 		if (childout_tag != -1) {
 			g_source_remove(childout_tag);
 		}
@@ -618,6 +890,9 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 	}
 	if (count == 0) {
 		/* EOF from the child. */
+#ifdef DEBUG_USERHELPER
+		g_print("EOF from child.\n");
+#endif
 		gdk_input_remove(childout_tag);
 		childout_tag = -1;
 	}
@@ -672,7 +947,12 @@ userhelper_runv(gboolean dialog_success, char *path, const char **args)
 				 G_CALLBACK(userhelper_child_exited),
 				 NULL);
 #ifdef DEBUG_USERHELPER
-		fprintf(stderr, "Running child.\n");
+		fprintf(stderr, "Running child pid=%ld.\n", (long) childpid);
+#endif
+
+#ifdef USE_STARTUP_NOTIFICATION
+		/* Complete startup notification for consolehelper. */
+		userhelper_startup_notification_launchee(NULL);
 #endif
 
 		/* Tell the child we're ready for it to run. */

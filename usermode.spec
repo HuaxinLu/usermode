@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.65
-Release: 2
+Version: 1.66
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -104,6 +104,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Feb 19 2003 Nalin Dahyabhai <nalin@redhat.com> 1.66-1
+- consolehelper-gtk: complete startup notification at startup
+- userhelper: pass startup notification data to consolehelper-gtk
+- consolehelper-gtk: setup startup notification for children if userhelper
+  requests it
+
 * Mon Jan 27 2003 Nalin Dahyabhai <nalin@redhat.com> 1.65-2
 - rebuild
 

@@ -1,4 +1,4 @@
-.\" Copyright (C) 1997,1999 Red Hat Software, Inc.
+.\" Copyright (C) 1997,1999,2001,2003 Red Hat, Inc.
 .\"
 .\" This is free software; you can redistribute it and/or modify it
 .\" under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@
 .\" along with this program; if not, write to the Free Software
 .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 .\"
-.TH USERHELPER 8 "26 November 2001" "Red Hat, Inc."
+.TH USERHELPER 8 "18 February 2003" "Red Hat, Inc."
 .SH NAME
 userhelper \- A helper interface to pam.
 .SH SYNOPSIS
@@ -158,7 +158,34 @@ userhelper prompts for information.  The default is a generic message based
 on the PAM service name.
 .TP
 .I BANNER_DOMAIN
-Specifies the text domain in which translations of the banner are stored.
+Specifies the text domain in which translations of the banner are stored.  This
+setting is deprecated in favor of the
+.I DOMAIN
+setting.
+.TP
+.I DOMAIN
+Specifies the text domain in which translations of strings are stored.  If this
+setting is specified, it overrides any setting for
+.I BANNER_DOMAIN
+which may also be set.
+.TP
+.I STARTUP_NOTIFICATION_NAME
+Specifies the startup notification name used for startup notification.
+.TP
+.I STARTUP_NOTIFICATION_DESCRIPTION
+Specifies the startup notification name used for startup notification.
+.TP
+.I STARTUP_NOTIFICATION_WORKSPACE
+Specifies the startup notification workspace used for startup notification.
+.TP
+.I STARTUP_NOTIFICATION_WMCLASS
+Specifies the startup notification binary wmclass used for startup notification.
+.TP
+.I STARTUP_NOTIFICATION_BINARY_NAME
+Specifies the startup notification binary name used for startup notification.
+.TP
+.I STARTUP_NOTIFICATION_ICON_NAME
+Specifies the startup notification icon name used for startup notification.
 
 .SH EXIT STATUS
 A non-zero exit status indicates an error occured.  Those errors are:

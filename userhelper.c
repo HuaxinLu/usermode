@@ -23,8 +23,7 @@
 #include <sys/wait.h>
 #include <assert.h>
 #include <ctype.h>
-#include <glib.h>
-#include <glib-object.h>
+#include <fcntl.h>
 #include <grp.h>
 #include <libintl.h>
 #include <locale.h>
@@ -34,6 +33,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+
+#include <glib.h>
+#include <glib-object.h>
 
 #include <security/pam_appl.h>
 #include <security/pam_misc.h>
@@ -76,11 +78,21 @@ static struct app_data {
 	gboolean fallback_allowed, fallback_chosen, canceled;
 	FILE *input, *output;
 	char *banner, *domain;
+#ifdef USE_STARTUP_NOTIFICATION
+	char *sn_name, *sn_description, *sn_wmclass;
+	char *sn_binary_name, *sn_icon_name, *sn_id;
+	int sn_workspace;
+#endif
 } app_data = {
 	NULL,
 	FALSE, FALSE, FALSE,
 	NULL, NULL,
 	NULL, NULL,
+#ifdef USE_STARTUP_NOTIFICATION
+	NULL, NULL, NULL,
+	NULL, NULL, NULL,
+	-1,
+#endif
 };
 
 /* Exit, returning the proper status code based on a PAM error code. */
@@ -94,32 +106,57 @@ fail_exit(int retval)
 
 	if (retval != PAM_SUCCESS) {
 		/* Map the PAM error code to a local error code and return
-		 * it to the parent process. */
+		 * it to the parent process.  Trust the canceled flag before
+		 * any PAM error codes. */
+		if (app_data.canceled) {
 #ifdef DEBUG_USERHELPER
-		g_print(_("Got PAM error %d.\n"), retval);
+			g_print("userhelper: exiting with status %d.\n",
+				ERR_CANCELED);
+#endif
+			_exit(ERR_CANCELED);
+		}
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: got PAM error %d.\n", retval);
 #endif
 		switch (retval) {
 			case PAM_AUTH_ERR:
 			case PAM_PERM_DENIED:
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: exiting with status %d.\n",
+					ERR_PASSWD_INVALID);
+#endif
 				exit(ERR_PASSWD_INVALID);
 				break;
 			case PAM_AUTHTOK_LOCK_BUSY:
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: exiting with status %d.\n",
+					ERR_LOCKS);
+#endif
 				exit(ERR_LOCKS);
 				break;
 			case PAM_CRED_INSUFFICIENT:
 			case PAM_AUTHINFO_UNAVAIL:
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: exiting with status %d.\n",
+					ERR_NO_RIGHTS);
+#endif
 				exit(ERR_NO_RIGHTS);
 				break;
 			case PAM_ABORT:
-				if (app_data.canceled) {
-					_exit(ERR_CANCELED);
-				}
 				/* fall through */
 			default:
-				_exit(ERR_UNK_ERROR);
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: exiting with status %d.\n",
+					ERR_UNK_ERROR);
+#endif
+				exit(ERR_UNK_ERROR);
+				break;
 		}
 	}
 	/* Just exit. */
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: exiting with status %d.\n", 0);
+#endif
 	_exit(0);
 }
 
@@ -127,7 +164,7 @@ fail_exit(int retval)
  * the end-of-line terminator if there was one, and with an optional
  * consolehelper message header removed. */
 static char *
-read_string(FILE *fp)
+read_reply(FILE *fp)
 {
 	char buffer[BUFSIZ], *check = NULL;
 	int slen = 0;
@@ -152,10 +189,6 @@ read_string(FILE *fp)
 		}
 	}
 
-	if (buffer[0] == UH_TEXT) {
-		memmove(buffer, buffer + 1, sizeof(buffer) - 1);
-	}
-
 	return g_strdup(buffer);
 }
 
@@ -176,146 +209,341 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	int count = 0;
 	int responses = 0;
 	struct pam_response *reply = NULL;
-	char *noecho_message, *user, *service;
+	char *noecho_message, *user, *service, *string;
 	struct app_data *app_data = appdata_ptr;
 
 	/* Pass on any hints we have to the consolehelper. */
-	fprintf(app_data->output, "%d %d\n",
-		UH_FALLBACK_ALLOW, app_data->fallback_allowed ? 1 : 0);
-	if (pam_get_item(app_data->pamh, PAM_USER,
-			(const void**)&user) == PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-		g_print("Sending user `%s'\n", user);
-#endif
-		fprintf(app_data->output, "%d %s\n", UH_USER, user);
-	} else {
+
+	/* User. */
+	if ((pam_get_item(app_data->pamh, PAM_USER,
+			  (const void**)&user) != PAM_SUCCESS) ||
+	    (user == NULL) ||
+	    (strlen(user) == 0)) {
 		user = "root";
 	}
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: sending user `%s'\n", user);
+#endif
+	fprintf(app_data->output, "%d %s\n", UH_USER, user);
+
+	/* Service. */
 	if (pam_get_item(app_data->pamh, PAM_SERVICE,
 			(const void**)&service) == PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-		g_print("Sending service `%s'\n", service);
+		g_print("userhelper: sending service `%s'\n", service);
 #endif
 		fprintf(app_data->output, "%d %s\n", UH_SERVICE_NAME, service);
 	}
+
+	/* Fallback allowed? */
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: sending fallback = %d.\n",
+		app_data->fallback_allowed ? 1 : 0);
+#endif
+	fprintf(app_data->output, "%d %d\n",
+		UH_FALLBACK_ALLOW, app_data->fallback_allowed ? 1 : 0);
+
+	/* Banner. */
 	if ((app_data->domain != NULL) && (app_data->banner != NULL)) {
 #ifdef DEBUG_USERHELPER
-		g_print("Sending banner `%s'\n", app_data->banner);
+		g_print("userhelper: sending banner `%s'\n", app_data->banner);
 #endif
 		fprintf(app_data->output, "%d %s\n", UH_BANNER,
 			dgettext(app_data->domain, app_data->banner));
 	}
 
-	/* We do first a pass on all items and output them, and then a second
-	 * pass to read responses from the helper. */
-	for (count = responses = 0; count < num_msg; count++)
-	switch (msg[count]->msg_style) {
-		case PAM_PROMPT_ECHO_ON:
-			/* Spit out the prompt. */
-			fprintf(app_data->output, "%d %s\n", UH_ECHO_ON_PROMPT,
-				msg[count]->msg);
-			responses++;
-			break;
-		case PAM_PROMPT_ECHO_OFF:
-			/* If the prompt is for the user's password, indicate
-			 * the user's name if we can.  Otherwise, just output
-			 * the prompt as-is. */
-			if ((strncasecmp(msg[count]->msg, "password", 8) == 0)) {
-				noecho_message =
-					g_strdup_printf(_("Password for %s"),
-							user);
-			} else {
-				noecho_message = g_strdup(msg[count]->msg);
-			}
-			fprintf(app_data->output, "%d %s\n",
-				UH_ECHO_OFF_PROMPT, noecho_message);
-			g_free(noecho_message);
-			responses++;
-			break;
-		case PAM_TEXT_INFO:
-			/* Text information strings are output verbatim. */
-			fprintf(app_data->output, "%d %s\n",
-				UH_INFO_MSG, msg[count]->msg);
-			break;
-		case PAM_ERROR_MSG:
-			/* Error message strings are output verbatim. */
-			fprintf(app_data->output, "%d %s\n",
-				UH_ERROR_MSG, msg[count]->msg);
-			break;
-		default:
-			/* Maybe the consolehelper can figure out what to do
-			 * with this, because we sure can't. */
-			fprintf(app_data->output, "%d %s\n",
-				UH_UNKNOWN_PROMPT, msg[count]->msg);
+#ifdef USE_STARTUP_NOTIFICATION
+	/* SN Name. */
+	if ((app_data->domain != NULL) && (app_data->sn_name != NULL)) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: sending sn name `%s'\n",
+			app_data->sn_name);
+#endif
+		fprintf(app_data->output, "%d %s\n", UH_SN_NAME,
+			dgettext(app_data->domain, app_data->sn_name));
 	}
 
-	/* Tell the consolehelper how many messages we expect to get
-	 * responses to. */
+	/* SN Description. */
+	if ((app_data->domain != NULL) && (app_data->sn_description != NULL)) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: sending sn description `%s'\n",
+			app_data->sn_description);
+#endif
+		fprintf(app_data->output, "%d %s\n", UH_SN_DESCRIPTION,
+			dgettext(app_data->domain, app_data->sn_description));
+	}
+
+	/* SN WM Class. */
+	if ((app_data->domain != NULL) && (app_data->sn_wmclass != NULL)) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: sending sn wm_class `%s'\n",
+			app_data->sn_wmclass);
+#endif
+		fprintf(app_data->output, "%d %s\n", UH_SN_WMCLASS,
+			dgettext(app_data->domain, app_data->sn_wmclass));
+	}
+
+	/* SN BinaryName. */
+	if ((app_data->domain != NULL) && (app_data->sn_binary_name != NULL)) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: sending sn binary name `%s'\n",
+			app_data->sn_binary_name);
+#endif
+		fprintf(app_data->output, "%d %s\n", UH_SN_BINARY_NAME,
+			dgettext(app_data->domain, app_data->sn_binary_name));
+	}
+
+	/* SN IconName. */
+	if ((app_data->domain != NULL) && (app_data->sn_icon_name != NULL)) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: sending sn icon name `%s'\n",
+			app_data->sn_icon_name);
+#endif
+		fprintf(app_data->output, "%d %s\n", UH_SN_ICON_NAME,
+			dgettext(app_data->domain, app_data->sn_icon_name));
+	}
+
+	/* SN Workspace. */
+	if ((app_data->domain != NULL) && (app_data->sn_workspace != -1)) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: sending sn workspace %d.\n",
+			app_data->sn_workspace);
+#endif
+		fprintf(app_data->output, "%d %d\n", UH_SN_WORKSPACE,
+			app_data->sn_workspace);
+	}
+#endif
+
+	/* We do a first pass on all items and output them, and then a second
+	 * pass to read responses from the helper. */
+	for (count = responses = 0; count < num_msg; count++) {
+		switch (msg[count]->msg_style) {
+			case PAM_PROMPT_ECHO_ON:
+				/* Spit out the prompt. */
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: sending prompt (echo on) ="
+					" \"%s\".\n", msg[count]->msg);
+#endif
+				fprintf(app_data->output, "%d %s\n",
+					UH_ECHO_ON_PROMPT, msg[count]->msg);
+				responses++;
+				break;
+			case PAM_PROMPT_ECHO_OFF:
+				/* If the prompt is for the user's password,
+				 * indicate the user's name if we can.
+				 * Otherwise, just output the prompt as-is. */
+				if ((strncasecmp(msg[count]->msg,
+						 "password",
+						 8) == 0)) {
+					noecho_message =
+						g_strdup_printf(_("Password for %s"),
+								user);
+				} else {
+					noecho_message = g_strdup(msg[count]->msg);
+				}
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: sending prompt (no echo) ="
+					" \"%s\".\n", noecho_message);
+#endif
+				fprintf(app_data->output, "%d %s\n",
+					UH_ECHO_OFF_PROMPT, noecho_message);
+				g_free(noecho_message);
+				responses++;
+				break;
+			case PAM_TEXT_INFO:
+				/* Text information strings are output
+				 * verbatim. */
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: sending text = \"%s\".\n",
+					msg[count]->msg);
+#endif
+				fprintf(app_data->output, "%d %s\n",
+					UH_INFO_MSG, msg[count]->msg);
+				break;
+			case PAM_ERROR_MSG:
+				/* Error message strings are output verbatim. */
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: sending error = \"%s\".\n",
+					msg[count]->msg);
+#endif
+				fprintf(app_data->output, "%d %s\n",
+					UH_ERROR_MSG, msg[count]->msg);
+				break;
+			default:
+				/* Maybe the consolehelper can figure out what
+				 * to do with this, because we sure can't. */
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: sending ??? = \"%s\".\n",
+					msg[count]->msg);
+#endif
+				fprintf(app_data->output, "%d %s\n",
+					UH_UNKNOWN_PROMPT, msg[count]->msg);
+				break;
+		}
+	}
+
+	/* Tell the consolehelper how many messages for which we expect to
+	 * receive responses. */
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: sending expected response count = %d.\n",
+		responses);
+#endif
 	fprintf(app_data->output, "%d %d\n", UH_EXPECT_RESP, responses);
+
+	/* Tell the consolehelper that we're ready for it to do its thing. */
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: sending sync point.\n");
+#endif
+	fprintf(app_data->output, "%d\n", UH_SYNC_POINT);
 	fflush(NULL);
 
 	/* Now, for the second pass, allocate space for the responses and read
 	 * the answers back. */
-	reply = g_malloc0(num_msg * sizeof(struct pam_response));
+	reply = g_malloc0((num_msg + 1) * sizeof(struct pam_response));
 	app_data->fallback_chosen = FALSE;
-	for (count = 0; count < num_msg; count++)
-	switch (msg[count]->msg_style) {
+
+	/* First, handle the items which don't require answers. */
+	count = 0;
+	while (count < num_msg) {
+		switch (msg[count]->msg_style) {
 		case PAM_TEXT_INFO:
-			/* ignore it... */
-			reply[count].resp_retcode = PAM_SUCCESS;
-			break;
 		case PAM_ERROR_MSG:
-			/* Also ignore it... */
-			reply[count].resp_retcode = PAM_SUCCESS;
-			break;
-		case PAM_PROMPT_ECHO_ON:
-			/* fall through */
-		case PAM_PROMPT_ECHO_OFF:
-			reply[count].resp = read_string(app_data->input);
-			if (reply[count].resp == NULL) {
-				/* EOF: the child isn't going to give us any
-				 * more information. */
-				app_data->canceled = TRUE;
-				g_free(reply);
-				return PAM_ABORT;
-			}
-#ifdef DEBUG_USERHELPER
-			if (!isprint(reply[count].resp[0])) {
-				g_print("userhelper: got %d\n",
-					reply[count].resp[0]);
-				g_print("userhelper: got `%s'\n",
-					reply[count].resp[0] ?
-					reply[count].resp + 1 : "");
-			} else {
-				g_print("userhelper: got `%s'\n",
-					reply[count].resp[0] ?
-					reply[count].resp : "");
-			}
-#endif
-			/* If the user chose to abort, do so. */
-			if (reply[count].resp[0] == UH_ABORT) {
-				app_data->canceled = TRUE;
-				g_free(reply);
-				return PAM_ABORT;
-			}
-
-			/* If the user chose to fallback, do so. */
-			if (reply[count].resp[0] == UH_FALLBACK) {
-				app_data->fallback_chosen = TRUE;
-				g_free(reply);
-				return PAM_ABORT;
-			}
-
+			/* Ignore it... */
 			reply[count].resp_retcode = PAM_SUCCESS;
 			break;
 		default:
-			/*
-			 * Must be an error of some sort... 
-			 */
+			break;
+		}
+		count++;
+	}
+
+	/* Now read responses until we hit a sync point or an EOF. */
+	count = 0;
+	do {
+		string = read_reply(app_data->input);
+
+		/* If we got nothing, and we expected data, then we're done. */
+		if ((string == NULL) && (count < responses)) {
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: got %d responses, expected %d\n",
+				count, responses);
+#endif
+			app_data->canceled = TRUE;
+			g_free(reply);
+			return PAM_ABORT;
+		}
+
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: received string type %d, text \"%s\".\n",
+			string[0], string[0] ? string + 1 : "");
+#endif
+
+		/* If we hit a sync point, we're done. */
+		if (string[0] == UH_SYNC_POINT) {
+			if (count != responses) {
+				/* Whoa, not done yet! */
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: got %d responses, "
+					"expected %d\n", count, responses);
+#endif
+				g_free(reply);
+				return PAM_CONV_ERR;
+			}
+			/* Okay, we're done. */
+			g_free(string);
+			break;
+		}
+
+#ifdef USE_STARTUP_NOTIFICATION
+		/* If we got a desktop startup ID, set it. */
+		if (string[0] == UH_SN_ID) {
+			if (app_data->sn_id) {
+				g_free(app_data->sn_id);
+			}
+			app_data->sn_id = string + 1;
+			while ((app_data->sn_id[0] != '\0') &&
+			       (g_ascii_isspace(app_data->sn_id[0]))) {
+				app_data->sn_id++;
+			}
+			app_data->sn_id = g_strdup(app_data->sn_id);
+			g_free(string);
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: startup id \"%s\"\n",
+				app_data->sn_id);
+#endif
+			continue;
+		}
+#endif
+
+		/* If the user chose to abort, do so. */
+		if (string[0] == UH_CANCEL) {
+			app_data->canceled = TRUE;
+			g_free(string);
+			g_free(reply);
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: canceling\n");
+#endif
+			return PAM_ABORT;
+		}
+
+		/* If the user chose to fallback, do so. */
+		if (string[0] == UH_FALLBACK) {
+			app_data->fallback_chosen = TRUE;
+			g_free(string);
+			g_free(reply);
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: falling back\n");
+#endif
+			return PAM_ABORT;
+		}
+
+		/* Find the first unanswered prompt. */
+		while ((count < responses) &&
+		       (msg[count]->msg_style != PAM_PROMPT_ECHO_ON) &&
+		       (msg[count]->msg_style != PAM_PROMPT_ECHO_OFF)) {
+			count++;
+		}
+		if (count >= responses) {
+			/* Whoa, TMI! */
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: got %d responses, expected %d\n",
+				count, responses);
+#endif
 			g_free(reply);
 			return PAM_CONV_ERR;
+		}
+
+		/* Save this response. */
+		reply[count].resp = string + 1;
+		while ((reply[count].resp[0] != '\0') &&
+		       (g_ascii_isspace(reply[count].resp[0]))) {
+			reply[count].resp++;
+		}
+		reply[count].resp = g_strdup(reply[count].resp);
+		reply[count].resp_retcode = PAM_SUCCESS;
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: got `%s'\n", reply[count].resp);
+#endif
+		g_free(string);
+		count++;
+	} while(1);
+
+	/* Check that we got exactly the number of responses we were
+	 * expecting. */
+	if (count != responses) {
+		/* Must be an error of some sort... */
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: got %d responses, expected %d\n",
+			count, responses);
+#endif
+		g_free(reply);
+		return PAM_CONV_ERR;
 	}
-	*resp = reply;
+
+	/* Return successfully. */
+	if (resp != NULL) {
+		*resp = reply;
+	}
 	return PAM_SUCCESS;
 }
 
@@ -398,18 +626,26 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 	    gpointer callback_data, struct lu_error **error)
 {
 	int i;
-	char *user, *service;
+	char *user, *service, *string;
 	struct app_data *app_data = callback_data;
 
 	/* Pass on any hints we have to the consolehelper. */
 	fprintf(app_data->output, "%d %d\n",
 		UH_FALLBACK_ALLOW, app_data->fallback_allowed ? 1 : 0);
-	if (pam_get_item(app_data->pamh, PAM_USER,
-			(const void**)&user) == PAM_SUCCESS) {
-		fprintf(app_data->output, "%d %s\n", UH_USER, user);
-	} else {
+
+	/* User. */
+	if ((pam_get_item(app_data->pamh, PAM_USER,
+			  (const void**)&user) != PAM_SUCCESS) ||
+	    (user == NULL) ||
+	    (strlen(user) == 0)) {
 		user = "root";
 	}
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: sending user `%s'\n", user);
+#endif
+	fprintf(app_data->output, "%d %s\n", UH_USER, user);
+
+	/* Service. */
 	if (pam_get_item(app_data->pamh, PAM_SERVICE,
 			(const void**)&service) == PAM_SUCCESS) {
 		fprintf(app_data->output, "%d %s\n", UH_SERVICE_NAME, service);
@@ -434,41 +670,74 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 	/* Tell the consolehelper how many messages we expect to get
 	 * responses to. */
 	fprintf(app_data->output, "%d %d\n", UH_EXPECT_RESP, prompts_count);
+	fprintf(app_data->output, "%d\n", UH_SYNC_POINT);
 	fflush(NULL);
 
 	/* Now, for the second pass, allocate space for the responses and read
 	 * the answers back. */
-	for (i = 0; i < prompts_count; i++) {
-		prompts[i].value = read_string(app_data->input);
-		if (prompts[i].value == NULL) {
+	i = 0;
+	do {
+		string = read_reply(app_data->input);
+
+		if (string == NULL) {
 			/* EOF: the child isn't going to give us any more
 			 * information. */
 			app_data->canceled = TRUE;
-			return PAM_ABORT;
+			return FALSE;
 		}
-		prompts[i].free_value = g_free;
+
+		/* If we finished, we're done. */
+		if (string[0] == UH_SYNC_POINT) {
+			if (i < prompts_count) {
+				/* Not enough information. */
 #ifdef DEBUG_USERHELPER
-		if (!isprint(prompts[i].value[0])) {
-			g_print("userhelper: got %d\n", prompts[i].value[0]);
-			g_print("userhelper: got `%s'\n",
-				prompts[i].value[0] ?
-				prompts[i].value + 1 : "");
-		} else {
-			g_print("userhelper: got `%s'\n", prompts[i].value);
-		}
+				g_print("userhelper: not enough responses\n");
 #endif
+				g_free(string);
+				return FALSE;
+			}
+			g_free(string);
+			return TRUE;
+		}
+
 		/* If the user chose to abort, do so. */
-		if (prompts[i].value[0] == UH_ABORT) {
+		if (string[0] == UH_CANCEL) {
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: user canceled\n");
+#endif
+			g_free(string);
 			app_data->canceled = TRUE;
 			return FALSE;
 		}
 
 		/* If the user chose to fallback, do so. */
-		if (prompts[i].value[0] == UH_FALLBACK) {
+		if (string[0] == UH_FALLBACK) {
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: user fell back\n");
+#endif
+			g_free(string);
 			app_data->fallback_chosen = TRUE;
 			return FALSE;
 		}
+
+		/* Save this response. */
+		prompts[i].free_value = g_free;
+		prompts[i].value = g_strdup(string + 1);
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: got `%s'\n", prompts[i].value);
+#endif
+		g_free(string);
+		i++;
+	} while(1);
+
+	/* If we got an unexpected number of responses, bail. */
+	if (i != prompts_count) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: wrong number of responses\n");
+#endif
+		return FALSE;
 	}
+
 	return TRUE;
 }
 
@@ -486,6 +755,36 @@ static struct pam_conv text_conv = {
 	converse_console,
 	&app_data,
 };
+static void
+pipe_conv_exec_start(const struct pam_conv *conv)
+{
+	if (conv == &pipe_conv) {
+		converse_pipe(0, NULL, NULL, &app_data);
+		fprintf(app_data.output, "%d\n", UH_EXEC_START);
+		fprintf(app_data.output, "%d\n", UH_SYNC_POINT);
+		fflush(app_data.output);
+#ifdef DEBUG_USERHELPER
+		{
+			int timeout = 5;
+			g_print("userhelper: exec start\nuserhelper: pausing "
+				"for %d seconds for debugging\n", timeout);
+			sleep(timeout);
+		}
+#endif
+	}
+}
+static void
+pipe_conv_exec_fail(const struct pam_conv *conv)
+{
+	if (conv == &pipe_conv) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: exec failed\n");
+#endif
+		fprintf(app_data.output, "%d\n", UH_EXEC_FAILED);
+		fprintf(app_data.output, "%d\n", UH_SYNC_POINT);
+		fflush(app_data.output);
+	}
+}
 
 /* Parse the passed-in GECOS string and set the globals to its broken-down
  * contents.  Note that the string *is* modified here, and the parsing is
@@ -568,7 +867,7 @@ shell_valid(char *shell_name)
 		     shell != NULL;
 		     shell = getusershell()) {
 #ifdef DEBUG_USERHELPER
-			g_print("got shell \"%s\"\n", shell);
+			g_print("userhelper: got shell \"%s\"\n", shell);
 #endif
 			if (shell_name) {
 				if (strcmp(shell_name, shell) == 0) {
@@ -595,7 +894,7 @@ become_super(void)
 	    (getegid() != 0) ||
 	    (getgid() != 0)) {
 #ifdef DEBUG_USERHELPER
-		g_print("set*id() failure: %s\n", strerror(errno));
+		g_print("userhelper: set*id() failure: %s\n", strerror(errno));
 #endif
 		exit(ERR_EXEC_FAILED);
 	}
@@ -609,7 +908,7 @@ become_normal(char *user)
 	/* Verify that we're back to normal. */
 	if (getegid() != getgid()) {
 #ifdef DEBUG_USERHELPER
-		g_print("still setgid()\n");
+		g_print("userhelper: still setgid()\n");
 #endif
 		exit(ERR_EXEC_FAILED);
 	}
@@ -618,14 +917,14 @@ become_normal(char *user)
 	/* Yes, setuid() can fail. */
 	if (geteuid() != getuid()) {
 #ifdef DEBUG_USERHELPER
-		g_print("still setuid()\n");
+		g_print("userhelper: still setuid()\n");
 #endif
 		exit(ERR_EXEC_FAILED);
 	}
 }
 
 /*
- * ------- the application itself -------- 
+ * ------- the application itself --------
  */
 int
 main(int argc, char **argv)
@@ -646,7 +945,7 @@ main(int argc, char **argv)
 	if (geteuid() != 0) {
 		fprintf(stderr, _("userhelper must be setuid root\n"));
 #ifdef DEBUG_USERHELPER
-		g_print("not setuid\n");
+		g_print("userhelper: not setuid\n");
 #endif
 		exit(ERR_NO_RIGHTS);
 	}
@@ -696,7 +995,8 @@ main(int argc, char **argv)
 				break;
 			default:
 #ifdef DEBUG_USERHELPER
-				g_print("invalid call: unknown option\n");
+				g_print("userhelper: invalid call: "
+					"unknown option\n");
 #endif
 				exit(ERR_INVALID_CALL);
 		}
@@ -708,7 +1008,8 @@ main(int argc, char **argv)
 	    (c_flag && w_flag) ||
 	    (w_flag && SHELL_FLAGS)) {
 #ifdef DEBUG_USERHELPER
-		g_print("invalid call: invalid combination of options\n");
+		g_print("userhelper: invalid call: "
+			"invalid combination of options\n");
 #endif
 		exit(ERR_INVALID_CALL);
 	}
@@ -738,7 +1039,7 @@ main(int argc, char **argv)
 		app_data.output = fdopen(UH_OUTFILENO, "w");
 		if ((app_data.input == NULL) || (app_data.output == NULL)) {
 #ifdef DEBUG_USERHELPER
-			g_print("invalid call\n");
+			g_print("userhelper: invalid call\n");
 #endif
 			exit(ERR_INVALID_CALL);
 		}
@@ -753,12 +1054,12 @@ main(int argc, char **argv)
 	} else {
 		/* I have no name and I must have one. */
 #ifdef DEBUG_USERHELPER
-		g_print("i have no name");
+		g_print("userhelper: i have no name\n");
 #endif
 		exit(ERR_UNK_ERROR);
 	}
 #ifdef DEBUG_USERHELPER
-	g_print("user is %s\n", user_name);
+	g_print("userhelper: user is %s\n", user_name);
 #endif
 
 	/* If we didn't get the -w flag, the last argument could be a user's
@@ -774,7 +1075,8 @@ main(int argc, char **argv)
 		pw = getpwnam(user_name);
 		if ((pw == NULL) || (pw->pw_name == NULL)) {
 #ifdef DEBUG_USERHELPER
-			g_print("user %s doesn't exist\n", user_name);
+			g_print("userhelper: user %s doesn't exist\n",
+				user_name);
 #endif
 			exit(ERR_NO_USER);
 		}
@@ -783,12 +1085,12 @@ main(int argc, char **argv)
 	/* Time to do the heavy lifting. */
 	if (c_flag) {
 		int tryagain = 1;
-		/* We're here to change the user's password.  Start up PAM 
+		/* We're here to change the user's password.  Start up PAM
 		 * and tell it we're the "passwd" command. */
 		retval = pam_start("passwd", user_name, conv, &app_data.pamh);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_start() failed\n");
+			g_print("userhelper: pam_start() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -797,7 +1099,7 @@ main(int argc, char **argv)
 		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_set_item() failed\n");
+			g_print("userhelper: pam_set_item() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -805,12 +1107,12 @@ main(int argc, char **argv)
 		/* Now try to change the user's password. */
 		do {
 #ifdef DEBUG_USERHELPER
-			g_print("about to change password for \"%s\"\n",
+			g_print("userhelper: changing password for \"%s\"\n",
 				user_name);
 #endif
 			retval = pam_chauthtok(app_data.pamh, 0);
 #ifdef DEBUG_USERHELPER
-			g_print("PAM retval = %d (%s)\n", retval,
+			g_print("userhelper: PAM retval = %d (%s)\n", retval,
 				pam_strerror(app_data.pamh, retval));
 #endif
 			tryagain--;
@@ -820,7 +1122,7 @@ main(int argc, char **argv)
 			 tryagain);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_chauthtok() failed\n");
+			g_print("userhelper: pam_chauthtok() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -829,7 +1131,7 @@ main(int argc, char **argv)
 		retval = pam_end(app_data.pamh, PAM_SUCCESS);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_end() failed\n");
+			g_print("userhelper: pam_end() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -866,7 +1168,7 @@ main(int argc, char **argv)
 		retval = pam_start("chfn", user_name, conv, &app_data.pamh);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_start() failed\n");
+			g_print("userhelper: pam_start() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -875,7 +1177,7 @@ main(int argc, char **argv)
 		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_set_item() failed\n");
+			g_print("userhelper: pam_set_item() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -883,11 +1185,12 @@ main(int argc, char **argv)
 		/* Try to authenticate the user. */
 		do {
 #ifdef DEBUG_USERHELPER
-			g_print("about to authenticate \"%s\"\n", user_name);
+			g_print("userhelper: about to authenticate \"%s\"\n",
+				user_name);
 #endif
 			retval = pam_authenticate(app_data.pamh, 0);
 #ifdef DEBUG_USERHELPER
-			g_print("PAM retval = %d (%s)\n", retval,
+			g_print("userhelper: PAM retval = %d (%s)\n", retval,
 				pam_strerror(app_data.pamh, retval));
 #endif
 			tryagain--;
@@ -898,7 +1201,7 @@ main(int argc, char **argv)
 		/* If we didn't succeed, bail. */
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam authentication failed\n");
+			g_print("userhelper: pam authentication failed\n");
 #endif
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
@@ -910,7 +1213,7 @@ main(int argc, char **argv)
 				      (const void**)&auth_user);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("no pam user set\n");
+			g_print("userhelper: no pam user set\n");
 #endif
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
@@ -918,8 +1221,8 @@ main(int argc, char **argv)
 		/* At some point this check will go away. */
 		if (strcmp(user_name, auth_user) != 0) {
 #ifdef DEBUG_USERHELPER
-			g_print("username(%s) != authuser(%s)", user_name,
-				auth_user);
+			g_print("userhelper: username(%s) != authuser(%s)\n",
+				user_name, auth_user);
 #endif
 			exit(ERR_UNK_ERROR);
 		}
@@ -929,7 +1232,7 @@ main(int argc, char **argv)
 		retval = pam_acct_mgmt(app_data.pamh, 0);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_acct_mgmt() failed");
+			g_print("userhelper: pam_acct_mgmt() failed\n");
 #endif
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
@@ -941,14 +1244,14 @@ main(int argc, char **argv)
 				   (gpointer)&app_data, &error);
 		if (context == NULL) {
 #ifdef DEBUG_USERHELPER
-			g_print("libuser startup error");
+			g_print("userhelper: libuser startup error\n");
 #endif
 			pam_end(app_data.pamh, PAM_ABORT);
 			fail_exit(PAM_ABORT);
 		}
 		if (error != NULL) {
 #ifdef DEBUG_USERHELPER
-			g_print("libuser startup error: %s",
+			g_print("userhelper: libuser startup error: %s\n",
 				lu_strerror(error));
 #endif
 			pam_end(app_data.pamh, PAM_ABORT);
@@ -960,14 +1263,14 @@ main(int argc, char **argv)
 		ret = lu_user_lookup_name(context, user_name, ent, &error);
 		if (ret != TRUE) {
 #ifdef DEBUG_USERHELPER
-			g_print("libuser doesn't know the user");
+			g_print("userhelper: libuser doesn't know the user\n");
 #endif
 			pam_end(app_data.pamh, PAM_ABORT);
 			fail_exit(PAM_ABORT);
 		}
 		if (error != NULL) {
 #ifdef DEBUG_USERHELPER
-			g_print("libuser startup error: %s",
+			g_print("userhelper: libuser startup error: %s\n",
 				lu_strerror(error));
 #endif
 			pam_end(app_data.pamh, PAM_ABORT);
@@ -992,7 +1295,8 @@ main(int argc, char **argv)
 		/* Verify that the strings we got passed are not too long. */
 		if (gecos_size() > GECOS_LENGTH) {
 #ifdef DEBUG_USERHELPER
-			g_print("user gecos too long %d > %d", gecos_size(), GECOS_LENGTH);
+			g_print("userhelper: user gecos too long %d > %d\n",
+				gecos_size(), GECOS_LENGTH);
 #endif
 			lu_ent_free(ent);
 			lu_end(context);
@@ -1056,15 +1360,16 @@ main(int argc, char **argv)
 			}
 
 #ifdef DEBUG_USERHELPER
-			g_print("current shell \"%s\"\n", old_shell);
-			g_print("new shell \"%s\"\n", shell_path);
+			g_print("userhelper: current shell \"%s\"\n",
+				old_shell);
+			g_print("userhelper: new shell \"%s\"\n", shell_path);
 #endif
 			/* If the old or new shell are invalid, then
 			 * the user doesn't get to make the change. */
 			if (!shell_valid(shell_path) ||
 			    !shell_valid(old_shell)) {
 #ifdef DEBUG_USERHELPER
-				g_print("bad shell value\n");
+				g_print("userhelper: bad shell value\n");
 #endif
 				lu_ent_free(ent);
 				lu_end(context);
@@ -1086,13 +1391,13 @@ main(int argc, char **argv)
 			lu_end(context);
 			pam_end(app_data.pamh, PAM_ABORT);
 #ifdef DEBUG_USERHELPER
-			g_print("libuser save failed\n");
+			g_print("userhelper: libuser save failed\n");
 #endif
 			fail_exit(PAM_ABORT);
 		}
 		if (error != NULL) {
 #ifdef DEBUG_USERHELPER
-			g_print("libuser save error: %s",
+			g_print("userhelper: libuser save error: %s\n",
 				lu_strerror(error));
 #endif
 			lu_ent_free(ent);
@@ -1113,7 +1418,7 @@ main(int argc, char **argv)
 		char *constructed_path;
 		char *apps_filename;
 		char *user_pam = user_name, *apps_user, *auth_user;
-		char *apps_banner, *apps_domain;
+		char *apps_banner, *apps_domain, *apps_sn = NULL;
 		char *retry, *noxoption;
 		char *env_home, *env_term, *env_desktop_startup_id;
 		char *env_display, *env_shell;
@@ -1223,7 +1528,7 @@ main(int argc, char **argv)
 		    !S_ISREG(sbuf.st_mode) ||
 		    (sbuf.st_mode & S_IWOTH)) {
 #ifdef DEBUG_USERHELPER
-			g_print("bad file permissions\n");
+			g_print("userhelper: bad file permissions\n");
 #endif
 			exit(ERR_UNK_ERROR);
 		}
@@ -1255,7 +1560,8 @@ main(int argc, char **argv)
 				if (access(constructed_path, X_OK)) {
 					/* Nope, not there, either. */
 #ifdef DEBUG_USERHELPER
-					g_print("couldn't find binary\n");
+					g_print("userhelper: couldn't find "
+						"wrapped binary\n");
 #endif
 					exit(ERR_NO_PROGRAM);
 				}
@@ -1289,7 +1595,8 @@ main(int argc, char **argv)
 		pw = getpwnam(user_pam);
 		if (pw == NULL) {
 #ifdef DEBUG_USERHELPER
-			g_print("no user named %s exists\n", user_pam);
+			g_print("userhelper: no user named %s exists\n",
+				user_pam);
 #endif
 			exit(ERR_NO_USER);
 		}
@@ -1322,14 +1629,51 @@ main(int argc, char **argv)
 		apps_banner = svGetValue(s, "BANNER");
 		if ((apps_banner != NULL) && (strlen(apps_banner) > 0)) {
 			app_data.banner = apps_banner;
-
 		}
-		apps_domain = svGetValue(s, "BANNER_DOMAIN");
+		apps_domain = svGetValue(s, "DOMAIN");
 		if ((apps_domain != NULL) && (strlen(apps_domain) > 0)) {
 			bindtextdomain(apps_domain, DATADIR "/locale");
 			bind_textdomain_codeset(apps_domain, "UTF-8");
 			app_data.domain = apps_domain;
 		}
+		if (app_data.domain == NULL) {
+			apps_domain = svGetValue(s, "BANNER_DOMAIN");
+			if ((apps_domain != NULL) &&
+			    (strlen(apps_domain) > 0)) {
+				bindtextdomain(apps_domain, DATADIR "/locale");
+				bind_textdomain_codeset(apps_domain, "UTF-8");
+				app_data.domain = apps_domain;
+			}
+		}
+		if (app_data.domain == NULL) {
+			app_data.domain = progname;
+		}
+#ifdef USE_STARTUP_NOTIFICATION
+		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_NAME");
+		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+			app_data.sn_name = apps_sn;
+		}
+		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_DESCRIPTION");
+		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+			app_data.sn_description = apps_sn;
+		}
+		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_WMCLASS");
+		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+			app_data.sn_wmclass = apps_sn;
+		}
+		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_BINARY_NAME");
+		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+			app_data.sn_binary_name = apps_sn;
+		}
+		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_ICON_NAME");
+		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+			app_data.sn_icon_name = apps_sn;
+		}
+		apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_WORKSPACE");
+		if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
+			app_data.sn_workspace = atoi(apps_sn);
+		}
+#endif
 
 		/* Now we're done reading the file. */
 		svCloseFile(s);
@@ -1338,7 +1682,7 @@ main(int argc, char **argv)
 		retval = pam_start(progname, user_pam, conv, &app_data.pamh);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_start() failed\n");
+			g_print("userhelper: pam_start() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -1347,7 +1691,7 @@ main(int argc, char **argv)
 		retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-			g_print("pam_set_item() failed\n");
+			g_print("userhelper: pam_set_item() failed\n");
 #endif
 			fail_exit(retval);
 		}
@@ -1355,11 +1699,12 @@ main(int argc, char **argv)
 		/* Try to authenticate the user. */
 		do {
 #ifdef DEBUG_USERHELPER
-			g_print("about to authenticate \"%s\"\n", user_pam);
+			g_print("userhelper: authenticating \"%s\"\n",
+				user_pam);
 #endif
 			retval = pam_authenticate(app_data.pamh, 0);
 #ifdef DEBUG_USERHELPER
-			g_print("PAM retval = %d (%s)\n", retval,
+			g_print("userhelper: PAM retval = %d (%s)\n", retval,
 				pam_strerror(app_data.pamh, retval));
 #endif
 			tryagain--;
@@ -1370,21 +1715,30 @@ main(int argc, char **argv)
 			pam_end(app_data.pamh, retval);
 			if (app_data.canceled) {
 				fail_exit(retval);
-			} else if (app_data.fallback_allowed) {
+			} else
+			if (app_data.fallback_allowed) {
 				/* Reset the user's environment so that the
 				 * application can run normally. */
 				argv[optind - 1] = progname;
 				environ = environ_save;
 				become_normal(user_name);
 				if (app_data.input != NULL) {
-				       fclose(app_data.input);
-				       close(UH_INFILENO);
+					fflush(app_data.input);
+					fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
 				}
 				if (app_data.output != NULL) {
-				       fclose(app_data.output);
-				       close(UH_OUTFILENO);
+					fflush(app_data.output);
+					fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 				}
+				pipe_conv_exec_start(conv);
+#ifdef USE_STARTUP_NOTIFICATION
+				if (app_data.sn_id) {
+					setenv("DESKTOP_STARTUP_ID",
+					       app_data.sn_id, 1);
+				}
+#endif
 				execv(constructed_path, argv + optind - 1);
+				pipe_conv_exec_fail(conv);
 				exit(ERR_EXEC_FAILED);
 			} else {
 				/* Well, we tried. */
@@ -1417,7 +1771,8 @@ main(int argc, char **argv)
 		pw = getpwnam(user_pam);
 		if (pw == NULL) {
 #ifdef DEBUG_USERHELPER
-			g_print("no user named %s exists\n", user_pam);
+			g_print("userhelper: no user named %s exists\n",
+				user_pam);
 #endif
 			exit(ERR_NO_USER);
 		}
@@ -1454,7 +1809,8 @@ main(int argc, char **argv)
 				env_pam = pam_getenvlist(app_data.pamh);
 				while (env_pam && *env_pam) {
 #ifdef DEBUG_USERHELPER
-					g_print("setting %s\n", *env_pam);
+					g_print("userhelper: setting %s\n",
+						*env_pam);
 #endif
 					putenv(g_strdup(*env_pam));
 					env_pam++;
@@ -1462,19 +1818,27 @@ main(int argc, char **argv)
 
 				argv[optind - 1] = progname;
 #ifdef DEBUG_USERHELPER
-				g_print(_("about to exec \"%s\"\n"),
+				g_print("userhelper: about to exec \"%s\"\n",
 					constructed_path);
 #endif
 				become_super();
 				if (app_data.input != NULL) {
-				       fclose(app_data.input);
-				       close(UH_INFILENO);
+					fflush(app_data.input);
+					fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
 				}
 				if (app_data.output != NULL) {
-				       fclose(app_data.output);
-				       close(UH_OUTFILENO);
+					fflush(app_data.output);
+					fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 				}
+				pipe_conv_exec_start(conv);
+#ifdef USE_STARTUP_NOTIFICATION
+				if (app_data.sn_id) {
+					setenv("DESKTOP_STARTUP_ID",
+					       app_data.sn_id, 1);
+				}
+#endif
 				execv(constructed_path, argv + optind - 1);
+				pipe_conv_exec_fail(conv);
 				exit(ERR_EXEC_FAILED);
 			}
 			/* We're in the parent.  Wait for the child to exit. */
@@ -1508,19 +1872,26 @@ main(int argc, char **argv)
 
 			argv[optind - 1] = progname;
 #ifdef DEBUG_USERHELPER
-			g_print(_("about to exec \"%s\"\n"),
+			g_print("userhelper: about to exec \"%s\"\n",
 				constructed_path);
 #endif
 			become_super();
 			if (app_data.input != NULL) {
-			       fclose(app_data.input);
-			       close(UH_INFILENO);
+				fflush(app_data.input);
+				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
 			}
 			if (app_data.output != NULL) {
-			       fclose(app_data.output);
-			       close(UH_OUTFILENO);
+				fflush(app_data.output);
+				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 			}
+			pipe_conv_exec_start(conv);
+#ifdef USE_STARTUP_NOTIFICATION
+			if (app_data.sn_id) {
+				setenv("DESKTOP_STARTUP_ID", app_data.sn_id, 1);
+			}
+#endif
 			execv(constructed_path, argv + optind - 1);
+			pipe_conv_exec_fail(conv);
 			exit(ERR_EXEC_FAILED);
 		}
 	}
