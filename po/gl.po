@@ -1,66 +1,63 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: usermodePOT-Creation-Date: 2000-08-03 15:08-0400\n"
 "POT-Creation-Date: 2000-08-03 15:08-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2000-12-12 21:36+0100\n"
+"Last-Translator: Jesús Bravo Álvarez <jba@pobox.com>\n"
+"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: ../userdialogs.c:35
 msgid "Message"
-msgstr ""
+msgstr "Mensaxe"
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:358
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr ""
+msgstr "Prompt"
 
 #: ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
-msgstr ""
+msgstr "Aceptar"
 
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Erro na canalización.\n"
 
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Non se pode facer fork().\n"
 
 #: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
 #: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
 #: ../usermount.c:817
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "Erro de dup2().\n"
 
 #: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
 #: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "Erro de execl(), errno=%d\n"
 
 #: ../userhelper-wrap.c:115
 msgid "Information updated."
-msgstr ""
+msgstr "Información actualizada."
 
 #: ../userhelper-wrap.c:118
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"O contrasinal que introduciu non é válido.\n"
+"Tente de novo."
 
 #: ../userhelper-wrap.c:121
 msgid ""
@@ -68,28 +65,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Un ou máis dos campos cambiados non é válido.\n"
+"Probablemente débese a algunha coma ou dous puntos nalgún dos campos.\n"
+"Bórreos e tente de novo."
 
 #: ../userhelper-wrap.c:124
 msgid "Password resetting error."
-msgstr ""
+msgstr "Erro reiniciando o contrasinal."
 
 #: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Algúns ficheiros de sistema están bloqueados.\n"
+"Tente de novo dentro dun intre."
 
 #: ../userhelper-wrap.c:130
 msgid "Unknown user."
-msgstr ""
+msgstr "Usuario descoñecido."
 
 #: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Dereitos insuficientes."
 
 #: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Chamada inválida ó subproceso."
 
 #: ../userhelper-wrap.c:139
 msgid ""
@@ -97,36 +99,39 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"A súa shell actual non está listada en /etc/shells.\n"
+"Non lle está permitido mudar a súa shell.\n"
+"Consulte co administrador do seu sistema."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:143
 msgid "Out of memory."
-msgstr ""
+msgstr "Memoria esgotada."
 
 #: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
-msgstr ""
+msgstr "A chamada a exec() fallou."
 
 #: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Non se atopou o programa seleccionado."
 
 #: ../userhelper-wrap.c:152
 msgid "Unknown error."
-msgstr ""
+msgstr "Erro descoñecido."
 
 #: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Erro de saída descoñecido."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Entrada"
 
 #: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "Necesita %d respostas.\n"
 
 #: ../userhelper-wrap.c:345
 #, c-format
@@ -134,131 +139,137 @@ msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
 "required."
 msgstr ""
+"Para poder executar \"%s\" con privilexios de %s, requírese información "
+"adicional."
 
 #: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "¡¿Quere %d resposta(s) a partir de %d campos?!\n"
 
 #: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Obteuse o erro %d.\n"
 
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Contrasinal de %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "A comprobación de consistencia non está activada."
 
 #: ../userhelper.c:389
 msgid "Block is fine."
-msgstr ""
+msgstr "O bloque é correcto."
 
 #: ../userhelper.c:391
 msgid "Block freed twice."
-msgstr ""
+msgstr "Bloque liberado dúas veces."
 
 #: ../userhelper.c:393
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "A memoria antes do bloque estaba esmagada."
 
 #: ../userhelper.c:395
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "A memoria tralo bloque estaba esmagada."
 
 #: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "O userhelper ten que ser setuid root\n"
 
 #: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr ""
+msgstr "a piques de executar \"%s\"\n"
 
 #: ../userinfo.c:125
 msgid "User Information"
-msgstr ""
+msgstr "Información de Usuario"
 
 #: ../userinfo.c:154
 msgid "Help"
-msgstr ""
+msgstr "Axuda"
 
 #: ../userinfo.c:243
 msgid "Full Name:"
-msgstr ""
+msgstr "Nome Completo:"
 
 #: ../userinfo.c:261
 msgid "Office:"
-msgstr ""
+msgstr "Oficina:"
 
 #: ../userinfo.c:280
 msgid "Office Phone:"
-msgstr ""
+msgstr "Teléfono da Oficina:"
 
 #: ../userinfo.c:298
 msgid "Home Phone:"
-msgstr ""
+msgstr "Teléfono da Casa:"
 
 #: ../userinfo.c:316
 msgid "Shell:"
-msgstr ""
+msgstr "Shell:"
 
 #: ../userinfo.c:379
 msgid "This will be some help text."
-msgstr ""
+msgstr "Isto será algún texto de axuda."
 
 #: ../usermount.c:56
 msgid "Mount"
-msgstr ""
+msgstr "Montar"
 
 #: ../usermount.c:57
 msgid "Unmount"
-msgstr ""
+msgstr "Desmontar"
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Ferramenta de Montaxe de Usuario"
 
 #: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
+"Non hai ningún sistema de ficheiro montable polo usuario.\n"
+"Contacte co seu administrador."
 
 #: ../usermount.c:178
 msgid "Directory"
-msgstr ""
+msgstr "Directorio"
 
 #: ../usermount.c:186
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
 #: ../usermount.c:194
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: ../usermount.c:269
 msgid "Format"
-msgstr ""
+msgstr "Formatar"
 
 #: ../usermount.c:363
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
+"¿Está seguro?\n"
+"Vai destruír tódolos datos nese disco.\n"
 
 #: ../usermount.c:365
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: ../usermount.c:375
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: ../usermount.c:382
 msgid "Do low level format."
-msgstr ""
+msgstr "Facer formato de baixo nivel."
