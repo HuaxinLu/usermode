@@ -1,18 +1,19 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation to Bahasa Indonesia
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Alexander Agung <redtux@sby.dnet.net.id>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
+"Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date:  2001-01-25 15:31-0500\n"
-"Last-Translator: Unknown\n"
-"Language-Team: Indonesian\n"
+"PO-Revision-Date: 2004-07-16 10:53+0700\n"
+"Last-Translator: Alexander Agung <redtux@sby.dnet.net.id>\n"
+"Language-Team: Bahasa Indonesia <viribus@traderweb.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -35,73 +36,73 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr ""
+msgstr "OKE"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr ""
+msgstr "Keluar"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr ""
+msgstr "Batalkan"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Jalan Tanpa Kewenangan"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "UNIX password (yang sekarang): "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr ""
+msgstr "UNIX password Baru: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Ketik ulang UNIX password baru: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "PASSWORD BURUK: CARANYA terlalu pendek"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "PASSWORD BURUK: terlalu pendek"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr ""
+msgstr "Password tak berubah"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Maaf, passwords tidak sesuai"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "Luncurka alat konfigurasi sistem global tanpa password."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "login: "
 
 #: dummy.h:34
 msgid "Password: "
-msgstr ""
+msgstr "Password: "
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr ""
+msgstr "Bantuan"
 
 #: userhelper.c:114
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Tidak dapat set konteks exec untuk %s.\n"
 
 #: userhelper.c:431
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Password untuk %s"
 
 #: userhelper.c:674
 #, c-format
@@ -109,6 +110,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Anda mencoba menjalankan \"%s\" yang didapat dari kewenangan\n"
+"administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
 #: userhelper.c:676
 #, c-format
@@ -116,49 +119,56 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan\n"
+"administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
 #: userhelper.c:680
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang didapat dari \n"
+"kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
 #: userhelper.c:682
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang memerlukan \n"
+"kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
 #: userhelper.c:701
 #, c-format
 msgid "Password for %s: "
-msgstr ""
+msgstr "Password untuk %s: "
 
 #: userhelper.c:2215
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "userhelper harus setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2313
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Tidak dapat membuka jendela grafis, dan tidak dapat menemukan terminal pengontrol.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Kode keluar tidak diketahui."
 
 #: userhelper-wrap.c:181
 msgid "Information updated."
-msgstr ""
+msgstr "Informasi diperbarui."
 
 #: userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Password yang anda ketik tidak valid.\n"
+"Harap coba lagi."
 
 #: userhelper-wrap.c:185
 msgid ""
@@ -169,7 +179,7 @@ msgstr ""
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
-msgstr ""
+msgstr "Reset password salah."
 
 #: userhelper-wrap.c:189
 msgid ""
@@ -179,15 +189,15 @@ msgstr ""
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
-msgstr ""
+msgstr "Pemakai tidak dikenal."
 
 #: userhelper-wrap.c:193
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Kewenangan tidak cukup."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
-msgstr ""
+msgstr "Panggilan tidak valid ke subproses."
 
 #: userhelper-wrap.c:197
 msgid ""
@@ -198,19 +208,19 @@ msgstr ""
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
-msgstr ""
+msgstr "Kehabisan memori."
 
 #: userhelper-wrap.c:202
 msgid "The exec() call failed."
-msgstr ""
+msgstr "Panggilan exec() gagal."
 
 #: userhelper-wrap.c:204
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Gagal temukan program yang dipilih."
 
 #: userhelper-wrap.c:208
 msgid "Unknown error."
-msgstr ""
+msgstr "Kesalahan tidak diketahui."
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -219,28 +229,28 @@ msgstr ""
 #.
 #: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
-msgstr ""
+msgstr "Query"
 
 #: userhelper-wrap.c:564 userhelper-wrap.c:744
 msgid "Error"
-msgstr ""
+msgstr "Kesalahan"
 
 #: userhelper-wrap.c:576
 msgid "Information"
-msgstr ""
+msgstr "Informasi"
 
 #: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
-msgstr ""
+msgstr "Penempatan teks."
 
 #: userhelper-wrap.c:782
 msgid "Changing personal information."
-msgstr ""
+msgstr "Merubah informasi pribadi."
 
 #: userhelper-wrap.c:785
 msgid "Changing login shell."
-msgstr ""
+msgstr "Merubah login shell."
 
 #: userhelper-wrap.c:791
 #, c-format
@@ -261,145 +271,154 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang mungkin diperlukan kewenangan "
+"administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: userhelper-wrap.c:804
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang memerlukan kewenangan "
+"administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
-msgstr ""
+msgstr "_Jalan Tanpa Kewenangan"
 
 #: userhelper-wrap.c:973
 #, c-format
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Kesalahan pipe.\n"
 
 #: userhelper-wrap.c:980
 #, c-format
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Tidak dapat fork().\n"
 
 #: userhelper-wrap.c:1058 userhelper-wrap.c:1062
 #, c-format
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "kesalahan dup2().\n"
 
 #: userhelper-wrap.c:1074
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "kesalahan execl(), errno=%d\n"
 
 #: userinfo.c:323
 #, c-format
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "Anda tidak ada.  Harap pergi.\n"
 
 #: usermount.c:62
 msgid "_Mount"
-msgstr ""
+msgstr "_Pasang"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr ""
+msgstr "L_epaskan"
 
 #: usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
+"Anda yakin ingin format disk ini?  Anda akan menghancurkan data yang ada "
+"didalamnya."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr ""
+msgstr "Lakukan format _low-level."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Pilih sebuah tipe _filesystem untuk dibuat:"
 
 #: usermount.c:543
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
+"Tidak ada filesystems yang dibolehkan pasang atau lepas buat anda.\n"
+"Hubungi administrator anda."
 
 #. Create the dialog.
 #: usermount.c:544 usermount.c:556
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Alat Pemasang Pengguna"
 
 #. Create the other buttons.
 #: usermount.c:570
 msgid "_Format"
-msgstr ""
+msgstr "_Format"
 
 #: usermount.c:606
 msgid "Device"
-msgstr ""
+msgstr "Peralatan"
 
 #: usermount.c:612
 msgid "Directory"
-msgstr ""
+msgstr "Direktori"
 
 #: usermount.c:618
 msgid "Filesystem"
-msgstr ""
+msgstr "Filesystem"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
-msgstr ""
+msgstr "Pesan"
 
 #: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
-msgstr ""
+msgstr "Informasi Pemakai"
 
 #: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
-msgstr ""
+msgstr "Nama Lengkap:"
 
 #: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
-msgstr ""
+msgstr "Kantor:"
 
 #: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr ""
+msgstr "Nomor Telepon Kantor:"
 
 #: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr ""
+msgstr "Nomor Telepon Rumah:"
 
 #: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr ""
+msgstr "Login Shell:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Tentang Diri Saya"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr ""
+msgstr "Rubah informasi pribadi"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Manajemen Disk"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Pasang dan lepaskan filesystem"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Ubah login password anda"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
-msgstr ""
+msgstr "Password"
+
