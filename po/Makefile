@@ -1,8 +1,8 @@
 INSTALL= /usr/bin/install -c
 INSTALL_PROGRAM= ${INSTALL}
 INSTALL_DATA= ${INSTALL} -m 644
-datadir=$(PREFIX)/usr/share
-INSTALLNLSDIR=$(datadir)/locale
+datadir=/usr/share
+INSTALLNLSDIR=$(PREFIX)$(datadir)/locale
 
 MSGMERGE = msgmerge
 
