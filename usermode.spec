@@ -1,12 +1,12 @@
 %if %{?WITH_SELINUX:0}%{!?WITH_SELINUX:1}
-%define WITH_SELINUX 1
+%define WITH_SELINUX 0
 %endif
 
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.68
-Release: 7.sel
+Release: 8
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -117,6 +117,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Oct 6 2003 Dan Walsh <dwalsh@redhat.com> 1.68-8
+
 * Wed Oct 1 2003 Dan Walsh <dwalsh@redhat.com> 1.68-7.sel
 - Fix to use /etc instead of /usr/etc
 
