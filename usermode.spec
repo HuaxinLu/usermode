@@ -2,7 +2,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.36
-Release: 3
+Release: 4
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -90,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Tue Oct 24 2000 Nalin Dahyabhai <nalin@redhat.com>
+- /sbin/shutdown, not /usr/sbin/shutdown (#19034)
+
 * Fri Oct  6 2000 Nalin Dahyabhai <nalin@redhat.com>
 - don't pass on arguments to halt and reboot, because they error out
 

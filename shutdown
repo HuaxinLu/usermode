@@ -1,7 +1,7 @@
 #!/bin/sh
 # Try to do the right thing for programs that rely on "/usr/bin/shutdown -r now"
 # to shut down the machine.
-prog=/usr/sbin/shutdown
+prog=/sbin/shutdown
 now=
 for flag in $* ; do
 	if test ${flag} = "-h" ; then
@@ -14,8 +14,8 @@ for flag in $* ; do
 		args="$args $flag"
 	fi
 done
-if [ -z "$args" -a $prog != /usr/sbin/shutdown ] ; then
+if [ -z "$args" -a $prog != /sbin/shutdown ] ; then
 	exec $prog $args
 else
-	exec /usr/sbin/shutdown $args $now
+	exec /sbin/shutdown $args $now
 fi
