@@ -372,7 +372,7 @@ msgstr ""
 
 #: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
-msgstr "_Uruchom bez dodatkowych uprawnień"
+msgstr "U_ruchom bez dodatkowych uprawnień"
 
 #: userhelper-wrap.c:974
 #, c-format
@@ -417,7 +417,7 @@ msgstr ""
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr "Przeprowadź formatowanie nisko-poziomowe."
+msgstr "Przeprowadź formatowanie _niskopoziomowe."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
@@ -428,7 +428,7 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Brak systemów plików do których montowania/odmontowania miałbyś prawo.\n"
+"Brak systemów plików do których montowania/odmontowywania miałbyś prawo.\n"
 "Skontaktuj się z administratorem."
 
 #  Create the dialog.
@@ -448,7 +448,7 @@ msgstr "Urządzenie"
 
 #: usermount.c:618
 msgid "Directory"
-msgstr "Katalog"
+msgstr "Folder"
 
 #: usermount.c:624
 msgid "Filesystem"
