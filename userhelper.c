@@ -39,6 +39,7 @@
 #include <libintl.h>
 #include <unistd.h>
 #include <pwd.h>
+#include <grp.h>
 #include <sys/types.h>
 #include <sys/resource.h>
 #include <sys/stat.h>
@@ -716,6 +717,8 @@ int main(int argc, char *argv[])
 
 	    if ((child = fork()) == 0) {
                 struct passwd *pw;
+		setgroups(0, NULL);
+		setgid(0);
 		setuid(0);
 		pw = getpwuid(getuid());
 		if (pw) setenv("HOME", pw->pw_dir, 1);
@@ -755,10 +758,11 @@ int main(int argc, char *argv[])
 
 	} else {
 	    /* this is not a session, so do not do session management */
-
 	    pam_end(pamh, PAM_SUCCESS);
 
 	    /* time for an exec */
+	    setgroups(0, NULL);
+	    setgid(0);
 	    setuid(0);
 	    argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER

@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.40
+Version: 1.41
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -91,6 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Wed Feb 14 2001 Nalin Dahyabhai <nalin@redhat.com>
+- clear the supplemental groups list before running binaries as root (#26851)
+
 * Wed Feb  7 2001 Nalin Dahyabhai <nalin@redhat.com>
 - set XAUTHORITY if we fall back to regular behavior (#26343)
 - make the suid helper 04711 instead of 04755
