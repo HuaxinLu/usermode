@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.9.1
+Version: 1.10
 Release: 1
 Copyright: GPL
 Group: Applications/System
