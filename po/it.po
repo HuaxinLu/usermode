@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-08-13 21:32-0400\n"
-"PO-Revision-Date: 2002-08-08 10:19GMT\n"
+"PO-Revision-Date: 2002-08-29 12:09GMT\n"
 "Last-Translator: Marisa <marisa@redhat.it>\n"
 "Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -78,10 +78,8 @@ msgid "Sorry, passwords do not match"
 msgstr "Le password non corrispondono"
 
 #: dummy.h:32
-#, fuzzy
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Aprire gli strumenti di configurazione del sistema senza eseguire il login."
+msgstr "Aprire gli strumenti di configurazione del sistema senza password."
 
 #: userdialogs.h:30
 msgid "Help"
