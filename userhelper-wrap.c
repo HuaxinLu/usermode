@@ -251,6 +251,7 @@ userhelper_parse_exitstatus(int exitstatus)
 	}
 }
 
+#if 0
 /* Attempt to grab focus for the toplevel of this widget, so that peers can
  * get events too. */
 static void
@@ -262,6 +263,7 @@ userhelper_grab_keyboard(GtkWidget *widget, GdkEventAny *event)
 		g_warning("gdk_keyboard_grab returned %d", ret);
 	}
 }
+#endif
 
 /* Handle the executed dialog, writing responses back to the child when
  * possible. */
