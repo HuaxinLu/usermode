@@ -1,7 +1,18 @@
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
-EXTRA_DIST = usermode.spec dummy.h
+EXTRA_DIST = \
+	dummy.h \
+	usermode.spec \
+	shutdown \
+	userinfo.1 \
+	usermount.1 \
+	userpasswd.1 \
+	consolehelper.8 \
+	userhelper.8 \
+	userinfo.desktop \
+	usermount.desktop \
+	userpasswd.desktop
 
 SUBDIRS=intl po
 

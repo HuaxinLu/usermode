@@ -128,7 +128,7 @@ pkgdata_DATA = usermode.glade
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_LDADD =  -L/usr/lib -lglib-1.3   -lpwdb -lpam_misc -lpam -ldl 
 
-userinfo_SOURCES = userinfo.c userdialogs.c userhelper-wrap.c
+userinfo_SOURCES = userinfo.c userdialogs.c userhelper-wrap.c userhelper-wrap.h
 userinfo_LDADD =  -L/usr/lib -L/usr/X11R6/lib -lglade-2.0 -lgtk-x11-1.3 -lgdk-x11-1.3 -lXi -lgdk_pixbuf-1.3 -lm -lpangox -lpangoxft -lXft -lXrender -lXext -lX11 -lfreetype -lpango -latk -lgobject-1.3 -lgmodule-1.3 -ldl -lglib-1.3 -lxml2 -lz   
 
 usermount_SOURCES = usermount.c userdialogs.c
