@@ -104,7 +104,7 @@ msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 #: userhelper.c:1117 userhelper.c:1156
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "\"%s\" 를 실행합니다\n"
+msgstr "\"%s\" (을)를 실행합니다\n"
 
 #: userhelper-wrap.c:50
 msgid "Unknown exit code."
