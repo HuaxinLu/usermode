@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.15
+Version: 1.16
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -70,6 +70,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Sep 30 1999 Michael K. Johnson <johnsonm@redhat.com>
+- fixed old complex broken gecos parsing, replaced with simple working parsing
+- can now blank fields (was broken by previous fix for something else...)
+
 * Tue Sep 21 1999 Michael K. Johnson <johnsonm@redhat.com>
 - FALLBACK/RETRY in consolehelper/userhelper
 - session management fixed for consolehelper/userhelper SESSION=true
