@@ -249,42 +249,38 @@ msgid "Changing login shell."
 msgstr "A modificar a 'shell' de ligação."
 
 #: userhelper-wrap.c:456
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Está a tentar executar \"%s\", o qual pode beneficiar de privilégios de "
-"super-utilizador. No entanto, para os obter são necessárias algumas "
-"informações."
+"super-utilizador, mas para os obter são necessárias mais informações."
 
 #: userhelper-wrap.c:458
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
 "Está a tentar executar \"%s\", o qual necessita de privilégios de super-"
-"utilizador. No entanto, para os obter são necessárias algumas informações."
+"utilizador, mas para os obter são necessárias mais informações."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Está a tentar executar um comando que pode beneficiar de privilégios de "
-"super-utilizador. No entanto, para os obter são necessárias algumas "
-"informações."
+"super-utilizador, mas para os obter são necessárias mais informações."
 
 #: userhelper-wrap.c:465
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Está a tentar executar um comando que necessita de privilégios de super-"
-"utilizador. No entanto, para os obter são necessárias algumas informações."
+"utilizador, mas para os obter são necessárias mais informações."
 
 #: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
