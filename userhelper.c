@@ -1016,6 +1016,113 @@ become_normal(char *user)
 	}
 }
 
+/* Determine the name of the user whose ruid we're executing under.  For
+ * SELinux, this is the user from the previous context. */
+char *
+get_user_from_ruid()
+{
+	struct passwd *pw;
+	char *ret;
+
+	ret = NULL;
+#ifdef WITH_SELINUX
+	selinux_enabled = is_selinux_enabled();
+	if (selinux_enabled) {
+		context_t ctx;
+		if (getprevcon(&old_context) < 0) {
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: i have no name\n");
+#endif
+			exit(ERR_UNK_ERROR);
+		}
+		ctx = context_new(old_context);
+		user_name = g_strdup(context_user_get(ctx));
+		context_free(ctx);
+	}
+#endif
+	if (ret == NULL) {
+		/* Now try to figure out who called us. */
+		pw = getpwuid(getuid());
+		if ((pw != NULL) && (pw->pw_name != NULL)) {
+			user_name = g_strdup(pw->pw_name);
+		} else {
+			/* I have no name and I must have one. */
+#ifdef DEBUG_USERHELPER
+			g_print("userhelper: i have no name\n");
+#endif
+			exit(ERR_UNK_ERROR);
+		}
+	}
+
+	return ret;
+}
+
+/* Determine the name of the user as whom we must authenticate. */
+char *
+get_user_for_auth(shvarFile *s)
+{
+	char *ret = NULL;
+	char *ruid_user, *configured_user;
+
+	ruid_user = get_user_from_ruid();
+
+#ifdef WITH_SELINUX
+	if (selinux_enabled) {
+		security_context_t defcontext = NULL;
+		char *apps_role, *apps_type;
+		context_t ctx;
+
+		if (get_init_context(CONTEXT_FILE, &defcontext) == 0) {
+			ctx = context_new(defcontext);
+		} else {
+			ctx = context_new(old_context);
+		}
+		context_user_set(ctx, ruid_user);
+		apps_role = svGetValue(s, "ROLE");
+		apps_type = svGetValue(s, "TYPE");
+		if (apps_role != NULL) { 
+			context_type_set(ctx, apps_type); /* XXX */
+		}
+		if (apps_type != NULL) {
+			context_role_set(ctx, apps_role); /* XXX */
+		}
+		freecon(defcontext);
+		defcontext = NULL;
+		freecon(old_context);
+		old_context = NULL;
+
+		new_context = strdup(context_str(ctx));
+		context_free(ctx);
+		ret = ruid_user;
+	}
+#endif
+	if (ret == NULL) {
+		/* Determine who we should authenticate as.  If not specified,
+		 * or if "<user>" is specified, we authenticate as the invoking
+		 * user, otherwise we authenticate as the specified user (which
+		 * is usually root, but could conceivably be something else). */
+		configured_user = svGetValue(s, "USER");
+		if (configured_user == NULL) {
+			ret = ruid_user;
+		} else
+		if (strcmp(configured_user, "<user>") == 0) {
+			free(configured_user);
+			ret = ruid_user;
+		} else {
+			ret = configured_user;
+		}
+	}
+
+	if (ret != NULL) {
+		if (ruid_user != ret) {
+			free(ruid_user);
+		}
+		return ret;
+	}
+
+	return NULL;
+}
+
 /*
  * ------- the application itself --------
  */
@@ -1140,35 +1247,8 @@ main(int argc, char **argv)
 		prompt = &prompt_pipe;
 	}
 
-#ifdef WITH_SELINUX
-	selinux_enabled = is_selinux_enabled();
-	if (selinux_enabled) {
-		context_t ctx;
-		if (getprevcon(&old_context) < 0) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: i have no name\n");
-#endif
-			exit(ERR_UNK_ERROR);
-		}
-		ctx = context_new(old_context);
-		user_name = g_strdup(context_user_get(ctx));
-		context_free(ctx);
-	} else {
-#endif
-	/* Now try to figure out who called us. */
-	pw = getpwuid(getuid());
-	if ((pw != NULL) && (pw->pw_name != NULL)) {
-		user_name = g_strdup(pw->pw_name);
-	} else {
-		/* I have no name and I must have one. */
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: i have no name\n");
-#endif
-		exit(ERR_UNK_ERROR);
-	}
-#ifdef WITH_SELINUX
-	}
-#endif
+	user_name = get_user_from_ruid();
+
 #ifdef DEBUG_USERHELPER
 	g_print("userhelper: user is %s\n", user_name);
 #endif
@@ -1528,7 +1608,7 @@ main(int argc, char **argv)
 		 * execute the command given in the console.apps file. */
 		char *constructed_path;
 		char *apps_filename;
-		char *user_pam = user_name, *apps_user;
+		char *user_pam = user_name;
 		const char *auth_user;
 		char *apps_banner, *apps_domain, *apps_sn = NULL;
 		char *retry, *noxoption;
@@ -1645,46 +1725,8 @@ main(int argc, char **argv)
 			exit(ERR_UNK_ERROR);
 		}
 
-#ifdef WITH_SELINUX
-		if (selinux_enabled) {
-		  security_context_t defcontext=NULL;
-		  char *apps_role,*apps_type;
-		  context_t ctx;
-		  if (get_init_context(CONTEXT_FILE, &defcontext)==0) {
-		    ctx=context_new(defcontext);
-		  } else {
-		    ctx=context_new(old_context);
-		  }
-		  context_user_set(ctx,user_name);
-		  apps_role = svGetValue(s, "ROLE");
-		  apps_type = svGetValue(s, "TYPE");
-		  if (apps_role != NULL) { 
-		    context_type_set(ctx,apps_type);
-		  }
-		  if (apps_type != NULL) {
-		    context_role_set(ctx,apps_role);
-		  }
-		  freecon(defcontext);
-		  freecon(old_context);
-		  new_context=strdup(context_str(ctx));
-		  context_free(ctx);
-		  apps_user=user_name;
-		} else {
-#endif
-		/* Determine who we should authenticate as.  If not specified,
-		 * or if "<user>" is specified, we authenticate as the invoking
-		 * user, otherwise we authenticate as the specified user (which
-		 * is usually root, but could conceivably be something else). */
-		apps_user = svGetValue(s, "USER");
-		if ((apps_user == NULL) || (strcmp(apps_user, "<user>") == 0)) {
-			user_pam = user_name;
-		} else {
-			user_pam = g_strdup(apps_user);
-		}
+		user_pam = get_user_for_auth(s);
 
-#ifdef WITH_SELINUX
-		}
-#endif
 		/* Read the path to the program to run. */
 		constructed_path = svGetValue(s, "PROGRAM");
 		if (!constructed_path || constructed_path[0] != '/') {
