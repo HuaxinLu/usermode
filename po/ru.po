@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
 "POT-Creation-Date: 2002-04-01 11:46-0500\n"
-"PO-Revision-Date: 2002-02-03 00:44EET\n"
+"PO-Revision-Date: 2002-04-12 23:34EET\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=KOI8-R\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Date: 1999-04-03 12:20+0200\n"
-"X-Generator: KBabel 0.9.5\n"
+"X-Generator: KBabel 0.9.6\n"
 
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
@@ -75,6 +75,9 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Вы пытаетесь выполнить программу \"%s\", которая получает\n"
+"определенные преимущества будучи запущенной с правами\n"
+"root. Для этого требуется дополнительная информация."
 
 #: userhelper.c:319
 #, c-format
@@ -82,31 +85,37 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Вы пытаетесь выполнить программу \"%s\", которая требует\n"
+"привилегий root. Для этого нужна дополнительная информация."
 
 #: userhelper.c:323
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
 msgstr ""
+"Вы пытаетесь выполнить программу, которая получает\n"
+"определенные преимущества будучи запущенной с правами\n"
+"root. Для этого требуется дополнительная информация."
 
 #: userhelper.c:325
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Вы пытаетесь выполнить программу, которая требует привелегий\n"
+"root. Для этого нужна дополнительная информация."
 
 #: userhelper.c:343
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "Пароль для %s"
+msgstr "Пароль для %s: "
 
 #: userhelper.c:626
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper должен быть setuid root\n"
 
 #: userhelper.c:708
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Невозможно открыть графическое окно и найти управляющий терминал.\n"
 
 #: userhelper.c:1369 userhelper.c:1407
@@ -192,7 +201,7 @@ msgstr "Неизвестная ошибка."
 
 #: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
-msgstr ""
+msgstr "Место для текста."
 
 #: userhelper-wrap.c:352
 #, c-format
@@ -221,6 +230,9 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Вы пытаетесь выполнить программу \"%s\", которая получает "
+"определенные преимущества будучи запущенной с правами "
+"root. Для этого требуется дополнительная информация."
 
 #: userhelper-wrap.c:450
 #, c-format
@@ -228,18 +240,25 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Вы пытаетесь выполнить программу \"%s\", которая требует привилегий root. "
+"Для этого нужна дополнительная информация."
 
 #: userhelper-wrap.c:455
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Вы пытаетесь выполнить программу, которая получает "
+"определенные преимущества будучи запущенной с правами "
+"root. Для этого требуется дополнительная информация."
 
 #: userhelper-wrap.c:457
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Вы пытаетесь выполнить программу, которая требует "
+"привилегий root. Для этого нужна дополнительная информация."
 
 #: userhelper-wrap.c:467
 msgid "_Run Unprivileged"
@@ -264,7 +283,7 @@ msgstr "ошибка execl(), код ошибки %d\n"
 
 #: userinfo.c:300
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "Вы не существуете. Уходите.\n"
 
 #: usermount.c:61 glade.strings:26
 msgid "_Mount"
@@ -316,7 +335,7 @@ msgstr "Каталог"
 
 #: usermount.c:591
 msgid "Filesystem"
-msgstr ""
+msgstr "Файловая система"
 
 #: glade.strings:7
 msgid "User Information"
@@ -340,11 +359,11 @@ msgstr "Домашний телефон"
 
 #: glade.strings:12
 msgid "Login Shell"
-msgstr ""
+msgstr "Login Shell"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr ""
+msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
@@ -360,7 +379,7 @@ msgstr "Закрыть"
 
 #: glade.strings:18
 msgid "Query"
-msgstr ""
+msgstr "Запрос"
 
 #: glade.strings:25
 msgid "Type"
@@ -373,3 +392,4 @@ msgstr "Размонтировать"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "Выход"
+
