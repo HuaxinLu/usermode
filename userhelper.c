@@ -1660,7 +1660,8 @@ wrap(const char *user, const char *program,
 	char **environ_save;
 	char *env_home, *env_term, *env_desktop_startup_id;
 	char *env_display, *env_shell;
-	char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
+	char *env_lang, *env_language, *env_lcall, *env_lcmsgs;
+	char *env_xauthority;
 	int session, tryagain, gui, retval;
 	struct stat sbuf;
 	struct passwd *pwd;
@@ -1678,6 +1679,7 @@ wrap(const char *user, const char *program,
 	env_display = getenv("DISPLAY");
 	env_home = getenv("HOME");
 	env_lang = getenv("LANG");
+	env_language = getenv("LANGUAGE");
 	env_lcall = getenv("LC_ALL");
 	env_lcmsgs = getenv("LC_MESSAGES");
 	env_shell = getenv("SHELL");
@@ -1700,6 +1702,11 @@ wrap(const char *user, const char *program,
 	     strstr(env_lang, "..") ||
 	     strchr(env_lang, '%')))
 		env_lang = NULL;
+	if (env_language &&
+	    (strstr(env_language, "/") ||
+	     strstr(env_language, "..") ||
+	     strchr(env_language, '%')))
+		env_language = NULL;
 	if (env_lcall &&
 	    (strstr(env_lcall, "/") ||
 	     strstr(env_lcall, "..") ||
@@ -1738,6 +1745,7 @@ wrap(const char *user, const char *program,
 	if (env_desktop_startup_id) setenv("DESKTOP_STARTUP_ID",
 					   env_desktop_startup_id, 1);
 	if (env_lang) setenv("LANG", env_lang, 1);
+	if (env_language) setenv("LANGUAGE", env_language, 1);
 	if (env_lcall) setenv("LC_ALL", env_lcall, 1);
 	if (env_lcmsgs) setenv("LC_MESSAGES", env_lcmsgs, 1);
 	if (env_shell) setenv("SHELL", env_shell, 1);
