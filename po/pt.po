@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2003-09-29 16:02+0100\n"
+"PO-Revision-Date: 2004-01-27 22:48+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "Cancelar"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Executar sem privilégios"
+msgstr "Executar sem Privilégios"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -396,7 +396,7 @@ msgstr "'Shell':"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr "_OK"
+msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
