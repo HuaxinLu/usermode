@@ -54,6 +54,7 @@ static char *office	= NULL; /* office */
 static char *office_ph	= NULL;	/* office phone */
 static char *home_ph	= NULL;	/* home phone */
 static char *user_name	= NULL; /* the account name */
+static char *shell_path = NULL; /* shell path */
 
 /* command line flags */
 static int 	f_flg = 0; 	/* -f flag = change full name */
@@ -61,6 +62,7 @@ static int	o_flg = 0;	/* -o flag = change office name */
 static int	p_flg = 0;	/* -p flag = change office phone */
 static int 	h_flg = 0;	/* -h flag = change home phone number */
 static int 	c_flg = 0;	/* -c flag = change password */
+static int 	s_flg = 0;	/* -s flag = change shell */
 
 /*
  * A handy fail exit function we can call from man places
@@ -299,7 +301,7 @@ int main(int argc, char *argv[])
 	exit(ERR_NO_RIGHTS);
     }
 
-    while ((arg = getopt(argc, argv, "f:o:p:h:c")) != EOF) {
+    while ((arg = getopt(argc, argv, "f:o:p:h:cs:")) != EOF) {
 	switch (arg) {
 	    case 'f':
 		f_flg++; full_name = optarg;
@@ -316,12 +318,15 @@ int main(int argc, char *argv[])
 	    case 'c':
 		c_flg++;
 		break;
+	    case 's':
+		s_flg++; shell_path = optarg;
+		break;
 	    default:
 		exit(ERR_INVALID_CALL);
 	}
     } 
     /* verify a little the parameters */
-    if (c_flg && (f_flg || o_flg || p_flg || h_flg))
+    if (c_flg && (f_flg || o_flg || p_flg || h_flg || s_flg))
 	exit(ERR_INVALID_CALL);
     
     /* now try to identify the username we are doing all this work for */
@@ -443,6 +448,18 @@ int main(int argc, char *argv[])
 	    pam_end(pamh, PAM_ABORT);
 	    fail_error(PAM_ABORT);
 	}
+	/* if we change the shell too ... */
+	if (s_flg != 0) {
+	    retval = pwdb_set_entry(_pwdb, "shell", shell_path, 1+strlen(shell_path),
+				    NULL, NULL, 0);
+	    if (retval != PWDB_SUCCESS) {
+		/* try a clean exit */
+		pwdb_delete(&_pwdb);
+		pwdb_end();
+		pam_end(pamh, PAM_ABORT);
+		fail_error(PAM_ABORT);
+	    }
+	}    
 	retval = pwdb_replace("user", _pwdb->source, user_name, PWDB_ID_UNKNOWN, &_pwdb);
 	if (retval != PWDB_SUCCESS) {
 	    /* clean exit ... */
