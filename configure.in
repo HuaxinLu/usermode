@@ -65,6 +65,16 @@ if test x$debug != xno ; then
 	AC_MSG_RESULT([===== Extra debugging messages enabled. =====])
 fi
 
+efence=no
+EFENCE_LIBS=
+AC_ARG_WITH(efence,[  --with-efence          Enable use of ElectricFence],
+	    efence=${withval})
+if test x$efence != xno ; then
+	EFENCE_LIBS="-lefence"
+	AC_MSG_RESULT([===== ElectricFence enabled. =====])
+fi
+AC_SUBST(EFENCE_LIBS)
+
 selinux=no
 AC_ARG_WITH(selinux,[  --with-selinux         Use SELinux functionality],
 	    selinux=${withval})

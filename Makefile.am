@@ -79,29 +79,29 @@ pkgdata_DATA = usermode.glade
 @INTLTOOL_DESKTOP_RULE@
 
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
-userhelper_LDADD = @LIBUSER_LIBS@ @GLIB_LIBS@ @PAM_LIBS@ @LIBS@
+userhelper_LDADD = @LIBUSER_LIBS@ @GLIB_LIBS@ @PAM_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c userhelper-wrap.h reaper.c reaper.h marshal.c marshal.h
-userinfo_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@
+userinfo_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 usermount_SOURCES = usermount.c userdialogs.c
-usermount_LDADD = @LIBGLADE_LIBS@ @LIBS@
+usermount_LDADD = @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c reaper.c userhelper-wrap.h reaper.h marshal.c marshal.h
-userpasswd_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@
+userpasswd_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 consolehelper_SOURCES = consolehelper-nox.c
-consolehelper_LDADD = @GLIB_LIBS@ @LIBS@
+consolehelper_LDADD = @GLIB_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userdialogs.h userhelper-wrap.c userhelper-wrap.h reaper.c reaper.h marshal.c marshal.h
-consolehelper_gtk_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@
+consolehelper_gtk_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) egg-marshal.c gsmclient.c gsmclient.h props.h props.c
-pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ $(X_LIBS) -lICE -lSM
+pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ $(X_LIBS) -lICE -lSM @EFENCE_LIBS@
 pam-panel-icon.c: egg-marshal.c
 
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c userdialogs.h
-test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@
+test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 tag:
 	cvs tag -cR $(CVSTAG) .
