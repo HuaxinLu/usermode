@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.42\n"
 "POT-Creation-Date: 2001-02-05 10:35-0500\n"
-"PO-Revision-Date: 2001-03-12 16:40+0900\n"
+"PO-Revision-Date: 2001-03-14 10:05+0900\n"
 "Last-Translator: Jong-Hoon Ryu <queenrjh@chollian.net>\n"
 "Language-Team: Korean Linux Extension project <kle@kldp.org>\n"
 "MIME-Version: 1.0\n"
@@ -187,7 +187,7 @@ msgstr "블럭이 올바릅니다."
 
 #: ../userhelper.c:402
 msgid "Block freed twice."
-msgstr "블럭이 두번 비워졌습니다."
+msgstr "블럭이 두번 비워(free) 졌습니다."
 
 #: ../userhelper.c:404
 msgid "Memory before the block was clobbered."
@@ -246,7 +246,7 @@ msgstr "쉘:"
 
 #: ../userinfo.c:378
 msgid "This will be some help text."
-msgstr "이 것은 사용자에 대한 간단한 정보로 이용됩니다."
+msgstr "이 내용은 사용자에 대한 간단한 정보로 이용됩니다."
 
 #: ../usermount.c:57
 msgid "Mount"
