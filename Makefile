@@ -68,7 +68,7 @@ install-po:
 	$(MAKE) -C po $@ PREFIX=$(PREFIX) datadir=$(datadir)
 
 clean:	
-	rm -f *~ *.o $(PROGS)
+	rm -f *~ *.o $(PROGS) *.bz2 *.gz
 
 archive:
 	cvs tag -F $(CVSTAG) .

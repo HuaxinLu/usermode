@@ -87,6 +87,7 @@ static int 	c_flg = 0;	/* -c flag = change password */
 static int 	s_flg = 0;	/* -s flag = change shell */
 static int 	t_flg = 0;	/* -t flag = direct text-mode -- exec'ed */
 static int 	w_flg = 0;	/* -w flag = act as a wrapper for next args */
+static int	d_flg = 0;      /* -d flag = three descriptor numbers for us */
 
 /*
  * A handy fail exit function we can call from many places
@@ -413,6 +414,7 @@ int main(int argc, char *argv[])
     pam_handle_t 	*pamh = NULL;
     struct passwd	*pw;
     struct pam_conv     *conv;
+    int		stdin_fileno = -1, stdout_fileno = -1, stderr_fileno = -1;
 
 #ifdef USE_MCHECK
     mtrace();
@@ -429,7 +431,7 @@ int main(int argc, char *argv[])
 	exit(ERR_NO_RIGHTS);
     }
 
-    while (!w_flg && (arg = getopt(argc, argv, "f:o:p:h:cs:tw:")) != -1) {
+    while (!w_flg && (arg = getopt(argc, argv, "f:o:p:h:cs:tw:d:")) != -1) {
 	/* we process no arguments after -w progname; those are sacred */
 	switch (arg) {
 	    case 'f':
@@ -456,6 +458,31 @@ int main(int argc, char *argv[])
 	    case 'w':
 		w_flg++; progname = optarg;
 		break;
+	    case 'd':
+		{
+		    char *p;
+#ifdef DEBUG_USERHELPER
+                    fprintf(stderr, "Want to use %s for I/O.\n", optarg);
+#endif
+		    stdin_fileno = strtol(optarg, &p, 10);
+		    if(*p == ',') {
+                        p++;
+			stdout_fileno = strtol(p, &p, 10);
+		        if(*p == ',') {
+                            p++;
+			    stderr_fileno = strtol(p, &p, 10);
+		            if(*p == '\0') {
+#ifdef DEBUG_USERHELPER
+                                fprintf(stderr, "Using %d,%d,%d for I/O.\n",
+                                        stdin_fileno, stdout_fileno,
+					stderr_fileno);
+#endif
+		                d_flg++;
+			    }
+		        }
+		    }
+		    break;
+		}
 	    default:
 		exit(ERR_INVALID_CALL);
 	}
@@ -532,6 +559,7 @@ int main(int argc, char *argv[])
 	size_t aft;
 	struct stat sbuf;
 	shvarFile *s;
+	struct passwd *pw;
 
 	if (strrchr(progname, '/'))
 	    progname = strrchr(progname, '/');
@@ -587,6 +615,7 @@ int main(int argc, char *argv[])
 	} else {
 	    user = apps_user;
 	}
+	pw = getpwnam(user);
 
 	constructed_path = svGetValue(s, "PROGRAM");
 	if (!constructed_path || constructed_path[0] != '/') {
@@ -621,7 +650,7 @@ int main(int argc, char *argv[])
 	    fail_error(retval);
 
 	app_data.fallback = fallback;
-	app_data.user = "root";
+	app_data.user = user;
 	app_data.service = progname;
 
 	do {
@@ -639,6 +668,11 @@ int main(int argc, char *argv[])
 		    exit (ERR_EXEC_FAILED);
 		}
 		argv[optind-1] = progname;
+		if(d_flg) {
+		    dup2(stdin_fileno, STDIN_FILENO);
+		    dup2(stdout_fileno, STDOUT_FILENO);
+		    dup2(stderr_fileno, STDERR_FILENO);
+		}
 		execv(constructed_path, argv+optind-1);
 		exit (ERR_EXEC_FAILED);
 	    } else {
@@ -664,19 +698,25 @@ int main(int argc, char *argv[])
 		fail_error(retval);
 	    }
 
-	    if (!(child = fork())) {
-		struct passwd *pw;
-
-		setuid(0);
-		pw = getpwuid(getuid());
+	    if ((child = fork()) == 0) {
 		if (pw) setenv("HOME", pw->pw_dir, 1);
+		if (pw) setuid(pw->pw_uid);
 		argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
 		g_print(i18n("about to exec \"%s\"\n"), constructed_path);
 #endif
+		if(d_flg) {
+		    dup2(stdin_fileno, STDIN_FILENO);
+		    dup2(stdout_fileno, STDOUT_FILENO);
+		    dup2(stderr_fileno, STDERR_FILENO);
+		}
 		execv(constructed_path, argv+optind-1);
 		exit (ERR_EXEC_FAILED);
 	    }
+
+	    close(STDIN_FILENO);
+	    close(STDOUT_FILENO);
+	    close(STDERR_FILENO);
 
 	    wait4 (child, &status, 0, NULL);
 
@@ -701,7 +741,7 @@ int main(int argc, char *argv[])
 	    pam_end(pamh, PAM_SUCCESS);
 
 	    /* time for an exec */
-	    setuid(0);
+	    if (pw) setuid(pw->pw_uid);
 	    argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
             g_print(i18n("about to exec \"%s\"\n"), constructed_path);

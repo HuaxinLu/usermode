@@ -38,8 +38,13 @@ userhelper_runv(char *path, char **args)
 {
   pid_t pid;
   int retval;
+  int i;
+  int stdin_save = STDIN_FILENO;
+  int stdout_save = STDOUT_FILENO;
+  int stderr_save = STDERR_FILENO;
+  char *nargs[256]; /* only used internally, we know this will not overflow */
 
-  if(pipe(childout) < 0 || pipe(childin) < 0)
+  if((pipe(childout) == -1) || (pipe(childin) == -1))
     {
       fprintf(stderr, i18n("Pipe error.\n"));
       exit(1);
@@ -64,7 +69,8 @@ userhelper_runv(char *path, char **args)
 
       if(childout[1] != STDOUT_FILENO)
 	{
-	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
+          if(((stdout_save = dup(STDOUT_FILENO)) == -1) ||
+	    (dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO))
 	    {
 	      fprintf(stderr, i18n("dup2() error.\n"));
 	      exit(2);
@@ -73,14 +79,34 @@ userhelper_runv(char *path, char **args)
 	}
       if(childin[0] != STDIN_FILENO)
 	{
-	  if(dup2(childin[0], STDIN_FILENO) != STDIN_FILENO)
+          if(((stdin_save = dup(STDIN_FILENO)) == -1) ||
+	    (dup2(childin[0], STDIN_FILENO) != STDIN_FILENO))
 	    {
 	      fprintf(stderr, i18n("dup2() error.\n"));
 	      exit(2);
 	    }
 	}
 
-      retval = execv(path, args);
+      memset(&nargs, 0, sizeof(nargs));
+      nargs[0] = args[0];
+      nargs[1] = "-d";
+      nargs[2] = g_strdup_printf("%d,%d,%d", stdin_save, stdout_save,
+			  	 stderr_save);
+      for(i = 3; i < sizeof(nargs) / sizeof(nargs[0]); i++) {
+          nargs[i] = args[i - 2];
+	  if(nargs[i] == NULL) {
+              break;
+          }
+      }
+#ifdef DEBUG_USERHELPER
+      for(i = 0; i < sizeof(nargs) / sizeof(nargs[0]); i++) {
+	  if(nargs[i] == NULL) {
+              break;
+          }
+	  fprintf(stderr, "Exec arg = \"%s\".\n", nargs[i]);
+      }
+#endif
+      retval = execv(path, nargs);
 
       if(retval < 0) {
 	fprintf(stderr, i18n("execl() error, errno=%d\n"), errno);
