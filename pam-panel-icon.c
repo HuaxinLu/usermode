@@ -17,6 +17,7 @@
  */
 
 #include "config.h"
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <errno.h>
@@ -131,8 +132,8 @@ add_weak_egg_tray_icon_pointer(GObject *object, EggTrayIcon **weak_pointer)
 static gboolean
 icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
 {
-	/* We only respond to left-click. */
-	if (event->button != 1) {
+	/* We only respond to left-click and right click. */
+	if (event->button != 1 || event->button != 3) {
 		return FALSE;
 	}
 
@@ -208,9 +209,11 @@ show_unlocked_icon(void)
 static void
 show_locked_icon(void)
 {
-	ensure_tray_icon();
-	gtk_image_set_from_pixbuf(GTK_IMAGE(image), locked_pixbuf);
-	gtk_widget_show(image);
+	if ( getuid() || geteuid() || getgid() || getegid() ) {
+		ensure_tray_icon();
+		gtk_image_set_from_pixbuf(GTK_IMAGE(image), locked_pixbuf);
+		gtk_widget_show(image);
+	}
 }
 
 static gboolean
