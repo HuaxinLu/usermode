@@ -1,12 +1,12 @@
 %if %{?WITH_SELINUX:0}%{!?WITH_SELINUX:1}
-%define WITH_SELINUX 0
+%define WITH_SELINUX 1
 %endif
 
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.68
-Release: 5
+Release: 6.sel
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -67,7 +67,9 @@ for wrappedapp in halt reboot poweroff ; do
 	cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %endif
 done
-
+%if %{WITH_SELINUX}
+cp userhelper_text /etc/security
+%endif
 %if ! %{build6x}
 rm -f $RPM_BUILD_ROOT/%{_bindir}/shutdown
 %endif
@@ -96,7 +98,9 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/security/console.apps/halt
 %config /etc/security/console.apps/reboot
 %config /etc/security/console.apps/poweroff
-
+%if %{WITH_SELINUX}
+%config /etc/security/userhelper_context
+%endif
 %files gtk
 %defattr(-,root,root)
 %{_bindir}/usermount
@@ -112,6 +116,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Sep 8 2003 Dan Walsh <dwalsh@redhat.com> 1.68-6.sel
+- turn on selinux
+- add default userhelper context file
+
 * Thu Sep 25 2003 Nalin Dahyabhai <nalin@redhat.com> 1.68-5
 - rebuild
 

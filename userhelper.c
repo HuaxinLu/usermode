@@ -62,7 +62,56 @@ static void setupSELinuxExec(char *constructed_path) {
       freecon(new_context);
   }
 }
-#endif
+#define CONTEXT_FILE "/etc/security/userhelper_context"
+
+/*
+ * get_init_context()
+ *
+ * Get the init CONTEXT for this program 
+ *
+ * in:		nothing
+ * out:		The CONTEXT associated with the context.
+ * return:	0 on success, -1 on failure.
+ */
+int get_init_context(const char *context_file, security_context_t *context) {
+
+  FILE* fp;
+  char  buf[255], *bufp;
+  int buf_len;
+  
+  fp = fopen(context_file, "r");
+  if (!fp) {
+    return -1;
+  }
+
+  while (1) {           /* loop until we find a non-empty line */
+
+    if (!fgets(buf, sizeof buf, fp))
+      break;
+
+    buf_len = strlen(buf);
+    if (buf[buf_len-1] == '\n')
+      buf[buf_len-1] = 0;
+
+    bufp = buf;
+    while (*bufp && isspace(*bufp))
+      bufp++;
+
+    if( *bufp ) {
+      *context = strdup(bufp);
+      if (!(*context))
+	goto out;
+      return 0;
+    }
+  }
+out:
+  fclose(fp);
+  errno=EBADF;
+  return -1;
+
+} /* get_init_context() */
+
+#endif /* WITH_SELINUX */
 #include "shvar.h"
 #include "userhelper.h"
 
@@ -1573,20 +1622,25 @@ main(int argc, char **argv)
 
 #ifdef WITH_SELINUX
 		if (selinux_enabled) {
+		  security_context_t defcontext=NULL;
 		  char *apps_role,*apps_type;
 		  context_t ctx;
+		  if (get_init_context(CONTEXT_FILE, &defcontext)==0) {
+		    ctx=context_new(defcontext);
+		  } else {
+		    ctx=context_new(old_context);
+		  }
+		  context_user_set(ctx,user_name);
 		  apps_role = svGetValue(s, "ROLE");
-		  if (apps_role == NULL) {
-		    apps_role = "sysadm_r";
-		  }
 		  apps_type = svGetValue(s, "TYPE");
-		  if (apps_type == NULL) {
-		    apps_type = "sysadm_t";
+		  if (apps_role != NULL) { 
+		    context_type_set(ctx,apps_type);
 		  }
-		  ctx=context_new(old_context);
+		  if (apps_type != NULL) {
+		    context_role_set(ctx,apps_role);
+		  }
+		  freecon(defcontext);
 		  freecon(old_context);
-		  context_type_set(ctx,apps_type);
-		  context_role_set(ctx,apps_role);
 		  new_context=strdup(context_str(ctx));
 		  context_free(ctx);
 		  apps_user=user_name;
