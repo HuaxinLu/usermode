@@ -564,7 +564,6 @@ int main(int argc, char *argv[])
 	char *env_home, *env_term, *env_display, *env_shell;
         char *env_user, *env_logname, *env_lang, *env_lcall, *env_lcmsgs;
 	char *env_xauthority;
-	char **env_pam;
 	int session, fallback, try;
 	size_t aft;
 	struct stat sbuf;
@@ -670,7 +669,7 @@ int main(int argc, char *argv[])
 
 	do {
 #ifdef DEBUG_USERHELPER
-	    fprintf(stderr, i18n("PAM returned = %d\n"), retval);
+	    fprintf(stderr, i18n("PAM retval = %d\n"), retval);
 	    fprintf(stderr, i18n("about to authenticate \"%s\"\n"), user);
 #endif
 	    retval = pam_authenticate(pamh, 0);
@@ -703,13 +702,6 @@ int main(int argc, char *argv[])
 	    fail_error(retval);
 	}
 
-	/* copy PAM's environment variables to the child process */
-	env_pam = pam_getenvlist(pamh);
-	while(env_pam && *env_pam) {
-            putenv(strdup(*env_pam));
-	    env_pam++;
-	}
-
 	if (session) {
 	    int child, status;
 
@@ -721,6 +713,19 @@ int main(int argc, char *argv[])
 
 	    if ((child = fork()) == 0) {
                 struct passwd *pw;
+		char **env_pam;
+
+	        /* copy PAM's environment variables to the child process */
+	        env_pam = pam_getenvlist(pamh);
+
+	        while(env_pam && *env_pam) {
+#ifdef DEBUG_USERHELPER
+	            g_print("setting %s\n", *env_pam);
+#endif
+                    putenv(*env_pam);
+	            env_pam++;
+	        }
+
 		setgroups(0, NULL);
 		setgid(0);
 		setuid(0);
