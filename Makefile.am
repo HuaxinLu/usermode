@@ -66,6 +66,6 @@ test_userdialog_SOURCES = test-userdialog.c userdialogs.c
 test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 tag:
-	cvs tag -cR $(CVSTAG) .
+	cvs tag -cFR $(CVSTAG) .
 
 ACLOCAL_AMFLAGS = -I m4

@@ -1,17 +1,15 @@
-# Makefile for program source directory in GNU NLS utilities package.
-# Copyright (C) 1995-1997, 2000, 2001 by Ulrich Drepper <drepper@gnu.ai.mit.edu>
+# Makefile for PO directory in any package using GNU gettext.
+# Copyright (C) 1995-1997, 2000-2002 by Ulrich Drepper <drepper@gnu.ai.mit.edu>
 #
-# This file file be copied and used freely without restrictions.  It can
-# be used in projects which are not available under the GNU Public License
-# but which still want to provide support for the GNU gettext functionality.
-# Please note that the actual code is *not* freely available.
+# This file can be copied and used freely without restrictions.  It can
+# be used in projects which are not available under the GNU General Public
+# License but which still want to provide support for the GNU gettext
+# functionality.
+# Please note that the actual code of GNU gettext is covered by the GNU
+# General Public License and is *not* in the public domain.
 
 PACKAGE = usermode
 VERSION = Version:
-
-# These two variables depend on the location of this directory.
-subdir = po
-top_builddir = ..
 
 SHELL = /bin/sh
 
@@ -31,24 +29,24 @@ INSTALL_DATA = ${INSTALL} -m 644
 MKINSTALLDIRS = ./mkinstalldirs
 mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) echo "$(MKINSTALLDIRS)" ;; *) echo "$(top_builddir)/$(MKINSTALLDIRS)" ;; esac`
 
-CC = gcc
 GMSGFMT = /usr/bin/msgfmt
 MSGFMT = /usr/bin/msgfmt
 XGETTEXT = /usr/bin/xgettext
 MSGMERGE = msgmerge
-
-DEFS = -DHAVE_CONFIG_H
-CFLAGS = -Wall -Wunused -Wmissing-prototypes -Wmissing-declarations -g3
-CPPFLAGS = 
-
-INCLUDES = -I.. -I$(top_srcdir)/intl
-
-COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS)
+MSGMERGE_UPDATE = /usr/bin/msgmerge --update
+MSGINIT = msginit
+MSGCONV = msgconv
+MSGFILTER = msgfilter
 
 POFILES =  bs.po cs.po da.po de.po es.po eu_ES.po fi.po fr.po gl.po hu.po id.po is.po it.po ja.po ko.po no.po pl.po pt_BR.po pt.po ro.po ru.po sk.po sl.po sr.po sv.po tr.po uk.po wa.po zh_CN.GB2312.po zh.po
 GMOFILES =  bs.gmo cs.gmo da.gmo de.gmo es.gmo eu_ES.gmo fi.gmo fr.gmo gl.gmo hu.gmo id.gmo is.gmo it.gmo ja.gmo ko.gmo no.gmo pl.gmo pt_BR.gmo pt.gmo ro.gmo ru.gmo sk.gmo sl.gmo sr.gmo sv.gmo tr.gmo uk.gmo wa.gmo zh_CN.GB2312.gmo zh.gmo
-DISTFILES = ChangeLog Makefile.in.in POTFILES.in $(PACKAGE).pot \
-$(POFILES) $(GMOFILES)
+UPDATEPOFILES =  bs.po-update cs.po-update da.po-update de.po-update es.po-update eu_ES.po-update fi.po-update fr.po-update gl.po-update hu.po-update id.po-update is.po-update it.po-update ja.po-update ko.po-update no.po-update pl.po-update pt_BR.po-update pt.po-update ro.po-update ru.po-update sk.po-update sl.po-update sr.po-update sv.po-update tr.po-update uk.po-update wa.po-update zh_CN.GB2312.po-update zh.po-update
+DUMMYPOFILES =  bs.nop cs.nop da.nop de.nop es.nop eu_ES.nop fi.nop fr.nop gl.nop hu.nop id.nop is.nop it.nop ja.nop ko.nop no.nop pl.nop pt_BR.nop pt.nop ro.nop ru.nop sk.nop sl.nop sr.nop sv.nop tr.nop uk.nop wa.nop zh_CN.GB2312.nop zh.nop
+DISTFILES.common = Makefile.in.in Makevars \
+$(DISTFILES.common.extra1) $(DISTFILES.common.extra2) $(DISTFILES.common.extra3)
+DISTFILES = $(DISTFILES.common) POTFILES.in $(DOMAIN).pot \
+$(POFILES) $(GMOFILES) \
+$(DISTFILES.extra1) $(DISTFILES.extra2) $(DISTFILES.extra3)
 
 POTFILES = \
      ../consolehelper.c \
@@ -63,22 +61,44 @@ POTFILES = \
 
 CATALOGS =  bs.gmo cs.gmo da.gmo de.gmo es.gmo eu_ES.gmo fi.gmo fr.gmo gl.gmo hu.gmo id.gmo is.gmo it.gmo ja.gmo ko.gmo no.gmo pl.gmo pt_BR.gmo pt.gmo ro.gmo ru.gmo sk.gmo sl.gmo sr.gmo sv.gmo tr.gmo uk.gmo wa.gmo zh_CN.GB2312.gmo zh.gmo
 
+# Makevars gets inserted here. (Don't remove this line!)
+# Makefile variables for PO directory in any package using GNU gettext.
+
+# Usually the message domain is the same as the package name.
+DOMAIN = $(PACKAGE)
+
+# These two variables depend on the location of this directory.
+subdir = po
+top_builddir = ..
+
+# These options get passed to xgettext.
+XGETTEXT_OPTIONS = --keyword=_ --keyword=N_
+
+# This is the copyright holder that gets inserted into the header of the
+# $(DOMAIN).pot file.  Set this to the copyright holder of the surrounding
+# package.  (Note that the msgstr strings, extracted from the package's
+# sources, belong to the copyright holder of the package.)  Translators are
+# expected to transfer the copyright for their translations to this person
+# or entity, or to disclaim their copyright.  The empty string stands for
+# the public domain; in this case the translators are expected to disclaim
+# their copyright.
+COPYRIGHT_HOLDER = 
+
+# This is the list of locale categories, beyond LC_MESSAGES, for which the
+# message catalogs shall be used.  It is usually empty.
+EXTRA_LOCALE_CATEGORIES =
+
 .SUFFIXES:
-.SUFFIXES: .c .o .po .pox .gmo .mo
-
-.c.o:
-	$(COMPILE) $<
-
-.po.pox:
-	$(MAKE) $(PACKAGE).pot
-	$(MSGMERGE) $< $(srcdir)/$(PACKAGE).pot -o $*.pox
+.SUFFIXES: .po .gmo .mo .nop .po-update
 
 .po.mo:
-	$(MSGFMT) -o $@ $<
+	$(MSGFMT) -c -o $@ $<
 
 .po.gmo:
-	file=$(srcdir)/`echo $* | sed 's,.*/,,'`.gmo \
-	  && rm -f $$file && $(GMSGFMT) --statistics -o $$file $<
+	@lang=`echo $* | sed -e 's,.*/,,'`; \
+	test "$(srcdir)" = . && cdcmd="" || cdcmd="cd $(srcdir) && "; \
+	echo "$${cdcmd}rm -f $${lang}.gmo && $(GMSGFMT) -c --statistics -o $${lang}.gmo $${lang}.po"; \
+	cd $(srcdir) && rm -f $${lang}.gmo && $(GMSGFMT) -c --statistics -o $${lang}.gmo $${lang}.po
 
 
 all: all-yes
@@ -86,17 +106,27 @@ all: all-yes
 all-yes: $(CATALOGS)
 all-no:
 
-# Note: Target 'all' must not depend on target '$(srcdir)/$(PACKAGE).pot',
+# Note: Target 'all' must not depend on target '$(DOMAIN).pot-update',
 # otherwise packages like GCC can not be built if only parts of the source
 # have been downloaded.
 
-$(srcdir)/$(PACKAGE).pot: $(POTFILES) $(srcdir)/POTFILES.in
-	$(XGETTEXT) --default-domain=$(PACKAGE) --directory=$(top_srcdir) \
-	  --add-comments --keyword=_ --keyword=N_ \
+$(DOMAIN).pot-update: $(POTFILES) $(srcdir)/POTFILES.in
+	$(XGETTEXT) --default-domain=$(DOMAIN) --directory=$(top_srcdir) \
+	  --add-comments=TRANSLATORS: $(XGETTEXT_OPTIONS) \
 	  --files-from=$(srcdir)/POTFILES.in \
-	&& test ! -f $(PACKAGE).po \
-	   || ( rm -f $(srcdir)/$(PACKAGE).pot \
-		&& mv $(PACKAGE).po $(srcdir)/$(PACKAGE).pot )
+	  --copyright-holder='$(COPYRIGHT_HOLDER)' \
+	&& test ! -f $(DOMAIN).po \
+	   || ( rm -f $(srcdir)/$(DOMAIN).pot \
+		&& mv $(DOMAIN).po $(srcdir)/$(DOMAIN).pot )
+
+$(srcdir)/$(DOMAIN).pot:
+	$(MAKE) $(DOMAIN).pot-update
+
+$(POFILES): $(srcdir)/$(DOMAIN).pot
+	@lang=`echo $@ | sed -e 's,.*/,,' -e 's/\.po$$//'`; \
+	test "$(srcdir)" = . && cdcmd="" || cdcmd="cd $(srcdir) && "; \
+	echo "$${cdcmd}$(MSGMERGE_UPDATE) $${lang}.po $(DOMAIN).pot"; \
+	cd $(srcdir) && $(MSGMERGE_UPDATE) $${lang}.po $(DOMAIN).pot
 
 
 install: install-exec install-data
@@ -104,8 +134,10 @@ install-exec:
 install-data: install-data-yes
 	if test "$(PACKAGE)" = "gettext"; then \
 	  $(mkinstalldirs) $(DESTDIR)$(gettextsrcdir); \
-	  $(INSTALL_DATA) $(srcdir)/Makefile.in.in \
-			  $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
+	  for file in $(DISTFILES.common); do \
+	    $(INSTALL_DATA) $(srcdir)/$$file \
+			    $(DESTDIR)$(gettextsrcdir)/$$file; \
+	  done; \
 	else \
 	  : ; \
 	fi
@@ -115,41 +147,116 @@ install-data-yes: all
 	@catalogs='$(CATALOGS)'; \
 	for cat in $$catalogs; do \
 	  cat=`basename $$cat`; \
-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
+	  lang=`echo $$cat | sed -e 's/\.gmo$$//'`; \
 	  dir=$(localedir)/$$lang/LC_MESSAGES; \
 	  $(mkinstalldirs) $(DESTDIR)$$dir; \
-	  if test -r $$cat; then \
-	    $(INSTALL_DATA) $$cat $(DESTDIR)$$dir/$(PACKAGE).mo; \
-	    echo "installing $$cat as $(DESTDIR)$$dir/$(PACKAGE).mo"; \
-	  else \
-	    $(INSTALL_DATA) $(srcdir)/$$cat $(DESTDIR)$$dir/$(PACKAGE).mo; \
-	    echo "installing $(srcdir)/$$cat as" \
-		 "$(DESTDIR)$$dir/$(PACKAGE).mo"; \
-	  fi; \
+	  if test -r $$cat; then realcat=$$cat; else realcat=$(srcdir)/$$cat; fi; \
+	  $(INSTALL_DATA) $$realcat $(DESTDIR)$$dir/$(DOMAIN).mo; \
+	  echo "installing $$realcat as $(DESTDIR)$$dir/$(DOMAIN).mo"; \
+	  for lc in '' $(EXTRA_LOCALE_CATEGORIES); do \
+	    if test -n "$$lc"; then \
+	      if (cd $(DESTDIR)$(localedir)/$$lang && LC_ALL=C ls -l -d $$lc 2>/dev/null) | grep ' -> ' >/dev/null; then \
+	        link=`cd $(DESTDIR)$(localedir)/$$lang && LC_ALL=C ls -l -d $$lc | sed -e 's/^.* -> //'`; \
+	        mv $(DESTDIR)$(localedir)/$$lang/$$lc $(DESTDIR)$(localedir)/$$lang/$$lc.old; \
+	        mkdir $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	        (cd $(DESTDIR)$(localedir)/$$lang/$$lc.old && \
+	         for file in *; do \
+	           if test -f $$file; then \
+	             ln -s ../$$link/$$file $(DESTDIR)$(localedir)/$$lang/$$lc/$$file; \
+	           fi; \
+	         done); \
+	        rm -f $(DESTDIR)$(localedir)/$$lang/$$lc.old; \
+	      else \
+	        if test -d $(DESTDIR)$(localedir)/$$lang/$$lc; then \
+	          :; \
+	        else \
+	          rm -f $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	          mkdir $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	        fi; \
+	      fi; \
+	      rm -f $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo; \
+	      ln -s ../LC_MESSAGES/$(DOMAIN).mo $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo 2>/dev/null || \
+	      ln $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(DOMAIN).mo $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo 2>/dev/null || \
+	      cp -p $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(DOMAIN).mo $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo; \
+	      echo "installing $$realcat link as $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo"; \
+	    fi; \
+	  done; \
+	done
+
+install-strip: install
+
+installdirs: installdirs-exec installdirs-data
+installdirs-exec:
+installdirs-data: installdirs-data-yes
+	if test "$(PACKAGE)" = "gettext"; then \
+	  $(mkinstalldirs) $(DESTDIR)$(gettextsrcdir); \
+	else \
+	  : ; \
+	fi
+installdirs-data-no:
+installdirs-data-yes:
+	$(mkinstalldirs) $(DESTDIR)$(datadir)
+	@catalogs='$(CATALOGS)'; \
+	for cat in $$catalogs; do \
+	  cat=`basename $$cat`; \
+	  lang=`echo $$cat | sed -e 's/\.gmo$$//'`; \
+	  dir=$(localedir)/$$lang/LC_MESSAGES; \
+	  $(mkinstalldirs) $(DESTDIR)$$dir; \
+	  for lc in '' $(EXTRA_LOCALE_CATEGORIES); do \
+	    if test -n "$$lc"; then \
+	      if (cd $(DESTDIR)$(localedir)/$$lang && LC_ALL=C ls -l -d $$lc 2>/dev/null) | grep ' -> ' >/dev/null; then \
+	        link=`cd $(DESTDIR)$(localedir)/$$lang && LC_ALL=C ls -l -d $$lc | sed -e 's/^.* -> //'`; \
+	        mv $(DESTDIR)$(localedir)/$$lang/$$lc $(DESTDIR)$(localedir)/$$lang/$$lc.old; \
+	        mkdir $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	        (cd $(DESTDIR)$(localedir)/$$lang/$$lc.old && \
+	         for file in *; do \
+	           if test -f $$file; then \
+	             ln -s ../$$link/$$file $(DESTDIR)$(localedir)/$$lang/$$lc/$$file; \
+	           fi; \
+	         done); \
+	        rm -f $(DESTDIR)$(localedir)/$$lang/$$lc.old; \
+	      else \
+	        if test -d $(DESTDIR)$(localedir)/$$lang/$$lc; then \
+	          :; \
+	        else \
+	          rm -f $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	          mkdir $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	        fi; \
+	      fi; \
+	    fi; \
+	  done; \
 	done
 
 # Define this as empty until I found a useful application.
 installcheck:
 
-uninstall:
-	catalogs='$(CATALOGS)'; \
-	for cat in $$catalogs; do \
-	  cat=`basename $$cat`; \
-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
-	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE).mo; \
-	done
+uninstall: uninstall-exec uninstall-data
+uninstall-exec:
+uninstall-data: uninstall-data-yes
 	if test "$(PACKAGE)" = "gettext"; then \
-	  rm -f $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
+	  for file in $(DISTFILES.common); do \
+	    rm -f $(DESTDIR)$(gettextsrcdir)/$$file; \
+	  done; \
 	else \
 	  : ; \
 	fi
+uninstall-data-no:
+uninstall-data-yes:
+	catalogs='$(CATALOGS)'; \
+	for cat in $$catalogs; do \
+	  cat=`basename $$cat`; \
+	  lang=`echo $$cat | sed -e 's/\.gmo$$//'`; \
+	  for lc in LC_MESSAGES $(EXTRA_LOCALE_CATEGORIES); do \
+	    rm -f $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo; \
+	  done; \
+	done
 
 check: all
 
 dvi info tags TAGS ID:
 
 mostlyclean:
-	rm -f core core.* *.pox $(PACKAGE).po *.new.po
+	rm -f core core.* $(DOMAIN).po *.new.po
 	rm -fr *.o
 
 clean: mostlyclean
@@ -169,28 +276,48 @@ dist distdir:
 # This is a separate target because 'update-po' must be executed before.
 dist2: $(DISTFILES)
 	dists="$(DISTFILES)"; \
+	if test -f $(srcdir)/ChangeLog; then dists="$$dists ChangeLog"; fi; \
+	if test -f $(srcdir)/LINGUAS; then dists="$$dists LINGUAS"; fi; \
 	for file in $$dists; do \
-	  if test -f $$file; then dir=.; else dir=$(srcdir); fi; \
-	  cp -p $$dir/$$file $(distdir); \
+	  if test -f $$file; then \
+	    cp -p $$file $(distdir); \
+	  else \
+	    cp -p $(srcdir)/$$file $(distdir); \
+	  fi; \
 	done
 
 update-po: Makefile
-	$(MAKE) $(PACKAGE).pot
-	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; fi; \
-	cd $(srcdir); \
-	catalogs='$(GMOFILES)'; \
-	for cat in $$catalogs; do \
-	  cat=`basename $$cat`; \
-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
-	  echo "$$lang:"; \
-	  if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
-	    mv -f $$lang.new.po $$lang.po; \
-	  else \
-	    echo "msgmerge for $$cat failed!"; \
-	    rm -f $$lang.new.po; \
-	  fi; \
-	done
+	$(MAKE) $(DOMAIN).pot-update
+	$(MAKE) $(UPDATEPOFILES)
 	$(MAKE) update-gmo
+
+# General rule for updating PO files.
+
+.nop.po-update:
+	@lang=`echo $@ | sed -e 's/\.po-update$$//'`; \
+	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; fi; \
+	tmpdir=`pwd`; \
+	echo "$$lang:"; \
+	test "$(srcdir)" = . && cdcmd="" || cdcmd="cd $(srcdir) && "; \
+	echo "$${cdcmd}$(MSGMERGE) $$lang.po $(DOMAIN).pot -o $$lang.new.po"; \
+	cd $(srcdir); \
+	if $(MSGMERGE) $$lang.po $(DOMAIN).pot -o $$tmpdir/$$lang.new.po; then \
+	  if cmp $$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
+	    rm -f $$tmpdir/$$lang.new.po; \
+	  else \
+	    if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
+	      :; \
+	    else \
+	      echo "msgmerge for $$lang.po failed: cannot move $$tmpdir/$$lang.new.po to $$lang.po" 1>&2; \
+	      exit 1; \
+	    fi; \
+	  fi; \
+	else \
+	  echo "msgmerge for $$lang.po failed!" 1>&2; \
+	  rm -f $$tmpdir/$$lang.new.po; \
+	fi
+
+$(DUMMYPOFILES):
 
 update-gmo: Makefile $(GMOFILES)
 	@:
@@ -200,6 +327,50 @@ Makefile: Makefile.in.in $(top_builddir)/config.status POTFILES.in
 	  && CONFIG_FILES=$(subdir)/$@.in CONFIG_HEADERS= \
 	       $(SHELL) ./config.status
 
+force:
+
 # Tell versions [3.59,3.63) of GNU make not to export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
+# Special Makefile rules for English message catalogs with quotation marks.
+
+DISTFILES.common.extra1 = quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot
+
+.SUFFIXES: .insert-header .po-update-en
+
+en@quot.po-update: en@quot.po-update-en
+en@boldquot.po-update: en@boldquot.po-update-en
+
+.insert-header.po-update-en:
+	@lang=`echo $@ | sed -e 's/\.po-update-en$$//'`; \
+	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; GETTEXTLIBDIR=`cd $(top_srcdir)/src && pwd`; export GETTEXTLIBDIR; fi; \
+	tmpdir=`pwd`; \
+	echo "$$lang:"; \
+	ll=`echo $$lang | sed -e 's/@.*//'`; \
+	LC_ALL=C; export LC_ALL; \
+	cd $(srcdir); \
+	if $(MSGINIT) -i $(DOMAIN).pot --no-translator -l $$ll -o - 2>/dev/null | sed -f $$tmpdir/$$lang.insert-header | $(MSGCONV) -t UTF-8 | $(MSGFILTER) sed -f `echo $$lang | sed -e 's/.*@//'`.sed 2>/dev/null > $$tmpdir/$$lang.new.po; then \
+	  if cmp $$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
+	    rm -f $$tmpdir/$$lang.new.po; \
+	  else \
+	    if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
+	      :; \
+	    else \
+	      echo "creation of $$lang.po failed: cannot move $$tmpdir/$$lang.new.po to $$lang.po" 1>&2; \
+	      exit 1; \
+	    fi; \
+	  fi; \
+	else \
+	  echo "creation of $$lang.po failed!" 1>&2; \
+	  rm -f $$tmpdir/$$lang.new.po; \
+	fi
+
+en@quot.insert-header: insert-header.sin
+	sed -e '/^#/d' -e 's/HEADER/en@quot.header/g' $(srcdir)/insert-header.sin > en@quot.insert-header
+
+en@boldquot.insert-header: insert-header.sin
+	sed -e '/^#/d' -e 's/HEADER/en@boldquot.header/g' $(srcdir)/insert-header.sin > en@boldquot.insert-header
+
+mostlyclean: mostlyclean-quot
+mostlyclean-quot:
+	rm -f *.insert-header

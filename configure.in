@@ -11,7 +11,7 @@ AC_DEFINE_UNQUOTED(PATH_UMOUNT,"$UMOUNT",[path to the umount command])
 AC_DEFINE_UNQUOTED(PATH_FDFORMAT,"$FDFORMAT",[path to the fdformat command])
 AC_DEFINE_UNQUOTED(PATH_MKFS,"$MKFS",[path to the mkfs command])
 ALL_LINGUAS="bs cs da de es eu_ES fi fr gl hu id is it ja ko no pl pt_BR pt ro ru sk sl sr sv tr uk wa zh_CN.GB2312 zh"
-AM_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
 PKG_CHECK_MODULES(GLIB,glib-2.0)
 PKG_CHECK_MODULES(LIBGLADE,libglade-2.0)
 PKG_CHECK_MODULES(LIBUSER,libuser)
@@ -40,9 +40,8 @@ AC_ARG_ENABLE(debug,
 AC_DEFINE(DEBUG_USERHELPER,1,[enable debugging messages]))
 AM_CONFIG_HEADER(config.h)
 
-AC_OUTPUT([
+AC_OUTPUT([ m4/Makefile  intl/Makefile 
 Makefile
-intl/Makefile
 po/Makefile.in
 consolehelper.8
 userhelper.8
