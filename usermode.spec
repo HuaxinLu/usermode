@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.75
+Version: 1.76
 Release: 1
 License: GPL
 Group: Applications/System
@@ -18,6 +18,7 @@ Requires: util-linux, pam >= 0.75-37, /etc/pam.d/system-auth, passwd
 Conflicts: SysVinit < 2.74-14
 BuildPrereq: desktop-file-utils, glib2-devel, gtk2-devel
 BuildPrereq: libglade2-devel, libuser-devel, pam-devel, util-linux
+BuildPrereq: Perl-XML-Parser
 %if %{WITH_SELINUX}
 BuildPrereq: libselinux-devel >= 1.17.13-2
 %endif
@@ -45,7 +46,6 @@ graphical tools for certain account management tasks.
 
 %prep
 %setup -q
-./autogen.sh
 
 %build
 %configure \
@@ -115,6 +115,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Dec 02 2004 Jindrich Novy <jnovy@redhat.com> 1.76-1
+- fix dependencies to Perl-XML-Parser #124170
+- use pamconsole instead of user in /etc/fstab to let
+  usermount work with hal #139820
+
+* Tue Nov 16 2004 Jindrich Novy <jnovy@redhat.com>
+- update libuser interface to libuser-0.6
+
 * Wed Nov 10 2004 Jindrich Novy <jnovy@redhat.com> 1.75-1
 - make pam-panel-icon using localized strings (#138609)
 - update translations

@@ -112,7 +112,7 @@ build_mountinfo_list(void)
 		struct stat st, st1, st2;
 		const char *node, *fstype, *mountpoint;
 		char *mkfs, *sbindir;
-		gboolean owner, user, swap, superuser;
+		gboolean owner, pamconsole, swap, superuser;
 
 		/* Read flags. */
 		owner = (hasmntopt(fstab_entry, "owner") != NULL);
