@@ -185,11 +185,14 @@ userhelper_parse_childout(char* outline)
   char *prompt;
   char *rest = NULL;
   char *title;
-  int prompt_type;
+  int prompt_type, left = 0;
   static response *resp = NULL;
+  GdkPixmap *pixmap;
+  GdkBitmap *bitmap;
 
   if (resp != NULL) {
     if(!GTK_IS_WINDOW(resp->top)) {
+      g_free(resp->user);
       g_free(resp);
       resp = NULL;
     }
@@ -198,6 +201,7 @@ userhelper_parse_childout(char* outline)
   if (resp == NULL) {
     resp = g_malloc0(sizeof(response));
 
+    resp->user = g_strdup(getlogin());
     resp->top = gtk_dialog_new();
     gtk_signal_connect(GTK_OBJECT(resp->top), "destroy",
 		       GTK_SIGNAL_FUNC(mark_void), &resp->top);
@@ -280,10 +284,10 @@ userhelper_parse_childout(char* outline)
 	resp->tail = msg->entry;
 
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  0, 1, message_list_length, message_list_length + 1,
+	  left + 0, left + 1, message_list_length, message_list_length + 1,
 	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->entry,
-	  1, 2, message_list_length, message_list_length + 1,
+	  left + 1, left + 2, message_list_length, message_list_length + 1,
 	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
 
 	resp->message_list = g_slist_append(resp->message_list, msg);
@@ -291,9 +295,47 @@ userhelper_parse_childout(char* outline)
 	/* printf("Need %d responses.\n", resp->responses); */
 	break;
 
+      case UH_FALLBACK:
+#if 0
+	msg->label = gtk_label_new(prompt);
+	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
+	  left + 0, left + 2,
+	  message_list_length, message_list_length + 1, 0, 0, 2, 2);
+	resp->message_list = g_slist_append(resp->message_list, msg);
+#else
+	resp->fallback = atoi(prompt) != 0;
+#endif
+	break;
+
+      case UH_USER:
+	if(strstr(prompt, "<user>") == NULL) {
+          g_free(resp->user);
+	  resp->user = g_strdup(prompt);
+	}
+	break;
+
       case UH_SERVICE_NAME:
-	title = g_strdup_printf("Input required to run \"%s\"", msg->message);
+	title = g_strdup_printf("Input required to run \"%s\"", prompt);
 	gtk_window_set_title(GTK_WINDOW(resp->top), title);
+	g_free(title);
+
+	title = NULL;
+	if(resp->fallback) {
+	  title = g_strdup_printf("In order to run \"%s\" with %s's privileges,"
+                                  " additional information is required."
+                                  " (It can also be run unprivileged.)",
+				  prompt, resp->user);
+	} else {
+	  title = g_strdup_printf("In order to run \"%s\" with %s's privileges,"
+                                  " additional information is required.",
+				  prompt, resp->user);
+	}
+	msg->label = gtk_label_new(title);
+	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
+	  0, left + 2,
+	  message_list_length, message_list_length + 1,
+	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
+	resp->message_list = g_slist_append(resp->message_list, msg);
 	break;
 
       case UH_ERROR_MSG:
@@ -302,18 +344,9 @@ userhelper_parse_childout(char* outline)
       case UH_INFO_MSG:
 	msg->label = gtk_label_new(prompt);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  0, 2, message_list_length, message_list_length + 1, 0, 0, 2, 2);
+	  left + 0, left + 2,
+	  message_list_length, message_list_length + 1, 0, 0, 2, 2);
 	resp->message_list = g_slist_append(resp->message_list, msg);
-	break;
-
-      case UH_FALLBACK:
-#if 0
-	/* do nothing with the information for now */
-	msg->label = gtk_label_new(prompt);
-	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  0, 2, message_list_length, message_list_length + 1, 0, 0, 2, 2);
-	resp->message_list = g_slist_append(resp->message_list, msg);
-#endif
 	break;
 
       case UH_EXPECT_RESP:

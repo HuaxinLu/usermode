@@ -534,7 +534,7 @@ int main(int argc, char *argv[])
 	apps_filename = alloca(aft);
 	snprintf(apps_filename, aft, "/etc/security/console.apps/%s", progname);
 	s = svNewFile(apps_filename);
-	
+
 	if (fstat(s->fd, &sbuf) ||
 	    !S_ISREG(sbuf.st_mode) ||
 	    (sbuf.st_mode & S_IWOTH))
@@ -582,13 +582,14 @@ int main(int argc, char *argv[])
 
 	retval = !PAM_SUCCESS;
 	while (try-- && retval != PAM_SUCCESS) {
+	    printf("%d %d\n", UH_FALLBACK, fallback);
+	    printf("%d %s\n", UH_USER, apps_user ? apps_user : "root");
             if(strrchr(constructed_path, '/') != NULL) {
               printf("%d %s\n", UH_SERVICE_NAME,
                      strrchr(constructed_path, '/') + 1);
 	    } else {
               printf("%d %s\n", UH_SERVICE_NAME, constructed_path);
 	    }
-	    printf("%d %d\n", UH_FALLBACK, fallback);
 	    retval = pam_authenticate(pamh, 0);
 	}
 	if (retval != PAM_SUCCESS) {

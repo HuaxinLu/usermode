@@ -25,6 +25,7 @@
 #define UH_EXPECT_RESP 5
 #define UH_SERVICE_NAME 6
 #define UH_FALLBACK 7
+#define UH_USER 8
 
 #define ERR_PASSWD_INVALID      1       /* password is not right */
 #define ERR_FIELDS_INVALID      2       /* gecos fields invalid or
