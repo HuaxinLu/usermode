@@ -421,7 +421,7 @@ msgstr "Hæ_tta"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
