@@ -55,7 +55,7 @@ done
 install -m755 shutdown $RPM_BUILD_ROOT%{_bindir}/
 
 # Strip it!
-strip $RPM_BUILD_ROOT%{_bindir}/* $RPM_BUILD_ROOT%{_sbindir}/*
+strip $RPM_BUILD_ROOT%{_bindir}/* $RPM_BUILD_ROOT%{_sbindir}/* || :
       
 %clean
 rm -rf $RPM_BUILD_ROOT
