@@ -2,8 +2,6 @@
 # translation of zh_CN.po to Simplified Chinese
 # Simplified Chinese Version of usermode.
 # Copyright (C) 2002 Red Hat, Inc.
-# Sarah Smith <sarahs@redhat.com>, 2002.
-# Sarah Saiying Wang <sarahs@redhat.com>, 2003
 # Sarah Wang <sarahs@redhat.com>, 2003
 #
 msgid ""
