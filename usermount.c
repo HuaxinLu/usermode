@@ -52,8 +52,9 @@
 #define MAXFSTAB 30
 #define MAXLINE 512
 
-#define MOUNT_TEXT "Mount"
-#define UMOUNT_TEXT "Unmount"
+#define N_(String) String
+#define MOUNT_TEXT N_("Mount")
+#define UMOUNT_TEXT N_("Unmount")
 
 struct mountinfo
 {
@@ -242,7 +243,7 @@ create_mount_table(struct mountinfo* list)
 
       mount = gtk_button_new();
       gtk_widget_set_usize(mount, 60, 0);
-      mount_label = gtk_label_new(UMOUNT_TEXT);
+      mount_label = gtk_label_new(i18n(UMOUNT_TEXT));
       gtk_misc_set_padding(GTK_MISC(mount_label), 4, 0);
       gtk_container_add(GTK_CONTAINER(mount), mount_label);
       gtk_widget_show(mount_label);
@@ -251,9 +252,9 @@ create_mount_table(struct mountinfo* list)
       current->mount_label = mount_label;
 
       if(current->mi_status)
-	gtk_label_set(GTK_LABEL(current->mount_label), UMOUNT_TEXT);
+	gtk_label_set(GTK_LABEL(current->mount_label), i18n(UMOUNT_TEXT));
       else
-	gtk_label_set(GTK_LABEL(current->mount_label), MOUNT_TEXT);
+	gtk_label_set(GTK_LABEL(current->mount_label), i18n(MOUNT_TEXT));
 
       gtk_signal_connect(GTK_OBJECT(mount), "clicked",
 			 (GtkSignalFunc) mount_button,
@@ -272,7 +273,7 @@ create_mount_table(struct mountinfo* list)
       gtk_widget_set_sensitive(format, current->mi_writable);
       if(current->mi_status)
 	{
-	  gtk_label_set(GTK_LABEL(current->mount_label), UMOUNT_TEXT);
+	  gtk_label_set(GTK_LABEL(current->mount_label), i18n(UMOUNT_TEXT));
  	  gtk_widget_set_sensitive(format, FALSE);
 	  normalize_mountinfo_list(NULL, current);
 	}
@@ -320,12 +321,12 @@ mount_button(GtkWidget* widget, struct mountinfo* info)
       if(info->mi_status)
 	{
 	  sensitive = FALSE;
-	  gtk_label_set(GTK_LABEL(info->mount_label), UMOUNT_TEXT);
+	  gtk_label_set(GTK_LABEL(info->mount_label), i18n(UMOUNT_TEXT));
 	}
       else
 	{
 	  sensitive = TRUE;
-	  gtk_label_set(GTK_LABEL(info->mount_label), MOUNT_TEXT);
+	  gtk_label_set(GTK_LABEL(info->mount_label), i18n(MOUNT_TEXT));
 	}
       gtk_widget_set_sensitive(info->format, sensitive && info->mi_writable);
       normalize_mountinfo_list(NULL, info);

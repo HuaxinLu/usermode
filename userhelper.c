@@ -194,7 +194,7 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
 		if (the_username && !strncasecmp(msg[count]->msg, "password", 8)) {
-		    noecho_message = g_strdup_printf(i18n("%s's password"),
+		    noecho_message = g_strdup_printf(i18n("Password for %s"),
                                                      the_username);
 		} else {
 		    noecho_message = g_strdup(msg[count]->msg);

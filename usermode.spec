@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.27
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -68,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/reboot
 %{_bindir}/poweroff
 %{_datadir}/pixmaps/*
-#%{_datadir}/locale/*/*
+%{_datadir}/locale/*/*
 %config(noreplace) /etc/pam.d/shutdown
 %config(noreplace) /etc/pam.d/halt
 %config(noreplace) /etc/pam.d/reboot
@@ -79,6 +79,11 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Wed Aug  2 2000 Nalin Dahyabhia <nalin@redhat.com>
+- install translations
+- fixup a messy text string
+- make "Mount"/"Unmount" translateable
+
 * Mon Jul 31 2000 Nalin Dahyabhia <nalin@redhat.com>
 - attempt to add i18n support
 
@@ -213,4 +218,3 @@ rm -rf $RPM_BUILD_ROOT
 
 * Mon Oct 6 1997 Otto Hammersmith <otto@redhat.com>
 - Created the spec file.
-
