@@ -48,7 +48,6 @@
 #include <selinux/selinux.h>
 #include <selinux/context.h>
 #include <selinux/get_context_list.h>
-#define CONTEXT_FILE SYSCONFDIR "/security/userhelper_context"
 #endif
 
 #include "shvar.h"
@@ -1126,12 +1125,16 @@ get_user_for_auth(shvarFile *s)
 		char *apps_role, *apps_type;
 		context_t ctx;
 		struct passwd *pwd;
+		char context_file[PATH_MAX];
 
 		/* Assume userhelper's default context, if the context file
 		 * contains one.  Just in case policy changes, we read the
 		 * default context from a file instead of hard-coding it. */
 		defcontext = NULL;
-		if (get_init_context(CONTEXT_FILE, &defcontext) == 0) {
+
+		snprintf(context_file, PATH_MAX, "%s/%s",selinux_policy_root(), "contexts/userhelper_context");
+
+		if (get_init_context(context_file, &defcontext) == 0) {
 			ctx = context_new(defcontext);
 		} else {
 			ctx = context_new(old_context);

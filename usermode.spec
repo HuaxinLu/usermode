@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.70
-Release: 3
+Release: 4
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -114,6 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue May 25 2004 Dan Walsh <dwalsh@redhat.com> 1.70-4
+- Support new policy files
+
 * Thu May 20 2004 Dan Walsh <dwalsh@redhat.com> 1.70-3
 - Change user context to default name if username context not in passwd file
 
