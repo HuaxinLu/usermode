@@ -2,18 +2,19 @@
 # Copyright (C) 2004 Hasbullah Bin Pit <sebol@my-penguin.org>.
 #
 # placeholder tu apa?
+# Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>, 2004
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2004-03-03 00:35+0730\n"
-"Last-Translator: Hasbullah Bin Pit <sebol@my-penguin.org>\n"
-"Language-Team: Projek Gabai <gabai-penyumbang@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2004-07-24 14:18+0800\n"
+"Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
+"Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -152,11 +153,11 @@ msgstr "userhelper mesti setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:1123
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Tak dapat membuka tetingkap bergrafik, dan tak dapat menjumpai terminal yg mengawal.\n"
+msgstr "Tidak dapat membuka tetingkap bergrafik, dan tidak dapat menjumpai terminal yg mengawal.\n"
 
 #: userhelper-wrap.c:178
 msgid "Unknown exit code."
-msgstr "Kod keluar yg tak diketahui."
+msgstr "Kod keluar yg tidak diketahui."
 
 #: userhelper-wrap.c:180
 msgid "Information updated."
@@ -206,7 +207,7 @@ msgstr "Hak tidak mencukupi."
 
 #: userhelper-wrap.c:194
 msgid "Invalid call to subprocess."
-msgstr "Panggil ke subproses yg tak sah."
+msgstr "Panggil ke subproses yg tidak sah."
 
 #: userhelper-wrap.c:196
 msgid ""
@@ -214,8 +215,8 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Shell semasa tak disenarai di /etc/shells.\n"
-"Anda tak boleh menukar shell anda.\n"
+"Shell semasa tidak disenarai di /etc/shells.\n"
+"Anda tidak boleh menukar shell anda.\n"
 "Rujuk pentadbir sistem anda.."
 
 #: userhelper-wrap.c:199
@@ -296,7 +297,7 @@ msgstr "Ralat paip.\n"
 
 #: userhelper-wrap.c:938
 msgid "Cannot fork().\n"
-msgstr "Tak dapat fork().\n"
+msgstr "Tidak dapat fork().\n"
 
 #: userhelper-wrap.c:1016
 #: userhelper-wrap.c:1020
@@ -310,7 +311,7 @@ msgstr "execl() error, errno=%d\n"
 
 #: userinfo.c:323
 msgid "You don't exist.  Go away.\n"
-msgstr "Anda tak wujud. Pergi jauh jauh.\n"
+msgstr "Anda tidak wujud. Pergi jauh jauh.\n"
 
 #: usermount.c:62
 #: glade.strings:26
