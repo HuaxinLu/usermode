@@ -2,8 +2,8 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.42
-Release: 1
-Copyright: GPL
+Release: 3
+License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.bz2
 %if %{build6x}
@@ -12,6 +12,7 @@ Requires: util-linux, pam >= 0.66-5
 Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
 %endif
 Conflicts: SysVinit < 2.74-14
+BuildPrereq: glib-devel, gtk+-devel, pam-devel
 BuildRoot: %{_tmppath}/%{name}-root
 
 %description
@@ -43,12 +44,12 @@ make PREFIX=$RPM_BUILD_ROOT \
 # place....
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
 for wrapapp in halt reboot poweroff ; do
-  ln -sf consolehelper $RPM_BUILD_ROOT/usr/bin/$wrapapp
-  touch $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
+  ln -s consolehelper $RPM_BUILD_ROOT/usr/bin/${wrapapp}
+  touch $RPM_BUILD_ROOT/etc/security/console.apps/${wrapapp}
 %if %{build6x}
-  cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
+  cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/${wrapapp}
 %else
-  cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
+  cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrapapp}
 %endif
 done
 
@@ -91,6 +92,12 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Mon Aug  6 2001 Nalin Dahyabhai <nalin@redhat.com>
+- add build requirements on glib-devel, gtk+-devel, pam-devel (#49726)
+
+* Sun Jun 24 2001 Elliot Lee <sopwith@redhat.com>
+- Bump release + rebuild.
+
 * Wed Feb 14 2001 Preston Brown <pbrown@redhat.com>
 - final translation merge.
 
