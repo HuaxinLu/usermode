@@ -2,7 +2,7 @@ VERSION=$(shell awk '/^Version:/ { print $$2 }' < $(srcdir)/usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < $(srcdir)/usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
 VENDOR=redhat
-distdir=$(PACKAGE)-$(VERSION)-$(RELEASE)
+distdir=$(PACKAGE)-$(VERSION)
 
 EXTRA_DIST = 	\
 	mkinstalldirs \
@@ -140,7 +140,7 @@ archive:
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 	CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r $(CVSTAG) -d $(PACKAGE)-export-tmp $(PACKAGE)
 	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh ; make dist
-	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION)-$(RELEASE).tar.gz .
+	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.gz .
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 
 marshal.c marshal.h: marshal.list

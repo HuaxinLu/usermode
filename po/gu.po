@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-04 11:06+0200\n"
+"POT-Creation-Date: 2004-11-10 14:44+0100\n"
 "PO-Revision-Date: 2004-10-04 16:18+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 "\n"
 
 #.
@@ -104,14 +105,17 @@ msgstr "સંચાલન પૂર્વધારણાઓ મૂકવામ�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "સંચાલન પૂર્વધારણાઓ મૂકવામાં નિષ્ફળ: pam_timestamp_check એ નિષ્ફળતા કોડ %d આપ્યો"
+msgstr ""
+"સંચાલન પૂર્વધારણાઓ મૂકવામાં નિષ્ફળ: pam_timestamp_check એ નિષ્ફળતા કોડ %d આપ્યો"
 
 #: pam-panel-icon.c:148
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "તમે system-wide સુયોજનો સાથે વર્તમાનમાં સત્તાધિકાર પામેલા છો (કે જે બધા વપરાશકર્તાઓને અસર કરે છે) સંચાલન પાસવર્ડ છાપ્યા વિના. તમે આ સત્તાધિકરણ આપી શકો છો."
+msgstr ""
+"તમે system-wide સુયોજનો સાથે વર્તમાનમાં સત્તાધિકાર પામેલા છો (કે જે બધા વપરાશકર્તાઓને "
+"અસર કરે છે) સંચાલન પાસવર્ડ છાપ્યા વિના. તમે આ સત્તાધિકરણ આપી શકો છો."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
@@ -156,7 +160,7 @@ msgstr "\"%s\" આદેશ ચલાવવામાં નિષ્ફળ: %s\n
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO channel nonblocking સુયોજિત કરવામાં નિષ્ફળ: %s\n"
 
-#: pam-panel-icon.c:491
+#: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: સત્ર વ્યવસ્થાપક સાથે સંપર્ક કરવામાં નિષ્ફળ\n"
 
@@ -213,15 +217,16 @@ msgstr ""
 msgid "Password for %s: "
 msgstr "%s માટેનો પાસવર્ડ: "
 
-#: userhelper.c:2249
+#: userhelper.c:2301
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "વપરાશકર્તા મદદગાર માટે uid રુટ જ સુયોજિત હોવું જોઈએ\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2347
+#: userhelper.c:2399
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ગ્રાફિકવાળી વિન્ડો ખોલવા સમર્થ નથી, અને નિયંત્રક ટર્મિનલ ખોલવામાં અસમર્થ.\n"
 
 #: userhelper-wrap.c:179
@@ -309,28 +314,28 @@ msgstr "અજ્ઞાત ભૂલ."
 msgid "Query"
 msgstr "પ્રશ્ન"
 
-#: userhelper-wrap.c:564 userhelper-wrap.c:744
+#: userhelper-wrap.c:565 userhelper-wrap.c:745
 msgid "Error"
 msgstr "ભૂલ"
 
-#: userhelper-wrap.c:576
+#: userhelper-wrap.c:577
 msgid "Information"
 msgstr "જાણકારી"
 
-#: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "જગ્યા વાપરનાર લખાણ."
 
-#: userhelper-wrap.c:782
+#: userhelper-wrap.c:783
 msgid "Changing personal information."
 msgstr "ખાનગી જાણકારી બદલી રહ્યા છીએ."
 
-#: userhelper-wrap.c:785
+#: userhelper-wrap.c:786
 msgid "Changing login shell."
 msgstr "પ્રવેશ શેલ બદલી રહ્યા છીએ."
 
-#: userhelper-wrap.c:791
+#: userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -339,7 +344,7 @@ msgstr ""
 "તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
 "માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper-wrap.c:793
+#: userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -348,7 +353,7 @@ msgstr ""
 "તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
 "જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper-wrap.c:802
+#: userhelper-wrap.c:803
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -356,7 +361,7 @@ msgstr ""
 "તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
 "માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper-wrap.c:804
+#: userhelper-wrap.c:805
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -364,26 +369,26 @@ msgstr ""
 "તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
 "જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper-wrap.c:821
+#: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
 msgstr "પ્રિવિલેજ નહિં તે ચલાવો (_R)"
 
-#: userhelper-wrap.c:973
+#: userhelper-wrap.c:974
 #, c-format
 msgid "Pipe error.\n"
 msgstr "પાઈપ ભૂલ.\n"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:981
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() કરી શકતા નથી.\n"
 
-#: userhelper-wrap.c:1058 userhelper-wrap.c:1062
+#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() ભૂલ.\n"
 
-#: userhelper-wrap.c:1074
+#: userhelper-wrap.c:1075
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ભૂલ, ભૂલ ક્રમાંક=%d\n"
@@ -417,7 +422,7 @@ msgstr "નિમ્ન સ્તરનું ફોર્મેટ કરો (_
 msgid "Select a _filesystem type to create:"
 msgstr "બનાવવા માટે ફાઈલસિસ્ટમનો પ્રકાર પસંદ કરો (_f):"
 
-#: usermount.c:544
+#: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -426,24 +431,24 @@ msgstr ""
 "તમારા સંચાલકનો સંપર્ક કરો."
 
 #. Create the dialog.
-#: usermount.c:545 usermount.c:557
+#: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "વપરાશકર્તા માઉન્ટ સાધન"
 
 #. Create the other buttons.
-#: usermount.c:571
+#: usermount.c:576
 msgid "_Format"
 msgstr "બંધારણ (_F)"
 
-#: usermount.c:607
+#: usermount.c:612
 msgid "Device"
 msgstr "ઉપકરણ"
 
-#: usermount.c:613
+#: usermount.c:618
 msgid "Directory"
 msgstr "ડિરેક્ટરી"
 
-#: usermount.c:619
+#: usermount.c:624
 msgid "Filesystem"
 msgstr "ફાઈલસિસ્ટમ"
 
@@ -503,4 +508,3 @@ msgstr "તમારો પ્રવેશ પાસવર્ડ બદલો"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "પાસવર્ડ"
-

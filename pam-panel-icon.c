@@ -479,6 +479,13 @@ main(int argc, char **argv)
 	locked_pixbuf = gdk_pixbuf_new_from_file(DATADIR
 						 "/pixmaps/keyring-small.png",
 						 NULL);
+
+	/* Start up locales */
+        setlocale(LC_ALL, "");
+        bindtextdomain(PACKAGE, DATADIR "/locale");
+        bind_textdomain_codeset(PACKAGE, "UTF-8");
+        textdomain(PACKAGE);
+
 	client = gsm_client_new();
 
 	gsm_client_set_restart_style(client, GSM_RESTART_IMMEDIATELY);

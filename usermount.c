@@ -438,9 +438,14 @@ format(struct mountinfo *info)
 		command[0] = PATH_MKFS;
 		command[1] = "-t";
 		command[2] = fstype;
-		command[3] = "-I";
-		command[4] = info->dev;
-		command[5] = NULL;
+		if (!strcmp(fstype,"vfat") || !strcmp(fstype,"msdos")) {
+			command[3] = "-I";
+			command[4] = info->dev;
+			command[5] = NULL;
+		} else {
+			command[3] = info->dev;
+			command[4] = NULL;
+		}
 		if (g_spawn_async("/",
 				  command, NULL,
 				  G_SPAWN_DO_NOT_REAP_CHILD |

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-04 11:06+0200\n"
+"POT-Creation-Date: 2004-11-10 14:44+0100\n"
 "PO-Revision-Date: 2004-07-31 12:32+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
@@ -156,7 +156,7 @@ msgstr ""
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr ""
 
-#: pam-panel-icon.c:491
+#: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr ""
 
@@ -214,13 +214,13 @@ msgstr ""
 msgid "Password for %s: "
 msgstr "Katalaluan bagi %s:"
 
-#: userhelper.c:2249
+#: userhelper.c:2301
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mesti setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2347
+#: userhelper.c:2399
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -319,30 +319,30 @@ msgstr "Kueri"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:129 libgnomeui/gnome-messagebox.c:262
-#: userhelper-wrap.c:564 userhelper-wrap.c:744
+#: userhelper-wrap.c:565 userhelper-wrap.c:745
 msgid "Error"
 msgstr "Ralat"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:111 libgnomeui/gnome-messagebox.c:244
-#: userhelper-wrap.c:576
+#: userhelper-wrap.c:577
 msgid "Information"
 msgstr "Maklumat"
 
-#: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Teks Placeholder."
 
-#: userhelper-wrap.c:782
+#: userhelper-wrap.c:783
 msgid "Changing personal information."
 msgstr "Menukar maklumat peribadi."
 
-#: userhelper-wrap.c:785
+#: userhelper-wrap.c:786
 msgid "Changing login shell."
 msgstr "Menukar shell logmasuk"
 
-#: userhelper-wrap.c:791
+#: userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -352,7 +352,7 @@ msgstr ""
 "privilejadministratif, tetapi maklumat lanjut diperlukan untuk berbuat "
 "demikian."
 
-#: userhelper-wrap.c:793
+#: userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -361,7 +361,7 @@ msgstr ""
 "Anda cuba melaksanakan \"%s\" yang memerlukan privilej administratif, tetapi "
 "maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper-wrap.c:802
+#: userhelper-wrap.c:803
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -369,7 +369,7 @@ msgstr ""
 "Anda cuba melaksanakan arahan yang mendapat faedah daripada privilej "
 "administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper-wrap.c:804
+#: userhelper-wrap.c:805
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -377,26 +377,26 @@ msgstr ""
 "Anda cuba melaksanakan arahan yang memerlukan privilej administratif, tetapi "
 "maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper-wrap.c:821
+#: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
 msgstr "_Laksana Tanpa Privilej"
 
-#: userhelper-wrap.c:973
+#: userhelper-wrap.c:974
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Ralat paip.\n"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:981
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Tidak dapat fork().\n"
 
-#: userhelper-wrap.c:1058 userhelper-wrap.c:1062
+#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
 #, c-format
 msgid "dup2() error.\n"
 msgstr "ralat dup2() .\n"
 
-#: userhelper-wrap.c:1074
+#: userhelper-wrap.c:1075
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
@@ -430,7 +430,7 @@ msgstr "Lakukan pengformatan peringkat-_rendah."
 msgid "Select a _filesystem type to create:"
 msgstr "Pilih satu jenis sistem _fail untuk dicipta:"
 
-#: usermount.c:544
+#: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -439,24 +439,24 @@ msgstr ""
 "Hubungi pentadbir sistem anda"
 
 #. Create the dialog.
-#: usermount.c:545 usermount.c:557
+#: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "Alat Pelekapan Pengguna"
 
 #. Create the other buttons.
-#: usermount.c:571
+#: usermount.c:576
 msgid "_Format"
 msgstr "_Format"
 
-#: usermount.c:607
+#: usermount.c:612
 msgid "Device"
 msgstr "Peranti"
 
-#: usermount.c:613
+#: usermount.c:618
 msgid "Directory"
 msgstr "Direktori"
 
-#: usermount.c:619
+#: usermount.c:624
 msgid "Filesystem"
 msgstr "Sistem fail"
 

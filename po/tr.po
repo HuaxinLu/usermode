@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-04 11:06+0200\n"
+"POT-Creation-Date: 2004-11-10 14:44+0100\n"
 "PO-Revision-Date: 2004-01-20 13:02+0200\n"
 "Last-Translator: YILDIZ KARDEŞLER <turkishprogram@xposta.com>\n"
 "Language-Team: Turkish <C@li.org>\n"
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr ""
 
-#: pam-panel-icon.c:491
+#: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr ""
 
@@ -209,13 +209,13 @@ msgstr ""
 msgid "Password for %s: "
 msgstr "%s için parola: "
 
-#: userhelper.c:2249
+#: userhelper.c:2301
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper programı setuid root olmalıdır.\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2347
+#: userhelper.c:2399
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -307,28 +307,28 @@ msgstr "Bilinmeyen hata."
 msgid "Query"
 msgstr "Sorgu"
 
-#: userhelper-wrap.c:564 userhelper-wrap.c:744
+#: userhelper-wrap.c:565 userhelper-wrap.c:745
 msgid "Error"
 msgstr "Hata"
 
-#: userhelper-wrap.c:576
+#: userhelper-wrap.c:577
 msgid "Information"
 msgstr "Bilgi"
 
-#: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Yer ayırma metni."
 
-#: userhelper-wrap.c:782
+#: userhelper-wrap.c:783
 msgid "Changing personal information."
 msgstr "Kişisel bilgiler değiştiriliyor"
 
-#: userhelper-wrap.c:785
+#: userhelper-wrap.c:786
 msgid "Changing login shell."
 msgstr "Giriş kabuğu değiştiriliyor."
 
-#: userhelper-wrap.c:791
+#: userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -337,7 +337,7 @@ msgstr ""
 "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
 "yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper-wrap.c:793
+#: userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -346,7 +346,7 @@ msgstr ""
 "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
 "yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper-wrap.c:802
+#: userhelper-wrap.c:803
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -354,7 +354,7 @@ msgstr ""
 "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama "
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper-wrap.c:804
+#: userhelper-wrap.c:805
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -362,26 +362,26 @@ msgstr ""
 "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu "
 "yapmak için daha fazla bilgi gerekiyor."
 
-#: userhelper-wrap.c:821
+#: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
 msgstr "_Yetkisiz Çalıştırma"
 
-#: userhelper-wrap.c:973
+#: userhelper-wrap.c:974
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Veri yolu hatası.\n"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:981
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() çalıştırılamadı.\n"
 
-#: userhelper-wrap.c:1058 userhelper-wrap.c:1062
+#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() hatası.\n"
 
-#: userhelper-wrap.c:1074
+#: userhelper-wrap.c:1075
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() hatası, hatano=%d\n"
@@ -414,7 +414,7 @@ msgstr "_Düşük düzeyli biçimleme uygula."
 msgid "Select a _filesystem type to create:"
 msgstr "_Oluşturulacak dosya sistemi türünü seçiniz."
 
-#: usermount.c:544
+#: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -423,24 +423,24 @@ msgstr ""
 "bulunmuyor. Sistem yöneticinize başvurun."
 
 #. Create the dialog.
-#: usermount.c:545 usermount.c:557
+#: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "Bağlama Aracı"
 
 #. Create the other buttons.
-#: usermount.c:571
+#: usermount.c:576
 msgid "_Format"
 msgstr "_Biçemle"
 
-#: usermount.c:607
+#: usermount.c:612
 msgid "Device"
 msgstr "Aygıt"
 
-#: usermount.c:613
+#: usermount.c:618
 msgid "Directory"
 msgstr "Dizin"
 
-#: usermount.c:619
+#: usermount.c:624
 msgid "Filesystem"
 msgstr "Dosya sistemi"
 

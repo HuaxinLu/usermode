@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.74
+Version: 1.75
 Release: 1
 License: GPL
 Group: Applications/System
@@ -48,7 +48,6 @@ graphical tools for certain account management tasks.
 ./autogen.sh
 
 %build
-export CPPFLAGS="-g3"
 %configure \
 %if %{WITH_SELINUX}
 	--with-selinux 
@@ -116,7 +115,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
-* Wed Oct 20 2004 Jindrich Novy <jnovy@redhat.con> 1.74-1
+* Wed Nov 10 2004 Jindrich Novy <jnovy@redhat.com> 1.75-1
+- make pam-panel-icon using localized strings (#138609)
+- update translations
+- fix usermount to use "-I" option only for vfat and msdos fs
+- fix Makefile.am to not to use "Release" from spec to name dist tarballs
+
+* Wed Oct 20 2004 Jindrich Novy <jnovy@redhat.com> 1.74-1
 - add patch from Mathew Miller (mattdm@mattdm.org) to use
   own user's password instead of root's in authentization
   (the user must be a member of specific group to enable it)

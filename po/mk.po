@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-04 11:06+0200\n"
+"POT-Creation-Date: 2004-11-10 14:44+0100\n"
 "PO-Revision-Date: 2004-10-18 22:21+0200\n"
 "Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -100,14 +100,19 @@ msgstr "Не успеав да ги отстранам администрато�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Не успеав да ги отстранам администраторските привилегии: pam_timestamp_check врати неуспешен код %d"
+msgstr ""
+"Не успеав да ги отстранам администраторските привилегии: pam_timestamp_check "
+"врати неуспешен код %d"
 
 #: pam-panel-icon.c:148
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Моментално сте авторизирани да ги конфигурирате системските подесувања (кои што се применуваат врз сите корисници) без да ја внесувате администраторската лозинка. Можете да се откажете од авторизацијата."
+msgstr ""
+"Моментално сте авторизирани да ги конфигурирате системските подесувања (кои "
+"што се применуваат врз сите корисници) без да ја внесувате "
+"администраторската лозинка. Можете да се откажете од авторизацијата."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
@@ -152,7 +157,7 @@ msgstr "Не можам да ја извршам командата \"%s\": %s\n
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Не можам да го наместам ИО каналот да деблокира: %s\n"
 
-#: pam-panel-icon.c:491
+#: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: не може да се врзе со менаџерот на сесијата\n"
 
@@ -209,13 +214,13 @@ msgstr ""
 msgid "Password for %s: "
 msgstr "Лозинката на %s: "
 
-#: userhelper.c:2249
+#: userhelper.c:2301
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper мора да биде setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2347
+#: userhelper.c:2399
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -309,28 +314,28 @@ msgstr "Непозната грешка."
 msgid "Query"
 msgstr "Слог"
 
-#: userhelper-wrap.c:564 userhelper-wrap.c:744
+#: userhelper-wrap.c:565 userhelper-wrap.c:745
 msgid "Error"
 msgstr "Грешка"
 
-#: userhelper-wrap.c:576
+#: userhelper-wrap.c:577
 msgid "Information"
 msgstr "Информации"
 
-#: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Место за текст."
 
-#: userhelper-wrap.c:782
+#: userhelper-wrap.c:783
 msgid "Changing personal information."
 msgstr "Промена на личните информации."
 
-#: userhelper-wrap.c:785
+#: userhelper-wrap.c:786
 msgid "Changing login shell."
 msgstr "Промена на школката за најава."
 
-#: userhelper-wrap.c:791
+#: userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -339,7 +344,7 @@ msgstr ""
 "Се обидувате да ја отворите програмата \"%s\" која може да ги искористи и\n"
 "административните привилегии, но потребни се дополнителни информации."
 
-#: userhelper-wrap.c:793
+#: userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -348,7 +353,7 @@ msgstr ""
 "Се обидувате да ја отворите програмата \"%s\" која бара административен\n"
 "пристап. Внесете ги дополнителните информации за тоа."
 
-#: userhelper-wrap.c:802
+#: userhelper-wrap.c:803
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -356,7 +361,7 @@ msgstr ""
 "Се обидувате да извршите команда која може да ги искористи и\n"
 "административните привилегии, но потребни се дополнителни информации."
 
-#: userhelper-wrap.c:804
+#: userhelper-wrap.c:805
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -364,26 +369,26 @@ msgstr ""
 "Се обидувате да извршите команда која бара административен пристап.\n"
 "Внесете ги дополнителните информации."
 
-#: userhelper-wrap.c:821
+#: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
 msgstr "_Изврши без привилегии"
 
-#: userhelper-wrap.c:973
+#: userhelper-wrap.c:974
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe грешка.\n"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:981
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "form() е неуспешно.\n"
 
-#: userhelper-wrap.c:1058 userhelper-wrap.c:1062
+#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
 #, c-format
 msgid "dup2() error.\n"
 msgstr "грешка во dup2().\n"
 
-#: userhelper-wrap.c:1074
+#: userhelper-wrap.c:1075
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "грешка во execl(), errno=%d\n"
@@ -417,7 +422,7 @@ msgstr "Изврши _low-level форматирање."
 msgid "Select a _filesystem type to create:"
 msgstr "Одберете вид на _датотечен систем за креирање:"
 
-#: usermount.c:544
+#: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -426,24 +431,24 @@ msgstr ""
 "Контактирајте со администраторот."
 
 #. Create the dialog.
-#: usermount.c:545 usermount.c:557
+#: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "Алатка за монтирање"
 
 #. Create the other buttons.
-#: usermount.c:571
+#: usermount.c:576
 msgid "_Format"
 msgstr "_Форматирај"
 
-#: usermount.c:607
+#: usermount.c:612
 msgid "Device"
 msgstr "Уред"
 
-#: usermount.c:613
+#: usermount.c:618
 msgid "Directory"
 msgstr "Директориум"
 
-#: usermount.c:619
+#: usermount.c:624
 msgid "Filesystem"
 msgstr "Датотечен систем"
 
@@ -503,4 +508,3 @@ msgstr "Променете ја лозинката за најава"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Лозинка"
-
