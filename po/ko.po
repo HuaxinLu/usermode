@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-10-20 15:37+1000\n"
+"PO-Revision-Date: 2004-10-20 15:38+1000\n"
 "Last-Translator: Michelle J Kim <mkim@redhat.com>\n"
 "Language-Team:  <ko@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -139,9 +139,9 @@ msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "오류"
+msgstr "오류: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
