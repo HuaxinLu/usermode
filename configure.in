@@ -32,6 +32,9 @@ DATADIR=`eval echo ${datadir}`
 AC_DEFINE_UNQUOTED(DATADIR,"$DATADIR","/usr/share")
 SYSCONFDIR=`eval echo ${sysconfdir}`
 AC_DEFINE_UNQUOTED(SYSCONFDIR,"$SYSCONFDIR","/etc")
+AC_SUBST(SBINDIR)
+AC_SUBST(DATADIR)
+AC_SUBST(SYSCONFDIR)
 AC_ARG_ENABLE(debug,
 [  --enable-debug         Enable debugging messages],
 AC_DEFINE(DEBUG_USERHELPER,1,[enable debugging messages]))

@@ -31,8 +31,8 @@ or
 .PP
 This program provides a basic interface to change a user's password, gecos
 information, and shell.  The main differnce between this program and
-its traditional equivilents is that prompts come out on standard out
-to make it easy for a GUI program to interface it as a child process.
+its traditional equivilents is that prompts are written to standard out
+to make it easy for a GUI wrapper to interface to it as a child process.
 .PP
 The output is in the form of:
 .TP
@@ -50,46 +50,45 @@ Prompt with visible input.
 Prompt with invisible input.
 .TP
 3
-Informational message.
+Suggested answer for the current prompt.
 .TP
 4
-Error message.
+Informational message.
 .TP
 5
-Count of messages sent in this block so far.
+Error message.
 .TP
 6
-The name of the service being used.
+Count of messages sent in this block so far.
 .TP
 7
-Whether or not the command will be executed as the user if authentication fails.
+The name of the service being used.
 .TP
 8
+Whether or not the command will be executed as the user if authentication fails.
+.TP
+9
 The name of the user being authenticated.
 
 .SH OPTIONS
 .TP
 .I -t
-Text mode authentication instead of the numbered message types
+Use text mode authentication instead of the numbered message types
 just described; only used with -w.
 .TP
 .I -w
-Specify a program name and arguments to be passed through.  userhelper
-will look up in the file @SYSCONFDIR@/security/console.apps/\fIprogramname\fP
-the username to authenticate stored as USER=\fIvalue\fP (\fIvalue\fP
-is normally "root" or the magic token "<user>" which indicates
-to authenticate the current user) and the program to run stored as
-PROGRAM=\fIvalue\fP (\fIvalue\fP \fBmust\fP be an absolute path or it
-will be ignored).  If USER is not specified, the current user is used,
-and if PROGRAM is not specified, userhelper looks for \fIprogramname\fP
-in /sbin and /usr/sbin/.  userhelper will then authenticate the user via
-pam and then run the named program.  If SESSION=true is specified, then
-userhelper establishes a pam session and forks and execs, then waits
-around for the child to exit; otherwise, it simply execs the child.
-userhelper is normally called from consolehelper via a symlink.
-If FALLBACK=true is specified, the program will run as user if
-authentication fails.  Authentication will be retried twice (three
-times total) unless something other than RETRY=2 is specified.
+Specify a program name to be run and arguments to be passed to it.  userhelper
+will look in the file @SYSCONFDIR@/security/console.apps/\fIprogramname\fP
+for the name of a user to authenticate, the path of the binary to be run, and
+other settings described below.
+userhelper will then attempt to authenticate the user using PAM,
+specifying \fIprogramname\fP as the PAM service name.  If authentication
+succeeds, the binary will be run with superuser privileges.  If the
+configuration file specifies that PAM session management should be
+performed, userhelper will also open a PAM session before starting the
+program, and close the session when the program terminates.  If authentication
+fails, userhelper can be configured run the program with the user's privileges
+instead.
 .TP
 .I -c 
 Change the current user's password.  Note that this option cannot be
@@ -110,6 +109,49 @@ Specify a new Home Phone.
 .TP
 .I -s
 Specify a new shell.
+.SH VARIABLES
+.TP
+.I USER
+The name of the user userhelper should attempt to authenticate the invoking
+user as.  Typically this is \fIroot\fP.  The special value \fI<user>\fP (which
+is also the default) indicates that userhelper should authenticate the invoking
+user.
+.TP
+.I PROGRAM
+The name of the binary to execute if authentication succeeds.  This should
+always be specified as an absolute path.  If not specified, userhelper will
+attempt to run /sbin/\fIprogramname\fP first, and failing that, it will attempt
+to run /usr/sbin/\fIprogramname\fP.
+.TP
+.I SESSION
+Specifies whether or not userhelper should perform PAM session management
+when running the program.  Typically this is needed if the PAM configuration
+uses a module such as \fIpam_xauth.so\fP to forward X11 authentication tokens
+for use by the program.
+Valid values are \fIyes\fP and \fIno\fP, with the default being \fIno\fP.
+.TP
+.I RETRY
+Specifies the number of times userhelper should attempt to authenticate the
+user if the initial attempt fails.  The default value is 2, which causes
+userhelper to attempt to authenticate the user a total of 3 times.
+.TP
+.I FALLBACK
+Specifies whether or not the specified binary should be run with the invoking
+user's privileges if authentication fails.  This option is useful for running
+applications which gain additional abilities when run with superuser privileges,
+but which are still useful when run without them.
+.TP
+.I NOXOPTION
+The name of an option which, if passed to userhelper as an argument for the
+program it will run, will cause userhelper to behave as if the \fI-t\fP flag
+had been pased to it.
+.TP
+.I GUI
+Specifies whether or not userhelper should use consolehelper to present
+graphical dialog boxes when prompting the user for information.  This is
+the inverse of the \fI-t\fP option.
+Valid values are \fIyes\fP and \fIno\fP, with the default being \fIyes\fP.
+
 .SH EXIT STATUS
 A non-zero exit status indicates an error occured.  Those errors are:
 .TP
