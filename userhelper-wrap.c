@@ -351,6 +351,9 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 	}
 #endif
 	/* Tell the child we have no more to say. */
+#ifdef DEBUG_USERHELPER
+	fprintf(stderr, "Sending synchronization point.\n");
+#endif
 	byte = UH_SYNC_POINT;
 	write(childin[1], &byte, 1);
 	write(childin[1], "\n", 1);
@@ -370,18 +373,8 @@ userhelper_parse_childout(char *outline)
 {
 	char *prompt;
 	int prompt_type;
-	struct response *resp = NULL;
+	static struct response *resp = NULL;
 	struct passwd *pwd;
-
-	/* Attempt to reuse a response structure (which may contain incomplete
-	 * messages we've already received) unless the dialog is bogus. */
-	if (resp != NULL) {
-		if (!GTK_IS_WINDOW(resp->dialog)) {
-			g_free(resp->user);
-			g_free(resp);
-			resp = NULL;
-		}
-	}
 
 	if (resp == NULL) {
 		/* Allocate the response structure. */
@@ -435,7 +428,6 @@ userhelper_parse_childout(char *outline)
 #endif
 		msg->type = prompt_type;
 		msg->message = prompt;
-		msg->data = NULL;
 		msg->entry = NULL;
 
 		echo = TRUE;
@@ -456,9 +448,14 @@ userhelper_parse_childout(char *outline)
 				echo = FALSE;
 				/* fall through */
 			case UH_ECHO_ON_PROMPT:
-				resp->title = _("Query");
+				/* Only set the title to "Query" if it isn't
+				 * already set to "Error" or something else
+				 * more meaningful. */
+				if (resp->title == NULL) {
+					resp->title = _("Query");
+				}
 				/* Create a label to hold the prompt, and make
-				   a feeble gesture at being accessible :(. */
+				 * a feeble gesture at being accessible :(. */
 				msg->label =
 					gtk_label_new_with_mnemonic(_(prompt));
 				gtk_label_set_line_wrap(GTK_LABEL(msg->label),
@@ -472,6 +469,7 @@ userhelper_parse_childout(char *outline)
 							      GTK_WIDGET(msg->entry));
 				gtk_entry_set_visibility(GTK_ENTRY(msg->entry),
 							 echo);
+
 				/* If we had a suggestion, use it up. */
 				if (resp->suggestion) {
 					gtk_entry_set_text(GTK_ENTRY(msg->entry),
@@ -686,7 +684,11 @@ userhelper_parse_childout(char *outline)
 	/* If we're ready, do some last-minute changes and run the dialog. */
 	if ((resp->ready) && (resp->responses == 0)) {
 		/* No queries means that we've just processed a sync request
-		 * for cases where we don't need any info for authentication. */
+		 * for cases where we don't need any info for authentication.
+		 * Hopefully this is just a module being stupid and calling the
+		 * conversation callback once. for. every. chunk. of. output
+		 * and we'll get an actual prompt (which will give us cause to
+		 * open a dialog) later. */
 		userhelper_write_childin(GTK_RESPONSE_OK, resp);
 	} else
 	if ((resp->ready) && (resp->responses > 0)) {
@@ -715,6 +717,12 @@ userhelper_parse_childout(char *outline)
 						      GTK_BUTTONS_OK_CANCEL :
 						      GTK_BUTTONS_CLOSE,
 						      _("Placeholder text."));
+
+		/* Ensure that we don't get dangling crap widget pointers. */
+		g_object_add_weak_pointer(G_OBJECT(resp->dialog),
+					  (gpointer*) &resp->dialog);
+
+		/* If we didn't get a title from userhelper, assume badness. */
 		gtk_window_set_title(GTK_WINDOW(resp->dialog),
 				     resp->title ? resp->title : _("Error"));
 
@@ -822,17 +830,34 @@ userhelper_parse_childout(char *outline)
 
 		/* Destroy the dialog box. */
 		gtk_widget_destroy(resp->dialog);
+		resp->table = NULL;
+		resp->last = NULL;
+		resp->first = NULL;
 		resp->dialog = NULL;
-		if (resp->service) {
-			g_free(resp->service);
+		if (resp->title) {
+			g_free(resp->title);
+			resp->title = NULL;
+		}
+		if (resp->banner) {
+			g_free(resp->banner);
+			resp->banner = NULL;
 		}
 		if (resp->suggestion) {
 			g_free(resp->suggestion);
+			resp->suggestion = NULL;
+		}
+		if (resp->service) {
+			g_free(resp->service);
+			resp->service = NULL;
 		}
 		if (resp->user) {
 			g_free(resp->user);
+			resp->user = NULL;
 		}
-		resp->title = NULL;
+		if (resp->message_list) {
+			g_list_free(resp->message_list);
+			resp->message_list = NULL;
+		}
 		g_free(resp);
 		resp = NULL;
 	}
