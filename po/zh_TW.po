@@ -1,18 +1,19 @@
+# Translation of zh_TW.po to Traditional Chinese
 # Translation of zh_TW.po to Chinese (traditional)
-# Copyright (C) 2002 Free Software Foundation, Inc.
-# Ben Wu <hpwu@redhat.com>, 2002.
+# Copyright (C) 2002, 2003 Free Software Foundation, Inc.
+# Ben Wu <hpwu@redhat.com>, 2002, 2003.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
+"Project-Id-Version: zh_TW\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2002-09-03 16:27+1000\n"
+"PO-Revision-Date: 2003-11-21 09:01+1000\n"
 "Last-Translator: Ben Wu <hpwu@redhat.com>\n"
-"Language-Team: Chinese (Traditional) <i18n-list@redhat.com>\n"
+"Language-Team: Traditional Chinese <i18n-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0beta1\n"
+"X-Generator: KBabel 1.0.2\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -83,12 +84,11 @@ msgstr "在不輸入密碼的情況下啟動全系統性的設定工具。"
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "登入帳號: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "密碼"
+msgstr "密碼: "
 
 #: userdialogs.h:30
 msgid "Help"
@@ -97,7 +97,7 @@ msgstr "求助"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "無法設定執行上下文為 %s。\n"
 
 #: userhelper.c:431
 #, c-format
@@ -149,8 +149,7 @@ msgstr "userhelper 必須 setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:1123
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗，且找不到控制終端機。\n"
 
 #: userhelper-wrap.c:178
@@ -258,30 +257,26 @@ msgstr "更改登入 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:776
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:778
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:795
 msgid "_Run Unprivileged"
@@ -484,3 +479,4 @@ msgstr "密碼"
 
 #~ msgid "Starting \"%s\" with administrative privileges."
 #~ msgstr "以管理者的權限啟動 \"%s\"。"
+
