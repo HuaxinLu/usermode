@@ -1,0 +1,457 @@
+# Catalan translations for usermode package.
+# Copyright (C) 2004 Free Software Fundation
+# This file is distributed under the same license as the usermode package.
+# Ramon Gómez Vilar <ramongomezvilar@gmx.net>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: usermode\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-09-25 16:34-0400\n"
+"PO-Revision-Date: 2004-02-24 09:01+0100\n"
+"Last-Translator: Ramon Gómez Vilar <ramongomezvilar@gmx.net>\n"
+"Language-Team: Catalan <fedora@softcatala.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
+#: dummy.h:21 userdialogs.h:29
+msgid "OK"
+msgstr "D'acord"
+
+#: dummy.h:22 userdialogs.h:32
+msgid "Exit"
+msgstr "Surt"
+
+#: dummy.h:23 userdialogs.h:31
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: dummy.h:24 userdialogs.h:33
+msgid "Run Unprivileged"
+msgstr "Executa sense privilegis"
+
+#: dummy.h:25
+msgid "(current) UNIX password: "
+msgstr "contrasenya de UNIX (actual): "
+
+#: dummy.h:26
+msgid "New UNIX password: "
+msgstr "Nova contrasenya de UNIX: "
+
+#: dummy.h:27
+msgid "Retype new UNIX password: "
+msgstr "Torneu a escriure la nova contrasenya de UNIX: "
+
+#: dummy.h:28
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr "Contrasenya incorrecta: és molt curta"
+
+#: dummy.h:29
+msgid "BAD PASSWORD: it is too short"
+msgstr "Contrasenya incorrecta: és massa curta"
+
+#: dummy.h:30
+msgid "Password unchanged"
+msgstr "No s'ha canviat la contrasenya"
+
+#: dummy.h:31
+msgid "Sorry, passwords do not match"
+msgstr "Les contrasenyes no coincideixen"
+
+#: dummy.h:32
+msgid "Launch system-wide configuration tools without a password."
+msgstr ""
+"Executa les eines de configuració generals del sistema sense contrasenya."
+
+#: dummy.h:33
+msgid "login: "
+msgstr "entrada:"
+
+#: dummy.h:34
+msgid "Password: "
+msgstr "Contrasenya: "
+
+#: userdialogs.h:30
+msgid "Help"
+msgstr "Ajuda"
+
+#: userhelper.c:122
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "No s'ha pogut definir el contexte exec com a %s.\n"
+
+#: userhelper.c:431
+#, c-format
+msgid "Password for %s"
+msgstr "Contrasenya per a %s"
+
+#: userhelper.c:666
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar \"%s\" que es pot beneficiar de privilegis\n"
+"d'administrador, però es necessita més informació per fer-ho."
+
+#: userhelper.c:668
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar \"%s\" que necessita privilegis\n"
+"d'administrador, però es necessita més informació per fer-ho."
+
+#: userhelper.c:672
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar una ordre que es pot beneficiar de privilegis\n"
+"d'administrador, però es necessita més informació per fer-ho."
+
+#: userhelper.c:674
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar una ordre que necessita privilegis\n"
+"d'administrador, però es necessita més informació per fer-ho."
+
+#: userhelper.c:693
+#, c-format
+msgid "Password for %s: "
+msgstr "Contrasenya per a %s: "
+
+#: userhelper.c:1039
+msgid "userhelper must be setuid root\n"
+msgstr "L'userhelper ha de ser setuid root\n"
+
+#. FIXME: print a warning here?
+#: userhelper.c:1123
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"No s'ha pogut obrir una finestra gràfica, ni tampoc trobar un terminal de "
+"control.\n"
+
+#: userhelper-wrap.c:178
+msgid "Unknown exit code."
+msgstr "Codi de sortida desconegut."
+
+#: userhelper-wrap.c:180
+msgid "Information updated."
+msgstr "S'ha actualitzat la informació."
+
+#: userhelper-wrap.c:182
+msgid ""
+"The password you typed is invalid.\n"
+"Please try again."
+msgstr ""
+"La contrasenya que heu teclejat no és vàlida\n"
+"Si us plau, torneu-ho a intentar."
+
+#: userhelper-wrap.c:184
+msgid ""
+"One or more of the changed fields is invalid.\n"
+"This is probably due to either colons or commas in one of the fields.\n"
+"Please remove those and try again."
+msgstr ""
+"Un o més d'un dels camps modificats no és vàlid.\n"
+"Probablement és degut a comes o dos punts en un dels camps.\n"
+"Esborreu els signes i proveu de nou."
+
+#: userhelper-wrap.c:186
+msgid "Password resetting error."
+msgstr "Error de reinicialització de contrasenya."
+
+#: userhelper-wrap.c:188
+msgid ""
+"Some systems files are locked.\n"
+"Please try again in a few moments."
+msgstr ""
+"Alguns fitxers de sistema estan blocats.\n"
+"Si us plau, torneu-ho a intentar d'aquí a una estona."
+
+#: userhelper-wrap.c:190
+msgid "Unknown user."
+msgstr "Usuari desconegut."
+
+#: userhelper-wrap.c:192
+msgid "Insufficient rights."
+msgstr "No teniu prou drets."
+
+#: userhelper-wrap.c:194
+msgid "Invalid call to subprocess."
+msgstr "Crida de subprocés no vàlida."
+
+#: userhelper-wrap.c:196
+msgid ""
+"Your current shell is not listed in /etc/shells.\n"
+"You are not allowed to change your shell.\n"
+"Consult your system administrator."
+msgstr ""
+"L'intèrpret d'ordres actual no es troba a /etc/shells.\n"
+"No està permès que canvieu el vostre intèrpret d'ordres.\n"
+"Consulteu a l'administrador del sistema."
+
+#: userhelper-wrap.c:199
+msgid "Out of memory."
+msgstr "Sense memòria."
+
+#: userhelper-wrap.c:201
+msgid "The exec() call failed."
+msgstr "La crida exec() ha fallat."
+
+#: userhelper-wrap.c:203
+msgid "Failed to find selected program."
+msgstr "No s'ha pogut trobar el programa seleccionat."
+
+#: userhelper-wrap.c:207
+msgid "Unknown error."
+msgstr "Error desconegut."
+
+#: userhelper-wrap.c:458 glade.strings:18 usermode.glade.h:9
+msgid "Query"
+msgstr "Consulta"
+
+#: userhelper-wrap.c:548 userhelper-wrap.c:718
+msgid "Error"
+msgstr "Error"
+
+#: userhelper-wrap.c:560
+msgid "Information"
+msgstr "Informació"
+
+#: userhelper-wrap.c:716 glade.strings:16 glade.strings:19 usermode.glade.h:8
+msgid "Placeholder text."
+msgstr "Text del marcador."
+
+#: userhelper-wrap.c:756
+msgid "Changing personal information."
+msgstr "S'està canviant la informació personal."
+
+#: userhelper-wrap.c:759
+msgid "Changing login shell."
+msgstr "S'està canviant l'intèrpret d'ordres d'entrada."
+
+#: userhelper-wrap.c:765
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar \"%s\" que es pot beneficiar de privilegis "
+"d'administrador, però es necessita més informació per fer-ho."
+
+#: userhelper-wrap.c:767
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar \"%s\" que necessita privilegis d'administrador, "
+"però es necessita més informació per fer-ho."
+
+#: userhelper-wrap.c:776
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar una ordre que es pot beneficiar de privilegis "
+"d'administrador, però es necessita més informació per fer-ho."
+
+#: userhelper-wrap.c:778
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar una ordre que necessita privilegis d'administrador, "
+"però es necessita més informació per fer-ho."
+
+#: userhelper-wrap.c:795
+msgid "_Run Unprivileged"
+msgstr "_Executa sense privilegis"
+
+#: userhelper-wrap.c:931
+msgid "Pipe error.\n"
+msgstr "Error de conducte.\n"
+
+#: userhelper-wrap.c:938
+msgid "Cannot fork().\n"
+msgstr "No es pot executar el fork().\n"
+
+#: userhelper-wrap.c:1016 userhelper-wrap.c:1020
+msgid "dup2() error.\n"
+msgstr "Error del dup2().\n"
+
+#: userhelper-wrap.c:1032
+#, c-format
+msgid "execl() error, errno=%d\n"
+msgstr "Error de l'execl(), errno=%d\n"
+
+#: userinfo.c:323
+msgid "You don't exist.  Go away.\n"
+msgstr "Vostè no existeix.  Vagi-se'n.\n"
+
+#: usermount.c:62 glade.strings:26
+msgid "_Mount"
+msgstr "_Munta"
+
+#: usermount.c:63
+msgid "Un_mount"
+msgstr "Des_munta"
+
+#: usermount.c:321
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"Esteu segur que voleu formatar aquest disc?  En destruireu tota la "
+"informació continguda."
+
+#: usermount.c:332
+msgid "Perform a _low-level format."
+msgstr "Realitza un formatat de nivell _baix."
+
+#: usermount.c:375
+msgid "Select a _filesystem type to create:"
+msgstr "Seleccioneu un tipus de sistema de _fitxers per crear:"
+
+#: usermount.c:543
+msgid ""
+"There are no filesystems which you are allowed to mount or unmount.\n"
+"Contact your administrator."
+msgstr ""
+"No hi ha sistemes de fitxers pels que tingueu permís per muntar o "
+"desmuntar.\n"
+"Contacteu l'administrador."
+
+#. Create the dialog.
+#: usermount.c:544 usermount.c:555 glade.strings:22
+msgid "User Mount Tool"
+msgstr "Eina de muntatge de l'usuari"
+
+#. Create the other buttons.
+#: usermount.c:569 glade.strings:28
+msgid "_Format"
+msgstr "_Format"
+
+#: usermount.c:605 glade.strings:24
+msgid "Device"
+msgstr "Dispositiu"
+
+#: usermount.c:611 glade.strings:23
+msgid "Directory"
+msgstr "Directori"
+
+#: usermount.c:617
+msgid "Filesystem"
+msgstr "Sistema de fitxers"
+
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
+#: glade.strings:7 usermode.glade.h:10
+msgid "User Information"
+msgstr "Informació de l'usuari"
+
+#: glade.strings:8 usermode.glade.h:2
+msgid "Full Name:"
+msgstr "Nom complet:"
+
+#: glade.strings:9 usermode.glade.h:7
+msgid "Office:"
+msgstr "Feina:"
+
+#: glade.strings:10 usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "Número de telèfon de l'oficina:"
+
+#: glade.strings:11 usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr "Número de telèfon de casa:"
+
+#: glade.strings:12 usermode.glade.h:4
+msgid "Login Shell:"
+msgstr "Entrada d'intèrpret d'ordres:"
+
+#: glade.strings:13 glade.strings:20
+msgid "_Ok"
+msgstr "_D'acord"
+
+#: glade.strings:14 glade.strings:21
+msgid "_Cancel"
+msgstr "_Cancel·la"
+
+#: glade.strings:15 usermode.glade.h:5
+msgid "Message"
+msgstr "Missatge"
+
+#: glade.strings:17
+msgid "_Close"
+msgstr "_Tanca"
+
+#: glade.strings:25
+msgid "Type"
+msgstr "Tipus"
+
+#: glade.strings:27
+msgid "_Unmount"
+msgstr "_Desmunta"
+
+#: glade.strings:29
+msgid "E_xit"
+msgstr "S_urt"
+
+#: usermode.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "Quant a Myself"
+
+#: userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Canvieu la informació personal"
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr "Gestió de disc"
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr "Munta i desmunta sistemes de fitxers"
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr "Canvieu la vostra contrasenya d'entrada"
+
+#: userpasswd.desktop.in.h:2
+msgid "Password"
+msgstr "Contrasenya"
