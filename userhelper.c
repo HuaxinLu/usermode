@@ -677,6 +677,8 @@ int main(int argc, char *argv[])
 	if (retval != PAM_SUCCESS) {
 	    pam_end(pamh, retval);
 	    if (fallback) {
+		/* reset the XAUTHORITY so that X stuff will work now */
+	        if (env_xauthority) setenv("XAUTHORITY", env_xauthority, 1);
 		setuid(getuid());
 		if(geteuid() != getuid()) {
 		    exit (ERR_EXEC_FAILED);

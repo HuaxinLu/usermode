@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.39
-Release: 2
+Version: 1.40
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.bz2
@@ -68,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/usermount.1*
 %{_bindir}/userinfo
 %{_mandir}/man1/userinfo.1*
-%attr(4755,root,root) /usr/sbin/userhelper
+%attr(4711,root,root) /usr/sbin/userhelper
 %{_mandir}/man8/userhelper.8*
 %{_bindir}/userpasswd
 %{_mandir}/man1/userpasswd.1*
@@ -91,6 +91,10 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Wed Feb  7 2001 Nalin Dahyabhai <nalin@redhat.com>
+- set XAUTHORITY if we fall back to regular behavior (#26343)
+- make the suid helper 04711 instead of 04755
+
 * Mon Feb  5 2001 Nalin Dahyabhai <nalin@redhat.com>
 - refresh translations
 
