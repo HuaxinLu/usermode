@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.65
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -104,6 +104,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Jan 27 2003 Nalin Dahyabhai <nalin@redhat.com> 1.65-2
+- rebuild
+
 * Mon Jan 20 2003 Nalin Dahyabhai <nalin@redhat.com> 1.65-1
 - pass-through DESKTOP_STARTUP_ID
 
