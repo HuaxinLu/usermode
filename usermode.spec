@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.16
+Version: 1.17
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -70,6 +70,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Jan 02 2000 Michael K. Johnson <johnsonm@redhat.com>
+- fixed local root exploit
+
 * Thu Sep 30 1999 Michael K. Johnson <johnsonm@redhat.com>
 - fixed old complex broken gecos parsing, replaced with simple working parsing
 - can now blank fields (was broken by previous fix for something else...)

@@ -502,8 +502,8 @@ int main(int argc, char *argv[])
 	struct stat sbuf;
 	shvarFile *s;
 
-	if (strchr(progname, '/'))
-	    progname = strchr(progname, '/');
+	if (strrchr(progname, '/'))
+	    progname = strrchr(progname, '/');
 
 	aft = strlen(progname) + sizeof("/etc/security/console.apps/") + 2;
 	apps_filename = alloca(aft);
