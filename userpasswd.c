@@ -25,7 +25,8 @@ main(int argc, char* argv[])
 {
   gtk_init(&argc, &argv);
 
-  userhelper_run_passwd();
+  signal(SIGCHLD, userhelper_sigchld);
+  userhelper_run(UH_PATH, UH_PATH, UH_PASSWD_OPT, 0);
 
   gtk_main();
 

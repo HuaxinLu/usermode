@@ -70,10 +70,6 @@ static int 	w_flg = 0;	/* -w flag = act as a wrapper for next args */
  */
 static int fail_error(int retval)
 {
-/* well behaved GUI helper programs don't print to the console! -Otto */
-/*     fprintf(stderr, "failing with error: %s\n", */
-/* 	    pam_strerror(retval)); */
-
   /* this is a temporary kludge.. will be fixed shortly. */
     if(retval == ERR_SHELL_INVALID)
         exit(ERR_SHELL_INVALID);	  
@@ -354,7 +350,7 @@ int main(int argc, char *argv[])
 	exit(ERR_NO_RIGHTS);
     }
 
-    while ((arg = getopt(argc, argv, "f:o:p:h:cs:tw:")) != -1 && !w_flg) {
+    while (!w_flg && (arg = getopt(argc, argv, "f:o:p:h:cs:tw:")) != -1) {
 	/* we process no arguments after -w progname; those are sacred */
 	switch (arg) {
 	    case 'f':
@@ -446,13 +442,15 @@ int main(int argc, char *argv[])
 	 */
 	char *constructed_path;
 
-	constructed_path = malloc(strlen(progname) + sizeof("/usr/sbin/" + 1));
+/*sleep(60);*/
+
+	constructed_path = malloc(strlen(progname) + sizeof("/usr/sbin/" + 2));
 	if (!constructed_path) exit (ERR_NO_MEMORY);
 
 	strcpy(constructed_path, "/usr/sbin/");
 	strcat(constructed_path, progname);
 	if (access(constructed_path, X_OK)) {
-	    strcpy(constructed_path, "/usr/sbin/");
+	    strcpy(constructed_path, "/sbin/");
 	    strcat(constructed_path, progname);
 	    if (access(constructed_path, X_OK)) {
 		exit (ERR_NO_PROGRAM);
@@ -476,6 +474,8 @@ int main(int argc, char *argv[])
 	}
 
 	/* this is not a session, so do not do session management */
+
+	pam_end(pamh, PAM_SUCCESS);
 
 	/* time for an exec */
 	setuid(getuid());

@@ -38,4 +38,15 @@
 #define ERR_EXEC_FAILED		11	/* exec failed for some reason */
 #define ERR_UNK_ERROR           255     /* unknown error */
 
+#define UH_PATH "/usr/sbin/userhelper"
+/* #define UH_PATH "./userhelper" */
+#define UH_PASSWD_OPT "-c"
+#define UH_FULLNAME_OPT "-f"
+#define UH_OFFICE_OPT "-o"
+#define UH_OFFICEPHONE_OPT "-p"
+#define UH_HOMEPHONE_OPT "-h"
+#define UH_SHELL_OPT "-s"
+#define UH_TEXT_OPT "-t"
+#define UH_WRAP_OPT "-w"
+
 #endif /* __USERHELPER_H__ */

@@ -501,12 +501,22 @@ set_new_userinfo(UserInfo* userinfo)
   homephone = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_HOMEPHONE]));
   shell = gtk_entry_get_text(GTK_ENTRY(gecos_fields[GECOS_SHELL]));
 
-  if(strcmp(userinfo->shell, shell) == 0)
-    {
-      shell = NULL;
-    }
+  signal(SIGCHLD, userhelper_sigchld);
 
-  userhelper_run_chfn(fullname, office, officephone, homephone, shell);
+  if(strcmp(userinfo->shell, shell) == 0) {
+    userhelper_run(UH_PATH, UH_PATH,
+                   UH_FULLNAME_OPT, fullname,
+                   UH_OFFICE_OPT, office,
+                   UH_OFFICEPHONE_OPT, officephone,
+                   UH_HOMEPHONE_OPT, homephone, 0);
+  } else {
+    userhelper_run(UH_PATH, UH_PATH,
+                   UH_FULLNAME_OPT, fullname,
+                   UH_OFFICE_OPT, office,
+                   UH_OFFICEPHONE_OPT, officephone,
+                   UH_HOMEPHONE_OPT, homephone,
+                   UH_SHELL_OPT, shell, 0);
+  }
 }
 
 void

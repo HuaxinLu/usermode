@@ -29,18 +29,6 @@
 
 #include "userhelper.h"
 
-#define UH_PATH "/usr/sbin/userhelper"
-/* #define UH_PATH "./userhelper" */
-#define UH_PASSWD_OPT "-c"
-#define UH_FULLNAME_OPT "-f"
-#define UH_OFFICE_OPT "-o"
-#define UH_OFFICEPHONE_OPT "-p"
-#define UH_HOMEPHONE_OPT "-h"
-#define UH_SHELL_OPT "-s"
-#define UH_TEXT_OPT "-t"
-#define UH_WRAP_OPT "-w"
-
-
 typedef struct message {
 	int type;
 	char *message;
@@ -60,10 +48,8 @@ typedef struct response {
 	message *tail;
 } response;
 
-void userhelper_run_passwd();
-void userhelper_run_chfn(char* fullname, char* office, 
-			 char* officephone, char* homephone, 
-			 char* shell);
+void userhelper_run(char *path, ...);
+void userhelper_runv(char *path, char **args);
 void userhelper_parse_exitstatus(int exitstatus);
 void userhelper_parse_childout();
 void userhelper_read_childout(gpointer data, int source, GdkInputCondition cond);

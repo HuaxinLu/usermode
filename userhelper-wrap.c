@@ -20,6 +20,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include "userhelper-wrap.h"
 #include "userdialogs.h"
 
@@ -39,16 +40,11 @@ userhelper_malloc(size_t size) {
   return ret;
 }
 
-/* the only difference between this and userhelper_run_chfn() is the
- * final exec() call... I want to avoid all duplication, but I can't
- * think of a clean way to do it right now...
- */
 void
-userhelper_run_passwd()
+userhelper_runv(char *path, char **args)
 {
   pid_t pid;
-
-  signal(SIGCHLD, userhelper_sigchld);
+  int retval;
 
   if(pipe(childout) < 0 || pipe(childin) < 0)
     {
@@ -92,95 +88,30 @@ userhelper_run_passwd()
 	}
       setbuf(stdout, NULL);
 
-      if(execl(UH_PATH, UH_PATH, UH_PASSWD_OPT, 0) < 0)
-	{
-	  fprintf(stderr, "execl() error, errno=%d\n", errno);
-	}
+      retval = execv(path, args);
+
+      if(retval < 0) {
+	fprintf(stderr, "execl() error, errno=%d\n", errno);
+      }
 
       _exit(0);
 
     }
 }
-
 void
-userhelper_run_chfn(char* fullname, char* office, char* officephone,
-		    char* homephone, char* shell)
+userhelper_run(char *path, ...)
 {
-  pid_t pid;
-  int retval;
+  va_list ap;
+  char *args[256]; /* only used internally, we know this will not overflow */
+  int i = 0;
 
-  signal(SIGCHLD, userhelper_sigchld);
+  va_start(ap, path);
+  do {
+    args[i++] = va_arg(ap, char *);
+  } while (args[i]);
+  va_end(ap);
 
-  if(pipe(childout) < 0 || pipe(childin) < 0)
-    {
-      fprintf(stderr, "Pipe error.\n");
-      exit(1);
-    }
-
-  if((pid = fork()) < 0)
-    {
-      fprintf(stderr, "Cannot fork().\n");
-    }
-  else if(pid > 0)		/* parent */
-    {
-      close(childout[1]);
-      close(childin[0]);
-
-      childout_tag = gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
-
-    }
-  else				/* child */
-    {
-      close(childout[0]);
-      close(childin[1]);
-
-      if(childout[1] != STDOUT_FILENO)
-	{
-	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
-	    {
-	      fprintf(stderr, "dup2() error.\n");
-	      exit(2);
-	    }
-	  close(childout[1]);
-	}
-      if(childin[0] != STDIN_FILENO)
-	{
-	  if(dup2(childin[0], STDIN_FILENO) != STDIN_FILENO)
-	    {
-	      fprintf(stderr, "dup2() error.\n");
-	      exit(2);
-	    }
-	}
-      setbuf(stdout, NULL);
-
-      if(shell != NULL)
-	{
-	  retval = execl(UH_PATH, UH_PATH, 
-			 UH_FULLNAME_OPT, fullname,
-			 UH_OFFICE_OPT, office, 
-			 UH_OFFICEPHONE_OPT, officephone,
-			 UH_HOMEPHONE_OPT, homephone,
-			 UH_SHELL_OPT, shell,
-			 0);
-	}
-      else
-	{
-	  retval = execl(UH_PATH, UH_PATH, 
-			 UH_FULLNAME_OPT, fullname,
-			 UH_OFFICE_OPT, office, 
-			 UH_OFFICEPHONE_OPT, officephone,
-			 UH_HOMEPHONE_OPT, homephone,
-			 0);
-	}
-
-      if(retval < 0)
-	{
-	  fprintf(stderr, "execl() error, errno=%d\n", errno);
-	}
-
-      _exit(0);
-
-    }
+  userhelper_runv(path, args);
 }
 
 void
@@ -217,11 +148,21 @@ userhelper_parse_exitstatus(int exitstatus)
     case ERR_SHELL_INVALID:
       message_box = create_error_box("Your current shell is not listed in /etc/shells.\nYou are not allowed to change your shell.\nConsult your system administrator.", NULL);
       break;
+    case ERR_NO_MEMORY:
+      /* well, this is unlikely to work either, but at least we tried... */
+      message_box = create_error_box("Out of memory.", NULL);
+      break;
+    case ERR_EXEC_FAILED:
+      message_box = create_error_box("The exec() call failed.", NULL);
+      break;
+    case ERR_NO_PROGRAM:
+      message_box = create_error_box("Failed to find selected program.", NULL);
+      break;
     case ERR_UNK_ERROR:
       message_box = create_error_box("Unknown error.", NULL);
       break;
     default:
-      message_box = create_error_box("SuperUnknown error.", NULL);
+      message_box = create_error_box("Unknown exit code.", NULL);
       break;
     }
 

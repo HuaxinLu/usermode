@@ -7,8 +7,8 @@ CFLAGS=-g -Wall $(shell gtk-config --cflags)
 LDFLAGS=$(shell gtk-config --libs)
 INSTALL=install
 
-PROGS=userinfo usermount userhelper userpasswd
-MANS=userinfo.1 usermount.1 userhelper.8 userpasswd.1
+PROGS=userinfo usermount userhelper userpasswd consolehelper
+MANS=userinfo.1 usermount.1 userhelper.8 userpasswd.1 consolehelper.8
 
 all: 	$(PROGS)
 
@@ -29,6 +29,9 @@ usermount:	usermount.o userdialogs.o
 userpasswd:	userpasswd.o userdialogs.o userhelper-wrap.o
 	$(CC) -ouserpasswd $(CFLAGS) userpasswd.o userdialogs.o userhelper-wrap.o $(LDFLAGS)
 
+consolehelper:	consolehelper.o userdialogs.o userhelper-wrap.o
+	$(CC) -oconsolehelper $(CFLAGS) consolehelper.o userdialogs.o userhelper-wrap.o $(LDFLAGS)
+
 install:	$(PROGS)
 	mkdir -p $(PREFIX)/usr/bin $(PREFIX)/usr/sbin
 	mkdir -p $(PREFIX)/etc/X11/wmconfig 
@@ -39,12 +42,14 @@ install:	$(PROGS)
 	$(INSTALL) -m 755 usermount.wmconfig $(PREFIX)/etc/X11/wmconfig/usermount
 	$(INSTALL) -m 755 -s userpasswd $(PREFIX)/usr/bin
 	$(INSTALL) -m 755 userpasswd.wmconfig $(PREFIX)/etc/X11/wmconfig/userpasswd
+	$(INSTALL) -m 755 -s consolehelper $(PREFIX)/usr/bin
 	$(INSTALL) -m 4755 -s userhelper $(PREFIX)/usr/sbin
 
 install-man: 	$(MANS)
 	$(INSTALL) -m 644 userinfo.1 $(PREFIX)/usr/man/man1
 	$(INSTALL) -m 644 usermount.1 $(PREFIX)/usr/man/man1
 	$(INSTALL) -m 644 userhelper.8 $(PREFIX)/usr/man/man8
+	$(INSTALL) -m 644 consolehelper.8 $(PREFIX)/usr/man/man8
 	$(INSTALL) -m 644 userpasswd.1 $(PREFIX)/usr/man/man1
 
 clean:	
