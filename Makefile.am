@@ -88,7 +88,7 @@ consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userdialogs.h userhelp
 consolehelper_gtk_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) egg-marshal.c gsmclient.c gsmclient.h props.h props.c
-pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ -L/usr/X11R6/lib -lICE -lSM
+pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ $(X_LIBS) -lICE -lSM
 pam-panel-icon.c: egg-marshal.c
 
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c userdialogs.h
