@@ -19,7 +19,6 @@ Conflicts: SysVinit < 2.74-14
 BuildPrereq: desktop-file-utils, glib2-devel, gtk2-devel
 BuildPrereq: libglade2-devel, libuser-devel, pam-devel, util-linux
 BuildRoot: %{_tmppath}/%{name}-root
-Source1: usermode_context
 
 %package gtk
 Summary: Graphical tools for certain user account management tasks.
