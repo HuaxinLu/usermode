@@ -46,7 +46,7 @@
 #include <selinux/selinux.h>
 #include <selinux/context.h>
 #include <selinux/get_context_list.h>
-#define CONTEXT_FILE "/etc/security/userhelper_context"
+#define CONTEXT_FILE SYSCONFDIR "/security/userhelper_context"
 #endif
 
 #include "shvar.h"
@@ -55,29 +55,19 @@
 /* A maximum GECOS field length.  There's no hard limit, so we guess. */
 #define GECOS_LENGTH			127
 
-static char *full_name = NULL;		/* full user name */
-static char *office = NULL;		/* office */
-static char *office_phone = NULL;	/* office phone */
-static char *home_phone = NULL;		/* home phone */
-static char *site_info = NULL;		/* other stuff */
-static char *user_name = NULL;		/* the account name */
-static char *shell_path = NULL;		/* shell path */
+/* A structure to hold broken-out GECOS data.  The number and names of the
+ * fields are dictated entirely by the flavor of finger we use.  Seriously. */
+struct gecos_data {
+	char *full_name;	/* full user name */
+	char *office;		/* office */
+	char *office_phone;	/* office phone */
+	char *home_phone;	/* home phone */
+	char *site_info;	/* other stuff */
+};
 
-/* we manipulate the environment directly, so we have to declare (but not
- * define) the right variable here */
+/* We manipulate the environment directly, so we have to declare (but not
+ * define) the right variable here. */
 extern char **environ;
-static char **environ_save;
-
-/* command line flags */
-static int f_flag = 0;		/* -f flag = change full name */
-static int o_flag = 0;		/* -o flag = change office name */
-static int p_flag = 0;		/* -p flag = change office phone */
-static int h_flag = 0;		/* -h flag = change home phone number */
-static int c_flag = 0;		/* -c flag = change password */
-static int s_flag = 0;		/* -s flag = change shell */
-static int t_flag = 0;		/* -t flag = direct text-mode -- exec'ed */
-static int w_flag = 0;		/* -w flag = act as a wrapper for next
-				 * args */
 
 #ifdef WITH_SELINUX
 static gboolean selinux_enabled = FALSE;
@@ -883,7 +873,7 @@ pipe_conv_exec_fail(const struct pam_conv *conv)
  * contents.  Note that the string *is* modified here, and the parsing is
  * performed using the convention obeyed by BSDish finger(1) under Linux.  */
 static void
-parse_gecos(char *gecos)
+parse_gecos(char *gecos, struct gecos_data *parsed)
 {
 	char **exploded, **dest;
 	int i;
@@ -901,19 +891,19 @@ parse_gecos(char *gecos)
 		dest = NULL;
 		switch (i) {
 			case 0:
-				dest = &full_name;
+				dest = &parsed->full_name;
 				break;
 			case 1:
-				dest = &office;
+				dest = &parsed->office;
 				break;
 			case 2:
-				dest = &office_phone;
+				dest = &parsed->office_phone;
 				break;
 			case 3:
-				dest = &home_phone;
+				dest = &parsed->home_phone;
 				break;
 			case 4:
-				dest = &site_info;
+				dest = &parsed->site_info;
 				break;
 			default:
 				g_assert_not_reached();
@@ -930,20 +920,27 @@ parse_gecos(char *gecos)
 /* A simple function to compute the size of a gecos string containing the
  * data we have. */
 static int
-gecos_size(void)
+gecos_size(struct gecos_data *parsed)
 {
-	int len = 0;
+	int len;
 
-	if (full_name != NULL)
-		len += (strlen(full_name) + 1);
-	if (office != NULL)
-		len += (strlen(office) + 1);
-	if (office_phone != NULL)
-		len += (strlen(office_phone) + 1);
-	if (home_phone != NULL)
-		len += (strlen(home_phone) + 1);
-	if (site_info != NULL)
-		len += (strlen(site_info) + 1);
+	len = 0;
+	if (parsed->full_name != NULL) {
+		len += (strlen(parsed->full_name) + 1);
+	}
+	if (parsed->office != NULL) {
+		len += (strlen(parsed->office) + 1);
+	}
+	if (parsed->office_phone != NULL) {
+		len += (strlen(parsed->office_phone) + 1);
+	}
+	if (parsed->home_phone != NULL) {
+		len += (strlen(parsed->home_phone) + 1);
+	}
+	if (parsed->site_info != NULL) {
+		len += (strlen(parsed->site_info) + 1);
+	}
+
 	return len;
 }
 
@@ -1137,6 +1134,18 @@ main(int argc, char **argv)
 	struct passwd *pw;
 	struct pam_conv *conv;
 	lu_prompt_fn *prompt;
+	char **environ_save;
+	struct gecos_data parsed_gecos;
+	char *user_name; /* current user, as determined by real uid */
+	char *shell_path;/* requested shell in cases where s_flag > 0 */
+	int f_flag;	 /* -f flag = change full name */
+	int o_flag;	 /* -o flag = change office name */
+	int p_flag;	 /* -p flag = change office phone */
+	int h_flag;	 /* -h flag = change home phone number */
+	int c_flag;	 /* -c flag = change password */
+	int s_flag;	 /* -s flag = change shell */
+	int t_flag;	 /* -t flag = direct text-mode -- exec'ed */
+	int w_flag;	 /* -w flag = act as a wrapper for next * args */
 
 	setlocale(LC_ALL, "");
 	bindtextdomain(PACKAGE, DATADIR "/locale");
@@ -1151,6 +1160,15 @@ main(int argc, char **argv)
 		exit(ERR_NO_RIGHTS);
 	}
 
+	f_flag = 0;
+	o_flag = 0;
+	p_flag = 0;
+	h_flag = 0;
+	c_flag = 0;
+	s_flag = 0;
+	t_flag = 0;
+	w_flag = 0;
+	shell_path = NULL;
 	while ((w_flag == 0) &&
 	       (arg = getopt(argc, argv, "f:o:p:h:s:ctw:")) != -1) {
 		/* We process no arguments after -w progname; those are passed
@@ -1159,22 +1177,22 @@ main(int argc, char **argv)
 			case 'f':
 				/* Full name. */
 				f_flag++;
-				full_name = optarg;
+				parsed_gecos.full_name = optarg;
 				break;
 			case 'o':
 				/* Office. */
 				o_flag++;
-				office = optarg;
+				parsed_gecos.office = optarg;
 				break;
 			case 'h':
 				/* Home phone. */
 				h_flag++;
-				home_phone = optarg;
+				parsed_gecos.home_phone = optarg;
 				break;
 			case 'p':
 				/* Office phone. */
 				p_flag++;
-				office_phone = optarg;
+				parsed_gecos.office_phone = optarg;
 				break;
 			case 's':
 				/* Change shell flag. */
@@ -1251,7 +1269,7 @@ main(int argc, char **argv)
 	user_name = get_user_from_ruid();
 
 #ifdef DEBUG_USERHELPER
-	g_print("userhelper: user is %s\n", user_name);
+	g_print("userhelper: current user is %s\n", user_name);
 #endif
 
 	/* If we didn't get the -w flag, the last argument could be a user's
@@ -1346,14 +1364,18 @@ main(int argc, char **argv)
 
 		/* Verify that the fields we were given on the command-line
 		 * are sane (i.e., contain no forbidden characters). */
-		if (f_flag && strpbrk(full_name, ":,="))
+		if (f_flag && strpbrk(parsed_gecos.full_name, ":,=")) {
 			exit(ERR_FIELDS_INVALID);
-		if (o_flag && strpbrk(office, ":,="))
+		}
+		if (o_flag && strpbrk(parsed_gecos.office, ":,=")) {
 			exit(ERR_FIELDS_INVALID);
-		if (p_flag && strpbrk(office_phone, ":,="))
+		}
+		if (p_flag && strpbrk(parsed_gecos.office_phone, ":,=")) {
 			exit(ERR_FIELDS_INVALID);
-		if (h_flag && strpbrk(home_phone, ":,="))
+		}
+		if (h_flag && strpbrk(parsed_gecos.home_phone, ":,=")) {
 			exit(ERR_FIELDS_INVALID);
+		}
 
 		/* Start up PAM to authenticate the user, this time pretending
 		 * we're "chfn". */
@@ -1410,6 +1432,7 @@ main(int argc, char **argv)
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
 		}
+
 		/* At some point this check will go away. */
 		if (strcmp(user_name, auth_user) != 0) {
 #ifdef DEBUG_USERHELPER
@@ -1481,14 +1504,14 @@ main(int argc, char **argv)
 			} else {
 				g_assert_not_reached();
 			}
-			parse_gecos(gecos);
+			parse_gecos(gecos, &parsed_gecos);
 		}
 
 		/* Verify that the strings we got passed are not too long. */
-		if (gecos_size() > GECOS_LENGTH) {
+		if (gecos_size(&parsed_gecos) > GECOS_LENGTH) {
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: user gecos too long %d > %d\n",
-				gecos_size(), GECOS_LENGTH);
+				gecos_size(&parsed_gecos), GECOS_LENGTH);
 #endif
 			lu_ent_free(ent);
 			lu_end(context);
@@ -1498,12 +1521,12 @@ main(int argc, char **argv)
 
 		/* Build a new value for the GECOS data. */
 		new_gecos = g_strdup_printf("%s,%s,%s,%s%s%s",
-					    full_name ?: "",
-					    office ?: "",
-					    office_phone ?: "",
-					    home_phone ?: "",
-					    site_info ? "," : "",
-					    site_info ?: "");
+					    parsed_gecos.full_name ?: "",
+					    parsed_gecos.office ?: "",
+					    parsed_gecos.office_phone ?: "",
+					    parsed_gecos.home_phone ?: "",
+					    parsed_gecos.site_info ? "," : "",
+					    parsed_gecos.site_info ?: "");
 
 		/* We don't need the user's current GECOS anymore, so clear
 		 * out the value and set our own in the in-memory structure. */
@@ -1516,19 +1539,19 @@ main(int argc, char **argv)
 
 		/* While we're at it, set the individual data items as well. */
 		lu_ent_clear(ent, LU_COMMONNAME);
-		g_value_set_string(&val, full_name);
+		g_value_set_string(&val, parsed_gecos.full_name);
 		lu_ent_add(ent, LU_COMMONNAME, &val);
 
 		lu_ent_clear(ent, LU_ROOMNUMBER);
-		g_value_set_string(&val, office);
+		g_value_set_string(&val, parsed_gecos.office);
 		lu_ent_add(ent, LU_ROOMNUMBER, &val);
 
 		lu_ent_clear(ent, LU_TELEPHONENUMBER);
-		g_value_set_string(&val, office_phone);
+		g_value_set_string(&val, parsed_gecos.office_phone);
 		lu_ent_add(ent, LU_TELEPHONENUMBER, &val);
 
 		lu_ent_clear(ent, LU_HOMEPHONE);
-		g_value_set_string(&val, home_phone);
+		g_value_set_string(&val, parsed_gecos.home_phone);
 		lu_ent_add(ent, LU_HOMEPHONE, &val);
 
 		/* If we're here to change the user's shell, too, do that
