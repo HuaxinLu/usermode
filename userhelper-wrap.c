@@ -208,7 +208,7 @@ userhelper_parse_childout(char* outline)
     resp->top = gtk_window_new(GTK_WINDOW_DIALOG);
     gtk_signal_connect(GTK_OBJECT(resp->top), "destroy",
 		       GTK_SIGNAL_FUNC(mark_void), &resp->top);
-    gtk_window_set_title(GTK_WINDOW(resp->top), "Input");
+    gtk_window_set_title(GTK_WINDOW(resp->top), i18n("Input"));
     gtk_window_position(GTK_WINDOW(resp->top), GTK_WIN_POS_CENTER);
     gtk_container_set_border_width(GTK_CONTAINER(resp->top), 5);
     gtk_signal_connect(GTK_OBJECT(resp->top), "map",

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2000-08-02 12:21-0400\n"
+"POT-Creation-Date: 2000-08-02 12:47-0400\n"
 "PO-Revision-Date: 2000-08-02 17:11+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -123,6 +123,10 @@ msgstr "Okänt fel."
 #: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
 msgstr "Okänd slutkod."
+
+#: ../userhelper-wrap.c:211
+msgid "Input"
+msgstr ""
 
 #: ../userhelper-wrap.c:320
 #, c-format
