@@ -12,7 +12,8 @@ CATALOGS = $(shell ls *.po | sed 's/po/mo/')
 
 POTFILES  = ../consolehelper.c ../userdialogs.c ../userhelper-wrap.c \
 	    ../userhelper.c ../userinfo.c ../usermount.c ../userpasswd.c \
-	    ../userhelper.h
+	    ../userhelper.h ../userdialogs.h ../dummy.h \
+	    ../userhelper-wrap.c
 
 all: $(NLSPACKAGE).pot $(CATALOGS)
 
