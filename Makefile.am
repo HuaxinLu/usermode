@@ -19,7 +19,7 @@ EXTRA_DIST = config.rpath  \
 	shutdown.pamd \
 	shutdown.pamd.6x
 
-SUBDIRS= m4 intl po
+SUBDIRS= intl m4  m4 intl po
 
 CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@
 
