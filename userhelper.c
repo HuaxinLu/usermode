@@ -80,7 +80,8 @@ static struct app_data {
 	pam_handle_t *pamh;
 	gboolean fallback_allowed, fallback_chosen, canceled;
 	FILE *input, *output;
-	char *banner, *domain;
+	char *banner;
+	const char *domain;
 #ifdef USE_STARTUP_NOTIFICATION
 	char *sn_name, *sn_description, *sn_wmclass;
 	char *sn_binary_name, *sn_icon_name, *sn_id;
@@ -241,7 +242,7 @@ fail_exit(int pam_retval)
 static char *
 read_reply(FILE *fp)
 {
-	char buffer[BUFSIZ], *check = NULL;
+	char buffer[BUFSIZ], *check;
 	int slen = 0;
 
 	memset(buffer, '\0', sizeof(buffer));
@@ -289,7 +290,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 {
 	int count = 0;
 	int responses = 0;
-	struct pam_response *reply = NULL;
+	struct pam_response *reply;
 	char *noecho_message, *string;
 	const char *user, *service;
 	struct app_data *app_data = appdata_ptr;
@@ -635,16 +636,18 @@ converse_console(int num_msg, const struct pam_message **msg,
 		 struct pam_response **resp, void *appdata_ptr)
 {
 	static int banner = 0;
-	const char *service = NULL, *user = NULL, *codeset = NULL;
-	char *text = NULL;
+	const char *service = NULL, *user, *codeset;
+	char *text;
 	struct app_data *app_data = appdata_ptr;
 	struct pam_message **messages;
 	int i, ret;
 
+	codeset = "C";
 	g_get_charset(&codeset);
 	bind_textdomain_codeset(PACKAGE, codeset);
 
 	get_pam_string_item(app_data->pamh, PAM_SERVICE, &service);
+	user = NULL;
 	get_pam_string_item(app_data->pamh, PAM_USER, &user);
 
 	if (banner == 0) {
@@ -1022,7 +1025,7 @@ become_super(void)
 }
 
 static void
-become_normal(char *user)
+become_normal(const char *user)
 {
 	/* Join the groups of the user who invoked us. */
 	initgroups(user, getgid());
@@ -1046,7 +1049,7 @@ become_normal(char *user)
 
 /* Determine the name of the user whose ruid we're executing under.  For
  * SELinux, this is the user from the previous context. */
-char *
+static char *
 get_user_from_ruid()
 {
 	struct passwd *pwd;
@@ -1087,20 +1090,23 @@ get_user_from_ruid()
 }
 
 /* Determine the name of the user as whom we must authenticate. */
-char *
+static char *
 get_user_for_auth(shvarFile *s)
 {
-	char *ret = NULL;
+	char *ret;
 	char *ruid_user, *configured_user;
 
 	ruid_user = get_user_from_ruid();
 
+	ret = NULL;
+
 #ifdef WITH_SELINUX
 	if (selinux_enabled) {
-		security_context_t defcontext = NULL;
+		security_context_t defcontext;
 		char *apps_role, *apps_type;
 		context_t ctx;
 
+		defcontext = NULL;
 		if (get_init_context(CONTEXT_FILE, &defcontext) == 0) {
 			ctx = context_new(defcontext);
 		} else {
@@ -1511,7 +1517,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 
 static void
 wrap(const char *user, const char *program,
-     struct pam_conv *conv, lu_prompter_fn *prompt,
+     struct pam_conv *conv, lu_prompt_fn *prompt,
      int argc, char **argv)
 {
 	/* We're here to wrap the named program.  After authenticating as the
@@ -1521,18 +1527,21 @@ wrap(const char *user, const char *program,
 	char *apps_filename;
 	char *user_pam;
 	const char *auth_user;
-	char *apps_banner, *apps_domain, *apps_sn = NULL;
+	char *apps_banner, *apps_sn;
+	const char *apps_domain;
 	char *retry, *noxoption;
+	char **environ_save;
 	char *env_home, *env_term, *env_desktop_startup_id;
 	char *env_display, *env_shell;
 	char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
-	int session, tryagain, gui;
+	int session, tryagain, gui, retval;
 	struct stat sbuf;
+	struct passwd *pwd;
 	shvarFile *s;
 
 	/* Find the basename of the command we're wrapping. */
-	if (strrchr(progname, '/')) {
-		progname = strrchr(progname, '/') + 1;
+	if (strrchr(program, '/')) {
+		program = strrchr(program, '/') + 1;
 	}
 
 	/* Save some of the current environment variables, because the
@@ -1619,7 +1628,7 @@ wrap(const char *user, const char *program,
 	 * and read settings from it. */
 	apps_filename = g_strdup_printf(SYSCONFDIR
 					"/security/console.apps/%s",
-					progname);
+					program);
 	s = svNewFile(apps_filename);
 
 	/* If the file is world-writable, or isn't a regular file, or couldn't
@@ -1646,11 +1655,11 @@ wrap(const char *user, const char *program,
 		 * name in either of those directories.  FIXME: we're a setuid
 		 * app, so access() may not be correct here, as it may give
 		 * false negatives.  But then, it wasn't an absolute path. */
-		constructed_path = g_strdup_printf("/usr/sbin/%s", progname);
+		constructed_path = g_strdup_printf("/usr/sbin/%s", program);
 		if (access(constructed_path, X_OK) != 0) {
 			/* Try the second directory. */
 			strcpy(constructed_path, "/sbin/");
-			strcat(constructed_path, progname);
+			strcat(constructed_path, program);
 			if (access(constructed_path, X_OK)) {
 				/* Nope, not there, either. */
 #ifdef DEBUG_USERHELPER
@@ -1686,8 +1695,8 @@ wrap(const char *user, const char *program,
 
 	/* Verify that the user we need to authenticate as has a home
 	 * directory. */
-	pw = getpwnam(user_pam);
-	if (pw == NULL) {
+	pwd = getpwnam(user_pam);
+	if (pwd == NULL) {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: no user named %s exists\n", user_pam);
 #endif
@@ -1696,8 +1705,8 @@ wrap(const char *user, const char *program,
 
 	/* If the user we're authenticating as has root's UID, then it's
 	 * safe to let them use HOME=~root. */
-	if (pw->pw_uid == 0) {
-		setenv("HOME", g_strdup(pw->pw_dir), 1);
+	if (pwd->pw_uid == 0) {
+		setenv("HOME", g_strdup(pwd->pw_dir), 1);
 	} else {
 		/* Otherwise, if they had a reasonable value for HOME, let them
 		 * use it. */
@@ -1705,9 +1714,9 @@ wrap(const char *user, const char *program,
 			setenv("HOME", env_home, 1);
 		} else {
 			/* Otherwise, set HOME to the user's home directory. */
-			pw = getpwuid(getuid());
-			if ((pw != NULL) && (pw->pw_dir != NULL)) {
-				setenv("HOME", g_strdup(pw->pw_dir), 1);
+			pwd = getpwuid(getuid());
+			if ((pwd != NULL) && (pwd->pw_dir != NULL)) {
+				setenv("HOME", g_strdup(pwd->pw_dir), 1);
 			}
 		}
 	}
@@ -1739,7 +1748,7 @@ wrap(const char *user, const char *program,
 		}
 	}
 	if (app_data.domain == NULL) {
-		app_data.domain = progname;
+		app_data.domain = program;
 	}
 #ifdef USE_STARTUP_NOTIFICATION
 	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_NAME");
@@ -1772,7 +1781,7 @@ wrap(const char *user, const char *program,
 	svCloseFile(s);
 
 	/* Start up PAM to authenticate the specified user. */
-	retval = pam_start(progname, user_pam, conv, &app_data.pamh);
+	retval = pam_start(program, user_pam, conv, &app_data.pamh);
 	if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: pam_start() failed\n");
@@ -1781,7 +1790,7 @@ wrap(const char *user, const char *program,
 	}
 
 	/* Set the requesting user. */
-	retval = pam_set_item(app_data.pamh, PAM_RUSER, user_name);
+	retval = pam_set_item(app_data.pamh, PAM_RUSER, user);
 	if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: pam_set_item() failed\n");
@@ -1812,9 +1821,9 @@ wrap(const char *user, const char *program,
 		if (app_data.fallback_allowed) {
 			/* Reset the user's environment so that the
 			 * application can run normally. */
-			argv[optind - 1] = progname;
+			argv[optind - 1] = strdup(program);
 			environ = environ_save;
-			become_normal(user_name);
+			become_normal(user);
 			if (app_data.input != NULL) {
 				fflush(app_data.input);
 				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
@@ -1869,8 +1878,8 @@ wrap(const char *user, const char *program,
 
 	/* We need to re-read the user's information -- libpam doesn't
 	 * guarantee that these won't be nuked. */
-	pw = getpwnam(user_pam);
-	if (pw == NULL) {
+	pwd = getpwnam(user_pam);
+	if (pwd == NULL) {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: no user named %s exists\n",
 			user_pam);
@@ -1917,7 +1926,7 @@ wrap(const char *user, const char *program,
 				env_pam++;
 			}
 
-			argv[optind - 1] = progname;
+			argv[optind - 1] = strdup(program);
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: about to exec \"%s\"\n",
 				constructed_path);
@@ -1979,7 +1988,7 @@ wrap(const char *user, const char *program,
 		 * the program we're wrapping. */
 		pam_end(app_data.pamh, PAM_SUCCESS);
 
-		argv[optind - 1] = progname;
+		argv[optind - 1] = strdup(program);
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: about to exec \"%s\"\n",
 			constructed_path);
@@ -2020,12 +2029,10 @@ int
 main(int argc, char **argv)
 {
 	int arg;
-	int retval;
 	char *wrapped_program = NULL;
-	struct passwd *pw;
+	struct passwd *pwd;
 	struct pam_conv *conv;
 	lu_prompt_fn *prompt;
-	char **environ_save;
 	char *user_name; /* current user, as determined by real uid */
 	int f_flag;	 /* -f flag = change full name */
 	int o_flag;	 /* -o flag = change office name */
@@ -2184,8 +2191,8 @@ main(int argc, char **argv)
 		}
 
 		/* Verify that the user exists. */
-		pw = getpwnam(user_name);
-		if ((pw == NULL) || (pw->pw_name == NULL)) {
+		pwd = getpwnam(user_name);
+		if ((pwd == NULL) || (pwd->pw_name == NULL)) {
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: user %s doesn't exist\n",
 				user_name);
@@ -2211,7 +2218,7 @@ main(int argc, char **argv)
 
 	/* Wrap some other program? */
 	if (w_flag) {
-		wrap(user_name, wrapped_program, conv, prompt, &app_data,
+		wrap(user_name, wrapped_program, conv, prompt,
 		     argc, argv);
 		g_assert_not_reached();
 	}
