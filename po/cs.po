@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
-"POT-Creation-Date: 2002-04-15 18:05-0400\n"
+"POT-Creation-Date: 2002-06-19 17:27-0400\n"
 "PO-Revision-Date: 2002-04-21 21:27+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -9,6 +9,25 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "Ok"
@@ -110,11 +129,11 @@ msgstr "Heslo pro %s: "
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí být SUID root\n"
 
+#. FIXME: print a warning here?
 #: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Nelze otevøít grafické okno a nelze najít kontrolní terminál.\n"
+msgstr "Nelze otevøít grafické okno a nelze najít kontrolní terminál.\n"
 
 #: userhelper.c:1373 userhelper.c:1411
 #, c-format
@@ -198,82 +217,84 @@ msgstr "Nemohu najít vybraný progra."
 msgid "Unknown error."
 msgstr "Neznámá chyba."
 
-#: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
+#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
 msgstr "TextTextTextText."
 
-#: userhelper-wrap.c:352
+#: userhelper-wrap.c:357
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Potøebuji %d odpovìdi.\n"
 
-#: userhelper-wrap.c:385
+#: userhelper-wrap.c:390
 msgid "Error"
 msgstr "Chyba"
 
-#: userhelper-wrap.c:398
+#: userhelper-wrap.c:403
 msgid "Information"
 msgstr "Informace"
 
-#: userhelper-wrap.c:442
+#: userhelper-wrap.c:450
 msgid "Changing personal information."
 msgstr "Zmìna informací o u¾ivateli."
 
-#: userhelper-wrap.c:445
+#: userhelper-wrap.c:453
 msgid "Changing login shell."
 msgstr "Zmìna pøihla¹ovacího shellu."
 
-#: userhelper-wrap.c:448
-#, c-format
+#: userhelper-wrap.c:456
+#, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser "
+"You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit \"%s\", co¾ mù¾e pøinést administrátorská "
-"oprávnìní, ale je potøeba více informací, aby se dalo pokraèovat."
+"Pokou¹íte se spustit \"%s\", co¾ mù¾e pøinést administrátorská oprávnìní, "
+"ale je potøeba více informací, aby se dalo pokraèovat."
 
-#: userhelper-wrap.c:450
-#, c-format
+#: userhelper-wrap.c:458
+#, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser privileges, but "
-"more information is needed in order to do so."
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrtorská práva. "
-"Je potøeba více informací, aby bylo mo¾né pokraèovat."
+"Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrtorská práva. Je "
+"potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper-wrap.c:455
+#: userhelper-wrap.c:463
+#, fuzzy
 msgid ""
-"You are attempting to run a command which may benefit from superuser "
+"You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská "
-"oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
-
-#: userhelper-wrap.c:457
-msgid ""
-"You are attempting to run a command which requires superuser privileges, but "
-"more information is needed in order to do so."
-msgstr ""
-"Pokou¹íte se spustit pøíkaz, který poøebuje administrátorská oprávnìní. "
+"Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská oprávnìní. "
 "Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
-#: userhelper-wrap.c:467
+#: userhelper-wrap.c:465
+#, fuzzy
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Pokou¹íte se spustit pøíkaz, který poøebuje administrátorská oprávnìní. Je "
+"potøeba více informací, aby bylo mo¾né pokraèovat."
+
+#: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
 msgstr "_Spustit neprivilegovanì"
 
-#: userhelper-wrap.c:579 userhelper-wrap.c:596
+#: userhelper-wrap.c:592 userhelper-wrap.c:609
 msgid "Pipe error.\n"
 msgstr "Chyba trubky.\n"
 
-#: userhelper-wrap.c:603
+#: userhelper-wrap.c:616
 msgid "Cannot fork().\n"
 msgstr "Nemohu provést fork().\n"
 
-#: userhelper-wrap.c:649 userhelper-wrap.c:653
+#: userhelper-wrap.c:662 userhelper-wrap.c:666
 msgid "dup2() error.\n"
 msgstr "Chyba pøi dup2().\n"
 
-#: userhelper-wrap.c:665
+#: userhelper-wrap.c:678
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Chyba pøi execl(), errno=%d\n"
@@ -311,14 +332,16 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Nejsou k dispozici ¾ádné systémy souborù, které byste mohl pøipojit "
-"nebo odpojit.\n"
+"Nejsou k dispozici ¾ádné systémy souborù, které byste mohl pøipojit nebo "
+"odpojit.\n"
 "Kontaktujte administrátora systému."
 
+#. Create the dialog.
 #: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
 msgstr "Nástroj pro pøipojení u¾ivatelem"
 
+#. Create the other buttons.
 #: usermount.c:544 glade.strings:28
 msgid "_Format"
 msgstr "_Formátovat"
@@ -335,6 +358,11 @@ msgstr "Adresáø"
 msgid "Filesystem"
 msgstr "Systém souborù"
 
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
 #: glade.strings:7
 msgid "User Information"
 msgstr "Informace o u¾ivateli"

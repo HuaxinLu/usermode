@@ -11,8 +11,8 @@ libtoolize --force
 glib-gettextize -f -c
 cat ChangeLog.old > ChangeLog
 autoheader
-aclocal-1.5
-automake-1.5 -a
+aclocal-1.4
+automake-1.4 -a
 autoconf
 test -f config.cache && rm -f config.cache || true
 ./configure --prefix=/usr --sysconfdir=/etc --enable-maintainer-mode $@

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-04-15 18:05-0400\n"
+"POT-Creation-Date: 2002-06-19 17:27-0400\n"
 "PO-Revision-Date: 2002-04-02 08:45GMT+10.00\n"
 "Last-Translator: Michelle Kim <mkim@brisbane.redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -13,6 +13,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.9.5\n"
 
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "확인"
@@ -115,6 +134,7 @@ msgstr "%s의 패스워드: "
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 
+#. FIXME: print a warning here?
 #: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -203,82 +223,84 @@ msgstr "선택하신 프로그램을 찾는데 실패했습니다."
 msgid "Unknown error."
 msgstr "알 수 없는 오류입니다."
 
-#: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
+#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
 msgstr "Placeholder 형식의 text 입니다."
 
-#: userhelper-wrap.c:352
+#: userhelper-wrap.c:357
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "%d의 응답이 필요합니다.\n"
 
-#: userhelper-wrap.c:385
+#: userhelper-wrap.c:390
 msgid "Error"
 msgstr "오류"
 
-#: userhelper-wrap.c:398
+#: userhelper-wrap.c:403
 msgid "Information"
 msgstr "정보"
 
-#: userhelper-wrap.c:442
+#: userhelper-wrap.c:450
 msgid "Changing personal information."
 msgstr "개인 정보를 변경합니다."
 
-#: userhelper-wrap.c:445
+#: userhelper-wrap.c:453
 msgid "Changing login shell."
 msgstr "로그인 쉘을 변경합니다."
 
-#: userhelper-wrap.c:448
-#, c-format
+#: userhelper-wrap.c:456
+#, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser "
+"You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, 그러"
 "나 이 것을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: userhelper-wrap.c:450
-#, c-format
+#: userhelper-wrap.c:458
+#, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser privileges, but "
-"more information is needed in order to do so."
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
 msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, 그러나 이 것"
 "을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper-wrap.c:455
+#: userhelper-wrap.c:463
+#, fuzzy
 msgid ""
-"You are attempting to run a command which may benefit from superuser "
+"You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, 그러나 이 것"
 "을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper-wrap.c:457
+#: userhelper-wrap.c:465
+#, fuzzy
 msgid ""
-"You are attempting to run a command which requires superuser privileges, but "
-"more information is needed in order to do so."
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
 msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 이 것을 실행"
 "하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper-wrap.c:467
+#: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
 msgstr "권한없이 실행 (_R)"
 
-#: userhelper-wrap.c:579 userhelper-wrap.c:596
+#: userhelper-wrap.c:592 userhelper-wrap.c:609
 msgid "Pipe error.\n"
 msgstr "파이프 오류입니다.\n"
 
-#: userhelper-wrap.c:603
+#: userhelper-wrap.c:616
 msgid "Cannot fork().\n"
 msgstr "fork() 할 수 없습니다.\n"
 
-#: userhelper-wrap.c:649 userhelper-wrap.c:653
+#: userhelper-wrap.c:662 userhelper-wrap.c:666
 msgid "dup2() error.\n"
 msgstr "dup2() 오류입니다.\n"
 
-#: userhelper-wrap.c:665
+#: userhelper-wrap.c:678
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 오류입니다, 오류코드(errno)=%d\n"
@@ -319,10 +341,12 @@ msgstr ""
 "장치에 연결 또는 해제할 파일시스템이 없습니다.\n"
 "시스템 관리자에게 문의하십시요."
 
+#. Create the dialog.
 #: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
 msgstr "사용자 장치연결 도구"
 
+#. Create the other buttons.
 #: usermount.c:544 glade.strings:28
 msgid "_Format"
 msgstr "포맷 (_F)"
@@ -339,6 +363,11 @@ msgstr "디렉토리"
 msgid "Filesystem"
 msgstr "파일시스템"
 
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
 #: glade.strings:7
 msgid "User Information"
 msgstr "사용자 정보"

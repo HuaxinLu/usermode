@@ -1,5 +1,5 @@
-VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
-RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
+VERSION=$(shell awk '/^Version:/ { print $$2 }' < $(srcdir)/usermode.spec)
+RELEASE=$(shell awk '/^Release:/ { print $$2 }' < $(srcdir)/usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
 EXTRA_DIST = config.rpath  \
 	dummy.h \
@@ -29,13 +29,12 @@ bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk pam
 bin_SCRIPTS = shutdown
 sbin_PROGRAMS = userhelper
 noinst_PROGRAMS = test-userdialog
-man1_MANS = userinfo.1 usermount.1 userpasswd.1
-man8_MANS = consolehelper.8 userhelper.8
-install-data-local:
-	$(INSTALL) -m755 -d $(DESTDIR)/$(mandir)/man1
-	$(INSTALL) -m644 $(man1_MANS) $(DESTDIR)/$(mandir)/man1/
-	$(INSTALL) -m755 -d $(DESTDIR)/$(mandir)/man8
-	$(INSTALL) -m644 $(man8_MANS) $(DESTDIR)/$(mandir)/man8/
+man_MANS = userinfo.1 usermount.1 userpasswd.1 consolehelper.8 userhelper.8
+# install-data-local:
+# 	$(INSTALL) -m755 -d $(DESTDIR)/$(mandir)/man1
+# 	$(INSTALL) -m644 $(man1_MANS) $(DESTDIR)/$(mandir)/man1/
+# 	$(INSTALL) -m755 -d $(DESTDIR)/$(mandir)/man8
+# 	$(INSTALL) -m644 $(man8_MANS) $(DESTDIR)/$(mandir)/man8/
 
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = keys.xpm status_lock.png

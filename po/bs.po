@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop files\n"
-"POT-Creation-Date: 2002-04-15 18:05-0400\n"
+"POT-Creation-Date: 2002-06-19 17:27-0400\n"
 "PO-Revision-Date: 2001-09-09 20:03GMT\n"
 "Last-Translator: Amila Akagiæ <bono@lugbih.org>\n"
 "Language-Team: Bosnian <lokal-subscribe@lugbih.org>\n"
@@ -15,6 +15,25 @@ msgstr ""
 "X-Generator: KBabel 0.9.1\n"
 
 # ../dummy.h:20 ../userdialogs.c:193 ../userinfo.c:139
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "U redu"
@@ -123,6 +142,7 @@ msgstr "©ifra za %s"
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mora biti setuid root\n"
 
+#. FIXME: print a warning here?
 #: userhelper.c:711
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -225,89 +245,89 @@ msgstr "Ne mogu da naðem izabrani program."
 msgid "Unknown error."
 msgstr "Nepoznata gre¹ka."
 
-#: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
+#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
 msgstr ""
 
 # ../userhelper-wrap.c:346
-#: userhelper-wrap.c:352
+#: userhelper-wrap.c:357
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Potrebno %d odgovora.\n"
 
 # ../userdialogs.c:81 ../userhelper-wrap.c:384
-#: userhelper-wrap.c:385
+#: userhelper-wrap.c:390
 msgid "Error"
 msgstr "Gre¹ka"
 
 # ../userinfo.c:124
-#: userhelper-wrap.c:398
+#: userhelper-wrap.c:403
 #, fuzzy
 msgid "Information"
 msgstr "Korisnikove informacije"
 
-#: userhelper-wrap.c:442
+#: userhelper-wrap.c:450
 msgid "Changing personal information."
 msgstr ""
 
-#: userhelper-wrap.c:445
+#: userhelper-wrap.c:453
 msgid "Changing login shell."
 msgstr ""
 
-#: userhelper-wrap.c:448
+#: userhelper-wrap.c:456
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser "
+"You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:450
+#: userhelper-wrap.c:458
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser privileges, but "
-"more information is needed in order to do so."
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:455
+#: userhelper-wrap.c:463
 msgid ""
-"You are attempting to run a command which may benefit from superuser "
+"You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:457
+#: userhelper-wrap.c:465
 msgid ""
-"You are attempting to run a command which requires superuser privileges, but "
-"more information is needed in order to do so."
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
 msgstr ""
 
 # ../dummy.h:23
-#: userhelper-wrap.c:467
+#: userhelper-wrap.c:480
 #, fuzzy
 msgid "_Run Unprivileged"
 msgstr "Pokreni neprivilegovan"
 
 # ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
 # ../usermount.c:761
-#: userhelper-wrap.c:579 userhelper-wrap.c:596
+#: userhelper-wrap.c:592 userhelper-wrap.c:609
 msgid "Pipe error.\n"
 msgstr "Pipe gre¹ka.\n"
 
 # ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
 # ../usermount.c:767
-#: userhelper-wrap.c:603
+#: userhelper-wrap.c:616
 msgid "Cannot fork().\n"
 msgstr "Ne mogu raèvati().\n"
 
 # ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
 # ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
 # ../usermount.c:814
-#: userhelper-wrap.c:649 userhelper-wrap.c:653
+#: userhelper-wrap.c:662 userhelper-wrap.c:666
 msgid "dup2() error.\n"
 msgstr "dup2() gre¹ka.\n"
 
 # ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
 # ../usermount.c:821
-#: userhelper-wrap.c:665
+#: userhelper-wrap.c:678
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
@@ -359,11 +379,13 @@ msgstr ""
 "Kontaktirajte va¹eg administratora."
 
 # ../usermount.c:119
+#. Create the dialog.
 #: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
 msgstr "Korisnikov alat za montiranje"
 
 # ../usermount.c:267
+#. Create the other buttons.
 #: usermount.c:544 glade.strings:28
 #, fuzzy
 msgid "_Format"
@@ -384,6 +406,11 @@ msgid "Filesystem"
 msgstr ""
 
 # ../userinfo.c:124
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
 #: glade.strings:7
 msgid "User Information"
 msgstr "Korisnikove informacije"
