@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.4.5
+Version: 1.5
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -46,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 /etc/X11/wmconfig/usermount
 
 %changelog
+* Thu Mar 18 1999 Michael Johnson <johnsonm@redhat.com>
+- Changed conversation architecture to follow PAM spec
+
 * Wed Mar 17 1999 Bill Nottingham <notting@redhat.com>
 - remove gdk_input_remove (causing segfaults)
 

@@ -105,7 +105,7 @@ main(int argc, char* argv[])
 void
 create_userinfo_window(UserInfo* userinfo)
 {
-  GtkWidget* main;		/* GtkWindow */
+  GtkWidget* mainwindow;		/* GtkWindow */
   GtkWidget* gecos;		/* GtkTable */
   GtkWidget* shell_field;	/* GtkOptionMenu */
   GtkWidget* ok;		/* GtkButton */
@@ -113,13 +113,11 @@ create_userinfo_window(UserInfo* userinfo)
   GtkWidget* help;		/* GtkButton */
   
   /* create the widgets */
-  /*   main = gtk_window_new(GTK_WINDOW_TOPLEVEL); */
-  main = gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(main), "User Information");
-  /*   gtk_container_border_width(GTK_CONTAINER(main), 5); */
-  gtk_signal_connect(GTK_OBJECT(main), "destroy",
+  mainwindow = gtk_dialog_new();
+  gtk_window_set_title(GTK_WINDOW(mainwindow), "User Information");
+  gtk_signal_connect(GTK_OBJECT(mainwindow), "destroy",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
-  gtk_signal_connect(GTK_OBJECT(main), "delete_event",
+  gtk_signal_connect(GTK_OBJECT(mainwindow), "delete_event",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
 
   gecos = create_gecos_table(userinfo);
@@ -151,17 +149,17 @@ create_userinfo_window(UserInfo* userinfo)
   gtk_widget_set_usize(cancel, 50, 0);
   gtk_widget_set_usize(help, 50, 0);
 
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwindow)->action_area), 
 		     ok, TRUE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwindow)->action_area), 
 		     cancel, TRUE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwindow)->action_area), 
 		     help, TRUE, FALSE, 0);
 
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->vbox), gecos, TRUE, TRUE, 0);
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(mainwindow)->vbox), gecos, TRUE, TRUE, 0);
 
   gtk_widget_show(gecos);
-  gtk_widget_show(main);
+  gtk_widget_show(mainwindow);
 }
 
 GtkWidget*
@@ -514,6 +512,5 @@ set_new_userinfo(UserInfo* userinfo)
 void
 userhelper_fatal_error()
 {
-  /* noop */
-  return;
+  gtk_main_quit();
 }

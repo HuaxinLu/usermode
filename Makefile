@@ -39,7 +39,7 @@ install:	$(PROGS)
 	$(INSTALL) -m 755 usermount.wmconfig $(PREFIX)/etc/X11/wmconfig/usermount
 	$(INSTALL) -m 755 -s userpasswd $(PREFIX)/usr/bin
 	$(INSTALL) -m 755 userpasswd.wmconfig $(PREFIX)/etc/X11/wmconfig/userpasswd
-	$(INSTALL) -m 755 -s userhelper $(PREFIX)/usr/sbin
+	$(INSTALL) -m 4755 -s userhelper $(PREFIX)/usr/sbin
 
 install-man: 	$(MANS)
 	$(INSTALL) -m 644 userinfo.1 $(PREFIX)/usr/man/man1

@@ -17,15 +17,27 @@
  */
 
 #include <unistd.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "userhelper-wrap.h"
+#include "userdialogs.h"
 
 #define MAXLINE 512
 
 int childout[2];
 int childin[2];
 int childout_tag;
+
+void *
+userhelper_malloc(size_t size) {
+  void *ret;
+
+  ret = malloc(size);
+  if (!ret) exit (ERR_NO_MEMORY);
+
+  return ret;
+}
 
 /* the only difference between this and userhelper_run_chfn() is the
  * final exec() call... I want to avoid all duplication, but I can't
@@ -219,6 +231,7 @@ userhelper_parse_exitstatus(int exitstatus)
 
 }
 
+
 void
 userhelper_parse_childout(char* outline)
 {
@@ -226,82 +239,115 @@ userhelper_parse_childout(char* outline)
   char* current;
   char* rest = NULL;
   int prompt_type;
-  int done = FALSE;
-  GtkWidget* message_box;
+  static response *resp = NULL; /* this will be attached to the toplevel */
 
   prompt = strchr(outline, ' ');
 
-  if(prompt == NULL)
-    {
-      return;
-    }
+  if(prompt == NULL) return;
+
+  if (!resp) {
+    resp = userhelper_malloc(sizeof(response));
+
+    resp->num_components = 1;
+    resp->message_list = NULL;
+    resp->head = resp->tail = NULL;
+    resp->top = gtk_dialog_new();
+    gtk_window_set_title(GTK_WINDOW(resp->top), "Input");
+    resp->ok = gtk_button_new_with_label(UD_OK_TEXT);
+    resp->cancel = gtk_button_new_with_label(UD_CANCEL_TEXT);
+    resp->table = gtk_table_new(1, 2, FALSE);
+
+    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
+	resp->ok, TRUE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
+	resp->cancel, TRUE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->vbox),
+	resp->table, FALSE, FALSE, 0);
+
+    gtk_signal_connect(GTK_OBJECT(resp->top), "delete_event", 
+		       (GtkSignalFunc) userhelper_fatal_error, NULL);
+    gtk_signal_connect(GTK_OBJECT(resp->cancel), "clicked", 
+		       (GtkSignalFunc) userhelper_fatal_error, NULL);
+
+    gtk_signal_connect(GTK_OBJECT(resp->ok), "clicked", 
+		       (GtkSignalFunc) userhelper_write_childin, resp);
+
+    gtk_object_set_user_data(GTK_OBJECT(resp->top), resp);
+  }
 
   current = prompt - 1;
-  if(current[0] >= '1' && current[0] <= '4')
-    {
-      current[1] = '\0';
-      prompt_type = atoi(current);
+  if(isdigit(current[0])) {
+    message *msg = userhelper_malloc(sizeof(message));
 
-      prompt++;
-      /* null terminate the actual prompt... then call this function
-       * on the rest
-       */
-      current = prompt;
+    current[1] = '\0';
+    prompt_type = atoi(current);
 
-      while(!done)
-	{
-	  rest = strchr(current, ' ');
-	  if(rest == NULL)
-	    {
-	      done = TRUE;
-	      continue;
-	    }
+    prompt++;
+    /* null terminate the actual prompt... then call this function
+     * on the rest
+     */
+    current = prompt;
 
-	  /* fix this!!! 
-	   *  not sure what's going wrong.
-	   */
-	  rest = rest - 1;
-	  if(rest[0] >= '1' && rest[0] <= '4')
-	    {
-	      current = rest - 1;
-	      current[0] = '\0';
-	      done = TRUE;
-	    }
-
-	  current = rest + 2;
-	}
-
-      switch(prompt_type)
-	{
-	case UH_ECHO_ON_PROMPT:
-	  message_box = create_query_box(prompt, NULL, 
-					 (GtkSignalFunc)userhelper_write_childin);
-	  break;
-	case UH_ECHO_OFF_PROMPT:
-	  message_box = create_invisible_query_box(prompt, NULL,
-						   (GtkSignalFunc)userhelper_write_childin);
-	  break;
-	case UH_INFO_MSG:
-	  message_box = create_message_box(prompt, NULL);
-	  break;
-	case UH_ERROR_MSG:
-	  message_box = create_error_box(prompt, NULL);
-	  break;
-	}
+    rest = strchr(current, '\n');
+    if(rest) {
+      *rest = '\0';
+      rest++;
+      if (!*rest) {
+	rest = NULL;
+      }
     }
 
-  gtk_signal_connect(GTK_OBJECT(message_box), "destroy", 
-		     (GtkSignalFunc) userhelper_fatal_error, NULL);
-  gtk_signal_connect(GTK_OBJECT(message_box), "delete_event", 
-		     (GtkSignalFunc) userhelper_fatal_error, NULL);
+    msg->type = prompt_type;
+    msg->message = prompt;
+    msg->data = NULL;
+    msg->entry = NULL;
 
-  gtk_widget_show(message_box);
+    switch(prompt_type) {
+      case UH_ECHO_OFF_PROMPT:
+	msg->entry = gtk_entry_new();
+	gtk_entry_set_visibility(GTK_ENTRY(msg->entry), FALSE);
+	/* fall through */
+      case UH_ECHO_ON_PROMPT:
+	if (!msg->entry) msg->entry = gtk_entry_new();
+	msg->label = gtk_label_new(prompt);
+	gtk_misc_set_alignment(GTK_MISC(msg->label), 1.0, 1.0);
+	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
+	  0, 1, resp->num_components, resp->num_components + 1, 0, 0, 2, 2);
+	gtk_table_attach(GTK_TABLE(resp->table), msg->entry,
+	  1, 2, resp->num_components, resp->num_components + 1, 0, 0, 2, 2);
+	if (!resp->head) resp->head = msg; resp->tail = msg;
+	resp->message_list = g_slist_append(resp->message_list, msg);
+	break;
+      case UH_ERROR_MSG:
+	gtk_window_set_title(GTK_WINDOW(resp->top), "Error");
+	/* fall through */
+      case UH_INFO_MSG:
+	msg->label = gtk_label_new(prompt);
+	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
+	  0, 2, resp->num_components, resp->num_components + 1, 0, 0, 2, 2);
+	break;
+      case UH_EXPECT_RESP:
+	free(msg); /* useless */
+	if (--resp->num_components != atoi(prompt)) {
+	  /* FIXME: bail out nicely */
+          exit (1);
+	}
+	gtk_widget_show_all(resp->top);
+	gtk_widget_grab_focus(resp->head->entry);
+	gtk_signal_connect_object(GTK_OBJECT(resp->tail->entry), "activate",
+	      gtk_button_clicked, GTK_OBJECT(resp->ok));
+	/* FIXME: do all sorts of last-minute stuff */
 
-  if(rest != NULL)
-    {
-      userhelper_parse_childout(rest);
-    }
+	resp = NULL; /* start over next time */
+	break;
+      default:
+	/* ignore, I guess... */
+	break;
+      }
+    if (resp) resp->num_components++;
+  }
 
+  if(rest != NULL) userhelper_parse_childout(rest);
 }
 
 void
@@ -313,9 +359,10 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
   if(cond != GDK_INPUT_READ)
     {
       /* serious error, panic. */
+      exit (1);
     }
 
-  output = malloc(sizeof(char) * MAXLINE);
+  output = userhelper_malloc(sizeof(char) * MAXLINE);
 
   count = read(source, output, MAXLINE);
   output[count] = '\0';
@@ -323,23 +370,26 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
   userhelper_parse_childout(output);
 }
 
-/* void */
-/* userhelper_write_childin(gpointer data, int source,
-   GdkInputCondition cond) */
 void
-userhelper_write_childin(GtkWidget* widget, GtkWidget* entry)
+userhelper_write_childin(GtkWidget *widget, response *resp)
 {
-  /* data should be passed as the entry... */
   char* input;
   int len;
+  message *m;
+  GSList *message_list = resp->message_list;
 
-  input = gtk_entry_get_text(GTK_ENTRY(entry));
-  len = strlen(input);
+  for (m = message_list->data;
+       message_list;
+       message_list = message_list->next) {
 
-/*   write(source, input, len); */
-/*   write(source, "\n", 1); */
-  write(childin[1], input, len);
-  write(childin[1], "\n", 1);
+    input = gtk_entry_get_text(GTK_ENTRY(m->entry));
+    len = strlen(input);
+
+    write(childin[1], input, len);
+    write(childin[1], "\n", 1);
+  }
+
+  gtk_widget_destroy(resp->top);
 }
 
 void
@@ -354,8 +404,6 @@ userhelper_sigchld()
   
   if(WIFEXITED(status))
     {
-      /* what is this doing here? */
-      /* gdk_input_remove(childout_tag); */
       userhelper_parse_exitstatus(WEXITSTATUS(status));
     }
 }

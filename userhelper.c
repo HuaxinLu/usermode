@@ -33,19 +33,8 @@
 
 #include <pwdb/pwdb_public.h>
 
-/* Error codes we have to return */
-#define	ERR_PASSWD_INVALID	1	/* password is not right */
-#define ERR_FIELDS_INVALID	2	/* gecos fields invalid or
-					 * sum(lengths) too big */
-#define ERR_SET_PASSWORD	3	/* password resetting error */
-#define ERR_LOCKS		4	/* some files are locked */
-#define	ERR_NO_USER		5	/* user unknown ... */
-#define ERR_NO_RIGHTS		6	/* insufficient rights to perform operation */
-#define ERR_INVALID_CALL	7	/* invalid call to this program */
-#define ERR_SHELL_INVALID       8       /* no such line in /etc/shells */
-#define ERR_NO_MEMORY		9	/* out of memory */
-#define ERR_UNK_ERROR		255	/* unknown error */
-					   
+#include "userhelper.h"
+
 /* Total GECOS field length... is this enough ? */
 #define GECOS_LENGTH		80
 
@@ -73,6 +62,8 @@ static int	p_flg = 0;	/* -p flag = change office phone */
 static int 	h_flg = 0;	/* -h flag = change home phone number */
 static int 	c_flg = 0;	/* -c flag = change password */
 static int 	s_flg = 0;	/* -s flag = change shell */
+static int 	t_flg = 0;	/* -t flag = direct text-mode -- exec'ed */
+static int 	w_flg = 0;	/* -w flag = act as a wrapper for next args */
 
 /*
  * A handy fail exit function we can call from man places
@@ -149,21 +140,26 @@ static int conv_func(int num_msg, const struct pam_message **msg,
     for (count = 0; count < num_msg; count++) {
 	switch (msg[count]->msg_style) {
 	    case PAM_PROMPT_ECHO_ON:
-		printf("1 %s\n", msg[count]->msg);
+		printf("%d %s\n", UH_ECHO_ON_PROMPT, msg[count]->msg);
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
-		printf("2 %s\n", msg[count]->msg);
+		printf("%d %s\n", UH_ECHO_OFF_PROMPT, msg[count]->msg);
 		break;
 	    case PAM_TEXT_INFO:
-		printf("3 %s\n", msg[count]->msg);
+		printf("%d %s\n", UH_INFO_MSG, msg[count]->msg);
 		break;
 	    case PAM_ERROR_MSG:
-		printf("4 %s\n", msg[count]->msg);
+		printf("%d %s\n", UH_ERROR_MSG, msg[count]->msg);
 		break;
 	    default:
 		printf("0 %s\n", msg[count]->msg);
 	}
     }
+
+    /* tell the other side how many messages we sent and how many
+     * responses we expect (ignoring messages, which we fudge here).
+     */
+    printf("%d %d", UH_EXPECT_RESP, num_msg);
 
     /* now the second pass */
     for (count = 0; count < num_msg; count++) {
@@ -200,8 +196,12 @@ static int conv_func(int num_msg, const struct pam_message **msg,
  * the structure pointing at the conversation function for
  * auth and changing the password
  */
-static struct pam_conv conv = {
+static struct pam_conv pipe_conv = {
      conv_func,
+     NULL
+};
+static struct pam_conv text_conv = {
+     misc_conv,
      NULL
 };
     
@@ -340,19 +340,22 @@ int main(int argc, char *argv[])
 {
     int		arg;
     int 	retval;
+    char	*progname = NULL;
     pam_handle_t 	*pamh = NULL;
     struct passwd	*pw;
+    struct pam_conv     *conv;
      
-    /* for lack of a better palce to put it... */
+    /* for lack of a better place to put it... */
     setbuf(stdout, NULL);
     setbuf(stdin, NULL);
 
     if (geteuid() != 0) {
-	fprintf(stderr, "Hmm, we need root privs for this program...\n");
+	fprintf(stderr, "userhelper must be setuid root\n");
 	exit(ERR_NO_RIGHTS);
     }
 
-    while ((arg = getopt(argc, argv, "f:o:p:h:cs:")) != EOF) {
+    while ((arg = getopt(argc, argv, "f:o:p:h:cs:tw:")) != -1 && !w_flg) {
+	/* we process no arguments after -w progname; those are sacred */
 	switch (arg) {
 	    case 'f':
 		f_flg++; full_name = optarg;
@@ -372,13 +375,23 @@ int main(int argc, char *argv[])
 	    case 's':
 		s_flg++; shell_path = optarg;
 		break;
+	    case 't':
+		t_flg++;
+		break;
+	    case 'w':
+		w_flg++; progname = optarg;
+		break;
 	    default:
 		exit(ERR_INVALID_CALL);
 	}
     } 
-    /* verify a little the parameters */
-    if (c_flg && (f_flg || o_flg || p_flg || h_flg || s_flg))
+    /* verify the parameters a little */
+#   define SHELL_FLAGS (f_flg || o_flg || p_flg || h_flg || s_flg)
+    if ((c_flg && SHELL_FLAGS) || (c_flg && w_flg) || (w_flg && SHELL_FLAGS))
 	exit(ERR_INVALID_CALL);
+
+    /* point to the right conversation function */
+    conv = t_flg ? &text_conv : &pipe_conv;
     
     /* now try to identify the username we are doing all this work for */
     user_name = getlogin();
@@ -401,7 +414,7 @@ int main(int argc, char *argv[])
 	user_name = argv[optind];
     }
 
-    /* check for the existance of this looser */
+    /* check for the existance of this user */
     pw = getpwnam(user_name);
     if (pw == (struct passwd *)NULL) {
 	/* user not known */
@@ -415,7 +428,7 @@ int main(int argc, char *argv[])
     if (c_flg) { /* are we changing the password ? */
 
 	/* Start the PAM session, recommend ourselves as 'passwd' */
-	retval = pam_start("passwd", user_name, &conv, &pamh);
+	retval = pam_start("passwd", user_name, conv, &pamh);
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
 
@@ -423,6 +436,52 @@ int main(int argc, char *argv[])
 	retval = pam_chauthtok(pamh, 0);
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
+
+    } else if (w_flg) { /* we are a wrapper program */
+	/* pick the first existing of /usr/sbin/<progname> and /sbin/<progname>
+	 * authenticate <progname>
+	 * argv[optind-1] = <progname> (boondoggle unless -- used)
+	 * (we know there is at least one open slot in argv for this)
+	 * execv(constructed_path, argv+optind);
+	 */
+	char *constructed_path;
+
+	constructed_path = malloc(strlen(progname) + sizeof("/usr/sbin/" + 1));
+	if (!constructed_path) exit (ERR_NO_MEMORY);
+
+	strcpy(constructed_path, "/usr/sbin/");
+	strcat(constructed_path, progname);
+	if (access(constructed_path, X_OK)) {
+	    strcpy(constructed_path, "/usr/sbin/");
+	    strcat(constructed_path, progname);
+	    if (access(constructed_path, X_OK)) {
+		exit (ERR_NO_PROGRAM);
+	    }
+	}
+
+	retval = pam_start(progname, user_name, conv, &pamh);
+	if (retval != PAM_SUCCESS)
+	    fail_error(retval);
+
+	retval = pam_authenticate(pamh, 0);
+	if (retval != PAM_SUCCESS) {
+	    pam_end(pamh, retval);
+	    fail_error(retval);
+	}
+
+	retval = pam_acct_mgmt(pamh, 0);
+	if (retval != PAM_SUCCESS) {
+	    pam_end(pamh, retval);
+	    fail_error(retval);
+	}
+
+	/* this is not a session, so do not do session management */
+
+	/* time for an exec */
+	setuid(getuid());
+	argv[optind-1] = progname;
+	execv(constructed_path, argv+optind-1);
+	exit (ERR_EXEC_FAILED);
 
     } else { /* we are changing some gecos fields */
 
@@ -441,7 +500,7 @@ int main(int argc, char *argv[])
 	if (h_flg && invalid_field(home_ph, ":,="))
 	    exit(ERR_FIELDS_INVALID);
     
-	retval = pam_start("chfn", user_name, &conv, &pamh);
+	retval = pam_start("chfn", user_name, conv, &pamh);
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
 
@@ -542,9 +601,3 @@ int main(int argc, char *argv[])
 	fail_error(retval);
     exit (0);
 }
-
-
-
-
-
-
