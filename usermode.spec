@@ -92,6 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 - fix incorrect user name
 - add a shell wrapper version of /usr/bin/shutdown
 - build for 6.x errata
+- bump revision to upgrade the errata
 
 * Wed Aug 23 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix stdin/stdout redirection shenanigans (#11706)
