@@ -17,4 +17,4 @@ AC_DEFINE_UNQUOTED(DATADIR,"$DATADIR","/usr/share")
 SYSCONFDIR=`eval echo ${sysconfdir}`
 AC_DEFINE_UNQUOTED(SYSCONFDIR,"$SYSCONFDIR","/etc")
 
-AC_OUTPUT(Makefile intl/Makefile po/Makefile)
+AC_OUTPUT(Makefile intl/Makefile po/Makefile.in)
