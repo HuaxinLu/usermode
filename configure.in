@@ -38,7 +38,7 @@ AC_SUBST(SYSCONFDIR)
 AC_ARG_ENABLE(debug,
 [  --enable-debug         Enable debugging messages],
 AC_DEFINE(DEBUG_USERHELPER,1,[enable debugging messages]))
-AM_CONFIG_HEADER(config.h)
+AM_CONFIG_HEADER([config.h])
 
 AC_OUTPUT([ m4/Makefile  intl/Makefile 
 Makefile

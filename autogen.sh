@@ -8,7 +8,7 @@ set -x -e
 CFLAGS="$DEFINES $RPM_OPT_FLAGS -O0 -g3 $CFLAGS" ; export CFLAGS
 libtoolize --force
 (cat /dev/null ChangeLog) > ChangeLog.old
-gettextize -f -c --intl
+test -d intl || gettextize -f -c --intl
 cat ChangeLog.old > ChangeLog
 aclocal
 automake -a
