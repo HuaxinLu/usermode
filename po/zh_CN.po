@@ -1,12 +1,13 @@
-# translation of zh_CN.GB2312.po to Simplified Chinese
-# Copyright (C) 2002 Free Software Foundation, Inc.
+# translation of zh_CN.po to Simplified Chinese
+# Simplified Chinese Version of usermode.
+# Copyright (C) 2002 Red Hat, Inc.
 # Sarah Smith <sarahs@redhat.com>, 2002.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zh_CN.GB2312\n"
+"Project-Id-Version: zh_CN\n"
 "POT-Creation-Date: 2002-04-15 18:05-0400\n"
-"PO-Revision-Date: 2002-05-31 13:47GMT+10:00\n"
+"PO-Revision-Date: 2002-05-31 13:48GMT+10:00\n"
 "Last-Translator: Sarah Smith <sarahs@redhat.com>\n"
 "Language-Team: Simplified Chinese <zh@li.org>\n"
 "MIME-Version: 1.0\n"
