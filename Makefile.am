@@ -2,7 +2,6 @@ VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
 EXTRA_DIST = config.rpath  \
-	config.h.in \
 	dummy.h \
 	usermode.spec \
 	shutdown \
