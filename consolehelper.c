@@ -42,10 +42,9 @@ main(int argc, char* argv[])
   int fake_gtk_argc = 1;
   char **fake_gtk_argv;
 
+  setlocale(LC_ALL, "");
   bindtextdomain("usermode", "/usr/share/locale");
   textdomain("usermode");
-
-  gtk_set_locale();
 
   constructed_argv = g_malloc0((argc+4) * sizeof(char *));
 
@@ -64,6 +63,7 @@ main(int argc, char* argv[])
 
   if ((((display != NULL) && (strlen(display) > 0)) || !isatty(STDIN_FILENO))) {
     if (gtk_init_check(&fake_gtk_argc, &fake_gtk_argv)) {
+      gtk_set_locale();
       graphics_available = 1;
     }
   }
