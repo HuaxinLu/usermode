@@ -82,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 * Wed Aug  2 2000 Nalin Dahyabhia <nalin@redhat.com>
 - install translations
 - fixup a messy text string
-- make "Mount"/"Unmount" translateable
+- make "Mount"/"Unmount" translatable
 - stop prompting for passwords to shut down -- we can hit ctrl-alt-del anyway,
   and gdm users can just shut down without logging in
 
