@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-08-13 21:32-0400\n"
-"PO-Revision-Date: 2002-08-08 15:59+0100\n"
+"PO-Revision-Date: 2002-09-01 15:16+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -76,9 +76,8 @@ msgid "Sorry, passwords do not match"
 msgstr "Desculpe, as senhas não são iguais"
 
 #: dummy.h:32
-#, fuzzy
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Lança ferramentas de configuração de todo o sistema sem autenticação."
+msgstr "Lança as ferramentas de configuração do sistema sem se autenticar."
 
 #: userdialogs.h:30
 msgid "Help"
