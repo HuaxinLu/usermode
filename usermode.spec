@@ -2,10 +2,10 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.36
-Release: 3.6.x
+Release: 4
 Copyright: GPL
 Group: Applications/System
-Source: usermode-%{version}-%{release}.tar.bz2
+Source: usermode-%{version}.tar.bz2
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else
