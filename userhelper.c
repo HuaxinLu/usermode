@@ -1021,10 +1021,11 @@ become_normal(char *user)
 char *
 get_user_from_ruid()
 {
-	struct passwd *pw;
+	struct passwd *pwd;
 	char *ret;
 
 	ret = NULL;
+
 #ifdef WITH_SELINUX
 	selinux_enabled = is_selinux_enabled();
 	if (selinux_enabled) {
@@ -1036,15 +1037,15 @@ get_user_from_ruid()
 			exit(ERR_UNK_ERROR);
 		}
 		ctx = context_new(old_context);
-		user_name = g_strdup(context_user_get(ctx));
+		ret = g_strdup(context_user_get(ctx));
 		context_free(ctx);
 	}
 #endif
 	if (ret == NULL) {
 		/* Now try to figure out who called us. */
-		pw = getpwuid(getuid());
-		if ((pw != NULL) && (pw->pw_name != NULL)) {
-			user_name = g_strdup(pw->pw_name);
+		pwd = getpwuid(getuid());
+		if ((pwd != NULL) && (pwd->pw_name != NULL)) {
+			ret = g_strdup(pwd->pw_name);
 		} else {
 			/* I have no name and I must have one. */
 #ifdef DEBUG_USERHELPER
