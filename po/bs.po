@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop files\n"
-"POT-Creation-Date: 2002-06-19 17:27-0400\n"
+"POT-Creation-Date: 2002-07-23 21:12-0400\n"
 "PO-Revision-Date: 2001-09-09 20:03GMT\n"
 "Last-Translator: Amila Akagiæ <bono@lugbih.org>\n"
 "Language-Team: Bosnian <lokal-subscribe@lugbih.org>\n"
@@ -100,56 +100,61 @@ msgid "Got PAM error %d.\n"
 msgstr "Imate gre¹ku %d.\n"
 
 # ../userhelper.c:199
-#: userhelper.c:203
+#: userhelper.c:210
 #, c-format
 msgid "Password for %s"
 msgstr "©ifra za %s"
 
-#: userhelper.c:320
+#: userhelper.c:351
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser\n"
+"You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:322
+#: userhelper.c:353
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser\n"
+"You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:326
+#: userhelper.c:357
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"superuser privileges, but more information is needed in order to do so."
+"administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:328
+#: userhelper.c:359
 msgid ""
-"You are attempting to run a command which requires superuser\n"
+"You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
 # ../userhelper.c:199
-#: userhelper.c:346
+#: userhelper.c:377
 #, fuzzy, c-format
 msgid "Password for %s: "
 msgstr "©ifra za %s"
 
 # ../userhelper.c:435
-#: userhelper.c:629
+#: userhelper.c:660
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mora biti setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
+#: userhelper.c:742
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
+#: userhelper.c:1393 userhelper.c:1454
+#, c-format
+msgid "Starting \"%s\" with administrative privileges."
+msgstr ""
+
 # ../userhelper.c:722 ../userhelper.c:763
-#: userhelper.c:1373 userhelper.c:1411
+#: userhelper.c:1418 userhelper.c:1465
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr ""
@@ -332,7 +337,7 @@ msgstr "dup2() gre¹ka.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: userinfo.c:300
+#: userinfo.c:305
 msgid "You don't exist.  Go away.\n"
 msgstr ""
 
@@ -483,6 +488,21 @@ msgstr "Demontiraj"
 msgid "E_xit"
 msgstr "Izaði"
 
+# ../userinfo.c:124
+#, fuzzy
+#~ msgid "Change personal information"
+#~ msgstr "Korisnikove informacije"
+
+# ../userhelper-wrap.c:389
+#, fuzzy
+#~ msgid "Change password"
+#~ msgstr "Mjenjam ¹ifru za %s"
+
+# ../userhelper-wrap.c:389
+#, fuzzy
+#~ msgid "Change your login password"
+#~ msgstr "Mjenjam ¹ifru za %s"
+
 # ../userhelper.c:672
 #, fuzzy
 #~ msgid "PAM retval = %d (%s)\n"
@@ -511,10 +531,6 @@ msgstr "Izaði"
 #~ msgstr ""
 #~ "Da bi pokrenuli \"%s\" sa root privilegijama, potrebne su dodatne "
 #~ "informacije."
-
-# ../userhelper-wrap.c:389
-#~ msgid "Changing password for %s"
-#~ msgstr "Mjenjam ¹ifru za %s"
 
 # ../userhelper-wrap.c:403
 #~ msgid "You want %d response(s) from %d entry fields!?!?!\n"

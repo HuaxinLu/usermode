@@ -11,7 +11,10 @@ AC_DEFINE_UNQUOTED(PATH_UMOUNT,"$UMOUNT",[path to the umount command])
 AC_DEFINE_UNQUOTED(PATH_FDFORMAT,"$FDFORMAT",[path to the fdformat command])
 AC_DEFINE_UNQUOTED(PATH_MKFS,"$MKFS",[path to the mkfs command])
 ALL_LINGUAS="bs cs da de es eu_ES fi fr gl hu id is it ja ko no pl pt_BR pt ro ru sk sl sr sv tr uk wa zh zh_TW"
+GETTEXT_PACKAGE=usermode
+AC_SUBST(GETTEXT_PACKAGE)
 AM_GLIB_GNU_GETTEXT
+AC_PROG_INTLTOOL
 PKG_CHECK_MODULES(GLIB,glib-2.0)
 PKG_CHECK_MODULES(LIBGLADE,libglade-2.0)
 PKG_CHECK_MODULES(LIBUSER,libuser)

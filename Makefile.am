@@ -10,15 +10,19 @@ EXTRA_DIST = 	\
 	userpasswd.1 \
 	consolehelper.8 \
 	userhelper.8 \
-	userinfo.desktop \
-	usermount.desktop \
-	userpasswd.desktop \
+	userinfo.desktop.in \
+	usermount.desktop.in \
+	userpasswd.desktop.in \
+	wrapped.console \
 	keys.xpm \
 	usermode.glade \
 	shutdown.pamd \
 	shutdown.pamd.6x \
 	update-from-egg.sh \
 	eggmarshalers.list \
+	intltool-extract.in \
+	intltool-merge.in \
+	intltool-update.in \
 	$(pixmap_DATA)
 
 SUBDIRS=po
@@ -30,17 +34,24 @@ bin_SCRIPTS = shutdown
 sbin_PROGRAMS = userhelper
 noinst_PROGRAMS = test-userdialog
 man_MANS = userinfo.1 usermount.1 userpasswd.1 consolehelper.8 userhelper.8
-# install-data-local:
-# 	$(INSTALL) -m755 -d $(DESTDIR)/$(mandir)/man1
-# 	$(INSTALL) -m644 $(man1_MANS) $(DESTDIR)/$(mandir)/man1/
-# 	$(INSTALL) -m755 -d $(DESTDIR)/$(mandir)/man8
-# 	$(INSTALL) -m644 $(man8_MANS) $(DESTDIR)/$(mandir)/man8/
 
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = keys.xpm status_lock.png
 
-applnkdir = $(sysconfdir)/X11/applnk/System
-applnk_DATA = userinfo.desktop usermount.desktop userpasswd.desktop
+install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
+	mkdir -p $(DESTDIR)/$(datadir)/applications
+	desktop-file-install --vendor=redhat \
+		--add-category X-Red-Hat-Base \
+		--add-category Settings \
+		--add-category Application \
+		--dir=$(DESTDIR)/$(datadir)/applications \
+		userinfo.desktop userpasswd.desktop
+	desktop-file-install --vendor=redhat \
+		--add-category X-Red-Hat-Base \
+		--add-category System \
+		--add-category Application \
+		--dir=$(DESTDIR)/$(datadir)/applications \
+		usermount.desktop
 
 consoleappdir = $(sysconfdir)/security/console.apps
 WRAPPED_APPS = halt poweroff reboot
@@ -49,6 +60,8 @@ $(WRAPPED_APPS): /dev/null
 	$(INSTALL) -m600 $^ $@
 
 pkgdata_DATA = usermode.glade
+
+@INTLTOOL_DESKTOP_RULE@
 
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_LDADD = @LIBUSER_LIBS@ @GLIB_LIBS@ @PAM_LIBS@ @LIBS@
@@ -62,8 +75,6 @@ usermount_LDADD = @LIBGLADE_LIBS@ @LIBS@
 userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c
 userpasswd_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
-# Aaagh! I want automake 1.5!
-consolehelper_CFLAGS = -DDISABLE_X11 $(CFLAGS)
 consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_LDADD = @GLIB_LIBS@ @LIBS@
 
@@ -85,8 +96,6 @@ tag:
 	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.gz .
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 
-ACLOCAL_AMFLAGS = -I m4
-
 ## libegg goo - "make regenerate-built-sources EGGDIR=foo"
 EGGFILES=			\
 	eggtrayicon.h		\
@@ -98,15 +107,13 @@ regenerate-built-sources:
 	EGGFILES="$(EGGFILES)" EGGDIR="$(EGGDIR)" $(srcdir)/update-from-egg.sh
 
 eggmarshalers.h:
-	cd $(srcdir)										\
-	&& $(GLIB_GENMARSHAL) --prefix=_egg_marshal eggmarshalers.list --header > xgen-emh	\
-	&& cp xgen-emh eggmarshalers.h								\
+	$(GLIB_GENMARSHAL) --prefix=_egg_marshal $(srcdir)/eggmarshalers.list --header > xgen-emh \
+	&& cp xgen-emh eggmarshalers.h \
 	&& rm -f xgen-emh xgen-emh~
 
 eggmarshalers.c:
-	cd $(srcdir)										\
-	&& $(GLIB_GENMARSHAL) --prefix=_egg_marshal eggmarshalers.list --body > xgen-emc	\
-	&& cp xgen-emc eggmarshalers.c								\
+	$(GLIB_GENMARSHAL) --prefix=_egg_marshal $(srcdir)/eggmarshalers.list --body > xgen-emc \
+	&& cp xgen-emc eggmarshalers.c \
 	&& rm -f xgen-emc xgen-emc~
 
 egg-marshal.c: eggmarshalers.h eggmarshalers.c

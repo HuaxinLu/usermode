@@ -7,13 +7,11 @@ fi
 set -x -e
 CFLAGS="$DEFINES $RPM_OPT_FLAGS -g3 $CFLAGS" ; export CFLAGS
 libtoolize --force
-(cat /dev/null ChangeLog) > ChangeLog.old
 glib-gettextize -f -c
-cat ChangeLog.old > ChangeLog
+intltoolize
 touch config.h.in
-touch po/ChangeLog
-aclocal-1.4
-automake-1.4 -a
+aclocal
+automake -a
 autoheader
 autoconf
 test -f config.cache && rm -f config.cache || true

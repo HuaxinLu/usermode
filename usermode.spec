@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.55
-Release: 3
+Version: 1.56
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -12,7 +12,8 @@ Requires: util-linux, pam >= 0.66-5
 Requires: util-linux, pam >= 0.75-37, /etc/pam.d/system-auth
 %endif
 Conflicts: SysVinit < 2.74-14
-BuildPrereq: glib2-devel, gtk2-devel, libglade2-devel, libuser-devel, pam-devel, util-linux
+BuildPrereq: desktop-file-utils, glib2-devel, gtk2-devel
+BuildPrereq: libglade2-devel, libuser-devel, pam-devel, util-linux
 BuildRoot: %{_tmppath}/%{name}-root
 
 %package gtk
@@ -51,7 +52,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
 for wrappedapp in halt reboot poweroff ; do
 	ln -s consolehelper $RPM_BUILD_ROOT%{_bindir}/${wrappedapp}
-	touch $RPM_BUILD_ROOT/etc/security/console.apps/${wrappedapp}
+	install -m644 wrapped.console $RPM_BUILD_ROOT/etc/security/console.apps/${wrappedapp}
 %if %{build6x}
 	cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %else
@@ -59,8 +60,6 @@ for wrappedapp in halt reboot poweroff ; do
 %endif
 done
 
-# Strip it!  Strip it good!
-strip $RPM_BUILD_ROOT%{_sbindir}/* || :
 %find_lang %{name}
 
 %clean
@@ -88,7 +87,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files gtk
 %defattr(-,root,root)
-%config /etc/X11/applnk/System/*
 %{_bindir}/usermount
 %{_mandir}/man1/usermount.1*
 %{_bindir}/userinfo
@@ -98,10 +96,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/consolehelper-gtk
 %{_bindir}/pam-panel-icon
 %{_datadir}/%{name}
+%{_datadir}/applications/*
 
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Tue Jul 23 2002 Nalin Dahyabhai <nalin@redhat.com> 1.56-1
+- userinfo: prevent users from selecting "nologin" as a shell (#68579)
+- don't strip binaries by default; leave that to the buildroot policy
+- use desktop-file-install
+
 * Wed Jun 19 2002 Havoc Pennington <hp@redhat.com>
 - put pam-panel-icon in file list
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-06-19 17:27-0400\n"
+"POT-Creation-Date: 2002-07-23 21:12-0400\n"
 "PO-Revision-Date:  2001-01-25 15:31-0500\n"
 "Last-Translator: Unknown\n"
 "Language-Team: Portuguese\n"
@@ -85,53 +85,58 @@ msgstr ""
 msgid "Got PAM error %d.\n"
 msgstr ""
 
-#: userhelper.c:203
+#: userhelper.c:210
 #, c-format
 msgid "Password for %s"
 msgstr ""
 
-#: userhelper.c:320
+#: userhelper.c:351
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser\n"
+"You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:322
+#: userhelper.c:353
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser\n"
+"You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:326
+#: userhelper.c:357
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"superuser privileges, but more information is needed in order to do so."
+"administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:328
+#: userhelper.c:359
 msgid ""
-"You are attempting to run a command which requires superuser\n"
+"You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:346
+#: userhelper.c:377
 #, c-format
 msgid "Password for %s: "
 msgstr ""
 
-#: userhelper.c:629
+#: userhelper.c:660
 msgid "userhelper must be setuid root\n"
 msgstr ""
 
 #. FIXME: print a warning here?
-#: userhelper.c:711
+#: userhelper.c:742
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
-#: userhelper.c:1373 userhelper.c:1411
+#: userhelper.c:1393 userhelper.c:1454
+#, c-format
+msgid "Starting \"%s\" with administrative privileges."
+msgstr ""
+
+#: userhelper.c:1418 userhelper.c:1465
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr ""
@@ -274,7 +279,7 @@ msgstr ""
 msgid "execl() error, errno=%d\n"
 msgstr ""
 
-#: userinfo.c:300
+#: userinfo.c:305
 msgid "You don't exist.  Go away.\n"
 msgstr ""
 
