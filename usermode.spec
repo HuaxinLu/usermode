@@ -1,8 +1,12 @@
+%if %{?WITH_SELINUX:0}%{!?WITH_SELINUX:1}
+%define WITH_SELINUX 0
+%endif
+
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.68
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -41,7 +45,10 @@ graphical tools for certain account management tasks.
 
 %build
 %configure
-make
+make \
+%if %{WITH_SELINUX}
+	WITH_SELINUX=yes
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -104,6 +111,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue Jul 29 2003 Dan Walsh <dwalsh@redhat.com> 1.68-2
+- Add SELinux support
+
 * Wed Apr 16 2003 Nalin Dahyabhai <nalin@redhat.com> 1.68-1
 - update translations
 - suppress the error dialog from user cancel

@@ -41,7 +41,28 @@
 #include <security/pam_misc.h>
 
 #include <libuser/user.h>
-
+#ifdef WITH_SELINUX
+#include <selinux/selinux.h>
+#include <selinux/context.h>
+#include <selinux/get_context_list.h>
+static int selinux_enabled=FALSE;
+static  security_context_t old_context=NULL;   /* our original securiy context */
+static security_context_t new_context=NULL;    /* our target security context */
+static void setupSELinuxExec(char *constructed_path) {
+  if (selinux_enabled) {
+#ifdef DEBUG_USERHELPER
+    g_print("userhelper: exec \"%s\" with %s context\n",
+	    constructed_path,new_context);
+#endif
+    if (setexeccon(new_context) < 0) {
+      fprintf(stderr, "Could not set exec context to %s.\n", new_context);
+      exit(-1);
+    }
+    if (new_context) 
+      freecon(new_context);
+  }
+}
+#endif
 #include "shvar.h"
 #include "userhelper.h"
 
@@ -1047,6 +1068,20 @@ main(int argc, char **argv)
 		prompt = &prompt_pipe;
 	}
 
+#ifdef WITH_SELINUX
+	if ((selinux_enabled=is_selinux_enabled())) {
+	  context_t ctx;
+	  if (getprevcon(&old_context) < 0) {
+#ifdef DEBUG_USERHELPER
+	    g_print("userhelper: i have no name\n");
+#endif
+	    exit(ERR_UNK_ERROR);
+	  }
+	  ctx=context_new(old_context);
+	  user_name=g_strdup(context_user_get(ctx));
+	  context_free(ctx);
+	} else {
+#endif
 	/* Now try to figure out who called us. */
 	pw = getpwuid(getuid());
 	if ((pw != NULL) && (pw->pw_name != NULL)) {
@@ -1058,6 +1093,9 @@ main(int argc, char **argv)
 #endif
 		exit(ERR_UNK_ERROR);
 	}
+#ifdef WITH_SELINUX
+	}
+#endif
 #ifdef DEBUG_USERHELPER
 	g_print("userhelper: user is %s\n", user_name);
 #endif
@@ -1533,6 +1571,27 @@ main(int argc, char **argv)
 			exit(ERR_UNK_ERROR);
 		}
 
+#ifdef WITH_SELINUX
+		if (selinux_enabled) {
+		  char *apps_role,*apps_type;
+		  context_t ctx;
+		  apps_role = svGetValue(s, "ROLE");
+		  if (apps_role == NULL) {
+		    apps_role = "sysadm_r";
+		  }
+		  apps_type = svGetValue(s, "TYPE");
+		  if (apps_type == NULL) {
+		    apps_type = "sysadm_t";
+		  }
+		  ctx=context_new(old_context);
+		  freecon(old_context);
+		  context_type_set(ctx,apps_type);
+		  context_role_set(ctx,apps_role);
+		  new_context=strdup(context_str(ctx));
+		  context_free(ctx);
+		  apps_user=user_name;
+		} else {
+#endif
 		/* Determine who we should authenticate as.  If not specified,
 		 * or if "<user>" is specified, we authenticate as the invoking
 		 * user, otherwise we authenticate as the specified user (which
@@ -1544,6 +1603,9 @@ main(int argc, char **argv)
 			user_pam = g_strdup(apps_user);
 		}
 
+#ifdef WITH_SELINUX
+		}
+#endif
 		/* Read the path to the program to run. */
 		constructed_path = svGetValue(s, "PROGRAM");
 		if (!constructed_path || constructed_path[0] != '/') {
@@ -1742,6 +1804,9 @@ main(int argc, char **argv)
 					       app_data.sn_id, 1);
 				}
 #endif
+#ifdef WITH_SELINUX
+				setupSELinuxExec(constructed_path);
+#endif
 				execv(constructed_path, argv + optind - 1);
 				pipe_conv_exec_fail(conv);
 				exit(ERR_EXEC_FAILED);
@@ -1847,6 +1912,9 @@ main(int argc, char **argv)
 					       app_data.sn_id, 1);
 				}
 #endif
+#ifdef WITH_SELINUX
+				setupSELinuxExec(constructed_path);
+#endif
 				execv(constructed_path, argv + optind - 1);
 				pipe_conv_exec_fail(conv);
 				exit(ERR_EXEC_FAILED);
@@ -1904,6 +1972,9 @@ main(int argc, char **argv)
 #endif
 				setenv("DESKTOP_STARTUP_ID", app_data.sn_id, 1);
 			}
+#endif
+#ifdef WITH_SELINUX
+			setupSELinuxExec(constructed_path);
 #endif
 			execv(constructed_path, argv + optind - 1);
 			pipe_conv_exec_fail(conv);
