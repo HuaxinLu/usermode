@@ -4,17 +4,17 @@
 # Nathalie Scholz <EMAIL@ADDRESS>, 2001.
 # Bettina De Monti <bdemonti@redhat.it>, 2001.
 # Audrey Simons <asimons@redhat.com>, 2003
-# Jean-Paul Aubry <jpaubry@redhat.com>, 2003
+# Jean-Paul Aubry <jpaubry@redhat.com>, 2003,2004
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2003-11-26 15:41+0100\n"
+"PO-Revision-Date: 2004-02-20 15:42+0100\n"
 "Last-Translator: Jean-Paul Aubry <jpaubry@redhat.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0\n"
 
@@ -39,7 +39,7 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "OK"
+msgstr "OK "
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
@@ -51,7 +51,7 @@ msgstr "Annuler"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Exécuter sans privilèges"
+msgstr "ExÃ©cuter sans privilÃ¨ges"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -75,15 +75,15 @@ msgstr "MOT DE PASSE INCORRECT : trop court"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "Mot de passe inchangé"
+msgstr "Mot de passe inchangÃ©"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Désolé, les mots de passe ne correspondent pas"
+msgstr "DÃ©solÃ©, les mots de passe ne correspondent pas"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Démarrer les outils de configuration de tout le système sans mot de passe."
+msgstr "DÃ©marrer les outils de configuration de tout le systÃ¨me sans mot de passe."
 
 #: dummy.h:33
 msgid "login: "
@@ -113,9 +113,9 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter \"%s\" qui pourrait nécessiter des privilèges du "
+"Vous essayez d'exÃ©cuter \"%s\" qui pourrait nÃ©cessiter des privilÃ¨ges du "
 "super-utilisateur. De plus amples informations sont toutefois requises pour "
-"cette opération."
+"cette opÃ©ration."
 
 #: userhelper.c:668
 #, c-format
@@ -123,27 +123,27 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter \"%s\" qui nécessite des privilèges du super-"
+"Vous essayez d'exÃ©cuter \"%s\" qui nÃ©cessite des privilÃ¨ges du super-"
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
-"opération."
+"opÃ©ration."
 
 #: userhelper.c:672
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges\n"
+"Vous essayez d'exÃ©cuter une commande qui pourrait nÃ©cessiter des privilÃ¨ges\n"
 "du super-utilisateur. De plus amples informations sont toutefois requises "
-"pour cette opération."
+"pour cette opÃ©ration."
 
 #: userhelper.c:674
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter une commande qui nécessite des privilèges du\n"
+"Vous essayez d'exÃ©cuter une commande qui nÃ©cessite des privilÃ¨ges du\n"
 "super-utilisateur. De plus amples informations sont toutefois requises pour "
-"cette opération."
+"cette opÃ©ration."
 
 #: userhelper.c:693
 #, c-format
@@ -152,14 +152,14 @@ msgstr "Mot de passe pour %s :"
 
 #: userhelper.c:1039
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper doit être setuid root\n"
+msgstr "userhelper doit Ãªtre setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:1123
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
-"contrôle.\n"
+"Impossible d'ouvrir une fenÃªtre graphique et de trouver un terminal de "
+"contrÃ´le.\n"
 
 #: userhelper-wrap.c:178
 msgid "Unknown exit code."
@@ -167,7 +167,7 @@ msgstr "Code de sortie inconnu."
 
 #: userhelper-wrap.c:180
 msgid "Information updated."
-msgstr "Informations mises à jour."
+msgstr "Informations mises Ã  jour."
 
 #: userhelper-wrap.c:182
 msgid ""
@@ -175,7 +175,7 @@ msgid ""
 "Please try again."
 msgstr ""
 "Le mot de passe n'est pas valide.\n"
-"Veuillez réessayer."
+"Veuillez rÃ©essayer."
 
 #: userhelper-wrap.c:184
 msgid ""
@@ -183,21 +183,21 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Un ou plusieurs des champs modifiés ne sont pas valides.\n"
-"Cela pourrait être causé par des caractères deux-points ou virgule dans\n"
-"l'un des champs. Veuillez les éliminer et réessayer."
+"Un ou plusieurs des champs modifiÃ©s ne sont pas valides.\n"
+"Cela pourrait Ãªtre causÃ© par des caractÃ¨res deux-points ou virgule dans\n"
+"l'un des champs. Veuillez les Ã©liminer et rÃ©essayer."
 
 #: userhelper-wrap.c:186
 msgid "Password resetting error."
-msgstr "Erreur de réinitialisation du mot de passe."
+msgstr "Erreur de rÃ©initialisation du mot de passe."
 
 #: userhelper-wrap.c:188
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Certains fichiers système sont verrouillés.\n"
-"Réessayer plus tard."
+"Certains fichiers systÃ¨me sont verrouillÃ©s.\n"
+"RÃ©essayer plus tard."
 
 #: userhelper-wrap.c:190
 msgid "Unknown user."
@@ -209,7 +209,7 @@ msgstr "Droits insuffisants."
 
 #: userhelper-wrap.c:194
 msgid "Invalid call to subprocess."
-msgstr "Appel non valide à un sous-processus. "
+msgstr "Appel non valide Ã  un sous-processus. "
 
 #: userhelper-wrap.c:196
 msgid ""
@@ -218,20 +218,20 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "Votre shell actuel ne figure pas dans le fichier /etc/shells.\n"
-"Vous n'êtes pas autorisé à changer votre shell.\n"
-"Consultez votre administrateur système."
+"Vous n'Ãªtes pas autorisÃ© Ã  changer votre shell.\n"
+"Consultez votre administrateur systÃ¨me."
 
 #: userhelper-wrap.c:199
 msgid "Out of memory."
-msgstr "Mémoire insuffisante."
+msgstr "MÃ©moire insuffisante."
 
 #: userhelper-wrap.c:201
 msgid "The exec() call failed."
-msgstr "Impossible d'exécuter l'appel exec()."
+msgstr "Impossible d'exÃ©cuter l'appel exec()."
 
 #: userhelper-wrap.c:203
 msgid "Failed to find selected program."
-msgstr "Impossible de trouver le programme sélectionné."
+msgstr "Impossible de trouver le programme sÃ©lectionnÃ©."
 
 #: userhelper-wrap.c:207
 msgid "Unknown error."
@@ -267,9 +267,9 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter \"%s\" qui pourrait nécessiter des privilèges de "
+"Vous essayez d'exÃ©cuter \"%s\" qui pourrait nÃ©cessiter des privilÃ¨ges de "
 "super-utilisateur. De plus amples informations sont toutefois requises pour "
-"cette opération."
+"cette opÃ©ration."
 
 #: userhelper-wrap.c:767
 #, c-format
@@ -277,31 +277,31 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter \"%s\" qui nécessite des privilèges de super-"
+"Vous essayez d'exÃ©cuter \"%s\" qui nÃ©cessite des privilÃ¨ges de super-"
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
-"opération."
+"opÃ©ration."
 
 #: userhelper-wrap.c:776
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges "
+"Vous essayez d'exÃ©cuter une commande qui pourrait nÃ©cessiter des privilÃ¨ges "
 "de super-utilisateur. De plus amples informations sont toutefois requises "
-"pour cette opération."
+"pour cette opÃ©ration."
 
 #: userhelper-wrap.c:778
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter une commande qui nécessite des privilèges de super-"
+"Vous essayez d'exÃ©cuter une commande qui nÃ©cessite des privilÃ¨ges de super-"
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
-"opération."
+"opÃ©ration."
 
 #: userhelper-wrap.c:795
 msgid "_Run Unprivileged"
-msgstr "Exécute_r sans privilèges"
+msgstr "ExÃ©cute_r sans privilÃ¨ges"
 
 #: userhelper-wrap.c:931
 msgid "Pipe error.\n"
@@ -322,7 +322,7 @@ msgstr "Erreur execl(), errno=%d\n"
 
 #: userinfo.c:323
 msgid "You don't exist.  Go away.\n"
-msgstr "Identité inexistante. Partir.\n"
+msgstr "IdentitÃ© inexistante. Partir.\n"
 
 #: usermount.c:62 glade.strings:26
 msgid "_Mount"
@@ -330,15 +330,15 @@ msgstr "_Monter"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "Dé_monter"
+msgstr "DÃ©_monter"
 
 #: usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Êtes-vous sûr de vouloir formater ce disque ? Vous détruirez toutes les "
-"données qu'il contient."
+"ÃŠtes-vous sÃ»r de vouloir formater ce disque ? Vous dÃ©truirez toutes les "
+"donnÃ©es qu'il contient."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -346,14 +346,14 @@ msgstr "Effectuer un formatage de _bas niveau."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Sélectionner un type de système de _fichiers à créer :"
+msgstr "SÃ©lectionner un type de systÃ¨me de _fichiers Ã  crÃ©er :"
 
 #: usermount.c:543
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Il n'y a pas de système de fichiers montable ou démontable par les "
+"Il n'y a pas de systÃ¨me de fichiers montable ou dÃ©montable par les "
 "utilisateurs.\n"
 "Contactez votre administrateur."
 
@@ -369,15 +369,15 @@ msgstr "_Formater"
 
 #: usermount.c:605 glade.strings:24
 msgid "Device"
-msgstr "Périphérique"
+msgstr "PÃ©riphÃ©rique"
 
 #: usermount.c:611 glade.strings:23
 msgid "Directory"
-msgstr "Répertoire"
+msgstr "RÃ©pertoire"
 
 #: usermount.c:617
 msgid "Filesystem"
-msgstr "Système de fichiers"
+msgstr "SystÃ¨me de fichiers"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -398,11 +398,11 @@ msgstr "Bureau :"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "Téléphone bureau :"
+msgstr "TÃ©lÃ©phone bureau :"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr "Téléphone domicile :"
+msgstr "TÃ©lÃ©phone domicile :"
 
 #: glade.strings:12 usermode.glade.h:4
 msgid "Login Shell:"
@@ -430,7 +430,7 @@ msgstr "Type"
 
 #: glade.strings:27
 msgid "_Unmount"
-msgstr "_Démonter"
+msgstr "_DÃ©monter"
 
 #: glade.strings:29
 msgid "E_xit"
@@ -454,7 +454,7 @@ msgstr "Gestion du disque"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Monter et démonter les systèmes de fichiers"
+msgstr "Monter et dÃ©monter les systÃ¨mes de fichiers"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
@@ -468,8 +468,8 @@ msgstr "Mot de passe"
 #~ msgstr "Erreur PAM %d.\n"
 
 #~ msgid "about to exec \"%s\"\n"
-#~ msgstr "début de l'exécution de \"%s\"\n"
+#~ msgstr "dÃ©but de l'exÃ©cution de \"%s\"\n"
 
 #~ msgid "Need %d responses.\n"
-#~ msgstr "%d réponses nécessaires.\n"
+#~ msgstr "%d rÃ©ponses nÃ©cessaires.\n"
 
