@@ -60,7 +60,7 @@
 /* Paths, flag names, and other stuff. */
 #define UH_PATH SBINDIR "/userhelper"
 #define UH_CONSOLEHELPER_PATH BINDIR "/consolehelper"
-#define UH_CONSOLEHELPER_X11_PATH BINDIR "/consolehelper-x11"
+#define UH_CONSOLEHELPER_X11_PATH BINDIR "/consolehelper-gtk"
 #define UH_KEY_PIXMAP_PATH DATADIR "/pixmaps/userhelper-keys.xpm"
 #define UH_PASSWD_OPT "-c"
 #define UH_FULLNAME_OPT "-f"
