@@ -20,7 +20,7 @@ EXTRA_DIST = \
 
 SUBDIRS=intl po
 
-CFLAGS = @LIBGLADE_CFLAGS@ @CFLAGS@
+CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@
 consolehelper_CFLAGS = -DDISABLE_X11 $(CFLAGS)
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk
@@ -45,7 +45,7 @@ $(WRAPPED_APPS): /dev/null
 pkgdata_DATA = usermode.glade
 
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
-userhelper_LDADD = @GLIB_LIBS@ @PAM_LIBS@ @LIBS@
+userhelper_LDADD = @LIBUSER_LIBS@ @GLIB_LIBS@ @PAM_LIBS@ @LIBS@
 
 userinfo_SOURCES = userinfo.c userdialogs.c userhelper-wrap.c userhelper-wrap.h
 userinfo_LDADD = @LIBGLADE_LIBS@ @LIBS@

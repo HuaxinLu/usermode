@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.49
-Release: 3
+Version: 1.50
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -101,6 +101,14 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Thu Jan 31 2002 Nalin Dahyabhai <nalin@redhat.com> 1.50-1
+- fix userpasswd dialog message being incorrect for password changes
+- use a dumb conversation function when text mode is invoked without a tty -- if
+  the service's configuration doesn't call for prompts, then it'll still work
+- port from pwdb to libuser
+- catch child-exit errors correctly again
+- fix keyboard-grabbing
+
 * Wed Jan 23 2002 Nalin Dahyabhai <nalin@redhat.com> 1.49-3
 - add default locations for certain binaries to configure.in
 

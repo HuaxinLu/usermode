@@ -98,13 +98,12 @@ userhelper_parse_exitstatus(int exitstatus)
 /* Attempt to grab focus for the toplevel of this widget, so that peers can
  * get events too. */
 static void
-userhelper_grab_focus(GtkWidget * widget, GdkEvent * map_event,
-		      gpointer data)
+userhelper_grab_focus(GtkWidget *widget, GdkEventAny *event)
 {
-	GtkWidget *toplevel;
-	toplevel = gtk_widget_get_toplevel(widget);
-	if(GTK_WIDGET_TOPLEVEL(toplevel)) {
-		gdk_keyboard_grab(toplevel->window, TRUE, GDK_CURRENT_TIME);
+	int ret;
+	ret = gdk_keyboard_grab(widget->window, TRUE, GDK_CURRENT_TIME);
+	if (ret != 0) {
+		g_warning("gdk_keyboard_grab returned %d", ret);
 	}
 }
 
@@ -241,7 +240,7 @@ userhelper_parse_childout(char *outline)
 
 		/* Make sure we grab the keyboard focus when the window gets
 		 * an X window associated with it. */
-		gtk_signal_connect(GTK_OBJECT(resp->dialog), "map",
+		gtk_signal_connect(GTK_OBJECT(resp->dialog), "map_event",
 				   GTK_SIGNAL_FUNC(userhelper_grab_focus),
 				   NULL);
 
@@ -432,14 +431,20 @@ userhelper_parse_childout(char *outline)
 
 		/* Customize the label. */
 		if(resp->service) {
-			if (strcmp(resp->service, "passwd") != 0) {
+			if (strcmp(resp->service, "passwd") == 0) {
+				text = "";
+			} else
+			if (strcmp(resp->service, "chfn") == 0) {
+				text = g_strdup_printf(_("Changing personal information."));
+			} else
+			if (strcmp(resp->service, "chsh") == 0) {
+				text = g_strdup_printf(_("Changing login shell."));
+			} else {
 				if(resp->fallback_allowed) {
 					text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from superuser privileges, but more information is needed in order to do so."), resp->service);
 				} else {
 					text = g_strdup_printf(_("You are attempting to run \"%s\" which requires superuser privileges, but more information is needed in order to do so."), resp->service);
 				}
-			} else {
-				text = g_strdup_printf(_("Changing passwords."));
 			}
 		} else {
 			if(resp->fallback_allowed) {
@@ -475,6 +480,9 @@ userhelper_parse_childout(char *outline)
 		/* Run the dialog. */
 		response = gtk_dialog_run(GTK_DIALOG(resp->dialog));
 		userhelper_write_childin(response, resp);
+		/* Release the keyboard. */
+		gdk_keyboard_ungrab(GDK_CURRENT_TIME);
+		/* Destroy the dialog box. */
 		gtk_widget_destroy(resp->dialog);
 		if(resp->service)
 			g_free(resp->service);
@@ -531,16 +539,18 @@ userhelper_read_signal(gpointer data, int source, GdkInputCondition cond)
 		_exit(1);
 	}
 
-	if(read(source, &u, 1) != -1) {
+	if(read(source, &u, 1) <= 0) {
 		/* Error reading signals?  Stop reading them. */
 		gdk_input_remove(signal_tag);
 		return;
 	}
 
 	/* Reap a child. */
-	pid = waitpid(0, &status, WNOHANG);
-	if((pid != 0) && (pid != -1) && WIFEXITED(status)) {
-		userhelper_parse_exitstatus(WEXITSTATUS(status));
+	if (u == SIGCHLD) {
+		pid = waitpid(0, &status, WNOHANG);
+		if((pid != 0) && (pid != -1) && WIFEXITED(status)) {
+			userhelper_parse_exitstatus(WEXITSTATUS(status));
+		}
 	}
 }
 

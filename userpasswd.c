@@ -31,7 +31,7 @@ main(int argc, char *argv[])
 	gtk_set_locale();
 	gtk_init(&argc, &argv);
 
-	signal(SIGCHLD, userhelper_sigchld);
+	userhelper_sigchld(0);
 	userhelper_run(UH_PATH, UH_PATH, UH_PASSWD_OPT, 0);
 
 	gtk_main();

@@ -14,12 +14,12 @@ ALL_LINGUAS="bs cs da de es eu_ES fi fr gl hu id is it ja ko no pl pt_BR pt ro r
 AM_GNU_GETTEXT
 PKG_CHECK_MODULES(GLIB,glib-2.0)
 PKG_CHECK_MODULES(LIBGLADE,libglade-2.0)
+PKG_CHECK_MODULES(LIBUSER,libuser)
 AC_CHECK_FUNC(pam_start,,[AC_CHECK_LIB(pam,pam_start,PAM_LIBS="-lpam -ldl",dl)])
 AC_CHECK_FUNC(misc_conv,,[AC_CHECK_LIB(pam_misc,misc_conv,PAM_LIBS="-lpam_misc $PAM_LIBS",$PAM_LIBS)])
-AC_CHECK_FUNC(pwdb_start,,[AC_CHECK_LIB(pwdb,pwdb_start,PAM_LIBS="-lpwdb $PAM_LIBS",$PAM_LIBS)])
 AC_SUBST(PAM_LIBS)
 
-AC_DEFINE(GTK_DISABLE_DEPRECATED,,[Disable use of deprecated GTK APIs.])
+AC_DEFINE(GTK_DISABLE_DEPRECATED,,[Disable use of deprecated GTK+ APIs.])
 
 test "x$prefix" = xNONE && prefix=$ac_default_prefix
 test "x$exec_prefix" = xNONE && exec_prefix=${prefix}

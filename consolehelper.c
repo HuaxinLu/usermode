@@ -87,14 +87,6 @@ main(int argc, char *argv[])
 	}
 #endif
 
-	/* If we're not on a TTY, and we can't display a window, we're
-	 * screwed. */
-	if(!isatty(STDIN_FILENO) && !graphics_available) {
-		fprintf(stderr,
-			_("Unable to open graphical window, and unable to find controlling terminal.\n"));
-		_exit(0);
-	}
-
 	/* Allocate space for a new argv array, with room for up to 3 more
 	 * items than we have in argv, plus the NULL-terminator. */
 	constructed_argv = g_malloc0((argc + 3 + 1) * sizeof(char *));

@@ -56,7 +56,8 @@ struct UserInfo {
 	const char *shell;
 };
 
-void set_new_userinfo(struct UserInfo *userinfo);
+static void set_new_userinfo(struct UserInfo *userinfo);
+static gint on_ok_clicked(GtkWidget *widget, gpointer data);
 
 static void
 shell_activate(GtkWidget *widget, gpointer data)
@@ -143,7 +144,10 @@ create_userinfo_window(struct UserInfo *userinfo)
 		gtk_option_menu_set_history(GTK_OPTION_MENU(shell_menu), 0);
 		endusershell();
 
-		glade_xml_signal_autoconnect(xml);
+		glade_xml_signal_connect(xml, "on_ok_clicked",
+					 GTK_SIGNAL_FUNC(on_ok_clicked));
+		glade_xml_signal_connect(xml, "gtk_main_quit",
+					 GTK_SIGNAL_FUNC(gtk_main_quit));
 	}
 
 	return widget;
@@ -184,7 +188,7 @@ parse_userinfo()
 	return retval;
 }
 
-gint
+static gint
 on_ok_clicked(GtkWidget *widget, gpointer data)
 {
 	struct UserInfo *userinfo;
@@ -223,7 +227,7 @@ on_ok_clicked(GtkWidget *widget, gpointer data)
 	return FALSE;
 }
 
-void
+static void
 set_new_userinfo(struct UserInfo *userinfo)
 {
 	const char *fullname;
@@ -269,7 +273,7 @@ set_new_userinfo(struct UserInfo *userinfo)
 
 	argv[i++] = NULL;
 
-	signal(SIGCHLD, userhelper_sigchld);
+	userhelper_sigchld(0);
 	userhelper_runv(UH_PATH, argv);
 }
 
