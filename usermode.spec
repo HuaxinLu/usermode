@@ -19,7 +19,6 @@ BuildRoot: %{_tmppath}/%{name}-root
 Summary: Graphical tools for certain user account management tasks.
 Group: Applications/System
 Requires: %{name} = %{version}-%{release}
-Requires: pygtk2-libglade
 
 %description
 The usermode package contains the userhelper program, which can be
@@ -104,7 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
 * Tue Apr  9 2002 Nalin Dahyabhai <nalin@redhat.com> 1.52-2
-- require pygtk2-libglade
 - refresh translations
 
 * Mon Apr  1 2002 Nalin Dahyabhai <nalin@redhat.com> 1.52-1
