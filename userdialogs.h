@@ -1,7 +1,39 @@
-/* -*-Mode: c-*-
- * Author:     Otto Hammersmith
- * File:       .h
- * Created:    <>
- * Time-stamp: <97/02/18 11:10:23 ohammers>
- * Purpose:
+/* -*-Mode: c-*- */
+/* Copyright (C) 1997 Red Hat Software, Inc.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
+
+#ifndef __USERDIALOGS_H__
+#define __USERDIALOGS_H__
+
+#include <gtk/gtk.h>
+
+#define UD_OK_TEXT "OK"
+#define UD_HELP_TEXT "Help"
+#define UD_CANCEL_TEXT "Cancel"
+#define UD_EXIT_TEXT "Exit"
+
+/* consider a "has args" arg, so I can use the arg argument or not at will */
+GtkWidget* create_message_box(gchar* message, gchar* title,
+			      GtkSignalFunc func, gpointer arg);
+GtkWidget* create_error_box(gchar* error, gchar* title, 
+			    GtkSignalFunc func, gpointer arg);
+GtkWidget* create_query_box(gchar* prompt, gchar* title, 
+			    GtkSignalFunc func, gpointer arg);
+GtkWidget* create_invisible_query_box(gchar* prompt, gchar* title,
+				      GtkSignalFunc func, gpointer arg); 
+
+#endif /* __USERDIALOGS_H__ */
