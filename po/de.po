@@ -161,8 +161,8 @@ msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
-"Um \"%s\" mit Root-Zugriffsrechten zu starten, sind zusätzliche Informationen "
-"erforderlich."
+"Um \"%s\" mit Root-Zugriffsrechten zu starten, sind zusätzliche "
+"Informationen erforderlich."
 
 #: ../userhelper-wrap.c:389
 #, c-format
@@ -317,7 +317,7 @@ msgstr "Beenden"
 
 #: ../dummy.h:22
 msgid "Cancel"
-msgstr "Löschen"
+msgstr "Abbrechen"
 
 #: ../dummy.h:23
 msgid "Run Unprivileged"
