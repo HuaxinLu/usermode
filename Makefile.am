@@ -1,7 +1,9 @@
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < $(srcdir)/usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < $(srcdir)/usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
+VENDOR=redhat
 distdir=$(PACKAGE)-$(VERSION)-$(RELEASE)
+
 EXTRA_DIST = 	\
 	mkinstalldirs \
 	dummy.h \
@@ -46,24 +48,29 @@ pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png passwor
 
 install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 	mkdir -p $(DESTDIR)/$(datadir)/applications
-	desktop-file-install --vendor=redhat \
-		--add-category X-Red-Hat-Base \
+	desktop-file-install --vendor=$(VENDOR) \
+		--add-category Settings \
 		--add-category AdvancedSettings \
 		--add-category Application \
 		--dir=$(DESTDIR)/$(datadir)/applications \
-		userinfo.desktop
-	desktop-file-install --vendor=redhat \
-		--add-category X-Red-Hat-Base \
-		--add-category Settings \
-		--add-category Application \
-		--dir=$(DESTDIR)/$(datadir)/applications \
-		userpasswd.desktop
-	desktop-file-install --vendor=redhat \
+		$(top_builddir)/userinfo.desktop
+	desktop-file-install --vendor=$(VENDOR) \
 		--add-category X-Red-Hat-Base \
 		--add-category System \
 		--add-category Application \
 		--dir=$(DESTDIR)/$(datadir)/applications \
-		usermount.desktop
+		$(top_builddir)/usermount.desktop
+	desktop-file-install --vendor=$(VENDOR) \
+		--add-category X-Red-Hat-Base \
+		--add-category Settings \
+		--add-category Application \
+		--dir=$(DESTDIR)/$(datadir)/applications \
+		$(top_builddir)/userpasswd.desktop
+
+uninstall-local: 
+	-rm -f $(DESTDIR)/$(datadir)/applications/$(VENDOR)-userinfo.desktop   \
+	       $(DESTDIR)/$(datadir)/applications/$(VENDOR)-usermount.desktop  \
+	       $(DESTDIR)/$(datadir)/applications/$(VENDOR)-userpasswd.desktop 
 
 consoleappdir = $(sysconfdir)/security/console.apps
 WRAPPED_APPS = halt poweroff reboot
@@ -71,8 +78,20 @@ INIT_APPS = pam_timestamp_init
 consoleapp_DATA = $(WRAPPED_APPS)
 $(WRAPPED_APPS): wrapped.console
 	$(INSTALL) -m600 $^ $@
+        
 $(INIT_APPS): pam_timestamp_init.console
 	$(INSTALL) -m600 $^ $@
+
+DISTCLEANFILES =            \
+	intltool-extract    \
+	intltool-merge      \
+	intltool-update     \
+	userinfo.desktop    \
+	usermount.desktop   \
+	userpasswd.desktop  \
+	$(WRAPPED_APPS)     
+
+
 debug-install:
 	$(INSTALL) -m4711 userhelper $(sbindir)/
 	$(INSTALL)  -m755 consolehelper $(bindir)/
@@ -105,9 +124,8 @@ consolehelper_LDADD = @GLIB_LIBS@ @LIBS@ @EFENCE_LIBS@
 consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userdialogs.h userhelper-wrap.c userhelper-wrap.h reaper.c reaper.h marshal.c marshal.h
 consolehelper_gtk_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
-pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) egg-marshal.c gsmclient.c gsmclient.h props.h props.c
+pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) marshal.c gsmclient.c gsmclient.h props.h props.c
 pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ $(X_LIBS) -lICE -lSM @EFENCE_LIBS@
-pam-panel-icon.c: egg-marshal.c
 
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c userdialogs.h
 test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
@@ -138,15 +156,3 @@ EGGDIR="you need to set EGGDIR variable"
 
 regenerate-built-sources:
 	EGGFILES="$(EGGFILES)" EGGDIR="$(EGGDIR)" $(srcdir)/update-from-egg.sh
-
-eggmarshalers.h:
-	$(GLIB_GENMARSHAL) --prefix=_egg_marshal $(srcdir)/eggmarshalers.list --header > xgen-emh \
-	&& cp xgen-emh eggmarshalers.h \
-	&& rm -f xgen-emh xgen-emh~
-
-eggmarshalers.c:
-	$(GLIB_GENMARSHAL) --prefix=_egg_marshal $(srcdir)/eggmarshalers.list --body > xgen-emc \
-	&& cp xgen-emc eggmarshalers.c \
-	&& rm -f xgen-emc xgen-emc~
-
-egg-marshal.c: eggmarshalers.h eggmarshalers.c

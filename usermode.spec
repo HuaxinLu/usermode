@@ -5,8 +5,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.71
-Release: 4
+Version: 1.72
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -117,6 +117,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Sep 27 2004 Ray Strode <rstrode@redhat.com> 1.72-1
+- remove X-Red-Hat-Base category from userinfo.desktop
+- fix `make distcheck'
+- use proper value types for Terminal keys in desktop entries 
+
 * Fri Sep 24 2004 Jindrich Novy <jnovy@redhat.com> 1.71-4
 - updated dependencies to SELinux
 

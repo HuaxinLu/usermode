@@ -3,6 +3,6 @@ Encoding=UTF-8
 _Name=About Myself
 _Comment=Change personal information
 Exec=userinfo
-Terminal=0
+Terminal=false
 Type=Application
 Icon=user_icon.png

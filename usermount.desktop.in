@@ -3,6 +3,6 @@ Encoding=UTF-8
 _Name=Disk Management
 _Comment=Mount and unmount filesystems
 Exec=usermount
-Terminal=0
+Terminal=false
 Type=Application
 Icon=disks.png
