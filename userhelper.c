@@ -519,6 +519,7 @@ int main(int argc, char *argv[])
 	char *retry;
 	char *env_home, *env_term, *env_display, *env_shell;
         char *env_user, *env_logname, *env_lang, *env_lcall;
+	char *env_xauthority;
 	int session, fallback, try;
 	size_t aft;
 	struct stat sbuf;
@@ -530,14 +531,12 @@ int main(int argc, char *argv[])
 	env_home = getenv("HOME");
 	env_term = getenv("TERM");
 	env_display = getenv("DISPLAY");
-	/* note that XAUTHORITY not copied -- do not let attackers get at
-	 * others' X authority records
-	 */
 	env_shell = getenv("SHELL");
 	env_user = getenv("USER");
 	env_logname = getenv("LOGNAME");
         env_lang = getenv("LANG");
         env_lcall = getenv("LC_ALL");
+        env_xauthority = getenv("XAUTHORITY");
 
 	if (strstr(env_home, ".."))
 	    env_home=NULL;
@@ -547,6 +546,9 @@ int main(int argc, char *argv[])
 	    env_term="dumb";
 
 	environ = (char **) calloc (1, 2 * sizeof (char *));
+	/* note that XAUTHORITY not copied -- do not let attackers get at
+	 * others' X authority records
+	 */
 	if (env_home) setenv("HOME", env_home, 1);
 	if (env_term) setenv("TERM", env_term, 1);
 	if (env_display) setenv("DISPLAY", env_display, 1);
@@ -638,6 +640,9 @@ int main(int argc, char *argv[])
 	    pam_end(pamh, retval);
 	    fail_error(retval);
 	}
+
+	/* reset the XAUTHORITY so that X stuff will work now */
+        if (env_xauthority) setenv("XAUTHORITY", env_xauthority, 1);
 
 	if (session) {
 	    int child, status;

@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=Change Password
+Name[sv]=Byt lösenord
 Comment=Change Password
+Comment[sv]=Byt lösenord
 Exec=userpasswd
 Terminal=0
 Type=Application

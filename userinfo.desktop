@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=About Myself
+Name[sv]=Om mig själv
 Description=Change account information
+Description[sv]=Ändra kontoinformation
 Exec=userinfo
 Terminal=0
 Type=Application

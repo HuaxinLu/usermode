@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=Disk Management
+Name[sv]=Diskhantering
 Comment=Mount and unmount filesystems
+Comment[sv]=Montera och avmontera filsystem
 Exec=usermount
 Terminal=0
 Type=Application

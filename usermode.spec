@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.27
-Release: 4
+Version: 1.28
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -81,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Wed Aug  8 2000 Nalin Dahyabhia <nalin@redhat.com>
 - merge in updated translations
+- set XAUTHORITY after successful authentication (#11006)
 
 * Wed Aug  2 2000 Nalin Dahyabhia <nalin@redhat.com>
 - install translations
