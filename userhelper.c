@@ -142,6 +142,13 @@ static char *read_string(void)
     return buffer;
 }
 
+/* Application data with some hints. */
+struct app_data_t {
+     int fallback;
+     char *user;
+     char *service;
+} app_data = {0, NULL, NULL};
+
 /*
  * Conversation function for the boring change password stuff
  */
@@ -158,6 +165,20 @@ static int conv_func(int num_msg, const struct pam_message **msg,
     if (reply == NULL)
 	return PAM_CONV_ERR;
  
+    if(appdata_ptr != NULL) {
+        struct app_data_t *app_data = (struct app_data_t*) appdata_ptr;
+
+        printf("%d %d\n", UH_FALLBACK, app_data->fallback);
+	if(app_data->user == NULL) {
+            printf("%d %s\n", UH_USER, "root");
+	} else {
+            printf("%d %s\n", UH_USER, app_data->user);
+	}
+	if(app_data->service != NULL) {
+            printf("%d %s\n", UH_SERVICE_NAME, app_data->service);
+	}
+    }
+
     /*
      * We do first a pass on all items and output them;
      * then we do a second pass and read what we have to read
@@ -231,11 +252,11 @@ static int conv_func(int num_msg, const struct pam_message **msg,
  */
 static struct pam_conv pipe_conv = {
      conv_func,
-     NULL
+     &app_data,
 };
 static struct pam_conv text_conv = {
      misc_conv,
-     NULL
+     &app_data,
 };
     
 /*
@@ -586,18 +607,12 @@ int main(int argc, char *argv[])
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
 
+	app_data.fallback = fallback;
+	app_data.user = user;
+	app_data.service = progname;
+
 	retval = !PAM_SUCCESS;
 	while (try-- && retval != PAM_SUCCESS) {
-#ifdef DEBUG_USERHELPER
-	    printf("%d %d\n", UH_FALLBACK, fallback);
-	    printf("%d %s\n", UH_USER, apps_user ? apps_user : "root");
-            if(strrchr(constructed_path, '/') != NULL) {
-              printf("%d %s\n", UH_SERVICE_NAME,
-                     strrchr(constructed_path, '/') + 1);
-	    } else {
-              printf("%d %s\n", UH_SERVICE_NAME, constructed_path);
-	    }
-#endif
 	    retval = pam_authenticate(pamh, 0);
 	}
 	if (retval != PAM_SUCCESS) {
