@@ -165,7 +165,7 @@ msgstr "%s 의 패스워드를 변경합니다"
 #: ../userhelper-wrap.c:403
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr "여러분은 %d 응답을 %d 입력 항목에 요청하셨습니다!?!?!\n"
+msgstr "여러분은 %2$d 입력 항목에서 %1$d 응답을 요청하셨습니다!?!?!\n"
 
 #: ../userhelper.c:103
 #, c-format
