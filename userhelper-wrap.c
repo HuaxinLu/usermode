@@ -258,10 +258,27 @@ userhelper_parse_exitstatus(int exitstatus)
 static void
 userhelper_grab_keyboard(GtkWidget *widget, GdkEventAny *event)
 {
-	int ret;
+	GdkGrabStatus ret;
+
 	ret = gdk_keyboard_grab(widget->window, TRUE, GDK_CURRENT_TIME);
-	if (ret != 0) {
-		g_warning("gdk_keyboard_grab returned %d", ret);
+	if (ret != GDK_GRAB_SUCCESS) {
+		switch (ret) {
+		case GDK_GRAB_ALREADY_GRABBED:
+			g_warning("keyboard grab failed: keyboard already grabbed by another window");
+			break;
+		case GDK_GRAB_INVALID_TIME:
+			g_warning("keyboard grab failed: requested grab time was invalid (shouldn't happen)");
+			break;
+		case GDK_GRAB_NOT_VIEWABLE:
+			g_warning("keyboard grab failed: window requesting grab is not viewable");
+			break;
+		case GDK_GRAB_FROZEN:
+			g_warning("keyboard grab failed: keyboard is already grabbed");
+			break;
+		default:
+			g_warning("keyboard grab failed: unknown error %d", (int) ret);
+			break;
+		}
 	}
 }
 #endif
