@@ -11,6 +11,7 @@ libtoolize --force
 glib-gettextize -f -c
 cat ChangeLog.old > ChangeLog
 touch config.h.in
+touch po/ChangeLog
 aclocal-1.4
 automake-1.4 -a
 autoheader
