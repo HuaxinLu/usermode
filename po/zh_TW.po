@@ -1,20 +1,22 @@
+# translation of zh_TW.po to Traditional Chinese
 # Translation of zh_TW.po to Traditional Chinese
 # Translation of zh_TW.po to Chinese (traditional)
-# Copyright (C) 2002, 2003 Free Software Foundation, Inc.
+# Copyright (C) 2002, 2003, 2004 Free Software Foundation, Inc.
 # Ben Wu <hpwu@redhat.com>, 2002, 2003.
+# Chester Cheng <ccheng@redhat.com>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2003-11-21 09:01+1000\n"
-"Last-Translator: Ben Wu <hpwu@redhat.com>\n"
-"Language-Team: Traditional Chinese <i18n-list@redhat.com>\n"
+"PO-Revision-Date: 2004-10-05 09:01+1000\n"
+"Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
+"Language-Team: Traditional Chinese <zh@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.3.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -92,70 +94,70 @@ msgid "Password: "
 msgstr "密碼: "
 
 #: pam-panel-icon.c:89
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr "以管理者的權限啟動 \"%s\"。"
+msgstr "無法放棄管理者權限：%s"
 
 #: pam-panel-icon.c:105
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
+msgstr "無法放棄管理者權限：pam_timestamp_check 傳回錯誤值 %d"
 
 #: pam-panel-icon.c:148
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
+msgstr "不需要再次輸入管理者密碼，您目前已授權可以設定系統全域設定（會影響所有使用者）。您可以放棄本次授權。"
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "保留授權"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "放棄授權"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check 並非 setuid root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check 沒有控制中的 tty "
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check 的使用者未知"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check 的存取權限錯誤"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check 的控制中 tty 錯誤"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "錯誤"
+msgstr "錯誤： %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "執行 \"%s\" 失敗：%s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "將 IO 通道設為 nonblocking 失敗：%s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon：連接到 session 管理員失敗\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -218,8 +220,7 @@ msgstr "userhelper 必須 setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2347
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗，且找不到控制終端機。\n"
 
 #: userhelper-wrap.c:179
@@ -333,30 +334,26 @@ msgstr "更改登入 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:802
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:804
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
@@ -496,57 +493,3 @@ msgstr "更改您的登入密碼"
 msgid "Password"
 msgstr "密碼"
 
-#~ msgid "_Ok"
-#~ msgstr "確定(_O)"
-
-#~ msgid "_Cancel"
-#~ msgstr "取消(_C)"
-
-#~ msgid "_Close"
-#~ msgstr "關閉(_C)"
-
-#~ msgid "Type"
-#~ msgstr "種類"
-
-#~ msgid "_Unmount"
-#~ msgstr "卸載(_U)"
-
-#~ msgid "E_xit"
-#~ msgstr "離開(_x)"
-
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "有 PAM 錯誤 %d。\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "即將執行 \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "需要 %d 回應。\n"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "您試著要執行 \"%s\", 這將使您有 superuser\n"
-#~ "的權限, 但為了要如此做您需要更多資訊。"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "您試著要執行 \"%s\", 您需要有 superuser\n"
-#~ "的權限, 但為了要如此做您需要更多資訊。"
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "您試著要執行一個指令, 這將使您有\n"
-#~ "superuser 的權限, 但為了要如此做您需要更多資訊。"
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "您試著要執行一個指令, 您需要有 superuser\n"
-#~ "的權限, 但為了要如此做您需要更多資訊。"
