@@ -65,4 +65,6 @@ void userhelper_write_childin(GtkWidget* widget, GtkWidget* entry);
 
 void userhelper_sigchld();	/* sigchld handler */
 
+void userhelper_fatal_error();
+
 #endif /* __USERHELPER_WRAP_H__ */

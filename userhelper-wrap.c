@@ -168,7 +168,7 @@ userhelper_parse_exitstatus(int exitstatus)
       message_box = create_error_box("The password you typed is invalid.\nPlease try again.", NULL);
       break;
     case ERR_FIELDS_INVALID:
-      message_box = create_error_box("One or more of the changed fields is invalid.\nThis is probably due to either colons or commas in the fields.  Please remove those and try again.", NULL);
+      message_box = create_error_box("One or more of the changed fields is invalid.\nThis is probably due to either colons or commas in one of the fields.\nPlease remove those and try again.", NULL);
       break;
     case ERR_SET_PASSWORD:
       message_box = create_error_box("Password resetting error.", NULL);
@@ -190,7 +190,8 @@ userhelper_parse_exitstatus(int exitstatus)
       break;
     }
 
-  gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) gtk_main_quit, NULL);
+/*   gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) gtk_main_quit, NULL); */
+  gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) userhelper_fatal_error, NULL);
   gtk_widget_show(message_box);
 
 }

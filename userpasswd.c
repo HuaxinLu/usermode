@@ -31,3 +31,9 @@ main(int argc, char* argv[])
 
   return 0;
 }
+
+void
+userhelper_fatal_error()
+{
+  gtk_main_quit();
+}
