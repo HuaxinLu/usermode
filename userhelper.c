@@ -1151,7 +1151,8 @@ get_user_for_auth(shvarFile *s)
 		if (pwd != NULL) {
 			ret = ruid_user;
 		} else {
-			ret = NULL;
+		        context_user_set(ctx, "root");
+		        ret = NULL;
 		}
 	}
 #endif
