@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
 "PO-Revision-Date: 2004-03-01 17:59+0000\n"
-"Last-Translator: Owain Green <owaing@oceanfree.net>\n"
+"Last-Translator: Alan Cox <alan@redhat.com>\n"
 "Language-Team: Cymraeg <Cy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,14 +95,15 @@ msgstr "Cyfrinair: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Methu colli hawliau gweinyddwr: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
+msgstr "Methu colli hawliau gweinyddwr: dychwelodd pam_timestamp_check "
+"côd methiant %d"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -113,15 +114,15 @@ msgstr ""
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Cadw awdurdod"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Anghofio awdurdod"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "Nid setuid root yw pam_timestamp_check"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
@@ -140,14 +141,14 @@ msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Gwall"
+msgstr "Gwall: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Methu rhedeg gorchymyn \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
@@ -156,7 +157,7 @@ msgstr ""
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: methu cysylltu i'r rheolydd sesiwn\n"
 
 #: userdialogs.h:30
 msgid "Help"
