@@ -85,48 +85,48 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
-* Mon Aug 21 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Mon Aug 21 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix typo (#16664)
 
-* Sun Aug 20 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Sun Aug 20 2000 Nalin Dahyabhai <nalin@redhat.com>
 - previous fix, part two
 
-* Sat Aug 19 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Sat Aug 19 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix inadvertent breakage of the shell-changing code
 
-* Fri Aug 18 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Fri Aug 18 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix the "run unprivileged" option
 
-* Mon Aug 14 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Mon Aug 14 2000 Nalin Dahyabhai <nalin@redhat.com>
 - actually use the right set of translations
 
-* Fri Aug 11 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Fri Aug 11 2000 Nalin Dahyabhai <nalin@redhat.com>
 - remove the shutdown command from the list of honored commands
 
-* Wed Aug  9 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Wed Aug  9 2000 Nalin Dahyabhai <nalin@redhat.com>
 - merge in updated translations
 - set XAUTHORITY after successful authentication (#11006)
 
-* Wed Aug  2 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Wed Aug  2 2000 Nalin Dahyabhai <nalin@redhat.com>
 - install translations
 - fixup a messy text string
 - make "Mount"/"Unmount" translatable
 - stop prompting for passwords to shut down -- we can hit ctrl-alt-del anyway,
   and gdm users can just shut down without logging in
 
-* Mon Jul 31 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Mon Jul 31 2000 Nalin Dahyabhai <nalin@redhat.com>
 - attempt to add i18n support
 
-* Wed Jul 12 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Wed Jul 12 2000 Nalin Dahyabhai <nalin@redhat.com>
 - attempt to get a usable icon for userhelper-wrap (#13616, #13768)
 
-* Wed Jul  5 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Wed Jul  5 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix them right this time
 
-* Mon Jul  3 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Mon Jul  3 2000 Nalin Dahyabhai <nalin@redhat.com>
 - fix verbosity problems
 
-* Mon Jun 19 2000 Nalin Dahyabhia <nalin@redhat.com>
+* Mon Jun 19 2000 Nalin Dahyabhai <nalin@redhat.com>
 - strip all binaries by default
 - add the name of the program being run to the userhelper dialog
 - add a graphic to the userhelper-wrap package
