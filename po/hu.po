@@ -1,13 +1,19 @@
+# Hungarian translation of usermode.
+# Copyright (C) 2003-2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the usermode package.
+# Tamas Szanto <tszanto@mol.hu>, 2003.
+# Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2003-10-17 11:11+0100\n"
-"Last-Translator: Tamas Szanto <tszanto@mol.hu>\n"
-"Language-Team: Hungarian\n"
+"PO-Revision-Date: 2004-04-13 16:43+0200\n"
+"Last-Translator: Laszlo Dvornik <dvornikl@mailbox.hu>\n"
+"Language-Team: Hungarian <tszanto@mol.hu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #.
@@ -35,64 +41,64 @@ msgstr "OK"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr "Kilépés"
+msgstr "KilÃ©pÃ©s"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Mégsem"
+msgstr "MÃ©gsem"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Futtatás normál jogosultsággal"
+msgstr "FuttatÃ¡s normÃ¡l jogosultsÃ¡ggal"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(a jelenlegi) UNIX jelszó: "
+msgstr "(a jelenlegi) UNIX jelszÃ³: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Az új UNIX jelszó: "
+msgstr "Az Ãºj UNIX jelszÃ³: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Az új UNIX jelszó (még egyszer): "
+msgstr "Az Ãºj UNIX jelszÃ³ (mÃ©g egyszer): "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "A JELSZÓ HIBÁS: túlságosan rövid"
+msgstr "A JELSZÃ“ HIBÃS: tÃºlsÃ¡gosan rÃ¶vid"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "A JELSZÓ HIBÁS: túl rövid"
+msgstr "A JELSZÃ“ HIBÃS: tÃºl rÃ¶vid"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "A jelszó nem változott"
+msgstr "A jelszÃ³ nem vÃ¡ltozott"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "A két jelszó nem egyezik meg"
+msgstr "A kÃ©t jelszÃ³ nem egyezik meg"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Adminisztrátori programok indítása jelszó nélkül."
+msgstr "AdminisztrÃ¡tori programok indÃ­tÃ¡sa jelszÃ³ nÃ©lkÃ¼l."
 
 #: dummy.h:33
 msgid "login: "
-msgstr "Név: "
+msgstr "NÃ©v: "
 
 #: dummy.h:34
 msgid "Password: "
-msgstr "Jelszó: "
+msgstr "JelszÃ³: "
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr "Segítség"
+msgstr "SegÃ­tsÃ©g"
 
 #: userhelper.c:114
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Nem sikerült beállítani a futtatási kontextust erre: %s.\n"
+msgstr "Nem sikerÃ¼lt beÃ¡llÃ­tani a futtatÃ¡si kontextust erre: %s.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -105,9 +111,9 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai jogosultsággal próbálta indítani ezt: \"%s\".\n"
-"A program használatához szükség lehet erre, de nincs megadva minden "
-"szükséges információ."
+"Rendszergazdai jogosultsÃ¡ggal prÃ³bÃ¡lta indÃ­tani ezt: \"%s\".\n"
+"A program hasznÃ¡latÃ¡hoz szÃ¼ksÃ©g lehet erre, de nincs megadva minden "
+"szÃ¼ksÃ©ges informÃ¡ciÃ³."
 
 #: userhelper.c:676
 #, c-format
@@ -115,27 +121,27 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai jogosultsággal próbálta indítani ezt: \"%s\".\n"
-"A program csak rendszergazdai joggal futtatható, de nincs megadva minden "
-"szükséges információ."
+"Rendszergazdai jogosultsÃ¡ggal prÃ³bÃ¡lta indÃ­tani ezt: \"%s\".\n"
+"A program csak rendszergazdai joggal futtathatÃ³, de nincs megadva minden "
+"szÃ¼ksÃ©ges informÃ¡ciÃ³."
 
 #: userhelper.c:680
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai jogosultsággal próbált kiadni egy parancsot.\n"
-"A parancs használatához szükség lehet erre, de nincs megadva minden "
-"szükséges információ."
+"Rendszergazdai jogosultsÃ¡ggal prÃ³bÃ¡lt kiadni egy parancsot.\n"
+"A parancs hasznÃ¡latÃ¡hoz szÃ¼ksÃ©g lehet erre, de nincs megadva minden "
+"szÃ¼ksÃ©ges informÃ¡ciÃ³."
 
 #: userhelper.c:682
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai jogosultsággal próbált kiadni egy parancsot.\n"
-"A parancs csak rendszergazdai joggal hajtható végre, de nincs megadva minden "
-"szükséges információ."
+"Rendszergazdai jogosultsÃ¡ggal prÃ³bÃ¡lt kiadni egy parancsot.\n"
+"A parancs csak rendszergazdai joggal hajthatÃ³ vÃ©gre, de nincs megadva minden "
+"szÃ¼ksÃ©ges informÃ¡ciÃ³."
 
 #: userhelper.c:701
 #, c-format
@@ -145,7 +151,7 @@ msgstr "%s jelszava: "
 #: userhelper.c:2215
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "a userhelper programnak 'setuid root' beállításúnak kell lennie\n"
+msgstr "a userhelper programnak 'setuid root' beÃ¡llÃ­tÃ¡sÃºnak kell lennie\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2313
@@ -153,24 +159,24 @@ msgstr "a userhelper programnak 'setuid root' beállításúnak kell lennie\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Grafikus ablakot nem sikerült megnyitni, vezérlõterminál pedig nem "
-"található.\n"
+"Grafikus ablakot nem sikerÃ¼lt megnyitni, vezÃ©rlÅ‘terminÃ¡l pedig nem "
+"talÃ¡lhatÃ³.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
-msgstr "Ismeretlen kilépési kód."
+msgstr "Ismeretlen kilÃ©pÃ©si kÃ³d."
 
 #: userhelper-wrap.c:181
 msgid "Information updated."
-msgstr "Az információ frissítése megtörtént."
+msgstr "Az informÃ¡ciÃ³ frissÃ­tÃ©se megtÃ¶rtÃ©nt."
 
 #: userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"A megadott jelszó érvénytelen.\n"
-"Kérem próbálja meg újra."
+"A megadott jelszÃ³ Ã©rvÃ©nytelen.\n"
+"KÃ©rem prÃ³bÃ¡lja meg Ãºjra."
 
 #: userhelper-wrap.c:185
 msgid ""
@@ -178,33 +184,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Egy vagy több módosított mezõ tartalma érvénytelen.\n"
-"Valószínûleg kettõspont vagy vesszõ maradt valamelyik mezõben.\n"
-"Távolítsa el ezeket, majd próbálkozzon újra."
+"Egy vagy tÃ¶bb mÃ³dosÃ­tott mezÅ‘ tartalma Ã©rvÃ©nytelen.\n"
+"ValÃ³szÃ­nÅ±leg kettÅ‘spont vagy vesszÅ‘ maradt valamelyik mezÅ‘ben.\n"
+"TÃ¡volÃ­tsa el ezeket, majd prÃ³bÃ¡lkozzon Ãºjra."
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
-msgstr "A jelszó alapállapotba hozása nem sikerült."
+msgstr "A jelszÃ³ alapÃ¡llapotba hozÃ¡sa nem sikerÃ¼lt."
 
 #: userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Néhány rendszerfájl zárolva van.\n"
-"Próbálkozzon újra nehány másodperc múlva."
+"NÃ©hÃ¡ny rendszerfÃ¡jl zÃ¡rolva van.\n"
+"PrÃ³bÃ¡lkozzon Ãºjra nÃ©hÃ¡ny mÃ¡sodperc mÃºlva."
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
-msgstr "Ismeretlen felhasználónév."
+msgstr "Ismeretlen felhasznÃ¡lÃ³nÃ©v."
 
 #: userhelper-wrap.c:193
 msgid "Insufficient rights."
-msgstr "Nincs megfelelõ jogosultság."
+msgstr "Nincs megfelelÅ‘ jogosultsÃ¡g."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
-msgstr "Érvénytelen hívási kísérlet történt egy alfolyamatra."
+msgstr "Ã‰rvÃ©nytelen hÃ­vÃ¡si kÃ­sÃ©rlet tÃ¶rtÃ©nt egy alfolyamatra."
 
 #: userhelper-wrap.c:197
 msgid ""
@@ -212,25 +218,25 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"A mostani parancsértelmezõ nem szerepel az /etc/shells fájlban.\n"
-"A parancsértelmezõt ezért nem lehet megváltoztatni.\n"
-"Kérjen segítséget a rendszergazdától."
+"A mostani parancsÃ©rtelmezÅ‘ nem szerepel az /etc/shells fÃ¡jlban.\n"
+"A parancsÃ©rtelmezÅ‘t ezÃ©rt nem lehet megvÃ¡ltoztatni.\n"
+"KÃ©rjen segÃ­tsÃ©get a rendszergazdÃ¡tÃ³l."
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
-msgstr "Nincs elég memória."
+msgstr "Nincs elÃ©g memÃ³ria."
 
 #: userhelper-wrap.c:202
 msgid "The exec() call failed."
-msgstr "Az exec() hívás végrehajtása nem sikerült."
+msgstr "Az exec() hÃ­vÃ¡s vÃ©grehajtÃ¡sa nem sikerÃ¼lt."
 
 #: userhelper-wrap.c:204
 msgid "Failed to find selected program."
-msgstr "A kiválasztott program nem található."
+msgstr "A kivÃ¡lasztott program nem talÃ¡lhatÃ³."
 
 #: userhelper-wrap.c:208
 msgid "Unknown error."
-msgstr "Ismeretlen hiba történt."
+msgstr "Ismeretlen hiba tÃ¶rtÃ©nt."
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -239,7 +245,7 @@ msgstr "Ismeretlen hiba történt."
 #.
 #: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
-msgstr "Lekérdezés"
+msgstr "LekÃ©rdezÃ©s"
 
 #: userhelper-wrap.c:564 userhelper-wrap.c:744
 msgid "Error"
@@ -247,20 +253,20 @@ msgstr "Hiba"
 
 #: userhelper-wrap.c:576
 msgid "Information"
-msgstr "Információ"
+msgstr "InformÃ¡ciÃ³"
 
 #: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
-msgstr "Alapértelmezett szöveg."
+msgstr "AlapÃ©rtelmezett szÃ¶veg."
 
 #: userhelper-wrap.c:782
 msgid "Changing personal information."
-msgstr "A személyes adatok megváltoztatása."
+msgstr "A szemÃ©lyes adatok megvÃ¡ltoztatÃ¡sa."
 
 #: userhelper-wrap.c:785
 msgid "Changing login shell."
-msgstr "A parancsértelmezõ megváltoztatása."
+msgstr "A parancsÃ©rtelmezÅ‘ megvÃ¡ltoztatÃ¡sa."
 
 #: userhelper-wrap.c:791
 #, c-format
@@ -268,8 +274,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai joggal próbálta futtatni ezt: \"%s\".A program használatához "
-"szükség lehet erre, de nincs megadva minden szükséges információ."
+"Rendszergazdai joggal prÃ³bÃ¡lta futtatni ezt: \"%s\". A program hasznÃ¡latÃ¡hoz "
+"szÃ¼ksÃ©g lehet erre, de nincs megadva minden szÃ¼ksÃ©ges informÃ¡ciÃ³."
 
 #: userhelper-wrap.c:793
 #, c-format
@@ -277,41 +283,41 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai joggal próbálta futtatni ezt: \"%s\".A program csak "
-"rendszergazdai joggal futtatható, de nincs megadva minden szükséges "
-"információ."
+"Rendszergazdai joggal prÃ³bÃ¡lta futtatni ezt: \"%s\". A program csak "
+"rendszergazdai joggal futtathatÃ³, de nincs megadva minden szÃ¼ksÃ©ges "
+"informÃ¡ciÃ³."
 
 #: userhelper-wrap.c:802
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai joggal próbált végrehajtani egy parancsot. A parancs "
-"használatához szükség lehet erre, de nincs megadva minden szükséges "
-"információ."
+"Rendszergazdai joggal prÃ³bÃ¡lt vÃ©grehajtani egy parancsot. A parancs "
+"hasznÃ¡latÃ¡hoz szÃ¼ksÃ©g lehet erre, de nincs megadva minden szÃ¼ksÃ©ges "
+"informÃ¡ciÃ³."
 
 #: userhelper-wrap.c:804
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Rendszergazdai joggal próbált végrehajtani egy parancsot. A parancs csak "
-"rendszergazdai joggal használható, de nincs megadva minden szükséges "
-"információ."
+"Rendszergazdai joggal prÃ³bÃ¡lt vÃ©grehajtani egy parancsot. A parancs csak "
+"rendszergazdai joggal hasznÃ¡lhatÃ³, de nincs megadva minden szÃ¼ksÃ©ges "
+"informÃ¡ciÃ³."
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
-msgstr "Futtatás n_ormál jogosultsággal"
+msgstr "FuttatÃ¡s n_ormÃ¡l jogosultsÃ¡ggal"
 
 #: userhelper-wrap.c:973
 #, c-format
 msgid "Pipe error.\n"
-msgstr "Pipe-kezelési hiba.\n"
+msgstr "Pipe-kezelÃ©si hiba.\n"
 
 #: userhelper-wrap.c:980
 #, c-format
 msgid "Cannot fork().\n"
-msgstr "Nem sikerült végrehajtani egy fork() hívást.\n"
+msgstr "Nem sikerÃ¼lt vÃ©grehajtani egy fork() hÃ­vÃ¡st.\n"
 
 #: userhelper-wrap.c:1058 userhelper-wrap.c:1062
 #, c-format
@@ -326,62 +332,62 @@ msgstr "execl() hiba, errno=%d\n"
 #: userinfo.c:323
 #, c-format
 msgid "You don't exist.  Go away.\n"
-msgstr "Az Ön neve nem is létezik...\n"
+msgstr "Az Ã–n neve nem is lÃ©tezik...\n"
 
 #: usermount.c:62
 msgid "_Mount"
-msgstr "_Csatlakoztatás (mount)"
+msgstr "_CsatlakoztatÃ¡s"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "Le_választás"
+msgstr "Le_vÃ¡lasztÃ¡s"
 
 #: usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Biztosan le szeretné formázni a lemezt? A rajta található adatok véglegesen "
+"Biztos formÃ¡zza a lemezt? A rajta talÃ¡lhatÃ³ adatok vÃ©glegesen "
 "elvesznek!"
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr "Ala_csony szintû formázás végrehajtása."
+msgstr "Ala_csony szintÅ± formÃ¡zÃ¡s vÃ©grehajtÃ¡sa."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Válassza ki _a kívánt fájlrendszert:"
+msgstr "VÃ¡lassza ki _a kÃ­vÃ¡nt fÃ¡jlrendszert:"
 
 #: usermount.c:543
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Önnek nincs jogosultsága egy fájlrendszer csatlakoztatására/leválasztására "
+"Ã–nnek nincs jogosultsÃ¡ga egy fÃ¡jlrendszer csatlakoztatÃ¡sÃ¡ra/levÃ¡lasztÃ¡sÃ¡ra "
 "sem.\n"
-"Kérjen segítséget a rendszergazdától."
+"KÃ©rjen segÃ­tsÃ©get a rendszergazdÃ¡tÃ³l."
 
 #. Create the dialog.
 #: usermount.c:544 usermount.c:556
 msgid "User Mount Tool"
-msgstr "Lemezcsatlakoztatási segédprogram"
+msgstr "LemezcsatlakoztatÃ¡si segÃ©dprogram"
 
 #. Create the other buttons.
 #: usermount.c:570
 msgid "_Format"
-msgstr "_Formázás"
+msgstr "_FormÃ¡zÃ¡s"
 
 #: usermount.c:606
 msgid "Device"
-msgstr "Eszköz"
+msgstr "EszkÃ¶z"
 
 #: usermount.c:612
 msgid "Directory"
-msgstr "Könyvtár"
+msgstr "KÃ¶nyvtÃ¡r"
 
 #: usermount.c:618
 msgid "Filesystem"
-msgstr "Fájlrendszer"
+msgstr "FÃ¡jlrendszer"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade.h:1
@@ -390,15 +396,15 @@ msgstr "*"
 
 #: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
-msgstr "Üzenet"
+msgstr "Ãœzenet"
 
 #: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
-msgstr "Felhasználói adatok"
+msgstr "FelhasznÃ¡lÃ³i adatok"
 
 #: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
-msgstr "Teljes név:"
+msgstr "Teljes nÃ©v:"
 
 #: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
@@ -414,46 +420,28 @@ msgstr "Otthoni telefon:"
 
 #: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr "Bejelentkezési parancsértelmezõ:"
+msgstr "BejelentkezÃ©si parancsÃ©rtelmezÅ‘:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr "Névjegy"
+msgstr "NÃ©vjegy"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "A személyes adatok módosítása"
+msgstr "A szemÃ©lyes adatok mÃ³dosÃ­tÃ¡sa"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Lemezkezelés"
+msgstr "LemezkezelÃ©s"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Fájlrendszer csatlakoztatása, leválasztása"
+msgstr "FÃ¡jlrendszer csatlakoztatÃ¡sa, levÃ¡lasztÃ¡sa"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "A jelszó megváltoztatása"
+msgstr "A jelszÃ³ megvÃ¡ltoztatÃ¡sa"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
-msgstr "Jelszó"
-
-#~ msgid "_Ok"
-#~ msgstr "_OK"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Mégsem"
-
-#~ msgid "_Close"
-#~ msgstr "Be_zárás"
-
-#~ msgid "Type"
-#~ msgstr "Típus"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Leválasztás (unmount)"
-
-#~ msgid "E_xit"
-#~ msgstr "_Kilépés"
+msgstr "JelszÃ³"
