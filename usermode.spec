@@ -1,3 +1,4 @@
+%define 6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.28
@@ -5,7 +6,11 @@ Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
+%if %{6x}
+Requires: util-linux, pam >= 0.66-5
+%else
 Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
+%endif
 Conflicts: SysVinit < 2.74-14
 BuildRoot: %{_tmppath}/usermode-root
 
@@ -40,7 +45,11 @@ mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
 for wrapapp in halt reboot poweroff ; do
   ln -sf consolehelper $RPM_BUILD_ROOT/usr/bin/$wrapapp
   touch $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
+%if %{6x}
+  cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
+%else
   cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
+%endif
 done
 
 # Strip it!
