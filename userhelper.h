@@ -34,15 +34,16 @@
 #define UH_UNKNOWN_PROMPT 33
 #define UH_ECHO_ON_PROMPT 34
 #define UH_ECHO_OFF_PROMPT 35
-#define UH_INFO_MSG 36
-#define UH_ERROR_MSG 37
-#define UH_EXPECT_RESP 38
-#define UH_SERVICE_NAME 39
-#define UH_FALLBACK_ALLOW 40
-#define UH_USER 41
-#define UH_BANNER 42
-#define UH_EXEC_START 43
-#define UH_EXEC_FAILED 44
+#define UH_PROMPT_SUGGESTION 36
+#define UH_INFO_MSG 37
+#define UH_ERROR_MSG 38
+#define UH_EXPECT_RESP 39
+#define UH_SERVICE_NAME 40
+#define UH_FALLBACK_ALLOW 41
+#define UH_USER 42
+#define UH_BANNER 43
+#define UH_EXEC_START 44
+#define UH_EXEC_FAILED 45
 
 #ifdef USE_STARTUP_NOTIFICATION
 #define UH_SN_NAME 46
@@ -83,6 +84,11 @@
 #define UH_CONSOLEHELPER_PATH BINDIR "/consolehelper"
 #define UH_CONSOLEHELPER_X11_PATH BINDIR "/consolehelper-gtk"
 #define UH_PASSWD_OPT "-c"
+#define UH_FULLNAME_OPT "-f"
+#define UH_OFFICE_OPT "-o"
+#define UH_OFFICEPHONE_OPT "-p"
+#define UH_HOMEPHONE_OPT "-h"
+#define UH_SHELL_OPT "-s"
 #define UH_TEXT_OPT "-t"
 #define UH_WRAP_OPT "-w"
 

@@ -5,8 +5,10 @@ pam-panel-icon.c
 userdialogs.h
 userhelper.c
 userhelper-wrap.c
+userinfo.c
 usermount.c
 userhelper.h
+glade.strings.h
 # files added by intltool-prepare
 usermode.glade
 userinfo.desktop.in

@@ -18,6 +18,7 @@ AC_PROG_INTLTOOL
 AC_PATH_XTRA
 PKG_CHECK_MODULES(GLIB,glib-2.0)
 PKG_CHECK_MODULES(LIBGLADE,libglade-2.0)
+PKG_CHECK_MODULES(LIBUSER,libuser)
 if pkg-config libstartup-notification-1.0 ; then
 	if pkg-config libwnck-1.0 ; then
 		PKG_CHECK_MODULES(SN_WNCK,libstartup-notification-1.0 libwnck-1.0)

@@ -41,7 +41,7 @@ typedef struct message {
 struct response {
 	int responses, left, rows;
 	gboolean ready, fallback_allowed;
-	char *user, *service, *banner, *title;
+	char *user, *service, *suggestion, *banner, *title;
 	GList *message_list; /* contains pointers to messages */
 	GtkWidget *dialog, *first, *last, *table;
 };
