@@ -1,15 +1,25 @@
 Summary: User Tools
 Name: usermode
-Version: 1.4
+Version: 1.4.1
 Release: 1
 Copyright: GPL
 Group: X11/Applications
 Source: usermode-1.4.tar.gz
 Requires: util-linux
-Requires: gtk >= 0.99.970925
-Description: Several graphical tools, including a tool to help users manage floppies (and other removable media) and a tool to help the user change his or her finger information.
+BuildRoot: /var/tmp/usermode-root
+
+%description
+Several graphical tools, including a tool to help users manage floppies
+(and other removable media) and a tool to help the user change his or
+her finger information.
 
 %changelog
+
+* Thu Apr 16 1998 Erik Troan <ewt@redhat.com>
+
+- use gtk-config during build
+- added make archive rule to Makefile
+- uses a build root
 
 * Fri Nov  7 1997 Otto Hammersmith <otto@redhat.com>
 
@@ -42,8 +52,12 @@ Created the spec file.
 make
 
 %install
-make install
-make install-man
+rm -rf $(RPM_BUILD_ROOT)
+make PREFIX=$(RPM_BUILD_ROOT) install
+make PREFIX=$(RPM_BUILD_ROOT) install-man
+
+%clean
+rm -rf $(RPM_BUILD_ROOT)
 
 %files
 /usr/bin/usermount

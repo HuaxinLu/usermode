@@ -1,9 +1,10 @@
-# completely and totally crappy makefile... better one to come.
+# mostly and totally crappy makefile... better one to come.
+VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
+CVSTAG = r$(subst .,-,$(VERSION))
 
 #CFLAGS=-O2 -Wall
-CFLAGS=-g -Wall
-INCLUDES=
-LDFLAGS=-L/usr/X11R6/lib -lm -lX11 -lXext -lglib -lgdk -lgtk 
+CFLAGS=-g -Wall $(shell gtk-config --cflags)
+LDFLAGS=$(shell gtk-config --libs)
 INSTALL=install
 
 PROGS=userinfo usermount userhelper userpasswd
@@ -29,19 +30,31 @@ userpasswd:	userpasswd.o userdialogs.o userhelper-wrap.o
 	$(CC) -ouserpasswd $(CFLAGS) userpasswd.o userdialogs.o userhelper-wrap.o $(LDFLAGS)
 
 install:	$(PROGS)
-	$(INSTALL) -m 755 -o root -g root userinfo /usr/bin
-	$(INSTALL) -m 755 -o root -g root userinfo.wmconfig /etc/X11/wmconfig/userinfo
-	$(INSTALL) -m 755 -o root -g root usermount /usr/bin
-	$(INSTALL) -m 755 -o root -g root usermount.wmconfig /etc/X11/wmconfig/usermount
-	$(INSTALL) -m 755 -o root -g root userpasswd /usr/bin
-	$(INSTALL) -m 755 -o root -g root userpasswd.wmconfig /etc/X11/wmconfig/userpasswd
-	$(INSTALL) -m 755 -o root -g root userhelper /usr/sbin
+	mkdir -p $(PREFIX)/usr/bin $(PREFIX)/usr/sbin
+	mkdir -p $(PREFIX)/etc/X11/wmconfig 
+	mkdir -p $(PREFIX)/usr/man/man1 $(PREFIX)/usr/man/man8
+	$(INSTALL) -m 755 -o root -g root userinfo $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 -o root -g root userinfo.wmconfig $(PREFIX)/etc/X11/wmconfig/userinfo
+	$(INSTALL) -m 755 -o root -g root usermount $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 -o root -g root usermount.wmconfig $(PREFIX)/etc/X11/wmconfig/usermount
+	$(INSTALL) -m 755 -o root -g root userpasswd $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 -o root -g root userpasswd.wmconfig $(PREFIX)/etc/X11/wmconfig/userpasswd
+	$(INSTALL) -m 755 -o root -g root userhelper $(PREFIX)/usr/sbin
 
 install-man: 	$(MANS)
-	$(INSTALL) -m 755 -o root -g root userinfo.1 /usr/man/man1
-	$(INSTALL) -m 755 -o root -g root usermount.1 /usr/man/man1
-	$(INSTALL) -m 755 -o root -g root userhelper.8 /usr/man/man8
-	$(INSTALL) -m 755 -o root -g root userpasswd.1 /usr/man/man1
+	$(INSTALL) -m 755 -o root -g root userinfo.1 $(PREFIX)/usr/man/man1
+	$(INSTALL) -m 755 -o root -g root usermount.1 $(PREFIX)/usr/man/man1
+	$(INSTALL) -m 755 -o root -g root userhelper.8 $(PREFIX)/usr/man/man8
+	$(INSTALL) -m 755 -o root -g root userpasswd.1 $(PREFIX)/usr/man/man1
 
 clean:	
 	rm -f *~ *.o $(PROGS)
+
+archive:
+	cvs tag -F $(CVSTAG) .
+	@rm -rf /tmp/usermode-$(VERSION) /tmp/usermode
+	@cd /tmp; cvs export -r$(CVSTAG) usermode
+	@mv /tmp/usermode /tmp/usermode-$(VERSION)
+	@dir=$$PWD; cd /tmp; tar cvzf $$dir/usermode-$(VERSION).tar.gz usermode-$(VERSION)
+	@rm -rf /tmp/usermode-$(VERSION)
+	@echo "The archive is in usermode-$(VERSION).tar.gz"
