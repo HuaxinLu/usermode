@@ -71,6 +71,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Tue Sep 21 1999 Michael K. Johnson <johnsonm@redhat.com>
+- FALLBACK/RETRY in consolehelper/userhelper
+- session management fixed for consolehelper/userhelper SESSION=true
 - fix memory leak and failure to close in error condition (#3614)
 - fix various bugs where not all elements in userinfo got set
 

@@ -496,7 +496,8 @@ int main(int argc, char *argv[])
 	char *constructed_path;
 	char *apps_filename;
 	char *user, *apps_user;
-	int session;
+	char *retry;
+	int session, fallback, try;
 	size_t aft;
 	struct stat sbuf;
 	shvarFile *s;
@@ -536,6 +537,13 @@ int main(int argc, char *argv[])
 	}
 
 	session = svTrueValue(s, "SESSION", 0);
+	fallback = svTrueValue(s, "FALLBACK", 0);
+	retry = svGetValue(s, "RETRY");
+	if (retry) {
+	    try = atoi(retry) + 1;
+	} else {
+	    try = 3;
+	}
 
 	svCloseFile(s);
 
@@ -544,10 +552,20 @@ int main(int argc, char *argv[])
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
 
-	retval = pam_authenticate(pamh, 0);
+	retval = !PAM_SUCCESS;
+	while (try-- && retval != PAM_SUCCESS) {
+	    retval = pam_authenticate(pamh, 0);
+	}
 	if (retval != PAM_SUCCESS) {
 	    pam_end(pamh, retval);
-	    fail_error(retval);
+	    if (fallback) {
+		setuid(getuid());
+		argv[optind-1] = progname;
+		execv(constructed_path, argv+optind-1);
+		exit (ERR_EXEC_FAILED);
+	    } else {
+		fail_error(retval);
+	    }
 	}
 
 	retval = pam_acct_mgmt(pamh, 0);
@@ -560,11 +578,6 @@ int main(int argc, char *argv[])
 	    int child, status;
 
 	    retval = pam_open_session(pamh, 0);
-	    if (retval != PAM_SUCCESS) {
-		pam_end(pamh, retval);
-		fail_error(retval);
-	    }
-	    retval = pam_close_session(pamh, 0);
 	    if (retval != PAM_SUCCESS) {
 		pam_end(pamh, retval);
 		fail_error(retval);
@@ -582,13 +595,22 @@ int main(int argc, char *argv[])
 	    }
 
 	    wait4 (child, &status, 0, NULL);
+
+	    retval = pam_close_session(pamh, 0);
+	    if (retval != PAM_SUCCESS) {
+		pam_end(pamh, retval);
+		fail_error(retval);
+	    }
+
 	    if (WIFEXITED(status) && (WEXITSTATUS(status) == 0)) {
 		pam_end(pamh, PAM_SUCCESS);
-		exit(1);
+		retval = 1;
 	    } else {
 		pam_end(pamh, PAM_SUCCESS);
-		exit(ERR_EXEC_FAILED);
+		retval = ERR_EXEC_FAILED;
 	    }
+	    exit (retval);
+
 	} else {
 	    /* this is not a session, so do not do session management */
 
@@ -607,6 +629,7 @@ int main(int argc, char *argv[])
 	pwdb_type user_unix[2] = { PWDB_UNIX, _PWDB_MAX_TYPES };
 	const struct pwdb *_pwdb = NULL;
 	const struct pwdb_entry *_pwe = NULL;
+	int try=3;
 	
 	/* verify the fields we were passed */
 	if (f_flg && invalid_field(full_name, ":,="))
@@ -622,7 +645,10 @@ int main(int argc, char *argv[])
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
 
-	retval = pam_authenticate(pamh, 0);
+	retval = !PAM_SUCCESS;
+	while (try-- && retval != PAM_SUCCESS) {
+	    retval = pam_authenticate(pamh, 0);
+	}
 	if (retval != PAM_SUCCESS) {
 	    pam_end(pamh, retval);
 	    fail_error(retval);
