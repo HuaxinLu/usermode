@@ -45,12 +45,17 @@ static int current_status = STATUS_UNKNOWN;
 static GIOChannel *child_io_channel = NULL;
 static pid_t child_pid = -1;
 static EggTrayIcon *icon = NULL;
+static GtkWidget *image = NULL;
 static GtkWidget *dialog = NULL;
 static GtkWidget *start_dialog = NULL;
+static GdkPixbuf *unlocked_pixbuf = NULL;
+static GdkPixbuf *locked_pixbuf = NULL;
 
-static void show_icon    (void);
-static void hide_icon    (void);
-static void launch_child (void);
+static pid_t running_init_pid = -1;
+
+static void show_unlocked_icon (void);
+static void show_locked_icon   (void);
+static void launch_child       (void);
 
 static gboolean
 child_io_func (GIOChannel   *source,
@@ -70,6 +75,28 @@ child_io_func (GIOChannel   *source,
   respawn_child = FALSE;
   old_status = current_status;
   
+  /* While we're here, let's check the status of the running_init child
+   */
+  if (running_init_pid != -1)
+    {
+      retval = waitpid (running_init_pid, &exit_status, WNOHANG);
+      if (retval != 0)
+	{
+	  if (retval == running_init_pid)
+	    {
+	      running_init_pid = -1;
+	    }
+	  else
+	    {
+	      g_printerr ("Confused about waitpid(): %s\nreturned %d, child pid was %d\n",
+			  g_strerror (errno),
+			  retval, running_init_pid);
+	      running_init_pid = -1;
+	    }
+	}
+    }
+  
+
   if ((condition & G_IO_HUP) ||
       (condition & G_IO_ERR) ||
       (condition & G_IO_NVAL))
@@ -191,9 +218,9 @@ child_io_func (GIOChannel   *source,
     }
 
   if (current_status == STATUS_AUTHENTICATED)
-    show_icon ();
+    show_locked_icon ();
   else
-    hide_icon ();
+    show_unlocked_icon ();
   
   if (respawn_child)
     {
@@ -266,6 +293,16 @@ main (int argc, char **argv)
       previous_id = argv[2];
     }
   
+  if (g_file_test ("./status_lock.png", G_FILE_TEST_EXISTS))
+    locked_pixbuf = gdk_pixbuf_new_from_file ("./status_lock.png", NULL);
+  else
+    locked_pixbuf = gdk_pixbuf_new_from_file (DATADIR"/pixmaps/status_lock.png", NULL);
+
+  if (g_file_test ("./status_unlocked.png", G_FILE_TEST_EXISTS))
+    unlocked_pixbuf = gdk_pixbuf_new_from_file ("./status_unlocked.png", NULL);
+  else
+    unlocked_pixbuf = gdk_pixbuf_new_from_file (DATADIR"/pixmaps/status_unlocked.png", NULL);
+
   client = gsm_client_new ();
 
   gsm_client_set_restart_style (client, GSM_RESTART_IMMEDIATELY);
@@ -369,54 +406,91 @@ icon_clicked_event (GtkWidget      *widget,
   if (event->button != 1)
     return FALSE;
 
-  if (dialog != NULL)
+
+  if (current_status == STATUS_AUTHENTICATED)
     {
+      if (dialog != NULL)
+	{
+	  gtk_window_present (GTK_WINDOW (dialog));
+	  return TRUE;
+	}
+  
+      dialog = gtk_message_dialog_new (NULL,
+				       GTK_DIALOG_DESTROY_WITH_PARENT,
+				       GTK_MESSAGE_QUESTION,
+				       GTK_BUTTONS_NONE,
+				       _("You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."));
+
+      g_object_add_weak_pointer (G_OBJECT (dialog), (void**) &dialog);
+      
+      gtk_dialog_add_button (GTK_DIALOG (dialog),
+			     _("Keep Authorization"), GTK_RESPONSE_REJECT);
+
+      gtk_dialog_add_button (GTK_DIALOG (dialog),
+			     _("Forget Password"), GTK_RESPONSE_ACCEPT);
+  
+      g_signal_connect (G_OBJECT (dialog), "response",
+			G_CALLBACK (dialog_response_cb),
+			NULL);
+  
+      gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+      
       gtk_window_present (GTK_WINDOW (dialog));
+  
       return TRUE;
     }
-  
-  dialog = gtk_message_dialog_new (NULL,
-                                   GTK_DIALOG_DESTROY_WITH_PARENT,
-                                   GTK_MESSAGE_QUESTION,
-                                   GTK_BUTTONS_NONE,
-                                   _("You're currently authorized to configure systemwide settings (that affect all users) without typing the administrator password again. You can give up this authorization."));
+  else
+    {
+      char *argv[] = { "/usr/bin/pam_timestamp_init", NULL };
+      GError *err = NULL;
+      gint exit_status;
 
-  g_object_add_weak_pointer (G_OBJECT (dialog), (void**) &dialog);
+      if (running_init_pid != -1)
+	{
+	  gint retval;
 
-  gtk_dialog_add_button (GTK_DIALOG (dialog),
-                         _("Keep Authorization"), GTK_RESPONSE_REJECT);
+	  retval = waitpid (running_init_pid, &exit_status, WNOHANG);
+	  if (retval == 0)
+	    /* Child hasn't exited yet */
+	    return TRUE;
+	  else if (retval == running_init_pid)
+	    {
+	      running_init_pid = -1;
+	    }
+	  else
+	    {
+	      g_printerr ("Confused about waitpid(): returned %d, child pid was %d\n",
+			  retval, running_init_pid);
+	      running_init_pid = -1;
+	    }
+	}
+      if (!g_spawn_async ("/",
+			  argv, NULL, G_SPAWN_CHILD_INHERITS_STDIN | G_SPAWN_DO_NOT_REAP_CHILD,
+			  NULL, NULL, &running_init_pid, &err))
+	{
+	  g_printerr ("Unable to launch pam_timestamp_init: %s\n",
+		      err->message);
+          g_error_free (err);
 
-  gtk_dialog_add_button (GTK_DIALOG (dialog),
-                         _("Forget Password"), GTK_RESPONSE_ACCEPT);
-  
-  g_signal_connect (G_OBJECT (dialog), "response",
-                    G_CALLBACK (dialog_response_cb),
-                    NULL);
-  
-  gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-  
-  gtk_window_present (GTK_WINDOW (dialog));
-  
+	  return TRUE;
+	}
+    }
   return TRUE;
 }
 
+
 static void
-show_icon (void)
+ensure_tray_icon (void)
 {
   if (icon == NULL)
     {
-      GtkWidget *image;
-      
       icon = egg_tray_icon_new ("Authentication Indicator");
+      image = gtk_image_new ();
 
-      /* If the system tray goes away, our icon can get destroyed */
+	/* If the system tray goes away, our icon can get destroyed */
       g_object_add_weak_pointer (G_OBJECT (icon), (void**) &icon);
+      g_object_add_weak_pointer (G_OBJECT (image), (void**) &image);
       
-      if (g_file_test ("./status_lock.png", G_FILE_TEST_EXISTS))
-        image = gtk_image_new_from_file ("./status_lock.png");
-      else
-        image = gtk_image_new_from_file (DATADIR"/pixmaps/status_lock.png");
-
       gtk_container_add (GTK_CONTAINER (icon), image);
       gtk_widget_show (image);
 
@@ -426,6 +500,7 @@ show_icon (void)
     }
 
   /* When the icon first appears show a dialog */
+#if 0
   if (icon && !GTK_WIDGET_VISIBLE (icon))
     {
       if (start_dialog == NULL)
@@ -450,24 +525,25 @@ show_icon (void)
       gtk_window_present (GTK_WINDOW (start_dialog));
     }
   
+#endif
   gtk_widget_show (GTK_WIDGET (icon));
-  
-  /* g_print ("showing icon status = %d child_pid = %d\n", current_status, child_pid); */
 }
 
 static void
-hide_icon (void)
+show_unlocked_icon (void)
 {
-  if (icon != NULL)
-    {
-      gtk_widget_destroy (GTK_WIDGET (icon));
-      icon = NULL;
-    }
+  ensure_tray_icon ();
+  gtk_image_set_from_pixbuf (GTK_IMAGE (image), unlocked_pixbuf);
+}
 
+static void
+show_locked_icon (void)
+{
+  ensure_tray_icon ();
+  gtk_image_set_from_pixbuf (GTK_IMAGE (image), locked_pixbuf);
   if (start_dialog != NULL)
     gtk_widget_destroy (start_dialog);
 
-  /*   g_print ("hiding icon status = %d child_pid = %d\n", current_status, child_pid); */
 }
 
 static void
