@@ -1,15 +1,19 @@
 Summary: User Tools
 Name: usermode
-Version: 1.3
-Release: 2
+Version: 1.4
+Release: 1
 Copyright: GPL
 Group: X11/Applications
-Source: usermode-1.3.tar.gz
+Source: usermode-1.4.tar.gz
 Requires: util-linux
 Requires: gtk >= 0.99.970925
 Description: Several graphical tools, including a tool to help users manage floppies (and other removable media) and a tool to help the user change his or her finger information.
 
 %changelog
+
+* Fri Nov  7 1997 Otto Hammersmith <otto@redhat.com>
+
+new version that fixed memory leak bug.
 
 * Mon Nov  3 1997 Otto Hammersmith <otto@redhat.com>
 
