@@ -19,31 +19,51 @@
 #ifndef __USERHELPER_H__
 #define __USERHELPER_H__
 
+#include "config.h"
+
 #define _(String) gettext(String)
 
 /* Descriptors used to communicate between userhelper and consolhelper. */
 #define UH_INFILENO 3
 #define UH_OUTFILENO 4
 
+/* Synchronization point code. */
+#define UH_SYNC_POINT 32
+
+/* Valid userhelper request codes. */
+#define UH_UNKNOWN_PROMPT 33
+#define UH_ECHO_ON_PROMPT 34
+#define UH_ECHO_OFF_PROMPT 35
+#define UH_PROMPT_SUGGESTION 36
+#define UH_INFO_MSG 37
+#define UH_ERROR_MSG 38
+#define UH_EXPECT_RESP 39
+#define UH_SERVICE_NAME 40
+#define UH_FALLBACK_ALLOW 41
+#define UH_USER 42
+#define UH_BANNER 43
+#define UH_EXEC_START 44
+#define UH_EXEC_FAILED 45
+
+#ifdef USE_STARTUP_NOTIFICATION
+#define UH_SN_NAME 46
+#define UH_SN_DESCRIPTION 47
+#define UH_SN_WORKSPACE 48
+#define UH_SN_WMCLASS 49
+#define UH_SN_BINARY_NAME 50
+#define UH_SN_ICON_NAME 51
+#endif
+
+/* Consolehelper response codes. */
+#define UH_TEXT 33
+#define UH_CANCEL 34
+#define UH_FALLBACK 35
+
+#ifdef USE_STARTUP_NOTIFICATION
+#define UH_SN_ID 4
+#endif
+
 /* Valid userhelper error codes. */
-#define UH_UNKNOWN_PROMPT 0
-#define UH_ECHO_ON_PROMPT 1
-#define UH_ECHO_OFF_PROMPT 2
-#define UH_PROMPT_SUGGESTION 3
-#define UH_INFO_MSG 4
-#define UH_ERROR_MSG 5
-#define UH_EXPECT_RESP 6
-#define UH_SERVICE_NAME 7
-#define UH_FALLBACK_ALLOW 8
-#define UH_USER 9
-#define UH_BANNER 10
-
-/* Consolehelper response types. */
-#define UH_TEXT 1
-#define UH_ABORT 2
-#define UH_FALLBACK 3
-
-/* Valid consolehelper error codes. */
 #define ERR_PASSWD_INVALID      1       /* password is not right */
 #define ERR_FIELDS_INVALID      2       /* gecos fields invalid or
                                          * sum(lengths) too big */
