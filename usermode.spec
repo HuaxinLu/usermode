@@ -1,11 +1,11 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.23
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
-Requires: util-linux pam >= 0.66-5
+Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
 Conflicts: SysVinit < 2.74-14
 BuildRoot: %{_tmppath}/usermode-root
 
@@ -71,6 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Jun  1 2000 Nalin Dahyabhai <nalin@redhat.com>
+- modify PAM setup to use system-auth
+
 * Fri Mar 17 2000 Ngo Than <than@redhat.de>
 - fix problem with LANG and LC_ALL
 - compress source with bzip2
