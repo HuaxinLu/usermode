@@ -27,18 +27,30 @@
 #include <sys/time.h>
 #include <sys/wait.h>
 
-/* #define UH_PATH "/usr/bin/userhelper" */
-#define UH_PATH "./userhelper"
+#define UH_PATH "/usr/sbin/userhelper"
+/* #define UH_PATH "./userhelper" */
 #define UH_PASSWD_OPT "-c"
 #define UH_FULLNAME_OPT "-f"
 #define UH_OFFICE_OPT "-o"
 #define UH_OFFICEPHONE_OPT "-p"
 #define UH_HOMEPHONE_OPT "-h"
 
+/* fix userhelper so these match the pam.h defines. */
 #define UH_ECHO_ON_PROMPT 1
 #define UH_ECHO_OFF_PROMPT 2
 #define UH_INFO_MSG 3
 #define UH_ERROR_MSG 4
+
+/* make a common header that userhelper will get these from, as well. */
+#define ERR_PASSWD_INVALID      1       /* password is not right */
+#define ERR_FIELDS_INVALID      2       /* gecos fields invalid or
+                                         * sum(lengths) too big */
+#define ERR_SET_PASSWORD        3       /* password resetting error */
+#define ERR_LOCKS               4       /* some files are locked */
+#define ERR_NO_USER             5       /* user unknown ... */
+#define ERR_NO_RIGHTS           6       /* insufficient rights  */
+#define ERR_INVALID_CALL        7       /* invalid call to this program */
+#define ERR_UNK_ERROR           255     /* unknown error */
 
 void userhelper_run_passwd();
 void userhelper_run_chfn(char* fullname, char* office, 
@@ -46,7 +58,7 @@ void userhelper_run_chfn(char* fullname, char* office,
 			 char* shell);
 void userhelper_parse_exitstatus(int exitstatus);
 void userhelper_parse_childout();
-int userhelper_read_childout();
+void userhelper_read_childout(gpointer data, int source, GdkInputCondition cond);
 /* int userhelper_write_childin(); */
 void userhelper_write_childin(GtkWidget* widget, GtkWidget* entry);
 

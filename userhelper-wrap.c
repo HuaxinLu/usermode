@@ -30,19 +30,7 @@ int childin[2];
 void
 userhelper_run_passwd()
 {
-  GtkWidget* message_box;
-  char* prompt;
-  int prompt_type;
-
   pid_t pid;
-  int childstatus;
-  char outline[MAXLINE];
-  int count;
-
-  fd_set rfds;
-  fd_set wfds;
-  struct timeval tv;
-  int retval;
 
   signal(SIGCHLD, userhelper_sigchld);
 
@@ -61,65 +49,11 @@ userhelper_run_passwd()
       close(childout[1]);
       close(childin[0]);
 
-      FD_ZERO(&rfds);
-      FD_SET(childout[0], &rfds);
-      FD_ZERO(&wfds);
-      FD_SET(childin[1], &wfds);
-
       /* switch to gdk_input() */
-      retval = select(childout[0] + 1, &rfds, &wfds, NULL, NULL);
-      while(retval > 0)
-      {
-	if(FD_ISSET(childout[0], &rfds))
-	  {
-	    /* technically, I should keep reading until everything is
-	     * exhausted... in practice, there isn't enough data to
-	     * exceed MAXLINE.
-	     */
-	    count = read(childout[0], outline, MAXLINE);
-	    outline[count] = '\0';
+/*       retval = select(childout[0] + 1, &rfds, &wfds, NULL, NULL);
+ */
+      gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
 
-	    prompt = outline + 2;
-	    outline[1] = '\0';
-	    prompt_type = atoi(outline);
-
-	    switch(prompt_type)
-	      {
-	      case UH_ECHO_ON_PROMPT:
-		message_box = create_query_box(prompt, NULL, 
-					       (GtkSignalFunc)userhelper_write_childin);
-		gtk_widget_show(message_box);
-		break;
-	      case UH_ECHO_OFF_PROMPT:
-		message_box = create_invisible_query_box(prompt, NULL,
-							 (GtkSignalFunc)userhelper_write_childin);
-		gtk_widget_show(message_box);
-		break;
-	      case UH_INFO_MSG:
-		message_box = create_message_box(prompt, NULL);
-		gtk_widget_show(message_box);
-		break;
-	      case UH_ERROR_MSG:
-		message_box = create_error_box(prompt, NULL);
-		gtk_widget_show(message_box);
-		break;
-	      }
-	    
-	  }
-
-	waitpid(pid, &childstatus, WNOHANG);
-
-	if(WIFEXITED(childstatus) != 0)
-	  {
- 	    retval = 0;
-	  }
-	else
-	  {
-	    tv.tv_sec = 0;
- 	    tv.tv_usec = 50;	/* long enough? */
-	    retval = select(childout[0] + 1, &rfds, &wfds, NULL, &tv);
-	  }
-      }
     }
   else				/* child */
     {
@@ -165,38 +99,128 @@ userhelper_run_chfn(char* fullname, char* office, char* officephone,
 void
 userhelper_parse_exitstatus(int exitstatus)
 {
+  GtkWidget* message_box;
+
+  switch(exitstatus)
+    {
+    case 0:
+      message_box = create_message_box("Password changed.", NULL);
+      break;
+    case ERR_PASSWD_INVALID:
+      message_box = create_error_box("The password you typed is invalid.\nPlease try again.", NULL);
+      break;
+    case ERR_FIELDS_INVALID:
+      message_box = create_error_box("One or more of the changed fields is invalid.\nThis is probably due to either colons or commas in the fields.  Please remove those and try again.", NULL);
+      break;
+    case ERR_SET_PASSWORD:
+      message_box = create_error_box("Password resetting error.", NULL);
+      break;
+    case ERR_LOCKS:
+      message_box = create_error_box("Some systems files are locked.\nPlease try again in a few moments.", NULL);
+      break;
+    case ERR_NO_USER:
+      message_box = create_error_box("Unknown user.", NULL);
+      break;
+    case ERR_NO_RIGHTS:
+      message_box = create_error_box("Insufficient rights.", NULL);
+      break;
+    case ERR_INVALID_CALL:
+      message_box = create_error_box("Invalid call to sub process.", NULL);
+      break;
+    case ERR_UNK_ERROR:
+      message_box = create_error_box("Unknown error.", NULL);
+      break;
+    }
+
+  gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) gtk_main_quit, NULL);
+  gtk_widget_show(message_box);
 
 }
 
 void
-userhelper_parse_childout()
+userhelper_parse_childout(char* outline)
 {
+  char* prompt;
+  int prompt_type;
+  GtkWidget* message_box;
 
+  prompt = outline + 2;
+  outline[1] = '\0';
+  prompt_type = atoi(outline);
+  
+  switch(prompt_type)
+    {
+    case UH_ECHO_ON_PROMPT:
+      message_box = create_query_box(prompt, NULL, 
+				     (GtkSignalFunc)userhelper_write_childin);
+      gtk_widget_show(message_box);
+      break;
+    case UH_ECHO_OFF_PROMPT:
+      message_box = create_invisible_query_box(prompt, NULL,
+					       (GtkSignalFunc)userhelper_write_childin);
+      gtk_widget_show(message_box);
+      break;
+    case UH_INFO_MSG:
+      message_box = create_message_box(prompt, NULL);
+      gtk_widget_show(message_box);
+      break;
+    case UH_ERROR_MSG:
+      message_box = create_error_box(prompt, NULL);
+      gtk_widget_show(message_box);
+      break;
+    }
 }
 
-int
-userhelper_read_childout()
+void
+userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 {
+  char* output;
+  int count;
 
+  if(cond != GDK_INPUT_READ)
+    {
+      /* serious error, panic. */
+    }
+
+  output = malloc(sizeof(char) * MAXLINE);
+
+  count = read(source, output, MAXLINE);
+  output[count] = '\0';
+
+  userhelper_parse_childout(output);
 }
 
+/* void */
+/* userhelper_write_childin(gpointer data, int source,
+   GdkInputCondition cond) */
 void
 userhelper_write_childin(GtkWidget* widget, GtkWidget* entry)
 {
+  /* data should be passed as the entry... */
   char* input;
   int len;
 
   input = gtk_entry_get_text(GTK_ENTRY(entry));
-
   len = strlen(input);
+
+/*   write(source, input, len); */
+/*   write(source, "\n", 1); */
   write(childin[1], input, len);
   write(childin[1], "\n", 1);
-
 }
 
 void
 userhelper_sigchld()
 {
-  /* if the child died, get it's exitstatus and parse it. */
-  /* don't forget to reset the signal handler... */
+  pid_t pid;
+  int status;
+
+  signal(SIGCHLD, userhelper_sigchld);
+  
+  pid = waitpid(0, &status, WNOHANG);
+  
+  if(WIFEXITED(status))
+    {
+      userhelper_parse_exitstatus(WEXITSTATUS(status));
+    }
 }
