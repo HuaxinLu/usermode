@@ -18,6 +18,9 @@ Requires: util-linux, pam >= 0.75-37, /etc/pam.d/system-auth
 Conflicts: SysVinit < 2.74-14
 BuildPrereq: desktop-file-utils, glib2-devel, gtk2-devel
 BuildPrereq: libglade2-devel, libuser-devel, pam-devel, util-linux
+%if %{WITH_SELINUX}
+BuildPrereq: libselinux-devel
+%endif
 BuildRoot: %{_tmppath}/%{name}-root
 
 %package gtk
