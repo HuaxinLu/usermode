@@ -3,7 +3,7 @@ Name: usermode
 Version: 1.4.5
 Release: 1
 Copyright: GPL
-Group: User Interface/Desktops
+Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
 Requires: util-linux
 BuildRoot: /var/tmp/usermode-root
