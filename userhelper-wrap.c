@@ -600,14 +600,14 @@ userhelper_parse_childout(char *outline)
 #ifdef DEBUG_USERHELPER
 				g_print("Child started.\n");
 #endif
-				break;
+				return;
 			/* Userhelper failed to exec. */
 			case UH_EXEC_FAILED:
 				child_was_execed = FALSE;
 #ifdef DEBUG_USERHELPER
 				g_print("Child failed.\n");
 #endif
-				break;
+				return;
 #ifdef USE_STARTUP_NOTIFICATION
 			/* Startup notification name. */
 			case UH_SN_NAME:

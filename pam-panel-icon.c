@@ -18,6 +18,7 @@
 
 #include "config.h"
 #include <unistd.h>
+#include <stdio.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <errno.h>
@@ -55,20 +56,20 @@ static pid_t child_pid = -1;
 static EggTrayIcon *tray_icon = NULL;
 static GtkWidget *image = NULL;
 static GtkWidget *drop_dialog = NULL;
+static GtkWidget *drop_menu = NULL;
+static GtkWidget *drop_menu_items = NULL;
 static GdkPixbuf *locked_pixbuf = NULL;
 static pid_t running_init_pid = -1;
 
 static void launch_checker(void);
 
-/* Respond to a button press in the drop dialog. */
+/* Respond to a selecion in the popup menu. */
 static void
-drop_dialog_response_cb(GtkWidget *dialog, int response_id, void *data)
-{
+drop_menu_response_cb( int response_id ) {
 	GError *err;
+	GtkWidget *dialog;
 	int exit_status;
 	char *argv[4];
-
-	gtk_widget_destroy(dialog);
 
 	if (response_id == RESPONSE_DROP) {
 		argv[0] = PAM_TIMESTAMP_CHECK_PATH;
@@ -117,6 +118,15 @@ drop_dialog_response_cb(GtkWidget *dialog, int response_id, void *data)
 	}
 }
 
+/* Respond to a button press in the drop dialog. */
+static void
+drop_dialog_response_cb(GtkWidget *dialog, int response_id, void *data)
+{
+	gtk_widget_destroy(dialog);
+
+	drop_menu_response_cb(response_id);
+}
+
 static void
 add_weak_widget_pointer(GObject *object, GtkWidget **weak_pointer)
 {
@@ -133,13 +143,44 @@ static gboolean
 icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
 {
 	/* We only respond to left-click and right click. */
-	if (event->button != 1 || event->button != 3) {
+	if (event->button != 1 && event->button != 3) {
 		return FALSE;
 	}
 
 	/* If we're already authenticated, give the user the option of removing
 	 * the timestamp. */
 	if (current_status == STATUS_AUTHENTICATED) {
+		/* Open popup menu when right clicked. */
+		if ( event->button == 3 ) {
+			if (drop_menu == NULL) {
+				drop_menu = gtk_menu_new();
+
+				drop_menu_items = gtk_menu_item_new_with_label (_("Keep Authorization"));
+				
+				gtk_menu_shell_append(GTK_MENU_SHELL(drop_menu), drop_menu_items);
+
+				g_signal_connect_swapped(G_OBJECT(drop_menu_items), "activate",
+							 G_CALLBACK(drop_menu_response_cb),
+							 (gpointer)RESPONSE_DO_NOTHING);
+
+				gtk_widget_show(drop_menu_items);
+
+				drop_menu_items = gtk_menu_item_new_with_label (_("Forget Authorization"));
+				
+				gtk_menu_shell_append(GTK_MENU_SHELL(drop_menu), drop_menu_items);
+
+				g_signal_connect_swapped(G_OBJECT(drop_menu_items), "activate",
+							 G_CALLBACK(drop_menu_response_cb),
+							 (gpointer)RESPONSE_DROP);
+
+				gtk_widget_show(drop_menu_items);
+			}
+			gtk_menu_popup(GTK_MENU(drop_menu), NULL, NULL, NULL, NULL, 
+				       event->button, event->time);
+			
+			return TRUE;
+		}
+
 		/* If there's not already a dialog up, create one. */
 		if (drop_dialog == NULL) {
 			drop_dialog = gtk_message_dialog_new(NULL,

@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.77
+Version: 1.78
 Release: 1
 License: GPL
 Group: Applications/System
@@ -115,6 +115,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Jan 27 2005 Jindrich Novy <jnovy@redhat.com> 1.78-1
+- pam-panel-icon has popup menu to choose to forget/keep
+  authentization by right clicking as usual for other panel applets (#75845)
+- fix race condition (#142254)
+
 * Thu Jan 20 2005 Jindrich Novy <jnovy@redhat.com> 1.77-1
 - preserve LANGUAGE environment variable in userhelper (#82300)
 - use badge instead of keyring icon for pam-panel-icon (#122487)
