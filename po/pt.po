@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2003-09-29 10:38+0100\n"
+"PO-Revision-Date: 2003-09-29 16:02+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -376,7 +376,7 @@ msgstr "Informações do Utilizador"
 
 #: glade.strings:8 usermode.glade.h:2
 msgid "Full Name:"
-msgstr "Nome Completo:"
+msgstr "Nome completo:"
 
 #: glade.strings:9 usermode.glade.h:7
 msgid "Office:"
@@ -384,19 +384,19 @@ msgstr "Escritório:"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "Telefone do Escritório:"
+msgstr "Telefone do escritório:"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr "Telefone de Casa:"
+msgstr "Telefone de casa:"
 
 #: glade.strings:12 usermode.glade.h:4
 msgid "Login Shell:"
-msgstr "'Shell' de Login:"
+msgstr "'Shell':"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr "_Ok"
+msgstr "_OK"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
