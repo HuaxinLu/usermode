@@ -116,6 +116,11 @@ create_userinfo_window(struct UserInfo *userinfo)
 
 		setusershell();
 		while((shell = getusershell()) != NULL) {
+			/* Filter out "nologin" to keep the user from shooting
+			 * self in foot, or similar analogy. */
+			if (strstr(shell, "/nologin") != NULL) {
+				continue;
+			}
 			item = gtk_menu_item_new_with_label(shell);
 			gtk_widget_show(item);
 			g_object_set_data(G_OBJECT(item),
