@@ -1,13 +1,13 @@
 # translation of ko.po to Korean
 # Michelle Kim <mkim@redhat.com>, 2002.
 # Michelle J Kim <mkim@redhat.com>, 2003, 2004.
-#
+# Cr4S3T0n <cr4s3t0n@empal.com>, 2004
 msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-10-20 15:38+1000\n"
+"PO-Revision-Date: 2004-10-22 09:55+1000\n"
 "Last-Translator: Michelle J Kim <mkim@redhat.com>\n"
 "Language-Team:  <ko@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -94,14 +94,14 @@ msgstr "암호: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr "관리자 권한을 취소하는데 실패했습니다: %s"
+msgstr "관리자 권한 취소 실패: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
+msgstr "관리자 권한 취소 실패 : pam_timestamp_check는 실패코드 %d 를 반환했습니다."
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -109,34 +109,37 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"현재 관리자 암호를 입력할 필요 없이 모든 사용자들에게 영향을 미치는 "
+"시스템 전체 설정을 변경할 수 있는 권한을 가지고 계십니다. "
+"이 관리자 권한은 언제든 포기할 수 있습니다."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "관리자 권한 유지하기"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "관리자 권한 해제하기"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check 는 setuid root 가 아닙니다"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check를 위한 제어 tty가 없습니다"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check에 알려지지 않은 사용자"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check의 권한 에러"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check의 잘못된 제어 tty"
 
 #: pam-panel-icon.c:329
 #, c-format
@@ -146,16 +149,16 @@ msgstr "오류: %s\n"
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "\"%s\" 명령 실행 오류 : %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "입출력 채널 nonbloking 설정 실패: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon : 세션 관리자와 연결하는데 실패했습니다\n"
 
 #: userdialogs.h:30
 msgid "Help"
