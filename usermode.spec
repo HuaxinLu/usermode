@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.63
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -104,9 +104,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*
 
-# If you're updating translations, do me a favor and bump the RELEASE number,
-# and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Mon Nov 11 2002 Nalin Dahyabhai <nalin@redhat.com> 1.63-2
+- remove directory names from PAM config files, allowing the same config
+  files to work for both arches on multilib boxes
+- translation updates
+
 * Wed Sep  4 2002 Nalin Dahyabhai <nalin@redhat.com> 1.63-1
 - userhelper: swallow the exec'd program's exit stauts, which would be
   misinterpreted by consolehelper anyway
