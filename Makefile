@@ -99,7 +99,7 @@ install_sh = /home/devel/nalin/projects/usermode/install-sh
 VERSION = $(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE = $(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
-EXTRA_DIST = usermode.spec dummy.h
+EXTRA_DIST = usermode.spec dummy.h shutdown
 
 SUBDIRS = intl po
 
