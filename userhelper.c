@@ -23,6 +23,7 @@
 #include <sys/wait.h>
 #include <assert.h>
 #include <ctype.h>
+#include <errno.h>
 #include <fcntl.h>
 #include <grp.h>
 #include <libintl.h>
@@ -1986,7 +1987,7 @@ wrap(const char *user, const char *program,
 						    argv + optind - 1);
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: running '%s' with "
-				"root privileges on behalf of '%s'.",
+				"root privileges on behalf of '%s'.\n",
 				cmdline, user);
 #endif
 			syslog(LOG_NOTICE, "running '%s' with "
@@ -2062,7 +2063,7 @@ wrap(const char *user, const char *program,
 					    argv + optind - 1);
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: running '%s' with root privileges on "
-			"behalf of '%s'", cmdline, user);
+			"behalf of '%s'\n", cmdline, user);
 #endif
 		syslog(LOG_NOTICE, "running '%s' with "
 		       "root privileges on behalf of '%s'",

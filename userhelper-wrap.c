@@ -19,6 +19,7 @@
 #include "config.h"
 #include <sys/types.h>
 #include <ctype.h>
+#include <errno.h>
 #include <libintl.h>
 #include <locale.h>
 #include <pwd.h>
