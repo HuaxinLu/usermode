@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-10 14:44+0100\n"
-"PO-Revision-Date: 2004-07-31 12:32+0800\n"
+"PO-Revision-Date: 2005-01-24 23:52+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -17,38 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
-#. *
 #. * This is free software; you can redistribute it and/or modify it
-#. * under the terms of the GNU General Public License as published by
 #. * the Free Software Foundation; either version 2 of the License, or
-#. * (at your option) any later version.
 #. *
-#. * This program is distributed in the hope that it will be useful, but
 #. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 #. * General Public License for more details.
-#. *
 #. * You should have received a copy of the GNU General Public License
-#. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
 #. Just a dummy file for gettext, containing messages emmitted by various
-#. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#: dummy.h:21
+#: userdialogs.h:29
 msgid "OK"
 msgstr "OK"
 
-#: dummy.h:22 userdialogs.h:32
+#: dummy.h:22
+#: userdialogs.h:32
 msgid "Exit"
 msgstr "Keluar"
 
-#: dummy.h:23 userdialogs.h:31
+#: dummy.h:23
+#: userdialogs.h:31
 msgid "Cancel"
 msgstr "Batal"
 
-#: dummy.h:24 userdialogs.h:33
+#: dummy.h:24
+#: userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Laksana Tanpa Privilej"
 
@@ -86,7 +80,7 @@ msgstr "Lancar alat konfigurasi sistem global tanpa katalaluan."
 
 #: dummy.h:33
 msgid "login: "
-msgstr "Logmasuk:"
+msgstr "logmasuk:"
 
 #: dummy.h:34
 msgid "Password: "
@@ -95,20 +89,15 @@ msgstr "Katalaluan: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Gagal untuk mematikan kelebihan pentadbir: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
 msgstr ""
 
 #: pam-panel-icon.c:148
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
 msgstr ""
 
 #: pam-panel-icon.c:154
@@ -142,9 +131,9 @@ msgstr ""
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:129 libgnomeui/gnome-messagebox.c:262
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Ralat"
+msgstr "Ralat: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
@@ -164,7 +153,8 @@ msgstr ""
 msgid "Help"
 msgstr "Bantuan"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:138
+#: userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Tidak dapat menetapkan konteks exec ke %s.\n"
@@ -198,16 +188,13 @@ msgid ""
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Anda cuba melaksanakan arahan yang mendapat faedah daripada\n"
-" privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat "
-"demikian."
+" privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper.c:757
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan arahan yang yang memerlukan privilej administratif, "
-"tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr "Anda cuba melaksanakan arahan yang yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper.c:776
 #, c-format
@@ -222,11 +209,8 @@ msgstr "userhelper mesti setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2399
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Tidak dapat membuka tetingkap bergrafik, dan tidak dapat menjumpai terminal "
-"yang mengawal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Tidak dapat membuka tetingkap bergrafik, dan tidak dapat menjumpai terminal yang mengawal.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -308,18 +292,18 @@ msgstr "Gagal menjumpai program dipilih."
 msgid "Unknown error."
 msgstr "Ralat tidak diketahui."
 
-#.
 #. * Translatable strings file generated by Glade.
-#. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
-#.
-#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:472
+#: glade.strings.h:7
+#: usermode.glade.h:9
 msgid "Query"
 msgstr "Kueri"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:129 libgnomeui/gnome-messagebox.c:262
-#: userhelper-wrap.c:565 userhelper-wrap.c:745
+#: userhelper-wrap.c:565
+#: userhelper-wrap.c:745
 msgid "Error"
 msgstr "Ralat"
 
@@ -329,7 +313,9 @@ msgstr "Ralat"
 msgid "Information"
 msgstr "Maklumat"
 
-#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:737
+#: glade.strings.h:8
+#: glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Teks Placeholder."
@@ -344,38 +330,21 @@ msgstr "Menukar shell logmasuk"
 
 #: userhelper-wrap.c:792
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada "
-"privilejadministratif, tetapi maklumat lanjut diperlukan untuk berbuat "
-"demikian."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada privilejadministratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper-wrap.c:794
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan \"%s\" yang memerlukan privilej administratif, tetapi "
-"maklumat lanjut diperlukan untuk berbuat demikian."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan \"%s\" yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper-wrap.c:803
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan arahan yang mendapat faedah daripada privilej "
-"administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan arahan yang mendapat faedah daripada privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper-wrap.c:805
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan arahan yang memerlukan privilej administratif, tetapi "
-"maklumat lanjut diperlukan untuk berbuat demikian."
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan arahan yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
@@ -391,7 +360,8 @@ msgstr "Ralat paip.\n"
 msgid "Cannot fork().\n"
 msgstr "Tidak dapat fork().\n"
 
-#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
+#: userhelper-wrap.c:1059
+#: userhelper-wrap.c:1063
 #, c-format
 msgid "dup2() error.\n"
 msgstr "ralat dup2() .\n"
@@ -415,12 +385,8 @@ msgid "Un_mount"
 msgstr "_Nyahlekap"
 
 #: usermount.c:321
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"Adakah anda pasti untuk mengformat cakera ini? Ia akan memusnahkan sebarang "
-"data yang ia kandungi."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Adakah anda pasti untuk memformat cakera ini? Ia akan memusnahkan sebarang data yang ia kandungi."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -439,7 +405,8 @@ msgstr ""
 "Hubungi pentadbir sistem anda"
 
 #. Create the dialog.
-#: usermount.c:550 usermount.c:562
+#: usermount.c:550
+#: usermount.c:562
 msgid "User Mount Tool"
 msgstr "Alat Pelekapan Pengguna"
 
@@ -460,38 +427,49 @@ msgstr "Direktori"
 msgid "Filesystem"
 msgstr "Sistem fail"
 
-#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:9
+#: glade.strings.h:18
+#: glade.strings.h:19
+#: glade.strings.h:20
+#: glade.strings.h:21
+#: usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:147 libgnomeui/gnome-messagebox.c:280
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10
+#: usermode.glade.h:5
 msgid "Message"
 msgstr "Mesej"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12
+#: usermode.glade.h:10
 msgid "User Information"
 msgstr "Maklumat Pengguna"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13
+#: usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Nama Penuh:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14
+#: usermode.glade.h:7
 msgid "Office:"
 msgstr "Pejabat:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15
+#: usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Nombor Telefon Pejabat:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16
+#: usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr " Nombor Telefon Rumah:"
+msgstr "Nombor Telefon Rumah:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17
+#: usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Shell Logmasuk:"
 
@@ -519,26 +497,3 @@ msgstr "Tukar katalaluan logmasuk anda"
 msgid "Password"
 msgstr "Katalaluan"
 
-#~ msgid "_Ok"
-#~ msgstr "_Ok"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Batal"
-
-# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
-# libgnomeui/gnome-app-helper.c:155
-#~ msgid "_Close"
-#~ msgstr "_Tutup"
-
-#~ msgid "Type"
-#~ msgstr "Jenis"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Nyahlekap"
-
-# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
-# libgnomeui/gnome-app-helper.c:160
-# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
-# libgnomeui/gnome-app-helper.c:160
-#~ msgid "E_xit"
-#~ msgstr "_Keluar"
