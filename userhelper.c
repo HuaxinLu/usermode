@@ -15,9 +15,8 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
-/* 
- * UserTool suid helper program
- */
+
+/* UserTool suid helper program */
 
 #if 0
 #define USE_MCHECK 1
@@ -76,7 +75,7 @@ static char *shell_path = NULL; /* shell path */
 
 static char *the_username = NULL; /* used to mangle the conversation function */
 
-/* manipulate the environment directly */
+/* we manipulate the environment directly */
 extern char **environ;
 
 /* command line flags */
@@ -90,12 +89,11 @@ static int 	t_flg = 0;	/* -t flag = direct text-mode -- exec'ed */
 static int 	w_flg = 0;	/* -w flag = act as a wrapper for next args */
 static int	d_flg = 0;      /* -d flag = three descriptor numbers for us */
 
-/*
- * A handy fail exit function we can call from many places
- */
-static int fail_error(int retval)
+/* A handy fail exit function we can call from many places */
+static int
+fail_error(int retval)
 {
-  /* this is a temporary kludge.. will be fixed shortly. */
+    /* this is a temporary kludge.. will be fixed shortly. */
     if(retval == ERR_SHELL_INVALID)
         exit(ERR_SHELL_INVALID);	  
 
@@ -117,19 +115,18 @@ static int fail_error(int retval)
 		exit(ERR_UNK_ERROR);
 	}
     }
-    exit (0);
+    exit(0);
 }
 
-/*
- * Read a string from stdin, returns a malloced copy of it
- */
-static char *read_string(void)
+/* Read a string from stdin, returns a malloced copy of it */
+static char *
+read_string(void)
 {
     char *buffer = NULL;
     char *check = NULL;
     int slen = 0;
     
-    buffer = g_malloc(BUFSIZ);
+    buffer = g_malloc0(BUFSIZ);
     if (buffer == NULL)
 	return NULL;
     
@@ -147,38 +144,33 @@ static char *read_string(void)
 }
 
 /* Application data with some hints. */
-static struct app_data_t {
+static struct app_data {
      int fallback;
      char *user;
      char *service;
-} app_data = {0, NULL, NULL};
+} global_app_data = {0, NULL, NULL};
 static gboolean fallback_flag = FALSE;
 
-/*
- * Conversation function for the boring change password stuff
- */
-static int conv_func(int num_msg, const struct pam_message **msg,
-		     struct pam_response **resp, void *appdata_ptr)
+/* Conversation function for the boring change password stuff */
+static int
+conv_func(int num_msg, const struct pam_message **msg,
+	  struct pam_response **resp, void *appdata_ptr)
 {
     int count = 0;
     int responses = 0;
     struct pam_response *reply = NULL;
     char *noecho_message;
 
-    reply = (struct pam_response *)
-	calloc(num_msg, sizeof(struct pam_response));
+    reply = malloc(num_msg * sizeof(struct pam_response));
     if (reply == NULL)
 	return PAM_CONV_ERR;
+    memset(reply, 0, num_msg * sizeof(struct pam_response));
  
     if(appdata_ptr != NULL) {
-        struct app_data_t *app_data = (struct app_data_t*) appdata_ptr;
+        struct app_data *app_data = appdata_ptr;
 
         g_print("%d %d\n", UH_FALLBACK, app_data->fallback);
-	if(app_data->user == NULL) {
-            g_print("%d %s\n", UH_USER, "root");
-	} else {
-            g_print("%d %s\n", UH_USER, app_data->user);
-	}
+        g_print("%d %s\n", UH_USER, app_data->user ?: "root");
 	if(app_data->service != NULL) {
             g_print("%d %s\n", UH_SERVICE_NAME, app_data->service);
 	}
@@ -196,7 +188,8 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		responses++;
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
-		if (the_username && !strncasecmp(msg[count]->msg, "password", 8)) {
+		if(the_username &&
+		   (strncasecmp(msg[count]->msg, "password", 8) == 0)) {
 		    noecho_message = g_strdup_printf(i18n("Password for %s"),
                                                      the_username);
 		} else {
@@ -263,11 +256,11 @@ static int conv_func(int num_msg, const struct pam_message **msg,
  */
 static struct pam_conv pipe_conv = {
      conv_func,
-     &app_data,
+     &global_app_data,
 };
 static struct pam_conv text_conv = {
      misc_conv,
-     &app_data,
+     &global_app_data,
 };
     
 /*
@@ -663,9 +656,9 @@ int main(int argc, char *argv[])
 	if (retval != PAM_SUCCESS)
 	    fail_error(retval);
 
-	app_data.fallback = fallback;
-	app_data.user = "root";
-	app_data.service = progname;
+	global_app_data.fallback = fallback;
+	global_app_data.user = "root";
+	global_app_data.service = progname;
 
 	do {
 #ifdef DEBUG_USERHELPER
@@ -847,10 +840,10 @@ int main(int argc, char *argv[])
 	/* Build the new gecos field */
 	snprintf(new_gecos, sizeof(new_gecos),
 		 "%s,%s,%s,%s",
-		 full_name ? full_name : "",
-		 office ? office : "",
-		 office_ph ? office_ph : "",
-		 home_ph ? home_ph : "");
+		 full_name ?: "",
+		 office ?: "",
+		 office_ph ?: "",
+		 home_ph ?: "");
 
 	/* We don't need the pwdb_entry for gecos anymore... */
 	pwdb_entry_delete(&_pwe);
