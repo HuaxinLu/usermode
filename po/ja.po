@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
 "POT-Creation-Date: 2002-04-01 11:46-0500\n"
-"PO-Revision-Date: 2002-03-26 15:34GMT+10:00\n"
+"PO-Revision-Date: 2002-04-02 10:53GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -73,53 +73,50 @@ msgid "Password for %s"
 msgstr "%sのパスワード"
 
 #: userhelper.c:317
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限が必要なコマンド\"%s\"を実行しようとしていますが、実行するに"
-"は追加情報が必要です。"
+"スーパユーザ権限から役得を得る様な\"%s\"を実行しようとしていますが、\n "
+"実行するには追加情報が必要です。"
 
 #: userhelper.c:319
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限が必要なコマンド\"%s\"を実行しようとしていますが、実行するに"
+"スーパユーザ権限が必要な\"%s\"を実行しようとしていますが、実行するに\n"
 "は追加情報が必要です。"
 
 #: userhelper.c:323
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限が必要なコマンドを実行しようとしていますが、実行するには追加"
-"情報が必要です。"
+"スーパユーザ権限から役得を得るようなコマンドを実行しようとしていますが、\n "
+"実行するには追加情報が必要です。"
 
 #: userhelper.c:325
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限が必要なコマンドを実行しようとしていますが、実行するには追加"
+"スーパユーザ権限が必要なコマンドを実行しようとしていますが、実行するには追加\n"
 "情報が必要です。"
 
 #: userhelper.c:343
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "%sのパスワード"
+msgstr "%s:用のパスワード"
 
 #: userhelper.c:626
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
 
 #: userhelper.c:708
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
@@ -396,3 +393,4 @@ msgstr "マウント解除"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "出口"
+
