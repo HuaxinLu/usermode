@@ -20,6 +20,7 @@
 #define __USERDIALOGS_H__
 
 #include <gtk/gtk.h>
+#include <gdk/gdkx.h>
 
 #define UD_OK_TEXT "OK"
 #define UD_HELP_TEXT "Help"

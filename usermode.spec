@@ -63,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/halt
 %{_bindir}/reboot
 %{_bindir}/poweroff
+%{_datadir}/pixmaps/*
 %config(noreplace) /etc/pam.d/shutdown
 %config(noreplace) /etc/pam.d/halt
 %config(noreplace) /etc/pam.d/reboot

@@ -39,6 +39,8 @@ typedef struct message {
 
 typedef struct response {
 	int responses;
+	int left;
+	int rows;
 	gboolean fallback;
 	char *user;
 	GSList *message_list; /* contains pointers to messages */

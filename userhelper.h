@@ -42,6 +42,7 @@
 #define ERR_UNK_ERROR           255     /* unknown error */
 
 #define UH_PATH "/usr/sbin/userhelper"
+#define UH_KEY_PIXMAP_PATH "/usr/share/pixmaps/userhelper-keys.xpm"
 /* #define UH_PATH "./userhelper" */
 #define UH_PASSWD_OPT "-c"
 #define UH_FULLNAME_OPT "-f"

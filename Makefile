@@ -14,6 +14,7 @@ prefix=/usr
 bindir=$(prefix)/bin
 mandir=$(prefix)/man
 sbindir=$(prefix)/sbin
+datadir=$(prefix)/share
 
 PROGS=userinfo usermount userhelper userpasswd consolehelper
 MANS=userinfo.1 usermount.1 userhelper.8 userpasswd.1 consolehelper.8
@@ -43,6 +44,8 @@ consolehelper: consolehelper.o userdialogs.o userhelper-wrap.o
 install:	$(PROGS)
 	mkdir -p $(PREFIX)$(bindir) $(PREFIX)$(sbindir)
 	mkdir -p $(PREFIX)/etc/X11/applnk/System
+	mkdir -p $(PREFIX)$(datadir)/pixmaps
+	mkdir -p $(PREFIX)$(mandir)/man1 $(PREFIX)$(mandir)/man8
 	mkdir -p $(PREFIX)$(mandir)/man1 $(PREFIX)$(mandir)/man8
 	$(INSTALL) -m 755 userinfo $(PREFIX)$(bindir)
 	$(INSTALL) -m 644 userinfo.desktop $(PREFIX)/etc/X11/applnk/System/
@@ -52,6 +55,7 @@ install:	$(PROGS)
 	$(INSTALL) -m 644 userpasswd.desktop $(PREFIX)/etc/X11/applnk/System/
 	$(INSTALL) -m 755 consolehelper $(PREFIX)$(bindir)
 	$(INSTALL) -m 4755 userhelper $(PREFIX)$(sbindir)
+	$(INSTALL) -m 644 keys.xpm $(PREFIX)$(datadir)/pixmaps/userhelper-keys.xpm
 
 install-man: 	$(MANS)
 	$(INSTALL) -m 644 userinfo.1 $(PREFIX)$(mandir)/man1

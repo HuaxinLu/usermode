@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <gdk/gdkx.h>
 #include "userhelper-wrap.h"
 #include "userdialogs.h"
 
@@ -185,10 +186,9 @@ userhelper_parse_childout(char* outline)
   char *prompt;
   char *rest = NULL;
   char *title;
-  int prompt_type, left = 0;
+  int prompt_type;
   static response *resp = NULL;
   GdkPixmap *pixmap;
-  GdkBitmap *bitmap;
 
   if (resp != NULL) {
     if(!GTK_IS_WINDOW(resp->top)) {
@@ -218,6 +218,18 @@ userhelper_parse_childout(char* outline)
     gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->cancel)->child), 4, 0);
 
     resp->table = gtk_table_new(1, 2, FALSE);
+    resp->rows = 1;
+
+    pixmap = gdk_pixmap_create_from_xpm(gdk_window_foreign_new(GDK_ROOT_WINDOW()),
+		                        NULL, NULL, UH_KEY_PIXMAP_PATH);
+    if(pixmap != NULL) {
+      GtkWidget *pm = gtk_pixmap_new(pixmap, NULL);
+      if(pm != NULL) {
+	gtk_table_attach(GTK_TABLE(resp->table), pm,
+	  0, 1, 1, 2, GTK_SHRINK, GTK_SHRINK, 2, 2);
+	resp->left = 1;
+      }
+    }
 
     gtk_box_set_homogeneous(GTK_BOX(GTK_DIALOG(resp->top)->action_area), TRUE);
 
@@ -241,7 +253,6 @@ userhelper_parse_childout(char* outline)
 
   if(isdigit(outline[0])) {
     gboolean echo = TRUE;
-    int message_list_length = g_slist_length(resp->message_list);
     message *msg = g_malloc(sizeof(message));
 
     prompt_type = strtol(outline, &prompt, 10);
@@ -284,14 +295,15 @@ userhelper_parse_childout(char* outline)
 	resp->tail = msg->entry;
 
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  left + 0, left + 1, message_list_length, message_list_length + 1,
+	  resp->left + 0, resp->left + 1, resp->rows, resp->rows + 1,
 	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->entry,
-	  left + 1, left + 2, message_list_length, message_list_length + 1,
+	  resp->left + 1, resp->left + 2, resp->rows, resp->rows + 1,
 	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
 
 	resp->message_list = g_slist_append(resp->message_list, msg);
 	resp->responses++;
+	resp->rows++;
 	/* printf("Need %d responses.\n", resp->responses); */
 	break;
 
@@ -299,8 +311,8 @@ userhelper_parse_childout(char* outline)
 #if 0
 	msg->label = gtk_label_new(prompt);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  left + 0, left + 2,
-	  message_list_length, message_list_length + 1, 0, 0, 2, 2);
+	  resp->left + 0, resp->left + 2, resp->rows, resp->rows + 1,
+	  0, 0, 2, 2);
 	resp->message_list = g_slist_append(resp->message_list, msg);
 #else
 	resp->fallback = atoi(prompt) != 0;
@@ -332,8 +344,7 @@ userhelper_parse_childout(char* outline)
 	}
 	msg->label = gtk_label_new(title);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  0, left + 2,
-	  message_list_length, message_list_length + 1,
+	  0, resp->left + 2, 0, 1,
 	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
 	resp->message_list = g_slist_append(resp->message_list, msg);
 	break;
@@ -344,9 +355,9 @@ userhelper_parse_childout(char* outline)
       case UH_INFO_MSG:
 	msg->label = gtk_label_new(prompt);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  left + 0, left + 2,
-	  message_list_length, message_list_length + 1, 0, 0, 2, 2);
+	  resp->left + 0, resp->left + 2, resp->rows, resp->rows + 1, 0, 0, 2, 2);
 	resp->message_list = g_slist_append(resp->message_list, msg);
+	resp->rows++;
 	break;
 
       case UH_EXPECT_RESP:
