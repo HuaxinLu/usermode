@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.68
-Release: 4
+Release: 5
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -112,6 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Sep 25 2003 Nalin Dahyabhai <nalin@redhat.com> 1.68-5
+- rebuild
+
 * Mon Sep 8 2003 Dan Walsh <dwalsh@redhat.com> 1.68-4
 - turn off selinux
 
