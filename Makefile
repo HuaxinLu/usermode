@@ -1,6 +1,7 @@
 # mostly and totally crappy makefile... better one to come.
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
-CVSTAG = r$(subst .,-,$(VERSION))
+REVISION=$(shell awk '/^Revision:/ { print $$2 }' < usermode.spec)
+CVSTAG = um$(subst .,-,$(VERSION))$(subst .,-,$(REVISION))
 
 #CFLAGS=-O2 -Wall
 CFLAGS=-g -Wall $(shell gtk-config --cflags)
