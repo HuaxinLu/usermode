@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-09-01 12:27+0530\n"
+"PO-Revision-Date: 2004-10-06 18:07+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <Indlinux-hindi@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -94,68 +94,68 @@ msgstr "शब्दकूट: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "प्रशासक सुविधा छोड़ने में असफल: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
+msgstr "प्रशासक सुविधा छोड़ने में असफल: pam_timestamp_check ने %d विफलता कोड लौटाया"
 
 #: pam-panel-icon.c:148
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
+msgstr "आप प्रशासक शब्दकूट फिर डाले बिना अभी system-wide जमावट (जो सभी उपयोगकर्ता को प्रभावित करता है) को विन्यस्त करने के अधिकारी हैं. आप इस अधिकार को छोड़ भी सकते हैं."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "अधिकार रखें"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "अधिकार भूलें"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check एक setuid रूट नहीं है"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check के लिए कोई नियंत्रणकारी tty नहीं है"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check में उपयोगकर्ता अज्ञात था"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check में अनुमति त्रुटि"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check में अमान्य नियंत्रणकारी tty"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "दोष"
+msgstr "दोष: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "\"%s\"समादेश चलाने में असफल: %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "IO channel nonblocking सेट करने में विफल: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: सत्र प्रबंधक से जोड़ने में विफल\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -218,8 +218,7 @@ msgstr "उपयोगकर्ता सहायक को अवश्य �
 #. FIXME: print a warning here?
 #: userhelper.c:2347
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखी विंडो को खोलने में असमर्थ, और अंतक नियंञक को खोजने में असमर्थ।\n"
 
 #: userhelper-wrap.c:179
@@ -502,20 +501,3 @@ msgstr "आपका सञारंभ शब्दकूट को बदल�
 msgid "Password"
 msgstr "शब्दकूट"
 
-#~ msgid "_Ok"
-#~ msgstr "सही"
-
-#~ msgid "_Cancel"
-#~ msgstr "निरस्त"
-
-#~ msgid "_Close"
-#~ msgstr "बंद"
-
-#~ msgid "Type"
-#~ msgstr "प्रकार"
-
-#~ msgid "_Unmount"
-#~ msgstr "अनारोहण करें"
-
-#~ msgid "E_xit"
-#~ msgstr "बाहर"
