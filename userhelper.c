@@ -1115,7 +1115,8 @@ main(int argc, char **argv)
 		char *user_pam = user_name, *apps_user, *auth_user;
 		char *apps_banner, *apps_domain;
 		char *retry, *noxoption;
-		char *env_home, *env_term, *env_display, *env_shell;
+		char *env_home, *env_term, *env_desktop_startup_id;
+		char *env_display, *env_shell;
 		char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
 		int session, tryagain, gui;
 		struct stat sbuf;
@@ -1128,6 +1129,7 @@ main(int argc, char **argv)
 
 		/* Save some of the current environment variables, because the
 		 * environment is going to be nuked shortly. */
+		env_desktop_startup_id = getenv("DESKTOP_STARTUP_ID");
 		env_display = getenv("DISPLAY");
 		env_home = getenv("HOME");
 		env_lang = getenv("LANG");
@@ -1189,6 +1191,8 @@ main(int argc, char **argv)
 		if (env_display) setenv("DISPLAY", env_display, 1);
 
 		/* The rest of the environment variables are simpler. */
+		if (env_desktop_startup_id) setenv("DESKTOP_STARTUP_ID",
+						   env_desktop_startup_id, 1);
 		if (env_lang) setenv("LANG", env_lang, 1);
 		if (env_lcall) setenv("LC_ALL", env_lcall, 1);
 		if (env_lcmsgs) setenv("LC_MESSAGES", env_lcmsgs, 1);

@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.64
+Version: 1.65
 Release: 1
 License: GPL
 Group: Applications/System
@@ -104,6 +104,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Jan 20 2003 Nalin Dahyabhai <nalin@redhat.com> 1.65-1
+- pass-through DESKTOP_STARTUP_ID
+
 * Mon Jan  6 2003 Nalin Dahyabhai <nalin@redhat.com> 1.64-1
 - set the requesting user PAM item to the invoking user's name (#81255)
 
