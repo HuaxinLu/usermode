@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
-"PO-Revision-Date: 2002-08-29 12:09GMT\n"
+"PO-Revision-Date: 2002-09-03 10:16GMT\n"
 "Last-Translator: Marisa <marisa@redhat.it>\n"
 "Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -140,8 +140,7 @@ msgstr "userhelper deve impostare la setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:729
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica o trovare il terminale di "
 "controllo.\n"
@@ -228,7 +227,7 @@ msgstr "Impossibile trovare il programma selezionato."
 msgid "Unknown error."
 msgstr "Errore sconosciuto."
 
-#: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
+#: glade.strings:18 userhelper-wrap.c:293 usermode.glade.h:9
 msgid "Query"
 msgstr "Interrogazione"
 
@@ -245,7 +244,7 @@ msgstr "Errore"
 msgid "Information"
 msgstr "Informazioni "
 
-#: userhelper-wrap.c:441 glade.strings:16 glade.strings:19 usermode.glade.h:8
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:441 usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Contenitore testo"
 
@@ -316,7 +315,7 @@ msgstr "execl() error, errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Identità non conosciuta.\n"
 
-#: usermount.c:61 glade.strings:26
+#: glade.strings:26 usermount.c:61
 msgid "_Mount"
 msgstr "_Monta"
 
@@ -328,8 +327,7 @@ msgstr "_Smonta"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Formattare il disco? La formattazione distruggerà tutti i dati sul disco."
+msgstr "Formattare il disco? La formattazione distruggerà tutti i dati sul disco."
 
 #: usermount.c:331
 msgid "Perform a _low-level format."
@@ -348,20 +346,20 @@ msgstr ""
 "Contattare l'amministratore del sistema."
 
 #. Create the dialog.
-#: usermount.c:543 usermount.c:554 glade.strings:22
+#: glade.strings:22 usermount.c:543 usermount.c:554
 msgid "User Mount Tool"
 msgstr "Tool di montaggio per utenti"
 
 #. Create the other buttons.
-#: usermount.c:568 glade.strings:28
+#: glade.strings:28 usermount.c:568
 msgid "_Format"
 msgstr "_Formatta"
 
-#: usermount.c:604 glade.strings:24
+#: glade.strings:24 usermount.c:604
 msgid "Device"
 msgstr "Dispositivo"
 
-#: usermount.c:610 glade.strings:23
+#: glade.strings:23 usermount.c:610
 msgid "Directory"
 msgstr "Directory"
 
@@ -428,7 +426,7 @@ msgstr "E_sci"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -453,3 +451,4 @@ msgstr "Modifica la password di accesso"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Password"
+
