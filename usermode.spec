@@ -5,16 +5,15 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.72
+Version: 1.74
 Release: 1
 License: GPL
 Group: Applications/System
-Source: usermode-%{version}-%{release}.tar.gz
-Patch0: usermode-mkfs.patch
+Source: usermode-%{version}.tar.bz2
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else
-Requires: util-linux, pam >= 0.75-37, /etc/pam.d/system-auth
+Requires: util-linux, pam >= 0.75-37, /etc/pam.d/system-auth, passwd
 %endif
 Conflicts: SysVinit < 2.74-14
 BuildPrereq: desktop-file-utils, glib2-devel, gtk2-devel
@@ -45,11 +44,11 @@ Install the usermode-gtk package if you would like to provide users with
 graphical tools for certain account management tasks.
 
 %prep
-%setup -q -n %{name}-%{version}-%{release}
-
-%patch0 -p1 -b .mkfs
+%setup -q
+./autogen.sh
 
 %build
+export CPPFLAGS="-g3"
 %configure \
 %if %{WITH_SELINUX}
 	--with-selinux 
@@ -117,10 +116,25 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Oct 20 2004 Jindrich Novy <jnovy@redhat.con> 1.74-1
+- add patch from Mathew Miller (mattdm@mattdm.org) to use
+  own user's password instead of root's in authentization
+  (the user must be a member of specific group to enable it)
+
+* Mon Oct 04 2004 Jindrich Novy <jnovy@redhat.com> 1.73-1
+- add support to configure.in for more languages
+- update translations from upstream
+- generate build scripts by autogen.sh
+
+* Tue Sep 28 2004 Rik van Riel <riel@redhat.com> 1.72-2
+- add dependency on passwd (bz #125010)
+- make sure the Release: isn't part of the path name and tarball name
+
 * Mon Sep 27 2004 Ray Strode <rstrode@redhat.com> 1.72-1
 - remove X-Red-Hat-Base category from userinfo.desktop
 - fix `make distcheck'
-- use proper value types for Terminal keys in desktop entries 
+- use proper value types for Terminal keys in desktop entries
+- remove upstreamed mkfs patch
 
 * Fri Sep 24 2004 Jindrich Novy <jnovy@redhat.com> 1.71-4
 - updated dependencies to SELinux

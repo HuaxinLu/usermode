@@ -1084,6 +1084,46 @@ shell_valid(const char *shell_name)
 	return found;
 }
 
+/* checks if username is a member of groupname */
+static gboolean
+is_group_member(const char *username, const char * groupname)
+{
+	char **mem;
+	struct group *gr = getgrnam(groupname);
+	struct passwd *pw = getpwnam(username);
+	
+	if (pw !=NULL && gr != NULL) {
+		if (gr->gr_gid == pw->pw_gid) return TRUE;
+		for (mem = gr->gr_mem; *mem != NULL; mem++) {
+			if (strcmp(*mem, username) == 0) return TRUE;
+		}
+	}
+	return FALSE;
+} 
+
+/* checks if username is a member of any of a comma-separated list of groups */
+static gboolean
+is_grouplist_member(const char *username, const char * grouplist)
+{
+	char **grouparray;
+	gboolean retval = FALSE;
+	
+	if (grouplist != NULL) {
+		grouparray = g_strsplit(grouplist, ",", -1);
+		int i;
+		for (i = 0; grouparray[i] != NULL; i++) {
+			g_strstrip(grouparray[i]);
+			if (is_group_member(username, grouparray[i])) {
+				retval = TRUE;
+				break;
+			}
+		}
+		g_strfreev(grouparray);
+	}
+	
+	return retval;
+}
+
 static void
 become_super(void)
 {
@@ -1159,7 +1199,7 @@ static char *
 get_user_for_auth(shvarFile *s)
 {
 	char *ret;
-	char *invoking_user, *configured_user;
+	char *invoking_user, *configured_user, *configured_asusergroups;
 
 	invoking_user = get_invoking_user();
 
@@ -1167,16 +1207,28 @@ get_user_for_auth(shvarFile *s)
 
 	if (ret == NULL) {
 		/* Determine who we should authenticate as.  If not specified,
-		 * or if "<user>" is specified, we authenticate as the invoking
+		 * or if "<user>" is specified, or if UGROUPS is set and the
+		 * invoking user is a member, we authenticate as the invoking
 		 * user, otherwise we authenticate as the specified user (which
 		 * is usually root, but could conceivably be someone else). */
 		configured_user = svGetValue(s, "USER");
+		configured_asusergroups = svGetValue(s, "UGROUPS");
 		if (configured_user == NULL) {
 			ret = invoking_user;
 		} else
 		if (strcmp(configured_user, "<user>") == 0) {
 			free(configured_user);
 			ret = invoking_user;
+		} else if (configured_asusergroups != NULL) {
+			if (is_grouplist_member(invoking_user, configured_asusergroups)) {
+				free(configured_user);
+				ret = invoking_user;
+			} else {
+				ret = configured_user;
+			}
+			free(configured_asusergroups);
+		} else if (strcmp(configured_user, "<none>") == 0) {
+			exit(ERR_NO_RIGHTS);
 		} else {
 			ret = configured_user;
 		}

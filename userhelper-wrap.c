@@ -539,7 +539,8 @@ userhelper_parse_childout(char *outline)
 				break;
 			/* User name. Read it and save it for later. */
 			case UH_USER:
-				if (strstr(prompt, "<user>") == NULL) {
+				if ((strstr(prompt, "<user>") == NULL) && 
+				    (strstr(prompt, "<none>") == NULL)) {
 					if (resp->user) {
 						g_free(resp->user);
 					}

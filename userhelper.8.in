@@ -115,7 +115,20 @@ Specify a new shell.
 The name of the user userhelper should attempt to authenticate the invoking
 user as.  Typically this is \fIroot\fP.  The special value \fI<user>\fP (which
 is also the default) indicates that userhelper should authenticate the invoking
-user.
+user. 
+
+The special value \fI<none>\fP indicates that access should be denied;
+when used in conjunction with UGROUPS, members of the given groups can
+authenticate but all others are given an Insufficient Rights message.
+.TP
+.I UGROUPS
+A comma-separated list of groups whose members will be authenticated as if
+USER were set to the special value \fI<user>\fP. If the invoking user is not
+a member of one of these groups, the name defined in USER will be used as
+normal. For example, setting UGROUPS to \fIwheel\fP and USER to \fIroot\fP
+allows members of \fIwheel\fP (traditionally used for administrative
+privileges) to authenticate with their own credentials and requires
+other users to provide the root password.
 .TP
 .I PROGRAM
 The name of the binary to execute if authentication succeeds.  This should
