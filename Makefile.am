@@ -38,7 +38,7 @@ noinst_PROGRAMS = test-userdialog
 man_MANS = userinfo.1 usermount.1 userpasswd.1 consolehelper.8 userhelper.8
 
 pixmapdir = $(datadir)/pixmaps
-pixmap_DATA = keys.xpm status_lock.png user_icon.png password.png disks.png
+pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png password.png disks.png
 
 install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 	mkdir -p $(DESTDIR)/$(datadir)/applications

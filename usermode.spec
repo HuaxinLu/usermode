@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.58
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -112,6 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Aug  7 2002 Nalin Dahyabhai <nalin@redhat.com> 1.58-2
+- install the new 'unlocked' icon
+
 * Tue Aug  6 2002 Jonathan Blandford <jrb@redhat.com>
 - New version.
 
