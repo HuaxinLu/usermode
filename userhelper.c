@@ -599,8 +599,7 @@ int main(int argc, char *argv[])
 
 	environ = (char **) calloc (1, 2 * sizeof (char *));
 	/* note that XAUTHORITY not copied -- do not let attackers get at
-	 * others' X authority records
-	 */
+	 * others' X authority records */
 	if (env_home) setenv("HOME", env_home, 1);
 	if (env_term) setenv("TERM", env_term, 1);
 	if (env_display) setenv("DISPLAY", env_display, 1);
@@ -703,9 +702,6 @@ int main(int argc, char *argv[])
 	    pam_end(pamh, retval);
 	    fail_error(retval);
 	}
-
-	/* reset the XAUTHORITY so that X stuff will work now */
-        if (env_xauthority) setenv("XAUTHORITY", env_xauthority, 1);
 
 	/* copy PAM's environment variables to the child process */
 	env_pam = pam_getenvlist(pamh);

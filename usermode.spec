@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.44
+Version: 1.45
 Release: 1
 License: GPL
 Group: Applications/System
@@ -94,6 +94,9 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Fri Nov  2 2001 Nalin Dahyabhai <nalin@redhat.com> 1.45-1
+- propagate environment variables from libpam to applications
+
 * Fri Oct  3 2001 Nalin Dahyabhai <nalin@redhat.com> 1.44-1
 - only try to call gtk_main_quit() if we've got a loop to get out of (#54109)
 - obey RPM_OPT_FLAGS, obey
