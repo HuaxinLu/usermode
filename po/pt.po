@@ -141,7 +141,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Alguns dos ficheiros de sistema estão trancados.\n"
-"Por favor tente novamento dentro de alguns momentos."
+"Por favor tente novamente dentro de alguns momentos."
 
 #: userhelper-wrap.c:62
 msgid "Unknown user."
@@ -211,26 +211,26 @@ msgstr "A modificar a 'shell' de ligação."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
-msgstr "Está a tentar executar \"%s\", o qual pode beneficiar de previlégios de super-utilizador. No entanto, para os obter são necessárias algumas informações."
+msgstr "Está a tentar executar \"%s\", o qual pode beneficiar de privilégios de super-utilizador. No entanto, para os obter são necessárias algumas informações."
 
 #: userhelper-wrap.c:446
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
-msgstr "Está a tentar executar \"%s\", o qual necessita de previlégios de super-utilizador. No entanto, para os obter são necessárias algumas informações."
+msgstr "Está a tentar executar \"%s\", o qual necessita de privilégios de super-utilizador. No entanto, para os obter são necessárias algumas informações."
 
 #: userhelper-wrap.c:451
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
-msgstr "Está a tentar executar um comando que pode beneficiar de previlégios de super-utilizador. No entanto, para os obter são necessárias algumas informações."
+msgstr "Está a tentar executar um comando que pode beneficiar de privilégios de super-utilizador. No entanto, para os obter são necessárias algumas informações."
 
 #: userhelper-wrap.c:453
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
-msgstr "Está a tentar executar um comando que necessita de previlégios de super-utilizador. No entanto, para os obter são necessárias algumas informações."
+msgstr "Está a tentar executar um comando que necessita de privilégios de super-utilizador. No entanto, para os obter são necessárias algumas informações."
 
 #: userhelper-wrap.c:463
 msgid "_Run Unprivileged"
