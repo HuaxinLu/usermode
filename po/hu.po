@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-31 15:31-0500\n"
+"POT-Creation-Date: 2004-10-04 11:06+0200\n"
 "PO-Revision-Date: 2004-07-17 20:09+0200\n"
 "Last-Translator: Arpad Biro <biro_arpad@yahoo.com>\n"
 "Language-Team: Hungarian\n"
@@ -93,21 +93,87 @@ msgstr "Név: "
 msgid "Password: "
 msgstr "Jelszó: "
 
+#: pam-panel-icon.c:89
+#, c-format
+msgid "Failed to drop administrator privileges: %s"
+msgstr ""
+
+#: pam-panel-icon.c:105
+#, c-format
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+
+#: pam-panel-icon.c:148
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+
+#: pam-panel-icon.c:154
+msgid "Keep Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:158
+msgid "Forget Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:294
+msgid "pam_timestamp_check is not setuid root"
+msgstr ""
+
+#: pam-panel-icon.c:299
+msgid "no controlling tty for pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:303
+msgid "user unknown to pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:307
+msgid "permissions error in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:311
+msgid "invalid controlling tty in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:329
+#, fuzzy, c-format
+msgid "Error: %s\n"
+msgstr "Hiba"
+
+#: pam-panel-icon.c:406
+#, c-format
+msgid "Failed to run command \"%s\": %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:419
+#, c-format
+msgid "Failed to set IO channel nonblocking: %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:491
+msgid "pam-panel-icon: failed to connect to session manager\n"
+msgstr ""
+
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Segítség"
 
-#: userhelper.c:114
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Nem sikerült beállítani a futtatási kontextust erre: %s.\n"
 
-#: userhelper.c:431
+#: userhelper.c:506
 #, c-format
 msgid "Password for %s"
 msgstr "%s jelszava"
 
-#: userhelper.c:674
+#: userhelper.c:749
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -117,7 +183,7 @@ msgstr ""
 "rendszergazdai jogosultsággal indítani, ehhez viszont további\n"
 "információ szükséges."
 
-#: userhelper.c:676
+#: userhelper.c:751
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -126,7 +192,7 @@ msgstr ""
 "\"%s\" indítását kezdeményezte. A program csak rendszergazdai\n"
 "jogosultsággal indítható el, ehhez pedig további információ szükséges."
 
-#: userhelper.c:680
+#: userhelper.c:755
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -135,7 +201,7 @@ msgstr ""
 "rendszergazdai jogosultsággal végrehajtani - ehhez viszont további\n"
 "információ szükséges."
 
-#: userhelper.c:682
+#: userhelper.c:757
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -143,20 +209,21 @@ msgstr ""
 "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai\n"
 "jogosultság szükséges - ehhez pedig további információra van szükség."
 
-#: userhelper.c:701
+#: userhelper.c:776
 #, c-format
 msgid "Password for %s: "
 msgstr "%s jelszava: "
 
-#: userhelper.c:2215
+#: userhelper.c:2249
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "a userhelper programnak 'setuid root' beállításúnak kell lennie\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2313
+#: userhelper.c:2347
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem "
 "található.\n"
@@ -273,9 +340,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"\"%s\" indítását kezdeményezte. A programot érdemesebb lehet "
-"rendszergazdai jogosultsággal indítani, ehhez viszont további "
-"információ szükséges."
+"\"%s\" indítását kezdeményezte. A programot érdemesebb lehet rendszergazdai "
+"jogosultsággal indítani, ehhez viszont további információ szükséges."
 
 #: userhelper-wrap.c:793
 #, c-format
@@ -283,8 +349,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"\"%s\" indítását kezdeményezte. A program csak rendszergazdai "
-"jogosultsággal indítható el, ehhez pedig további információ szükséges."
+"\"%s\" indítását kezdeményezte. A program csak rendszergazdai jogosultsággal "
+"indítható el, ehhez pedig további információ szükséges."
 
 #: userhelper-wrap.c:802
 msgid ""
@@ -345,8 +411,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Biztosan formázza a lemezt? A rajta található adatok véglegesen "
-"elvesznek!"
+"Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -356,34 +421,34 @@ msgstr "Ala_csony szintű formázás végrehajtása."
 msgid "Select a _filesystem type to create:"
 msgstr "Válassza ki _a kívánt fájlrendszertípust:"
 
-#: usermount.c:543
+#: usermount.c:544
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Önnek nincs jogosultsága egyetlen fájlrendszer csatlakoztatására/leválasztására "
-"sem.\n"
+"Önnek nincs jogosultsága egyetlen fájlrendszer csatlakoztatására/"
+"leválasztására sem.\n"
 "Kérjen segítséget a rendszergazdától."
 
 #. Create the dialog.
-#: usermount.c:544 usermount.c:556
+#: usermount.c:545 usermount.c:557
 msgid "User Mount Tool"
 msgstr "Lemezcsatlakoztatási segédprogram"
 
 #. Create the other buttons.
-#: usermount.c:570
+#: usermount.c:571
 msgid "_Format"
 msgstr "_Formázás"
 
-#: usermount.c:606
+#: usermount.c:607
 msgid "Device"
 msgstr "Eszköz"
 
-#: usermount.c:612
+#: usermount.c:613
 msgid "Directory"
 msgstr "Könyvtár"
 
-#: usermount.c:618
+#: usermount.c:619
 msgid "Filesystem"
 msgstr "Fájlrendszer"
 
@@ -443,4 +508,3 @@ msgstr "A jelszó megváltoztatása"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Jelszó"
-

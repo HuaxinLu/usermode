@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
-"POT-Creation-Date: 2002-09-03 01:15-0400\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-10-04 11:06+0200\n"
 "PO-Revision-Date: 2004-07-22 19:05+0600\n"
 "Last-Translator: Runa Bhattacharjee <runa@bengalinux.org>\n"
 "Language-Team: Bangla <redhat-translation@bengalinux.org>\n"
@@ -32,23 +33,38 @@ msgstr ""
 #  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #  Just a dummy file for gettext, containing messages emmitted by various
 #  * commonly-used PAM modules.
-#: dummy.h:21
-#: userdialogs.h:29
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
+#: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "ঠিক আছে"
 
-#: dummy.h:22
-#: userdialogs.h:32
+#: dummy.h:22 userdialogs.h:32
 msgid "Exit"
 msgstr "প্রস্থান"
 
-#: dummy.h:23
-#: userdialogs.h:31
+#: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
 msgstr "বাতিল"
 
-#: dummy.h:24
-#: userdialogs.h:33
+#: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "অধিকার ছাড়া চালাও"
 
@@ -69,7 +85,7 @@ msgstr "ইউনিক্সের নতুন পাসওয়ার্ড প
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "অবৈধ পাসওয়ার্ড: প্রয়োজনীয় দৈর্ঘ্যের চেয়ে অতিরিক্ত ছোট"
 
-#msgstr "অবৈধ পাসওয়ার্ড: প্রয়োজনীয় দৈর্ঘের চেয়ে অতিরিক্ত ছোট" <-- বানান
+# msgstr "অবৈধ পাসওয়ার্ড: প্রয়োজনীয় দৈর্ঘের চেয়ে অতিরিক্ত ছোট" <-- বানান
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "অবৈধ পাসওয়ার্ড: অতিরিক্ত ছোট"
@@ -82,30 +98,106 @@ msgstr "পাসওয়ার্ড বদল করা হয় নি"
 msgid "Sorry, passwords do not match"
 msgstr "দুঃখিত, পাসওয়ার্ডগুলো মেলেনি"
 
-#msgstr "দুক্ষিত, পাসওয়ার্ডগুলো মেলেনি" <-- দুঃখিত, আপনার বানানটা ভুল ছিল
+# msgstr "দুক্ষিত, পাসওয়ার্ডগুলো মেলেনি" <-- দুঃখিত, আপনার বানানটা ভুল ছিল
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "সমগ্র-সিস্টেম-ব্যাপী কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঞ্চ করো।"
 
+#: dummy.h:33
+msgid "login: "
+msgstr ""
 
-#msgstr "সিস্টেম-জোড়া কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঞ্চ করো।"
-#msgstr "সিস্টেম-জোড়া কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঙ্চ করো।ষ" <-- বানান
-#msgstr "সমগ্র-সিস্টেম-ব্যাপী কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঙ্চ করো।"
+# msgstr "আপনার লগ-ইন পাসওয়ার্ড পরিবর্তন করুন"
+#: dummy.h:34
+#, fuzzy
+msgid "Password: "
+msgstr "পাসওয়ার্ড"
+
+#: pam-panel-icon.c:89
+#, c-format
+msgid "Failed to drop administrator privileges: %s"
+msgstr ""
+
+#: pam-panel-icon.c:105
+#, c-format
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+
+#: pam-panel-icon.c:148
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+
+#: pam-panel-icon.c:154
+msgid "Keep Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:158
+msgid "Forget Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:294
+msgid "pam_timestamp_check is not setuid root"
+msgstr ""
+
+#: pam-panel-icon.c:299
+msgid "no controlling tty for pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:303
+msgid "user unknown to pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:307
+msgid "permissions error in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:311
+msgid "invalid controlling tty in pam_timestamp_check"
+msgstr ""
+
+# অস্পস্ট
+#: pam-panel-icon.c:329
+#, fuzzy, c-format
+msgid "Error: %s\n"
+msgstr "সমস্যা"
+
+#: pam-panel-icon.c:406
+#, c-format
+msgid "Failed to run command \"%s\": %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:419
+#, c-format
+msgid "Failed to set IO channel nonblocking: %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:491
+msgid "pam-panel-icon: failed to connect to session manager\n"
+msgstr ""
+
+# msgstr "সিস্টেম-জোড়া কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঞ্চ করো।"
+# msgstr "সিস্টেম-জোড়া কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঙ্চ করো।ষ" <-- বানান
+# msgstr "সমগ্র-সিস্টেম-ব্যাপী কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঙ্চ করো।"
 #: userdialogs.h:30
 msgid "Help"
 msgstr "সহায়িকা"
 
-#: userhelper.c:99
+#: userhelper.c:138 userhelper.c:141
 #, c-format
-msgid "Got PAM error %d.\n"
-msgstr "PAM সমস্যা %d ধরা পড়েছে।\n"
+msgid "Could not set exec context to %s.\n"
+msgstr ""
 
-#: userhelper.c:225
+#: userhelper.c:506
 #, c-format
 msgid "Password for %s"
 msgstr "%s -র পাসওয়ার্ড"
 
-#: userhelper.c:346
+#: userhelper.c:749
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -116,7 +208,7 @@ msgstr ""
 
 # বোঝা যাচ্ছে না ;-(
 # ........... প্রয়োজন আছে।
-#: userhelper.c:348
+#: userhelper.c:751
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -126,17 +218,18 @@ msgstr ""
 "কিন্তু এই কাজের  জন্য অধিক তথ্য প্রয়োজন।"
 
 # আগেরটার মতই ;-(
-#: userhelper.c:352
+#: userhelper.c:755
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"আপনি এমন একটি কমান্ড চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার থাকলে সুবিধাজনক হত \n"
+"আপনি এমন একটি কমান্ড চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার থাকলে "
+"সুবিধাজনক হত \n"
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # এভাবে লিখতে পারেন -" ........., কিন্তু প্রশাসনিক অধিকার পাওয়ার জন্য আপনাকে আরো তথ্য জানাতে হবে।"
 # ভাল কথা, Administrator শব্দটা যখন অনুবাদ করা হচ্ছে না তখন Administrative সম্ভবত অনুবাদ করার দরকার নাই।
-#: userhelper.c:354
+#: userhelper.c:757
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -144,38 +237,37 @@ msgstr ""
 "আপনি এমন একটি কমান্ড চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার আবশ্যক,\n"
 " কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: userhelper.c:373
+#: userhelper.c:776
 #, c-format
 msgid "Password for %s: "
 msgstr "%s -র পাসওয়ার্ড: "
 
-#: userhelper.c:647
+#: userhelper.c:2249
+#, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper এর জন্য setuid root হওয়া আবশ্যক\n"
 
 # sgstr "userhelper-কে setuid root হিসেবে চালাতে হবে\n
 # Root বাংলায় লিখলে অনেকে নাও বুঝতে পারে।
 #  FIXME: print a warning here?
-#: userhelper.c:729
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "গ্রাফিক্যাল উইন্ডো খোলা যায় নি, এবং নিয়ন্ত্রণকারী টার্মিনালটিও খুঁজে পাওয়া যায় নি।\n"
-
-#: userhelper.c:1434
-#: userhelper.c:1480
+#. FIXME: print a warning here?
+#: userhelper.c:2347
 #, c-format
-msgid "about to exec \"%s\"\n"
-msgstr "\"%s\" চালু করা হবে\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"গ্রাফিক্যাল উইন্ডো খোলা যায় নি, এবং নিয়ন্ত্রণকারী টার্মিনালটিও খুঁজে পাওয়া যায় নি।\n"
 
 # ..........হতে যাচ্ছে
-#: userhelper-wrap.c:61
+#: userhelper-wrap.c:179
 msgid "Unknown exit code."
 msgstr "অজ্ঞাত প্রস্থান (Exit) কোড।"
 
-#: userhelper-wrap.c:63
+#: userhelper-wrap.c:181
 msgid "Information updated."
 msgstr "তথ্য পরিমার্জন করা হয়েছে।"
 
-#: userhelper-wrap.c:65
+#: userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -183,7 +275,7 @@ msgstr ""
 "আপনি যে পাসওয়ার্ডটি লিখেছেন তা অবৈধ।\n"
 "দয়া করা আবার লিখুন।"
 
-#: userhelper-wrap.c:67
+#: userhelper-wrap.c:185
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -193,11 +285,11 @@ msgstr ""
 "সম্ভবত ভুলক্রমে কোলন অথবা বিরামচিহ্ন লেখার ফলে এই সমস্যা হয়েছে।\n"
 "এগুলো মুছে আবার চেষ্টা করুন।"
 
-#: userhelper-wrap.c:69
+#: userhelper-wrap.c:187
 msgid "Password resetting error."
 msgstr "পাসওয়ার্ড রিসেট করতে সমস্যা দেখা দিয়েছে।"
 
-#: userhelper-wrap.c:71
+#: userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -206,19 +298,20 @@ msgstr ""
 "অনুগ্রহ করে কিছুক্ষণ পরে পুনরায় চেষ্টা করুন।"
 
 # লক (Lock)
-#: userhelper-wrap.c:73
+#: userhelper-wrap.c:191
 msgid "Unknown user."
 msgstr "অজানা ব্যবহারকারী।"
 
-#: userhelper-wrap.c:75
+#: userhelper-wrap.c:193
 msgid "Insufficient rights."
 msgstr "অপর্যাপ্ত (Insufficient) অধিকার।"
 
-#: userhelper-wrap.c:77
-msgid "Invalid call to subprocess.."
+#: userhelper-wrap.c:195
+#, fuzzy
+msgid "Invalid call to subprocess."
 msgstr "সাবপ্রসেসকে ভুল উপায়ে চালানোর চেষ্টা করা হয়েছে.."
 
-#: userhelper-wrap.c:79
+#: userhelper-wrap.c:197
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -229,133 +322,150 @@ msgstr ""
 "আপনার সিস্টেম অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
 
 # ২য় বাক্যটা.......
-#: userhelper-wrap.c:82
+#: userhelper-wrap.c:200
 msgid "Out of memory."
 msgstr "অপর্যাপ্ত মেমরি।"
 
 # মেমরী
-#: userhelper-wrap.c:84
+#: userhelper-wrap.c:202
 msgid "The exec() call failed."
 msgstr "exec() কার্যকর করার চেষ্টা ব্যর্থ হয়েছে।"
 
-#: userhelper-wrap.c:86
+#: userhelper-wrap.c:204
 msgid "Failed to find selected program."
 msgstr "বাছাই করা প্রোগ্রামটি খুঁজে পাওয়া যায় নি।"
 
-#: userhelper-wrap.c:90
+#: userhelper-wrap.c:208
 msgid "Unknown error."
 msgstr "অজানা সমস্যা।"
 
-#: userhelper-wrap.c:293
-#: glade.strings:18
-#: usermode.glade.h:9
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
+#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "অনুসন্ধান"
 
-#: userhelper-wrap.c:342
-#, c-format
-msgid "Need %d responses.\n"
-msgstr "%d প্রত্যুত্তোর প্রয়োজন।\n"
-
 # অস্পস্ট
-#: userhelper-wrap.c:374
-#: userhelper-wrap.c:443
+#: userhelper-wrap.c:564 userhelper-wrap.c:744
 msgid "Error"
 msgstr "সমস্যা"
 
-#: userhelper-wrap.c:386
+#: userhelper-wrap.c:576
 msgid "Information"
 msgstr "তথ্য"
 
-#: userhelper-wrap.c:441
-#: glade.strings:16
-#: glade.strings:19
+#: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "প্লেস হোল্ডার (Placeholder) টেক্সট (text)।"
 
-#: userhelper-wrap.c:482
+#: userhelper-wrap.c:782
 msgid "Changing personal information."
 msgstr "ব্যক্তিগত তথ্য পরিবর্তন করা হচ্ছে।"
 
 # 'বদল' এর থিকে 'পরিবর্তন' অনেকে ভাল শোনায় না কি ?
-#: userhelper-wrap.c:485
+#: userhelper-wrap.c:785
 msgid "Changing login shell."
 msgstr "লগ-ইন শেল পরিবর্তন করা হচ্ছে।"
 
-#msgstr "লগ-ইন শেল বদল করা হচ্ছে।"
-#: userhelper-wrap.c:491
+# msgstr "লগ-ইন শেল বদল করা হচ্ছে।"
+#: userhelper-wrap.c:791
 #, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "আপনি \"%s\" চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার থাকলে সুবিধাজনক হত, কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"আপনি \"%s\" চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার থাকলে সুবিধাজনক হত, "
+"কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # সেই আগের মত
-#: userhelper-wrap.c:493
+#: userhelper-wrap.c:793
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
-msgstr "আপনি \"%s\" চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার আবশ্যক, কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"আপনি \"%s\" চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার আবশ্যক, কিন্তু এই কাজের "
+"জন্য অধিক তথ্য প্রয়োজন।"
 
 # বাক্যটা ভুল হইছে
-#: userhelper-wrap.c:502
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "আপনি এমন একটি কমান্ড চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার থাকলে সুবিধাজনক হত, কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
+#: userhelper-wrap.c:802
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"আপনি এমন একটি কমান্ড চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার থাকলে "
+"সুবিধাজনক হত, কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # বাক্যটা ভুল হইছে
-#: userhelper-wrap.c:504
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
-msgstr "আপনি এমন একটি কমান্ড চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার আবশ্যক, কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
+#: userhelper-wrap.c:804
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"আপনি এমন একটি কমান্ড চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার আবশ্যক, কিন্তু "
+"এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: userhelper-wrap.c:521
+#: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
 msgstr "বিনা অধিকারে চালাও(_চ)"
 
-#: userhelper-wrap.c:622
+#: userhelper-wrap.c:973
+#, c-format
 msgid "Pipe error.\n"
 msgstr "পাইপের সমস্যা।\n"
 
-#: userhelper-wrap.c:629
+#: userhelper-wrap.c:980
+#, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() করা সম্ভব নয়।\n"
 
-#: userhelper-wrap.c:696
-#: userhelper-wrap.c:700
+#: userhelper-wrap.c:1058 userhelper-wrap.c:1062
+#, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() -র সমস্যা।\n"
 
-#: userhelper-wrap.c:712
+#: userhelper-wrap.c:1074
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "exec() -র সমস্যা, সমস্যা সংখ্যা=%d\n"
 
 # সমস্যা নম্বর =%d
-#: userinfo.c:321
+#: userinfo.c:323
+#, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "আপনি আবার কে। চলে যান।\n"
 
 # আপনি আবার কে ? ফুটেন মিয়া ;-)
-#: usermount.c:61
-#: glade.strings:26
+#: usermount.c:62
 msgid "_Mount"
 msgstr "মাউন্ট(_ম)"
 
-#: usermount.c:62
+#: usermount.c:63
 msgid "Un_mount"
 msgstr "আনমাউন্ট(_ন)"
 
-#: usermount.c:320
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "আপনি কি নিশ্চিতরূপে এই ডিস্কটি ফরম্যাট করতে ইচ্ছুক? এতে সংরক্ষিত সকল তথ্য ফরম্যাটের দরুন মুছে যাবে।"
+#: usermount.c:321
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"আপনি কি নিশ্চিতরূপে এই ডিস্কটি ফরম্যাট করতে ইচ্ছুক? এতে সংরক্ষিত সকল তথ্য ফরম্যাটের "
+"দরুন মুছে যাবে।"
 
 # ফরম্যাটের ফলে ডিস্কে সংরক্ষিত সকল তথ্য মুছে যাবে। তখন খুব ভাল হবে।
-#: usermount.c:331
+#: usermount.c:332
 msgid "Perform a _low-level format."
 msgstr "একটি লো-লেভেল (Low-Level) ফরম্যাট করুন।"
 
-#: usermount.c:374
+#: usermount.c:375
 msgid "Select a _filesystem type to create:"
 msgstr "যে ধরনের ফাইলসিস্টেম তৈরি করা হবে তা নির্বাচন করুন(_ফ):"
 
-#: usermount.c:542
+#: usermount.c:544
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -364,123 +474,80 @@ msgstr ""
 "আপনার অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
 
 #. Create the dialog.
-#: usermount.c:543
-#: usermount.c:554
-#: glade.strings:22
+#: usermount.c:545 usermount.c:557
 msgid "User Mount Tool"
 msgstr "মাউন্ট করার কাজে সাধারণ ব্যবহারকারীর ব্যবহার্য সফটওয়ার টুল"
 
 # মাউন্ট করার কাজে সাধারণ ব্যবহারকারীর ব্যবহার্য সফটওয়ার
 #. Create the other buttons.
-#: usermount.c:568
-#: glade.strings:28
+#: usermount.c:571
 msgid "_Format"
 msgstr "ফরম্যাট(_ফ)"
 
-#: usermount.c:604
-#: glade.strings:24
+#: usermount.c:607
 msgid "Device"
 msgstr "ডিভাইস"
 
-#: usermount.c:610
-#: glade.strings:23
+#: usermount.c:613
 msgid "Directory"
 msgstr "ডিরেক্টরি"
 
-#: usermount.c:616
+#: usermount.c:619
 msgid "Filesystem"
 msgstr "ফাইলসিস্টেম"
 
-#.
-#. * Translatable strings file generated by Glade.
-#. * Add this file to your project's POTFILES.in.
-#. * DO NOT compile it as part of your application.
-#.
-#: glade.strings:7
-#: usermode.glade.h:10
-msgid "User Information"
-msgstr "ব্যবহারকারীর পরিচিতি"
+# msgstr "প্রস্থান (_প)" <-- Standard term
+#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
+#: glade.strings.h:21 usermode.glade.h:1
+msgid "*"
+msgstr "*"
 
-#msgstr "ব্যবহারকারীর পরিচিত"
-#: glade.strings:8
-#: usermode.glade.h:2
-msgid "Full Name:"
-msgstr "সম্পূর্ণ নাম:"
-
-#: glade.strings:9
-#: usermode.glade.h:7
-msgid "Office:"
-msgstr "অফিস:"
-
-#: glade.strings:10
-#: usermode.glade.h:6
-msgid "Office Phone Number:"
-msgstr "অফিসের ফোন নম্বর:"
-
-#: glade.strings:11
-#: usermode.glade.h:3
-msgid "Home Phone Number:"
-msgstr "বাড়ির ফোন নম্বর:"
-
-#msgstr "বাড়ির ফোন নম্বর:" <-- ইংরেজিটা খেয়াল করেন
-#: glade.strings:12
-#: usermode.glade.h:4
-msgid "Login Shell:"
-msgstr "লগ ইন শেল:"
-
-#msgstr "লগ-ইন শেল:"
-#: glade.strings:13
-#: glade.strings:20
-msgid "_Ok"
-msgstr "ঠিক আছে(_ঠ)"
-
-#: glade.strings:14
-#: glade.strings:21
-msgid "_Cancel"
-msgstr "বাতিল(_ব)"
-
-#msgstr "বাতিল (_ব)"
-#: glade.strings:15
-#: usermode.glade.h:5
+# msgstr "বাতিল (_ব)"
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "বার্তা"
 
-#: glade.strings:17
-msgid "_Close"
-msgstr "বন্ধ করো(_ব)"
+#: glade.strings.h:12 usermode.glade.h:10
+msgid "User Information"
+msgstr "ব্যবহারকারীর পরিচিতি"
 
-#: glade.strings:25
-msgid "Type"
-msgstr "ধরন"
+# msgstr "ব্যবহারকারীর পরিচিত"
+#: glade.strings.h:13 usermode.glade.h:2
+msgid "Full Name:"
+msgstr "সম্পূর্ণ নাম:"
 
-#: glade.strings:27
-msgid "_Unmount"
-msgstr "আনমাউন্ট(_ন)"
+#: glade.strings.h:14 usermode.glade.h:7
+msgid "Office:"
+msgstr "অফিস:"
 
-#: glade.strings:29
-msgid "E_xit"
-msgstr "প্রস্থান(_প)"
+#: glade.strings.h:15 usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "অফিসের ফোন নম্বর:"
 
-#msgstr "প্রস্থান (_প)" <-- Standard term
-#: usermode.glade.h:1
-msgid "*"
-msgstr "*"
+#: glade.strings.h:16 usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr "বাড়ির ফোন নম্বর:"
+
+# msgstr "বাড়ির ফোন নম্বর:" <-- ইংরেজিটা খেয়াল করেন
+#: glade.strings.h:17 usermode.glade.h:4
+msgid "Login Shell:"
+msgstr "লগ ইন শেল:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
 msgstr "আমার পরিচিতি"
 
-#msgstr "এই আমি" ;-)
+# msgstr "এই আমি" ;-)
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
 msgstr "ব্যক্তিগত তথ্য পরিবর্তন করো"
 
-#msgstr "ব্যাক্তিগত তথ্য বদল করো" <-- বানান
+# msgstr "ব্যাক্তিগত তথ্য বদল করো" <-- বানান
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
 msgstr "ডিস্ক পরিচালনা"
 
-#msgstr "ডিস্ক ব্যবস্থাপনা"
+# msgstr "ডিস্ক ব্যবস্থাপনা"
 # যেইটা খুশি লিখেন
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
@@ -490,8 +557,35 @@ msgstr "ফাইলসিস্টেম মাউন্ট এবং আনম
 msgid "Change your login password"
 msgstr "আপনার লগ-ইনের পাসওয়ার্ড পরিবর্তন করুন"
 
-#msgstr "আপনার লগ-ইন পাসওয়ার্ড পরিবর্তন করুন"
+# msgstr "আপনার লগ-ইন পাসওয়ার্ড পরিবর্তন করুন"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "পাসওয়ার্ড"
 
+#~ msgid "Got PAM error %d.\n"
+#~ msgstr "PAM সমস্যা %d ধরা পড়েছে।\n"
+
+#~ msgid "about to exec \"%s\"\n"
+#~ msgstr "\"%s\" চালু করা হবে\n"
+
+#~ msgid "Need %d responses.\n"
+#~ msgstr "%d প্রত্যুত্তোর প্রয়োজন।\n"
+
+# msgstr "লগ-ইন শেল:"
+#~ msgid "_Ok"
+#~ msgstr "ঠিক আছে(_ঠ)"
+
+#~ msgid "_Cancel"
+#~ msgstr "বাতিল(_ব)"
+
+#~ msgid "_Close"
+#~ msgstr "বন্ধ করো(_ব)"
+
+#~ msgid "Type"
+#~ msgstr "ধরন"
+
+#~ msgid "_Unmount"
+#~ msgstr "আনমাউন্ট(_ন)"
+
+#~ msgid "E_xit"
+#~ msgstr "প্রস্থান(_প)"

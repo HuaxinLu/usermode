@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-31 15:31-0500\n"
+"POT-Creation-Date: 2004-10-04 11:06+0200\n"
 "PO-Revision-Date: 2004-08-24 00:51+0300\n"
 "Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
@@ -92,21 +92,87 @@ msgstr "Име: "
 msgid "Password: "
 msgstr "Парола: "
 
+#: pam-panel-icon.c:89
+#, c-format
+msgid "Failed to drop administrator privileges: %s"
+msgstr ""
+
+#: pam-panel-icon.c:105
+#, c-format
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+
+#: pam-panel-icon.c:148
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+
+#: pam-panel-icon.c:154
+msgid "Keep Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:158
+msgid "Forget Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:294
+msgid "pam_timestamp_check is not setuid root"
+msgstr ""
+
+#: pam-panel-icon.c:299
+msgid "no controlling tty for pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:303
+msgid "user unknown to pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:307
+msgid "permissions error in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:311
+msgid "invalid controlling tty in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:329
+#, fuzzy, c-format
+msgid "Error: %s\n"
+msgstr "Грешка"
+
+#: pam-panel-icon.c:406
+#, c-format
+msgid "Failed to run command \"%s\": %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:419
+#, c-format
+msgid "Failed to set IO channel nonblocking: %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:491
+msgid "pam-panel-icon: failed to connect to session manager\n"
+msgstr ""
+
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Помощ"
 
-#: userhelper.c:114
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Неуспешно установяване контекста на изпълнение на %s.\n"
 
-#: userhelper.c:431
+#: userhelper.c:506
 #, c-format
 msgid "Password for %s"
 msgstr "Парола за %s"
 
-#: userhelper.c:674
+#: userhelper.c:749
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -115,7 +181,7 @@ msgstr ""
 "Опитвате се да стартирате \"%s\". В случая от полза могат да бъдат\n"
 "административни права, но за това е нужна повече информация."
 
-#: userhelper.c:676
+#: userhelper.c:751
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -124,7 +190,7 @@ msgstr ""
 "Опитвате се да стартирате \"%s\". За целта са необходими административни\n"
 "права, но за това е нужна повече информация."
 
-#: userhelper.c:680
+#: userhelper.c:755
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -132,7 +198,7 @@ msgstr ""
 "Опитвате се да стартирате команда, която може да се възползва\n"
 "от административни права, но за това е нужна повече информация."
 
-#: userhelper.c:682
+#: userhelper.c:757
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -140,21 +206,24 @@ msgstr ""
 "Опитвате се да стартирате команда, която изисква административни\n"
 "права, но за това е нужна повече информация."
 
-#: userhelper.c:701
+#: userhelper.c:776
 #, c-format
 msgid "Password for %s: "
 msgstr "Парола за %s: "
 
-#: userhelper.c:2215
+#: userhelper.c:2249
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper трябва да бъде setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2313
+#: userhelper.c:2347
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Не може да бъде отворен графичен прозорец, а не може да бъде намерен и контролен терминал.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Не може да бъде отворен графичен прозорец, а не може да бъде намерен и "
+"контролен терминал.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -285,16 +354,16 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Опитвате се да стартирате команда, която може да се възползва "
-"от административни права, но за това е нужна повече информация."
+"Опитвате се да стартирате команда, която може да се възползва от "
+"административни права, но за това е нужна повече информация."
 
 #: userhelper-wrap.c:804
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Опитвате се да стартирате команда, която изисква административни "
-"права, но за това е нужна повече информация."
+"Опитвате се да стартирате команда, която изисква административни права, но "
+"за това е нужна повече информация."
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
@@ -349,7 +418,7 @@ msgstr "Форматиране на _ниско ниво."
 msgid "Select a _filesystem type to create:"
 msgstr "Изберете тип _файлова система:"
 
-#: usermount.c:543
+#: usermount.c:544
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -358,24 +427,24 @@ msgstr ""
 "Свържете се със своя администратор."
 
 #. Create the dialog.
-#: usermount.c:544 usermount.c:556
+#: usermount.c:545 usermount.c:557
 msgid "User Mount Tool"
 msgstr "Потребителски инструмент за монтиране"
 
 #. Create the other buttons.
-#: usermount.c:570
+#: usermount.c:571
 msgid "_Format"
 msgstr "_Форматиране"
 
-#: usermount.c:606
+#: usermount.c:607
 msgid "Device"
 msgstr "Устройство"
 
-#: usermount.c:612
+#: usermount.c:613
 msgid "Directory"
 msgstr "Директория"
 
-#: usermount.c:618
+#: usermount.c:619
 msgid "Filesystem"
 msgstr "Файлова система"
 
@@ -435,4 +504,3 @@ msgstr "Промяна на паролата за вход"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Парола"
-

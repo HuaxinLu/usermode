@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-31 15:31-0500\n"
+"POT-Creation-Date: 2004-10-04 11:06+0200\n"
 "PO-Revision-Date: 2004-01-11 18:15+0000\n"
 "Last-Translator: Gustavo Luiz Gomes dos Santos <gustavo.luiz@galoforte.com."
 "br>\n"
@@ -92,21 +92,87 @@ msgstr "login: "
 msgid "Password: "
 msgstr "Senha: "
 
+#: pam-panel-icon.c:89
+#, c-format
+msgid "Failed to drop administrator privileges: %s"
+msgstr ""
+
+#: pam-panel-icon.c:105
+#, c-format
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+
+#: pam-panel-icon.c:148
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+
+#: pam-panel-icon.c:154
+msgid "Keep Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:158
+msgid "Forget Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:294
+msgid "pam_timestamp_check is not setuid root"
+msgstr ""
+
+#: pam-panel-icon.c:299
+msgid "no controlling tty for pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:303
+msgid "user unknown to pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:307
+msgid "permissions error in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:311
+msgid "invalid controlling tty in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:329
+#, fuzzy, c-format
+msgid "Error: %s\n"
+msgstr "Erro"
+
+#: pam-panel-icon.c:406
+#, c-format
+msgid "Failed to run command \"%s\": %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:419
+#, c-format
+msgid "Failed to set IO channel nonblocking: %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:491
+msgid "pam-panel-icon: failed to connect to session manager\n"
+msgstr ""
+
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Ajuda"
 
-#: userhelper.c:114
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Não pôde configurar contexto de execução para %s.\n"
 
-#: userhelper.c:431
+#: userhelper.c:506
 #, c-format
 msgid "Password for %s"
 msgstr "Senha para %s"
 
-#: userhelper.c:674
+#: userhelper.c:749
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -115,7 +181,7 @@ msgstr ""
 "Você está tentando executar \"%s\", que pode se beneficiar de privilégios\n"
 "administrativos; porém são necessárias mais informações para fazer isso."
 
-#: userhelper.c:676
+#: userhelper.c:751
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -124,7 +190,7 @@ msgstr ""
 "Você está tentando executar \"%s\", que requer privilégios\n"
 "administrativos; porém são necessárias mais informações para fazer isso."
 
-#: userhelper.c:680
+#: userhelper.c:755
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -133,7 +199,7 @@ msgstr ""
 "privilégios\n"
 "administrativos; porém são necessárias mais informações para fazer isso."
 
-#: userhelper.c:682
+#: userhelper.c:757
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -141,18 +207,18 @@ msgstr ""
 "Você está tentando executar um comando que requer privilégios\n"
 "administrativos; porém são necessárias mais informações para fazer isso."
 
-#: userhelper.c:701
+#: userhelper.c:776
 #, c-format
 msgid "Password for %s: "
 msgstr "Senha para %s: "
 
-#: userhelper.c:2215
+#: userhelper.c:2249
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper deve ter o id do usuário configurado como root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2313
+#: userhelper.c:2347
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -354,7 +420,7 @@ msgstr "Executar formatação de _baixo nível."
 msgid "Select a _filesystem type to create:"
 msgstr "Selecione um tipo de _sistema de arquivo a ser criado:"
 
-#: usermount.c:543
+#: usermount.c:544
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -363,24 +429,24 @@ msgstr ""
 "Contate seu administrador de sistemas."
 
 #. Create the dialog.
-#: usermount.c:544 usermount.c:556
+#: usermount.c:545 usermount.c:557
 msgid "User Mount Tool"
 msgstr "Ferramenta de Montagem do Usuário"
 
 #. Create the other buttons.
-#: usermount.c:570
+#: usermount.c:571
 msgid "_Format"
 msgstr "_Formatar"
 
-#: usermount.c:606
+#: usermount.c:607
 msgid "Device"
 msgstr "Dispositivo"
 
-#: usermount.c:612
+#: usermount.c:613
 msgid "Directory"
 msgstr "Diretório"
 
-#: usermount.c:618
+#: usermount.c:619
 msgid "Filesystem"
 msgstr "Sistema de Arquivos"
 

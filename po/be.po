@@ -5,13 +5,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-31 15:31-0500\n"
+"POT-Creation-Date: 2004-10-04 11:06+0200\n"
 "PO-Revision-Date: 2004-09-13 14:21+0300\n"
 "Last-Translator: Vital Khilko (aka dojlid) <vk@mova.org>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -88,21 +88,87 @@ msgstr "уліковае імя: "
 msgid "Password: "
 msgstr "Пароль: "
 
+#: pam-panel-icon.c:89
+#, c-format
+msgid "Failed to drop administrator privileges: %s"
+msgstr ""
+
+#: pam-panel-icon.c:105
+#, c-format
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+
+#: pam-panel-icon.c:148
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+
+#: pam-panel-icon.c:154
+msgid "Keep Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:158
+msgid "Forget Authorization"
+msgstr ""
+
+#: pam-panel-icon.c:294
+msgid "pam_timestamp_check is not setuid root"
+msgstr ""
+
+#: pam-panel-icon.c:299
+msgid "no controlling tty for pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:303
+msgid "user unknown to pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:307
+msgid "permissions error in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:311
+msgid "invalid controlling tty in pam_timestamp_check"
+msgstr ""
+
+#: pam-panel-icon.c:329
+#, fuzzy, c-format
+msgid "Error: %s\n"
+msgstr "Памылка"
+
+#: pam-panel-icon.c:406
+#, c-format
+msgid "Failed to run command \"%s\": %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:419
+#, c-format
+msgid "Failed to set IO channel nonblocking: %s\n"
+msgstr ""
+
+#: pam-panel-icon.c:491
+msgid "pam-panel-icon: failed to connect to session manager\n"
+msgstr ""
+
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Даведка"
 
-#: userhelper.c:114
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Немагчыма выставіць сьцяг запуску на %s.\n"
 
-#: userhelper.c:431
+#: userhelper.c:506
 #, c-format
 msgid "Password for %s"
 msgstr "Пароль карыстальніка %s"
 
-#: userhelper.c:674
+#: userhelper.c:749
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -112,7 +178,7 @@ msgstr ""
 "пэўныя перавагі, калі будзе выканана з адміністратыўнымі\n"
 "прывілеямі, але для гэтага спатрэбяцца дадатковыя зьвесткі."
 
-#: userhelper.c:676
+#: userhelper.c:751
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -122,7 +188,7 @@ msgstr ""
 "адміністратыўныя прывілеі, але для гэтага патрэбныя\n"
 "дадатковыя зьвесткі."
 
-#: userhelper.c:680
+#: userhelper.c:755
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -131,7 +197,7 @@ msgstr ""
 "перавагі, калі будзе выканана з адміністратыўнымі правамі,\n"
 "але для гэтага патрабуюцца дадатковыя зьвесткі."
 
-#: userhelper.c:682
+#: userhelper.c:757
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -139,18 +205,18 @@ msgstr ""
 "Вы спрабуеце выканаць праграму, якая патрабуе адміністратыўныя\n"
 "прывілеі. Для гэтага патрэбныя дадатковыя зьвесткі."
 
-#: userhelper.c:701
+#: userhelper.c:776
 #, c-format
 msgid "Password for %s: "
 msgstr "Пароль карыстальніка %s: "
 
-#: userhelper.c:2215
+#: userhelper.c:2249
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper мусіць быць setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2313
+#: userhelper.c:2347
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -286,17 +352,17 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы спрабуеце выканаць праграму, якая атрымлівае пэўныя перавагі "
-"калі будзе выканана з адміністратыўнымі прывілеямі. Для гэтага патрабуецца "
-"дадатковыя зьвесткі."
+"Вы спрабуеце выканаць праграму, якая атрымлівае пэўныя перавагі калі будзе "
+"выканана з адміністратыўнымі прывілеямі. Для гэтага патрабуецца дадатковыя "
+"зьвесткі."
 
 #: userhelper-wrap.c:804
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Вы спрабуеце выканаць праграму, якая патрабуе адміністратыўныя "
-"прывілеі. Для гэтага неабходны дадатковыя зьвесткі."
+"Вы спрабуеце выканаць праграму, якая патрабуе адміністратыўныя прывілеі. Для "
+"гэтага неабходны дадатковыя зьвесткі."
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
@@ -340,8 +406,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Вы сапраўды жадаеце фарматаваць гэты дыск? Усе даньні на ім будуць "
-"зьнішчаны."
+"Вы сапраўды жадаеце фарматаваць гэты дыск? Усе даньні на ім будуць зьнішчаны."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -351,7 +416,7 @@ msgstr "Выканаць фармат нізкага ўзроўню."
 msgid "Select a _filesystem type to create:"
 msgstr "Пазначце тып файлавае сыстэмы:"
 
-#: usermount.c:543
+#: usermount.c:544
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -360,24 +425,24 @@ msgstr ""
 "Зьвяжыцеся з сыстэмным адміністратарам."
 
 #. Create the dialog.
-#: usermount.c:544 usermount.c:556
+#: usermount.c:545 usermount.c:557
 msgid "User Mount Tool"
 msgstr "Інструмэнт мацаваньня для карыстальнікаў"
 
 #. Create the other buttons.
-#: usermount.c:570
+#: usermount.c:571
 msgid "_Format"
 msgstr "Фарматаваць"
 
-#: usermount.c:606
+#: usermount.c:607
 msgid "Device"
 msgstr "Прылада"
 
-#: usermount.c:612
+#: usermount.c:613
 msgid "Directory"
 msgstr "Каталёг"
 
-#: usermount.c:618
+#: usermount.c:619
 msgid "Filesystem"
 msgstr "Файлавая сыстэма"
 
