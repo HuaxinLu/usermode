@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.26
-Release: 1
+Release: 2
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -74,6 +74,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Wed Jul 12 2000 Nalin Dahyabhia <nalin@redhat.com>
+- attempt to get a usable icon for userhelper-wrap (#13616, #13768)
+
 * Wed Jul  5 2000 Nalin Dahyabhia <nalin@redhat.com>
 - fix them right this time
 
