@@ -1,5 +1,5 @@
-/* -*-Mode: c-*- */
-/* Copyright (C) 1997 Red Hat Software, Inc.
+/*
+ * Copyright (C) 1997,2001 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -19,11 +19,11 @@
 #ifndef __USERDIALOGS_H__
 #define __USERDIALOGS_H__
 
+#include <libintl.h>
+#include <locale.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
-#include <locale.h>
-#include <libintl.h>
-#define i18n(String) gettext(String)
+#define _(String) gettext(String)
 #define N_(String) String
 
 #define UD_OK_TEXT N_("OK")
@@ -32,7 +32,6 @@
 #define UD_EXIT_TEXT N_("Exit")
 #define UD_FALLBACK_TEXT N_("Run Unprivileged")
 
-/* consider a "has args" arg, so I can use the arg argument or not at will */
 GtkWidget* create_message_box(gchar* message, gchar* title);
 GtkWidget* create_error_box(gchar* error, gchar* title);
 GtkWidget* create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func);

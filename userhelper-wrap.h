@@ -1,4 +1,5 @@
-/* Copyright (C) 1997-1999 Red Hat Software, Inc.
+/*
+ * Copyright (C) 1997-2001 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -38,31 +39,17 @@ typedef struct message {
 	GtkWidget *label;
 } message;
 
-typedef struct response {
-	int responses;
-	int left;
-	int rows;
-	gboolean fallback;
-	char *user;
-	GSList *message_list; /* contains pointers to messages */
-	GtkWidget *head;
-	GtkWidget *tail;
-	GtkWidget *top;
-	GtkWidget *table;
-	GtkWidget *ok;
-	GtkWidget *cancel;
-	GtkWidget *unprivileged;
-} response;
+struct response {
+	int responses, left, rows;
+	gboolean ready, fallback_allowed;
+	char *user, *service, *suggestion;
+	GList *message_list; /* contains pointers to messages */
+	GtkWidget *dialog, *first, *last, *table;
+};
 
 void userhelper_run(char *path, ...);
-void userhelper_runv(char *path, char **args);
-void userhelper_parse_exitstatus(int exitstatus);
-void userhelper_parse_childout();
-void userhelper_read_childout(gpointer data, int source, GdkInputCondition cond);
-void userhelper_write_childin(GtkWidget* widget, response *resp);
-
-void userhelper_sigchld();	/* sigchld handler */
-
+void userhelper_runv(char *path, const char **args);
 void userhelper_fatal_error(int ignored);
+void userhelper_sigchld(int signum);	/* sigchld handler */
 
 #endif /* __USERHELPER_WRAP_H__ */

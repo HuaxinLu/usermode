@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.46
+Version: 1.49
 Release: 1
 License: GPL
 Group: Applications/System
@@ -12,7 +12,7 @@ Requires: util-linux, pam >= 0.66-5
 Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
 %endif
 Conflicts: SysVinit < 2.74-14
-BuildPrereq: glib-devel, gtk+-devel, pam-devel
+BuildPrereq: glib-devel, gtk+-devel, libglade-devel, pam-devel
 BuildRoot: %{_tmppath}/%{name}-root
 
 %description
@@ -94,6 +94,13 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Nov 28 2001 Nalin Dahyabhai <nalin@redhat.com> 1.49-1
+- the grand libglade/gtk2 overhaul
+- allow disabling display of GUI windows by setting "GUI=false" in the
+  console.apps configuration file (default: TRUE)
+- allow disabling display of GUI windows by recognizing a magic option
+  on the command-line of the program being wrapped (NOXOPTION, no default)
+
 * Fri Nov  9 2001 Nalin Dahyabhai <nalin@redhat.com> 1.46-1
 - restore the previous XAUTHORITY setting before opening PAM sessions
 

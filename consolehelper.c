@@ -1,4 +1,5 @@
-/* Copyright (C) 1999-2001 Red Hat, Inc.  All rights reserved.
+/*
+ * Copyright (C) 1999-2001 Red Hat, Inc.  All rights reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -15,12 +16,12 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include <sys/types.h>
+#include <libintl.h>
+#include <locale.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
-#include <libintl.h>
-#include <unistd.h>
-#include <sys/types.h>
 #include <gtk/gtk.h>
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
@@ -28,71 +29,94 @@
 void
 userhelper_fatal_error(int signal)
 {
-  if(gtk_main_level() > 0)
-    gtk_main_quit();
-  else
-    _exit(0);
+	if(gtk_main_level() > 0) {
+		gtk_main_quit();
+	} else {
+		_exit(0);
+	}
 }
 
 int
-main(int argc, char* argv[])
+main(int argc, char *argv[])
 {
-  char *display;
-  char **constructed_argv;
-  int cargc, cdiff;
-  char *progname;
-  int graphics_available = 0;
-  int fake_gtk_argc = 1;
-  char **fake_gtk_argv;
+	char *display;
+	char **constructed_argv;
+	int offset, i;
+	char *progname;
+	gboolean graphics_available = FALSE;
 
-  setlocale(LC_ALL, "");
-  bindtextdomain("usermode", "/usr/share/locale");
-  textdomain("usermode");
+	/* Set up locales. */
+	setlocale(LC_ALL, "");
+	bindtextdomain("usermode", "/usr/share/locale");
+	textdomain("usermode");
 
-  constructed_argv = g_malloc0((argc+4) * sizeof(char *));
+	/* Find the basename of the program we were invoked as. */
+	progname = strrchr(argv[0], '/');
+	if(progname) {
+		progname++;	/* Skip over the '/' character. */
+	} else {
+		progname = argv[0];
+	}
 
-  constructed_argv[0] = UH_PATH;
-  progname = strrchr(argv[0], '/');
-  if (progname) {
-    progname++; /* pass the '/' character */
-  } else {
-    progname = argv[0];
-  }
+	/* If DISPLAY is set, or if stdin isn't a TTY, we have to check if we
+	 * can display in a window.  Otherwise, all is probably lost.  */
+	display = getenv("DISPLAY");
+	if(((display != NULL) && (strlen(display) > 0)) ||
+	   !isatty(STDIN_FILENO)) {
+		int fake_argc;
+		char **fake_argv;
+		fake_argc = 1;
+		fake_argv = g_malloc0((fake_argc + 1) * sizeof(char *));
+		fake_argv[0] = argv[0];
+		if(gtk_init_check(&fake_argc, &fake_argv)) {
+			gtk_set_locale();
+			graphics_available = TRUE;
+		}
+	}
 
-  fake_gtk_argv = g_malloc0((fake_gtk_argc + 1) * sizeof(char *));
-  fake_gtk_argv[0] = argv[0];
+	/* If we're not on a TTY, and we can't display a window, we're
+	 * screwed. */
+	if(!isatty(STDIN_FILENO) && !graphics_available) {
+		fprintf(stderr,
+			_("Unable to open graphical window, and unable to find controlling terminal.\n"));
+		_exit(0);
+	}
 
-  display = getenv("DISPLAY");
+	/* Allocate space for a new argv array, with room for up to 3 more
+	 * items than we have in argv, plus the NULL-terminator. */
+	constructed_argv = g_malloc0((argc + 3 + 1) * sizeof(char *));
+	if(graphics_available) {
+		/* Set up args to tell userhelper to wrap the named program
+		 * using a consolehelper window to interact with the user. */
+		constructed_argv[0] = UH_PATH;
+		constructed_argv[1] = UH_WRAP_OPT;
+		constructed_argv[2] = progname;
+		offset = 2;
+	} else {
+		/* Set up args to tell userhelper to wrap the named program
+		 * using a text-only interface. */
+		constructed_argv[0] = UH_PATH;
+		constructed_argv[1] = UH_TEXT_OPT;
+		constructed_argv[2] = UH_WRAP_OPT;
+		constructed_argv[3] = progname;
+		offset = 3;
+	}
 
-  if ((((display != NULL) && (strlen(display) > 0)) || !isatty(STDIN_FILENO))) {
-    if (gtk_init_check(&fake_gtk_argc, &fake_gtk_argv)) {
-      gtk_set_locale();
-      graphics_available = 1;
-    }
-  }
+	/* Copy the command-line arguments, except for the program name. */
+	for(i = 1; i < argc; i++) {
+		constructed_argv[i + offset] = argv[i];
+	}
 
-  if (graphics_available) {
-    constructed_argv[1] = UH_WRAP_OPT;
-    constructed_argv[2] = progname;
-    cdiff = 2;
-  } else {
-    constructed_argv[1] = UH_TEXT_OPT;
-    constructed_argv[2] = UH_WRAP_OPT;
-    constructed_argv[3] = progname;
-    cdiff = 3;
-  }
+	/* If we can open a window, use the graphical wrapper routine. */
+	if(graphics_available) {
+		signal(SIGCHLD, userhelper_fatal_error);
+		userhelper_runv(UH_PATH, (const char**) constructed_argv);
+		gtk_main();
+	} else {
+		/* Text mode doesn't need the whole pipe thing. */
+		execv(UH_PATH, constructed_argv);
+		return 1;
+	}
 
-  for (cargc = 1; cargc < argc; constructed_argv[cargc+cdiff] = argv[cargc++]);
-
-  if (graphics_available) {
-    signal(SIGCHLD, userhelper_fatal_error);
-    userhelper_runv(UH_PATH, constructed_argv);
-    gtk_main();
-  } else {
-    /* text mode doesn't need the whole pipe thing... */
-    execv(UH_PATH, constructed_argv);
-    return 1;
-  }
-
-  return 0;
+	return 0;
 }

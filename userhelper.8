@@ -14,12 +14,12 @@
 .\" along with this program; if not, write to the Free Software
 .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 .\"
-.TH USERHELPER 8 "23 August 2000" "Red Hat, Inc."
+.TH USERHELPER 8 "26 November 2001" "Red Hat, Inc."
 .SH NAME
 userhelper \- A helper interface to pam.
 .SH SYNOPSIS
 .B userhelper
-[\ -t\ ] [\ -d in,out,err\ ] [\ -w\ prog\ args\ ] [\ -c\ ] [\ \-f\ full-name\ ] [\ \-o\ office\ ] [\ \-p\ office-phone\ ] [\ \-h\ home-phone\ ] [\ \-s\ shell\ ] [\ username \]
+[\ -t\ ] [\ -w\ prog\ args\ ] [\ -c\ ] [\ \-f\ full-name\ ] [\ \-o\ office\ ] [\ \-p\ office-phone\ ] [\ \-h\ home-phone\ ] [\ \-s\ shell\ ] [\ username \]
 
 .SH DESCRIPTION
 NOTE this program is NOT intended to be run interactively.  If you
@@ -68,10 +68,6 @@ Whether or not the command will be executed as the user if authentication fails.
 The name of the user being authenticated.
 
 .SH OPTIONS
-.TP
-.I -d
-A comma-separated list of three descriptors which need to be reattached to
-the standard handles before the command is executed; only used with -w.
 .TP
 .I -t
 Text mode authentication instead of the numbered message types

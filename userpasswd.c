@@ -22,24 +22,24 @@
 #include "userhelper-wrap.h"
 
 int
-main(int argc, char* argv[])
+main(int argc, char *argv[])
 {
-  bindtextdomain("usermode", "/usr/share/locale");
-  textdomain("usermode");
+	bindtextdomain("usermode", "/usr/share/locale");
+	textdomain("usermode");
 
-  gtk_set_locale();
-  gtk_init(&argc, &argv);
+	gtk_set_locale();
+	gtk_init(&argc, &argv);
 
-  signal(SIGCHLD, userhelper_sigchld);
-  userhelper_run(UH_PATH, UH_PATH, UH_PASSWD_OPT, 0);
+	signal(SIGCHLD, userhelper_sigchld);
+	userhelper_run(UH_PATH, UH_PATH, UH_PASSWD_OPT, 0);
 
-  gtk_main();
+	gtk_main();
 
-  return 0;
+	return 0;
 }
 
 void
 userhelper_fatal_error(int ignored)
 {
-  gtk_main_quit();
+	gtk_main_quit();
 }

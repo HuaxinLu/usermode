@@ -1,4 +1,5 @@
-/* Copyright (C) 1997-1999 Red Hat Software, Inc.
+/*
+ * Copyright (C) 1997-2001 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -18,20 +19,30 @@
 #ifndef __USERHELPER_H__
 #define __USERHELPER_H__
 
-#define i18n(String) gettext(String)
+#define _(String) gettext(String)
 
+/* Descriptors used to communicate between userhelper and consolhelper. */
+#define UH_INFILENO 3
+#define UH_OUTFILENO 4
+
+/* Valid userhelper error codes. */
+#define UH_UNKNOWN_PROMPT 0
 #define UH_ECHO_ON_PROMPT 1
 #define UH_ECHO_OFF_PROMPT 2
-#define UH_INFO_MSG 3
-#define UH_ERROR_MSG 4
-#define UH_EXPECT_RESP 5
-#define UH_SERVICE_NAME 6
-#define UH_FALLBACK 7
-#define UH_USER 8
+#define UH_PROMPT_SUGGESTION 3
+#define UH_INFO_MSG 4
+#define UH_ERROR_MSG 5
+#define UH_EXPECT_RESP 6
+#define UH_SERVICE_NAME 7
+#define UH_FALLBACK_ALLOW 8
+#define UH_USER 9
 
+/* Consolehelper response types. */
 #define UH_TEXT 1
 #define UH_ABORT 2
+#define UH_FALLBACK 3
 
+/* Valid consolehelper error codes. */
 #define ERR_PASSWD_INVALID      1       /* password is not right */
 #define ERR_FIELDS_INVALID      2       /* gecos fields invalid or
                                          * sum(lengths) too big */
@@ -46,9 +57,9 @@
 #define ERR_EXEC_FAILED		11	/* exec failed for some reason */
 #define ERR_UNK_ERROR           255     /* unknown error */
 
+/* Paths, flag names, and other stuff. */
 #define UH_PATH "/usr/sbin/userhelper"
 #define UH_KEY_PIXMAP_PATH "/usr/share/pixmaps/userhelper-keys.xpm"
-/* #define UH_PATH "./userhelper" */
 #define UH_PASSWD_OPT "-c"
 #define UH_FULLNAME_OPT "-f"
 #define UH_OFFICE_OPT "-o"

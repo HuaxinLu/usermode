@@ -1,5 +1,5 @@
-/* -*-Mode: c-*- */
-/* Copyright (C) 1997 Red Hat Software, Inc.
+/*
+ * Copyright (C) 1997,2001 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -14,216 +14,183 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *
  */
+
+#include "config.h"
 #include <locale.h>
 #include <libintl.h>
-#define i18n(String) gettext(String)
+#include <glade/glade-xml.h>
+#include <gtk/gtk.h>
 #include "userdialogs.h"
 
-GtkWidget*
-create_message_box(gchar* message, gchar* title)
+#define DIALOG_XML_NAME "userdialog-xml"
+
+#if GTK_CHECK_VERSION(1,3,10)
+GtkWidget *
+create_message_box(gchar *message, gchar *title)
 {
-  GtkWidget* message_box;
-  GtkWidget* label;
-  GtkWidget* hbox;
-  GtkWidget* ok;
-
-  message_box = gtk_dialog_new();
-  gtk_window_position(GTK_WINDOW(message_box), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width(GTK_CONTAINER(message_box), 5);
-  if(title == NULL)
-    gtk_window_set_title(GTK_WINDOW(message_box), i18n("Message"));
-  else
-    gtk_window_set_title(GTK_WINDOW(message_box), title);
-
-  label = gtk_label_new(message);
-  hbox = gtk_hbox_new(TRUE, 5);
-  ok = gtk_button_new_with_label(i18n(UD_OK_TEXT));
-  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
-			    (GtkSignalFunc) gtk_widget_destroy,
-			    (gpointer) message_box);
-  gtk_widget_set_usize(ok, 50, 0);
-
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->vbox), hbox,
-		     FALSE, FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->action_area), ok,
-		     FALSE, FALSE, 0);
-  
-  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
-  gtk_widget_grab_default(ok);
-
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(hbox);
-  gtk_widget_show(message_box);
-
-  return message_box;
-
+	GtkWidget *dialog;
+	dialog =  gtk_message_dialog_new(NULL, 0,
+					 GTK_MESSAGE_INFO,
+					 GTK_BUTTONS_CLOSE,
+					 "%s", message);
+	if(title) {
+		gtk_window_set_title(GTK_WINDOW(dialog), title);
+	}
+	g_signal_connect_object(G_OBJECT(dialog), "response",
+				(GtkSignalFunc)gtk_widget_destroy, dialog, 0);
+	gtk_widget_show_all(dialog);
+	return dialog;
 }
 
-/* conslidate error_box and message_box.. they're the same damn thing
- * with a different default title.
- */
-GtkWidget*
-create_error_box(gchar* error, gchar* title)
+GtkWidget *
+create_error_box(gchar * error, gchar * title)
 {
-  GtkWidget* error_box;
-  GtkWidget* label;
-  GtkWidget* hbox;
-  GtkWidget* ok;
+	GtkWidget *dialog;
+	dialog =  gtk_message_dialog_new(NULL, 0,
+					 GTK_MESSAGE_ERROR,
+					 GTK_BUTTONS_CLOSE,
+					 "%s", error);
+	if(title) {
+		gtk_window_set_title(GTK_WINDOW(dialog), title);
+	}
+	g_signal_connect_object(G_OBJECT(dialog), "response",
+				(GtkSignalFunc)gtk_widget_destroy, dialog, 0);
+	gtk_widget_show_all(dialog);
+	return dialog;
+}
+#else
+GtkWidget *
+create_message_box(gchar *message, gchar *title)
+{
+	GladeXML *xml;
+	GtkWidget *window, *label, *button;
 
-  error_box = gtk_dialog_new();
-  gtk_window_position(GTK_WINDOW(error_box), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width(GTK_CONTAINER(error_box), 5);
-  if(title == NULL)
-    gtk_window_set_title(GTK_WINDOW(error_box), i18n("Error"));
-  else
-    gtk_window_set_title(GTK_WINDOW(error_box), title);
+	xml = glade_xml_new(DATADIR "/" PACKAGE "/" PACKAGE ".glade",
+			    "message_box", PACKAGE);
 
-  label = gtk_label_new(error);
-  hbox = gtk_hbox_new(TRUE, 5);
-  ok = gtk_button_new_with_label(i18n(UD_OK_TEXT));
-  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
-			    (GtkSignalFunc) gtk_widget_destroy,
-			    (gpointer) error_box);
-  gtk_widget_set_usize(ok, 50, 0);
+	window = glade_xml_get_widget(xml, "message_box");
+	gtk_object_set_data(GTK_OBJECT(window), DIALOG_XML_NAME, xml);
 
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(error_box)->vbox), hbox,
-		     FALSE, FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(error_box)->action_area), ok,
-		     FALSE, FALSE, 0);
-  
-  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
-  gtk_widget_grab_default(ok);
+	label = glade_xml_get_widget(xml, "message");
+	button = glade_xml_get_widget(xml, "close");
 
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(hbox);
-  gtk_widget_show(error_box);
+	if(title) {
+		gtk_window_set_title(GTK_WINDOW(window), title);
+	}
+	gtk_label_set_text(GTK_LABEL(label), message);
 
-  return error_box;
+	gtk_signal_connect_object(GTK_OBJECT(button), "clicked",
+				  (GtkSignalFunc) gtk_widget_destroy,
+				  (gpointer) window);
+
+	return window;
 }
 
-GtkWidget*
-create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
+GtkWidget *
+create_error_box(gchar * error, gchar * title)
 {
-  GtkWidget* query_box;
-  GtkWidget* label;
-  GtkWidget* entry;
-  GtkWidget* hbox;
-  GtkWidget* ok;
+	return create_message_box(error, title);
+}
+#endif
 
-  query_box = gtk_dialog_new();
-  gtk_window_position(GTK_WINDOW(query_box), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width(GTK_CONTAINER(query_box), 5);
-  if(title == NULL)
-    gtk_window_set_title(GTK_WINDOW(query_box), i18n("Prompt"));
-  else
-    gtk_window_set_title(GTK_WINDOW(query_box), i18n("Prompt"));
-  
-  label = gtk_label_new(prompt);
-  entry = gtk_entry_new();
-  ok = gtk_button_new_with_label(i18n(UD_OK_TEXT));
-  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
-  gtk_widget_set_usize(ok, 50, 0);
-
-  hbox = gtk_hbox_new(TRUE, 0);
-
-  gtk_signal_connect_object(GTK_OBJECT(entry), "activate", 
-			    (GtkSignalFunc) gtk_button_clicked,
-			    (gpointer) GTK_BUTTON(ok));
-
-  /* FIXME: memory leak... well, not really.  Just rely on the caller
-   * to free the widget... 'cept that's not nice either. :-S 
-   */
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
-			    (GtkSignalFunc) gtk_widget_hide,
- 			    (gpointer) query_box);
-  if(func != NULL)
-    {
-      gtk_signal_connect(GTK_OBJECT(ok), "clicked", func, entry);
-    }
-
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), label,
-		     FALSE, FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), hbox,
-		     FALSE, FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(hbox), entry, TRUE, TRUE, 5);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->action_area), ok,
-		     TRUE, FALSE, 0);
-  
-  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
-  gtk_widget_grab_default(ok);
-
-  gtk_widget_grab_focus(entry);
-
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(entry);
-  gtk_widget_show(hbox);
-  gtk_widget_show(query_box);
-
-  return query_box;
+#if GTK_CHECK_VERSION(1,3,10)
+static void
+relay_value(GtkWidget *dialog, GtkResponseType response, GtkSignalFunc func)
+{
+	void (*callback)(GtkWidget *dialog, GtkWidget *entry) = NULL;
+	callback = (void(*)(GtkWidget *dialog, GtkWidget *entry)) func;
+	if(response == GTK_RESPONSE_OK) {
+		GtkWidget *entry;
+		entry = g_object_get_data(G_OBJECT(dialog), "entry");
+		if(GTK_IS_WIDGET(entry)) {
+			callback(dialog, entry);
+		}
+	}
 }
 
-GtkWidget*
-create_invisible_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
+static GtkWidget *
+create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
+		   gboolean visible)
 {
-  GtkWidget* query_box;
-  GtkWidget* label;
-  GtkWidget* entry;
-  GtkWidget* hbox;
-  GtkWidget* ok;
-  
-  query_box = gtk_dialog_new();
-  gtk_window_position(GTK_WINDOW(query_box), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width(GTK_CONTAINER(query_box), 5);
-  gtk_window_set_title(GTK_WINDOW(query_box), i18n("Prompt"));
-/*   gtk_container_border_width(GTK_CONTAINER(GTK_DIALOG(query_box)->vbox), 5); */
-  label = gtk_label_new(prompt);
-  entry = gtk_entry_new();
-  gtk_entry_set_visibility(GTK_ENTRY(entry), FALSE);
+	GtkWidget *dialog, *box, *entry;
+	dialog = gtk_message_dialog_new(NULL, 0,
+					GTK_MESSAGE_QUESTION,
+					GTK_BUTTONS_OK_CANCEL,
+					"%s", prompt);
+	if(title) {
+		gtk_window_set_title(GTK_WINDOW(dialog), title);
+	}
+	box = (GTK_DIALOG(dialog))->vbox;
 
-  hbox = gtk_hbox_new(TRUE, 5);
+	entry = gtk_entry_new();
+	g_object_set_data(G_OBJECT(dialog), "entry", entry);
+	gtk_entry_set_visibility(GTK_ENTRY(entry), visible);
 
-  ok = gtk_button_new_with_label(i18n("OK"));
-  gtk_misc_set_padding(GTK_MISC(GTK_BIN(ok)->child), 4, 0);
+	gtk_box_pack_start_defaults(GTK_BOX(box), entry);
 
-  gtk_signal_connect_object(GTK_OBJECT(entry), "activate", 
-			    (GtkSignalFunc) gtk_button_clicked,
-			    (gpointer) GTK_BUTTON(ok));
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
-			    (GtkSignalFunc) gtk_widget_hide,
-			    (gpointer) query_box);
-  gtk_widget_set_usize(ok, 50, 0);
+	g_signal_connect(G_OBJECT(dialog), "response",
+			 (GtkSignalFunc)relay_value, func);
+	g_signal_connect_object(G_OBJECT(dialog), "response",
+				(GtkSignalFunc)gtk_widget_destroy, NULL,
+				G_CONNECT_AFTER);
 
-  if(func != NULL)
-    {
-      gtk_signal_connect(GTK_OBJECT(ok), "clicked", func, entry);
-    }
+	gtk_widget_show_all(dialog);
 
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), label,
-		     FALSE, FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), hbox,
-		     FALSE, FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(hbox), entry, TRUE, TRUE, 5);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->action_area), ok,
-		     TRUE, FALSE, 0);
-  
-  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
-  gtk_widget_grab_default(ok);
+	return dialog;
+}
+#else
+static GtkWidget *
+create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
+		   gboolean visible)
+{
+	GladeXML *xml;
+	GtkWidget *window, *label, *entry, *ok, *cancel;
 
-  gtk_widget_grab_focus(entry);
+	xml = glade_xml_new(DATADIR "/" PACKAGE "/" PACKAGE ".glade",
+			    "query_box", PACKAGE);
 
-  gtk_widget_show(ok);
-  gtk_widget_show(label);
-  gtk_widget_show(entry);
-  gtk_widget_show(hbox);
-  gtk_widget_show(query_box);
+	window = glade_xml_get_widget(xml, "query_box");
+	gtk_object_set_data(GTK_OBJECT(window), DIALOG_XML_NAME, xml);
 
-  return query_box;
+	label = glade_xml_get_widget(xml, "question");
+	entry = glade_xml_get_widget(xml, "entry");
+	ok = glade_xml_get_widget(xml, "ok");
+	cancel = glade_xml_get_widget(xml, "cancel");
+
+	if(title) {
+		gtk_window_set_title(GTK_WINDOW(window), title);
+	}
+	gtk_label_set_text(GTK_LABEL(label), prompt);
+	gtk_entry_set_visibility(GTK_ENTRY(entry), visible);
+
+	gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
+				  (GtkSignalFunc) gtk_widget_hide,
+				  (gpointer) window);
+	gtk_signal_connect(GTK_OBJECT(ok), "clicked",
+			   (GtkSignalFunc) func, (gpointer) entry);
+
+	gtk_signal_connect_object(GTK_OBJECT(cancel), "clicked",
+				  (GtkSignalFunc) gtk_widget_destroy,
+				  (gpointer) window);
+
+	/* FIXME: close the dialog when the cancel button is clicked, and
+	 * attach a signal handler to the entry field */
+
+	return window;
+}
+#endif
+
+GtkWidget *
+create_invisible_query_box(gchar * prompt, gchar * title,
+			   GtkSignalFunc func)
+{
+	return create_query_box_i(prompt, title, func, FALSE);
+}
+
+GtkWidget *
+create_query_box(gchar * prompt, gchar * title, GtkSignalFunc func)
+{
+	return create_query_box_i(prompt, title, func, TRUE);
 }

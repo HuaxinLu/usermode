@@ -1,5 +1,5 @@
-/* -*-Mode: c-*- */
-/* Copyright (C) 1997 Red Hat Software, Inc.
+/*
+ * Copyright (C) 1997, 2001 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -16,514 +16,661 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <unistd.h>
-#include <locale.h>
-#include <libintl.h>
+#include <sys/types.h>
 #include <ctype.h>
+#include <libintl.h>
+#include <locale.h>
+#include <pwd.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
+#include <unistd.h>
 #include <gdk/gdkx.h>
-#include "userhelper-wrap.h"
 #include "userdialogs.h"
+#include "userhelper-wrap.h"
 
-#define MAXLINE 512
+#define  PAD 8
+static int childout[2];
+static int childin[2];
+static int childout_tag = -1;
+static int signal_tag = -1;
 
-int childout[2];
-int childin[2];
-int childout_tag;
-
-void
-userhelper_runv(char *path, char **args)
-{
-  pid_t pid;
-  int retval;
-  int i;
-  int stdin_save = STDIN_FILENO;
-  int stdout_save = STDOUT_FILENO;
-  int stderr_save = STDERR_FILENO;
-  char *nargs[256]; /* only used internally, we know this will not overflow */
-
-  if((pipe(childout) == -1) || (pipe(childin) == -1))
-    {
-      fprintf(stderr, i18n("Pipe error.\n"));
-      exit(1);
-    }
-
-  if((pid = fork()) == -1)
-    {
-      fprintf(stderr, i18n("Cannot fork().\n"));
-    }
-  else if(pid > 0)		/* parent */
-    {
-      close(childout[1]);
-      close(childin[0]);
-
-      childout_tag = gdk_input_add(childout[0], GDK_INPUT_READ, (GdkInputFunction) userhelper_read_childout, NULL);
-
-    }
-  else				/* child */
-    {
-      close(childout[0]);
-      close(childin[1]);
-
-      if(childout[1] != STDOUT_FILENO)
-	{
-          if(((stdout_save = dup(STDOUT_FILENO)) == -1) ||
-	    (dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO))
-	    {
-	      fprintf(stderr, i18n("dup2() error.\n"));
-	      exit(2);
-	    }
-	  close(childout[1]);
-	}
-      if(childin[0] != STDIN_FILENO)
-	{
-          if(((stdin_save = dup(STDIN_FILENO)) == -1) ||
-	    (dup2(childin[0], STDIN_FILENO) != STDIN_FILENO))
-	    {
-	      fprintf(stderr, i18n("dup2() error.\n"));
-	      exit(2);
-	    }
-	}
-
-      memset(&nargs, 0, sizeof(nargs));
-      nargs[0] = args[0];
-      nargs[1] = "-d";
-      nargs[2] = g_strdup_printf("%d,%d,%d", stdin_save, stdout_save,
-			  	 stderr_save);
-      for(i = 3; i < sizeof(nargs) / sizeof(nargs[0]); i++) {
-          nargs[i] = args[i - 2];
-	  if(nargs[i] == NULL) {
-              break;
-          }
-      }
-#ifdef DEBUG_USERHELPER
-      for(i = 0; i < sizeof(nargs) / sizeof(nargs[0]); i++) {
-	  if(nargs[i] == NULL) {
-              break;
-          }
-	  fprintf(stderr, "Exec arg = \"%s\".\n", nargs[i]);
-      }
-#endif
-      retval = execv(path, nargs);
-
-      if(retval < 0) {
-	fprintf(stderr, i18n("execl() error, errno=%d\n"), errno);
-      }
-
-      _exit(0);
-
-    }
-}
-void
-userhelper_run(char *path, ...)
-{
-  va_list ap;
-  char *args[256]; /* only used internally, we know this will not overflow */
-  int i = 0;
-
-  va_start(ap, path);
-  while((i < 255) && ((args[i++] = va_arg(ap, char *)) != NULL));
-  va_end(ap);
-
-  userhelper_runv(path, args);
-}
-
-void
+/* Display a dialog explaining a child's exit status, and exit ourselves. */
+static void
 userhelper_parse_exitstatus(int exitstatus)
 {
-  GtkWidget* message_box;
+	GtkWidget *message_box;
+	int i;
+	struct {
+		int code;
+		GtkWidget* (*create)(gchar*, gchar*);
+		gchar *message;
+	} codes[] = {
+		{-1, create_error_box, 
+		  _("Unknown exit code.")},
+		{0, create_message_box,
+		 _("Information updated.")},
+		{ERR_PASSWD_INVALID, create_error_box,
+		 _("The password you typed is invalid.\nPlease try again.")},
+		{ERR_FIELDS_INVALID, create_error_box,
+		 _("One or more of the changed fields is invalid.\nThis is probably due to either colons or commas in one of the fields.\nPlease remove those and try again.")},
+		{ERR_SET_PASSWORD, create_error_box,
+		 _("Password resetting error.")},
+		{ERR_LOCKS, create_error_box,
+		 _("Some systems files are locked.\nPlease try again in a few moments.")},
+		{ERR_NO_USER, create_error_box,
+		 _("Unknown user.")},
+		{ERR_NO_RIGHTS, create_error_box,
+		 _("Insufficient rights.")},
+		{ERR_INVALID_CALL, create_error_box,
+		 _("Invalid call to subprocess..")},
+		{ERR_SHELL_INVALID, create_error_box,
+		 _("Your current shell is not listed in /etc/shells.\nYou are not allowed to change your shell.\nConsult your system administrator.")},
+		/* well, this is unlikely to work, but at least we tried... */
+		{ERR_NO_MEMORY, create_error_box, 
+		  _("Out of memory.")},
+		{ERR_EXEC_FAILED, create_error_box, 
+		  _("The exec() call failed.")},
+		{ERR_NO_PROGRAM, create_error_box, 
+		  _("Failed to find selected program.")},
+		{ERR_UNK_ERROR, create_error_box, 
+		  _("Unknown error.")},
+	};
 
-  switch(exitstatus)
-    {
-    case 0:
-      message_box = create_message_box(i18n("Information updated."), NULL);
-      break;
-    case ERR_PASSWD_INVALID:
-      message_box = create_error_box(i18n("The password you typed is invalid.\nPlease try again."), NULL);
-      break;
-    case ERR_FIELDS_INVALID:
-      message_box = create_error_box(i18n("One or more of the changed fields is invalid.\nThis is probably due to either colons or commas in one of the fields.\nPlease remove those and try again."), NULL);
-      break;
-    case ERR_SET_PASSWORD:
-      message_box = create_error_box(i18n("Password resetting error."), NULL);
-      break;
-    case ERR_LOCKS:
-      message_box = create_error_box(i18n("Some systems files are locked.\nPlease try again in a few moments."), NULL);
-      break;
-    case ERR_NO_USER:
-      message_box = create_error_box(i18n("Unknown user."), NULL);
-      break;
-    case ERR_NO_RIGHTS:
-      message_box = create_error_box(i18n("Insufficient rights."), NULL);
-      break;
-    case ERR_INVALID_CALL:
-      message_box = create_error_box(i18n("Invalid call to sub process."), NULL);
-      break;
-    case ERR_SHELL_INVALID:
-      message_box = create_error_box(i18n("Your current shell is not listed in /etc/shells.\nYou are not allowed to change your shell.\nConsult your system administrator."), NULL);
-      break;
-    case ERR_NO_MEMORY:
-      /* well, this is unlikely to work either, but at least we tried... */
-      message_box = create_error_box(i18n("Out of memory."), NULL);
-      break;
-    case ERR_EXEC_FAILED:
-      message_box = create_error_box(i18n("The exec() call failed."), NULL);
-      break;
-    case ERR_NO_PROGRAM:
-      message_box = create_error_box(i18n("Failed to find selected program."), NULL);
-      break;
-    case ERR_UNK_ERROR:
-      message_box = create_error_box(i18n("Unknown error."), NULL);
-      break;
-    default:
-      message_box = create_error_box(i18n("Unknown exit code."), NULL);
-      break;
-    }
+	message_box = NULL;
+	for(i = 1; i < (sizeof(codes) / sizeof(codes[0])); i++) {
+		if(codes[i].code == exitstatus) {
+			message_box = codes[i].create(codes[i].message, NULL);
+			break;
+		}
+	}
+	if(message_box == NULL) {
+		message_box = codes[0].create(codes[0].message, NULL);
+	}
 
-  gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) userhelper_fatal_error, NULL);
-  gtk_signal_connect(GTK_OBJECT(message_box), "delete_event", (GtkSignalFunc) userhelper_fatal_error, NULL);
-  gtk_widget_show(message_box);
-
+	gtk_signal_connect(GTK_OBJECT(message_box), "destroy",
+			   (GtkSignalFunc) userhelper_fatal_error, NULL);
+	gtk_signal_connect(GTK_OBJECT(message_box), "delete_event",
+			   (GtkSignalFunc) userhelper_fatal_error, NULL);
+	gtk_widget_show(message_box);
 }
 
+/* Attempt to grab focus for the toplevel of this widget, so that peers can
+ * get events too. */
 static void
-userhelper_grab_focus(GtkWidget *widget, GdkEvent *map_event, gpointer data)
+userhelper_grab_focus(GtkWidget * widget, GdkEvent * map_event,
+		      gpointer data)
 {
 	int ret;
 	GtkWidget *toplevel;
-	/* grab focus for the toplevel of this widget, so that peers can
-	 * get events too */
 	toplevel = gtk_widget_get_toplevel(widget);
 	ret = gdk_keyboard_grab(toplevel->window, TRUE, GDK_CURRENT_TIME);
 }
 
+/* Handle the executed dialog, writing responses back to the child when
+ * possible. */
 static void
-mark_void(GtkWidget *widget, gpointer target)
+userhelper_write_childin(GtkResponseType response, struct response *resp)
 {
-  if(target != NULL) {
-    *(gpointer*)target = NULL;
-  }
+	const char *input;
+	guchar byte;
+	GList *message_list = resp->message_list;
+
+	switch(response) {
+		case PAD:
+			/* Run unprivileged. */
+			byte = UH_FALLBACK;
+			for(message_list = resp->message_list;
+			    (message_list != NULL) &&
+			    (message_list->data != NULL);
+			    message_list = g_list_next(message_list)) {
+				message *m = (message *) message_list->data;
+#ifdef DEBUG_USERHELPER
+				fprintf(stderr, "message %d, \"%s\"\n", m->type,
+					m->message);
+				fprintf(stderr, "responding FALLBACK\n");
+#endif
+				if (GTK_IS_ENTRY(m->entry)) {
+					write(childin[1], &byte, 1);
+					write(childin[1], "\n", 1);
+				}
+			}
+			break;
+		case GTK_RESPONSE_CANCEL:
+			/* Abort. */
+			byte = UH_ABORT;
+			for(message_list = resp->message_list;
+			    (message_list != NULL) &&
+			    (message_list->data != NULL);
+			    message_list = g_list_next(message_list)) {
+				message *m = (message *) message_list->data;
+#ifdef DEBUG_USERHELPER
+				fprintf(stderr, "message %d, \"%s\"\n", m->type,
+					m->message);
+				fprintf(stderr, "responding ABORT\n");
+#endif
+				if (GTK_IS_ENTRY(m->entry)) {
+					write(childin[1], &byte, 1);
+					write(childin[1], "\n", 1);
+				}
+			}
+			break;
+		case GTK_RESPONSE_OK:
+			byte = UH_TEXT;
+			for (message_list = resp->message_list;
+			     (message_list != NULL)
+			     && (message_list->data != NULL);
+			     message_list = g_list_next(message_list)) {
+				message *m = (message *) message_list->data;
+#ifdef DEBUG_USERHELPER
+				fprintf(stderr, "message %d, \"%s\"\n", m->type,
+					m->message);
+				fprintf(stderr, "responding `%s'\n",
+					gtk_entry_get_text(GTK_ENTRY(m->entry)));
+#endif
+				if (GTK_IS_ENTRY(m->entry)) {
+					input =
+					    gtk_entry_get_text(GTK_ENTRY
+							       (m->entry));
+					write(childin[1], &byte, 1);
+					write(childin[1], input, strlen(input));
+					write(childin[1], "\n", 1);
+				}
+			}
+			break;
+		default:
+			/* We were closed, deleted, cancelled, or something else
+			 * which we can treat as a cancellation. */
+			_exit(1);
+			break;
+	}
 }
 
-void
-userhelper_parse_childout(char* outline)
+/* Glue. */
+static void
+respond_ok(GtkWidget *widget, GtkWidget *dialog)
 {
-  char *prompt;
-  char *rest = NULL;
-  char *title;
-  int prompt_type;
-  static response *resp = NULL;
-  GdkPixmap *pixmap;
-
-  if (resp != NULL) {
-    if(!GTK_IS_WINDOW(resp->top)) {
-      g_free(resp->user);
-      g_free(resp);
-      resp = NULL;
-    }
-  }
-
-  if (resp == NULL) {
-    GtkWidget *vbox, *hbox, *sbox;
-
-    resp = g_malloc0(sizeof(response));
-
-    resp->user = g_strdup(getlogin());
-    resp->top = gtk_window_new(GTK_WINDOW_DIALOG);
-    gtk_signal_connect(GTK_OBJECT(resp->top), "destroy",
-		       GTK_SIGNAL_FUNC(mark_void), &resp->top);
-    gtk_window_set_title(GTK_WINDOW(resp->top), i18n("Input"));
-    gtk_window_position(GTK_WINDOW(resp->top), GTK_WIN_POS_CENTER);
-    gtk_container_set_border_width(GTK_CONTAINER(resp->top), 5);
-    gtk_signal_connect(GTK_OBJECT(resp->top), "map",
-		       GTK_SIGNAL_FUNC(userhelper_grab_focus), NULL);
-
-    resp->table = gtk_table_new(1, 2, FALSE);
-    resp->rows = 1;
-
-    vbox = gtk_vbox_new(FALSE, 4);
-    sbox = gtk_hbox_new(TRUE, 4);
-    hbox = gtk_hbutton_box_new();
-    gtk_object_set_data(GTK_OBJECT(resp->top), UH_ACTION_AREA, hbox);
-    gtk_box_pack_start(GTK_BOX(vbox), resp->table, TRUE, TRUE, 4);
-    gtk_box_pack_start(GTK_BOX(vbox), gtk_hseparator_new(), FALSE, FALSE, 4);
-    gtk_box_pack_start(GTK_BOX(vbox), sbox, FALSE, FALSE, 4);
-    gtk_box_pack_start(GTK_BOX(sbox), hbox, FALSE, FALSE, 4);
-    gtk_container_add(GTK_CONTAINER(resp->top), vbox);
-
-    pixmap = gdk_pixmap_create_from_xpm(gdk_window_foreign_new(GDK_ROOT_WINDOW()),
-		                        NULL, NULL, UH_KEY_PIXMAP_PATH);
-    if(pixmap != NULL) {
-      GtkWidget *pm = gtk_pixmap_new(pixmap, NULL);
-      if(pm != NULL) {
-	GtkWidget *frame = NULL;
-	frame = gtk_frame_new(NULL);
-	gtk_container_add(GTK_CONTAINER(frame), pm);
-	gtk_table_attach(GTK_TABLE(resp->table), frame,
-	  0, 1, 1, 2, GTK_SHRINK, GTK_SHRINK, 2, 2);
-	resp->left = 1;
-      }
-    }
-
-    resp->ok = gtk_button_new_with_label(i18n(UD_OK_TEXT));
-    gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->ok)->child), 4, 0);
-    gtk_box_pack_start(GTK_BOX(hbox), resp->ok, FALSE, FALSE, 0);
-
-    resp->cancel = gtk_button_new_with_label(i18n(UD_CANCEL_TEXT));
-    gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->cancel)->child), 4, 0);
-    gtk_box_pack_start(GTK_BOX(hbox), resp->cancel, FALSE, FALSE, 0);
-
-    gtk_signal_connect(GTK_OBJECT(resp->top), "delete_event", 
-		       (GtkSignalFunc) userhelper_fatal_error, NULL);
-    gtk_signal_connect(GTK_OBJECT(resp->cancel), "clicked", 
-		       (GtkSignalFunc) userhelper_fatal_error, NULL);
-
-    gtk_signal_connect(GTK_OBJECT(resp->ok), "clicked", 
-		       (GtkSignalFunc) userhelper_write_childin, resp);
-
-    gtk_object_set_user_data(GTK_OBJECT(resp->top), resp);
-  }
-
-  if(isdigit(outline[0])) {
-    gboolean echo = TRUE;
-    message *msg = g_malloc(sizeof(message));
-
-    prompt_type = strtol(outline, &prompt, 10);
-    if((prompt != NULL) && (strlen(prompt) > 0)) {
-      while((isspace(prompt[0]) && (prompt[0] != '\0') && (prompt[0] != '\n'))){
-        prompt++;
-      }
-    }
-
-    /* snip off terminating newlines in the prompt string and save a pointer to
-     * interate the parser along */
-    rest = strchr(prompt, '\n');
-    if(rest != NULL) {
-      *rest = '\0';
-      rest++;
-      if (rest[0] == '\0') {
-	rest = NULL;
-      }
-    }
-#ifdef DEBUG_USERHELPER
-    g_print("(%d) \"%s\"\n", prompt_type, prompt);
-#endif
-
-    msg->type = prompt_type;
-    msg->message = prompt;
-    msg->data = NULL;
-    msg->entry = NULL;
-
-    echo = TRUE;
-    switch(prompt_type) {
-      case UH_ECHO_OFF_PROMPT:
-	echo = FALSE;
-	/* fall through */
-      case UH_ECHO_ON_PROMPT:
-	msg->label = gtk_label_new(i18n(prompt));
-	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
-	gtk_misc_set_alignment(GTK_MISC(msg->label), 1.0, 1.0);
-
-	msg->entry = gtk_entry_new();
-	gtk_entry_set_visibility(GTK_ENTRY(msg->entry), echo);
-
-	if(resp->head == NULL) resp->head = msg->entry;
-	resp->tail = msg->entry;
-
-	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  resp->left + 0, resp->left + 1, resp->rows, resp->rows + 1,
-	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
-	gtk_table_attach(GTK_TABLE(resp->table), msg->entry,
-	  resp->left + 1, resp->left + 2, resp->rows, resp->rows + 1,
-	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
-
-	resp->message_list = g_slist_append(resp->message_list, msg);
-	resp->responses++;
-	resp->rows++;
-#ifdef DEBUG_USERHELPER
-	g_print(i18n("Need %d responses.\n"), resp->responses);
-#endif
-	break;
-
-      case UH_FALLBACK:
-#if 0
-	msg->label = gtk_label_new(prompt);
-	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
-	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  resp->left + 0, resp->left + 2, resp->rows, resp->rows + 1,
-	  0, 0, 2, 2);
-	resp->message_list = g_slist_append(resp->message_list, msg);
-#else
-	resp->fallback = atoi(prompt) != 0;
-#endif
-	break;
-
-      case UH_USER:
-	if(strstr(prompt, "<user>") == NULL) {
-          g_free(resp->user);
-	  resp->user = g_strdup(prompt);
-	}
-	break;
-
-      case UH_SERVICE_NAME:
-	title = g_strdup_printf(i18n("In order to run \"%s\" with root's "
-				"privileges, additional information is "
-				"required."),
-				prompt);
-	msg->label = gtk_label_new(title);
-	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
-	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  0, resp->left + 2, 0, 1,
-	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
-	resp->message_list = g_slist_append(resp->message_list, msg);
-	break;
-
-      case UH_ERROR_MSG:
-	gtk_window_set_title(GTK_WINDOW(resp->top), i18n("Error"));
-	/* fall through */
-      case UH_INFO_MSG:
-	if( !strncmp(prompt,
-	   "Changing password for ", strlen("Changing password for ")) ) {
-		prompt = g_strdup_printf(i18n("Changing password for %s"),
-		prompt+strlen("Changing password for "));
-	}
-	msg->label = gtk_label_new(i18n(prompt));
-	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
-	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  resp->left + 0, resp->left + 2, resp->rows, resp->rows + 1, 0, 0, 2, 2);
-	resp->message_list = g_slist_append(resp->message_list, msg);
-	resp->rows++;
-	break;
-
-      case UH_EXPECT_RESP:
-	g_free(msg); /* useless */
-	if (resp->responses != atoi(prompt)) {
-          g_print(i18n("You want %d response(s) from %d entry fields!?!?!\n"),
-                 atoi(prompt), resp->responses);
-          exit (1);
-	}
-
-	if (resp->fallback) {
-          gpointer a = GTK_WIDGET(gtk_object_get_data(GTK_OBJECT(resp->top),
-			                              UH_ACTION_AREA));
-	  GtkWidget *hbox = GTK_WIDGET(a);
-          resp->unprivileged = gtk_button_new_with_label(i18n(UD_FALLBACK_TEXT));
-          gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->unprivileged)->child),
-			       4, 0);
-          gtk_box_pack_start(GTK_BOX(hbox), resp->unprivileged,
-			     FALSE, FALSE, 0);
-          if(resp->unprivileged != NULL) {
-            gtk_signal_connect(GTK_OBJECT(resp->unprivileged), "clicked", 
-		               GTK_SIGNAL_FUNC(userhelper_write_childin), resp);
-          }
-	}
-
-	gtk_widget_show_all(resp->top);
-	if(GTK_IS_ENTRY(resp->head)) {
-	  gtk_widget_grab_focus(resp->head);
-	}
-	if(GTK_IS_ENTRY(resp->tail)) {
-	  gtk_signal_connect_object(GTK_OBJECT(resp->tail), "activate",
-	    gtk_button_clicked, GTK_OBJECT(resp->ok));
-	}
-	break;
-      default:
-	/* ignore, I guess... */
-	break;
-      }
-  }
-
-  if(rest != NULL) userhelper_parse_childout(rest);
+	gtk_dialog_response(GTK_DIALOG(dialog), GTK_RESPONSE_OK);
 }
 
-void
+/* Parse requests from the child userhelper process and display them in a
+ * message box. */
+static void
+userhelper_parse_childout(char *outline)
+{
+	char *prompt;
+	int prompt_type;
+	struct response *resp = NULL;
+	struct passwd *pwd;
+
+	/* Attempt to reuse a response structure (which may contain incomplete
+	 * messages we've already received) unless the dialog is bogus. */
+	if(resp != NULL) {
+		if(!GTK_IS_WINDOW(resp->dialog)) {
+			g_free(resp->user);
+			g_free(resp);
+			resp = NULL;
+		}
+	}
+
+	if(resp == NULL) {
+		GtkWidget *vbox;
+
+		/* Allocate the response structure. */
+		resp = g_malloc0(sizeof(struct response));
+
+		/* Figure out who the invoking user is. */
+		pwd = getpwuid(getuid());
+		if(pwd == NULL) {
+			pwd = getpwuid(0);
+		}
+		resp->user = pwd ? g_strdup(pwd->pw_name) : g_strdup("root");
+
+		/* Create a new GTK dialog box. */
+		resp->dialog = gtk_message_dialog_new(NULL,
+						      0,
+						      GTK_MESSAGE_QUESTION,
+						      GTK_BUTTONS_OK_CANCEL,
+						      _("Placeholder text."));
+
+		/* Create a table to put in its vbox. */
+		resp->table = gtk_table_new(2, 1, FALSE);
+		vbox = (GTK_DIALOG(resp->dialog))->vbox;
+		gtk_box_pack_start_defaults(GTK_BOX(vbox), resp->table);
+
+		/* Make sure we grab the keyboard focus when the window gets
+		 * an X window associated with it. */
+		gtk_signal_connect(GTK_OBJECT(resp->dialog), "map",
+				   GTK_SIGNAL_FUNC(userhelper_grab_focus),
+				   NULL);
+
+		/* If the user closes the window, we bail. */
+		gtk_signal_connect(GTK_OBJECT(resp->dialog), "delete_event",
+				   (GtkSignalFunc) userhelper_fatal_error,
+				   NULL);
+
+		/* Set the resp structure as the data item for the dialog. */
+		gtk_object_set_user_data(GTK_OBJECT(resp->dialog), resp);
+	}
+
+	/* Now process items from the child. */
+	while((outline != NULL) && isdigit(outline[0])) {
+		gboolean echo = TRUE;
+
+		/* Allocate a structure to hold the message data. */
+		message *msg = g_malloc(sizeof(message));
+
+		/* Read the prompt type. */
+		prompt_type = strtol(outline, &prompt, 10);
+
+		/* The first character which wasn't a digit might be whitespace,
+		 * so skip over any whitespace before settling on the actual
+		 * prompt. */
+		if((prompt != NULL) && (strlen(prompt) > 0)) {
+			while ((isspace(prompt[0]) && (prompt[0] != '\0')
+				&& (prompt[0] != '\n'))) {
+				prompt++;
+			}
+		}
+
+		/* Snip off terminating newlines in the prompt string and save
+		 * a pointer to interate the parser along. */
+		outline = strchr(prompt, '\n');
+		if(outline != NULL) {
+			outline[0] = '\0';
+			outline++;
+			if(outline[0] == '\0') {
+				outline = NULL;
+			}
+		}
+#ifdef DEBUG_USERHELPER
+		g_print("Child message: (%d)/\"%s\"\n", prompt_type, prompt);
+#endif
+		msg->type = prompt_type;
+		msg->message = prompt;
+		msg->data = NULL;
+		msg->entry = NULL;
+
+		echo = TRUE;
+		switch(prompt_type) {
+			/* Prompts.  Create a label and entry field. */
+			case UH_ECHO_OFF_PROMPT:
+				echo = FALSE;
+				/* fall through */
+			case UH_ECHO_ON_PROMPT:
+				/* Create a label to hold the prompt. */
+				msg->label = gtk_label_new(_(prompt));
+				gtk_label_set_line_wrap(GTK_LABEL(msg->label),
+							TRUE);
+				gtk_misc_set_alignment(GTK_MISC(msg->label),
+						       1.0, 0.5);
+
+				/* Create an entry field to hold the answer. */
+				msg->entry = gtk_entry_new();
+				gtk_entry_set_visibility(GTK_ENTRY(msg->entry),
+							 echo);
+				if(resp->suggestion) {
+					gtk_entry_set_text(GTK_ENTRY(msg->entry),
+							   resp->suggestion);
+					g_free(resp->suggestion);
+					resp->suggestion = NULL;
+				}
+
+				/* Keep track of the first entry field in the
+				 * dialog box. */
+				if(resp->first == NULL)
+					resp->first = msg->entry;
+
+				/* Keep track of the last entry field in the
+				 * dialog box. */
+				resp->last = msg->entry;
+
+				/* Insert them. */
+				gtk_table_attach(GTK_TABLE(resp->table),
+						 msg->label, 0, 1,
+						 resp->rows, resp->rows + 1,
+						 GTK_EXPAND | GTK_FILL, 0,
+						 PAD, PAD);
+				gtk_table_attach(GTK_TABLE(resp->table),
+						 msg->entry, 1, 2,
+						 resp->rows, resp->rows + 1,
+						 GTK_EXPAND | GTK_FILL, 0,
+						 PAD, PAD);
+
+				/* Add this message to the list of messages. */
+				resp->message_list =
+					g_list_append(resp->message_list, msg);
+
+				/* Mark that this one needs a response. */
+				resp->responses++;
+				resp->rows++;
+#ifdef DEBUG_USERHELPER
+				g_print(_("Need %d responses.\n"),
+					resp->responses);
+#endif
+				break;
+			case UH_PROMPT_SUGGESTION:
+				if(resp->suggestion) {
+					g_free(resp->suggestion);
+				}
+				resp->suggestion = g_strdup(prompt);
+				break;
+			/* Fallback flag.  Read it and save it for later. */
+			case UH_FALLBACK_ALLOW:
+				resp->fallback_allowed = atoi(prompt) != 0;
+				break;
+			/* User name. Read it and save it for later. */
+			case UH_USER:
+				if(strstr(prompt, "<user>") == NULL) {
+					if(resp->user) {
+						g_free(resp->user);
+					}
+					resp->user = g_strdup(prompt);
+				}
+				break;
+			/* Service name. Read it and save it for later. */
+			case UH_SERVICE_NAME:
+				if(resp->service) {
+					g_free(resp->service);
+				}
+				resp->service = g_strdup(prompt);
+				break;
+			/* An error message. */
+			case UH_ERROR_MSG:
+				gtk_window_set_title(GTK_WINDOW(resp->dialog),
+						     _("Error"));
+				msg->label = gtk_label_new(_(prompt));
+				gtk_table_attach(GTK_TABLE(resp->table),
+						 msg->label, 0, 2,
+						 resp->rows, resp->rows + 1,
+						 0, 0, PAD, PAD);
+				resp->message_list =
+					g_list_append(resp->message_list, msg);
+				resp->rows++;
+				break;
+			/* An informational message. */
+			case UH_INFO_MSG:
+				gtk_window_set_title(GTK_WINDOW(resp->dialog),
+						     _("Information"));
+				msg->label = gtk_label_new(_(prompt));
+				gtk_table_attach(GTK_TABLE(resp->table),
+						 msg->label, 0, 2,
+						 resp->rows, resp->rows + 1,
+						 0, 0, PAD, PAD);
+				resp->message_list =
+					g_list_append(resp->message_list, msg);
+				resp->rows++;
+				break;
+			/* Sanity-check the number of expected responses. */
+			case UH_EXPECT_RESP:
+				g_free(msg); /* We don't need this after all. */
+				if(resp->responses != atoi(prompt)) {
+					fprintf(stderr,
+						"Protocol error (%d responses "
+						"expected from %d prompts)!\n",
+						atoi(prompt), resp->responses);
+					_exit(1);
+				}
+				resp->ready = TRUE;
+				break;
+			default:
+				break;
+		}
+	}
+
+	/* Check that we used up all of the data. */
+	if(outline && (strlen(outline) > 0)) {
+		fprintf(stderr, "ERROR: unused data: `%s'.\n", outline);
+	}
+
+	/* If we're ready, do some last-minute changes and run the dialog. */
+	if(resp->ready) {
+		char *text;
+		GtkWidget *label;
+		GtkResponseType response;
+
+		/* Customize the label. */
+		if(resp->service) {
+			if(resp->fallback_allowed) {
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from superuser privileges, but more information is needed in order to do so."), resp->service);
+			} else {
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires superuser privileges, but more information is needed in order to do so."), resp->service);
+			}
+		} else {
+			if(resp->fallback_allowed) {
+				text = g_strdup_printf(_("You are attempting to run a command which may benefit from superuser privileges, but more information is needed in order to do so."));
+			} else {
+				text = g_strdup_printf(_("You are attempting to run a command which requires superuser privileges, but more information is needed in order to do so."));
+			}
+		}
+		label = (GTK_MESSAGE_DIALOG(resp->dialog))->label;
+		gtk_label_set_text(GTK_LABEL(label), text);
+
+		/* Add an "unprivileged" button if we're allowed to offer
+		 * unprivileged execution as an option. */
+		if(resp->fallback_allowed) {
+			gtk_dialog_add_button(GTK_DIALOG(resp->dialog),
+					      _("_Run Unprivileged"), PAD);
+		}
+
+		/* Have the activation signal for the last entry field be
+		 * equivalent to hitting the default button. */
+		if(resp->last) {
+			g_signal_connect(G_OBJECT(resp->last), "activate",
+					 (GtkSignalFunc)respond_ok,
+					 resp->dialog);
+		}
+
+		/* Show the dialog and grab focus. */
+		gtk_widget_show_all(resp->dialog);
+		if(GTK_IS_ENTRY(resp->first)) {
+			gtk_widget_grab_focus(resp->first);
+		}
+
+		/* Run the dialog. */
+		response = gtk_dialog_run(GTK_DIALOG(resp->dialog));
+		userhelper_write_childin(response, resp);
+		gtk_widget_destroy(resp->dialog);
+		if(resp->service)
+			g_free(resp->service);
+		if(resp->suggestion)
+			g_free(resp->suggestion);
+		if(resp->user)
+			g_free(resp->user);
+		g_free(resp);
+		resp = NULL;
+	}
+}
+
+/* Read data sent from the child userhelper process and pass it on to
+ * userhelper_parse_childout(). */
+static void
 userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 {
-  char* output;
-  int count;
+	char *output;
+	int count;
 
-  if(cond != GDK_INPUT_READ)
-    {
-      /* Serious error, this is.  Panic. */
-      exit (1);
-    }
+	if (cond != GDK_INPUT_READ) {
+		/* Serious error, this is.  Panic, we must. */
+		_exit(1);
+	}
 
-  output = g_malloc(MAXLINE + 1);
+	/* Allocate room to store the data, and store it. */
+	output = g_malloc0(LINE_MAX + 1);
+	count = read(source, output, LINE_MAX);
+	if(count == -1) {
+		/* Error of some kind.  Because the pipe's blocking, even
+		 * EAGAIN is unexpected, so we bail. */
+		_exit(0);
+	}
+	if(count == 0) {
+		/* EOF from the child. */
+		gdk_input_remove(childout_tag);
+		childout_tag = -1;
+	}
 
-  count = read(source, output, MAXLINE);
-  if (count == -1)
-    {
-      exit (0);
-    }
-  if (count == 0)
-    {
-      gdk_input_remove(childout_tag);
-      childout_tag = -1;
-    }
-  output[count] = '\0';
+	/* Parse the data and we're done. */
+	userhelper_parse_childout(output);
+	g_free(output);
+}
 
-  userhelper_parse_childout(output);
-  g_free(output);
+static void
+userhelper_read_signal(gpointer data, int source, GdkInputCondition cond)
+{
+	unsigned char u;
+	pid_t pid;
+	int status;
+
+	if(cond != GDK_INPUT_READ) {
+		/* Serious error, this is.  Panic, we must. */
+		_exit(1);
+	}
+
+	if(read(source, &u, 1) != -1) {
+		/* Error reading signals?  Stop reading them. */
+		gdk_input_remove(signal_tag);
+		return;
+	}
+
+	/* Reap a child. */
+	pid = waitpid(0, &status, WNOHANG);
+	if((pid != 0) && (pid != -1) && WIFEXITED(status)) {
+		userhelper_parse_exitstatus(WEXITSTATUS(status));
+	}
 }
 
 void
-userhelper_write_childin(GtkWidget *widget, response *resp)
+userhelper_sigchld(int signum)
 {
-  char* input;
-  int len;
-  guchar byte;
-  GSList *message_list = resp->message_list;
+	unsigned char u;
+	static int sigpipe[2] = {-1, -1};
 
-  if(widget == resp->unprivileged) {
-    byte = UH_ABORT;
-    for (message_list = resp->message_list;
-         (message_list != NULL) && (message_list->data != NULL);
-         message_list = g_slist_next(message_list)) {
-      message *m = (message*)message_list->data;
-#ifdef DEBUG_USERHELPER
-      fprintf(stderr, "message %d, \"%s\"\n", m->type, m->message);
-#endif
-      if(GTK_IS_ENTRY(m->entry)) {
-        write(childin[1], &byte, 1);
-        write(childin[1], "\n", 1);
-      }
-    }
-  }
-  if(widget == resp->ok) {
-    byte = UH_TEXT;
-    for (message_list = resp->message_list;
-         (message_list != NULL) && (message_list->data != NULL);
-         message_list = g_slist_next(message_list)) {
-      message *m = (message*)message_list->data;
-#ifdef DEBUG_USERHELPER
-      fprintf(stderr, "message %d, \"%s\"\n", m->type, m->message);
-#endif
-      if(GTK_IS_ENTRY(m->entry)) {
-        input = gtk_entry_get_text(GTK_ENTRY(m->entry));
-        len = strlen(input);
-        write(childin[1], &byte, 1);
-        write(childin[1], input, len);
-        write(childin[1], "\n", 1);
-      }
-    }
-  }
-  gtk_widget_destroy(resp->top);
+	/* If the signal number wasn't 0 (the special "set up" signal), write
+	 * it to the pipe and continue on. */
+	if(signum != 0) {
+		u = signum;
+		write(sigpipe[1], &u, 1);
+		signal(SIGCHLD, userhelper_sigchld);
+		return;
+	}
+
+	/* If this is our first time in, then we need to allocate a pipe and
+	 * set ourselves up as the handler for signals. */
+	if(pipe(sigpipe) == -1) {
+		fprintf(stderr, _("Pipe error.\n"));
+		_exit(1);
+	}
+	signal_tag = gdk_input_add(sigpipe[0], GDK_INPUT_READ,
+				   userhelper_read_signal, NULL);
+	signal(SIGCHLD, userhelper_sigchld);
 }
 
 void
-userhelper_sigchld()
+userhelper_runv(char *path, const char **args)
 {
-  pid_t pid;
-  int status;
+	pid_t pid;
+	int retval;
+	int i, fd[4];
 
-  signal(SIGCHLD, userhelper_sigchld);
-  
-  pid = waitpid(0, &status, WNOHANG);
-  
-  if(WIFEXITED(status))
-    {
-      userhelper_parse_exitstatus(WEXITSTATUS(status));
-    }
+	/* Create pipes with which to interact with the userhelper child. */
+	if((pipe(childout) == -1) || (pipe(childin) == -1)) {
+		fprintf(stderr, _("Pipe error.\n"));
+		_exit(1);
+	}
+
+	/* Start up a new process. */
+	pid = fork();
+	if(pid == -1) {
+		fprintf(stderr, _("Cannot fork().\n"));
+		_exit(0);
+	}
+
+	if(pid > 0) {
+		/* We're the parent; close the write-end of the reading pipe,
+		 * and the read-end of the writing pipe. */
+		close(childout[1]);
+		close(childin[0]);
+		/* Tell GDK to watch the reading end of the reading pipe for
+		 * data from the child. */
+		childout_tag = gdk_input_add(childout[0], GDK_INPUT_READ,
+					     userhelper_read_childout, NULL);
+	} else {
+		/* We're the child; close the read-end of the parent's reading
+		 * pipe, and the write-end of the parent's writing pipe. */
+		close(childout[0]);
+		close(childin[1]);
+
+		/* Close all of descriptors which aren't stdio or the two
+		 * pipe descriptors we'll be using. */
+		for(i = 3; i < sysconf(_SC_OPEN_MAX); i++) {
+			if((i != childout[1]) && (i != childin[0])) {
+				close(i);
+			}
+		}
+
+		/* First create two copies of stdin, in case 3 and 4 aren't
+		 * currently in use. */
+		fd[0] = dup(STDIN_FILENO);
+		fd[1] = dup(STDIN_FILENO);
+
+		/* Now create temporary copies of the pipe descriptors, which
+		 * aren't goint to be 3 or 4 because they are surely in use
+		 * by now. */
+		fd[2] = dup(childin[0]);
+		fd[3] = dup(childout[1]);
+
+		/* Now get rid of the temporary descriptors, */
+		close(fd[0]);
+		close(fd[1]);
+		close(childin[0]);
+		close(childout[1]);
+
+		/* and move the pipe descriptors to their now homes. */
+		if(dup2(fd[2], UH_INFILENO) == -1) {
+			fprintf(stderr, _("dup2() error.\n"));
+			_exit(2);
+		}
+		if(dup2(fd[3], UH_OUTFILENO) == -1) {
+			fprintf(stderr, _("dup2() error.\n"));
+			_exit(2);
+		}
+		close(fd[2]);
+		close(fd[3]);
+
+#ifdef DEBUG_USERHELPER
+		for (i = 0; args[i] != NULL; i++) {
+			fprintf(stderr, "Exec arg %d = \"%s\".\n", i, args[i]);
+		}
+#endif
+		retval = execv(path, (char**) args);
+		fprintf(stderr, _("execl() error, errno=%d\n"), errno);
+		_exit(0);
+	}
+}
+
+void
+userhelper_run(char *path, ...)
+{
+	va_list ap;
+	const char **argv;
+	int argc = 0;
+	int i = 0;
+
+	/* Count the number of arguments. */
+	va_start(ap, path);
+	while(va_arg(ap, char *) != NULL) {
+		argc++;
+	}
+	va_end(ap);
+
+	/* Copy the arguments into a normal array. */
+	argv = g_malloc0((argc + 1) * sizeof(char*));
+	va_start(ap, path);
+	for(i = 0; i < argc; i++) {
+		argv[i] = g_strdup(va_arg(ap, char *));
+	}
+	va_end(ap);
+
+	/* Pass the array into userhelper_runv() to actually run it. */
+	userhelper_runv(path, argv);
 }

@@ -6,27 +6,28 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2001-02-05 10:35-0500\n"
+"POT-Creation-Date: 2001-11-26 23:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: ../userdialogs.c:35
+#: ../userdialogs.c:36
 msgid "Message"
 msgstr ""
 
-#: ../userdialogs.c:81 ../userhelper-wrap.c:384
+#: ../userdialogs.c:82 ../userhelper-wrap.c:400
 msgid "Error"
 msgstr ""
 
-#: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
+#: ../userdialogs.c:126 ../userdialogs.c:129 ../userdialogs.c:188
 msgid "Prompt"
 msgstr ""
 
-#. Copyright (C) 2001 Red Hat, Inc.
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
 #. * under the terms of the GNU General Public License as published by
@@ -43,179 +44,113 @@ msgstr ""
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #.
 #. Just a dummy file for gettext
-#: ../dummy.h:20 ../userdialogs.c:193 ../userinfo.c:139
+#: ../dummy.h:21 ../userdialogs.c:196 ../userdialogs.h:29 ../userinfo.c:138
 msgid "OK"
 msgstr ""
 
-#: ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
-#: ../usermount.c:761
-msgid "Pipe error.\n"
-msgstr ""
-
-#: ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
-#: ../usermount.c:767
-msgid "Cannot fork().\n"
-msgstr ""
-
-#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
-#: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
-#: ../usermount.c:814
-msgid "dup2() error.\n"
-msgstr ""
-
-#: ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
-#: ../usermount.c:821
-#, c-format
-msgid "execl() error, errno=%d\n"
-msgstr ""
-
-#: ../userhelper-wrap.c:141
-msgid "Information updated."
-msgstr ""
-
-#: ../userhelper-wrap.c:144
-msgid ""
-"The password you typed is invalid.\n"
-"Please try again."
-msgstr ""
-
-#: ../userhelper-wrap.c:147
+#: ../userhelper-wrap.c:52
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
 
-#: ../userhelper-wrap.c:150
+#: ../userhelper-wrap.c:57
 msgid "Password resetting error."
 msgstr ""
 
-#: ../userhelper-wrap.c:153
+#: ../userhelper-wrap.c:63
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
 
-#: ../userhelper-wrap.c:156
+#: ../userhelper-wrap.c:68
 msgid "Unknown user."
 msgstr ""
 
-#: ../userhelper-wrap.c:159
+#: ../userhelper-wrap.c:72
 msgid "Insufficient rights."
 msgstr ""
 
-#: ../userhelper-wrap.c:162
+#: ../userhelper-wrap.c:76
 msgid "Invalid call to sub process."
 msgstr ""
 
-#: ../userhelper-wrap.c:165
+#: ../userhelper-wrap.c:82
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
 
-#. well, this is unlikely to work either, but at least we tried...
-#: ../userhelper-wrap.c:169
+#: ../userhelper-wrap.c:88
 msgid "Out of memory."
 msgstr ""
 
-#: ../userhelper-wrap.c:172
+#: ../userhelper-wrap.c:92
 msgid "The exec() call failed."
 msgstr ""
 
-#: ../userhelper-wrap.c:175
+#: ../userhelper-wrap.c:98
 msgid "Failed to find selected program."
 msgstr ""
 
-#: ../userhelper-wrap.c:178
+#: ../userhelper-wrap.c:103
 msgid "Unknown error."
 msgstr ""
 
-#: ../userhelper-wrap.c:181
+#: ../userhelper-wrap.c:107
 msgid "Unknown exit code."
 msgstr ""
 
-#: ../userhelper-wrap.c:237
+#: ../userhelper-wrap.c:215
 msgid "Input"
 msgstr ""
 
-#: ../userhelper-wrap.c:346
+#: ../userhelper-wrap.c:353
 #, c-format
 msgid "Need %d responses.\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:371
+#: ../userhelper-wrap.c:384
 #, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
 
-#: ../userhelper-wrap.c:389
+#: ../userhelper-wrap.c:408
 #, c-format
 msgid "Changing password for %s"
 msgstr ""
 
-#: ../userhelper-wrap.c:403
+#: ../userhelper-wrap.c:429
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
 msgstr ""
 
-#: ../userhelper.c:103
+#: ../userhelper-wrap.c:536 ../usermount.c:552 ../usermount.c:640
+#: ../usermount.c:718
+msgid "Pipe error.\n"
+msgstr ""
+
+#: ../userhelper-wrap.c:543 ../usermount.c:557 ../usermount.c:648
+#: ../usermount.c:723
+msgid "Cannot fork().\n"
+msgstr ""
+
+#: ../userhelper-wrap.c:605 ../usermount.c:606 ../usermount.c:708
+#: ../usermount.c:771
 #, c-format
-msgid "Got error %d.\n"
-msgstr ""
-
-#: ../userhelper.c:199
-#, c-format
-msgid "Password for %s"
-msgstr ""
-
-#: ../userhelper.c:398
-msgid "Consistency checking is not turned on."
-msgstr ""
-
-#: ../userhelper.c:400
-msgid "Block is fine."
-msgstr ""
-
-#: ../userhelper.c:402
-msgid "Block freed twice."
-msgstr ""
-
-#: ../userhelper.c:404
-msgid "Memory before the block was clobbered."
-msgstr ""
-
-#: ../userhelper.c:406
-msgid "Memory after the block was clobbered."
-msgstr ""
-
-#: ../userhelper.c:435
-msgid "userhelper must be setuid root\n"
-msgstr ""
-
-#: ../userhelper.c:672
-#, c-format
-msgid "PAM returned = %d\n"
-msgstr ""
-
-#: ../userhelper.c:673
-#, c-format
-msgid "about to authenticate \"%s\"\n"
-msgstr ""
-
-#: ../userhelper.c:722 ../userhelper.c:763
-#, c-format
-msgid "about to exec \"%s\"\n"
+msgid "execl() error, errno=%d\n"
 msgstr ""
 
 #: ../userinfo.c:124
 msgid "User Information"
 msgstr ""
 
-#: ../userinfo.c:153
+#: ../userdialogs.h:30 ../userinfo.c:152
 msgid "Help"
 msgstr ""
 
@@ -223,23 +158,23 @@ msgstr ""
 msgid "Full Name:"
 msgstr ""
 
-#: ../userinfo.c:260
+#: ../userinfo.c:259
 msgid "Office:"
 msgstr ""
 
-#: ../userinfo.c:279
+#: ../userinfo.c:276
 msgid "Office Phone:"
 msgstr ""
 
-#: ../userinfo.c:297
+#: ../userinfo.c:293
 msgid "Home Phone:"
 msgstr ""
 
-#: ../userinfo.c:315
+#: ../userinfo.c:310
 msgid "Shell:"
 msgstr ""
 
-#: ../userinfo.c:378
+#: ../userinfo.c:380
 msgid "This will be some help text."
 msgstr ""
 
@@ -255,82 +190,87 @@ msgstr ""
 msgid "User Mount Tool"
 msgstr ""
 
-#: ../usermount.c:136
+#: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
 
-#: ../usermount.c:177
+#: ../usermount.c:176
 msgid "Directory"
 msgstr ""
 
-#: ../usermount.c:185
+#: ../usermount.c:183
 msgid "Device"
 msgstr ""
 
-#: ../usermount.c:193
+#: ../usermount.c:190
 msgid "Type"
 msgstr ""
 
-#: ../usermount.c:267
+#: ../usermount.c:258
 msgid "Format"
 msgstr ""
 
-#: ../usermount.c:360
+#: ../usermount.c:351
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
 
-#: ../usermount.c:362
+#: ../usermount.c:353
 msgid "Yes"
 msgstr ""
 
-#: ../usermount.c:372
+#: ../usermount.c:364
 msgid "No"
 msgstr ""
 
-#: ../usermount.c:379
+#: ../usermount.c:373
 msgid "Do low level format."
 msgstr ""
 
-#: ../dummy.h:21
-msgid "Exit"
+#: ../usermount.c:593 ../usermount.c:600 ../usermount.c:695 ../usermount.c:702
+#: ../usermount.c:756 ../usermount.c:763
+msgid "dup2() error.\n"
 msgstr ""
 
-#: ../dummy.h:22
+#: ../dummy.h:23 ../userdialogs.h:31
 msgid "Cancel"
 msgstr ""
 
-#: ../dummy.h:23
+#: ../dummy.h:22 ../userdialogs.h:32
+msgid "Exit"
+msgstr ""
+
+#: ../dummy.h:24 ../userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr ""
 
-#: ../dummy.h:24
+#: ../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr ""
 
-#: ../dummy.h:25
+#: ../dummy.h:26
 msgid "New UNIX password: "
 msgstr ""
 
-#: ../dummy.h:26
+#: ../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr ""
 
-#: ../dummy.h:27
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr ""
 
-#: ../dummy.h:28
+#: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr ""
 
-#: ../dummy.h:29
+#: ../dummy.h:30
 msgid "Password unchanged"
 msgstr ""
 
-#: ../dummy.h:30
+#: ../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr ""

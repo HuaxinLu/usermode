@@ -1,0 +1,8 @@
+consolehelper.c
+userdialogs.h
+userhelper.c
+userhelper-wrap.c
+userinfo.c
+usermount.c
+userhelper.h
+glade.strings
