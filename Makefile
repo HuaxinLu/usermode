@@ -6,7 +6,7 @@ RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
 
 #CFLAGS=-O2 -Wall
-CFLAGS=-g -Wall $(shell gtk-config --cflags) # -DDEBUG_USERHELPER
+CFLAGS=-g $(RPM_OPT_FLAGS) -Wall $(shell gtk-config --cflags) # -DDEBUG_USERHELPER
 LDFLAGS=$(shell gtk-config --libs)
 INSTALL=install
 

@@ -50,7 +50,7 @@ userhelper_runv(char *path, char **args)
       exit(1);
     }
 
-  if((pid = fork()) < 0)
+  if((pid = fork()) == -1)
     {
       fprintf(stderr, i18n("Cannot fork().\n"));
     }

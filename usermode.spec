@@ -96,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Fri Oct  3 2001 Nalin Dahyabhai <nalin@redhat.com> 1.44-1
 - only try to call gtk_main_quit() if we've got a loop to get out of (#54109)
+- obey RPM_OPT_FLAGS, obey
 
 * Tue Aug 28 2001 Trond Eivind Glomsrød <teg@redhat.com> 1.43-1
 - Update translations

@@ -28,7 +28,10 @@
 void
 userhelper_fatal_error(int signal)
 {
-  gtk_main_quit();
+  if(gtk_main_level() > 0)
+    gtk_main_quit();
+  else
+    _exit(0);
 }
 
 int
