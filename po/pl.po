@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-08-20 16:47+0200\n"
+"PO-Revision-Date: 2004-10-04 15:04+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: POLISH <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,7 @@ msgstr "Hasło: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Rezygnacja z przywilejów administratora nie powiodła się: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -101,6 +101,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"Rezygnacja z przywilejów administratora nie powiodła się: pam_timestamp_check "
+"zwrócił kod błędu %d"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -108,53 +110,56 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"Jesteś aktualnie zautoryzowany w zakresie konfiguracji ustawień systemu "
+"(które dotyczą wszystkich użytkowników) bez konieczności wprowadzania "
+"ponownie hasła administratora. Możesz zrezygnować z tej autoryzacji."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Zachowaj Autoryzacje"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Zapomnij Autoryzacje"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check nie jest setuid root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "brak kontrolującego tty dla pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "nieznany użytkownik dla pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "brak uprawnień w pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "niepoprawny kontrolujący tty dla pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Błąd"
+msgstr "Błąd: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Nie powiodło się wydanie polecenia \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Nie powiodło się ustawienie kanału IO w tryb bezblokowania: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: nie powiodło się połączenie do menadżera sesji\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -176,8 +181,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz uruchomić program \"%s\" który może wykorzystywać uprawnieia\n"
-" administratora, niezbęde są jednak dodatkowe informacje w celu uruchomienia."
+"Próbujesz uruchomić program \"%s\" który może wykorzystywać uprawnienia\n"
+" administratora, niezbędne są jednak dodatkowe informacje w celu uruchomienia."
 
 #: userhelper.c:751
 #, c-format
@@ -218,13 +223,12 @@ msgstr "userhelper musi być uruchamiany jako root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2347
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Nie można otworzyć okna graficznego i znaleźć terminala sterującego.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
-msgstr "Unknown exit code."
+msgstr "Nieznany kod wyjścia."
 
 #: userhelper-wrap.c:181
 msgid "Information updated."
@@ -271,7 +275,7 @@ msgstr "Niewystarczające uprawnienia."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
-msgstr "Invalid call to subprocess."
+msgstr "Niepoprawne wywołanie podprocesu."
 
 #: userhelper-wrap.c:197
 msgid ""
@@ -289,7 +293,7 @@ msgstr "Brak pamięci."
 
 #: userhelper-wrap.c:202
 msgid "The exec() call failed."
-msgstr "The exec() call failed."
+msgstr "Wywołanie exec() nie powiodło się."
 
 #: userhelper-wrap.c:204
 msgid "Failed to find selected program."
@@ -336,7 +340,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Próbujesz uruchomić program \"%s\" który może korzystać z "
-"uprawnieńadministratora, niezbęde są dodatkowe informacje w celu "
+"uprawnieńadministratora, niezbędne są dodatkowe informacje w celu "
 "uruchomienia."
 
 #: userhelper-wrap.c:793
@@ -371,22 +375,22 @@ msgstr "_Uruchom Bez Dodatkowych Uprawnień"
 #: userhelper-wrap.c:973
 #, c-format
 msgid "Pipe error.\n"
-msgstr "Pipe error.\n"
+msgstr "Błąd strumienia danych.\n"
 
 #: userhelper-wrap.c:980
 #, c-format
 msgid "Cannot fork().\n"
-msgstr "Cannot fork().\n"
+msgstr "Nie można wywołać fork().\n"
 
 #: userhelper-wrap.c:1058 userhelper-wrap.c:1062
 #, c-format
 msgid "dup2() error.\n"
-msgstr "dup2() error.\n"
+msgstr "błąd dup2().\n"
 
 #: userhelper-wrap.c:1074
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "execl() error, errno=%d\n"
+msgstr "błąd execl(), errno=%d\n"
 
 #: userinfo.c:323
 #, c-format
@@ -406,7 +410,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Czy aby napewno chcesz sformatować dysk? Zniszczysz wszystkie dane na nim "
+"Czy aby na pewno chcesz sformatować dysk? Zniszczysz wszystkie dane na nim "
 "zawarte."
 
 #: usermount.c:332
@@ -504,3 +508,4 @@ msgstr "Zmień hasło"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Hasło"
+
