@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "POT-Creation-Date: 2002-08-13 21:32-0400\n"
-"PO-Revision-Date: 2002-08-14 14:56+1000\n"
+"PO-Revision-Date: 2002-08-22 09:35GMT+10:00\n"
 "Last-Translator: Sarah Smith <sarahs@redhat.com>\n"
-"Language-Team: Simplified Chinese <i18n@redhat.com>\n"
+"Language-Team: Simplified Chinese <zh@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -311,7 +311,7 @@ msgstr "挂载(_M)"
 
 #: usermount.c:62
 msgid "Un_mount"
-msgstr "卸载(_m)"
+msgstr "卸载(_M)"
 
 #: usermount.c:310
 msgid ""
@@ -321,11 +321,11 @@ msgstr "你确信要格式化该磁盘吗？这将破坏磁盘上全部当前信
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
-msgstr "执行低级格式化(_l)。"
+msgstr "执行低级格式化(_L)。"
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr "选择要创建的文件类型(_f)："
+msgstr "选择要创建的文件类型(_F)："
 
 #: usermount.c:521
 msgid ""
@@ -412,7 +412,7 @@ msgstr "卸载(_U)"
 
 #: glade.strings:29
 msgid "E_xit"
-msgstr "退出(_x)"
+msgstr "退出(_X)"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
