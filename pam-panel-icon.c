@@ -16,6 +16,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include "gsmclient.h"
 #include "eggtrayicon.h"
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -23,6 +24,7 @@
 #include <libintl.h>
 #include <errno.h>
 #include <locale.h>
+#include <string.h>
 #include <gtk/gtk.h>
 
 #define _(x) gettext (x)
@@ -212,12 +214,64 @@ child_io_func (GIOChannel   *source,
     }
 }
 
+static void
+session_save_callback (GsmClient *client,
+                       gboolean   is_phase2,
+                       void      *data)
+{
+  const char *argv[4];
+
+#define ARGC 3
+  argv[0] = "pam-panel-icon";
+  argv[1] = "--sm-client-id";
+  argv[2] = gsm_client_get_id (client);
+  argv[3] = NULL;
+
+  gsm_client_set_restart_command (client,
+                                  ARGC, (char**) argv);
+  
+  argv[1] = NULL;
+  gsm_client_set_clone_command (client,
+                                1, (char**) argv);
+}
+
 int
 main (int argc, char **argv)
 {
   GMainLoop *loop;
+  GsmClient *client;
+  const char *previous_id;
 
+  previous_id = NULL;
+  
   gtk_init (&argc, &argv);
+
+  if (argc > 1)
+    {
+      if (argc != 3 ||
+          strcmp (argv[1], "--sm-client-id") != 0)
+        {
+          g_printerr ("pam-panel-icon: invalid args\n");
+          return 1;
+        }
+
+      previous_id = argv[2];
+    }
+  
+  client = gsm_client_new ();
+
+  gsm_client_set_restart_style (client, GSM_RESTART_IMMEDIATELY);
+  /* start up last */
+  gsm_client_set_priority (client, GSM_CLIENT_PRIORITY_NORMAL + 10);
+  
+  gsm_client_connect (client, previous_id);
+
+  if (!gsm_client_get_connected (client))
+    g_printerr (_("pam-panel-icon: failed to connect to session manager\n"));
+
+  g_signal_connect (G_OBJECT (client), "save",
+                    G_CALLBACK (session_save_callback),
+                    NULL);
   
   loop = g_main_loop_new (NULL, FALSE);
 
@@ -396,7 +450,7 @@ launch_child (void)
                                  &err))
     {
       g_printerr (_("Failed to run command \"%s\": %s\n"),
-                  command, err->message);
+                  command[0], err->message);
 
       g_error_free (err);
 

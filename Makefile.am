@@ -23,7 +23,7 @@ EXTRA_DIST = config.rpath  \
 
 SUBDIRS= m4 intl po
 
-CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\"
+CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk pam-panel-icon
 bin_SCRIPTS = shutdown
@@ -71,8 +71,8 @@ consolehelper_LDADD = @GLIB_LIBS@ @LIBS@
 consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userhelper-wrap.c
 consolehelper_gtk_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
-pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) egg-marshal.c
-pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@
+pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) egg-marshal.c gsmclient.c gsmclient.h props.h props.c
+pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ -L/usr/X11R6/lib -lICE -lSM
 pam-panel-icon.c: egg-marshal.c
 
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c
