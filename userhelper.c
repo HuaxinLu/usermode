@@ -473,9 +473,6 @@ int main(int argc, char *argv[])
 	exit(ERR_NO_USER);
     }
 
-    /* I guess we don't need this anymore */
-    endpwent();
-
     /* okay, start the process */    
     if (c_flg) { /* are we changing the password ? */
 
@@ -526,7 +523,7 @@ int main(int argc, char *argv[])
 	if (strstr(env_term, ".."))
 	    env_term="dumb";
 
-	environ = (char **) malloc (2 * sizeof (char *));
+	environ = (char **) calloc (1, 2 * sizeof (char *));
 	if (env_home) setenv("HOME", env_home, 1);
 	if (env_term) setenv("TERM", env_term, 1);
 	if (env_display) setenv("DISPLAY", env_display, 1);
