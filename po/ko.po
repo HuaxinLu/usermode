@@ -83,7 +83,7 @@ msgstr "도움말"
 #: userhelper.c:95
 #, c-format
 msgid "Got PAM error %d.\n"
-msgstr "PAM 오류 %d (이)가 발생했습니다.\n"
+msgstr "PAM 오류 %d(이)가 발생했습니다.\n"
 
 #: userhelper.c:198
 #, c-format
@@ -105,7 +105,7 @@ msgstr ""
 #: userhelper.c:1297 userhelper.c:1335
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "\"%s\" (을)를 실행합니다\n"
+msgstr "\"%s\"(을)를 실행합니다\n"
 
 #: userhelper-wrap.c:50
 msgid "Unknown exit code."
@@ -202,11 +202,11 @@ msgstr "정보"
 
 #: userhelper-wrap.c:438
 msgid "Changing personal information."
-msgstr ""
+msgstr "개인 정보를 변경합니다."
 
 #: userhelper-wrap.c:441
 msgid "Changing login shell."
-msgstr ""
+msgstr "로그인 쉘을 변경합니다."
 
 #: userhelper-wrap.c:444
 #, c-format
@@ -214,7 +214,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\" (을)를 실행하였습니다, 그러"
+"여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, 그러"
 "나 이 것을 실행하기 위해서는 정보가 더 필요합니다."
 
 #: userhelper-wrap.c:446
@@ -223,8 +223,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한이 필요한 \"%s\" (을)를 실행하였습니다, 그러나 이 것"
-"을 실행하기 위해서는 정보가 더 필요합니다."
+"여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, 그러나 이 것"
+"을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: userhelper-wrap.c:451
 msgid ""
@@ -232,7 +232,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, 그러나 이 것"
-"을 실행하기 위해서는 정보가 더 필요합니다."
+"을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: userhelper-wrap.c:453
 msgid ""
@@ -240,7 +240,7 @@ msgid ""
 "more information is needed in order to do so."
 msgstr ""
 "여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 이 것을 실행"
-"하기 위해서는 정보가 더 필요합니다."
+"하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: userhelper-wrap.c:463
 msgid "_Run Unprivileged"
@@ -265,7 +265,7 @@ msgstr "execl() 오류입니다, 오류코드(errno)=%d\n"
 
 #: userinfo.c:299
 msgid "You don't exist.  Go away.\n"
-msgstr "등록되어 있지 않은 사용자 이군요.  어서 나가세요.\n"
+msgstr "등록된 사용자가 아니군요.  이용하실 수 없습니다.\n"
 
 #: glade.strings:26 usermount.c:61
 msgid "_Mount"
