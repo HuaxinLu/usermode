@@ -27,6 +27,7 @@
 #include <glib-object.h>
 #include <grp.h>
 #include <libintl.h>
+#include <langinfo.h>
 #include <locale.h>
 #include <pwd.h>
 #include <unistd.h>
@@ -307,6 +308,8 @@ converse_console(int num_msg, const struct pam_message **msg,
 	struct app_data *app_data = appdata_ptr;
 	struct pam_message **messages;
 	int i, ret;
+
+	bind_textdomain_codeset(PACKAGE, nl_langinfo(CODESET));
 
 	pam_get_item(app_data->pamh, PAM_SERVICE, (const void**)&service);
 	pam_get_item(app_data->pamh, PAM_USER, (const void**)&user);
