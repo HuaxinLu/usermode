@@ -89,12 +89,10 @@ main(int argc, char* argv[])
 {
   UserInfo* userinfo;
 
-  /* first set up our locale info for gettext. */
-  setlocale(LC_ALL, "");
   bindtextdomain("usermode", "/usr/share/locale");
   textdomain("usermode");
 
-  /* gtk_set_locale(); */		/* this is new... */
+  gtk_set_locale();
   gtk_init(&argc, &argv);
   /* put this back in when I've decided I need it... */
   /*   gtk_rc_parse("userinforc"); */
