@@ -576,12 +576,16 @@ int main(int argc, char *argv[])
         env_lcall = getenv("LC_ALL");
         env_xauthority = getenv("XAUTHORITY");
 
-	if (strstr(env_home, ".."))
+	if (env_home && strstr(env_home, ".."))
 	    env_home=NULL;
-	if (strstr(env_shell, ".."))
+	if (env_shell && strstr(env_shell, ".."))
 	    env_shell=NULL;
-	if (strstr(env_term, ".."))
+	if (env_term && strstr(env_term, ".."))
 	    env_term="dumb";
+	if (env_lang && strchr(env_lang, '/'))
+	    env_lang=NULL;
+	if (env_lcall && strchr(env_lcall, '/'))
+	    env_lcall=NULL;
 
 	environ = (char **) calloc (1, 2 * sizeof (char *));
 	/* note that XAUTHORITY not copied -- do not let attackers get at
@@ -593,7 +597,7 @@ int main(int argc, char *argv[])
 	if (env_shell) setenv("SHELL", env_shell, 1);
 	if (env_user) setenv("USER", env_user, 1);
 	if (env_logname) setenv("LOGNAME", env_logname, 1);
-        /* we want I18n */
+        /* we want I18n, but only if it is safe */
         if (env_lang) setenv("LANG", env_lang, 1);
         if (env_lcall) setenv("LC_ALL", env_lcall, 1);
 

@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.35
-Release: 3
+Version: 1.36
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -88,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Wed Oct  4 2000 Jakub Jelinek <jakub@redhat.com>
+- fix a security bug with LC_ALL/LANG variables (#18046)
+
 * Mon Aug 28 2000 Nalin Dahyabhai <nalin@redhat.com>
 - mark defined strings translateable (#17006)
 
