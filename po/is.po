@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode 1.1\n"
-"POT-Creation-Date: 2000-08-02 12:47-0400\n"
-"PO-Revision-Date: 2000-08-02 10:47+0000\n"
+"Project-Id-Version: usermode 1.3\n"
+"POT-Creation-Date: 2000-08-03 15:08-0400\n"
+"PO-Revision-Date: 2000-08-05 20:47+0000\n"
 "Last-Translator: Richard Allen <ra@hp.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "Pípuvilla.\n"
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
 msgid "Cannot fork().\n"
-msgstr "Get ekki notað fort().\n"
+msgstr "Get ekki notað fork().\n"
 
 #: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
 #: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
@@ -126,7 +126,7 @@ msgstr "Óþekkt skilagildi."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Ílag"
 
 #: ../userhelper-wrap.c:320
 #, c-format
@@ -155,7 +155,7 @@ msgstr "Fékk villu %d.\n"
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Aðgangsorð fyrir %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
@@ -218,6 +218,14 @@ msgstr "Skél:"
 msgid "This will be some help text."
 msgstr "Þetta verður hjálpartexti."
 
+#: ../usermount.c:56
+msgid "Mount"
+msgstr ""
+
+#: ../usermount.c:57
+msgid "Unmount"
+msgstr ""
+
 #: ../usermount.c:120
 msgid "User Mount Tool"
 msgstr "Tengitól fyrir notendur"
@@ -265,6 +273,3 @@ msgstr "Nei"
 #: ../usermount.c:382
 msgid "Do low level format."
 msgstr "Ekki lágforsníða."
-
-#~ msgid "%s's password"
-#~ msgstr "lykilorð %s"
