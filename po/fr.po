@@ -9,7 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2003-09-25 16:34-0400\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-03-31 15:31-0500\n"
 "PO-Revision-Date: 2004-02-20 15:42+0100\n"
 "Last-Translator: Jean-Paul Aubry <jpaubry@redhat.com>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -83,7 +84,8 @@ msgstr "Désolé, les mots de passe ne correspondent pas"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Démarrer les outils de configuration de tout le système sans mot de passe."
+msgstr ""
+"Démarrer les outils de configuration de tout le système sans mot de passe."
 
 #: dummy.h:33
 msgid "login: "
@@ -97,7 +99,7 @@ msgstr "Mot de passe :"
 msgid "Help"
 msgstr "Aide"
 
-#: userhelper.c:122
+#: userhelper.c:114
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Impossible de au contexte d'exec la valeur %s.\n"
@@ -107,7 +109,7 @@ msgstr "Impossible de au contexte d'exec la valeur %s.\n"
 msgid "Password for %s"
 msgstr "Mot de passe pour %s"
 
-#: userhelper.c:666
+#: userhelper.c:674
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -117,7 +119,7 @@ msgstr ""
 "super-utilisateur. De plus amples informations sont toutefois requises pour "
 "cette opération."
 
-#: userhelper.c:668
+#: userhelper.c:676
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -127,7 +129,7 @@ msgstr ""
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
 "opération."
 
-#: userhelper.c:672
+#: userhelper.c:680
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -136,7 +138,7 @@ msgstr ""
 "du super-utilisateur. De plus amples informations sont toutefois requises "
 "pour cette opération."
 
-#: userhelper.c:674
+#: userhelper.c:682
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -145,31 +147,34 @@ msgstr ""
 "super-utilisateur. De plus amples informations sont toutefois requises pour "
 "cette opération."
 
-#: userhelper.c:693
+#: userhelper.c:701
 #, c-format
 msgid "Password for %s: "
 msgstr "Mot de passe pour %s :"
 
-#: userhelper.c:1039
+#: userhelper.c:2215
+#, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper doit être setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:1123
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:2313
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
 "contrôle.\n"
 
-#: userhelper-wrap.c:178
+#: userhelper-wrap.c:179
 msgid "Unknown exit code."
 msgstr "Code de sortie inconnu."
 
-#: userhelper-wrap.c:180
+#: userhelper-wrap.c:181
 msgid "Information updated."
 msgstr "Informations mises à jour."
 
-#: userhelper-wrap.c:182
+#: userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -177,7 +182,7 @@ msgstr ""
 "Le mot de passe n'est pas valide.\n"
 "Veuillez réessayer."
 
-#: userhelper-wrap.c:184
+#: userhelper-wrap.c:185
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -187,11 +192,11 @@ msgstr ""
 "Cela pourrait être causé par des caractères deux-points ou virgule dans\n"
 "l'un des champs. Veuillez les éliminer et réessayer."
 
-#: userhelper-wrap.c:186
+#: userhelper-wrap.c:187
 msgid "Password resetting error."
 msgstr "Erreur de réinitialisation du mot de passe."
 
-#: userhelper-wrap.c:188
+#: userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -199,19 +204,19 @@ msgstr ""
 "Certains fichiers système sont verrouillés.\n"
 "Réessayer plus tard."
 
-#: userhelper-wrap.c:190
+#: userhelper-wrap.c:191
 msgid "Unknown user."
 msgstr "Utilisateur inconnu."
 
-#: userhelper-wrap.c:192
+#: userhelper-wrap.c:193
 msgid "Insufficient rights."
 msgstr "Droits insuffisants."
 
-#: userhelper-wrap.c:194
+#: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
 msgstr "Appel non valide à un sous-processus. "
 
-#: userhelper-wrap.c:196
+#: userhelper-wrap.c:197
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -221,47 +226,53 @@ msgstr ""
 "Vous n'êtes pas autorisé à changer votre shell.\n"
 "Consultez votre administrateur système."
 
-#: userhelper-wrap.c:199
+#: userhelper-wrap.c:200
 msgid "Out of memory."
 msgstr "Mémoire insuffisante."
 
-#: userhelper-wrap.c:201
+#: userhelper-wrap.c:202
 msgid "The exec() call failed."
 msgstr "Impossible d'exécuter l'appel exec()."
 
-#: userhelper-wrap.c:203
+#: userhelper-wrap.c:204
 msgid "Failed to find selected program."
 msgstr "Impossible de trouver le programme sélectionné."
 
-#: userhelper-wrap.c:207
+#: userhelper-wrap.c:208
 msgid "Unknown error."
 msgstr "Erreur inconnue."
 
-#: userhelper-wrap.c:458 glade.strings:18 usermode.glade.h:9
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
+#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "Interroger"
 
-#: userhelper-wrap.c:548 userhelper-wrap.c:718
+#: userhelper-wrap.c:564 userhelper-wrap.c:744
 msgid "Error"
 msgstr "Erreur"
 
-#: userhelper-wrap.c:560
+#: userhelper-wrap.c:576
 msgid "Information"
 msgstr "Information"
 
-#: userhelper-wrap.c:716 glade.strings:16 glade.strings:19 usermode.glade.h:8
+#: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
+#: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Conteneur de texte"
 
-#: userhelper-wrap.c:756
+#: userhelper-wrap.c:782
 msgid "Changing personal information."
 msgstr "Changement des informations personnelles."
 
-#: userhelper-wrap.c:759
+#: userhelper-wrap.c:785
 msgid "Changing login shell."
 msgstr "Changement du shell de connexion."
 
-#: userhelper-wrap.c:765
+#: userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -271,7 +282,7 @@ msgstr ""
 "super-utilisateur. De plus amples informations sont toutefois requises pour "
 "cette opération."
 
-#: userhelper-wrap.c:767
+#: userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -281,7 +292,7 @@ msgstr ""
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
 "opération."
 
-#: userhelper-wrap.c:776
+#: userhelper-wrap.c:802
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -290,7 +301,7 @@ msgstr ""
 "de super-utilisateur. De plus amples informations sont toutefois requises "
 "pour cette opération."
 
-#: userhelper-wrap.c:778
+#: userhelper-wrap.c:804
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -299,32 +310,36 @@ msgstr ""
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
 "opération."
 
-#: userhelper-wrap.c:795
+#: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
 msgstr "Exécute_r sans privilèges"
 
-#: userhelper-wrap.c:931
+#: userhelper-wrap.c:973
+#, c-format
 msgid "Pipe error.\n"
 msgstr "Erreur de conduit.\n"
 
-#: userhelper-wrap.c:938
+#: userhelper-wrap.c:980
+#, c-format
 msgid "Cannot fork().\n"
 msgstr "Erreur fork().\n"
 
-#: userhelper-wrap.c:1016 userhelper-wrap.c:1020
+#: userhelper-wrap.c:1058 userhelper-wrap.c:1062
+#, c-format
 msgid "dup2() error.\n"
 msgstr "Erreur dup2().\n"
 
-#: userhelper-wrap.c:1032
+#: userhelper-wrap.c:1074
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Erreur execl(), errno=%d\n"
 
 #: userinfo.c:323
+#, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Identité inexistante. Partir.\n"
 
-#: usermount.c:62 glade.strings:26
+#: usermount.c:62
 msgid "_Mount"
 msgstr "_Monter"
 
@@ -358,87 +373,59 @@ msgstr ""
 "Contactez votre administrateur."
 
 #. Create the dialog.
-#: usermount.c:544 usermount.c:555 glade.strings:22
+#: usermount.c:544 usermount.c:556
 msgid "User Mount Tool"
 msgstr "Outil de montage de l'utilisateur"
 
 #. Create the other buttons.
-#: usermount.c:569 glade.strings:28
+#: usermount.c:570
 msgid "_Format"
 msgstr "_Formater"
 
-#: usermount.c:605 glade.strings:24
+#: usermount.c:606
 msgid "Device"
 msgstr "Périphérique"
 
-#: usermount.c:611 glade.strings:23
+#: usermount.c:612
 msgid "Directory"
 msgstr "Répertoire"
 
-#: usermount.c:617
+#: usermount.c:618
 msgid "Filesystem"
 msgstr "Système de fichiers"
 
-#.
-#. * Translatable strings file generated by Glade.
-#. * Add this file to your project's POTFILES.in.
-#. * DO NOT compile it as part of your application.
-#.
-#: glade.strings:7 usermode.glade.h:10
-msgid "User Information"
-msgstr "Informations utilisateur"
+#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
+#: glade.strings.h:21 usermode.glade.h:1
+msgid "*"
+msgstr "*"
 
-#: glade.strings:8 usermode.glade.h:2
-msgid "Full Name:"
-msgstr "Nom complet :"
-
-#: glade.strings:9 usermode.glade.h:7
-msgid "Office:"
-msgstr "Bureau :"
-
-#: glade.strings:10 usermode.glade.h:6
-msgid "Office Phone Number:"
-msgstr "Téléphone bureau :"
-
-#: glade.strings:11 usermode.glade.h:3
-msgid "Home Phone Number:"
-msgstr "Téléphone domicile :"
-
-#: glade.strings:12 usermode.glade.h:4
-msgid "Login Shell:"
-msgstr "Shell de connexion :"
-
-#: glade.strings:13 glade.strings:20
-msgid "_Ok"
-msgstr "_Ok"
-
-#: glade.strings:14 glade.strings:21
-msgid "_Cancel"
-msgstr "_Annuler"
-
-#: glade.strings:15 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "Message"
 
-#: glade.strings:17
-msgid "_Close"
-msgstr "_Fermer"
+#: glade.strings.h:12 usermode.glade.h:10
+msgid "User Information"
+msgstr "Informations utilisateur"
 
-#: glade.strings:25
-msgid "Type"
-msgstr "Type"
+#: glade.strings.h:13 usermode.glade.h:2
+msgid "Full Name:"
+msgstr "Nom complet :"
 
-#: glade.strings:27
-msgid "_Unmount"
-msgstr "_Démonter"
+#: glade.strings.h:14 usermode.glade.h:7
+msgid "Office:"
+msgstr "Bureau :"
 
-#: glade.strings:29
-msgid "E_xit"
-msgstr "_Quitter"
+#: glade.strings.h:15 usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "Téléphone bureau :"
 
-#: usermode.glade.h:1
-msgid "*"
-msgstr "*"
+#: glade.strings.h:16 usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr "Téléphone domicile :"
+
+#: glade.strings.h:17 usermode.glade.h:4
+msgid "Login Shell:"
+msgstr "Shell de connexion :"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -464,6 +451,24 @@ msgstr "Modifier le mot de passe de connexion"
 msgid "Password"
 msgstr "Mot de passe"
 
+#~ msgid "_Ok"
+#~ msgstr "_Ok"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Annuler"
+
+#~ msgid "_Close"
+#~ msgstr "_Fermer"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "_Unmount"
+#~ msgstr "_Démonter"
+
+#~ msgid "E_xit"
+#~ msgstr "_Quitter"
+
 #~ msgid "Got PAM error %d.\n"
 #~ msgstr "Erreur PAM %d.\n"
 
@@ -472,4 +477,3 @@ msgstr "Mot de passe"
 
 #~ msgid "Need %d responses.\n"
 #~ msgstr "%d réponses nécessaires.\n"
-

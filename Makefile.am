@@ -78,6 +78,8 @@ pkgdata_DATA = usermode.glade
 
 @INTLTOOL_DESKTOP_RULE@
 
+reaper.c: marshal.h
+
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_LDADD = @LIBUSER_LIBS@ @GLIB_LIBS@ @PAM_LIBS@ @LIBS@ @EFENCE_LIBS@
 
