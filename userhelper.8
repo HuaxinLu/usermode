@@ -1,4 +1,4 @@
-.\" Copyright (C) 1997 Red Hat Software, Inc.
+.\" Copyright (C) 1997,1999 Red Hat Software, Inc.
 .\"
 .\" This is free software; you can redistribute it and/or modify it
 .\" under the terms of the GNU General Public License as published by
@@ -14,12 +14,12 @@
 .\" along with this program; if not, write to the Free Software
 .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 .\"
-.TH USERHELPER 8 "17 October 1997" "Red Hat Software"
+.TH USERHELPER 8 "19 March 1999" "Red Hat Software"
 .SH NAME
 userhelper \- A helper interface to pam.
 .SH SYNOPSIS
 .B userhelper
-[\ -c\ ] [\ \-f\ full-name\ ] [\ \-o\ office\ ] [\ \-p\ office-phone\ ] [\ \-h\ home-phone\ ] [\ \-s\ shell\ ] [\ username \]
+[\ -t\ ] [\ -w\ prog\ args\ ] [\ -c\ ] [\ \-f\ full-name\ ] [\ \-o\ office\ ] [\ \-p\ office-phone\ ] [\ \-h\ home-phone\ ] [\ \-s\ shell\ ] [\ username \]
 
 .SH DESCRIPTION
 NOTE this program is NOT intended to be run interactively.  If you
@@ -54,7 +54,20 @@ Informational message.
 .TP
 4
 Error message.
+.TP
+5
+Count of messages sent in this block so far.
 .SH OPTIONS
+.TP
+.I -t
+Text mode authentication instead of the numbered message types
+just described; only used with -w.
+.TP
+.I -w
+Specify a program name and arguments to be passed through.
+userhelper will authenticate the user via pam and then exec
+the named program, if such a program exists in /usr/sbin or
+/sbin.  Normally called from consolehelper via a symlink.
 .TP
 .I -c 
 Change the current user's password.  Note that this option cannot be
@@ -103,6 +116,15 @@ Invalid call to this program.
 8
 The shell provided is not valid (i.e., does not exist in /etc/shells).
 .TP
+9
+Ran out of memory.
+.TP
+10
+Could not find the program.
+.TP
+11
+exec failed even though program exists.
+.TP
 255
 Unknown error.
 .SH FILES
@@ -115,8 +137,11 @@ This file is checked to see if the new shell supplied is valid.
 .SH "SEE ALSO"
 .IR userpasswd (1),
 .IR userinfo (1),
+.IR consolehelper (8),
 .IR chfn (1),
 .IR chsh (1),
 .IR passwd (5)
 .SH AUTHOR
 Otto Hammersmith <otto@redhat.com>
+.br
+Michael K. Johnson <johnsonm@redhat.com>
