@@ -6,13 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-04-01 11:46-0500\n"
-"PO-Revision-Date: 2002-04-02 15:52GMT\n"
-"Last-Translator: Frigga <frigga@redhat.it>\n"
-"Language-Team: german <de@li.org>\n"
+"PO-Revision-Date: 2002-04-14 03:06GMT\n"
+"Last-Translator: Karsten Hopp <karsten@redhat.de>\n"
+"Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.5\n"
+"X-Generator: KBabel 0.9.4\n"
 
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
@@ -36,7 +36,7 @@ msgstr "(aktuelles) UNIX Passwort:"
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Neues UNIX Passwort nochmals eingeben:"
+msgstr "Neues UNIX Passwort: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
@@ -65,7 +65,7 @@ msgstr "Hilfe"
 #: userhelper.c:96
 #, c-format
 msgid "Got PAM error %d.\n"
-msgstr "PAM Fehler %d gefunden.\n"
+msgstr "PAM Fehler %d bekommen.\n"
 
 #: userhelper.c:202
 #, c-format
@@ -113,11 +113,10 @@ msgstr "Passwort für %s:"
 
 #: userhelper.c:626
 msgid "userhelper must be setuid root\n"
-msgstr "usermode muss Setuid-Root sein\n"
+msgstr "userhelper muss Setuid-Root sein\n"
 
 #: userhelper.c:708
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -334,7 +333,7 @@ msgstr "Gerät"
 
 #: glade.strings:23 usermount.c:585
 msgid "Directory"
-msgstr "Verzeichniss"
+msgstr "Verzeichnis"
 
 #: usermount.c:591
 msgid "Filesystem"
@@ -395,3 +394,4 @@ msgstr "_Unmount"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "B_eenden"
+
