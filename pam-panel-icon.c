@@ -477,7 +477,7 @@ main(int argc, char **argv)
 
 	/* Load the images. */
 	locked_pixbuf = gdk_pixbuf_new_from_file(DATADIR
-						 "/pixmaps/keyring-small.png",
+						 "/pixmaps/badge-small.png",
 						 NULL);
 
 	/* Start up locales */
