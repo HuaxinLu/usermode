@@ -18,7 +18,7 @@ EXTRA_DIST = config.rpath  \
 	shutdown.pamd \
 	shutdown.pamd.6x \
 	update-from-egg.sh \
-	egg-marshalers.list \
+	eggmarshalers.list \
 	$(pixmap_DATA)
 
 SUBDIRS=m4 po
