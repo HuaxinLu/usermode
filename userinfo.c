@@ -58,6 +58,7 @@ struct UserInfo {
 
 static void set_new_userinfo(struct UserInfo *userinfo);
 static gint on_ok_clicked(GtkWidget *widget, gpointer data);
+extern char **environ;
 
 static void
 shell_activate(GtkWidget *widget, gpointer data)
@@ -74,44 +75,50 @@ create_userinfo_window(struct UserInfo *userinfo)
 {
 	GladeXML *xml = NULL;
 	GtkWidget *widget = NULL, *entry = NULL, *menu = NULL, *item = NULL,
-		  *shell_menu;
+		  *shell_menu, *window = NULL;
 	char *shell;
 	gboolean saw_shell = FALSE;
 
 	xml = glade_xml_new(DATADIR "/" PACKAGE "/" PACKAGE ".glade",
 			    "userinfo", PACKAGE);
 	if(xml) {
-		widget = glade_xml_get_widget(xml, "userinfo");
-		g_object_set_data(G_OBJECT(widget),
+		window = glade_xml_get_widget(xml, "userinfo");
+		g_assert(window != NULL);
+		g_object_set_data(G_OBJECT(window),
 				  USERINFO_DATA_NAME, userinfo);
-		g_object_set_data(G_OBJECT(widget),
+		g_object_set_data(G_OBJECT(window),
 				  USERINFO_XML_NAME, xml);
 
 		entry = glade_xml_get_widget(xml, "fullname");
+		g_assert(entry != NULL);
 		if(GTK_IS_ENTRY(entry) && userinfo->full_name) {
 			gtk_entry_set_text(GTK_ENTRY(entry),
 					   userinfo->full_name);
 		}
 
 		entry = glade_xml_get_widget(xml, "office");
+		g_assert(entry != NULL);
 		if(GTK_IS_ENTRY(entry) && userinfo->office) {
 			gtk_entry_set_text(GTK_ENTRY(entry),
 					   userinfo->office);
 		}
 
 		entry = glade_xml_get_widget(xml, "officephone");
+		g_assert(entry != NULL);
 		if(GTK_IS_ENTRY(entry) && userinfo->office_phone) {
 			gtk_entry_set_text(GTK_ENTRY(entry),
 					   userinfo->office_phone);
 		}
 
 		entry = glade_xml_get_widget(xml, "homephone");
+		g_assert(entry != NULL);
 		if(GTK_IS_ENTRY(entry) && userinfo->home_phone) {
 			gtk_entry_set_text(GTK_ENTRY(entry),
 					   userinfo->home_phone);
 		}
 
 		shell_menu = glade_xml_get_widget(xml, "shellmenu");
+		g_assert(shell_menu != NULL);
 		menu = gtk_menu_new();
 
 		setusershell();
@@ -149,12 +156,14 @@ create_userinfo_window(struct UserInfo *userinfo)
 		gtk_option_menu_set_history(GTK_OPTION_MENU(shell_menu), 0);
 		endusershell();
 
-		widget = glade_xml_get_widget(xml, "ok");
+		widget = glade_xml_get_widget(xml, "apply");
+		g_assert(widget != NULL);
 		g_signal_connect(widget, "clicked",
-				 G_CALLBACK(on_ok_clicked), NULL);
-		widget = glade_xml_get_widget(xml, "cancel");
+				 G_CALLBACK(on_ok_clicked), window);
+		widget = glade_xml_get_widget(xml, "close");
+		g_assert(widget != NULL);
 		g_signal_connect(widget, "clicked",
-				 G_CALLBACK(gtk_main_quit), NULL);
+				 G_CALLBACK(gtk_main_quit), window);
 	}
 
 	return widget;
@@ -230,7 +239,13 @@ on_ok_clicked(GtkWidget *widget, gpointer data)
 		userinfo->home_phone = gtk_entry_get_text(GTK_ENTRY(entry));
 	}
 
+	if (GTK_IS_WIDGET(toplevel)) {
+		gtk_widget_set_sensitive(GTK_WIDGET(toplevel), FALSE);
+	}
 	set_new_userinfo(userinfo);
+	if (GTK_IS_WIDGET(toplevel)) {
+		gtk_widget_set_sensitive(GTK_WIDGET(toplevel), TRUE);
+	}
 	return FALSE;
 }
 
@@ -244,6 +259,7 @@ set_new_userinfo(struct UserInfo *userinfo)
 	const char *shell;
 	const char *argv[12];
 	int i = 0;
+	GError *error = NULL;
 
 	fullname = userinfo->full_name;
 	office = userinfo->office;
@@ -303,7 +319,7 @@ main(int argc, char *argv[])
 	gtk_set_locale();
 
 	userinfo = parse_userinfo();
-	if(userinfo == NULL) {
+	if (userinfo == NULL) {
 		fprintf(stderr, _("You don't exist.  Go away.\n"));
 		exit(1);
 	}
