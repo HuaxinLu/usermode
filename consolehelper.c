@@ -1,4 +1,4 @@
-/* Copyright (C) 1999 Red Hat Software, Inc.
+/* Copyright (C) 1999-2001 Red Hat Software, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -42,10 +42,10 @@ main(int argc, char* argv[])
   int fake_gtk_argc = 1;
   char **fake_gtk_argv;
 
-  /* first set up our locale info for gettext. */
-  setlocale(LC_ALL, "");
   bindtextdomain("usermode", "/usr/share/locale");
   textdomain("usermode");
+
+  gtk_set_locale();
 
   constructed_argv = g_malloc0((argc+4) * sizeof(char *));
 
