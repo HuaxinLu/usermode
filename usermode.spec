@@ -46,7 +46,7 @@ graphical tools for certain account management tasks.
 %build
 %configure \
 %if %{WITH_SELINUX}
-	--with-selinux --sysconfdir=/etc
+	--with-selinux 
 %endif
 
 make
