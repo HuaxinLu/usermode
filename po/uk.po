@@ -19,7 +19,7 @@ msgstr "Помилка"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr "П╕дказка"
+msgstr ""
 
 #. Copyright (C) 2001 Red Hat, Inc.
 #. *
@@ -56,18 +56,17 @@ msgstr ""
 #: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
 #: ../usermount.c:814
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "помилка dup2().\n"
 
 #: ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
 #: ../usermount.c:821
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "помилка execl(), errno=%d\n"
 
 #: ../userhelper-wrap.c:141
-#, fuzzy
 msgid "Information updated."
-msgstr "Користувач"
+msgstr "╤нформац╕ю поновлено."
 
 #: ../userhelper-wrap.c:144
 msgid ""
@@ -93,17 +92,16 @@ msgid ""
 msgstr ""
 
 #: ../userhelper-wrap.c:156
-#, fuzzy
 msgid "Unknown user."
-msgstr "Нев╕дома помилка."
+msgstr "Нев╕домий користувач."
 
 #: ../userhelper-wrap.c:159
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Недостатньо прав."
 
 #: ../userhelper-wrap.c:162
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Нев╕рний виклик саб-процесу"
 
 #: ../userhelper-wrap.c:165
 msgid ""
@@ -130,9 +128,8 @@ msgid "Unknown error."
 msgstr "Нев╕дома помилка."
 
 #: ../userhelper-wrap.c:181
-#, fuzzy
 msgid "Unknown exit code."
-msgstr "Нев╕дома помилка."
+msgstr "Нев╕домий код виходу."
 
 #: ../userhelper-wrap.c:237
 msgid "Input"
@@ -141,7 +138,7 @@ msgstr "Вв╕д:"
 #: ../userhelper-wrap.c:346
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "Потр╕бно %d в╕дпов╕дей.\n"
 
 #: ../userhelper-wrap.c:371
 #, c-format
@@ -153,7 +150,7 @@ msgstr ""
 #: ../userhelper-wrap.c:389
 #, c-format
 msgid "Changing password for %s"
-msgstr ""
+msgstr "Зм╕ню╓ться пароль для %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
@@ -168,7 +165,7 @@ msgstr ""
 #: ../userhelper.c:199
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Пароль для %s"
 
 #: ../userhelper.c:398
 msgid "Consistency checking is not turned on."
@@ -219,7 +216,7 @@ msgstr "Дов╕дка"
 
 #: ../userinfo.c:242
 msgid "Full Name:"
-msgstr ""
+msgstr "Повне ╕м'я:"
 
 #: ../userinfo.c:260
 msgid "Office:"
