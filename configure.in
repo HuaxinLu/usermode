@@ -2,7 +2,6 @@ AC_INIT(usermode.spec)
 AM_INIT_AUTOMAKE(usermode,`awk '/^Version:/ { print $$2 }' usermode.spec`)
 AC_PREFIX_DEFAULT(/usr)
 AC_PROG_CC
-AC_SYS_LARGEFILE
 AC_PATH_PROG(MOUNT,mount,/bin/mount,[/sbin:/bin:/usr/sbin:/usr/bin])
 AC_PATH_PROG(UMOUNT,umount,/bin/umount,[/sbin:/bin:/usr/sbin:/usr/bin])
 AC_PATH_PROG(MKFS,mkfs,/sbin/mkfs,[/sbin:/bin:/usr/sbin:/usr/bin])
