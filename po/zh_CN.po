@@ -441,12 +441,3 @@ msgstr "改变您的登录口令"
 msgid "Password"
 msgstr "口令"
 
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "得到 PAM 错误 %d。\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "即将执行“%s”\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "需要 %d 个回应。\n"
-
