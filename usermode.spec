@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.27
-Release: 3
+Release: 4
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -79,6 +79,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Wed Aug  8 2000 Nalin Dahyabhia <nalin@redhat.com>
+- merge in updated translations
+
 * Wed Aug  2 2000 Nalin Dahyabhia <nalin@redhat.com>
 - install translations
 - fixup a messy text string
