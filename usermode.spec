@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.24
+Version: 1.25
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -74,6 +74,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Mon Jul  3 2000 Nalin Dahyabhia <nalin@redhat.com>
+- fix verbosity problems
+
 * Mon Jun 19 2000 Nalin Dahyabhia <nalin@redhat.com>
 - strip all binaries by default
 - add the name of the program being run to the userhelper dialog
