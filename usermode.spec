@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.4.4
+Version: 1.4.5
 Release: 1
 Copyright: GPL
 Group: User Interface/Desktops
@@ -46,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 /etc/X11/wmconfig/usermount
 
 %changelog
+* Wed Mar 17 1999 Bill Nottingham <notting@redhat.com>
+- remove gdk_input_remove (causing segfaults)
+
 * Tue Jan 12 1999 Michael Johnson <johnsonm@redhat.com>
 - fix missing include files
 

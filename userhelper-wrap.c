@@ -354,7 +354,8 @@ userhelper_sigchld()
   
   if(WIFEXITED(status))
     {
-      gdk_input_remove(childout_tag);
+      /* what is this doing here? */
+      /* gdk_input_remove(childout_tag); */
       userhelper_parse_exitstatus(WEXITSTATUS(status));
     }
 }
