@@ -8,6 +8,10 @@ CFLAGS=-g -Wall $(shell gtk-config --cflags)
 LDFLAGS=$(shell gtk-config --libs)
 INSTALL=install
 
+bindir=/usr/bin
+mandir=/usr/man
+sbindir=/usr/sbin
+
 PROGS=userinfo usermount userhelper userpasswd consolehelper
 MANS=userinfo.1 usermount.1 userhelper.8 userpasswd.1 consolehelper.8
 
@@ -34,24 +38,24 @@ consolehelper:	consolehelper.o userdialogs.o userhelper-wrap.o
 	$(CC) -oconsolehelper $(CFLAGS) consolehelper.o userdialogs.o userhelper-wrap.o $(LDFLAGS)
 
 install:	$(PROGS)
-	mkdir -p $(PREFIX)/usr/bin $(PREFIX)/usr/sbin
+	mkdir -p $(PREFIX)$(bindir) $(PREFIX)$(sbindir)
 	mkdir -p $(PREFIX)/etc/X11/applnk/System
-	mkdir -p $(PREFIX)/usr/man/man1 $(PREFIX)/usr/man/man8
-	$(INSTALL) -m 755 userinfo $(PREFIX)/usr/bin
+	mkdir -p $(PREFIX)$(mandir)/man1 $(PREFIX)$(mandir)/man8
+	$(INSTALL) -m 755 userinfo $(PREFIX)$(bindir)
 	$(INSTALL) -m 644 userinfo.desktop $(PREFIX)/etc/X11/applnk/System/
-	$(INSTALL) -m 755 usermount $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 usermount $(PREFIX)$(bindir)
 	$(INSTALL) -m 644 usermount.desktop $(PREFIX)/etc/X11/applnk/System/
-	$(INSTALL) -m 755 userpasswd $(PREFIX)/usr/bin
+	$(INSTALL) -m 755 userpasswd $(PREFIX)$(bindir)
 	$(INSTALL) -m 644 userpasswd.desktop $(PREFIX)/etc/X11/applnk/System/
-	$(INSTALL) -m 755 consolehelper $(PREFIX)/usr/bin
-	$(INSTALL) -m 4755 userhelper $(PREFIX)/usr/sbin
+	$(INSTALL) -m 755 consolehelper $(PREFIX)$(bindir)
+	$(INSTALL) -m 4755 userhelper $(PREFIX)$(sbindir)
 
 install-man: 	$(MANS)
-	$(INSTALL) -m 644 userinfo.1 $(PREFIX)/usr/man/man1
-	$(INSTALL) -m 644 usermount.1 $(PREFIX)/usr/man/man1
-	$(INSTALL) -m 644 userhelper.8 $(PREFIX)/usr/man/man8
-	$(INSTALL) -m 644 consolehelper.8 $(PREFIX)/usr/man/man8
-	$(INSTALL) -m 644 userpasswd.1 $(PREFIX)/usr/man/man1
+	$(INSTALL) -m 644 userinfo.1 $(PREFIX)$(mandir)/man1
+	$(INSTALL) -m 644 usermount.1 $(PREFIX)$(mandir)/man1
+	$(INSTALL) -m 644 userhelper.8 $(PREFIX)$(mandir)/man8
+	$(INSTALL) -m 644 consolehelper.8 $(PREFIX)$(mandir)/man8
+	$(INSTALL) -m 644 userpasswd.1 $(PREFIX)$(mandir)/man1
 
 clean:	
 	rm -f *~ *.o $(PROGS)

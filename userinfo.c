@@ -169,11 +169,7 @@ create_shell_menu(UserInfo* userinfo)
   GtkWidget* shell_menu;
   GtkWidget* menu;
   GtkWidget* menuitem;
-  int shells_fd;
-  struct stat shells_stat;
-  char* shells_buf;
   char* shell_curr;
-  char* shell_sep = "\n";
 
   shell_menu = gtk_option_menu_new();
   menu = gtk_menu_new();
@@ -194,14 +190,8 @@ create_shell_menu(UserInfo* userinfo)
   gtk_menu_append(GTK_MENU(menu), menuitem);
   gtk_widget_show(menuitem);
 
-  /* FIXME: aggressive error checking... */
-  shells_fd = open("/etc/shells", O_RDONLY);
-  fstat(shells_fd, &shells_stat);
-  shells_buf = malloc(sizeof(char) * shells_stat.st_size);
-  read(shells_fd, shells_buf, shells_stat.st_size);
-  
-  shell_curr = strtok(shells_buf, shell_sep);
-  while(shell_curr != NULL)
+  setusershell();
+  for(shell_curr = getusershell(); shell_curr; shell_curr = getusershell())
     {
       if(strcmp(shell_curr, userinfo->shell) != 0)
 	{
@@ -213,11 +203,12 @@ create_shell_menu(UserInfo* userinfo)
 	}
       else
 	{
-	  /* I've found current shell in /etc/shells, turn the option menu on */
+	  /* The user's shell is a valid one.  Turn the option menu on. */
 	  gtk_widget_set_sensitive(shell_menu, TRUE);
 	}
-      shell_curr = strtok(NULL, shell_sep);
+      shell_curr = getusershell();
     }
+  endusershell();
 
   gtk_option_menu_set_menu(GTK_OPTION_MENU(shell_menu), menu);
   return shell_menu;

@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.23
-Release: 2
+Release: 3
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -27,8 +27,8 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make PREFIX=$RPM_BUILD_ROOT install
-make PREFIX=$RPM_BUILD_ROOT install-man
+make PREFIX=$RPM_BUILD_ROOT install bindir=%{_bindir} mandir=%{_mandir} sbindir=%{_sbindir}
+make PREFIX=$RPM_BUILD_ROOT install-man bindir=%{_bindir} mandir=%{_mandir} sbindir=%{_sbindir}
 
 # Stuff from pam_console, for sysvinit. Here for lack of a better
 # place....
@@ -44,22 +44,22 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-/usr/bin/usermount
-/usr/man/man1/usermount.1*
-/usr/bin/userinfo
-/usr/man/man1/userinfo.1*
+%{_bindir}/usermount
+%{_mandir}/man1/usermount.1*
+%{_bindir}/userinfo
+%{_mandir}/man1/userinfo.1*
 %attr(4755,root,root) /usr/sbin/userhelper
-/usr/man/man8/userhelper.8*
-/usr/bin/userpasswd
-/usr/man/man1/userpasswd.1*
-/usr/bin/consolehelper
-/usr/man/man8/consolehelper.8*
+%{_mandir}/man8/userhelper.8*
+%{_bindir}/userpasswd
+%{_mandir}/man1/userpasswd.1*
+%{_bindir}/consolehelper
+%{_mandir}/man8/consolehelper.8*
 %config /etc/X11/applnk/System/*
 # PAM console wrappers
-/usr/bin/shutdown
-/usr/bin/halt
-/usr/bin/reboot
-/usr/bin/poweroff
+%{_bindir}/shutdown
+%{_bindir}/halt
+%{_bindir}/reboot
+%{_bindir}/poweroff
 %config(noreplace) /etc/pam.d/shutdown
 %config(noreplace) /etc/pam.d/halt
 %config(noreplace) /etc/pam.d/reboot
@@ -71,6 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Jun  5 2000 Nalin Dahyabhai <nalin@redhat.com>
+- move man pages to %{_mandir}
+
 * Thu Jun  1 2000 Nalin Dahyabhai <nalin@redhat.com>
 - modify PAM setup to use system-auth
 - bzip2 compress tarball

@@ -23,6 +23,11 @@
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
 
+void call_gtk_main_quit(int signal)
+{
+	gtk_main_quit();
+}
+
 int
 main(int argc, char* argv[])
 {
@@ -71,7 +76,7 @@ main(int argc, char* argv[])
   for (cargc = 1; cargc < argc; constructed_argv[cargc+cdiff] = argv[cargc++]);
 
   if (graphics_available) {
-    signal(SIGCHLD, gtk_main_quit);
+    signal(SIGCHLD, call_gtk_main_quit);
     userhelper_runv(UH_PATH, constructed_argv);
     gtk_main();
   } else {

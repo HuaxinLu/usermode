@@ -441,10 +441,12 @@ int main(int argc, char *argv[])
     /* point to the right conversation function */
     conv = t_flg ? &text_conv : &pipe_conv;
 
+#if 0
     /* if we're a wrapper, tell the wrapper what we are */
     if(w_flg && progname) {
         printf("%d %s\n", UH_SERVICE_NAME, progname);
     }
+#endif
     
     /* now try to identify the username we are doing all this work for */
     user_name = getlogin();

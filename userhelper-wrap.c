@@ -30,16 +30,6 @@ int childout[2];
 int childin[2];
 int childout_tag;
 
-void *
-userhelper_malloc(size_t size) {
-  void *ret;
-
-  ret = malloc(size);
-  if (!ret) exit (ERR_NO_MEMORY);
-
-  return ret;
-}
-
 void
 userhelper_runv(char *path, char **args)
 {
@@ -197,7 +187,7 @@ userhelper_parse_childout(char* outline)
   if(prompt == NULL) return;
 
   if (!resp) {
-    resp = userhelper_malloc(sizeof(response));
+    resp = g_malloc(sizeof(response));
 
     resp->num_components = 1;
     resp->message_list = NULL;
@@ -235,7 +225,7 @@ userhelper_parse_childout(char* outline)
 
   current = prompt - 1;
   if(isdigit(current[0])) {
-    message *msg = userhelper_malloc(sizeof(message));
+    message *msg = g_malloc(sizeof(message));
 
     current[1] = '\0';
     prompt_type = atoi(current);
@@ -275,6 +265,9 @@ userhelper_parse_childout(char* outline)
 	  1, 2, resp->num_components, resp->num_components + 1, 0, 0, 2, 2);
 	if (!resp->head) resp->head = msg; resp->tail = msg;
 	resp->message_list = g_slist_append(resp->message_list, msg);
+	break;
+      case UH_SERVICE_NAME:
+	gtk_window_set_title(GTK_WINDOW(resp->top), msg->message);
 	break;
       case UH_ERROR_MSG:
 	gtk_window_set_title(GTK_WINDOW(resp->top), "Error");
@@ -320,7 +313,7 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
       exit (1);
     }
 
-  output = userhelper_malloc(sizeof(char) * MAXLINE);
+  output = g_malloc(MAXLINE);
 
   count = read(source, output, MAXLINE);
   if (count < 0)
@@ -330,7 +323,7 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
   output[count] = '\0';
 
   userhelper_parse_childout(output);
-  free(output);
+  g_free(output);
 }
 
 void

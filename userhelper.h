@@ -23,6 +23,7 @@
 #define UH_INFO_MSG 3
 #define UH_ERROR_MSG 4
 #define UH_EXPECT_RESP 5
+#define UH_SERVICE_NAME 6
 
 #define ERR_PASSWD_INVALID      1       /* password is not right */
 #define ERR_FIELDS_INVALID      2       /* gecos fields invalid or

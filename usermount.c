@@ -103,18 +103,18 @@ main(int argc, char* argv[])
 void
 create_usermount_window()
 {
-  GtkWidget* main;
+  GtkWidget* dialog;
   GtkWidget* cancel;
   GtkWidget* mount_table;
   struct mountinfo* info;
   
-  main = gtk_dialog_new();
-  gtk_window_position(GTK_WINDOW(main), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width(GTK_CONTAINER(main), 5);
-  gtk_window_set_title(GTK_WINDOW(main), "User Mount Tool");
-  gtk_signal_connect(GTK_OBJECT(main), "destroy",
+  dialog = gtk_dialog_new();
+  gtk_window_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
+  gtk_container_set_border_width(GTK_CONTAINER(dialog), 5);
+  gtk_window_set_title(GTK_WINDOW(dialog), "User Mount Tool");
+  gtk_signal_connect(GTK_OBJECT(dialog), "destroy",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
-  gtk_signal_connect(GTK_OBJECT(main), "delete_event",
+  gtk_signal_connect(GTK_OBJECT(dialog), "delete_event",
 		     (GtkSignalFunc) gtk_main_quit, NULL);
 
   cancel = gtk_button_new_with_label(UD_EXIT_TEXT);
@@ -122,21 +122,21 @@ create_usermount_window()
   gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
 		     (GtkSignalFunc) gtk_main_quit, NULL);
 
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->action_area), 
 		     cancel, TRUE, TRUE, 4);
 
   info = build_mountinfo_list();
   if(info == NULL)
     {
       mount_table = gtk_label_new("There are no user mountable filesystems.\nContact your administrator.");
-      gtk_box_set_spacing(GTK_BOX(GTK_DIALOG(main)->vbox), 5);
+      gtk_box_set_spacing(GTK_BOX(GTK_DIALOG(dialog)->vbox), 5);
     }
   else
     {
       mount_table = create_mount_table(info);
     }
 
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->vbox), mount_table,
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), mount_table,
 		     TRUE, TRUE, 0);
 
   GTK_WIDGET_SET_FLAGS(cancel, GTK_CAN_DEFAULT);
@@ -144,8 +144,7 @@ create_usermount_window()
 
   gtk_widget_show(mount_table);
   gtk_widget_show(cancel);
-  gtk_widget_show(main);
-
+  gtk_widget_show(dialog);
 }
 
 GtkWidget*
@@ -436,7 +435,7 @@ build_mountinfo_list()
 	 euid == 0)
 	 && strcmp(fstab_entry->mnt_type, "swap") != 0)
 	{
-	  tmp = malloc(sizeof(struct mountinfo));
+	  tmp = g_malloc(sizeof(struct mountinfo));
 	  tmp->next = retval;
 	  retval = tmp;
 
@@ -446,7 +445,7 @@ build_mountinfo_list()
 
 	  /* FIXME: aggressive error checking. */
 	  stat(retval->mi_dir, &stat_buf_1);
-	  parent_dir = strdup(retval->mi_dir);
+	  parent_dir = g_strdup(retval->mi_dir);
 	  strrchr(parent_dir, '/')[0] = '\0';
 	  stat(parent_dir, &stat_buf_2);
 	  if(stat_buf_1.st_dev != stat_buf_2.st_dev)
@@ -457,7 +456,7 @@ build_mountinfo_list()
 	    {
 	      retval->mi_status = FALSE;
 	    }
-	  free(parent_dir);
+	  g_free(parent_dir);
 
 	  if(access(retval->mi_dev, W_OK) == 0 || euid == 0)
 	    {

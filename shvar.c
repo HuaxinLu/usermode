@@ -256,7 +256,7 @@ svSetValue(shvarFile *s, char *key, char *value)
     /* value may be NULL */
 
     if (value) value = escape(value);
-    keyValue = malloc (strlen(key) + (value?strlen(value):0) + 2);
+    keyValue = g_malloc (strlen(key) + (value?strlen(value):0) + 2);
     if (!keyValue) return;
     sprintf(keyValue, "%s=%s", key, value?value:"");
 
