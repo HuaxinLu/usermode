@@ -49,7 +49,7 @@ graphical tools for certain account management tasks.
 make \
 %if %{WITH_SELINUX}
 	WITH_SELINUX="-DWITH_SELINUX" \
-	SELINUX_LIBS="-lselinux -lattr" SELINUX_EXTRA=userhelper_context
+	SELINUX_LIBS="-lselinux -lattr" SELINUX_EXTRA="userhelper_context"
 %endif
 
 %install
@@ -69,7 +69,8 @@ for wrappedapp in halt reboot poweroff ; do
 %endif
 done
 %if %{WITH_SELINUX}
-install -m644 userhelper_context /etc/security
+ls
+install -m644 userhelper_context $RPM_BUILD_ROOT/etc/security
 %endif
 %if ! %{build6x}
 rm -f $RPM_BUILD_ROOT/%{_bindir}/shutdown

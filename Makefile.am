@@ -10,6 +10,7 @@ EXTRA_DIST = 	\
 	userpasswd.1 \
 	consolehelper.8 \
 	userhelper.8 \
+	userhelper_context \
 	userinfo.desktop.in \
 	usermount.desktop.in \
 	userpasswd.desktop.in \
