@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 7.3\n"
-"POT-Creation-Date: 2002-07-24 09:26-0400\n"
+"POT-Creation-Date: 2002-07-24 09:37-0400\n"
 "PO-Revision-Date: 2002-05-18 21:44+0200\n"
 "Last-Translator: Roman Maurer <roman.maurer@amis.net>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -93,38 +93,40 @@ msgid "Password for %s"
 msgstr "Geslo za %s"
 
 #: userhelper.c:320
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser\n"
+"You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati \"%s\", ki lahko pridobi, èe ga po¾enete\n"
-"kot skrbnik sistema, a za to je treba veè podatkov."
+"Sku¹ate pognati \"%s\", ki lahko pridobi, èe ga po¾enete kot skrbnik "
+"sistema, a za to je treba veè podatkov."
 
 #: userhelper.c:322
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser\n"
+"You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati \"%s\", ki zahteva, da ga po¾enete kot skrbnik sistema,\n"
-"a za to je treba veè podatkov."
+"Sku¹ate pognati \"%s\", ki zahteva, da ga po¾enete kot skrbnik sistema, a za "
+"to je treba veè podatkov."
 
 #: userhelper.c:326
+#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"superuser privileges, but more information is needed in order to do so."
+"administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati ukaz, ki lahko pridobi, èe ga po¾enete\n"
-"kot skrbnik sistema, a za to je treba veè podatkov."
+"Sku¹ate pognati ukaz, ki lahko pridobi, èe ga po¾enete kot skrbnik sistema, "
+"a za to je treba veè podatkov."
 
 #: userhelper.c:328
+#, fuzzy
 msgid ""
-"You are attempting to run a command which requires superuser\n"
+"You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati ukaz, ki zahteva, da ga po¾enete kot skrbnik sistema,\n"
-"a za to je treba veè podatkov."
+"Sku¹ate pognati ukaz, ki zahteva, da ga po¾enete kot skrbnik sistema, a za "
+"to je treba veè podatkov."
 
 #: userhelper.c:346
 #, c-format
@@ -141,7 +143,7 @@ msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Ni moè odpreti grafiènega okna in ni moè najti nadzornega terminala.\n"
 
-#: userhelper.c:1373 userhelper.c:1411
+#: userhelper.c:1375 userhelper.c:1413
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "nameravam izvesti \"%s\"\n"
@@ -423,38 +425,33 @@ msgstr "_Odklopi"
 msgid "E_xit"
 msgstr "Iz_hod"
 
-#, fuzzy
 #~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from administrative\n"
+#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "Sku¹ate pognati \"%s\", ki lahko pridobi, èe ga po¾enete kot skrbnik "
-#~ "sistema, a za to je treba veè podatkov."
+#~ "Sku¹ate pognati \"%s\", ki lahko pridobi, èe ga po¾enete\n"
+#~ "kot skrbnik sistema, a za to je treba veè podatkov."
 
-#, fuzzy
 #~ msgid ""
-#~ "You are attempting to run \"%s\" which requires administrative\n"
+#~ "You are attempting to run \"%s\" which requires superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "Sku¹ate pognati \"%s\", ki zahteva, da ga po¾enete kot skrbnik sistema, a "
-#~ "za to je treba veè podatkov."
+#~ "Sku¹ate pognati \"%s\", ki zahteva, da ga po¾enete kot skrbnik sistema,\n"
+#~ "a za to je treba veè podatkov."
 
-#, fuzzy
 #~ msgid ""
 #~ "You are attempting to run a command which may benefit from\n"
-#~ "administrative privileges, but more information is needed in order to do "
-#~ "so."
+#~ "superuser privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "Sku¹ate pognati ukaz, ki lahko pridobi, èe ga po¾enete kot skrbnik "
-#~ "sistema, a za to je treba veè podatkov."
+#~ "Sku¹ate pognati ukaz, ki lahko pridobi, èe ga po¾enete\n"
+#~ "kot skrbnik sistema, a za to je treba veè podatkov."
 
-#, fuzzy
 #~ msgid ""
-#~ "You are attempting to run a command which requires administrative\n"
+#~ "You are attempting to run a command which requires superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "Sku¹ate pognati ukaz, ki zahteva, da ga po¾enete kot skrbnik sistema, a "
-#~ "za to je treba veè podatkov."
+#~ "Sku¹ate pognati ukaz, ki zahteva, da ga po¾enete kot skrbnik sistema,\n"
+#~ "a za to je treba veè podatkov."
 
 #, fuzzy
 #~ msgid "Change personal information"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
-"POT-Creation-Date: 2002-07-24 09:26-0400\n"
+"POT-Creation-Date: 2002-07-24 09:37-0400\n"
 "PO-Revision-Date: 2002-07-24 12:25+1000\n"
 "Last-Translator: Michelle Kim <mkim@brisbane.redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -95,37 +95,36 @@ msgstr "%s의 패스워드"
 #: userhelper.c:320
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser\n"
+"You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, 그러"
-"나\n"
-"이 것을 실행하기 위해서는 정보가 더 필요합니다."
+"여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, \n"
+"그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
 
 #: userhelper.c:322
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser\n"
+"You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, 그러나\n"
-"이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+"여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, \n"
+"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"superuser privileges, but more information is needed in order to do so."
+"administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, \n"
-"그러나 이 것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: userhelper.c:328
 msgid ""
-"You are attempting to run a command which requires superuser\n"
+"You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 \n"
-"이 것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+"여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, \n"
+"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: userhelper.c:346
 #, c-format
@@ -144,7 +143,7 @@ msgstr ""
 "그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
 "니다.\n"
 
-#: userhelper.c:1373 userhelper.c:1411
+#: userhelper.c:1375 userhelper.c:1413
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\"(을)를 실행합니다\n"
@@ -425,33 +424,33 @@ msgid "E_xit"
 msgstr "종료 (_x)"
 
 #~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from administrative\n"
+#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, \n"
-#~ "그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
+#~ "여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, 그"
+#~ "러나\n"
+#~ "이 것을 실행하기 위해서는 정보가 더 필요합니다."
 
 #~ msgid ""
-#~ "You are attempting to run \"%s\" which requires administrative\n"
+#~ "You are attempting to run \"%s\" which requires superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, \n"
-#~ "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+#~ "여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, 그러나\n"
+#~ "이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #~ msgid ""
 #~ "You are attempting to run a command which may benefit from\n"
-#~ "administrative privileges, but more information is needed in order to do "
-#~ "so."
+#~ "superuser privileges, but more information is needed in order to do so."
 #~ msgstr ""
 #~ "여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, \n"
-#~ "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+#~ "그러나 이 것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #~ msgid ""
-#~ "You are attempting to run a command which requires administrative\n"
+#~ "You are attempting to run a command which requires superuser\n"
 #~ "privileges, but more information is needed in order to do so."
 #~ msgstr ""
-#~ "여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, \n"
-#~ "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+#~ "여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 \n"
+#~ "이 것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #~ msgid "Starting \"%s\" with administrative privileges."
 #~ msgstr "슈퍼유저의 권한으로 \"%s\"을(를) 시작합니다."

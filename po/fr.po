@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.37\n"
-"POT-Creation-Date: 2002-07-24 09:26-0400\n"
+"POT-Creation-Date: 2002-07-24 09:37-0400\n"
 "PO-Revision-Date: 2002-04-02 17:33GMT\n"
 "Last-Translator: Bettina De Monti <bettina@redhat.it>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -95,20 +95,20 @@ msgstr "Mot de passe pour %s"
 #: userhelper.c:320
 #, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser\n"
+"You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter \"%s\" qui pourrait nécessiter des privilèges du "
-"super-utilisateur. De plus amples informations sont toutefois requises pour "
-"cette opération."
+"Vous essayez d'exécuter \"%s\" qui pourrait nécessiter des privilèges "
+"desuper-utilisateur. De plus amples informations sont toutefois requises "
+"pour cette opération."
 
 #: userhelper.c:322
 #, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser\n"
+"You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter \"%s\" qui nécessite des privilèges du super-"
+"Vous essayez d'exécuter \"%s\" qui nécessite des privilèges de super-"
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
 "opération."
 
@@ -116,19 +116,19 @@ msgstr ""
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"superuser privileges, but more information is needed in order to do so."
+"administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges "
-"du super-utilisateur. De plus amples informations sont toutefois requises "
+"de super-utilisateur. De plus amples informations sont toutefois requises "
 "pour cette opération."
 
 #: userhelper.c:328
 #, fuzzy
 msgid ""
-"You are attempting to run a command which requires superuser\n"
+"You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Vous essayez d'exécuter une commande qui nécessite des privilèges du super-"
+"Vous essayez d'exécuter une commande qui nécessite des privilèges desuper-"
 "utilisateur. De plus amples informations sont toutefois requises pour cette "
 "opération."
 
@@ -149,7 +149,7 @@ msgstr ""
 "Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
 "contrôle.\n"
 
-#: userhelper.c:1373 userhelper.c:1411
+#: userhelper.c:1375 userhelper.c:1413
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "début de l'exécution de \"%s\"\n"
@@ -436,6 +436,42 @@ msgstr "_Démonter"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "Q_uitter"
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Vous essayez d'exécuter \"%s\" qui pourrait nécessiter des privilèges du "
+#~ "super-utilisateur. De plus amples informations sont toutefois requises "
+#~ "pour cette opération."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which requires superuser\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Vous essayez d'exécuter \"%s\" qui nécessite des privilèges du super-"
+#~ "utilisateur. De plus amples informations sont toutefois requises pour "
+#~ "cette opération."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run a command which may benefit from\n"
+#~ "superuser privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Vous essayez d'exécuter une commande qui pourrait nécessiter des "
+#~ "privilèges du super-utilisateur. De plus amples informations sont "
+#~ "toutefois requises pour cette opération."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run a command which requires superuser\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Vous essayez d'exécuter une commande qui nécessite des privilèges du "
+#~ "super-utilisateur. De plus amples informations sont toutefois requises "
+#~ "pour cette opération."
 
 #, fuzzy
 #~ msgid "Change personal information"

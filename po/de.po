@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-07-24 09:26-0400\n"
+"POT-Creation-Date: 2002-07-24 09:37-0400\n"
 "PO-Revision-Date: 2002-04-14 03:06GMT\n"
 "Last-Translator: Karsten Hopp <karsten@redhat.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -94,37 +94,37 @@ msgstr "Passwort für %s"
 #: userhelper.c:320
 #, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser\n"
+"You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser\n"
+"Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser "
 "erfordern könnte. Dafür werden weitere Informationen benötigt."
 
 #: userhelper.c:322
 #, fuzzy, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser\n"
+"You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser\n"
+"Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser "
 "erfordert. Dazu werden weitere Informationen benötigt."
 
 #: userhelper.c:326
 #, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"superuser privileges, but more information is needed in order to do so."
+"administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, einen Befehl auszuführen, der Privilegien für den Superuser\n"
+"Sie versuchen, einen Befehl auszuführen, der Privilegien für den Superuser "
 "erfordern könnte. Dafür werden weitere Informationen benötigt."
 
 #: userhelper.c:328
 #, fuzzy
 msgid ""
-"You are attempting to run a command which requires superuser\n"
+"You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, einen Befehl auszuführen, der Privilegien für den Superuser\n"
+"Sie versuchen, einen Befehl auszuführen, der Privilegien für den Superuser "
 "erfordert. Dazu werden weitere Informationen benötigt."
 
 #: userhelper.c:346
@@ -144,7 +144,7 @@ msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
 
-#: userhelper.c:1373 userhelper.c:1411
+#: userhelper.c:1375 userhelper.c:1413
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "\"%s\" exec wird gerade ausgeführt\n"
@@ -426,6 +426,40 @@ msgstr "_Unmount"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "B_eenden"
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser\n"
+#~ "erfordern könnte. Dafür werden weitere Informationen benötigt."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run \"%s\" which requires superuser\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser\n"
+#~ "erfordert. Dazu werden weitere Informationen benötigt."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run a command which may benefit from\n"
+#~ "superuser privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Sie versuchen, einen Befehl auszuführen, der Privilegien für den "
+#~ "Superuser\n"
+#~ "erfordern könnte. Dafür werden weitere Informationen benötigt."
+
+#, fuzzy
+#~ msgid ""
+#~ "You are attempting to run a command which requires superuser\n"
+#~ "privileges, but more information is needed in order to do so."
+#~ msgstr ""
+#~ "Sie versuchen, einen Befehl auszuführen, der Privilegien für den "
+#~ "Superuser\n"
+#~ "erfordert. Dazu werden weitere Informationen benötigt."
 
 #, fuzzy
 #~ msgid "Change personal information"

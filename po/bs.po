@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop files\n"
-"POT-Creation-Date: 2002-07-24 09:26-0400\n"
+"POT-Creation-Date: 2002-07-24 09:37-0400\n"
 "PO-Revision-Date: 2001-09-09 20:03GMT\n"
 "Last-Translator: Amila Akagiæ <bono@lugbih.org>\n"
 "Language-Team: Bosnian <lokal-subscribe@lugbih.org>\n"
@@ -108,26 +108,26 @@ msgstr "©ifra za %s"
 #: userhelper.c:320
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which may benefit from superuser\n"
+"You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
 #: userhelper.c:322
 #, c-format
 msgid ""
-"You are attempting to run \"%s\" which requires superuser\n"
+"You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
 #: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
-"superuser privileges, but more information is needed in order to do so."
+"administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
 #: userhelper.c:328
 msgid ""
-"You are attempting to run a command which requires superuser\n"
+"You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
@@ -149,7 +149,7 @@ msgid ""
 msgstr ""
 
 # ../userhelper.c:722 ../userhelper.c:763
-#: userhelper.c:1373 userhelper.c:1411
+#: userhelper.c:1375 userhelper.c:1413
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr ""
