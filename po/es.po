@@ -97,9 +97,9 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar \"%s\". Esto puede ser beneficioso desde el punto de "
-"vista de los privilegios de superusuario, pero es necesaria más información "
-"para poder realizarlo."
+"Está intentando ejecutar \"%s\". Esto puede ser beneficioso desde el punto "
+"de vista de los privilegios de superusuario, pero es necesaria más "
+"información para poder realizarlo."
 
 #: userhelper.c:322
 #, fuzzy, c-format
@@ -107,8 +107,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar \"%s\" que requiere los privilegios de superusuario, "
-"pero necesita más información para hacerlo. "
+"Está intentando ejecutar \"%s\" que requiere los privilegios de "
+"superusuario, pero necesita más información para hacerlo. "
 
 #: userhelper.c:326
 #, fuzzy
@@ -116,8 +116,8 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar un comando que se beneficia de los privilegios de "
-"superusuario, pero necesita más información para hacerlo."
+"Está intentando ejecutar un comando que se beneficia de los privilegios de\n"
+" superusuario, pero necesita más información para hacerlo."
 
 #: userhelper.c:328
 #, fuzzy
@@ -125,7 +125,7 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Ha intentado ejecutar un comando que requiere los privilegios del "
+"Está intentando ejecutar un comando que requiere los privilegios del\n"
 "superusuario pero se necesita más información para hacerlo."
 
 #: userhelper.c:346
@@ -225,7 +225,7 @@ msgstr "No se ha encontrado el programa seleccionado."
 msgid "Unknown error."
 msgstr "Error desconocido."
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:238
 msgid "Placeholder text."
 msgstr "Texto que contiene espacio"
 
@@ -312,7 +312,7 @@ msgstr "Error execl(), errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Identidad desconocida.\n"
 
-#: usermount.c:61 glade.strings:26
+#: glade.strings:26 usermount.c:61
 msgid "_Mount"
 msgstr "_Montar"
 
@@ -345,20 +345,20 @@ msgstr ""
 "Contacte con su administrador."
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: glade.strings:22 usermount.c:522 usermount.c:530
 msgid "User Mount Tool"
 msgstr "Herramienta de montaje para el usuario"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: glade.strings:28 usermount.c:544
 msgid "_Format"
 msgstr "_Formato"
 
-#: usermount.c:579 glade.strings:24
+#: glade.strings:24 usermount.c:579
 msgid "Device"
 msgstr "Dispositivo"
 
-#: usermount.c:585 glade.strings:23
+#: glade.strings:23 usermount.c:585
 msgid "Directory"
 msgstr "Directorio"
 
@@ -426,41 +426,3 @@ msgstr "_Desmontar"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "S_alir"
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Está intentando ejecutar \"%s\". Esto puede ser beneficioso desde el "
-#~ "punto de vista de los privilegios de superusuario, pero es necesaria más "
-#~ "información para poder realizarlo."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Está intentando ejecutar \"%s\" que requiere los privilegios de "
-#~ "superusuario, pero necesita más información para hacerlo. "
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Está intentando ejecutar un comando que se beneficia de los privilegios "
-#~ "de\n"
-#~ " superusuario, pero necesita más información para hacerlo."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Está intentando ejecutar un comando que requiere los privilegios del\n"
-#~ "superusuario pero se necesita más información para hacerlo."
-
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "Cambio de la informacion personal."

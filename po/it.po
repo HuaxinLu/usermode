@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-07-24 09:41-0400\n"
-"PO-Revision-Date: 2002-04-02 16:40GMT\n"
+"PO-Revision-Date: 2002-07-24 14:02GMT\n"
 "Last-Translator: Marisa <marisa@redhat.it>\n"
 "Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.9.5\n"
 
@@ -47,7 +47,7 @@ msgstr "Cancella"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Eseguire in modalit‡ non privilegiata"
+msgstr "Eseguire in modalit√† non privilegiata"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -63,11 +63,11 @@ msgstr "Ridigitare nuova password UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "PASSWORD ERRATA: Ë DAVVERO troppo corta"
+msgstr "PASSWORD ERRATA: √® DAVVERO troppo corta"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "PASSWORD ERRATA: Ë troppo corta"
+msgstr "PASSWORD ERRATA: √® troppo corta"
 
 #: dummy.h:30
 msgid "Password unchanged"
@@ -92,39 +92,37 @@ msgid "Password for %s"
 msgstr "Password per %s"
 
 #: userhelper.c:320
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di  \"%s\" con i privilegi di superutente. Sono "
-"necessarie maggiori informazioni per eseguire l'operazione."
+"Si sta tentando di eseguire \"%s\" con i privilegi di superutente\n"
+" Sono necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di \"%s\" che richiede i privilegi di superutente. "
+"Si sta tentando di eseguire \"%s\" che richiede i privilegi di superutente. "
 "Sono necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper.c:326
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di un comando con i privilegi di superutente. Sono "
+"Si sta tentando di eseguire un comando con i privilegi di superutente. Sono "
 "necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper.c:328
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di un comando che richiede i privilegi di "
+"Si sta tentando di eseguire un comando che richiede i privilegi di "
 "superutente. Sono necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper.c:346
@@ -162,7 +160,7 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"La password digitata non Ë corretta.\n"
+"La password digitata non √® corretta.\n"
 "Riprovare."
 
 #: userhelper-wrap.c:56
@@ -171,8 +169,8 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Uno o pi˘ campi modificati non sono corretti.\n"
-"L'errore Ë probabilmente causato da punti e virgola o virgole in uno dei "
+"Uno o pi√π campi modificati non sono corretti.\n"
+"L'errore √® probabilmente causato da punti e virgola o virgole in uno dei "
 "campi.\n"
 "Rimuovere la punteggiatura inutile e riprovare."
 
@@ -186,7 +184,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Alcuni file di sistema sono bloccati.\n"
-"Riprovare pi˘ tardi."
+"Riprovare pi√π tardi."
 
 #: userhelper-wrap.c:62
 msgid "Unknown user."
@@ -206,8 +204,8 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"La shell corrente non Ë elencata in /etc/shells.\n"
-"Non Ë permesso cambiare la shell.\n"
+"La shell corrente non √® elencata in /etc/shells.\n"
+"Non √® permesso cambiare la shell.\n"
 "Rivolgersi all'amministratore del sistema."
 
 #: userhelper-wrap.c:71
@@ -226,7 +224,7 @@ msgstr "Impossibile trovare il programma selezionato."
 msgid "Unknown error."
 msgstr "Errore sconosciuto."
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:238
 msgid "Placeholder text."
 msgstr "Contenitore testo"
 
@@ -252,16 +250,16 @@ msgid "Changing login shell."
 msgstr "Modifica della shell di login."
 
 #: userhelper-wrap.c:456
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di  \"%s\" con i privilegi di superutente. Sono "
+"Tentativo di esecuzione di \"%s\" con i privilegi di superutente. Sono "
 "necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:458
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
@@ -270,7 +268,6 @@ msgstr ""
 "Sono necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -279,7 +276,6 @@ msgstr ""
 "necessarie maggiori informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:465
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -289,7 +285,7 @@ msgstr ""
 
 #: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
-msgstr "_Esegui in modalit‡ non privilegiata"
+msgstr "_Esegui in modalit√† non privilegiata"
 
 #: userhelper-wrap.c:592 userhelper-wrap.c:609
 msgid "Pipe error.\n"
@@ -310,9 +306,9 @@ msgstr "execl() error, errno=%d\n"
 
 #: userinfo.c:305
 msgid "You don't exist.  Go away.\n"
-msgstr "Identit‡ non conosciuta.\n"
+msgstr "Identit√† non conosciuta.\n"
 
-#: usermount.c:61 glade.strings:26
+#: glade.strings:26 usermount.c:61
 msgid "_Mount"
 msgstr "_Monta"
 
@@ -325,7 +321,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Formattare il disco? La formattazione distrugger‡ tutti i dati sul disco."
+"Formattare il disco? La formattazione distrugger√† tutti i dati sul disco."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
@@ -344,20 +340,20 @@ msgstr ""
 "Contattare l'amministratore del sistema."
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: glade.strings:22 usermount.c:522 usermount.c:530
 msgid "User Mount Tool"
 msgstr "Tool di montaggio per utenti"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: glade.strings:28 usermount.c:544
 msgid "_Format"
 msgstr "_Formatta"
 
-#: usermount.c:579 glade.strings:24
+#: glade.strings:24 usermount.c:579
 msgid "Device"
 msgstr "Dispositivo"
 
-#: usermount.c:585 glade.strings:23
+#: glade.strings:23 usermount.c:585
 msgid "Directory"
 msgstr "Directory"
 
@@ -426,40 +422,5 @@ msgstr "_Smonta"
 msgid "E_xit"
 msgstr "E_sci"
 
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Si sta tentando di eseguire \"%s\" con i privilegi di superutente. Sono "
-#~ "necessarie maggiori informazioni per eseguire l'operazione."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Si sta tentando di eseguire \"%s\" che richiede i privilegi di "
-#~ "superutente. Sono necessarie maggiori informazioni per eseguire "
-#~ "l'operazione."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Si sta tentando di eseguire un comando con i privilegi di superutente. "
-#~ "Sono necessarie maggiori informazioni per eseguire l'operazione."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Si sta tentando di eseguire un comando che richiede i privilegi di "
-#~ "superutente. Sono necessarie maggiori informazioni per eseguire "
-#~ "l'operazione."
-
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "Modifica delle informazioni personali."
+#~ msgid "Starting \"%s\" with administrative privileges."
+#~ msgstr "Avvio di \"%s\" con privilegi di superutente."

@@ -6,13 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-07-24 09:41-0400\n"
-"PO-Revision-Date: 2002-04-14 03:06GMT\n"
-"Last-Translator: Karsten Hopp <karsten@redhat.de>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2002-07-26 16:22+0000\n"
+"Last-Translator:  <claudia@redhat.it>\n"
+"Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.4\n"
+"X-Generator: KBabel 0.9.6\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -47,7 +47,7 @@ msgstr "Abbrechen"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Läuft nicht bevorrechtigt"
+msgstr "LÃ¤uft nicht bevorrechtigt"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -63,19 +63,19 @@ msgstr "Neues UNIX Passwort nochmal eingeben: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "UNGÜLTIGES PASSWORT: Es ist viel zu kurz"
+msgstr "UNGÃœLTIGES PASSWORT: Es ist viel zu kurz"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "UNGÜLTIGES PASSWORT: Es ist zu kurz"
+msgstr "UNGÃœLTIGES PASSWORT: Es ist zu kurz"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr "Passwort nicht geändert"
+msgstr "Passwort nicht geÃ¤ndert"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Sorry, die Passwörter stimmen nicht überein"
+msgstr "Sorry, die PasswÃ¶rter stimmen nicht Ã¼berein"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -89,48 +89,46 @@ msgstr "PAM Fehler %d bekommen.\n"
 #: userhelper.c:203
 #, c-format
 msgid "Password for %s"
-msgstr "Passwort für %s"
+msgstr "Passwort fÃ¼r %s"
 
 #: userhelper.c:320
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser "
-"erfordern könnte. Dafür werden weitere Informationen benötigt."
+"Sie versuchen, \"%s\" auszufÃ¼hren, das administrative Privilegien\n"
+"nutzen kÃ¶nnte. DafÃ¼r werden jedoch weitere Informationen benÃ¶tigt."
 
 #: userhelper.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser "
-"erfordert. Dazu werden weitere Informationen benötigt."
+"Sie versuchen, \"%s\" auszufÃ¼hren, das administrative Privilegien\n"
+"erfordert. Dazu werden jedoch weitere Informationen benÃ¶tigt."
 
 #: userhelper.c:326
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, einen Befehl auszuführen, der Privilegien für den Superuser "
-"erfordern könnte. Dafür werden weitere Informationen benötigt."
+"Sie versuchen einen Befehl auszufÃ¼hren, der administrative Privilegien\n"
+"nutzen kÃ¶nnte. DafÃ¼r werden jedoch weitere Informationen benÃ¶tigt."
 
 #: userhelper.c:328
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, einen Befehl auszuführen, der Privilegien für den Superuser "
-"erfordert. Dazu werden weitere Informationen benötigt."
+"Sie versuchen einen Befehl auszufÃ¼hren, der administrative Privilegien\n"
+"erfordert. Dazu werden jedoch weitere Informationen benÃ¶tigt."
 
 #: userhelper.c:346
 #, c-format
 msgid "Password for %s: "
-msgstr "Passwort für %s:"
+msgstr "Passwort fÃ¼r %s:"
 
 #: userhelper.c:629
 msgid "userhelper must be setuid root\n"
@@ -141,13 +139,13 @@ msgstr "userhelper muss Setuid-Root sein\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
+"Grafisches Fenster kann nicht geÃ¶ffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
 
 #: userhelper.c:1375 userhelper.c:1413
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr "\"%s\" exec wird gerade ausgeführt\n"
+msgstr "\"%s\" exec wird gerade ausgefÃ¼hrt\n"
 
 #: userhelper-wrap.c:50
 msgid "Unknown exit code."
@@ -162,7 +160,7 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Das eingegebene Passwort ist ungültig.\n"
+"Das eingegebene Passwort ist ungÃ¼ltig.\n"
 "Versuchen Sie es erneut."
 
 #: userhelper-wrap.c:56
@@ -171,8 +169,8 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Eins oder mehrere der geänderten Felder ist ungültig.\n"
-"Die Gründe sind wahrscheinlich Doppelpunkte oder Kommas in einem der\n"
+"Eins oder mehrere der geÃ¤nderten Felder ist ungÃ¼ltig.\n"
+"Die GrÃ¼nde sind wahrscheinlich Doppelpunkte oder Kommas in einem der\n"
 "Felder.\n"
 "Bitte entfernen Sie diese und versuchen Sie es erneut."
 
@@ -186,7 +184,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Einige Systemdateien sind gesperrt.\n"
-"Bitte versuchen Sie es später nochmal."
+"Bitte versuchen Sie es spÃ¤ter nochmal."
 
 #: userhelper-wrap.c:62
 msgid "Unknown user."
@@ -194,11 +192,11 @@ msgstr "Benutzer unbekannt."
 
 #: userhelper-wrap.c:64
 msgid "Insufficient rights."
-msgstr "Nicht genügend Rechte."
+msgstr "Nicht genÃ¼gend Rechte."
 
 #: userhelper-wrap.c:66
 msgid "Invalid call to subprocess.."
-msgstr "Ungültiger Aufruf des Unterprozesses.."
+msgstr "UngÃ¼ltiger Aufruf des Unterprozesses.."
 
 #: userhelper-wrap.c:68
 msgid ""
@@ -207,12 +205,12 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "Ihre aktuelle Shell ist nicht in /etc/shells aufgelistet.\n"
-"Das Ändern Ihrer Shell ist nicht zulässig.\n"
+"Das Ã„ndern Ihrer Shell ist nicht zulÃ¤ssig.\n"
 "Setzen Sie sich mit Ihrem Systemadministrator in Verbindung."
 
 #: userhelper-wrap.c:71
 msgid "Out of memory."
-msgstr "Nicht genügend Speicher."
+msgstr "Nicht genÃ¼gend Speicher."
 
 #: userhelper-wrap.c:73
 msgid "The exec() call failed."
@@ -220,13 +218,13 @@ msgstr "Aufruf von exec() fehlgeschlagen."
 
 #: userhelper-wrap.c:75
 msgid "Failed to find selected program."
-msgstr "Fehler beim Finden des ausgewählten Programms."
+msgstr "Fehler beim Finden des ausgewÃ¤hlten Programms."
 
 #: userhelper-wrap.c:77
 msgid "Unknown error."
 msgstr "Unbekannter Fehler."
 
-#: userhelper-wrap.c:238 glade.strings:16 glade.strings:19
+#: glade.strings:16 glade.strings:19 userhelper-wrap.c:238
 msgid "Placeholder text."
 msgstr "Platzhalter Text."
 
@@ -245,51 +243,49 @@ msgstr "Informationen"
 
 #: userhelper-wrap.c:450
 msgid "Changing personal information."
-msgstr "Ändern der persönlichen Informationen"
+msgstr "Ã„ndern der persÃ¶nlichen Informationen"
 
 #: userhelper-wrap.c:453
 msgid "Changing login shell."
-msgstr "Ändern der Login-Shell"
+msgstr "Ã„ndern der Login-Shell"
 
 #: userhelper-wrap.c:456
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser "
-"erfordern könnte. Dafür werden weitere Informationen benötigt."
+"Sie versuchen, \"%s\" auszufÃ¼hren, das administrative Privilegiennutzen "
+"kÃ¶nnte. DafÃ¼r werden jedoch weitere Informationen benÃ¶tigt."
 
 #: userhelper-wrap.c:458
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser "
-"erfordert. Dazu werden weitere Informationen benötigt."
+"Sie versuchen, \"%s\" auszufÃ¼hren, das administrative Privilegienerfordert. "
+"Dazu werden jedoch weitere Informationen benÃ¶tigt."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, einen Befehl auszuführen, der Privilegien für den Superuser "
-"erfordern könnte. Dafür werden weitere Informationen benötigt."
+"Sie versuchen einen Befehl auszufÃ¼hren, der administrative Privilegien "
+"nutzen kÃ¶nnte. DafÃ¼r werden jedoch weitere Informationen benÃ¶tigt."
 
 #: userhelper-wrap.c:465
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sie versuchen, einen Befehl auszuführen, der Privilegien für den Superuser "
-"erfordert. Dazu werden weitere Informationen benötigt."
+"Sie versuchen einen Befehl auszufÃ¼hren, der administrative "
+"Privilegienerfordert. Dazu werden jedoch weitere Informationen benÃ¶tigt."
 
 #: userhelper-wrap.c:480
 msgid "_Run Unprivileged"
-msgstr "Wird ohne Privilegien ausgefüh_rt"
+msgstr "Wird ohne Privilegien ausgefÃ¼h_rt"
 
 #: userhelper-wrap.c:592 userhelper-wrap.c:609
 msgid "Pipe error.\n"
@@ -312,7 +308,7 @@ msgstr "execl() Fehler, errno=%d\n"
 msgid "You don't exist.  Go away.\n"
 msgstr "Benutzer-ID existiert nicht.  Verlassen Sie den Bereich.\n"
 
-#: usermount.c:61 glade.strings:26
+#: glade.strings:26 usermount.c:61
 msgid "_Mount"
 msgstr "_Mounten"
 
@@ -325,40 +321,40 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Möchten Sie diese Festplatte wirklich formatieren? Alle Daten, die diese "
-"Festplatte zur Zeit enthält, werden zerstört."
+"MÃ¶chten Sie diese Festplatte wirklich formatieren? Alle Daten, die diese "
+"Festplatte zur Zeit enthÃ¤lt, werden zerstÃ¶rt."
 
 #: usermount.c:321
 msgid "Perform a _low-level format."
-msgstr "_Low-Level-Formatierung ausführen."
+msgstr "_Low-Level-Formatierung ausfÃ¼hren."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr "Wählen Sie den Dateisystemtyp aus:"
+msgstr "WÃ¤hlen Sie den Dateisystemtyp aus:"
 
 #: usermount.c:521
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Es gibt keine Dateisysteme, die Sie mounten oder unmounten können.\n"
+"Es gibt keine Dateisysteme, die Sie mounten oder unmounten kÃ¶nnen.\n"
 "Setzen Sie sich mit Ihrem Administrator in Verbindung."
 
 #. Create the dialog.
-#: usermount.c:522 usermount.c:530 glade.strings:22
+#: glade.strings:22 usermount.c:522 usermount.c:530
 msgid "User Mount Tool"
 msgstr "Benutzer Mount-Tool"
 
 #. Create the other buttons.
-#: usermount.c:544 glade.strings:28
+#: glade.strings:28 usermount.c:544
 msgid "_Format"
 msgstr "_Format"
 
-#: usermount.c:579 glade.strings:24
+#: glade.strings:24 usermount.c:579
 msgid "Device"
-msgstr "Gerät"
+msgstr "GerÃ¤t"
 
-#: usermount.c:585 glade.strings:23
+#: glade.strings:23 usermount.c:585
 msgid "Directory"
 msgstr "Verzeichnis"
 
@@ -377,15 +373,15 @@ msgstr "Benutzerinformationen"
 
 #: glade.strings:8
 msgid "Full Name:"
-msgstr "Vollständiger Name:"
+msgstr "VollstÃ¤ndiger Name:"
 
 #: glade.strings:9
 msgid "Office:"
-msgstr "Büro:"
+msgstr "BÃ¼ro:"
 
 #: glade.strings:10
 msgid "Office Phone Number"
-msgstr "Telefonnummer Büro"
+msgstr "Telefonnummer BÃ¼ro"
 
 #: glade.strings:11
 msgid "Home Phone Number"
@@ -409,7 +405,7 @@ msgstr "Mitteilung"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr "S_chließen"
+msgstr "S_chlieÃŸen"
 
 #: glade.strings:18
 msgid "Query"
@@ -426,41 +422,3 @@ msgstr "_Unmount"
 #: glade.strings:29
 msgid "E_xit"
 msgstr "B_eenden"
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser\n"
-#~ "erfordern könnte. Dafür werden weitere Informationen benötigt."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Sie versuchen, \"%s\" auszuführen, das Privilegien für den Superuser\n"
-#~ "erfordert. Dazu werden weitere Informationen benötigt."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Sie versuchen, einen Befehl auszuführen, der Privilegien für den "
-#~ "Superuser\n"
-#~ "erfordern könnte. Dafür werden weitere Informationen benötigt."
-
-#, fuzzy
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Sie versuchen, einen Befehl auszuführen, der Privilegien für den "
-#~ "Superuser\n"
-#~ "erfordert. Dazu werden weitere Informationen benötigt."
-
-#, fuzzy
-#~ msgid "Change personal information"
-#~ msgstr "Ändern der persönlichen Informationen"
