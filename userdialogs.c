@@ -46,6 +46,9 @@ create_message_box(gchar* message, gchar* title)
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->action_area), ok,
 		     FALSE, FALSE, 0);
   
+  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
+  gtk_widget_grab_default(ok);
+
   gtk_widget_show(ok);
   gtk_widget_show(label);
   gtk_widget_show(hbox);
@@ -86,6 +89,9 @@ create_error_box(gchar* error, gchar* title)
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(error_box)->action_area), ok,
 		     FALSE, FALSE, 0);
   
+  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
+  gtk_widget_grab_default(ok);
+
   gtk_widget_show(ok);
   gtk_widget_show(label);
   gtk_widget_show(hbox);
@@ -115,6 +121,11 @@ create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   gtk_widget_set_usize(ok, 50, 0);
 
   hbox = gtk_hbox_new(TRUE, 0);
+
+  gtk_signal_connect_object(GTK_OBJECT(entry), "activate", 
+			    (GtkSignalFunc) gtk_button_clicked,
+			    (gpointer) GTK_BUTTON(ok));
+
   /* FIXME: memory leak... well, not really.  Just rely on the caller
    * to free the widget... 'cept that's not nice either. :-S 
    */
@@ -134,6 +145,11 @@ create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->action_area), ok,
 		     TRUE, FALSE, 0);
   
+  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
+  gtk_widget_grab_default(ok);
+
+  gtk_widget_grab_focus(entry);
+
   gtk_widget_show(ok);
   gtk_widget_show(label);
   gtk_widget_show(entry);
@@ -162,6 +178,10 @@ create_invisible_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   hbox = gtk_hbox_new(TRUE, 5);
 
   ok = gtk_button_new_with_label("OK");
+
+  gtk_signal_connect_object(GTK_OBJECT(entry), "activate", 
+			    (GtkSignalFunc) gtk_button_clicked,
+			    (gpointer) GTK_BUTTON(ok));
   gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
 			    (GtkSignalFunc) gtk_widget_hide,
 			    (gpointer) query_box);
@@ -180,6 +200,11 @@ create_invisible_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->action_area), ok,
 		     TRUE, FALSE, 0);
   
+  GTK_WIDGET_SET_FLAGS(ok, GTK_CAN_DEFAULT);
+  gtk_widget_grab_default(ok);
+
+  gtk_widget_grab_focus(entry);
+
   gtk_widget_show(ok);
   gtk_widget_show(label);
   gtk_widget_show(entry);
