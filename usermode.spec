@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.37
-Release: 2
+Version: 1.38
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.bz2
@@ -90,6 +90,11 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Thu Jan 25 2001 Yukihiro Nakai <ynakai@redhat.com>
+- Some fix for Japanese environment.
+- Use gtk_set_locale() instead of setlocale()
+- Copyright update.
+
 * Sun Jan  7 2001 Yukihiro Nakai <ynakai@redhat.com>
 - Add gettextized
 
