@@ -3,6 +3,7 @@ RELEASE=$(shell awk '/^Release:/ { print $$2 }' < $(srcdir)/usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
 distdir=$(PACKAGE)-$(VERSION)-$(RELEASE)
 EXTRA_DIST = 	\
+	mkinstalldirs \
 	dummy.h \
 	usermode.spec \
 	shutdown \
