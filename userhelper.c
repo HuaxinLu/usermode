@@ -1055,7 +1055,7 @@ become_normal(const char *user)
  * user from the previous context, but for everyone else, it's the user under
  * whose ruid we're running in. */
 static char *
-get_user_from_ruid(void)
+get_invoking_user(void)
 {
 	struct passwd *pwd;
 	char *ret;
@@ -1103,9 +1103,9 @@ static char *
 get_user_for_auth(shvarFile *s)
 {
 	char *ret;
-	char *ruid_user, *configured_user;
+	char *invoking_user, *configured_user;
 
-	ruid_user = get_user_from_ruid();
+	invoking_user = get_invoking_user();
 
 	ret = NULL;
 
@@ -1127,7 +1127,7 @@ get_user_for_auth(shvarFile *s)
 		}
 		/* Switch the user portion of the next context to the invoking
 		 * user.  */
-		context_user_set(ctx, ruid_user);
+		context_user_set(ctx, invoking_user);
 		/* Optionally change the role and type of the next context, per
 		 * the service-specific userhelper configuration file. */
 		apps_role = svGetValue(s, "ROLE");
@@ -1145,9 +1145,9 @@ get_user_for_auth(shvarFile *s)
 
 		/* Ensure that the system knows who the user is before
 		 * returning the user's name. */
-		pwd = getpwnam(ruid_user);
+		pwd = getpwnam(invoking_user);
 		if (pwd != NULL) {
-			ret = ruid_user;
+			ret = invoking_user;
 		} else {
 		        context_user_set(ctx, "root");
 		        ret = NULL;
@@ -1166,19 +1166,19 @@ get_user_for_auth(shvarFile *s)
 		 * is usually root, but could conceivably be someone else). */
 		configured_user = svGetValue(s, "USER");
 		if (configured_user == NULL) {
-			ret = ruid_user;
+			ret = invoking_user;
 		} else
 		if (strcmp(configured_user, "<user>") == 0) {
 			free(configured_user);
-			ret = ruid_user;
+			ret = invoking_user;
 		} else {
 			ret = configured_user;
 		}
 	}
 
 	if (ret != NULL) {
-		if (ruid_user != ret) {
-			free(ruid_user);
+		if (invoking_user != ret) {
+			free(invoking_user);
 		}
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: user for auth = '%s'\n", ret);
@@ -2334,7 +2334,7 @@ main(int argc, char **argv)
 		prompt = &prompt_pipe;
 	}
 
-	user_name = get_user_from_ruid();
+	user_name = get_invoking_user();
 #ifdef DEBUG_USERHELPER
 	g_print("userhelper: current user is %s\n", user_name);
 #endif
