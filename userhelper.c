@@ -687,10 +687,6 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 
 		/* Save this response. */
 		reply[count].resp = string + 1;
-		while ((reply[count].resp[0] != '\0') &&
-		       (g_ascii_isspace(reply[count].resp[0]))) {
-			reply[count].resp++;
-		}
 		reply[count].resp = g_strdup(reply[count].resp);
 		reply[count].resp_retcode = PAM_SUCCESS;
 #ifdef DEBUG_USERHELPER
