@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
+"POT-Creation-Date: 2001-02-05 10:35-0500\n"
 "PO-Revision-Date:  2001-01-25 15:31-0500\n"
 "Last-Translator: Unknown\n"
 "Language-Team: German\n"
@@ -15,52 +15,70 @@ msgstr ""
 
 #: ../userdialogs.c:35
 msgid "Message"
-msgstr ""
+msgstr "Mitteilung"
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:384
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr ""
+msgstr "Eingabe"
 
+#. Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
 #. Just a dummy file for gettext
-#: ../dummy.h:3 ../userdialogs.c:193 ../userinfo.c:140
+#: ../dummy.h:20 ../userdialogs.c:193 ../userinfo.c:139
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
-#: ../userhelper-wrap.c:49 ../usermount.c:581 ../usermount.c:676
-#: ../usermount.c:764
+#: ../userhelper-wrap.c:49 ../usermount.c:578 ../usermount.c:673
+#: ../usermount.c:761
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Pipe Fehler.\n"
 
-#: ../userhelper-wrap.c:55 ../usermount.c:587 ../usermount.c:687
-#: ../usermount.c:770
+#: ../userhelper-wrap.c:55 ../usermount.c:584 ../usermount.c:684
+#: ../usermount.c:767
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Kann nicht forken().\n"
 
-#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:627
-#: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
-#: ../usermount.c:817
+#: ../userhelper-wrap.c:75 ../userhelper-wrap.c:85 ../usermount.c:624
+#: ../usermount.c:632 ../usermount.c:736 ../usermount.c:744 ../usermount.c:806
+#: ../usermount.c:814
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "dup2() Fehler.\n"
 
-#: ../userhelper-wrap.c:112 ../usermount.c:642 ../usermount.c:754
-#: ../usermount.c:824
+#: ../userhelper-wrap.c:112 ../usermount.c:639 ../usermount.c:751
+#: ../usermount.c:821
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "execl() Fehler, errno=%d\n"
 
 #: ../userhelper-wrap.c:141
 msgid "Information updated."
-msgstr ""
+msgstr "Information aktualisiert."
 
 #: ../userhelper-wrap.c:144
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Das eingegebene Passwort ist ungültig.\n"
+"Versuchen Sie es erneut."
 
 #: ../userhelper-wrap.c:147
 msgid ""
@@ -68,28 +86,34 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Eins oder mehrere der geänderten Felder ist ungültig.\n"
+"Die Gründe sind wahrscheinlich Doppelpunkte oder Kommas in einem der\n"
+"Felder.\n"
+"Bitte entfernen Sie diese und versuchen Sie es erneut."
 
 #: ../userhelper-wrap.c:150
 msgid "Password resetting error."
-msgstr ""
+msgstr "Fehler beim Neueinstellen des Passworts."
 
 #: ../userhelper-wrap.c:153
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Einige Systemdateien sind gesperrt.\n"
+"Bitte versuchen Sie es später nochmal."
 
 #: ../userhelper-wrap.c:156
 msgid "Unknown user."
-msgstr ""
+msgstr "Benutzer unbekannt."
 
 #: ../userhelper-wrap.c:159
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Nicht genügend Rechte."
 
 #: ../userhelper-wrap.c:162
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Ungültiger Aufruf des Unterprozesses."
 
 #: ../userhelper-wrap.c:165
 msgid ""
@@ -97,36 +121,39 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"Ihre aktuelle Shell ist nicht in /etc/shells aufgelistet.\n"
+"Das Ändern Ihrer Shell ist nicht zulässig.\n"
+"Setzen Sie sich mit Ihrem Systemadministrator in Verbindung."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:169
 msgid "Out of memory."
-msgstr ""
+msgstr "Nicht genügend Speicher."
 
 #: ../userhelper-wrap.c:172
 msgid "The exec() call failed."
-msgstr ""
+msgstr "Aufruf von exec() fehlgeschlagen."
 
 #: ../userhelper-wrap.c:175
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Fehler beim Finden des ausgewählten Programms."
 
 #: ../userhelper-wrap.c:178
 msgid "Unknown error."
-msgstr ""
+msgstr "Unbekannter Fehler."
 
 #: ../userhelper-wrap.c:181
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Unbekannter Exit Code."
 
 #: ../userhelper-wrap.c:237
 msgid "Input"
-msgstr ""
+msgstr "Eingabe"
 
 #: ../userhelper-wrap.c:346
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "%d Antworten erforderlich.\n"
 
 #: ../userhelper-wrap.c:371
 #, c-format
@@ -134,186 +161,192 @@ msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
+"Um \"%s\" per Root-Zugriffsrecht zu starten, sind zusätzliche Informationen "
+"erforderlich."
 
 #: ../userhelper-wrap.c:389
 #, c-format
 msgid "Changing password for %s"
-msgstr ""
+msgstr "Änderung des Passworts für %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "Möchten Sie %d Antworten von den %d Eingabefeldern!?!?!\n"
 
 #: ../userhelper.c:103
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "%d Fehler aufgetreten.\n"
 
 #: ../userhelper.c:199
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Passwort für %s"
 
 #: ../userhelper.c:398
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "Die Konsistenzprüfung ist nich eingeschaltet."
 
 #: ../userhelper.c:400
 msgid "Block is fine."
-msgstr ""
+msgstr "Block ist fine."
 
 #: ../userhelper.c:402
 msgid "Block freed twice."
-msgstr ""
+msgstr "Block wurde zweimal getrennt."
 
 #: ../userhelper.c:404
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "Speichern, bevor der Block zerstört wurde."
 
 #: ../userhelper.c:406
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "Speichern, nachdem der Block zerstört wurde."
 
 #: ../userhelper.c:435
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "Benutzerhilfe muss Setuid-Root sein\n"
 
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "PAM returned = %d\n"
 
 #: ../userhelper.c:673
 #, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr ""
+msgstr "\"%s\" wird gerade authentifiziert\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr ""
+msgstr "\"%s\" exec wird gerade durchgeführt\n"
 
-#: ../userinfo.c:125
+#: ../userinfo.c:124
 msgid "User Information"
-msgstr ""
+msgstr "Benutzerinformationen"
 
-#: ../userinfo.c:154
+#: ../userinfo.c:153
 msgid "Help"
-msgstr ""
+msgstr "Hilfe"
 
-#: ../userinfo.c:243
+#: ../userinfo.c:242
 msgid "Full Name:"
-msgstr ""
+msgstr "Vollständiger Name:"
 
-#: ../userinfo.c:261
+#: ../userinfo.c:260
 msgid "Office:"
-msgstr ""
+msgstr "Büro:"
 
-#: ../userinfo.c:280
+#: ../userinfo.c:279
 msgid "Office Phone:"
-msgstr ""
+msgstr "Telefon Büro:"
 
-#: ../userinfo.c:298
+#: ../userinfo.c:297
 msgid "Home Phone:"
-msgstr ""
+msgstr "Telefon zu Hause:"
 
-#: ../userinfo.c:316
+#: ../userinfo.c:315
 msgid "Shell:"
-msgstr ""
+msgstr "Shell:"
 
-#: ../userinfo.c:379
+#: ../userinfo.c:378
 msgid "This will be some help text."
-msgstr ""
-
-#: ../usermount.c:56
-msgid "Mount"
-msgstr ""
+msgstr "Das wird ein Hilfstext."
 
 #: ../usermount.c:57
+msgid "Mount"
+msgstr "Mount"
+
+#: ../usermount.c:58
 msgid "Unmount"
-msgstr ""
+msgstr "Unmount"
 
-#: ../usermount.c:120
+#: ../usermount.c:119
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Benutzer Mount-Tool"
 
-#: ../usermount.c:137
+#: ../usermount.c:136
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
+"Es stehen keine zu ladende Benutzerdateien zur Vefügung.\n"
+"Setzen Sie sich mit Ihrem Administrator in Verbindung."
 
-#: ../usermount.c:178
+#: ../usermount.c:177
 msgid "Directory"
-msgstr ""
+msgstr "Directory"
 
-#: ../usermount.c:186
+#: ../usermount.c:185
 msgid "Device"
-msgstr ""
+msgstr "Gerät"
 
-#: ../usermount.c:194
+#: ../usermount.c:193
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
-#: ../usermount.c:269
+#: ../usermount.c:267
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
-#: ../usermount.c:363
+#: ../usermount.c:360
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
+"Sind Sie sicher?\n"
+"Alle Daten auf dieser Platte werden zerstört.\n"
 
-#: ../usermount.c:365
+#: ../usermount.c:362
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
-#: ../usermount.c:375
+#: ../usermount.c:372
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
-#: ../usermount.c:382
+#: ../usermount.c:379
 msgid "Do low level format."
-msgstr ""
+msgstr "Low-Level-Format ausführen."
 
-#: ../dummy.h:4
+#: ../dummy.h:21
 msgid "Exit"
-msgstr ""
+msgstr "Beenden"
 
-#: ../dummy.h:5
+#: ../dummy.h:22
 msgid "Cancel"
-msgstr ""
+msgstr "Löschen"
 
-#: ../dummy.h:6
+#: ../dummy.h:23
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Läuft nicht bevorrechtigt"
 
-#: ../dummy.h:7
+#: ../dummy.h:24
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(aktuelles) UNIX Passwort:"
 
-#: ../dummy.h:8
+#: ../dummy.h:25
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Neues UNIX Passwort:"
 
-#: ../dummy.h:9
+#: ../dummy.h:26
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Neues UNIX Passwort nochmal eingeben: "
 
-#: ../dummy.h:10
+#: ../dummy.h:27
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "UNGÜLTIGES PASSWORT: Es ist viel zu kurz"
 
-#: ../dummy.h:11
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "UNGÜLTIGES PASSWORT: Es ist zu kurz"
 
-#: ../dummy.h:12
+#: ../dummy.h:29
 msgid "Password unchanged"
-msgstr ""
+msgstr "Passwort nicht geändert"
 
-#: ../dummy.h:13
+#: ../dummy.h:30
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Sorry, die Passwörter stimmen nicht überein"

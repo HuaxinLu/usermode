@@ -100,7 +100,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Algunos ficheros del sistema están bloqueados.\n"
-"Por favor, inténtelo de nuevo mas tarde.\n"
+"Por favor, inténtelo de nuevo mas tarde."
 
 #: ../userhelper-wrap.c:156
 msgid "Unknown user."

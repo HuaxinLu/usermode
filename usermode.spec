@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.41
+Version: 1.42
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -12,7 +12,7 @@ Requires: util-linux, pam >= 0.66-5
 Requires: util-linux, pam >= 0.66-5, /etc/pam.d/system-auth
 %endif
 Conflicts: SysVinit < 2.74-14
-BuildRoot: %{_tmppath}/usermode-root
+BuildRoot: %{_tmppath}/%{name}-root
 
 %description
 The usermode package contains several graphical tools for users:
@@ -91,6 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/poweroff
 
 %changelog
+* Wed Feb 14 2001 Preston Brown <pbrown@redhat.com>
+- final translation merge.
+
 * Wed Feb 14 2001 Nalin Dahyabhai <nalin@redhat.com>
 - clear the supplemental groups list before running binaries as root (#26851)
 
