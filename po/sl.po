@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 9.1\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2003-07-13 23:20+0200\n"
+"PO-Revision-Date: 2004-01-11 18:40+0100\n"
 "Last-Translator: Roman Maurer <roman@lugos.si>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -84,12 +84,11 @@ msgstr "Zaženi sistemska nastavitvena orodja brez gesla."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "prijava: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Geslo"
+msgstr "Geslo: "
 
 #: userdialogs.h:30
 msgid "Help"
@@ -98,7 +97,7 @@ msgstr "Pomoč"
 #: userhelper.c:122
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Ni moč nastaviti izvajalnega konteksta na %s.\n"
 
 #: userhelper.c:431
 #, c-format
@@ -451,12 +450,3 @@ msgstr "Spremeni vaše prijavno geslo"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Geslo"
-
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "Dobil napako PAM %d.\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "nameravam izvesti \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Potrebno je %d odgovorov.\n"
