@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
 "POT-Creation-Date: 2002-08-07 15:05-0400\n"
-"PO-Revision-Date: 2002-08-08 10:11GMT+10:00\n"
+"PO-Revision-Date: 2002-08-13 20:00+0900\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -398,7 +398,7 @@ msgstr "ログインシェル"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr "Ok(_O)"
+msgstr "OK(_O)"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
@@ -438,11 +438,11 @@ msgstr "個人情報を変更"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "¥Ç¥£¥¹¥¯´ÉÍý"
+msgstr "ディスク管理"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "¥Õ¥¡¥¤¥ë¥·¥¹¥Æ¥à¤Î¥Þ¥¦¥ó¥È¤È¥Þ¥¦¥ó¥È²ò½ü"
+msgstr "ファイルシステムをマウント/マウント解除をします"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
@@ -451,43 +451,4 @@ msgstr "ログインパスワードを変更"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "パスワード"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "スーパユーザ権限から役得を得る様な\"%s\"を実行しようとしていますが、\n"
-#~ " 実行するには追加情報が必要です。"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "スーパユーザ権限が必要な\"%s\"を実行しようとしていますが、\n"
-#~ " 実行するには追加情報が必要です。"
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "スーパユーザ権限から役得を得るようなコマンドを実行しようとしていますが、\n"
-#~ " 実行するには追加情報が必要です。"
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "スーパユーザ権限が必要なコマンドを実行しようとしていますが、実行するに"
-#~ "は \n"
-#~ "追加情報が必要です。"
-
-#~ msgid "Starting \"%s\" with administrative privileges."
-#~ msgstr "管理者権限で\"%s\"をスタート中です。"
-
-#, fuzzy
-#~ msgid "Change password"
-#~ msgstr "¥Ñ¥¹¥ï¡¼¥ÉÊÑ¹¹"
-
-#~ msgid "Change account information"
-#~ msgstr "¥¢¥«¥¦¥ó¥È¾ðÊó¤ÎÊÑ¹¹¥Ä¡¼¥ë"
 
