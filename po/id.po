@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2004-07-16 10:53+0700\n"
+"PO-Revision-Date: 2004-07-19 07:35+0700\n"
 "Last-Translator: Alexander Agung <redtux@sby.dnet.net.id>\n"
 "Language-Team: Bahasa Indonesia <viribus@traderweb.net>\n"
 "MIME-Version: 1.0\n"
@@ -176,6 +176,9 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Satu atau lebih field yang dirubah tidak valid.\n"
+"Hal ini mungkin dikarenakan adanya colon atau koma disalah satu field.\n"
+"Harap diperbaiki dulu dan coba lagi."
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
@@ -186,6 +189,8 @@ msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Beberapa berkas sistem terkunci.\n"
+"Harap coba beberapa saat lagi."
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
@@ -205,6 +210,9 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"shell anda saat ini tidak terdaftar di /etc/shells.\n"
+"Anda tidak dibolehkan merubah shell anda.\n"
+"Konsultasikan ke administrator sistem anda."
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
@@ -258,6 +266,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Anda mencoba menjalankan \"%s\" yang mungkin diperlukan kewenangan "
+"administratif, tapi diperlukan informasi lebihuntuk melaksanakannya."
 
 #: userhelper-wrap.c:793
 #, c-format
@@ -265,6 +275,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
+"Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan administratif, "
+"Tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: userhelper-wrap.c:802
 msgid ""
