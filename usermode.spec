@@ -52,9 +52,9 @@ Created the spec file.
 make
 
 %install
-rm -rf $(RPM_BUILD_ROOT)
-make PREFIX=$(RPM_BUILD_ROOT) install
-make PREFIX=$(RPM_BUILD_ROOT) install-man
+rm -rf $RPM_BUILD_ROOT
+make PREFIX=$RPM_BUILD_ROOT install
+make PREFIX=$RPM_BUILD_ROOT install-man
 
 %clean
 rm -rf $(RPM_BUILD_ROOT)
