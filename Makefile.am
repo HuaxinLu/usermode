@@ -13,7 +13,8 @@ EXTRA_DIST = \
 	userinfo.desktop \
 	usermount.desktop \
 	userpasswd.desktop \
-	keys.xpm
+	keys.xpm \
+	usermode.glade
 
 SUBDIRS=intl po
 
