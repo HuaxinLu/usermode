@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Red Hat 6.1 usermode\n"
 "POT-Creation-Date: 2002-07-24 09:41-0400\n"
-"PO-Revision-Date: 2002-07-05 15:24+0200\n"
+"PO-Revision-Date: 2002-07-31 15:24+0200\n"
 "Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgid "Password for %s"
 msgstr "Adgangskode for %s"
 
 #: userhelper.c:320
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -97,7 +97,7 @@ msgstr ""
 "men mere information er nødvendigt for at gøre dette."
 
 #: userhelper.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -106,7 +106,6 @@ msgstr ""
 "men mere information er nødvendigt for at gøre dette."
 
 #: userhelper.c:326
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -116,7 +115,6 @@ msgstr ""
 "men mere information er nødvendigt for at gøre dette."
 
 #: userhelper.c:328
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -450,7 +448,6 @@ msgstr "Af_slut"
 #~ "Du forsøger at køre en kommando, som kræver superbruger-rettigheder,\n"
 #~ "men mere information er nødvendigt for at gøre dette."
 
-#, fuzzy
 #~ msgid "Change personal information"
 #~ msgstr "Ændrer personlige oplysninger."
 
