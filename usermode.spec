@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.67
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -104,6 +104,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Feb 24 2003 Elliot Lee <sopwith@redhat.com>
+- rebuilt
+
 * Thu Feb 20 2003 Nalin Dahyabhai <nalin@redhat.com> 1.67-1
 - work around GTK+ clearing DESKTOP_STARTUP_ID at gtk_init() time, so that
   startup notification actually works (#84684)
