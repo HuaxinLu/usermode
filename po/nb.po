@@ -1,66 +1,63 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2000-08-02 12:47-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: usermode 1.26\n"
+"POT-Creation-Date: 2000-08-02 12:21-0400\n"
+"PO-Revision-Date: 2000-08-04 02:02+02:00\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
+"Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: ../userdialogs.c:35
 msgid "Message"
-msgstr ""
+msgstr "Melding"
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:358
 msgid "Error"
-msgstr ""
+msgstr "Feil"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr ""
+msgstr "Spør"
 
 #: ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Feil med rør.\n"
 
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Kan ikke kjøre fork().\n"
 
 #: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
 #: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
 #: ../usermount.c:817
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "feil ved kjøring av dup2().\n"
 
 #: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
 #: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "execl() feil, errno=%d\n"
 
 #: ../userhelper-wrap.c:115
 msgid "Information updated."
-msgstr ""
+msgstr "Informasjon oppdatert."
 
 #: ../userhelper-wrap.c:118
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Passordet du oppga er ugyldig.\n"
+"Vennligst prøv igjen."
 
 #: ../userhelper-wrap.c:121
 msgid ""
@@ -68,28 +65,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Ett eller flere endrede felt er ugyldige.\n"
+"Dette skyldes sannsynligvis et kolon eller komma i ett av feltene.\n"
+"Vennligst fjern disse og prøv igjen."
 
 #: ../userhelper-wrap.c:124
 msgid "Password resetting error."
-msgstr ""
+msgstr "Feil under nullstilling av passord."
 
 #: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Noen systemfiler er låst.\n"
+"Prøv igjen om et øyeblikk."
 
 #: ../userhelper-wrap.c:130
 msgid "Unknown user."
-msgstr ""
+msgstr "Ukjent bruker."
 
 #: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Utilstrekkelige rettigheter."
 
 #: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Ugyldig kall til underprosess."
 
 #: ../userhelper-wrap.c:139
 msgid ""
@@ -97,27 +99,30 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"Ditt nåværende skall er ikke listet i /etc/shells.\n"
+"Du kan ikke endre ditt skall.\n"
+"Kontakt systemadministratoren."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:143
 msgid "Out of memory."
-msgstr ""
+msgstr "Tom for minne."
 
 #: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
-msgstr ""
+msgstr "exec() kallet feilet."
 
 #: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Kunne ikke finne valgt program."
 
 #: ../userhelper-wrap.c:152
 msgid "Unknown error."
-msgstr ""
+msgstr "Ukjent feil."
 
 #: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Ukjent avsluttingskode."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
@@ -126,7 +131,7 @@ msgstr ""
 #: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "Trenger %d svar.\n"
 
 #: ../userhelper-wrap.c:345
 #, c-format
@@ -134,123 +139,128 @@ msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
 "required."
 msgstr ""
+"For å kjøre \"%s\" med rettigheter som %s, er mer informasjon nødvendig."
 
 #: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "Du ønsker %d svar fra %d oppføringsfelt!?!?!\n"
 
 #: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Mottok feil %d.\n"
 
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Passord for %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "Konsistenssjekk er ikke slått på."
 
 #: ../userhelper.c:389
 msgid "Block is fine."
-msgstr ""
+msgstr "Blokken er bra."
 
 #: ../userhelper.c:391
 msgid "Block freed twice."
-msgstr ""
+msgstr "Blokk frigitt to ganger."
 
 #: ../userhelper.c:393
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "Minne før blokken ble overskrevet."
 
 #: ../userhelper.c:395
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "Minne etter blokken ble overskrevet."
 
 #: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "userhelper må være setuid root\n"
 
 #: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr ""
+msgstr "i ferd med å kjøre \"%s\"\n"
 
 #: ../userinfo.c:125
 msgid "User Information"
-msgstr ""
+msgstr "Brukerinformasjon"
 
 #: ../userinfo.c:154
 msgid "Help"
-msgstr ""
+msgstr "Hjelp"
 
 #: ../userinfo.c:243
 msgid "Full Name:"
-msgstr ""
+msgstr "Fullt navn:"
 
 #: ../userinfo.c:261
 msgid "Office:"
-msgstr ""
+msgstr "Kontor:"
 
 #: ../userinfo.c:280
 msgid "Office Phone:"
-msgstr ""
+msgstr "Telefon på kontor:"
 
 #: ../userinfo.c:298
 msgid "Home Phone:"
-msgstr ""
+msgstr "Hjemmetelefon:"
 
 #: ../userinfo.c:316
 msgid "Shell:"
-msgstr ""
+msgstr "Skall:"
 
 #: ../userinfo.c:379
 msgid "This will be some help text."
-msgstr ""
+msgstr "Dette vil være en hjelpetekst."
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Brukerverktøy for montering"
 
 #: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
+"Ingen filsystemer som kan monteres av brukere.\n"
+"Kontakt din administrator."
 
 #: ../usermount.c:178
 msgid "Directory"
-msgstr ""
+msgstr "Katalog"
 
 #: ../usermount.c:186
 msgid "Device"
-msgstr ""
+msgstr "Enhet"
 
 #: ../usermount.c:194
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: ../usermount.c:269
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: ../usermount.c:363
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
+"Er du sikker?\n"
+"Du vil ødelegge alle data på den disken.\n"
 
 #: ../usermount.c:365
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: ../usermount.c:375
 msgid "No"
-msgstr ""
+msgstr "Nei"
 
 #: ../usermount.c:382
 msgid "Do low level format."
-msgstr ""
+msgstr "Utfør lavnivå formatering."
