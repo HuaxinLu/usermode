@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: usermode 1.71\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2004-10-05 14:46+0200\n"
+"PO-Revision-Date: 2004-10-16 15:25+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -95,42 +95,42 @@ msgstr "Kunne ikke gi slipp på administratorrettigheter: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
+msgstr "Klarte ikke å gi slipp på administratorrettigheter: pam_timestamp_check returnerte feilkode %d"
 
 #: pam-panel-icon.c:148
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
+msgstr "Du er nå autorisert for å gjøre endringer for hele systemet (som påvirker alle brukere) uten å oppgi passord for administrator igjen. Du kan gi slipp på denne autoriseringen."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Behold autorisering"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Gi slipp på autorisering"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check er ikke setuid root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "ingen tty kontrollerer pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "bruker ukjent for pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "feil med rettigheter i pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "ugyldig tty for kontroll av pam_timestamp_check"
 
 #: pam-panel-icon.c:329
 #, c-format
