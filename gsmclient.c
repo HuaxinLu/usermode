@@ -339,7 +339,7 @@ gsm_client_connect (GsmClient  *client,
                        SmcSaveCompleteProcMask | 
                        SmcShutdownCancelledProcMask,
                        &callbacks,
-                       client->priv->client_id, &client_id,
+                       (char*) previous_id, &client_id,
                        ERROR_STRING_LENGTH, error_string_ret);
 
 
@@ -347,6 +347,8 @@ gsm_client_connect (GsmClient  *client,
     {
       client->priv->client_id = g_strdup (client_id);
       free (client_id);
+      gsm_verbose ("Got client ID \"%s\" submitted previous id \"%s\"\n",
+                   client->priv->client_id, previous_id ? previous_id : "none");
     }
   
   if (client->priv->connection == NULL)

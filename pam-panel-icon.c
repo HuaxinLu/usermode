@@ -235,6 +235,13 @@ session_save_callback (GsmClient *client,
                                 1, (char**) argv);
 }
 
+static void
+session_die_callback (GsmClient *client,
+                      void      *data)
+{
+  exit (1);
+}
+
 int
 main (int argc, char **argv)
 {
@@ -271,6 +278,10 @@ main (int argc, char **argv)
 
   g_signal_connect (G_OBJECT (client), "save",
                     G_CALLBACK (session_save_callback),
+                    NULL);
+
+  g_signal_connect (G_OBJECT (client), "die",
+                    G_CALLBACK (session_die_callback),
                     NULL);
   
   loop = g_main_loop_new (NULL, FALSE);
