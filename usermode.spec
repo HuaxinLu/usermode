@@ -44,7 +44,7 @@ make PREFIX=$RPM_BUILD_ROOT \
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
 for wrapapp in halt reboot poweroff ; do
   ln -sf consolehelper $RPM_BUILD_ROOT/usr/bin/$wrapapp
-  echo "USER=root" > $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
+  touch $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
 %if %{build6x}
   cp shutdown.pamd.6x $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
 %else
