@@ -73,7 +73,6 @@ msgid "Sorry, passwords do not match"
 msgstr "Lykilorðin stemma því miður ekki"
 
 #: dummy.h:32
-#, fuzzy
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Keyra stillingatól fyrir allt kerfið án auðkenningar."
 
