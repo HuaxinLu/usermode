@@ -1,0 +1,472 @@
+# Malay messages for usermode.
+# Copyright (C) 2004 Hasbullah Bin Pit <sebol@my-penguin.org>.
+#
+# placeholder tu apa?
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: usermode\n"
+"POT-Creation-Date: 2003-09-25 16:34-0400\n"
+"PO-Revision-Date: 2004-03-03 00:35+0730\n"
+"Last-Translator: Hasbullah Bin Pit <sebol@my-penguin.org>\n"
+"Language-Team: Projek Gabai <gabai-penyumbang@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
+#: dummy.h:21
+#: userdialogs.h:29
+msgid "OK"
+msgstr "OK"
+
+#: dummy.h:22
+#: userdialogs.h:32
+msgid "Exit"
+msgstr "Keluar"
+
+#: dummy.h:23
+#: userdialogs.h:31
+msgid "Cancel"
+msgstr "Batal"
+
+#: dummy.h:24
+#: userdialogs.h:33
+msgid "Run Unprivileged"
+msgstr "Laksana Tanpa Privilej"
+
+#: dummy.h:25
+msgid "(current) UNIX password: "
+msgstr "Katalaluan UNIX (semasa):"
+
+#: dummy.h:26
+msgid "New UNIX password: "
+msgstr "Katalaluan UNIX baru:"
+
+#: dummy.h:27
+msgid "Retype new UNIX password: "
+msgstr "Ulangtaip katalaluan UNIX baru:"
+
+#: dummy.h:28
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr "KATALALUAN TERUK: Ia terlalu pendek yg MELAMPAU"
+
+#: dummy.h:29
+msgid "BAD PASSWORD: it is too short"
+msgstr "KATALALUAN TERUK: Ia terlalu pendek"
+
+#: dummy.h:30
+msgid "Password unchanged"
+msgstr "Katalaluan tidak berubah"
+
+#: dummy.h:31
+msgid "Sorry, passwords do not match"
+msgstr "Maaf, katalaluan tidak sepadan."
+
+#: dummy.h:32
+msgid "Launch system-wide configuration tools without a password."
+msgstr "Lancar alat konfigurasi sistem global tanpa katalaluan."
+
+#: dummy.h:33
+msgid "login: "
+msgstr "Logmasuk:"
+
+#: dummy.h:34
+msgid "Password: "
+msgstr "Katalaluan: "
+
+#: userdialogs.h:30
+msgid "Help"
+msgstr "Bantuan"
+
+#: userhelper.c:122
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "Tidak dapat menetapkan konteks exec ke %s.\n"
+
+#: userhelper.c:431
+#, c-format
+msgid "Password for %s"
+msgstr "Katalaluan bagi %s"
+
+#: userhelper.c:666
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda cuba melaksanakan \"%s\" yang mendapat faedah drpd privilej\n"
+"administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper.c:668
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda cuba melaksanakan \"%s\" yang memerlukan privilej\n"
+"administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper.c:672
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda cuba melaksanakan arahan yang mendapat faedah drpd\n"
+" privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper.c:674
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan arahan yang yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper.c:693
+#, c-format
+msgid "Password for %s: "
+msgstr "Katalaluan bagi %s:"
+
+#: userhelper.c:1039
+msgid "userhelper must be setuid root\n"
+msgstr "userhelper mesti setuid root\n"
+
+#. FIXME: print a warning here?
+#: userhelper.c:1123
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Tak dapat membuka tetingkap bergrafik, dan tak dapat menjumpai terminal yg mengawal.\n"
+
+#: userhelper-wrap.c:178
+msgid "Unknown exit code."
+msgstr "Kod keluar yg tak diketahui."
+
+#: userhelper-wrap.c:180
+msgid "Information updated."
+msgstr "Maklumat dikemaskinikan."
+
+# Malay Translation of redhat-config-samba
+# Copyright (C) 2002 Projek Gabai http://gabai.sf.net
+# Hasbullah Bin Pit <sebol@ikhlas.com>, 2002. Merlimau.
+#
+#: userhelper-wrap.c:182
+msgid ""
+"The password you typed is invalid.\n"
+"Please try again."
+msgstr ""
+"Katalaluan yg anda taip tidak sah.\n"
+" Sila cuba lagi."
+
+#: userhelper-wrap.c:184
+msgid ""
+"One or more of the changed fields is invalid.\n"
+"This is probably due to either colons or commas in one of the fields.\n"
+"Please remove those and try again."
+msgstr ""
+"Satu atau lebih medan yg diubah adalah tidak sah.\n"
+"Ini mungkin kerana samada titikbertindih atau koma pada salah satu medan.\n"
+"Sila buang ia dan cuba lagi"
+
+#: userhelper-wrap.c:186
+msgid "Password resetting error."
+msgstr "Ralat mengulangtetap katalaluan."
+
+#: userhelper-wrap.c:188
+msgid ""
+"Some systems files are locked.\n"
+"Please try again in a few moments."
+msgstr ""
+"Beberapa fail sistem dikunci.\n"
+"Sila cuba lagi kelak."
+
+#: userhelper-wrap.c:190
+msgid "Unknown user."
+msgstr "Penggunat tidak diketahui."
+
+#: userhelper-wrap.c:192
+msgid "Insufficient rights."
+msgstr "Hak tidak mencukupi."
+
+#: userhelper-wrap.c:194
+msgid "Invalid call to subprocess."
+msgstr "Panggil ke subproses yg tak sah."
+
+#: userhelper-wrap.c:196
+msgid ""
+"Your current shell is not listed in /etc/shells.\n"
+"You are not allowed to change your shell.\n"
+"Consult your system administrator."
+msgstr ""
+"Shell semasa tak disenarai di /etc/shells.\n"
+"Anda tak boleh menukar shell anda.\n"
+"Rujuk pentadbir sistem anda.."
+
+#: userhelper-wrap.c:199
+msgid "Out of memory."
+msgstr "Memori tidak cukup."
+
+#: userhelper-wrap.c:201
+msgid "The exec() call failed."
+msgstr "Panggilan exec() gagal."
+
+#: userhelper-wrap.c:203
+msgid "Failed to find selected program."
+msgstr "Gagal menjumpai program dipilih."
+
+#: userhelper-wrap.c:207
+msgid "Unknown error."
+msgstr "Ralat tidak diketahui."
+
+#: userhelper-wrap.c:458
+#: glade.strings:18
+#: usermode.glade.h:9
+msgid "Query"
+msgstr "Kueri"
+
+# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
+# libgnomeui/gnome-messagebox.c:129 libgnomeui/gnome-messagebox.c:262
+#: userhelper-wrap.c:548
+#: userhelper-wrap.c:718
+msgid "Error"
+msgstr "Ralat"
+
+# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
+# libgnomeui/gnome-messagebox.c:111 libgnomeui/gnome-messagebox.c:244
+#: userhelper-wrap.c:560
+msgid "Information"
+msgstr "Maklumat"
+
+#: userhelper-wrap.c:716
+#: glade.strings:16
+#: glade.strings:19
+#: usermode.glade.h:8
+msgid "Placeholder text."
+msgstr "Teks Placeholder."
+
+#: userhelper-wrap.c:756
+msgid "Changing personal information."
+msgstr "Menukar maklumat peribadi."
+
+#: userhelper-wrap.c:759
+msgid "Changing login shell."
+msgstr "Menukar shell logmasuk"
+
+#: userhelper-wrap.c:765
+#, c-format
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan \"%s\" yang mendapat faedah drpd privilejadministratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper-wrap.c:767
+#, c-format
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan \"%s\" yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper-wrap.c:776
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan arahan yang mendapat faedah drpd privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper-wrap.c:778
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan arahan yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper-wrap.c:795
+msgid "_Run Unprivileged"
+msgstr "_Laksana Tanpa Privilej"
+
+#: userhelper-wrap.c:931
+msgid "Pipe error.\n"
+msgstr "Ralat paip.\n"
+
+#: userhelper-wrap.c:938
+msgid "Cannot fork().\n"
+msgstr "Tak dapat fork().\n"
+
+#: userhelper-wrap.c:1016
+#: userhelper-wrap.c:1020
+msgid "dup2() error.\n"
+msgstr "ralat dup2() .\n"
+
+#: userhelper-wrap.c:1032
+#, c-format
+msgid "execl() error, errno=%d\n"
+msgstr "execl() error, errno=%d\n"
+
+#: userinfo.c:323
+msgid "You don't exist.  Go away.\n"
+msgstr "Anda tak wujud. Pergi jauh jauh.\n"
+
+#: usermount.c:62
+#: glade.strings:26
+msgid "_Mount"
+msgstr "_Lekap"
+
+#: usermount.c:63
+msgid "Un_mount"
+msgstr "_Nyahlekap"
+
+#: usermount.c:321
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Adakah anda pasti untuk mengformat cakera ini? Ia akan memusnahkan sebarang data yg ia kandungi."
+
+#: usermount.c:332
+msgid "Perform a _low-level format."
+msgstr "Lakukan pengformatan peringkat-_rendah."
+
+#: usermount.c:375
+msgid "Select a _filesystem type to create:"
+msgstr "Pilih satu jenis sistem _fail untuk dicipta:"
+
+#: usermount.c:543
+msgid ""
+"There are no filesystems which you are allowed to mount or unmount.\n"
+"Contact your administrator."
+msgstr ""
+"Tiada sistemfail yang anda boleh izinkan untuk dilekap atau dinyahlekapkan.\n"
+"Hubungi pentadbir sistem anda"
+
+#. Create the dialog.
+#: usermount.c:544
+#: usermount.c:555
+#: glade.strings:22
+msgid "User Mount Tool"
+msgstr "Alat Pelekapan Pengguna"
+
+#. Create the other buttons.
+#: usermount.c:569
+#: glade.strings:28
+msgid "_Format"
+msgstr "_Format"
+
+#: usermount.c:605
+#: glade.strings:24
+msgid "Device"
+msgstr "Peranti"
+
+#: usermount.c:611
+#: glade.strings:23
+msgid "Directory"
+msgstr "Direktori"
+
+#: usermount.c:617
+msgid "Filesystem"
+msgstr "Sistem fail"
+
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
+#: glade.strings:7
+#: usermode.glade.h:10
+msgid "User Information"
+msgstr "Maklumat Pengguna"
+
+#: glade.strings:8
+#: usermode.glade.h:2
+msgid "Full Name:"
+msgstr "Nama Penuh:"
+
+#: glade.strings:9
+#: usermode.glade.h:7
+msgid "Office:"
+msgstr "Pejabat:"
+
+#: glade.strings:10
+#: usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "Nombor Telefon Pejabat:"
+
+#: glade.strings:11
+#: usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr " Nombor Telefon Rumah:"
+
+#: glade.strings:12
+#: usermode.glade.h:4
+msgid "Login Shell:"
+msgstr "Shell Logmasuk:"
+
+#: glade.strings:13
+#: glade.strings:20
+msgid "_Ok"
+msgstr "_Ok"
+
+#: glade.strings:14
+#: glade.strings:21
+msgid "_Cancel"
+msgstr "_Batal"
+
+# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
+# libgnomeui/gnome-messagebox.c:147 libgnomeui/gnome-messagebox.c:280
+#: glade.strings:15
+#: usermode.glade.h:5
+msgid "Message"
+msgstr "Mesej"
+
+# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
+# libgnomeui/gnome-app-helper.c:155
+#: glade.strings:17
+msgid "_Close"
+msgstr "_Tutup"
+
+#: glade.strings:25
+msgid "Type"
+msgstr "Jenis"
+
+#: glade.strings:27
+msgid "_Unmount"
+msgstr "_Nyahlekap"
+
+# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
+# libgnomeui/gnome-app-helper.c:160
+# #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
+# libgnomeui/gnome-app-helper.c:160
+#: glade.strings:29
+msgid "E_xit"
+msgstr "_Keluar"
+
+#: usermode.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "Perihal Diri Saya"
+
+#: userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Tukar maklumat peribadi"
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr "Pengurusan Cakera"
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr "Lekap dan nyahlekap sistemfail"
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr "Tukar katalaluan logmasuk anda"
+
+#: userpasswd.desktop.in.h:2
+msgid "Password"
+msgstr "Katalaluan"
+
