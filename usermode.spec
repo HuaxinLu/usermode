@@ -68,7 +68,7 @@ for wrappedapp in halt reboot poweroff ; do
 %endif
 done
 %if %{WITH_SELINUX}
-cp userhelper_text /etc/security
+install -m644 userhelper_context /etc/security
 %endif
 %if ! %{build6x}
 rm -f $RPM_BUILD_ROOT/%{_bindir}/shutdown

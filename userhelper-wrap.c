@@ -251,7 +251,7 @@ userhelper_parse_exitstatus(int exitstatus)
 	}
 }
 
-#if 0
+#ifndef DEBUG_USERHELPER
 /* Attempt to grab focus for the toplevel of this widget, so that peers can
  * get events too. */
 static void
