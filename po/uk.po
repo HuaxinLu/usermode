@@ -92,7 +92,7 @@ msgstr "Пароль: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Не вдається скинути привілеї адміністратора: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -100,6 +100,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"Не вдається скинути привілеї адміністратора: pam_timestamp_check повернув "
+"код помилки %d"
 
 #: pam-panel-icon.c:148
 msgid ""
@@ -107,53 +109,56 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"Наразі ви авторизовані для виконання налаштовування параметрів для усієї "
+"системи (що впливає на усіх користувачів) без повторного набору "
+"пароля адміністратора. Ви можете відмовитись від такої авторизації."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Зберегти авторизацію"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Скинути авторизацію"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check не має встановленого біта setuid root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "немає керуючої консолі tty для pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "користувач невідомий для pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "помилка прав доступу у pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "неправильна керуюча консоль tty у pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Помилка"
+msgstr "Помилка: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Не вдається запустити команду \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Помилка встановлення каналу вводу-виводу у неблокований режим: %s\n"
 
 #: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: не вдається підключитись до менеджера сеансів\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -410,14 +415,14 @@ msgstr "Виконати _низького рівня форматування."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Виберіть тип файлової системи:"
+msgstr "Виберіть тип _файлової системи:"
 
 #: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Немає файлових систем, які вам дозволено монтувати чи демонтувати.\n"
+"Немає файлових систем, які вам дозволено підключати чи відключати.\n"
 "Зверніться до системного адміністратора."
 
 #. Create the dialog.
