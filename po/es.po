@@ -23,7 +23,7 @@ msgstr "Error"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr "Interprete de comandos"
+msgstr "Intérprete de comandos"
 
 #. Copyright (C) 2001 Red Hat, Inc.
 #. *
@@ -100,7 +100,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Algunos ficheros del sistema están bloqueados.\n"
-"Por favor, inténtelo de nuevo mas tarde."
+"Por favor, inténtelo de nuevo más tarde."
 
 #: ../userhelper-wrap.c:156
 msgid "Unknown user."
@@ -253,7 +253,7 @@ msgstr "Shell:"
 
 #: ../userinfo.c:378
 msgid "This will be some help text."
-msgstr "Éste será un texto de ayuda."
+msgstr "Este será un texto de ayuda."
 
 #: ../usermount.c:57
 msgid "Mount"
@@ -272,7 +272,7 @@ msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
-"No existen sistemas de archivos montables por los usuarios.\n"
+"No existen sistemas de archivos que los usuarios puedan montar.\n"
 "Contácte con su administrador."
 
 #: ../usermount.c:177

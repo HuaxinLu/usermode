@@ -301,7 +301,7 @@ msgstr ""
 
 #: ../usermount.c:362
 msgid "Yes"
-msgstr "Si"
+msgstr "Sì"
 
 #: ../usermount.c:372
 msgid "No"

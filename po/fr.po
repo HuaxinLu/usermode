@@ -1,14 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2001 Red Hat, Inc.
 # Nathalie Scholz <EMAIL@ADDRESS>, 2001.
+# Bettina De Monti <bdemonti@redhat.it>, 2001.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.37\n"
 "POT-Creation-Date: 2001-02-05 10:35-0500\n"
-"PO-Revision-Date:  2001-01-30 11:30 CET\n"
-"Last-Translator: Nathalie Scholz\n"
-"Language-Team: French <LL@li.org>\n"
+"PO-Revision-Date:  2001-07-23 11:30 CET\n"
+"Last-Translator: Bettina De Monti\n"
+"Language-Team: French <FR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -190,7 +191,7 @@ msgstr "Le contrôle de cohérence n'est pas enclenché."
 
 #: ../userhelper.c:400
 msgid "Block is fine."
-msgstr "Le bloc est correct ."
+msgstr "Le bloc est correct."
 
 #: ../userhelper.c:402
 msgid "Block freed twice."
@@ -198,7 +199,7 @@ msgstr "Bloc libéré deux fois."
 
 #: ../userhelper.c:404
 msgid "Memory before the block was clobbered."
-msgstr "Memoire avant la destruction du bloc."
+msgstr "Mémoire avant la destruction du bloc."
 
 #: ../userhelper.c:406
 msgid "Memory after the block was clobbered."
@@ -206,7 +207,7 @@ msgstr "Mémoire après la destruction du bloc."
 
 #: ../userhelper.c:435
 msgid "userhelper must be setuid root\n"
-msgstr "userhelp doit être setuid root\n"
+msgstr "userhelper doit être setuid root\n"
 
 #: ../userhelper.c:672
 #, c-format
@@ -265,7 +266,7 @@ msgstr "Démonter"
 
 #: ../usermount.c:119
 msgid "User Mount Tool"
-msgstr "Utiliser outil de montage"
+msgstr "Outil de montage de l'utilisateur"
 
 #: ../usermount.c:136
 msgid ""
@@ -296,7 +297,7 @@ msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
-"Etes-vous sûr de vous ,\n"
+"Etes-vous sûr de vous ?\n"
 "Vous détruirez toutes les données sur ce disque.\n"
 
 #: ../usermount.c:362
