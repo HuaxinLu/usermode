@@ -746,6 +746,11 @@ int main(int argc, char *argv[])
 #ifdef DEBUG_USERHELPER
             g_print(i18n("about to exec \"%s\"\n"), constructed_path);
 #endif
+	    if(d_flg) {
+	        dup2(stdin_fileno, STDIN_FILENO);
+	        dup2(stdout_fileno, STDOUT_FILENO);
+	        dup2(stderr_fileno, STDERR_FILENO);
+	    }
 	    execv(constructed_path, argv+optind-1);
 	    exit (ERR_EXEC_FAILED);
 	}
