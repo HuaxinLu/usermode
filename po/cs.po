@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
 "POT-Creation-Date: 2002-04-15 18:05-0400\n"
-"PO-Revision-Date: 2001-04-02 02:51+0100\n"
+"PO-Revision-Date: 2002-04-21 21:27+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,9 +58,9 @@ msgid "Help"
 msgstr "Nápovìda"
 
 #: userhelper.c:97
-#, fuzzy, c-format
+#, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Chyba %d.\n"
+msgstr "Chyba PAM %d.\n"
 
 #: userhelper.c:203
 #, c-format
@@ -73,6 +73,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Pokou¹íte se spustit pøíkaz \"%s\", který mù¾e získat administrátorská\n"
+"oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper.c:322
 #, c-format
@@ -80,23 +82,29 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Pokou¹íte se spustit pøíkaz \"%s\", který potøebuje administrátorská\n"
+"oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper.c:326
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "superuser privileges, but more information is needed in order to do so."
 msgstr ""
+"Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská\n"
+"oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper.c:328
 msgid ""
 "You are attempting to run a command which requires superuser\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Pokou¹íte se spustit pøíkaz, který potøebuje administrátorská\n"
+"oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper.c:346
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "Heslo pro u¾ivatele %s"
+msgstr "Heslo pro %s: "
 
 #: userhelper.c:629
 msgid "userhelper must be setuid root\n"
@@ -106,6 +114,7 @@ msgstr "program userhelper musí být SUID root\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
+"Nelze otevøít grafické okno a nelze najít kontrolní terminál.\n"
 
 #: userhelper.c:1373 userhelper.c:1411
 #, c-format
@@ -160,9 +169,8 @@ msgid "Insufficient rights."
 msgstr "Nedostateèná práva."
 
 #: userhelper-wrap.c:66
-#, fuzzy
 msgid "Invalid call to subprocess.."
-msgstr "Neplatné volání subprocesu."
+msgstr "Neplatné volání subprocesu.."
 
 #: userhelper-wrap.c:68
 msgid ""
@@ -192,7 +200,7 @@ msgstr "Neznámá chyba."
 
 #: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
-msgstr ""
+msgstr "TextTextTextText."
 
 #: userhelper-wrap.c:352
 #, c-format
@@ -204,17 +212,16 @@ msgid "Error"
 msgstr "Chyba"
 
 #: userhelper-wrap.c:398
-#, fuzzy
 msgid "Information"
-msgstr "Informace o u¾ivateli"
+msgstr "Informace"
 
 #: userhelper-wrap.c:442
 msgid "Changing personal information."
-msgstr ""
+msgstr "Zmìna informací o u¾ivateli."
 
 #: userhelper-wrap.c:445
 msgid "Changing login shell."
-msgstr ""
+msgstr "Zmìna pøihla¹ovacího shellu."
 
 #: userhelper-wrap.c:448
 #, c-format
@@ -222,6 +229,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Pokou¹íte se spustit \"%s\", co¾ mù¾e pøinést administrátorská "
+"oprávnìní, ale je potøeba více informací, aby se dalo pokraèovat."
 
 #: userhelper-wrap.c:450
 #, c-format
@@ -229,23 +238,28 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrtorská práva. "
+"Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper-wrap.c:455
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská "
+"oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper-wrap.c:457
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Pokou¹íte se spustit pøíkaz, který poøebuje administrátorská oprávnìní. "
+"Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper-wrap.c:467
-#, fuzzy
 msgid "_Run Unprivileged"
-msgstr "Spustit neprivilegovanì"
+msgstr "_Spustit neprivilegovanì"
 
 #: userhelper-wrap.c:579 userhelper-wrap.c:596
 msgid "Pipe error.\n"
@@ -266,43 +280,39 @@ msgstr "Chyba pøi execl(), errno=%d\n"
 
 #: userinfo.c:300
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "V systému neexistujete. Odejdìte.\n"
 
 #: usermount.c:61 glade.strings:26
-#, fuzzy
 msgid "_Mount"
-msgstr "Pøipojit"
+msgstr "_Pøipojit"
 
 #: usermount.c:62
-#, fuzzy
 msgid "Un_mount"
-msgstr "Odpojit"
+msgstr "_Odpojit"
 
 #: usermount.c:310
-#, fuzzy
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Jste si jist?\n"
-"Znièíte tak v¹echna data na tomto disku.\n"
+"Jste si jist ¾e chcete formátovat tento disk? Formátováním budou znièena "
+"v¹echna obsa¾ená data."
 
 #: usermount.c:321
-#, fuzzy
 msgid "Perform a _low-level format."
-msgstr "Proveïte low level formátování."
+msgstr "Provést _low-level formátování."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Vytvoøit _systém souborù:"
 
 #: usermount.c:521
-#, fuzzy
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Nejsou k dispozici ¾ádné systémy pøipojitelné u¾ivatelem.\n"
+"Nejsou k dispozici ¾ádné systémy souborù, které byste mohl pøipojit "
+"nebo odpojit.\n"
 "Kontaktujte administrátora systému."
 
 #: usermount.c:522 usermount.c:530 glade.strings:22
@@ -310,9 +320,8 @@ msgid "User Mount Tool"
 msgstr "Nástroj pro pøipojení u¾ivatelem"
 
 #: usermount.c:544 glade.strings:28
-#, fuzzy
 msgid "_Format"
-msgstr "Formátovat"
+msgstr "_Formátovat"
 
 #: usermount.c:579 glade.strings:24
 msgid "Device"
@@ -324,7 +333,7 @@ msgstr "Adresáø"
 
 #: usermount.c:591
 msgid "Filesystem"
-msgstr ""
+msgstr "Systém souborù"
 
 #: glade.strings:7
 msgid "User Information"
@@ -339,28 +348,24 @@ msgid "Office:"
 msgstr "Kanceláø:"
 
 #: glade.strings:10
-#, fuzzy
 msgid "Office Phone Number"
-msgstr "Telefon do kanceláøe:"
+msgstr "Telefon do kanceláøe"
 
 #: glade.strings:11
-#, fuzzy
 msgid "Home Phone Number"
-msgstr "Domácí telefon:"
+msgstr "Domácí telefon"
 
 #: glade.strings:12
-#, fuzzy
 msgid "Login Shell"
-msgstr "Shell:"
+msgstr "Pøihla¹ovací Shell"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr ""
+msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
-#, fuzzy
 msgid "_Cancel"
-msgstr "Pøeru¹it"
+msgstr "_Pøeru¹it"
 
 #: glade.strings:15
 msgid "Message"
@@ -368,72 +373,20 @@ msgstr "Zpráva"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr ""
+msgstr "_Zavøít"
 
 #: glade.strings:18
 msgid "Query"
-msgstr ""
+msgstr "Otázka"
 
 #: glade.strings:25
 msgid "Type"
 msgstr "Typ"
 
 #: glade.strings:27
-#, fuzzy
 msgid "_Unmount"
-msgstr "Odpojit"
+msgstr "_Odpojit"
 
 #: glade.strings:29
-#, fuzzy
 msgid "E_xit"
-msgstr "Konec"
-
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "autentizuji \"%s\"\n"
-
-#, fuzzy
-#~ msgid "PAM retval = %d (%s)\n"
-#~ msgstr "PAM vrátil = %d\n"
-
-#~ msgid "Yes"
-#~ msgstr "Ano"
-
-#~ msgid "No"
-#~ msgstr "Ne"
-
-#~ msgid "Prompt"
-#~ msgstr "Vstup"
-
-#~ msgid "Input"
-#~ msgstr "Vstup"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "Pokud mám spustit \"%s\" s právy roota, jsou potøebné doplòující "
-#~ "informace."
-
-#~ msgid "Changing password for %s"
-#~ msgstr "Mìním heslo pro u¾ivatele %s"
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "Chcete %d odpovìï(i) z %d polo¾ek!?!?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "Kontrola konzistence není zapnuta."
-
-#~ msgid "Block is fine."
-#~ msgstr "Blok je v poøádku."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Blok byl uvolnìn dvakrát."
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "Pamì» pøed blokem byla naru¹ena."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "Pamì» za blokem byla naru¹ena."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Toto bude nápovìda."
+msgstr "_Konec"
