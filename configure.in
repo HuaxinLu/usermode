@@ -35,7 +35,12 @@ AC_CHECK_FUNC(pam_start,,[AC_CHECK_LIB(pam,pam_start,PAM_LIBS="-lpam -ldl",dl)])
 AC_CHECK_FUNC(misc_conv,,[AC_CHECK_LIB(pam_misc,misc_conv,PAM_LIBS="-lpam_misc $PAM_LIBS",$PAM_LIBS)])
 AC_SUBST(PAM_LIBS)
 
-AC_DEFINE(GTK_DISABLE_DEPRECATED,,[Disable use of deprecated GTK+ APIs.])
+AC_ARG_ENABLE(deprecation,[AC_HELP_STRING(--enable-deprecation,prohibit usermode from using deprecated GTK+ features)],usedeprecation=$enableval,usedeprecation=no)
+if test "$usedeprecation" = yes ; then
+	AC_MSG_RESULT([===== Disabling use of deprecated GLib and GTK+ APIs. =====])
+	AC_DEFINE(G_DISABLE_DEPRECATED,,[Disable use of deprecated GLib APIs.])
+	AC_DEFINE(GTK_DISABLE_DEPRECATED,,[Disable use of deprecated GTK+ APIs.])
+fi
 
 GLIB_GENMARSHAL=`$PKG_CONFIG --variable=glib_genmarshal glib-2.0`  
 AC_SUBST(GLIB_GENMARSHAL)
