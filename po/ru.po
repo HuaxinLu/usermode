@@ -1,66 +1,64 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: usermode 1.1\n"
 "POT-Creation-Date: 2000-08-03 15:08-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2000-08-08 01:20+0300\n"
+"Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
+"Language-Team: Black Cat Linux Team <blackcat-support@blackcatlinux.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Date: 1999-04-03 12:20+0200\n"
 
 #: ../userdialogs.c:35
 msgid "Message"
-msgstr ""
+msgstr "Сообщение"
 
 #: ../userdialogs.c:81 ../userhelper-wrap.c:358
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr ""
+msgstr "Приглашение"
 
 #: ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
-msgstr ""
+msgstr "ОК"
 
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
 msgid "Pipe error.\n"
-msgstr ""
+msgstr "Ошибка потока.\n"
 
 #: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
 #: ../usermount.c:770
 msgid "Cannot fork().\n"
-msgstr ""
+msgstr "Невозможно вызвать fork().\n"
 
 #: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
 #: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
 #: ../usermount.c:817
 msgid "dup2() error.\n"
-msgstr ""
+msgstr "ошибка dup2().\n"
 
 #: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
 #: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr ""
+msgstr "ошибка execl(), код ошибки %d\n"
 
 #: ../userhelper-wrap.c:115
 msgid "Information updated."
-msgstr ""
+msgstr "Информация обновлена."
 
 #: ../userhelper-wrap.c:118
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Вы ввели неверный пароль.\n"
+"Попробуйте еще раз."
 
 #: ../userhelper-wrap.c:121
 msgid ""
@@ -68,28 +66,33 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Одно или более из измененных полей ошибочны.\n"
+"Вероятная причина - наличие точек или запятых в одном из полей.\n"
+"Удалите их и попробуйте снова."
 
 #: ../userhelper-wrap.c:124
 msgid "Password resetting error."
-msgstr ""
+msgstr "Ошибка сброса пароля"
 
 #: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
+"Некоторые системные файлы заблокированы.\n"
+"Повторите через несколько минут."
 
 #: ../userhelper-wrap.c:130
 msgid "Unknown user."
-msgstr ""
+msgstr "Неизвестный пользователь."
 
 #: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
-msgstr ""
+msgstr "Недостаточно прав."
 
 #: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
-msgstr ""
+msgstr "Ошибочный вызов подпроцесса."
 
 #: ../userhelper-wrap.c:139
 msgid ""
@@ -97,36 +100,39 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"Ваша текущая оболочка не указана в /etc/shells.\n"
+"Вам не разрешено сменить вашу оболочку.\n"
+"Свяжитесь с системным администратором."
 
 #. well, this is unlikely to work either, but at least we tried...
 #: ../userhelper-wrap.c:143
 msgid "Out of memory."
-msgstr ""
+msgstr "Недостаточно памяти."
 
 #: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
-msgstr ""
+msgstr "Ошибка вызова exec()."
 
 #: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
-msgstr ""
+msgstr "Невозможно найти выбранную программу."
 
 #: ../userhelper-wrap.c:152
 msgid "Unknown error."
-msgstr ""
+msgstr "Неизвестная ошибка."
 
 #: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
-msgstr ""
+msgstr "Неизвестный код выхода."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Ввод"
 
 #: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "Необходимы ответы %d.\n"
 
 #: ../userhelper-wrap.c:345
 #, c-format
@@ -134,131 +140,137 @@ msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
 "required."
 msgstr ""
+"Чтобы выполнить \"%s\" с привелегиями %s, необходима дополнительная "
+"информация."
 
 #: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "Вы хотите получить %d ответ(ов) из %d полей ввода!?!?!\n"
 
 #: ../userhelper.c:102
 #, c-format
 msgid "Got error %d.\n"
-msgstr ""
+msgstr "Получена ошибка %d.\n"
 
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Пароль для %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "Проверка консистенции не включена"
 
 #: ../userhelper.c:389
 msgid "Block is fine."
-msgstr ""
+msgstr "Блок нормальный."
 
 #: ../userhelper.c:391
 msgid "Block freed twice."
-msgstr ""
+msgstr "Блок очищен дважды."
 
 #: ../userhelper.c:393
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "Memory before the block was clobbered."
 
 #: ../userhelper.c:395
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "Memory after the block was clobbered."
 
 #: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "userhelper должен быть setuid root\n"
 
 #: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr ""
+msgstr "выполнение \"%s\"\n"
 
 #: ../userinfo.c:125
 msgid "User Information"
-msgstr ""
+msgstr "Информация о пользователе"
 
 #: ../userinfo.c:154
 msgid "Help"
-msgstr ""
+msgstr "Помощь"
 
 #: ../userinfo.c:243
 msgid "Full Name:"
-msgstr ""
+msgstr "Полное имя:"
 
 #: ../userinfo.c:261
 msgid "Office:"
-msgstr ""
+msgstr "Офис:"
 
 #: ../userinfo.c:280
 msgid "Office Phone:"
-msgstr ""
+msgstr "Рабочий телефон:"
 
 #: ../userinfo.c:298
 msgid "Home Phone:"
-msgstr ""
+msgstr "Домашний телефон:"
 
 #: ../userinfo.c:316
 msgid "Shell:"
-msgstr ""
+msgstr "Оболочка:"
 
 #: ../userinfo.c:379
 msgid "This will be some help text."
-msgstr ""
+msgstr "Здесь должен быть текст помощи."
 
 #: ../usermount.c:56
 msgid "Mount"
-msgstr ""
+msgstr "Монтирование"
 
 #: ../usermount.c:57
 msgid "Unmount"
-msgstr ""
+msgstr "Отмонтирование"
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Утилита монтирования для пользователей"
 
 #: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
 msgstr ""
+"Нет файловых систем, которые может монтировать пользователь.\n"
+"Свяжитесь с системным администратором."
 
 #: ../usermount.c:178
 msgid "Directory"
-msgstr ""
+msgstr "Каталог"
 
 #: ../usermount.c:186
 msgid "Device"
-msgstr ""
+msgstr "Устройство"
 
 #: ../usermount.c:194
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: ../usermount.c:269
 msgid "Format"
-msgstr ""
+msgstr "Формат"
 
 #: ../usermount.c:363
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
 msgstr ""
+"Вы уверены?\n"
+"Все данные на этом диске будут уничтожены.\n"
 
 #: ../usermount.c:365
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: ../usermount.c:375
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: ../usermount.c:382
 msgid "Do low level format."
-msgstr ""
+msgstr "Выполнить формат низкого уровня."
