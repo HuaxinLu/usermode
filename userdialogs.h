@@ -26,6 +26,7 @@
 #define UD_HELP_TEXT "Help"
 #define UD_CANCEL_TEXT "Cancel"
 #define UD_EXIT_TEXT "Exit"
+#define UD_FALLBACK_TEXT "Run Unprivileged"
 
 /* consider a "has args" arg, so I can use the arg argument or not at will */
 GtkWidget* create_message_box(gchar* message, gchar* title);

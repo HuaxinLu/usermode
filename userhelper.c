@@ -133,6 +133,10 @@ static char *read_string(void)
     if((slen > 0) && ((buffer[slen - 1] == '\n') || isspace(buffer[slen - 1]))){
         buffer[slen-1] = '\0';
     }
+    if(buffer[0] == UH_TEXT) {
+        memmove(buffer, buffer + 1, BUFSIZ - 1);
+    }
+    fprintf(stderr, "returning \"%s\"\n", buffer);
     return buffer;
 }
 
@@ -192,21 +196,21 @@ static int conv_func(int num_msg, const struct pam_message **msg,
     /* now the second pass */
     for (count = 0; count < num_msg; count++) {
 	switch (msg[count]->msg_style) {
-	    case PAM_PROMPT_ECHO_ON:
-		reply[count].resp_retcode = PAM_SUCCESS;
-		reply[count].resp = read_string();
-		/* PAM frees resp */
-		break;
-	    case PAM_PROMPT_ECHO_OFF:
-		reply[count].resp_retcode = PAM_SUCCESS;
-		reply[count].resp = read_string();
-		/* PAM frees resp */
-		break;
 	    case PAM_TEXT_INFO:
 		/* ignore it... */
 		break;
 	    case PAM_ERROR_MSG:
 		/* also ignore it... */
+		break;
+	    case PAM_PROMPT_ECHO_ON:
+		/* fall through */
+	    case PAM_PROMPT_ECHO_OFF:
+		reply[count].resp_retcode = PAM_SUCCESS;
+		reply[count].resp = read_string();
+		if(reply[count].resp[0] == UH_ABORT) {
+		  free (reply);
+		  return PAM_MAXTRIES; /* Shrug. */
+		}
 		break;
 	    default:
 		/* Must be an error of some sort... */

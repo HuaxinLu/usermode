@@ -213,18 +213,13 @@ userhelper_parse_childout(char* outline)
     gtk_signal_connect(GTK_OBJECT(resp->top), "map",
 		       GTK_SIGNAL_FUNC(userhelper_grab_focus), NULL);
 
-    resp->ok = gtk_button_new_with_label(UD_OK_TEXT);
-    gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->ok)->child), 4, 0);
-
-    resp->cancel = gtk_button_new_with_label(UD_CANCEL_TEXT);
-    gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->cancel)->child), 4, 0);
-
     resp->table = gtk_table_new(1, 2, FALSE);
     resp->rows = 1;
 
     vbox = gtk_vbox_new(FALSE, 4);
     sbox = gtk_hbox_new(TRUE, 4);
     hbox = gtk_hbutton_box_new();
+    gtk_object_set_data(GTK_OBJECT(resp->top), UH_ACTION_AREA, hbox);
     gtk_box_pack_start(GTK_BOX(vbox), resp->table, TRUE, TRUE, 4);
     gtk_box_pack_start(GTK_BOX(vbox), gtk_hseparator_new(), FALSE, FALSE, 4);
     gtk_box_pack_start(GTK_BOX(vbox), sbox, FALSE, FALSE, 4);
@@ -245,7 +240,12 @@ userhelper_parse_childout(char* outline)
       }
     }
 
+    resp->ok = gtk_button_new_with_label(UD_OK_TEXT);
+    gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->ok)->child), 4, 0);
     gtk_box_pack_start(GTK_BOX(hbox), resp->ok, FALSE, FALSE, 0);
+
+    resp->cancel = gtk_button_new_with_label(UD_CANCEL_TEXT);
+    gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->cancel)->child), 4, 0);
     gtk_box_pack_start(GTK_BOX(hbox), resp->cancel, FALSE, FALSE, 0);
 
     gtk_signal_connect(GTK_OBJECT(resp->top), "delete_event", 
@@ -280,7 +280,7 @@ userhelper_parse_childout(char* outline)
 	rest = NULL;
       }
     }
-    /* printf("(%d) \"%s\"\n", prompt_type, prompt); */
+    printf("(%d) \"%s\"\n", prompt_type, prompt);
 
     msg->type = prompt_type;
     msg->message = prompt;
@@ -337,21 +337,9 @@ userhelper_parse_childout(char* outline)
 	break;
 
       case UH_SERVICE_NAME:
-	title = g_strdup_printf("Input required to run \"%s\"", prompt);
-	gtk_window_set_title(GTK_WINDOW(resp->top), title);
-	g_free(title);
-
-	title = NULL;
-	if(resp->fallback) {
-	  title = g_strdup_printf("In order to run \"%s\" with %s's privileges,"
-                                  " additional information is required."
-                                  " (It can also be run unprivileged.)",
-				  prompt, resp->user);
-	} else {
-	  title = g_strdup_printf("In order to run \"%s\" with %s's privileges,"
-                                  " additional information is required.",
-				  prompt, resp->user);
-	}
+	title = g_strdup_printf("In order to run \"%s\" with %s's privileges,"
+                                " additional information is required.",
+				prompt, resp->user);
 	msg->label = gtk_label_new(title);
 	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
@@ -379,6 +367,22 @@ userhelper_parse_childout(char* outline)
                  atoi(prompt), resp->responses);
           exit (1);
 	}
+
+	if (resp->fallback) {
+          gpointer a = GTK_WIDGET(gtk_object_get_data(GTK_OBJECT(resp->top),
+			                              UH_ACTION_AREA));
+	  GtkWidget *hbox = GTK_WIDGET(a);
+          resp->unprivileged = gtk_button_new_with_label(UD_FALLBACK_TEXT);
+          gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->unprivileged)->child),
+			       4, 0);
+          gtk_box_pack_start(GTK_BOX(hbox), resp->unprivileged,
+			     FALSE, FALSE, 0);
+          if(resp->unprivileged != NULL) {
+            gtk_signal_connect(GTK_OBJECT(resp->unprivileged), "clicked", 
+		               GTK_SIGNAL_FUNC(userhelper_write_childin), resp);
+          }
+	}
+
 	gtk_widget_show_all(resp->top);
 	if(GTK_IS_ENTRY(resp->head)) {
 	  gtk_widget_grab_focus(resp->head);
@@ -427,17 +431,33 @@ userhelper_write_childin(GtkWidget *widget, response *resp)
 {
   char* input;
   int len;
+  guchar byte;
   GSList *message_list = resp->message_list;
 
-  for (message_list = resp->message_list;
-       (message_list != NULL) && (message_list->data != NULL);
-       message_list = g_slist_next(message_list)) {
-    if(GTK_IS_ENTRY(((message*)message_list->data)->entry)) {
-      message *m = (message*)message_list->data;
-      input = gtk_entry_get_text(GTK_ENTRY(m->entry));
-      len = strlen(input);
-      write(childin[1], input, len);
-      write(childin[1], "\n", 1);
+  if(widget == resp->unprivileged) {
+    byte = UH_ABORT;
+    for (message_list = resp->message_list;
+         (message_list != NULL) && (message_list->data != NULL);
+         message_list = g_slist_next(message_list)) {
+      if(GTK_IS_ENTRY(((message*)message_list->data)->entry)) {
+        write(childin[1], &byte, 1);
+        write(childin[1], "\n", 1);
+      }
+    }
+  }
+  if(widget == resp->ok) {
+    byte = UH_TEXT;
+    for (message_list = resp->message_list;
+         (message_list != NULL) && (message_list->data != NULL);
+         message_list = g_slist_next(message_list)) {
+      if(GTK_IS_ENTRY(((message*)message_list->data)->entry)) {
+        message *m = (message*)message_list->data;
+        input = gtk_entry_get_text(GTK_ENTRY(m->entry));
+        len = strlen(input);
+        write(childin[1], &byte, 1);
+        write(childin[1], input, len);
+        write(childin[1], "\n", 1);
+      }
     }
   }
   gtk_widget_destroy(resp->top);

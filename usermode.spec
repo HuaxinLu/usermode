@@ -78,6 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 - strip all binaries by default
 - add the name of the program being run to the userhelper dialog
 - add a graphic to the userhelper-wrap package
+- add a button to jump straight to nonprivileged operation when supported
 
 * Sun Jun 18 2000 Matt Wilson <msw@redhat.com>
 - rebuilt to see if we get stripped binaries

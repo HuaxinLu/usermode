@@ -28,6 +28,7 @@
 #include <sys/wait.h>
 
 #include "userhelper.h"
+#define UH_ACTION_AREA "userhelper-action-area"
 
 typedef struct message {
 	int type;
@@ -50,6 +51,7 @@ typedef struct response {
 	GtkWidget *table;
 	GtkWidget *ok;
 	GtkWidget *cancel;
+	GtkWidget *unprivileged;
 } response;
 
 void userhelper_run(char *path, ...);
