@@ -1,11 +1,12 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.17
+Version: 1.18
 Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.gz
-Requires: util-linux pam >= 0.66-5 SysVinit >= 2.74-14
+Requires: util-linux pam >= 0.66-5
+Conflicts: SysVinit < 2.74-14
 BuildRoot: /var/tmp/usermode-root
 
 %description
@@ -70,6 +71,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jan 07 2000 Michael K. Johnson <johnsonm@redhat.com>
+- The root exploit fix created a bug that only showed up in certain
+  circumstances.  Unfortunately, we didn't test in those circumstances...
+
 * Mon Jan 03 2000 Michael K. Johnson <johnsonm@redhat.com>
 - fixed local root exploit
 
