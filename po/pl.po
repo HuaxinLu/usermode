@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2004-07-22 11:53+0200\n"
+"PO-Revision-Date: 2004-08-20 16:47+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: POLISH <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -251,9 +251,8 @@ msgstr "Informacja"
 
 #: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
-#, fuzzy
 msgid "Placeholder text."
-msgstr "Tylko napisy"
+msgstr "Miejsce na tekst."
 
 #: userhelper-wrap.c:782
 msgid "Changing personal information."
