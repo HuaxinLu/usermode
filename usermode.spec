@@ -179,7 +179,7 @@ rm -rf $RPM_BUILD_ROOT
 - translation updates
 
 * Wed Sep  4 2002 Nalin Dahyabhai <nalin@redhat.com> 1.63-1
-- userhelper: swallow the exec'd program's exit stauts, which would be
+- userhelper: swallow the exec'd program's exit status, which would be
   misinterpreted by consolehelper anyway
 
 * Tue Sep  3 2002 Nalin Dahyabhai <nalin@redhat.com> 1.62-1
