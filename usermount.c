@@ -17,8 +17,15 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <mntent.h>
+#include <string.h>
+#include <wait.h>
+#include <errno.h>
 #include <gtk/gtk.h>
+
+#define MAXLINE 512
 
 /* general thoughts on the usermount tool...
  * -- needs to system() out to /bin/mount.  I need to be suid root to
@@ -41,6 +48,7 @@
 
 void create_usermount_window();
 GtkWidget* create_mount_table();
+void user_mount(GtkWidget* widget, char* file);
 
 int
 main(int argc, char* argv[])
@@ -75,6 +83,8 @@ create_usermount_window()
   /* action_area buttons */
   ok = gtk_button_new_with_label("OK");
   cancel = gtk_button_new_with_label("Cancel");
+  gtk_signal_connect(GTK_OBJECT(cancel), "clicked", 
+		     (GtkSignalFunc) gtk_exit, NULL);
   help = gtk_button_new_with_label("Help");
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), 
@@ -105,6 +115,7 @@ create_mount_table()
   GtkWidget* device;
   GtkWidget* fstype;
   GtkWidget* mount;
+  GtkWidget* headings;
 
   struct mntent* fstab_entry;
 /*   struct mntent* mtab_entry; */
@@ -121,6 +132,32 @@ create_mount_table()
   gtk_table_set_row_spacings(GTK_TABLE(mount_table), 5);
   gtk_table_set_col_spacings(GTK_TABLE(mount_table), 5);
 
+  headings = gtk_label_new("Mount Point");
+  gtk_table_attach(GTK_TABLE(mount_table), headings,
+		   0, 1, row, row+1,
+		   GTK_EXPAND | GTK_FILL, 
+		   GTK_EXPAND | GTK_FILL, 
+		   0, 0);
+  gtk_widget_show(headings);
+
+  headings = gtk_label_new("Device");
+  gtk_table_attach(GTK_TABLE(mount_table), headings,
+		   1, 2, row, row+1,
+		   GTK_EXPAND | GTK_FILL, 
+		   GTK_EXPAND | GTK_FILL, 
+		   0, 0);
+  gtk_widget_show(headings);
+
+  headings = gtk_label_new("Type");
+  gtk_table_attach(GTK_TABLE(mount_table), headings,
+		   2, 3, row, row+1,
+		   GTK_EXPAND | GTK_FILL, 
+		   GTK_EXPAND | GTK_FILL, 
+		   0, 0);
+  gtk_widget_show(headings);
+  
+
+  row++;
   /* this is a little trickier than I had hoped... it's going to be
    * hard to figure out the current status of the filesystems... it
    * can be done, but I'm not going to code it right now.
@@ -132,19 +169,8 @@ create_mount_table()
   fstab = setmntent(MNTTAB, "r");
 /*   mtab = setmntent("/etc/mtab", 'r'); */
 
-/*   fstab_entry = getmntent(fstab); */
-
-  /* DEBUG */
-  printf("got here.\n");
-
   while((fstab_entry = getmntent(fstab)) != NULL)
     {
-/*       fstab_entry = getmntent(fstab); */
-
-      /* DEBUG */
-      printf("got here.\n");
-      printf("fstab_entry->mnt_opts is: %s\n", fstab_entry->mnt_opts);
-
       /* not sure if user is a valid "real" option... I think it might
        * just be translated into equivalent other options... reason is
        * that mntent.h doesn't have a macro for it.  We'll see.
@@ -176,7 +202,12 @@ create_mount_table()
 			   0, 0);
 	  gtk_widget_show(fstype);
 
-	  mount = gtk_toggle_button_new_with_label("Mount");
+/* 	  mount = gtk_toggle_button_new_with_label("Mount"); */
+	  mount = gtk_button_new_with_label("Mount");
+	  /* FIXME: need to pass an arg... */
+	  gtk_signal_connect(GTK_OBJECT(mount), "clicked",
+			     (GtkSignalFunc) user_mount, 
+			     strdup(fstab_entry->mnt_dir));
 	  gtk_table_attach(GTK_TABLE(mount_table), mount, 
 			   3, 4, row, row+1,
 			   GTK_EXPAND | GTK_FILL, 
@@ -192,3 +223,107 @@ create_mount_table()
   return mount_table;
 }
 
+void
+user_mount(GtkWidget* widget, char* file)
+{
+  /* more aggressive error checking. */
+
+  char* cmd = "/bin/mount";
+  int childout[2];
+  int childerr[2];
+  pid_t pid;
+
+  char outline[MAXLINE];
+  char errline[MAXLINE];
+  char* buffer;
+  int n;
+  int count;
+
+  if(pipe(childout) < 0 || pipe(childerr) < 0)
+    {
+      fprintf(stderr, "Pipe error.\n");
+      exit(1);
+    }
+
+  if((pid = fork()) < 0)
+    {
+      fprintf(stderr, "Cannot fork().\n");
+    }
+  else if(pid > 0)		/* parent */
+    {
+      if(waitpid(pid, NULL, 0) < 0)
+	{
+	  fprintf(stderr, "waitpid() error\n");
+	  exit(2);
+	}
+
+      close(childout[1]);
+      close(childerr[1]);
+
+      n = 0;
+
+/*       count = read(childerr[0], errline, MAXLINE); */
+/*       if(count >= 0) */
+/* 	{ */
+/* 	  errline[count] = '\0'; */
+/* 	  fprintf(stderr, "errline is: %s\n", errline); */
+/* 	} */
+/*       fprintf(stderr, "count=%d, errno=%d\n", count, errno); */
+/*       count = read(childout[0], outline, MAXLINE); */
+/*       if(count >= 0) */
+/* 	{ */
+/* 	  outline[count] = '\0'; */
+/* 	  fprintf(stderr, "outline is: %s\n", outline); */
+/* 	} */
+/*       fprintf(stderr, "count=%d, errno=%d\n", count, errno); */
+
+      while((count = read(childerr[0], errline, MAXLINE)) > 0)
+	{
+	  char* tmp;
+
+ 	  tmp = buffer;
+
+	  buffer = malloc(sizeof(char) * MAXLINE * n + count);
+	  strncpy(buffer, tmp, MAXLINE);
+	  strncpy(buffer + MAXLINE, errline, count);
+
+	  buffer[count*n] = '\0';
+
+ 	  n++;
+	}
+
+      fprintf(stderr, "hold up..");
+
+    }
+  else				/* child */
+    {
+      close(childout[0]);
+      close(childerr[0]);
+
+      if(childout[1] != STDOUT_FILENO)
+	{
+	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
+	    {
+	      fprintf(stdout, "dup2() error.\n");
+	      exit(2);
+	    }
+	}
+      if(childerr[1] != STDERR_FILENO)
+	{
+	  if(dup2(childerr[1], STDERR_FILENO) != STDERR_FILENO)
+	    {
+	      fprintf(stdout, "dup2() error.\n");
+	      exit(2);
+	    }
+	}
+
+      fprintf(stderr, "testing!\n");
+
+/*       if(execl(cmd, cmd, file, 0) < 0) */
+/* 	{ */
+/* 	  fprintf(stderr, "execl() error, errno=%d\n", errno); */
+/* 	} */
+
+    }
+
+}
