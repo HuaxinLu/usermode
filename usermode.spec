@@ -96,11 +96,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/userpasswd
 %{_mandir}/man1/userpasswd.1*
 %{_bindir}/consolehelper-gtk
+%{_bindir}/pam-panel-icon
 %{_datadir}/%{name}
 
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Wed Jun 19 2002 Havoc Pennington <hp@redhat.com>
+- put pam-panel-icon in file list
+
 * Mon May 20 2002 Nalin Dahyabhai <nalin@redhat.com> 1.55-2
 - don't strip binaries which have no special privileges
 
