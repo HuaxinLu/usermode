@@ -29,6 +29,9 @@ main(int argc, char* argv[])
   char **constructed_argv;
   int cargc, cdiff;
   char *progname;
+  int graphics_available = 0;
+  int fake_argc = 1;
+  char **fake_argv;
 
   constructed_argv = malloc((argc+4) * sizeof(char *));
   constructed_argv[0] = UH_PATH;
@@ -36,17 +39,13 @@ main(int argc, char* argv[])
   if (progname) progname++; /* pass the '/' character */
   else progname = argv[0];
 
-  display = getenv("DISPLAY");
-  if (display && *display && !getuid()) { /* root won't be authed anyway */
-    int fake_argc = 1;
-    char **fake_argv;
+  fake_argv = malloc(2 * sizeof(char *));
+  fake_argv[0] = argv[0];
+  fake_argv[1] = NULL;
+  if (gtk_init_check(&fake_argc, &fake_argv))
+    graphics_available = 1;
 
-    fake_argv = malloc(2 * sizeof(char *));
-    fake_argv[0] = argv[0];
-    fake_argv[1] = NULL;
-    gtk_init(&fake_argc, &fake_argv);
-
-
+  if (graphics_available) {
     constructed_argv[1] = UH_WRAP_OPT;
     constructed_argv[2] = progname;
     cdiff = 2;
