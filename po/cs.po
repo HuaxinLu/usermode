@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
-"POT-Creation-Date: 2000-07-31 10:41-0400\n"
+"POT-Creation-Date: 2000-08-02 12:21-0400\n"
 "PO-Revision-Date: 2000-08-02 01:07+0100\n"
 "Last-Translator: Milan Kerslager <milan.kerslager@spsselib.hiedu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -13,7 +13,7 @@ msgstr ""
 msgid "Message"
 msgstr "Zpráva"
 
-#: ../userdialogs.c:81 ../userhelper-wrap.c:359
+#: ../userdialogs.c:81 ../userhelper-wrap.c:358
 msgid "Error"
 msgstr "Chyba"
 
@@ -25,33 +25,33 @@ msgstr ""
 msgid "OK"
 msgstr "OK"
 
-#: ../userhelper-wrap.c:44 ../usermount.c:580 ../usermount.c:675
-#: ../usermount.c:763
+#: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
+#: ../usermount.c:764
 msgid "Pipe error.\n"
 msgstr "Chyba trubky.\n"
 
-#: ../userhelper-wrap.c:50 ../usermount.c:586 ../usermount.c:686
-#: ../usermount.c:769
+#: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
+#: ../usermount.c:770
 msgid "Cannot fork().\n"
 msgstr "Nemohu provést fork().\n"
 
-#: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:626
-#: ../usermount.c:634 ../usermount.c:738 ../usermount.c:746 ../usermount.c:808
-#: ../usermount.c:816
+#: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
+#: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
+#: ../usermount.c:817
 msgid "dup2() error.\n"
 msgstr "Chyba pøi dup2().\n"
 
-#: ../userhelper-wrap.c:87 ../usermount.c:641 ../usermount.c:753
-#: ../usermount.c:823
+#: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
+#: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Chyba pøi execl(), errno=%d\n"
 
-#: ../userhelper-wrap.c:116
+#: ../userhelper-wrap.c:115
 msgid "Information updated."
 msgstr "Informace aktualizovány."
 
-#: ../userhelper-wrap.c:119
+#: ../userhelper-wrap.c:118
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -59,18 +59,18 @@ msgstr ""
 "Vlo¾eno neplatné heslo.\n"
 "Zkuste to znovu."
 
-#: ../userhelper-wrap.c:122
+#: ../userhelper-wrap.c:121
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
 
-#: ../userhelper-wrap.c:125
+#: ../userhelper-wrap.c:124
 msgid "Password resetting error."
 msgstr ""
 
-#: ../userhelper-wrap.c:128
+#: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -78,19 +78,19 @@ msgstr ""
 "Nìkteré systémové soubory jsou uzamèeny.\n"
 "Zkuste to prosím za chvíli znovu."
 
-#: ../userhelper-wrap.c:131
+#: ../userhelper-wrap.c:130
 msgid "Unknown user."
 msgstr "Neznámý u¾ivatel."
 
-#: ../userhelper-wrap.c:134
+#: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
 msgstr "Nedostateèná práva."
 
-#: ../userhelper-wrap.c:137
+#: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
 msgstr "Neplatné volání subprocesu."
 
-#: ../userhelper-wrap.c:140
+#: ../userhelper-wrap.c:139
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -101,39 +101,39 @@ msgstr ""
 "Chybu konzultujte s administrátorem systému."
 
 #. well, this is unlikely to work either, but at least we tried...
-#: ../userhelper-wrap.c:144
+#: ../userhelper-wrap.c:143
 msgid "Out of memory."
 msgstr "Nedostatek pamìti."
 
-#: ../userhelper-wrap.c:147
+#: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
 msgstr "Volání exec() selhalo."
 
-#: ../userhelper-wrap.c:150
+#: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
 msgstr "Nemohu najít vybraný progra."
 
-#: ../userhelper-wrap.c:153
+#: ../userhelper-wrap.c:152
 msgid "Unknown error."
 msgstr "Neznámá chyba."
 
-#: ../userhelper-wrap.c:156
+#: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
 msgstr "Neznámý návratový kód."
 
-#: ../userhelper-wrap.c:321
+#: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:346
+#: ../userhelper-wrap.c:345
 #, c-format
 msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
 "required."
 msgstr ""
 
-#: ../userhelper-wrap.c:373
+#: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
 msgstr ""
@@ -145,8 +145,8 @@ msgstr "Chyba %d.\n"
 
 #: ../userhelper.c:197
 #, c-format
-msgid "%s's password"
-msgstr "heslo u¾ivatele %s"
+msgid "Password for %s"
+msgstr ""
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
@@ -168,11 +168,11 @@ msgstr ""
 msgid "Memory after the block was clobbered."
 msgstr ""
 
-#: ../userhelper.c:427
+#: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí být SUID root\n"
 
-#: ../userhelper.c:663 ../userhelper.c:695
+#: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr ""
@@ -209,11 +209,11 @@ msgstr "Shell:"
 msgid "This will be some help text."
 msgstr "Toto bude nápovìda."
 
-#: ../usermount.c:119
+#: ../usermount.c:120
 msgid "User Mount Tool"
 msgstr ""
 
-#: ../usermount.c:136
+#: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
@@ -221,23 +221,23 @@ msgstr ""
 "Nejsou k dispozici ¾ádné systémy pøipojitelné u¾ivatelem.\n"
 "Kontaktujte administrátora systému."
 
-#: ../usermount.c:177
+#: ../usermount.c:178
 msgid "Directory"
 msgstr "Adresáø"
 
-#: ../usermount.c:185
+#: ../usermount.c:186
 msgid "Device"
 msgstr "Zaøízení"
 
-#: ../usermount.c:193
+#: ../usermount.c:194
 msgid "Type"
 msgstr "Typ"
 
-#: ../usermount.c:268
+#: ../usermount.c:269
 msgid "Format"
 msgstr "Formátovat"
 
-#: ../usermount.c:362
+#: ../usermount.c:363
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
@@ -245,14 +245,17 @@ msgstr ""
 "Jste si jist?\n"
 "Znièíte tak v¹echna data na tomto disku.\n"
 
-#: ../usermount.c:364
+#: ../usermount.c:365
 msgid "Yes"
 msgstr "Ano"
 
-#: ../usermount.c:374
+#: ../usermount.c:375
 msgid "No"
 msgstr "Ne"
 
-#: ../usermount.c:381
+#: ../usermount.c:382
 msgid "Do low level format."
 msgstr "Proveïte low level formátování."
+
+#~ msgid "%s's password"
+#~ msgstr "heslo u¾ivatele %s"

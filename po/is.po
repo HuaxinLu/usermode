@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
-"POT-Creation-Date: 2000-07-31 10:41-0400\n"
+"POT-Creation-Date: 2000-08-02 12:21-0400\n"
 "PO-Revision-Date: 2000-08-02 10:47+0000\n"
 "Last-Translator: Richard Allen <ra@hp.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
@@ -13,7 +13,7 @@ msgstr ""
 msgid "Message"
 msgstr "Skilaboð"
 
-#: ../userdialogs.c:81 ../userhelper-wrap.c:359
+#: ../userdialogs.c:81 ../userhelper-wrap.c:358
 msgid "Error"
 msgstr "Villa"
 
@@ -25,33 +25,33 @@ msgstr "Spurning"
 msgid "OK"
 msgstr "Í lagi"
 
-#: ../userhelper-wrap.c:44 ../usermount.c:580 ../usermount.c:675
-#: ../usermount.c:763
+#: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
+#: ../usermount.c:764
 msgid "Pipe error.\n"
 msgstr "Pípuvilla.\n"
 
-#: ../userhelper-wrap.c:50 ../usermount.c:586 ../usermount.c:686
-#: ../usermount.c:769
+#: ../userhelper-wrap.c:50 ../usermount.c:587 ../usermount.c:687
+#: ../usermount.c:770
 msgid "Cannot fork().\n"
 msgstr "Get ekki notað fort().\n"
 
-#: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:626
-#: ../usermount.c:634 ../usermount.c:738 ../usermount.c:746 ../usermount.c:808
-#: ../usermount.c:816
+#: ../userhelper-wrap.c:69 ../userhelper-wrap.c:78 ../usermount.c:627
+#: ../usermount.c:635 ../usermount.c:739 ../usermount.c:747 ../usermount.c:809
+#: ../usermount.c:817
 msgid "dup2() error.\n"
 msgstr "villa í dup2().\n"
 
-#: ../userhelper-wrap.c:87 ../usermount.c:641 ../usermount.c:753
-#: ../usermount.c:823
+#: ../userhelper-wrap.c:86 ../usermount.c:642 ../usermount.c:754
+#: ../usermount.c:824
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() villa, errno=%d\n"
 
-#: ../userhelper-wrap.c:116
+#: ../userhelper-wrap.c:115
 msgid "Information updated."
 msgstr "Upplýsingar uppfærðar."
 
-#: ../userhelper-wrap.c:119
+#: ../userhelper-wrap.c:118
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -59,7 +59,7 @@ msgstr ""
 "Lykilorðið sem þú gafst upp er ógilt.\n"
 "Vinsamlegast reyndu aftur."
 
-#: ../userhelper-wrap.c:122
+#: ../userhelper-wrap.c:121
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -69,11 +69,11 @@ msgstr ""
 "Orsökin er líklega að ein af færslunum inniheldur tvípunkt eða kommu.\n"
 "Fjarlægðu þær og reyndu aftur."
 
-#: ../userhelper-wrap.c:125
+#: ../userhelper-wrap.c:124
 msgid "Password resetting error."
 msgstr "Villa við að frumstilla aðgangsorð."
 
-#: ../userhelper-wrap.c:128
+#: ../userhelper-wrap.c:127
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -81,19 +81,19 @@ msgstr ""
 "Sumar kerfisskrárnar eru læstar.\n"
 "Reyndu aftur eftir smá stund."
 
-#: ../userhelper-wrap.c:131
+#: ../userhelper-wrap.c:130
 msgid "Unknown user."
 msgstr "Óþekktur notandi."
 
-#: ../userhelper-wrap.c:134
+#: ../userhelper-wrap.c:133
 msgid "Insufficient rights."
 msgstr "Ekki nægar heimildir."
 
-#: ../userhelper-wrap.c:137
+#: ../userhelper-wrap.c:136
 msgid "Invalid call to sub process."
 msgstr "Ógilt kall í undirferli."
 
-#: ../userhelper-wrap.c:140
+#: ../userhelper-wrap.c:139
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -104,32 +104,32 @@ msgstr ""
 "Hafðu samband við kerfisstjórann þinn."
 
 #. well, this is unlikely to work either, but at least we tried...
-#: ../userhelper-wrap.c:144
+#: ../userhelper-wrap.c:143
 msgid "Out of memory."
 msgstr "Minnið er búið."
 
-#: ../userhelper-wrap.c:147
+#: ../userhelper-wrap.c:146
 msgid "The exec() call failed."
 msgstr "exec() kerfisfallið brást."
 
-#: ../userhelper-wrap.c:150
+#: ../userhelper-wrap.c:149
 msgid "Failed to find selected program."
 msgstr "Gat ekki fundið forritið sem þú valdir."
 
-#: ../userhelper-wrap.c:153
+#: ../userhelper-wrap.c:152
 msgid "Unknown error."
 msgstr "Óþekkt villa."
 
-#: ../userhelper-wrap.c:156
+#: ../userhelper-wrap.c:155
 msgid "Unknown exit code."
 msgstr "Óþekkt skilagildi."
 
-#: ../userhelper-wrap.c:321
+#: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
 msgstr "Þarfnast %d svara.\n"
 
-#: ../userhelper-wrap.c:346
+#: ../userhelper-wrap.c:345
 #, c-format
 msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
@@ -138,7 +138,7 @@ msgstr ""
 "Til að hægt sé að keyra \"%s\" með heimildum %s er þörf á frekari "
 "upplýsingum."
 
-#: ../userhelper-wrap.c:373
+#: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
 msgstr "Viltu %d svör úr %d færslum!?!?!\n"
@@ -150,8 +150,8 @@ msgstr "Fékk villu %d.\n"
 
 #: ../userhelper.c:197
 #, c-format
-msgid "%s's password"
-msgstr "lykilorð %s"
+msgid "Password for %s"
+msgstr ""
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
@@ -173,11 +173,11 @@ msgstr "Minnið á undan blokkinni var stútað."
 msgid "Memory after the block was clobbered."
 msgstr "Minnið á eftir blokkinni var stútað."
 
-#: ../userhelper.c:427
+#: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper verður að vera 'setuid' ofurpaur\n"
 
-#: ../userhelper.c:663 ../userhelper.c:695
+#: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr "alveg að fara að keyra \"%s\"\n"
@@ -214,11 +214,11 @@ msgstr "Skél:"
 msgid "This will be some help text."
 msgstr "Þetta verður hjálpartexti."
 
-#: ../usermount.c:119
+#: ../usermount.c:120
 msgid "User Mount Tool"
 msgstr "Tengitól fyrir notendur"
 
-#: ../usermount.c:136
+#: ../usermount.c:137
 msgid ""
 "There are no user mountable filesystems.\n"
 "Contact your administrator."
@@ -226,23 +226,23 @@ msgstr ""
 "Það eru engin tengjanleg skráarkerfi.\n"
 "Hafðu samband við kerfisstjórann."
 
-#: ../usermount.c:177
+#: ../usermount.c:178
 msgid "Directory"
 msgstr "Mappa"
 
-#: ../usermount.c:185
+#: ../usermount.c:186
 msgid "Device"
 msgstr "Tæki"
 
-#: ../usermount.c:193
+#: ../usermount.c:194
 msgid "Type"
 msgstr "Tegund"
 
-#: ../usermount.c:268
+#: ../usermount.c:269
 msgid "Format"
 msgstr "Forsníða"
 
-#: ../usermount.c:362
+#: ../usermount.c:363
 msgid ""
 "Are you sure?\n"
 "You will destroy any data on that disk.\n"
@@ -250,14 +250,17 @@ msgstr ""
 "Ertu viss?\n"
 "Þú munt eyða öllum gögnum á þessum disk.\n"
 
-#: ../usermount.c:364
+#: ../usermount.c:365
 msgid "Yes"
 msgstr "Já"
 
-#: ../usermount.c:374
+#: ../usermount.c:375
 msgid "No"
 msgstr "Nei"
 
-#: ../usermount.c:381
+#: ../usermount.c:382
 msgid "Do low level format."
 msgstr "Ekki lágforsníða."
+
+#~ msgid "%s's password"
+#~ msgstr "lykilorð %s"
