@@ -511,7 +511,7 @@ int main(int argc, char *argv[])
 	pam_end(pamh, PAM_SUCCESS);
 
 	/* time for an exec */
-	setuid(getuid());
+	setuid(0);
 	argv[optind-1] = progname;
 	execv(constructed_path, argv+optind-1);
 	exit (ERR_EXEC_FAILED);
