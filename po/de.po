@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-07-24 09:37-0400\n"
+"POT-Creation-Date: 2002-07-24 09:41-0400\n"
 "PO-Revision-Date: 2002-04-14 03:06GMT\n"
 "Last-Translator: Karsten Hopp <karsten@redhat.de>\n"
 "Language-Team: German <de@li.org>\n"

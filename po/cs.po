@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
-"POT-Creation-Date: 2002-07-24 09:37-0400\n"
+"POT-Creation-Date: 2002-07-24 09:41-0400\n"
 "PO-Revision-Date: 2002-04-21 21:27+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"

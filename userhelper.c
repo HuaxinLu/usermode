@@ -325,7 +325,7 @@ converse_console(int num_msg, const struct pam_message **msg,
 			if (app_data->fallback_allowed) {
 				text = g_strdup_printf(_("You are attempting to run a command which may benefit from\nadministrative privileges, but more information is needed in order to do so."));
 			} else {
-				text = g_strdup_printf(_("You are attempting to run a command which requires administrative\nprivileges, but more information is needed in order to do so."), service);
+				text = g_strdup_printf(_("You are attempting to run a command which requires administrative\nprivileges, but more information is needed in order to do so."));
 			}
 		}
 		if (text != NULL) {

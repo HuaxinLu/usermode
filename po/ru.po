@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
-"POT-Creation-Date: 2002-07-24 09:37-0400\n"
+"POT-Creation-Date: 2002-07-24 09:41-0400\n"
 "PO-Revision-Date: 2002-04-12 23:34EET\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"

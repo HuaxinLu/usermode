@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode CVS\n"
-"POT-Creation-Date: 2002-07-24 09:37-0400\n"
+"POT-Creation-Date: 2002-07-24 09:41-0400\n"
 "PO-Revision-Date: 2002-07-24 15:20GMT+10:00\n"
 "Last-Translator: James Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <i18-list@redhat.com>\n"

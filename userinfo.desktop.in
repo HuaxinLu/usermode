@@ -5,3 +5,4 @@ _Comment=Change personal information
 Exec=userinfo
 Terminal=0
 Type=Application
+Icon=user_icon.png
