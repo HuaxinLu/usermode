@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
 "POT-Creation-Date: 2000-08-03 15:08-0400\n"
-"PO-Revision-Date: 2000-08-06 23:11+0100\n"
+"PO-Revision-Date: 2000-08-06 23:32+0100\n"
 "Last-Translator: Milan Kerslager <milan.kerslager@spsselib.hiedu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,11 @@ msgstr "Chyba"
 
 #: ../userdialogs.c:124 ../userdialogs.c:126 ../userdialogs.c:185
 msgid "Prompt"
-msgstr ""
+msgstr "Vstup"
 
 #: ../userdialogs.c:193 ../userinfo.c:140
 msgid "OK"
-msgstr "OK"
+msgstr "Ok"
 
 #: ../userhelper-wrap.c:44 ../usermount.c:581 ../usermount.c:676
 #: ../usermount.c:764
@@ -65,10 +65,14 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Jedna nebo více zmìnìných polo¾ek je neplatná.\n"
+"Tato chyba je pravdìpodobnì zpùsobena pøítomností znaku èárky nebo trubky v "
+"jedé ze vstupních polo¾ek.\n"
+"Odstraòte je prosím a zkuste to znovu."
 
 #: ../userhelper-wrap.c:124
 msgid "Password resetting error."
-msgstr ""
+msgstr "Chyba pøi vymazávání hesla."
 
 #: ../userhelper-wrap.c:127
 msgid ""
@@ -123,12 +127,12 @@ msgstr "Neznámý návratový kód."
 
 #: ../userhelper-wrap.c:211
 msgid "Input"
-msgstr ""
+msgstr "Vstup"
 
 #: ../userhelper-wrap.c:320
 #, c-format
 msgid "Need %d responses.\n"
-msgstr ""
+msgstr "Potøebuji %d odpovìdi.\n"
 
 #: ../userhelper-wrap.c:345
 #, c-format
@@ -136,11 +140,12 @@ msgid ""
 "In order to run \"%s\" with %s's privileges, additional information is "
 "required."
 msgstr ""
+"Pokud mám spustit \"%s\" s právy %s, jsou potøebné doplòující informace."
 
 #: ../userhelper-wrap.c:372
 #, c-format
 msgid "You want %d response(s) from %d entry fields!?!?!\n"
-msgstr ""
+msgstr "Chcete %d odpovìï(i) z %d polo¾ek!?!?!\n"
 
 #: ../userhelper.c:102
 #, c-format
@@ -150,27 +155,27 @@ msgstr "Chyba %d.\n"
 #: ../userhelper.c:197
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "Heslo pro u¾ivatele %s"
 
 #: ../userhelper.c:387
 msgid "Consistency checking is not turned on."
-msgstr ""
+msgstr "Kontrola konzistence není zapnuta."
 
 #: ../userhelper.c:389
 msgid "Block is fine."
-msgstr ""
+msgstr "Blok je v poøádku."
 
 #: ../userhelper.c:391
 msgid "Block freed twice."
-msgstr ""
+msgstr "Blok byl uvolnìn dvakrát."
 
 #: ../userhelper.c:393
 msgid "Memory before the block was clobbered."
-msgstr ""
+msgstr "Pamì» pøed blokem byla naru¹ena."
 
 #: ../userhelper.c:395
 msgid "Memory after the block was clobbered."
-msgstr ""
+msgstr "Pamì» za blokem byla naru¹ena."
 
 #: ../userhelper.c:423
 msgid "userhelper must be setuid root\n"
@@ -179,7 +184,7 @@ msgstr "program userhelper musí být SUID root\n"
 #: ../userhelper.c:659 ../userhelper.c:691
 #, c-format
 msgid "about to exec \"%s\"\n"
-msgstr ""
+msgstr "spou¹tím \"%s\"\n"
 
 #: ../userinfo.c:125
 msgid "User Information"
@@ -195,11 +200,11 @@ msgstr "Plné jméno:"
 
 #: ../userinfo.c:261
 msgid "Office:"
-msgstr ""
+msgstr "Kanceláø:"
 
 #: ../userinfo.c:280
 msgid "Office Phone:"
-msgstr ""
+msgstr "Telefon do kanceláøe:"
 
 #: ../userinfo.c:298
 msgid "Home Phone:"
@@ -215,15 +220,15 @@ msgstr "Toto bude nápovìda."
 
 #: ../usermount.c:56
 msgid "Mount"
-msgstr ""
+msgstr "Pøipojit"
 
 #: ../usermount.c:57
 msgid "Unmount"
-msgstr ""
+msgstr "Odpojit"
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
-msgstr ""
+msgstr "Nástroj pro pøipojení u¾ivatelem"
 
 #: ../usermount.c:137
 msgid ""
@@ -268,6 +273,3 @@ msgstr "Ne"
 #: ../usermount.c:382
 msgid "Do low level format."
 msgstr "Proveïte low level formátování."
-
-#~ msgid "%s's password"
-#~ msgstr "heslo u¾ivatele %s"
