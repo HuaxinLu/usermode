@@ -608,7 +608,7 @@ int main(int argc, char *argv[])
 	    fail_error(retval);
 
 	app_data.fallback = fallback;
-	app_data.user = user;
+	app_data.user = "root";
 	app_data.service = progname;
 
 	retval = !PAM_SUCCESS;
