@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.56
-Release: 2
+Release: 3
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
