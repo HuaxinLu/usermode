@@ -1,5 +1,5 @@
 USER=root
 PROGRAM=/bin/true
 SESSION=true
-BANNER=Launch system-wide configuration tools without login.
+BANNER=Launch system-wide configuration tools without a password.
 BANNER_DOMAIN=usermode
