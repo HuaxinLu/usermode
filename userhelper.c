@@ -27,7 +27,6 @@
 #include <glib-object.h>
 #include <grp.h>
 #include <libintl.h>
-#include <langinfo.h>
 #include <locale.h>
 #include <pwd.h>
 #include <unistd.h>
@@ -51,6 +50,7 @@ static char *full_name = NULL;		/* full user name */
 static char *office = NULL;		/* office */
 static char *office_phone = NULL;	/* office phone */
 static char *home_phone = NULL;		/* home phone */
+static char *site_info = NULL;		/* other stuff */
 static char *user_name = NULL;		/* the account name */
 static char *shell_path = NULL;		/* shell path */
 
@@ -109,11 +109,11 @@ fail_exit(int retval)
 				exit(ERR_NO_RIGHTS);
 			case PAM_ABORT:
 			default:
-				exit(ERR_UNK_ERROR);
+				_exit(ERR_UNK_ERROR);
 		}
 	}
 	/* Just exit. */
-	exit(0);
+	_exit(0);
 }
 
 /* Read a string from stdin, and return a freshly-allocated copy, without
@@ -137,11 +137,11 @@ read_string(FILE *fp)
 
 	slen = strlen(buffer);
 	if (slen > 0) {
-		if (buffer[slen - 1] == '\n') {
+		while ((slen > 1) &&
+		       ((buffer[slen - 1] == '\n') ||
+			(buffer[slen - 1] == '\r'))) {
 			buffer[slen - 1] = '\0';
-		}
-		if (isspace(buffer[slen - 1])) {
-			buffer[slen - 1] = '\0';
+			slen--;
 		}
 	}
 
@@ -318,13 +318,14 @@ converse_console(int num_msg, const struct pam_message **msg,
 		 struct pam_response **resp, void *appdata_ptr)
 {
 	static int banner = 0;
-	const char *service = NULL, *user = NULL;
+	const char *service = NULL, *user = NULL, *codeset = NULL;
 	char *text = NULL;
 	struct app_data *app_data = appdata_ptr;
 	struct pam_message **messages;
 	int i, ret;
 
-	bind_textdomain_codeset(PACKAGE, nl_langinfo(CODESET));
+	g_get_charset(&codeset);
+	bind_textdomain_codeset(PACKAGE, codeset);
 
 	pam_get_item(app_data->pamh, PAM_SERVICE, (const void**)&service);
 	pam_get_item(app_data->pamh, PAM_USER, (const void**)&user);
@@ -485,57 +486,46 @@ static struct pam_conv text_conv = {
 static void
 parse_gecos(char *gecos)
 {
-	char *idx;
+	char **exploded, **dest;
+	int i;
 
-	if (gecos == NULL)
+	if (gecos == NULL) {
 		return;
-
-	/* The user's full name comes first. */
-	if (!full_name)
-		full_name = gecos;
-	idx = strchr(gecos, ',');
-	if (idx != NULL) {
-		*idx = '\0';
-		gecos = idx + 1;
 	}
-	if ((idx == NULL) || (*gecos == '\0')) {
-		/* no more fields */
+	exploded = g_strsplit(gecos, ",", 5);
+
+	if (exploded == NULL) {
 		return;
 	}
 
-	/* If we have data left, assume the user's office number is next. */
-	if (!office)
-		office = gecos;
-	idx = strchr(gecos, ',');
-	if (idx != NULL) {
-		*idx = '\0';
-		gecos = idx + 1;
-	}
-	if ((idx == NULL) || (*gecos == '\0')) {
-		/* no more fields */
-		return;
+	for (i = 0; (exploded != NULL) && (exploded[i] != NULL); i++) {
+		dest = NULL;
+		switch (i) {
+			case 0:
+				dest = &full_name;
+				break;
+			case 1:
+				dest = &office;
+				break;
+			case 2:
+				dest = &office_phone;
+				break;
+			case 3:
+				dest = &home_phone;
+				break;
+			case 4:
+				dest = &site_info;
+				break;
+			default:
+				g_assert_not_reached();
+				break;
+		}
+		if (*dest != NULL) {
+			*dest = g_strdup(exploded[i]);
+		}
 	}
 
-	/* If we have data left, assume the user's office telephone is next. */
-	if (!office_phone)
-		office_phone = gecos;
-	idx = strchr(gecos, ',');
-	if (idx != NULL) {
-		*idx = '\0';
-		gecos = idx + 1;
-	}
-	if ((idx == NULL) || (*gecos == '\0')) {
-		/* no more fields */
-		return;
-	}
-
-	/* If we have data left, assume the user's home telephone is next. */
-	if (!home_phone)
-		home_phone = gecos;
-	idx = strchr(gecos, ',');
-	if (idx != NULL) {
-		*idx = '\0';
-	}
+	g_strfreev(exploded);
 }
 
 /* A simple function to compute the size of a gecos string containing the
@@ -553,6 +543,8 @@ gecos_size(void)
 		len += (strlen(office_phone) + 1);
 	if (home_phone != NULL)
 		len += (strlen(home_phone) + 1);
+	if (site_info != NULL)
+		len += (strlen(site_info) + 1);
 	return len;
 }
 
@@ -709,7 +701,7 @@ main(int argc, char **argv)
 	    (c_flag && w_flag) ||
 	    (w_flag && SHELL_FLAGS)) {
 #ifdef DEBUG_USERHELPER
-		g_print("invalid call: invalid mixture of options\n");
+		g_print("invalid call: invalid combination of options\n");
 #endif
 		exit(ERR_INVALID_CALL);
 	}
@@ -969,11 +961,13 @@ main(int argc, char **argv)
 		}
 
 		/* Build a new value for the GECOS data. */
-		new_gecos = g_strdup_printf("%s,%s,%s,%s",
+		new_gecos = g_strdup_printf("%s,%s,%s,%s%s%s",
 					    full_name ?: "",
 					    office ?: "",
 					    office_phone ?: "",
-					    home_phone ?: "");
+					    home_phone ?: "",
+					    site_info ? "," : "",
+					    site_info ?: "");
 
 		/* We don't need the user's current GECOS anymore, so clear
 		 * out the value and set our own in the in-memory structure. */
