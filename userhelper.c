@@ -96,6 +96,9 @@ static int fail_error(int retval)
         exit(ERR_SHELL_INVALID);	  
 
     if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+	printf("Got error %d.\n", retval);
+#endif
 	switch(retval) {
 	    case PAM_AUTH_ERR:
 	    case PAM_PERM_DENIED:
@@ -443,7 +446,7 @@ int main(int argc, char *argv[])
 	
 	tmp = getpwuid(getuid());
         if ((tmp != NULL) && (tmp->pw_name != NULL)) {
-	    user_name = strdup(tmp->pw_name);
+	    user_name = g_strdup(tmp->pw_name);
 	} else {
             /* weirdo, bail out */
 	    exit (ERR_UNK_ERROR);
@@ -634,6 +637,9 @@ int main(int argc, char *argv[])
 		pw = getpwuid(getuid());
 		if (pw) setenv("HOME", pw->pw_dir, 1);
 		argv[optind-1] = progname;
+#ifdef DEBUG_USERHELPER
+		printf("about to exec \"%s\"\n", constructed_path);
+#endif
 		execv(constructed_path, argv+optind-1);
 		exit (ERR_EXEC_FAILED);
 	    }
@@ -663,6 +669,9 @@ int main(int argc, char *argv[])
 	    /* time for an exec */
 	    setuid(0);
 	    argv[optind-1] = progname;
+#ifdef DEBUG_USERHELPER
+            printf("about to exec \"%s\"\n", constructed_path);
+#endif
 	    execv(constructed_path, argv+optind-1);
 	    exit (ERR_EXEC_FAILED);
 	}
