@@ -47,7 +47,8 @@ graphical tools for certain account management tasks.
 %configure
 make \
 %if %{WITH_SELINUX}
-	WITH_SELINUX=yes
+	WITH_SELINUX="-DWITH_SELINUX" \
+	SELINUX_LIBS="-lselinux -lattr"
 %endif
 
 %install
