@@ -199,10 +199,12 @@ userhelper_parse_childout(char* outline)
   }
 
   if (resp == NULL) {
+    GtkWidget *vbox, *hbox, *sbox;
+
     resp = g_malloc0(sizeof(response));
 
     resp->user = g_strdup(getlogin());
-    resp->top = gtk_dialog_new();
+    resp->top = gtk_window_new(GTK_WINDOW_DIALOG);
     gtk_signal_connect(GTK_OBJECT(resp->top), "destroy",
 		       GTK_SIGNAL_FUNC(mark_void), &resp->top);
     gtk_window_set_title(GTK_WINDOW(resp->top), "Input");
@@ -220,25 +222,31 @@ userhelper_parse_childout(char* outline)
     resp->table = gtk_table_new(1, 2, FALSE);
     resp->rows = 1;
 
+    vbox = gtk_vbox_new(FALSE, 4);
+    sbox = gtk_hbox_new(TRUE, 4);
+    hbox = gtk_hbutton_box_new();
+    gtk_box_pack_start(GTK_BOX(vbox), resp->table, TRUE, TRUE, 4);
+    gtk_box_pack_start(GTK_BOX(vbox), gtk_hseparator_new(), FALSE, FALSE, 4);
+    gtk_box_pack_start(GTK_BOX(vbox), sbox, FALSE, FALSE, 4);
+    gtk_box_pack_start(GTK_BOX(sbox), hbox, FALSE, FALSE, 4);
+    gtk_container_add(GTK_CONTAINER(resp->top), vbox);
+
     pixmap = gdk_pixmap_create_from_xpm(gdk_window_foreign_new(GDK_ROOT_WINDOW()),
 		                        NULL, NULL, UH_KEY_PIXMAP_PATH);
     if(pixmap != NULL) {
       GtkWidget *pm = gtk_pixmap_new(pixmap, NULL);
       if(pm != NULL) {
-	gtk_table_attach(GTK_TABLE(resp->table), pm,
+	GtkWidget *frame = NULL;
+	frame = gtk_frame_new(NULL);
+	gtk_container_add(GTK_CONTAINER(frame), pm);
+	gtk_table_attach(GTK_TABLE(resp->table), frame,
 	  0, 1, 1, 2, GTK_SHRINK, GTK_SHRINK, 2, 2);
 	resp->left = 1;
       }
     }
 
-    gtk_box_set_homogeneous(GTK_BOX(GTK_DIALOG(resp->top)->action_area), TRUE);
-
-    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
-	resp->ok, TRUE, TRUE, 2);
-    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
-	resp->cancel, TRUE, TRUE, 2);
-    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->vbox),
-	resp->table, FALSE, FALSE, 5);
+    gtk_box_pack_start(GTK_BOX(hbox), resp->ok, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(hbox), resp->cancel, FALSE, FALSE, 0);
 
     gtk_signal_connect(GTK_OBJECT(resp->top), "delete_event", 
 		       (GtkSignalFunc) userhelper_fatal_error, NULL);
@@ -286,6 +294,7 @@ userhelper_parse_childout(char* outline)
 	/* fall through */
       case UH_ECHO_ON_PROMPT:
 	msg->label = gtk_label_new(prompt);
+	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
 	gtk_misc_set_alignment(GTK_MISC(msg->label), 1.0, 1.0);
 
 	msg->entry = gtk_entry_new();
@@ -310,6 +319,7 @@ userhelper_parse_childout(char* outline)
       case UH_FALLBACK:
 #if 0
 	msg->label = gtk_label_new(prompt);
+	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
 	  resp->left + 0, resp->left + 2, resp->rows, resp->rows + 1,
 	  0, 0, 2, 2);
@@ -343,6 +353,7 @@ userhelper_parse_childout(char* outline)
 				  prompt, resp->user);
 	}
 	msg->label = gtk_label_new(title);
+	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
 	  0, resp->left + 2, 0, 1,
 	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
@@ -354,6 +365,7 @@ userhelper_parse_childout(char* outline)
 	/* fall through */
       case UH_INFO_MSG:
 	msg->label = gtk_label_new(prompt);
+	gtk_label_set_line_wrap(GTK_LABEL(msg->label), FALSE);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
 	  resp->left + 0, resp->left + 2, resp->rows, resp->rows + 1, 0, 0, 2, 2);
 	resp->message_list = g_slist_append(resp->message_list, msg);

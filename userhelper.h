@@ -27,6 +27,9 @@
 #define UH_FALLBACK 7
 #define UH_USER 8
 
+#define UH_TEXT 1
+#define UH_ABORT 2
+
 #define ERR_PASSWD_INVALID      1       /* password is not right */
 #define ERR_FIELDS_INVALID      2       /* gecos fields invalid or
                                          * sum(lengths) too big */

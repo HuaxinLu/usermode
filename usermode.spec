@@ -77,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 * Mon Jun 19 2000 Nalin Dahyabhia <nalin@redhat.com>
 - strip all binaries by default
 - add the name of the program being run to the userhelper dialog
+- add a graphic to the userhelper-wrap package
 
 * Sun Jun 18 2000 Matt Wilson <msw@redhat.com>
 - rebuilt to see if we get stripped binaries
