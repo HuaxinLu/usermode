@@ -1,3 +1,4 @@
+# translation of bg.po to Bulgarian
 # translation of usermode.po to Bulgarian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -5,10 +6,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
+"Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2004-07-27 01:34+0300\n"
+"PO-Revision-Date: 2004-08-05 23:56+0300\n"
 "Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +50,7 @@ msgstr "Отказ"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Изпълни без привилегии"
+msgstr "Изпълнение без привилегии"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -81,7 +82,7 @@ msgstr "Грешка, паролите не съвпадат"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Стартиране на system-wide инструменти за настройка без парола."
+msgstr "Стартиране на инструменти за настройка на цялата система без парола."
 
 #: dummy.h:33
 msgid "login: "
@@ -153,7 +154,7 @@ msgstr "userhelper трябва да бъде setuid root\n"
 #: userhelper.c:2313
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Не може да бъде отворен графичен прозорец, а не може да бъде намерен и контролния терминал.\n"
+msgstr "Не може да бъде отворен графичен прозорец, а не може да бъде намерен и контролен терминал.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -203,7 +204,7 @@ msgstr "Недостатъчни права."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
-msgstr "Невалидно извикване към подпроцес."
+msgstr "Невалидно извикване на подпроцес."
 
 #: userhelper-wrap.c:197
 msgid ""
@@ -238,7 +239,7 @@ msgstr "Неизвестна грешка."
 #.
 #: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
-msgstr "Заявка"
+msgstr "Въпрос"
 
 #: userhelper-wrap.c:564 userhelper-wrap.c:744
 msgid "Error"
@@ -276,7 +277,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Опитвате се да стартирате \"%s\". За целта са необходими административни"
+"Опитвате се да стартирате \"%s\". За целта са необходими административни "
 "права, но за това се изисква повече информация."
 
 #: userhelper-wrap.c:802
@@ -297,7 +298,7 @@ msgstr ""
 
 #: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
-msgstr "_Старт без привилегии"
+msgstr "_Изпълнение без привилегии"
 
 #: userhelper-wrap.c:973
 #, c-format
@@ -315,7 +316,7 @@ msgid "dup2() error.\n"
 msgstr "Грешка при извикване на dup2().\n"
 
 #: userhelper-wrap.c:1074
-#, c-format					
+#, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Грешка %d при извикване на execl()\n"
 
