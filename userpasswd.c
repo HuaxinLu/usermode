@@ -38,7 +38,7 @@ main(int argc, char *argv[])
 	gtk_set_locale();
 	gtk_init(&argc, &argv);
 
-	userhelper_run(UH_PATH, UH_PATH, UH_PASSWD_OPT, 0);
+	userhelper_run(TRUE, UH_PATH, UH_PATH, UH_PASSWD_OPT, 0);
 
 	return 0;
 }

@@ -47,8 +47,8 @@ struct response {
 	GtkWidget *dialog, *first, *last, *table;
 };
 
-void userhelper_run(char *path, ...);
-void userhelper_runv(char *path, const char **args);
+void userhelper_run(gboolean notify_success, char *path, ...);
+void userhelper_runv(gboolean notify_success, char *path, const char **args);
 void userhelper_fatal_error(int ignored);
 void userhelper_main_quit(void);
 

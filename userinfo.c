@@ -297,7 +297,7 @@ set_new_userinfo(struct UserInfo *userinfo)
 
 	argv[i++] = NULL;
 
-	userhelper_runv(UH_PATH, argv);
+	userhelper_runv(TRUE, UH_PATH, argv);
 }
 
 void

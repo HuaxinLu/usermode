@@ -35,6 +35,7 @@ static int childout[2];
 static int childin[2];
 static int childpid;
 static int childout_tag = -1;
+static gboolean child_success_dialog = TRUE;
 
 /* Call gtk_main_quit. */
 void
@@ -108,7 +109,9 @@ userhelper_parse_exitstatus(int exitstatus)
 	}
 
 	if (message_box != NULL) {
-		gtk_dialog_run(GTK_DIALOG(message_box));
+		if (child_success_dialog || (exitstatus != 0)) {
+			gtk_dialog_run(GTK_DIALOG(message_box));
+		}
 		gtk_widget_destroy(message_box);
 	}
 }
@@ -624,7 +627,7 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 }
 
 void
-userhelper_runv(char *path, const char **args)
+userhelper_runv(gboolean dialog_success, char *path, const char **args)
 {
 	VteReaper *reaper;
 	int retval;
@@ -649,6 +652,10 @@ userhelper_runv(char *path, const char **args)
 		 * and the read-end of the writing pipe. */
 		close(childout[1]);
 		close(childin[0]);
+
+		/* Keep track of whether or not we need to display a dialog
+		 * box on successful termination. */
+		child_success_dialog = dialog_success;
 
 		/* Tell GDK to watch the reading end of the reading pipe for
 		 * data from the child. */
@@ -729,7 +736,7 @@ userhelper_runv(char *path, const char **args)
 }
 
 void
-userhelper_run(char *path, ...)
+userhelper_run(gboolean dialog_success, char *path, ...)
 {
 	va_list ap;
 	const char **argv;
@@ -753,7 +760,7 @@ userhelper_run(char *path, ...)
 	va_end(ap);
 
 	/* Pass the array into userhelper_runv() to actually run it. */
-	userhelper_runv(path, argv);
+	userhelper_runv(dialog_success, path, argv);
 
 	g_free(argv);
 }

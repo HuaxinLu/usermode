@@ -131,7 +131,8 @@ main(int argc, char *argv[])
 	/* If we can open a window, use the graphical wrapper routine. */
 	if (graphics_available) {
 #ifndef DISABLE_X11
-		userhelper_runv(UH_PATH, (const char**) constructed_argv);
+		userhelper_runv(FALSE, UH_PATH,
+				(const char**) constructed_argv);
 #endif
 	} else {
 		/* Text mode doesn't need the whole pipe thing. */
