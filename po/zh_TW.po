@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-09-03 01:15-0400\n"
+"POT-Creation-Date: 2003-09-25 16:34-0400\n"
 "PO-Revision-Date: 2002-09-03 16:27+1000\n"
 "Last-Translator: Ben Wu <hpwu@redhat.com>\n"
 "Language-Team: Chinese (Traditional) <i18n-list@redhat.com>\n"
@@ -81,21 +81,30 @@ msgstr "抱歉，密碼不符"
 msgid "Launch system-wide configuration tools without a password."
 msgstr "在不輸入密碼的情況下啟動全系統性的設定工具。"
 
+#: dummy.h:33
+msgid "login: "
+msgstr ""
+
+#: dummy.h:34
+#, fuzzy
+msgid "Password: "
+msgstr "密碼"
+
 #: userdialogs.h:30
 msgid "Help"
 msgstr "求助"
 
-#: userhelper.c:99
+#: userhelper.c:122
 #, c-format
-msgid "Got PAM error %d.\n"
-msgstr "有 PAM 錯誤 %d。\n"
+msgid "Could not set exec context to %s.\n"
+msgstr ""
 
-#: userhelper.c:225
+#: userhelper.c:431
 #, c-format
 msgid "Password for %s"
 msgstr "%s 的密碼"
 
-#: userhelper.c:346
+#: userhelper.c:666
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -104,7 +113,7 @@ msgstr ""
 "您試著要執行 \"%s\"，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:348
+#: userhelper.c:668
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -113,7 +122,7 @@ msgstr ""
 "您試著要執行 \"%s\"，您需要有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:352
+#: userhelper.c:672
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -121,7 +130,7 @@ msgstr ""
 "您試著要執行一個指令，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:354
+#: userhelper.c:674
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -129,34 +138,30 @@ msgstr ""
 "您試著要執行一個指令，您需要有管理者的權限,\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:373
+#: userhelper.c:693
 #, c-format
 msgid "Password for %s: "
 msgstr "%s 的密碼： "
 
-#: userhelper.c:647
+#: userhelper.c:1039
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必須 setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:729
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+#: userhelper.c:1123
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗，且找不到控制終端機。\n"
 
-#: userhelper.c:1434 userhelper.c:1480
-#, c-format
-msgid "about to exec \"%s\"\n"
-msgstr "即將執行 \"%s\"\n"
-
-#: userhelper-wrap.c:61
+#: userhelper-wrap.c:178
 msgid "Unknown exit code."
 msgstr "未知的離開碼(exit code)。"
 
-#: userhelper-wrap.c:63
+#: userhelper-wrap.c:180
 msgid "Information updated."
 msgstr "已更新的資訊。"
 
-#: userhelper-wrap.c:65
+#: userhelper-wrap.c:182
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -164,7 +169,7 @@ msgstr ""
 "您輸入的密碼無效。\n"
 "請再試一次。"
 
-#: userhelper-wrap.c:67
+#: userhelper-wrap.c:184
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -174,11 +179,11 @@ msgstr ""
 "也許是由於有冒號或逗號在欄位裡。\n"
 "請移除它們然後再試一次。"
 
-#: userhelper-wrap.c:69
+#: userhelper-wrap.c:186
 msgid "Password resetting error."
 msgstr "重設密碼錯誤。"
 
-#: userhelper-wrap.c:71
+#: userhelper-wrap.c:188
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -186,19 +191,19 @@ msgstr ""
 "某些系統檔已鎖住。\n"
 "請等會再試一次。"
 
-#: userhelper-wrap.c:73
+#: userhelper-wrap.c:190
 msgid "Unknown user."
 msgstr "不知名的使用者。"
 
-#: userhelper-wrap.c:75
+#: userhelper-wrap.c:192
 msgid "Insufficient rights."
 msgstr "沒有足夠的權力。"
 
-#: userhelper-wrap.c:77
+#: userhelper-wrap.c:194
 msgid "Invalid call to subprocess."
 msgstr "無效的子程序呼叫.."
 
-#: userhelper-wrap.c:79
+#: userhelper-wrap.c:196
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -208,125 +213,124 @@ msgstr ""
 "無法更改您的 shell.\n"
 "請求助您的系統管理員。"
 
-#: userhelper-wrap.c:82
+#: userhelper-wrap.c:199
 msgid "Out of memory."
 msgstr "記憶體不足。"
 
-#: userhelper-wrap.c:84
+#: userhelper-wrap.c:201
 msgid "The exec() call failed."
 msgstr "exec() 呼叫失敗。"
 
-#: userhelper-wrap.c:86
+#: userhelper-wrap.c:203
 msgid "Failed to find selected program."
 msgstr "找不到選取的程式。"
 
-#: userhelper-wrap.c:90
+#: userhelper-wrap.c:207
 msgid "Unknown error."
 msgstr "未知的錯誤。"
 
-#: userhelper-wrap.c:293 glade.strings:18 usermode.glade.h:9
+#: userhelper-wrap.c:458 glade.strings:18 usermode.glade.h:9
 msgid "Query"
 msgstr "查詢"
 
-#: userhelper-wrap.c:342
-#, c-format
-msgid "Need %d responses.\n"
-msgstr "需要 %d 回應。\n"
-
-#: userhelper-wrap.c:374 userhelper-wrap.c:443
+#: userhelper-wrap.c:548 userhelper-wrap.c:718
 msgid "Error"
 msgstr "錯誤"
 
-#: userhelper-wrap.c:386
+#: userhelper-wrap.c:560
 msgid "Information"
 msgstr "資訊"
 
-#: userhelper-wrap.c:441 glade.strings:16 glade.strings:19 usermode.glade.h:8
+#: userhelper-wrap.c:716 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "沒有加密過的文字。"
 
-#: userhelper-wrap.c:482
+#: userhelper-wrap.c:756
 msgid "Changing personal information."
 msgstr "更改個人資訊。"
 
-#: userhelper-wrap.c:485
+#: userhelper-wrap.c:759
 msgid "Changing login shell."
 msgstr "更改登入 shell。"
 
-#: userhelper-wrap.c:491
+#: userhelper-wrap.c:765
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:493
+#: userhelper-wrap.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:502
+#: userhelper-wrap.c:776
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:504
+#: userhelper-wrap.c:778
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr ""
+"您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:521
+#: userhelper-wrap.c:795
 msgid "_Run Unprivileged"
 msgstr "無特權的執行(_R)"
 
-#: userhelper-wrap.c:622
+#: userhelper-wrap.c:931
 msgid "Pipe error.\n"
 msgstr "程式的輸出導向錯誤.\n"
 
-#: userhelper-wrap.c:629
+#: userhelper-wrap.c:938
 msgid "Cannot fork().\n"
 msgstr "無法 fork().\n"
 
-#: userhelper-wrap.c:696 userhelper-wrap.c:700
+#: userhelper-wrap.c:1016 userhelper-wrap.c:1020
 msgid "dup2() error.\n"
 msgstr "dup2() 錯誤.\n"
 
-#: userhelper-wrap.c:712
+#: userhelper-wrap.c:1032
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: userinfo.c:321
+#: userinfo.c:323
 msgid "You don't exist.  Go away.\n"
 msgstr "您不存在.  請離開.\n"
 
-#: usermount.c:61 glade.strings:26
+#: usermount.c:62 glade.strings:26
 msgid "_Mount"
 msgstr "掛載(_M)"
 
-#: usermount.c:62
+#: usermount.c:63
 msgid "Un_mount"
 msgstr "卸載（_m）"
 
-#: usermount.c:320
+#: usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr "您確定要格式化磁碟嗎？您將摧毀它原有的資料。"
 
-#: usermount.c:331
+#: usermount.c:332
 msgid "Perform a _low-level format."
 msgstr "執行低階格式化(_l)。"
 
-#: usermount.c:374
+#: usermount.c:375
 msgid "Select a _filesystem type to create:"
 msgstr "選取要建立的檔案系統(_f)："
 
-#: usermount.c:542
+#: usermount.c:543
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -335,24 +339,24 @@ msgstr ""
 "請聯絡系統管理員。"
 
 #. Create the dialog.
-#: usermount.c:543 usermount.c:554 glade.strings:22
+#: usermount.c:544 usermount.c:555 glade.strings:22
 msgid "User Mount Tool"
 msgstr "使用者掛載工具"
 
 #. Create the other buttons.
-#: usermount.c:568 glade.strings:28
+#: usermount.c:569 glade.strings:28
 msgid "_Format"
 msgstr "格式化(_F)"
 
-#: usermount.c:604 glade.strings:24
+#: usermount.c:605 glade.strings:24
 msgid "Device"
 msgstr "裝置"
 
-#: usermount.c:610 glade.strings:23
+#: usermount.c:611 glade.strings:23
 msgid "Directory"
 msgstr "目錄"
 
-#: usermount.c:616
+#: usermount.c:617
 msgid "Filesystem"
 msgstr "檔案系統"
 
@@ -441,6 +445,15 @@ msgstr "更改您的登入密碼"
 msgid "Password"
 msgstr "密碼"
 
+#~ msgid "Got PAM error %d.\n"
+#~ msgstr "有 PAM 錯誤 %d。\n"
+
+#~ msgid "about to exec \"%s\"\n"
+#~ msgstr "即將執行 \"%s\"\n"
+
+#~ msgid "Need %d responses.\n"
+#~ msgstr "需要 %d 回應。\n"
+
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
 #~ "privileges, but more information is needed in order to do so."
@@ -471,4 +484,3 @@ msgstr "密碼"
 
 #~ msgid "Starting \"%s\" with administrative privileges."
 #~ msgstr "以管理者的權限啟動 \"%s\"。"
-
