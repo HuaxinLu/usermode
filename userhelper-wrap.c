@@ -233,6 +233,10 @@ userhelper_parse_childout(char *outline)
 						      GTK_BUTTONS_OK_CANCEL,
 						      _("Placeholder text."));
 
+		/* Force GTK+ to try to center this dialog. */
+		gtk_window_set_position(GTK_WINDOW(resp->dialog),
+					GTK_WIN_POS_CENTER_ALWAYS);
+
 		/* Create a table to put in its vbox. */
 		resp->table = gtk_table_new(2, 1, FALSE);
 		vbox = (GTK_DIALOG(resp->dialog))->vbox;

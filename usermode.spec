@@ -1,7 +1,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.51
+Version: 1.52
 Release: 1
 License: GPL
 Group: Applications/System
@@ -102,6 +102,14 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Mon Apr  1 2002 Nalin Dahyabhai <nalin@redhat.com> 1.52-1
+- attempt to make prompts at the console more meaningful
+
+* Thu Mar 28 2002 Nalin Dahyabhai <nalin@redhat.com>
+- stop giving the user chances to enter the right password if we get a
+  conversation error reading a response (appears to be masked by libpam)
+- always center consolehelper dialog windows
+
 * Wed Mar 27 2002 Nalin Dahyabhai <nalin@redhat.com> 1.51-1
 - patch to make gettext give us UTF-8 strings (which GTK needs) from ynakai
 

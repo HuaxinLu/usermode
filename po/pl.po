@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
-"POT-Creation-Date: 2002-01-31 05:38-0500\n"
+"POT-Creation-Date: 2002-04-01 11:46-0500\n"
 "PO-Revision-Date:  2001-01-25 15:31-0500\n"
 "Last-Translator: Unknown\n"
 "Language-Team: Polish\n"
@@ -13,25 +13,6 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#.
-#. * Copyright (C) 2001 Red Hat, Inc.
-#. *
-#. * This is free software; you can redistribute it and/or modify it
-#. * under the terms of the GNU General Public License as published by
-#. * the Free Software Foundation; either version 2 of the License, or
-#. * (at your option) any later version.
-#. *
-#. * This program is distributed in the hope that it will be useful, but
-#. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-#. * General Public License for more details.
-#. *
-#. * You should have received a copy of the GNU General Public License
-#. * along with this program; if not, write to the Free Software
-#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
-#. Just a dummy file for gettext, containing messages emmitted by various
-#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr ""
@@ -80,27 +61,57 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: userhelper.c:95
+#: userhelper.c:96
 #, c-format
 msgid "Got PAM error %d.\n"
 msgstr ""
 
-#: userhelper.c:198
+#: userhelper.c:202
 #, c-format
 msgid "Password for %s"
 msgstr ""
 
-#: userhelper.c:555
+#: userhelper.c:317
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from superuser\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+
+#: userhelper.c:319
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires superuser\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+
+#: userhelper.c:323
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"superuser privileges, but more information is needed in order to do so."
+msgstr ""
+
+#: userhelper.c:325
+msgid ""
+"You are attempting to run a command which requires superuser\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+
+#: userhelper.c:343
+#, c-format
+msgid "Password for %s: "
+msgstr ""
+
+#: userhelper.c:626
 msgid "userhelper must be setuid root\n"
 msgstr ""
 
-#. FIXME: print a warning here?
-#: userhelper.c:637
+#: userhelper.c:708
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
-#: userhelper.c:1297 userhelper.c:1335
+#: userhelper.c:1369 userhelper.c:1407
 #, c-format
 msgid "about to exec \"%s\"\n"
 msgstr ""
@@ -171,83 +182,83 @@ msgstr ""
 msgid "Unknown error."
 msgstr ""
 
-#: glade.strings:16 glade.strings:19 userhelper-wrap.c:234
+#: userhelper-wrap.c:234 glade.strings:16 glade.strings:19
 msgid "Placeholder text."
 msgstr ""
 
-#: userhelper-wrap.c:348
+#: userhelper-wrap.c:352
 #, c-format
 msgid "Need %d responses.\n"
 msgstr ""
 
-#: userhelper-wrap.c:381
+#: userhelper-wrap.c:385
 msgid "Error"
 msgstr ""
 
-#: userhelper-wrap.c:394
+#: userhelper-wrap.c:398
 msgid "Information"
 msgstr ""
 
-#: userhelper-wrap.c:438
+#: userhelper-wrap.c:442
 msgid "Changing personal information."
 msgstr ""
 
-#: userhelper-wrap.c:441
+#: userhelper-wrap.c:445
 msgid "Changing login shell."
 msgstr ""
 
-#: userhelper-wrap.c:444
+#: userhelper-wrap.c:448
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:446
+#: userhelper-wrap.c:450
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:451
+#: userhelper-wrap.c:455
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:453
+#: userhelper-wrap.c:457
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:463
+#: userhelper-wrap.c:467
 msgid "_Run Unprivileged"
 msgstr ""
 
-#: userhelper-wrap.c:575 userhelper-wrap.c:592
+#: userhelper-wrap.c:579 userhelper-wrap.c:596
 msgid "Pipe error.\n"
 msgstr ""
 
-#: userhelper-wrap.c:599
+#: userhelper-wrap.c:603
 msgid "Cannot fork().\n"
 msgstr ""
 
-#: userhelper-wrap.c:645 userhelper-wrap.c:649
+#: userhelper-wrap.c:649 userhelper-wrap.c:653
 msgid "dup2() error.\n"
 msgstr ""
 
-#: userhelper-wrap.c:661
+#: userhelper-wrap.c:665
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr ""
 
-#: userinfo.c:299
+#: userinfo.c:300
 msgid "You don't exist.  Go away.\n"
 msgstr ""
 
-#: glade.strings:26 usermount.c:61
+#: usermount.c:61 glade.strings:26
 msgid "_Mount"
 msgstr ""
 
@@ -275,21 +286,19 @@ msgid ""
 "Contact your administrator."
 msgstr ""
 
-#. Create the dialog.
-#: glade.strings:22 usermount.c:522 usermount.c:530
+#: usermount.c:522 usermount.c:530 glade.strings:22
 msgid "User Mount Tool"
 msgstr ""
 
-#. Create the other buttons.
-#: glade.strings:28 usermount.c:544
+#: usermount.c:544 glade.strings:28
 msgid "_Format"
 msgstr ""
 
-#: glade.strings:24 usermount.c:579
+#: usermount.c:579 glade.strings:24
 msgid "Device"
 msgstr ""
 
-#: glade.strings:23 usermount.c:585
+#: usermount.c:585 glade.strings:23
 msgid "Directory"
 msgstr ""
 
@@ -297,11 +306,6 @@ msgstr ""
 msgid "Filesystem"
 msgstr ""
 
-#.
-#. * Translatable strings file generated by Glade.
-#. * Add this file to your project's POTFILES.in.
-#. * DO NOT compile it as part of your application.
-#.
 #: glade.strings:7
 msgid "User Information"
 msgstr ""

@@ -56,6 +56,7 @@ static char *shell_path = NULL;		/* shell path */
 /* we manipulate the environment directly, so we have to declare (but not
  * define) the right variable here */
 extern char **environ;
+static char **environ_save;
 
 /* command line flags */
 static int f_flag = 0;		/* -f flag = change full name */
@@ -159,8 +160,8 @@ silent_converse(int num_msg, const struct pam_message **msg,
 
 /* A mixed-mode conversation function suitable for use with X. */
 static int
-converse(int num_msg, const struct pam_message **msg,
-	 struct pam_response **resp, void *appdata_ptr)
+converse_pipe(int num_msg, const struct pam_message **msg,
+	      struct pam_response **resp, void *appdata_ptr)
 {
 	int count = 0;
 	int responses = 0;
@@ -295,6 +296,72 @@ converse(int num_msg, const struct pam_message **msg,
 	return PAM_SUCCESS;
 }
 
+/* A conversation function which wraps the one provided by libpam_misc. */
+static int
+converse_console(int num_msg, const struct pam_message **msg,
+		 struct pam_response **resp, void *appdata_ptr)
+{
+	static int banner = 0;
+	const char *service = NULL, *user = NULL;
+	char *text = NULL;
+	struct app_data *app_data = appdata_ptr;
+	struct pam_message **messages;
+	int i, ret;
+
+	pam_get_item(app_data->pamh, PAM_SERVICE, (const void**)&service);
+	pam_get_item(app_data->pamh, PAM_USER, (const void**)&user);
+
+	if (banner == 0) {
+		if ((service != NULL) && (strlen(service) > 0)) {
+			if (app_data->fallback_allowed) {
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from superuser\nprivileges, but more information is needed in order to do so."), service);
+			} else {
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires superuser\nprivileges, but more information is needed in order to do so."), service);
+			}
+		} else {
+			if (app_data->fallback_allowed) {
+				text = g_strdup_printf(_("You are attempting to run a command which may benefit from\nsuperuser privileges, but more information is needed in order to do so."), service);
+			} else {
+				text = g_strdup_printf(_("You are attempting to run a command which requires superuser\nprivileges, but more information is needed in order to do so."), service);
+			}
+		}
+		if (text != NULL) {
+			fprintf(stdout, "%s\n", text);
+			fflush(stdout);
+			g_free(text);
+		}
+		banner++;
+	}
+
+	messages = g_malloc0(sizeof(struct pam_message) * (num_msg + 1));
+	for (i = 0; i < num_msg; i++) {
+		messages[i] = g_malloc(sizeof(struct pam_message));
+		*(messages[i]) = *(msg[i]);
+		if (msg[i]->msg != NULL) {
+			if ((strncasecmp(msg[i]->msg, "password", 8) == 0)) {
+				messages[i]->msg =
+					g_strdup_printf(_("Password for %s: "),
+							user);
+			} else {
+				messages[i]->msg = g_strdup(msg[i]->msg);
+			}
+		}
+	}
+
+	ret = misc_conv(num_msg, (const struct pam_message**)messages,
+			resp, appdata_ptr);
+
+	for (i = 0; i < num_msg; i++) {
+		if (messages[i]->msg != NULL) {
+			g_free((char*)messages[i]->msg);
+		}
+		g_free(messages[i]);
+	}
+	g_free(messages);
+
+	return ret;
+}
+
 /* A mixed-mode libuser prompter callback. */
 static gboolean
 prompt_pipe(struct lu_prompt *prompts, int prompts_count,
@@ -382,11 +449,11 @@ static struct pam_conv silent_conv = {
 	&app_data,
 };
 static struct pam_conv pipe_conv = {
-	converse,
+	converse_pipe,
 	&app_data,
 };
 static struct pam_conv text_conv = {
-	misc_conv,
+	converse_console,
 	&app_data,
 };
 
@@ -769,7 +836,9 @@ main(int argc, char **argv)
 				pam_strerror(app_data.pamh, retval));
 #endif
 			tryagain--;
-		} while ((retval != PAM_SUCCESS) && tryagain);
+		} while ((retval != PAM_SUCCESS) &&
+			 (retval != PAM_CONV_ERR) &&
+			 tryagain);
 		/* If we didn't succeed, bail. */
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
@@ -1048,6 +1117,7 @@ main(int argc, char **argv)
 			env_xauthority = NULL;
 
 		/* Wipe out the current environment. */
+		environ_save = environ;
 		environ = g_malloc0(2 * sizeof(char *));
 
 		/* Set just the environment variables we can trust.  Note that
@@ -1215,10 +1285,8 @@ main(int argc, char **argv)
 			} else if (app_data.fallback_allowed) {
 				/* Reset the user's XAUTHORITY so that the
 				 * application can open windows. */
-				if (env_xauthority) {
-					setenv("XAUTHORITY", env_xauthority, 1);
-				}
 				argv[optind - 1] = progname;
+				environ = environ_save;
 				become_normal(user_name);
 				execv(constructed_path, argv + optind - 1);
 				exit(ERR_EXEC_FAILED);
