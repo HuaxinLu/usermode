@@ -48,6 +48,12 @@
 #include <selinux/selinux.h>
 #include <selinux/context.h>
 #include <selinux/get_context_list.h>
+#include <selinux/flask.h>
+#include <selinux/av_permissions.h>
+
+static gboolean selinux_enabled = FALSE;
+static security_context_t new_context = NULL; /* our target security context */
+
 #endif
 
 #include "shvar.h"
@@ -70,11 +76,6 @@ struct gecos_data {
  * define) the right variable here. */
 extern char **environ;
 
-#ifdef WITH_SELINUX
-static gboolean selinux_enabled = FALSE;
-static security_context_t new_context = NULL; /* our target security context */
-#endif
-
 /* A structure type which we use to carry psuedo-global data around with us. */
 struct app_data {
 	pam_handle_t *pamh;
@@ -90,6 +91,30 @@ struct app_data {
 };
 
 #ifdef WITH_SELINUX
+static int checkAccess(int selaccess) {
+  int status=-1;
+  security_context_t user_context;
+  if( getprevcon(&user_context)==0 ) {
+    struct av_decision avd;
+    int retval = security_compute_av(user_context,
+				     user_context,
+				     SECCLASS_PASSWD,
+				     selaccess,
+				     &avd);
+	  
+    if ((retval == 0) && 
+	((selaccess & avd.allowed) == selaccess)) {
+      status=0;
+    } 
+    freecon(user_context);
+  }
+
+  if (status != 0 && security_getenforce()==0) {
+      status=0;
+  }
+  return status;
+}
+
 /*
  * setup_selinux_exec()
  *
@@ -183,12 +208,10 @@ out:
 	errno = EBADF;
 	return -1;
 }
-static char *selinux_init(shvarFile *s) {
-	char *selinux_user, *ret=NULL;
+static void selinux_init(shvarFile *s) {
 	security_context_t defcontext=NULL;
 	char *apps_role, *apps_type;
 	context_t ctx;
-	struct passwd *pwd;
 	char context_file[PATH_MAX];
 	
 	security_context_t old_context = NULL; /* our original securiy context */
@@ -200,12 +223,11 @@ static char *selinux_init(shvarFile *s) {
 	}
 	ctx = context_new(old_context);
 	freecon(old_context);
-	selinux_user=strdup(context_user_get(ctx));
-	
+
 	/* Assume userhelper's default context, if the context file
 	 * contains one.  Just in case policy changes, we read the
 	 * default context from a file instead of hard-coding it. */
-	snprintf(context_file, PATH_MAX, "%s/%s",selinux_policy_root(), "contexts/userhelper_context");
+	snprintf(context_file, PATH_MAX, "%s/%s",selinux_contexts_path(), "userhelper_context");
 	
 	if (get_init_context(context_file, &defcontext) == 0) {
 		context_free(ctx);
@@ -223,24 +245,14 @@ static char *selinux_init(shvarFile *s) {
 	if (apps_type != NULL) {
 		context_type_set(ctx, apps_type);
 	}
-	pwd = getpwnam(selinux_user);
-	if (pwd != NULL) {
-		/* Switch the user portion of the next context to the 
-		   selinux_user.  */
-		context_user_set(ctx, selinux_user);
-		ret = selinux_user;
-		
-	} else {
-		context_user_set(ctx, "root");
-		free(selinux_user);
-		ret = NULL;
-	}
+	context_user_set(ctx, "root");
+
 	new_context = strdup(context_str(ctx));
 	context_free(ctx);
 #ifdef DEBUG_USERHELPER
 	g_print("userhelper: context = '%s'\n", new_context);
 #endif
-	return ret;
+	return;
 }
 #endif /* WITH_SELINUX */
 
@@ -1152,11 +1164,6 @@ get_user_for_auth(shvarFile *s)
 
 	ret = NULL;
 
-#ifdef WITH_SELINUX
-	if (selinux_enabled) {
-		ret=selinux_init(s);
-	}
-#endif
 	if (ret == NULL) {
 		/* Determine who we should authenticate as.  If not specified,
 		 * or if "<user>" is specified, we authenticate as the invoking
@@ -1729,6 +1736,12 @@ wrap(const char *user, const char *program,
 	data = conv->appdata_ptr;
 	user_pam = get_user_for_auth(s);
 
+#ifdef WITH_SELINUX
+	if (selinux_enabled) {
+		selinux_init(s);
+	}
+#endif
+
 	/* Read the path to the program to run. */
 	constructed_path = svGetValue(s, "PROGRAM");
 	if (!constructed_path || constructed_path[0] != '/') {
@@ -1928,8 +1941,16 @@ wrap(const char *user, const char *program,
 			}
 #endif
 #ifdef WITH_SELINUX
-			if (setup_selinux_exec(constructed_path)) {
-			  exit(-1);
+			if (selinux_enabled) {
+				if (getprevcon(&new_context) < 0) {
+					syslog(LOG_NOTICE,"Unable to retrieve SELinux security context\n");
+					if (security_getenforce()>0) 
+						exit(ERR_EXEC_FAILED);
+				}
+				if (setup_selinux_exec(constructed_path)) {
+					if (security_getenforce()>0) 
+						exit(ERR_EXEC_FAILED);
+				}
 			}
 #endif
 			execv(constructed_path, argv + optind - 1);
@@ -2354,6 +2375,19 @@ main(int argc, char **argv)
 			/* We were started by the superuser, so accept the
 			 * user's name. */
 			user_name = g_strdup(argv[optind]);
+
+#ifdef WITH_SELINUX
+			if (selinux_enabled && 
+			    checkAccess(PASSWD__ROOTOK)!= 0) {
+				syslog(LOG_NOTICE, 
+				       "SELinux user not have proper access to change to \"%s\"\n",
+					user_name);
+				if (security_getenforce()>0) {
+					g_free(user_name);
+					exit(ERR_NO_USER);
+				}
+			}
+#endif
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: modifying account data for %s\n",
 				user_name);

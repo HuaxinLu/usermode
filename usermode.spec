@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.70
-Release: 6
+Release: 7
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -114,6 +114,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Jul 8 2004 Dan Walsh <dwalsh@redhat.com> 1.70-7
+- More fixes for SELinux.  roll back to only use root for auth.
+- Add getenforce checks
+- Add root_passwd check
+
 * Tue Jul 1 2004 Dan Walsh <dwalsh@redhat.com> 1.70-6
 - More fixes to make targeted policy work correctly
 
