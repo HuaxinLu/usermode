@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
-"POT-Creation-Date: 2000-08-02 12:21-0400\n"
+"POT-Creation-Date: 2000-08-03 15:08-0400\n"
 "PO-Revision-Date: 2000-08-04 02:02+02:00\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -216,6 +216,14 @@ msgstr "Skall:"
 #: ../userinfo.c:379
 msgid "This will be some help text."
 msgstr "Dette vil være en hjelpetekst."
+
+#: ../usermount.c:56
+msgid "Mount"
+msgstr ""
+
+#: ../usermount.c:57
+msgid "Unmount"
+msgstr ""
 
 #: ../usermount.c:120
 msgid "User Mount Tool"
