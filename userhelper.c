@@ -101,25 +101,30 @@ struct app_data {
  * out:		nothing
  * return:	0 on success, -1 on failure.
  */
-static void
+static int
 setup_selinux_exec(char *constructed_path)
 {
-	if (selinux_enabled) {
+  int status=0;
+  if (selinux_enabled) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: exec \"%s\" with %s context\n",
-			constructed_path, new_context);
+    g_print("userhelper: exec \"%s\" with %s context\n",
+	    constructed_path, new_context);
 #endif
-		if (setexeccon(new_context) < 0) {
-			fprintf(stderr,
-				_("Could not set exec context to %s.\n"),
-				new_context);
-			exit(-1);
-		}
-		if (new_context) {
-			freecon(new_context);
-			new_context = NULL;
-		}
-	}
+    if (setexeccon(new_context) < 0) {
+      syslog(LOG_NOTICE,
+	     _("Could not set exec context to %s.\n"),
+	     new_context);
+      fprintf(stderr,
+	      _("Could not set exec context to %s.\n"),
+	      new_context);
+      status=-1;
+    }
+    if (new_context) {
+      freecon(new_context);
+      new_context = NULL;
+    }
+  }
+  return status;
 }
 
 /*
@@ -1075,6 +1080,12 @@ get_invoking_user(void)
 		ctx = context_new(old_context);
 		ret = g_strdup(context_user_get(ctx));
 		context_free(ctx);
+		pwd = getpwnam(ret);
+		if (pwd == NULL) {
+		  free(ret);
+		  ret = NULL;
+		}
+
 	}
 #endif
 	if (ret == NULL) {
@@ -1930,7 +1941,9 @@ wrap(const char *user, const char *program,
 			}
 #endif
 #ifdef WITH_SELINUX
-			setup_selinux_exec(constructed_path);
+			if (setup_selinux_exec(constructed_path)) {
+			  exit(-1);
+			}
 #endif
 			execv(constructed_path, argv + optind - 1);
 			pipe_conv_exec_fail(conv);
@@ -2038,7 +2051,9 @@ wrap(const char *user, const char *program,
 			}
 #endif
 #ifdef WITH_SELINUX
-			setup_selinux_exec(constructed_path);
+			if (setup_selinux_exec(constructed_path)) {
+			  exit(-1);
+			}
 #endif
 			cmdline = construct_cmdline(constructed_path,
 						    argv + optind - 1);
@@ -2114,7 +2129,9 @@ wrap(const char *user, const char *program,
 		}
 #endif
 #ifdef WITH_SELINUX
-		setup_selinux_exec(constructed_path);
+		if (setup_selinux_exec(constructed_path)) {
+		  exit(-1);
+		}
 #endif
 		cmdline = construct_cmdline(constructed_path,
 					    argv + optind - 1);

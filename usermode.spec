@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.70
-Release: 2
+Release: 3
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -70,9 +70,6 @@ for wrappedapp in halt reboot poweroff ; do
 	cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/${wrappedapp}
 %endif
 done
-%if %{WITH_SELINUX}
-install -m644 userhelper_context $RPM_BUILD_ROOT/etc/security
-%endif
 %if ! %{build6x}
 rm -f $RPM_BUILD_ROOT/%{_bindir}/shutdown
 %endif
@@ -101,9 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/security/console.apps/halt
 %config /etc/security/console.apps/reboot
 %config /etc/security/console.apps/poweroff
-%if %{WITH_SELINUX}
-%config /etc/security/userhelper_context
-%endif
 
 %files gtk
 %defattr(-,root,root)
@@ -120,6 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu May 20 2004 Dan Walsh <dwalsh@redhat.com> 1.70-3
+- Change user context to default name if username context not in passwd file
+
 * Thu Apr 1 2004 Dan Walsh <dwalsh@redhat.com> 1.70-1
 - Change user context to "root" if username context "user_t" not in passwd file
 
