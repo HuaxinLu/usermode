@@ -936,7 +936,9 @@ main(int argc, char **argv)
 
 		if(retval != PAM_SUCCESS) {
 			pam_end(app_data.pamh, retval);
-			if(app_data.fallback_allowed) {
+			if(app_data.cancelled) {
+				fail_exit(retval);
+			} else if(app_data.fallback_allowed) {
 				/* Reset the user's XAUTHORITY so that the
 				 * application can open windows. */
 				if(env_xauthority) {
