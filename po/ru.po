@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-10 14:44+0100\n"
-"PO-Revision-Date: 2004-10-04 21:51+0400\n"
+"PO-Revision-Date: 2005-01-29 12:00+0300\n"
 "Last-Translator: Andrew Martynov <andrewm@inventa.ru>\n"
 "Language-Team: Russian <fedora-trans-ru@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr "Пароль: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr "Сбой отмены привелегий администратора: %s"
+msgstr "Сбой отмены привилегий администратора: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
@@ -102,7 +102,7 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Сбой отмены привелегий администратора: pam_timestamp_check вернул код ошибки "
+"Сбой отмены привилегий администратора: pam_timestamp_check вернул код ошибки "
 "%d"
 
 #: pam-panel-icon.c:148
@@ -157,7 +157,7 @@ msgstr "Сбой выполнения команды \"%s\": %s\n"
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "Сбой установки канала ввода-вывода в неблокируемый режим: %s\n"
+msgstr "Сбой установки канала ввода-вывода в не блокируемый режим: %s\n"
 
 #: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
