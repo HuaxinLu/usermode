@@ -27,7 +27,12 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make PREFIX=$RPM_BUILD_ROOT bindir=%{_bindir} mandir=%{_mandir} sbindir=%{_sbindir} install install-man install-po
+make PREFIX=$RPM_BUILD_ROOT \
+	bindir=%{_bindir} \
+	mandir=%{_mandir} \
+	sbindir=%{_sbindir} \
+	datadir=%{_datadir} \
+	install install-man install-po
 
 # Stuff from pam_console, for sysvinit. Here for lack of a better
 # place....
@@ -63,6 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/reboot
 %{_bindir}/poweroff
 %{_datadir}/pixmaps/*
+%{_datadir}/locale/*/*
 %config(noreplace) /etc/pam.d/shutdown
 %config(noreplace) /etc/pam.d/halt
 %config(noreplace) /etc/pam.d/reboot
