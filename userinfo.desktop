@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=About Myself
+Name[ja]=交□扒樹扷
 Name[sv]=Om mig sj鄟v
-Description=Change account information
-Description[sv]=瓏dra kontoinformation
+Comment=Change account information
+Comment[ja]=失市它件玄樹扷及庍凳汁□伙
+Comment[sv]=瓏dra kontoinformation
 Exec=userinfo
 Terminal=0
 Type=Application

@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=Change Password
+Name[ja]=¥Ñ¥¹¥ï¡¼¥ÉÊÑ¹¹
 Name[sv]=Byt lösenord
 Comment=Change Password
+Comment[ja]=¥Ñ¥¹¥ï¡¼¥É¤ÎÊÑ¹¹¥Ä¡¼¥ë
 Comment[sv]=Byt lösenord
 Exec=userpasswd
 Terminal=0
