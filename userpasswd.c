@@ -34,7 +34,7 @@ main(int argc, char* argv[])
 }
 
 void
-userhelper_fatal_error()
+userhelper_fatal_error(int ignored)
 {
   gtk_main_quit();
 }

@@ -96,9 +96,7 @@ userhelper_run(char *path, ...)
   int i = 0;
 
   va_start(ap, path);
-  do {
-    args[i++] = va_arg(ap, char *);
-  } while (args[i]);
+  while((i < 255) && ((args[i++] = va_arg(ap, char *)) != NULL));
   va_end(ap);
 
   userhelper_runv(path, args);
@@ -162,7 +160,7 @@ userhelper_parse_exitstatus(int exitstatus)
 
 }
 
-void
+static void
 userhelper_grab_focus(GtkWidget *widget, GdkEvent *map_event, gpointer data)
 {
 	int ret;
@@ -173,38 +171,52 @@ userhelper_grab_focus(GtkWidget *widget, GdkEvent *map_event, gpointer data)
 	ret = gdk_keyboard_grab(toplevel->window, TRUE, GDK_CURRENT_TIME);
 }
 
+static void
+mark_void(GtkWidget *widget, gpointer target)
+{
+  if(target != NULL) {
+    *(gpointer*)target = NULL;
+  }
+}
+
 void
 userhelper_parse_childout(char* outline)
 {
-  char* prompt;
-  char* current;
-  char* rest = NULL;
+  char *prompt;
+  char *rest = NULL;
+  char *title;
   int prompt_type;
-  static response *resp = NULL; /* this will be attached to the toplevel */
+  static response *resp = NULL;
 
-  prompt = strchr(outline, ' ');
+  if (resp != NULL) {
+    if(!GTK_IS_WINDOW(resp->top)) {
+      g_free(resp);
+      resp = NULL;
+    }
+  }
 
-  if(prompt == NULL) return;
+  if (resp == NULL) {
+    resp = g_malloc0(sizeof(response));
 
-  if (!resp) {
-    resp = g_malloc(sizeof(response));
-
-    resp->num_components = 1;
-    resp->message_list = NULL;
-    resp->head = resp->tail = NULL;
     resp->top = gtk_dialog_new();
-    gtk_signal_connect(GTK_OBJECT(resp->top), "map",
-		       GTK_SIGNAL_FUNC(userhelper_grab_focus), NULL);
+    gtk_signal_connect(GTK_OBJECT(resp->top), "destroy",
+		       GTK_SIGNAL_FUNC(mark_void), &resp->top);
+    gtk_window_set_title(GTK_WINDOW(resp->top), "Input");
     gtk_window_position(GTK_WINDOW(resp->top), GTK_WIN_POS_CENTER);
     gtk_container_set_border_width(GTK_CONTAINER(resp->top), 5);
-    gtk_window_set_title(GTK_WINDOW(resp->top), "Input");
+    gtk_signal_connect(GTK_OBJECT(resp->top), "map",
+		       GTK_SIGNAL_FUNC(userhelper_grab_focus), NULL);
+
     resp->ok = gtk_button_new_with_label(UD_OK_TEXT);
     gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->ok)->child), 4, 0);
+
     resp->cancel = gtk_button_new_with_label(UD_CANCEL_TEXT);
     gtk_misc_set_padding(GTK_MISC(GTK_BIN(resp->cancel)->child), 4, 0);
+
     resp->table = gtk_table_new(1, 2, FALSE);
 
     gtk_box_set_homogeneous(GTK_BOX(GTK_DIALOG(resp->top)->action_area), TRUE);
+
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
 	resp->ok, TRUE, TRUE, 2);
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(resp->top)->action_area),
@@ -223,79 +235,107 @@ userhelper_parse_childout(char* outline)
     gtk_object_set_user_data(GTK_OBJECT(resp->top), resp);
   }
 
-  current = prompt - 1;
-  if(isdigit(current[0])) {
+  if(isdigit(outline[0])) {
+    gboolean echo = TRUE;
+    int message_list_length = g_slist_length(resp->message_list);
     message *msg = g_malloc(sizeof(message));
 
-    current[1] = '\0';
-    prompt_type = atoi(current);
+    prompt_type = strtol(outline, &prompt, 10);
+    if((prompt != NULL) && (strlen(prompt) > 0)) {
+      while((isspace(prompt[0]) && (prompt[0] != '\0') && (prompt[0] != '\n'))){
+        prompt++;
+      }
+    }
 
-    prompt++;
-    /* null terminate the actual prompt... then call this function
-     * on the rest
-     */
-    current = prompt;
-
-    rest = strchr(current, '\n');
-    if(rest) {
+    /* snip off terminating newlines in the prompt string and save a pointer to
+     * interate the parser along */
+    rest = strchr(prompt, '\n');
+    if(rest != NULL) {
       *rest = '\0';
       rest++;
-      if (!*rest) {
+      if (rest[0] == '\0') {
 	rest = NULL;
       }
     }
+    /* printf("(%d) \"%s\"\n", prompt_type, prompt); */
 
     msg->type = prompt_type;
     msg->message = prompt;
     msg->data = NULL;
     msg->entry = NULL;
 
+    echo = TRUE;
     switch(prompt_type) {
       case UH_ECHO_OFF_PROMPT:
-	msg->entry = gtk_entry_new();
-	gtk_entry_set_visibility(GTK_ENTRY(msg->entry), FALSE);
+	echo = FALSE;
 	/* fall through */
       case UH_ECHO_ON_PROMPT:
-	if (!msg->entry) msg->entry = gtk_entry_new();
 	msg->label = gtk_label_new(prompt);
 	gtk_misc_set_alignment(GTK_MISC(msg->label), 1.0, 1.0);
+
+	msg->entry = gtk_entry_new();
+	gtk_entry_set_visibility(GTK_ENTRY(msg->entry), echo);
+
+	if(resp->head == NULL) resp->head = msg->entry;
+	resp->tail = msg->entry;
+
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  0, 1, resp->num_components, resp->num_components + 1, 0, 0, 2, 2);
+	  0, 1, message_list_length, message_list_length + 1,
+	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->entry,
-	  1, 2, resp->num_components, resp->num_components + 1, 0, 0, 2, 2);
-	if (!resp->head) resp->head = msg; resp->tail = msg;
+	  1, 2, message_list_length, message_list_length + 1,
+	  GTK_EXPAND | GTK_FILL, 0, 2, 2);
+
 	resp->message_list = g_slist_append(resp->message_list, msg);
+	resp->responses++;
+	/* printf("Need %d responses.\n", resp->responses); */
 	break;
+
       case UH_SERVICE_NAME:
-	gtk_window_set_title(GTK_WINDOW(resp->top), msg->message);
+	title = g_strdup_printf("Input required to run \"%s\"", msg->message);
+	gtk_window_set_title(GTK_WINDOW(resp->top), title);
 	break;
+
       case UH_ERROR_MSG:
 	gtk_window_set_title(GTK_WINDOW(resp->top), "Error");
 	/* fall through */
       case UH_INFO_MSG:
 	msg->label = gtk_label_new(prompt);
 	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
-	  0, 2, resp->num_components, resp->num_components + 1, 0, 0, 2, 2);
+	  0, 2, message_list_length, message_list_length + 1, 0, 0, 2, 2);
+	resp->message_list = g_slist_append(resp->message_list, msg);
 	break;
+
+      case UH_FALLBACK:
+#if 0
+	/* do nothing with the information for now */
+	msg->label = gtk_label_new(prompt);
+	gtk_table_attach(GTK_TABLE(resp->table), msg->label,
+	  0, 2, message_list_length, message_list_length + 1, 0, 0, 2, 2);
+	resp->message_list = g_slist_append(resp->message_list, msg);
+#endif
+	break;
+
       case UH_EXPECT_RESP:
-	free(msg); /* useless */
-	if (--resp->num_components != atoi(prompt)) {
-	  /* FIXME: bail out nicely */
+	g_free(msg); /* useless */
+	if (resp->responses != atoi(prompt)) {
+          printf("You want %d response(s) from %d entry fields!?!?!\n",
+                 atoi(prompt), resp->responses);
           exit (1);
 	}
 	gtk_widget_show_all(resp->top);
-	gtk_widget_grab_focus(resp->head->entry);
-	gtk_signal_connect_object(GTK_OBJECT(resp->tail->entry), "activate",
-	      gtk_button_clicked, GTK_OBJECT(resp->ok));
-	/* FIXME: do all sorts of last-minute stuff */
-
-	resp = NULL; /* start over next time */
+	if(GTK_IS_ENTRY(resp->head)) {
+	  gtk_widget_grab_focus(resp->head);
+	}
+	if(GTK_IS_ENTRY(resp->tail)) {
+	  gtk_signal_connect_object(GTK_OBJECT(resp->tail), "activate",
+	    gtk_button_clicked, GTK_OBJECT(resp->ok));
+	}
 	break;
       default:
 	/* ignore, I guess... */
 	break;
       }
-    if (resp) resp->num_components++;
   }
 
   if(rest != NULL) userhelper_parse_childout(rest);
@@ -309,14 +349,14 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 
   if(cond != GDK_INPUT_READ)
     {
-      /* serious error, panic. */
+      /* Serious error, this is.  Panic. */
       exit (1);
     }
 
-  output = g_malloc(MAXLINE);
+  output = g_malloc(MAXLINE + 1);
 
   count = read(source, output, MAXLINE);
-  if (count < 0)
+  if (count == -1)
     {
       exit (0);
     }
@@ -331,20 +371,19 @@ userhelper_write_childin(GtkWidget *widget, response *resp)
 {
   char* input;
   int len;
-  message *m;
   GSList *message_list = resp->message_list;
 
-  for (m = message_list->data;
-       message_list;
-       message_list = message_list->next) {
-
-    input = gtk_entry_get_text(GTK_ENTRY(m->entry));
-    len = strlen(input);
-
-    write(childin[1], input, len);
-    write(childin[1], "\n", 1);
+  for (message_list = resp->message_list;
+       (message_list != NULL) && (message_list->data != NULL);
+       message_list = g_slist_next(message_list)) {
+    if(GTK_IS_ENTRY(((message*)message_list->data)->entry)) {
+      message *m = (message*)message_list->data;
+      input = gtk_entry_get_text(GTK_ENTRY(m->entry));
+      len = strlen(input);
+      write(childin[1], input, len);
+      write(childin[1], "\n", 1);
+    }
   }
-
   gtk_widget_destroy(resp->top);
 }
 

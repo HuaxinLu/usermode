@@ -23,9 +23,10 @@
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
 
-void call_gtk_main_quit(int signal)
+void
+userhelper_fatal_error(int signal)
 {
-	gtk_main_quit();
+  gtk_main_quit();
 }
 
 int
@@ -39,8 +40,7 @@ main(int argc, char* argv[])
   int fake_gtk_argc = 1;
   char **fake_gtk_argv;
 
-  constructed_argv = g_malloc((argc+4) * sizeof(char *));
-  memset(constructed_argv, 0, (argc+4) * sizeof(char *));
+  constructed_argv = g_malloc0((argc+4) * sizeof(char *));
 
   constructed_argv[0] = UH_PATH;
   progname = strrchr(argv[0], '/');
@@ -50,16 +50,15 @@ main(int argc, char* argv[])
     progname = argv[0];
   }
 
-  fake_gtk_argv = g_malloc(2 * sizeof(char *));
+  fake_gtk_argv = g_malloc0((fake_gtk_argc + 1) * sizeof(char *));
   fake_gtk_argv[0] = argv[0];
-  fake_gtk_argv[1] = NULL;
 
   display = getenv("DISPLAY");
 
-  if (((display && (display[0] != '\0')) ||
-       !isatty(STDIN_FILENO)) &&
-      gtk_init_check(&fake_gtk_argc, &fake_gtk_argv)) {
-    graphics_available = 1;
+  if ((((display != NULL) && (strlen(display) > 0)) || !isatty(STDIN_FILENO))) {
+    if (gtk_init_check(&fake_gtk_argc, &fake_gtk_argv)) {
+      graphics_available = 1;
+    }
   }
 
   if (graphics_available) {
@@ -76,7 +75,7 @@ main(int argc, char* argv[])
   for (cargc = 1; cargc < argc; constructed_argv[cargc+cdiff] = argv[cargc++]);
 
   if (graphics_available) {
-    signal(SIGCHLD, call_gtk_main_quit);
+    signal(SIGCHLD, userhelper_fatal_error);
     userhelper_runv(UH_PATH, constructed_argv);
     gtk_main();
   } else {
@@ -86,10 +85,4 @@ main(int argc, char* argv[])
   }
 
   return 0;
-}
-
-void
-userhelper_fatal_error()
-{
-  gtk_main_quit();
 }

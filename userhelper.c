@@ -87,7 +87,7 @@ static int 	t_flg = 0;	/* -t flag = direct text-mode -- exec'ed */
 static int 	w_flg = 0;	/* -w flag = act as a wrapper for next args */
 
 /*
- * A handy fail exit function we can call from man places
+ * A handy fail exit function we can call from many places
  */
 static int fail_error(int retval)
 {
@@ -114,7 +114,7 @@ static int fail_error(int retval)
 }
 
 /*
- * Read a string from stdin, returns a malloced memory to it
+ * Read a string from stdin, returns a malloced copy of it
  */
 static char *read_string(void)
 {
@@ -130,8 +130,9 @@ static char *read_string(void)
     if (!check)
 	return NULL;
     slen = strlen(buffer);
-    if (buffer[slen-1] == '\n')
-	buffer[slen-1] = '\0';
+    if((slen > 0) && ((buffer[slen - 1] == '\n') || isspace(buffer[slen - 1]))){
+        buffer[slen-1] = '\0';
+    }
     return buffer;
 }
 
@@ -142,8 +143,7 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		     struct pam_response **resp, void *appdata_ptr)
 {
     int count = 0;
-    gboolean need_reply = FALSE;
-    static int old_msgs = 0;
+    int responses = 0;
     struct pam_response *reply = NULL;
     char *noecho_message;
 
@@ -151,28 +151,28 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 	calloc(num_msg, sizeof(struct pam_response));
     if (reply == NULL)
 	return PAM_CONV_ERR;
-    
+ 
     /*
      * We do first a pass on all items and output them;
      * then we do a second pass and read what we have to read
      * from stdin
      */
-    for (count = 0; count < num_msg; count++) {
+    for (count = responses = 0; count < num_msg; count++) {
 	switch (msg[count]->msg_style) {
 	    case PAM_PROMPT_ECHO_ON:
 		printf("%d %s\n", UH_ECHO_ON_PROMPT, msg[count]->msg);
-		need_reply = TRUE;
+		responses++;
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
 		if (the_username && !strncasecmp(msg[count]->msg, "password", 8)) {
-		    noecho_message = g_malloc(strlen (the_username) + 14);
-		    sprintf(noecho_message, "%s's password:", the_username);
+		    noecho_message = g_strdup_printf("%s's password",
+                                                     the_username);
 		} else {
 		    noecho_message = g_strdup(msg[count]->msg);
 		}
 		printf("%d %s\n", UH_ECHO_OFF_PROMPT, noecho_message);
 		g_free(noecho_message);
-		need_reply = TRUE;
+		responses++;
 		break;
 	    case PAM_TEXT_INFO:
 		printf("%d %s\n", UH_INFO_MSG, msg[count]->msg);
@@ -185,16 +185,9 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 	}
     }
 
-    /* tell the other side how many messages we sent and how many
-     * responses we expect (ignoring messages, which we fudge here).
-     */
-    if(need_reply) {
-        printf("%d %d", UH_EXPECT_RESP, num_msg + old_msgs);
-        fflush(NULL);
-	old_msgs = 0;
-    } else {
-	old_msgs += num_msg;
-    }
+    /* tell the other side how many messages we expect responses for */
+    printf("%d %d\n", UH_EXPECT_RESP, responses);
+    fflush(NULL);
 
     /* now the second pass */
     for (count = 0; count < num_msg; count++) {
@@ -215,7 +208,6 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 	    case PAM_ERROR_MSG:
 		/* also ignore it... */
 		break;
-		
 	    default:
 		/* Must be an error of some sort... */
 		free (reply);
@@ -374,7 +366,7 @@ mcheck_out(enum mcheck_status reason) {
 	    explanation = "Memory after the block was clobbered."; break;
     }
     printf("%d %s\n", UH_ERROR_MSG, explanation);
-    printf("%d 1", UH_EXPECT_RESP);
+    printf("%d 1\n", UH_EXPECT_RESP);
 }
 #endif
 
@@ -441,26 +433,17 @@ int main(int argc, char *argv[])
     /* point to the right conversation function */
     conv = t_flg ? &text_conv : &pipe_conv;
 
-#if 0
-    /* if we're a wrapper, tell the wrapper what we are */
-    if(w_flg && progname) {
-        printf("%d %s\n", UH_SERVICE_NAME, progname);
-    }
-#endif
-    
     /* now try to identify the username we are doing all this work for */
     user_name = getlogin();
     if (user_name == NULL) {
 	struct passwd *tmp;
 	
 	tmp = getpwuid(getuid());
-	if (tmp != (struct passwd *)NULL) {
-	    user_name = tmp->pw_name;
-	    if (user_name != NULL)
-		user_name = strdup(user_name);
-	    else
-		/* weirdo, bail out */
-		exit (ERR_UNK_ERROR);
+        if ((tmp != NULL) && (tmp->pw_name != NULL)) {
+	    user_name = strdup(tmp->pw_name);
+	} else {
+            /* weirdo, bail out */
+	    exit (ERR_UNK_ERROR);
 	}
     }
 
@@ -472,9 +455,9 @@ int main(int argc, char *argv[])
 	    user_name = argv[optind];
         }
 
-        /* check for the existance of this user */
+        /* check for the existence of this user */
         pw = getpwnam(user_name);
-        if (pw == (struct passwd *)NULL) {
+        if ((pw == NULL) || (pw->pw_name == NULL)) {
 	    /* user not known */
 	    exit(ERR_NO_USER);
         }
@@ -599,12 +582,22 @@ int main(int argc, char *argv[])
 
 	retval = !PAM_SUCCESS;
 	while (try-- && retval != PAM_SUCCESS) {
+            if(strrchr(constructed_path, '/') != NULL) {
+              printf("%d %s\n", UH_SERVICE_NAME,
+                     strrchr(constructed_path, '/') + 1);
+	    } else {
+              printf("%d %s\n", UH_SERVICE_NAME, constructed_path);
+	    }
+	    printf("%d %d\n", UH_FALLBACK, fallback);
 	    retval = pam_authenticate(pamh, 0);
 	}
 	if (retval != PAM_SUCCESS) {
 	    pam_end(pamh, retval);
 	    if (fallback) {
 		setuid(getuid());
+		if(geteuid() != getuid()) {
+		    exit (ERR_EXEC_FAILED);
+		}
 		argv[optind-1] = progname;
 		execv(constructed_path, argv+optind-1);
 		exit (ERR_EXEC_FAILED);

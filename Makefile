@@ -1,3 +1,5 @@
+CC=gcc
+
 # mostly and totally crappy makefile... better one to come.
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 REVISION=$(shell awk '/^Revision:/ { print $$2 }' < usermode.spec)
@@ -8,34 +10,35 @@ CFLAGS=-g -Wall $(shell gtk-config --cflags)
 LDFLAGS=$(shell gtk-config --libs)
 INSTALL=install
 
-bindir=/usr/bin
-mandir=/usr/man
-sbindir=/usr/sbin
+prefix=/usr
+bindir=$(prefix)/bin
+mandir=$(prefix)/man
+sbindir=$(prefix)/sbin
 
 PROGS=userinfo usermount userhelper userpasswd consolehelper
 MANS=userinfo.1 usermount.1 userhelper.8 userpasswd.1 consolehelper.8
 
-all: 	$(PROGS)
+all: $(PROGS)
 
-userhelper:	userhelper.c shvar.o
-	$(CC) -ouserhelper $(CFLAGS) userhelper.c shvar.o -lglib -lpwdb -lpam -lpam_misc -ldl
+userhelper: userhelper.o shvar.o
+	$(CC) -ouserhelper $(CFLAGS) $^ -lglib -lpwdb -lpam -lpam_misc -ldl
 
 test:	test-userdialog
 
-test-userdialog: 	userdialogs.o test-userdialog.o
-	$(CC) -otest-userdialog $(CFLAGS) userdialogs.o test-userdialog.o $(LDFLAGS)
+test-userdialog:  userdialogs.o test-userdialog.o
+	$(CC) -otest-userdialog $(CFLAGS) $^ $(LDFLAGS)
 
-userinfo:	userinfo.o userdialogs.o userhelper-wrap.o
-	$(CC) -ouserinfo $(CFLAGS) userinfo.o userdialogs.o userhelper-wrap.o $(LDFLAGS)
+userinfo: userinfo.o userdialogs.o userhelper-wrap.o
+	$(CC) -ouserinfo $(CFLAGS) $^ $(LDFLAGS)
 
-usermount:	usermount.o userdialogs.o
-	$(CC) -ousermount $(CFLAGS) usermount.o userdialogs.o $(LDFLAGS)
+usermount: usermount.o userdialogs.o
+	$(CC) -ousermount $(CFLAGS) $^ $(LDFLAGS)
 
-userpasswd:	userpasswd.o userdialogs.o userhelper-wrap.o
-	$(CC) -ouserpasswd $(CFLAGS) userpasswd.o userdialogs.o userhelper-wrap.o $(LDFLAGS)
+userpasswd: userpasswd.o userdialogs.o userhelper-wrap.o
+	$(CC) -ouserpasswd $(CFLAGS) $^ $(LDFLAGS)
 
-consolehelper:	consolehelper.o userdialogs.o userhelper-wrap.o
-	$(CC) -oconsolehelper $(CFLAGS) consolehelper.o userdialogs.o userhelper-wrap.o $(LDFLAGS)
+consolehelper: consolehelper.o userdialogs.o userhelper-wrap.o
+	$(CC) -oconsolehelper $(CFLAGS) $^ $(LDFLAGS)
 
 install:	$(PROGS)
 	mkdir -p $(PREFIX)$(bindir) $(PREFIX)$(sbindir)

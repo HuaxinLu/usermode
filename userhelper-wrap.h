@@ -38,14 +38,14 @@ typedef struct message {
 } message;
 
 typedef struct response {
-	int num_components;
+	int responses;
 	GSList *message_list; /* contains pointers to messages */
+	GtkWidget *head;
+	GtkWidget *tail;
 	GtkWidget *top;
 	GtkWidget *table;
 	GtkWidget *ok;
 	GtkWidget *cancel;
-	message *head;
-	message *tail;
 } response;
 
 void userhelper_run(char *path, ...);
@@ -57,6 +57,6 @@ void userhelper_write_childin(GtkWidget* widget, response *resp);
 
 void userhelper_sigchld();	/* sigchld handler */
 
-void userhelper_fatal_error();
+void userhelper_fatal_error(int ignored);
 
 #endif /* __USERHELPER_WRAP_H__ */

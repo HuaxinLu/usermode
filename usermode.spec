@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.23
-Release: 4
+Version: 1.24
+Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -38,6 +38,9 @@ for wrapapp in shutdown halt reboot poweroff ; do
   touch $RPM_BUILD_ROOT/etc/security/console.apps/$wrapapp
   cp shutdown.pamd $RPM_BUILD_ROOT/etc/pam.d/$wrapapp
 done
+
+# Strip it!
+strip $RPM_BUILD_ROOT%{_bindir}/* $RPM_BUILD_ROOT%{_sbindir}/*
       
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,8 +72,11 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/security/console.apps/reboot
 %config(missingok) /etc/security/console.apps/poweroff
 
-
 %changelog
+* Mon Jun 19 2000 Nalin Dahyabhia <nalin@redhat.com>
+- strip all binaries by default
+- add the name of the program being run to the userhelper dialog
+
 * Sun Jun 18 2000 Matt Wilson <msw@redhat.com>
 - rebuilt to see if we get stripped binaries
 
