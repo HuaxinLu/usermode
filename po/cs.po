@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.27\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
-"PO-Revision-Date: 2002-04-21 21:27+0100\n"
-"Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
+"PO-Revision-Date: 2002-09-06 07:22+0200\n"
+"Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
@@ -30,7 +30,7 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "Ok"
+msgstr "OK"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
@@ -38,7 +38,7 @@ msgstr "Konec"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Pøeru¹it"
+msgstr "Zru¹it"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
@@ -70,11 +70,11 @@ msgstr "Heslo nebylo zmìnìno"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Promiòte, vlo¾ená hesla nebyla stejná"
+msgstr "Promiòte, vlo¾ená hesla nesouhlasí"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "Spustí systémové konfiguraèní nástroje bez hesla."
 
 #: userdialogs.h:30
 msgid "Help"
@@ -91,40 +91,38 @@ msgid "Password for %s"
 msgstr "Heslo pro u¾ivatele %s"
 
 #: userhelper.c:346
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit \"%s\", co¾ mù¾e pøinést administrátorská oprávnìní, "
-"ale je potøeba více informací, aby se dalo pokraèovat."
+"Pokou¹íte se spustit \"%s\", co¾ mù¾e vyu¾ít administrátorská oprávnìní,\n"
+"ale k tomu je potøeba více informací."
 
 #: userhelper.c:348
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrtorská práva. Je "
-"potøeba více informací, aby bylo mo¾né pokraèovat."
+"Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrátorská oprávnìní.\n"
+"Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper.c:352
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská oprávnìní. "
-"Je potøeba více informací, aby bylo mo¾né pokraèovat."
+"Pokou¹íte se spustit pøíkaz, který mù¾e vyu¾ít administrátorská oprávnìní,\n"
+"ale k tomu je potøeba více informací."
 
 #: userhelper.c:354
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokou¹íte se spustit pøíkaz, který poøebuje administrátorská oprávnìní. Je "
-"potøeba více informací, aby bylo mo¾né pokraèovat."
+"Pokou¹íte se spustit pøíkaz, který potøebuje administrátorská oprávnìní.\n"
+"Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper.c:373
 #, c-format
@@ -139,7 +137,7 @@ msgstr "program userhelper musí být SUID root\n"
 #: userhelper.c:729
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Nelze otevøít grafické okno a nelze najít kontrolní terminál.\n"
+msgstr "Nelze otevøít grafické okno a nelze najít øídící terminál.\n"
 
 #: userhelper.c:1434 userhelper.c:1480
 #, c-format
@@ -169,8 +167,7 @@ msgid ""
 "Please remove those and try again."
 msgstr ""
 "Jedna nebo více zmìnìných polo¾ek je neplatná.\n"
-"Tato chyba je pravdìpodobnì zpùsobena pøítomností znaku èárky nebo trubky v "
-"jedné ze vstupních polo¾ek.\n"
+"Tato chyba je pravdìpodobnì zpùsobena pøítomností znaku dvojteèka nebo èárka v jedné ze vstupních polo¾ek.\n"
 "Odstraòte je prosím a zkuste to znovu."
 
 #: userhelper-wrap.c:69
@@ -217,7 +214,7 @@ msgstr "Volání exec() selhalo."
 
 #: userhelper-wrap.c:86
 msgid "Failed to find selected program."
-msgstr "Nemohu najít vybraný progra."
+msgstr "Nemohu najít vybraný program."
 
 #: userhelper-wrap.c:90
 msgid "Unknown error."
@@ -253,40 +250,30 @@ msgid "Changing login shell."
 msgstr "Zmìna pøihla¹ovacího shellu."
 
 #: userhelper-wrap.c:491
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Pokou¹íte se spustit \"%s\", co¾ mù¾e pøinést administrátorská oprávnìní, "
-"ale je potøeba více informací, aby se dalo pokraèovat."
+msgstr "Pokou¹íte se spustit \"%s\", co¾ mù¾e vyu¾ít administrátorská oprávnìní, ale k tomu je potøeba více informací."
 
 #: userhelper-wrap.c:493
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrtorská práva. Je "
-"potøeba více informací, aby bylo mo¾né pokraèovat."
+msgstr "Pokou¹íte se spustit \"%s\", k èemu¾ jsou potøeba administrátorská oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper-wrap.c:502
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská oprávnìní. "
-"Je potøeba více informací, aby bylo mo¾né pokraèovat."
+msgstr "Pokou¹íte se spustit pøíkaz, který mù¾e vyu¾ít administrátorská oprávnìní, ale k tomu je potøeba více informací."
 
 #: userhelper-wrap.c:504
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Pokou¹íte se spustit pøíkaz, který poøebuje administrátorská oprávnìní. Je "
-"potøeba více informací, aby bylo mo¾né pokraèovat."
+msgstr "Pokou¹íte se spustit pøíkaz, který potøebuje administrátorská oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
 
 #: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
@@ -294,7 +281,7 @@ msgstr "_Spustit neprivilegovanì"
 
 #: userhelper-wrap.c:622
 msgid "Pipe error.\n"
-msgstr "Chyba trubky.\n"
+msgstr "Chyba roury.\n"
 
 #: userhelper-wrap.c:629
 msgid "Cannot fork().\n"
@@ -342,8 +329,7 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Nejsou k dispozici ¾ádné systémy souborù, které byste mohl pøipojit nebo "
-"odpojit.\n"
+"Nejsou k dispozici ¾ádné systémy souborù, které smíte pøipojit nebo odpojit.\n"
 "Kontaktujte administrátora systému."
 
 #. Create the dialog.
@@ -403,7 +389,7 @@ msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
-msgstr "_Pøeru¹it"
+msgstr "_Zru¹it"
 
 #: glade.strings:15 usermode.glade.h:5
 msgid "Message"
@@ -427,58 +413,28 @@ msgstr "_Konec"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "O mì"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Zmìna informací o u¾ivateli."
+msgstr "Zmìna osobních informací."
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Správa diskù"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Pøipojit a odpojit souborové systémy"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Zmìnit Va¹e pøihla¹ovací heslo"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Heslo pro u¾ivatele %s"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Pokou¹íte se spustit pøíkaz \"%s\", který mù¾e získat administrátorská\n"
-#~ "oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Pokou¹íte se spustit pøíkaz \"%s\", který potøebuje administrátorská\n"
-#~ "oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Pokou¹íte se spustit pøíkaz, který mù¾e získat administrátorská\n"
-#~ "oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Pokou¹íte se spustit pøíkaz, který potøebuje administrátorská\n"
-#~ "oprávnìní. Je potøeba více informací, aby bylo mo¾né pokraèovat."
+msgstr "Heslo"
