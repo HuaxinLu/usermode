@@ -1,7 +1,7 @@
 VERSION=$(shell awk '/^Version:/ { print $$2 }' < usermode.spec)
 RELEASE=$(shell awk '/^Release:/ { print $$2 }' < usermode.spec)
 CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
-EXTRA_DIST = \
+EXTRA_DIST = config.rpath  \
 	dummy.h \
 	usermode.spec \
 	shutdown \
@@ -18,7 +18,7 @@ EXTRA_DIST = \
 	shutdown.pamd \
 	shutdown.pamd.6x
 
-SUBDIRS=intl po
+SUBDIRS= m4 po
 
 CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@
 consolehelper_CFLAGS = -DDISABLE_X11 $(CFLAGS)
@@ -67,3 +67,5 @@ test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@
 
 tag:
 	cvs tag -cR $(CVSTAG) .
+
+ACLOCAL_AMFLAGS = -I m4
