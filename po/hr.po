@@ -1,8 +1,11 @@
+# Translation of usermode to Croatian
+# Copyright (C) Croatian team
+# Translators: Denis Lackovic <delacko@fly.srk.fer.hr>,Robert Sedak <robert.sedak@sk.tel.hr>,Vlatko Kosturjak <kost@linux.hr>,
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 0\n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
-"PO-Revision-Date: 2003-10-03 17:30+CEST\n"
+"PO-Revision-Date: 2003-12-10 16:36+CET\n"
 "Last-Translator: auto\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +37,7 @@ msgstr "U redu"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr "Izlaz"
+msgstr "Izađi"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
@@ -89,17 +92,16 @@ msgid "Help"
 msgstr "Pomoć"
 
 #: userhelper.c:122
-#,  c-format
+#, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Ne mogu se spojiti na %s.\n"
 
 #: userhelper.c:431
-#,  c-format
+#, c-format
 msgid "Password for %s"
 msgstr "Lozinka za %s"
 
 #: userhelper.c:666
-#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -108,7 +110,6 @@ msgstr ""
 "Potrebno je više podataka da bi se to napravilo."
 
 #: userhelper.c:668
-#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -133,7 +134,6 @@ msgstr ""
 "Potrebno je više podataka da bi se to napravilo."
 
 #: userhelper.c:693
-#, c-format
 msgid "Password for %s: "
 msgstr "Lozinka za %s: "
 
@@ -224,7 +224,7 @@ msgstr "Nepoznata greška."
 
 #: userhelper-wrap.c:458 glade.strings:18 usermode.glade.h:9
 msgid "Query"
-msgstr "Zahtjev"
+msgstr "Upit"
 
 #: userhelper-wrap.c:548 userhelper-wrap.c:718
 msgid "Error"
@@ -232,7 +232,7 @@ msgstr "Greška"
 
 #: userhelper-wrap.c:560
 msgid "Information"
-msgstr "Informacija"
+msgstr "Informacije"
 
 #: userhelper-wrap.c:716 glade.strings:16 glade.strings:19 usermode.glade.h:8
 msgid "Placeholder text."
@@ -247,7 +247,6 @@ msgid "Changing login shell."
 msgstr "Mijenjam korisničku ljusku za prijavu u sustav."
 
 #: userhelper-wrap.c:765
-#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -256,7 +255,6 @@ msgstr ""
 "Potrebno je više podataka da bi se to napravilo."
 
 #: userhelper-wrap.c:767
-#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
@@ -297,7 +295,7 @@ msgid "dup2() error.\n"
 msgstr "dup2() greška.\n"
 
 #: userhelper-wrap.c:1032
-#,  c-format
+#, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() greška, broj greške=%d\n"
 
@@ -411,7 +409,7 @@ msgstr "_Odmontiraj"
 
 #: glade.strings:29
 msgid "E_xit"
-msgstr "_Izađi"
+msgstr "_Izlaz"
 
 #: usermode.glade.h:1
 msgid "*"
