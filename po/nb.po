@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.26\n"
 "POT-Creation-Date: 2001-12-10 16:03-0500\n"
-"PO-Revision-Date: 2002-01-16 01:36+0100\n"
+"PO-Revision-Date: 2002-01-16 02:08+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnu.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -211,13 +211,13 @@ msgstr "Du prøver å kjøre «%s» som krever superbrukerprivilegier, men du må oppg
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
-msgstr ""
+msgstr "Du prøver å kjøre en kommando har fordeler hvis den kjøres med superbrukerprivilegier, men mer informasjon må oppgis for å gjøre dette."
 
 #: userhelper-wrap.c:444
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
-msgstr ""
+msgstr "Du prøver å kjøre en kommando som krever superbrukerprivilegier, men du må oppgi mer informasjon for å gjøre dette."
 
 #: userhelper-wrap.c:454
 msgid "_Run Unprivileged"
