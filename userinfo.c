@@ -507,17 +507,18 @@ set_new_userinfo(UserInfo* userinfo)
   signal(SIGCHLD, userhelper_sigchld);
 
   if(strcmp(userinfo->shell, shell) == 0) {
+    /* don't touch shell */
     userhelper_run(UH_PATH, UH_PATH,
-                   UH_FULLNAME_OPT, fullname,
-                   UH_OFFICE_OPT, office,
-                   UH_OFFICEPHONE_OPT, officephone,
-                   UH_HOMEPHONE_OPT, homephone, 0);
+                   UH_FULLNAME_OPT, fullname?fullname:"",
+                   UH_OFFICE_OPT, office?office:"",
+                   UH_OFFICEPHONE_OPT, officephone?officephone:"",
+                   UH_HOMEPHONE_OPT, homephone?homephone:"", 0);
   } else {
     userhelper_run(UH_PATH, UH_PATH,
-                   UH_FULLNAME_OPT, fullname,
-                   UH_OFFICE_OPT, office,
-                   UH_OFFICEPHONE_OPT, officephone,
-                   UH_HOMEPHONE_OPT, homephone,
+                   UH_FULLNAME_OPT, fullname?fullname:"",
+                   UH_OFFICE_OPT, office?office:"",
+                   UH_OFFICEPHONE_OPT, officephone?officephone:"",
+                   UH_HOMEPHONE_OPT, homephone?homephone:"",
                    UH_SHELL_OPT, shell, 0);
   }
 }
