@@ -43,6 +43,7 @@
 #define ERR_NO_RIGHTS		6	/* insufficient rights to perform operation */
 #define ERR_INVALID_CALL	7	/* invalid call to this program */
 #define ERR_SHELL_INVALID       8       /* no such line in /etc/shells */
+#define ERR_NO_MEMORY		9	/* out of memory */
 #define ERR_UNK_ERROR		255	/* unknown error */
 					   
 /* Total GECOS field length... is this enough ? */
@@ -133,17 +134,13 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		     struct pam_response **resp, void *appdata_ptr)
 {
     int 	count = 0;
-    int		replies = 0;
     struct pam_response *reply = NULL;
-    int size = sizeof(struct pam_response);
 
-#define GET_MEM \
-    if (reply) realloc(reply, size); \
-    else reply = malloc(size); \
-    if (!reply) return PAM_CONV_ERR; \
-    size += sizeof(struct pam_response);
-#define COPY_STRING(s) (s) ? strdup(s) : NULL
-
+    reply = (struct pam_response *)
+	calloc(num_msg, sizeof(struct pam_response));
+    if (reply == NULL)
+	return PAM_CONV_ERR;
+    
     /*
      * We do first a pass on all items and output them;
      * then we do a second pass and read what we have to read
@@ -172,15 +169,13 @@ static int conv_func(int num_msg, const struct pam_message **msg,
     for (count = 0; count < num_msg; count++) {
 	switch (msg[count]->msg_style) {
 	    case PAM_PROMPT_ECHO_ON:
-		GET_MEM;
-		reply[replies].resp_retcode = PAM_SUCCESS;
-		reply[replies++].resp = read_string();
+		reply[count].resp_retcode = PAM_SUCCESS;
+		reply[count].resp = read_string();
 		/* PAM frees resp */
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
-		GET_MEM;
-		reply[replies].resp_retcode = PAM_SUCCESS;
-		reply[replies++].resp = read_string();
+		reply[count].resp_retcode = PAM_SUCCESS;
+		reply[count].resp = read_string();
 		/* PAM frees resp */
 		break;
 	    case PAM_TEXT_INFO:
