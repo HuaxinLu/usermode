@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.1\n"
 "POT-Creation-Date: 2002-08-07 15:05-0400\n"
-"PO-Revision-Date: 2002-08-05 17:41+0300\n"
+"PO-Revision-Date: 2002-08-09 17:22+0300\n"
 "Last-Translator: Leon Kanter <leon@blackcatlinux.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgstr "Извините, пароли не совпадают"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without login."
-msgstr ""
+msgstr "Запускает общесистемные средства конфигурации без изменения регистрации в системе"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -140,8 +140,7 @@ msgstr "userhelper должен быть setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:730
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Невозможно открыть графическое окно и найти управляющий терминал.\n"
 
 #: userhelper.c:1409 userhelper.c:1447
@@ -428,29 +427,27 @@ msgstr "Выход"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "О себе"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Изменение личной информации."
+msgstr "Изменение личной информации"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Управление дисками"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Подключает и отключает файловые системы"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Изменяет ваш пароль"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Пароль для %s"
+msgstr "Смена пароля"
 
 #~ msgid ""
 #~ "You are attempting to run \"%s\" which may benefit from superuser\n"
@@ -481,3 +478,4 @@ msgstr "Пароль для %s"
 #~ msgstr ""
 #~ "Вы пытаетесь выполнить программу, которая требует привелегий\n"
 #~ "root. Для этого нужна дополнительная информация."
+
