@@ -1464,7 +1464,7 @@ main(int argc, char **argv)
 			 * exit value. */
 			if (WIFEXITED(status) && (WEXITSTATUS(status) == 0)) {
 				pam_end(app_data.pamh, PAM_SUCCESS);
-				retval = 1;
+				retval = 0;
 			} else {
 				pam_end(app_data.pamh, PAM_SUCCESS);
 				retval = ERR_EXEC_FAILED;

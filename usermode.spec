@@ -109,6 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Tue Sep  3 2002 Nalin Dahyabhai <nalin@redhat.com> 1.62-1
 - consolehelper: suppress dialog on successful execution
+- userhelper: return 0 on success, not 1 (what was I *thinking*?)
 
 * Mon Sep  2 2002 Nalin Dahyabhai <nalin@redhat.com> 1.61-1
 - userinfo: exit properly on escape. handle site_info field properly. go

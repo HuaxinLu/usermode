@@ -104,6 +104,7 @@ userhelper_parse_exitstatus(int exitstatus)
 			break;
 		}
 	}
+
 	if (i >= G_N_ELEMENTS(codes)) {
 		message_box = codes[0].create(codes[0].message, NULL);
 	}
@@ -563,8 +564,7 @@ userhelper_parse_childout(char *outline)
 
 /* Handle a child-exited signal by disconnecting from its stdout. */
 static void
-userhelper_child_exited(VteReaper *reaper, guint pid, guint status,
-			gpointer data)
+userhelper_child_exited(VteReaper *reaper, int pid, int status, gpointer data)
 {
 #ifdef DEBUG_USERHELPER
 	fprintf(stderr, "Child %d exited (looking for %d).\n", pid, childpid);
@@ -574,6 +574,10 @@ userhelper_child_exited(VteReaper *reaper, guint pid, guint status,
 			g_source_remove(childout_tag);
 		}
 		if (WIFEXITED(status)) {
+#ifdef DEBUG_USERHELPER
+			fprintf(stderr, "Child %d exited normally, ret = %d.\n",
+				pid, WEXITSTATUS(status));
+#endif
 			userhelper_parse_exitstatus(WEXITSTATUS(status));
 		} else {
 #ifdef DEBUG_USERHELPER
