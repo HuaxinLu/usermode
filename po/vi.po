@@ -135,7 +135,8 @@ msgstr "userhelper cần đặt setuid của root\n"
 #: userhelper.c:729
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Không thể mở cửa sổ đồ họa, và không thể tìm thấy terminal điều khiển.\n"
+msgstr ""
+"Không thể mở cửa sổ đồ họa, và không thể tìm thấy terminal điều khiển.\n"
 
 #: userhelper.c:1434 userhelper.c:1480
 #, c-format
@@ -310,7 +311,8 @@ msgstr "_Tháo gắn kết"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Bạn có chắc muốn định dạng đĩa này không? Bạn sẽ hủy mọi dữ liệu trên đó."
+msgstr ""
+"Bạn có chắc muốn định dạng đĩa này không? Bạn sẽ hủy mọi dữ liệu trên đó."
 
 #: usermount.c:331
 msgid "Perform a _low-level format."
