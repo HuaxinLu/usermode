@@ -6,6 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2003-09-25 16:34-0400\n"
 "PO-Revision-Date: 2003-12-03 13:55+1000\n"
 "Last-Translator: Francesco Valente <fvalen@redhat.com>\n"
@@ -149,7 +150,8 @@ msgstr "userhelper deve impostare la setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:1123
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica o trovare il terminale di "
 "controllo.\n"
@@ -326,7 +328,8 @@ msgstr "_Smonta"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Formattare il disco? La formattazione distruggerà tutti i dati sul disco."
+msgstr ""
+"Formattare il disco? La formattazione distruggerà tutti i dati sul disco."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -459,4 +462,3 @@ msgstr "Password"
 
 #~ msgid "Need %d responses.\n"
 #~ msgstr "Necessarie %d risposte.\n"
-
