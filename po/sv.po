@@ -1,5 +1,5 @@
 # Swedish messages for usermode.
-# Copyright (C) 2001 Christian Rose <menthos@menthos.com>.
+# Copyright (C) 2001, 2002 Christian Rose <menthos@menthos.com>.
 #
 # $Id$
 #
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "POT-Creation-Date: 2002-01-31 05:38-0500\n"
-"PO-Revision-Date: 2001-08-15 22:16+0200\n"
+"PO-Revision-Date: 2002-02-13 09:14+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -82,9 +82,9 @@ msgid "Help"
 msgstr "Hjälp"
 
 #: userhelper.c:95
-#, fuzzy, c-format
+#, c-format
 msgid "Got PAM error %d.\n"
-msgstr "Tog emot felet %d.\n"
+msgstr "Tog emot PAM-fel %d.\n"
 
 #: userhelper.c:198
 #, c-format
@@ -100,6 +100,8 @@ msgstr "userhelper måste vara setuid root\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
+"Kan inte öppna grafiskt fönster och kan inte hitta kontrollerande "
+"terminal.\n"
 
 #: userhelper.c:1297 userhelper.c:1335
 #, c-format
@@ -153,7 +155,6 @@ msgid "Insufficient rights."
 msgstr "Otillräckliga rättigheter."
 
 #: userhelper-wrap.c:66
-#, fuzzy
 msgid "Invalid call to subprocess.."
 msgstr "Ogiltigt anrop av underprocess."
 
@@ -185,7 +186,7 @@ msgstr "Okänt fel."
 
 #: glade.strings:16 glade.strings:19 userhelper-wrap.c:234
 msgid "Placeholder text."
-msgstr ""
+msgstr "Testtext."
 
 #: userhelper-wrap.c:348
 #, c-format
@@ -197,17 +198,16 @@ msgid "Error"
 msgstr "Fel"
 
 #: userhelper-wrap.c:394
-#, fuzzy
 msgid "Information"
-msgstr "Användarinformation"
+msgstr "Information"
 
 #: userhelper-wrap.c:438
 msgid "Changing personal information."
-msgstr ""
+msgstr "Ändrar personlig information."
 
 #: userhelper-wrap.c:441
 msgid "Changing login shell."
-msgstr ""
+msgstr "Ändrar inloggningsskal."
 
 #: userhelper-wrap.c:444
 #, c-format
@@ -215,6 +215,9 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Du försöker köra \"%s\" vilket kan dra nytta av "
+"superanvändarrättigheter, men mer information krävs för att kunna göra "
+"det."
 
 #: userhelper-wrap.c:446
 #, c-format
@@ -222,23 +225,29 @@ msgid ""
 "You are attempting to run \"%s\" which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Du försöker köra \"%s\" som kräver superanvändarrättigheter, men mer "
+"information krävs för att kunna göra det."
 
 #: userhelper-wrap.c:451
 msgid ""
 "You are attempting to run a command which may benefit from superuser "
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Du försöker köra ett kommando vilket kan dra nytta av "
+"superanvändarrättigheter, men mer information krävs för att kunna göra "
+"det."
 
 #: userhelper-wrap.c:453
 msgid ""
 "You are attempting to run a command which requires superuser privileges, but "
 "more information is needed in order to do so."
 msgstr ""
+"Du försöker köra ett kommando som kräver superanvändarrättigheter, men "
+"mer information krävs för att kunna göra det."
 
 #: userhelper-wrap.c:463
-#, fuzzy
 msgid "_Run Unprivileged"
-msgstr "Kör oprivilegierat"
+msgstr "_Kör oprivilegierat"
 
 #: userhelper-wrap.c:575 userhelper-wrap.c:592
 msgid "Pipe error.\n"
@@ -259,44 +268,39 @@ msgstr "execl()-fel, felnummer=%d\n"
 
 #: userinfo.c:299
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "Du finns inte. Försvinn.\n"
 
 #: glade.strings:26 usermount.c:61
-#, fuzzy
 msgid "_Mount"
-msgstr "Montera"
+msgstr "_Montera"
 
 #: usermount.c:62
-#, fuzzy
 msgid "Un_mount"
-msgstr "Avmontera"
+msgstr "Av_montera"
 
 #: usermount.c:310
-#, fuzzy
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Är du säker?\n"
-"Du kommer att förstöra all data på den disken.\n"
+"Är du säker på att du vill formatera denna disk?\n"
+"Du kommer att förstöra all data som den för tillfället innehåller."
 
 #: usermount.c:321
-#, fuzzy
 msgid "Perform a _low-level format."
-msgstr "Lågnivåformatera."
+msgstr "Utför en _lågnivåformatering."
 
 #: usermount.c:364
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Välj en typ av _filsystem att skapa:"
 
 #: usermount.c:521
-#, fuzzy
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Det finns inga filsystem som kan monteras av användare.\n"
-"Kontakta din systemadministratör."
+"Det finns inga filsystem som du tillåts montera eller avmontera.\n"
+"Kontakta din administratör."
 
 #. Create the dialog.
 #: glade.strings:22 usermount.c:522 usermount.c:530
@@ -305,9 +309,8 @@ msgstr "Monteringsverktyg"
 
 #. Create the other buttons.
 #: glade.strings:28 usermount.c:544
-#, fuzzy
 msgid "_Format"
-msgstr "Formatera"
+msgstr "_Formatera"
 
 #: glade.strings:24 usermount.c:579
 msgid "Device"
@@ -319,7 +322,7 @@ msgstr "Katalog"
 
 #: usermount.c:591
 msgid "Filesystem"
-msgstr ""
+msgstr "Filsystem"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -339,28 +342,24 @@ msgid "Office:"
 msgstr "Kontor:"
 
 #: glade.strings:10
-#, fuzzy
 msgid "Office Phone Number"
-msgstr "Kontorstelefon:"
+msgstr "Kontorstelefon"
 
 #: glade.strings:11
-#, fuzzy
 msgid "Home Phone Number"
-msgstr "Hemtelefon:"
+msgstr "Hemtelefon"
 
 #: glade.strings:12
-#, fuzzy
 msgid "Login Shell"
-msgstr "Skal:"
+msgstr "Inloggningsskal"
 
 #: glade.strings:13 glade.strings:20
 msgid "_Ok"
-msgstr ""
+msgstr "_Ok"
 
 #: glade.strings:14 glade.strings:21
-#, fuzzy
 msgid "_Cancel"
-msgstr "Avbryt"
+msgstr "Av_bryt"
 
 #: glade.strings:15
 msgid "Message"
@@ -368,32 +367,26 @@ msgstr "Meddelande"
 
 #: glade.strings:17
 msgid "_Close"
-msgstr ""
+msgstr "_Stäng"
 
 #: glade.strings:18
 msgid "Query"
-msgstr ""
+msgstr "Fråga"
 
 #: glade.strings:25
 msgid "Type"
 msgstr "Typ"
 
 #: glade.strings:27
-#, fuzzy
 msgid "_Unmount"
-msgstr "Avmontera"
+msgstr "_Avmontera"
 
 #: glade.strings:29
-#, fuzzy
 msgid "E_xit"
-msgstr "Avsluta"
+msgstr "A_vsluta"
 
 #~ msgid "about to authenticate \"%s\"\n"
 #~ msgstr "kommer att autentisera \"%s\"\n"
-
-#, fuzzy
-#~ msgid "PAM retval = %d (%s)\n"
-#~ msgstr "PAM returnerade = %d\n"
 
 #~ msgid "Yes"
 #~ msgstr "Ja"
@@ -437,3 +430,12 @@ msgstr "Avsluta"
 
 #~ msgid "This will be some help text."
 #~ msgstr "Det här kommer att vara någon hjälptext."
+
+#~ msgid "Invalid call to subprocess."
+#~ msgstr "Ogiltigt anrop av underprocess."
+
+#~ msgid "Full Name"
+#~ msgstr "Fullständigt namn"
+
+#~ msgid "Office"
+#~ msgstr "Kontor"
