@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.78
-Release: 1
+Release: 3
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.bz2
@@ -29,6 +29,8 @@ Summary: Graphical tools for certain user account management tasks.
 Group: Applications/System
 Requires: %{name} = %{version}-%{release}
 
+Patch0: usermode-1.78-startspace.patch
+
 %description
 The usermode package contains the userhelper program, which can be
 used to allow configured programs to be run with superuser privileges
@@ -46,8 +48,10 @@ graphical tools for certain account management tasks.
 
 %prep
 %setup -q
+%patch0 -p1 -b .startspace
 
 %build
+export CFLAGS="$RPM_OPT_FLAGS"
 %configure \
 %if %{WITH_SELINUX}
 	--with-selinux 
@@ -115,6 +119,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Mar 02 2005 Jindrich Novy <jnovy@rdhat.com> 1.78-3
+- fix problem with root passwords starting with space (#124980)
+
+* Wed Feb 16 2005 Jindrich Novy <jnovy@rdhat.com> 1.78-2
+- add $RPM_OPT_FLAGS to CFLAGS
+
 * Thu Jan 27 2005 Jindrich Novy <jnovy@redhat.com> 1.78-1
 - pam-panel-icon has popup menu to choose to forget/keep
   authentization by right clicking as usual for other panel applets (#75845)
