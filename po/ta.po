@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-09-25 16:34-0400\n"
+"POT-Creation-Date: 2004-03-31 15:31-0500\n"
 "PO-Revision-Date: 2003-12-30 16:45+0530\n"
 "Last-Translator: tamilpc <tamilpc@ambalam.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,23 +33,19 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21
-#: userdialogs.h:29
+#: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "சரி "
 
-#: dummy.h:22
-#: userdialogs.h:32
+#: dummy.h:22 userdialogs.h:32
 msgid "Exit"
 msgstr "வெளியேறு"
 
-#: dummy.h:23
-#: userdialogs.h:31
+#: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
 msgstr "விடு "
 
-#: dummy.h:24
-#: userdialogs.h:33
+#: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "சலுகையில்லா ஓட்டம் "
 
@@ -97,7 +93,7 @@ msgstr "நுழைசொல்:"
 msgid "Help"
 msgstr "உதவி"
 
-#: userhelper.c:122
+#: userhelper.c:114
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr " %s க்கு நிறைவேற்று சூழல் அமைக்க இயலவில்லை.\n"
@@ -107,7 +103,7 @@ msgstr " %s க்கு நிறைவேற்று சூழல் அம�
 msgid "Password for %s"
 msgstr " %s-க்கு நுழைசொல் "
 
-#: userhelper.c:666
+#: userhelper.c:674
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -116,7 +112,7 @@ msgstr ""
 "நீங்கள் ஓடுவதற்கு முயற்சி செய்கிறீர்கள் \"%s\" நிர்வாகத்திடம் இருந்து அது பயனை தரலாம்\n"
 "சழுகைகள், ஆனால் அதிகம் செய்வதற்கு அதிக தகவல்கள் தேவைப்படுகிறது."
 
-#: userhelper.c:668
+#: userhelper.c:676
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -125,15 +121,16 @@ msgstr ""
 "நீங்கள் ஓடுவதற்கு முயற்சி செய்கிறீர்கள் \"%s\" இது நிர்வாகம் கட்டாய தேவை \n"
 "சழுகைகள், ஆனால் அதிகம் செய்வதற்கு அதிக தகவல்கள் தேவைப்படுகிறது."
 
-#: userhelper.c:672
+#: userhelper.c:680
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"நீங்கள் ஓடுவதற்கு முயற்சி செய்கிறீர்கள் கட்டளை  நிர்வாகத்திடம் இருந்து அது சழுகைகள் பயனை தரலாம்\n"
+"நீங்கள் ஓடுவதற்கு முயற்சி செய்கிறீர்கள் கட்டளை  நிர்வாகத்திடம் இருந்து அது சழுகைகள் பயனை "
+"தரலாம்\n"
 ", ஆனால் அதிகம் செய்வதற்கு அதிக தகவல்கள் தேவைப்படுகிறது."
 
-#: userhelper.c:674
+#: userhelper.c:682
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -141,29 +138,34 @@ msgstr ""
 "நீங்கள் ஓடுவதற்கு முயற்சி செய்கிறீர்கள் கட்டளை இதற்கு நிர்வாகம் கட்டாய தேவை \n"
 "சழுகைகள், ஆனால் அதிகம் செய்வதற்கு அதிக தகவல்கள் தேவைப்படுகிறது."
 
-#: userhelper.c:693
+#: userhelper.c:701
 #, c-format
 msgid "Password for %s: "
 msgstr "%s- க்கு நுழைசொல் : "
 
-#: userhelper.c:1039
+#: userhelper.c:2215
+#, c-format
 msgid "userhelper must be setuid root\n"
 msgstr ""
 
 #. FIXME: print a warning here?
-#: userhelper.c:1123
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "வரைகலை சாளரத்தை திறக்க இயலவில்லை.மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க இயலவில்லை.\n"
+#: userhelper.c:2313
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"வரைகலை சாளரத்தை திறக்க இயலவில்லை.மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
+"இயலவில்லை.\n"
 
-#: userhelper-wrap.c:178
+#: userhelper-wrap.c:179
 msgid "Unknown exit code."
 msgstr "தெரியாத வெளியேறு குறிமுறை "
 
-#: userhelper-wrap.c:180
+#: userhelper-wrap.c:181
 msgid "Information updated."
 msgstr "தகவல் இன்றையப்படுத்தப்பட்டது."
 
-#: userhelper-wrap.c:182
+#: userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -171,18 +173,18 @@ msgstr ""
 "நீங்கள் தட்டச்சு செய்த நுழைசொல் செல்லாதது.\n"
 "தயவுசெய்து மீண்டும் முயற்சி செய்யவும்."
 
-#: userhelper-wrap.c:184
+#: userhelper-wrap.c:185
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
 
-#: userhelper-wrap.c:186
+#: userhelper-wrap.c:187
 msgid "Password resetting error."
 msgstr "நுழைசொல் மாற்றமைப்பு பிழை."
 
-#: userhelper-wrap.c:188
+#: userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -190,117 +192,127 @@ msgstr ""
 "சில முறைமை கோப்புகள் மூடப்பட்டுள்ளது.\n"
 "சில நிமிடங்கலுக்கு தயவுசெய்து மீண்டும் முயற்சி செய்யவும்."
 
-#: userhelper-wrap.c:190
+#: userhelper-wrap.c:191
 msgid "Unknown user."
 msgstr "தெரியாத பயனர்."
 
-#: userhelper-wrap.c:192
+#: userhelper-wrap.c:193
 msgid "Insufficient rights."
 msgstr "சலுகைகள் போதவில்லை."
 
-#: userhelper-wrap.c:194
+#: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
 msgstr "துணை செயலாக்கத்திற்கு செல்லாத அழைப்பு."
 
-#: userhelper-wrap.c:196
+#: userhelper-wrap.c:197
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
 
-#: userhelper-wrap.c:199
+#: userhelper-wrap.c:200
 msgid "Out of memory."
 msgstr "நினைவகத்தை விட்டு வெளியே."
 
-#: userhelper-wrap.c:201
+#: userhelper-wrap.c:202
 msgid "The exec() call failed."
 msgstr "நிறைவேற்றுகை அழைப்பு தோல்வியடைந்தது."
 
-#: userhelper-wrap.c:203
+#: userhelper-wrap.c:204
 msgid "Failed to find selected program."
 msgstr "தேர்ந்தெடுக்கப்பட்ட நிரல் கண்டரிவது தோல்வியடைந்தது."
 
-#: userhelper-wrap.c:207
+#: userhelper-wrap.c:208
 msgid "Unknown error."
 msgstr "தெரியாத பிழை."
 
-#: userhelper-wrap.c:458
-#: glade.strings:18
-#: usermode.glade.h:9
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
+#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "வினவல்"
 
-#: userhelper-wrap.c:548
-#: userhelper-wrap.c:718
+#: userhelper-wrap.c:564 userhelper-wrap.c:744
 msgid "Error"
 msgstr "பிழை"
 
-#: userhelper-wrap.c:560
+#: userhelper-wrap.c:576
 msgid "Information"
 msgstr "தகவல்"
 
-#: userhelper-wrap.c:716
-#: glade.strings:16
-#: glade.strings:19
+#: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "இடம்தாங்கி உரை."
 
-#: userhelper-wrap.c:756
+#: userhelper-wrap.c:782
 msgid "Changing personal information."
 msgstr "சொந்த தகவல்களை மாற்று"
 
-#: userhelper-wrap.c:759
+#: userhelper-wrap.c:785
 msgid "Changing login shell."
 msgstr "புகுபதிகை  உறையகத்தினை மாற்று."
 
-#: userhelper-wrap.c:765
+#: userhelper-wrap.c:791
 #, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:767
+#: userhelper-wrap.c:793
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:776
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+#: userhelper-wrap.c:802
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:778
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+#: userhelper-wrap.c:804
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper-wrap.c:795
+#: userhelper-wrap.c:821
 msgid "_Run Unprivileged"
 msgstr "_சலுகையில்லா ஓட்டம்"
 
-#: userhelper-wrap.c:931
+#: userhelper-wrap.c:973
+#, c-format
 msgid "Pipe error.\n"
 msgstr "குழல் பிழை.\n"
 
-#: userhelper-wrap.c:938
+#: userhelper-wrap.c:980
+#, c-format
 msgid "Cannot fork().\n"
 msgstr "பிரிக்க இயலவில்லை().\n"
 
-#: userhelper-wrap.c:1016
-#: userhelper-wrap.c:1020
+#: userhelper-wrap.c:1058 userhelper-wrap.c:1062
+#, c-format
 msgid "dup2() error.\n"
 msgstr "டியுபி2() பிழை.\n"
 
-#: userhelper-wrap.c:1032
+#: userhelper-wrap.c:1074
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() பிழை, பிழை எண்=%d\n"
 
 #: userinfo.c:323
+#, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "நீங்கள் வெளியேறாதீர்கள்.  வெளியே செல்.\n"
 
 #: usermount.c:62
-#: glade.strings:26
 msgid "_Mount"
 msgstr "_அடுக்குதல்"
 
@@ -309,8 +321,12 @@ msgid "Un_mount"
 msgstr "_கலைத்தல்"
 
 #: usermount.c:321
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "இந்த வட்டினை வடிவமைப்பதில் உங்கலுக்கு விருப்பமா அதில் நீங்கள் உருதியாக இருக்கிறீர்களா? நடப்பு தரவு கோண்டுள்ளதை நீங்கள் அழிக்க வேண்டும்."
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"இந்த வட்டினை வடிவமைப்பதில் உங்கலுக்கு விருப்பமா அதில் நீங்கள் உருதியாக இருக்கிறீர்களா? "
+"நடப்பு தரவு கோண்டுள்ளதை நீங்கள் அழிக்க வேண்டும்."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -329,101 +345,59 @@ msgstr ""
 "உங்கள் நிர்வாகியை தொடர்பு கொள்ளவும்."
 
 #. Create the dialog.
-#: usermount.c:544
-#: usermount.c:555
-#: glade.strings:22
+#: usermount.c:544 usermount.c:556
 msgid "User Mount Tool"
 msgstr "பயனர் அடுக்கு கருவி"
 
 #. Create the other buttons.
-#: usermount.c:569
-#: glade.strings:28
+#: usermount.c:570
 msgid "_Format"
 msgstr "_வடிவம்"
 
-#: usermount.c:605
-#: glade.strings:24
+#: usermount.c:606
 msgid "Device"
 msgstr "சாதனம் "
 
-#: usermount.c:611
-#: glade.strings:23
+#: usermount.c:612
 msgid "Directory"
 msgstr "கோப்பகம் "
 
-#: usermount.c:617
+#: usermount.c:618
 msgid "Filesystem"
 msgstr "கோப்பு முறைமை "
 
-#.
-#. * Translatable strings file generated by Glade.
-#. * Add this file to your project's POTFILES.in.
-#. * DO NOT compile it as part of your application.
-#.
-#: glade.strings:7
-#: usermode.glade.h:10
-msgid "User Information"
-msgstr "பயனர் தகவல்"
+#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
+#: glade.strings.h:21 usermode.glade.h:1
+msgid "*"
+msgstr "*"
 
-#: glade.strings:8
-#: usermode.glade.h:2
-msgid "Full Name:"
-msgstr "முழு பெயர்:"
-
-#: glade.strings:9
-#: usermode.glade.h:7
-msgid "Office:"
-msgstr "அலுவலகம்: "
-
-#: glade.strings:10
-#: usermode.glade.h:6
-msgid "Office Phone Number:"
-msgstr "அலுவலக தொலைபேசி எண்: "
-
-#: glade.strings:11
-#: usermode.glade.h:3
-msgid "Home Phone Number:"
-msgstr "வீட்டு தொலைபேசி எண்: "
-
-#: glade.strings:12
-#: usermode.glade.h:4
-msgid "Login Shell:"
-msgstr "புகுபதிகை  உறையகம்:"
-
-#: glade.strings:13
-#: glade.strings:20
-msgid "_Ok"
-msgstr "_சரி"
-
-#: glade.strings:14
-#: glade.strings:21
-msgid "_Cancel"
-msgstr "_நீக்கு"
-
-#: glade.strings:15
-#: usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "செய்தி "
 
-#: glade.strings:17
-msgid "_Close"
-msgstr "_மூடு"
+#: glade.strings.h:12 usermode.glade.h:10
+msgid "User Information"
+msgstr "பயனர் தகவல்"
 
-#: glade.strings:25
-msgid "Type"
-msgstr "வகை"
+#: glade.strings.h:13 usermode.glade.h:2
+msgid "Full Name:"
+msgstr "முழு பெயர்:"
 
-#: glade.strings:27
-msgid "_Unmount"
-msgstr "_கலைத்தல்"
+#: glade.strings.h:14 usermode.glade.h:7
+msgid "Office:"
+msgstr "அலுவலகம்: "
 
-#: glade.strings:29
-msgid "E_xit"
-msgstr "_வெளியேறு"
+#: glade.strings.h:15 usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "அலுவலக தொலைபேசி எண்: "
 
-#: usermode.glade.h:1
-msgid "*"
-msgstr "*"
+#: glade.strings.h:16 usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr "வீட்டு தொலைபேசி எண்: "
+
+#: glade.strings.h:17 usermode.glade.h:4
+msgid "Login Shell:"
+msgstr "புகுபதிகை  உறையகம்:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -449,3 +423,20 @@ msgstr "புகுபதிகை நுழைசொல்லை மாற்�
 msgid "Password"
 msgstr "நுழைசொல்"
 
+#~ msgid "_Ok"
+#~ msgstr "_சரி"
+
+#~ msgid "_Cancel"
+#~ msgstr "_நீக்கு"
+
+#~ msgid "_Close"
+#~ msgstr "_மூடு"
+
+#~ msgid "Type"
+#~ msgstr "வகை"
+
+#~ msgid "_Unmount"
+#~ msgstr "_கலைத்தல்"
+
+#~ msgid "E_xit"
+#~ msgstr "_வெளியேறு"
