@@ -524,7 +524,7 @@ int main(int argc, char *argv[])
 	if (strstr(env_shell, ".."))
 	    env_shell=NULL;
 	if (strstr(env_term, ".."))
-	    env_term=NULL;
+	    env_term="dumb";
 
 	environ = (char **) malloc (2 * sizeof (char *));
 	if (env_home) setenv("HOME", env_home, 1);
