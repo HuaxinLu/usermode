@@ -202,7 +202,7 @@ userhelper_parse_exitstatus(int exitstatus)
 		{ERR_NO_PROGRAM, create_error_box, 
 		  _("Failed to find selected program.")},
 		/* special no-display dialog */
-		{ERR_CANCELED, NULL, ""},
+		{ERR_CANCELED, NULL, "Request canceled."},
 		{ERR_UNK_ERROR, create_error_box, 
 		  _("Unknown error.")},
 	};
@@ -226,13 +226,19 @@ userhelper_parse_exitstatus(int exitstatus)
 	code = 0;
 	for (i = 1; i < G_N_ELEMENTS(codes); i++) {
 		/* If entries past zero match this exit code, we'll use them. */
-		if ((codes[i].code == exitstatus) &&
-		    (codes[i].create != NULL)) {
+		if (codes[i].code == exitstatus) {
 			code = i;
+#ifdef DEBUG_USERHELPER
+			fprintf(stderr, "Status is \"%s\".\n",
+				codes[i].message);
+#endif
 			break;
 		}
 	}
-	if (code < G_N_ELEMENTS(codes)) {
+
+	/* If we recognize this code, create the error dialog for it if we
+	   need to display one. */
+	if ((code < G_N_ELEMENTS(codes)) && (codes[code].create != NULL)) {
 		message_box = codes[code].create(codes[code].message, NULL);
 	}
 

@@ -1,8 +1,8 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.67
-Release: 2
+Version: 1.68
+Release: 1
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -104,6 +104,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Apr 16 2003 Nalin Dahyabhai <nalin@redhat.com> 1.68-1
+- update translations
+- suppress the error dialog from user cancel
+
 * Mon Feb 24 2003 Elliot Lee <sopwith@redhat.com>
 - rebuilt
 
