@@ -31,25 +31,31 @@ main(int argc, char* argv[])
   int cargc, cdiff;
   char *progname;
   int graphics_available = 0;
-  int fake_argc = 1;
-  char **fake_argv;
+  int fake_gtk_argc = 1;
+  char **fake_gtk_argv;
 
-  constructed_argv = malloc((argc+4) * sizeof(char *));
+  constructed_argv = g_malloc((argc+4) * sizeof(char *));
+  memset(constructed_argv, 0, (argc+4) * sizeof(char *));
+
   constructed_argv[0] = UH_PATH;
   progname = strrchr(argv[0], '/');
-  if (progname) progname++; /* pass the '/' character */
-  else progname = argv[0];
+  if (progname) {
+    progname++; /* pass the '/' character */
+  } else {
+    progname = argv[0];
+  }
 
-  fake_argv = malloc(2 * sizeof(char *));
-  fake_argv[0] = argv[0];
-  fake_argv[1] = NULL;
+  fake_gtk_argv = g_malloc(2 * sizeof(char *));
+  fake_gtk_argv[0] = argv[0];
+  fake_gtk_argv[1] = NULL;
 
   display = getenv("DISPLAY");
 
   if (((display && (display[0] != '\0')) ||
        !isatty(STDIN_FILENO)) &&
-      gtk_init_check(&fake_argc, &fake_argv))
+      gtk_init_check(&fake_gtk_argc, &fake_gtk_argv)) {
     graphics_available = 1;
+  }
 
   if (graphics_available) {
     constructed_argv[1] = UH_WRAP_OPT;

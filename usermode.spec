@@ -1,6 +1,6 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
-Version: 1.21
+Version: 1.22
 Release: 1
 Copyright: GPL
 Group: Applications/System
@@ -71,6 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Mar 09 2000 Nalin Dahyabhai <nalin@redhat.com>
+- fix problem parsing userhelper's -w flag with other args
+
 * Wed Mar 08 2000 Nalin Dahyabhai <nalin@redhat.com>
 - ignore read() == 0 because the child exits
 

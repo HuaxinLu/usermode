@@ -470,17 +470,21 @@ int main(int argc, char *argv[])
 		exit (ERR_UNK_ERROR);
 	}
     }
-    if ((getuid() == 0) && (argc == optind+1)) {
-	/* we have a username supplied on the command line and
-	 * the guy running this program is the root */
-	user_name = argv[optind];
-    }
 
-    /* check for the existance of this user */
-    pw = getpwnam(user_name);
-    if (pw == (struct passwd *)NULL) {
-	/* user not known */
-	exit(ERR_NO_USER);
+    /* if we got -w, argv[optind] can't be a user */
+    if (!w_flg) {
+        if ((getuid() == 0) && (argc == optind+1)) {
+	    /* we have a username supplied on the command line and
+	     * the guy running this program is the root */
+	    user_name = argv[optind];
+        }
+
+        /* check for the existance of this user */
+        pw = getpwnam(user_name);
+        if (pw == (struct passwd *)NULL) {
+	    /* user not known */
+	    exit(ERR_NO_USER);
+        }
     }
 
     /* okay, start the process */    
