@@ -339,7 +339,7 @@ msgstr "Πληροφορίες Χρήστη"
 #: glade.strings:8
 #: usermode.glade.h:2
 msgid "Full Name:"
-msgstr "Πλήρες Όνομα:"
+msgstr "Ονοματεπώνυμο:"
 
 #: glade.strings:9
 #: usermode.glade.h:7
@@ -359,7 +359,7 @@ msgstr "Αριθμός Τηλεφώνου Οικίας:"
 #: glade.strings:12
 #: usermode.glade.h:4
 msgid "Login Shell:"
-msgstr "Φλοιός Σύνδεσης:"
+msgstr "Κέλυφος Σύνδεσης:"
 
 #: glade.strings:13
 #: glade.strings:20
