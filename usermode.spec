@@ -112,10 +112,12 @@ rm -rf $RPM_BUILD_ROOT
   insensitive while running child process.
 - userpasswd: exit properly on cancel.
 - all of the above: reap the child instead of checking for pipe close -- this
-  way is more robust.
+  way is more robust (#68578,72684).
 - usermount: run mount/umount synchronously. capture stderr and display in a
   dialog. desensitize action buttons when no filesystems are selected.
-- translation updates
+- consolehelper: display errors if we're attempting to run bogus programs
+  (#72127)
+- translation updates (#70278)
 
 * Wed Aug 14 2002 Nalin Dahyabhai <nalin@redhat.com> 1.60-1
 - reconnect the "cancel" and "ok" buttons in userinfo
