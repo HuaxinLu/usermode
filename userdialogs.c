@@ -19,8 +19,7 @@
 #include "userdialogs.h"
 
 GtkWidget*
-create_message_box(gchar* message, gchar* title, 
-		   GtkSignalFunc func, gpointer arg)
+create_message_box(gchar* message, gchar* title)
 {
   GtkWidget* message_box;
   GtkWidget* label;
@@ -37,15 +36,6 @@ create_message_box(gchar* message, gchar* title,
   gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
 			    (GtkSignalFunc) gtk_widget_destroy,
 			    (gpointer) message_box);
-  if(func != NULL)
-    {
-      /* what to do, if I don't want to pass an arg? */
-      /* really should use varargs... simpliest solution, 'cept there
-       * are no signal_connect functions that'll let me pass multiple
-       * arg.. which would be -really- nice. 
-       */
-      gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", func, arg);
-    }
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(message_box)->vbox), label,
 		     FALSE, FALSE, 0);
@@ -61,8 +51,7 @@ create_message_box(gchar* message, gchar* title,
 }
 
 GtkWidget*
-create_error_box(gchar* error, gchar* title, 
-		 GtkSignalFunc func, gpointer arg)
+create_error_box(gchar* error, gchar* title)
 {
   GtkWidget* error_box;
   GtkWidget* label;
@@ -79,11 +68,6 @@ create_error_box(gchar* error, gchar* title,
   gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
 			    (GtkSignalFunc) gtk_widget_destroy,
 			    (gpointer) error_box);
-  if(func != NULL)
-    {
-      gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", func, arg);
-    }
-
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(error_box)->vbox), label,
 		     FALSE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(error_box)->action_area), ok,
@@ -97,8 +81,7 @@ create_error_box(gchar* error, gchar* title,
 }
 
 GtkWidget*
-create_query_box(gchar* prompt, gchar* title, 
-		 GtkSignalFunc func, gpointer arg)
+create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
 {
   GtkWidget* query_box;
   GtkWidget* label;
@@ -115,12 +98,15 @@ create_query_box(gchar* prompt, gchar* title,
   label = gtk_label_new(prompt);
   entry = gtk_entry_new();
   ok = gtk_button_new_with_label(UD_OK_TEXT);
-  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", 
-			    (GtkSignalFunc) gtk_widget_destroy,
-			    (gpointer) query_box);
+  /* FIXME: memory leak... well, not really.  Just rely on the user to
+   * free the widget
+   */
+  gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
+			    (GtkSignalFunc) gtk_widget_hide,
+ 			    (gpointer) query_box);
   if(func != NULL)
     {
-      gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", func, arg);
+      gtk_signal_connect(GTK_OBJECT(ok), "clicked", func, entry);
     }
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), label,
@@ -139,8 +125,7 @@ create_query_box(gchar* prompt, gchar* title,
 }
 
 GtkWidget*
-create_invisible_query_box(gchar* prompt, gchar* title, 
-			   GtkSignalFunc func, gpointer arg)
+create_invisible_query_box(gchar* prompt, gchar* title, GtkSignalFunc func)
 {
   GtkWidget* query_box;
   GtkWidget* label;
@@ -153,15 +138,14 @@ create_invisible_query_box(gchar* prompt, gchar* title,
   label = gtk_label_new(prompt);
   entry = gtk_entry_new();
   gtk_entry_set_visibility(GTK_ENTRY(entry), FALSE);
-/*   gtk_signal_connect(GTK_OBJECT(entry), "destroy", */
-/* 		     (GtkSignalFunc) user_input, (gpointer)fd); */
+
   ok = gtk_button_new_with_label("OK");
   gtk_signal_connect_object(GTK_OBJECT(ok), "clicked",
-			    (GtkSignalFunc) gtk_widget_destroy,
+			    (GtkSignalFunc) gtk_widget_hide,
 			    (gpointer) query_box);
   if(func != NULL)
     {
-      gtk_signal_connect_object(GTK_OBJECT(ok), "clicked", func, arg);
+      gtk_signal_connect(GTK_OBJECT(ok), "clicked", func, entry);
     }
 
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(query_box)->vbox), label,

@@ -27,13 +27,10 @@
 #define UD_EXIT_TEXT "Exit"
 
 /* consider a "has args" arg, so I can use the arg argument or not at will */
-GtkWidget* create_message_box(gchar* message, gchar* title,
-			      GtkSignalFunc func, gpointer arg);
-GtkWidget* create_error_box(gchar* error, gchar* title, 
-			    GtkSignalFunc func, gpointer arg);
-GtkWidget* create_query_box(gchar* prompt, gchar* title, 
-			    GtkSignalFunc func, gpointer arg);
+GtkWidget* create_message_box(gchar* message, gchar* title);
+GtkWidget* create_error_box(gchar* error, gchar* title);
+GtkWidget* create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func);
 GtkWidget* create_invisible_query_box(gchar* prompt, gchar* title,
-				      GtkSignalFunc func, gpointer arg); 
+				      GtkSignalFunc func); 
 
 #endif /* __USERDIALOGS_H__ */
