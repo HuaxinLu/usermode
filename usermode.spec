@@ -1,12 +1,12 @@
 %if %{?WITH_SELINUX:0}%{!?WITH_SELINUX:1}
-%define WITH_SELINUX 0
+%define WITH_SELINUX 1
 %endif
 
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.69
-Release: 1
+Release: 2.sel
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}-%{release}.tar.gz
@@ -117,6 +117,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Oct 30 2003 Dan Walsh <dwalsh@redhat.com> 1.69-2.sel
+- Turn on sleinux
+
 * Thu Oct 23 2003 Nalin Dahyabhai <nalin@redhat.com> 1.69-1
 - all around: cleanups
 - consolehelper: coalesce multiple messages from PAM again
