@@ -82,9 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) /etc/pam.d/halt
 %config(noreplace) /etc/pam.d/reboot
 %config(noreplace) /etc/pam.d/poweroff
-%config(missingok) /etc/security/console.apps/halt
-%config(missingok) /etc/security/console.apps/reboot
-%config(missingok) /etc/security/console.apps/poweroff
+%config /etc/security/console.apps/halt
+%config /etc/security/console.apps/reboot
+%config /etc/security/console.apps/poweroff
 
 %files gtk
 %defattr(-,root,root)
@@ -101,7 +101,10 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
-* Tue Dec  4 2001 Nalin Dahyabhai <nalin@redhat.com> 1.49-1
+* Mon Dec 10 2001 Nalin Dahyabhai <nalin@redhat.com> 1.49-1
+- the console.apps configs shouldn't be missingok
+
+* Tue Dec  4 2001 Nalin Dahyabhai <nalin@redhat.com>
 - more gtk2 changes
 - split off a -gtk subpackage with all of the gtk-specific functionality
 

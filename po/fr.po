@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.37\n"
-"POT-Creation-Date: 2001-12-04 18:12-0500\n"
+"POT-Creation-Date: 2001-12-10 16:03-0500\n"
 "PO-Revision-Date:  2001-07-23 11:30 CET\n"
 "Last-Translator: Bettina De Monti\n"
 "Language-Team: French <FR@li.org>\n"
