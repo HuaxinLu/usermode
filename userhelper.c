@@ -1044,7 +1044,7 @@ become_normal(const char *user)
 /* Determine the name of the user whose ruid we're executing under.  For
  * SELinux, this is the user from the previous context. */
 static char *
-get_user_from_ruid()
+get_user_from_ruid(void)
 {
 	struct passwd *pwd;
 	char *ret;

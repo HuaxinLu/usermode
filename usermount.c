@@ -94,7 +94,7 @@ static GtkWidget *mount_button = NULL, *format_button = NULL;
  * of course getuid() == 0, then we get them all.  No reason root shouldn't
  * be allowed to use this, right?.  */
 static struct mountinfo *
-build_mountinfo_list()
+build_mountinfo_list(void)
 {
 	struct mountinfo *ret = NULL;
 	struct mountinfo *tmp = NULL;
@@ -216,7 +216,7 @@ build_mountinfo_list()
 /* Return the mountinfo struct associated with the currently-selected row in
  * the TreeView, which is stored in the fourth column in its model. */
 static struct mountinfo *
-selected_info()
+selected_info(void)
 {
 	GtkTreeModel *model;
 	GtkTreeIter iter;
@@ -525,7 +525,7 @@ response_callback(GtkWidget *emitter, GtkResponseType response)
 }
 
 static gboolean
-create_usermount_window()
+create_usermount_window(void)
 {
 	GtkWidget *dialog, *treeview, *format, *mount;
 	GtkTreeIter iter;
@@ -548,7 +548,7 @@ create_usermount_window()
 		g_signal_connect_object(G_OBJECT(dialog), "delete-event",
 					GTK_SIGNAL_FUNC(gtk_main_quit), NULL,
 					G_CONNECT_AFTER);
-		gtk_dialog_run(dialog);
+		gtk_dialog_run(GTK_DIALOG(dialog));
 		return FALSE;
 	}
 
@@ -637,6 +637,8 @@ create_usermount_window()
 			   TRUE, TRUE, 0);
 
 	gtk_widget_show_all(dialog);
+
+	return TRUE;
 }
 
 int

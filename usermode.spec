@@ -117,6 +117,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Mon Dec  8 2003 Nalin Dahyabhai <nalin@redhat.com>
+- fix warning in userinfo which would cause random early exit (#111409)
+- clean up warnings
+
 * Tue Nov 25 2003 Dan Walsh <dwalsh@redhat.com> 1.69-3.sel
 - Fix handling of roles from console file
 

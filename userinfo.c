@@ -172,7 +172,7 @@ create_userinfo_window(struct UserInfo *userinfo)
 }
 
 static struct UserInfo *
-parse_userinfo()
+parse_userinfo(void)
 {
 	struct UserInfo *retval;
 	struct passwd *pwent;
