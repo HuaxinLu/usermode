@@ -21,7 +21,7 @@ EXTRA_DIST = config.rpath  \
 	eggmarshalers.list \
 	$(pixmap_DATA)
 
-SUBDIRS=m4 po
+SUBDIRS=po
 
 CFLAGS = @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
 

@@ -47,7 +47,7 @@ if test x$GCC = xyes ; then
 	CFLAGS="$CFLAGS -Wall -Wuninitialized -Wunused"
 fi
 
-AC_OUTPUT([ po/Makefile.in m4/Makefile
+AC_OUTPUT([ po/Makefile.in
 Makefile
 consolehelper.8
 userhelper.8

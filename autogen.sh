@@ -12,7 +12,7 @@ glib-gettextize -f -c
 cat ChangeLog.old > ChangeLog
 touch config.h.in
 aclocal-1.4
-automake-1.4 -a || true
+automake-1.4 -a
 autoheader
 autoconf
 test -f config.cache && rm -f config.cache || true
