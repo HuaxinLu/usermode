@@ -28,15 +28,17 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include <pwd.h>
 #include <sys/types.h>
+#include <sys/stat.h>
 #include <gtk/gtk.h>
 
 #define NUM_GECOS_FIELDS 4
 
 struct _UserInfo
 {
-  /* use GString*? */
+  /* use GString* or gchar*? */
   char* full_name;
   char* office;
   char* office_phone;
@@ -46,8 +48,8 @@ struct _UserInfo
 
 typedef struct _UserInfo UserInfo;
 
-void create_userinfo_window();
-GtkWidget* create_shell_menu();
+void create_userinfo_window(UserInfo* userinfo);
+GtkWidget* create_shell_menu(UserInfo* userinfo);
 GtkWidget* create_gecos_table(int rows, int cols);
 UserInfo* parse_userinfo();
 
@@ -63,7 +65,7 @@ main(int argc, char* argv[])
 
   userinfo = parse_userinfo();
 
-  create_userinfo_window();
+  create_userinfo_window(userinfo);
 
   gtk_main();
 
@@ -72,10 +74,9 @@ main(int argc, char* argv[])
 }
 
 void
-create_userinfo_window()
+create_userinfo_window(UserInfo* userinfo)
 {
   GtkWidget* main;		/* GtkWindow */
-  GtkWidget* vbox;		/* GtkVBox */
   GtkWidget* notebook;		/* GtkNotebook */
   GtkWidget* gecos;		/* GtkTable */
   GtkWidget* shell_field;	/* GtkOptionMenu */
@@ -84,7 +85,6 @@ create_userinfo_window()
   GtkWidget* pw_field_old;	/* GtkEntry */
   GtkWidget* pw_field_1;	/* GtkEntry */ /* need gtk_entry_set_echo_char() */
   GtkWidget* pw_field_2;	/* GtkEntry */ /* ditto */
-  GtkWidget* seperator;		/* GtkSeperator */
   GtkWidget* buttons;		/* GtkHBox */
   GtkWidget* ok;		/* GtkButton */
   GtkWidget* cancel;		/* GtkButton */
@@ -98,15 +98,12 @@ create_userinfo_window()
   gtk_signal_connect(GTK_OBJECT(main), "destroy",
 		     (GtkSignalFunc) gtk_exit, NULL);
 
-/*   vbox = gtk_vbox_new(FALSE, 0); */
-/*   vbox = GTK_DIALOG(main)->vbox; */
-
   notebook = gtk_notebook_new();
   gtk_container_border_width(GTK_CONTAINER(notebook), 5);
 
   gecos = create_gecos_table(NUM_GECOS_FIELDS, 2);
 
-  shell_field = create_shell_menu();
+  shell_field = create_shell_menu(userinfo);
 
   gtk_table_attach(GTK_TABLE(gecos), shell_field,
 		   1, 2, 4, 5,
@@ -150,11 +147,7 @@ create_userinfo_window()
   gtk_notebook_append_page(GTK_NOTEBOOK(notebook), password,
 			   gtk_label_new("Password"));
 
-/*   gtk_container_add(GTK_CONTAINER(main), vbox); */
-/*   gtk_box_pack_start(GTK_BOX(vbox), notebook, TRUE, TRUE, 0); */
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->vbox), notebook, TRUE, TRUE, 0);
-/* gtk_box_pack_start(GTK_BOX(vbox), gtk_hseparator_new(), TRUE, TRUE, 0); */
-/* gtk_box_pack_start(GTK_BOX(GTK_DIALOG(main)->action_area), buttons, TRUE, TRUE, 0); */
 
   gtk_widget_show(gecos);
   gtk_widget_show(pw_field_old);
@@ -162,51 +155,90 @@ create_userinfo_window()
   gtk_widget_show(pw_field_2);
   gtk_widget_show(password);
   gtk_widget_show(notebook);
-  gtk_widget_show(seperator);
   gtk_widget_show(buttons);
-  gtk_widget_show(vbox);
   gtk_widget_show(main);
 }
 
 GtkWidget*
-create_shell_menu()
+create_shell_menu(UserInfo* userinfo)
 {
   GtkWidget* shell_menu;
   GtkWidget* menu;
   GtkWidget* menuitem;
-
-  /* need to actually parse /etc/shells */
-  /* need to be able to get the current value... can't do that with
-   * gtk option menus, so I need to attach signals to the various
-   * menuitems that will set some data.  That means this function
-   * should take an argument, and the function called from the signals
-   * need to take arguments.. I need to figure out how that's done.
-   */
+  int shells_fd;
+  struct stat shells_stat;
+  char* shells_buf;
+  char* shell_curr;
+  char* shell_sep = "\n";
 
   shell_menu = gtk_option_menu_new();
   menu = gtk_menu_new();
 
-  menuitem = gtk_menu_item_new_with_label("/bin/ash");
+  menuitem = gtk_menu_item_new_with_label(userinfo->shell);
   gtk_menu_append(GTK_MENU(menu), menuitem);
   gtk_widget_show(menuitem);
-  menuitem = gtk_menu_item_new_with_label("/bin/bash");
-  gtk_menu_append(GTK_MENU(menu), menuitem);
-  gtk_widget_show(menuitem);
-  menuitem = gtk_menu_item_new_with_label("/bin/sh");
-  gtk_menu_append(GTK_MENU(menu), menuitem);
-  gtk_widget_show(menuitem);
-  menuitem = gtk_menu_item_new_with_label("/bin/ksh");
-  gtk_menu_append(GTK_MENU(menu), menuitem);
-  gtk_widget_show(menuitem);
-  menuitem = gtk_menu_item_new_with_label("/bin/tcsh");
-  gtk_menu_append(GTK_MENU(menu), menuitem);
-  gtk_widget_show(menuitem);
-  menuitem = gtk_menu_item_new_with_label("/bin/zsh");
-  gtk_menu_append(GTK_MENU(menu), menuitem);
-  gtk_widget_show(menuitem);
-  menuitem = gtk_menu_item_new_with_label("/bin/bsh");
-  gtk_menu_append(GTK_MENU(menu), menuitem);
-  gtk_widget_show(menuitem);
+
+  /* FIXME: aggressive error checking... */
+  shells_fd = open("/etc/shells", O_RDONLY);
+  fstat(shells_fd, &shells_stat);
+  shells_buf = malloc(sizeof(char) * shells_stat.st_size);
+  read(shells_fd, shells_buf, shells_stat.st_size);
+
+  shell_curr = strtok(shells_buf, shell_sep);
+  if(strcmp(shell_curr, userinfo->shell) != 0)
+    {
+      menuitem = gtk_menu_item_new_with_label(shell_curr);
+      gtk_menu_append(GTK_MENU(menu), menuitem);
+      gtk_widget_show(menuitem);
+    }
+
+  shell_curr = strtok(NULL, shell_sep);
+  if(strcmp(shell_curr, userinfo->shell) != 0)
+    {
+      menuitem = gtk_menu_item_new_with_label(shell_curr);
+      gtk_menu_append(GTK_MENU(menu), menuitem);
+      gtk_widget_show(menuitem);
+    }
+
+  shell_curr = strtok(NULL, shell_sep);
+  if(strcmp(shell_curr, userinfo->shell) != 0)
+    {
+      menuitem = gtk_menu_item_new_with_label(shell_curr);
+      gtk_menu_append(GTK_MENU(menu), menuitem);
+      gtk_widget_show(menuitem);
+    }
+
+  shell_curr = strtok(NULL, shell_sep);
+  if(strcmp(shell_curr, userinfo->shell) != 0)
+    {
+      menuitem = gtk_menu_item_new_with_label(shell_curr);
+      gtk_menu_append(GTK_MENU(menu), menuitem);
+      gtk_widget_show(menuitem);
+    }
+
+  shell_curr = strtok(NULL, shell_sep);
+  if(strcmp(shell_curr, userinfo->shell) != 0)
+    {
+      menuitem = gtk_menu_item_new_with_label(shell_curr);
+      gtk_menu_append(GTK_MENU(menu), menuitem);
+      gtk_widget_show(menuitem);
+    }
+
+  shell_curr = strtok(NULL, shell_sep);
+  if(strcmp(shell_curr, userinfo->shell) != 0)
+    {
+      menuitem = gtk_menu_item_new_with_label(shell_curr);
+      gtk_menu_append(GTK_MENU(menu), menuitem);
+      gtk_widget_show(menuitem);
+    }
+
+  shell_curr = strtok(NULL, shell_sep);
+  if(strcmp(shell_curr, userinfo->shell) != 0)
+    {
+      menuitem = gtk_menu_item_new_with_label(shell_curr);
+      gtk_menu_append(GTK_MENU(menu), menuitem);
+      gtk_widget_show(menuitem);
+    }
 
   gtk_option_menu_set_menu(GTK_OPTION_MENU(shell_menu), menu);
   return shell_menu;
@@ -291,25 +323,16 @@ parse_userinfo()
   UserInfo* retval;
   struct passwd* pwent;
   char* gecos;
-  char pwsep = ':';
+  char* pwsep = ":";
 
-  /* use gmalloc()? */
   retval = malloc(sizeof(UserInfo));
-
-  /* need to get this stuff...
-   * retval->full_name
-   * retval->office
-   * retval->office_phone
-   * retval->home_phone
-   * retval->shell
-   */
 
   pwent = getpwuid(getuid());
 
   retval->shell = strdup(pwent->pw_shell);
   gecos = strdup(pwent->pw_gecos);
 
-  if(strchr(gecos, pwsep) == NULL)
+  if(strchr(gecos, pwsep[0]) == NULL)
     {
       retval->full_name = gecos;
       /* think this is valid, right? */
@@ -322,10 +345,10 @@ parse_userinfo()
       /* if, for some reason this gets threaded, wrap this in #ifdef
        * _REENTRANT with using strtok_r, for thread saftey.
        */
-      retval->full_name = strtok(gecos, &pwsep);
-      retval->office = strtok(NULL, &pwsep);
-      retval->office_phone = strtok(NULL, &pwsep);
-      retval->home_phone = strtok(NULL, &pwsep);
+      retval->full_name = strtok(gecos, pwsep);
+      retval->office = strtok(NULL, pwsep);
+      retval->office_phone = strtok(NULL, pwsep);
+      retval->home_phone = strtok(NULL, pwsep);
     }
 
   return retval;
