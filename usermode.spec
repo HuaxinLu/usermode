@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.52
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -19,6 +19,7 @@ BuildRoot: %{_tmppath}/%{name}-root
 Summary: Graphical tools for certain user account management tasks.
 Group: Applications/System
 Requires: %{name} = %{version}-%{release}
+Requires: pygtk2-libglade
 
 %description
 The usermode package contains the userhelper program, which can be
@@ -102,6 +103,10 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Tue Apr  9 2002 Nalin Dahyabhai <nalin@redhat.com> 1.52-2
+- require pygtk2-libglade
+- refresh translations
+
 * Mon Apr  1 2002 Nalin Dahyabhai <nalin@redhat.com> 1.52-1
 - attempt to make prompts at the console more meaningful
 - when falling back, reset the entire environment to the user's
@@ -109,6 +114,7 @@ rm -rf $RPM_BUILD_ROOT
 * Thu Mar 28 2002 Nalin Dahyabhai <nalin@redhat.com>
 - stop giving the user chances to enter the right password if we get a
   conversation error reading a response (appears to be masked by libpam)
+  (#62195)
 - always center consolehelper dialog windows
 
 * Wed Mar 27 2002 Nalin Dahyabhai <nalin@redhat.com> 1.51-1
