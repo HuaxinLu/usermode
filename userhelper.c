@@ -82,8 +82,9 @@ static int
 fail_exit(int retval)
 {
 	/* This is a local error.  Bail. */
-	if (retval == ERR_SHELL_INVALID)
+	if (retval == ERR_SHELL_INVALID) {
 		exit(ERR_SHELL_INVALID);
+	}
 
 	if (retval != PAM_SUCCESS) {
 		/* Map the PAM error code to a local error code and return
@@ -241,12 +242,12 @@ converse(int num_msg, const struct pam_message **msg,
 			}
 #ifdef DEBUG_USERHELPER
 			if(!isprint(reply[count].resp[0])) {
-				fprintf(stderr, "userhelper: got %d\n",
+				g_print("userhelper: got %d\n",
 					reply[count].resp[0]);
-				fprintf(stderr, "userhelper: got `%s'\n",
+				g_print("userhelper: got `%s'\n",
 					reply[count].resp + 1);
 			} else {
-				fprintf(stderr, "userhelper: got `%s'\n",
+				g_print("userhelper: got `%s'\n",
 					reply[count].resp);
 			}
 #endif
@@ -380,7 +381,7 @@ shell_valid(char *shell_name)
 		    shell != NULL;
 		    shell = getusershell()) {
 #ifdef DEBUG_USERHELPER
-			fprintf(stderr, "got shell \"%s\"\n", shell);
+			g_print("got shell \"%s\"\n", shell);
 #endif
 			if (shell_name) {
 				if (strcmp(shell_name, shell) == 0) {
@@ -406,6 +407,9 @@ become_super(void)
 	   (getuid() != 0) ||
 	   (getegid() != 0) ||
 	   (getgid() != 0)) {
+#ifdef DEBUG_USERHELPER
+		g_print("set*id() failure: %s\n", strerror(errno));
+#endif
 		exit(ERR_EXEC_FAILED);
 	}
 }
@@ -417,12 +421,18 @@ become_normal(char *user)
 	initgroups(user, getgid());
 	/* Verify that we're back to normal. */
 	if (getegid() != getgid()) {
+#ifdef DEBUG_USERHELPER
+		g_print("still setgid()\n");
+#endif
 		exit(ERR_EXEC_FAILED);
 	}
 	/* Become the user who invoked us. */
 	setreuid(getuid(), getuid());
 	/* Yes, setuid() can fail. */
 	if (geteuid() != getuid()) {
+#ifdef DEBUG_USERHELPER
+		g_print("still setuid()\n");
+#endif
 		exit(ERR_EXEC_FAILED);
 	}
 }
@@ -445,6 +455,9 @@ main(int argc, char **argv)
 
 	if(geteuid() != 0) {
 		fprintf(stderr, _("userhelper must be setuid root\n"));
+#ifdef DEBUG_USERHELPER
+		g_print("not setuid\n");
+#endif
 		exit(ERR_NO_RIGHTS);
 	}
 
@@ -492,6 +505,9 @@ main(int argc, char **argv)
 				progname = optarg;
 				break;
 			default:
+#ifdef DEBUG_USERHELPER
+				g_print("invalid call: unknown option\n");
+#endif
 				exit(ERR_INVALID_CALL);
 		}
 	}
@@ -501,6 +517,9 @@ main(int argc, char **argv)
 	if((c_flag && SHELL_FLAGS) ||
 	   (c_flag && w_flag) ||
 	   (w_flag && SHELL_FLAGS)) {
+#ifdef DEBUG_USERHELPER
+		g_print("invalid call: invalid mixture of options\n");
+#endif
 		exit(ERR_INVALID_CALL);
 	}
 
@@ -511,6 +530,9 @@ main(int argc, char **argv)
 		app_data.input = fdopen(UH_INFILENO, "r");
 		app_data.output = fdopen(UH_OUTFILENO, "w");
 		if((app_data.input == NULL) || (app_data.output == NULL)) {
+#ifdef DEBUG_USERHELPER
+			g_print("invalid call\n");
+#endif
 			exit(ERR_INVALID_CALL);
 		}
 		conv = &pipe_conv;
@@ -522,10 +544,13 @@ main(int argc, char **argv)
 		user_name = g_strdup(pw->pw_name);
 	} else {
 		/* I have no name and I must have one. */
+#ifdef DEBUG_USERHELPER
+		g_print("i have no name");
+#endif
 		exit(ERR_UNK_ERROR);
 	}
 #ifdef DEBUG_USERHELPER
-	fprintf(stderr, "user is %s\n", user_name);
+	g_print("user is %s\n", user_name);
 #endif
 
 	/* If we didn't get the -w flag, the last argument could be a user's
@@ -540,6 +565,9 @@ main(int argc, char **argv)
 		/* Verify that the user exists. */
 		pw = getpwnam(user_name);
 		if ((pw == NULL) || (pw->pw_name == NULL)) {
+#ifdef DEBUG_USERHELPER
+			g_print("user %s doesn't exist\n", user_name);
+#endif
 			exit(ERR_NO_USER);
 		}
 	}
@@ -550,18 +578,27 @@ main(int argc, char **argv)
 		 * and tell it we're the "passwd" command. */
 		retval = pam_start("passwd", user_name, conv, &app_data.pamh);
 		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_start() failed\n");
+#endif
 			fail_exit(retval);
 		}
 
 		/* Now try to change the user's password. */
 		retval = pam_chauthtok(app_data.pamh, 0);
 		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_chauthtok() failed\n");
+#endif
 			fail_exit(retval);
 		}
 
 		/* All done! */
 		retval = pam_end(app_data.pamh, PAM_SUCCESS);
 		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_end() failed\n");
+#endif
 			fail_exit(retval);
 		}
 		exit(0);
@@ -592,25 +629,31 @@ main(int argc, char **argv)
 		 * we're "chfn". */
 		retval = pam_start("chfn", user_name, conv, &app_data.pamh);
 		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_start() failed\n");
+#endif
 			fail_exit(retval);
 		}
 
 		/* Try to authenticate the user. */
 		do {
 #ifdef DEBUG_USERHELPER
-			fprintf(stderr, _("about to authenticate \"%s\"\n"),
-				user_name);
+			g_print("about to authenticate \"%s\"\n", user_name);
 #endif
 			retval = pam_authenticate(app_data.pamh, 0);
 #ifdef DEBUG_USERHELPER
-			fprintf(stderr, _("PAM retval = %d (%s)\n"), retval,
+			g_print("PAM retval = %d (%s)\n", retval,
 				pam_strerror(app_data.pamh, retval));
 #endif
 			tryagain--;
 		} while((retval != PAM_SUCCESS) && tryagain);
 
 		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam authentication failed\n");
+#endif
 			pam_end(app_data.pamh, retval);
+			fail_exit(retval);
 			fail_exit(retval);
 		}
 
@@ -619,10 +662,17 @@ main(int argc, char **argv)
 		retval = pam_get_item(app_data.pamh, PAM_USER,
 				      (const void**)&auth_user);
 		if(retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("no pam user set\n");
+#endif
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
 		}
 		if(strcmp(user_name, auth_user) != 0) {
+#ifdef DEBUG_USERHELPER
+			g_print("username(%s) != authuser(%s)", user_name,
+				auth_user);
+#endif
 			exit(ERR_UNK_ERROR);
 		}
 
@@ -630,6 +680,9 @@ main(int argc, char **argv)
 		 * this time, on this machine, yadda, yadda, yadda.... */
 		retval = pam_acct_mgmt(app_data.pamh, 0);
 		if (retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_acct_mgmt() failed");
+#endif
 			pam_end(app_data.pamh, retval);
 			fail_exit(retval);
 		}
@@ -639,6 +692,9 @@ main(int argc, char **argv)
 		retval = pwdb_locate("user", user_unix, user_name,
 				     PWDB_ID_UNKNOWN, &_pwdb);
 		if(retval != PWDB_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pwdb doesn't know the user");
+#endif
 			pam_end(app_data.pamh, PAM_ABORT);
 			fail_exit(PAM_ABORT);
 		}
@@ -651,6 +707,9 @@ main(int argc, char **argv)
 
 		/* Verify that the strings we got passed are not too long. */
 		if(gecos_size() > GECOS_LENGTH) {
+#ifdef DEBUG_USERHELPER
+			g_print("user gecos too long");
+#endif
 			pwdb_entry_delete(&_pwe);
 			pwdb_delete(&_pwdb);
 			pwdb_end();
@@ -676,6 +735,9 @@ main(int argc, char **argv)
 			pwdb_delete(&_pwdb);
 			pwdb_end();
 			pam_end(app_data.pamh, PAM_ABORT);
+#ifdef DEBUG_USERHELPER
+			g_print("pwdb save failed\n");
+#endif
 			fail_exit(PAM_ABORT);
 		}
 
@@ -686,13 +748,15 @@ main(int argc, char **argv)
 			 * shell. */
 			retval = pwdb_get_entry(_pwdb, "shell", &_pwe);
 #ifdef DEBUG_USERHELPER
-			fprintf(stderr, "current shell \"%s\"\n",
-				(char *) _pwe->value);
-			fprintf(stderr, "new shell \"%s\"\n", shell_path);
+			g_print("current shell \"%s\"\n", (char *) _pwe->value);
+			g_print("new shell \"%s\"\n", shell_path);
 #endif
 			if (!shell_valid(shell_path) ||
 			    !shell_valid((char *) _pwe->value) ||
 			    retval != PWDB_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+				g_print("bad shell value\n");
+#endif
 				fail_exit(ERR_SHELL_INVALID);
 				pwdb_entry_delete(&_pwe);
 			}
@@ -706,6 +770,9 @@ main(int argc, char **argv)
 				pwdb_delete(&_pwdb);
 				pwdb_end();
 				pam_end(app_data.pamh, PAM_ABORT);
+#ifdef DEBUG_USERHELPER
+				g_print("unable to change shell value\n");
+#endif
 				fail_exit(PAM_ABORT);
 			}
 		}
@@ -718,6 +785,9 @@ main(int argc, char **argv)
 			pwdb_delete(&_pwdb);
 			pwdb_end();
 			pam_end(app_data.pamh, PAM_ABORT);
+#ifdef DEBUG_USERHELPER
+			g_print("unable to rename user\n");
+#endif
 			fail_exit(PAM_ABORT);
 		}
 		pwdb_delete(&_pwdb);
@@ -730,7 +800,7 @@ main(int argc, char **argv)
 		 * execute the command given in the console.apps file. */
 		char *constructed_path;
 		char *apps_filename;
-		char *user, *apps_user, *auth_user;
+		char *user = user_name, *apps_user, *auth_user;
 		char *retry, *noxoption;
 		char *env_home, *env_term, *env_display, *env_shell;
 		char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
@@ -806,6 +876,9 @@ main(int argc, char **argv)
 
 		pw = getpwnam(user);
 		if(pw == NULL) {
+#ifdef DEBUG_USERHELPER
+			g_print("no user named %s exists\n", user);
+#endif
 			exit(ERR_NO_USER);
 		}
 		if(pw->pw_uid == 0) {
@@ -850,6 +923,9 @@ main(int argc, char **argv)
 		if((fstat(s->fd, &sbuf) == -1) ||
 		   !S_ISREG(sbuf.st_mode) ||
 		   (sbuf.st_mode & S_IWOTH)) {
+#ifdef DEBUG_USERHELPER
+			g_print("bad file permissions\n");
+#endif
 			exit(ERR_UNK_ERROR);
 		}
 
@@ -879,6 +955,9 @@ main(int argc, char **argv)
 				strcat(constructed_path, progname);
 				if(access(constructed_path, X_OK)) {
 					/* Nope, not there, either. */
+#ifdef DEBUG_USERHELPER
+					g_print("couldn't find binary\n");
+#endif
 					exit(ERR_NO_PROGRAM);
 				}
 			}
@@ -918,18 +997,20 @@ main(int argc, char **argv)
 		/* Start up PAM to authenticate the specified user. */
 		retval = pam_start(progname, user, conv, &app_data.pamh);
 		if(retval != PAM_SUCCESS) {
+#ifdef DEBUG_USERHELPER
+			g_print("pam_start() failed\n");
+#endif
 			fail_exit(retval);
 		}
 
 		/* Try to authenticate the user. */
 		do {
 #ifdef DEBUG_USERHELPER
-			fprintf(stderr, _("about to authenticate \"%s\"\n"),
-				user);
+			g_print("about to authenticate \"%s\"\n", user);
 #endif
 			retval = pam_authenticate(app_data.pamh, 0);
 #ifdef DEBUG_USERHELPER
-			fprintf(stderr, _("PAM retval = %d (%s)\n"), retval,
+			g_print("PAM retval = %d (%s)\n", retval,
 				pam_strerror(app_data.pamh, retval));
 #endif
 			tryagain--;
