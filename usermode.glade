@@ -3,7 +3,7 @@
 
 <glade-interface>
   <widget class="GtkWindow" id="userinfo">
-    <property name="title">User Information</property>
+    <property name="title" translatable="yes">User Information</property>
     <property name="type">GTK_WINDOW_TOPLEVEL</property>
     <property name="modal">no</property>
     <property name="allow_shrink">no</property>
@@ -31,7 +31,7 @@
 
             <child>
               <widget class="GtkLabel" id="label1">
-                <property name="label">Full Name:</property>
+                <property name="label" translatable="yes">Full Name:</property>
                 <property name="justify">GTK_JUSTIFY_CENTER</property>
                 <property name="wrap">no</property>
                 <property name="xalign">1</property>
@@ -54,7 +54,7 @@
 
             <child>
               <widget class="GtkLabel" id="label2">
-                <property name="label">Office:</property>
+                <property name="label" translatable="yes">Office:</property>
                 <property name="justify">GTK_JUSTIFY_CENTER</property>
                 <property name="wrap">no</property>
                 <property name="xalign">1</property>
@@ -77,7 +77,7 @@
 
             <child>
               <widget class="GtkLabel" id="label3">
-                <property name="label">Office Phone Number:</property>
+                <property name="label" translatable="yes">Office Phone Number:</property>
                 <property name="justify">GTK_JUSTIFY_CENTER</property>
                 <property name="wrap">no</property>
                 <property name="xalign">1</property>
@@ -100,7 +100,7 @@
 
             <child>
               <widget class="GtkLabel" id="label4">
-                <property name="label">Home Phone Number:</property>
+                <property name="label" translatable="yes">Home Phone Number:</property>
                 <property name="justify">GTK_JUSTIFY_CENTER</property>
                 <property name="wrap">no</property>
                 <property name="xalign">1</property>
@@ -123,7 +123,7 @@
 
             <child>
               <widget class="GtkLabel" id="label5">
-                <property name="label">Login Shell:</property>
+                <property name="label" translatable="yes">Login Shell:</property>
                 <property name="justify">GTK_JUSTIFY_CENTER</property>
                 <property name="wrap">no</property>
                 <property name="xalign">1</property>
@@ -384,7 +384,7 @@
     </child>
   </widget>
   <widget class="GtkWindow" id="query_box">
-    <property name="title">Query</property>
+    <property name="title" translatable="yes">Query</property>
     <property name="type">GTK_WINDOW_TOPLEVEL</property>
     <property name="modal">no</property>
     <property name="default_width">400</property>

@@ -2,7 +2,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.56
-Release: 3
+Release: 4
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -102,6 +102,10 @@ rm -rf $RPM_BUILD_ROOT
 # If you're updating translations, do me a favor and bump the RELEASE number,
 # and not the VERSION number.  Version numbers indicate CODE changes.
 %changelog
+* Mon Aug  5 2002 Nalin Dahyabhai <nalin@redhat.com> 1.56-4
+- mark strings in the .glade file as translatable (#70278)
+- translation updates
+
 * Wed Jul 31 2002 Nalin Dahyabhai <nalin@redhat.com> 1.56-3
 - add icons for userpasswd and usermount
 
