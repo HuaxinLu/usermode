@@ -73,11 +73,11 @@ static int w_flag = 0;		/* -w flag = act as a wrapper for next
 /* A structure type which we use to carry psuedo-global data around with us. */
 static struct app_data {
 	pam_handle_t *pamh;
-	gboolean fallback_allowed, fallback_chosen, cancelled, questions_asked;
+	gboolean fallback_allowed, fallback_chosen, cancelled;
 	FILE *input, *output;
 } app_data = {
 	NULL,
-	FALSE, FALSE, FALSE, FALSE,
+	FALSE, FALSE, FALSE,
 	NULL, NULL,
 };
 
@@ -153,7 +153,7 @@ read_string(FILE *fp)
 /* A text-mode conversation function suitable for use when there is no
  * controlling terminal. */
 static int
-converse_silent(int num_msg, const struct pam_message **msg,
+silent_converse(int num_msg, const struct pam_message **msg,
 		struct pam_response **resp, void *appdata_ptr)
 {
 	return PAM_CONV_ERR;
@@ -170,13 +170,6 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	char *noecho_message, *user, *service;
 	struct app_data *app_data = appdata_ptr;
 
-#ifdef DEBUG_USERHELPER
-	g_print("pipe conversation called with %d messages\n", num_msg);
-#endif
-	/* Log whether or not we've asked the user anything yet. */
-	if (num_msg > 0) {
-		app_data->questions_asked = TRUE;
-	}
 	/* Pass on any hints we have to the consolehelper. */
 	fprintf(app_data->output, "%d %d\n",
 		UH_FALLBACK_ALLOW, app_data->fallback_allowed ? 1 : 0);
@@ -314,49 +307,25 @@ converse_console(int num_msg, const struct pam_message **msg,
 	char *text = NULL;
 	struct app_data *app_data = appdata_ptr;
 	struct pam_message **messages;
-	int i, ret, responses;
+	int i, ret;
 
-#ifdef DEBUG_USERHELPER
-	g_print("console conversation called with %d messages\n", num_msg);
-#endif
-
-	/* Log whether or not we've asked the user anything yet. */
-	if (num_msg > 0) {
-		app_data->questions_asked = TRUE;
-	}
-
-	/* Attempt to output text messages in the current terminal encoding. */
 	bind_textdomain_codeset(PACKAGE, nl_langinfo(CODESET));
 
 	pam_get_item(app_data->pamh, PAM_SERVICE, (const void**)&service);
 	pam_get_item(app_data->pamh, PAM_USER, (const void**)&user);
 
-	for (i = 0, responses = 0; i < num_msg; i++) {
-		switch (msg[i]->msg_style) {
-		case PAM_PROMPT_ECHO_ON:
-		case PAM_PROMPT_ECHO_OFF:
-			responses++;
-			break;
-		default:
-			break;
-		}
-	}
-
 	if (banner == 0) {
-		if (responses == 0) {
-			text = NULL;
-		} else
 		if ((service != NULL) && (strlen(service) > 0)) {
 			if (app_data->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative\nprivileges, but more information is needed in order to do so."), service);
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from superuser\nprivileges, but more information is needed in order to do so."), service);
 			} else {
-				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative\nprivileges, but more information is needed in order to do so."), service);
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires superuser\nprivileges, but more information is needed in order to do so."), service);
 			}
 		} else {
 			if (app_data->fallback_allowed) {
-				text = g_strdup_printf(_("You are attempting to run a command which may benefit from\nadministrative privileges, but more information is needed in order to do so."));
+				text = g_strdup_printf(_("You are attempting to run a command which may benefit from\nsuperuser privileges, but more information is needed in order to do so."), service);
 			} else {
-				text = g_strdup_printf(_("You are attempting to run a command which requires administrative\nprivileges, but more information is needed in order to do so."));
+				text = g_strdup_printf(_("You are attempting to run a command which requires superuser\nprivileges, but more information is needed in order to do so."), service);
 			}
 		}
 		if (text != NULL) {
@@ -479,7 +448,7 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 /* PAM conversation structures containing the addresses of the various
  * conversation functions and our global data. */
 static struct pam_conv silent_conv = {
-	converse_silent,
+	silent_converse,
 	&app_data,
 };
 static struct pam_conv pipe_conv = {
@@ -830,8 +799,7 @@ main(int argc, char **argv)
 		 * PAM doesn't provide an interface to do this, because it's
 		 * not PAM's job to manage this stuff, so farm it out to a
 		 * different library. */
-		char *new_gecos = NULL, *auth_user,
-		     *gecos = NULL, *old_shell = NULL;
+		char *new_gecos = NULL, *auth_user, *gecos, *old_shell;
 		struct lu_context *context;
 		struct lu_ent *ent = NULL;
 		struct lu_error *error = NULL;
@@ -852,8 +820,7 @@ main(int argc, char **argv)
 
 		/* Start up PAM to authenticate the user, this time pretending
 		 * we're "chfn". */
-		progname = "chfn";
-		retval = pam_start(progname, user_name, conv, &app_data.pamh);
+		retval = pam_start("chfn", user_name, conv, &app_data.pamh);
 		if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
 			g_print("pam_start() failed\n");
@@ -1095,9 +1062,6 @@ main(int argc, char **argv)
 		char *env_lang, *env_lcall, *env_lcmsgs, *env_xauthority;
 		int session, tryagain, gui;
 		struct stat sbuf;
-		struct pam_message pmessage;
-		const struct pam_message *pmessages[] = {&pmessage};
-		struct pam_response *presponses;
 		shvarFile *s;
 
 		/* Find the basename of the command we're wrapping. */
@@ -1193,8 +1157,7 @@ main(int argc, char **argv)
 		/* If the file is world-writable, or isn't a regular file, or
 		 * couldn't be open, just exit.  We don't want to alert an
 		 * attacker that the service name is invalid. */
-		if ((s == NULL) ||
-		    (fstat(s->fd, &sbuf) == -1) ||
+		if ((fstat(s->fd, &sbuf) == -1) ||
 		    !S_ISREG(sbuf.st_mode) ||
 		    (sbuf.st_mode & S_IWOTH)) {
 #ifdef DEBUG_USERHELPER
@@ -1386,14 +1349,6 @@ main(int argc, char **argv)
 				fail_exit(retval);
 			}
 
-			/* Give the user a heads-up that this is going to be
-			 * a privileged process. */
-			if (!app_data.questions_asked) {
-				pmessage.msg_style = PAM_TEXT_INFO;
-				pmessage.msg = g_strdup_printf(_("Starting \"%s\" with administrative privileges."), progname);
-				conv->conv(1, pmessages, &presponses, conv->appdata_ptr);
-			}
-
 			/* Start up a child process we can wait on. */
 			child = fork();
 			if (child == -1) {
@@ -1447,20 +1402,11 @@ main(int argc, char **argv)
 			}
 			exit(retval);
 		} else {
-			/* Give the user a heads-up that this is going to be
-			 * a privileged process. */
-			if (!app_data.questions_asked) {
-				pmessage.msg_style = PAM_TEXT_INFO;
-				pmessage.msg = g_strdup_printf(_("Starting \"%s\" with administrative privileges."), progname);
-				conv->conv(1, pmessages, &presponses, conv->appdata_ptr);
-			}
-
 			/* We're not opening a session, so we can just exec()
 			 * the program we're wrapping. */
 			pam_end(app_data.pamh, PAM_SUCCESS);
 
 			argv[optind - 1] = progname;
-
 #ifdef DEBUG_USERHELPER
 			g_print(_("about to exec \"%s\"\n"),
 				constructed_path);
