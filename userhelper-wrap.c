@@ -211,7 +211,7 @@ userhelper_parse_exitstatus(int exitstatus)
     }
 
   gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) userhelper_fatal_error, NULL);
-  gtk_signal_connect(GTK_OBJECT(message_box), "delete-event", (GtkSignalFunc) userhelper_fatal_error, NULL);
+  gtk_signal_connect(GTK_OBJECT(message_box), "delete_event", (GtkSignalFunc) userhelper_fatal_error, NULL);
   gtk_widget_show(message_box);
 
 }
@@ -220,34 +220,79 @@ void
 userhelper_parse_childout(char* outline)
 {
   char* prompt;
+  char* current;
+  char* rest = NULL;
   int prompt_type;
+  int done = FALSE;
   GtkWidget* message_box;
 
-  prompt = outline + 2;
-  outline[1] = '\0';
-  prompt_type = atoi(outline);
-  
-  switch(prompt_type)
+  prompt = strchr(outline, ' ');
+  current = prompt - 1;
+  if(current[0] >= '1' && current[0] <= '4')
     {
-    case UH_ECHO_ON_PROMPT:
-      message_box = create_query_box(prompt, NULL, 
-				     (GtkSignalFunc)userhelper_write_childin);
-      gtk_widget_show(message_box);
-      break;
-    case UH_ECHO_OFF_PROMPT:
-      message_box = create_invisible_query_box(prompt, NULL,
-					       (GtkSignalFunc)userhelper_write_childin);
-      gtk_widget_show(message_box);
-      break;
-    case UH_INFO_MSG:
-      message_box = create_message_box(prompt, NULL);
-      gtk_widget_show(message_box);
-      break;
-    case UH_ERROR_MSG:
-      message_box = create_error_box(prompt, NULL);
-      gtk_widget_show(message_box);
-      break;
+      current[1] = '\0';
+      prompt_type = atoi(current);
+
+      prompt++;
+      /* null terminate the actual prompt... then call this function
+       * on the rest
+       */
+      current = prompt;
+
+      /*DEBUG*/
+      fprintf(stderr, "got here.\n");
+      while(!done)
+/*       while(FALSE) */
+	{
+	  rest = strchr(current, ' ');
+	  if(rest == NULL)
+	    {
+	      done = TRUE;
+	      continue;
+	    }
+
+	  /* fix this!!! 
+	   *  not sure what's going wrong.
+	   */
+	  rest = rest - 1;
+	  if(rest[0] >= '1' && rest[0] <= '4')
+	    {
+	      current = rest - 1;
+	      current[0] = '\0';
+	      done = TRUE;
+	    }
+
+	  current = rest + 2;
+	}
+
+      switch(prompt_type)
+	{
+	case UH_ECHO_ON_PROMPT:
+	  message_box = create_query_box(prompt, NULL, 
+					 (GtkSignalFunc)userhelper_write_childin);
+	  gtk_widget_show(message_box);
+	  break;
+	case UH_ECHO_OFF_PROMPT:
+	  message_box = create_invisible_query_box(prompt, NULL,
+						   (GtkSignalFunc)userhelper_write_childin);
+	  gtk_widget_show(message_box);
+	  break;
+	case UH_INFO_MSG:
+	  message_box = create_message_box(prompt, NULL);
+	  gtk_widget_show(message_box);
+	  break;
+	case UH_ERROR_MSG:
+	  message_box = create_error_box(prompt, NULL);
+	  gtk_widget_show(message_box);
+	  break;
+	}
     }
+
+  if(rest != NULL)
+    {
+      userhelper_parse_childout(rest);
+    }
+
 }
 
 void

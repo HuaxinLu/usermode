@@ -24,11 +24,12 @@
 #include <signal.h>
 #include <unistd.h>
 #include <errno.h>
+#include <string.h>
 #include <sys/time.h>
 #include <sys/wait.h>
 
-#define UH_PATH "/usr/sbin/userhelper"
-/* #define UH_PATH "./userhelper" */
+/* #define UH_PATH "/usr/sbin/userhelper" */
+#define UH_PATH "./userhelper"
 #define UH_PASSWD_OPT "-c"
 #define UH_FULLNAME_OPT "-f"
 #define UH_OFFICE_OPT "-o"

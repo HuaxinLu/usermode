@@ -1,6 +1,7 @@
 # completely and totally crappy makefile... better one to come.
 
-CFLAGS=-O2 -Wall
+#CFLAGS=-O2 -Wall
+CFLAGS=-g -Wall
 INCLUDES=
 LDFLAGS=-L/usr/X11R6/lib -lm -lX11 -lXext -lglib -lgdk -lgtk 
 INSTALL=install
