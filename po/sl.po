@@ -1,18 +1,18 @@
 # SLOVENIAN TRANSLATION OF USERMODE.
 # Copyright (C) 2002 Free Software Foundation, Inc.
-# Roman Maurer <roman.maurer@amis.net>, 2002.
+# Roman Maurer <roman@lugos.si>, 2002.
 # $Id$
 # $Source$
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode 7.3\n"
+"Project-Id-Version: usermode 9.1\n"
 "POT-Creation-Date: 2002-09-03 01:15-0400\n"
-"PO-Revision-Date: 2002-05-18 21:44+0200\n"
-"Last-Translator: Roman Maurer <roman.maurer@amis.net>\n"
+"PO-Revision-Date: 2003-07-13 23:20+0200\n"
+"Last-Translator: Roman Maurer <roman@lugos.si>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #.
@@ -60,7 +60,7 @@ msgstr "Novo geslo za UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Vnoviè vpi¹ite novo geslo za UNIX: "
+msgstr "VnoviÄ vpiÅ¡ite novo geslo za UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -76,15 +76,15 @@ msgstr "Geslo ni spremenjeno"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "®al se gesli ne ujemata"
+msgstr "Å½al se gesli ne ujemata"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "ZaÅ¾eni sistemska nastavitvena orodja brez gesla."
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr "Pomoè"
+msgstr "PomoÄ"
 
 #: userhelper.c:99
 #, c-format
@@ -97,40 +97,38 @@ msgid "Password for %s"
 msgstr "Geslo za %s"
 
 #: userhelper.c:346
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati \"%s\", ki lahko pridobi, èe ga po¾enete kot skrbnik "
-"sistema, a za to je treba veè podatkov."
+"SkuÅ¡ate pognati \"%s\", ki lahko pridobi, Äe ga poÅ¾enete kot skrbnik\n"
+"sistema, a za to je treba veÄ podatkov."
 
 #: userhelper.c:348
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati \"%s\", ki zahteva, da ga po¾enete kot skrbnik sistema, a za "
-"to je treba veè podatkov."
+"SkuÅ¡ate pognati \"%s\", ki zahteva, da ga poÅ¾enete kot skrbnik sistema,\n"
+"a za to je treba veÄ podatkov."
 
 #: userhelper.c:352
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati ukaz, ki lahko pridobi, èe ga po¾enete kot skrbnik sistema, "
-"a za to je treba veè podatkov."
+"SkuÅ¡ate pognati ukaz, ki lahko pridobi, Äe ga poÅ¾enete kot skrbnik\n"
+"sistema, a za to je treba veÄ podatkov."
 
 #: userhelper.c:354
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati ukaz, ki zahteva, da ga po¾enete kot skrbnik sistema, a za "
-"to je treba veè podatkov."
+"SkuÅ¡ate pognati ukaz, ki zahteva, da ga poÅ¾enete kot skrbnik sistema,\n"
+"a za to je treba veÄ podatkov."
 
 #: userhelper.c:373
 #, c-format
@@ -145,7 +143,7 @@ msgstr "userhelper mora biti setuid root\n"
 #: userhelper.c:729
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Ni moè odpreti grafiènega okna in ni moè najti nadzornega terminala.\n"
+msgstr "Ni moÄ odpreti grafiÄnega okna in ni moÄ najti nadzornega terminala.\n"
 
 #: userhelper.c:1434 userhelper.c:1480
 #, c-format
@@ -158,7 +156,7 @@ msgstr "Neznana izhodna vrednost."
 
 #: userhelper-wrap.c:63
 msgid "Information updated."
-msgstr "Podatek osve¾en."
+msgstr "Podatek osveÅ¾en."
 
 #: userhelper-wrap.c:65
 msgid ""
@@ -174,13 +172,13 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Eno ali veè spremenjenih polj je neveljavnih.\n"
-"Verjetno je to zaradi vejic ali podpièij v enem od polj.\n"
+"Eno ali veÄ spremenjenih polj je neveljavnih.\n"
+"Verjetno je to zaradi vejic ali podpiÄij v enem od polj.\n"
 "Prosimo, odstranite jih in poskusite znova."
 
 #: userhelper-wrap.c:69
 msgid "Password resetting error."
-msgstr "Napaka pri vnoviènem nastavljanju gesla."
+msgstr "Napaka pri vnoviÄnem nastavljanju gesla."
 
 #: userhelper-wrap.c:71
 msgid ""
@@ -188,7 +186,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Nekatere sistemske datoteke so zaklenjene.\n"
-"Prosimo, poskusite znova èez nekaj èasa."
+"Prosimo, poskusite znova Äez nekaj Äasa."
 
 #: userhelper-wrap.c:73
 msgid "Unknown user."
@@ -208,9 +206,9 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Va¹a trenutna ukazna lupina ni navedena v /etc/shells.\n"
+"VaÅ¡a trenutna ukazna lupina ni navedena v /etc/shells.\n"
 "Ni vam je dovoljeno spremeniti.\n"
-"Posvetujte se s skrbnikom va¹ega sistema."
+"Posvetujte se s skrbnikom vaÅ¡ega sistema."
 
 #: userhelper-wrap.c:82
 msgid "Out of memory."
@@ -222,7 +220,7 @@ msgstr "Klic exec() ni uspel."
 
 #: userhelper-wrap.c:86
 msgid "Failed to find selected program."
-msgstr "Izbranega programa ni moè najti."
+msgstr "Izbranega programa ni moÄ najti."
 
 #: userhelper-wrap.c:90
 msgid "Unknown error."
@@ -258,40 +256,38 @@ msgid "Changing login shell."
 msgstr "Sprememba prijavne lupine."
 
 #: userhelper-wrap.c:491
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati \"%s\", ki lahko pridobi, èe ga po¾enete kot skrbnik "
-"sistema, a za to je treba veè podatkov."
+"SkuÅ¡ate pognati \"%s\", ki lahko pridobi, Äe ga poÅ¾enete kot skrbnik "
+"sistema, a za to je treba veÄ podatkov."
 
 #: userhelper-wrap.c:493
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati \"%s\", ki zahteva, da ga po¾enete kot skrbnik sistema, a za "
-"to je treba veè podatkov."
+"SkuÅ¡ate pognati \"%s\", ki zahteva, da ga poÅ¾enete kot skrbnik sistema, a za "
+"to je treba veÄ podatkov."
 
 #: userhelper-wrap.c:502
-#, fuzzy
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati ukaz, ki lahko pridobi, èe ga po¾enete kot skrbnik sistema, "
-"a za to je treba veè podatkov."
+"SkuÅ¡ate pognati ukaz, ki lahko pridobi, Äe ga poÅ¾enete kot skrbnik sistema, "
+"a za to je treba veÄ podatkov."
 
 #: userhelper-wrap.c:504
-#, fuzzy
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Sku¹ate pognati ukaz, ki zahteva, da ga po¾enete kot skrbnik sistema, a za "
-"to je treba veè podatkov."
+"SkuÅ¡ate pognati ukaz, ki zahteva, da ga poÅ¾enete kot skrbnik sistema, a za "
+"to je treba veÄ podatkov."
 
 #: userhelper-wrap.c:521
 msgid "_Run Unprivileged"
@@ -303,7 +299,7 @@ msgstr "Napaka s cevjo.\n"
 
 #: userhelper-wrap.c:629
 msgid "Cannot fork().\n"
-msgstr "Klic fork() ni mogoè.\n"
+msgstr "Klic fork() ni mogoÄ.\n"
 
 #: userhelper-wrap.c:696 userhelper-wrap.c:700
 msgid "dup2() error.\n"
@@ -331,7 +327,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Ste preprièani, da ¾elite formatirati ta disk? Unièili boste vse podatke, ki "
+"Ste prepriÄani, da Å¾elite formatirati ta disk? UniÄili boste vse podatke, ki "
 "jih trenutno vsebuje."
 
 #: usermount.c:331
@@ -340,20 +336,20 @@ msgstr "Napravi _nizko-nivojski format."
 
 #: usermount.c:374
 msgid "Select a _filesystem type to create:"
-msgstr "Izberite vrsto _datoteènega sistema, ki naj se ustvari:"
+msgstr "Izberite vrsto _datoteÄnega sistema, ki naj se ustvari:"
 
 #: usermount.c:542
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Ni datoteènih sistemov, ki jih smete priklopiti ali odklopiti.\n"
+"Ni datoteÄnih sistemov, ki jih smete priklopiti ali odklopiti.\n"
 "Posvetujte se s skrbnikom sistema."
 
 #. Create the dialog.
 #: usermount.c:543 usermount.c:554 glade.strings:22
 msgid "User Mount Tool"
-msgstr "Orodje za uporabni¹ki priklop"
+msgstr "Orodje za uporabniÅ¡ki priklop"
 
 #. Create the other buttons.
 #: usermount.c:568 glade.strings:28
@@ -370,7 +366,7 @@ msgstr "Imenik"
 
 #: usermount.c:616
 msgid "Filesystem"
-msgstr "Datoteèni sistem"
+msgstr "DatoteÄni sistem"
 
 #.
 #. * Translatable strings file generated by Glade.
@@ -391,11 +387,11 @@ msgstr "Pisarna:"
 
 #: glade.strings:10 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr "Slu¾beni telefon:"
+msgstr "SluÅ¾beni telefon:"
 
 #: glade.strings:11 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr "Domaèi telefon:"
+msgstr "DomaÄi telefon:"
 
 #: glade.strings:12 usermode.glade.h:4
 msgid "Login Shell:"
@@ -407,11 +403,11 @@ msgstr "V _redu"
 
 #: glade.strings:14 glade.strings:21
 msgid "_Cancel"
-msgstr "_Preklièi"
+msgstr "_PrekliÄi"
 
 #: glade.strings:15 usermode.glade.h:5
 msgid "Message"
-msgstr "Sporoèilo"
+msgstr "SporoÄilo"
 
 #: glade.strings:17
 msgid "_Close"
@@ -431,58 +427,28 @@ msgstr "Iz_hod"
 
 #: usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "O meni"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Sprememba osebnih podatkov."
+msgstr "Sprememba osebnih podatkov"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Upravljanje z diski"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Priklop in odklop datoteÄnih sistemov"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Spremeni vaÅ¡e prijavno geslo"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Geslo za %s"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Sku¹ate pognati \"%s\", ki lahko pridobi, èe ga po¾enete\n"
-#~ "kot skrbnik sistema, a za to je treba veè podatkov."
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Sku¹ate pognati \"%s\", ki zahteva, da ga po¾enete kot skrbnik sistema,\n"
-#~ "a za to je treba veè podatkov."
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Sku¹ate pognati ukaz, ki lahko pridobi, èe ga po¾enete\n"
-#~ "kot skrbnik sistema, a za to je treba veè podatkov."
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Sku¹ate pognati ukaz, ki zahteva, da ga po¾enete kot skrbnik sistema,\n"
-#~ "a za to je treba veè podatkov."
+msgstr "Geslo"
