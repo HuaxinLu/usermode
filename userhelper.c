@@ -99,7 +99,7 @@ static int fail_error(int retval)
 
     if (retval != PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-	printf(i18n("Got error %d.\n"), retval);
+	g_print(i18n("Got error %d.\n"), retval);
 #endif
 	switch(retval) {
 	    case PAM_AUTH_ERR:
@@ -170,14 +170,14 @@ static int conv_func(int num_msg, const struct pam_message **msg,
     if(appdata_ptr != NULL) {
         struct app_data_t *app_data = (struct app_data_t*) appdata_ptr;
 
-        printf("%d %d\n", UH_FALLBACK, app_data->fallback);
+        g_print("%d %d\n", UH_FALLBACK, app_data->fallback);
 	if(app_data->user == NULL) {
-            printf("%d %s\n", UH_USER, "root");
+            g_print("%d %s\n", UH_USER, "root");
 	} else {
-            printf("%d %s\n", UH_USER, app_data->user);
+            g_print("%d %s\n", UH_USER, app_data->user);
 	}
 	if(app_data->service != NULL) {
-            printf("%d %s\n", UH_SERVICE_NAME, app_data->service);
+            g_print("%d %s\n", UH_SERVICE_NAME, app_data->service);
 	}
     }
 
@@ -189,7 +189,7 @@ static int conv_func(int num_msg, const struct pam_message **msg,
     for (count = responses = 0; count < num_msg; count++) {
 	switch (msg[count]->msg_style) {
 	    case PAM_PROMPT_ECHO_ON:
-		printf("%d %s\n", UH_ECHO_ON_PROMPT, msg[count]->msg);
+		g_print("%d %s\n", UH_ECHO_ON_PROMPT, msg[count]->msg);
 		responses++;
 		break;
 	    case PAM_PROMPT_ECHO_OFF:
@@ -199,23 +199,23 @@ static int conv_func(int num_msg, const struct pam_message **msg,
 		} else {
 		    noecho_message = g_strdup(msg[count]->msg);
 		}
-		printf("%d %s\n", UH_ECHO_OFF_PROMPT, noecho_message);
+		g_print("%d %s\n", UH_ECHO_OFF_PROMPT, noecho_message);
 		g_free(noecho_message);
 		responses++;
 		break;
 	    case PAM_TEXT_INFO:
-		printf("%d %s\n", UH_INFO_MSG, msg[count]->msg);
+		g_print("%d %s\n", UH_INFO_MSG, msg[count]->msg);
 		break;
 	    case PAM_ERROR_MSG:
-		printf("%d %s\n", UH_ERROR_MSG, msg[count]->msg);
+		g_print("%d %s\n", UH_ERROR_MSG, msg[count]->msg);
 		break;
 	    default:
-		printf("0 %s\n", msg[count]->msg);
+		g_print("0 %s\n", msg[count]->msg);
 	}
     }
 
     /* tell the other side how many messages we expect responses for */
-    printf("%d %d\n", UH_EXPECT_RESP, responses);
+    g_print("%d %d\n", UH_EXPECT_RESP, responses);
     fflush(NULL);
 
     /* now the second pass */
@@ -371,7 +371,7 @@ static int get_shell_list(char* shell_name)
                 break;
             }
         }
-        else printf ("%s\n", shell);
+        else g_print("%s\n", shell);
     }
     endusershell();
     return found;
@@ -394,8 +394,8 @@ mcheck_out(enum mcheck_status reason) {
 	case MCHECK_TAIL:
 	    explanation = i18n("Memory after the block was clobbered."); break;
     }
-    printf("%d %s\n", UH_ERROR_MSG, explanation);
-    printf("%d 1\n", UH_EXPECT_RESP);
+    g_print("%d %s\n", UH_ERROR_MSG, explanation);
+    g_print("%d 1\n", UH_EXPECT_RESP);
 }
 #endif
 
@@ -418,10 +418,6 @@ int main(int argc, char *argv[])
     setlocale(LC_ALL, "");
     bindtextdomain("userhelper", "/usr/share/locale");
     textdomain("userhelper");
-
-    /* for lack of a better place to put it... */
-    setbuf(stdout, NULL);
-    setbuf(stdin, NULL);
 
     if (geteuid() != 0) {
 	fprintf(stderr, i18n("userhelper must be setuid root\n"));
@@ -660,7 +656,7 @@ int main(int argc, char *argv[])
 		if (pw) setenv("HOME", pw->pw_dir, 1);
 		argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
-		printf(i18n("about to exec \"%s\"\n"), constructed_path);
+		g_print(i18n("about to exec \"%s\"\n"), constructed_path);
 #endif
 		execv(constructed_path, argv+optind-1);
 		exit (ERR_EXEC_FAILED);
@@ -692,7 +688,7 @@ int main(int argc, char *argv[])
 	    setuid(0);
 	    argv[optind-1] = progname;
 #ifdef DEBUG_USERHELPER
-            printf(i18n("about to exec \"%s\"\n"), constructed_path);
+            g_print(i18n("about to exec \"%s\"\n"), constructed_path);
 #endif
 	    execv(constructed_path, argv+optind-1);
 	    exit (ERR_EXEC_FAILED);

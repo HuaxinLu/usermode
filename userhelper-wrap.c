@@ -79,7 +79,6 @@ userhelper_runv(char *path, char **args)
 	      exit(2);
 	    }
 	}
-      setbuf(stdout, NULL);
 
       retval = execv(path, args);
 
@@ -283,7 +282,7 @@ userhelper_parse_childout(char* outline)
       }
     }
 #ifdef DEBUG_USERHELPER
-    printf("(%d) \"%s\"\n", prompt_type, prompt);
+    g_print("(%d) \"%s\"\n", prompt_type, prompt);
 #endif
 
     msg->type = prompt_type;
@@ -318,7 +317,7 @@ userhelper_parse_childout(char* outline)
 	resp->responses++;
 	resp->rows++;
 #ifdef DEBUG_USERHELPER
-	printf(i18n("Need %d responses.\n"), resp->responses);
+	g_print(i18n("Need %d responses.\n"), resp->responses);
 #endif
 	break;
 
@@ -370,7 +369,7 @@ userhelper_parse_childout(char* outline)
       case UH_EXPECT_RESP:
 	g_free(msg); /* useless */
 	if (resp->responses != atoi(prompt)) {
-          printf(i18n("You want %d response(s) from %d entry fields!?!?!\n"),
+          g_print(i18n("You want %d response(s) from %d entry fields!?!?!\n"),
                  atoi(prompt), resp->responses);
           exit (1);
 	}
