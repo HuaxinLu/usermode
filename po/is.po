@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.6\n"
-"POT-Creation-Date: 2001-01-25 15:31-0500\n"
-"PO-Revision-Date: 2000-08-05 20:50+0000\n"
+"POT-Creation-Date: 2001-01-25 15:50-0500\n"
+"PO-Revision-Date: 2001-02-02 20:50+0000\n"
 "Last-Translator: Richard Allen <ra@hp.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 "MIME-Version: 1.0\n"
@@ -135,18 +135,18 @@ msgid "Need %d responses.\n"
 msgstr "Þarfnast %d svara.\n"
 
 #: ../userhelper-wrap.c:371
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "In order to run \"%s\" with root's privileges, additional information is "
 "required."
 msgstr ""
-"Til að hægt sé að keyra \"%s\" með heimildum %s er þörf á frekari "
+"Til að hægt sé að keyra \"%s\" með rótarheimildum er þörf á frekari "
 "upplýsingum."
 
 #: ../userhelper-wrap.c:389
-#, fuzzy, c-format
+#, c-format
 msgid "Changing password for %s"
-msgstr "Aðgangsorð fyrir %s"
+msgstr "Breyti aðgangsorði %s"
 
 #: ../userhelper-wrap.c:403
 #, c-format
@@ -190,12 +190,12 @@ msgstr "userhelper verður að vera 'setuid' ofurpaur\n"
 #: ../userhelper.c:672
 #, c-format
 msgid "PAM returned = %d\n"
-msgstr ""
+msgstr "PAM skilaði = %d\n"
 
 #: ../userhelper.c:673
-#, fuzzy, c-format
+#, c-format
 msgid "about to authenticate \"%s\"\n"
-msgstr "alveg að fara að keyra \"%s\"\n"
+msgstr "alveg að fara að auðkenna \"%s\"\n"
 
 #: ../userhelper.c:722 ../userhelper.c:763
 #, c-format
@@ -292,40 +292,40 @@ msgstr "Ekki lágforsníða."
 
 #: ../dummy.h:4
 msgid "Exit"
-msgstr ""
+msgstr "Hætta"
 
 #: ../dummy.h:5
 msgid "Cancel"
-msgstr ""
+msgstr "Hætta við"
 
 #: ../dummy.h:6
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "Keyra án rótarheimilda"
 
 #: ../dummy.h:7
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(núverandi) UNIX lykilorð: "
 
 #: ../dummy.h:8
 msgid "New UNIX password: "
-msgstr ""
+msgstr "Sláðu inn nýtt UNIX lykilorð: "
 
 #: ../dummy.h:9
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "Sláðu aftur inn nýja UNIX lykilorðið: "
 
 #: ../dummy.h:10
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "SLÆMT LYKILORÐ: það er ALLT OF stutt"
 
 #: ../dummy.h:11
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "SLÆMT LYKILORÐ: Það er of stutt"
 
 #: ../dummy.h:12
 msgid "Password unchanged"
-msgstr ""
+msgstr "Lykilorði ekki breytt"
 
 #: ../dummy.h:13
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "Lykilorðin stemma því miður ekki"
