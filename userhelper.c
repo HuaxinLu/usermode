@@ -706,7 +706,7 @@ int main(int argc, char *argv[])
 	/* copy PAM's environment variables to the child process */
 	env_pam = pam_getenvlist(pamh);
 	while(env_pam && *env_pam) {
-            putenv(*env_pam);
+            putenv(strdup(*env_pam));
 	    env_pam++;
 	}
 
