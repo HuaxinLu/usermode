@@ -27,14 +27,14 @@
 #include <sys/time.h>
 #include <sys/wait.h>
 
-#define UH_PATH "/usr/sbin/userhelper"
-/* #define UH_PATH "./userhelper" */
+/* #define UH_PATH "/usr/sbin/userhelper" */
+#define UH_PATH "./userhelper"
 #define UH_PASSWD_OPT "-c"
 #define UH_FULLNAME_OPT "-f"
 #define UH_OFFICE_OPT "-o"
 #define UH_OFFICEPHONE_OPT "-p"
 #define UH_HOMEPHONE_OPT "-h"
-/* #define UH_SHELL_OPT "" */
+#define UH_SHELL_OPT "-s"
 
 /* fix userhelper so these match the pam.h defines. */
 #define UH_ECHO_ON_PROMPT 1
@@ -51,6 +51,7 @@
 #define ERR_NO_USER             5       /* user unknown ... */
 #define ERR_NO_RIGHTS           6       /* insufficient rights  */
 #define ERR_INVALID_CALL        7       /* invalid call to this program */
+#define ERR_SHELL_INVALID       8       /* invalid call to this program */
 #define ERR_UNK_ERROR           255     /* unknown error */
 
 void userhelper_run_passwd();

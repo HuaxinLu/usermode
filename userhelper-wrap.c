@@ -142,8 +142,7 @@ userhelper_run_chfn(char* fullname, char* office, char* officephone,
 	       UH_OFFICE_OPT, office, 
 	       UH_OFFICEPHONE_OPT, officephone,
 	       UH_HOMEPHONE_OPT, homephone,
-/* FIXME: !!!  userhelper doesn't do the shell!  arrrgh! */
-/* 	       UH_SHELL_OPT, shell, */
+	       UH_SHELL_OPT, shell,
 	       0) < 0)
 	{
 	  fprintf(stderr, "execl() error, errno=%d\n", errno);
@@ -185,12 +184,16 @@ userhelper_parse_exitstatus(int exitstatus)
     case ERR_INVALID_CALL:
       message_box = create_error_box("Invalid call to sub process.", NULL);
       break;
+    case ERR_SHELL_INVALID:
+      message_box = create_error_box("No such shell in /etc/shells.", NULL);
     case ERR_UNK_ERROR:
       message_box = create_error_box("Unknown error.", NULL);
       break;
+    default:
+      message_box = create_error_box("SuperUnknown error.", NULL);
+      break;
     }
 
-/*   gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) gtk_main_quit, NULL); */
   gtk_signal_connect(GTK_OBJECT(message_box), "destroy", (GtkSignalFunc) userhelper_fatal_error, NULL);
   gtk_widget_show(message_box);
 
