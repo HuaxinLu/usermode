@@ -1,10 +1,13 @@
-# Miloslav Trmac <mitr@volny.cz>, 2002, 2003.
+# Copyright (C) 2002, 2003, 2004 usermode'S COPYRIGHT HOLDER
+# Copyright (C) 2004 Miloslav Trmac <mitr@volny.cz>
+#
+# Miloslav Trmac <mitr@volny.cz>, 2002, 2003, 2004.
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode 1.27\n"
+"Project-Id-Version: usermode VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-04 11:06+0200\n"
-"PO-Revision-Date: 2003-09-27 15:24+0200\n"
+"PO-Revision-Date: 2004-10-04 11:12+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -89,68 +92,68 @@ msgstr "Heslo: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Nemohu se vzdát oprávnění správce: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
+msgstr "Nemohu se vzdát oprávnění správce: pam_timestamp_check vrátilo kód chyby %d"
 
 #: pam-panel-icon.c:148
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
+msgstr "Momentálně jste autorizováni měnit systémová nastavení (která ovlivňují všechny uživatele) bez opětovného zadávání hesla správce. Této autorizace se můžete vzdát."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Ponechat autorizaci"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Zapomenout autorizaci"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check není setuid root"
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "není řídicí tty pro pam_timestamp_check"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "uživatel neznámý v pam_timestamp_check"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "chyba oprávnění v pam_timestamp_check"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "neplatný řídicí tty v pam_timestamp_check"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Chyba"
+msgstr "Chyba: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Nemohu spustit příkaz \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Nemohu nastavit IO kanál na neblokující: %s\n"
 
 #: pam-panel-icon.c:491
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: nemohu se připojit ke správci sezení\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -500,9 +503,6 @@ msgstr "Změnit vaše přihlašovací heslo"
 msgid "Password"
 msgstr "Heslo"
 
-#~ msgid "_Ok"
-#~ msgstr "_Ok"
-
 #~ msgid "_Cancel"
 #~ msgstr "_Zrušit"
 
@@ -514,6 +514,3 @@ msgstr "Heslo"
 
 #~ msgid "_Unmount"
 #~ msgstr "_Odpojit"
-
-#~ msgid "E_xit"
-#~ msgstr "_Konec"
