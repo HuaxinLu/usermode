@@ -468,7 +468,7 @@ set_new_userinfo()
 
   /* stuff for the select */
   fd_set rfds;
-  struct timeval tv;
+/*   struct timeval tv; */
   int retval;
 
   GtkWidget* message_box;
@@ -499,43 +499,30 @@ set_new_userinfo()
       FD_ZERO(&rfds);
       FD_SET(childout[0], &rfds);
       /* may not need a timeout */
-      tv.tv_sec = 10;
-      tv.tv_usec = 0;
+/*       tv.tv_sec = 10; */
+/*       tv.tv_usec = 0; */
 
-      /* this is irritating... I'm trying to figure out why I can't
-       * get anything on stdout, until I shove something down
-       * stdin... GRRRR!
-       */
-      /*DEBUG*/
-      fprintf(stderr, "Got here.\n");
       retval = select(childout[0] + 1, &rfds, NULL, NULL, NULL);
-/*       while(select(childout[0] + 1, &rfds, NULL, NULL, &tv) > 0) */
-      /*DEBUG*/
-      fprintf(stderr, "retval is: %d\n", retval);
+/*       while(retval > 0) */
       if(retval > 0)
       {
 	if(FD_ISSET(childout[0], &rfds))
 	  {
 	    count = read(childout[0], outline, MAXLINE);
 	    outline[count] = '\0';
-	    
-	    /*DEBUG*/
-/* 	    fprintf(stderr, "outline is: %s\n", outline); */
-	    fprintf(stderr, "count is: %d\n", count);
-
 	    message_box = create_message_box(outline);
 	    gtk_widget_show(message_box);
 	  }
+	retval = select(childout[0] + 1, &rfds, NULL, NULL, NULL);
       }
       
     }
   else				/* child */
     {
-/*       close(childout[0]); */
-/*       close(childin[1]); */
+      close(childout[0]);
+      close(childin[1]);
 
       if(childout[1] != STDOUT_FILENO)
-/*       if(FALSE) */
 	{
 	  if(dup2(childout[1], STDOUT_FILENO) != STDOUT_FILENO)
 	    {
@@ -551,25 +538,18 @@ set_new_userinfo()
 	      fprintf(stderr, "dup2() error.\n");
 	      exit(2);
 	    }
+	  close(childin[0]);
 	}
       setbuf(stdout, NULL);
-/*       fprintf(stdout, "Force some output on stdout...\n"); */
-/*       fprintf(stdout, "Force some output on stdout...\n"); */
-/*       write(childout[1], "Force some output on stdout...\n", 31);       */
-/*       write(childout[1], "Force some output on stdout...\n", 31); */
-/*       write(STDOUT_FILENO, "Force some output on stdout...\n", 31); */
-/*       write(STDOUT_FILENO, "Force some output on stdout...\n", 31); */
 
       if(execl(userhelper, userhelper,
 	       fullname_opt, fullname,
 	       office_opt, office,
 	       officephone_opt, officephone,
 	       homephone_opt, homephone, 0) < 0)
-/* 	{ */
-/* 	  fprintf(stderr, "execl() error, errno=%d\n", errno); */
-/* 	} */
-
-      getchar();
+	{
+	  fprintf(stderr, "execl() error, errno=%d\n", errno);
+	}
 
       _exit(0);
 
