@@ -524,7 +524,7 @@ response_callback(GtkWidget *emitter, GtkResponseType response)
 	}
 }
 
-static void
+static gboolean
 create_usermount_window()
 {
 	GtkWidget *dialog, *treeview, *format, *mount;
@@ -548,7 +548,8 @@ create_usermount_window()
 		g_signal_connect_object(G_OBJECT(dialog), "delete-event",
 					GTK_SIGNAL_FUNC(gtk_main_quit), NULL,
 					G_CONNECT_AFTER);
-		return;
+		gtk_dialog_run(dialog);
+		return FALSE;
 	}
 
 	/* Create the dialog. */
@@ -641,13 +642,16 @@ create_usermount_window()
 int
 main(int argc, char *argv[])
 {
+	gboolean run_main;
 	bindtextdomain(PACKAGE, DATADIR "/locale");
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 	gtk_set_locale();
 	gtk_init(&argc, &argv);
 	glade_init();
-	create_usermount_window();
-	gtk_main();
+	run_main = create_usermount_window();
+	if (run_main) {
+		gtk_main();
+	}
 	return 0;
 }
