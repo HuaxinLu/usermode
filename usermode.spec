@@ -1,7 +1,7 @@
 Summary: Graphical tools for certain user account management tasks.
 Name: usermode
 Version: 1.27
-Release: 2
+Release: 3
 Copyright: GPL
 Group: Applications/System
 Source: usermode-%{PACKAGE_VERSION}.tar.bz2
@@ -83,6 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 - install translations
 - fixup a messy text string
 - make "Mount"/"Unmount" translateable
+- stop prompting for passwords to shut down -- we can hit ctrl-alt-del anyway,
+  and gdm users can just shut down without logging in
 
 * Mon Jul 31 2000 Nalin Dahyabhia <nalin@redhat.com>
 - attempt to add i18n support
