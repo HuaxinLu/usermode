@@ -70,6 +70,9 @@ debug-install:
 	$(INSTALL) -m4711 userhelper $(sbindir)/
 	$(INSTALL)  -m755 consolehelper $(bindir)/
 	$(INSTALL)  -m755 consolehelper-gtk $(bindir)/
+	$(INSTALL)  -m755 userinfo          $(bindir)/
+	$(INSTALL)  -m755 usermount         $(bindir)/
+	$(INSTALL)  -m755 userpasswd        $(bindir)/
 
 pkgdata_DATA = usermode.glade
 
