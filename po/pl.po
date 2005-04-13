@@ -421,7 +421,7 @@ msgstr "Przeprowadź formatowanie _niskopoziomowe."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Wybierz sytem _plików do utworzenia:"
+msgstr "Wybierz _system plików do utworzenia:"
 
 #: usermount.c:549
 msgid ""
@@ -440,7 +440,7 @@ msgstr "Narzędzie montujące systemy plików"
 #. Create the other buttons.
 #: usermount.c:576
 msgid "_Format"
-msgstr "S_formatuj"
+msgstr "Sfo_rmatuj"
 
 #: usermount.c:612
 msgid "Device"
@@ -497,7 +497,7 @@ msgstr "Zmiana informacji osobistych"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Zarządzanie dyskiem"
+msgstr "Zarządzanie dyskami"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
