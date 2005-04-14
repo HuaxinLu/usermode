@@ -501,11 +501,11 @@ msgstr "Zarządzanie dyskami"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Zamontuj i odmontuj systemy plików"
+msgstr "Montowanie i odmontowywanie systemów plików"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Zmień hasło"
+msgstr "Zmiana hasła"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
