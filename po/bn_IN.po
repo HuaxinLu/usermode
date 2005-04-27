@@ -1,20 +1,22 @@
+# translation of bn_IN.po to Bangla (INDIA)
 # Bangla translation of Usermode.
 # Copyright (C) 2004 Red Hat In.
 # This file is distributed under the same license as the usermode package.
 # Runa Bhattacharjee <runab77@softhome.net>, 2003.
+# Runa Bhattacharjee <runab@redhat.com>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
+"Project-Id-Version: bn_IN\n"
 "POT-Creation-Date: 2004-11-10 14:44+0100\n"
-"PO-Revision-Date: 2004-10-05 16:23+0530\n"
+"PO-Revision-Date: 2005-04-27 21:39+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
-"Language-Team: bangla <redhat-translation@bengalinux.org>\n"
+"Language-Team: Bangla (INDIA) <redhat-translation@bengalinux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
@@ -260,10 +262,8 @@ msgstr "userhelper এর জন্য setuid root হওয়া আবশ্য�
 #. FIXME: print a warning here?
 #: userhelper.c:2399
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"গ্রাফিক্যাল উইন্ডো খোলা যায় নি, এবং নিয়ন্ত্রণকারী টার্মিনালটিও খুঁজে পাওয়া যায় নি।\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "গ্রাফিক্যাল উইন্ডো খোলা যায় নি, এবং নিয়ন্ত্রণকারী টার্মিনালটিও খুঁজে পাওয়া যায় নি।\n"
 
 # ..........হতে যাচ্ছে
 #: userhelper-wrap.c:179
@@ -417,7 +417,7 @@ msgstr ""
 
 #: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
-msgstr "বিনা অধিকারে চালাও(_চ)"
+msgstr "বিনা অধিকারে চালাও(_R)"
 
 #: userhelper-wrap.c:974
 #, c-format
@@ -448,11 +448,11 @@ msgstr "আপনি আবার কে। চলে যান।\n"
 # আপনি আবার কে ? ফুটেন মিয়া ;-)
 #: usermount.c:62
 msgid "_Mount"
-msgstr "মাউন্ট(_ম)"
+msgstr "মাউন্ট (_M)"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "আনমাউন্ট(_ন)"
+msgstr "আনমাউন্ট(_m)"
 
 #: usermount.c:321
 msgid ""
@@ -469,7 +469,7 @@ msgstr "একটি লো-লেভেল (Low-Level) ফরম্যাট �
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "যে ধরনের ফাইলসিস্টেম তৈরি করা হবে তা নির্বাচন করুন(_ফ):"
+msgstr "যে ধরনের ফাইলসিস্টেম তৈরি করা হবে তা নির্বাচন করুন(_f):"
 
 #: usermount.c:549
 msgid ""
@@ -488,7 +488,7 @@ msgstr "মাউন্ট করার কাজে সাধারণ ব্�
 #. Create the other buttons.
 #: usermount.c:576
 msgid "_Format"
-msgstr "ফরম্যাট(_ফ)"
+msgstr "ফরম্যাট(_F)"
 
 #: usermount.c:612
 msgid "Device"
@@ -567,3 +567,4 @@ msgstr "আপনার লগ-ইনের পাসওয়ার্ড পর�
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "পাসওয়ার্ড"
+
