@@ -1,19 +1,21 @@
+# translation of tr.po to Türkçe
 # translation of tr.po to Turkish
 # $Id$
 # Nilgün Belma Bugüner <nilgun@superonline.com>, 2003.
 # YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2004.
+# Hamdi Akoğuz <akoguzh@itu.edu.tr>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-10 14:44+0100\n"
-"PO-Revision-Date: 2004-01-20 13:02+0200\n"
-"Last-Translator: YILDIZ KARDEŞLER <turkishprogram@xposta.com>\n"
-"Language-Team: Turkish <C@li.org>\n"
+"PO-Revision-Date: 2005-04-26 01:45+0200\n"
+"Last-Translator: Hamdi Akoğuz <akoguzh@itu.edu.tr>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.9\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -34,19 +36,23 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#: dummy.h:21
+#: userdialogs.h:29
 msgid "OK"
 msgstr "Tamam"
 
-#: dummy.h:22 userdialogs.h:32
+#: dummy.h:22
+#: userdialogs.h:32
 msgid "Exit"
 msgstr "Çık"
 
-#: dummy.h:23 userdialogs.h:31
+#: dummy.h:23
+#: userdialogs.h:31
 msgid "Cancel"
 msgstr "İptal"
 
-#: dummy.h:24 userdialogs.h:33
+#: dummy.h:24
+#: userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Yetkisiz çalıştırma"
 
@@ -76,7 +82,7 @@ msgstr "Parola değişmedi"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Kusura bakmayın ama parolalar eşleşmedi"
+msgstr "Maalesef parolalar eşleşmedi"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
@@ -93,29 +99,24 @@ msgstr "Parola: "
 #: pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Administrator ayrıcalıkları iptal edilemedi: %s"
 
 #: pam-panel-icon.c:105
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Administrator ayrıcalıkları iptal edilemedi: pam_timestamp_check hata kodu döndürdü %d"
 
 #: pam-panel-icon.c:148
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Şu anda tekrar administrator şifrenizi yazmasanız da system-geneli (tüm kullanıcıları etkileyen) ayarları değiştirmekle yetkilisiniz. Bu yetkiyi bırakabilirsiniz."
 
 #: pam-panel-icon.c:154
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Yetkilendirmeyi Koru"
 
 #: pam-panel-icon.c:158
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Yetkilendirmeyi Unut"
 
 #: pam-panel-icon.c:294
 msgid "pam_timestamp_check is not setuid root"
@@ -123,29 +124,29 @@ msgstr ""
 
 #: pam-panel-icon.c:299
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check için denetleyici tty yok"
 
 #: pam-panel-icon.c:303
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "kullanıcı pam_timestamp_check tarafından bilinmiyor"
 
 #: pam-panel-icon.c:307
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check 'de izin hatası"
 
 #: pam-panel-icon.c:311
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check 'te geçersiz denetleyici tty"
 
 #: pam-panel-icon.c:329
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Hata"
+msgstr "Hata: %s\n"
 
 #: pam-panel-icon.c:406
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Komut çalıştırılamadı \"%s\": %s\n"
 
 #: pam-panel-icon.c:419
 #, c-format
@@ -154,13 +155,14 @@ msgstr ""
 
 #: pam-panel-icon.c:498
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: oturum yöneticisine bağlanılamadı\n"
 
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Yardım"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:138
+#: userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Çalıştırma içeriği %s'ye ayarlanamıyor.\n"
@@ -217,8 +219,7 @@ msgstr "userhelper programı setuid root olmalıdır.\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2399
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 
 #: userhelper-wrap.c:179
@@ -244,8 +245,7 @@ msgid ""
 "Please remove those and try again."
 msgstr ""
 "Değiştirilen alanların bir ya da birden fazlası geçersiz.\n"
-"Bu sorun alanlardaki iki nokta üstüsteler ya da virgüllerden dolayı "
-"olabilir.\n"
+"Bu sorun alanlardaki iki nokta üstüsteler ya da virgüllerden dolayı olabilir.\n"
 "Bunları silip yeniden deneyin."
 
 #: userhelper-wrap.c:187
@@ -303,11 +303,14 @@ msgstr "Bilinmeyen hata."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:472
+#: glade.strings.h:7
+#: usermode.glade.h:9
 msgid "Query"
 msgstr "Sorgu"
 
-#: userhelper-wrap.c:565 userhelper-wrap.c:745
+#: userhelper-wrap.c:565
+#: userhelper-wrap.c:745
 msgid "Error"
 msgstr "Hata"
 
@@ -315,7 +318,9 @@ msgstr "Hata"
 msgid "Information"
 msgstr "Bilgi"
 
-#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:737
+#: glade.strings.h:8
+#: glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Yer ayırma metni."
@@ -330,37 +335,21 @@ msgstr "Giriş kabuğu değiştiriliyor."
 
 #: userhelper-wrap.c:792
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
-"yapmak için daha fazla bilgi gerekiyor."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper-wrap.c:794
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
-"yapmak için daha fazla bilgi gerekiyor."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper-wrap.c:803
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama "
-"bunu yapmak için daha fazla bilgi gerekiyor."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper-wrap.c:805
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu "
-"yapmak için daha fazla bilgi gerekiyor."
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: userhelper-wrap.c:822
 msgid "_Run Unprivileged"
@@ -376,7 +365,8 @@ msgstr "Veri yolu hatası.\n"
 msgid "Cannot fork().\n"
 msgstr "fork() çalıştırılamadı.\n"
 
-#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
+#: userhelper-wrap.c:1059
+#: userhelper-wrap.c:1063
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() hatası.\n"
@@ -400,11 +390,8 @@ msgid "Un_mount"
 msgstr "_Ayır"
 
 #: usermount.c:321
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -423,7 +410,8 @@ msgstr ""
 "bulunmuyor. Sistem yöneticinize başvurun."
 
 #. Create the dialog.
-#: usermount.c:550 usermount.c:562
+#: usermount.c:550
+#: usermount.c:562
 msgid "User Mount Tool"
 msgstr "Bağlama Aracı"
 
@@ -444,36 +432,47 @@ msgstr "Dizin"
 msgid "Filesystem"
 msgstr "Dosya sistemi"
 
-#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:9
+#: glade.strings.h:18
+#: glade.strings.h:19
+#: glade.strings.h:20
+#: glade.strings.h:21
+#: usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10
+#: usermode.glade.h:5
 msgid "Message"
 msgstr "İleti"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12
+#: usermode.glade.h:10
 msgid "User Information"
 msgstr "Kullanıcı Bilgisi"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13
+#: usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Tam isim:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14
+#: usermode.glade.h:7
 msgid "Office:"
 msgstr "İş yeri:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15
+#: usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "İş Telefonu:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16
+#: usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Ev Telefonu:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17
+#: usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Sisteme Giriş Kabuğu:"
 
@@ -501,58 +500,3 @@ msgstr "Sisteme giriş parolanızı değiştirin"
 msgid "Password"
 msgstr "Parola"
 
-#~ msgid "_Ok"
-#~ msgstr "_Tamam"
-
-#~ msgid "_Cancel"
-#~ msgstr "İp_tal"
-
-#~ msgid "_Close"
-#~ msgstr "_Kapat"
-
-#~ msgid "Type"
-#~ msgstr "Tür"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Ayır"
-
-#~ msgid "E_xit"
-#~ msgstr "Çı_k"
-
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "PAM hatası %d alındı.\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "\"%s\" çalıştırmak üzere\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "%d cevap gerekli.\n"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
-#~ "bunu yapmak için daha fazla bilgi gerekiyor."
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
-#~ "bunu yapmak için daha fazla bilgi gerekiyor."
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "root yetkilerinden yararlanarak bir komut çalıştırmaya çalışıyorsunuz "
-#~ "ama\n"
-#~ "bunu yapmak için daha fazla bilgi gerekiyor."
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\n"
-#~ "bunu yapmak için daha fazla bilgi gerekiyor."
