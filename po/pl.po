@@ -302,11 +302,11 @@ msgstr "Nie znaleziono wybranego programu."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Anulowano żądanie."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Wystąpił wewnętrzny błąd PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
