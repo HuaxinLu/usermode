@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-10 14:44+0100\n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2004-10-05 09:01+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
 "Language-Team: Traditional Chinese <zh@li.org>\n"
@@ -93,19 +93,27 @@ msgstr "登入帳號: "
 msgid "Password: "
 msgstr "密碼: "
 
-#: pam-panel-icon.c:89
+#: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "無法放棄管理者權限：%s"
 
-#: pam-panel-icon.c:105
+#: pam-panel-icon.c:107
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr "無法放棄管理者權限：pam_timestamp_check 傳回錯誤值 %d"
 
-#: pam-panel-icon.c:148
+#: pam-panel-icon.c:158 pam-panel-icon.c:196
+msgid "Keep Authorization"
+msgstr "保留授權"
+
+#: pam-panel-icon.c:168 pam-panel-icon.c:200
+msgid "Forget Authorization"
+msgstr "放棄授權"
+
+#: pam-panel-icon.c:190
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -114,50 +122,42 @@ msgstr ""
 "不需要再次輸入管理者密碼，您目前已授權可以設定系統全域設定（會影響所有使用"
 "者）。您可以放棄本次授權。"
 
-#: pam-panel-icon.c:154
-msgid "Keep Authorization"
-msgstr "保留授權"
-
-#: pam-panel-icon.c:158
-msgid "Forget Authorization"
-msgstr "放棄授權"
-
-#: pam-panel-icon.c:294
+#: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check 並非 setuid root"
 
-#: pam-panel-icon.c:299
+#: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check 沒有控制中的 tty "
 
-#: pam-panel-icon.c:303
+#: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check 的使用者未知"
 
-#: pam-panel-icon.c:307
+#: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check 的存取權限錯誤"
 
-#: pam-panel-icon.c:311
+#: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check 的控制中 tty 錯誤"
 
-#: pam-panel-icon.c:329
+#: pam-panel-icon.c:373
 #, c-format
 msgid "Error: %s\n"
 msgstr "錯誤： %s\n"
 
-#: pam-panel-icon.c:406
+#: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "執行 \"%s\" 失敗：%s\n"
 
-#: pam-panel-icon.c:419
+#: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "將 IO 通道設為 nonblocking 失敗：%s\n"
 
-#: pam-panel-icon.c:498
+#: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon：連接到 session 管理員失敗\n"
 
@@ -170,12 +170,12 @@ msgstr "求助"
 msgid "Could not set exec context to %s.\n"
 msgstr "無法設定執行上下文為 %s。\n"
 
-#: userhelper.c:506
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "%s 的密碼"
 
-#: userhelper.c:749
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -184,7 +184,7 @@ msgstr ""
 "您試著要執行 \"%s\"，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:751
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -193,7 +193,7 @@ msgstr ""
 "您試著要執行 \"%s\"，您需要有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:755
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -201,7 +201,7 @@ msgstr ""
 "您試著要執行一個指令，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:757
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -209,18 +209,18 @@ msgstr ""
 "您試著要執行一個指令，您需要有管理者的權限,\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:776
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "%s 的密碼： "
 
-#: userhelper.c:2301
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必須 setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2399
+#: userhelper.c:2416
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -298,7 +298,15 @@ msgstr "exec() 呼叫失敗。"
 msgid "Failed to find selected program."
 msgstr "找不到選取的程式。"
 
-#: userhelper-wrap.c:208
+#: userhelper-wrap.c:207
+msgid "Request canceled."
+msgstr ""
+
+#: userhelper-wrap.c:209
+msgid "Internal PAM error occured."
+msgstr ""
+
+#: userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "未知的錯誤。"
 
@@ -307,32 +315,32 @@ msgstr "未知的錯誤。"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "查詢"
 
-#: userhelper-wrap.c:565 userhelper-wrap.c:745
+#: userhelper-wrap.c:568 userhelper-wrap.c:748
 msgid "Error"
 msgstr "錯誤"
 
-#: userhelper-wrap.c:577
+#: userhelper-wrap.c:580
 msgid "Information"
 msgstr "資訊"
 
-#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "沒有加密過的文字。"
 
-#: userhelper-wrap.c:783
+#: userhelper-wrap.c:789
 msgid "Changing personal information."
 msgstr "更改個人資訊。"
 
-#: userhelper-wrap.c:786
+#: userhelper-wrap.c:792
 msgid "Changing login shell."
 msgstr "更改登入 shell。"
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:798
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -340,7 +348,7 @@ msgid ""
 msgstr ""
 "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:794
+#: userhelper-wrap.c:800
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -348,45 +356,45 @@ msgid ""
 msgstr ""
 "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:803
+#: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:805
+#: userhelper-wrap.c:811
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: userhelper-wrap.c:822
+#: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
 msgstr "無特權的執行(_R)"
 
-#: userhelper-wrap.c:974
+#: userhelper-wrap.c:980
 #, c-format
 msgid "Pipe error.\n"
 msgstr "程式的輸出導向錯誤.\n"
 
-#: userhelper-wrap.c:981
+#: userhelper-wrap.c:987
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "無法 fork().\n"
 
-#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
+#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() 錯誤.\n"
 
-#: userhelper-wrap.c:1075
+#: userhelper-wrap.c:1081
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: userinfo.c:323
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "您不存在.  請離開.\n"
@@ -427,19 +435,19 @@ msgid "User Mount Tool"
 msgstr "使用者掛載工具"
 
 #. Create the other buttons.
-#: usermount.c:576
+#: usermount.c:579
 msgid "_Format"
 msgstr "格式化(_F)"
 
-#: usermount.c:612
+#: usermount.c:615
 msgid "Device"
 msgstr "裝置"
 
-#: usermount.c:618
+#: usermount.c:621
 msgid "Directory"
 msgstr "目錄"
 
-#: usermount.c:624
+#: usermount.c:627
 msgid "Filesystem"
 msgstr "檔案系統"
 

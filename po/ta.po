@@ -7,14 +7,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
-"POT-Creation-Date: 2004-11-10 14:44+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2004-10-25 11:32+0530\n"
 "Last-Translator: Jayaradha N <njaya@redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
 "X-Generator: KBabel 1.3.1\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
@@ -95,12 +95,12 @@ msgstr "உள்நுழை:"
 msgid "Password: "
 msgstr "கடவுச்சொல்:"
 
-#: pam-panel-icon.c:89
+#: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "மேலாளர் உரிமையை கைவிடுவதில் தோல்வி: %s"
 
-#: pam-panel-icon.c:105
+#: pam-panel-icon.c:107
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -108,7 +108,15 @@ msgid ""
 msgstr ""
 "மேலாளர் உரிமையை கைவிடுவதில் தோல்வி. : pam_timestamp_check பிழை எண்ணை தந்தது %d"
 
-#: pam-panel-icon.c:148
+#: pam-panel-icon.c:158 pam-panel-icon.c:196
+msgid "Keep Authorization"
+msgstr "அனுமதி சரிபார்த்தலை அப்படியேவை"
+
+#: pam-panel-icon.c:168 pam-panel-icon.c:200
+msgid "Forget Authorization"
+msgstr "அனுமதி சரிபார்தல் நினைவில் இல்லை"
+
+#: pam-panel-icon.c:190
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -117,50 +125,42 @@ msgstr ""
 "மேலாளர் கடவுச்சொல்லை மீண்டும் தட்டச்சு செய்யாமல் கணிணி-முழுவதும் அமைக்க உங்களுக்கு அனுமதி "
 "உண்டு(எல்லா பயனர்களையும் பாதிக்கும்). உங்கள் அனுமதி சரிபார்த்தலை கைவிடலாம்."
 
-#: pam-panel-icon.c:154
-msgid "Keep Authorization"
-msgstr "அனுமதி சரிபார்த்தலை அப்படியேவை"
-
-#: pam-panel-icon.c:158
-msgid "Forget Authorization"
-msgstr "அனுமதி சரிபார்தல் நினைவில் இல்லை"
-
-#: pam-panel-icon.c:294
+#: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check setuid root இல் இல்லை"
 
-#: pam-panel-icon.c:299
+#: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "tty ஐ pam_timestamp_check க்காக கட்டுப்படுத்தவில்லை"
 
-#: pam-panel-icon.c:303
+#: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
 msgstr "தெரியாத pam_timestamp_check ஐ பயன்படுத்து"
 
-#: pam-panel-icon.c:307
+#: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check அனுமதி பிழை"
 
-#: pam-panel-icon.c:311
+#: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "tty இல் pam_timestamp_check செல்லாத கட்டுப்பாடு"
 
-#: pam-panel-icon.c:329
+#: pam-panel-icon.c:373
 #, c-format
 msgid "Error: %s\n"
 msgstr "பிழை: %s\n"
 
-#: pam-panel-icon.c:406
+#: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "கட்டளையை இயக்க முடியவில்லை \"%s\": %s\n"
 
-#: pam-panel-icon.c:419
+#: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO பாதையை அடைக்காமல் அனுப்புவதில் தோல்வி: %s\n"
 
-#: pam-panel-icon.c:498
+#: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: அமர்வு மேலாளருடன் இணைப்பதில் தோல்வி\n"
 
@@ -173,12 +173,12 @@ msgstr "உதவி"
 msgid "Could not set exec context to %s.\n"
 msgstr "%s க்கு exec சூழல் அமைக்க இயலவில்லை.\n"
 
-#: userhelper.c:506
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "%s-க்கு கடவுச்சொல் "
 
-#: userhelper.c:749
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -187,7 +187,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளை \"%s\" யை இயக்க, மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:751
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -196,7 +196,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளை \"%s\" யை இயக்க, மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:755
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -204,7 +204,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளைக்கு மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:757
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -212,18 +212,18 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளைக்கு மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்."
 
-#: userhelper.c:776
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "%s- க்கான கடவுச்சொல் : "
 
-#: userhelper.c:2301
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "பயனர் உதவியில் setuid root அமைக்கப்பட்டிருக்க வேண்டும்\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2399
+#: userhelper.c:2416
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -303,7 +303,15 @@ msgstr "exec() அழைப்பு தோல்வியுற்றது"
 msgid "Failed to find selected program."
 msgstr "தேர்ந்தெடுக்கப்பட்ட நிரல் கண்டறிவது தோல்வியடைந்தது."
 
-#: userhelper-wrap.c:208
+#: userhelper-wrap.c:207
+msgid "Request canceled."
+msgstr ""
+
+#: userhelper-wrap.c:209
+msgid "Internal PAM error occured."
+msgstr ""
+
+#: userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "தெரியாத பிழை."
 
@@ -312,32 +320,32 @@ msgstr "தெரியாத பிழை."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "கேள்வி"
 
-#: userhelper-wrap.c:565 userhelper-wrap.c:745
+#: userhelper-wrap.c:568 userhelper-wrap.c:748
 msgid "Error"
 msgstr "பிழை"
 
-#: userhelper-wrap.c:577
+#: userhelper-wrap.c:580
 msgid "Information"
 msgstr "தகவல்"
 
-#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "இடம்தாங்கி உரை."
 
-#: userhelper-wrap.c:783
+#: userhelper-wrap.c:789
 msgid "Changing personal information."
 msgstr "சொந்த தகவல்களை மாற்று"
 
-#: userhelper-wrap.c:786
+#: userhelper-wrap.c:792
 msgid "Changing login shell."
 msgstr "உள்நுழையும் ஷெல்லை மாற்றுகிறது."
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:798
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -346,7 +354,7 @@ msgstr ""
 "\"%s\" ஐ இயக்கி, மேலாளர் உரிமையை பெற முயலுகிறீர்கள். இவ்வாறு செய்ய இன்னும் சில "
 "தகவல்களை உள்ளிடவும்."
 
-#: userhelper-wrap.c:794
+#: userhelper-wrap.c:800
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -355,7 +363,7 @@ msgstr ""
 "\"%s\" ஐ இயக்கி, மேலாளர் உரிமையை பெற முயலுகிறீர்கள். இவ்வாறு செய்ய இன்னும் சில "
 "தகவல்களை உள்ளிடவும்."
 
-#: userhelper-wrap.c:803
+#: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -363,7 +371,7 @@ msgstr ""
 "மேலாளர் உரிமை பெற விருப்பும் கட்டளையை இயக்க முயலுகிறீர்கள் . இவ்வாறு செய்ய இன்னும் சில "
 "தகவல்களை உள்ளிடவும்."
 
-#: userhelper-wrap.c:805
+#: userhelper-wrap.c:811
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -371,31 +379,31 @@ msgstr ""
 "மேலாளர் உரிமைக்கு தேவையான கட்டளையை இயக்க முயலுகிறீர்கள் . இவ்வாறு செய்ய இன்னும் சில "
 "தகவல்களை உள்ளிடவும்."
 
-#: userhelper-wrap.c:822
+#: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
 msgstr "(_R)சலுகையில்லா ஓட்டம்"
 
-#: userhelper-wrap.c:974
+#: userhelper-wrap.c:980
 #, c-format
 msgid "Pipe error.\n"
 msgstr "குழல் பிழை.\n"
 
-#: userhelper-wrap.c:981
+#: userhelper-wrap.c:987
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() பிளக்க இயலவில்லை.\n"
 
-#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
+#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2பி2() பிழை.\n"
 
-#: userhelper-wrap.c:1075
+#: userhelper-wrap.c:1081
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() பிழை, பிழை எண்=%d\n"
 
-#: userinfo.c:323
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "நீங்கள் வெளியேறாதீர்கள். வெளியே செல்.\n"
@@ -436,19 +444,19 @@ msgid "User Mount Tool"
 msgstr "பயனர் அடுக்கு கருவி"
 
 #. Create the other buttons.
-#: usermount.c:576
+#: usermount.c:579
 msgid "_Format"
 msgstr "(_F)வடிவம்"
 
-#: usermount.c:612
+#: usermount.c:615
 msgid "Device"
 msgstr "சாதனம் "
 
-#: usermount.c:618
+#: usermount.c:621
 msgid "Directory"
 msgstr "அடைவு"
 
-#: usermount.c:624
+#: usermount.c:627
 msgid "Filesystem"
 msgstr "கோப்பு முறைமை "
 

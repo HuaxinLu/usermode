@@ -571,6 +571,9 @@ create_usermount_window(void)
 			 GTK_SIGNAL_FUNC(gtk_main_quit), NULL);
 	g_signal_connect(G_OBJECT(dialog), "delete-event",
 			 GTK_SIGNAL_FUNC(gtk_main_quit), NULL);
+	
+	/* Set the window icon */
+	gtk_window_set_icon_from_file(GTK_WINDOW(dialog), "/usr/share/pixmaps/disks.png", NULL);
 
 	/* Create the other buttons. */
 	format_button = format = gtk_button_new_with_mnemonic(_("_Format"));

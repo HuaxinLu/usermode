@@ -203,7 +203,10 @@ userhelper_parse_exitstatus(int exitstatus)
 		{ERR_NO_PROGRAM, create_error_box, 
 		  _("Failed to find selected program.")},
 		/* special no-display dialog */
-		{ERR_CANCELED, NULL, "Request canceled."},
+		{ERR_CANCELED, NULL, 
+		  _("Request canceled.")},
+		{ERR_PAM_INT_ERROR, create_error_box, 
+		  _("Internal PAM error occured.")},
 		{ERR_UNK_ERROR, create_error_box, 
 		  _("Unknown error.")},
 	};
@@ -747,6 +750,9 @@ userhelper_parse_childout(char *outline)
 		/* Force GTK+ to try to center this dialog. */
 		gtk_window_set_position(GTK_WINDOW(resp->dialog),
 					GTK_WIN_POS_CENTER_ALWAYS);
+		
+		/* Set window icon */
+		gtk_window_set_icon_from_file(GTK_WINDOW(resp->dialog), "/usr/share/pixmaps/password.png", NULL);
 
 		/* If we're asking questions, change the dialog's icon. */
 		if (resp->responses > 0) {

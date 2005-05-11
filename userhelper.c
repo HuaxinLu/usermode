@@ -281,7 +281,19 @@ fail_exit(struct app_data *data, int pam_retval)
 		g_print("userhelper: got PAM error %d.\n", pam_retval);
 #endif
 		switch (pam_retval) {
+			case PAM_OPEN_ERR:
+			case PAM_SYMBOL_ERR:
+			case PAM_SERVICE_ERR:
+			case PAM_SYSTEM_ERR:
+			case PAM_BUF_ERR:
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: exiting with status %d.\n",
+					ERR_PAM_INT_ERROR);
+#endif
+				exit(ERR_PAM_INT_ERROR);
+				break;
 			case PAM_AUTH_ERR:
+			case PAM_AUTHTOK_ERR:
 			case PAM_PERM_DENIED:
 #ifdef DEBUG_USERHELPER
 				g_print("userhelper: exiting with status %d.\n",
@@ -298,11 +310,21 @@ fail_exit(struct app_data *data, int pam_retval)
 				break;
 			case PAM_CRED_INSUFFICIENT:
 			case PAM_AUTHINFO_UNAVAIL:
+			case PAM_CRED_UNAVAIL:
+			case PAM_CRED_EXPIRED:
+			case PAM_AUTHTOK_EXPIRED:
 #ifdef DEBUG_USERHELPER
 				g_print("userhelper: exiting with status %d.\n",
 					ERR_NO_RIGHTS);
 #endif
 				exit(ERR_NO_RIGHTS);
+				break;
+			case PAM_USER_UNKNOWN:
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper: exiting with status %d.\n",
+					ERR_NO_USER);
+#endif
+				exit(ERR_NO_USER);
 				break;
 			case PAM_ABORT:
 				/* fall through */

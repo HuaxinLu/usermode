@@ -6,14 +6,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
-"POT-Creation-Date: 2004-11-10 14:44+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2005-03-23 14:12+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
 "X-Generator: KBabel 1.9.1\n"
 
 #.
@@ -91,71 +91,71 @@ msgstr "लॉगिन: "
 msgid "Password: "
 msgstr "शब्दकूट: "
 
-#: pam-panel-icon.c:89
+#: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "प्रशासक सुविधा छोड़ने में असफल: %s"
 
-#: pam-panel-icon.c:105
+#: pam-panel-icon.c:107
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr "प्रशासक सुविधा छोड़ने में असफल: pam_timestamp_check ने %d विफलता कोड लौटाया"
 
-#: pam-panel-icon.c:148
+#: pam-panel-icon.c:158 pam-panel-icon.c:196
+msgid "Keep Authorization"
+msgstr "प्राधिकार रखें"
+
+#: pam-panel-icon.c:168 pam-panel-icon.c:200
+msgid "Forget Authorization"
+msgstr "प्राधिकार भूलें"
+
+#: pam-panel-icon.c:190
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
-"आप प्रशासक शब्दकूट फिर डाले बिना अभी सिस्टम वाइड जमावट (जो सभी उपयोक्ता को "
-"प्रभावित करता है) को विन्यस्त करने के अधिकारी हैं. आप इस अधिकार को छोड़ भी सकते हैं."
+"आप प्रशासक शब्दकूट फिर डाले बिना अभी सिस्टम वाइड जमावट (जो सभी उपयोक्ता को प्रभावित "
+"करता है) को विन्यस्त करने के अधिकारी हैं. आप इस अधिकार को छोड़ भी सकते हैं."
 
-#: pam-panel-icon.c:154
-msgid "Keep Authorization"
-msgstr "प्राधिकार रखें"
-
-#: pam-panel-icon.c:158
-msgid "Forget Authorization"
-msgstr "प्राधिकार भूलें"
-
-#: pam-panel-icon.c:294
+#: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check एक setuid रूट नहीं है"
 
-#: pam-panel-icon.c:299
+#: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check के लिए कोई नियंत्रणकारी tty नहीं है"
 
-#: pam-panel-icon.c:303
+#: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check में उपयोक्ता अज्ञात था"
 
-#: pam-panel-icon.c:307
+#: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check में अनुमति त्रुटि"
 
-#: pam-panel-icon.c:311
+#: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check में अमान्य नियंत्रणकारी tty"
 
-#: pam-panel-icon.c:329
+#: pam-panel-icon.c:373
 #, c-format
 msgid "Error: %s\n"
 msgstr "त्रुटि: %s\n"
 
-#: pam-panel-icon.c:406
+#: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "\"%s\"समादेश चलाने में असफल: %s\n"
 
-#: pam-panel-icon.c:419
+#: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO channel nonblocking सेट करने में विफल: %s\n"
 
-#: pam-panel-icon.c:498
+#: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: सत्र प्रबंधक से जोड़ने में विफल\n"
 
@@ -168,12 +168,12 @@ msgstr "सहायता"
 msgid "Could not set exec context to %s.\n"
 msgstr "%s से exec संदर्भ को व्यवस्थित नहीं कर सका.\n"
 
-#: userhelper.c:506
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "%s के लिए शब्दकूट"
 
-#: userhelper.c:749
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -182,7 +182,7 @@ msgstr ""
 "आप \"%s\" को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से चलते हैं,\n"
 "लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: userhelper.c:751
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -191,7 +191,7 @@ msgstr ""
 "आप \"%s\" को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार \n"
 "की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: userhelper.c:755
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -199,7 +199,7 @@ msgstr ""
 "आप एक निर्देश को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से चलता है,\n"
 "लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: userhelper.c:757
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -207,20 +207,21 @@ msgstr ""
 "आप एक निर्देश को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार\n"
 " की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: userhelper.c:776
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "%s के लिए शब्दकूटः"
 
-#: userhelper.c:2301
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "उपयोक्ता सहायक को अवश्य ही setuid root होना चाहिए\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2399
+#: userhelper.c:2416
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखी विंडो को खोलने में असमर्थ, और नियंत्रक टर्मिनल को खोजने में असमर्थ.\n"
 
 #: userhelper-wrap.c:179
@@ -295,7 +296,15 @@ msgstr "exec() बुलावा असफल रहा."
 msgid "Failed to find selected program."
 msgstr "चयनित कार्यक्रम को खोजने में असफल."
 
-#: userhelper-wrap.c:208
+#: userhelper-wrap.c:207
+msgid "Request canceled."
+msgstr ""
+
+#: userhelper-wrap.c:209
+msgid "Internal PAM error occured."
+msgstr ""
+
+#: userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "अज्ञात त्रुटि."
 
@@ -304,32 +313,32 @@ msgstr "अज्ञात त्रुटि."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "प्रश्न"
 
-#: userhelper-wrap.c:565 userhelper-wrap.c:745
+#: userhelper-wrap.c:568 userhelper-wrap.c:748
 msgid "Error"
 msgstr "त्रुटि"
 
-#: userhelper-wrap.c:577
+#: userhelper-wrap.c:580
 msgid "Information"
 msgstr "जानकारी"
 
-#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "स्थानधारक पाठ्यांश."
 
-#: userhelper-wrap.c:783
+#: userhelper-wrap.c:789
 msgid "Changing personal information."
 msgstr "निजी जानकारी को बदल रहा है."
 
-#: userhelper-wrap.c:786
+#: userhelper-wrap.c:792
 msgid "Changing login shell."
 msgstr "सत्रारंभ शैल को बदल रहा. "
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:798
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -338,7 +347,7 @@ msgstr ""
 "आप \"%s\" को चलाने जा रहा है जो प्रशासनिक अधिकार से चलता है, लेकिन ऐसा करने के लिए "
 "अधिक जानकारी की आवश्यकता है."
 
-#: userhelper-wrap.c:794
+#: userhelper-wrap.c:800
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -347,7 +356,7 @@ msgstr ""
 "आप \"%s\" को चलाने जा रहा है जो प्रशासनिक अधिकार से चलता है, लेकिन ऐसा करने के लिए "
 "अधिक जानकारी की आवश्यकता है."
 
-#: userhelper-wrap.c:803
+#: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -355,7 +364,7 @@ msgstr ""
 "आप एक निर्देश को चलाने जा रहे हैं जो प्रशासनिक अधिकार से चलता है, लेकिन ऐसा करने के लिए "
 "अधिक जानकारी की आवश्यकता है. "
 
-#: userhelper-wrap.c:805
+#: userhelper-wrap.c:811
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -363,31 +372,31 @@ msgstr ""
 "आप एक निर्देश को चलाने जा रहे हैं जो प्रशासनिक अधिकार से चलता है, लेकिन ऐसा करने के लिए "
 "अधिक जानकारी की आवश्यकता है."
 
-#: userhelper-wrap.c:822
+#: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
 msgstr "विशेषाधिकार के बिना चलाएँ (_R)"
 
-#: userhelper-wrap.c:974
+#: userhelper-wrap.c:980
 #, c-format
 msgid "Pipe error.\n"
 msgstr "पाइप त्रुटि.\n"
 
-#: userhelper-wrap.c:981
+#: userhelper-wrap.c:987
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() नहीं कर सकता.\n"
 
-#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
+#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() त्रुटि.\n"
 
-#: userhelper-wrap.c:1075
+#: userhelper-wrap.c:1081
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() त्रुटि, errno=%d\n"
 
-#: userinfo.c:323
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "आप जीवंत नहीं हैं. बाहर जाएँ.\n"
@@ -405,8 +414,8 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"क्या आप निश्चित हैं कि आप इस डिस्क को संरूपित करना चाहते है? कोई भी आंकड़ा जो वर्तमान में है उसे आप "
-"नष्ट कर देंगे."
+"क्या आप निश्चित हैं कि आप इस डिस्क को संरूपित करना चाहते है? कोई भी आंकड़ा जो वर्तमान में "
+"है उसे आप नष्ट कर देंगे."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -430,19 +439,19 @@ msgid "User Mount Tool"
 msgstr "उपयोक्ता आरोह उपकरण"
 
 #. Create the other buttons.
-#: usermount.c:576
+#: usermount.c:579
 msgid "_Format"
 msgstr "संरूपित करें (_F)"
 
-#: usermount.c:612
+#: usermount.c:615
 msgid "Device"
 msgstr "युक्ति"
 
-#: usermount.c:618
+#: usermount.c:621
 msgid "Directory"
 msgstr "निर्देशिका"
 
-#: usermount.c:624
+#: usermount.c:627
 msgid "Filesystem"
 msgstr "फाइलसिस्टम"
 
@@ -502,4 +511,3 @@ msgstr "अपने सत्रारंभ शब्दकूट को ब�
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "शब्दकूट"
-

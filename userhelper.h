@@ -77,6 +77,7 @@
 #define ERR_NO_PROGRAM		10	/* -w progname not found */
 #define ERR_EXEC_FAILED		11	/* exec failed for some reason */
 #define ERR_CANCELED		12	/* user cancelled operation */
+#define ERR_PAM_INT_ERROR	13	/* PAM internal error */
 #define ERR_UNK_ERROR		255	/* unknown error */
 
 /* Paths, flag names, and other stuff. */

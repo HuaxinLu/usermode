@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-10 14:44+0100\n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2005-02-13 18:11+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
@@ -17,25 +17,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0\n"
 
+#.
 #. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
 #. Just a dummy file for gettext, containing messages emmitted by various
-#: dummy.h:21
-#: userdialogs.h:29
+#. * commonly-used PAM modules.
+#: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "OK"
 
-#: dummy.h:22
-#: userdialogs.h:32
+#: dummy.h:22 userdialogs.h:32
 msgid "Exit"
 msgstr "Keluar"
 
-#: dummy.h:23
-#: userdialogs.h:31
+#: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
 msgstr "Batal"
 
-#: dummy.h:24
-#: userdialogs.h:33
+#: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Laksana Tanpa Privilej"
 
@@ -79,66 +92,76 @@ msgstr "logmasuk:"
 msgid "Password: "
 msgstr "Katalaluan: "
 
-#: pam-panel-icon.c:89
+#: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Gagal untuk mematikan kelebihan pentadbir: %s"
 
-#: pam-panel-icon.c:105
+#: pam-panel-icon.c:107
 #, c-format
-msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
-msgstr "Gagal untuk membuang kelebihan administrator: pam_timestamp_check memulangkan kod gagal %d"
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+"Gagal untuk membuang kelebihan administrator: pam_timestamp_check "
+"memulangkan kod gagal %d"
 
-#: pam-panel-icon.c:148
-msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
-msgstr "Anda sekarang dibenarkan untuk menetapkan tetapan seluruh-sistem (yang memberi kesan pada semua pengguna) tanpa menaip kata laluan administrator lagi. Anda boleh melepaskan kebenaran ini."
-
-#: pam-panel-icon.c:154
+#: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
 msgstr "Kekal Kebenaran"
 
-#: pam-panel-icon.c:158
+#: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
 msgstr "Lupa Kebenaran"
 
-#: pam-panel-icon.c:294
+#: pam-panel-icon.c:190
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+"Anda sekarang dibenarkan untuk menetapkan tetapan seluruh-sistem (yang "
+"memberi kesan pada semua pengguna) tanpa menaip kata laluan administrator "
+"lagi. Anda boleh melepaskan kebenaran ini."
+
+#: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check tidak setuid root"
 
-#: pam-panel-icon.c:299
+#: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "tiada pengawal tty untuk pam_timestamp_check"
 
-#: pam-panel-icon.c:303
+#: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
 msgstr "pengguna tidak diketahui kepada pam_timestamp_check"
 
-#: pam-panel-icon.c:307
+#: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
 msgstr "ralat kebenaran dalam pam_timestamp_check"
 
-#: pam-panel-icon.c:311
+#: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "tty pengawal tidak sah dalam pam_timestamp_check"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:129 libgnomeui/gnome-messagebox.c:262
-#: pam-panel-icon.c:329
+#: pam-panel-icon.c:373
 #, c-format
 msgid "Error: %s\n"
 msgstr "Ralat: %s\n"
 
-#: pam-panel-icon.c:406
+#: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Gagal untuk melaksanakan arahan \"%s\": %s\n"
 
-#: pam-panel-icon.c:419
+#: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Gagal untuk menetapkan saluran IO tanpa sekatan: %s\n"
 
-#: pam-panel-icon.c:498
+#: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: gagal untuk menyambung ke pengurus sessi\n"
 
@@ -146,18 +169,17 @@ msgstr "pam-panel-icon: gagal untuk menyambung ke pengurus sessi\n"
 msgid "Help"
 msgstr "Bantuan"
 
-#: userhelper.c:138
-#: userhelper.c:141
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Tidak dapat menetapkan konteks exec ke %s.\n"
 
-#: userhelper.c:506
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "Katalaluan bagi %s"
 
-#: userhelper.c:749
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -166,7 +188,7 @@ msgstr ""
 "Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada privilej\n"
 "administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper.c:751
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -175,35 +197,41 @@ msgstr ""
 "Anda cuba melaksanakan \"%s\" yang memerlukan privilej\n"
 "administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper.c:755
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Anda cuba melaksanakan arahan yang mendapat faedah daripada\n"
-" privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+" privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat "
+"demikian."
 
-#: userhelper.c:757
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan arahan yang yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan arahan yang yang memerlukan privilej administratif, "
+"tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper.c:776
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "Katalaluan bagi %s:"
 
-#: userhelper.c:2301
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mesti setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2399
+#: userhelper.c:2416
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Tidak dapat membuka tetingkap bergrafik, dan tidak dapat menjumpai terminal yang mengawal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Tidak dapat membuka tetingkap bergrafik, dan tidak dapat menjumpai terminal "
+"yang mengawal.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -281,89 +309,112 @@ msgstr "Panggilan exec() gagal."
 msgid "Failed to find selected program."
 msgstr "Gagal menjumpai program dipilih."
 
-#: userhelper-wrap.c:208
+#: userhelper-wrap.c:207
+msgid "Request canceled."
+msgstr ""
+
+#: userhelper-wrap.c:209
+msgid "Internal PAM error occured."
+msgstr ""
+
+#: userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "Ralat tidak diketahui."
 
+#.
 #. * Translatable strings file generated by Glade.
-#: userhelper-wrap.c:472
-#: glade.strings.h:7
-#: usermode.glade.h:9
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "Kueri"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:129 libgnomeui/gnome-messagebox.c:262
-#: userhelper-wrap.c:565
-#: userhelper-wrap.c:745
+#: userhelper-wrap.c:568 userhelper-wrap.c:748
 msgid "Error"
 msgstr "Ralat"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:111 libgnomeui/gnome-messagebox.c:244
-#: userhelper-wrap.c:577
+#: userhelper-wrap.c:580
 msgid "Information"
 msgstr "Maklumat"
 
-#: userhelper-wrap.c:737
-#: glade.strings.h:8
-#: glade.strings.h:11
+#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Teks Placeholder."
 
-#: userhelper-wrap.c:783
+#: userhelper-wrap.c:789
 msgid "Changing personal information."
 msgstr "Menukar maklumat peribadi."
 
-#: userhelper-wrap.c:786
+#: userhelper-wrap.c:792
 msgid "Changing login shell."
 msgstr "Menukar shell logmasuk"
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:798
 #, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada privilejadministratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada "
+"privilejadministratif, tetapi maklumat lanjut diperlukan untuk berbuat "
+"demikian."
 
-#: userhelper-wrap.c:794
+#: userhelper-wrap.c:800
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan \"%s\" yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"Anda cuba melaksanakan \"%s\" yang memerlukan privilej administratif, tetapi "
+"maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper-wrap.c:803
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan arahan yang mendapat faedah daripada privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+#: userhelper-wrap.c:809
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda cuba melaksanakan arahan yang mendapat faedah daripada privilej "
+"administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper-wrap.c:805
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan arahan yang memerlukan privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+#: userhelper-wrap.c:811
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda cuba melaksanakan arahan yang memerlukan privilej administratif, tetapi "
+"maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper-wrap.c:822
+#: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
 msgstr "_Laksana Tanpa Privilej"
 
-#: userhelper-wrap.c:974
+#: userhelper-wrap.c:980
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Ralat paip.\n"
 
-#: userhelper-wrap.c:981
+#: userhelper-wrap.c:987
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Tidak dapat fork().\n"
 
-#: userhelper-wrap.c:1059
-#: userhelper-wrap.c:1063
+#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
 msgstr "ralat dup2() .\n"
 
-#: userhelper-wrap.c:1075
+#: userhelper-wrap.c:1081
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: userinfo.c:323
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Anda tidak wujud. Pergi jauh jauh.\n"
@@ -377,8 +428,12 @@ msgid "Un_mount"
 msgstr "_Nyahlekap"
 
 #: usermount.c:321
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "Adakah anda pasti untuk memformat cakera ini? Ia akan memusnahkan sebarang data yang ia kandungi."
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"Adakah anda pasti untuk memformat cakera ini? Ia akan memusnahkan sebarang "
+"data yang ia kandungi."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -397,71 +452,59 @@ msgstr ""
 "Hubungi pentadbir sistem anda"
 
 #. Create the dialog.
-#: usermount.c:550
-#: usermount.c:562
+#: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "Alat Pelekapan Pengguna"
 
 #. Create the other buttons.
-#: usermount.c:576
+#: usermount.c:579
 msgid "_Format"
 msgstr "_Format"
 
-#: usermount.c:612
+#: usermount.c:615
 msgid "Device"
 msgstr "Peranti"
 
-#: usermount.c:618
+#: usermount.c:621
 msgid "Directory"
 msgstr "Direktori"
 
-#: usermount.c:624
+#: usermount.c:627
 msgid "Filesystem"
 msgstr "Sistem fail"
 
-#: glade.strings.h:9
-#: glade.strings.h:18
-#: glade.strings.h:19
-#: glade.strings.h:20
-#: glade.strings.h:21
-#: usermode.glade.h:1
+#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
+#: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
 # #-#-#-#-#  longgok.edited (longokan)  #-#-#-#-#
 # libgnomeui/gnome-messagebox.c:147 libgnomeui/gnome-messagebox.c:280
-#: glade.strings.h:10
-#: usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "Mesej"
 
-#: glade.strings.h:12
-#: usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
 msgstr "Maklumat Pengguna"
 
-#: glade.strings.h:13
-#: usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Nama Penuh:"
 
-#: glade.strings.h:14
-#: usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
 msgstr "Pejabat:"
 
-#: glade.strings.h:15
-#: usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Nombor Telefon Pejabat:"
 
-#: glade.strings.h:16
-#: usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Nombor Telefon Rumah:"
 
-#: glade.strings.h:17
-#: usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Shell Logmasuk:"
 
@@ -488,4 +531,3 @@ msgstr "Tukar katalaluan logmasuk anda"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Katalaluan"
-

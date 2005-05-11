@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.79
+Version: 1.80
 Release: 1
 License: GPL
 Group: Applications/System
@@ -116,6 +116,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed May 11 2005 Jindrich Novy <jnovy@redhat.com> 1.80-1
+- fix "Unknown error" when password is mistyped in userpasswd (#135500)
+- add icons to windows for usermode-gtk applications (#155867)
+- add missing checks for some PAM error codes
+- fix ungettextized error message
+- update translations
+
+* Tue Mar 15 2005 Matthias Clasen <mclasen@redhat.com> 1.79-2
+- rebuild against new libwnck
+
 * Wed Mar 02 2005 Jindrich Novy <jnovy@rdhat.com> 1.79-1
 - fix problem with root passwords starting with space (#124980)
 

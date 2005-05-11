@@ -9,14 +9,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
-"POT-Creation-Date: 2004-11-10 14:44+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2004-10-05 00:15+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
 "X-Generator: KBabel 1.0\n"
 
 #.
@@ -94,12 +94,12 @@ msgstr "ログイン: "
 msgid "Password: "
 msgstr "パスワード: "
 
-#: pam-panel-icon.c:89
+#: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "管理者権限を破棄することに失敗しました: %s"
 
-#: pam-panel-icon.c:105
+#: pam-panel-icon.c:107
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -108,7 +108,15 @@ msgstr ""
 "管理者権限を破棄することに失敗しました: pam_timestamp_check はエラーコード %"
 "d を返しました"
 
-#: pam-panel-icon.c:148
+#: pam-panel-icon.c:158 pam-panel-icon.c:196
+msgid "Keep Authorization"
+msgstr "認証を続行"
+
+#: pam-panel-icon.c:168 pam-panel-icon.c:200
+msgid "Forget Authorization"
+msgstr "認証を解除"
+
+#: pam-panel-icon.c:190
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -118,50 +126,42 @@ msgstr ""
 "ザーに対する設定) に現在認証されています。また、認証を解除することができま"
 "す。"
 
-#: pam-panel-icon.c:154
-msgid "Keep Authorization"
-msgstr "認証を続行"
-
-#: pam-panel-icon.c:158
-msgid "Forget Authorization"
-msgstr "認証を解除"
-
-#: pam-panel-icon.c:294
+#: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check は setuid root ではありません。"
 
-#: pam-panel-icon.c:299
+#: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check の制御不能な tty"
 
-#: pam-panel-icon.c:303
+#: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check の不明なユーザー"
 
-#: pam-panel-icon.c:307
+#: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check のパーミッションエラー"
 
-#: pam-panel-icon.c:311
+#: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check の無効な制御の tty"
 
-#: pam-panel-icon.c:329
+#: pam-panel-icon.c:373
 #, c-format
 msgid "Error: %s\n"
 msgstr "エラー: %s\n"
 
-#: pam-panel-icon.c:406
+#: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "コマンド \"%s\" の実行に失敗しました: %s\n"
 
-#: pam-panel-icon.c:419
+#: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO チャンネルのブロック解除に失敗しました: %s\n"
 
-#: pam-panel-icon.c:498
+#: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: セッションマネージャーの接続に失敗しました\n"
 
@@ -174,12 +174,12 @@ msgstr "ヘルプ"
 msgid "Could not set exec context to %s.\n"
 msgstr "%s に実行権限を与えられませんでした。\n"
 
-#: userhelper.c:506
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "%sのパスワード"
 
-#: userhelper.c:749
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -188,7 +188,7 @@ msgstr ""
 "スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:751
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -197,7 +197,7 @@ msgstr ""
 "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:755
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -205,7 +205,7 @@ msgstr ""
 "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:757
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -214,18 +214,18 @@ msgstr ""
 "は\n"
 "追加情報が必要です。"
 
-#: userhelper.c:776
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "%s用のパスワード:"
 
-#: userhelper.c:2301
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2399
+#: userhelper.c:2416
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -305,7 +305,16 @@ msgstr "exec()の呼び出しに失敗しました。"
 msgid "Failed to find selected program."
 msgstr "選択したプログラムは見つかりませんでした。"
 
-#: userhelper-wrap.c:208
+#: userhelper-wrap.c:207
+msgid "Request canceled."
+msgstr ""
+
+#: userhelper-wrap.c:209
+#, fuzzy
+msgid "Internal PAM error occured."
+msgstr "PAMエラーが発生しました。%d\n"
+
+#: userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "不明なエラーです。"
 
@@ -314,32 +323,32 @@ msgstr "不明なエラーです。"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:472 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "質問"
 
-#: userhelper-wrap.c:565 userhelper-wrap.c:745
+#: userhelper-wrap.c:568 userhelper-wrap.c:748
 msgid "Error"
 msgstr "エラー"
 
-#: userhelper-wrap.c:577
+#: userhelper-wrap.c:580
 msgid "Information"
 msgstr "情報"
 
-#: userhelper-wrap.c:737 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "プレースホルダテキスト。"
 
-#: userhelper-wrap.c:783
+#: userhelper-wrap.c:789
 msgid "Changing personal information."
 msgstr "個人情報を変更しています。"
 
-#: userhelper-wrap.c:786
+#: userhelper-wrap.c:792
 msgid "Changing login shell."
 msgstr "ログイン シェルを変更中"
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:798
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -348,7 +357,7 @@ msgstr ""
 "スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
-#: userhelper-wrap.c:794
+#: userhelper-wrap.c:800
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -357,7 +366,7 @@ msgstr ""
 "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには追"
 "加情報が必要です。"
 
-#: userhelper-wrap.c:803
+#: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -365,7 +374,7 @@ msgstr ""
 "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
-#: userhelper-wrap.c:805
+#: userhelper-wrap.c:811
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -373,31 +382,31 @@ msgstr ""
 "スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには"
 "追加情報が必要です。"
 
-#: userhelper-wrap.c:822
+#: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
 msgstr "権限なしで実行(_R)"
 
-#: userhelper-wrap.c:974
+#: userhelper-wrap.c:980
 #, c-format
 msgid "Pipe error.\n"
 msgstr "パイプエラー。\n"
 
-#: userhelper-wrap.c:981
+#: userhelper-wrap.c:987
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork()できません。\n"
 
-#: userhelper-wrap.c:1059 userhelper-wrap.c:1063
+#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()エラー。\n"
 
-#: userhelper-wrap.c:1075
+#: userhelper-wrap.c:1081
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
 
-#: userinfo.c:323
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "あなたは存在しません。続けられません。\n"
@@ -440,19 +449,19 @@ msgid "User Mount Tool"
 msgstr "ユーザーマウントツール"
 
 #. Create the other buttons.
-#: usermount.c:576
+#: usermount.c:579
 msgid "_Format"
 msgstr "フォーマット(_F)"
 
-#: usermount.c:612
+#: usermount.c:615
 msgid "Device"
 msgstr "デバイス"
 
-#: usermount.c:618
+#: usermount.c:621
 msgid "Directory"
 msgstr "ディレクトリ"
 
-#: usermount.c:624
+#: usermount.c:627
 msgid "Filesystem"
 msgstr "ファイルシステム"
 
@@ -530,9 +539,6 @@ msgstr "パスワード"
 
 #~ msgid "E_xit"
 #~ msgstr "終了(_x)"
-
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "PAMエラーが発生しました。%d\n"
 
 #~ msgid "about to exec \"%s\"\n"
 #~ msgstr "\"%s\"を実行しようとしています\n"

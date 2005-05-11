@@ -84,6 +84,9 @@ create_userinfo_window(struct UserInfo *userinfo)
 	if (xml) {
 		window = glade_xml_get_widget(xml, "userinfo");
 		g_assert(window != NULL);
+
+		gtk_window_set_icon_from_file(GTK_WINDOW(window), "/usr/share/pixmaps/user_icon.png", NULL);
+
 		g_object_set_data(G_OBJECT(window),
 				  USERINFO_DATA_NAME, userinfo);
 		g_object_set_data(G_OBJECT(window),
