@@ -1,20 +1,22 @@
+# translation of it.po to 
 # translation of it.po to Italian
 # Copyright (C) 2001 Red Hat, Inc.
 # Bettina De Monti <bdemonti@redhat.it>, 2001.
 # Francesco Valente <fvalen@redhat.com>, 2003, 2004.
+# Francesco Tombolini <tombo@adamantio.net>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-11 14:52+1000\n"
-"Last-Translator: Francesco Valente <fvalen@redhat.com>\n"
-"Language-Team: Italian <i18n-list@redhat.com>\n"
+"PO-Revision-Date: 2005-05-11 22:02+0200\n"
+"Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
+"Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -111,7 +113,7 @@ msgstr "Mantieni l'autorizzazione"
 
 #: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
-msgstr "Salta l'autorizzazione"
+msgstr "Dimentica l'autorizzazione"
 
 #: pam-panel-icon.c:190
 msgid ""
@@ -121,15 +123,15 @@ msgid ""
 msgstr ""
 "Siete attualmente autorizzati a configurare tutte le impostazioni del "
 "sistema (che influenzano tutti gli utenti), senza dover digitare nuovamente "
-"la password dell'amministratore. Potete annullare questa autorizzazione."
+"la password dell'amministratore. Potete rinunciare a questa autorizzazione."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
-msgstr "pam_timestamp_check non è un root setuid"
+msgstr "pam_timestamp_check non è setuid root"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
-msgstr "nessun controllo tty per pam_timestamp_check"
+msgstr "nessuna tty di controllo per pam_timestamp_check"
 
 #: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
@@ -141,7 +143,7 @@ msgstr "errore nei permessi in pam_timestamp_check"
 
 #: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr "controllo tty invalido in pam_timestamp_check"
+msgstr "tty di controllo non valida nel pam_timestamp_check"
 
 #: pam-panel-icon.c:373
 #, c-format
@@ -164,7 +166,7 @@ msgstr "pam-panel-icon: impossibile collegarsi al session manager\n"
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr "Help"
+msgstr "Aiuto"
 
 #: userhelper.c:138 userhelper.c:141
 #, c-format
@@ -182,8 +184,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Si sta tentando di eseguire \"%s\" con i privilegi di superutente\n"
-" Sono necessarie maggiori informazioni per eseguire l'operazione."
+"Stai tentando di eseguire \"%s\" che può trarre beneficio dai privilegi\n"
+"amministrativi, ma occorrono maggiori informazioni per eseguire l'operazione."
 
 #: userhelper.c:769
 #, c-format
@@ -191,24 +193,24 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Si sta tentando di eseguire \"%s\" che richiede i privilegi di superutente. "
-"Sono necessarie maggiori informazioni per eseguire l'operazione."
+"Stai tentando di eseguire \"%s\" che richiede privilegi amministrativi,\n"
+"ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Si sta tentando di eseguire un comando con i privilegi di superutente. Sono "
-"necessarie maggiori informazioni per eseguire l'operazione."
+"Stai tentando di eseguire un comando che può trarre beneficio dai\n"
+"privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Si sta tentando di eseguire un comando che richiede i privilegi di "
-"superutente. Sono necessarie maggiori informazioni per eseguire l'operazione."
+"Stai tentando di eseguire un comando che richiede i privilegi\n"
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper.c:794
 #, c-format
@@ -218,13 +220,12 @@ msgstr "Password per %s:"
 #: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper deve impostare la setuid root\n"
+msgstr "userhelper deve essere setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica o trovare il terminale di "
 "controllo.\n"
@@ -287,7 +288,7 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "La shell corrente non è elencata in /etc/shells.\n"
-"Non è permesso cambiare la shell.\n"
+"Non ti è permesso cambiare la shell.\n"
 "Rivolgersi all'amministratore del sistema."
 
 #: userhelper-wrap.c:200
@@ -304,12 +305,11 @@ msgstr "Impossibile trovare il programma selezionato."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Richiesta annullata."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "Errore PAM %d.\n"
+msgstr "E' avvenuto un errore PAM interno."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -330,7 +330,7 @@ msgstr "Errore"
 
 #: userhelper-wrap.c:580
 msgid "Information"
-msgstr "Informazioni "
+msgstr "Informazioni"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
@@ -351,8 +351,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di \"%s\" con i privilegi di superutente. Sono "
-"necessarie maggiori informazioni per eseguire l'operazione."
+"Stai tentando di eseguire \"%s\" che può trarre beneficio dai privilegi\n"
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:800
 #, c-format
@@ -360,24 +360,24 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di \"%s\" che richiede i privilegi di superutente. "
-"Sono necessarie maggiori informazioni per eseguire l'operazione."
+"Stai tentando di eseguire \"%s\" che richiede i privilegi di superutente, "
+"ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di un comando con i privilegi di superutente. Sono "
-"necessarie maggiori informazioni per eseguire l'operazione."
+"Stai tentando di eseguire un comando che può trarre beneficio dai privilegi "
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:811
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Tentativo di esecuzione di un comando che richiede i privilegi di "
-"superutente. Sono necessarie maggiori informazioni per eseguire l'operazione."
+"Stai tentando di eseguire un comando che richiede privilegi "
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
@@ -401,12 +401,12 @@ msgstr "errore dup2().\n"
 #: userhelper-wrap.c:1081
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "execl() error, errno=%d\n"
+msgstr "errore execl(), errno=%d\n"
 
 #: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
-msgstr "Identità non conosciuta.\n"
+msgstr "Tu non esisti.  Vai via.\n"
 
 #: usermount.c:62
 msgid "_Mount"
@@ -421,28 +421,29 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Formattare il disco? La formattazione distruggerà tutti i dati sul disco."
+"Sei sicuro di voler formattare questo disco? Distruggerai qualsiasi dato in esso "
+"contenuto."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr "Esegui formato di _basso livello."
+msgstr "Esegui una formatttazione a _basso-livello."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Selezionare un typo di _filesystem da creare:"
+msgstr "Seleziona il tipo di _filesystem da creare:"
 
 #: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"I privilegi attuali non permettono di montare o smontare alcun filesystem.\n"
+"Non ci sono filesystems che ti è permesso di montare o smontare.\n"
 "Contattare l'amministratore del sistema."
 
 #. Create the dialog.
 #: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
-msgstr "Tool di montaggio per utenti"
+msgstr "Strumento di montaggio per utenti"
 
 #. Create the other buttons.
 #: usermount.c:579
@@ -508,7 +509,7 @@ msgstr "Gestione dischi"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Attiva e disattiva i filesystem"
+msgstr "Monta e smonta filesystems"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
@@ -518,26 +519,3 @@ msgstr "Modifica la password di accesso"
 msgid "Password"
 msgstr "Password"
 
-#~ msgid "_Ok"
-#~ msgstr "_Ok"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Cancella"
-
-#~ msgid "_Close"
-#~ msgstr "_Chiudi"
-
-#~ msgid "Type"
-#~ msgstr "Tipo"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Smonta"
-
-#~ msgid "E_xit"
-#~ msgstr "E_sci"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "inizio di exec \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Necessarie %d risposte.\n"
