@@ -4,14 +4,14 @@
 # Yukihiro Nakai <ynakai@redhat.com>, 2001.
 # James Hashida <khashida@redhat.com>, 2002
 # Noriko Mizumoto <noriko@redhat.com>, 2004
-# Hirofumi Saito <hi_saito@yk.rim.or.jp>, 2004.
+# Hirofumi Saito <hi_saito@yk.rim.or.jp>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-05 00:15+0900\n"
+"PO-Revision-Date: 2005-05-11 23:52+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -307,12 +307,11 @@ msgstr "選択したプログラムは見つかりませんでした。"
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "要求はキャンセルされました。"
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "PAMエラーが発生しました。%d\n"
+msgstr "内部 PAM エラーが発生しました。"
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
