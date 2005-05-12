@@ -1,13 +1,13 @@
-# Copyright (C) 2002, 2003, 2004 usermode'S COPYRIGHT HOLDER
-# Copyright (C) 2004 Miloslav Trmac <mitr@volny.cz>
+# Copyright (C) 2002, 2003, 2004, 2005 usermode'S COPYRIGHT HOLDER
+# Copyright (C) 2004, 2005 Miloslav Trmac <mitr@volny.cz>
 #
-# Miloslav Trmac <mitr@volny.cz>, 2002, 2003, 2004.
+# Miloslav Trmac <mitr@volny.cz>, 2002 - 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-04 11:12+0200\n"
+"PO-Revision-Date: 2005-05-12 11:16+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -300,11 +300,11 @@ msgstr "Nemohu najít vybraný program."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Požadavek zrušen."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Došlo k interní chybě PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
