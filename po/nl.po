@@ -1,15 +1,15 @@
 # Dutch translation of usermode.
-# Copyright (C) 2003, 2004 The Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003.
-# Peter van Egdom <p.van.egdom@chello.nl>, 2004.
+# Peter van Egdom <p.van.egdom@chello.nl>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-12-14 23:06+0100\n"
+"PO-Revision-Date: 2005-05-12 21:05+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@chello.nl>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -308,12 +308,11 @@ msgstr "Kon het geselecteerde programma niet vinden."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Aanvraag geannuleerd."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "Kreeg PAM-fout %d.\n"
+msgstr "Er deed zich een interne PAM-fout voor."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
