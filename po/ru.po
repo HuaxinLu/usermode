@@ -1,20 +1,19 @@
-# translation of ru.po to
-# translation of ru.po to
+# translation of ru.po to Russian
 # Leonid Kanter <leon@geon.donetsk.ua>, 2003.
-# Andrew Martynov <andrewm@inventa.ru>, 2004.
+# Andrew Martynov <andrewm@inventa.ru>, 2004, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2005-01-29 12:00+0300\n"
+"PO-Revision-Date: 2005-05-13 19:12+0400\n"
 "Last-Translator: Andrew Martynov <andrewm@inventa.ru>\n"
 "Language-Team: Russian <fedora-trans-ru@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Date: 1999-04-03 12:20+0200\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -306,12 +305,11 @@ msgstr "Невозможно найти выбранную программу."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Запрос отменен."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "Получена ошибка PAM %d.\n"
+msgstr "Произошла внутренняя ошибка PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
