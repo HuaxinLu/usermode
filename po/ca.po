@@ -1,14 +1,26 @@
 # Catalan translations for usermode package.
-# Copyright (C) 2004 Free Software Fundation
+# Copyright © 2005 Free Software Fundation
 # This file is distributed under the same license as the usermode package.
-# Ramon Gómez Vilar <ramongomezvilar@gmx.net>, 2004.
+# Ramon Gómez Vilar <ramongomezvilar@gmx.net>, 2005.
+#
+# This file is translated according to the glossary and style guide of
+#   Softcatalà. If you plan to modify this file, please read first the page
+#   of the Catalan translation team for the Fedora project at:
+#   http://www.softcatala.org/projectes/fedora/
+#   and contact the previous translator
+#
+# Aquest fitxer s'ha de traduir d'acord amb el recull de termes i la guia
+#   d'estil de Softcatalà. Si voleu modificar aquest fitxer, llegiu si
+#   us plau la pàgina de catalanització del projecte Fedora a:
+#   http://www.softcatala.org/projectes/fedora/
+#   i contacteu l'anterior traductor/a.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-18 16:19+0200\n"
+"PO-Revision-Date: 2005-05-15 10:25+0200\n"
 "Last-Translator: Ramon Gómez Vilar <ramongomezvilar@gmx.net>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
 "MIME-Version: 1.0\n"
@@ -304,11 +316,11 @@ msgstr "No s'ha pogut trobar el programa seleccionat."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "S'ha cancel·lat la sol·licitud."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "S'ha produït un error intern del PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
