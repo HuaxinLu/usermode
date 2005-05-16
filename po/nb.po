@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: usermode 1.71\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-16 15:25+0200\n"
+"PO-Revision-Date: 2005-05-16 19:52+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -299,11 +299,11 @@ msgstr "Kunne ikke finne valgt program."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Forespørsel avbrutt"
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Intern feil oppsto i PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
