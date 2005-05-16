@@ -1,15 +1,16 @@
+# translation of da.po to Danish
 # Danish translation of Eye of usermode
 # This file is distributed under the same license as the usermode package.
-# Keld Simonsen <keld@dkuug.dk>, 2002, 2003, 2004.
+# Keld Simonsen <keld@dkuug.dk>, 2002, 2003, 2004, 2005.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
+"Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-26 16:40+0200\n"
-"Last-Translator: Martin Willemoes Hansen <mwh@sysrq.dk>\n"
+"PO-Revision-Date: 2005-05-16 11:15+0200\n"
+"Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -81,8 +82,7 @@ msgstr "Desværre, adgangskoder er ikke ens"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
+msgstr "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
 #: dummy.h:33
 msgid "login: "
@@ -225,10 +225,8 @@ msgstr "userhelper skal være setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -304,12 +302,11 @@ msgstr "Det lykkedes ikke at finde det valgte program"
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Forespørgsel annulleret."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "Fik PAM-fejl %d.\n"
+msgstr "Intern PAM-fejl indtraf."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -621,3 +618,4 @@ msgstr "Adgangskode"
 
 #~ msgid "This will be some help text."
 #~ msgstr "Dette vil i fremtiden vise hjælp"
+
