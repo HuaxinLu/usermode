@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-26 12:45+0100\n"
+"PO-Revision-Date: 2005-05-16 11:02+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -222,8 +222,7 @@ msgstr "userhelper tem que ser setuid root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Não consegui abrir janela e não consegui encontrar terminal de controle.\n"
+msgstr "Não foi possível abrir janela e não foi possível encontrar terminal de controle.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -296,16 +295,15 @@ msgstr "A chamada exec() falhou."
 
 #: userhelper-wrap.c:204
 msgid "Failed to find selected program."
-msgstr "Não consegui encontrar o programa seleccionado."
+msgstr "Não foi possível encontrar o programa seleccionado."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Pedido cancelado."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "Encontrei o erro PAM %d.\n"
+msgstr "Ocorreu um erro interno de PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -387,7 +385,7 @@ msgstr "Erro no 'pipe'.\n"
 #: userhelper-wrap.c:987
 #, c-format
 msgid "Cannot fork().\n"
-msgstr "Não consegui executar fork().\n"
+msgstr "Não foi possível executar fork().\n"
 
 #: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
