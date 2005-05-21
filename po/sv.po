@@ -1,5 +1,5 @@
 # Swedish messages for usermode.
-# Copyright (C) 2001, 2002, 2003, 2004 Christian Rose <menthos@menthos.com>.
+# Copyright (C) 2001, 2002, 2003, 2004, 2005 Christian Rose <menthos@menthos.com>.
 #
 # $Id$
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-05 01:29+0200\n"
+"PO-Revision-Date: 2005-05-22 02:02+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -301,12 +301,14 @@ msgstr "Misslyckades med att hitta valt program."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Begäran avbruten."
+
+msgid "Request cancelled."
+msgstr "Begäran avbruten."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "Fick PAM-fel %d.\n"
+msgstr "Internt PAM-fel inträffade."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
