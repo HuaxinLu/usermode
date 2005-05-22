@@ -1,19 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of ar.po to Arabic
+# translation of help-screens-C.po to Arabic
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Ahmad Tarek <ahmadtarek@link.net>, 2004.
+# Ossama M. Khayat <okhayat@yahoo.com>, 2004.
+# Hicham Amaoui <amaoui@altern.org
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Fedora Core 1\n"
+"Project-Id-Version: ar_new\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-04 22:52+0200\n"
-"Last-Translator: Hicham Amaoui <amaoui@altern.org>\n"
-"Language-Team: Arabic <support@arabeyes.org>\n"
+"PO-Revision-Date: 2005-05-22 23:58+0300\n"
+"Last-Translator: Munzir Taha <munzirtaha@newhorizons.com.sa>\n"
+"Language-Team: Arabic <fedora-trans-ar@redhat.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -52,15 +55,15 @@ msgstr "شغّل بوضع عادي"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "كلمة مرور يونكس (الحاليّة):"
+msgstr "كلمة مرور يونكس (الحاليّة): "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "كلمة مرور يونكس الجديدة:"
+msgstr "كلمة مرور يونكس الجديدة: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "أعد كتابة كلمة مرور يونكس الجديدة:"
+msgstr "أعد كتابة كلمة مرور يونكس الجديدة: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -84,11 +87,11 @@ msgstr "شغّل أدوات إعداد النّظام العامّة بدون ك
 
 #: dummy.h:33
 msgid "login: "
-msgstr "اسم المستخدم:"
+msgstr "اسم المستخدم: "
 
 #: dummy.h:34
 msgid "Password: "
-msgstr "كلمة المرور:"
+msgstr "كلمة المرور: "
 
 #: pam-panel-icon.c:91
 #, c-format
@@ -121,8 +124,7 @@ msgstr ""
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
-"إن pam_timestamp_check لا يتوفر على ترخيصsetuid بالنسبة للمستخدم الجذري"
+msgstr "إن pam_timestamp_check لا يتوفر على ترخيصsetuid بالنسبة للمستخدم الجذري"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
@@ -210,7 +212,7 @@ msgstr ""
 #: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
-msgstr "كلمة المرور لـ%s:"
+msgstr "كلمة المرور لـ%s: "
 
 #: userhelper.c:2318
 #, c-format
@@ -220,10 +222,8 @@ msgstr "userhelper يجب أن يكون setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"لم يمكن فتح النّافذة الرّسوميّة، ولم يمكن العثور على الشّاشة الطّرفيّة المتحكّمة.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "لم يمكن فتح النّافذة الرّسوميّة، ولم يمكن العثور على الشّاشة الطّرفيّة المتحكّمة.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -273,7 +273,7 @@ msgstr "حقوق غير كافية."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
-msgstr "مناداة غير صالحة للعمليّة الفرعيّة"
+msgstr "مناداة غير صالحة للعمليّة الفرعيّة."
 
 #: userhelper-wrap.c:197
 msgid ""
@@ -299,11 +299,11 @@ msgstr "فشل العثور على البرنامج المحدّد."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "تم إلغاء الطلب."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "حدث خطأ داخلي في وحدات المصادقة (PAM)."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -329,7 +329,7 @@ msgstr "معلومات"
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
-msgstr "نص حاجز مكان"
+msgstr "نص حاجز مكان."
 
 #: userhelper-wrap.c:789
 msgid "Changing personal information."
@@ -422,7 +422,7 @@ msgstr "قُم بتنسيق _منخفض المستوى."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "اختر نوع _نظام ملفّات لإنشاءه:"
+msgstr "اختر نوع _نظام ملفّات لإنشائه:"
 
 #: usermount.c:549
 msgid ""
@@ -511,20 +511,3 @@ msgstr "غيّر كلمة مرور اسم مستخدمك"
 msgid "Password"
 msgstr "كلمة المرور"
 
-#~ msgid "_Ok"
-#~ msgstr "_موافق"
-
-#~ msgid "_Cancel"
-#~ msgstr "إ_لغاء"
-
-#~ msgid "_Close"
-#~ msgstr "إ_غلاق"
-
-#~ msgid "Type"
-#~ msgstr "نوع"
-
-#~ msgid "_Unmount"
-#~ msgstr "أزل ال_تّجهيز"
-
-#~ msgid "E_xit"
-#~ msgstr "_خروج"
