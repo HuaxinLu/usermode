@@ -1,8 +1,8 @@
 # Slovak translations for usermode package
 # Slovenské preklady pre balík usermode.
-# Copyright (C) 2004 Marcel Telka
+# Copyright (C) 2004, 2005 Marcel Telka
 # This file is distributed under the same license as the usermode package.
-# Marcel Telka <marcel@telka.sk>, 2004.
+# Marcel Telka <marcel@telka.sk>, 2004, 2005.
 #
 # $Id$
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-05 04:59+0200\n"
+"PO-Revision-Date: 2005-06-10 21:10+0200\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -305,11 +305,11 @@ msgstr "Hľadanie zvoleného programu zlyhalo."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Požiadavka zrušená."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Vyskytla sa interná chyba PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
