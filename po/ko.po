@@ -1,19 +1,20 @@
 # translation of ko.po to Korean
 # Michelle Kim <mkim@redhat.com>, 2002.
 # Michelle J Kim <mkim@redhat.com>, 2003, 2004.
-# Cr4S3T0n <cr4s3t0n@empal.com>, 2004
+# Cr4S3T0n <cr4s3t0n@empal.com>, 2004.
+# Michelle Ji Yeen Kim <mkim@redhat.com>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-22 09:55+1000\n"
-"Last-Translator: Michelle J Kim <mkim@redhat.com>\n"
-"Language-Team:  <ko@li.org>\n"
+"PO-Revision-Date: 2005-06-16 14:45+1000\n"
+"Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
+"Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -101,8 +102,7 @@ msgstr "관리자 권한 취소 실패: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"관리자 권한 취소 실패 : pam_timestamp_check는 실패코드 %d 를 반환했습니다."
+msgstr "관리자 권한 취소 실패 : pam_timestamp_check는 실패코드 %d 를 반환했습니다."
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -222,8 +222,7 @@ msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
 "니다.\n"
@@ -302,12 +301,11 @@ msgstr "선택하신 프로그램을 찾는데 실패했습니다."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "요청을 취소함."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "PAM 오류 %d(이)가 발생했습니다.\n"
+msgstr "내부 PAM 오류가 발생했습니다."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -517,55 +515,3 @@ msgstr "로그인 암호 변경"
 msgid "Password"
 msgstr "암호"
 
-#~ msgid "_Ok"
-#~ msgstr "확인 (_O)"
-
-#~ msgid "_Cancel"
-#~ msgstr "취소 (_C)"
-
-#~ msgid "_Close"
-#~ msgstr "닫기 (_C)"
-
-#~ msgid "Type"
-#~ msgstr "유형"
-
-#~ msgid "_Unmount"
-#~ msgstr "장치연결 해제 (_U)"
-
-#~ msgid "E_xit"
-#~ msgstr "종료 (_x)"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "\"%s\"(을)를 실행합니다\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "%d의 응답이 필요합니다.\n"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, 그"
-#~ "러나\n"
-#~ "이 것을 실행하기 위해서는 정보가 더 필요합니다."
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "여러분은 슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하였습니다, 그러나\n"
-#~ "이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "여러분은 슈퍼유저의 권한으로 취할 수 있는 명령을 실행하였습니다, \n"
-#~ "그러나 이 것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "여러분은 슈퍼유저의 권한이 필요한 명령을 실행하였습니다, 그러나 \n"
-#~ "이 것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
