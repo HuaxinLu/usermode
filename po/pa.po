@@ -244,7 +244,8 @@ msgstr "ਉਪਭੋਗਤਾ-ਸਹਾਇਕ ਦਾ ਸੈਟ-ਸ਼ੰਨ ਨ�
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ਗਰਾਫਿਕਲ ਝਰੋਖਾ ਖੋਲਣ ਵਿੱਚ ਅਸਫਲ ਹੈ, ਅਤੇ ਕੰਟਰੋਲਿੰਗ ਟਰਮੀਨਲ ਨੂੰ ਲੱਭ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
 
 #: userhelper-wrap.c:179
@@ -534,4 +535,3 @@ msgstr "ਆਪਣਾ ਲਾਗਇਨ ਗੁਪਤ-ਕੋਡ ਤਬਦੀਲ ਕ�
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "ਗੁਪਤ-ਕੋਡ"
-
