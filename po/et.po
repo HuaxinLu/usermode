@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-11-04 21:23+0200\n"
-"Last-Translator: Allan Sims <allsi@eau.ee>\n"
+"PO-Revision-Date: 2005-07-27 13:32+0200\n"
+"Last-Translator: Allan Sims <allan.sims@eau.ee>\n"
 "Language-Team: Estonian <Eesti>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,19 +36,23 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#: dummy.h:21
+#: userdialogs.h:29
 msgid "OK"
 msgstr "Olgu"
 
-#: dummy.h:22 userdialogs.h:32
+#: dummy.h:22
+#: userdialogs.h:32
 msgid "Exit"
 msgstr "Välju"
 
-#: dummy.h:23 userdialogs.h:31
+#: dummy.h:23
+#: userdialogs.h:31
 msgid "Cancel"
 msgstr "Loobu"
 
-#: dummy.h:24 userdialogs.h:33
+#: dummy.h:24
+#: userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Käivita õigusteta"
 
@@ -99,30 +103,22 @@ msgstr "Ebaõnnestus kustutada administraaroti õigusi: %s"
 
 #: pam-panel-icon.c:107
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
-"Ebaõnnestus kustutada administraatori õigusi: pam_timestamp_check tagastas "
-"ebaõnne koodi %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Ebaõnnestus kustutada administraatori õigusi: pam_timestamp_check tagastas ebaõnne koodi %d"
 
-#: pam-panel-icon.c:158 pam-panel-icon.c:196
+#: pam-panel-icon.c:158
+#: pam-panel-icon.c:196
 msgid "Keep Authorization"
 msgstr "Hoia autoriseerimist"
 
-#: pam-panel-icon.c:168 pam-panel-icon.c:200
+#: pam-panel-icon.c:168
+#: pam-panel-icon.c:200
 msgid "Forget Authorization"
 msgstr "Unusta autoriseerimine"
 
 #: pam-panel-icon.c:190
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"Hetkel on süsteem seadistatud (mis mõjutab kõiki kasutajaid) nii, et "
-"administraatori parooli ei ole vaja korduvalt sisestada.  Sa võid lõpetada "
-"selle autoriseerimise."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Hetkel on süsteem seadistatud (mis mõjutab kõiki kasutajaid) nii, et administraatori parooli ei ole vaja korduvalt sisestada.  Sa võid lõpetada selle autoriseerimise."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -167,7 +163,8 @@ msgstr "pam-panel-icon: ebaõnnestus ühendada sessioonihalduriga\n"
 msgid "Help"
 msgstr "Abi"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:138
+#: userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Ei saa seada exec konteksti %s-le.\n"
@@ -182,9 +179,7 @@ msgstr "Parool %s jaoks"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Sa üritad käivitada \"%s\", mis õnnestub omades administratiivseid õigusi, "
-"kuid selle tegemiseks on vaja rohkem informatsiooni."
+msgstr "Sa üritad käivitada \"%s\", mis õnnestub omades administratiivseid õigusi, kuid selle tegemiseks on vaja rohkem informatsiooni."
 
 #: userhelper.c:769
 #, c-format
@@ -224,10 +219,8 @@ msgstr "userhelper peab olema seatud kui juurkasutaja\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Ei suuda avada graafilist akent ja ei suuda leida kontrollimise terminali.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Ei suuda avada graafilist akent ja ei suuda leida kontrollimise terminali.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -303,11 +296,11 @@ msgstr "Ebaõnnestus leida valitud programmi."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Päring tühistati."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Esines lisatava autentimismooduli sisemine viga."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -318,11 +311,14 @@ msgstr "Tundmatu viga."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475
+#: glade.strings.h:7
+#: usermode.glade.h:9
 msgid "Query"
 msgstr "Päring"
 
-#: userhelper-wrap.c:568 userhelper-wrap.c:748
+#: userhelper-wrap.c:568
+#: userhelper-wrap.c:748
 msgid "Error"
 msgstr "Viga"
 
@@ -330,7 +326,9 @@ msgstr "Viga"
 msgid "Information"
 msgstr "Informatsioon"
 
-#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:740
+#: glade.strings.h:8
+#: glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Kohahoidja tekst."
@@ -345,36 +343,26 @@ msgstr "Logimise kesta muutmine."
 
 #: userhelper-wrap.c:798
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Sa üritad käivitada \"%s\", mis õnnestub omades administratiivseid õigusi, "
-"kuid selle\n"
+"Sa üritad käivitada \"%s\", mis õnnestub omades administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
 #: userhelper-wrap.c:800
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Sa üritad käivitada \"%s\", mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
 #: userhelper-wrap.c:809
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Sa üritad käivitada käsku, mis õnnestub omades administratiivseid õigusi, "
-"kuid selle\n"
+"Sa üritad käivitada käsku, mis õnnestub omades administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
 #: userhelper-wrap.c:811
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Sa üritad käivitada käsku, mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
@@ -393,7 +381,8 @@ msgstr "Pipe viga.\n"
 msgid "Cannot fork().\n"
 msgstr "Ei saa fork().\n"
 
-#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
+#: userhelper-wrap.c:1065
+#: userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() viga.\n"
@@ -417,12 +406,8 @@ msgid "Un_mount"
 msgstr "Ühenda _lahti"
 
 #: usermount.c:321
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"Oled sa kindel, et soovid ketast vormindada? Kõik andmed, mis sellel on,  "
-"hävivad."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Oled sa kindel, et soovid ketast vormindada? Kõik andmed, mis sellel on,  hävivad."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -441,7 +426,8 @@ msgstr ""
 "Kontakteeru süsteemi administraatoriga."
 
 #. Create the dialog.
-#: usermount.c:550 usermount.c:562
+#: usermount.c:550
+#: usermount.c:562
 msgid "User Mount Tool"
 msgstr "Kasutaja ühendamise vahend"
 
@@ -462,36 +448,47 @@ msgstr "Kataloog"
 msgid "Filesystem"
 msgstr "Failisüsteem"
 
-#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:9
+#: glade.strings.h:18
+#: glade.strings.h:19
+#: glade.strings.h:20
+#: glade.strings.h:21
+#: usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10
+#: usermode.glade.h:5
 msgid "Message"
 msgstr "Teade"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12
+#: usermode.glade.h:10
 msgid "User Information"
 msgstr "Kasutaja info"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13
+#: usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Täisnimi:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14
+#: usermode.glade.h:7
 msgid "Office:"
 msgstr "Kontor:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15
+#: usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Kontori telefoni number:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16
+#: usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Kodune telefoni number:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17
+#: usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Logimise kest:"
 
@@ -505,7 +502,7 @@ msgstr "Muuda isiklik informatsioon"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Ketta haldur"
+msgstr "Kettahaldur"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
@@ -518,3 +515,4 @@ msgstr "Muuda oma sisselogimise parool"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Parool"
+
