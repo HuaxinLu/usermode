@@ -1,22 +1,24 @@
+# translation of zh_CN.po to Chinese, Simplified
 # translation of zh_CN.po to zh_CN
 # translation of usermode.po to Simplified Chinese
 # translation of zh_CN.po to Simplified Chinese
 # Simplified Chinese Version of usermode.
 # Copyright (C) 2002 Red Hat, Inc.
 # Sarah Wang <sarahs@redhat.com>, 2003, 2004.
+# Leah Liu <weliu@redhat.com>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-10-07 15:15+1000\n"
-"Last-Translator: Sarah Wang <sarahs@redhat.com>\n"
-"Language-Team: zh_CN <i18n@redhat.com>\n"
+"PO-Revision-Date: 2005-08-05 14:25+1000\n"
+"Last-Translator: Leah Liu <weliu@redhat.com>\n"
+"Language-Team: Chinese, Simplified <zh@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -222,8 +224,7 @@ msgstr "userhelper 必须是 setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
 
 #: userhelper-wrap.c:179
@@ -300,11 +301,11 @@ msgstr "没有找到所选程序。"
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "请求取消。"
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "出现内部PAM错误。"
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -345,23 +346,20 @@ msgstr "正在改变登录 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:800
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
+msgstr "您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:811
 msgid ""
@@ -507,20 +505,3 @@ msgstr "改变您的登录口令"
 msgid "Password"
 msgstr "口令"
 
-#~ msgid "_Ok"
-#~ msgstr "确定(_O)"
-
-#~ msgid "_Cancel"
-#~ msgstr "取消(_C)"
-
-#~ msgid "_Close"
-#~ msgstr "关闭(_C)"
-
-#~ msgid "Type"
-#~ msgstr "类型"
-
-#~ msgid "_Unmount"
-#~ msgstr "卸载(_U)"
-
-#~ msgid "E_xit"
-#~ msgstr "退出(_X)"
