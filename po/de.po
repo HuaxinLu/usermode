@@ -1,26 +1,29 @@
+# translation of de.po to German / Deutsch
 # translation of de.po to
 # translation of usermode.po to
 # translation of de.po to Deutsch
-# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Ronny Buchmann <ronny-vlug@vlugnet.org> 2004
 # Claudia Krug <fhonig@redhat.it>, YEAR.
 # Bernd Groh <bgroh@redhat.com>, 2003.
 # Andreas Müller <redhat@andreas-mueller.com>, 2003.
 # Bernd Bartmann <Bernd.Bartmann@sohanet.de>, 2004.
-# Ronny Buchmann <ronny-vlug@vlugnet.org> 2004
-# Marcus Gloeckner <mgloeckner@gmail.com>, 2005
+# Marcus Gloeckner <mgloeckner@gmail.com>, 2005.
+# Severin Heiniger <severinheiniger@gmail.com>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2005-05-11 17:56+0200\n"
-"Last-Translator: Marcus Gloeckner <mgloeckner@gmail.com>\n"
-"Language-Team: Deutsch <de@li.org>\n"
+"PO-Revision-Date: 2005-08-09 21:05+0200\n"
+"Last-Translator: Severin Heiniger <severinheiniger@gmail.com>\n"
+"Language-Team: German / Deutsch <fedora-i18n-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.10\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -59,15 +62,15 @@ msgstr "Läuft nicht bevorrechtigt"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(aktuelles) UNIX Passwort:"
+msgstr "(aktuelles) UNIX-Passwort:"
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Neues UNIX Passwort: "
+msgstr "Neues UNIX-Passwort: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Neues UNIX Passwort nochmal eingeben: "
+msgstr "Neues UNIX-Passwort nochmal eingeben: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -162,7 +165,7 @@ msgstr "Fehler beim Ausführen von \"%s\": %s\n"
 #: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "Fehler beim Setz des E/A Kanals auf nicht-blockierend: %s\n"
+msgstr "Fehler beim Setzen des E/A-Kanals auf nicht-blockierend: %s\n"
 
 #: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
@@ -229,15 +232,14 @@ msgstr "userhelper muss Setuid-Root sein\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
-msgstr "Unbekannter Exit Code."
+msgstr "Unbekannter Exit-Code."
 
 #: userhelper-wrap.c:181
 msgid "Information updated."
@@ -264,7 +266,7 @@ msgstr ""
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
-msgstr "Fehler beim Neueinstellen des Passworts."
+msgstr "Fehler beim Zurücksetzen des Passworts."
 
 #: userhelper-wrap.c:189
 msgid ""
@@ -272,11 +274,11 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Einige Systemdateien sind gesperrt.\n"
-"Bitte versuchen Sie es später nochmal."
+"Bitte versuchen Sie es einen Augenblick später erneut."
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
-msgstr "Benutzer unbekannt."
+msgstr "Unbekannter Benutzer."
 
 #: userhelper-wrap.c:193
 msgid "Insufficient rights."
@@ -314,7 +316,7 @@ msgstr "Anfrage abgebrochen."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr "Interner PAM Fehler aufgetreten."
+msgstr "Interner PAM-Fehler aufgetreten."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -340,15 +342,15 @@ msgstr "Informationen"
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
 msgid "Placeholder text."
-msgstr "Platzhalter Text."
+msgstr "Platzhalter-Text."
 
 #: userhelper-wrap.c:789
 msgid "Changing personal information."
-msgstr "Ändern der persönlichen Informationen"
+msgstr "Ändern der persönlichen Informationen."
 
 #: userhelper-wrap.c:792
 msgid "Changing login shell."
-msgstr "Ändern der Login-Shell"
+msgstr "Ändern der Login-Shell."
 
 #: userhelper-wrap.c:798
 #, c-format
@@ -391,7 +393,7 @@ msgstr "Ohne Rechte ausfüh_ren"
 #: userhelper-wrap.c:980
 #, c-format
 msgid "Pipe error.\n"
-msgstr "Pipe Fehler.\n"
+msgstr "Pipe-Fehler.\n"
 
 #: userhelper-wrap.c:987
 #, c-format
@@ -401,12 +403,12 @@ msgstr "Kann fork() nicht aufrufen.\n"
 #: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
-msgstr "dup2() Fehler.\n"
+msgstr "dup2()-Fehler.\n"
 
 #: userhelper-wrap.c:1081
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "execl() Fehler, errno=%d\n"
+msgstr "execl()-Fehler, errno=%d\n"
 
 #: userinfo.c:326
 #, c-format
@@ -427,7 +429,7 @@ msgid ""
 "currently contains."
 msgstr ""
 "Möchten Sie diese Festplatte wirklich formatieren? Alle Daten, die diese "
-"Festplatte zur Zeit enthält, werden zerstört."
+"Festplatte zur Zeit enthält, werden gelöscht."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -442,7 +444,7 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Es gibt keine Dateisysteme, die Sie mounten oder unmounten können.\n"
+"Es gibt keine Dateisysteme, die Sie ein- oder aushängen können.\n"
 "Setzen Sie sich mit Ihrem Administrator in Verbindung."
 
 #. Create the dialog.
@@ -474,7 +476,7 @@ msgstr "*"
 
 #: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
-msgstr "Mitteilung"
+msgstr "Meldung"
 
 #: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
@@ -524,26 +526,3 @@ msgstr "Anmelde-Passwort ändern"
 msgid "Password"
 msgstr "Passwort"
 
-#~ msgid "_Ok"
-#~ msgstr "_OK"
-
-#~ msgid "_Cancel"
-#~ msgstr "Abbre_chen"
-
-#~ msgid "_Close"
-#~ msgstr "S_chließen"
-
-#~ msgid "Type"
-#~ msgstr "Typ"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Unmount"
-
-#~ msgid "E_xit"
-#~ msgstr "_Beenden"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "\"%s\" exec wird gerade ausgeführt\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "%d Antworten erforderlich.\n"
