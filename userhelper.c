@@ -46,13 +46,10 @@
 
 #ifdef WITH_SELINUX
 #include <selinux/selinux.h>
-#include <selinux/context.h>
-#include <selinux/get_context_list.h>
 #include <selinux/flask.h>
 #include <selinux/av_permissions.h>
 
 static gboolean selinux_enabled = FALSE;
-static security_context_t new_context = NULL; /* our target security context */
 
 #endif
 
@@ -116,42 +113,6 @@ static int checkAccess(unsigned int selaccess) {
 }
 
 /*
- * setup_selinux_exec()
- *
- * Set the new context to be transitioned to after the next exec(), or exit.
- *
- * in:		The name of a path, used in a debugging message.
- * out:		nothing
- * return:	0 on success, -1 on failure.
- */
-static int
-setup_selinux_exec(char *constructed_path)
-{
-  int status=0;
-  if (selinux_enabled) {
-#ifdef DEBUG_USERHELPER
-    g_print("userhelper: exec \"%s\" with %s context\n",
-	    constructed_path, new_context);
-#endif
-    if (setexeccon(new_context) < 0) {
-      syslog(LOG_NOTICE,
-	     _("Could not set exec context to %s.\n"),
-	     new_context);
-      fprintf(stderr,
-	      _("Could not set exec context to %s.\n"),
-	      new_context);
-      if (security_getenforce() > 0)
-	status=-1;
-    }
-    if (new_context) {
-      freecon(new_context);
-      new_context = NULL;
-    }
-  }
-  return status;
-}
-
-/*
  * get_init_context()
  *
  * Read the name of a context from the given file.
@@ -209,52 +170,159 @@ out:
 	errno = EBADF;
 	return -1;
 }
-static void selinux_init(shvarFile *s) {
-	security_context_t defcontext=NULL;
-	char *apps_role, *apps_type;
-	context_t ctx;
+/*
+ * setup_selinux_root_exec()
+ *
+ * Set the new context to be transitioned to after the next exec(), or exit.
+ *
+ * in:		The name of a path
+ * out:		nothing
+ * return:	0 on success, -1 on failure.
+ */
+static int
+setup_selinux_root_exec(char *filename)
+{
+	security_context_t con = NULL; /* our target security context */
+	security_context_t def_context=NULL;
+	security_context_t fcon = NULL;
 	char context_file[PATH_MAX];
-	
-	security_context_t old_context = NULL; /* our original securiy context */
-	if (getprevcon(&old_context) < 0) {
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: i have no name\n");
-#endif
-		exit(ERR_UNK_ERROR);
-	}
-	ctx = context_new(old_context);
-	freecon(old_context);
+	int status=0;
+	if (! selinux_enabled) 
+		return 0;
 
 	/* Assume userhelper's default context, if the context file
 	 * contains one.  Just in case policy changes, we read the
 	 * default context from a file instead of hard-coding it. */
 	snprintf(context_file, PATH_MAX, "%s/%s",selinux_contexts_path(), "userhelper_context");
 	
-	if (get_init_context(context_file, &defcontext) == 0) {
-		context_free(ctx);
-		ctx = context_new(defcontext);
-		freecon(defcontext);
-		defcontext = NULL;
-	} 
-	/* Optionally change the role and type of the next context, per
-	 * the service-specific userhelper configuration file. */
-	apps_role = svGetValue(s, "ROLE");
-	apps_type = svGetValue(s, "TYPE");
-	if (apps_role != NULL) {
-		context_role_set(ctx, apps_role);
-	}
-	if (apps_type != NULL) {
-		context_type_set(ctx, apps_type);
-	}
-	context_user_set(ctx, "root");
-
-	new_context = strdup(context_str(ctx));
-	context_free(ctx);
+	if (get_init_context(context_file, &def_context) != 0) {
 #ifdef DEBUG_USERHELPER
-	g_print("userhelper: context = '%s'\n", new_context);
+		g_print("userhelper: i have def context\n");
 #endif
-	return;
+		if (security_getenforce() > 0)
+			exit(ERR_UNK_ERROR);
+		return -1;
+	} 
+	if (getfilecon(filename, &fcon) < 0) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: unable to get context for %s\n", filename);
+#endif
+		freecon(def_context);
+		if (security_getenforce() > 0)
+			exit(ERR_UNK_ERROR);
+		return -1;
+	} 
+
+	status = security_compute_create(def_context, fcon, SECCLASS_PROCESS, &con);
+
+	if (status != 0) {
+		syslog(LOG_NOTICE,
+		       _("Could not set default context for %s for program %s.\n"),
+		       def_context, fcon);
+		freecon(fcon);
+		freecon(def_context);
+		if (security_getenforce() > 0)
+			exit(ERR_UNK_ERROR);
+		return -1;
+	}
+	freecon(fcon);
+	freecon(def_context);
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: exec \"%s\" with %s context\n",
+		filename, con);
+#endif
+	syslog(LOG_NOTICE, "running '%s' with %s context\n",
+	       filename, con);
+	if (setexeccon(con) < 0) {
+		syslog(LOG_NOTICE,
+		       _("Could not set exec context to %s.\n"),
+		       con);
+		fprintf(stderr,
+			_("Could not set exec context to %s.\n"),
+			con);
+		freecon(con);
+		if (security_getenforce() > 0)
+			exit(ERR_UNK_ERROR);
+		return -1;
+	}
+	freecon(con);
+	return 0;
 }
+
+/*
+ * setup_selinux_user_exec()
+ *
+ * Set the new context to be transitioned to after the next exec(), or exit.
+ *
+ * in:		The name of a path
+ * out:		nothing
+ * return:	0 on success, -1 on failure.
+ */
+static int
+setup_selinux_user_exec(char *filename)
+{
+	security_context_t con = NULL; /* our target security context */
+	security_context_t prev_context = NULL; /* our original securiy context */
+	security_context_t fcon = NULL;
+	int status=0;
+	if (! selinux_enabled) 
+		return 0;
+
+	if (getprevcon(&prev_context) < 0) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: i have no name\n");
+#endif
+		if (security_getenforce() > 0)
+			exit(ERR_UNK_ERROR);
+		return -1;
+	}
+
+	if (getfilecon(filename, &fcon) < 0) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: unable to get context for %s\n", filename);
+#endif
+		freecon(prev_context);
+		if (security_getenforce() > 0)
+			exit(ERR_UNK_ERROR);
+		return -1;
+	} 
+
+	status = security_compute_create(prev_context, fcon, SECCLASS_PROCESS, &con);
+
+	if (status != 0) {
+		syslog(LOG_NOTICE,
+		       _("Could not set default context for %s for program %s.\n"),
+		       prev_context, fcon);
+		freecon(fcon);
+		freecon(prev_context);
+		if (security_getenforce() > 0)
+			exit(ERR_UNK_ERROR);
+		return -1;
+	}
+	freecon(fcon);
+	freecon(prev_context);
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: exec \"%s\" with %s context\n",
+		filename, con);
+#endif
+	syslog(LOG_NOTICE, "running '%s' with %s context\n",
+	       filename, con);
+	if (setexeccon(con) < 0) {
+		syslog(LOG_NOTICE,
+		       _("Could not set exec context to %s.\n"),
+		       con);
+		fprintf(stderr,
+			_("Could not set exec context to %s.\n"),
+			con);
+		freecon(con);
+		if (security_getenforce() > 0)
+			exit(ERR_UNK_ERROR);
+		return -1;
+	}
+	freecon(con);
+	return 0;
+}
+
 #endif /* WITH_SELINUX */
 
 /* Exit, returning the proper status code based on a PAM error code. */
@@ -1804,12 +1872,6 @@ wrap(const char *user, const char *program,
 	data = conv->appdata_ptr;
 	user_pam = get_user_for_auth(s);
 
-#ifdef WITH_SELINUX
-	if (selinux_enabled) {
-		selinux_init(s);
-	}
-#endif
-
 	/* Read the path to the program to run. */
 	constructed_path = svGetValue(s, "PROGRAM");
 	if (!constructed_path || constructed_path[0] != '/') {
@@ -1834,6 +1896,7 @@ wrap(const char *user, const char *program,
 			}
 		}
 	}
+
 
 	/* We can forcefully disable the GUI from the configuration
 	 * file (a la blah-nox applications). */
@@ -2009,16 +2072,7 @@ wrap(const char *user, const char *program,
 			}
 #endif
 #ifdef WITH_SELINUX
-			if (selinux_enabled) {
-				if (getprevcon(&new_context) < 0) {
-					syslog(LOG_NOTICE,"Unable to retrieve SELinux security context\n");
-					if (security_getenforce()>0) 
-						exit(ERR_EXEC_FAILED);
-				}
-				if (setup_selinux_exec(constructed_path)) {
-					exit(ERR_EXEC_FAILED);
-				}
-			}
+			setup_selinux_user_exec(constructed_path);
 #endif
 			execv(constructed_path, argv + optind - 1);
 			pipe_conv_exec_fail(conv);
@@ -2126,9 +2180,7 @@ wrap(const char *user, const char *program,
 			}
 #endif
 #ifdef WITH_SELINUX
-			if (setup_selinux_exec(constructed_path)) {
-			  exit(ERR_EXEC_FAILED);
-			}
+			setup_selinux_root_exec(constructed_path);
 #endif
 			cmdline = construct_cmdline(constructed_path,
 						    argv + optind - 1);
@@ -2204,32 +2256,10 @@ wrap(const char *user, const char *program,
 		}
 #endif
 #ifdef WITH_SELINUX
-		if (setup_selinux_exec(constructed_path)) {
-		  exit(ERR_EXEC_FAILED);
-		}
+		setup_selinux_root_exec(constructed_path);
 #endif
 		cmdline = construct_cmdline(constructed_path,
 					    argv + optind - 1);
-#ifdef WITH_SELINUX
-		if (new_context != NULL) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: running '%s' with root privileges "
-				"in context '%s' on behalf of '%s'\n", cmdline,
-				new_context, user);
-#endif
-			syslog(LOG_NOTICE, "running '%s' with root privileges "
-			       "in '%s' context on behalf of '%s'", cmdline,
-			       new_context, user);
-		} else {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: running '%s' with root privileges "
-				"on behalf of '%s'\n", cmdline, user);
-#endif
-			syslog(LOG_NOTICE, "running '%s' with "
-			       "root privileges on behalf of '%s'",
-			       cmdline, user);
-		}
-#else
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: running '%s' with root privileges "
 			"on behalf of '%s'\n", cmdline, user);
@@ -2237,7 +2267,7 @@ wrap(const char *user, const char *program,
 		syslog(LOG_NOTICE, "running '%s' with "
 		       "root privileges on behalf of '%s'",
 		       cmdline, user);
-#endif
+
 		execv(constructed_path, argv + optind - 1);
 		syslog(LOG_ERR, "could not run '%s' with "
 		       "root privileges on behalf of '%s': %s",
