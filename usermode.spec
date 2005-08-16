@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.80
+Version: 1.81
 Release: 1
 License: GPL
 Group: Applications/System
@@ -116,6 +116,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue Aug 16 2005 Jindrich Novy <jnovy@redhat.com> 1.81-1
+- apply SELinux functionality enhancement patch from Dan Walsh
+- rebuilt because of the new cairo
+
+* Thu Aug 11 2005 Ray Strode <rstrode@redhat.com> 1.80-4
+- rebuild
+
+* Tue Jul 12 2005 Jindrich Novy <jnovy@redhat.com> 1.80-3
+- rebuild again because of libwnck change
+
+* Tue Jul 12 2005 Jindrich Novy <jnovy@redhat.com> 1.80-2
+- rebuild because of broken libwnck dependency
+
 * Wed May 11 2005 Jindrich Novy <jnovy@redhat.com> 1.80-1
 - fix "Unknown error" when password is mistyped in userpasswd (#135500)
 - add icons to windows for usermode-gtk applications (#155867)
