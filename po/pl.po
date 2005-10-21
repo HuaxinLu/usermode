@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2005-09-10 23:46+0200\n"
+"PO-Revision-Date: 2005-10-08 13:30+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -104,11 +104,11 @@ msgstr ""
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
-msgstr "pam_timestamp_check nie jest setuid root"
+msgstr "pam_timestamp_check nie jest setuid roota"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
-msgstr "brak kontrolującego tty dla pam_timestamp_check"
+msgstr "brak kontrolującego TTY dla pam_timestamp_check"
 
 #: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
@@ -120,7 +120,7 @@ msgstr "błąd uprawnień w pam_timestamp_check"
 
 #: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr "nieprawidłowy kontrolujący tty dla pam_timestamp_check"
+msgstr "nieprawidłowy kontrolujący TTY dla pam_timestamp_check"
 
 #: pam-panel-icon.c:373
 #, c-format
@@ -362,7 +362,7 @@ msgstr "U_ruchom bez dodatkowych uprawnień"
 #: userhelper-wrap.c:980
 #, c-format
 msgid "Pipe error.\n"
-msgstr "Błąd strumienia danych.\n"
+msgstr "Błąd potoku.\n"
 
 #: userhelper-wrap.c:987
 #, c-format
