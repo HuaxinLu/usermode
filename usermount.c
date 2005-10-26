@@ -650,6 +650,33 @@ create_usermount_window(void)
 	return TRUE;
 }
 
+static void
+format_one_device (const char *device)
+{
+	struct mountinfo *info, *i;
+
+	info = build_mountinfo_list();
+
+	for (i = info; i != NULL; i = i->next) {
+		if (strcmp (i->dev, device) == 0)
+			break;		
+	}
+
+	if (i && i->writable && !i->mounted) {
+		format (i);
+	} else {	
+		GtkWidget *dialog;
+
+		dialog = gtk_message_dialog_new (NULL, 
+						 0,
+						 GTK_MESSAGE_ERROR,
+						 GTK_BUTTONS_OK,
+						 _("The device '%s' can not be formatted."),
+						 device);
+                gtk_dialog_run(GTK_DIALOG(dialog));
+	}
+}
+
 int
 main(int argc, char *argv[])
 {
@@ -660,9 +687,20 @@ main(int argc, char *argv[])
 	gtk_set_locale();
 	gtk_init(&argc, &argv);
 	glade_init();
-	run_main = create_usermount_window();
-	if (run_main) {
-		gtk_main();
+        
+        if (argc > 1) {
+		char *name = strrchr (argv[0], '/');
+		
+		name = name ? name + 1: argv[0];
+		if ( !strcmp (name, "userformat") ) {
+        		format_one_device (argv[1]);
+		}
+        } else {
+		run_main = create_usermount_window();
+		if (run_main) {
+			gtk_main();
+		}
 	}
+
 	return 0;
 }

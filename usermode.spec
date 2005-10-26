@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.81
+Version: 1.82
 Release: 1
 License: GPL
 Group: Applications/System
@@ -60,6 +60,9 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
+# make userformat symlink to usermount
+ln -sf usermount $RPM_BUILD_ROOT%{_bindir}/userformat
+
 # We set up the shutdown programs to be wrapped in this package.  Other
 # packages are on their own....
 mkdir -p $RPM_BUILD_ROOT/etc/pam.d $RPM_BUILD_ROOT/etc/security/console.apps
@@ -104,6 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %files gtk
 %defattr(-,root,root)
 %{_bindir}/usermount
+%{_bindir}/userformat
 %{_mandir}/man1/usermount.1*
 %{_bindir}/userinfo
 %{_mandir}/man1/userinfo.1*
@@ -116,6 +120,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Oct 26 2005 Jindrich Novy <jnovy@redhat.com> 1.82-1
+- don't use pam_stack.so
+- introduce userformat to better handle device formatting
+  and removing usermount from menus (#132559)
+
 * Tue Aug 16 2005 Jindrich Novy <jnovy@redhat.com> 1.81-1
 - apply SELinux functionality enhancement patch from Dan Walsh
 - rebuilt because of the new cairo
