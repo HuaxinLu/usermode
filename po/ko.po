@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2005-06-16 14:45+1000\n"
 "Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
 "Language-Team: Korean\n"
@@ -102,7 +102,8 @@ msgstr "관리자 권한 취소 실패: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "관리자 권한 취소 실패 : pam_timestamp_check는 실패코드 %d 를 반환했습니다."
+msgstr ""
+"관리자 권한 취소 실패 : pam_timestamp_check는 실패코드 %d 를 반환했습니다."
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -165,17 +166,22 @@ msgstr "pam-panel-icon : 세션 관리자와 연결하는데 실패했습니다\
 msgid "Help"
 msgstr "도움말"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "exec 컨텍스트(context)를 %s로 설정할 수 없습니다.\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "exec 컨텍스트(context)를 %s로 설정할 수 없습니다.\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "%s의 암호"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -184,7 +190,7 @@ msgstr ""
 "여러분은 슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하였습니다, \n"
 "그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -193,7 +199,7 @@ msgstr ""
 "여러분은 관리자 권한이 필요한 \"%s\"(을)를 실행하였습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -201,7 +207,7 @@ msgstr ""
 "여러분은 관리자 권한으로 취할 수 있는 명령을 실행하였습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -209,20 +215,21 @@ msgstr ""
 "여러분은 관리자 권한이 필요한 명령을 실행하였습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "%s의 암호: "
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
 "니다.\n"
@@ -316,7 +323,7 @@ msgstr "알 수 없는 오류입니다."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "질의"
 
@@ -329,7 +336,7 @@ msgid "Information"
 msgstr "정보"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Placeholder 형식의 text 입니다."
 
@@ -458,60 +465,59 @@ msgstr "디렉토리"
 msgid "Filesystem"
 msgstr "파일시스템"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "메시지"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "사용자 정보"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "이름:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "사무실:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "사무실 전화 번호:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "집 전화 번호:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "로그인 쉘:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "자기 소개"
+#~ msgid "About Myself"
+#~ msgstr "자기 소개"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "개인 정보를 변경"
+#~ msgid "Change personal information"
+#~ msgstr "개인 정보를 변경"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "디스크 관리"
+#~ msgid "Disk Management"
+#~ msgstr "디스크 관리"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "파일시스템 장치연결 및 해제"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "파일시스템 장치연결 및 해제"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "로그인 암호 변경"
+#~ msgid "Change your login password"
+#~ msgstr "로그인 암호 변경"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "암호"
-
+#~ msgid "Password"
+#~ msgstr "암호"

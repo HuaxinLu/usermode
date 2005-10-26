@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2004-10-25 11:32+0530\n"
 "Last-Translator: Jayaradha N <njaya@redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
@@ -168,17 +168,22 @@ msgstr "pam-panel-icon: அமர்வு மேலாளருடன் இண
 msgid "Help"
 msgstr "உதவி"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "%s க்கு exec சூழல் அமைக்க இயலவில்லை.\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "%s க்கு exec சூழல் அமைக்க இயலவில்லை.\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "%s-க்கு கடவுச்சொல் "
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -187,7 +192,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளை \"%s\" யை இயக்க, மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -196,7 +201,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளை \"%s\" யை இயக்க, மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -204,7 +209,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளைக்கு மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -212,18 +217,18 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளைக்கு மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்."
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "%s- க்கான கடவுச்சொல் : "
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "பயனர் உதவியில் setuid root அமைக்கப்பட்டிருக்க வேண்டும்\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -320,7 +325,7 @@ msgstr "தெரியாத பிழை."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "கேள்வி"
 
@@ -333,7 +338,7 @@ msgid "Information"
 msgstr "தகவல்"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "இடம்தாங்கி உரை."
 
@@ -460,59 +465,59 @@ msgstr "அடைவு"
 msgid "Filesystem"
 msgstr "கோப்பு முறைமை "
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "செய்தி "
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "பயனர் தகவல்"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "முழு பெயர்:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "அலுவலகம்: "
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "அலுவலக தொலைபேசி எண்: "
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "வீட்டு தொலைபேசி எண்: "
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "உள்நுழை ஷெல்:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "என்னைப் பற்றி"
+#~ msgid "About Myself"
+#~ msgstr "என்னைப் பற்றி"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "சொந்த தகவல்களை மாற்று"
+#~ msgid "Change personal information"
+#~ msgstr "சொந்த தகவல்களை மாற்று"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "வட்டு மேலாண்மை "
+#~ msgid "Disk Management"
+#~ msgstr "வட்டு மேலாண்மை "
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "கோப்புமுறைமை எற்றம் மற்றும் வெளியேற்றம்"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "கோப்புமுறைமை எற்றம் மற்றும் வெளியேற்றம்"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "உள்நுழை கடவுச்சொல்லை மாற்று"
+#~ msgid "Change your login password"
+#~ msgstr "உள்நுழை கடவுச்சொல்லை மாற்று"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "கடவுச்சொல்"
+#~ msgid "Password"
+#~ msgstr "கடவுச்சொல்"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2004-04-06 14:08+0200\n"
 "Last-Translator: Maxim Dzumanenko <mvd@mylinux.com.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -164,17 +164,22 @@ msgstr "pam-panel-icon: не вдається підключитись до ме
 msgid "Help"
 msgstr "Довідка"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "Неможливо встановити контекст виконання у %s.\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Неможливо встановити контекст виконання у %s.\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "Пароль користувача %s"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -183,7 +188,7 @@ msgstr ""
 "Ви намагаєтесь виконати програму \"%s\", яка може потребувати привілей "
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -192,7 +197,7 @@ msgstr ""
 "Ви намагаєтесь виконати програму \"%s\", яка вимагає привілей\n"
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -200,7 +205,7 @@ msgstr ""
 "Ви намагаєтесь виконати команду, яка може потребувати привілей "
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -208,18 +213,18 @@ msgstr ""
 "Ви намагаєтесь виконати команду, яка вимагає привілей\n"
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "Пароль користувача %s: "
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper повинен бути setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -314,7 +319,7 @@ msgstr "Невідома помилка."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Запитання"
 
@@ -327,7 +332,7 @@ msgid "Information"
 msgstr "Інформація"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Місце для тексту."
 
@@ -455,59 +460,59 @@ msgstr "Каталог"
 msgid "Filesystem"
 msgstr "Файлова система"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "Повідомлення"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "Користувач"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "Повне ім'я:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "Офіс:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "Робочий телефон:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "Домашній телефон:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Оболонка:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Про мене"
+#~ msgid "About Myself"
+#~ msgstr "Про мене"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Зміна персональної інформації"
+#~ msgid "Change personal information"
+#~ msgstr "Зміна персональної інформації"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "Керування дисками"
+#~ msgid "Disk Management"
+#~ msgstr "Керування дисками"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "Монтування та демонтування файлових систем"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "Монтування та демонтування файлових систем"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Зміна власного паролю"
+#~ msgid "Change your login password"
+#~ msgstr "Зміна власного паролю"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "Пароль"
+#~ msgid "Password"
+#~ msgstr "Пароль"

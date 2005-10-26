@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2004-10-05 16:23+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: bangla <redhat-translation@bengalinux.org>\n"
@@ -194,17 +194,22 @@ msgstr "pam-panel-icon: সেশন ম্যানেজারের সাথ
 msgid "Help"
 msgstr "সহায়িকা"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "প্রসঙ্গকে %s -এ exec করতে ব্যর্থ।\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "প্রসঙ্গকে %s -এ exec করতে ব্যর্থ।\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "%s -র পাসওয়ার্ড"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -215,7 +220,7 @@ msgstr ""
 
 # বোঝা যাচ্ছে না ;-(
 # ........... প্রয়োজন আছে।
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -225,7 +230,7 @@ msgstr ""
 "কিন্তু এই কাজের  জন্য অধিক তথ্য প্রয়োজন।"
 
 # আগেরটার মতই ;-(
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -236,7 +241,7 @@ msgstr ""
 
 # এভাবে লিখতে পারেন -" ........., কিন্তু প্রশাসনিক অধিকার পাওয়ার জন্য আপনাকে আরো তথ্য জানাতে হবে।"
 # ভাল কথা, Administrator শব্দটা যখন অনুবাদ করা হচ্ছে না তখন Administrative সম্ভবত অনুবাদ করার দরকার নাই।
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -244,12 +249,12 @@ msgstr ""
 "আপনি এমন একটি কমান্ড চালাবার চেষ্টা করছেন যার জন্য প্রশাসনিক অধিকার আবশ্যক,\n"
 " কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "%s -র পাসওয়ার্ড: "
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper এর জন্য setuid root হওয়া আবশ্যক\n"
@@ -258,7 +263,7 @@ msgstr "userhelper এর জন্য setuid root হওয়া আবশ্য�
 # Root বাংলায় লিখলে অনেকে নাও বুঝতে পারে।
 #  FIXME: print a warning here?
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -358,7 +363,7 @@ msgstr "অজানা সমস্যা।"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "অনুসন্ধান"
 
@@ -372,7 +377,7 @@ msgid "Information"
 msgstr "তথ্য"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "প্লেস হোল্ডার (Placeholder) টেক্সট (text)।"
 
@@ -510,68 +515,68 @@ msgstr "ডিরেক্টরি"
 msgid "Filesystem"
 msgstr "ফাইলসিস্টেম"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 # msgstr "প্রস্থান (_প)" <-- Standard term
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
 # msgstr "বাতিল (_ব)"
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "বার্তা"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "ব্যবহারকারীর পরিচিতি"
 
 # msgstr "ব্যবহারকারীর পরিচিত"
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "সম্পূর্ণ নাম:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "অফিস:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "অফিসের ফোন নম্বর:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "বাড়ির ফোন নম্বর:"
 
 # msgstr "বাড়ির ফোন নম্বর:" <-- ইংরেজিটা খেয়াল করেন
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "লগ ইন শেল:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "আমার পরিচিতি"
+#~ msgid "About Myself"
+#~ msgstr "আমার পরিচিতি"
 
 # msgstr "এই আমি" ;-)
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "ব্যক্তিগত তথ্য পরিবর্তন করো"
+#~ msgid "Change personal information"
+#~ msgstr "ব্যক্তিগত তথ্য পরিবর্তন করো"
 
 # msgstr "ব্যাক্তিগত তথ্য বদল করো" <-- বানান
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "ডিস্ক পরিচালনা"
+#~ msgid "Disk Management"
+#~ msgstr "ডিস্ক পরিচালনা"
 
 # msgstr "ডিস্ক ব্যবস্থাপনা"
 # যেইটা খুশি লিখেন
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "ফাইলসিস্টেম মাউন্ট এবং আনমাউন্ট করো"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "ফাইলসিস্টেম মাউন্ট এবং আনমাউন্ট করো"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "আপনার লগ-ইনের পাসওয়ার্ড পরিবর্তন করুন"
+#~ msgid "Change your login password"
+#~ msgstr "আপনার লগ-ইনের পাসওয়ার্ড পরিবর্তন করুন"
 
 # msgstr "আপনার লগ-ইন পাসওয়ার্ড পরিবর্তন করুন"
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "পাসওয়ার্ড"
+#~ msgid "Password"
+#~ msgstr "পাসওয়ার্ড"

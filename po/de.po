@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2005-08-09 21:05+0200\n"
 "Last-Translator: Severin Heiniger <severinheiniger@gmail.com>\n"
 "Language-Team: German / Deutsch <fedora-i18n-list@redhat.com>\n"
@@ -175,17 +175,22 @@ msgstr "pam-panel-icon: konnte nicht mit Session-Manager verbinden\n"
 msgid "Help"
 msgstr "Hilfe"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "Konnte exec-Kontext nicht auf %s setzen.\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Konnte exec-Kontext nicht auf %s setzen.\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "Passwort für %s"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -194,7 +199,7 @@ msgstr ""
 "Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
 "nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -203,7 +208,7 @@ msgstr ""
 "Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
 "erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -211,7 +216,7 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
 "nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -219,20 +224,21 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
 "erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "Passwort für %s:"
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper muss Setuid-Root sein\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -327,7 +333,7 @@ msgstr "Unbekannter Fehler."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Abfrage"
 
@@ -340,7 +346,7 @@ msgid "Information"
 msgstr "Informationen"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Platzhalter-Text."
 
@@ -469,60 +475,59 @@ msgstr "Verzeichnis"
 msgid "Filesystem"
 msgstr "Dateisystem"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "Meldung"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "Benutzerinformationen"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "Vollständiger Name:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "Büro:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "Telefonnummer Büro:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "Telefonnummer Privat:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Login-Shell:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Persönliche Informationen"
+#~ msgid "About Myself"
+#~ msgstr "Persönliche Informationen"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Persönliche Informationen ändern"
+#~ msgid "Change personal information"
+#~ msgstr "Persönliche Informationen ändern"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "Diskettenverwaltung"
+#~ msgid "Disk Management"
+#~ msgstr "Diskettenverwaltung"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "Dateisysteme einhängen und aushängen"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "Dateisysteme einhängen und aushängen"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Anmelde-Passwort ändern"
+#~ msgid "Change your login password"
+#~ msgstr "Anmelde-Passwort ändern"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "Passwort"
-
+#~ msgid "Password"
+#~ msgstr "Passwort"

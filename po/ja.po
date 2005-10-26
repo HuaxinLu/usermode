@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2005-05-11 23:52+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
@@ -169,17 +169,22 @@ msgstr "pam-panel-icon: セッションマネージャーの接続に失敗し�
 msgid "Help"
 msgstr "ヘルプ"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "%s に実行権限を与えられませんでした。\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "%s に実行権限を与えられませんでした。\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "%sのパスワード"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -188,7 +193,7 @@ msgstr ""
 "スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -197,7 +202,7 @@ msgstr ""
 "スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -205,7 +210,7 @@ msgstr ""
 "スーパユーザ権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -214,18 +219,18 @@ msgstr ""
 "は\n"
 "追加情報が必要です。"
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "%s用のパスワード:"
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -322,7 +327,7 @@ msgstr "不明なエラーです。"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "質問"
 
@@ -335,7 +340,7 @@ msgid "Information"
 msgstr "情報"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "プレースホルダテキスト。"
 
@@ -464,62 +469,62 @@ msgstr "ディレクトリ"
 msgid "Filesystem"
 msgstr "ファイルシステム"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "メッセージ"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "ユーザー情報"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "フルネーム:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "オフィス:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "オフィスの電話番号:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "自宅の電話番号:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "ログインシェル:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "ユーザーの個人情報"
+#~ msgid "About Myself"
+#~ msgstr "ユーザーの個人情報"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "個人情報を変更"
+#~ msgid "Change personal information"
+#~ msgstr "個人情報を変更"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "ディスク管理"
+#~ msgid "Disk Management"
+#~ msgstr "ディスク管理"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "ファイルシステムをマウント/マウント解除をします"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "ファイルシステムをマウント/マウント解除をします"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "ログインパスワードを変更"
+#~ msgid "Change your login password"
+#~ msgstr "ログインパスワードを変更"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "パスワード"
+#~ msgid "Password"
+#~ msgstr "パスワード"
 
 #~ msgid "_Ok"
 #~ msgstr "OK(_O)"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2005-05-11 20:50+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: is <kde-isl@molar.is>\n"
@@ -164,17 +164,22 @@ msgstr "pam-panel-icon: gat ekki tengst setustjóra\n"
 msgid "Help"
 msgstr "Hjálp"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "Gat ekki breytt samhengi exec í %s.\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Gat ekki breytt samhengi exec í %s.\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "Aðgangsorð fyrir %s"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -183,7 +188,7 @@ msgstr ""
 "Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér\n"
 "er þörf á frekari upplýsingum svo það sé hægt."
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -192,7 +197,7 @@ msgstr ""
 "Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á\n"
 "frekari upplýsingum svo það sé hægt."
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -200,7 +205,7 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér\n"
 "er þörf á frekari upplýsingum svo það sé hægt."
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -208,18 +213,18 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á\n"
 "frekari upplýsingum svo það sé hægt."
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "Aðgangsorð fyrir %s: "
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper verður að vera 'setuid' ofurpaur\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -314,7 +319,7 @@ msgstr "Óþekkt villa."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Fyrirspurn"
 
@@ -327,7 +332,7 @@ msgid "Information"
 msgstr "Upplýsingar"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Þetta pláss autt."
 
@@ -456,59 +461,59 @@ msgstr "Mappa"
 msgid "Filesystem"
 msgstr "Skráarkerfi"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "Skilaboð"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "Notendaupplýsingar"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "Fullt nafn:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "Skrifstofa:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "Vinnusími:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "Heimasími:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Skél:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Um mig"
+#~ msgid "About Myself"
+#~ msgstr "Um mig"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Breyta persónuupplýsingum"
+#~ msgid "Change personal information"
+#~ msgstr "Breyta persónuupplýsingum"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "Sýsla með diska"
+#~ msgid "Disk Management"
+#~ msgstr "Sýsla með diska"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "Tengja og aftengja skráarkerfi"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "Tengja og aftengja skráarkerfi"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Breyta lykilorði þínu"
+#~ msgid "Change your login password"
+#~ msgstr "Breyta lykilorði þínu"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "Lykilorð"
+#~ msgid "Password"
+#~ msgstr "Lykilorð"

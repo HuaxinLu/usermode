@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2005-08-05 14:25+1000\n"
 "Last-Translator: Leah Liu <weliu@redhat.com>\n"
 "Language-Team: Chinese, Simplified <zh@li.org>\n"
@@ -167,17 +167,22 @@ msgstr "pam-panel-icon：连接到会话管理器时失败\n"
 msgid "Help"
 msgstr "帮助"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "无法把 exec 环境设置为 %s。\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "无法把 exec 环境设置为 %s。\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "%s 的口令"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -186,7 +191,7 @@ msgstr ""
 "您在试图运行“%s”。它可能会得益于超级用户的特权，\n"
 "但是这需要更多信息才能做到。"
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -195,7 +200,7 @@ msgstr ""
 "您在试图运行“%s”。它要求您拥有超级用户的特权，\n"
 "但是这需要更多信息才能做到。"
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -203,7 +208,7 @@ msgstr ""
 "您在试图运行一个可能会得益于超级用户特权的命令，\n"
 "但是这需要更多信息才能做到。"
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -211,20 +216,21 @@ msgstr ""
 "您在试图运行一个要求超级用户特权的命令，\n"
 "但是需要更多信息才能做到。"
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "%s 的口令："
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必须是 setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
 
 #: userhelper-wrap.c:179
@@ -316,7 +322,7 @@ msgstr "未知错误。"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "查询"
 
@@ -329,7 +335,7 @@ msgid "Information"
 msgstr "信息"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "定位符文字。"
 
@@ -346,20 +352,23 @@ msgstr "正在改变登录 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
+msgstr ""
+"您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:800
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
+msgstr ""
+"您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
+msgstr ""
+"您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:811
 msgid ""
@@ -448,60 +457,59 @@ msgstr "目录"
 msgid "Filesystem"
 msgstr "文件系统"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "消息"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "用户信息"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "全称："
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "办公室："
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "办公室电话号码:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "家庭电话号码:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "登录 shell:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "关于您自己"
+#~ msgid "About Myself"
+#~ msgstr "关于您自己"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "改变个人信息"
+#~ msgid "Change personal information"
+#~ msgstr "改变个人信息"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "磁盘管理"
+#~ msgid "Disk Management"
+#~ msgstr "磁盘管理"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "挂载和卸载文件系统"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "挂载和卸载文件系统"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "改变您的登录口令"
+#~ msgid "Change your login password"
+#~ msgstr "改变您的登录口令"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "口令"
-
+#~ msgid "Password"
+#~ msgstr "口令"

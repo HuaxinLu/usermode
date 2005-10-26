@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2005-10-08 13:30+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -14,6 +14,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "OK"
@@ -81,8 +100,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Rezygnacja z przywilejów administratora nie powiodła się: pam_timestamp_check "
-"zwrócił kod błędu %d"
+"Rezygnacja z przywilejów administratora nie powiodła się: "
+"pam_timestamp_check zwrócił kod błędu %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -99,8 +118,8 @@ msgid ""
 "this authorization."
 msgstr ""
 "Jesteś aktualnie upoważniony w zakresie konfiguracji ustawień systemu (które "
-"dotyczą wszystkich użytkowników) bez konieczności wprowadzania ponownie hasła "
-"administratora. Można zrezygnować z tego upoważnienia."
+"dotyczą wszystkich użytkowników) bez konieczności wprowadzania ponownie "
+"hasła administratora. Można zrezygnować z tego upoważnienia."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -146,17 +165,22 @@ msgstr "pam-panel-icon: nie powiodło się połączenie do menedżera sesji\n"
 msgid "Help"
 msgstr "Pomoc"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "Nie można ustawić kontekstu exec na %s.\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Nie można ustawić kontekstu exec na %s.\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "Hasło dla %s"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -165,7 +189,7 @@ msgstr ""
 "Próbujesz uruchomić program \"%s\", który może wykorzystywać uprawnienia\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -174,7 +198,7 @@ msgstr ""
 "Próbujesz uruchomić program \"%s\", który wymaga uprawnień\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -182,7 +206,7 @@ msgstr ""
 "Próbujesz wykonać polecenie, które może wykorzystywać uprawnienia\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -190,17 +214,18 @@ msgstr ""
 "Próbujesz wykonać polecenie, które wymaga uprawnień administratora,\n"
 "niezbędne są jednak dodatkowe informacje."
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "Hasło dla %s: "
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid root\n"
 
-#: userhelper.c:2416
+#. FIXME: print a warning here?
+#: userhelper.c:2446
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -296,7 +321,7 @@ msgstr "Nieznany błąd."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Zapytanie"
 
@@ -309,7 +334,7 @@ msgid "Information"
 msgstr "Informacja"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Miejsce na tekst."
 
@@ -352,8 +377,8 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz wykonać polecenie, które wymaga uprawnień administratora, niezbędne "
-"są jednak dodatkowe informacje."
+"Próbujesz wykonać polecenie, które wymaga uprawnień administratora, "
+"niezbędne są jednak dodatkowe informacje."
 
 #: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
@@ -416,10 +441,12 @@ msgstr ""
 "Brak systemów plików do których montowania/odmontowywania miałbyś prawo.\n"
 "Skontaktuj się z administratorem."
 
+#. Create the dialog.
 #: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "Narzędzie montujące systemy plików"
 
+#. Create the other buttons.
 #: usermount.c:579
 msgid "_Format"
 msgstr "Sfo_rmatuj"
@@ -436,59 +463,59 @@ msgstr "Folder"
 msgid "Filesystem"
 msgstr "System plików"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "Wiadomość"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "Informacje o użytkowniku"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "Imię i nazwisko:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "Biuro:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "Nr telefonu do biura:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "Nr telefonu do domu:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Powłoka logowania:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "O mnie"
+#~ msgid "About Myself"
+#~ msgstr "O mnie"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Zmiana informacji osobistych"
+#~ msgid "Change personal information"
+#~ msgstr "Zmiana informacji osobistych"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "Zarządzanie dyskami"
+#~ msgid "Disk Management"
+#~ msgstr "Zarządzanie dyskami"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "Montowanie i odmontowywanie systemów plików"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "Montowanie i odmontowywanie systemów plików"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Zmiana hasła"
+#~ msgid "Change your login password"
+#~ msgstr "Zmiana hasła"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "Hasło"
+#~ msgid "Password"
+#~ msgstr "Hasło"

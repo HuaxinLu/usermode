@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2003-01-10 01:17+0200\n"
 "Last-Translator: Nikos Charonitakis <charosn@her.forthnet.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -165,56 +165,61 @@ msgstr ""
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr ""
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr ""
 
 #
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "Κωδικός για %s"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
 #
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "Κωδικός για %s: "
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr ""
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -301,7 +306,7 @@ msgstr "Άγνωστο σφάλμα."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Επερώτηση"
 
@@ -314,7 +319,7 @@ msgid "Information"
 msgstr "Πληροφορίες"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Θέση για κείμενο."
 
@@ -434,10 +439,16 @@ msgstr "Κατάλογος"
 msgid "Filesystem"
 msgstr "Σύστημα αρχείων"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 # #-#-#-#-#  gnome-terminal.gnome-2-0.el.po (profterm 1.9.3)  #-#-#-#-#
 #
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
@@ -447,57 +458,51 @@ msgstr "*"
 #
 # #-#-#-#-#  gaim-el.po (gaim 0.48)  #-#-#-#-#
 #
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "Μήνυμα"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "Πληροφορίες Χρήστη"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "Ονοματεπώνυμο:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "Γραφείο:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "Αριθμός Τηλεφώνου Γραφείου:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "Αριθμός Τηλεφώνου Οικίας:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Κέλυφος Σύνδεσης:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Περί Εμένα"
+#~ msgid "About Myself"
+#~ msgstr "Περί Εμένα"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Αλλαγή πληροφοριών χρήστη"
+#~ msgid "Change personal information"
+#~ msgstr "Αλλαγή πληροφοριών χρήστη"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "Διαχείριση Δίσκων"
+#~ msgid "Disk Management"
+#~ msgstr "Διαχείριση Δίσκων"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "Προσάρτηση και αποπροσάρτηση συστημάτων αρχείων"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "Προσάρτηση και αποπροσάρτηση συστημάτων αρχείων"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Αλλαγή του κωδικού σύνδεσης"
+#~ msgid "Change your login password"
+#~ msgstr "Αλλαγή του κωδικού σύνδεσης"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "Κωδικός"
+#~ msgid "Password"
+#~ msgstr "Κωδικός"
 
 #~ msgid "about to exec \"%s\"\n"
 #~ msgstr "πρόκειται να εκτελεστεί το \"%s\"\n"

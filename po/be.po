@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2005-10-26 21:29+0200\n"
 "PO-Revision-Date: 2004-09-13 14:21+0300\n"
 "Last-Translator: Vital Khilko (aka dojlid) <vk@mova.org>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -158,17 +158,22 @@ msgstr ""
 msgid "Help"
 msgstr "Даведка"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "Немагчыма выставіць сьцяг запуску на %s.\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Немагчыма выставіць сьцяг запуску на %s.\n"
 
-#: userhelper.c:528
+#: userhelper.c:596
 #, c-format
 msgid "Password for %s"
 msgstr "Пароль карыстальніка %s"
 
-#: userhelper.c:767
+#: userhelper.c:835
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -178,7 +183,7 @@ msgstr ""
 "пэўныя перавагі, калі будзе выканана з адміністратыўнымі\n"
 "прывілеямі, але для гэтага спатрэбяцца дадатковыя зьвесткі."
 
-#: userhelper.c:769
+#: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -188,7 +193,7 @@ msgstr ""
 "адміністратыўныя прывілеі, але для гэтага патрэбныя\n"
 "дадатковыя зьвесткі."
 
-#: userhelper.c:773
+#: userhelper.c:841
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -197,7 +202,7 @@ msgstr ""
 "перавагі, калі будзе выканана з адміністратыўнымі правамі,\n"
 "але для гэтага патрабуюцца дадатковыя зьвесткі."
 
-#: userhelper.c:775
+#: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -205,18 +210,18 @@ msgstr ""
 "Вы спрабуеце выканаць праграму, якая патрабуе адміністратыўныя\n"
 "прывілеі. Для гэтага патрэбныя дадатковыя зьвесткі."
 
-#: userhelper.c:794
+#: userhelper.c:862
 #, c-format
 msgid "Password for %s: "
 msgstr "Пароль карыстальніка %s: "
 
-#: userhelper.c:2318
+#: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper мусіць быць setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2446
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -312,7 +317,7 @@ msgstr "Невядомая памылка."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Запыт"
 
@@ -325,7 +330,7 @@ msgid "Information"
 msgstr "Інфармацыя"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Месца для тэксту."
 
@@ -455,62 +460,62 @@ msgstr "Каталёг"
 msgid "Filesystem"
 msgstr "Файлавая сыстэма"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "Паведамленьне"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "Зьвесткі аб карыстальніку"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "Поўнае імя:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "Канцылярыя:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "Працоўны тэлефон:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "Хатні тэлефон:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Абалонка:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Пра сябе"
+#~ msgid "About Myself"
+#~ msgstr "Пра сябе"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Зьмена асабістых зьвестак"
+#~ msgid "Change personal information"
+#~ msgstr "Зьмена асабістых зьвестак"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "Кіраваньне дыскамі"
+#~ msgid "Disk Management"
+#~ msgstr "Кіраваньне дыскамі"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "Далучае ці адлучае файлавыя сыстэмы"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "Далучае ці адлучае файлавыя сыстэмы"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Зьмяняе ваш пароль"
+#~ msgid "Change your login password"
+#~ msgstr "Зьмяняе ваш пароль"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "Зьмена пароля"
+#~ msgid "Password"
+#~ msgstr "Зьмена пароля"
 
 #~ msgid "_Ok"
 #~ msgstr "_Ok"
