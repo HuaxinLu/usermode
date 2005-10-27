@@ -2,20 +2,20 @@
 # Copyright (C) 2003, 2004, 2005 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003.
-# Peter van Egdom <p.van.egdom@chello.nl>, 2004, 2005.
+# Peter van Egdom <p.van.egdom@gmail.com>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-26 21:29+0200\n"
-"PO-Revision-Date: 2005-05-12 21:05+0200\n"
-"Last-Translator: Peter van Egdom <p.van.egdom@chello.nl>\n"
+"PO-Revision-Date: 2005-10-27 21:39+0200\n"
+"Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.10.2\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -169,9 +169,9 @@ msgid "Help"
 msgstr "Hulp"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Instellen van 'exec context' naar %s mislukt.\n"
+msgstr "Instellen van 'standaard context' voor %s voor programma %s mislukt.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -192,7 +192,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerders-privileges\n"
-"nuttig kunnen zijn. Maar hiervoor is wel een root-wachtwoord vereist."
+"nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: userhelper.c:837
 #, c-format
@@ -209,7 +209,7 @@ msgid ""
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerders-privileges\n"
-"nuttig kunnen zijn. Maar hiervoor is wel een root-wachtwoord vereist."
+"nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: userhelper.c:843
 msgid ""
@@ -361,7 +361,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerders-privileges nuttig kunnen "
-"zijn. Maar hiervoor is wel een root-wachtwoord vereist."
+"zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: userhelper-wrap.c:800
 #, c-format
@@ -378,7 +378,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerders-privileges nuttig "
-"kunnen zijn. Maar hiervoor is wel een root-wachtwoord vereist."
+"kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: userhelper-wrap.c:811
 msgid ""
@@ -430,7 +430,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Weet u zeker dat u deze schijf wilt formateren?  U zult alle gegevens op de "
+"Weet u zeker dat u deze schijf wilt formatteren?  U zult alle gegevens op de "
 "schijf vernietigen."
 
 #: usermount.c:332
@@ -479,7 +479,7 @@ msgstr "Bestandssysteem"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Het apparaat '%s' kan niet worden geformatteerd."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
