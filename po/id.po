@@ -183,9 +183,9 @@ msgid "Help"
 msgstr "Bantuan"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Tidak dapat set konteks exec untuk %s.\n"
+msgstr "Tidak dapat men-set konteks default untuk %s untuk program %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -484,7 +484,7 @@ msgstr "Filesystem"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Perangkat '%s' tidak dapat diformat."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
