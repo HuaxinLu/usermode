@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: usermode VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-26 21:29+0200\n"
-"PO-Revision-Date: 2005-05-12 11:16+0200\n"
+"PO-Revision-Date: 2005-11-02 22:28+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -164,9 +164,9 @@ msgid "Help"
 msgstr "Nápověda"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Nemohu nastavit kontext exec na %s.\n"
+msgstr "Nemohu nastavit implicitní kontext pro %s pro program %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -466,7 +466,7 @@ msgstr "Systém souborů"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Zařízení '%s' nelze naformátovat."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -501,33 +501,3 @@ msgstr "Telefon domů:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Přihlašovací shell:"
-
-#~ msgid "About Myself"
-#~ msgstr "O mě"
-
-#~ msgid "Change personal information"
-#~ msgstr "Změna osobních informací."
-
-#~ msgid "Disk Management"
-#~ msgstr "Správa disků"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "Připojit a odpojit souborové systémy"
-
-#~ msgid "Change your login password"
-#~ msgstr "Změnit vaše přihlašovací heslo"
-
-#~ msgid "Password"
-#~ msgstr "Heslo"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Zrušit"
-
-#~ msgid "_Close"
-#~ msgstr "_Zavřít"
-
-#~ msgid "Type"
-#~ msgstr "Typ"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Odpojit"
