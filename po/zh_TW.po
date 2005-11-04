@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2005-08-05 14:24+1000\n"
 "Last-Translator: Leah Liu <weliu@redhat.com>\n"
 "Language-Team: Chinese, Simplified <zh@li.org>\n"
@@ -168,22 +168,17 @@ msgstr "pam-panel-icon：連接到 session 管理員失敗\n"
 msgid "Help"
 msgstr "求助"
 
-#: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "無法設定執行上下文為 %s。\n"
-
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "無法設定執行上下文為 %s。\n"
 
-#: userhelper.c:596
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "%s 的密碼"
 
-#: userhelper.c:835
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -192,7 +187,7 @@ msgstr ""
 "您試著要執行 \"%s\"，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:837
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -201,7 +196,7 @@ msgstr ""
 "您試著要執行 \"%s\"，您需要有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:841
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -209,7 +204,7 @@ msgstr ""
 "您試著要執行一個指令，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:843
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -217,18 +212,18 @@ msgstr ""
 "您試著要執行一個指令，您需要有管理者的權限,\n"
 "但為了要如此做您需要更多資訊。"
 
-#: userhelper.c:862
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "%s 的密碼： "
 
-#: userhelper.c:2348
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必須 setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2416
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -323,7 +318,7 @@ msgstr "未知的錯誤。"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "查詢"
 
@@ -336,7 +331,7 @@ msgid "Information"
 msgstr "資訊"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "沒有加密過的文字。"
 
@@ -459,59 +454,63 @@ msgstr "目錄"
 msgid "Filesystem"
 msgstr "檔案系統"
 
-#: usermount.c:674
-#, c-format
-msgid "The device '%s' can not be formatted."
-msgstr ""
-
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "信息"
 
-#: glade.strings.h:12 usermode.glade:187
+#: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
 msgstr "使用者資訊"
 
-#: glade.strings.h:13 usermode.glade:251
+#: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "全名："
 
-#: glade.strings.h:14 usermode.glade:275
+#: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
 msgstr "辦公室："
 
-#: glade.strings.h:15 usermode.glade:299
+#: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "辦公室電話號碼:"
 
-#: glade.strings.h:16 usermode.glade:323
+#: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "自家電話號碼:"
 
-#: glade.strings.h:17 usermode.glade:347
+#: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "登入的 Shell:"
 
-#~ msgid "About Myself"
-#~ msgstr "自我介紹"
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "自我介紹"
 
-#~ msgid "Change personal information"
-#~ msgstr "更改個人資訊"
+#: userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "更改個人資訊"
 
-#~ msgid "Disk Management"
-#~ msgstr "磁碟管理"
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr "磁碟管理"
 
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "掛載與卸載檔案系統"
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr "掛載與卸載檔案系統"
 
-#~ msgid "Change your login password"
-#~ msgstr "更改您的登入密碼"
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr "更改您的登入密碼"
 
-#~ msgid "Password"
-#~ msgstr "密碼"
+#: userpasswd.desktop.in.h:2
+msgid "Password"
+msgstr "密碼"
+
+#, fuzzy
+#~ msgid "Could not set default context for %s for program %s.\n"
+#~ msgstr "無法設定執行上下文為 %s。\n"
