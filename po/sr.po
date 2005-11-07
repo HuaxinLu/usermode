@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2005-07-15 19:18-0000\n"
+"PO-Revision-Date: 2005-11-04 14:05-0000\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgstr "Заборави овлашћење"
 #: pam-panel-icon.c:190
 #, fuzzy
 msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
-msgstr "Тренутно сте овашћени да подешавате свеобухватне системске поставке (које утичу на све кориснике) без поновног укуцавања лозинке администратора. Можете да се одрекнете овог овлашћења."
+msgstr "Тренутно сте овлашћени да подешавате свеобухватне системске поставке (које утичу на све кориснике) без поновног укуцавања лозинке администратора. Можете да се одрекнете овог овлашћења."
 
 #: pam-panel-icon.c:338
 #, fuzzy
@@ -284,8 +284,8 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "Ваша текућа љуска није наведена у /etc/shells.\n"
-"Није вам дозвољено да промените вашу љуску.\n"
-"Посаветујте се са вашим администратором система."
+"Није Вам дозвољено да промените Вашу љуску.\n"
+"Посаветујте се са Вашим администратором система."
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
@@ -420,8 +420,8 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Нема датотечних система над којим вам је дозвољено монтирање или демонтирање.\n"
-"Контактирајте вашег администратора."
+"Нема система датотека над којима Вам је дозвољено монтирање или демонтирање.\n"
+"Контактирајте Вашег администратора."
 
 #. Create the dialog.
 #: usermount.c:550
@@ -444,7 +444,7 @@ msgstr "Директоријум"
 
 #: usermount.c:627
 msgid "Filesystem"
-msgstr "Датотечни систем"
+msgstr "Систем датотека"
 
 #: glade.strings.h:9
 #: glade.strings.h:18
@@ -496,7 +496,7 @@ msgstr "О мени"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Промена личних података"
+msgstr "Мења личне податаке"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
@@ -504,11 +504,11 @@ msgstr "Управљање дисковима"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Монтирање и демонтирање датотечних система"
+msgstr "Монтира и демонтира системе датотека"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Промена ваше пријавне лозинке"
+msgstr "Мења Вашу пријавну лозинке"
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
