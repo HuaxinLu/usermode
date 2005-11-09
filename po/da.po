@@ -1,17 +1,19 @@
+# translation of da.po to 
 # translation of da.po to Danish
 # Danish translation of Eye of usermode
 # This file is distributed under the same license as the usermode package.
 # Keld Simonsen <keld@dkuug.dk>, 2002, 2003, 2004, 2005.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004.
+# Keld Simonsen <keld@rap.dk>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-26 21:29+0200\n"
-"PO-Revision-Date: 2005-05-16 11:15+0200\n"
-"Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
-"Language-Team: Danish <dansk@klid.dk>\n"
+"PO-Revision-Date: 2005-11-09 15:42+0100\n"
+"Last-Translator: Keld Simonsen <keld@rap.dk>\n"
+"Language-Team:  <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -82,8 +84,7 @@ msgstr "Desværre, adgangskoder er ikke ens"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
+msgstr "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
 #: dummy.h:33
 msgid "login: "
@@ -169,9 +170,9 @@ msgid "Help"
 msgstr "Hjælp"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Kunne ikke sætte udførelseskontekst til %s.\n"
+msgstr "Kunne ikke sætte standardkontekst til %s for program %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -231,10 +232,8 @@ msgstr "userhelper skal være setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -626,3 +625,4 @@ msgstr "Skál:"
 
 #~ msgid "This will be some help text."
 #~ msgstr "Dette vil i fremtiden vise hjælp"
+
