@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-26 21:29+0200\n"
-"PO-Revision-Date: 2005-10-08 13:30+0200\n"
+"PO-Revision-Date: 2005-10-27 17:22+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,25 +14,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
-#.
-#. * Copyright (C) 2001 Red Hat, Inc.
-#. *
-#. * This is free software; you can redistribute it and/or modify it
-#. * under the terms of the GNU General Public License as published by
-#. * the Free Software Foundation; either version 2 of the License, or
-#. * (at your option) any later version.
-#. *
-#. * This program is distributed in the hope that it will be useful, but
-#. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-#. * General Public License for more details.
-#. *
-#. * You should have received a copy of the GNU General Public License
-#. * along with this program; if not, write to the Free Software
-#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
-#. Just a dummy file for gettext, containing messages emmitted by various
-#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "OK"
@@ -100,8 +81,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Rezygnacja z przywilejów administratora nie powiodła się: "
-"pam_timestamp_check zwrócił kod błędu %d"
+"Rezygnacja z przywilejów administratora nie powiodła się: pam_timestamp_check "
+"zwrócił kod błędu %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -109,7 +90,7 @@ msgstr "Zachowaj upoważnienie"
 
 #: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
-msgstr "Rezygnuj z upoważnienia"
+msgstr "Zrezygnuj z upoważnienia"
 
 #: pam-panel-icon.c:190
 msgid ""
@@ -127,7 +108,7 @@ msgstr "pam_timestamp_check nie jest setuid roota"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
-msgstr "brak kontrolującego TTY dla pam_timestamp_check"
+msgstr "brak sterującego TTY dla pam_timestamp_check"
 
 #: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
@@ -139,7 +120,7 @@ msgstr "błąd uprawnień w pam_timestamp_check"
 
 #: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr "nieprawidłowy kontrolujący TTY dla pam_timestamp_check"
+msgstr "nieprawidłowy sterujący TTY dla pam_timestamp_check"
 
 #: pam-panel-icon.c:373
 #, c-format
@@ -166,9 +147,9 @@ msgid "Help"
 msgstr "Pomoc"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Nie można ustawić kontekstu exec na %s.\n"
+msgstr "Nie można ustawić domyślnego kontekstu na %s dla programu %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -224,7 +205,6 @@ msgstr "Hasło dla %s: "
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid root\n"
 
-#. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
 msgid ""
@@ -260,7 +240,7 @@ msgstr ""
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
-msgstr "Błąd podczas zmiany hasła."
+msgstr "Błąd podczas przywracania hasła."
 
 #: userhelper-wrap.c:189
 msgid ""
@@ -441,12 +421,10 @@ msgstr ""
 "Brak systemów plików do których montowania/odmontowywania miałbyś prawo.\n"
 "Skontaktuj się z administratorem."
 
-#. Create the dialog.
 #: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
-msgstr "Narzędzie montujące systemy plików"
+msgstr "Narzędzie montowania systemów plików"
 
-#. Create the other buttons.
 #: usermount.c:579
 msgid "_Format"
 msgstr "Sfo_rmatuj"
@@ -466,7 +444,7 @@ msgstr "System plików"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Urządzenie \"%s\" nie może zostać sformatowane."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -476,7 +454,7 @@ msgstr "*"
 
 #: glade.strings.h:10 usermode.glade:120
 msgid "Message"
-msgstr "Wiadomość"
+msgstr "Komunikat"
 
 #: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
@@ -501,21 +479,3 @@ msgstr "Nr telefonu do domu:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Powłoka logowania:"
-
-#~ msgid "About Myself"
-#~ msgstr "O mnie"
-
-#~ msgid "Change personal information"
-#~ msgstr "Zmiana informacji osobistych"
-
-#~ msgid "Disk Management"
-#~ msgstr "Zarządzanie dyskami"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "Montowanie i odmontowywanie systemów plików"
-
-#~ msgid "Change your login password"
-#~ msgstr "Zmiana hasła"
-
-#~ msgid "Password"
-#~ msgstr "Hasło"
