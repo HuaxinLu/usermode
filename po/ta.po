@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2004-10-25 11:32+0530\n"
 "Last-Translator: Jayaradha N <njaya@redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
@@ -408,7 +408,12 @@ msgstr "dup2பி2() பிழை.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() பிழை, பிழை எண்=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "நீங்கள் வெளியேறாதீர்கள். வெளியே செல்.\n"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-10-27 21:39+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
@@ -412,7 +412,12 @@ msgstr "dup2()-fout.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-fout, foutnr=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "U bestaat niet.   Ga weg!.\n"

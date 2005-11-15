@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-08-05 14:25+1000\n"
 "Last-Translator: Leah Liu <weliu@redhat.com>\n"
 "Language-Team: Chinese, Simplified <zh@li.org>\n"
@@ -400,7 +400,12 @@ msgstr "dup2() 错误。\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 错误，errno=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "您不存在。   走开。\n"

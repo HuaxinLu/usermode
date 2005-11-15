@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2004-10-26 12:48+0100\n"
 "Last-Translator: Dafydd Walters <dwalters@dragontechnology.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -406,7 +406,12 @@ msgstr "gwall dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "gwall execl() , rhif gwall=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Nid ydych yn bodoli. Ewch i ffwrdd.\n"

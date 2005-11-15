@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-10-27 17:22+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -14,6 +14,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "OK"
@@ -81,8 +100,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Rezygnacja z przywilejów administratora nie powiodła się: pam_timestamp_check "
-"zwrócił kod błędu %d"
+"Rezygnacja z przywilejów administratora nie powiodła się: "
+"pam_timestamp_check zwrócił kod błędu %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -205,6 +224,7 @@ msgstr "Hasło dla %s: "
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid root\n"
 
+#. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
 msgid ""
@@ -384,7 +404,12 @@ msgstr "Błąd dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "Błąd execl(), errno=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Nie istniejesz. Odejdź stąd.\n"
@@ -421,10 +446,12 @@ msgstr ""
 "Brak systemów plików do których montowania/odmontowywania miałbyś prawo.\n"
 "Skontaktuj się z administratorem."
 
+#. Create the dialog.
 #: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "Narzędzie montowania systemów plików"
 
+#. Create the other buttons.
 #: usermount.c:579
 msgid "_Format"
 msgstr "Sfo_rmatuj"

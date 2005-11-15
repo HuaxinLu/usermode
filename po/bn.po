@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2004-10-05 16:23+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: bangla <redhat-translation@bengalinux.org>\n"
@@ -452,8 +452,13 @@ msgstr "dup2() -র সমস্যা।\n"
 msgid "execl() error, errno=%d\n"
 msgstr "exec() -র সমস্যা, সমস্যা সংখ্যা=%d\n"
 
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
 # সমস্যা নম্বর =%d
-#: userinfo.c:326
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "আপনি আবার কে। চলে যান।\n"

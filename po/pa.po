@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-10-28 04:13+0530\n"
 "Last-Translator: harmeet <harmeetphulewala@yahoo.com>\n"
 "Language-Team: punjabi <fedora-trans-pa@redhat.com>\n"
@@ -251,7 +251,8 @@ msgstr "ਉਪਭੋਗਤਾ-ਸਹਾਇਕ ਦਾ ਸੈਟ-ਸ਼ੰਨ ਨ�
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ਗਰਾਫਿਕਲ ਝਰੋਖਾ ਖੋਲਣ ਵਿੱਚ ਅਸਫਲ ਹੈ, ਅਤੇ ਕੰਟਰੋਲਿੰਗ ਟਰਮੀਨਲ ਨੂੰ ਲੱਭ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
 
 #: userhelper-wrap.c:179
@@ -426,7 +427,12 @@ msgstr "dup2() ਗਲਤੀ ਹੈ।\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ਗਲਤੀ, ਗਲਤੀ ਨੰ=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "ਤੁਸੀਂ ਬਾਹਰ ਨਹੀ ਜਾ ਸਕਦੇ ਹੋ। ਹੋਰ ਕੁਝ ਕਰੋ\n"
@@ -523,4 +529,3 @@ msgstr "ਘਰ ਦਫਤਰ ਫੋਨ-ਨੰਬਰ:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "ਲਾਗਇਨ ਸ਼ੈੱਲ:"
-

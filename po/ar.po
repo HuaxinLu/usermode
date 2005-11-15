@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ar_new\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-05-22 23:58+0300\n"
 "Last-Translator: Munzir Taha <munzirtaha@newhorizons.com.sa>\n"
 "Language-Team: Arabic <fedora-trans-ar@redhat.com>\n"
@@ -405,7 +405,12 @@ msgstr "خطأ في dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "خطأ في execl()، errno=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "أنت غير موجود. ارحل عنّي.\n"

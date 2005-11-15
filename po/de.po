@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-08-09 21:05+0200\n"
 "Last-Translator: Severin Heiniger <severinheiniger@gmail.com>\n"
 "Language-Team: German / Deutsch <fedora-i18n-list@redhat.com>\n"
@@ -416,7 +416,12 @@ msgstr "dup2()-Fehler.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-Fehler, errno=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Benutzer-ID existiert nicht.  Verlassen Sie den Bereich.\n"

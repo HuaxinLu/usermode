@@ -309,6 +309,76 @@ userhelper_fatal_error(int ignored)
 	userhelper_main_quit();
 }
 
+static int
+safe_strcmp (const char *s1, const char *s2)
+{
+        return strcmp (s1 ? s1 : "", s2 ? s2 : "");
+}
+
+static void
+parse_args (struct UserInfo *userinfo, int argc, char *argv[])
+{
+	int changed;
+	int x_flag;
+	int arg;
+
+        changed = 0;
+        x_flag = 0;
+
+   	while ((arg = getopt(argc, argv, "f:o:p:h:s:x")) != -1) {
+                switch (arg) {
+                        case 'f':
+                                /* Full name. */
+				if (safe_strcmp (userinfo->full_name, optarg) != 0) {
+	                                changed = 1;
+                                	userinfo->full_name = optarg;
+				}
+                                break;
+                        case 'o':
+                                /* Office. */
+				if (safe_strcmp (userinfo->office, optarg) != 0) {
+	                                changed = 1;
+                                	userinfo->office = optarg;
+				}
+                                break;
+                        case 'h':
+                                /* Home phone. */
+				if (safe_strcmp (userinfo->home_phone, optarg) != 0) {
+	                                changed = 1;
+                                	userinfo->home_phone = optarg;
+				}
+                                break;
+                        case 'p':
+                                /* Office phone. */
+				if (safe_strcmp (userinfo->office_phone, optarg) != 0) {
+	                                changed = 1;
+                                	userinfo->office_phone = optarg;
+				}
+                                break;
+                        case 's':
+                                /* Shell. */
+				if (safe_strcmp (userinfo->shell, optarg) != 0) {
+	                                changed = 1;
+                                	userinfo->shell = optarg;
+				}
+                                break;
+                        case 'x':
+				x_flag = 1;
+				break;
+			default:
+				fprintf(stderr, _("Unexpected argument"));
+				exit(1);
+		}
+	}
+
+	if (x_flag) {
+		if (changed)
+			set_new_userinfo(userinfo);
+
+		exit(0);
+	}
+}
+
 int
 main(int argc, char *argv[])
 {
@@ -330,6 +400,8 @@ main(int argc, char *argv[])
 	gtk_init(&argc, &argv);
 
 	glade_init();
+
+	parse_args (userinfo, argc, argv);
 
 	window = create_userinfo_window(userinfo);
 	gtk_widget_show_all(window);

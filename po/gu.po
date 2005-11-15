@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-10-27 10:26+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -106,7 +107,8 @@ msgstr "સંચાલન પૂર્વધારણાઓ મૂકવામ�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "સંચાલન પૂર્વધારણાઓ મૂકવામાં નિષ્ફળ: pam_timestamp_check એ નિષ્ફળતા કોડ %d આપ્યો"
+msgstr ""
+"સંચાલન પૂર્વધારણાઓ મૂકવામાં નિષ્ફળ: pam_timestamp_check એ નિષ્ફળતા કોડ %d આપ્યો"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -230,7 +232,8 @@ msgstr "વપરાશકર્તા મદદગાર માટે uid ર�
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ગ્રાફિકવાળી વિન્ડો ખોલવા સમર્થ નથી, અને નિયંત્રક ટર્મિનલ ખોલવામાં અસમર્થ.\n"
 
 #: userhelper-wrap.c:179
@@ -405,7 +408,12 @@ msgstr "dup2() ભૂલ.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ભૂલ, ભૂલ ક્રમાંક=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "તમે અસ્તિત્વમાં નથી.  દૂર જતા રહો.\n"
@@ -502,4 +510,3 @@ msgstr "ઘરનો ફોન નંબર:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "પ્રવેશ શેલ:"
-

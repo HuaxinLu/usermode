@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.82
+Version: 1.83
 Release: 1
 License: GPL
 Group: Applications/System
@@ -120,6 +120,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue Nov 15 2005 Jindrich Novy <jnovy@redhat.com> 1.83-1
+- accept gecos information on commandline for userinfo,
+  patch by mclasen@redhat.com (#173232)
+- update translations
+
 * Wed Oct 26 2005 Jindrich Novy <jnovy@redhat.com> 1.82-1
 - don't use pam_stack.so
 - introduce userformat to better handle device formatting

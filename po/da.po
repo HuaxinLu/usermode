@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-11-09 15:42+0100\n"
 "Last-Translator: Keld Simonsen <keld@rap.dk>\n"
 "Language-Team:  <da@li.org>\n"
@@ -84,7 +84,8 @@ msgstr "Desværre, adgangskoder er ikke ens"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
+msgstr ""
+"Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
 #: dummy.h:33
 msgid "login: "
@@ -232,8 +233,10 @@ msgstr "userhelper skal være setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -408,7 +411,12 @@ msgstr "dup2() fejl.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() fejl, errno=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Du eksisterer ikke. Gå væk med dig.\n"
@@ -625,4 +633,3 @@ msgstr "Skál:"
 
 #~ msgid "This will be some help text."
 #~ msgstr "Dette vil i fremtiden vise hjælp"
-

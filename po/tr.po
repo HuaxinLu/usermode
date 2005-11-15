@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-04-26 01:45+0200\n"
 "Last-Translator: Hamdi Akoğuz <akoguzh@itu.edu.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -406,7 +406,12 @@ msgstr "dup2() hatası.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() hatası, hatano=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Yokol.  Defol.\n"

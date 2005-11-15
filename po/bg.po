@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2004-10-04 12:06-0700\n"
 "Last-Translator: Николай Сърмаджиев <nikolayd@sarmadzhiev.tk>\n"
 "Language-Team: Български <bg@li.org>\n"
@@ -409,7 +409,12 @@ msgstr "Грешка при извикване на dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "Грешка %d при извикване на execl()\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Вие не съществувате.  Вървете си.\n"

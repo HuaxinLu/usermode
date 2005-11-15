@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-10-27 22:17+0200\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team: Italiano <Fedora-trans-it@redhat.com>\n"
@@ -85,7 +85,8 @@ msgstr "Spiacente, le password non corrispondono"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Apertura strumenti di configurazione globali del sistema senza una password."
+msgstr ""
+"Apertura strumenti di configurazione globali del sistema senza una password."
 
 #: dummy.h:33
 msgid "login: "
@@ -106,8 +107,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Abbandono dei privilegi di amministratore fallito: pam_timestamp_check "
-"ha restituito il codice d'errore %d"
+"Abbandono dei privilegi di amministratore fallito: pam_timestamp_check ha "
+"restituito il codice d'errore %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -124,8 +125,8 @@ msgid ""
 "this authorization."
 msgstr ""
 "Sei attualmente autorizzato a configurare le impostazioni di sistema globali "
-"(che influenzano tutti gli utenti), senza dover digitare nuovamente "
-"la password di amministratore. Puoi rinunciare a questa autorizzazione."
+"(che influenzano tutti gli utenti), senza dover digitare nuovamente la "
+"password di amministratore. Puoi rinunciare a questa autorizzazione."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -173,7 +174,8 @@ msgstr "Aiuto"
 #: userhelper.c:220 userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Non posso impostare il contesto predefinito per %s per il programma %s.\n"
+msgstr ""
+"Non posso impostare il contesto predefinito per %s per il programma %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -233,10 +235,11 @@ msgstr "userhelper deve essere setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Impossibile aprire una finestra grafica, ed impossibile trovare il terminale di "
-"controllo.\n"
+"Impossibile aprire una finestra grafica, ed impossibile trovare il terminale "
+"di controllo.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -367,8 +370,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire \"%s\" che richiede privilegi amministrativi, "
-"ma occorrono più informazioni per eseguire l'operazione."
+"Stai tentando di eseguire \"%s\" che richiede privilegi amministrativi, ma "
+"occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:809
 msgid ""
@@ -410,7 +413,12 @@ msgstr "errore dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "errore execl(), errno=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Non esisti.  Va via.\n"
@@ -507,4 +515,3 @@ msgstr "Telefono casa:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Shell di login:"
-

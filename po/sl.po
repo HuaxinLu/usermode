@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 9.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 21:29+0200\n"
+"POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-11-12 00:19+0100\n"
 "Last-Translator: Jure Čuhalev <gandalf@owca.info>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -35,23 +35,19 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21
-#: userdialogs.h:29
+#: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "V redu"
 
-#: dummy.h:22
-#: userdialogs.h:32
+#: dummy.h:22 userdialogs.h:32
 msgid "Exit"
 msgstr "Izhod"
 
-#: dummy.h:23
-#: userdialogs.h:31
+#: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
 msgstr "Preklic"
 
-#: dummy.h:24
-#: userdialogs.h:33
+#: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Teci neprilivigiran"
 
@@ -102,21 +98,24 @@ msgstr ""
 
 #: pam-panel-icon.c:107
 #, c-format
-msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
 msgstr ""
 
-#: pam-panel-icon.c:158
-#: pam-panel-icon.c:196
+#: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
 msgstr ""
 
-#: pam-panel-icon.c:168
-#: pam-panel-icon.c:200
+#: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
 msgstr ""
 
 #: pam-panel-icon.c:190
-msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
 msgstr ""
 
 #: pam-panel-icon.c:338
@@ -162,16 +161,12 @@ msgstr ""
 msgid "Help"
 msgstr "Pomoč"
 
-#: userhelper.c:220
-#: userhelper.c:294
+#: userhelper.c:220 userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "Ni moč nastaviti izvajalnega konteksta %s za %s.\n"
 
-#: userhelper.c:238
-#: userhelper.c:241
-#: userhelper.c:312
-#: userhelper.c:315
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Ni moč nastaviti izvajalnega konteksta na %s.\n"
@@ -228,7 +223,8 @@ msgstr "userhelper mora biti setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Ni moč odpreti grafičnega okna in ni moč najti nadzornega terminala.\n"
 
 #: userhelper-wrap.c:179
@@ -320,14 +316,11 @@ msgstr "Neznana napaka."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475
-#: glade.strings.h:7
-#: usermode.glade:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Poizvedba"
 
-#: userhelper-wrap.c:568
-#: userhelper-wrap.c:748
+#: userhelper-wrap.c:568 userhelper-wrap.c:748
 msgid "Error"
 msgstr "Napaka"
 
@@ -335,11 +328,8 @@ msgstr "Napaka"
 msgid "Information"
 msgstr "Podatki"
 
-#: userhelper-wrap.c:740
-#: glade.strings.h:8
-#: glade.strings.h:11
-#: usermode.glade:71
-#: usermode.glade:164
+#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Nadomestno besedilo."
 
@@ -353,21 +343,37 @@ msgstr "Sprememba prijavne lupine."
 
 #: userhelper-wrap.c:798
 #, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati \"%s\", ki lahko pridobi, če ga poženete kot skrbnik sistema, a za to je treba več podatkov."
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Skušate pognati \"%s\", ki lahko pridobi, če ga poženete kot skrbnik "
+"sistema, a za to je treba več podatkov."
 
 #: userhelper-wrap.c:800
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati \"%s\", ki zahteva, da ga poženete kot skrbnik sistema, a za to je treba več podatkov."
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"Skušate pognati \"%s\", ki zahteva, da ga poženete kot skrbnik sistema, a za "
+"to je treba več podatkov."
 
 #: userhelper-wrap.c:809
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati ukaz, ki lahko pridobi, če ga poženete kot skrbnik sistema, a za to je treba več podatkov."
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Skušate pognati ukaz, ki lahko pridobi, če ga poženete kot skrbnik sistema, "
+"a za to je treba več podatkov."
 
 #: userhelper-wrap.c:811
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati ukaz, ki zahteva, da ga poženete kot skrbnik sistema, a za to je treba več podatkov."
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Skušate pognati ukaz, ki zahteva, da ga poženete kot skrbnik sistema, a za "
+"to je treba več podatkov."
 
 #: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
@@ -383,8 +389,7 @@ msgstr "Napaka s cevjo.\n"
 msgid "Cannot fork().\n"
 msgstr "Klic fork() ni mogoč.\n"
 
-#: userhelper-wrap.c:1065
-#: userhelper-wrap.c:1069
+#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Napaka pri dup2().\n"
@@ -394,7 +399,12 @@ msgstr "Napaka pri dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "Napaka pri execl(), errno=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Ne obstajate. Pojdite stran.\n"
@@ -408,8 +418,12 @@ msgid "Un_mount"
 msgstr "Od_klopi"
 
 #: usermount.c:321
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "Ste prepričani, da želite formatirati ta disk? Uničili boste vse podatke, ki jih trenutno vsebuje."
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"Ste prepričani, da želite formatirati ta disk? Uničili boste vse podatke, ki "
+"jih trenutno vsebuje."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -428,8 +442,7 @@ msgstr ""
 "Posvetujte se s skrbnikom sistema."
 
 #. Create the dialog.
-#: usermount.c:550
-#: usermount.c:562
+#: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "Orodje za uporabniški priklop"
 
@@ -455,76 +468,72 @@ msgstr "Datotečni sistem"
 msgid "The device '%s' can not be formatted."
 msgstr ""
 
-#: glade.strings.h:9
-#: glade.strings.h:18
-#: glade.strings.h:19
-#: glade.strings.h:20
-#: glade.strings.h:21
-#: usermode.glade:98
-#: usermode.glade:377
-#: usermode.glade:398
-#: usermode.glade:419
-#: usermode.glade:440
+#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10
-#: usermode.glade:120
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "Sporočilo"
 
-#: glade.strings.h:12
-#: usermode.glade:187
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "Podatki o uporabniku"
 
-#: glade.strings.h:13
-#: usermode.glade:251
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "Polno ime:"
 
-#: glade.strings.h:14
-#: usermode.glade:275
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "Pisarna:"
 
-#: glade.strings.h:15
-#: usermode.glade:299
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "Službeni telefon:"
 
-#: glade.strings.h:16
-#: usermode.glade:323
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "Domači telefon:"
 
-#: glade.strings.h:17
-#: usermode.glade:347
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Prijavna lupina:"
 
 #~ msgid "About Myself"
 #~ msgstr "O meni"
+
 #~ msgid "Change personal information"
 #~ msgstr "Sprememba osebnih podatkov"
+
 #~ msgid "Disk Management"
 #~ msgstr "Upravljanje z diski"
+
 #~ msgid "Mount and unmount filesystems"
 #~ msgstr "Priklop in odklop datotečnih sistemov"
+
 #~ msgid "Change your login password"
 #~ msgstr "Spremeni vaše prijavno geslo"
+
 #~ msgid "Password"
 #~ msgstr "Geslo"
+
 #~ msgid "_Ok"
 #~ msgstr "V _redu"
+
 #~ msgid "_Cancel"
 #~ msgstr "_Prekliči"
+
 #~ msgid "_Close"
 #~ msgstr "_Zapri"
+
 #~ msgid "Type"
 #~ msgstr "Vrsta"
+
 #~ msgid "_Unmount"
 #~ msgstr "_Odklopi"
+
 #~ msgid "E_xit"
 #~ msgstr "Iz_hod"
-
