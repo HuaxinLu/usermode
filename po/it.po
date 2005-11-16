@@ -1,6 +1,4 @@
 # translation of  it to italian
-# translation of it.po to
-# translation of it.po to Italian
 # Copyright (C) 2001 Red Hat, Inc.
 # Bettina De Monti <bdemonti@redhat.it>, 2001.
 # Francesco Valente <fvalen@redhat.com>, 2003, 2004.
@@ -11,7 +9,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-10-27 22:17+0200\n"
+"PO-Revision-Date: 2005-11-16 22:33+0100\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team: Italiano <Fedora-trans-it@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -85,8 +83,7 @@ msgstr "Spiacente, le password non corrispondono"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Apertura strumenti di configurazione globali del sistema senza una password."
+msgstr "Apertura strumenti di configurazione globali del sistema senza una password."
 
 #: dummy.h:33
 msgid "login: "
@@ -174,8 +171,7 @@ msgstr "Aiuto"
 #: userhelper.c:220 userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
-"Non posso impostare il contesto predefinito per %s per il programma %s.\n"
+msgstr "Non posso impostare il contesto predefinito per %s per il programma %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -235,8 +231,7 @@ msgstr "userhelper deve essere setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica, ed impossibile trovare il terminale "
 "di controllo.\n"
@@ -416,7 +411,7 @@ msgstr "errore execl(), errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Argomento inaspettato"
 
 #: userinfo.c:396
 #, c-format
@@ -515,3 +510,4 @@ msgstr "Telefono casa:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Shell di login:"
+
