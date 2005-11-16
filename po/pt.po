@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-11-03 23:12+0000\n"
+"PO-Revision-Date: 2005-11-16 00:29+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -407,7 +407,7 @@ msgstr "erro no execl(), errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Argumento inesperado"
 
 #: userinfo.c:396
 #, c-format
