@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-10-29 16:01-0200\n"
+"PO-Revision-Date: 2005-11-15 23:36-0200\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -234,8 +234,7 @@ msgstr "userhelper deve ter o id do usuário configurado como root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Não foi possível abrir janela gráfica; e não foi possível encontrar terminal "
 "de controle.\n"
@@ -416,7 +415,7 @@ msgstr "erro em execl(), errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Argumento inesperado "
 
 #: userinfo.c:396
 #, c-format
@@ -515,3 +514,4 @@ msgstr "Telefone Residencial:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Janela de Login:"
+
