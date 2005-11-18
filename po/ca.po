@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-10-26 23:20+0200\n"
+"PO-Revision-Date: 2005-11-18 19:19+0100\n"
 "Last-Translator: Josep Puigdemont <josep.puigdemont@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
 "MIME-Version: 1.0\n"
@@ -99,7 +99,7 @@ msgstr ""
 
 #: dummy.h:33
 msgid "login: "
-msgstr "entrada:"
+msgstr "entrada: "
 
 #: dummy.h:34
 msgid "Password: "
@@ -133,9 +133,9 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
-"Se us permet configurar paràmteres que afecten tot el sistema i usuaris, "
-"sense haver d'escriure la contrasenya de l'administrador de nou. Podeu "
-"abandonar aquesta autorització."
+"Se us permet configurar paràmteres que afecten tot el sistema (i els seus "
+"usuaris), sense haver de tornar a escriure la contrasenya de "
+"l'administrador. Podeu abandonar aquesta autorització."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -151,11 +151,11 @@ msgstr "usuari desconegut a pam_timestamp_check"
 
 #: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
-msgstr "error en els permisos en pam_timestamp_check"
+msgstr "error en els permisos a pam_timestamp_check"
 
 #: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr "tty de control invàlida en pam_timestamp_check"
+msgstr "tty de control invàlida a pam_timestamp_check"
 
 #: pam-panel-icon.c:373
 #, c-format
@@ -170,7 +170,7 @@ msgstr "No s'ha pogut executar l'ordre \"%s\": %s\n"
 #: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "No s'ha pogut posar el canal d'entrada/sortida a no blocar: %s\n"
+msgstr "No s'ha pogut posar el canal d'E/S a no blocar: %s\n"
 
 #: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
@@ -201,7 +201,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Esteu intentant executar \"%s\" que es pot beneficiar de privilegis\n"
+"Esteu intentant executar «%s» que es pot beneficiar de privilegis\n"
 "d'administrador, però es necessita més informació per fer-ho."
 
 #: userhelper.c:837
@@ -210,7 +210,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Esteu intentant executar \"%s\" que necessita privilegis\n"
+"Esteu intentant executar «%s» que necessita privilegis\n"
 "d'administrador, però es necessita més informació per fer-ho."
 
 #: userhelper.c:841
@@ -276,7 +276,7 @@ msgstr ""
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
-msgstr "S'ha produït un error de reinicialització de contrasenya."
+msgstr "S'ha produït un error en reiniciar la contrasenya."
 
 #: userhelper-wrap.c:189
 msgid ""
@@ -292,7 +292,7 @@ msgstr "Usuari desconegut."
 
 #: userhelper-wrap.c:193
 msgid "Insufficient rights."
-msgstr "No teniu prou drets."
+msgstr "No teniu prou privilegis."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
@@ -368,7 +368,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Esteu intentant executar \"%s\" que es pot beneficiar de privilegis "
+"Esteu intentant executar «%s» que es pot beneficiar de privilegis "
 "d'administrador, però es necessita més informació per fer-ho."
 
 #: userhelper-wrap.c:800
@@ -377,8 +377,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Esteu intentant executar \"%s\" que necessita privilegis d'administrador, "
-"però es necessita més informació per fer-ho."
+"Esteu intentant executar «%s» que necessita privilegis d'administrador, però "
+"es necessita més informació per fer-ho."
 
 #: userhelper-wrap.c:809
 msgid ""
@@ -423,12 +423,12 @@ msgstr "Error de l'execl(), errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "No s'esperava l'argument"
 
 #: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
-msgstr "Vostè no existeix.  Vagi-se'n.\n"
+msgstr "Vostè no existeix. Vagi-se'n.\n"
 
 #: usermount.c:62
 msgid "_Mount"
@@ -448,11 +448,11 @@ msgstr ""
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr "Realitza un formatat de nivell _baix."
+msgstr "Realitza un formatat de _baix nivell."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Seleccioneu un tipus de sistema de _fitxers per crear:"
+msgstr "Seleccioneu el tipus de sistema de _fitxers a crear:"
 
 #: usermount.c:549
 msgid ""
@@ -488,7 +488,7 @@ msgstr "Sistema de fitxers"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr "No es pot formatar el dispositiu '%s'."
+msgstr "No es pot formatar el dispositiu «%s»."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
