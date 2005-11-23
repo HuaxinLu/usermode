@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
+"POT-Creation-Date: 2005-11-23 23:47+0100\n"
 "PO-Revision-Date: 2005-10-28 00:12+0400\n"
 "Last-Translator: Andrew Martynov <andrewm@inventa.ru>\n"
 "Language-Team: Russian <fedora-trans-ru@redhat.com>\n"
@@ -388,7 +388,7 @@ msgstr ""
 
 #: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
-msgstr "Выполнить без привилегий"
+msgstr "_Выполнить без привилегий"
 
 #: userhelper-wrap.c:980
 #, c-format
@@ -413,7 +413,7 @@ msgstr "ошибка execl(), код ошибки %d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Неожиданный аргумент"
 
 #: userinfo.c:396
 #, c-format
