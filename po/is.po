@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: usermode 1.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-05-11 20:50+0000\n"
+"PO-Revision-Date: 2005-11-24 20:50+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: is <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -165,9 +165,9 @@ msgid "Help"
 msgstr "Hjálp"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Gat ekki breytt samhengi exec í %s.\n"
+msgstr "Gat ekki breytt samhengi %s fyrir forritið %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -405,7 +405,7 @@ msgstr "execl() villa, errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Óvænt viðfang"
 
 #: userinfo.c:396
 #, c-format
@@ -469,7 +469,7 @@ msgstr "Skráarkerfi"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Það er ekki hægt að forsníða tækið '%s'."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -504,21 +504,3 @@ msgstr "Heimasími:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Skél:"
-
-#~ msgid "About Myself"
-#~ msgstr "Um mig"
-
-#~ msgid "Change personal information"
-#~ msgstr "Breyta persónuupplýsingum"
-
-#~ msgid "Disk Management"
-#~ msgstr "Sýsla með diska"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "Tengja og aftengja skráarkerfi"
-
-#~ msgid "Change your login password"
-#~ msgstr "Breyta lykilorði þínu"
-
-#~ msgid "Password"
-#~ msgstr "Lykilorð"
