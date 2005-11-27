@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-05-11 23:52+0900\n"
+"PO-Revision-Date: 2005-11-27 23:10+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -170,9 +170,9 @@ msgid "Help"
 msgstr "ヘルプ"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s に実行権限を与えられませんでした。\n"
+msgstr "%s にプログラム %s のデフォルト権限を与えられませんでした。\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -413,7 +413,7 @@ msgstr "execl()エラー、errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "予期しない引数"
 
 #: userinfo.c:396
 #, c-format
@@ -477,7 +477,7 @@ msgstr "ファイルシステム"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "デバイス '%s' がフォーマットされていません。"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
