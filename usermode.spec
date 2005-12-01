@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.83
+Version: 1.84
 Release: 1
 License: GPL
 Group: Applications/System
@@ -120,6 +120,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Dec  1 2005 Jindrich Novy <jnovy@redhat.com> 1.84-1
+- usermode-gtk dialog stays always on top, thanks to Pierre Ossman (#80634)
+
 * Tue Nov 15 2005 Jindrich Novy <jnovy@redhat.com> 1.83-1
 - accept gecos information on commandline for userinfo,
   patch by mclasen@redhat.com (#173232)

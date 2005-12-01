@@ -750,6 +750,9 @@ userhelper_parse_childout(char *outline)
 		/* Force GTK+ to try to center this dialog. */
 		gtk_window_set_position(GTK_WINDOW(resp->dialog),
 					GTK_WIN_POS_CENTER_ALWAYS);
+
+		/* Set window to be always on top. */
+		gtk_window_set_keep_above(GTK_WINDOW(resp->dialog), TRUE);
 		
 		/* Set window icon */
 		gtk_window_set_icon_from_file(GTK_WINDOW(resp->dialog), "/usr/share/pixmaps/password.png", NULL);
