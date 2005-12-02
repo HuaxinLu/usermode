@@ -12,6 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: fork execl tty shells errno pamtimestampcheck PAM\n"
+"X-POFile-SpellExtra: exec userhelper dup icon pam panel\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
