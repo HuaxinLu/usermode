@@ -1,3 +1,4 @@
+# translation of zh_CN.po to 
 # translation of zh_CN.po to Chinese, Simplified
 # translation of zh_CN.po to zh_CN
 # translation of usermode.po to Simplified Chinese
@@ -12,9 +13,9 @@ msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-08-05 14:25+1000\n"
-"Last-Translator: Leah Liu <weliu@redhat.com>\n"
-"Language-Team: Chinese, Simplified <zh@li.org>\n"
+"PO-Revision-Date: 2005-12-07 11:39+1000\n"
+"Last-Translator: \n"
+"Language-Team:  <zh@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,9 +169,9 @@ msgid "Help"
 msgstr "帮助"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "无法把 exec 环境设置为 %s。\n"
+msgstr "无法为 %s （程序 %s）设置默认的上下文。\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -229,8 +230,7 @@ msgstr "userhelper 必须是 setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
 
 #: userhelper-wrap.c:179
@@ -352,23 +352,20 @@ msgstr "正在改变登录 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:800
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
+msgstr "您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
 
 #: userhelper-wrap.c:811
 msgid ""
@@ -403,7 +400,7 @@ msgstr "execl() 错误，errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "不需要的参数"
 
 #: userinfo.c:396
 #, c-format
@@ -465,7 +462,7 @@ msgstr "文件系统"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "这个设备 '%s' 不能被格式化。"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -501,20 +498,3 @@ msgstr "家庭电话号码:"
 msgid "Login Shell:"
 msgstr "登录 shell:"
 
-#~ msgid "About Myself"
-#~ msgstr "关于您自己"
-
-#~ msgid "Change personal information"
-#~ msgstr "改变个人信息"
-
-#~ msgid "Disk Management"
-#~ msgstr "磁盘管理"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "挂载和卸载文件系统"
-
-#~ msgid "Change your login password"
-#~ msgstr "改变您的登录口令"
-
-#~ msgid "Password"
-#~ msgstr "口令"
