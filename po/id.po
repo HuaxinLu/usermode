@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-10-27 00:10+0700\n"
+"PO-Revision-Date: 2005-12-23 05:28+0700\n"
 "Last-Translator: Teguh DC <dheche@bradjamoesti.or.id>\n"
 "Language-Team: Bahasa Indonesia <viribus@traderweb.net>\n"
 "MIME-Version: 1.0\n"
@@ -425,7 +425,7 @@ msgstr "kesalahan execl(), errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Argumen yang tidak diharapkan"
 
 #: userinfo.c:396
 #, c-format
