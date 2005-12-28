@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-07-25 15:15+0530\n"
+"PO-Revision-Date: 2005-12-28 14:14+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 
 #.
@@ -166,9 +166,9 @@ msgid "Help"
 msgstr "सहायता"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s से exec संदर्भ को व्यवस्थित नहीं कर सका.\n"
+msgstr "%s के लिये मूलभूत संदर्भ %s प्रोग्राम के लिये सेट नहीं कर सका.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -227,8 +227,7 @@ msgstr "उपयोक्ता सहायक को अवश्य ही s
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखी विंडो को खोलने में असमर्थ, और नियंत्रक टर्मिनल को खोजने में असमर्थ.\n"
 
 #: userhelper-wrap.c:179
@@ -506,20 +505,3 @@ msgstr "गृह दूरभाष क्रमांकः"
 msgid "Login Shell:"
 msgstr "सत्रारंभ शैलः"
 
-#~ msgid "About Myself"
-#~ msgstr "मेरे बारे में"
-
-#~ msgid "Change personal information"
-#~ msgstr "निजी जानकारी को बदलें"
-
-#~ msgid "Disk Management"
-#~ msgstr "डिस्क प्रबंधन"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "फाइलसिस्टमों को आरोहित और अनारोहित करें"
-
-#~ msgid "Change your login password"
-#~ msgstr "अपने सत्रारंभ शब्दकूट को बदलें"
-
-#~ msgid "Password"
-#~ msgstr "शब्दकूट"
