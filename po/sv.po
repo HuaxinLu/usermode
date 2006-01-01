@@ -1,5 +1,5 @@
 # Swedish messages for usermode.
-# Copyright (C) 2001, 2002, 2003, 2004, 2005 Christian Rose <menthos@menthos.com>.
+# Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006 Christian Rose <menthos@menthos.com>.
 #
 # $Id$
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-05-22 02:02+0200\n"
+"PO-Revision-Date: 2006-01-02 00:13+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,9 +166,9 @@ msgid "Help"
 msgstr "Hjälp"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Kunde inte ställa in körningssammanhang till %s.\n"
+msgstr "Kunde inte ställa in standardsammanhanget för %s för programmet %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -407,7 +407,7 @@ msgstr "execl()-fel, felnummer=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Oväntat argument"
 
 #: userinfo.c:396
 #, c-format
@@ -471,7 +471,7 @@ msgstr "Filsystem"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Enheten \"%s\" kan inte formateras."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
