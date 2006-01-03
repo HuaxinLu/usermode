@@ -435,6 +435,13 @@ userhelper_parse_childout(char *outline)
 		/* Snip off terminating newlines in the prompt string and save
 		 * a pointer to interate the parser along. */
 		outline = strchr(prompt, '\n');
+		while (outline != NULL) {
+			if ((outline[1] == '\0') || (isdigit(outline[1]))) {
+				break;
+			} else {
+				outline = strchr(outline + 1, '\n');
+			}
+		}
 		if (outline != NULL) {
 			outline[0] = '\0';
 			outline++;

@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.84
+Version: 1.85
 Release: 1
 License: GPL
 Group: Applications/System
@@ -120,6 +120,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue Jan  3 2005 Jindrich Novy <jnovy@redhat.com> 1.85-1
+- fix userpasswd - don't crash if pam produces multi-line ourput (#175735)
+  Thanks to toddp@bestweb.net
+- added Serbian translation (#176152)
+
 * Thu Dec  1 2005 Jindrich Novy <jnovy@redhat.com> 1.84-1
 - usermode-gtk dialog stays always on top, thanks to Pierre Ossman (#80634)
 
