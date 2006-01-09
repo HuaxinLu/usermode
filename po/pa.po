@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2005-11-18 15:30+0530\n"
 "Last-Translator: Jaswinder Singh Phulewala <jaswinderphulewala@yahoo.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
@@ -190,22 +190,17 @@ msgstr "pam-panel-icon: ਅਜਲਾਸ ਪ੍ਰਬੰਧਕ ਨਾਲ ਜੁ�
 msgid "Help"
 msgstr "ਸਹਾਇਤਾ"
 
-#: userhelper.c:220 userhelper.c:294
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s ਵਾਸਤੇ %s ਲਈ ਮੂਲ ਪ੍ਰਸੰਗ ਨਿਰਧਾਰਿਤ ਨਹੀਂ ਕਰ ਸਕਿਆ।\n"
-
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "exec ਪ੍ਰਸੰਗ ਨੂੰ %s ਨਿਰਧਾਰਿਤ ਨਹੀਂ ਕਰ ਸਕਿਆ।\n"
 
-#: userhelper.c:596
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "%s ਲਈ ਗੁਪਤ-ਕੋਡ"
 
-#: userhelper.c:835
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -214,7 +209,7 @@ msgstr ""
 "ਤੁਸੀਂ  \"%s\" ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜੋ ਕਿ ਪ੍ਰਬੰਧਕੀ ਮਨਜ਼ੂਰੀ\n"
 "ਤੋਂ ਲਾਭਦਾਇਕ ਹੈ, ਪਰ ਇਹ ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: userhelper.c:837
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -223,7 +218,7 @@ msgstr ""
 "ਤੁਸੀਂ \"%s\" ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜਿਸ ਲਈ ਪ੍ਰਬੰਧਕੀ ਮਨਜ਼ੂਰੀ\n"
 "ਹੋਣੀ ਜ਼ਰੂਰੀ ਹੈ, ਪਰ ਇਹ ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: userhelper.c:841
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -231,7 +226,7 @@ msgstr ""
 "ਤੁਸੀਂ ਇੱਕ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜੋ ਕਿ ਪ੍ਰਬੰਧਕੀ ਮਨਜ਼ੂਰੀ\n"
 "ਤੋਂ ਲਾਭਦਾਇਕ ਹੈ, ਪਰ ਇਹ ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: userhelper.c:843
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -239,20 +234,21 @@ msgstr ""
 "ਤੁਸੀਂ ਇੱਕ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜਿਸ ਲਈ ਪ੍ਰਬੰਧਕੀ ਮਨਜ਼ੂਰੀ\n"
 "ਹੋਣੀ ਜ਼ਰੂਰੀ ਹੈ, ਪਰ ਇਹ ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: userhelper.c:862
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "%s ਲਈ ਗੁਪਤ-ਕੋਡ: "
 
-#: userhelper.c:2348
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "ਉਪਭੋਗਤਾ-ਸਹਾਇਕ ਦਾ ਸੈਟ-ਸ਼ੰਨ ਨੰ ਪ੍ਰਬੰਧਕ(root) ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ।\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2416
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ਗਰਾਫਿਕਲ ਝਰੋਖਾ ਖੋਲਣ ਵਿੱਚ ਅਸਫਲ ਹੈ, ਅਤੇ ਕੰਟਰੋਲਿੰਗ ਟਰਮੀਨਲ ਨੂੰ ਲੱਭ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
 
 #: userhelper-wrap.c:179
@@ -344,7 +340,7 @@ msgstr "ਅਣਪਛਾਤੀ ਗਲਤੀ"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "ਸਵਾਲ"
 
@@ -357,7 +353,7 @@ msgid "Information"
 msgstr "ਜਾਣਕਾਰੀ"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "ਥਾਂ ਲਈ ਪਾਠ ਹੈ।"
 
@@ -427,12 +423,7 @@ msgstr "dup2() ਗਲਤੀ ਹੈ।\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ਗਲਤੀ, ਗਲਤੀ ਨੰ=%d\n"
 
-#: userinfo.c:369
-#, c-format
-msgid "Unexpected argument"
-msgstr "ਅਣ-ਚਾਹਿਆ ਆਰਗੂਮੈਂਟ"
-
-#: userinfo.c:396
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "ਤੁਸੀਂ ਬਾਹਰ ਨਹੀ ਜਾ ਸਕਦੇ ਹੋ। ਹੋਰ ਕੁਝ ਕਰੋ\n"
@@ -491,42 +482,70 @@ msgstr "ਡਾਇਰੈਕਟਰੀ"
 msgid "Filesystem"
 msgstr "ਫਾਇਲ-ਸਿਸਟਮ"
 
-#: usermount.c:674
-#, c-format
-msgid "The device '%s' can not be formatted."
-msgstr "ਜੰਤਰ '%s' ਨੂੰ ਫਾਰਮਿਟ ਨਹੀ ਕਰ ਸਕਿਆ।"
-
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "ਸੁਨੇਹਾ"
 
-#: glade.strings.h:12 usermode.glade:187
+#: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
 msgstr "ਉਪਭੋਗਤਾ ਜਾਣਕਾਰੀ"
 
-#: glade.strings.h:13 usermode.glade:251
+#: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "ਪੂਰਾ-ਨਾਂ:"
 
-#: glade.strings.h:14 usermode.glade:275
+#: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
 msgstr "ਦਫਤਰ:"
 
-#: glade.strings.h:15 usermode.glade:299
+#: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "ਦਫਤਰ ਫੋਨ-ਨੰਬਰ:"
 
-#: glade.strings.h:16 usermode.glade:323
+#: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "ਘਰ ਦਫਤਰ ਫੋਨ-ਨੰਬਰ:"
 
-#: glade.strings.h:17 usermode.glade:347
+#: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "ਲਾਗਇਨ ਸ਼ੈੱਲ:"
 
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਤਬਦੀਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ।"
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "ਗੁਪਤ-ਕੋਡ:"
+
+#~ msgid "Could not set default context for %s for program %s.\n"
+#~ msgstr "%s ਵਾਸਤੇ %s ਲਈ ਮੂਲ ਪ੍ਰਸੰਗ ਨਿਰਧਾਰਿਤ ਨਹੀਂ ਕਰ ਸਕਿਆ।\n"
+
+#~ msgid "Unexpected argument"
+#~ msgstr "ਅਣ-ਚਾਹਿਆ ਆਰਗੂਮੈਂਟ"
+
+#~ msgid "The device '%s' can not be formatted."
+#~ msgstr "ਜੰਤਰ '%s' ਨੂੰ ਫਾਰਮਿਟ ਨਹੀ ਕਰ ਸਕਿਆ।"
