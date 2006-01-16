@@ -2,13 +2,13 @@
 # Copyright (C) 2005 Red Hat, Inc.
 # This file is distributed under the same license as the usermode package.
 # Miloš Komarčević <kmilos@gmail.com>, 2005.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2005-11-04 14:05-0000\n"
+"PO-Revision-Date: 2006-01-15 17:41-0000\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,6 @@ msgid "Sorry, passwords do not match"
 msgstr "Жалим, лозинке се не слажу"
 
 #: dummy.h:32
-#, fuzzy
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Покрени свеобухватне системске алате за подешавање без лозинке."
 
@@ -116,30 +115,26 @@ msgid "Forget Authorization"
 msgstr "Заборави овлашћење"
 
 #: pam-panel-icon.c:190
-#, fuzzy
 msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
-msgstr "Тренутно сте овлашћени да подешавате свеобухватне системске поставке (које утичу на све кориснике) без поновног укуцавања лозинке администратора. Можете да се одрекнете овог овлашћења."
+msgstr "Тренутно сте овлашћени да подешавате свеобухватне системске поставке (које утичу на све кориснике) без поновног укуцавања лозинке администратора. Можете се одрећи овог овлашћења."
 
 #: pam-panel-icon.c:338
-#, fuzzy
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check није setuid root"
 
 #: pam-panel-icon.c:343
-#, fuzzy
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "нема контролног tty-а за pam_timestamp_check"
 
 #: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
-msgstr "непозант корисник pam_timestamp_check-у"
+msgstr "корисник непознат pam_timestamp_check-у"
 
 #: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
 msgstr "грешка дозвола у pam_timestamp_check"
 
 #: pam-panel-icon.c:355
-#, fuzzy
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "неисправан контролни tty у pam_timestamp_check"
 
@@ -160,7 +155,7 @@ msgstr "Неуспело постављање IO канала на неблок�
 
 #: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr "pam-panel-icon: неуспело повезицање са управљачем сеансе\n"
+msgstr "pam-panel-icon: неуспело повезивање са управљачем сеансе\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -168,7 +163,7 @@ msgstr "Помоћ"
 
 #: userhelper.c:138
 #: userhelper.c:141
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Не могу да поставим exec контекст на %s.\n"
 
@@ -217,7 +212,7 @@ msgid "Password for %s: "
 msgstr "Лозинка за %s: "
 
 #: userhelper.c:2318
-#, fuzzy, c-format
+#, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper мора бити setuid root\n"
 
@@ -275,7 +270,7 @@ msgstr "Недовољна права."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
-msgstr "Неиспараван позив подпроцесу."
+msgstr "Неисправан позив подпроцесу."
 
 #: userhelper-wrap.c:197
 msgid ""
@@ -335,9 +330,8 @@ msgstr "Информације"
 #: glade.strings.h:8
 #: glade.strings.h:11
 #: usermode.glade.h:8
-#, fuzzy
 msgid "Placeholder text."
-msgstr "Текст носиоца положаја."
+msgstr "Текст за предвиђено место."
 
 #: userhelper-wrap.c:789
 msgid "Changing personal information."
@@ -386,7 +380,7 @@ msgid "dup2() error.\n"
 msgstr "dup2() грешка.\n"
 
 #: userhelper-wrap.c:1081
-#, fuzzy, c-format
+#, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() грешка, errno=%d\n"
 
@@ -413,7 +407,7 @@ msgstr "Обави формат н_иског нивоа."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Изаберите да_тотечни систем за прављење:"
+msgstr "Изаберите систем да_тотека за прављење:"
 
 #: usermount.c:549
 msgid ""
@@ -496,7 +490,7 @@ msgstr "О мени"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Мења личне податаке"
+msgstr "Мења личне податке"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
