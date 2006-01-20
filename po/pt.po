@@ -14,6 +14,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POFile-SpellExtra: fork execl tty shells errno pamtimestampcheck PAM\n"
 "X-POFile-SpellExtra: exec userhelper dup icon pam panel\n"
+"X-POFile-IgnoreConsistency: _Format\n"
+"X-POFile-IgnoreConsistency: User Information\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
