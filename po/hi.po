@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 "\n"
 "\n"
 
@@ -223,7 +224,8 @@ msgstr "उपयोक्ता सहायक को अवश्य ही s
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखी विंडो को खोलने में असमर्थ, और नियंत्रक टर्मिनल को खोजने में असमर्थ.\n"
 
 #: userhelper-wrap.c:179
@@ -513,4 +515,3 @@ msgstr "अपना लॉगिन शब्दकूट बदलें"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "शब्दकूट"
-
