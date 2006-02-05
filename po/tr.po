@@ -1,21 +1,22 @@
+# translation of usermode_tr.po to 
 # translation of tr.po to Türkçe
 # translation of tr.po to Turkish
 # $Id$
 # Nilgün Belma Bugüner <nilgun@superonline.com>, 2003.
 # YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2004.
-# Hamdi Akoğuz <akoguzh@itu.edu.tr>, 2005.
+# Hamdi Akoğuz <akoguzh@itu.edu.tr>, 2005, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: tr\n"
+"Project-Id-Version: usermode_tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-04-26 01:45+0200\n"
-"Last-Translator: Hamdi Akoğuz <akoguzh@itu.edu.tr>\n"
-"Language-Team: Türkçe <tr@li.org>\n"
+"PO-Revision-Date: 2006-02-06 00:38+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -126,7 +127,7 @@ msgstr ""
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check root setuid değil"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
@@ -168,9 +169,9 @@ msgid "Help"
 msgstr "Yardım"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Çalıştırma içeriği %s'ye ayarlanamıyor.\n"
+msgstr "%s programı için %s öntanımlı içeriği ayarlanamıyor.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -229,8 +230,7 @@ msgstr "userhelper programı setuid root olmalıdır.\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 
 #: userhelper-wrap.c:179
@@ -308,11 +308,11 @@ msgstr "Seçilen program bulunamadı."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "İstek iptal edildi."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Dahili PAM hatası oluştu."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -409,7 +409,7 @@ msgstr "execl() hatası, hatano=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Beklenmeyen argüman"
 
 #: userinfo.c:396
 #, c-format
@@ -428,8 +428,7 @@ msgstr "_Ayır"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -472,7 +471,7 @@ msgstr "Dosya sistemi"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "%s aygıtı formatlanamaz."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -508,20 +507,3 @@ msgstr "Ev Telefonu:"
 msgid "Login Shell:"
 msgstr "Sisteme Giriş Kabuğu:"
 
-#~ msgid "About Myself"
-#~ msgstr "Hakkımda"
-
-#~ msgid "Change personal information"
-#~ msgstr "Kişisel bilgileri değiştir"
-
-#~ msgid "Disk Management"
-#~ msgstr "Disk Yönetimi"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "Dosya sistemlerini bağlar ve ayırır"
-
-#~ msgid "Change your login password"
-#~ msgstr "Sisteme giriş parolanızı değiştirin"
-
-#~ msgid "Password"
-#~ msgstr "Parola"
