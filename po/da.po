@@ -40,7 +40,7 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr "O.k."
+msgstr "OK"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
@@ -52,7 +52,7 @@ msgstr "Annullér"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Kør upriviligeret"
+msgstr "Kør Upriviligeret"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -64,7 +64,7 @@ msgstr "Ny UNIX-adgangskode: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Tast UNIX-adgangskode igen: "
+msgstr "Tast ny UNIX-adgangskode igen: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -84,8 +84,7 @@ msgstr "Desværre, adgangskoder er ikke ens"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
+msgstr "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
 #: dummy.h:33
 msgid "login: "
@@ -414,7 +413,7 @@ msgstr "execl() fejl, errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Uventet argument"
 
 #: userinfo.c:396
 #, c-format
@@ -478,7 +477,7 @@ msgstr "Filsystem"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Enheden '%s' kan ikke formateres"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
