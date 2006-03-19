@@ -4,6 +4,7 @@
 # Copyright (C) 2001 Red Hat, Inc.
 # Nuria Soriano <nsoriano@redhat.it>, 2001.
 # Luis Mayoral <mayoral@linuxadicto.org>, 2003, 2004.
+# Eduardo Villagrán <eduardo.villagran@usach.cl>, 2006
 #
 msgid ""
 msgstr ""
@@ -11,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
 "PO-Revision-Date: 2005-06-14 10:10-0300\n"
-"Last-Translator: Mauricio Wyler <mauricio.wyler@puertocity.com>\n"
+"Last-Translator: Eduardo Villagrán <eduardo.villagran@usach.cl>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -169,9 +170,10 @@ msgid "Help"
 msgstr "Ayuda"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "No se pudo establecer el contexto de ejecución a %s.\n"
+msgstr "No se pudo establecer el contexto para %s \n"
+"para el programa %s \n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -412,7 +414,7 @@ msgstr "Error execl(), errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Argumento no esperado"
 
 #: userinfo.c:396
 #, c-format
@@ -476,7 +478,7 @@ msgstr "Sistema de ficheros"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "El dispositivo '%s' no pudo ser formateado"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
