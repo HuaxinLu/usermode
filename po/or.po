@@ -1,20 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# translation of or.po to Oriya
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Subhransu Behera <sbehera@redhat.com>, 2006.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-03-29 15:38+0530\n"
+"Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
+"Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -37,64 +38,64 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr ""
+msgstr "ଠିକ ଅଛି"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr ""
+msgstr "ବିଦାୟ ନିଅ"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr ""
+msgstr "ବାତିଲ"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "ବିଶେଷ ଅଧୀକାର ନଥିବା କାର୍ଯ୍ଯ କୁ ଚଲାନ୍ତୁ"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(ବର୍ତ୍ତମାନ ର) ୟୁନିକ୍ସ ପ୍ରବେଶ ସଙ୍କେତ: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr ""
+msgstr "ନୂତନ ୟୁନିକ୍ସ ପ୍ରବେଶ ସଙ୍କେତ: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "ନୂତନ ୟୁନିକ୍ସ ପ୍ରବେଶ ସଙ୍କେତ କୁ ପୁନର୍ବାର ଟାଇପ କରନ୍ତୁ: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "ଖରାପ ପ୍ରବେଶ ସଙ୍କେତ: ଏହା ଖୁବ କ୍ଷୁଦ୍ର ଅଟେ"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "ଖରାପ ପ୍ରବେଶ ସଙ୍କେତ: ଏହା ଖୁବ କ୍ଷୁଦ୍ର ଅଟେ"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr ""
+msgstr "ପ୍ରବେଶ ସଙ୍କେତ ଟି ଅପରିବର୍ତ୍ତିତ ଅଛି"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "କ୍ଷମା କରିବେ, ପ୍ରବେଶ ସଙ୍କେତ ଟି ମେଳ ହେଉନାହିଁ"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "ବନା ପ୍ରବେଶ ସଙ୍କେତ ବିଶିଷ୍ଟ ତନ୍ତ୍ର ର ବିନ୍ଯାସ ଜନିତ ଉପକରଣ ର ଚାଳନା କର"
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "ଲଗଇନ୍:"
 
 #: dummy.h:34
 msgid "Password: "
-msgstr ""
+msgstr "ପ୍ରବେଶ ସଙ୍କେତ:"
 
 #: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "ପ୍ରଶାସକ ଙ୍କ ବିଶେଷ ଅଧୀକାର କୁ ରଦ୍ଦ କରିବା ରେ ଅସଫଳ: %s"
 
 #: pam-panel-icon.c:107
 #, c-format
@@ -102,14 +103,16 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"ପ୍ରଶାସକ ଙ୍କ ବିଶେଷ ଅଧୀକାର କୁ ରଦ୍ଦ କରିବା ରେ ଅସଫଳ: pam_timestamp_check"
+"ଫେରସ୍ତ ବିଫଳ ସଙ୍କେତ %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
-msgstr ""
+msgstr "ବୈଧିକରଣ କୁ ରକ୍ଷାକର"
 
 #: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
-msgstr ""
+msgstr "ବୈଧିକରଣ କୁ ଭୂଲିଯାଅ"
 
 #: pam-panel-icon.c:190
 msgid ""
@@ -120,56 +123,56 @@ msgstr ""
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check ଗୋଟିଏ setuid ମୂଖ୍ଯ ଚାଳକ ନୁହେଁ"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check କୌଣସି ନିୟନ୍ତ୍ରିତ tty ନାହିଁ"
 
 #: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check ପାଇଁ ଚାଳକ ଟି ଅଜଣା ଅଟେ"
 
 #: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check ରେ ଅନୁମତି ଜନିତ ତ୍ରୁଟି ପରିଲିଖିତ ହେଲା"
 
 #: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check ରେ ଅବୈଧ ନିୟନ୍ତ୍ରିତ tty"
 
 #: pam-panel-icon.c:373
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "ତ୍ରୁଟି: %s\n"
 
 #: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "\"%s\" ନିର୍ଦ୍ଦେଶ କୁ ଚଳାଇବା ରେ ଅସଫଳ: %s\n"
 
 #: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "ଅଖଣ୍ଡିତ ଆଇ.ଓ. ଉପପଥ କୁ ସେଟ କରିବାରେ ଅସଫଳ: %s\n"
 
 #: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: ଅଧିବେଶନ ପରିଚାଳକ କୁ ସଂଯୋଗ କରିବାରେ ଅସଫଳ\n"
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr ""
+msgstr "ସହାୟକ"
 
 #: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "%s ପାଇଁ ନିଷ୍ପାଦନ ପ୍ରସଙ୍ଗ କୁ ସେଟ କରିପାରିଲା ନାହିଁ \n"
 
 #: userhelper.c:528
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "%s ପାଇଁ ପ୍ରବେଶ ସଙ୍କେତ"
 
 #: userhelper.c:767
 #, c-format
@@ -200,7 +203,7 @@ msgstr ""
 #: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
-msgstr ""
+msgstr "%s ପାଇଁ ପ୍ରବେଶ ସଙ୍କେତ"
 
 #: userhelper.c:2318
 #, c-format
@@ -210,13 +213,12 @@ msgstr ""
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
-msgstr ""
+msgstr "ଅଜଣା ପ୍ରସ୍ଥାନ ସଙ୍କେତ"
 
 #: userhelper-wrap.c:181
 msgid "Information updated."
@@ -479,3 +481,4 @@ msgstr ""
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr ""
+
