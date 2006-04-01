@@ -6,9 +6,9 @@ msgstr ""
 "Project-Id-Version: usermode 0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2006-03-22 02:20+0100\n"
+"PO-Revision-Date: 2006-04-01 19:51+0100\n"
 "Last-Translator: Renato Pavicic <repavici@globalnet.hr>\n"
-"Language-Team: Renato Pavicic <repavici@globalnet.hr lokalizacija@linux.hr>\n"
+"Language-Team: Renato Pavicic <renato@translator-shop.org www.translator-shop.org lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -406,11 +406,11 @@ msgstr "Vi ne postojite u sustavu. Odlazite.\n"
 
 #: usermount.c:62
 msgid "_Mount"
-msgstr "_Postavi"
+msgstr "_Pristupi"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "_Skini"
+msgstr "_Napusti"
 
 #: usermount.c:321
 msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
@@ -429,14 +429,14 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Ne postoje datotečni sustavi za koje imate dopuštenja postavljanja ili skidanja.\n"
+"Ne postoje datotečni sustavi za koje imate dopuštenja pristupa ili napuštanja.\n"
 "Kontaktirajte vašeg administratora sustava."
 
 #. Create the dialog.
 #: usermount.c:550
 #: usermount.c:562
 msgid "User Mount Tool"
-msgstr "Korisnički alat za postavljanje"
+msgstr "Korisnički alat za pristupanje diskovima"
 
 #. Create the other buttons.
 #: usermount.c:579
