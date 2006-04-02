@@ -89,9 +89,8 @@ msgid "login: "
 msgstr ""
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Κωδικός"
+msgstr "Κωδικός: "
 
 #: pam-panel-icon.c:91
 #, c-format
@@ -141,14 +140,14 @@ msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
 #: pam-panel-icon.c:373
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Σφάλμα"
+msgstr "Σφάλμα: %s\n"
 
 #: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Αποτυχία εκτέλεσης εντολής \"%s\": %s\n"
 
 #: pam-panel-icon.c:463
 #, c-format
@@ -193,7 +192,9 @@ msgstr ""
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
+msgstr "Προσπαθείτε να εκτελέσετε το \"%s\" για το οποίο απαιτούνται\n"
+"δικαιώματα διαχειριστή συστήματος, χρειάζονται περισσότερες πληροφορίες\n"
+"για να ολοκληρώσετε αυτή την ενέργεια."
 
 #: userhelper.c:841
 msgid ""
@@ -205,7 +206,9 @@ msgstr ""
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
+msgstr "Προσπαθείτε να εκτελέσετε μια εντολή για την οποία απαιτούνται\n"
+"δικαιώματα διαχειριστή συστήματος, χρειάζονται περισσότερες πληροφορίες\n"
+"για να ολοκληρώσετε αυτή την ενέργεια."
 
 #
 #: userhelper.c:862
@@ -255,7 +258,8 @@ msgstr "Σφάλμα αρχικοποίησης κωδικού."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
+msgstr "Μερικά από τα αρχεία συστήματος είναι κλειδωμένα\n"
+"Παρακακώ δοκιμάστε ξανά μετά από λίγη ώρα."
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
@@ -359,7 +363,7 @@ msgstr ""
 
 #: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
-msgstr "_Εκτέλεση Χωρίς Δικαιώματα"
+msgstr "_Εκτέλεση χωρίς δικαιώματα"
 
 # gconf/gconf-internals.c:2137
 #: userhelper-wrap.c:980
@@ -481,11 +485,11 @@ msgstr "Γραφείο:"
 
 #: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
-msgstr "Αριθμός Τηλεφώνου Γραφείου:"
+msgstr "Αριθμός τηλεφώνου γραφείου:"
 
 #: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
-msgstr "Αριθμός Τηλεφώνου Οικίας:"
+msgstr "Αριθμός τηλεφώνου οικίας:"
 
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
