@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2006-03-06 16:01+0530\n"
 "Last-Translator: \n"
 "Language-Team:  <ta@li.org>\n"
@@ -106,7 +106,8 @@ msgstr "மேலாளர் உரிமையை கைவிடுவதி�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "மேலாளர் உரிமையை கைவிடுவதில் தோல்வி. : pam_timestamp_check பிழை எண்ணை தந்தது %d"
+msgstr ""
+"மேலாளர் உரிமையை கைவிடுவதில் தோல்வி. : pam_timestamp_check பிழை எண்ணை தந்தது %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -168,22 +169,17 @@ msgstr "pam-panel-icon: அமர்வு மேலாளருடன் இண
 msgid "Help"
 msgstr "உதவி"
 
-#: userhelper.c:220 userhelper.c:294
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "%sநிரலுக்கு %s க்கு முன்னிருப்பு உரை அமைக்க இயலவில்லை.\n"
-
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "%s க்கு exec சூழல் அமைக்க இயலவில்லை.\n"
 
-#: userhelper.c:596
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "%s-க்கு கடவுச்சொல் "
 
-#: userhelper.c:835
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -192,7 +188,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளை \"%s\" யை இயக்க, மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:837
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -201,7 +197,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளை \"%s\" யை இயக்க, மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:841
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -209,7 +205,7 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளைக்கு மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்"
 
-#: userhelper.c:843
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -217,20 +213,21 @@ msgstr ""
 "நீங்கள் இயக்க முயலும் கட்டளைக்கு மேலாளர் உரிமை தேவை\n"
 "இந்த செயலை செய்ய இன்னும் சில தகவல்களை உள்ளிடவும்."
 
-#: userhelper.c:862
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "%s- க்கான கடவுச்சொல் : "
 
-#: userhelper.c:2348
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "பயனர் உதவியில் setuid root அமைக்கப்பட்டிருக்க வேண்டும்\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2416
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "வரைகலை சாளரத்தை திறக்க இயலவில்லை.மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
 "இயலவில்லை.\n"
@@ -324,7 +321,7 @@ msgstr "தெரியாத பிழை."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "கேள்வி"
 
@@ -337,7 +334,7 @@ msgid "Information"
 msgstr "தகவல்"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "இடம்தாங்கி உரை."
 
@@ -407,12 +404,7 @@ msgstr "dup2பி2() பிழை.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() பிழை, பிழை எண்=%d\n"
 
-#: userinfo.c:369
-#, c-format
-msgid "Unexpected argument"
-msgstr "எதிர்பாராத மதிப்பு"
-
-#: userinfo.c:396
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "நீங்கள் வெளியேறாதீர்கள். வெளியே செல்.\n"
@@ -469,42 +461,70 @@ msgstr "அடைவு"
 msgid "Filesystem"
 msgstr "கோப்பு முறைமை "
 
-#: usermount.c:674
-#, c-format
-msgid "The device '%s' can not be formatted."
-msgstr "'%s' என்ற சாதனத்தை வடிவமைக்க இயலவில்லை."
-
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "செய்தி "
 
-#: glade.strings.h:12 usermode.glade:187
+#: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
 msgstr "பயனர் தகவல்"
 
-#: glade.strings.h:13 usermode.glade:251
+#: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "முழு பெயர்:"
 
-#: glade.strings.h:14 usermode.glade:275
+#: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
 msgstr "அலுவலகம்: "
 
-#: glade.strings.h:15 usermode.glade:299
+#: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "அலுவலக தொலைபேசி எண்: "
 
-#: glade.strings.h:16 usermode.glade:323
+#: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "வீட்டு தொலைபேசி எண்: "
 
-#: glade.strings.h:17 usermode.glade:347
+#: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "உள்நுழை ஷெல்:"
 
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "சொந்த தகவல்களை மாற்று"
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "கடவுச்சொல்:"
+
+#~ msgid "Could not set default context for %s for program %s.\n"
+#~ msgstr "%sநிரலுக்கு %s க்கு முன்னிருப்பு உரை அமைக்க இயலவில்லை.\n"
+
+#~ msgid "Unexpected argument"
+#~ msgstr "எதிர்பாராத மதிப்பு"
+
+#~ msgid "The device '%s' can not be formatted."
+#~ msgstr "'%s' என்ற சாதனத்தை வடிவமைக்க இயலவில்லை."
