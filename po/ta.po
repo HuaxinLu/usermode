@@ -1,23 +1,24 @@
-# translation of ta.po to 
+# translation of ta.po to
 # translation of ta.po to Tamil
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Jayaradha N <jaya@pune.redhat.com>, 2004.
 # Jayaradha N <njaya@redhat.com>, 2004, 2006.
+# Felix <ifelix@redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2006-03-06 16:01+0530\n"
-"Last-Translator: \n"
-"Language-Team:  <ta@li.org>\n"
+"PO-Revision-Date: 2006-04-21 15:21+0530\n"
+"Last-Translator: Felix <ifelix@redhat.com>\n"
+"Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 "\n"
 
@@ -106,8 +107,7 @@ msgstr "மேலாளர் உரிமையை கைவிடுவதி�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"மேலாளர் உரிமையை கைவிடுவதில் தோல்வி. : pam_timestamp_check பிழை எண்ணை தந்தது %d"
+msgstr "மேலாளர் உரிமையை கைவிடுவதில் தோல்வி. : pam_timestamp_check பிழை எண்ணை தந்தது %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -226,8 +226,7 @@ msgstr "பயனர் உதவியில் setuid root அமைக்க�
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "வரைகலை சாளரத்தை திறக்க இயலவில்லை.மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
 "இயலவில்லை.\n"
@@ -496,35 +495,25 @@ msgstr "உள்நுழை ஷெல்:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "என்னைப் பற்றி"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
 msgstr "சொந்த தகவல்களை மாற்று"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "வட்டு மேலாண்மை"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "கோப்பு அமைப்புகளை செயல்படுத்தவும் அல்லது செயலிழக்கச்செய்யவும்"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "உங்கள் பதிவு கடவுச்சொல்லை மாற்றவும்"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "கடவுச்சொல்:"
+msgstr "கடவுச்சொல்"
 
-#~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr "%sநிரலுக்கு %s க்கு முன்னிருப்பு உரை அமைக்க இயலவில்லை.\n"
-
-#~ msgid "Unexpected argument"
-#~ msgstr "எதிர்பாராத மதிப்பு"
-
-#~ msgid "The device '%s' can not be formatted."
-#~ msgstr "'%s' என்ற சாதனத்தை வடிவமைக்க இயலவில்லை."
