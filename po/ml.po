@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2006-03-27 11:14+0530\n"
+"PO-Revision-Date: 2006-04-27 19:11+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
@@ -142,12 +142,12 @@ msgstr "invalid controlling tty in pam_timestamp_check"
 #: pam-panel-icon.c:373
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "പിഴവ്: %s\n"
 
 #: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "\"%s\" എന്ന കമ്ന്‍ഡ് പ്രവറ്‍ത്തിപ്പിക്കുന്നതില്‍ പരാജയപ്പെട്ടു: %s\n"
 
 #: pam-panel-icon.c:463
 #, c-format
@@ -156,7 +156,7 @@ msgstr ""
 
 #: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: സശന്‍ മാനേജറുമായി കണക്റ്റ് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു\n"
 
 #: userdialogs.h:30
 msgid "Help"
@@ -239,7 +239,7 @@ msgstr ""
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
-msgstr ""
+msgstr "പാസ്വേഡ് റീസെറ്റ് ചെയ്യുന്നതില്‍ പിഴവ് സംഭവിച്ചിരിക്കുന്നു."
 
 #: userhelper-wrap.c:189
 msgid ""
@@ -373,7 +373,7 @@ msgstr "execl() error, errno=%d\n"
 #: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "നിങ്ങള്‍ നിലവിലില്ല.  കടന്നു പോവുക.\n"
 
 #: usermount.c:62
 msgid "_Mount"
@@ -388,6 +388,8 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
+"ഡിസ്ക്ക് ഫോറ്‍മാറ്റ് ചെയ്യണമെന്ന് നിങ്ങള്‍ക്ക് ഉറപ്പാണോ?  അതില്‍ ഇപ്പോള്‍ "
+"അടങ്ങിയിരിക്കുന്നതെല്ലാം നിങ്ങള്‍ക്ക് നഷ്ടമാകും."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -402,6 +404,8 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
+"മൌണ്ടും അണ്‍മൌണ്ടും ചെയ്യുന്നതിനായി നിങ്ങള്‍ക്ക് അനുവാദമുളള ഫൈല്‍സിസ്റ്റമുകള്‍ "
+"കംപ്യൂട്ടറില്‍ ലഭ്യമല്ല. നിങ്ങളുടെ അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക."
 
 #. Create the dialog.
 #: usermount.c:550 usermount.c:562
@@ -472,7 +476,7 @@ msgstr "ഡിസ്ക് മാനേജ്മന്‍റ്റ്"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "ഫൈല്‍സിസ്റ്റമുകള്‍ മൌണ്ടും അണ്‍മൌണ്ടും ചെയ്യുക"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
