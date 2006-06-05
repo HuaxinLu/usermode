@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: usermode 0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2006-04-14 08:42+0100\n"
+"PO-Revision-Date: 2006-06-05 10:38+0100\n"
 "Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
 "Language-Team: Renato Pavicic <renato@translator-shop.org www.translator-shop.org lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
@@ -159,26 +159,18 @@ msgstr "pam-panel-icon: povezivanje s upravljanjem sesija nije uspjelo\n"
 msgid "Help"
 msgstr "Pomoć"
 
-#: userhelper.c:220
-#: userhelper.c:294
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "Povezivanje s %s za potrebe programa %s nije moguće.\n"
-
-#: userhelper.c:238
-#: userhelper.c:241
-#: userhelper.c:312
-#: userhelper.c:315
+#: userhelper.c:138
+#: userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Nije moguće postaviti exec konteksta za %s.\n"
+msgstr "Nije moguće postaviti exec kontekst za %s.\n"
 
-#: userhelper.c:596
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "Lozinka za %s"
 
-#: userhelper.c:835
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -187,7 +179,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\". Pune mogućnosti može dobiti samo s\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: userhelper.c:837
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -196,7 +188,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\", a za to su potrebne\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: userhelper.c:841
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -204,7 +196,7 @@ msgstr ""
 "Pokušavate pokrenuti naredbu čije se pune mogućnosti mogu dobiti samo s\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: userhelper.c:843
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -212,18 +204,18 @@ msgstr ""
 "Pokušavate pokrenuti naredbu za koju su potrebne\n"
 "administratorske privilegije. Potrebno je više podataka za tu aktivnost."
 
-#: userhelper.c:862
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "Lozinka za %s: "
 
-#: userhelper.c:2348
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mora imati zadan setuid na root korisnika\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2416
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafički prozor nije moguće otvoriti i nije moguće pronaći terminal koji ga kontrolira.\n"
@@ -319,7 +311,7 @@ msgstr "Nepoznata pogreška."
 #.
 #: userhelper-wrap.c:475
 #: glade.strings.h:7
-#: usermode.glade:9
+#: usermode.glade.h:9
 msgid "Query"
 msgstr "Upit"
 
@@ -335,8 +327,7 @@ msgstr "Podaci"
 #: userhelper-wrap.c:740
 #: glade.strings.h:8
 #: glade.strings.h:11
-#: usermode.glade:71
-#: usermode.glade:164
+#: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Mjesto za teksta."
 
@@ -391,12 +382,7 @@ msgstr "dup2() pogreška.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() pogreška, broj pogreške=%d\n"
 
-#: userinfo.c:369
-#, c-format
-msgid "Unexpected argument"
-msgstr "Neočekivani argument"
-
-#: userinfo.c:396
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Vi ne postojite u sustavu. Odlazite.\n"
@@ -411,7 +397,7 @@ msgstr "_Napusti"
 
 #: usermount.c:321
 msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "Jeste li sigurni da želite preoblikovati ovaj disk? Izgubiti ćete sve podatke koji se trenutno nalaze na njemu."
+msgstr "Jeste li sigurni da želite preoblikovati ovaj disk? Izgubit ćete sve podatke koji se trenutno nalaze na njemu."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -452,55 +438,71 @@ msgstr "Mapa"
 msgid "Filesystem"
 msgstr "Datotečni sustav"
 
-#: usermount.c:674
-#, c-format
-msgid "The device '%s' can not be formatted."
-msgstr "Uređaj '%s' nije moguće preoblikovati."
-
 #: glade.strings.h:9
 #: glade.strings.h:18
 #: glade.strings.h:19
 #: glade.strings.h:20
 #: glade.strings.h:21
-#: usermode.glade:98
-#: usermode.glade:377
-#: usermode.glade:398
-#: usermode.glade:419
-#: usermode.glade:440
+#: usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
 #: glade.strings.h:10
-#: usermode.glade:120
+#: usermode.glade.h:5
 msgid "Message"
 msgstr "Poruka"
 
 #: glade.strings.h:12
-#: usermode.glade:187
+#: usermode.glade.h:10
 msgid "User Information"
 msgstr "Korisnički podaci"
 
 #: glade.strings.h:13
-#: usermode.glade:251
+#: usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Puno ime:"
 
 #: glade.strings.h:14
-#: usermode.glade:275
+#: usermode.glade.h:7
 msgid "Office:"
 msgstr "Ured:"
 
 #: glade.strings.h:15
-#: usermode.glade:299
+#: usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Broj uredskog telefona:"
 
 #: glade.strings.h:16
-#: usermode.glade:323
+#: usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Broj kućnog telefona:"
 
 #: glade.strings.h:17
-#: usermode.glade:347
+#: usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Korisnička ljuska za prijavu:"
+
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "O meni"
+
+#: userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Izmjena osobnih podataka"
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr "Upravljanje diskovima"
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr "Pristupanje i napuštanje datotečnih sustava"
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr "Promjena lozinke za prijavljivanje"
+
+#: userpasswd.desktop.in.h:2
+msgid "Password"
+msgstr "Lozinka"
+
