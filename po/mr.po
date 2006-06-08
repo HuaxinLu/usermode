@@ -1,19 +1,23 @@
+# translation of mr.po to Marathi
 # Marathi translations for PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2004.
+# Rahul Bhalerao <rbhalera@redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: mr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2004-03-31 15:31-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2006-06-02 00:15+0530\n"
+"Last-Translator: Rahul Bhalerao <rbhalera@redhat.com>\n"
+"Language-Team: Marathi\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -36,15 +40,15 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr ""
+msgstr "ठीक"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr ""
+msgstr "बाहेर"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
@@ -52,48 +56,48 @@ msgstr ""
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(चालू) UNIX गुप्तशब्द: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr ""
+msgstr "नविन UNIX गुप्तशब्द:"
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "नविन UNIX गुप्तशब्द पुन्हा टाइप करा:"
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "वाइट गुप्तशब्द: हा खूपच छोटा आहे"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "वाइट गुप्तशब्द: हा खूप छोटा आहे"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr ""
+msgstr "गुप्तशब्द बदलला नाही"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "माफ करा, गुप्तशब्द जुळत नाहीत"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "प्रणाली-व्यापी व्यूहरचना उपकरणे गुप्तशब्दाशिवाय सुरू करा."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "प्रवेश:"
 
 #: dummy.h:34
 msgid "Password: "
-msgstr ""
+msgstr "गुप्तशब्द:"
 
 #: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "प्रशासकाचे अधिकार सोडण्यास अयशस्वी: %s"
 
 #: pam-panel-icon.c:107
 #, c-format
@@ -101,14 +105,16 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"प्रशासकाचे अधिकार सोडण्यास अयशस्वी: pam_timestamp_check ने %d हा अपयश "
+"संकेत दिला. "
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
-msgstr ""
+msgstr "अधीप्रमाणन असू द्या"
 
 #: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
-msgstr ""
+msgstr "अधिप्रमाणन विसरून जा"
 
 #: pam-panel-icon.c:190
 msgid ""
@@ -119,56 +125,56 @@ msgstr ""
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check हा setuid रूट नाही आहे"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check साठी नियंत्रणकारी tty नाही"
 
 #: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "उपयोगकर्ता pam_timestamp_check ला अपरिचित"
 
 #: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check मध्ये अनुमतींची चूक"
 
 #: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "pam_timestamp_check मध्ये अवैध नियंत्रणकारी tty"
 
 #: pam-panel-icon.c:373
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "चूक: %s\n"
 
 #: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "\"%s\" आदेश चालवण्यात अपयश: %s\n"
 
 #: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "IO channel nonblocking निर्धारित करण्यास अपयशी:%s\n"
 
 #: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: सत्र व्यवस्थापकास जोडण्यास अपयशी\n"
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr ""
+msgstr "मदत"
 
 #: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "exec संदर्भ %s वर निर्धारित करता आला नाही.\n"
 
 #: userhelper.c:528
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "%s साठी गुप्तशब्द"
 
 #: userhelper.c:767
 #, c-format
@@ -199,19 +205,18 @@ msgstr ""
 #: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
-msgstr ""
+msgstr "%s साठी गुप्तशब्द: "
 
 #: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "उपयोक्ता सहाय्यक setuid रूट असायला हवा\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "आलेखीय खिडकी उघडण्यास असमर्थ, आणि नियंत्रक टर्मिनल शोधण्यास असमर्थ.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -478,3 +483,4 @@ msgstr ""
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr ""
+
