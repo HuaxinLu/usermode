@@ -1,20 +1,24 @@
+# translation of el.po to Greek
 # Greek translation of usermode.
-# Copyright (C) 2002 Free Software Foundation, Inc.
-# Simos Xenitellis <simos@hellug.gr>, 2002.
+# Copyright (C) 2002, 2006 Free Software Foundation, Inc.
 #
+# Simos Xenitellis <simos@hellug.gr>, 2002.
 # simos: 67 messages, 26Oct2002, initial translation.
+# Dimitris Glezos <dimitris@glezos.com>, 2006.
 # nikos 2 messages fixed
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode 1.0\n"
+"Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2003-01-10 01:17+0200\n"
-"Last-Translator: Nikos Charonitakis <charosn@her.forthnet.gr>\n"
-"Language-Team: Greek <nls@tux.hellug.gr>\n"
+"PO-Revision-Date: 2006-06-10 22:27+0100\n"
+"Last-Translator: Dimitris Glezos <dimitris@glezos.com>\n"
+"Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -53,16 +57,16 @@ msgstr "Εκτέλεση Χωρίς Δικαιώματα"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(τρέχον) κωδικός Unix: "
+msgstr "(τρέχων) κωδικός UNIX: "
 
 #
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Νέος κωδικός Unix: "
+msgstr "Νέος κωδικός UNIX:"
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Εισαγωγή ξανά κωδικού Unix: "
+msgstr "Εισαγωγή ξανά νέου κωδικού UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -86,7 +90,7 @@ msgstr "Εκκίνηση εργαλείων ρυθμίσεων συστήματ�
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "σύνδεση: "
 
 #: dummy.h:34
 msgid "Password: "
@@ -95,7 +99,7 @@ msgstr "Κωδικός: "
 #: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Αποτυχία εγκατάλειψης δικαιωμάτων διαχειριστή: %s"
 
 #: pam-panel-icon.c:107
 #, c-format
@@ -103,41 +107,43 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"Αποτυχία εγκατάλειψης δικαιωμάτων διαχειριστή: "
+"Το pam_timestamp_check επέστρεψε κωδικό αποτυχίας %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Διατήρηση Εξουσιοδότησης"
 
 #: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Εγκατάλειψη Εξουσιοδότησης"
 
 #: pam-panel-icon.c:190
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
+msgstr "Κατά την παρούσα περίοδο είστε εξουσιοδοτημένος να κάνετε ρυθμίσεις που επηρεάζουν όλο το σύστημα (που αφορούν όλους τους χρήστες) χωρίς να σας ζητείται ο κωδικός  διαχειριστή. Μπορείτε να εγκαταλείψετε αυτή την εξουσιοδότηση."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "το pam_timestamp_check δεν είναι setuid root"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "δεν υπάρχει tty ελέγχου για pam_timestamp_check"
 
 #: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "άγνωστος χρήστης στο pam_timestamp_check"
 
 #: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "σφάλμα δικαιωμάτων στο pam_timestamp_check"
 
 #: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "μη έγκυρο tty ελέγχου στο pam_timestamp_check"
 
 #: pam-panel-icon.c:373
 #, c-format
@@ -152,11 +158,11 @@ msgstr "Αποτυχία εκτέλεσης εντολής \"%s\": %s\n"
 #: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Αποτυχία ορισμού καναλιού IO nonblocking: %s\n"
 
 #: pam-panel-icon.c:542
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: αποτυχία σύνδεσης στο διαχειριστή συνεδριών\n"
 
 # #-#-#-#-#  yelp.gnome-2-0.el.po (yelp 1.0.3)  #-#-#-#-#
 #
@@ -167,12 +173,12 @@ msgstr "Βοήθεια"
 #: userhelper.c:220 userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
+msgstr "Δεν μπόρεσε να οριστεί προκαθορισμένο περιβάλλον για το %s για το πρόγραμμα %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr ""
+msgstr "Δεν μπόρεσε να οριστεί περιβάλλον exec στο %s.\n"
 
 #
 #: userhelper.c:596
@@ -186,13 +192,16 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Προσπαθείτε να τρέξετε το \"%s\" το οποίο μπορεί να ωφεληθεί από δικαιώματα\n"
+"διαχειριστή, ωστόσο για να γίνει αυτό χρειάζονται περισσότερες πληροφορίες."
 
 #: userhelper.c:837
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Προσπαθείτε να εκτελέσετε το \"%s\" για το οποίο απαιτούνται\n"
+msgstr ""
+"Προσπαθείτε να εκτελέσετε το \"%s\" για το οποίο απαιτούνται\n"
 "δικαιώματα διαχειριστή συστήματος, χρειάζονται περισσότερες πληροφορίες\n"
 "για να ολοκληρώσετε αυτή την ενέργεια."
 
@@ -201,12 +210,15 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
+"Προσπαθείτε να τρέξετε μία εντολή η οποία μπορεί να ωφεληθεί από δικαιώματα\n"
+"διαχειριστή, ωστόσο για να γίνει αυτό χρειάζονται περισσότερες πληροφορίες. "
 
 #: userhelper.c:843
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Προσπαθείτε να εκτελέσετε μια εντολή για την οποία απαιτούνται\n"
+msgstr ""
+"Προσπαθείτε να εκτελέσετε μια εντολή για την οποία απαιτούνται\n"
 "δικαιώματα διαχειριστή συστήματος, χρειάζονται περισσότερες πληροφορίες\n"
 "για να ολοκληρώσετε αυτή την ενέργεια."
 
@@ -219,14 +231,13 @@ msgstr "Κωδικός για %s: "
 #: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr ""
+msgstr "Το userhelper πρέπει να είναι setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2446
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Αδύνατο να άνοιγμα ενός γραφικού παραθύρου και αδύνατη η εύρεση τερματικού ελέγχου.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -241,6 +252,8 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
+"Ο κωδικός που πληκτρολογήσατε είναι λάθος.\n"
+"Παρακαλώ προσπαθήστε ξανά."
 
 #: userhelper-wrap.c:185
 msgid ""
@@ -248,6 +261,9 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
+"Ένα ή περισσότερα από τα τροποποιημένα πεδία δεν είναι έγκυρο.\n"
+"Αυτό οφείλεται πιθανόν σε άνω-κάτω τελείες ή κόμματα σε ένα από τα πεδία.\n"
+"Παρακαλώ διαγράψτε τα και προσπαθήστε ξανά."
 
 # gconf/gconf-internals.c:2137
 #: userhelper-wrap.c:187
@@ -258,8 +274,9 @@ msgstr "Σφάλμα αρχικοποίησης κωδικού."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Μερικά από τα αρχεία συστήματος είναι κλειδωμένα\n"
-"Παρακακώ δοκιμάστε ξανά μετά από λίγη ώρα."
+msgstr ""
+"Μερικά από τα αρχεία συστήματος είναι κλειδωμένα.\n"
+"Παρακαλώ δοκιμάστε ξανά σε λίγη ώρα."
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
@@ -279,6 +296,9 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
+"Ο τρέχων φλοιός δεν περιέχεται στο /etc/shells.\n"
+"Δεν επιτρέπεται να αλλάξετε το φλοιό σας.\n"
+"Συμβουλευτείτε τον διαχειριστή συστήματός σας."
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
@@ -294,12 +314,11 @@ msgstr "Αποτυχία εύρεσης του επιλεγμένου προγρ
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Η αίτηση ακυρώθηκε."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "Συνέβει σφάλμα PAM %d.\n"
+msgstr "Συνέβη εσωτερικό σφάλμα στο PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -312,7 +331,7 @@ msgstr "Άγνωστο σφάλμα."
 #.
 #: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
 msgid "Query"
-msgstr "Επερώτηση"
+msgstr "Ερώτηση"
 
 #: userhelper-wrap.c:568 userhelper-wrap.c:748
 msgid "Error"
@@ -340,7 +359,7 @@ msgstr "Αλλαγή φλοιού σύνδεσης."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
+msgstr "Επιχειρείτε να εκτελέσετε το \"%s\", το οποίο μπορεί να επωφεληθεί από δικαιώματα διαχειριστή, ωστόσο χρειάζονται περισσότερες πληροφορίες για να γίνει αυτό."
 
 #: userhelper-wrap.c:800
 #, c-format
@@ -348,18 +367,20 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
+"Επιχειρείτε να εκτελέσετε το \"%s\", το οποίο απαιτεί δικαιώματα διαχειριστή, "
+"ωστόσο χρειάζονται περισσότερες πληροφορίες για να γίνει αυτό."
 
 #: userhelper-wrap.c:809
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
+msgstr "Επιχειρείτε να εκτελέσετε μια εντολή η οποία μπορεί να επωφεληθεί από δικαιώματα διαχειριστή, ωστόσο χρειάζονται περισσότερες πληροφορίες για να γίνει αυτό."
 
 #: userhelper-wrap.c:811
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
+msgstr "Επιχειρείτε να εκτελέσετε μια εντολή η οποία απαιτεί δικαιώματα διαχειριστή, ωστόσο χρειάζονται περισσότερες πληροφορίες για να γίνει αυτό."
 
 #: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
@@ -374,12 +395,12 @@ msgstr "Σφάλμα σωλήνωσης.\n"
 #: userhelper-wrap.c:987
 #, c-format
 msgid "Cannot fork().\n"
-msgstr "Cannot fork().\n"
+msgstr "Δεν μπορεί να γίνει fork().\n"
 
 #: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
 msgid "dup2() error.\n"
-msgstr "dup2() error.\n"
+msgstr "Σφάλμα dup2().\n"
 
 #: userhelper-wrap.c:1081
 #, c-format
@@ -389,7 +410,7 @@ msgstr "execl() error, errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Απροσδόκητο όρισμα"
 
 #: userinfo.c:396
 #, c-format
@@ -402,27 +423,30 @@ msgstr "_Προσάρτηση"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "Αποπρο_άρτηση"
+msgstr "Αποπρο_σάρτηση"
 
 #: usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
+msgstr "Είστε βέβαιος πως θέλετε να μορφοποιήσετε αυτό το δίσκο; Θα καταστρέψετε όλα τα δεδομένα που περιέχει."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr ""
+msgstr "Εκτέλεση μορφοποίησης _χαμηλού επιπέδου."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Επιλέξτε ένα _σύστημα αρχείων προς δημιουργία:"
 
 #: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
+"Δεν υπάρχουν συστήματα αρχείων τα οποία επιτρέπεται να προσαρτήσετε ή να "
+"αποπροσαρτήσετε.\n"
+"Επικοινωνήστε με τον διαχειριστή σας."
 
 #. Create the dialog.
 #: usermount.c:550 usermount.c:562
@@ -451,7 +475,7 @@ msgstr "Σύστημα αρχείων"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Η συσκευή '%s' δε μπορεί να μορφοποιηθεί."
 
 # #-#-#-#-#  gnome-terminal.gnome-2-0.el.po (profterm 1.9.3)  #-#-#-#-#
 #
@@ -477,7 +501,7 @@ msgstr "Πληροφορίες Χρήστη"
 
 #: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
-msgstr "Ονοματεπώνυμο:"
+msgstr "Πλήρες όνομα:"
 
 #: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
@@ -495,66 +519,3 @@ msgstr "Αριθμός τηλεφώνου οικίας:"
 msgid "Login Shell:"
 msgstr "Κέλυφος Σύνδεσης:"
 
-#~ msgid "About Myself"
-#~ msgstr "Περί Εμένα"
-
-#~ msgid "Change personal information"
-#~ msgstr "Αλλαγή πληροφοριών χρήστη"
-
-#~ msgid "Disk Management"
-#~ msgstr "Διαχείριση Δίσκων"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "Προσάρτηση και αποπροσάρτηση συστημάτων αρχείων"
-
-#~ msgid "Change your login password"
-#~ msgstr "Αλλαγή του κωδικού σύνδεσης"
-
-#~ msgid "Password"
-#~ msgstr "Κωδικός"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "πρόκειται να εκτελεστεί το \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Απαιτούνται %d αποκρίσεις.\n"
-
-#~ msgid "_Ok"
-#~ msgstr "_Εντάξει"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Ακύρωση"
-
-# #-#-#-#-#  libgnomeui.gnome-2-0.el.po (libgnomeui 1.0)  #-#-#-#-#
-# #-#-#-#-#  balsa-el.po (balsa 0.9.3.1)  #-#-#-#-#
-#
-# #-#-#-#-#  galeon-el.po (galeon 1.0)  #-#-#-#-#
-#
-# #-#-#-#-#  glimmer-el.po (glimmer 1.0)  #-#-#-#-#
-#
-# #-#-#-#-#  gnome-libs-el.po (gnome-libs 1.2.12)  #-#-#-#-#
-#
-# #-#-#-#-#  mrproject-el.po (mrproject 0.5)  #-#-#-#-#
-#
-# #-#-#-#-#  screem-el.po (screem 1.0)  #-#-#-#-#
-#
-#~ msgid "_Close"
-#~ msgstr "_Κλείσιμο"
-
-# #-#-#-#-#  nautilus.gnome-2-0.el.po (nautilus 1.1.12)  #-#-#-#-#
-#~ msgid "Type"
-#~ msgstr "Τύπος"
-
-#~ msgid "_Unmount"
-#~ msgstr "Αποπρο_σάρτηση"
-
-# #-#-#-#-#  libgnomeui.gnome-2-0.el.po (libgnomeui 1.0)  #-#-#-#-#
-# #-#-#-#-#  memory.el.po (abiword 1.0)  #-#-#-#-#
-# #-#-#-#-#  galeon-el.po (galeon 1.0)  #-#-#-#-#
-#
-# #-#-#-#-#  gnome-libs-el.po (gnome-libs 1.2.12)  #-#-#-#-#
-#
-# #-#-#-#-#  mrproject-el.po (mrproject 0.5)  #-#-#-#-#
-#
-#~ msgid "E_xit"
-#~ msgstr "Έ_ξοδος"
