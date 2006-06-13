@@ -11,14 +11,13 @@ msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2006-06-13 02:30+0100\n"
+"PO-Revision-Date: 2006-06-13 19:25+0300\n"
 "Last-Translator: Dimitris Glezos <dimitris@glezos.com>\n"
 "Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -520,7 +519,7 @@ msgstr "Κέλυφος Σύνδεσης:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr "Σχετικά με μένα"
+msgstr "Προσωπικές πληροφορίες "
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
