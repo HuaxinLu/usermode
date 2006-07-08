@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -123,9 +123,9 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
-"Κατά την παρούσα περίοδο είστε εξουσιοδοτημένος να κάνετε καθολικές στο σύστημα ρυθμίσεις (που επηρεάζουν όλους τους χρήστες) χωρίς να σας "
-"ζητείται ο κωδικός  διαχειριστή. Μπορείτε να εγκαταλείψετε αυτή την "
-"εξουσιοδότηση."
+"Κατά την παρούσα περίοδο είστε εξουσιοδοτημένος να κάνετε καθολικές στο "
+"σύστημα ρυθμίσεις (που επηρεάζουν όλους τους χρήστες) χωρίς να σας ζητείται "
+"ο κωδικός  διαχειριστή. Μπορείτε να εγκαταλείψετε αυτή την εξουσιοδότηση."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -233,7 +233,8 @@ msgstr "Το userhelper πρέπει να είναι setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Αδύνατο να άνοιγμα ενός γραφικού παραθύρου και αδύνατη η εύρεση τερματικού "
 "ελέγχου.\n"
@@ -540,4 +541,3 @@ msgstr "Αλλαγή του κωδικού πρόσβασης σας"
 #: userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Κωδικός"
-
