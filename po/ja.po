@@ -190,7 +190,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、\n"
+"スーパユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
 #: userhelper.c:837
@@ -199,7 +199,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、\n"
+"スーパユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
 #: userhelper.c:841
@@ -207,7 +207,7 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になるコマンドを実行しようとしていますが、\n"
+"スーパユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
 #: userhelper.c:843
@@ -215,7 +215,7 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するに"
+"スーパユーザー権限を必要とするコマンドを実行しようとしていますが、実行するに"
 "は\n"
 "追加情報が必要です。"
 
@@ -227,7 +227,7 @@ msgstr "%s用のパスワード:"
 #: userhelper.c:2348
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "ユーザヘルパーはrootにsetuidされていなければなりません\n"
+msgstr "ユーザーヘルパーはrootにsetuidされていなければなりません\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2446
@@ -278,7 +278,7 @@ msgstr ""
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
-msgstr "不明なユーザです。"
+msgstr "不明なユーザーです。"
 
 #: userhelper-wrap.c:193
 msgid "Insufficient rights."
@@ -358,7 +358,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になる\"%s\"を実行しようとしていますが、実行するに"
+"スーパユーザー権限により有効になる\"%s\"を実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
 #: userhelper-wrap.c:800
@@ -367,7 +367,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とする\"%s\"を実行しようとしていますが、実行するには追"
+"スーパユーザー権限を必要とする\"%s\"を実行しようとしていますが、実行するには追"
 "加情報が必要です。"
 
 #: userhelper-wrap.c:809
@@ -375,7 +375,7 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限により有効になるコマンドを実行しようとしていますが、実行する"
+"スーパユーザー権限により有効になるコマンドを実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
 #: userhelper-wrap.c:811
@@ -383,7 +383,7 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザ権限を必要とするコマンドを実行しようとしていますが、実行するには"
+"スーパユーザー権限を必要とするコマンドを実行しようとしていますが、実行するには"
 "追加情報が必要です。"
 
 #: userhelper-wrap.c:828
