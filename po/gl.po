@@ -1,14 +1,27 @@
+# translation of gl.po to 
+# , 2006.
+# , 2006.
+# , 2006.
+# , 2006.
+# , 2006.
+# , 2006.
+# , 2006.
+# , 2006.
+# , 2006.
+# , 2006.
+# , 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
+"Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2001-03-17 20:04+0100\n"
-"Last-Translator: Jesús Bravo Álvarez <jba@pobox.com>\n"
-"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
+"PO-Revision-Date: 2006-07-19 20:38+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <gl@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -47,7 +60,7 @@ msgstr "Executar sen privilexios"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(actual) Contrasinal de UNIX: "
+msgstr "Contrasinal de UNIX (actual): "
 
 #: dummy.h:26
 msgid "New UNIX password: "
@@ -55,7 +68,7 @@ msgstr "Novo contrasinal de UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Escriba outra vez o novo contrasinal de UNIX: "
+msgstr "Volva introducir o novo contrasinal de UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -75,16 +88,15 @@ msgstr "Os contrasinais non coinciden"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
+msgstr "Executar sen contrasinal ferramentas de configuración para todo o sistema."
 
 #: dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "login: "
 
 #: dummy.h:34
-#, fuzzy
 msgid "Password: "
-msgstr "Contrasinal de %s"
+msgstr "Contrasinal: "
 
 #: userdialogs.h:30
 msgid "Help"
@@ -113,6 +125,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Está tentando executar \"%s\" o cal require privilexios\n"
+"administrativos, pero para facelo é precisa máis información."
 
 #: userhelper.c:680
 msgid ""
@@ -125,22 +139,24 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
+"Está tentando executar un comando que require privilexios\n"
+"administrativos, pero para facelo é precisa máis información."
 
 #: userhelper.c:701
-#, fuzzy, c-format
+#, c-format
 msgid "Password for %s: "
-msgstr "Contrasinal de %s"
+msgstr "Contrasinal de %s: "
 
 #: userhelper.c:2215
 #, c-format
+#, fuzzy
 msgid "userhelper must be setuid root\n"
 msgstr "O userhelper ten que ser setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2313
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
 #: userhelper-wrap.c:179
@@ -165,14 +181,14 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Un ou máis dos campos modificados non son válido.\n"
+"Un ou máis dos campos modificados non son válidos.\n"
 "Isto é probablemente por mor dalgunha coma ou dous puntos nalgún dos "
 "campos.\n"
 "Quíteos e tente de novo."
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
-msgstr "Erro ó reiniciar o contrasinal."
+msgstr ""
 
 #: userhelper-wrap.c:189
 msgid ""
@@ -191,9 +207,8 @@ msgid "Insufficient rights."
 msgstr "Permisos insuficientes."
 
 #: userhelper-wrap.c:195
-#, fuzzy
 msgid "Invalid call to subprocess."
-msgstr "Chamada ó subproceso non válida."
+msgstr "Chamada incorrecta ó subproceso."
 
 #: userhelper-wrap.c:197
 msgid ""
@@ -235,9 +250,8 @@ msgid "Error"
 msgstr "Erro"
 
 #: userhelper-wrap.c:576
-#, fuzzy
 msgid "Information"
-msgstr "Información do usuario"
+msgstr "Información"
 
 #: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
@@ -246,11 +260,11 @@ msgstr ""
 
 #: userhelper-wrap.c:782
 msgid "Changing personal information."
-msgstr ""
+msgstr "Cambiando a información persoal."
 
 #: userhelper-wrap.c:785
 msgid "Changing login shell."
-msgstr ""
+msgstr "Cambiando a shell de entrada."
 
 #: userhelper-wrap.c:791
 #, c-format
@@ -264,7 +278,7 @@ msgstr ""
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
+msgstr "Está tentando executar \"%s\" o cal require privilexios administrativos, pero para facelo é precisa máis información."
 
 #: userhelper-wrap.c:802
 msgid ""
@@ -276,15 +290,15 @@ msgstr ""
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
+msgstr "Está tentando executar un comando que require privilexios administrativos, pero para facelo é precisa máis información."
 
 #: userhelper-wrap.c:821
-#, fuzzy
 msgid "_Run Unprivileged"
-msgstr "Executar sen privilexios"
+msgstr "_Executar sen privilexios"
 
 #: userhelper-wrap.c:973
 #, c-format
+#, fuzzy
 msgid "Pipe error.\n"
 msgstr "Erro na canalización.\n"
 
@@ -306,26 +320,21 @@ msgstr "Erro de execl(), errno=%d\n"
 #: userinfo.c:323
 #, c-format
 msgid "You don't exist.  Go away.\n"
-msgstr ""
+msgstr "Non existe.  Vaiase.\n"
 
 #: usermount.c:62
-#, fuzzy
 msgid "_Mount"
-msgstr "Montar"
+msgstr "_Montar"
 
 #: usermount.c:63
-#, fuzzy
 msgid "Un_mount"
-msgstr "Desmontar"
+msgstr "_Desmontar"
 
 #: usermount.c:321
-#, fuzzy
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"¿Está seguro?\n"
-"Vai destruír tódolos datos nese disco.\n"
+msgstr "¿Está seguro de que desexa formatar este disco?  Vai destruír tódolos datos que contén."
 
 #: usermount.c:332
 #, fuzzy
@@ -334,27 +343,25 @@ msgstr "Facer formato de baixo nivel."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr ""
+msgstr "Seleccionar un tipo de sistema de _ficheiros para crear:"
 
 #: usermount.c:543
-#, fuzzy
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Non hai ningún sistema de ficheiros montable polo usuario.\n"
+"Non hai ningún sistema de ficheiros que o usuario poida montar ou desmontar.\n"
 "Contacte co seu administrador."
 
 #. Create the dialog.
 #: usermount.c:544 usermount.c:556
 msgid "User Mount Tool"
-msgstr "Ferramenta de montaxe de usuario"
+msgstr "Ferramenta de Montaxe de Usuario"
 
 #. Create the other buttons.
 #: usermount.c:570
-#, fuzzy
 msgid "_Format"
-msgstr "Formatar"
+msgstr "_Formatar"
 
 #: usermount.c:606
 msgid "Device"
@@ -366,12 +373,12 @@ msgstr "Directorio"
 
 #: usermount.c:618
 msgid "Filesystem"
-msgstr ""
+msgstr "Sistema de ficheiros"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
@@ -379,7 +386,7 @@ msgstr "Mensaxe"
 
 #: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
-msgstr "Información do usuario"
+msgstr "Información de Usuario"
 
 #: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
@@ -403,103 +410,25 @@ msgstr "Shell:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Sobre Min"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Información do usuario"
+msgstr "Cambiar a información persoal"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Administración de Discos"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Montar e desmontar sistemas de ficheiros"
 
 #: userpasswd.desktop.in.h:1
-#, fuzzy
 msgid "Change your login password"
-msgstr "Mudando o contrasinal de %s"
+msgstr "Cambie o seu contrasinal de entrada"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Contrasinal de %s"
+msgstr "Contrasinal"
 
-#, fuzzy
-#~ msgid "_Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "Type"
-#~ msgstr "Tipo"
-
-#, fuzzy
-#~ msgid "_Unmount"
-#~ msgstr "Desmontar"
-
-#, fuzzy
-#~ msgid "E_xit"
-#~ msgstr "Saír"
-
-#, fuzzy
-#~ msgid "Got PAM error %d.\n"
-#~ msgstr "Obteuse o erro %d.\n"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "a piques de executar \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Necesítanse %d respostas.\n"
-
-#, fuzzy
-#~ msgid "Change password"
-#~ msgstr "Mudando o contrasinal de %s"
-
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "a piques de autenticar a \"%s\"\n"
-
-#, fuzzy
-#~ msgid "PAM retval = %d (%s)\n"
-#~ msgstr "PAM devolveu = %d\n"
-
-#~ msgid "Yes"
-#~ msgstr "Si"
-
-#~ msgid "No"
-#~ msgstr "Non"
-
-#~ msgid "Prompt"
-#~ msgstr "Prompt"
-
-#~ msgid "Input"
-#~ msgstr "Entrada"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "Para poder executar \"%s\" con privilexios de root, precísase información "
-#~ "adicional."
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "¡¿Quere %d resposta(s) a partir de %d campos?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "A comprobación de consistencia non está activada."
-
-#~ msgid "Block is fine."
-#~ msgstr "O bloque é correcto."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Bloque liberado dúas veces."
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "A memoria antes do bloque estaba estragada."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "A memoria tralo bloque estaba estragada."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Isto será algún texto de axuda."
