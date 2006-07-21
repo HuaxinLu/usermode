@@ -1,18 +1,22 @@
+# translation of cs.po to Czech
 # Copyright (C) 2002, 2003, 2004, 2005 usermode'S COPYRIGHT HOLDER
 # Copyright (C) 2004, 2005 Miloslav Trmac <mitr@volny.cz>
-#
 # Miloslav Trmac <mitr@volny.cz>, 2002 - 2005.
+# Nikola Štohanzl <niko@srnet.cz>, 2006.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode VERSION\n"
+"Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
-"PO-Revision-Date: 2005-12-02 19:52+0100\n"
-"Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
-"Language-Team: Czech <cs@li.org>\n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"PO-Revision-Date: 2006-07-21 19:59+0200\n"
+"Last-Translator: Nikola Štohanzl <niko@srnet.cz>\n"
+"Language-Team: Czech\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8-bit\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -99,8 +103,7 @@ msgstr "Nemohu se vzdát oprávnění správce: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Nemohu se vzdát oprávnění správce: pam_timestamp_check vrátilo kód chyby %d"
+msgstr "Nemohu se vzdát oprávnění správce: pam_timestamp_check vrátilo kód chyby %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -163,22 +166,17 @@ msgstr "pam-panel-icon: nemohu se připojit ke správci sezení\n"
 msgid "Help"
 msgstr "Nápověda"
 
-#: userhelper.c:220 userhelper.c:294
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "Nemohu nastavit implicitní kontext pro %s pro program %s.\n"
-
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Nemohu nastavit kontext exec na %s.\n"
 
-#: userhelper.c:596
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "Heslo pro uživatele %s"
 
-#: userhelper.c:835
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -187,7 +185,7 @@ msgstr ""
 "Pokoušíte se spustit \"%s\", což může využít administrátorská oprávnění,\n"
 "ale k tomu je potřeba více informací."
 
-#: userhelper.c:837
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -197,7 +195,7 @@ msgstr ""
 "oprávnění.\n"
 "Je potřeba více informací, aby bylo možné pokračovat."
 
-#: userhelper.c:841
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -205,7 +203,7 @@ msgstr ""
 "Pokoušíte se spustit příkaz, který může využít administrátorská oprávnění,\n"
 "ale k tomu je potřeba více informací."
 
-#: userhelper.c:843
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -213,21 +211,20 @@ msgstr ""
 "Pokoušíte se spustit příkaz, který potřebuje administrátorská oprávnění.\n"
 "Je potřeba více informací, aby bylo možné pokračovat."
 
-#: userhelper.c:862
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "Heslo pro %s: "
 
-#: userhelper.c:2348
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí být SUID root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Nelze otevřít grafické okno a nelze najít řídící terminál.\n"
 
 #: userhelper-wrap.c:179
@@ -320,7 +317,7 @@ msgstr "Neznámá chyba."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "Otázka"
 
@@ -333,7 +330,7 @@ msgid "Information"
 msgstr "Informace"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "TextTextTextText."
 
@@ -403,12 +400,7 @@ msgstr "Chyba při dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "Chyba při execl(), errno=%d\n"
 
-#: userinfo.c:369
-#, c-format
-msgid "Unexpected argument"
-msgstr "Neočekávaný parametr"
-
-#: userinfo.c:396
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "V systému neexistujete. Odejděte.\n"
@@ -468,41 +460,60 @@ msgstr "Adresář"
 msgid "Filesystem"
 msgstr "Systém souborů"
 
-#: usermount.c:674
-#, c-format
-msgid "The device '%s' can not be formatted."
-msgstr "Zařízení '%s' nelze naformátovat."
-
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "Zpráva"
 
-#: glade.strings.h:12 usermode.glade:187
+#: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
 msgstr "Informace o uživateli"
 
-#: glade.strings.h:13 usermode.glade:251
+#: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Plné jméno:"
 
-#: glade.strings.h:14 usermode.glade:275
+#: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
 msgstr "Kancelář:"
 
-#: glade.strings.h:15 usermode.glade:299
+#: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Telefon do kanceláře:"
 
-#: glade.strings.h:16 usermode.glade:323
+#: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Telefon domů:"
 
-#: glade.strings.h:17 usermode.glade:347
+#: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Přihlašovací shell:"
+
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "O mně:"
+
+#: userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Změnit osobní informace"
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr "Správa disku"
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr "Připojit nebo odpojit souborové systémy"
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr "Změnit vaše heslo"
+
+#: userpasswd.desktop.in.h:2
+msgid "Password"
+msgstr "Heslo"
+
