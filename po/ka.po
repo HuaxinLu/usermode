@@ -1,19 +1,22 @@
+# translation of ka.po to Georgian
 # Georgian translations for PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2004.
 #
+# Automatically generated, 2004.
+# George Machitidze <giomac@gmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: package\n"
+"Project-Id-Version: ka\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-03-31 15:31-0500\n"
-"PO-Revision-Date: 2004-03-31 15:31-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2006-08-05 13:55+0400\n"
+"Last-Translator: George Machitidze <giomac@gmail.com>\n"
+"Language-Team: Georgian <ka@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -36,15 +39,15 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: dummy.h:22 userdialogs.h:32
 msgid "Exit"
-msgstr ""
+msgstr "გასვლა"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr ""
+msgstr "შეწყვეტა"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
@@ -52,15 +55,15 @@ msgstr ""
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(მიმდინარე) UNIX-პაროლი: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr ""
+msgstr "ახალი UNIX-პაროლი: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "გაიმეორეთ ახალი UNIX-პაროლი: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -68,15 +71,15 @@ msgstr ""
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "პაროლი უვარგისია: ის ძალიან მოკლეა"
 
 #: dummy.h:30
 msgid "Password unchanged"
-msgstr ""
+msgstr "პაროლი არ შეცვლილა"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "უკაცრავად, პაროლები არ ემთხვევა"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
@@ -88,11 +91,11 @@ msgstr ""
 
 #: dummy.h:34
 msgid "Password: "
-msgstr ""
+msgstr "პაროლი: "
 
 #: userdialogs.h:30
 msgid "Help"
-msgstr ""
+msgstr "დახმარება"
 
 #: userhelper.c:114
 #, c-format
@@ -102,7 +105,7 @@ msgstr ""
 #: userhelper.c:431
 #, c-format
 msgid "Password for %s"
-msgstr ""
+msgstr "პაროლი %s-თვის"
 
 #: userhelper.c:674
 #, c-format
@@ -133,7 +136,7 @@ msgstr ""
 #: userhelper.c:701
 #, c-format
 msgid "Password for %s: "
-msgstr ""
+msgstr "პაროლი %s-თვის: "
 
 #: userhelper.c:2215
 #, c-format
@@ -143,8 +146,7 @@ msgstr ""
 #. FIXME: print a warning here?
 #: userhelper.c:2313
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
 #: userhelper-wrap.c:179
@@ -153,7 +155,7 @@ msgstr ""
 
 #: userhelper-wrap.c:181
 msgid "Information updated."
-msgstr ""
+msgstr "ინფორმაცია განახლებულია."
 
 #: userhelper-wrap.c:183
 msgid ""
@@ -224,11 +226,11 @@ msgstr ""
 
 #: userhelper-wrap.c:564 userhelper-wrap.c:744
 msgid "Error"
-msgstr ""
+msgstr "შეცდომა"
 
 #: userhelper-wrap.c:576
 msgid "Information"
-msgstr ""
+msgstr "ინფორმაცია"
 
 #: userhelper-wrap.c:736 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
@@ -300,11 +302,11 @@ msgstr ""
 
 #: usermount.c:62
 msgid "_Mount"
-msgstr ""
+msgstr "_მონტირება"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr ""
+msgstr "დე_მონტირება"
 
 #: usermount.c:321
 msgid ""
@@ -334,48 +336,48 @@ msgstr ""
 #. Create the other buttons.
 #: usermount.c:570
 msgid "_Format"
-msgstr ""
+msgstr "_ფორმატირება"
 
 #: usermount.c:606
 msgid "Device"
-msgstr ""
+msgstr "მოწყობილობა"
 
 #: usermount.c:612
 msgid "Directory"
-msgstr ""
+msgstr "დირექტორია"
 
 #: usermount.c:618
 msgid "Filesystem"
-msgstr ""
+msgstr "ფაილური სისტემა"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
-msgstr ""
+msgstr "შეტყობინება"
 
 #: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
-msgstr ""
+msgstr "ინფორმაცია მომხმარებელზე"
 
 #: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
-msgstr ""
+msgstr "სახელი და გვარი:"
 
 #: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
-msgstr ""
+msgstr "ოფისი:"
 
 #: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
-msgstr ""
+msgstr "ოფისის ტელეფონი:"
 
 #: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
-msgstr ""
+msgstr "სახლის ტელეფონი:"
 
 #: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
@@ -383,19 +385,19 @@ msgstr ""
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "ჩემს შესახებ"
 
 #: userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr ""
+msgstr "პერსონალური ინფორმაციის შეცვლა"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "დისკის მართვა"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "ფაილური სისტემების მონტირება და დემონტირება"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
@@ -403,4 +405,5 @@ msgstr ""
 
 #: userpasswd.desktop.in.h:2
 msgid "Password"
-msgstr ""
+msgstr "პაროლი"
+
