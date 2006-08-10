@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
+"POT-Creation-Date: 2005-05-11 13:49+0200\n"
 "PO-Revision-Date: 2005-11-16 22:33+0100\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team: Italiano <Fedora-trans-it@redhat.com>\n"
@@ -83,7 +83,8 @@ msgstr "Spiacente, le password non corrispondono"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Apertura strumenti di configurazione globali del sistema senza una password."
+msgstr ""
+"Apertura strumenti di configurazione globali del sistema senza una password."
 
 #: dummy.h:33
 msgid "login: "
@@ -168,22 +169,17 @@ msgstr "pam-panel-icon: collegamento al session manager fallito\n"
 msgid "Help"
 msgstr "Aiuto"
 
-#: userhelper.c:220 userhelper.c:294
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "Non posso impostare il contesto predefinito per %s per il programma %s.\n"
-
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Non posso impostare un contesto exec su %s.\n"
 
-#: userhelper.c:596
+#: userhelper.c:528
 #, c-format
 msgid "Password for %s"
 msgstr "Password per %s"
 
-#: userhelper.c:835
+#: userhelper.c:767
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -192,7 +188,7 @@ msgstr ""
 "Stai tentando di eseguire \"%s\" che può trarre beneficio dai privilegi\n"
 "amministrativi, ma occorrono maggiori informazioni per eseguire l'operazione."
 
-#: userhelper.c:837
+#: userhelper.c:769
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -201,7 +197,7 @@ msgstr ""
 "Stai tentando di eseguire \"%s\" che richiede privilegi amministrativi,\n"
 "ma occorrono più informazioni per eseguire l'operazione."
 
-#: userhelper.c:841
+#: userhelper.c:773
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -210,7 +206,7 @@ msgstr ""
 "privilegi amministrativi, ma occorrono più informazioni per eseguire "
 "l'operazione."
 
-#: userhelper.c:843
+#: userhelper.c:775
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -218,20 +214,21 @@ msgstr ""
 "Stai tentando di eseguire un comando che richiede privilegi\n"
 "amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
-#: userhelper.c:862
+#: userhelper.c:794
 #, c-format
 msgid "Password for %s: "
 msgstr "Password per %s: "
 
-#: userhelper.c:2348
+#: userhelper.c:2318
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper deve essere setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2416
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica, ed impossibile trovare il terminale "
 "di controllo.\n"
@@ -325,7 +322,7 @@ msgstr "Errore sconosciuto."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
 msgid "Query"
 msgstr "Interrogazione"
 
@@ -338,7 +335,7 @@ msgid "Information"
 msgstr "Informazioni"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Contenitore testo"
 
@@ -408,12 +405,7 @@ msgstr "errore dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "errore execl(), errno=%d\n"
 
-#: userinfo.c:369
-#, c-format
-msgid "Unexpected argument"
-msgstr "Argomento inaspettato"
-
-#: userinfo.c:396
+#: userinfo.c:326
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Non esisti.  Va via.\n"
@@ -472,42 +464,71 @@ msgstr "Directory"
 msgid "Filesystem"
 msgstr "Filesystem"
 
-#: usermount.c:674
-#, c-format
-msgid "The device '%s' can not be formatted."
-msgstr "Il dispositivo '%s' non può essere formattato."
-
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: glade.strings.h:21 usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: glade.strings.h:10 usermode.glade.h:5
 msgid "Message"
 msgstr "Messaggio"
 
-#: glade.strings.h:12 usermode.glade:187
+#: glade.strings.h:12 usermode.glade.h:10
 msgid "User Information"
 msgstr "Informazioni utente"
 
-#: glade.strings.h:13 usermode.glade:251
+#: glade.strings.h:13 usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Nome completo:"
 
-#: glade.strings.h:14 usermode.glade:275
+#: glade.strings.h:14 usermode.glade.h:7
 msgid "Office:"
 msgstr "Ufficio:"
 
-#: glade.strings.h:15 usermode.glade:299
+#: glade.strings.h:15 usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Telefono ufficio:"
 
-#: glade.strings.h:16 usermode.glade:323
+#: glade.strings.h:16 usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Telefono casa:"
 
-#: glade.strings.h:17 usermode.glade:347
+#: glade.strings.h:17 usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Shell di login:"
 
+#: userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "Modifica informazioni personali."
+
+#: usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "Password: "
+
+#~ msgid "Could not set default context for %s for program %s.\n"
+#~ msgstr ""
+#~ "Non posso impostare il contesto predefinito per %s per il programma %s.\n"
+
+#~ msgid "Unexpected argument"
+#~ msgstr "Argomento inaspettato"
+
+#~ msgid "The device '%s' can not be formatted."
+#~ msgstr "Il dispositivo '%s' non può essere formattato."
