@@ -1,21 +1,21 @@
-# translation of  it to italian
+# translation of it.po to Italiano
 # Copyright (C) 2001 Red Hat, Inc.
+#
 # Bettina De Monti <bdemonti@redhat.it>, 2001.
 # Francesco Valente <fvalen@redhat.com>, 2003, 2004.
-# Francesco Tombolini <tombo@adamantio.net>, 2005.
-#
+# Francesco Tombolini <tombo@adamantio.net>, 2005, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2005-11-16 22:33+0100\n"
+"PO-Revision-Date: 2006-08-11 22:15+0200\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
-"Language-Team: Italiano <Fedora-trans-it@redhat.com>\n"
+"Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
@@ -83,8 +83,7 @@ msgstr "Spiacente, le password non corrispondono"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Apertura strumenti di configurazione globali del sistema senza una password."
+msgstr "Apertura strumenti di configurazione globali del sistema senza una password."
 
 #: dummy.h:33
 msgid "login: "
@@ -227,8 +226,7 @@ msgstr "userhelper deve essere setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2416
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica, ed impossibile trovare il terminale "
 "di controllo.\n"
@@ -499,36 +497,25 @@ msgstr "Shell di login:"
 
 #: userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Informazioni"
 
 #: userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Modifica informazioni personali."
+msgstr "Modifica informazioni personali"
 
 #: usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Amministrazione del disco"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Montaggio e smontaggio dei filesystems"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Cambio della password di login"
 
 #: userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Password: "
+msgstr "Password"
 
-#~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr ""
-#~ "Non posso impostare il contesto predefinito per %s per il programma %s.\n"
-
-#~ msgid "Unexpected argument"
-#~ msgstr "Argomento inaspettato"
-
-#~ msgid "The device '%s' can not be formatted."
-#~ msgstr "Il dispositivo '%s' non può essere formattato."
