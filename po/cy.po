@@ -169,9 +169,9 @@ msgid "Help"
 msgstr "Cymorth"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Methwyd gosod cyd-destun exec yn %s.\n"
+msgstr ""
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -509,38 +509,3 @@ msgstr "Rhif Ffôn Cartref:"
 msgid "Login Shell:"
 msgstr "Plisgyn Mewngofnodi:"
 
-#~ msgid "About Myself"
-#~ msgstr "Amdanaf i fy Hun"
-
-#~ msgid "Change personal information"
-#~ msgstr "Newid gwybodaeth bersonol"
-
-#~ msgid "Disk Management"
-#~ msgstr "Rheoli Disgiau"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "Gosod a Dad-osod systemau ffeil"
-
-#~ msgid "Change your login password"
-#~ msgstr "Newid eich cyfrinair mewngofnodi"
-
-#~ msgid "Password"
-#~ msgstr "Cyfrinair"
-
-#~ msgid "_Ok"
-#~ msgstr "_Iawn"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Dileu"
-
-#~ msgid "_Close"
-#~ msgstr "_Cau"
-
-#~ msgid "Type"
-#~ msgstr "Math"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Dad-osod"
-
-#~ msgid "E_xit"
-#~ msgstr "G_adael"
