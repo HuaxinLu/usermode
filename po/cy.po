@@ -171,7 +171,7 @@ msgstr "Cymorth"
 #: userhelper.c:220 userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
+msgstr "Methwyd gosod cyd-destun rhagosodedig o %s i raglen %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -308,11 +308,11 @@ msgstr "Methu canfod y raglen ddewisiedig."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Diddymwyd y cais."
 
 #: userhelper-wrap.c:209
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Digwyddodd gwall mewnol PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -409,7 +409,7 @@ msgstr "gwall execl() , rhif gwall=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Ymresymiad annisgwyl"
 
 #: userinfo.c:396
 #, c-format
@@ -473,7 +473,7 @@ msgstr "System ffeil"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Ni ellir fformatio y dyfais '%s'."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
