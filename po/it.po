@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-11 13:49+0200\n"
-"PO-Revision-Date: 2006-08-11 22:15+0200\n"
+"PO-Revision-Date: 2006-08-27 12:36+0200\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
@@ -47,7 +47,7 @@ msgstr "Esci"
 
 #: dummy.h:23 userdialogs.h:31
 msgid "Cancel"
-msgstr "Cancella"
+msgstr "Annulla"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
@@ -55,7 +55,7 @@ msgstr "Esegui senza privilegi"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "Password UNIX (attuale): "
+msgstr "Password UNIX (corrente): "
 
 #: dummy.h:26
 msgid "New UNIX password: "
@@ -63,7 +63,7 @@ msgstr "Nuova password UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Ridigita la nuova password UNIX: "
+msgstr "Ri-digita la nuova password UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -171,7 +171,7 @@ msgstr "Aiuto"
 #: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Non posso impostare un contesto exec su %s.\n"
+msgstr "Impossibile impostare un contesto exec su %s.\n"
 
 #: userhelper.c:528
 #, c-format
@@ -184,7 +184,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire \"%s\" che può trarre beneficio dai privilegi\n"
+"Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi\n"
 "amministrativi, ma occorrono maggiori informazioni per eseguire l'operazione."
 
 #: userhelper.c:769
@@ -193,7 +193,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire \"%s\" che richiede privilegi amministrativi,\n"
+"Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi,\n"
 "ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper.c:773
@@ -201,7 +201,7 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire un comando che può trarre beneficio dai\n"
+"Si sta tentando di eseguire un comando che può trarre beneficio dai\n"
 "privilegi amministrativi, ma occorrono più informazioni per eseguire "
 "l'operazione."
 
@@ -210,7 +210,7 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire un comando che richiede privilegi\n"
+"Si sta tentando di eseguire un comando che richiede privilegi\n"
 "amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper.c:794
@@ -245,7 +245,7 @@ msgid ""
 "Please try again."
 msgstr ""
 "La password digitata non è valida.\n"
-"Sei pregato di provare nuovamente."
+"Si prega di provare nuovamente."
 
 #: userhelper-wrap.c:185
 msgid ""
@@ -255,7 +255,7 @@ msgid ""
 msgstr ""
 "Uno o più campi modificati non sono validi.\n"
 "Questo è probabilmente causato da due punti o virgole in uno dei campi.\n"
-"Sei pregato di rimuoverli e riprovare."
+"Si prega di rimuoverli e riprovare."
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
@@ -267,7 +267,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Alcuni file di sistema sono bloccati.\n"
-"Sei pregato di riprovare fra qualche momento."
+"Si prega di riprovare fra qualche momento."
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
@@ -287,9 +287,9 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"La tua shell non è elencata in /etc/shells.\n"
-"Non ti è permesso cambiare la shell.\n"
-"Rivolgiti all'amministratore del sistema."
+"La shell corrente non è elencata in /etc/shells.\n"
+"Non si ha il permesso di cambiare la shell.\n"
+"Rivolgersi all'amministratore del sistema."
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
@@ -330,7 +330,7 @@ msgstr "Errore"
 
 #: userhelper-wrap.c:580
 msgid "Information"
-msgstr "Informazioni"
+msgstr "Informazione"
 
 #: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade.h:8
@@ -351,7 +351,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire \"%s\" che può trarre beneficio dai privilegi "
+"Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi "
 "amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:800
@@ -360,7 +360,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire \"%s\" che richiede privilegi amministrativi, ma "
+"Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi, ma "
 "occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:809
@@ -368,7 +368,7 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire un comando che può trarre beneficio dai privilegi "
+"Si sta tentando di eseguire un comando che può trarre beneficio dai privilegi "
 "amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:811
@@ -376,12 +376,12 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Stai tentando di eseguire un comando che richiede privilegi amministrativi, "
+"Si sta tentando di eseguire un comando che richiede privilegi amministrativi, "
 "ma occorrono più informazioni per eseguire l'operazione."
 
 #: userhelper-wrap.c:828
 msgid "_Run Unprivileged"
-msgstr "_Esegui in modalità non privilegiata"
+msgstr "_Eseguire in modalità non privilegiata"
 
 #: userhelper-wrap.c:980
 #, c-format
@@ -421,24 +421,24 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Sei sicuro di voler formattare questo disco? Distruggerai qualsiasi dato in "
+"Si è sicuri di voler formattare questo disco? Si distruggerà qualsiasi dato in "
 "esso contenuto."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr "Esegui una formatttazione a _basso-livello."
+msgstr "Eseguire formatttazione a _basso-livello."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Seleziona il tipo di _filesystem da creare:"
+msgstr "Selezionare il tipo di _filesystem da creare:"
 
 #: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Non ci sono filesystems che ti è permesso montare o smontare.\n"
-"Contatta l'amministratore del sistema."
+"Non ci sono filesystems che si ha il permesso di montare o smontare.\n"
+"Contattare l'amministratore del sistema."
 
 #. Create the dialog.
 #: usermount.c:550 usermount.c:562
@@ -509,7 +509,7 @@ msgstr "Amministrazione del disco"
 
 #: usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Montaggio e smontaggio dei filesystems"
+msgstr "Montaggio e smontaggio filesystems"
 
 #: userpasswd.desktop.in.h:1
 msgid "Change your login password"
