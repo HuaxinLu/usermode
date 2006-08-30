@@ -1,8 +1,9 @@
+# translation of de.po to 
 # translation of de.po to German / Deutsch
 # translation of de.po to
 # translation of usermode.po to
 # translation of de.po to Deutsch
-# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Ronny Buchmann <ronny-vlug@vlugnet.org>, 2004,2006.
 # Claudia Krug <fhonig@redhat.it>, YEAR.
 # Bernd Groh <bgroh@redhat.com>, 2003.
@@ -10,19 +11,20 @@
 # Bernd Bartmann <Bernd.Bartmann@sohanet.de>, 2004.
 # Marcus Gloeckner <mgloeckner@gmail.com>, 2005.
 # Severin Heiniger <severinheiniger@gmail.com>, 2005.
+# Timo Trinks <ttrinks@redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-03-19 18:13+0100\n"
-"Last-Translator: Severin Heiniger <severinheiniger@gmail.com>\n"
-"Language-Team: German / Deutsch <fedora-i18n-list@redhat.com>\n"
+"PO-Revision-Date: 2006-08-31 09:37+1000\n"
+"Last-Translator: Timo Trinks <ttrinks@redhat.com>\n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #.
@@ -177,9 +179,9 @@ msgid "Help"
 msgstr "Hilfe"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Konnte exec-Kontext nicht auf %s setzen.\n"
+msgstr "Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -240,8 +242,7 @@ msgstr "userhelper muss Setuid-Root sein\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -426,7 +427,7 @@ msgstr "execl()-Fehler, errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Unerwartetes Argument"
 
 #: userinfo.c:396
 #, c-format
@@ -490,7 +491,7 @@ msgstr "Dateisystem"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Das Gerät '%s' kann nicht formatiert werden."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -526,20 +527,3 @@ msgstr "Telefonnummer Privat:"
 msgid "Login Shell:"
 msgstr "Login-Shell:"
 
-#~ msgid "About Myself"
-#~ msgstr "Persönliche Informationen"
-
-#~ msgid "Change personal information"
-#~ msgstr "Persönliche Informationen ändern"
-
-#~ msgid "Disk Management"
-#~ msgstr "Diskettenverwaltung"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "Dateisysteme einhängen und aushängen"
-
-#~ msgid "Change your login password"
-#~ msgstr "Anmelde-Passwort ändern"
-
-#~ msgid "Password"
-#~ msgstr "Passwort"
