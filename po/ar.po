@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ar_new\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
+"POT-Creation-Date: 2006-08-30 16:05+0200\n"
 "PO-Revision-Date: 2005-05-22 23:58+0300\n"
 "Last-Translator: Munzir Taha <munzirtaha@newhorizons.com.sa>\n"
 "Language-Team: Arabic <fedora-trans-ar@redhat.com>\n"
@@ -159,6 +159,7 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "فشل جعل قناة الإدخال/الإخراج غير موقفة: %s\n"
 
 #: pam-panel-icon.c:542
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: فشل الإتصال بمدير الجلسة\n"
 
@@ -176,12 +177,12 @@ msgstr "لم يمكن وضْع سياق التّنفيذ %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "لم يمكن وضْع سياق التّنفيذ %s.\n"
 
-#: userhelper.c:596
+#: userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "كلمة المرور لـ%s"
 
-#: userhelper.c:835
+#: userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -190,7 +191,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: userhelper.c:837
+#: userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -199,7 +200,8 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: userhelper.c:841
+#: userhelper.c:853
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -207,7 +209,8 @@ msgstr ""
 "أنت تحاول تشغيل أمر قد يستفيد من\n"
 "الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: userhelper.c:843
+#: userhelper.c:855
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -215,18 +218,18 @@ msgstr ""
 "أنت تحاول تشغيل أمر يتطلّب الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: userhelper.c:862
+#: userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "كلمة المرور لـ%s: "
 
-#: userhelper.c:2348
+#: userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper يجب أن يكون setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -322,32 +325,34 @@ msgstr "خطأ غير معروف."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "استعلام"
 
-#: userhelper-wrap.c:568 userhelper-wrap.c:748
+#: userhelper-wrap.c:575 userhelper-wrap.c:755
 msgid "Error"
 msgstr "خطأ"
 
-#: userhelper-wrap.c:580
+#: userhelper-wrap.c:587
 msgid "Information"
 msgstr "معلومات"
 
-#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "نص حاجز مكان."
 
-#: userhelper-wrap.c:789
+#: userhelper-wrap.c:799
+#, c-format
 msgid "Changing personal information."
 msgstr "جاري تغيير المعلومات الشّخصيّة."
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:802
+#, c-format
 msgid "Changing login shell."
 msgstr "جاري تغيير صدفة الدّخول."
 
-#: userhelper-wrap.c:798
+#: userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -356,7 +361,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد "
 "من المعلومات مطلوبة للقيام بذلك."
 
-#: userhelper-wrap.c:800
+#: userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -365,7 +370,8 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من "
 "المعلومات مطلوبة للقيام بذلك."
 
-#: userhelper-wrap.c:809
+#: userhelper-wrap.c:819
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -373,7 +379,8 @@ msgstr ""
 "أنت تحاول تشغيل أمر قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد من "
 "المعلومات مطلوبة للقيام بذلك."
 
-#: userhelper-wrap.c:811
+#: userhelper-wrap.c:821
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -381,26 +388,26 @@ msgstr ""
 "أنت تحاول تشغيل أمر يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات "
 "مطلوبة للقيام بذلك."
 
-#: userhelper-wrap.c:828
+#: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "_شغّل بوضع عادي"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "خطأ في التّمرير.\n"
 
-#: userhelper-wrap.c:987
+#: userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "لم يمكن عمل fork().\n"
 
-#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
+#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "خطأ في dup2().\n"
 
-#: userhelper-wrap.c:1081
+#: userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "خطأ في execl()، errno=%d\n"

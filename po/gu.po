@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-11 13:49+0200\n"
+"POT-Creation-Date: 2006-08-30 16:05+0200\n"
 "PO-Revision-Date: 2006-02-03 16:05+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
@@ -165,6 +165,7 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO channel nonblocking સુયોજિત કરવામાં નિષ્ફળ: %s\n"
 
 #: pam-panel-icon.c:542
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: સત્ર વ્યવસ્થાપક સાથે સંપર્ક કરવામાં નિષ્ફળ\n"
 
@@ -172,17 +173,22 @@ msgstr "pam-panel-icon: સત્ર વ્યવસ્થાપક સાથે
 msgid "Help"
 msgstr "મદદ"
 
-#: userhelper.c:138 userhelper.c:141
+#: userhelper.c:220 userhelper.c:294
+#, fuzzy, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "ચલાવોને %s સાથે સુયોજિત કરી શક્યા નથી.\n"
+
+#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "ચલાવોને %s સાથે સુયોજિત કરી શક્યા નથી.\n"
 
-#: userhelper.c:528
+#: userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "%s માટેનો પાસવર્ડ"
 
-#: userhelper.c:767
+#: userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -191,7 +197,7 @@ msgstr ""
 "તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
 "માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper.c:769
+#: userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -200,7 +206,8 @@ msgstr ""
 "તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
 "જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper.c:773
+#: userhelper.c:853
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -208,7 +215,8 @@ msgstr ""
 "તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
 "માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper.c:775
+#: userhelper.c:855
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -216,18 +224,18 @@ msgstr ""
 "તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
 "જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper.c:794
+#: userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "%s માટેનો પાસવર્ડ: "
 
-#: userhelper.c:2318
+#: userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "વપરાશકર્તા મદદગાર માટે uid રુટ જ સુયોજિત હોવું જોઈએ\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2416
+#: userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -322,32 +330,34 @@ msgstr "અજ્ઞાત ભૂલ."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade.h:9
+#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "પ્રશ્ન"
 
-#: userhelper-wrap.c:568 userhelper-wrap.c:748
+#: userhelper-wrap.c:575 userhelper-wrap.c:755
 msgid "Error"
 msgstr "ભૂલ"
 
-#: userhelper-wrap.c:580
+#: userhelper-wrap.c:587
 msgid "Information"
 msgstr "જાણકારી"
 
-#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade.h:8
+#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
+#: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "જગ્યા વાપરનાર લખાણ."
 
-#: userhelper-wrap.c:789
+#: userhelper-wrap.c:799
+#, c-format
 msgid "Changing personal information."
 msgstr "ખાનગી જાણકારી બદલી રહ્યા છીએ."
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:802
+#, c-format
 msgid "Changing login shell."
 msgstr "પ્રવેશ શેલ બદલી રહ્યા છીએ."
 
-#: userhelper-wrap.c:798
+#: userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -356,7 +366,7 @@ msgstr ""
 "તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
 "માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper-wrap.c:800
+#: userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -365,7 +375,8 @@ msgstr ""
 "તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
 "જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper-wrap.c:809
+#: userhelper-wrap.c:819
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -373,7 +384,8 @@ msgstr ""
 "તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
 "માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper-wrap.c:811
+#: userhelper-wrap.c:821
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -381,31 +393,36 @@ msgstr ""
 "તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
 "જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
 
-#: userhelper-wrap.c:828
+#: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "પ્રિવિલેજ નહિં તે ચલાવો (_R)"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "પાઈપ ભૂલ.\n"
 
-#: userhelper-wrap.c:987
+#: userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() કરી શકતા નથી.\n"
 
-#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
+#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() ભૂલ.\n"
 
-#: userhelper-wrap.c:1081
+#: userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ભૂલ, ભૂલ ક્રમાંક=%d\n"
 
-#: userinfo.c:326
+#: userinfo.c:369
+#, c-format
+msgid "Unexpected argument"
+msgstr ""
+
+#: userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "તમે અસ્તિત્વમાં નથી.  દૂર જતા રહો.\n"
@@ -464,59 +481,59 @@ msgstr "ડિરેક્ટરી"
 msgid "Filesystem"
 msgstr "ફાઈલસિસ્ટમ"
 
+#: usermount.c:674
+#, c-format
+msgid "The device '%s' can not be formatted."
+msgstr ""
+
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade.h:1
+#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
+#: usermode.glade:419 usermode.glade:440
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade.h:5
+#: glade.strings.h:10 usermode.glade:120
 msgid "Message"
 msgstr "સંદેશો"
 
-#: glade.strings.h:12 usermode.glade.h:10
+#: glade.strings.h:12 usermode.glade:187
 msgid "User Information"
 msgstr "વપરાશકર્તા જાણકારી"
 
-#: glade.strings.h:13 usermode.glade.h:2
+#: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
 msgstr "પુરુ નામ:"
 
-#: glade.strings.h:14 usermode.glade.h:7
+#: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
 msgstr "ઓફિસ:"
 
-#: glade.strings.h:15 usermode.glade.h:6
+#: glade.strings.h:15 usermode.glade:299
 msgid "Office Phone Number:"
 msgstr "ઓફિસ ફોન નંબર:"
 
-#: glade.strings.h:16 usermode.glade.h:3
+#: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
 msgstr "ઘરનો ફોન નંબર:"
 
-#: glade.strings.h:17 usermode.glade.h:4
+#: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "પ્રવેશ શેલ:"
 
-#: userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "મારા વિશે"
+#~ msgid "About Myself"
+#~ msgstr "મારા વિશે"
 
-#: userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "વ્યક્તિગત જાણકારી બદલો"
+#~ msgid "Change personal information"
+#~ msgstr "વ્યક્તિગત જાણકારી બદલો"
 
-#: usermount.desktop.in.h:1
-msgid "Disk Management"
-msgstr "ડિસ્ક વ્યવસ્થાપન"
+#~ msgid "Disk Management"
+#~ msgstr "ડિસ્ક વ્યવસ્થાપન"
 
-#: usermount.desktop.in.h:2
-msgid "Mount and unmount filesystems"
-msgstr "ફાઈલસિસ્ટમો માઉન્ટ અને અનમાઉન્ટ કરો"
+#~ msgid "Mount and unmount filesystems"
+#~ msgstr "ફાઈલસિસ્ટમો માઉન્ટ અને અનમાઉન્ટ કરો"
 
-#: userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "તમારો પ્રવેશ પાસવર્ડ બદલો"
+#~ msgid "Change your login password"
+#~ msgstr "તમારો પ્રવેશ પાસવર્ડ બદલો"
 
-#: userpasswd.desktop.in.h:2
-msgid "Password"
-msgstr "પાસવર્ડ"
+#~ msgid "Password"
+#~ msgstr "પાસવર્ડ"

@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.85
+Version: 1.86
 Release: 1
 License: GPL
 Group: Applications/System
@@ -120,8 +120,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Aug 30 2006 Martin Bacovsky <mbacovsky@redhat.com> 1.86-1
+- fix userpasswd - Query window pops up three times if cancelling passwd (#202924)
+- Serbian latin script translation added (#203003)
+
 * Tue Jan  3 2005 Jindrich Novy <jnovy@redhat.com> 1.85-1
-- fix userpasswd - don't crash if pam produces multi-line ourput (#175735)
+- fix userpasswd - don't crash if pam produces multi-line output (#175735)
   Thanks to toddp@bestweb.net
 - added Serbian translation (#176152)
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
+"POT-Creation-Date: 2006-08-30 16:05+0200\n"
 "PO-Revision-Date: 2005-11-18 15:51+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -14,6 +14,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
+#.
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#.
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
 #: dummy.h:21 userdialogs.h:29
 msgid "OK"
 msgstr "OK"
@@ -139,6 +158,7 @@ msgstr ""
 "Nie powiodło się ustawienie kanału wejścia/wyjścia w tryb bezblokowania: %s\n"
 
 #: pam-panel-icon.c:542
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: nie powiodło się połączenie do menedżera sesji\n"
 
@@ -156,12 +176,12 @@ msgstr "Nie można ustawić domyślnego kontekstu na %s dla programu %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Nie można ustawić kontekstu exec na %s.\n"
 
-#: userhelper.c:596
+#: userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "Hasło dla %s"
 
-#: userhelper.c:835
+#: userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -170,7 +190,7 @@ msgstr ""
 "Próbujesz uruchomić program \"%s\", który może wykorzystywać uprawnienia\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: userhelper.c:837
+#: userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -179,7 +199,8 @@ msgstr ""
 "Próbujesz uruchomić program \"%s\", który wymaga uprawnień\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: userhelper.c:841
+#: userhelper.c:853
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -187,7 +208,8 @@ msgstr ""
 "Próbujesz wykonać polecenie, które może wykorzystywać uprawnienia\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: userhelper.c:843
+#: userhelper.c:855
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -195,17 +217,18 @@ msgstr ""
 "Próbujesz wykonać polecenie, które wymaga uprawnień administratora,\n"
 "niezbędne są jednak dodatkowe informacje."
 
-#: userhelper.c:862
+#: userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "Hasło dla %s: "
 
-#: userhelper.c:2348
+#: userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid root\n"
 
-#: userhelper.c:2446
+#. FIXME: print a warning here?
+#: userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -301,32 +324,34 @@ msgstr "Nieznany błąd."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Zapytanie"
 
-#: userhelper-wrap.c:568 userhelper-wrap.c:748
+#: userhelper-wrap.c:575 userhelper-wrap.c:755
 msgid "Error"
 msgstr "Błąd"
 
-#: userhelper-wrap.c:580
+#: userhelper-wrap.c:587
 msgid "Information"
 msgstr "Informacja"
 
-#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Miejsce na tekst."
 
-#: userhelper-wrap.c:789
+#: userhelper-wrap.c:799
+#, c-format
 msgid "Changing personal information."
 msgstr "Zmienianie informacji osobistych."
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:802
+#, c-format
 msgid "Changing login shell."
 msgstr "Zmienianie powłoki logowania."
 
-#: userhelper-wrap.c:798
+#: userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -335,7 +360,7 @@ msgstr ""
 "Próbujesz uruchomić program \"%s\", który może wykorzystywać uprawnienia "
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: userhelper-wrap.c:800
+#: userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -344,7 +369,8 @@ msgstr ""
 "Próbujesz uruchomić program \"%s\", który wymaga uprawnień administratora, "
 "niezbędne są dodatkowe informacje."
 
-#: userhelper-wrap.c:809
+#: userhelper-wrap.c:819
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -352,7 +378,8 @@ msgstr ""
 "Próbujesz wykonać polecenie, które może może wykorzystywać uprawnienia "
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: userhelper-wrap.c:811
+#: userhelper-wrap.c:821
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -360,26 +387,26 @@ msgstr ""
 "Próbujesz wykonać polecenie, które wymaga uprawnień administratora, "
 "niezbędne są jednak dodatkowe informacje."
 
-#: userhelper-wrap.c:828
+#: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "U_ruchom bez dodatkowych uprawnień"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Błąd potoku.\n"
 
-#: userhelper-wrap.c:987
+#: userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nie można wywołać fork().\n"
 
-#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
+#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Błąd dup2().\n"
 
-#: userhelper-wrap.c:1081
+#: userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Błąd execl(), errno=%d\n"
@@ -426,10 +453,12 @@ msgstr ""
 "Brak systemów plików do których montowania/odmontowywania miałbyś prawo.\n"
 "Skontaktuj się z administratorem."
 
+#. Create the dialog.
 #: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
 msgstr "Narzędzie montowania systemów plików"
 
+#. Create the other buttons.
 #: usermount.c:579
 msgid "_Format"
 msgstr "Sfo_rmatuj"

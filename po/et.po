@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
+"POT-Creation-Date: 2006-08-30 16:05+0200\n"
 "PO-Revision-Date: 2005-11-04 09:29+0200\n"
 "Last-Translator: Allan Sims <allan.sims@eau.ee>\n"
 "Language-Team: Estonian <Eesti>\n"
@@ -160,6 +160,7 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Ebaõnnestus seadistada IO kanal mitte-blokeerivaks: %s\n"
 
 #: pam-panel-icon.c:542
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: ebaõnnestus ühendada sessioonihalduriga\n"
 
@@ -177,12 +178,12 @@ msgstr "Ei saa seada vaikekonteksti %s-le programmile %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Ei saa seada exec konteksti %s-le.\n"
 
-#: userhelper.c:596
+#: userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "Parool %s jaoks"
 
-#: userhelper.c:835
+#: userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -191,7 +192,7 @@ msgstr ""
 "Sa üritad käivitada \"%s\", mis õnnestub omades administratiivseid õigusi, "
 "kuid selle tegemiseks on vaja rohkem informatsiooni."
 
-#: userhelper.c:837
+#: userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -200,7 +201,8 @@ msgstr ""
 "Sa üritad käivitada \"%s\", mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: userhelper.c:841
+#: userhelper.c:853
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -208,7 +210,8 @@ msgstr ""
 "Sa üritad käivitada käsku, mis õnnestub omades administratiivseid õigusi, \n"
 "kuid selle tegemiseks on vaja rohkem informatsiooni."
 
-#: userhelper.c:843
+#: userhelper.c:855
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -216,18 +219,18 @@ msgstr ""
 "Sa üritad käivitada käsku, mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: userhelper.c:862
+#: userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "Parool %s jaoks: "
 
-#: userhelper.c:2348
+#: userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper peab olema seatud kui juurkasutaja\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -323,32 +326,34 @@ msgstr "Tundmatu viga."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Päring"
 
-#: userhelper-wrap.c:568 userhelper-wrap.c:748
+#: userhelper-wrap.c:575 userhelper-wrap.c:755
 msgid "Error"
 msgstr "Viga"
 
-#: userhelper-wrap.c:580
+#: userhelper-wrap.c:587
 msgid "Information"
 msgstr "Informatsioon"
 
-#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Kohahoidja tekst."
 
-#: userhelper-wrap.c:789
+#: userhelper-wrap.c:799
+#, c-format
 msgid "Changing personal information."
 msgstr "Isikliku info muutmine."
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:802
+#, c-format
 msgid "Changing login shell."
 msgstr "Logimise kesta muutmine."
 
-#: userhelper-wrap.c:798
+#: userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -358,7 +363,7 @@ msgstr ""
 "kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: userhelper-wrap.c:800
+#: userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -367,7 +372,8 @@ msgstr ""
 "Sa üritad käivitada \"%s\", mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: userhelper-wrap.c:809
+#: userhelper-wrap.c:819
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -376,7 +382,8 @@ msgstr ""
 "kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: userhelper-wrap.c:811
+#: userhelper-wrap.c:821
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -384,26 +391,26 @@ msgstr ""
 "Sa üritad käivitada käsku, mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: userhelper-wrap.c:828
+#: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "_Käivita õigusteta"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe viga.\n"
 
-#: userhelper-wrap.c:987
+#: userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Ei saa fork().\n"
 
-#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
+#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() viga.\n"
 
-#: userhelper-wrap.c:1081
+#: userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() viga, veanumber=%d\n"

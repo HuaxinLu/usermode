@@ -8,7 +8,7 @@ set -x -e
 CFLAGS="$DEFINES $RPM_OPT_FLAGS -g3 $CFLAGS" ; export CFLAGS
 libtoolize --force
 glib-gettextize -f -c
-intltoolize
+intltoolize --force
 touch config.h.in
 aclocal
 automake -a

@@ -472,6 +472,17 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 
 	/* Pass on any hints we have to the consolehelper. */
 
+	/* Since PAM does not handle our cancel request well */
+	/* we have to do it ourself */
+	/* Don't bother user with messages if already canceled */
+	if (data->canceled) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper (cp): we were already canceled\n");
+#endif
+		return PAM_ABORT;
+	}
+
+
 	/* User. */
 	if ((get_pam_string_item(data->pamh, PAM_USER, &user) != PAM_SUCCESS) ||
 	    (user == NULL) ||
@@ -479,7 +490,8 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		user = "root";
 	}
 #ifdef DEBUG_USERHELPER
-	g_print("userhelper: sending user `%s'\n", user);
+	g_print("userhelper (cp): converse_pipe_called(num_msg=%d, canceled=%d)\n", num_msg, data->canceled);
+	g_print("userhelper (cp): sending user `%s'\n", user);
 #endif
 	fprintf(data->output, "%d %s\n", UH_USER, user);
 
@@ -487,14 +499,14 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	if (get_pam_string_item(data->pamh, PAM_SERVICE,
 				&service) == PAM_SUCCESS) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: sending service `%s'\n", service);
+		g_print("userhelper (cp): sending service `%s'\n", service);
 #endif
 		fprintf(data->output, "%d %s\n", UH_SERVICE_NAME, service);
 	}
 
 	/* Fallback allowed? */
 #ifdef DEBUG_USERHELPER
-	g_print("userhelper: sending fallback = %d.\n",
+	g_print("userhelper (cp): sending fallback = %d.\n",
 		data->fallback_allowed ? 1 : 0);
 #endif
 	fprintf(data->output, "%d %d\n",
@@ -503,7 +515,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	/* Banner. */
 	if ((data->domain != NULL) && (data->banner != NULL)) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: sending banner `%s'\n", data->banner);
+		g_print("userhelper (cp): sending banner `%s'\n", data->banner);
 #endif
 		fprintf(data->output, "%d %s\n", UH_BANNER,
 			dgettext(data->domain, data->banner));
@@ -513,7 +525,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	/* SN Name. */
 	if ((data->domain != NULL) && (data->sn_name != NULL)) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: sending sn name `%s'\n",
+		g_print("userhelper (cp): sending sn name `%s'\n",
 			data->sn_name);
 #endif
 		fprintf(data->output, "%d %s\n", UH_SN_NAME,
@@ -523,7 +535,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	/* SN Description. */
 	if ((data->domain != NULL) && (data->sn_description != NULL)) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: sending sn description `%s'\n",
+		g_print("userhelper (cp): sending sn description `%s'\n",
 			data->sn_description);
 #endif
 		fprintf(data->output, "%d %s\n", UH_SN_DESCRIPTION,
@@ -533,7 +545,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	/* SN WM Class. */
 	if ((data->domain != NULL) && (data->sn_wmclass != NULL)) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: sending sn wm_class `%s'\n",
+		g_print("userhelper (cp): sending sn wm_class `%s'\n",
 			data->sn_wmclass);
 #endif
 		fprintf(data->output, "%d %s\n", UH_SN_WMCLASS,
@@ -543,7 +555,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	/* SN BinaryName. */
 	if ((data->domain != NULL) && (data->sn_binary_name != NULL)) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: sending sn binary name `%s'\n",
+		g_print("userhelper (cp): sending sn binary name `%s'\n",
 			data->sn_binary_name);
 #endif
 		fprintf(data->output, "%d %s\n", UH_SN_BINARY_NAME,
@@ -553,7 +565,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	/* SN IconName. */
 	if ((data->domain != NULL) && (data->sn_icon_name != NULL)) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: sending sn icon name `%s'\n",
+		g_print("userhelper (cp): sending sn icon name `%s'\n",
 			data->sn_icon_name);
 #endif
 		fprintf(data->output, "%d %s\n", UH_SN_ICON_NAME,
@@ -563,7 +575,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	/* SN Workspace. */
 	if ((data->domain != NULL) && (data->sn_workspace != -1)) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: sending sn workspace %d.\n",
+		g_print("userhelper (cp): sending sn workspace %d.\n",
 			data->sn_workspace);
 #endif
 		fprintf(data->output, "%d %d\n", UH_SN_WORKSPACE,
@@ -578,7 +590,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			case PAM_PROMPT_ECHO_ON:
 				/* Spit out the prompt. */
 #ifdef DEBUG_USERHELPER
-				g_print("userhelper: sending prompt (echo on) ="
+				g_print("userhelper (cp): sending prompt (echo on) ="
 					" \"%s\".\n", msg[count]->msg);
 #endif
 				fprintf(data->output, "%d %s\n",
@@ -599,7 +611,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 					noecho_message = g_strdup(msg[count]->msg);
 				}
 #ifdef DEBUG_USERHELPER
-				g_print("userhelper: sending prompt (no echo) ="
+				g_print("userhelper (cp): sending prompt (no echo) ="
 					" \"%s\".\n", noecho_message);
 #endif
 				fprintf(data->output, "%d %s\n",
@@ -611,7 +623,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 				/* Text information strings are output
 				 * verbatim. */
 #ifdef DEBUG_USERHELPER
-				g_print("userhelper: sending text = \"%s\".\n",
+				g_print("userhelper (cp): sending text = \"%s\".\n",
 					msg[count]->msg);
 #endif
 				fprintf(data->output, "%d %s\n",
@@ -620,7 +632,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			case PAM_ERROR_MSG:
 				/* Error message strings are output verbatim. */
 #ifdef DEBUG_USERHELPER
-				g_print("userhelper: sending error = \"%s\".\n",
+				g_print("userhelper (cp): sending error = \"%s\".\n",
 					msg[count]->msg);
 #endif
 				fprintf(data->output, "%d %s\n",
@@ -630,7 +642,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 				/* Maybe the consolehelper can figure out what
 				 * to do with this, because we sure can't. */
 #ifdef DEBUG_USERHELPER
-				g_print("userhelper: sending ??? = \"%s\".\n",
+				g_print("userhelper (cp): sending ??? = \"%s\".\n",
 					msg[count]->msg);
 #endif
 				fprintf(data->output, "%d %s\n",
@@ -642,14 +654,14 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	/* Tell the consolehelper how many messages for which we expect to
 	 * receive responses. */
 #ifdef DEBUG_USERHELPER
-	g_print("userhelper: sending expected response count = %d.\n",
+	g_print("userhelper (cp): sending expected response count = %d.\n",
 		expected_responses);
 #endif
 	fprintf(data->output, "%d %d\n", UH_EXPECT_RESP, expected_responses);
 
 	/* Tell the consolehelper that we're ready for it to do its thing. */
 #ifdef DEBUG_USERHELPER
-	g_print("userhelper: sending sync point.\n");
+	g_print("userhelper (cp): sending sync point.\n");
 #endif
 	fprintf(data->output, "%d\n", UH_SYNC_POINT);
 	fflush(NULL);
@@ -683,7 +695,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		if ((string == NULL) &&
 		    (received_responses < expected_responses)) {
 #ifdef DEBUG_USERHELPER
-			g_print("userhelper: got %d responses, expected %d\n",
+			g_print("userhelper (cp): got %d responses, expected %d\n",
 				received_responses, expected_responses);
 #endif
 			data->canceled = TRUE;
@@ -692,19 +704,19 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		}
 
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: received string type %d, text \"%s\".\n",
+		g_print("userhelper (cp): received string type %d, text \"%s\".\n",
 			string[0], string[0] ? string + 1 : "");
 #endif
 
 		/* If we hit a sync point, we're done. */
 		if (string[0] == UH_SYNC_POINT) {
 #ifdef DEBUG_USERHELPER
-			g_print("userhelper: received sync point\n");
+			g_print("userhelper (cp): received sync point\n");
 #endif
 			if (received_responses != expected_responses) {
 				/* Whoa, not done yet! */
 #ifdef DEBUG_USERHELPER
-				g_print("userhelper: got %d responses, "
+				g_print("userhelper (cp): got %d responses, "
 					"expected %d\n", received_responses,
 					expected_responses);
 #endif
@@ -730,7 +742,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			data->sn_id = g_strdup(data->sn_id);
 			g_free(string);
 #ifdef DEBUG_USERHELPER
-			g_print("userhelper: startup id \"%s\"\n", data->sn_id);
+			g_print("userhelper (cp): startup id \"%s\"\n", data->sn_id);
 #endif
 			continue;
 		}
@@ -742,7 +754,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			g_free(string);
 			g_free(reply);
 #ifdef DEBUG_USERHELPER
-			g_print("userhelper: canceling with PAM_ABORT (%d)\n",
+			g_print("userhelper (cp): canceling with PAM_ABORT (%d)\n",
 				PAM_ABORT);
 #endif
 			return PAM_ABORT;
@@ -754,7 +766,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			g_free(string);
 			g_free(reply);
 #ifdef DEBUG_USERHELPER
-			g_print("userhelper: falling back\n");
+			g_print("userhelper (cp): falling back\n");
 #endif
 			return PAM_ABORT;
 		}
@@ -768,7 +780,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		if (count >= num_msg) {
 			/* Whoa, TMI! */
 #ifdef DEBUG_USERHELPER
-			g_print("userhelper: got %d responses, expected < %d\n",
+			g_print("userhelper (cp): got %d responses, expected < %d\n",
 				received_responses, num_msg);
 #endif
 			g_free(reply);
@@ -780,7 +792,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		reply[count].resp = g_strdup(reply[count].resp);
 		reply[count].resp_retcode = PAM_SUCCESS;
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: got `%s'\n", reply[count].resp);
+		g_print("userhelper (cp): got `%s'\n", reply[count].resp);
 #endif
 		g_free(string);
 		count++;
@@ -792,7 +804,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	if (received_responses != expected_responses) {
 		/* Must be an error of some sort... */
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: got %d responses, expected %d\n",
+		g_print("userhelper (cp): got %d responses, expected %d\n",
 			received_responses, expected_responses);
 #endif
 		g_free(reply);

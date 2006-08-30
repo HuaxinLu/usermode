@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-15 20:47+0100\n"
+"POT-Creation-Date: 2006-08-30 16:05+0200\n"
 "PO-Revision-Date: 2006-02-01 23:47+0100\n"
 "Last-Translator: Szentiványi Gábor <szentivanyi.gabor@ulx.hu>\n"
 "Language-Team: hungarian\n"
@@ -164,6 +164,7 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Nem sikerült beállítani nem blokkolóra az IO csatornát: %s\n"
 
 #: pam-panel-icon.c:542
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: nem sikerült csatlakozni a munkafolyamat-kezelőhöz\n"
 
@@ -174,19 +175,21 @@ msgstr "Segítség"
 #: userhelper.c:220 userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Nem sikerült beállítani az alapértelmezett kontextust erre: %s, az alábbi program számára: %s\n"
+msgstr ""
+"Nem sikerült beállítani az alapértelmezett kontextust erre: %s, az alábbi "
+"program számára: %s\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Nem sikerült beállítani a futtatási kontextust erre: %s.\n"
 
-#: userhelper.c:596
+#: userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "%s jelszava"
 
-#: userhelper.c:835
+#: userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -196,7 +199,7 @@ msgstr ""
 "rendszergazdai jogosultsággal indítani, ehhez viszont további\n"
 "információ szükséges."
 
-#: userhelper.c:837
+#: userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -205,7 +208,8 @@ msgstr ""
 "\"%s\" indítását kezdeményezte. A program csak rendszergazdai\n"
 "jogosultsággal indítható el, ehhez pedig további információ szükséges."
 
-#: userhelper.c:841
+#: userhelper.c:853
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -214,7 +218,8 @@ msgstr ""
 "rendszergazdai jogosultsággal végrehajtani - ehhez viszont további\n"
 "információ szükséges."
 
-#: userhelper.c:843
+#: userhelper.c:855
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -222,20 +227,21 @@ msgstr ""
 "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai\n"
 "jogosultság szükséges - ehhez pedig további információra van szükség."
 
-#: userhelper.c:862
+#: userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "%s jelszava: "
 
-#: userhelper.c:2348
+#: userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "a userhelper programnak 'setuid root' beállításúnak kell lennie\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2446
+#: userhelper.c:2458
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem "
 "található.\n"
@@ -329,32 +335,34 @@ msgstr "Ismeretlen hiba történt."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:475 glade.strings.h:7 usermode.glade:9
+#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
 msgid "Query"
 msgstr "Lekérdezés"
 
-#: userhelper-wrap.c:568 userhelper-wrap.c:748
+#: userhelper-wrap.c:575 userhelper-wrap.c:755
 msgid "Error"
 msgstr "Hiba"
 
-#: userhelper-wrap.c:580
+#: userhelper-wrap.c:587
 msgid "Information"
 msgstr "Információ"
 
-#: userhelper-wrap.c:740 glade.strings.h:8 glade.strings.h:11
+#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
 msgstr "Alapértelmezett szöveg."
 
-#: userhelper-wrap.c:789
+#: userhelper-wrap.c:799
+#, c-format
 msgid "Changing personal information."
 msgstr "A személyes adatok megváltoztatása."
 
-#: userhelper-wrap.c:792
+#: userhelper-wrap.c:802
+#, c-format
 msgid "Changing login shell."
 msgstr "A parancsértelmező megváltoztatása."
 
-#: userhelper-wrap.c:798
+#: userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -363,7 +371,7 @@ msgstr ""
 "\"%s\" indítását kezdeményezte. A programot érdemesebb lehet rendszergazdai "
 "jogosultsággal indítani, ehhez viszont további információ szükséges."
 
-#: userhelper-wrap.c:800
+#: userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -372,7 +380,8 @@ msgstr ""
 "\"%s\" indítását kezdeményezte. A program csak rendszergazdai jogosultsággal "
 "indítható el, ehhez pedig további információ szükséges."
 
-#: userhelper-wrap.c:809
+#: userhelper-wrap.c:819
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -381,7 +390,8 @@ msgstr ""
 "rendszergazdai jogosultsággal végrehajtani - ehhez viszont további "
 "információ szükséges."
 
-#: userhelper-wrap.c:811
+#: userhelper-wrap.c:821
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -389,26 +399,26 @@ msgstr ""
 "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai "
 "jogosultság szükséges - ehhez pedig további információra van szükség."
 
-#: userhelper-wrap.c:828
+#: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "Futtatás n_ormál jogosultsággal"
 
-#: userhelper-wrap.c:980
+#: userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe (csővezeték)-kezelési hiba.\n"
 
-#: userhelper-wrap.c:987
+#: userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nem sikerült végrehajtani egy fork() hívást (programindítást).\n"
 
-#: userhelper-wrap.c:1065 userhelper-wrap.c:1069
+#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-hiba.\n"
 
-#: userhelper-wrap.c:1081
+#: userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-hiba, errno=%d\n"
@@ -435,7 +445,8 @@ msgstr "Le_választás"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
+msgstr ""
+"Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -514,4 +525,3 @@ msgstr "Otthoni telefon:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Bejelentkezési parancsértelmező:"
-
