@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-02-03 16:05+0530\n"
+"PO-Revision-Date: 2006-08-31 09:20+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 "\n"
@@ -109,8 +109,7 @@ msgstr "સંચાલન પૂર્વધારણાઓ મૂકવામ�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"સંચાલન પૂર્વધારણાઓ મૂકવામાં નિષ્ફળ: pam_timestamp_check એ નિષ્ફળતા કોડ %d આપ્યો"
+msgstr "સંચાલન પૂર્વધારણાઓ મૂકવામાં નિષ્ફળ: pam_timestamp_check એ નિષ્ફળતા કોડ %d આપ્યો"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -174,9 +173,9 @@ msgid "Help"
 msgstr "મદદ"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "ચલાવોને %s સાથે સુયોજિત કરી શક્યા નથી.\n"
+msgstr "%s માટે કાર્યક્રમ %s માટે મૂળભૂત સંદર્ભ સુયોજિત કરી શક્યા નહિં.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -237,8 +236,7 @@ msgstr "વપરાશકર્તા મદદગાર માટે uid ર�
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ગ્રાફિકવાળી વિન્ડો ખોલવા સમર્થ નથી, અને નિયંત્રક ટર્મિનલ ખોલવામાં અસમર્થ.\n"
 
 #: userhelper-wrap.c:179
@@ -420,7 +418,7 @@ msgstr "execl() ભૂલ, ભૂલ ક્રમાંક=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "અનિચ્છનિય દલીલ"
 
 #: userinfo.c:396
 #, c-format
@@ -484,7 +482,7 @@ msgstr "ફાઈલસિસ્ટમ"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "ઉપકરણ '%s' નું બંધારણ ઘડી શકતા નથી."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -520,20 +518,3 @@ msgstr "ઘરનો ફોન નંબર:"
 msgid "Login Shell:"
 msgstr "પ્રવેશ શેલ:"
 
-#~ msgid "About Myself"
-#~ msgstr "મારા વિશે"
-
-#~ msgid "Change personal information"
-#~ msgstr "વ્યક્તિગત જાણકારી બદલો"
-
-#~ msgid "Disk Management"
-#~ msgstr "ડિસ્ક વ્યવસ્થાપન"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "ફાઈલસિસ્ટમો માઉન્ટ અને અનમાઉન્ટ કરો"
-
-#~ msgid "Change your login password"
-#~ msgstr "તમારો પ્રવેશ પાસવર્ડ બદલો"
-
-#~ msgid "Password"
-#~ msgstr "પાસવર્ડ"
