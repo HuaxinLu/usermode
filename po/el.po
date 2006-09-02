@@ -433,7 +433,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Είστε βέβαιος πως θέλετε να μορφοποιήσετε αυτό το δίσκο; Θα καταστρέψετε όλα "
+"Είστε βέβαιος πως θέλετε να μορφοποιήσετε αυτόν το δίσκο; Θα καταστρέψετε όλα "
 "τα δεδομένα που περιέχει."
 
 #: usermount.c:332
