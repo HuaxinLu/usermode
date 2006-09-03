@@ -310,7 +310,7 @@ msgstr "Αποτυχία κλήσης της exec()."
 
 #: userhelper-wrap.c:204
 msgid "Failed to find selected program."
-msgstr "Αποτυχία εύρεσης του επιλεγμένου προγράμματος."
+msgstr "Αποτυχία εύρεσης της επιλεγμένης εφαρμογής."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
