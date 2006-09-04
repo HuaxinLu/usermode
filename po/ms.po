@@ -50,7 +50,7 @@ msgstr "Batal"
 
 #: dummy.h:24 userdialogs.h:33
 msgid "Run Unprivileged"
-msgstr "Laksana Tanpa Privilej"
+msgstr "Laksana Tanpa Kelebihan"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
@@ -78,11 +78,11 @@ msgstr "Katalaluan tidak berubah"
 
 #: dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Maaf, katalaluan tidak sepadan."
+msgstr "Maaf, katalaluan tidak sepadan"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Lancar alat konfigurasi sistem global tanpa katalaluan."
+msgstr "Lancar alat tetapan seluruh-sistem tanpa katalaluan."
 
 #: dummy.h:33
 msgid "login: "
@@ -99,12 +99,8 @@ msgstr "Gagal untuk mematikan kelebihan pentadbir: %s"
 
 #: pam-panel-icon.c:107
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
-"Gagal untuk membuang kelebihan administrator: pam_timestamp_check "
-"memulangkan kod gagal %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Gagal untuk membuang kelebihan pentadbir: pam_timestamp_check memulangkan kod gagal %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -115,14 +111,8 @@ msgid "Forget Authorization"
 msgstr "Lupa Kebenaran"
 
 #: pam-panel-icon.c:190
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"Anda sekarang dibenarkan untuk menetapkan tetapan seluruh-sistem (yang "
-"memberi kesan pada semua pengguna) tanpa menaip kata laluan administrator "
-"lagi. Anda boleh melepaskan kebenaran ini."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Anda sekarang dibenarkan untuk menetapkan tetapan seluruh-sistem (yang memberi kesan pada semua pengguna) tanpa menaip kata laluan pentadbir lagi. Anda boleh melepaskan kebenaran ini."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -191,8 +181,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada privilej\n"
-"administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+"Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada kelebihan\n"
+"pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper.c:849
 #, c-format
@@ -200,8 +190,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Anda cuba melaksanakan \"%s\" yang memerlukan privilej\n"
-"administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+"Anda cuba melaksanakan \"%s\" yang memerlukan kelebihan\n"
+"pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper.c:853
 #, c-format
@@ -210,8 +200,7 @@ msgid ""
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Anda cuba melaksanakan arahan yang mendapat faedah daripada\n"
-" privilej administratif, tetapi maklumat lanjut diperlukan untuk berbuat "
-"demikian."
+"kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper.c:855
 #, c-format
@@ -219,8 +208,8 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Anda cuba melaksanakan arahan yang yang memerlukan privilej administratif, "
-"tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+"Anda cuba melaksanakan arahan yang yang memerlukan kelebihan\n"
+"pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper.c:874
 #, c-format
@@ -259,7 +248,7 @@ msgid ""
 "Please try again."
 msgstr ""
 "Katalaluan yang anda taip tidak sah.\n"
-" Sila cuba lagi."
+"Sila cuba lagi."
 
 #: userhelper-wrap.c:185
 msgid ""
@@ -268,8 +257,8 @@ msgid ""
 "Please remove those and try again."
 msgstr ""
 "Satu atau lebih medan yang diubah adalah tidak sah.\n"
-"Ini mungkin kerana samada titikbertindih atau koma pada salah satu medan.\n"
-"Sila buang ia dan cuba lagi"
+"Ini mungkin kerana samada titik bertindih atau koma pada salah satu medan.\n"
+"Sila buang ia dan cuba lagi."
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
@@ -281,11 +270,11 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Beberapa fail sistem dikunci.\n"
-"Sila cuba lagi kelak."
+"Sila cuba lagi seketika nanti."
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
-msgstr "Penggunat tidak diketahui."
+msgstr "Pengguna tidak diketahui."
 
 #: userhelper-wrap.c:193
 msgid "Insufficient rights."
@@ -301,9 +290,9 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Shell semasa tidak disenarai di /etc/shells.\n"
+"Shell semasa anda tidak disenarai di /etc/shells.\n"
 "Anda tidak boleh menukar shell anda.\n"
-"Rujuk pentadbir sistem anda.."
+"Rujuk pentadbir sistem anda."
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
@@ -353,7 +342,7 @@ msgstr "Maklumat"
 #: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
 #: usermode.glade:71 usermode.glade:164
 msgid "Placeholder text."
-msgstr "Teks Placeholder."
+msgstr "Teks placeholder."
 
 #: userhelper-wrap.c:799
 #, c-format
@@ -363,48 +352,31 @@ msgstr "Menukar maklumat peribadi."
 #: userhelper-wrap.c:802
 #, c-format
 msgid "Changing login shell."
-msgstr "Menukar shell logmasuk"
+msgstr "Menukar shell logmasuk."
 
 #: userhelper-wrap.c:808
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada "
-"privilejadministratif, tetapi maklumat lanjut diperlukan untuk berbuat "
-"demikian."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: userhelper-wrap.c:810
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan \"%s\" yang memerlukan privilej administratif, tetapi "
-"maklumat lanjut diperlukan untuk berbuat demikian."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan \"%s\" yang memerlukan kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper-wrap.c:819
-#, c-format
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan arahan yang mendapat faedah daripada privilej "
-"administratif, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+#: userhelper-wrap.c:809
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan arahan yang mendapat faedah daripada kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
-#: userhelper-wrap.c:821
-#, c-format
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda cuba melaksanakan arahan yang memerlukan privilej administratif, tetapi "
-"maklumat lanjut diperlukan untuk berbuat demikian."
+
+#: userhelper-wrap.c:811
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Anda cuba melaksanakan arahan yang memerlukan kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+
 
 #: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
-msgstr "_Laksana Tanpa Privilej"
+msgstr "_Laksana Tanpa Kelebihan"
 
 #: userhelper-wrap.c:990
 #, c-format
@@ -454,7 +426,7 @@ msgstr ""
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr "Lakukan pengformatan peringkat-_rendah."
+msgstr "_Lakukan pengformatan peringkat-rendah."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
@@ -466,7 +438,7 @@ msgid ""
 "Contact your administrator."
 msgstr ""
 "Tiada sistemfail yang anda boleh izinkan untuk dilekap atau dinyahlekapkan.\n"
-"Hubungi pentadbir sistem anda"
+"Hubungi pentadbir sistem anda."
 
 #. Create the dialog.
 #: usermount.c:550 usermount.c:562
