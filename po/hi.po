@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-02-03 18:18+0530\n"
+"PO-Revision-Date: 2006-09-05 09:50+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 "\n"
@@ -169,9 +169,9 @@ msgid "Help"
 msgstr "सहायता"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s से exec संदर्भ को व्यवस्थित नहीं कर सका.\n"
+msgstr "%s के लिये प्रोग्राम %s से मूलभूत संदर्भ सेट नहीं कर सका.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -232,8 +232,7 @@ msgstr "उपयोक्ता सहायक को अवश्य ही s
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखी विंडो को खोलने में असमर्थ, और नियंत्रक टर्मिनल को खोजने में असमर्थ.\n"
 
 #: userhelper-wrap.c:179
@@ -415,7 +414,7 @@ msgstr "execl() त्रुटि, errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "अप्रत्याशित तर्क"
 
 #: userinfo.c:396
 #, c-format
@@ -479,7 +478,7 @@ msgstr "फाइलसिस्टम"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "युक्ति '%s' संरूपित नहीं किया जा सकता है."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -515,20 +514,3 @@ msgstr "गृह दूरभाष क्रमांकः"
 msgid "Login Shell:"
 msgstr "सत्रारंभ शैलः"
 
-#~ msgid "About Myself"
-#~ msgstr "मेरे बारे में"
-
-#~ msgid "Change personal information"
-#~ msgstr "निजी जानकारी बदलें"
-
-#~ msgid "Disk Management"
-#~ msgstr "डिस्क प्रबंधन"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "फाइल सिस्टम आरोहित व अनारोहित करें"
-
-#~ msgid "Change your login password"
-#~ msgstr "अपना लॉगिन शब्दकूट बदलें"
-
-#~ msgid "Password"
-#~ msgstr "शब्दकूट"
