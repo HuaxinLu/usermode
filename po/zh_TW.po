@@ -1,11 +1,12 @@
+# translation of zh_TW.po to Chinese, Traditional
 # translation of zh_TW.po to Chinese, Simplified
 # translation of zh_TW.po to Chinese Traditional
 # translation of zh_TW.po to Traditional Chinese
 # Translation of zh_TW.po to Traditional Chinese
 # Translation of zh_TW.po to Chinese (traditional)
-# Copyright (C) 2002, 2003, 2004, 2005 Free Software Foundation, Inc.
+# Copyright (C) 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Ben Wu <hpwu@redhat.com>, 2002, 2003.
-# Chester Cheng <ccheng@redhat.com>, 2004, 2005.
+# Chester Cheng <ccheng@redhat.com>, 2004, 2005, 2006.
 # Leah Liu <weliu@redhat.com>, 2005.
 #
 msgid ""
@@ -13,9 +14,9 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2005-08-05 14:24+1000\n"
-"Last-Translator: Leah Liu <weliu@redhat.com>\n"
-"Language-Team: Chinese, Simplified <zh@li.org>\n"
+"PO-Revision-Date: 2006-09-10 14:29+1000\n"
+"Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
+"Language-Team: Chinese, Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -170,9 +171,9 @@ msgid "Help"
 msgstr "求助"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "無法設定執行上下文為 %s。\n"
+msgstr "無法設定 %s 的預設本文（程式 %s）。\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -233,8 +234,7 @@ msgstr "userhelper 必須 setuid root\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗，且找不到控制終端機。\n"
 
 #: userhelper-wrap.c:179
@@ -358,32 +358,28 @@ msgstr "更改登入 shell。"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:819
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:821
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
+msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
 #: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
@@ -412,7 +408,7 @@ msgstr "execl() error, errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "無預期的參數"
 
 #: userinfo.c:396
 #, c-format
@@ -474,7 +470,7 @@ msgstr "檔案系統"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "無法格式化「%s」裝置。"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -510,20 +506,3 @@ msgstr "自家電話號碼:"
 msgid "Login Shell:"
 msgstr "登入的 Shell:"
 
-#~ msgid "About Myself"
-#~ msgstr "自我介紹"
-
-#~ msgid "Change personal information"
-#~ msgstr "更改個人資訊"
-
-#~ msgid "Disk Management"
-#~ msgstr "磁碟管理"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "掛載與卸載檔案系統"
-
-#~ msgid "Change your login password"
-#~ msgstr "更改您的登入密碼"
-
-#~ msgid "Password"
-#~ msgstr "密碼"
