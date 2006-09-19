@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: usermode 0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-09-01 20:12+0100\n"
+"PO-Revision-Date: 2006-09-19 23:16+0100\n"
 "Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
 "Language-Team: Renato Pavicic <renato@translator-shop.org www.translator-shop.org lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
@@ -149,7 +149,7 @@ msgstr "Nije uspjelo pokretanje naredbe \"%s\": %s\n"
 #: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "Nije uspjelo zadavanjet ne-blokirajućeg IO kanala: %s\n"
+msgstr "Nije uspjelo zadavanje ne-blokirajućeg IO kanala: %s\n"
 
 #: pam-panel-icon.c:542
 #, c-format
@@ -279,7 +279,7 @@ msgstr "Nedovoljna prava."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
-msgstr "Neispravan poziv prema podprocesu."
+msgstr "Neispravan poziv prema potprocesu."
 
 #: userhelper-wrap.c:197
 msgid ""
