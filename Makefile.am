@@ -124,8 +124,12 @@ consolehelper_LDADD = @GLIB_LIBS@ @LIBS@ @EFENCE_LIBS@
 consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userdialogs.h userhelper-wrap.c userhelper-wrap.h reaper.c reaper.h marshal.c marshal.h
 consolehelper_gtk_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
-pam_panel_icon_SOURCES = pam-panel-icon.c $(EGGFILES) marshal.c gsmclient.c gsmclient.h props.h props.c
+pam_panel_icon_SOURCES = pam-panel-icon.c marshal.c gsmclient.c gsmclient.h props.h props.c
 pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ $(X_LIBS) -lICE -lSM @EFENCE_LIBS@
+
+if !HAVE_GTK210
+pam_panel_icon_SOURCES += eggtrayicon.c
+endif
 
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c userdialogs.h
 test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@

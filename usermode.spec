@@ -5,7 +5,7 @@
 %define build6x 0
 Summary: Tools for certain user account management tasks.
 Name: usermode
-Version: 1.86
+Version: 1.87
 Release: 1
 License: GPL
 Group: Applications/System
@@ -120,6 +120,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Wed Sep 20 2006 Martin Bacovsky <mbacovsky@redhat.com> 1.87-1
+- pam-panel-icon is now transparent on GTK+ >2.10 (#207181),
+  thanks to Bill Nottingham
+
 * Wed Aug 30 2006 Martin Bacovsky <mbacovsky@redhat.com> 1.86-1
 - fix userpasswd - Query window pops up three times if cancelling passwd (#202924)
 - Serbian latin script translation added (#203003)

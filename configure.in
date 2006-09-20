@@ -31,6 +31,11 @@ if pkg-config libstartup-notification-1.0 ; then
 			  [Define if you want to use libsn, even though it is not yet API-stabilized, because we need to use it.])
 	fi
 fi
+PKG_CHECK_EXISTS(gtk+-2.0 >= 2.9.0, have_gtk210=true, have_gtk210=false)
+if $have_gtk210 ; then
+   AC_DEFINE(HAVE_GTK210,1,[Define if you have GTK+ 2.10 or later])
+fi
+AM_CONDITIONAL(HAVE_GTK210, test x$have_gtk210 = xtrue)
 AC_CHECK_FUNC(pam_start,,[AC_CHECK_LIB(pam,pam_start,PAM_LIBS="-lpam -ldl",,-ldl)])
 AC_CHECK_FUNC(misc_conv,,[AC_CHECK_LIB(pam_misc,misc_conv,PAM_LIBS="-lpam_misc $PAM_LIBS",,$PAM_LIBS)])
 AC_SUBST(PAM_LIBS)

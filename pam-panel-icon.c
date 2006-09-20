@@ -28,7 +28,10 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include "gsmclient.h"
+
+#ifndef HAVE_GTK210
 #include "eggtrayicon.h"
+#endif
 
 #define _(String) gettext(String)
 #define N_(String) String
@@ -53,8 +56,12 @@ enum {
 static int current_status = STATUS_UNKNOWN;
 static GIOChannel *child_io_channel = NULL;
 static pid_t child_pid = -1;
+#ifdef HAVE_GTK210
+static GtkStatusIcon *tray_icon = NULL;
+#else
 static EggTrayIcon *tray_icon = NULL;
 static GtkWidget *image = NULL;
+#endif
 static GtkWidget *drop_dialog = NULL;
 static GtkWidget *drop_menu = NULL;
 static GtkWidget *drop_menu_items = NULL;
@@ -132,18 +139,23 @@ add_weak_widget_pointer(GObject *object, GtkWidget **weak_pointer)
 {
 	g_object_add_weak_pointer(object, (void**)weak_pointer);
 }
+
+#ifdef HAVE_GTK210
+static void
+add_weak_status_icon_pointer(GObject *object, GtkStatusIcon **weak_pointer)
+#else
 static void
 add_weak_egg_tray_icon_pointer(GObject *object, EggTrayIcon **weak_pointer)
+#endif
 {
 	g_object_add_weak_pointer(object, (void**)weak_pointer);
 }
 
 /* Respond to a button press event on our icon. */
-static gboolean
-icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
+static gboolean handle_button(guint button, guint activation_time) 
 {
 	/* We only respond to left-click and right click. */
-	if (event->button != 1 && event->button != 3) {
+	if (button != 1 && button != 3) {
 		return FALSE;
 	}
 
@@ -151,7 +163,7 @@ icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
 	 * the timestamp. */
 	if (current_status == STATUS_AUTHENTICATED) {
 		/* Open popup menu when right clicked. */
-		if ( event->button == 3 ) {
+		if ( button == 3 ) {
 			if (drop_menu == NULL) {
 				drop_menu = gtk_menu_new();
 
@@ -176,7 +188,7 @@ icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
 				gtk_widget_show(drop_menu_items);
 			}
 			gtk_menu_popup(GTK_MENU(drop_menu), NULL, NULL, NULL, NULL, 
-				       event->button, event->time);
+				       button, activation_time);
 			
 			return TRUE;
 		}
@@ -212,16 +224,49 @@ icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
 	return TRUE;
 }
 
+#ifdef HAVE_GTK210
+static gboolean
+handle_activate(GtkStatusIcon *icon, void *data)
+{
+	return handle_button(1, 0);
+}
+
+static gboolean
+handle_popup(GtkStatusIcon *icon, guint button, guint activate_time, void *data)
+{
+	return handle_button(button, activate_time);
+}
+#else
+static gboolean
+icon_clicked_event(GtkWidget *widget, GdkEventButton *event, void *data)
+{
+	return handle_button(event->button, event->time);
+}
+#endif
+
+
 static void
 ensure_tray_icon(void)
 {
 	if (tray_icon == NULL) {
+#ifdef HAVE_GTK210
+		printf("GTK210\n");
+		tray_icon = gtk_status_icon_new();
+#else
+		printf("GTKOld\n");
 		tray_icon = egg_tray_icon_new("Authentication Indicator");
 		image = gtk_image_new();
+#endif
 
 		/* If the system tray goes away, our icon will get destroyed,
 		 * and we don't want to be left with a dangling pointer to it
 		 * if that happens.  */
+#ifdef HAVE_GTK210
+		add_weak_status_icon_pointer(G_OBJECT(tray_icon), &tray_icon);
+		
+		g_signal_connect(G_OBJECT(tray_icon), "activate", G_CALLBACK(handle_activate), NULL);
+		g_signal_connect(G_OBJECT(tray_icon), "popup-menu", G_CALLBACK(handle_popup), NULL);
+#else
 		add_weak_egg_tray_icon_pointer(G_OBJECT(tray_icon), &tray_icon);
 		add_weak_widget_pointer(G_OBJECT(image), &image);
 
@@ -234,17 +279,26 @@ ensure_tray_icon(void)
 				      GDK_BUTTON_PRESS_MASK);
 		g_signal_connect(G_OBJECT(tray_icon), "button_press_event",
 				 G_CALLBACK(icon_clicked_event), NULL);
+#endif
 	}
 
+#ifdef HAVE_GTK210
+	gtk_status_icon_set_visible(GTK_STATUS_ICON(tray_icon), TRUE);
+#else
 	gtk_widget_show(GTK_WIDGET(tray_icon));
+#endif
 }
 
 static void
 show_unlocked_icon(void)
 {
 	ensure_tray_icon();
+#ifdef HAVE_GTK210
+	gtk_status_icon_set_from_pixbuf(GTK_STATUS_ICON(tray_icon), NULL);
+#else
 	gtk_image_set_from_pixbuf(GTK_IMAGE(image), NULL);
 	gtk_widget_hide(image);
+#endif
 }
 
 static void
@@ -252,8 +306,12 @@ show_locked_icon(void)
 {
 	if ( getuid() || geteuid() || getgid() || getegid() ) {
 		ensure_tray_icon();
+#ifdef HAVE_GTK210
+		gtk_status_icon_set_from_pixbuf(GTK_STATUS_ICON(tray_icon), locked_pixbuf);
+#else
 		gtk_image_set_from_pixbuf(GTK_IMAGE(image), locked_pixbuf);
 		gtk_widget_show(image);
+#endif
 	}
 }
 
