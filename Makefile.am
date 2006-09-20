@@ -128,7 +128,7 @@ pam_panel_icon_SOURCES = pam-panel-icon.c marshal.c gsmclient.c gsmclient.h prop
 pam_panel_icon_LDADD = @LIBGLADE_LIBS@ @LIBS@ $(X_LIBS) -lICE -lSM @EFENCE_LIBS@
 
 if !HAVE_GTK210
-pam_panel_icon_SOURCES += eggtrayicon.c
+pam_panel_icon_SOURCES += eggtrayicon.c eggtrayicon.h
 endif
 
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c userdialogs.h
