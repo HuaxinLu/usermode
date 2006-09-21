@@ -250,10 +250,8 @@ ensure_tray_icon(void)
 {
 	if (tray_icon == NULL) {
 #ifdef HAVE_GTK210
-		printf("GTK210\n");
 		tray_icon = gtk_status_icon_new();
 #else
-		printf("GTKOld\n");
 		tray_icon = egg_tray_icon_new("Authentication Indicator");
 		image = gtk_image_new();
 #endif
