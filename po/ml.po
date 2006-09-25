@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-09-24 22:21+0530\n"
+"PO-Revision-Date: 2006-09-25 14:00+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,7 @@ msgstr "പാസ്വേഡ്:"
 #: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "അഡ്മിനിസ്ട്രേറ്ററുടെ അവകാശങ്ങള്‍ ലഭ്യമാക്കുന്നതില്‍ പരാജയം: %s"
 
 #: pam-panel-icon.c:107
 #, c-format
@@ -104,14 +104,20 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"അഡ്മിനിസ്ട്രേറ്ററുടെ അവകാശങ്ങള്‍ ലഭ്യമാക്കുന്നതില്‍ പരാജയം: pam_timestamp_check "
+"പരാജയ കോഡ് %d തിരിച്ചു നല്‍കിയിരിക്കുന്നു"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
 msgstr ""
+"ആധികാരികത ഉറപ്പാക്കല്‍\n"
+"ആവശ്യമുണ്ട്"
 
 #: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
 msgstr ""
+"ആധികാരികത ഉറപ്പാക്കല്‍\n"
+"ആവശ്യമില്ല"
 
 #: pam-panel-icon.c:190
 msgid ""
@@ -119,6 +125,9 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"അഡ്മിനിസ്ട്രേറ്റര്‍ പാസ്‍വേര്‍ഡ് വീണ്ടും ടൈപ്പ് ചെയ്യാതെ നിങ്ങള്‍ക്ക് നിലവില്‍ സിസ്റ്റമിന്‍റെ "
+"ആകമൊത്തം ക്രമീകരണങ്ങള്‍ മാറ്റുന്നതിനായി(ഉപയോഗിക്കുന്ന ഏവര്‍ക്കും) അധികാരപ്പെ- "
+"ടുത്തിയിരിക്കുന്നു. നിങ്ങള്‍ക്ക് ആവശ്യമില്ലെങ്കില്‍ ഇത് ഉപേക്ഷിക്കാവുന്നതാണ്."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -410,7 +419,7 @@ msgstr "execl() error, errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "അപ്രതീക്ഷിതമായ ആര്‍ഗ്യുമെന്‍റ്"
 
 #: userinfo.c:396
 #, c-format
@@ -474,7 +483,7 @@ msgstr "ഫൈല്‍സിസ്റ്റം"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "ഡിവൈസ് %s ഫോര്‍മാറ്റ് ചെയ്യുവാന്‍ സാധ്യമല്ല."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
