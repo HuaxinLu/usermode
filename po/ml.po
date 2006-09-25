@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-07-04 17:27+0530\n"
+"PO-Revision-Date: 2006-09-24 22:21+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 
 #.
@@ -165,9 +165,9 @@ msgid "Help"
 msgstr "സഹായം"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "%sലേക്ക് exec context സെറ്റ് ചെയ്യുവാന്‍ സാധിക്കില്ല.\n"
+msgstr "%s പ്രോഗ്രാമിനുളള %sലേക്ക് ഡീഫോള്‍ട്ട് കോണ്‍ടെക്സ്റ്റ് സെറ്റ് ചെയ്യുവാന്‍ സാധിക്കില്ല.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -177,7 +177,7 @@ msgstr "%sലേക്ക് exec context സെറ്റ് ചെയ്യു�
 #: userhelper.c:608
 #, c-format
 msgid "Password for %s"
-msgstr "%s ന് പാസ്വേഡ്"
+msgstr "%s-ന് പാസ്‍വേര്‍ഡ്"
 
 #: userhelper.c:847
 #, c-format
@@ -228,8 +228,7 @@ msgstr "userhelperന് setuid root ആവശ്യമാണ്\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ഗ്രാഫിക്കല്‍ ജാലകം തുറക്കുവാനും കണ്ട്രോളിങ് ടര്‍മിനല്‍ കണ്ടുപിടിക്കുവാനും സാധിക്കുന്നില്ല.\n"
 
 #: userhelper-wrap.c:179
@@ -511,20 +510,3 @@ msgstr "വീട്ടിലെ ഫോണ്‍ നമ്ബറ്‍:"
 msgid "Login Shell:"
 msgstr "ലോഗിന്‍ ഷെല്ല:"
 
-#~ msgid "About Myself"
-#~ msgstr "എന്നെപ്പറ്റി രണ്ട് വാക്ക്"
-
-#~ msgid "Change personal information"
-#~ msgstr "സ്വകാര്യ വിവരങ്ങളില്‍ മാറ്റം വരുത്തുക"
-
-#~ msgid "Disk Management"
-#~ msgstr "ഡിസ്ക് മാനേജ്മന്‍റ്റ്"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "ഫൈല്‍സിസ്റ്റമുകള്‍ മൌണ്ടും അണ്‍മൌണ്ടും ചെയ്യുക"
-
-#~ msgid "Change your login password"
-#~ msgstr "ലോഗിന്‍ പാസ്വേഡ് മാറ്റുക"
-
-#~ msgid "Password"
-#~ msgstr "പാസ്വേഡ്"
