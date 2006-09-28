@@ -433,12 +433,12 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Είστε βέβαιος πως θέλετε να μορφοποιήσετε αυτόν το δίσκο; Θα καταστρέψετε όλα "
+"Είστε βέβαιος πως θέλετε να διαμορφώσετε αυτόν το δίσκο; Θα καταστρέψετε όλα "
 "τα δεδομένα που περιέχει."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
-msgstr "Εκτέλεση μορφοποίησης _χαμηλού επιπέδου."
+msgstr "Εκτέλεση διαμόρφωσης _χαμηλού επιπέδου."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
@@ -461,7 +461,7 @@ msgstr "Εργαλείο χρήστη για προσαρτήσεις"
 #. Create the other buttons.
 #: usermount.c:579
 msgid "_Format"
-msgstr "_Μορφοποίηση"
+msgstr "_Διαμόρφωση"
 
 # #-#-#-#-#  procman.HEAD.el.po (gnome-system-monitor 2.0.1)  #-#-#-#-#
 #
