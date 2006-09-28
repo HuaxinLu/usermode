@@ -176,7 +176,7 @@ msgstr "Βοήθεια"
 #: userhelper.c:138 userhelper.c:141
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Δεν μπόρεσε να οριστεί περιβάλλον exec στο %s.\n"
+msgstr "Δε μπόρεσε να οριστεί περιβάλλον exec στο %s.\n"
 
 #
 #: userhelper.c:528
@@ -403,7 +403,7 @@ msgstr "Σφάλμα σωλήνωσης.\n"
 #: userhelper-wrap.c:987
 #, c-format
 msgid "Cannot fork().\n"
-msgstr "Δεν μπορεί να γίνει fork().\n"
+msgstr "Δε μπορεί να γίνει fork().\n"
 
 #: userhelper-wrap.c:1065 userhelper-wrap.c:1069
 #, c-format
