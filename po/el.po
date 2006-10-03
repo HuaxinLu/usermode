@@ -1,24 +1,25 @@
 # translation of el.po to Greek
 # Greek translation of usermode.
 # Copyright (C) 2002, 2006 Free Software Foundation, Inc.
-#
 # Simos Xenitellis <simos@hellug.gr>, 2002.
 # simos: 67 messages, 26Oct2002, initial translation.
 # Dimitris Glezos <dimitris@glezos.com>, 2006.
 # nikos 2 messages fixed
+# Dimitrios Michelinakis <dimitris@michelinakis.gr>, 2006.
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-08-30 17:16+0100\n"
-"Last-Translator: Dimitris Glezos <dimitris@glezos.com>\n"
-"Language-Team: Greek <fedora-trans-el@redhat.com>\n"
+"PO-Revision-Date: 2006-10-03 16:23+0300\n"
+"Last-Translator: Dimitrios Michelinakis <dimitris@michelinakis.gr>\n"
+"Language-Team: Greek\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -176,9 +177,9 @@ msgid "Help"
 msgstr "Βοήθεια"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Δε μπόρεσε να οριστεί περιβάλλον exec στο %s.\n"
+msgstr "Δε μπόρεσε να οριστεί προεπιλεγμένο περιβάλλον %s για την εφαρμογή %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -432,7 +433,7 @@ msgstr "execl() error, errno=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Απρόβλεπτη παράμετρος"
 
 #: userinfo.c:396
 #, c-format
@@ -499,7 +500,7 @@ msgstr "Σύστημα αρχείων"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Δεν είναι δυνατή η διαμόρφωση της συσκευής '%s'."
 
 # #-#-#-#-#  gnome-terminal.gnome-2-0.el.po (profterm 1.9.3)  #-#-#-#-#
 #
