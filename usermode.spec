@@ -6,10 +6,10 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.87
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/System
-Source: usermode-%{version}.tar.bz2
+Source: usermode-%{version}.tar.gz
 %if %{build6x}
 Requires: util-linux, pam >= 0.66-5
 %else
@@ -18,7 +18,7 @@ Requires: util-linux, pam >= 0.75-37, /etc/pam.d/system-auth, passwd
 Conflicts: SysVinit < 2.74-14
 BuildPrereq: desktop-file-utils, glib2-devel, gtk2-devel
 BuildPrereq: libglade2-devel, libuser-devel, pam-devel, util-linux
-BuildPrereq: perl-XML-Parser
+BuildPrereq: perl-XML-Parser, libattr-devel, libSM-devel, gettext
 %if %{WITH_SELINUX}
 BuildPrereq: libselinux-devel >= 1.17.13-2
 %endif
@@ -120,6 +120,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Tue Oct  3 2006 Martin Bacovsky <mbacovsky@redhat.com> 1.87-2
+- Repackaging with new translations
+
 * Wed Sep 20 2006 Martin Bacovsky <mbacovsky@redhat.com> 1.87-1
 - pam-panel-icon is now transparent on GTK+ >2.10 (#207181),
   thanks to Bill Nottingham
@@ -128,10 +131,25 @@ rm -rf $RPM_BUILD_ROOT
 - fix userpasswd - Query window pops up three times if cancelling passwd (#202924)
 - Serbian latin script translation added (#203003)
 
-* Tue Jan  3 2005 Jindrich Novy <jnovy@redhat.com> 1.85-1
+* Wed Jul 12 2006 Jesse Keating <jkeating@redhat.com> - 1.85-2.2.1
+- rebuild
+
+* Fri Feb 10 2006 Jesse Keating <jkeating@redhat.com> - 1.85-2.2
+- bump again for double-long bug on ppc(64)
+
+* Tue Feb 07 2006 Jesse Keating <jkeating@redhat.com> - 1.85-2.1
+- rebuilt for new gcc4.1 snapshot and glibc changes
+
+* Tue Jan 31 2006 Jindrich Novy <jnovy@redhat.com> 1.85-2
+- add gettext, libattr-devel, libSM-devel dependencies
+
+* Tue Jan  3 2006 Jindrich Novy <jnovy@redhat.com> 1.85-1
 - fix userpasswd - don't crash if pam produces multi-line output (#175735)
   Thanks to toddp@bestweb.net
 - added Serbian translation (#176152)
+
+* Fri Dec 09 2005 Jesse Keating <jkeating@redhat.com>
+- rebuilt
 
 * Thu Dec  1 2005 Jindrich Novy <jnovy@redhat.com> 1.84-1
 - usermode-gtk dialog stays always on top, thanks to Pierre Ossman (#80634)
