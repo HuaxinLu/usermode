@@ -19,7 +19,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -179,7 +179,8 @@ msgstr "Βοήθεια"
 #: userhelper.c:220 userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Δε μπόρεσε να οριστεί προεπιλεγμένο περιβάλλον %s για την εφαρμογή %s.\n"
+msgstr ""
+"Δε μπόρεσε να οριστεί προεπιλεγμένο περιβάλλον %s για την εφαρμογή %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
