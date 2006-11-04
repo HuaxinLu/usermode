@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-10-14 22:17-0300\n"
+"PO-Revision-Date: 2006-11-04 17:07-0300\n"
 "Last-Translator: Igor Pires Soares <igor@projetofedora.org>\n"
 "Language-Team: Brazilian Portuguese <fedora-trans-pt_br@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -369,7 +369,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Você está tentando executar \"%s\", que pode se beneficiar de privilégios "
-"administrativos, porém são necessárias mais informações fazer isso."
+"administrativos, porém são necessárias mais informações para fazer isso."
 
 #: userhelper-wrap.c:810
 #, c-format
@@ -378,7 +378,7 @@ msgid ""
 "but more information is needed in order to do so."
 msgstr ""
 "Você está tentando executar \"%s\" que requer privilégios administrativos, "
-"porém são necessárias mais informações fazer isso."
+"porém são necessárias mais informações para fazer isso."
 
 #: userhelper-wrap.c:819
 #, c-format
@@ -387,7 +387,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Você está tentando executar um comando que pode se beneficiar de privilégios "
-"administrativos, porém são necessárias mais informações fazer isso."
+"administrativos, porém são necessárias mais informações para fazer isso."
 
 #: userhelper-wrap.c:821
 #, c-format
@@ -396,7 +396,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Você está tentando executar um comando que requer privilégios "
-"administrativos, porém são necessárias mais informações fazer isso."
+"administrativos, porém são necessárias mais informações para fazer isso."
 
 #: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
