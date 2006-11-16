@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: nautilus 1.65\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-11-16 22:15+0200\n"
+"PO-Revision-Date: 2006-11-16 22:42+0200\n"
 "Last-Translator: Marius Andreiana <marius galuna ro>\n"
 "Language-Team: Română <ro@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -188,8 +188,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi „%s” care ar putea beneficia de privilegii \n"
-"administrative, dar este nevoie de mai multă informaţie pentru aceasta."
+"Pentru a rula „%s”, care ar putea beneficia de privilegii \n"
+"administrative, este nevoie de informaţii suplimentare."
 
 #: userhelper.c:849
 #, c-format
@@ -197,8 +197,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi „%s” care necesită privilegii administrative,\n"
-"dar este nevoie de mai multă informaţie pentru aceasta."
+"Pentru a rula „%s”, care necesită privilegii administrative,\n"
+"este nevoie de informaţii suplimentare."
 
 #: userhelper.c:853
 #, c-format
@@ -207,7 +207,7 @@ msgid ""
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Încercaţi să rulaţi o comandă care ar putea beneficia de privilegii \n"
-"administrative, dar este nevoie de mai multă informaţie pentru aceasta."
+"administrative; pentru aceasta e nevoie de informaţii suplimentare."
 
 #: userhelper.c:855
 #, c-format
@@ -215,8 +215,8 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi o comandă care necesită privilegii administrative,\n"
-"dar este nevoie de mai multă informaţie pentru aceasta."
+"Încercaţi să rulaţi o comandă care necesită privilegii administrative;\n"
+"pentru aceasta este nevoie de informaţii suplimentare."
 
 #: userhelper.c:874
 #, c-format
@@ -360,8 +360,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi „%s” care ar putea beneficia de privilegii "
-"administrative, dar este nevoie de mai multă informaţie pentru aceasta."
+"Pentru a rula „%s”, care ar putea beneficia de privilegii "
+"administrative, este nevoie de informaţii suplimentare."
 
 #: userhelper-wrap.c:810
 #, c-format
@@ -369,8 +369,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi „%s” care necesită privilegii administrative, dar este "
-"nevoie de mai multă informaţie pentru aceasta."
+"Pentru a rula „%s”, care necesită privilegii administrative, este "
+"nevoie de informaţii suplimentare."
 
 #: userhelper-wrap.c:819
 #, c-format
@@ -379,7 +379,7 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "Încercaţi să rulaţi o comandă care ar putea beneficia de privilegii "
-"administrative, dar este nevoie de mai multă informaţie pentru aceasta."
+"administrative; pentru aceasta e nevoie de informaţii suplimentare."
 
 #: userhelper-wrap.c:821
 #, c-format
@@ -387,8 +387,8 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi o comandă care necesită privilegii administrative, "
-"dar este nevoie de mai multă informaţie pentru aceasta."
+"Încercaţi să rulaţi o comandă care necesită privilegii administrative; "
+"pentru aceasta este nevoie de informaţii suplimentare."
 
 #: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
