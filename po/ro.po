@@ -9,12 +9,12 @@ msgstr ""
 "Project-Id-Version: nautilus 1.65\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2004-06-22 18:50+0300\n"
+"PO-Revision-Date: 2006-11-16 22:15+0200\n"
 "Last-Translator: Marius Andreiana <marius galuna ro>\n"
 "Language-Team: Română <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -53,23 +53,23 @@ msgstr "Rulează neprivilegiat"
 
 #: dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "Parola actuală: "
+msgstr "Parola (actuală) UNIX: "
 
 #: dummy.h:26
 msgid "New UNIX password: "
-msgstr "Parola nouă: "
+msgstr "Noua parolă UNIX: "
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Reintroduceţi parola nouă: "
+msgstr "Reintroduceţi noua parolă UNIX: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "PAROLĂ GREŞITĂ: este MULT prea scurtă"
+msgstr "PAROLĂ·PREA·SIMPLĂ: este MULT prea scurtă"
 
 #: dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "PAROLĂ GREŞITĂ: este prea scurtă"
+msgstr "PAROLĂ PREA SIMPLĂ: este prea scurtă"
 
 #: dummy.h:30
 msgid "Password unchanged"
@@ -81,7 +81,7 @@ msgstr "Îmi pare rău, parolele nu se potrivesc"
 
 #: dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Lansează uneltele de configurare pentru tot sistemul fără parolă"
+msgstr "Lansează uneltele de configurare sistem fără parolă."
 
 #: dummy.h:33
 msgid "login: "
@@ -94,7 +94,7 @@ msgstr "Parolă: "
 #: pam-panel-icon.c:91
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr ""
+msgstr "Eşuare la eliminarea privilegiilor administrative: %s"
 
 #: pam-panel-icon.c:107
 #, c-format
@@ -102,14 +102,16 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
+"Eşuare la eliminarea privilegiilor administrative: pam_timestamp_check a "
+"întors codul de eşuare: %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
-msgstr ""
+msgstr "Păstrează autorizarea"
 
 #: pam-panel-icon.c:168 pam-panel-icon.c:200
 msgid "Forget Authorization"
-msgstr ""
+msgstr "Uită autorizarea"
 
 #: pam-panel-icon.c:190
 msgid ""
@@ -117,60 +119,63 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
+"Actualmente sunteţi autorizat să faceţi schimbări în sistem care afectează "
+"toţi utilizatorii fără să introduceţi parola administratorului din nou. Puteţi să "
+"renunţaţi la această autorizare."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
+msgstr "pam_timestamp_check nu este setuid root"
 
 #: pam-panel-icon.c:343
 msgid "no controlling tty for pam_timestamp_check"
-msgstr ""
+msgstr "niciun tty controlor pentru pam_timestamp_check"
 
 #: pam-panel-icon.c:347
 msgid "user unknown to pam_timestamp_check"
-msgstr ""
+msgstr "utilizator necunoscut pentru pam_timestamp_check"
 
 #: pam-panel-icon.c:351
 msgid "permissions error in pam_timestamp_check"
-msgstr ""
+msgstr "eroare de permisiuni în pam_timestamp_check"
 
 #: pam-panel-icon.c:355
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr ""
+msgstr "tty controlor invalid în pam_timestamp_check"
 
 #: pam-panel-icon.c:373
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Eroare"
+msgstr "Eroare: %s\n"
 
 #: pam-panel-icon.c:450
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr ""
+msgstr "Eşuare la rularea comenzii „%s”: %s\n"
 
 #: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr ""
+msgstr "Eşuarea la setarea IO channel nonblocking: %s\n"
 
 #: pam-panel-icon.c:542
 #, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
+msgstr "pam-panel-icon: eşuare la conectarea la managerul de sesiune\n"
 
 #: userdialogs.h:30
 msgid "Help"
 msgstr "Ajutor"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Nu am putut modifica contextul de securitate in %s \n"
+msgstr "Nu se poate seta contextul implicit de securitate pentru %s pentru programul %s.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Nu am putut modifica contextul de securitate in %s \n"
+msgstr "Nu am putut modifica contextul de securitate în %s \n"
 
 #: userhelper.c:608
 #, c-format
@@ -183,9 +188,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi \"%s\" care ar putea beneficia de privilegii "
-"administrative,\n"
-"dar este nevoie de mai multă informaţie pentru aceasta."
+"Încercaţi să rulaţi „%s” care ar putea beneficia de privilegii \n"
+"administrative, dar este nevoie de mai multă informaţie pentru aceasta."
 
 #: userhelper.c:849
 #, c-format
@@ -193,7 +197,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi \"%s\" care cere privilegii administrative,\n"
+"Încercaţi să rulaţi „%s” care necesită privilegii administrative,\n"
 "dar este nevoie de mai multă informaţie pentru aceasta."
 
 #: userhelper.c:853
@@ -202,9 +206,8 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi o comandă care ar putea beneficia de privilegii "
-"administrative,\n"
-"dar este nevoie de mai multă informaţie pentru aceasta."
+"Încercaţi să rulaţi o comandă care ar putea beneficia de privilegii \n"
+"administrative, dar este nevoie de mai multă informaţie pentru aceasta."
 
 #: userhelper.c:855
 #, c-format
@@ -212,7 +215,7 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi o comandă care cere privilegii administrative,\n"
+"Încercaţi să rulaţi o comandă care necesită privilegii administrative,\n"
 "dar este nevoie de mai multă informaţie pentru aceasta."
 
 #: userhelper.c:874
@@ -223,7 +226,7 @@ msgstr "Parola pentru %s: "
 #: userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper trebuie sa fie setuid root\n"
+msgstr "userhelper trebuie să fie setuid root\n"
 
 #. FIXME: print a warning here?
 #: userhelper.c:2458
@@ -231,12 +234,12 @@ msgstr "userhelper trebuie sa fie setuid root\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Nu am putut deschide fereastra grafică, şi nu am reuşit să găsesc terminalul "
-"care este în control \n"
+"Nu se poate deschide fereastra grafică şi nu se găseşte terminalul care "
+"controlează.\n"
 
 #: userhelper-wrap.c:179
 msgid "Unknown exit code."
-msgstr "Cod de terminare necunoscut."
+msgstr "Cod de ieşire necunoscut."
 
 #: userhelper-wrap.c:181
 msgid "Information updated."
@@ -256,10 +259,10 @@ msgid ""
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Unul sau mai multe dintre câmpurile schimbate este invalid \n"
-"Aceasta se întâmplă probabil datorită prezenţei virgulelor sau punct-şi-"
-"virgulă într-unul dintre câmpuri \n"
-"Vă rog să le scoateţi pe acelea şi să încercaţi încă o dată."
+"Unul sau mai multe dintre câmpurile schimbate este invalid.\n"
+"Aceasta se datorează probabil prezenţei virgulelor sau punct-şi-"
+"virgulelor într-unul dintre câmpuri.\n"
+"Vă rugăm să le eliminaţi şi să încercaţi din nou."
 
 #: userhelper-wrap.c:187
 msgid "Password resetting error."
@@ -271,7 +274,7 @@ msgid ""
 "Please try again in a few moments."
 msgstr ""
 "Câteva fişiere sistem sunt blocate.\n"
-"Vă rugăm mai încercaţi în câteva momente."
+"Vă rugăm încercaţi din nou în câteva momente."
 
 #: userhelper-wrap.c:191
 msgid "Unknown user."
@@ -283,7 +286,7 @@ msgstr "Drepturi insuficiente."
 
 #: userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
-msgstr "Chemare invalidă către sub-proces."
+msgstr "Apel invalid către subproces."
 
 #: userhelper-wrap.c:197
 msgid ""
@@ -291,17 +294,17 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Shell-ul curent nu este listat în /etc/shells.\n"
-"Nu puteţi să vă schimbaţi shell-ul.\n"
-"Contactaţi administratorul d-voastră."
+"Shell-ul dvs. curent nu este listat în /etc/shells.\n"
+"Nu vă este permis să vă schimbaţi shell-ul.\n"
+"Contactaţi administratorul sistemului dvs.."
 
 #: userhelper-wrap.c:200
 msgid "Out of memory."
-msgstr "Nu mai am memorie."
+msgstr "Memorie epuizată."
 
 #: userhelper-wrap.c:202
 msgid "The exec() call failed."
-msgstr "Chemarea exec() a eşuat."
+msgstr "Apelul exec() a eşuat."
 
 #: userhelper-wrap.c:204
 msgid "Failed to find selected program."
@@ -309,12 +312,11 @@ msgstr "Programul selectat nu a fost găsit."
 
 #: userhelper-wrap.c:207
 msgid "Request canceled."
-msgstr ""
+msgstr "Cerere anulată."
 
 #: userhelper-wrap.c:209
-#, fuzzy
 msgid "Internal PAM error occured."
-msgstr "Eroare PAM %d.\n"
+msgstr "A apărut o eroare internă PAM."
 
 #: userhelper-wrap.c:211
 msgid "Unknown error."
@@ -327,7 +329,7 @@ msgstr "Eroare necunoscută."
 #.
 #: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
 msgid "Query"
-msgstr "Cerere"
+msgstr "Interogare"
 
 #: userhelper-wrap.c:575 userhelper-wrap.c:755
 msgid "Error"
@@ -345,12 +347,12 @@ msgstr "Text înlocuitor."
 #: userhelper-wrap.c:799
 #, c-format
 msgid "Changing personal information."
-msgstr "Schimbă informaţiile personale."
+msgstr "Se schimbă informaţiile personale."
 
 #: userhelper-wrap.c:802
 #, c-format
 msgid "Changing login shell."
-msgstr "Schim shell-ul de login."
+msgstr "Schimb shell-ul de login."
 
 #: userhelper-wrap.c:808
 #, c-format
@@ -358,7 +360,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi \"%s\" care ar putea beneficia de privilegii "
+"Încercaţi să rulaţi „%s” care ar putea beneficia de privilegii "
 "administrative, dar este nevoie de mai multă informaţie pentru aceasta."
 
 #: userhelper-wrap.c:810
@@ -367,7 +369,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi \"%s\" care cere privilegii administrative, dar este "
+"Încercaţi să rulaţi „%s” care necesită privilegii administrative, dar este "
 "nevoie de mai multă informaţie pentru aceasta."
 
 #: userhelper-wrap.c:819
@@ -385,8 +387,8 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Încercaţi să rulaţi o comandă care cere privilegii administrative, dar este "
-"nevoie de mai multă informaţie pentru aceasta."
+"Încercaţi să rulaţi o comandă care necesită privilegii administrative, "
+"dar este nevoie de mai multă informaţie pentru aceasta."
 
 #: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
@@ -395,27 +397,27 @@ msgstr "_Rulează neprivilegiat"
 #: userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
-msgstr "Eroare pe ţeavă.\n"
+msgstr "Eroare de pipe.\n"
 
 #: userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
-msgstr "Nu am putut efectua fork().\n"
+msgstr "Nu se poate efectua fork().\n"
 
 #: userhelper-wrap.c:1075 userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
-msgstr "dup2() error.\n"
+msgstr "eroare dup2().\n"
 
 #: userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "execl()·error,·errno=%d\n"
+msgstr "eroare execl(),·errno=%d\n"
 
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Argument neaşteptat"
 
 #: userinfo.c:396
 #, c-format
@@ -428,15 +430,15 @@ msgstr "_Montează"
 
 #: usermount.c:63
 msgid "Un_mount"
-msgstr "_Demontează"
+msgstr "De_montează"
 
 #: usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Sunteţi sigur(ă) că doriţi să formataţi acest disc? Veţi distruge toate "
-"datele pe care le conţine acum."
+"Sigur doriţi să formataţi acest disc? Veţi distruge toate datele pe care "
+"le conţine."
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -444,21 +446,21 @@ msgstr "Efectuează o formatare la nive_l jos."
 
 #: usermount.c:375
 msgid "Select a _filesystem type to create:"
-msgstr "Selectează un tip de fişiere pentru a fi creat:"
+msgstr "Alegeţi un tip de sistem de _fişiere de creat:"
 
 #: usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Nu există nici un sistem de fişiere pe care sa aveţi drept de mount/"
-"unmount.\n"
-"Contactaţi administratorul."
+"Nu există nici un sistem de fişiere pe care să aveţi drept de a le monta "
+"sau demonta.\n"
+"Contactaţi administratorul dvs.."
 
 #. Create the dialog.
 #: usermount.c:550 usermount.c:562
 msgid "User Mount Tool"
-msgstr "Unealtă de montare"
+msgstr "Unealta utilizatorului pentru montare"
 
 #. Create the other buttons.
 #: usermount.c:579
@@ -471,7 +473,7 @@ msgstr "Dispozitiv"
 
 #: usermount.c:621
 msgid "Directory"
-msgstr "Dosar"
+msgstr "Director"
 
 #: usermount.c:627
 msgid "Filesystem"
@@ -480,7 +482,7 @@ msgstr "Sistem de fişiere"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Dispozitivul „%s” nu poate fi formatat."
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -498,7 +500,7 @@ msgstr "Informaţii utilizator"
 
 #: glade.strings.h:13 usermode.glade:251
 msgid "Full Name:"
-msgstr "Numele întreg:"
+msgstr "Nume întreg:"
 
 #: glade.strings.h:14 usermode.glade:275
 msgid "Office:"
@@ -514,7 +516,7 @@ msgstr "Numărul de telefon de acasă:"
 
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
-msgstr "Shell login:"
+msgstr "Shell de login:"
 
 #~ msgid "About Myself"
 #~ msgstr "Despre mine"
