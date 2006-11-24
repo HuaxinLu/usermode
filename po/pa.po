@@ -1,27 +1,27 @@
-# translation of pa.po to punjabi
 # translation of pa.po to Punjabi
 # Copyright (C) 2004 THE pa'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pa package.
+#
+#
 # Automatically generated, 2004.
 # Automatically generated <amanlinux@netscape.net>, 2004.
 # Amanpreet Singh Alam <aalam@redhat.com>, 2004, 2006.
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
 # harmeet <harmeetphulewala@yahoo.com>, 2005.
 # Jaswinder Singh Phulewala <jaswinderphulewala@yahoo.com>, 2005.
-#
-#
+# A S Alam <apbrar@gmail.com>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-01-09 12:26+0530\n"
-"Last-Translator: Amanpreet Singh Alam <aalam@redhat.com>\n"
+"PO-Revision-Date: 2006-11-24 09:48+0530\n"
+"Last-Translator: A S Alam <apbrar@gmail.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 "\n"
@@ -192,9 +192,9 @@ msgid "Help"
 msgstr "ਸਹਾਇਤਾ"
 
 #: userhelper.c:220 userhelper.c:294
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "exec ਪ੍ਰਸੰਗ ਨੂੰ %s ਦੇ ਨਹੀਂ ਸਕਿਆ ਹੈ\n"
+msgstr "ਪਰੋਗਰਾਮ %2$s ਲਈ %1$s ਲਈ ਮੂਲ ਪਰਸੰਗ ਸੈੱਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ ਹੈ।\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -255,8 +255,7 @@ msgstr "ਉਪਭੋਗੀ-ਸਹਾਇਕ ਦਾ ਸੈੱਟ-ਸ਼ੰਨ ਨ�
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ਗਰਾਫਿਕਲ ਝਰੋਖਾ ਖੋਲਣ ਵਿੱਚ ਅਸਫਲ ਹੈ, ਅਤੇ ਕੰਟਰੋਲਿੰਗ ਟਰਮੀਨਲ ਨੂੰ ਲੱਭ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
 
 #: userhelper-wrap.c:179
@@ -438,7 +437,7 @@ msgstr "execl() ਗਲਤੀ, ਗਲਤੀ ਨੰ=%d\n"
 #: userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "ਅਣਜਾਣ ਮੁੱਲ"
 
 #: userinfo.c:396
 #, c-format
@@ -502,7 +501,7 @@ msgstr "ਫਾਇਲ-ਸਿਸਟਮ"
 #: usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "ਜੰਤਰ '%s' ਨੂੰ ਫਾਰਮੈਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।"
 
 #: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
 #: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
@@ -538,20 +537,3 @@ msgstr "ਘਰ ਦਫਤਰ ਫੋਨ-ਨੰਬਰ:"
 msgid "Login Shell:"
 msgstr "ਲਾਗਇਨ ਸ਼ੈੱਲ:"
 
-#~ msgid "About Myself"
-#~ msgstr "ਮੇਰੇ ਬਾਰੇ"
-
-#~ msgid "Change personal information"
-#~ msgstr "ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਤਬਦੀਲ"
-
-#~ msgid "Disk Management"
-#~ msgstr "ਡਿਸਕ ਪਰਬੰਧ"
-
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "ਫਾਇਲ ਸਿਸਟਮ ਮਾਊਂਟ ਅਤੇ ਅਨ-ਮਾਊਂਟ"
-
-#~ msgid "Change your login password"
-#~ msgstr "ਆਪਣਾ ਲਾਗ-ਇਨ ਗੁਪਤ-ਕੋਡ ਬਦਲੋ"
-
-#~ msgid "Password"
-#~ msgstr "ਗੁਪਤ-ਕੋਡ"
