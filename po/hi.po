@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-30 16:05+0200\n"
-"PO-Revision-Date: 2006-09-05 09:50+0530\n"
+"PO-Revision-Date: 2006-11-27 11:21+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "नया UNIX शब्दकूटः"
 
 #: dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "UNIX शब्दकूट को पुनःमुद्रित करें: "
+msgstr "UNIX शब्दकूट को फिर टंकित करें: "
 
 #: dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -157,7 +157,7 @@ msgstr "\"%s\"समादेश चलाने में असफल: %s\n"
 #: pam-panel-icon.c:463
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "IO channel nonblocking सेट करने में विफल: %s\n"
+msgstr "IO चैनल गैर ब्लॉकिंग सेट करने में विफल: %s\n"
 
 #: pam-panel-icon.c:542
 #, c-format
@@ -248,7 +248,7 @@ msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"आपने अनुचित शब्दकूट मुद्रित किया.\n"
+"आपने अनुचित शब्दकूट टंकित किया.\n"
 "कृपया पुनःप्रयास करें."
 
 #: userhelper-wrap.c:185
@@ -423,7 +423,7 @@ msgstr "आप जीवंत नहीं हैं. बाहर जाएँ
 
 #: usermount.c:62
 msgid "_Mount"
-msgstr "आरोह करें (_M)"
+msgstr "आरोहित करें (_M)"
 
 #: usermount.c:63
 msgid "Un_mount"
@@ -508,7 +508,7 @@ msgstr "कार्यालय दूरभाष क्रमांकः"
 
 #: glade.strings.h:16 usermode.glade:323
 msgid "Home Phone Number:"
-msgstr "गृह दूरभाष क्रमांकः"
+msgstr "निवास दूरभाष क्रमांकः"
 
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
