@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
 "\n"
 
 #.
@@ -104,8 +105,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"അഡ്മിനിസ്ട്രേറ്ററുടെ അവകാശങ്ങള്‍ ലഭ്യമാക്കുന്നതില്‍ പരാജയം: pam_timestamp_check "
-"പരാജയ കോഡ് %d തിരിച്ചു നല്‍കിയിരിക്കുന്നു"
+"അഡ്മിനിസ്ട്രേറ്ററുടെ അവകാശങ്ങള്‍ ലഭ്യമാക്കുന്നതില്‍ പരാജയം: pam_timestamp_check പരാജയ കോഡ് %"
+"d തിരിച്ചു നല്‍കിയിരിക്കുന്നു"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -125,9 +126,9 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
-"അഡ്മിനിസ്ട്രേറ്റര്‍ പാസ്‍വേര്‍ഡ് വീണ്ടും ടൈപ്പ് ചെയ്യാതെ നിങ്ങള്‍ക്ക് നിലവില്‍ സിസ്റ്റമിന്‍റെ "
-"ആകമൊത്തം ക്രമീകരണങ്ങള്‍ മാറ്റുന്നതിനായി(ഉപയോഗിക്കുന്ന ഏവര്‍ക്കും) അധികാരപ്പെ- "
-"ടുത്തിയിരിക്കുന്നു. നിങ്ങള്‍ക്ക് ആവശ്യമില്ലെങ്കില്‍ ഇത് ഉപേക്ഷിക്കാവുന്നതാണ്."
+"അഡ്മിനിസ്ട്രേറ്റര്‍ പാസ്‍വേര്‍ഡ് വീണ്ടും ടൈപ്പ് ചെയ്യാതെ നിങ്ങള്‍ക്ക് നിലവില്‍ സിസ്റ്റമിന്‍റെ ആകമൊത്തം "
+"ക്രമീകരണങ്ങള്‍ മാറ്റുന്നതിനായി(ഉപയോഗിക്കുന്ന ഏവര്‍ക്കും) അധികാരപ്പെ- ടുത്തിയിരിക്കുന്നു. നിങ്ങള്‍ക്ക് "
+"ആവശ്യമില്ലെങ്കില്‍ ഇത് ഉപേക്ഷിക്കാവുന്നതാണ്."
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -237,7 +238,8 @@ msgstr "userhelperന് setuid root ആവശ്യമാണ്\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ഗ്രാഫിക്കല്‍ ജാലകം തുറക്കുവാനും കണ്ട്രോളിങ് ടര്‍മിനല്‍ കണ്ടുപിടിക്കുവാനും സാധിക്കുന്നില്ല.\n"
 
 #: userhelper-wrap.c:179
@@ -518,4 +520,3 @@ msgstr "വീട്ടിലെ ഫോണ്‍ നമ്ബറ്‍:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "ലോഗിന്‍ ഷെല്ല:"
-

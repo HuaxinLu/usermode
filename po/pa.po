@@ -255,7 +255,8 @@ msgstr "ਉਪਭੋਗੀ-ਸਹਾਇਕ ਦਾ ਸੈੱਟ-ਸ਼ੰਨ ਨ�
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ਗਰਾਫਿਕਲ ਝਰੋਖਾ ਖੋਲਣ ਵਿੱਚ ਅਸਫਲ ਹੈ, ਅਤੇ ਕੰਟਰੋਲਿੰਗ ਟਰਮੀਨਲ ਨੂੰ ਲੱਭ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
 
 #: userhelper-wrap.c:179
@@ -536,4 +537,3 @@ msgstr "ਘਰ ਦਫਤਰ ਫੋਨ-ਨੰਬਰ:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "ਲਾਗਇਨ ਸ਼ੈੱਲ:"
-

@@ -101,7 +101,8 @@ msgstr "প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'ল
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'লৈ অক্ষম: pam_timestamp_check -এ অক্ষম হোৱা কোড দিলে %d"
+msgstr ""
+"প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'লৈ অক্ষম: pam_timestamp_check -এ অক্ষম হোৱা কোড দিলে %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -116,7 +117,10 @@ msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "প্ৰশাসক গুপ্তশব্দ আকৌ নিলিখাকে ব্যৱস্থাপ্ৰণালী ব্যাপক পছন্দ বিন্যাস কৰাৰ অধিকাৰ আপুনাৰ লগত বৰ্ত্তমানে আছে (যি সকলো ব্যৱহাৰকৰ্তাক প্ৰভাবান্বিত কৰিব) । আপুনি এই  অধিকাৰ এৰিব পাৰে ।"
+msgstr ""
+"প্ৰশাসক গুপ্তশব্দ আকৌ নিলিখাকে ব্যৱস্থাপ্ৰণালী ব্যাপক পছন্দ বিন্যাস কৰাৰ অধিকাৰ আপুনাৰ "
+"লগত বৰ্ত্তমানে আছে (যি সকলো ব্যৱহাৰকৰ্তাক প্ৰভাবান্বিত কৰিব) । আপুনি এই  অধিকাৰ "
+"এৰিব পাৰে ।"
 
 #: pam-panel-icon.c:338
 msgid "pam_timestamp_check is not setuid root"
@@ -183,7 +187,8 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব পাৰে ,\n"
+"আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব "
+"পাৰে ,\n"
 "কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
 #: userhelper.c:849
@@ -201,7 +206,8 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব পাৰে ,\n"
+"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব "
+"পাৰে ,\n"
 "কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
 #: userhelper.c:855
@@ -226,7 +232,8 @@ msgstr "userhelper ৰূট setuid ত হ'ব লাগে\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "চিত্ৰালকিত পৰ্দ্দা খুলিব পৰা ন'গ'ল, আৰু নিয়ন্ত্ৰক টাৰ্মিনেল পোৱা ন'গ'ল ।\n"
 
 #: userhelper-wrap.c:179
@@ -360,8 +367,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন,"
-"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
+"আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন,কিন্তু ইয়াৰ "
+"বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
 #: userhelper-wrap.c:819
 #, c-format
@@ -369,8 +376,8 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব পাৰে"
-"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
+"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব "
+"পাৰেকিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
 #: userhelper-wrap.c:821
 #, c-format
@@ -378,8 +385,8 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন"
-"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
+"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজনকিন্তু "
+"ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
 #: userhelper-wrap.c:838
 msgid "_Run Unprivileged"
@@ -427,7 +434,9 @@ msgstr "বাহিৰ কৰক (_m)"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "এই ডিষ্ক পুনৰাকৃত কৰিব'লৈ আপুনি নিশ্চিত নে?  আপুনি বৰ্ত্তমান অৱস্থিত সকলো তথ্য নাশ কৰিব ।"
+msgstr ""
+"এই ডিষ্ক পুনৰাকৃত কৰিব'লৈ আপুনি নিশ্চিত নে?  আপুনি বৰ্ত্তমান অৱস্থিত সকলো তথ্য নাশ "
+"কৰিব ।"
 
 #: usermount.c:332
 msgid "Perform a _low-level format."
@@ -505,4 +514,3 @@ msgstr "ঘৰৰ দূৰভাষ সংখ্যা:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "প্ৰৱেশৰ শ্বেল:"
-

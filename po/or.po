@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 "\n"
 
 #.
@@ -236,7 +237,8 @@ msgstr "userhelper ଗୋଟିଏ ମୂଖ୍ଯ ଚାଳକ ହେବା ଆ
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ଆଲେଖୀକ ଓ୍ବେଣ୍ଡୋ କୁ ଖୋଲିବାରେ ଅସଫଳ, ଏବଂ ନିୟନ୍ତ୍ରିତ ଟର୍ମିନାଲ ଖୋଲିବାରେ ଅସଫଳ \n"
 
 #: userhelper-wrap.c:179
@@ -517,4 +519,3 @@ msgstr "ଘର ଫୋନ ନମ୍ବର:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "ଲଗଇନ୍ ଆବରଣ:"
-

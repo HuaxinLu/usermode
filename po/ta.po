@@ -18,7 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -108,7 +109,8 @@ msgstr "மேலாளர் உரிமையை கைவிடுவதி�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "மேலாளர் உரிமையை கைவிடுவதில் தோல்வி. : pam_timestamp_check பிழை எண்ணை தந்தது %d"
+msgstr ""
+"மேலாளர் உரிமையை கைவிடுவதில் தோல்வி. : pam_timestamp_check பிழை எண்ணை தந்தது %d"
 
 #: pam-panel-icon.c:158 pam-panel-icon.c:196
 msgid "Keep Authorization"
@@ -235,7 +237,8 @@ msgstr "பயனர் உதவியில் setuid root அமைக்க�
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "வரைகலை சாளரத்தை திறக்க இயலவில்லை.மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
 "இயலவில்லை.\n"
@@ -516,4 +519,3 @@ msgstr "வீட்டு தொலைபேசி எண்: "
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "உள்நுழை ஷெல்:"
-

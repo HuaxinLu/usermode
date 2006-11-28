@@ -181,7 +181,8 @@ msgstr "Hilfe"
 #: userhelper.c:220 userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
+msgstr ""
+"Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
 
 #: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
 #, c-format
@@ -242,7 +243,8 @@ msgstr "userhelper muss Setuid-Root sein\n"
 #. FIXME: print a warning here?
 #: userhelper.c:2458
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -526,4 +528,3 @@ msgstr "Telefonnummer Privat:"
 #: glade.strings.h:17 usermode.glade:347
 msgid "Login Shell:"
 msgstr "Login-Shell:"
-
