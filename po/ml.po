@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-30 16:05+0200\n"
+"POT-Creation-Date: 2006-11-29 16:09+0100\n"
 "PO-Revision-Date: 2006-09-25 14:00+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
@@ -38,68 +38,68 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#: ../dummy.h:21 ../userdialogs.h:29
 msgid "OK"
 msgstr "ശരി"
 
-#: dummy.h:22 userdialogs.h:32
+#: ../dummy.h:22 ../userdialogs.h:32
 msgid "Exit"
 msgstr "പുറത്തേക്ക് പോവുക"
 
-#: dummy.h:23 userdialogs.h:31
+#: ../dummy.h:23 ../userdialogs.h:31
 msgid "Cancel"
 msgstr "റദ്ദാക്കുക"
 
-#: dummy.h:24 userdialogs.h:33
+#: ../dummy.h:24 ../userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "അണ്‍പ്രിവിലേജ്ടായി പ്രവര്‍ത്തിക്കുക"
 
-#: dummy.h:25
+#: ../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "നിലവിലുളള UNIX പാസ്വേഡ്: "
 
-#: dummy.h:26
+#: ../dummy.h:26
 msgid "New UNIX password: "
 msgstr "പുതിയ UNIX പാസ്വേഡ്: "
 
-#: dummy.h:27
+#: ../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "പുതിയ UNIX പാസ്വേഡ് വീണ്ടും ടൈപ്പ് ചെയ്യുക: "
 
-#: dummy.h:28
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "BAD PASSWORD: പാസ്വേഡ് വളരെ ചെറുതാണ്"
 
-#: dummy.h:29
+#: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "BAD PASSWORD: പാസ്വേഡ് വളരെ ചെറുതാണ്"
 
-#: dummy.h:30
+#: ../dummy.h:30
 msgid "Password unchanged"
 msgstr "പാസ്വേഡിന് മാറ്റമില്ല"
 
-#: dummy.h:31
+#: ../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "ക്ഷമിക്കണം, പാസ്വേഡുകള്‍ ഒന്നല്ല"
 
-#: dummy.h:32
+#: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "system-wide configuration tools പാസ്വേഡ് ഇല്ലാതെ ഉപയോഗിക്കുക."
 
-#: dummy.h:33
+#: ../dummy.h:33
 msgid "login: "
 msgstr "ലോഗിന്‍ ചെയ്യുക:"
 
-#: dummy.h:34
+#: ../dummy.h:34
 msgid "Password: "
 msgstr "പാസ്വേഡ്:"
 
-#: pam-panel-icon.c:91
+#: ../pam-panel-icon.c:98
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "അഡ്മിനിസ്ട്രേറ്ററുടെ അവകാശങ്ങള്‍ ലഭ്യമാക്കുന്നതില്‍ പരാജയം: %s"
 
-#: pam-panel-icon.c:107
+#: ../pam-panel-icon.c:114
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -108,19 +108,19 @@ msgstr ""
 "അഡ്മിനിസ്ട്രേറ്ററുടെ അവകാശങ്ങള്‍ ലഭ്യമാക്കുന്നതില്‍ പരാജയം: pam_timestamp_check പരാജയ കോഡ് %"
 "d തിരിച്ചു നല്‍കിയിരിക്കുന്നു"
 
-#: pam-panel-icon.c:158 pam-panel-icon.c:196
+#: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
 msgid "Keep Authorization"
 msgstr ""
 "ആധികാരികത ഉറപ്പാക്കല്‍\n"
 "ആവശ്യമുണ്ട്"
 
-#: pam-panel-icon.c:168 pam-panel-icon.c:200
+#: ../pam-panel-icon.c:180 ../pam-panel-icon.c:212
 msgid "Forget Authorization"
 msgstr ""
 "ആധികാരികത ഉറപ്പാക്കല്‍\n"
 "ആവശ്യമില്ല"
 
-#: pam-panel-icon.c:190
+#: ../pam-panel-icon.c:202
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -130,66 +130,66 @@ msgstr ""
 "ക്രമീകരണങ്ങള്‍ മാറ്റുന്നതിനായി(ഉപയോഗിക്കുന്ന ഏവര്‍ക്കും) അധികാരപ്പെ- ടുത്തിയിരിക്കുന്നു. നിങ്ങള്‍ക്ക് "
 "ആവശ്യമില്ലെങ്കില്‍ ഇത് ഉപേക്ഷിക്കാവുന്നതാണ്."
 
-#: pam-panel-icon.c:338
+#: ../pam-panel-icon.c:394
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check is not setuid root"
 
-#: pam-panel-icon.c:343
+#: ../pam-panel-icon.c:399
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "no controlling tty for pam_timestamp_check"
 
-#: pam-panel-icon.c:347
+#: ../pam-panel-icon.c:403
 msgid "user unknown to pam_timestamp_check"
 msgstr "user unknown to pam_timestamp_check"
 
-#: pam-panel-icon.c:351
+#: ../pam-panel-icon.c:407
 msgid "permissions error in pam_timestamp_check"
 msgstr "permissions error in pam_timestamp_check"
 
-#: pam-panel-icon.c:355
+#: ../pam-panel-icon.c:411
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "invalid controlling tty in pam_timestamp_check"
 
-#: pam-panel-icon.c:373
+#: ../pam-panel-icon.c:429
 #, c-format
 msgid "Error: %s\n"
 msgstr "പിഴവ്: %s\n"
 
-#: pam-panel-icon.c:450
+#: ../pam-panel-icon.c:506
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "\"%s\" എന്ന കമ്ന്‍ഡ് പ്രവറ്‍ത്തിപ്പിക്കുന്നതില്‍ പരാജയപ്പെട്ടു: %s\n"
 
-#: pam-panel-icon.c:463
+#: ../pam-panel-icon.c:519
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO ചാനല്‍ നോണ്‍ബ്ളോക്കിങ് സെറ്റ് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു: %s\n"
 
-#: pam-panel-icon.c:542
-#, c-format
+#: ../pam-panel-icon.c:598
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: സശന്‍ മാനേജറുമായി കണക്റ്റ് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു\n"
 
-#: userdialogs.h:30
+#: ../userdialogs.h:30
 msgid "Help"
 msgstr "സഹായം"
 
-#: userhelper.c:220 userhelper.c:294
+#: ../userhelper.c:220 ../userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "%s പ്രോഗ്രാമിനുളള %sലേക്ക് ഡീഫോള്‍ട്ട് കോണ്‍ടെക്സ്റ്റ് സെറ്റ് ചെയ്യുവാന്‍ സാധിക്കില്ല.\n"
 
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: ../userhelper.c:238 ../userhelper.c:241 ../userhelper.c:312
+#: ../userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "%sലേക്ക് exec context സെറ്റ് ചെയ്യുവാന്‍ സാധിക്കില്ല.\n"
 
-#: userhelper.c:608
+#: ../userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "%s-ന് പാസ്‍വേര്‍ഡ്"
 
-#: userhelper.c:847
+#: ../userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -198,7 +198,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: userhelper.c:849
+#: ../userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -207,8 +207,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: userhelper.c:853
-#, c-format
+#: ../userhelper.c:853
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -216,8 +215,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡ് പ്രവര്‍ത്തിപ്പിക്കുവാനാണ് നിങ്ങള്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: userhelper.c:855
-#, c-format
+#: ../userhelper.c:855
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -225,32 +223,32 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡ് പ്രവര്‍ത്തിപ്പിക്കുവാനാണ് നിങ്ങള്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: userhelper.c:874
+#: ../userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "%s ന് പാസ്വേഡ്"
 
-#: userhelper.c:2360
+#: ../userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelperന് setuid root ആവശ്യമാണ്\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2458
+#: ../userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ഗ്രാഫിക്കല്‍ ജാലകം തുറക്കുവാനും കണ്ട്രോളിങ് ടര്‍മിനല്‍ കണ്ടുപിടിക്കുവാനും സാധിക്കുന്നില്ല.\n"
 
-#: userhelper-wrap.c:179
+#: ../userhelper-wrap.c:179
 msgid "Unknown exit code."
 msgstr "അപരിചിതമായ എക്സിറ്റ് കോഡ്."
 
-#: userhelper-wrap.c:181
+#: ../userhelper-wrap.c:181
 msgid "Information updated."
 msgstr "വിശദാംശങ്ങളില്‍ മാറ്റം വരുത്തിയിരിക്കുന്നു."
 
-#: userhelper-wrap.c:183
+#: ../userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -258,7 +256,7 @@ msgstr ""
 "നിങ്ങള്‍ ടൈപ്പ് ചെയ്ത പാസ്വേഡ് തെറ്റാണ്.\n"
 "വീണ്ടും ശ്രമിക്കുക."
 
-#: userhelper-wrap.c:185
+#: ../userhelper-wrap.c:185
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -268,11 +266,11 @@ msgstr ""
 "ഏതെങ്കിലും ഫീല്‍ഡില്‍ ഉളള കോമയോ കോളണോ ഇതിന് കാരണമാവാം.\n"
 "അവ നീക്കം ചെയ്തശേഷം വീണ്ടും ശ്രമിക്കുക."
 
-#: userhelper-wrap.c:187
+#: ../userhelper-wrap.c:187
 msgid "Password resetting error."
 msgstr "പാസ്വേഡ് റീസെറ്റ് ചെയ്യുന്നതില്‍ പിഴവ് സംഭവിച്ചിരിക്കുന്നു."
 
-#: userhelper-wrap.c:189
+#: ../userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -280,19 +278,19 @@ msgstr ""
 "ചില സിസ്റ്റം ഫയലുകള്‍ ലോക്കാണ്.\n"
 "ദയവായി അല്പ സമയത്തിന് ശേഷം ശ്രമിക്കുക."
 
-#: userhelper-wrap.c:191
+#: ../userhelper-wrap.c:191
 msgid "Unknown user."
 msgstr "അപരിചിതനായ യൂസറ്‍."
 
-#: userhelper-wrap.c:193
+#: ../userhelper-wrap.c:193
 msgid "Insufficient rights."
 msgstr "മതിയാവാത്ത അവകാശങ്ങള്‍"
 
-#: userhelper-wrap.c:195
+#: ../userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
 msgstr "സബ്പ്രൊസസ്സിലേക്ക് അസാധുവായ കോള്‍."
 
-#: userhelper-wrap.c:197
+#: ../userhelper-wrap.c:197
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -302,27 +300,27 @@ msgstr ""
 "നിങ്ങള്‍ക്ക ഷെല്ല് മാറ്റുവാന്‍ അവകാശമില്ല.\n"
 "നിങ്ങളുടെ സിസ്റ്റം അഡ്മിനിസ്ട്രേറ്റരുമായി ബന്ധപ്പെടുക."
 
-#: userhelper-wrap.c:200
+#: ../userhelper-wrap.c:200
 msgid "Out of memory."
 msgstr "മെമ്മറി തികയില്ല."
 
-#: userhelper-wrap.c:202
+#: ../userhelper-wrap.c:202
 msgid "The exec() call failed."
 msgstr "exec() കോള്‍ പരാജയപ്പെട്ടിരിക്കുന്നു."
 
-#: userhelper-wrap.c:204
+#: ../userhelper-wrap.c:204
 msgid "Failed to find selected program."
 msgstr "സലക്ട് ചെയ്ത പ്രോഗ്രാം തിരയുന്നതില്‍ പരാജയപ്പെട്ടിരിക്കുന്നു."
 
-#: userhelper-wrap.c:207
+#: ../userhelper-wrap.c:207
 msgid "Request canceled."
 msgstr "നിറ്‍ദ്ദേശം റദ്ദാക്കപ്പെട്ടു."
 
-#: userhelper-wrap.c:209
+#: ../userhelper-wrap.c:209
 msgid "Internal PAM error occured."
 msgstr "ഇന്‍റ്റേണല്‍ PAM ല്‍ തെറ്റ് സംഭവിച്ചിരിക്കുന്നു."
 
-#: userhelper-wrap.c:211
+#: ../userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "അപരിചിതമായ തെറ്റ് സംഭവിച്ചിരിക്കുന്നു."
 
@@ -331,34 +329,32 @@ msgstr "അപരിചിതമായ തെറ്റ് സംഭവിച്�
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
+#: ../userhelper-wrap.c:482 ../glade.strings.h:7 ../usermode.glade.h:9
 msgid "Query"
 msgstr "സംശയം"
 
-#: userhelper-wrap.c:575 userhelper-wrap.c:755
+#: ../userhelper-wrap.c:575 ../userhelper-wrap.c:755
 msgid "Error"
 msgstr "തെറ്റ് സംഭവിച്ചിരിക്കുന്നു"
 
-#: userhelper-wrap.c:587
+#: ../userhelper-wrap.c:587
 msgid "Information"
 msgstr "വിവരങ്ങള്‍"
 
-#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: ../userhelper-wrap.c:747 ../glade.strings.h:8 ../glade.strings.h:11
+#: ../usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "പ്ളെയ്സ്ഹോള്‍ഡറ്‍ ടെക്സ്ഫറ്റ്."
 
-#: userhelper-wrap.c:799
-#, c-format
+#: ../userhelper-wrap.c:799
 msgid "Changing personal information."
 msgstr "സ്വകാര്യ വിവരങ്ങള്‍ മാറ്റുക."
 
-#: userhelper-wrap.c:802
-#, c-format
+#: ../userhelper-wrap.c:802
 msgid "Changing login shell."
 msgstr "ലോഗിന്‍ ഷെല്ല മാറ്റുന്നു."
 
-#: userhelper-wrap.c:808
+#: ../userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -367,7 +363,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: userhelper-wrap.c:810
+#: ../userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -376,8 +372,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: userhelper-wrap.c:819
-#, c-format
+#: ../userhelper-wrap.c:819
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -385,8 +380,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡാണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: userhelper-wrap.c:821
-#, c-format
+#: ../userhelper-wrap.c:821
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -394,49 +388,49 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡാണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: userhelper-wrap.c:838
+#: ../userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "റണ്‍ അണ്‍പ്രവിലേജ്ഡ്(_R)"
 
-#: userhelper-wrap.c:990
+#: ../userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "പൈപ്പ് എററ്‍.\n"
 
-#: userhelper-wrap.c:997
+#: ../userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() ചെയ്യുവാന്‍ കഴിയുന്നില്ല.\n"
 
-#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
+#: ../userhelper-wrap.c:1075 ../userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() error.\n"
 
-#: userhelper-wrap.c:1091
+#: ../userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: userinfo.c:369
+#: ../userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
 msgstr "അപ്രതീക്ഷിതമായ ആര്‍ഗ്യുമെന്‍റ്"
 
-#: userinfo.c:396
+#: ../userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "നിങ്ങള്‍ നിലവിലില്ല.  കടന്നു പോവുക.\n"
 
-#: usermount.c:62
+#: ../usermount.c:62
 msgid "_Mount"
 msgstr "മൌണ്ട്ട്(_M)"
 
-#: usermount.c:63
+#: ../usermount.c:63
 msgid "Un_mount"
 msgstr "അണ്‍മൌണ്ട്ട്(_m)"
 
-#: usermount.c:321
+#: ../usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -444,15 +438,15 @@ msgstr ""
 "ഡിസ്ക്ക് ഫോറ്‍മാറ്റ് ചെയ്യണമെന്ന് നിങ്ങള്‍ക്ക് ഉറപ്പാണോ?  അതില്‍ ഇപ്പോള്‍ അടങ്ങിയിരിക്കുന്നതെല്ലാം "
 "നിങ്ങള്‍ക്ക് നഷ്ടമാകും."
 
-#: usermount.c:332
+#: ../usermount.c:332
 msgid "Perform a _low-level format."
 msgstr "ഒരു ലോ-ലവല്‍ ഫോറ്‍മാറ്റിംഗ്(_l) നടത്തുക."
 
-#: usermount.c:375
+#: ../usermount.c:375
 msgid "Select a _filesystem type to create:"
 msgstr "ഒരു ഫയല്‍ സിസ്റ്റം (_f) ടൈപ്പ് തിരഞ്ഞെടുക്കുക:"
 
-#: usermount.c:549
+#: ../usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -461,62 +455,87 @@ msgstr ""
 "നിങ്ങളുടെ അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക."
 
 #. Create the dialog.
-#: usermount.c:550 usermount.c:562
+#: ../usermount.c:550 ../usermount.c:562
 msgid "User Mount Tool"
 msgstr "യൂസറ്‍ മൌണ്ട് ടൂള്‍"
 
 #. Create the other buttons.
-#: usermount.c:579
+#: ../usermount.c:579
 msgid "_Format"
 msgstr "ഫോറ്‍മാറ്റ(_F)"
 
-#: usermount.c:615
+#: ../usermount.c:615
 msgid "Device"
 msgstr "ഡിവൈസ്"
 
-#: usermount.c:621
+#: ../usermount.c:621
 msgid "Directory"
 msgstr "ഡൈറക്ടറി"
 
-#: usermount.c:627
+#: ../usermount.c:627
 msgid "Filesystem"
 msgstr "ഫൈല്‍സിസ്റ്റം"
 
-#: usermount.c:674
+#: ../usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "ഡിവൈസ് %s ഫോര്‍മാറ്റ് ചെയ്യുവാന്‍ സാധ്യമല്ല."
 
-#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: ../glade.strings.h:9 ../glade.strings.h:18 ../glade.strings.h:19
+#: ../glade.strings.h:20 ../glade.strings.h:21 ../usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: ../glade.strings.h:10 ../usermode.glade.h:5
 msgid "Message"
 msgstr "സന്ദേശം"
 
-#: glade.strings.h:12 usermode.glade:187
+#: ../glade.strings.h:12 ../usermode.glade.h:10
 msgid "User Information"
 msgstr "യൂസറിനെ സംബന്ധിച്ചുള്ള വിവരങ്ങള്‍"
 
-#: glade.strings.h:13 usermode.glade:251
+#: ../glade.strings.h:13 ../usermode.glade.h:2
 msgid "Full Name:"
 msgstr "മുഴുവന്‍ പേര്:"
 
-#: glade.strings.h:14 usermode.glade:275
+#: ../glade.strings.h:14 ../usermode.glade.h:7
 msgid "Office:"
 msgstr "ഓഫീസ്:"
 
-#: glade.strings.h:15 usermode.glade:299
+#: ../glade.strings.h:15 ../usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "ഓഫീസ് ഫോണ്‍ നമ്ബറ്‍:"
 
-#: glade.strings.h:16 usermode.glade:323
+#: ../glade.strings.h:16 ../usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "വീട്ടിലെ ഫോണ്‍ നമ്ബറ്‍:"
 
-#: glade.strings.h:17 usermode.glade:347
+#: ../glade.strings.h:17 ../usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "ലോഗിന്‍ ഷെല്ല:"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: ../userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "സ്വകാര്യ വിവരങ്ങള്‍ മാറ്റുക."
+
+#: ../usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: ../usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: ../userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: ../userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "പാസ്വേഡ്:"
