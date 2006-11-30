@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-30 16:05+0200\n"
+"POT-Creation-Date: 2006-11-29 16:09+0100\n"
 "PO-Revision-Date: 2004-09-13 14:21+0300\n"
 "Last-Translator: Vital Khilko (aka dojlid) <vk@mova.org>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -32,149 +32,149 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#: ../dummy.h:21 ../userdialogs.h:29
 msgid "OK"
 msgstr "Добра"
 
-#: dummy.h:22 userdialogs.h:32
+#: ../dummy.h:22 ../userdialogs.h:32
 msgid "Exit"
 msgstr "Выхад"
 
-#: dummy.h:23 userdialogs.h:31
+#: ../dummy.h:23 ../userdialogs.h:31
 msgid "Cancel"
 msgstr "Скасаваць"
 
-#: dummy.h:24 userdialogs.h:33
+#: ../dummy.h:24 ../userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Выканаць без прывілеяў"
 
-#: dummy.h:25
+#: ../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(бягучы) пароль UNIX: "
 
-#: dummy.h:26
+#: ../dummy.h:26
 msgid "New UNIX password: "
 msgstr "Новы пароль UNIX: "
 
-#: dummy.h:27
+#: ../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "Паўтарыце новы пароль UNIX: "
 
-#: dummy.h:28
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "КЕПСКІ ПАРОЛЬ: пароль ЗАКАРОТКІ"
 
-#: dummy.h:29
+#: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "КЕПСКІ ПАРОЛЬ: пароль закароткі"
 
-#: dummy.h:30
+#: ../dummy.h:30
 msgid "Password unchanged"
 msgstr "Пароль ня зьменены"
 
-#: dummy.h:31
+#: ../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "Выбачайце, паролі не супадаюць"
 
-#: dummy.h:32
+#: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Запускае агульнасыстэмныя сродкі канфігурацыі без паролю."
 
-#: dummy.h:33
+#: ../dummy.h:33
 msgid "login: "
 msgstr "уліковае імя: "
 
-#: dummy.h:34
+#: ../dummy.h:34
 msgid "Password: "
 msgstr "Пароль: "
 
-#: pam-panel-icon.c:91
+#: ../pam-panel-icon.c:98
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr ""
 
-#: pam-panel-icon.c:107
+#: ../pam-panel-icon.c:114
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
 
-#: pam-panel-icon.c:158 pam-panel-icon.c:196
+#: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
 msgid "Keep Authorization"
 msgstr ""
 
-#: pam-panel-icon.c:168 pam-panel-icon.c:200
+#: ../pam-panel-icon.c:180 ../pam-panel-icon.c:212
 msgid "Forget Authorization"
 msgstr ""
 
-#: pam-panel-icon.c:190
+#: ../pam-panel-icon.c:202
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
 
-#: pam-panel-icon.c:338
+#: ../pam-panel-icon.c:394
 msgid "pam_timestamp_check is not setuid root"
 msgstr ""
 
-#: pam-panel-icon.c:343
+#: ../pam-panel-icon.c:399
 msgid "no controlling tty for pam_timestamp_check"
 msgstr ""
 
-#: pam-panel-icon.c:347
+#: ../pam-panel-icon.c:403
 msgid "user unknown to pam_timestamp_check"
 msgstr ""
 
-#: pam-panel-icon.c:351
+#: ../pam-panel-icon.c:407
 msgid "permissions error in pam_timestamp_check"
 msgstr ""
 
-#: pam-panel-icon.c:355
+#: ../pam-panel-icon.c:411
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
-#: pam-panel-icon.c:373
+#: ../pam-panel-icon.c:429
 #, fuzzy, c-format
 msgid "Error: %s\n"
 msgstr "Памылка"
 
-#: pam-panel-icon.c:450
+#: ../pam-panel-icon.c:506
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr ""
 
-#: pam-panel-icon.c:463
+#: ../pam-panel-icon.c:519
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr ""
 
-#: pam-panel-icon.c:542
-#, c-format
+#: ../pam-panel-icon.c:598
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr ""
 
-#: userdialogs.h:30
+#: ../userdialogs.h:30
 msgid "Help"
 msgstr "Даведка"
 
-#: userhelper.c:220 userhelper.c:294
+#: ../userhelper.c:220 ../userhelper.c:294
 #, fuzzy, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "Немагчыма выставіць сьцяг запуску на %s.\n"
 
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: ../userhelper.c:238 ../userhelper.c:241 ../userhelper.c:312
+#: ../userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Немагчыма выставіць сьцяг запуску на %s.\n"
 
-#: userhelper.c:608
+#: ../userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "Пароль карыстальніка %s"
 
-#: userhelper.c:847
+#: ../userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -184,7 +184,7 @@ msgstr ""
 "пэўныя перавагі, калі будзе выканана з адміністратыўнымі\n"
 "прывілеямі, але для гэтага спатрэбяцца дадатковыя зьвесткі."
 
-#: userhelper.c:849
+#: ../userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -194,8 +194,7 @@ msgstr ""
 "адміністратыўныя прывілеі, але для гэтага патрэбныя\n"
 "дадатковыя зьвесткі."
 
-#: userhelper.c:853
-#, c-format
+#: ../userhelper.c:853
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -204,8 +203,7 @@ msgstr ""
 "перавагі, калі будзе выканана з адміністратыўнымі правамі,\n"
 "але для гэтага патрабуюцца дадатковыя зьвесткі."
 
-#: userhelper.c:855
-#, c-format
+#: ../userhelper.c:855
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -213,32 +211,32 @@ msgstr ""
 "Вы спрабуеце выканаць праграму, якая патрабуе адміністратыўныя\n"
 "прывілеі. Для гэтага патрэбныя дадатковыя зьвесткі."
 
-#: userhelper.c:874
+#: ../userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "Пароль карыстальніка %s: "
 
-#: userhelper.c:2360
+#: ../userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper мусіць быць setuid root\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2458
+#: ../userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Немагчыма адкрыць графічнае акно й адшукаць тэрмінал кіраваньня.\n"
 
-#: userhelper-wrap.c:179
+#: ../userhelper-wrap.c:179
 msgid "Unknown exit code."
 msgstr "Невядомы код выхаду."
 
-#: userhelper-wrap.c:181
+#: ../userhelper-wrap.c:181
 msgid "Information updated."
 msgstr "Зьвесткі абноўлены."
 
-#: userhelper-wrap.c:183
+#: ../userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -246,7 +244,7 @@ msgstr ""
 "Вы ўвялі памылковы пароль.\n"
 "Паспрабуйце яшчэ раз."
 
-#: userhelper-wrap.c:185
+#: ../userhelper-wrap.c:185
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -256,11 +254,11 @@ msgstr ""
 "Верагодная прычына - наяўнасьць кропак ці косак у адным з палёў.\n"
 "Выдаліце іх і паспрабуйце яшчэ раз."
 
-#: userhelper-wrap.c:187
+#: ../userhelper-wrap.c:187
 msgid "Password resetting error."
 msgstr "Памылка скіданьня пароля"
 
-#: userhelper-wrap.c:189
+#: ../userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -268,19 +266,19 @@ msgstr ""
 "Пэўныя сыстэмныя файлы заблякаваны.\n"
 "Паўтарыце праз некалькі хвілін."
 
-#: userhelper-wrap.c:191
+#: ../userhelper-wrap.c:191
 msgid "Unknown user."
 msgstr "Невядомы карыстальнік."
 
-#: userhelper-wrap.c:193
+#: ../userhelper-wrap.c:193
 msgid "Insufficient rights."
 msgstr "Недастаткова правоў."
 
-#: userhelper-wrap.c:195
+#: ../userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
 msgstr "Памылковы выклік падпрацэсу."
 
-#: userhelper-wrap.c:197
+#: ../userhelper-wrap.c:197
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -290,28 +288,28 @@ msgstr ""
 "Вам не дазволена зьмяняць вашу абалонку.\n"
 "Зьвяжыцеся з сыстэмным адміністратарам."
 
-#: userhelper-wrap.c:200
+#: ../userhelper-wrap.c:200
 msgid "Out of memory."
 msgstr "Нестае памяці."
 
-#: userhelper-wrap.c:202
+#: ../userhelper-wrap.c:202
 msgid "The exec() call failed."
 msgstr "Памылка выкліку exec()."
 
-#: userhelper-wrap.c:204
+#: ../userhelper-wrap.c:204
 msgid "Failed to find selected program."
 msgstr "Немагчыма адшукаць выбраную праграму."
 
-#: userhelper-wrap.c:207
+#: ../userhelper-wrap.c:207
 msgid "Request canceled."
 msgstr ""
 
-#: userhelper-wrap.c:209
+#: ../userhelper-wrap.c:209
 #, fuzzy
 msgid "Internal PAM error occured."
 msgstr "Получена ошибка PAM %d.\n"
 
-#: userhelper-wrap.c:211
+#: ../userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "Невядомая памылка."
 
@@ -320,34 +318,32 @@ msgstr "Невядомая памылка."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
+#: ../userhelper-wrap.c:482 ../glade.strings.h:7 ../usermode.glade.h:9
 msgid "Query"
 msgstr "Запыт"
 
-#: userhelper-wrap.c:575 userhelper-wrap.c:755
+#: ../userhelper-wrap.c:575 ../userhelper-wrap.c:755
 msgid "Error"
 msgstr "Памылка"
 
-#: userhelper-wrap.c:587
+#: ../userhelper-wrap.c:587
 msgid "Information"
 msgstr "Інфармацыя"
 
-#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: ../userhelper-wrap.c:747 ../glade.strings.h:8 ../glade.strings.h:11
+#: ../usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Месца для тэксту."
 
-#: userhelper-wrap.c:799
-#, c-format
+#: ../userhelper-wrap.c:799
 msgid "Changing personal information."
 msgstr "Зьмена асабістых зьвестак."
 
-#: userhelper-wrap.c:802
-#, c-format
+#: ../userhelper-wrap.c:802
 msgid "Changing login shell."
 msgstr "Зьмена абалонкі (shell)."
 
-#: userhelper-wrap.c:808
+#: ../userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -357,7 +353,7 @@ msgstr ""
 "пэўныя перавагі, калі будзе выканана з адміністратыўнымі\n"
 "прывілеямі, але для гэтага спатрэбяцца дадатковыя зьвесткі."
 
-#: userhelper-wrap.c:810
+#: ../userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -366,8 +362,7 @@ msgstr ""
 "Вы спрабуеце выканаць праграму \"%s\", якая патрабуе адміністратыўныя "
 "прывілеі. Для гэтага патрэбныя дадатковыя зьвесткі."
 
-#: userhelper-wrap.c:819
-#, c-format
+#: ../userhelper-wrap.c:819
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -376,8 +371,7 @@ msgstr ""
 "выканана з адміністратыўнымі прывілеямі. Для гэтага патрабуецца дадатковыя "
 "зьвесткі."
 
-#: userhelper-wrap.c:821
-#, c-format
+#: ../userhelper-wrap.c:821
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -385,64 +379,64 @@ msgstr ""
 "Вы спрабуеце выканаць праграму, якая патрабуе адміністратыўныя прывілеі. Для "
 "гэтага неабходны дадатковыя зьвесткі."
 
-#: userhelper-wrap.c:838
+#: ../userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "Выканаць без прывілеяў"
 
-#: userhelper-wrap.c:990
+#: ../userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Памылка плыні.\n"
 
-#: userhelper-wrap.c:997
+#: ../userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Немагчыма выклікаць fork().\n"
 
-#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
+#: ../userhelper-wrap.c:1075 ../userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "памылка dup2().\n"
 
-#: userhelper-wrap.c:1091
+#: ../userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "памылка execl(), код памылкі %d\n"
 
-#: userinfo.c:369
+#: ../userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
 msgstr ""
 
-#: userinfo.c:396
+#: ../userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Вы не існуяце. Хадзіце прэч.\n"
 
-#: usermount.c:62
+#: ../usermount.c:62
 msgid "_Mount"
 msgstr "Замацаваць"
 
-#: usermount.c:63
+#: ../usermount.c:63
 msgid "Un_mount"
 msgstr "Адмацаваць"
 
-#: usermount.c:321
+#: ../usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
 "Вы сапраўды жадаеце фарматаваць гэты дыск? Усе даньні на ім будуць зьнішчаны."
 
-#: usermount.c:332
+#: ../usermount.c:332
 msgid "Perform a _low-level format."
 msgstr "Выканаць фармат нізкага ўзроўню."
 
-#: usermount.c:375
+#: ../usermount.c:375
 msgid "Select a _filesystem type to create:"
 msgstr "Пазначце тып файлавае сыстэмы:"
 
-#: usermount.c:549
+#: ../usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -451,83 +445,88 @@ msgstr ""
 "Зьвяжыцеся з сыстэмным адміністратарам."
 
 #. Create the dialog.
-#: usermount.c:550 usermount.c:562
+#: ../usermount.c:550 ../usermount.c:562
 msgid "User Mount Tool"
 msgstr "Інструмэнт мацаваньня для карыстальнікаў"
 
 #. Create the other buttons.
-#: usermount.c:579
+#: ../usermount.c:579
 msgid "_Format"
 msgstr "Фарматаваць"
 
-#: usermount.c:615
+#: ../usermount.c:615
 msgid "Device"
 msgstr "Прылада"
 
-#: usermount.c:621
+#: ../usermount.c:621
 msgid "Directory"
 msgstr "Каталёг"
 
-#: usermount.c:627
+#: ../usermount.c:627
 msgid "Filesystem"
 msgstr "Файлавая сыстэма"
 
-#: usermount.c:674
+#: ../usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr ""
 
-#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: ../glade.strings.h:9 ../glade.strings.h:18 ../glade.strings.h:19
+#: ../glade.strings.h:20 ../glade.strings.h:21 ../usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: ../glade.strings.h:10 ../usermode.glade.h:5
 msgid "Message"
 msgstr "Паведамленьне"
 
-#: glade.strings.h:12 usermode.glade:187
+#: ../glade.strings.h:12 ../usermode.glade.h:10
 msgid "User Information"
 msgstr "Зьвесткі аб карыстальніку"
 
-#: glade.strings.h:13 usermode.glade:251
+#: ../glade.strings.h:13 ../usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Поўнае імя:"
 
-#: glade.strings.h:14 usermode.glade:275
+#: ../glade.strings.h:14 ../usermode.glade.h:7
 msgid "Office:"
 msgstr "Канцылярыя:"
 
-#: glade.strings.h:15 usermode.glade:299
+#: ../glade.strings.h:15 ../usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Працоўны тэлефон:"
 
-#: glade.strings.h:16 usermode.glade:323
+#: ../glade.strings.h:16 ../usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Хатні тэлефон:"
 
-#: glade.strings.h:17 usermode.glade:347
+#: ../glade.strings.h:17 ../usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Абалонка:"
 
-#~ msgid "About Myself"
-#~ msgstr "Пра сябе"
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "Пра сябе"
 
-#~ msgid "Change personal information"
-#~ msgstr "Зьмена асабістых зьвестак"
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Зьмена асабістых зьвестак"
 
-#~ msgid "Disk Management"
-#~ msgstr "Кіраваньне дыскамі"
+#: ../usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr "Кіраваньне дыскамі"
 
-#~ msgid "Mount and unmount filesystems"
-#~ msgstr "Далучае ці адлучае файлавыя сыстэмы"
+#: ../usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr "Далучае ці адлучае файлавыя сыстэмы"
 
-#~ msgid "Change your login password"
-#~ msgstr "Зьмяняе ваш пароль"
+#: ../userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr "Зьмяняе ваш пароль"
 
-#~ msgid "Password"
-#~ msgstr "Зьмена пароля"
+#: ../userpasswd.desktop.in.h:2
+msgid "Password"
+msgstr "Зьмена пароля"
 
 #~ msgid "_Ok"
 #~ msgstr "_Ok"

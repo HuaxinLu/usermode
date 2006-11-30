@@ -16,3 +16,4 @@ autoheader
 autoconf
 test -f config.cache && rm -f config.cache || true
 ./configure --prefix=/usr --sysconfdir=/etc --enable-maintainer-mode $@
+#./configure --prefix=/usr --sysconfdir=/etc $@

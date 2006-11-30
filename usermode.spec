@@ -6,7 +6,7 @@
 Summary: Tools for certain user account management tasks.
 Name: usermode
 Version: 1.87
-Release: 2
+Release: 3
 License: GPL
 Group: Applications/System
 Source: usermode-%{version}.tar.gz
@@ -120,6 +120,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 
 %changelog
+* Thu Nov 30 2006 Martin Bacovsky <mbacovsk@redhat.com> - 1.87-3
+- Updated translations
+- Resolves: #216622
+
 * Tue Oct  3 2006 Martin Bacovsky <mbacovsky@redhat.com> 1.87-2
 - Repackaging with new translations
 

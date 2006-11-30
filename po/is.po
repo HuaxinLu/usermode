@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-30 16:05+0200\n"
+"POT-Creation-Date: 2006-11-29 16:09+0100\n"
 "PO-Revision-Date: 2005-11-24 20:50+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: is <kde-isl@molar.is>\n"
@@ -33,68 +33,68 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#: ../dummy.h:21 ../userdialogs.h:29
 msgid "OK"
 msgstr "Í lagi"
 
-#: dummy.h:22 userdialogs.h:32
+#: ../dummy.h:22 ../userdialogs.h:32
 msgid "Exit"
 msgstr "Hætta"
 
-#: dummy.h:23 userdialogs.h:31
+#: ../dummy.h:23 ../userdialogs.h:31
 msgid "Cancel"
 msgstr "Hætta við"
 
-#: dummy.h:24 userdialogs.h:33
+#: ../dummy.h:24 ../userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Keyra án rótarheimilda"
 
-#: dummy.h:25
+#: ../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(núverandi) UNIX lykilorð: "
 
-#: dummy.h:26
+#: ../dummy.h:26
 msgid "New UNIX password: "
 msgstr "Sláðu inn nýtt UNIX lykilorð: "
 
-#: dummy.h:27
+#: ../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "Sláðu aftur inn nýja UNIX lykilorðið: "
 
-#: dummy.h:28
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "SLÆMT LYKILORÐ: það er ALLT OF stutt"
 
-#: dummy.h:29
+#: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "SLÆMT LYKILORÐ: Það er of stutt"
 
-#: dummy.h:30
+#: ../dummy.h:30
 msgid "Password unchanged"
 msgstr "Lykilorði ekki breytt"
 
-#: dummy.h:31
+#: ../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "Lykilorðin stemma því miður ekki"
 
-#: dummy.h:32
+#: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Keyra stillingatól fyrir allt kerfið án auðkenningar."
 
-#: dummy.h:33
+#: ../dummy.h:33
 msgid "login: "
 msgstr "notandanafn: "
 
-#: dummy.h:34
+#: ../dummy.h:34
 msgid "Password: "
 msgstr "Lykilorð: "
 
-#: pam-panel-icon.c:91
+#: ../pam-panel-icon.c:98
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Gat ekki keyrt án kerfisstjóraheimilda: %s"
 
-#: pam-panel-icon.c:107
+#: ../pam-panel-icon.c:114
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -103,15 +103,15 @@ msgstr ""
 "Gat ekki keyrt án kerfisstjóraheimilda: pam_timestamp_check skilaði "
 "villuboðunum %d"
 
-#: pam-panel-icon.c:158 pam-panel-icon.c:196
+#: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
 msgid "Keep Authorization"
 msgstr "Halda réttindunum"
 
-#: pam-panel-icon.c:168 pam-panel-icon.c:200
+#: ../pam-panel-icon.c:180 ../pam-panel-icon.c:212
 msgid "Forget Authorization"
 msgstr "Henda réttindunum"
 
-#: pam-panel-icon.c:190
+#: ../pam-panel-icon.c:202
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -121,66 +121,66 @@ msgstr ""
 "alla notendur) án þess að slá inn rótarlykilorðið aftur.  Þú getur losað þig "
 "við þessi réttindi ef þú vilt."
 
-#: pam-panel-icon.c:338
+#: ../pam-panel-icon.c:394
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check hefur ekki rótarheimildir"
 
-#: pam-panel-icon.c:343
+#: ../pam-panel-icon.c:399
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "enginn stjórnskjár fyrir pam_timestamp_check"
 
-#: pam-panel-icon.c:347
+#: ../pam-panel-icon.c:403
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check þekkir ekki notandann"
 
-#: pam-panel-icon.c:351
+#: ../pam-panel-icon.c:407
 msgid "permissions error in pam_timestamp_check"
 msgstr "heimildavilla í pam_timestamp_check"
 
-#: pam-panel-icon.c:355
+#: ../pam-panel-icon.c:411
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "ógildur sjórnskjár fyrir pam_timestamp_check"
 
-#: pam-panel-icon.c:373
+#: ../pam-panel-icon.c:429
 #, c-format
 msgid "Error: %s\n"
 msgstr "Villa: %s\n"
 
-#: pam-panel-icon.c:450
+#: ../pam-panel-icon.c:506
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Gat ekki keyrt skipunina \"%s\": %s\n"
 
-#: pam-panel-icon.c:463
+#: ../pam-panel-icon.c:519
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Gat ekki gert IO rásina 'nonblocking': %s\n"
 
-#: pam-panel-icon.c:542
-#, c-format
+#: ../pam-panel-icon.c:598
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: gat ekki tengst setustjóra\n"
 
-#: userdialogs.h:30
+#: ../userdialogs.h:30
 msgid "Help"
 msgstr "Hjálp"
 
-#: userhelper.c:220 userhelper.c:294
+#: ../userhelper.c:220 ../userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "Gat ekki breytt samhengi %s fyrir forritið %s.\n"
 
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: ../userhelper.c:238 ../userhelper.c:241 ../userhelper.c:312
+#: ../userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Gat ekki breytt samhengi exec í %s.\n"
 
-#: userhelper.c:608
+#: ../userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "Aðgangsorð fyrir %s"
 
-#: userhelper.c:847
+#: ../userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -189,7 +189,7 @@ msgstr ""
 "Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér\n"
 "er þörf á frekari upplýsingum svo það sé hægt."
 
-#: userhelper.c:849
+#: ../userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -198,8 +198,7 @@ msgstr ""
 "Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á\n"
 "frekari upplýsingum svo það sé hægt."
 
-#: userhelper.c:853
-#, c-format
+#: ../userhelper.c:853
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -207,8 +206,7 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér\n"
 "er þörf á frekari upplýsingum svo það sé hægt."
 
-#: userhelper.c:855
-#, c-format
+#: ../userhelper.c:855
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -216,32 +214,32 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á\n"
 "frekari upplýsingum svo það sé hægt."
 
-#: userhelper.c:874
+#: ../userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "Aðgangsorð fyrir %s: "
 
-#: userhelper.c:2360
+#: ../userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper verður að vera 'setuid' ofurpaur\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2458
+#: ../userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Get ekki opnað grafískann skjá eða fundið stjórnskjáinn.\n"
 
-#: userhelper-wrap.c:179
+#: ../userhelper-wrap.c:179
 msgid "Unknown exit code."
 msgstr "Óþekkt skilagildi."
 
-#: userhelper-wrap.c:181
+#: ../userhelper-wrap.c:181
 msgid "Information updated."
 msgstr "Upplýsingar uppfærðar."
 
-#: userhelper-wrap.c:183
+#: ../userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -249,7 +247,7 @@ msgstr ""
 "Lykilorðið sem þú gafst upp er ógilt.\n"
 "Vinsamlegast reyndu aftur."
 
-#: userhelper-wrap.c:185
+#: ../userhelper-wrap.c:185
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -259,11 +257,11 @@ msgstr ""
 "Orsökin er líklega að ein af færslunum inniheldur tvípunkt eða kommu.\n"
 "Fjarlægðu þær og reyndu aftur."
 
-#: userhelper-wrap.c:187
+#: ../userhelper-wrap.c:187
 msgid "Password resetting error."
 msgstr "Villa við að frumstilla aðgangsorð."
 
-#: userhelper-wrap.c:189
+#: ../userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -271,19 +269,19 @@ msgstr ""
 "Sumar kerfisskrárnar eru læstar.\n"
 "Reyndu aftur eftir smá stund."
 
-#: userhelper-wrap.c:191
+#: ../userhelper-wrap.c:191
 msgid "Unknown user."
 msgstr "Óþekktur notandi."
 
-#: userhelper-wrap.c:193
+#: ../userhelper-wrap.c:193
 msgid "Insufficient rights."
 msgstr "Ekki nægar heimildir."
 
-#: userhelper-wrap.c:195
+#: ../userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
 msgstr "Ógilt kall í undirferli."
 
-#: userhelper-wrap.c:197
+#: ../userhelper-wrap.c:197
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -293,27 +291,27 @@ msgstr ""
 "Þú mátt ekki skipta um skél.\n"
 "Hafðu samband við kerfisstjórann þinn."
 
-#: userhelper-wrap.c:200
+#: ../userhelper-wrap.c:200
 msgid "Out of memory."
 msgstr "Minnið er búið."
 
-#: userhelper-wrap.c:202
+#: ../userhelper-wrap.c:202
 msgid "The exec() call failed."
 msgstr "exec() kerfisfallið brást."
 
-#: userhelper-wrap.c:204
+#: ../userhelper-wrap.c:204
 msgid "Failed to find selected program."
 msgstr "Gat ekki fundið forritið sem þú valdir."
 
-#: userhelper-wrap.c:207
+#: ../userhelper-wrap.c:207
 msgid "Request canceled."
 msgstr "Hætt við beiðni."
 
-#: userhelper-wrap.c:209
+#: ../userhelper-wrap.c:209
 msgid "Internal PAM error occured."
 msgstr "Innvær PAM villa."
 
-#: userhelper-wrap.c:211
+#: ../userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "Óþekkt villa."
 
@@ -322,34 +320,32 @@ msgstr "Óþekkt villa."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
+#: ../userhelper-wrap.c:482 ../glade.strings.h:7 ../usermode.glade.h:9
 msgid "Query"
 msgstr "Fyrirspurn"
 
-#: userhelper-wrap.c:575 userhelper-wrap.c:755
+#: ../userhelper-wrap.c:575 ../userhelper-wrap.c:755
 msgid "Error"
 msgstr "Villa"
 
-#: userhelper-wrap.c:587
+#: ../userhelper-wrap.c:587
 msgid "Information"
 msgstr "Upplýsingar"
 
-#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: ../userhelper-wrap.c:747 ../glade.strings.h:8 ../glade.strings.h:11
+#: ../usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Þetta pláss autt."
 
-#: userhelper-wrap.c:799
-#, c-format
+#: ../userhelper-wrap.c:799
 msgid "Changing personal information."
 msgstr "Breyti persónuupplýsingum."
 
-#: userhelper-wrap.c:802
-#, c-format
+#: ../userhelper-wrap.c:802
 msgid "Changing login shell."
 msgstr "Breyti skél."
 
-#: userhelper-wrap.c:808
+#: ../userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -358,7 +354,7 @@ msgstr ""
 "Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér "
 "er þörf á frekari upplýsingum svo það sé hægt."
 
-#: userhelper-wrap.c:810
+#: ../userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -367,8 +363,7 @@ msgstr ""
 "Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á "
 "frekari upplýsingum svo það sé hægt."
 
-#: userhelper-wrap.c:819
-#, c-format
+#: ../userhelper-wrap.c:819
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -376,8 +371,7 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér "
 "er þörf á frekari upplýsingum svo það sé hægt."
 
-#: userhelper-wrap.c:821
-#, c-format
+#: ../userhelper-wrap.c:821
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -385,49 +379,49 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á "
 "frekari upplýsingum svo það sé hægt."
 
-#: userhelper-wrap.c:838
+#: ../userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "_Keyra án rótarheimilda"
 
-#: userhelper-wrap.c:990
+#: ../userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pípuvilla.\n"
 
-#: userhelper-wrap.c:997
+#: ../userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Get ekki notað fork().\n"
 
-#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
+#: ../userhelper-wrap.c:1075 ../userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "villa í dup2().\n"
 
-#: userhelper-wrap.c:1091
+#: ../userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() villa, errno=%d\n"
 
-#: userinfo.c:369
+#: ../userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
 msgstr "Óvænt viðfang"
 
-#: userinfo.c:396
+#: ../userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Þú ert ekki til. Farðu burt.\n"
 
-#: usermount.c:62
+#: ../usermount.c:62
 msgid "_Mount"
 msgstr "_Tengja"
 
-#: usermount.c:63
+#: ../usermount.c:63
 msgid "Un_mount"
 msgstr "_Aftengja"
 
-#: usermount.c:321
+#: ../usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -435,15 +429,15 @@ msgstr ""
 "Ertu viss um að þú viljir forsníða þennan disk? Þú munt eyða öllum gögnum "
 "sem á honum eru."
 
-#: usermount.c:332
+#: ../usermount.c:332
 msgid "Perform a _low-level format."
 msgstr "Ekki _lágforsníða."
 
-#: usermount.c:375
+#: ../usermount.c:375
 msgid "Select a _filesystem type to create:"
 msgstr "Veldu _skráarkerfi sem þú vilt búa til:"
 
-#: usermount.c:549
+#: ../usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -452,62 +446,87 @@ msgstr ""
 "Hafðu samband við kerfisstjórann."
 
 #. Create the dialog.
-#: usermount.c:550 usermount.c:562
+#: ../usermount.c:550 ../usermount.c:562
 msgid "User Mount Tool"
 msgstr "Tengitól fyrir notendur"
 
 #. Create the other buttons.
-#: usermount.c:579
+#: ../usermount.c:579
 msgid "_Format"
 msgstr "_Forsníða"
 
-#: usermount.c:615
+#: ../usermount.c:615
 msgid "Device"
 msgstr "Tæki"
 
-#: usermount.c:621
+#: ../usermount.c:621
 msgid "Directory"
 msgstr "Mappa"
 
-#: usermount.c:627
+#: ../usermount.c:627
 msgid "Filesystem"
 msgstr "Skráarkerfi"
 
-#: usermount.c:674
+#: ../usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Það er ekki hægt að forsníða tækið '%s'."
 
-#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: ../glade.strings.h:9 ../glade.strings.h:18 ../glade.strings.h:19
+#: ../glade.strings.h:20 ../glade.strings.h:21 ../usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: ../glade.strings.h:10 ../usermode.glade.h:5
 msgid "Message"
 msgstr "Skilaboð"
 
-#: glade.strings.h:12 usermode.glade:187
+#: ../glade.strings.h:12 ../usermode.glade.h:10
 msgid "User Information"
 msgstr "Notendaupplýsingar"
 
-#: glade.strings.h:13 usermode.glade:251
+#: ../glade.strings.h:13 ../usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Fullt nafn:"
 
-#: glade.strings.h:14 usermode.glade:275
+#: ../glade.strings.h:14 ../usermode.glade.h:7
 msgid "Office:"
 msgstr "Skrifstofa:"
 
-#: glade.strings.h:15 usermode.glade:299
+#: ../glade.strings.h:15 ../usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Vinnusími:"
 
-#: glade.strings.h:16 usermode.glade:323
+#: ../glade.strings.h:16 ../usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Heimasími:"
 
-#: glade.strings.h:17 usermode.glade:347
+#: ../glade.strings.h:17 ../usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Skél:"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: ../userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "Breyti persónuupplýsingum."
+
+#: ../usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: ../usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: ../userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: ../userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "Lykilorð: "
