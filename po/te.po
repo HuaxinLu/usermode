@@ -1,17 +1,19 @@
-# translation of te.po to 
+# translation of te.po to Telugu
+# translation of te.po to
 # translation of te౧.po to
 # translation of te.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2006.
+# Sree Ganesh <sthottem@redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2006-10-30 13:14+0530\n"
-"Last-Translator: \n"
-"Language-Team:  <en@li.org>\n"
+"PO-Revision-Date: 2006-11-30 20:13+0530\n"
+"Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -102,8 +104,7 @@ msgstr "నిర్వాహకుని అదనపుహక్కులన�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"నిర్వాహకుని అదనపుహక్కులను ఉంచటంలో వైఫల్యం: pam_timestamp_check వైఫల్య కోడుకి తిరిగి వెళ్లు %d"
+msgstr "నిర్వాహకుని అదనపుహక్కులను ఉంచటంలో వైఫల్యం: pam_timestamp_check వైఫల్య కోడుకి తిరిగి వెళ్లు %d"
 
 #: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
 msgid "Keep Authorization"
@@ -228,8 +229,7 @@ msgstr "వినియోగదారుని సహాయకుడు తప�
 #. FIXME: print a warning here?
 #: ../userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "చిత్ర విండోని తెరవటానికి కుదరదు, మరియూ టెర్మినలుని నియంత్రణను కనుగొనటం కుదరదు.\n"
 
 #: ../userhelper-wrap.c:179
@@ -508,26 +508,25 @@ msgstr "షల్ ప్రవేశమ్:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "నా గురించి"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "వ్యక్తిగత సమాచారం మార్చుతోంది."
+msgstr "వ్యక్తిగత సమాచారం మార్చు"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "డిస్కు నిర్వహ"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Mount మరియూ unmount ఫైళ్ల విధానా"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "మీ ప్రవేశ అనుమతిపదాన్ని మార్చు"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "అనుమతిపదం: "
+msgstr "అనుమతిపదం"
+
