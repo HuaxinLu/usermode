@@ -1,4 +1,5 @@
 # translation of de.po to 
+# translation of de.po to
 # translation of de.po to German / Deutsch
 # translation of de.po to
 # translation of usermode.po to
@@ -18,7 +19,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2006-08-31 09:37+1000\n"
+"PO-Revision-Date: 2006-12-01 09:01+1000\n"
 "Last-Translator: Timo Trinks <ttrinks@redhat.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -180,8 +181,7 @@ msgstr "Hilfe"
 #: ../userhelper.c:220 ../userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
-"Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
+msgstr "Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
 
 #: ../userhelper.c:238 ../userhelper.c:241 ../userhelper.c:312
 #: ../userhelper.c:315
@@ -241,8 +241,7 @@ msgstr "userhelper muss Setuid-Root sein\n"
 #. FIXME: print a warning here?
 #: ../userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -524,26 +523,25 @@ msgstr "Login-Shell:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Über mich"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Ändern der persönlichen Informationen."
+msgstr "Persönliche Informationen ändern."
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Platten-Management"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Dateisysteme ein- und aushängen"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Ihr Login-Passwort ändern"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Passwort: "
+msgstr "Passwort"
+
