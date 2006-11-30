@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-30 16:05+0200\n"
+"POT-Creation-Date: 2006-11-29 16:09+0100\n"
 "PO-Revision-Date: 2006-10-14 00:47+0530\n"
 "Last-Translator: Amitakhya Phukan <amitakhya.phukan@gmail.com>\n"
 "Language-Team: Assamese <Assam@mm.assam-glug.org>\n"
@@ -35,68 +35,68 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: dummy.h:21 userdialogs.h:29
+#: ../dummy.h:21 ../userdialogs.h:29
 msgid "OK"
 msgstr "ঠিক আছে"
 
-#: dummy.h:22 userdialogs.h:32
+#: ../dummy.h:22 ../userdialogs.h:32
 msgid "Exit"
 msgstr "প্ৰস্থান"
 
-#: dummy.h:23 userdialogs.h:31
+#: ../dummy.h:23 ../userdialogs.h:31
 msgid "Cancel"
 msgstr "বাতিল"
 
-#: dummy.h:24 userdialogs.h:33
+#: ../dummy.h:24 ../userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "বিশেষাধিকাৰ নোহোৱাকে চলাওক"
 
-#: dummy.h:25
+#: ../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(বৰ্ত্তমানৰ) UNIX গুপ্তশব্দ:"
 
-#: dummy.h:26
+#: ../dummy.h:26
 msgid "New UNIX password: "
 msgstr "নতুন UNIX গুপ্তশব্দ:"
 
-#: dummy.h:27
+#: ../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "নতুন UNIX গুপ্তশব্দ পুনঃ লিখক:"
 
-#: dummy.h:28
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "বেয়া গুপ্তশব্দ: এইটো বহুত বেচি সৰু"
 
-#: dummy.h:29
+#: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "বেয়া গুপ্তশব্দ: এইটো বৰ সৰু"
 
-#: dummy.h:30
+#: ../dummy.h:30
 msgid "Password unchanged"
 msgstr "গুপ্তশব্দ সলনি ন'হ'ল"
 
-#: dummy.h:31
+#: ../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "ক্ষমা কৰিব, গুপ্তশব্দ একেই নহয় "
 
-#: dummy.h:32
+#: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "গুপ্তশব্দ নোহোৱাকৈ ব্যৱস্থাপ্ৰনালী ব্যাপক বিন্যাস সৰঞ্জাম আৰম্ভ কৰক ।"
 
-#: dummy.h:33
+#: ../dummy.h:33
 msgid "login: "
 msgstr "প্ৰৱেশ:"
 
-#: dummy.h:34
+#: ../dummy.h:34
 msgid "Password: "
 msgstr "গুপ্তশব্দ:"
 
-#: pam-panel-icon.c:91
+#: ../pam-panel-icon.c:98
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'লৈ অক্ষম: %s"
 
-#: pam-panel-icon.c:107
+#: ../pam-panel-icon.c:114
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -104,15 +104,15 @@ msgid ""
 msgstr ""
 "প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'লৈ অক্ষম: pam_timestamp_check -এ অক্ষম হোৱা কোড দিলে %d"
 
-#: pam-panel-icon.c:158 pam-panel-icon.c:196
+#: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
 msgid "Keep Authorization"
 msgstr "অধিকাৰ ৰাখক"
 
-#: pam-panel-icon.c:168 pam-panel-icon.c:200
+#: ../pam-panel-icon.c:180 ../pam-panel-icon.c:212
 msgid "Forget Authorization"
 msgstr "অধিকাৰ পাহৰি যাওক"
 
-#: pam-panel-icon.c:190
+#: ../pam-panel-icon.c:202
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -122,66 +122,66 @@ msgstr ""
 "লগত বৰ্ত্তমানে আছে (যি সকলো ব্যৱহাৰকৰ্তাক প্ৰভাবান্বিত কৰিব) । আপুনি এই  অধিকাৰ "
 "এৰিব পাৰে ।"
 
-#: pam-panel-icon.c:338
+#: ../pam-panel-icon.c:394
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check ৰূট setuid নহয় ।"
 
-#: pam-panel-icon.c:343
+#: ../pam-panel-icon.c:399
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check ৰ বাবে কোনো নিয়ন্ত্ৰক tty নাই"
 
-#: pam-panel-icon.c:347
+#: ../pam-panel-icon.c:403
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check লৈ ব্যৱহাৰক্ৰতা অজ্ঞাত"
 
-#: pam-panel-icon.c:351
+#: ../pam-panel-icon.c:407
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check ত অনুমতিৰ ভুল"
 
-#: pam-panel-icon.c:355
+#: ../pam-panel-icon.c:411
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check ত অসিদ্ধ নিয়ন্ত্ৰক tty"
 
-#: pam-panel-icon.c:373
+#: ../pam-panel-icon.c:429
 #, c-format
 msgid "Error: %s\n"
 msgstr "ভুল: %s\n"
 
-#: pam-panel-icon.c:450
+#: ../pam-panel-icon.c:506
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "\"%s\" আদেশ চলাবলৈ অক্ষম: %s\n"
 
-#: pam-panel-icon.c:463
+#: ../pam-panel-icon.c:519
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO প্ৰবাহ প্ৰতিবন্ধনোহোৱালৈ নিৰ্দ্দিষ্ট কৰাত অক্ষম: %s\n"
 
-#: pam-panel-icon.c:542
-#, c-format
+#: ../pam-panel-icon.c:598
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: অধিবেশন পৰিচালকলৈ সংযোগ কৰাত অক্ষম\n"
 
-#: userdialogs.h:30
+#: ../userdialogs.h:30
 msgid "Help"
 msgstr "সহায়"
 
-#: userhelper.c:220 userhelper.c:294
+#: ../userhelper.c:220 ../userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "কাৰ্য্যক্ৰম %s ৰ বাবে অবিকল্পিত পৃষ্ঠভূমি %s নিৰ্দ্দিষ্ট কৰিব নোৱাৰিলো ।\n"
 
-#: userhelper.c:238 userhelper.c:241 userhelper.c:312 userhelper.c:315
+#: ../userhelper.c:238 ../userhelper.c:241 ../userhelper.c:312
+#: ../userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "exec পৃষ্ঠভূমি %s লৈ নিৰ্দ্দিষ্ট কৰিব নোৱাৰিলো ।\n"
 
-#: userhelper.c:608
+#: ../userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "%s ৰ বাবে গুপ্তশব্দ"
 
-#: userhelper.c:847
+#: ../userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -191,7 +191,7 @@ msgstr ""
 "পাৰে ,\n"
 "কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
-#: userhelper.c:849
+#: ../userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -200,8 +200,7 @@ msgstr ""
 "আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন,\n"
 "কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
-#: userhelper.c:853
-#, c-format
+#: ../userhelper.c:853
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -210,8 +209,7 @@ msgstr ""
 "পাৰে ,\n"
 "কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
-#: userhelper.c:855
-#, c-format
+#: ../userhelper.c:855
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -219,32 +217,32 @@ msgstr ""
 "আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন\n"
 "কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
-#: userhelper.c:874
+#: ../userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "%s ৰ বাবে গুপ্তশব্দ:"
 
-#: userhelper.c:2360
+#: ../userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper ৰূট setuid ত হ'ব লাগে\n"
 
 #. FIXME: print a warning here?
-#: userhelper.c:2458
+#: ../userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "চিত্ৰালকিত পৰ্দ্দা খুলিব পৰা ন'গ'ল, আৰু নিয়ন্ত্ৰক টাৰ্মিনেল পোৱা ন'গ'ল ।\n"
 
-#: userhelper-wrap.c:179
+#: ../userhelper-wrap.c:179
 msgid "Unknown exit code."
 msgstr "অজ্ঞাত প্ৰস্থান কোড্ ।"
 
-#: userhelper-wrap.c:181
+#: ../userhelper-wrap.c:181
 msgid "Information updated."
 msgstr "তথ্য বৰ্ত্তমানলৈ অনা হ'ল ।"
 
-#: userhelper-wrap.c:183
+#: ../userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -252,7 +250,7 @@ msgstr ""
 "আপুনি লিখা গুপ্তশব্দ অবৈধ ।\n"
 "অনুগ্ৰহ কৰি পুনঃ চেষ্টা কৰক ।"
 
-#: userhelper-wrap.c:185
+#: ../userhelper-wrap.c:185
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -262,11 +260,11 @@ msgstr ""
 "এইটো বোধকৰো কোনো এটা ক্ষেত্ৰত ক'ল'ন বা ক'মামাবাবে হৈছে ।\n"
 "অনুগ্ৰহ কৰি সেইবোৰ আঁতৰাওক আৰু পুনঃ চেষ্টা কৰক ।ৰ "
 
-#: userhelper-wrap.c:187
+#: ../userhelper-wrap.c:187
 msgid "Password resetting error."
 msgstr "গুপ্তশব্দ পুনৰায় সজ্জিত কৰোঁতে ভুল ।"
 
-#: userhelper-wrap.c:189
+#: ../userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -274,19 +272,19 @@ msgstr ""
 "কিছুমান নথি-পত্ৰৰ প্ৰনালী বন্ধ আছে ।\n"
 "কিছু সময়ৰ পিছত পুনঃ চেষ্টা কৰক ।"
 
-#: userhelper-wrap.c:191
+#: ../userhelper-wrap.c:191
 msgid "Unknown user."
 msgstr "অজ্ঞাত ব্যৱহাৰকৰ্তা"
 
-#: userhelper-wrap.c:193
+#: ../userhelper-wrap.c:193
 msgid "Insufficient rights."
 msgstr "অপৰ্য্যাপ্ত অধিকাৰ"
 
-#: userhelper-wrap.c:195
+#: ../userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
 msgstr "উপ-প্ৰণালী অবৈধভাবে আহ্বান কৰা হৈছে ।"
 
-#: userhelper-wrap.c:197
+#: ../userhelper-wrap.c:197
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -296,27 +294,27 @@ msgstr ""
 "শ্বেল সলনি কৰিব'লৈ আপোনাৰ অনুমতি নাই ।\n"
 "আপোনাৰ ব্যৱস্থাপ্ৰণালীৰ পৰিচালকৰ সৈতে পৰামৰ্শ কৰক ।"
 
-#: userhelper-wrap.c:200
+#: ../userhelper-wrap.c:200
 msgid "Out of memory."
 msgstr "স্মৃতিশক্তিৰ বাহিৰৰ ।"
 
-#: userhelper-wrap.c:202
+#: ../userhelper-wrap.c:202
 msgid "The exec() call failed."
 msgstr "exec() আহ্বানত ভুল"
 
-#: userhelper-wrap.c:204
+#: ../userhelper-wrap.c:204
 msgid "Failed to find selected program."
 msgstr "নিৰ্ব্বাচিত কাৰ্য্যক্ৰম পোৱা ন'গ'ল ।"
 
-#: userhelper-wrap.c:207
+#: ../userhelper-wrap.c:207
 msgid "Request canceled."
 msgstr "অনুমোদন বাতিল কৰা হ'ল ।"
 
-#: userhelper-wrap.c:209
+#: ../userhelper-wrap.c:209
 msgid "Internal PAM error occured."
 msgstr "ভিতৰুৱা PAM ভুল হৈছে ।"
 
-#: userhelper-wrap.c:211
+#: ../userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "অজ্ঞাগ ভুল ।"
 
@@ -325,34 +323,32 @@ msgstr "অজ্ঞাগ ভুল ।"
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: userhelper-wrap.c:482 glade.strings.h:7 usermode.glade:9
+#: ../userhelper-wrap.c:482 ../glade.strings.h:7 ../usermode.glade.h:9
 msgid "Query"
 msgstr "অনুসন্ধান"
 
-#: userhelper-wrap.c:575 userhelper-wrap.c:755
+#: ../userhelper-wrap.c:575 ../userhelper-wrap.c:755
 msgid "Error"
 msgstr "ভুল"
 
-#: userhelper-wrap.c:587
+#: ../userhelper-wrap.c:587
 msgid "Information"
 msgstr "তথ্য"
 
-#: userhelper-wrap.c:747 glade.strings.h:8 glade.strings.h:11
-#: usermode.glade:71 usermode.glade:164
+#: ../userhelper-wrap.c:747 ../glade.strings.h:8 ../glade.strings.h:11
+#: ../usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "অজ্ঞাত মান(Placeholder)ৰ লিপি ।"
 
-#: userhelper-wrap.c:799
-#, c-format
+#: ../userhelper-wrap.c:799
 msgid "Changing personal information."
 msgstr "ব্যক্তিগত তথ্য সলনি কৰা হৈছে ।"
 
-#: userhelper-wrap.c:802
-#, c-format
+#: ../userhelper-wrap.c:802
 msgid "Changing login shell."
 msgstr "প্ৰবেশ শ্বেল সলনি কৰা হৈছে ।"
 
-#: userhelper-wrap.c:808
+#: ../userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -361,7 +357,7 @@ msgstr ""
 "আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব পাৰে,"
 "কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
-#: userhelper-wrap.c:810
+#: ../userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -370,8 +366,7 @@ msgstr ""
 "আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন,কিন্তু ইয়াৰ "
 "বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
-#: userhelper-wrap.c:819
-#, c-format
+#: ../userhelper-wrap.c:819
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -379,8 +374,7 @@ msgstr ""
 "আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব "
 "পাৰেকিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
-#: userhelper-wrap.c:821
-#, c-format
+#: ../userhelper-wrap.c:821
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -388,49 +382,49 @@ msgstr ""
 "আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজনকিন্তু "
 "ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
 
-#: userhelper-wrap.c:838
+#: ../userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "বিশেষাধিকাৰ নোহোৱাকে চলাওক (_R)"
 
-#: userhelper-wrap.c:990
+#: ../userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "পাইপ্ কৰোঁতে ভুল ।\n"
 
-#: userhelper-wrap.c:997
+#: ../userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() কৰিব নোৱাৰি ।\n"
 
-#: userhelper-wrap.c:1075 userhelper-wrap.c:1079
+#: ../userhelper-wrap.c:1075 ../userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() ভুল ।\n"
 
-#: userhelper-wrap.c:1091
+#: ../userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ভুল, ভুল সংখ্যা=%d\n"
 
-#: userinfo.c:369
+#: ../userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
 msgstr "অপ্ৰত্যাসিত তৰ্ক"
 
-#: userinfo.c:396
+#: ../userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "আপুনি বাস নকৰে । প্ৰস্থান কৰক ।\n"
 
-#: usermount.c:62
+#: ../usermount.c:62
 msgid "_Mount"
 msgstr "তোলক (_M)"
 
-#: usermount.c:63
+#: ../usermount.c:63
 msgid "Un_mount"
 msgstr "বাহিৰ কৰক (_m)"
 
-#: usermount.c:321
+#: ../usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -438,15 +432,15 @@ msgstr ""
 "এই ডিষ্ক পুনৰাকৃত কৰিব'লৈ আপুনি নিশ্চিত নে?  আপুনি বৰ্ত্তমান অৱস্থিত সকলো তথ্য নাশ "
 "কৰিব ।"
 
-#: usermount.c:332
+#: ../usermount.c:332
 msgid "Perform a _low-level format."
 msgstr "নিম্নস্তৰৰ পুনৰাকৃতি কৰক । (_l)"
 
-#: usermount.c:375
+#: ../usermount.c:375
 msgid "Select a _filesystem type to create:"
 msgstr "সৃষ্টি কৰিব'লৈ এটা নথি-পত্ৰৰ প্ৰণালী নিৰ্ব্বাচন কৰক (_f):"
 
-#: usermount.c:549
+#: ../usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -455,62 +449,87 @@ msgstr ""
 "আপোনাৰ পৰিচালকৰ সৈতে যোগাযোগ কৰক ।"
 
 #. Create the dialog.
-#: usermount.c:550 usermount.c:562
+#: ../usermount.c:550 ../usermount.c:562
 msgid "User Mount Tool"
 msgstr "ব্যৱহাৰক্ৰতাৰ তুলি লোৱা যন্ত্ৰ"
 
 #. Create the other buttons.
-#: usermount.c:579
+#: ../usermount.c:579
 msgid "_Format"
 msgstr "পুনৰাকৃতি (_F)"
 
-#: usermount.c:615
+#: ../usermount.c:615
 msgid "Device"
 msgstr "যন্ত্ৰ"
 
-#: usermount.c:621
+#: ../usermount.c:621
 msgid "Directory"
 msgstr "পঞ্জিকা"
 
-#: usermount.c:627
+#: ../usermount.c:627
 msgid "Filesystem"
 msgstr "নথি-পত্ৰৰ প্ৰণালী"
 
-#: usermount.c:674
+#: ../usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "'%s' যন্ত্ৰক পুনৰাকৃত কৰিব নোাৰি ।"
 
-#: glade.strings.h:9 glade.strings.h:18 glade.strings.h:19 glade.strings.h:20
-#: glade.strings.h:21 usermode.glade:98 usermode.glade:377 usermode.glade:398
-#: usermode.glade:419 usermode.glade:440
+#: ../glade.strings.h:9 ../glade.strings.h:18 ../glade.strings.h:19
+#: ../glade.strings.h:20 ../glade.strings.h:21 ../usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: glade.strings.h:10 usermode.glade:120
+#: ../glade.strings.h:10 ../usermode.glade.h:5
 msgid "Message"
 msgstr "সন্দেশ"
 
-#: glade.strings.h:12 usermode.glade:187
+#: ../glade.strings.h:12 ../usermode.glade.h:10
 msgid "User Information"
 msgstr "ব্যৱহাৰকৰ্তাৰ তথ্য"
 
-#: glade.strings.h:13 usermode.glade:251
+#: ../glade.strings.h:13 ../usermode.glade.h:2
 msgid "Full Name:"
 msgstr "সম্পূৰ্ণ নাম:"
 
-#: glade.strings.h:14 usermode.glade:275
+#: ../glade.strings.h:14 ../usermode.glade.h:7
 msgid "Office:"
 msgstr "ক্ৰ্য্যালয়:"
 
-#: glade.strings.h:15 usermode.glade:299
+#: ../glade.strings.h:15 ../usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "কাৰ্য্যালয়ৰ দূৰভাষ সংখ্যা:"
 
-#: glade.strings.h:16 usermode.glade:323
+#: ../glade.strings.h:16 ../usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "ঘৰৰ দূৰভাষ সংখ্যা:"
 
-#: glade.strings.h:17 usermode.glade:347
+#: ../glade.strings.h:17 ../usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "প্ৰৱেশৰ শ্বেল:"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr ""
+
+#: ../userinfo.desktop.in.h:2
+#, fuzzy
+msgid "Change personal information"
+msgstr "ব্যক্তিগত তথ্য সলনি কৰা হৈছে ।"
+
+#: ../usermount.desktop.in.h:1
+msgid "Disk Management"
+msgstr ""
+
+#: ../usermount.desktop.in.h:2
+msgid "Mount and unmount filesystems"
+msgstr ""
+
+#: ../userpasswd.desktop.in.h:1
+msgid "Change your login password"
+msgstr ""
+
+#: ../userpasswd.desktop.in.h:2
+#, fuzzy
+msgid "Password"
+msgstr "গুপ্তশব্দ:"
