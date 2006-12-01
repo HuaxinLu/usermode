@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2006-11-30 12:50+0530\n"
+"PO-Revision-Date: 2006-12-01 14:06+0530\n"
 "Last-Translator: Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 "\n"
 "\n"
@@ -237,8 +237,7 @@ msgstr "பயனர் உதவியாளர் setuid rootஆக இரு�
 #. FIXME: print a warning here?
 #: ../userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "வரைகலை சாளரத்தை திறக்க முடியவில்லை, மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
 "முடியவில்லை.\n"
@@ -517,26 +516,25 @@ msgstr "புகுபதிவு ஷெல்:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "என்னை பற்றி"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "தனிப்பட்ட தகவலை மாற்றுகிறது."
+msgstr "தனிப்பட்ட தகவலை மாற்றுகிறது"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "வட்டு மேலாண்மை"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "கோப்பு முறைமைகளை ஏற்றவும் அல்லது ஏற்றம்நீக்கவும்"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "உங்கள் புகுபதிவு கடவுச்சொல்லை மாற்றவும்"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "கடவுச்சொல்:"
+msgstr "கடவுச்சொல்"
+
