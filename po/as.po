@@ -3,14 +3,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Amitakhya Phukan <amitakhya.phukan@gmail.com>, 2006.
+# Amitakhya Phukan <aphukan@redhat.com>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2006-10-14 00:47+0530\n"
-"Last-Translator: Amitakhya Phukan <amitakhya.phukan@gmail.com>\n"
-"Language-Team: Assamese <Assam@mm.assam-glug.org>\n"
+"PO-Revision-Date: 2006-12-01 18:24+0530\n"
+"Last-Translator: Amitakhya Phukan <aphukan@redhat.com>\n"
+"Language-Team: Assamese <assam@mm.assam-glug.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -101,8 +102,7 @@ msgstr "প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'ল
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'লৈ অক্ষম: pam_timestamp_check -এ অক্ষম হোৱা কোড দিলে %d"
+msgstr "প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'লৈ অক্ষম: pam_timestamp_check -এ অক্ষম হোৱা কোড দিলে %d"
 
 #: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
 msgid "Keep Authorization"
@@ -230,8 +230,7 @@ msgstr "userhelper ৰূট setuid ত হ'ব লাগে\n"
 #. FIXME: print a warning here?
 #: ../userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "চিত্ৰালকিত পৰ্দ্দা খুলিব পৰা ন'গ'ল, আৰু নিয়ন্ত্ৰক টাৰ্মিনেল পোৱা ন'গ'ল ।\n"
 
 #: ../userhelper-wrap.c:179
@@ -510,26 +509,25 @@ msgstr "প্ৰৱেশৰ শ্বেল:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "নিজৰ বিষয়ে"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "ব্যক্তিগত তথ্য সলনি কৰা হৈছে ।"
+msgstr "ব্যক্তিগত তথ্য সলনি কৰক"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "ডিষ্কৰ পৰিচালনা"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "নথিপত্ৰৰপ্ৰণালী তোলক আৰু অৱৰোহণ কৰক"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "আপোনাৰ প্ৰৱেশৰ গুপ্তশব্দ সলনি কৰক"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "গুপ্তশব্দ:"
+msgstr "গুপ্তশব্দ"
+
