@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2006-08-30 22:33+0200\n"
+"PO-Revision-Date: 2006-12-01 15:15+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,25 +14,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
-#.
-#. * Copyright (C) 2001 Red Hat, Inc.
-#. *
-#. * This is free software; you can redistribute it and/or modify it
-#. * under the terms of the GNU General Public License as published by
-#. * the Free Software Foundation; either version 2 of the License, or
-#. * (at your option) any later version.
-#. *
-#. * This program is distributed in the hope that it will be useful, but
-#. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-#. * General Public License for more details.
-#. *
-#. * You should have received a copy of the GNU General Public License
-#. * along with this program; if not, write to the Free Software
-#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
-#. Just a dummy file for gettext, containing messages emmitted by various
-#. * commonly-used PAM modules.
 #: ../dummy.h:21 ../userdialogs.h:29
 msgid "OK"
 msgstr "OK"
@@ -225,7 +206,6 @@ msgstr "Hasło dla %s: "
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid root\n"
 
-#. FIXME: print a warning here?
 #: ../userhelper.c:2458
 #, c-format
 msgid ""
@@ -447,12 +427,10 @@ msgstr ""
 "Brak systemów plików do których montowania/odmontowywania miałbyś prawo.\n"
 "Skontaktuj się z administratorem."
 
-#. Create the dialog.
 #: ../usermount.c:550 ../usermount.c:562
 msgid "User Mount Tool"
 msgstr "Narzędzie montowania systemów plików"
 
-#. Create the other buttons.
 #: ../usermount.c:579
 msgid "_Format"
 msgstr "Sfo_rmatuj"
@@ -509,26 +487,24 @@ msgstr "Powłoka logowania:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "O mnie"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Zmienianie informacji osobistych."
+msgstr "Zmienianie informacji osobistych"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Zarządzanie dyskami"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Montowanie i odmontowywanie systemów plików"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Zmienianie hasła logowania"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Hasło: "
+msgstr "Hasło"
