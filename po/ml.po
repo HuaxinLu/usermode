@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2006-09-25 14:00+0530\n"
+"PO-Revision-Date: 2006-12-04 09:53+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 "\n"
 
@@ -236,8 +236,7 @@ msgstr "userhelperന് setuid root ആവശ്യമാണ്\n"
 #. FIXME: print a warning here?
 #: ../userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ഗ്രാഫിക്കല്‍ ജാലകം തുറക്കുവാനും കണ്ട്രോളിങ് ടര്‍മിനല്‍ കണ്ടുപിടിക്കുവാനും സാധിക്കുന്നില്ല.\n"
 
 #: ../userhelper-wrap.c:179
@@ -516,26 +515,25 @@ msgstr "ലോഗിന്‍ ഷെല്ല:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "എന്നെ സംബന്ധിച്ച്"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "സ്വകാര്യ വിവരങ്ങള്‍ മാറ്റുക."
+msgstr "സ്വകാര്യ വിവരങ്ങള്‍ മാറ്റുക"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "ഡിസ്ക് മാനേജ്മെന്‍റ്"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "ഫയല്‍ സിസ്റ്റമുകള്‍ മൊണ്ടും അണ്‍മൌണ്ടും ചെയ്യുക"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "നിങ്ങളുടെ ലോഗിന്‍ പാസ് വേര്‍ഡ് മാറ്റുക"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "പാസ്വേഡ്:"
+msgstr "പാസ് വേര്‍ഡ്"
+
