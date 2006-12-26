@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2006-12-10 17:39+0200\n"
-"Last-Translator: Lauri Nurmi <lanurmi@iki.fi>\n"
+"PO-Revision-Date: 2006-12-27 00:02+0200\n"
+"Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: Finnish <Laatu@lokalisointi.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -38,19 +38,23 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../dummy.h:21 ../userdialogs.h:29
+#: ../dummy.h:21
+#: ../userdialogs.h:29
 msgid "OK"
 msgstr "OK"
 
-#: ../dummy.h:22 ../userdialogs.h:32
+#: ../dummy.h:22
+#: ../userdialogs.h:32
 msgid "Exit"
 msgstr "Poistu"
 
-#: ../dummy.h:23 ../userdialogs.h:31
+#: ../dummy.h:23
+#: ../userdialogs.h:31
 msgid "Cancel"
 msgstr "Peru"
 
-#: ../dummy.h:24 ../userdialogs.h:33
+#: ../dummy.h:24
+#: ../userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Aja normaalioikeuksilla"
 
@@ -101,30 +105,22 @@ msgstr "Ylläpitäjän oikeuksista luopuminen epäonnistui: %s"
 
 #: ../pam-panel-icon.c:114
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
-"Ylläpitäjän oikeuksista luopuminen epäonnistui: pam_timestamp_check palautti "
-"virhekoodin %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Ylläpitäjän oikeuksista luopuminen epäonnistui: pam_timestamp_check palautti virhekoodin %d"
 
-#: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
+#: ../pam-panel-icon.c:170
+#: ../pam-panel-icon.c:208
 msgid "Keep Authorization"
 msgstr "Säilytä valtuutus"
 
-#: ../pam-panel-icon.c:180 ../pam-panel-icon.c:212
+#: ../pam-panel-icon.c:180
+#: ../pam-panel-icon.c:212
 msgid "Forget Authorization"
 msgstr "Luovu valtuutuksesta"
 
 #: ../pam-panel-icon.c:202
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"Olet tällä hetkellä valtuutettu muuttamaan järjestelmänlaajuisia (kaikkia "
-"käyttäjiä koskevia) asetuksia ilman ylläpitäjän salasanan antamista "
-"uudelleen. Voit luopua tästä valtuutuksesta."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Olet tällä hetkellä valtuutettu muuttamaan järjestelmänlaajuisia (kaikkia käyttäjiä koskevia) asetuksia ilman ylläpitäjän salasanan antamista uudelleen. Voit luopua tästä valtuutuksesta."
 
 #: ../pam-panel-icon.c:394
 msgid "pam_timestamp_check is not setuid root"
@@ -169,12 +165,15 @@ msgstr "pam-panel-icon: yhdistäminen istunnonhallintaan epäonnistui\n"
 msgid "Help"
 msgstr "Ohje"
 
-#: ../userhelper.c:220 ../userhelper.c:294
+#: ../userhelper.c:220
+#: ../userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "Oletuskontekstia ei voitu asettaa arvoon %s ohjelmalle %s.\n"
 
-#: ../userhelper.c:238 ../userhelper.c:241 ../userhelper.c:312
+#: ../userhelper.c:238
+#: ../userhelper.c:241
+#: ../userhelper.c:312
 #: ../userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
@@ -232,10 +231,8 @@ msgstr "Ohjelman userhelper on oltava ”setuid root”\n"
 #. FIXME: print a warning here?
 #: ../userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Graafisen ikkunan avaaminen ei onnistunut, eikä ohjaavaa päätettä löydy.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Graafisen ikkunan avaaminen ei onnistunut, eikä ohjaavaa päätettä löydy.\n"
 
 #: ../userhelper-wrap.c:179
 msgid "Unknown exit code."
@@ -326,11 +323,14 @@ msgstr "Tuntematon virhe."
 #. * Add this file to your project's POTFILES.in.
 #. * DO NOT compile it as part of your application.
 #.
-#: ../userhelper-wrap.c:482 ../glade.strings.h:7 ../usermode.glade.h:9
+#: ../userhelper-wrap.c:482
+#: ../glade.strings.h:7
+#: ../usermode.glade.h:9
 msgid "Query"
 msgstr "Kysely"
 
-#: ../userhelper-wrap.c:575 ../userhelper-wrap.c:755
+#: ../userhelper-wrap.c:575
+#: ../userhelper-wrap.c:755
 msgid "Error"
 msgstr "Virhe"
 
@@ -338,7 +338,9 @@ msgstr "Virhe"
 msgid "Information"
 msgstr "Tiedot"
 
-#: ../userhelper-wrap.c:747 ../glade.strings.h:8 ../glade.strings.h:11
+#: ../userhelper-wrap.c:747
+#: ../glade.strings.h:8
+#: ../glade.strings.h:11
 #: ../usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Paikanpitäjäteksti."
@@ -353,34 +355,26 @@ msgstr "Vaihdetaan kirjautumiskuorta."
 
 #: ../userhelper-wrap.c:808
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan\n"
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../userhelper-wrap.c:810
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan\n"
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../userhelper-wrap.c:819
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan\n"
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../userhelper-wrap.c:821
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan\n"
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
@@ -399,7 +393,8 @@ msgstr "Putkivirhe.\n"
 msgid "Cannot fork().\n"
 msgstr "fork() ei onnistu.\n"
 
-#: ../userhelper-wrap.c:1075 ../userhelper-wrap.c:1079
+#: ../userhelper-wrap.c:1075
+#: ../userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-virhe.\n"
@@ -428,9 +423,7 @@ msgid "Un_mount"
 msgstr "_Irrota"
 
 #: ../usermount.c:321
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
 msgstr "Haluatko varmasti alustaa tämän levyn? Kaikki sen sisältö tuhoutuu."
 
 #: ../usermount.c:332
@@ -450,7 +443,8 @@ msgstr ""
 "oikeuksia. Kysy neuvoa järjestelmänvalvojalta."
 
 #. Create the dialog.
-#: ../usermount.c:550 ../usermount.c:562
+#: ../usermount.c:550
+#: ../usermount.c:562
 msgid "User Mount Tool"
 msgstr "Käyttäjän liitostyökalu"
 
@@ -476,60 +470,71 @@ msgstr "Tiedostojärjestelmä"
 msgid "The device '%s' can not be formatted."
 msgstr "Laitetta '%s' ei voi alustaa."
 
-#: ../glade.strings.h:9 ../glade.strings.h:18 ../glade.strings.h:19
-#: ../glade.strings.h:20 ../glade.strings.h:21 ../usermode.glade.h:1
+#: ../glade.strings.h:9
+#: ../glade.strings.h:18
+#: ../glade.strings.h:19
+#: ../glade.strings.h:20
+#: ../glade.strings.h:21
+#: ../usermode.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: ../glade.strings.h:10 ../usermode.glade.h:5
+#: ../glade.strings.h:10
+#: ../usermode.glade.h:5
 msgid "Message"
 msgstr "Viesti"
 
-#: ../glade.strings.h:12 ../usermode.glade.h:10
+#: ../glade.strings.h:12
+#: ../usermode.glade.h:10
 msgid "User Information"
 msgstr "Käyttäjän tiedot"
 
-#: ../glade.strings.h:13 ../usermode.glade.h:2
+#: ../glade.strings.h:13
+#: ../usermode.glade.h:2
 msgid "Full Name:"
 msgstr "Koko nimi:"
 
-#: ../glade.strings.h:14 ../usermode.glade.h:7
+#: ../glade.strings.h:14
+#: ../usermode.glade.h:7
 msgid "Office:"
 msgstr "Toimisto:"
 
-#: ../glade.strings.h:15 ../usermode.glade.h:6
+#: ../glade.strings.h:15
+#: ../usermode.glade.h:6
 msgid "Office Phone Number:"
 msgstr "Toimiston puhelin:"
 
-#: ../glade.strings.h:16 ../usermode.glade.h:3
+#: ../glade.strings.h:16
+#: ../usermode.glade.h:3
 msgid "Home Phone Number:"
 msgstr "Kotipuhelin:"
 
-#: ../glade.strings.h:17 ../usermode.glade.h:4
+#: ../glade.strings.h:17
+#: ../usermode.glade.h:4
 msgid "Login Shell:"
 msgstr "Kirjautumiskuori:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Tietoja minusta"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Muutetaan henkilötietoja."
+msgstr "Muuta henkilötietoja"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Levyjen hallinta"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Liitä ja irrota tiedostojärjestelmiä"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Vaihda salasanasi"
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Salasana"
+
