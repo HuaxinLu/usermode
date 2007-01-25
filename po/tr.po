@@ -1,23 +1,22 @@
-# translation of usermode_tr.po to 
-# translation of tr.po to Türkçe
-# translation of tr.po to Turkish
-# $Id$
+# translation of usermode_tr.po to
 # Nilgün Belma Bugüner <nilgun@superonline.com>, 2003.
 # YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2004.
 # Hamdi Akoğuz <akoguzh@itu.edu.tr>, 2005, 2006.
-# Egemen Metin Turan <mturan@aegee-ankara.org>, 2006.
+# Egemen Metin Turan <mturan@aegee-ankara.org>, 2006, 2007.
+# translation of tr.po to Turkish
+# $Id$
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode_tr\n"
+"Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2006-06-23 20:24+0200\n"
+"PO-Revision-Date: 2007-01-25 17:53+0200\n"
 "Last-Translator: Egemen Metin Turan <mturan@aegee-ankara.org>\n"
 "Language-Team: Turkish <fedora-trans-tr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -232,8 +231,7 @@ msgstr "userhelper programı setuid root olmalıdır.\n"
 #. FIXME: print a warning here?
 #: ../userhelper.c:2458
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 
 #: ../userhelper-wrap.c:179
@@ -431,8 +429,7 @@ msgstr "_Ayır"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
 #: ../usermount.c:332
 msgid "Perform a _low-level format."
@@ -512,26 +509,25 @@ msgstr "Sisteme Giriş Kabuğu:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Hakkımda"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "Kişisel bilgiler değiştiriliyor"
+msgstr "Kişisel bilgileri değiştir"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Disk Yönetimi"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Dosya sistemlerini bağla ve kaldır"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Giriş parolasını değiştir"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Parola: "
+msgstr "Parola"
+
