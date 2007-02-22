@@ -1,14 +1,15 @@
 # translation to Bahasa Indonesia
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # Alexander Agung <redtux@sby.dnet.net.id>, 2004.
-# Teguh DC <dheche@brdjamoesti.or.id>, 2005
-#
+# Teguh DC <dheche@bradjamoesti.or.id>, 2005
+# $Id$
+
 msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-29 16:09+0100\n"
-"PO-Revision-Date: 2005-12-23 05:38+0700\n"
+"PO-Revision-Date: 2006-02-23 01:33+0700\n"
 "Last-Translator: Teguh DC <dheche@bradjamoesti.or.id>\n"
 "Language-Team: Bahasa Indonesia <viribus@traderweb.net>\n"
 "MIME-Version: 1.0\n"
@@ -531,7 +532,7 @@ msgstr "Tentang Diri Saya"
 
 #: ../userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Rubah informasi pribadi"
+msgstr "Ubah informasi pribadi"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
@@ -539,7 +540,7 @@ msgstr "Manajemen Disk"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Pasang dan lepaskan filesystem"
+msgstr "Pasang dan lepaskan filesistem"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
