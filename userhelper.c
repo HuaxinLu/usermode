@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1997-2003 Red Hat, Inc.  All rights reserved.
+ * Copyright (C) 1997-2003, 2007 Red Hat, Inc.  All rights reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -1014,11 +1014,36 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 	return TRUE;
 }
 
-static void
+/* A sync point is expected on the input pipe.  Wait until it arrives. */
+static int
+pipe_conv_wait_for_sync(struct app_data *data)
+{
+	char *reply;
+	int err;
+
+	reply = read_reply(data->input);
+	if (reply == NULL) {
+		err = ERR_UNK_ERROR;
+		goto err;
+	}
+	if (reply[0] != UH_SYNC_POINT) {
+		err = ERR_UNK_ERROR;
+		goto err_reply;
+	}
+	err = 0;
+	/* Fall through */
+err_reply:
+	g_free(reply);
+err:
+	return err;
+}
+
+static int
 pipe_conv_exec_start(const struct pam_conv *conv)
 {
-	struct app_data *data;
 	if (conv->conv == converse_pipe) {
+		struct app_data *data;
+
 		data = conv->appdata_ptr;
 		converse_pipe(0, NULL, NULL, data);
 		fprintf(data->output, "%d\n", UH_EXEC_START);
@@ -1032,13 +1057,17 @@ pipe_conv_exec_start(const struct pam_conv *conv)
 			sleep(timeout);
 		}
 #endif
+		return pipe_conv_wait_for_sync(data);
 	}
+	return 0;
 }
+
 static void
 pipe_conv_exec_fail(const struct pam_conv *conv)
 {
-	struct app_data *data;
 	if (conv->conv == converse_pipe) {
+		struct app_data *data;
+
 		data = conv->appdata_ptr;
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: exec failed\n");
@@ -1046,6 +1075,10 @@ pipe_conv_exec_fail(const struct pam_conv *conv)
 		fprintf(data->output, "%d\n", UH_EXEC_FAILED);
 		fprintf(data->output, "%d\n", UH_SYNC_POINT);
 		fflush(data->output);
+		/* It is important to keep the parent in sync with our state,
+		   even though there is no reliable way to inform it if this
+		   fails. */
+		(void)pipe_conv_wait_for_sync(data);
 	}
 }
 
@@ -2071,7 +2104,9 @@ wrap(const char *user, const char *program,
 				fflush(data->output);
 				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 			}
-			pipe_conv_exec_start(conv);
+			retval = pipe_conv_exec_start(conv);
+			if (retval != 0)
+				exit(retval);
 #ifdef USE_STARTUP_NOTIFICATION
 			if (data->sn_id) {
 #ifdef DEBUG_USERHELPER
@@ -2179,7 +2214,9 @@ wrap(const char *user, const char *program,
 				fflush(data->output);
 				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 			}
-			pipe_conv_exec_start(conv);
+			retval = pipe_conv_exec_start(conv);
+			if (retval != 0)
+				exit(retval);
 #ifdef USE_STARTUP_NOTIFICATION
 			if (data->sn_id) {
 #ifdef DEBUG_USERHELPER
@@ -2211,7 +2248,9 @@ wrap(const char *user, const char *program,
 			pipe_conv_exec_fail(conv);
 			exit(ERR_EXEC_FAILED);
 		}
-		/* We're in the parent.  Wait for the child to exit. */
+		/* We're in the parent.  Wait for the child to exit.  The child
+		   is calling pipe_conv_exec_{start,fail} () to define the
+		   semantics of its exit code. */
 		close(STDIN_FILENO);
 		close(STDOUT_FILENO);
 		close(STDERR_FILENO);
@@ -2221,20 +2260,13 @@ wrap(const char *user, const char *program,
 		/* Close the session. */
 		retval = pam_close_session(data->pamh, 0);
 		if (retval != PAM_SUCCESS) {
+			pipe_conv_exec_fail(conv);
 			pam_end(data->pamh, retval);
 			fail_exit(conv->appdata_ptr, retval);
 		}
 
-		/* Use the exit status fo the child to determine our
-		 * exit value. */
-		if (WIFEXITED(status)) {
-			pam_end(data->pamh, PAM_SUCCESS);
-			retval = 0;
-		} else {
-			pam_end(data->pamh, PAM_SUCCESS);
-			retval = ERR_UNK_ERROR;
-		}
-		exit(retval);
+		pam_end(data->pamh, PAM_SUCCESS);
+		exit(status);
 	} else {
 		const char *cmdline;
 
@@ -2256,7 +2288,9 @@ wrap(const char *user, const char *program,
 			fflush(data->output);
 			fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 		}
-		pipe_conv_exec_start(conv);
+		retval = pipe_conv_exec_start(conv);
+		if (retval != 0)
+			exit(retval);
 #ifdef USE_STARTUP_NOTIFICATION
 		if (data->sn_id) {
 #ifdef DEBUG_USERHELPER

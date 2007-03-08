@@ -1,3 +1,15 @@
+2007-03-09  Miloslav Trmac  <mitr@redhat.com>
+
+	* userhelper.c (pipe_conv_wait_for_sync): New function.
+	(pipe_conv_exec_start, pipe_conv_exec_fail): Wait until the parent's
+	status changes.
+	(wrap): Handle pipe_conv_exec_start () failures.  Preserve exit status
+	of processes run in their own session.
+
+	* userhelper-wrap.c (userhelper_parse_childout): Acknowledge
+	a transaction containing UH_EXEC_START and UH_EXEC_FAILED with
+	UH_SYNC_POINT like any other transaction.
+
 2007-03-08  Miloslav Trmac  <mitr@redhat.com>
 
 	* userhelper-wrap.c (child_exit_status): New variable.

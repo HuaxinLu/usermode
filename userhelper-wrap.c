@@ -612,14 +612,14 @@ userhelper_parse_childout(char *outline)
 #ifdef DEBUG_USERHELPER
 				g_print("Child started.\n");
 #endif
-				return;
+				break;
 			/* Userhelper failed to exec. */
 			case UH_EXEC_FAILED:
 				child_was_execed = FALSE;
 #ifdef DEBUG_USERHELPER
 				g_print("Child failed.\n");
 #endif
-				return;
+				break;
 #ifdef USE_STARTUP_NOTIFICATION
 			/* Startup notification name. */
 			case UH_SN_NAME:
@@ -714,11 +714,16 @@ userhelper_parse_childout(char *outline)
 	/* If we're ready, do some last-minute changes and run the dialog. */
 	if ((resp->ready) && (resp->responses == 0)) {
 		/* No queries means that we've just processed a sync request
-		 * for cases where we don't need any info for authentication.
-		 * Hopefully this is just a module being stupid and calling the
-		 * conversation callback once. for. every. chunk. of. output
-		 * and we'll get an actual prompt (which will give us cause to
-		 * open a dialog) later. */
+		   for cases where we don't need any info for authentication.
+
+		   This can happens when the child needs to wait for
+		   UH_EXEC_START or UH_EXEC_FAILED response to make sure the
+		   exit status is processed correctly.
+
+		   Otherwise, this might be just a module being stupid and
+		   calling the conversation callback once. for. every. chunk.
+		   of. output and we'll get an actual prompt (which will give
+		   us cause to open a dialog) later. */
 		userhelper_write_childin(GTK_RESPONSE_OK, resp);
 	} else
 	if ((resp->ready) && (resp->responses > 0)) {
