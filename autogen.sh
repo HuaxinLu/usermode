@@ -6,14 +6,13 @@ if test -x /bin/rpm ; then
 fi
 set -x -e
 CFLAGS="$DEFINES $RPM_OPT_FLAGS -g3 $CFLAGS" ; export CFLAGS
-libtoolize --force
-glib-gettextize -f -c
+glib-gettextize -f
 intltoolize --force
 touch config.h.in
 aclocal
 automake -a
 autoheader
 autoconf
-test -f config.cache && rm -f config.cache || true
+rm -f config.cache
 ./configure --prefix=/usr --sysconfdir=/etc --enable-maintainer-mode $@
 #./configure --prefix=/usr --sysconfdir=/etc $@

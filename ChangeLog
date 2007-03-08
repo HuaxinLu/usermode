@@ -1,5 +1,8 @@
 2007-03-09  Miloslav Trmac  <mitr@redhat.com>
 
+	* autogen.sh: Remove unnecessary libtoolize call.  Allow symbolic link
+	usage.  Simplify config.cache removal.
+
 	* userhelper.c (pipe_conv_wait_for_sync): New function.
 	(pipe_conv_exec_start, pipe_conv_exec_fail): Wait until the parent's
 	status changes.
