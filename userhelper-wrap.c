@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1997, 2001-2003 Red Hat, Inc.
+ * Copyright (C) 1997, 2001-2003, 2007 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -43,6 +43,7 @@ static int childout[2];
 static int childin[2];
 static int childpid;
 static int childout_tag = -1;
+static int child_exit_status;
 static gboolean child_success_dialog = TRUE;
 static gboolean child_was_execed = FALSE;
 
@@ -222,6 +223,7 @@ userhelper_parse_exitstatus(int exitstatus)
 	/* If the exit status came from what the child execed, then we don't
 	 * care about reporting it to the user. */
 	if (child_was_execed) {
+		child_exit_status = exitstatus;
 		return;
 	}
 
@@ -977,7 +979,7 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 	g_free(output);
 }
 
-void
+int
 userhelper_runv(gboolean dialog_success, char *path, const char **args)
 {
 	VteReaper *reaper;
@@ -1014,6 +1016,7 @@ userhelper_runv(gboolean dialog_success, char *path, const char **args)
 					     userhelper_read_childout, NULL);
 
 		/* Watch for child exits. */
+		child_exit_status = 0;
 		reaper = vte_reaper_get();
 		g_signal_connect(G_OBJECT(reaper), "child-exited",
 				 G_CALLBACK(userhelper_child_exited),
@@ -1091,6 +1094,7 @@ userhelper_runv(gboolean dialog_success, char *path, const char **args)
 		fprintf(stderr, _("execl() error, errno=%d\n"), errno);
 		_exit(0);
 	}
+	return child_exit_status;
 }
 
 void

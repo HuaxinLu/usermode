@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1999-2003 Red Hat, Inc.  All rights reserved.
+ * Copyright (C) 1999-2003, 2007 Red Hat, Inc.  All rights reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -140,16 +140,13 @@ main(int argc, char *argv[])
 	}
 
 	/* If we can open a window, use the graphical wrapper routine. */
-	if (graphics_available) {
 #ifndef DISABLE_X11
-		userhelper_runv(FALSE, UH_PATH,
-				(const char**) constructed_argv);
-#endif
-	} else {
-		/* Text mode doesn't need the whole pipe thing. */
-		execv(UH_PATH, constructed_argv);
-		return 1;
+	if (graphics_available) {
+		return userhelper_runv(FALSE, UH_PATH,
+				       (const char**) constructed_argv);
 	}
-
-	return 0;
+#endif
+	/* Text mode doesn't need the whole pipe thing. */
+	execv(UH_PATH, constructed_argv);
+	return 1;
 }

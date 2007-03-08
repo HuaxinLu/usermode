@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1997-2001 Red Hat, Inc.
+ * Copyright (C) 1997-2001, 2007 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ struct response {
 };
 
 void userhelper_run(gboolean notify_success, char *path, ...);
-void userhelper_runv(gboolean notify_success, char *path, const char **args);
+int userhelper_runv(gboolean notify_success, char *path, const char **args);
 void userhelper_fatal_error(int ignored);
 void userhelper_main_quit(void);
 

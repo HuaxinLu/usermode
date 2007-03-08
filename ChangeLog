@@ -1,0 +1,8 @@
+2007-03-08  Miloslav Trmac  <mitr@redhat.com>
+
+	* userhelper-wrap.c (child_exit_status): New variable.
+	(userhelper_parse_exitstatus): Save the child's exit status.
+	(userhelper_runv): Return the child's exit status.
+	* userhelper-wrap.h (userhelper_runv): Update prototype.
+	* consolehelper.c (main): Pass the child's exit status to the parent
+	process.
