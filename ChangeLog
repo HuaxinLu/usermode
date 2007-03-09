@@ -1,5 +1,28 @@
 2007-03-09  Miloslav Trmac  <mitr@redhat.com>
 
+	* configure.in: Replace obsolete macros.  Use AC_MSG_CHECKING instead
+	of custom AC_MSG_RESULT usage.  Quote all m4 macro invocations
+	and shell variable expansions where necessary.
+	(AC_INIT): Move the main version number here from usermode.spec.
+	(AM_INIT_AUTOMAKE): Use dist-bzip2, Wall.
+	(PAM_LIBS): Don't pull in -ldl unnecessarily.
+	(ALL_LINGUAS): Move ...
+	* po/LINGUAS: ... here, add missing languages.
+
+	* autogen.sh: Don't use rpm's opt flags by default.  Update for
+	AC_CONFIG_AUX_DIR.  Run autotools in the correct order, and with all
+	warnings enabled.  Don't run configure automatically, only suggest
+	its usage.
+
+	* Makefile.am (VERSION, RELEASE): Remove, rely on configure to set a
+	value.
+	(CVSTAG): Use only $(VERSION).  Use '_' instead of '-' for '.'.
+	(distdir): Remove duplicate definition.
+	(BUILT_SOURCES): New variable.
+	(reaper.c): Remove rule, it breaks compilation with separate build dir.
+	(tag, forcetag, archive): Handle compilation with separate build dir.
+	(archive): Update for new autogen.sh.
+
 	* userhelper-wrap.c (userhelper_run): Don't unnecessary clear the
 	memory before overwriting it.  Fix a memory leak.
 

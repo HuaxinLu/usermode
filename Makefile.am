@@ -1,9 +1,7 @@
-VERSION=$(shell awk '/^Version:/ { print $$2 }' < $(srcdir)/usermode.spec)
-RELEASE=$(shell awk '/^Release:/ { print $$2 }' < $(srcdir)/usermode.spec)
-CVSTAG = usermode-$(subst .,-,$(VERSION)-$(RELEASE))
+CVSTAG = usermode-$$(echo '$(VERSION)' | tr '.' '_')
 VENDOR=redhat
-distdir=$(PACKAGE)-$(VERSION)
 
+BUILT_SOURCES = marshal.c marshal.h
 EXTRA_DIST = 	\
 	mkinstalldirs \
 	dummy.h \
@@ -104,8 +102,6 @@ pkgdata_DATA = usermode.glade
 
 @INTLTOOL_DESKTOP_RULE@
 
-reaper.c: marshal.h
-
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_LDADD = @LIBUSER_LIBS@ @GLIB_LIBS@ @PAM_LIBS@ @LIBS@ @EFENCE_LIBS@
 
@@ -135,16 +131,18 @@ test_userdialog_SOURCES = test-userdialog.c userdialogs.c userdialogs.h
 test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 tag:
-	cvs tag -cR $(CVSTAG) .
+	cd $(top_srcdir); cvs tag -cR $(CVSTAG) .
 
 forcetag:
-	cvs tag -cFR $(CVSTAG) .
+	cd $(top_srcdir); cvs tag -cFR $(CVSTAG) .
 
 archive:
 	rm -fr /tmp/$(PACKAGE)-export-tmp
-	CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r $(CVSTAG) -d $(PACKAGE)-export-tmp $(PACKAGE)
-	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh ; make dist
-	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.gz .
+	CVSROOT=`cat $(top_srcdir)/CVS/Root`; cd /tmp; cvs -d $$CVSROOT \
+		export -r $(CVSTAG) -d $(PACKAGE)-export-tmp $(PACKAGE)
+	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh ; \
+		./configure --sysconfdir=etc --prefix=/usr; make dist
+	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.bz2 .
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 
 marshal.c marshal.h: marshal.list
