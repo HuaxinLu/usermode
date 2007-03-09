@@ -139,7 +139,7 @@ archive:
 	CVSROOT=`cat $(top_srcdir)/CVS/Root`; cd /tmp; cvs -d $$CVSROOT \
 		export -r $(CVSTAG) -d $(PACKAGE)-export-tmp $(PACKAGE)
 	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh ; \
-		./configure --sysconfdir=etc --prefix=/usr; make dist
+		./configure --sysconfdir=/etc --prefix=/usr; make dist
 	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.bz2 .
 	rm -fr /tmp/$(PACKAGE)-export-tmp
 
