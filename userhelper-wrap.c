@@ -985,7 +985,7 @@ userhelper_read_childout(gpointer data, int source, GdkInputCondition cond)
 }
 
 int
-userhelper_runv(gboolean dialog_success, char *path, const char **args)
+userhelper_runv(gboolean dialog_success, char *path, char **args)
 {
 	VteReaper *reaper;
 	int retval;
@@ -1095,7 +1095,7 @@ userhelper_runv(gboolean dialog_success, char *path, const char **args)
 			fprintf(stderr, "Exec arg %d = \"%s\".\n", i, args[i]);
 		}
 #endif
-		retval = execv(path, (char**) args);
+		retval = execv(path, args);
 		fprintf(stderr, _("execl() error, errno=%d\n"), errno);
 		_exit(0);
 	}
@@ -1106,7 +1106,7 @@ void
 userhelper_run(gboolean dialog_success, char *path, ...)
 {
 	va_list ap;
-	const char **argv;
+	char **argv;
 	int argc = 0;
 	int i = 0;
 
@@ -1118,7 +1118,7 @@ userhelper_run(gboolean dialog_success, char *path, ...)
 	va_end(ap);
 
 	/* Copy the arguments into a normal array. */
-	argv = g_malloc0((argc + 1) * sizeof(char*));
+	argv = g_malloc((argc + 1) * sizeof(*argv));
 	va_start(ap, path);
 	for (i = 0; i < argc; i++) {
 		argv[i] = g_strdup(va_arg(ap, char *));
@@ -1129,5 +1129,5 @@ userhelper_run(gboolean dialog_success, char *path, ...)
 	/* Pass the array into userhelper_runv() to actually run it. */
 	userhelper_runv(dialog_success, path, argv);
 
-	g_free(argv);
+	g_strfreev(argv);
 }

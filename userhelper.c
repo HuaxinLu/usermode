@@ -326,7 +326,7 @@ setup_selinux_user_exec(char *filename)
 #endif /* WITH_SELINUX */
 
 /* Exit, returning the proper status code based on a PAM error code. */
-static int
+static int G_GNUC_NORETURN
 fail_exit(struct app_data *data, int pam_retval)
 {
 	/* This is a local error.  Bail. */
@@ -1384,7 +1384,7 @@ get_user_for_auth(shvarFile *s)
 /* Change the user's password using the indicated conversation function and
  * application data (which includes the ability to cancel if the user requests
  * it.  For this task, we don't retry on failure. */
-static void
+static void G_GNUC_NORETURN
 passwd(const char *user, struct pam_conv *conv)
 {
 	int retval;
@@ -1436,7 +1436,7 @@ passwd(const char *user, struct pam_conv *conv)
 /* We're here to change the user's non-security information.  PAM doesn't
  * provide an interface to do this, because it's not PAM's job to manage this
  * stuff, so farm it out to a different library. */
-static void
+static void G_GNUC_NORETURN
 chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
      const char *new_full_name, const char *new_office,
      const char *new_office_phone, const char *new_home_phone,
@@ -1770,7 +1770,7 @@ construct_cmdline(const char *argv0, char **argv)
 	return ret;
 }
 
-static void
+static void G_GNUC_NORETURN
 wrap(const char *user, const char *program,
      struct pam_conv *conv, struct pam_conv *text_conv, lu_prompt_fn *prompt,
      int argc, char **argv)

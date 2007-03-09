@@ -59,7 +59,7 @@ main(int argc, char *argv[])
 
 	/* Set up locales. */
 	setlocale(LC_ALL, "");
-	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bindtextdomain(PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 
@@ -86,7 +86,7 @@ main(int argc, char *argv[])
 		sn_id = g_strdup(getenv("DESKTOP_STARTUP_ID"));
 #endif
 		fake_argc = 1;
-		fake_argv = g_malloc0((fake_argc + 1) * sizeof(char *));
+		fake_argv = g_malloc0((fake_argc + 1) * sizeof(*fake_argv));
 		fake_argv[0] = argv[0];
 		/* Redirect stderr to silence Xlib's "can't open display"
 		 * warning, which we don't mind. */
@@ -97,10 +97,8 @@ main(int argc, char *argv[])
 				fd = open("/dev/null", O_WRONLY | O_APPEND);
 			} while((fd != -1) && (fd != STDERR_FILENO));
 		}
-		if (gtk_init_check(&fake_argc, &fake_argv)) {
-			gtk_set_locale();
+		if (gtk_init_check(&fake_argc, &fake_argv))
 			graphics_available = TRUE;
-		}
 		/* Restore stderr. */
 		if (stderrfd != -1) {
 			dup2(stderrfd, STDERR_FILENO);
@@ -109,7 +107,7 @@ main(int argc, char *argv[])
 #ifdef USE_STARTUP_NOTIFICATION
 		/* Restore DESKTOP_STARTUP_ID.  I'll think up something mean
 		 * to say about having to do this eventually. */
-		setenv("DESKTOP_STARTUP_ID", sn_id, TRUE);
+		setenv("DESKTOP_STARTUP_ID", sn_id, 1);
 #endif
 	}
 #endif
@@ -141,10 +139,8 @@ main(int argc, char *argv[])
 
 	/* If we can open a window, use the graphical wrapper routine. */
 #ifndef DISABLE_X11
-	if (graphics_available) {
-		return userhelper_runv(FALSE, UH_PATH,
-				       (const char**) constructed_argv);
-	}
+	if (graphics_available)
+		return userhelper_runv(FALSE, UH_PATH, constructed_argv);
 #endif
 	/* Text mode doesn't need the whole pipe thing. */
 	execv(UH_PATH, constructed_argv);

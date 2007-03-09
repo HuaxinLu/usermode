@@ -262,7 +262,7 @@ set_new_userinfo(struct UserInfo *userinfo)
 	const char *officephone;
 	const char *homephone;
 	const char *shell;
-	const char *argv[12];
+	char *argv[12];
 	int i = 0;
 
 	fullname = userinfo->full_name;
@@ -275,27 +275,27 @@ set_new_userinfo(struct UserInfo *userinfo)
 
 	if (fullname) {
 		argv[i++] = UH_FULLNAME_OPT;
-		argv[i++] = fullname ?: "";
+		argv[i++] = (char *)(fullname ?: "");
 	}
 
 	if (office) {
 		argv[i++] = UH_OFFICE_OPT;
-		argv[i++] = office ?: "";
+		argv[i++] = (char *)(office ?: "");
 	}
 
 	if (officephone) {
 		argv[i++] = UH_OFFICEPHONE_OPT;
-		argv[i++] = officephone ?: "";
+		argv[i++] = (char *)(officephone ?: "");
 	}
 
 	if (homephone) {
 		argv[i++] = UH_HOMEPHONE_OPT;
-		argv[i++] = homephone;
+		argv[i++] = (char *)homephone;
 	}
 
 	if (shell) {
 		argv[i++] = UH_SHELL_OPT;
-		argv[i++] = shell;
+		argv[i++] = (char *)shell;
 	}
 
 	argv[i++] = NULL;

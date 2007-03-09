@@ -1,5 +1,18 @@
 2007-03-09  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper-wrap.c (userhelper_run): Don't unnecessary clear the
+	memory before overwriting it.  Fix a memory leak.
+
+	* userhelper-wrap.c (userhelper_runv): Use "char **", to be consistent
+	with main () and execve ().  All callers updated.
+	* userhelper-wrap.h (userhelper_runv): Update prototype.
+
+	* reaper.c (vte_reaper_channel_destroyed):
+	* userhelper.c (fail_exit, passwd, chfn): Use G_GNUC_NORETURN.
+
+	* consolehelper.c (main): Use LOCALEDIR.  Remove unnecessary call to
+	gtk_set_locale ().  Beautify a bit.
+
 	* autogen.sh: Remove unnecessary libtoolize call.  Allow symbolic link
 	usage.  Simplify config.cache removal.
 

@@ -47,7 +47,7 @@ struct response {
 };
 
 void userhelper_run(gboolean notify_success, char *path, ...);
-int userhelper_runv(gboolean notify_success, char *path, const char **args);
+int userhelper_runv(gboolean notify_success, char *path, char **args);
 void userhelper_fatal_error(int ignored);
 void userhelper_main_quit(void);
 

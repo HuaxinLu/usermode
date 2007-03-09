@@ -90,7 +90,7 @@ vte_reaper_emit_signal(GIOChannel *channel, GIOCondition condition,
 	return TRUE;
 }
 
-static void
+static void G_GNUC_NORETURN
 vte_reaper_channel_destroyed(gpointer data)
 {
 	g_assert_not_reached();
