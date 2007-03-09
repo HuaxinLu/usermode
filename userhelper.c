@@ -1787,7 +1787,7 @@ wrap(const char *user, const char *program,
 	char *apps_sn;
 #endif
 	const char *apps_domain;
-	char *retry, *noxoption;
+	char *retry;
 	char **environ_save;
 	char *env_home, *env_term, *env_desktop_startup_id;
 	char *env_display, *env_shell;
@@ -1946,23 +1946,32 @@ wrap(const char *user, const char *program,
 	/* We can forcefully disable the GUI from the configuration
 	 * file (a la blah-nox applications). */
 	gui = svTrueValue(s, "GUI", TRUE);
-	if (!gui) {
-		conv = text_conv;
-	}
-
 	/* We can use a magic configuration file option to disable
 	 * the GUI, too. */
 	if (gui) {
+		char *noxoption;
+
 		noxoption = svGetValue(s, "NOXOPTION");
 		if (noxoption && (strlen(noxoption) > 1)) {
 			int i;
+
 			for (i = optind; i < argc; i++) {
 				if (strcmp(argv[i], noxoption) == 0) {
-					conv = text_conv;
+					gui = FALSE;
 					break;
 				}
 			}
 		}
+	}
+
+	if (!gui) {
+		/* We are not really executing anything yet, but this switches
+		   off the parent to a "pass exit code through" mode without
+		   displaying any unwanted GUI dialogs. */
+		retval = pipe_conv_exec_start(conv);
+		if (retval != 0)
+			exit(retval);
+		conv = text_conv;
 	}
 
 	/* Verify that the user we need to authenticate as has a home

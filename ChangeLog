@@ -1,5 +1,8 @@
 2007-03-09  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper.c (wrap): Disable exit status interpretation by the parent
+	when the GUI mode is disabled.
+
 	* configure.in: Release 1.89.
 	* NEWS: Update.
 
