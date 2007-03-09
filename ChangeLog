@@ -1,5 +1,16 @@
 2007-03-09  Miloslav Trmac  <mitr@redhat.com>
 
+	* configure.in: Release 1.89.
+	* NEWS: Update.
+
+	* glade.strings.h: Remove, intltool handles glade files directly.
+	* po/POTFILES.in: Don't use glade.strings.h
+
+	* Makefile.am (EXTRA_DIST): Don't ship mkinstalldirs and usermode.spec.
+	Update intltool script location.
+
+	* usermode.spec: Remove to avoid divergence from Fedora CVS.
+
 	* configure.in: Replace obsolete macros.  Use AC_MSG_CHECKING instead
 	of custom AC_MSG_RESULT usage.  Quote all m4 macro invocations
 	and shell variable expansions where necessary.

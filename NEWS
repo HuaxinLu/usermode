@@ -1,0 +1,2 @@
+1.89
+* Preserve the exit status of processes executed by consolehelper.

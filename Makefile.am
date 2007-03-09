@@ -3,9 +3,7 @@ VENDOR=redhat
 
 BUILT_SOURCES = marshal.c marshal.h
 EXTRA_DIST = 	\
-	mkinstalldirs \
 	dummy.h \
-	usermode.spec \
 	shutdown \
 	userinfo.1 \
 	usermount.1 \
@@ -26,9 +24,9 @@ EXTRA_DIST = 	\
 	shutdown.pamd.6x \
 	update-from-egg.sh \
 	eggmarshalers.list \
-	intltool-extract.in \
-	intltool-merge.in \
-	intltool-update.in \
+	admin/intltool-extract.in \
+	admin/intltool-merge.in \
+	admin/intltool-update.in \
 	$(pixmap_DATA)
 
 SUBDIRS=po
