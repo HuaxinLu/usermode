@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 1997 Red Hat Software, Inc.
- * Copyright (C) 2001 Red Hat, Inc.
+ * Copyright (C) 2001, 2007 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -46,14 +46,13 @@
 #include "userdialogs.h"
 #include "userhelper-wrap.h"
 
-#define USERINFO_DATA_NAME "userinfo-data"
 #define USERINFO_XML_NAME "userinfo-xml"
 struct UserInfo {
 	const char *full_name;
 	const char *office;
 	const char *office_phone;
 	const char *home_phone;
-	const char *shell;
+	char *shell;
 };
 
 static void set_new_userinfo(struct UserInfo *userinfo);
@@ -61,34 +60,43 @@ static gint on_ok_clicked(GtkWidget *widget, gpointer data);
 extern char **environ;
 
 static void
-shell_activate(GtkWidget *widget, gpointer data)
+shell_changed(GtkWidget *widget, gpointer data)
 {
 	struct UserInfo *userinfo;
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	gchar *text;
 
-	userinfo = g_object_get_data(G_OBJECT(widget), USERINFO_DATA_NAME);
-
-	userinfo->shell = (char*)data;
+	userinfo = data;
+	if (gtk_combo_box_get_active_iter(GTK_COMBO_BOX(widget), &iter)
+	    == FALSE)
+		return;
+	model = gtk_combo_box_get_model(GTK_COMBO_BOX(widget));
+	gtk_tree_model_get(model, &iter, 0, &text, -1);
+	g_free(userinfo->shell);
+	userinfo->shell = text;
 }
 
 static GtkWidget *
 create_userinfo_window(struct UserInfo *userinfo)
 {
 	GladeXML *xml = NULL;
-	GtkWidget *widget = NULL, *entry = NULL, *menu = NULL, *item = NULL,
-		  *shell_menu, *window = NULL;
+	GtkWidget *window = NULL;
 	char *shell;
-	gboolean saw_shell = FALSE;
 
 	xml = glade_xml_new(DATADIR "/" PACKAGE "/" PACKAGE ".glade",
 			    "userinfo", PACKAGE);
 	if (xml) {
+		GtkWidget *entry, *shell_menu, *widget;
+		GtkListStore *shells;
+		GtkCellRenderer *cell;
+		gboolean saw_shell = FALSE;
+
 		window = glade_xml_get_widget(xml, "userinfo");
 		g_assert(window != NULL);
 
 		gtk_window_set_icon_from_file(GTK_WINDOW(window), "/usr/share/pixmaps/user_icon.png", NULL);
 
-		g_object_set_data(G_OBJECT(window),
-				  USERINFO_DATA_NAME, userinfo);
 		g_object_set_data(G_OBJECT(window),
 				  USERINFO_XML_NAME, xml);
 		g_signal_connect(window, "destroy",
@@ -122,56 +130,57 @@ create_userinfo_window(struct UserInfo *userinfo)
 					   userinfo->home_phone);
 		}
 
-		shell_menu = glade_xml_get_widget(xml, "shellmenu");
-		g_assert(shell_menu != NULL);
-		menu = gtk_menu_new();
+		shells = gtk_list_store_new(1, G_TYPE_STRING);
 
 		setusershell();
 		while ((shell = getusershell()) != NULL) {
+			GtkTreeIter iter;
+
 			/* Filter out "nologin" to keep the user from shooting
 			 * self in foot, or similar analogy. */
-			if (strstr(shell, "/nologin") != NULL) {
+			if (strstr(shell, "/nologin") != NULL)
 				continue;
-			}
-			item = gtk_menu_item_new_with_label(shell);
-			gtk_widget_show(item);
-			g_object_set_data(G_OBJECT(item),
-					  USERINFO_DATA_NAME, userinfo);
-			g_signal_connect(G_OBJECT(item), "activate",
-					 G_CALLBACK(shell_activate),
-					 g_strdup(shell));
-			gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
 			if (strcmp(shell, userinfo->shell) == 0) {
-				gtk_menu_reorder_child(GTK_MENU(menu), item, 0);
+				gtk_list_store_insert(shells, &iter, 0);
 				saw_shell = TRUE;
-			}
+			} else
+				gtk_list_store_append(shells, &iter);
+			gtk_list_store_set(shells, &iter, 0, shell, -1);
 		}
-		if (!saw_shell) {
-			item = gtk_menu_item_new_with_label(userinfo->shell);
-			gtk_widget_show(item);
-			g_object_set_data(G_OBJECT(item),
-					  USERINFO_DATA_NAME, userinfo);
-			g_signal_connect(G_OBJECT(item), "activate",
-					 G_CALLBACK(shell_activate),
-					 g_strdup(userinfo->shell));
-			gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
-			gtk_menu_reorder_child(GTK_MENU(menu), item, 0);
-		}
-		gtk_option_menu_set_menu(GTK_OPTION_MENU(shell_menu), menu);
-		gtk_option_menu_set_history(GTK_OPTION_MENU(shell_menu), 0);
 		endusershell();
+		if (!saw_shell) {
+			GtkTreeIter iter;
+
+			gtk_list_store_insert(shells, &iter, 0);
+			gtk_list_store_set(shells, &iter, 0, userinfo->shell,
+					   -1);
+		}
+
+		shell_menu = glade_xml_get_widget(xml, "shellmenu");
+		g_assert(shell_menu != NULL);
+		gtk_combo_box_set_model(GTK_COMBO_BOX(shell_menu),
+					GTK_TREE_MODEL(shells));
+		g_object_unref(shells);
+		cell = gtk_cell_renderer_text_new();
+		gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(shell_menu), cell,
+					   TRUE);
+		gtk_cell_layout_set_attributes(GTK_CELL_LAYOUT(shell_menu),
+					       cell, "text", 0, NULL);
+		gtk_combo_box_set_active(GTK_COMBO_BOX(shell_menu), 0);
+		g_signal_connect(shell_menu, "changed",
+				 G_CALLBACK(shell_changed), userinfo);
 
 		widget = glade_xml_get_widget(xml, "apply");
 		g_assert(widget != NULL);
-		g_signal_connect(widget, "clicked",
-				 G_CALLBACK(on_ok_clicked), window);
+		g_signal_connect(widget, "clicked", G_CALLBACK(on_ok_clicked),
+				 userinfo);
 		widget = glade_xml_get_widget(xml, "close");
 		g_assert(widget != NULL);
 		g_signal_connect(widget, "clicked",
 				 G_CALLBACK(userhelper_main_quit), window);
 	}
 
-	return widget;
+	return window;
 }
 
 static struct UserInfo *
@@ -220,8 +229,7 @@ on_ok_clicked(GtkWidget *widget, gpointer data)
 	if (!GTK_WIDGET_TOPLEVEL(toplevel)) {
 		return FALSE;
 	}
-	userinfo = g_object_get_data(G_OBJECT(toplevel),
-				     USERINFO_DATA_NAME);
+	userinfo = data;
 	xml = g_object_get_data(G_OBJECT(toplevel), USERINFO_XML_NAME);
 
 	entry = glade_xml_get_widget(xml, "fullname");

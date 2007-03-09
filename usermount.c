@@ -1,7 +1,6 @@
 /*
  * Copyright (C) 1997 Red Hat Software, Inc.
- * Copyright (C) 2001 Red Hat, Inc.
- * Copyright (C) 2003 Red Hat, Inc.
+ * Copyright (C) 2001, 2003, 2007 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -304,13 +303,12 @@ static void
 format(struct mountinfo *info)
 {
 	GtkWidget *dialog, *vbox, *format;
-	GtkWidget *label, *options, *menu, *item, *table;
+	GtkWidget *label, *options, *table;
 	GtkResponseType response;
 	char *command[6];
-	int status, defaultfs;
+	int status;
 	GError *error = NULL;
 	char *sbindir = NULL, *mkfs = NULL, *fstype = NULL;
-	int i;
 	gint child;
 	glob_t results;
 
@@ -341,35 +339,27 @@ format(struct mountinfo *info)
 	/* If it's a filesystem of type "auto", we also have to let the user
 	 * select a filesystem type to format it as. */
 	if (strcmp(info->fstype, "auto") == 0) {
+		size_t i, defaultfs;
+
 		sbindir = g_path_get_dirname(PATH_MKFS);
 		mkfs = g_strdup_printf("%s/mkfs.*", sbindir);
 
-		menu = gtk_menu_new();
-		gtk_widget_show(menu);
+		options = gtk_combo_box_new_text();
 
 		defaultfs = 0;
-		if (glob(mkfs, 0, NULL, &results) == 0) {
-			for(i = 0; i < results.gl_pathc; i++) {
-				const char *text;
-				text = results.gl_pathv[i] + strlen(mkfs) - 1;
-				item = gtk_menu_item_new_with_label(text);
-				gtk_widget_show(item);
-				if(strcmp(text, PREFERRED_FS) == 0) {
-					defaultfs = i;
-				}
-				gtk_menu_shell_append(GTK_MENU_SHELL(menu),
-						      item);
-			}
-		} else {
-			memset(&results, 0, sizeof(results));
+		if (glob(mkfs, 0, NULL, &results) != 0)
+			results.gl_pathc = 0;
+		for(i = 0; i < results.gl_pathc; i++) {
+			const char *text;
+
+			text = results.gl_pathv[i] + strlen(mkfs) - 1;
+			gtk_combo_box_append_text(GTK_COMBO_BOX(options),
+						  text);
+			if(strcmp(text, PREFERRED_FS) == 0)
+				defaultfs = i;
 		}
 
-		options = gtk_option_menu_new();
-		gtk_option_menu_set_menu(GTK_OPTION_MENU(options), menu);
-		if (defaultfs > 0) {
-			gtk_option_menu_set_history(GTK_OPTION_MENU(options),
-						    defaultfs);
-		}
+		gtk_combo_box_set_active(GTK_COMBO_BOX(options), defaultfs);
 		gtk_widget_show(options);
 
 		label = gtk_label_new_with_mnemonic(_("Select a _filesystem type to create:"));
@@ -425,10 +415,12 @@ format(struct mountinfo *info)
 		}
 		fstype = NULL;
 		if (options) {
-			defaultfs = gtk_option_menu_get_history(GTK_OPTION_MENU(options));
-			if (results.gl_pathc > defaultfs) {
-				fstype = results.gl_pathv[defaultfs] + strlen(mkfs) - 1;
-			}
+			int fs;
+
+			fs = gtk_combo_box_get_active(GTK_COMBO_BOX(options));
+			if (fs != -1 && fs < results.gl_pathc)
+				fstype = results.gl_pathv[fs]
+					+ strlen(mkfs) - 1;
 			g_free(mkfs);
 			g_free(sbindir);
 		}

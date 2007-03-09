@@ -1,3 +1,19 @@
+2007-03-10  Miloslav Trmac  <mitr@redhat.com>
+
+	* usermount.c (format): Use a GtkComboBox instead of obsolete
+	GtkOptionMenu.
+	* usermode.glade (userinfo.shellmenu): Use a GtkComboBox instead of
+	obsolete GtkOptionMenu.
+	* userinfo.c (USERINFO_DATA_NAME): Remove.
+	(struct UserInfo.shellmenu): Allow freeing the value.
+	(shell_changed): Replace shell_activate ().  Work with GtkComboBox.
+	Pass userinfo directly instead of using USERINFO_DATA_NAME.
+	(create_userinfo_window): Use GtkComboBox for shellmenu.  Pass userinfo
+	to shell_changed () and on_ok_clicked () directly instead of using
+	USERINFO_DATA_NAME.
+	(on_ok_clicked): Pass userinfo directly instead of using
+	USERINFO_DATA_NAME.
+
 2007-03-09  Miloslav Trmac  <mitr@redhat.com>
 
 	* userhelper.c (wrap): Disable exit status interpretation by the parent
