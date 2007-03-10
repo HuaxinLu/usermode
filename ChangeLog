@@ -1,5 +1,8 @@
 2007-03-10  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper-wrap.c (userhelper_parse_childout): Add a headline when
+	changing user password.  Simplify the code a bit.
+
 	* usermount.c (format): Use a GtkComboBox instead of obsolete
 	GtkOptionMenu.
 	* usermode.glade (userinfo.shellmenu): Use a GtkComboBox instead of

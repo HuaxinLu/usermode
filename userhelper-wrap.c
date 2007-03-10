@@ -795,48 +795,33 @@ userhelper_parse_childout(char *outline)
 				 NULL);
 
 		/* Customize the label. */
-		if (resp->responses == 0) {
-			text = NULL;
-		} else
-		if (resp->service) {
-			if (strcmp(resp->service, "passwd") == 0) {
-				text = NULL;
-			} else
-			if (strcmp(resp->service, "chfn") == 0) {
-				text = g_strdup_printf(_("Changing personal information."));
-			} else
-			if (strcmp(resp->service, "chsh") == 0) {
-				text = g_strdup_printf(_("Changing login shell."));
-			} else {
-				if (resp->banner) {
-					text = g_strdup(resp->banner);
-				} else {
-					if (resp->fallback_allowed) {
-						text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."), resp->service);
-					} else {
-						text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."), resp->service);
-					}
-				}
-			}
-		} else {
-			if (resp->banner) {
+		if (resp->responses == 0)
+			text = g_strdup("");
+		else if (resp->service != NULL) {
+			if (strcmp(resp->service, "passwd") == 0)
+				text = g_strdup(_("Changing password."));
+			else if (strcmp(resp->service, "chfn") == 0)
+				text = g_strdup(_("Changing personal "
+						  "information."));
+			else if (strcmp(resp->service, "chsh") == 0)
+				text = g_strdup(_("Changing login shell."));
+			else if (resp->banner != NULL)
 				text = g_strdup(resp->banner);
-			} else {
-				if (resp->fallback_allowed) {
-					text = g_strdup_printf(_("You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."));
-				} else {
-					text = g_strdup_printf(_("You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."));
-				}
-			}
+			else if (resp->fallback_allowed)
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."), resp->service);
+			else
+				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."), resp->service);
+		} else {
+			if (resp->banner)
+				text = g_strdup(resp->banner);
+			else if (resp->fallback_allowed)
+				text = g_strdup(_("You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."));
+			else
+				text = g_strdup(_("You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."));
 		}
 		label = (GTK_MESSAGE_DIALOG(resp->dialog))->label;
-		if (text != NULL) {
-			gtk_label_set_text(GTK_LABEL(label), text);
-			g_free(text);
-			text = NULL;
-		} else {
-			gtk_label_set_text(GTK_LABEL(label), "");
-		}
+		gtk_label_set_text(GTK_LABEL(label), text);
+		g_free(text);
 
 		/* Add an "unprivileged" button if we're allowed to offer
 		 * unprivileged execution as an option. */
