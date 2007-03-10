@@ -1045,7 +1045,6 @@ pipe_conv_exec_start(const struct pam_conv *conv)
 		struct app_data *data;
 
 		data = conv->appdata_ptr;
-		converse_pipe(0, NULL, NULL, data);
 		fprintf(data->output, "%d\n", UH_EXEC_START);
 		fprintf(data->output, "%d\n", UH_SYNC_POINT);
 		fflush(data->output);

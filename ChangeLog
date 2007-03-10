@@ -1,5 +1,9 @@
 2007-03-10  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper.c (pipe_conv_exec_start): Don't run an empty transaction,
+	it apparently serves no purpose and it may reference PAM data after
+	freeing it.
+
 	* userhelper-wrap.c (userhelper_parse_childout): Add a headline when
 	changing user password.  Simplify the code a bit.
 
