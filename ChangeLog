@@ -1,5 +1,14 @@
 2007-03-10  Miloslav Trmac  <mitr@redhat.com>
 
+	* pam-panel-icon.c
+	* userdialogs.h
+	* usermount.c: #include <glib/gi18n.h> instead of #defining _() and
+	N_() manually.
+	* userhelper.c: #include <glib/gi18n.h>
+	* userhelper.h: Don't #define _, it is not used in the header.
+
+2007-03-10  Miloslav Trmac  <mitr@redhat.com>
+
 	* userhelper.c (pipe_conv_exec_start): Don't run an empty transaction,
 	it apparently serves no purpose and it may reference PAM data after
 	freeing it.

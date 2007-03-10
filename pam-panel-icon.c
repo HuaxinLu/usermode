@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2002,2003 Red Hat, Inc.  All rights reserved.
+ * Copyright (C) 2002, 2003, 2007 Red Hat, Inc.  All rights reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@
 #include <locale.h>
 #include <stdlib.h>
 #include <string.h>
+#include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include "gsmclient.h"
 
@@ -33,8 +34,6 @@
 #include "eggtrayicon.h"
 #endif
 
-#define _(String) gettext(String)
-#define N_(String) String
 #define PAM_TIMESTAMP_CHECK_PATH "/sbin/pam_timestamp_check"
 
 enum {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1997,2001 Red Hat, Inc.
+ * Copyright (C) 1997, 2001, 2007 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -21,10 +21,9 @@
 
 #include <libintl.h>
 #include <locale.h>
+#include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
-#define _(String) gettext(String)
-#define N_(String) String
 
 #define UD_OK_TEXT N_("OK")
 #define UD_HELP_TEXT N_("Help")

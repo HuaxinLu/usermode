@@ -52,12 +52,11 @@
 #include <unistd.h>
 #include <wait.h>
 #include <glib.h>
+#include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <glade/glade.h>
 #include "userdialogs.h"
 
-#define N_(String)	String
-#define _(String)	gettext(String)
 #define MOUNT_TEXT	_("_Mount")
 #define UNMOUNT_TEXT	_("Un_mount")
 #define PREFERRED_FS	"ext2"
