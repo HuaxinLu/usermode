@@ -1,3 +1,59 @@
+2007-03-11  Miloslav Trmac  <mitr@redhat.com>
+
+	* pam-panel-icon.c (child_io_source, child_watch_source): New variables.
+	(running_init_pid): Remove.
+	(handle_drop_response): Split from drop_menu_response_cb.  Don't
+	duplicate dialog creation code.
+	(drop_menu_response_cb): Use the correct prototype.  All users updated.
+	(drop_dialog_response_cb): Use the correct prototype.  Use
+	handle_drop_response ().
+	(drop_menu_items): Make local to handle_popup ().
+	(child_pid): Make local to launch_checker ().
+	(handle_button): Split and integrate into callers.
+	(handle_popup): Use gtk_status_icon_position_menu ().
+	(refresh_tray_icon): Replace ensure_tray_icon (),
+	show_unlocked_icon (), show_locked_icon ().  Use
+	gtk_status_icon_set_visible () instead of switching the pixbuf between
+	NULL and locked_pixbuf.
+	(child_io_func): Remove dead running_init_pid handling.  Don't create
+	copies of the status messages.  Don't poll for the exit status of the
+	checker.
+	(child_watch_func): New function.
+	(launch_checker): Clean up after the previous launch instead of
+	assuming the callers do it.  Watch the checker's exit.
+	(session_save_callback, session_die_callback): Use the correct
+	prototype.
+
+	* pam-panel-icon.c (tray_icon, drop_dialog): Make a void * to avoid
+	an aliasing violation in g_object_add_weak_pointer ().
+	(add_weak_widget_pointer, add_weak_status_icon_pointer): Integrate into
+	the callers.
+
+	* Makefile.am (EXTRA_DIST, INIT_APPS): Remove remaining traces of
+	pam_timestamp_init.
+
+	* pam_timestamp_init.console
+	* pam_timestamp_init.pamd: Remove.
+
+	* pam-panel-icon.c: Remove !HAVE_GTK20 code.
+	* configure.in (HAVE_GTK20): Assume GTK+ 2.10, remove the conditional.
+	* Makefile.am (EXTRA_DIST, EGGFILES, EGGDIR, regenerate-build-sources):
+	Remove eggtrayicon and related files.
+	(pam_panel_icon_SOURCES): Don't use eggtrayicon.
+	* egg-marshal.c
+	* eggmarshalers.list
+	* eggtrayicon.c
+	* eggtrayicon.h
+	* update-from-egg.sh: Remove.
+
+	* configure.in: Get pkg-config data of GTK+.
+	(SELINUX_LIBS): New variable, use separately from LIBS.
+	* Makefile.am (consolehelper_LDADD, consolehelper_gtk_LDADD)
+	(pam_panel_icon_LDADD): Use GTK_LIBS instead of LIBGLADE_LIBS.  Clean
+	up.
+	(pam_panel_icon_SOURCES): Remove unnecessary marshal.c.
+	(userhelper_LDADD): Use SELINUX_LIBS.
+
 2007-03-10  Miloslav Trmac  <mitr@redhat.com>
 
 	* pam-panel-icon.c
@@ -5,7 +61,7 @@
 	* usermount.c: #include <glib/gi18n.h> instead of #defining _() and
 	N_() manually.
 	* userhelper.c: #include <glib/gi18n.h>
-	* userhelper.h: Don't #define _, it is not used in the header.
+	* userhelper.h: Don't #define _(), it is not used in the header.
 
 2007-03-10  Miloslav Trmac  <mitr@redhat.com>
 

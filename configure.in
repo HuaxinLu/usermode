@@ -23,6 +23,7 @@ AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL
 AC_PATH_XTRA
 PKG_CHECK_MODULES([GLIB], [glib-2.0])
+PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.9.0])
 PKG_CHECK_MODULES([LIBGLADE], [libglade-2.0])
 PKG_CHECK_MODULES([LIBUSER], [libuser])
 AC_CACHE_CHECK([for startup notification], [mitr_cv_lib_sn],
@@ -39,13 +40,6 @@ if test $mitr_cv_lib_sn = yes; then
 	AC_DEFINE([SN_API_NOT_YET_FROZEN], [1],
 		  [Define if you want to use libsn, even though it is not yet API-stabilized, because we need to use it.])
 fi
-AC_CACHE_CHECK([for gtk+ >= 2.9.0], [mitr_cv_lib_gtk210],
-[PKG_CHECK_EXISTS([gtk+-2.0 >= 2.9.0], [mitr_cv_lib_gtk210=yes],
-		  [mitr_cv_lib_gtk210=no])])
-if test $mitr_cv_lib_gtk210 = yes ; then
-   AC_DEFINE([HAVE_GTK210], [1], [Define if you have GTK+ 2.10 or later])
-fi
-AM_CONDITIONAL([HAVE_GTK210], [test $mitr_cv_lib_gtk210 = yes])
 AC_CHECK_FUNC([pam_start], ,
               [AC_CHECK_LIB([pam], [pam_start], [PAM_LIBS="-lpam"])])
 AC_CHECK_FUNC([misc_conv], ,
@@ -110,10 +104,12 @@ AC_MSG_CHECKING([whether we should use SELinux])
 AC_ARG_WITH([selinux],
 	    AS_HELP_STRING([--with-selinux], [Use SELinux functionality]),
 	    [selinux=${withval}], [selinux=no])
+SELINUX_LIBS=
 if test "x$selinux" != xno ; then
 	AC_DEFINE([WITH_SELINUX], [1], [Use SELinux features])
-	LIBS="$LIBS -lselinux -lattr"
+	SELINUX_LIBS="-lselinux -lattr"
 fi
+AC_SUBST([SELINUX_LIBS])
 AC_MSG_RESULT([$selinux])
 
 AC_MSG_CHECKING([whether we should use -Werror])
