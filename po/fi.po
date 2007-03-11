@@ -4,7 +4,7 @@
 # This file is distributed under the same license as the usermode package.
 #
 # Lauri Nurmi <lanurmi@iki.fi>, 2003, 2005.
-# Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2006.
+# Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -509,9 +509,4 @@ msgstr "Vaihda salasanasi"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Salasana"
-
-#~ msgid "Help"
-#~ msgstr "Ohje"
-#~ msgid "*"
-#~ msgstr "*"
 
