@@ -1,5 +1,10 @@
 2007-03-11  Miloslav Trmac  <mitr@redhat.com>
 
+	* test-userdialog.c (main): Use LOCALEDIR.  Don't unnecessarily call
+	gtk_set_locale ().  Remove all libglade references.
+	* Makefile.am (test_userdialog_LDADD): Use GTK_LIBS instead of
+	LIBGLADE_LIBS.  Clean up.
+
 	* shutdown.pamd.6x: Remove obsolete configuration.
 	* Makefile.am (EXTRA_DIST): Remove shutdown.pamd.6x.
 

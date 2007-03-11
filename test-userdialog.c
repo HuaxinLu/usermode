@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 1999,2000,2001,2002,2003 Red Hat, Inc.  All rights reserved.
+ * Copyright (C) 1999, 2000, 2001, 2002, 2003, 2007 Red Hat, Inc.  All rights
+ * reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -20,8 +21,6 @@
 #include <libintl.h>
 #include <locale.h>
 #include <stdio.h>
-#include <glade/glade.h>
-#include <glade/glade-xml.h>
 #include <gtk/gtk.h>
 #include "userdialogs.h"
 
@@ -42,13 +41,11 @@ main(int argc, char *argv[])
 {
 	GtkWidget *msg;
 
-	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bindtextdomain(PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 
-	gtk_set_locale();
 	gtk_init(&argc, &argv);
-	glade_init();
 
 	msg = create_message_box("Hello world!\n"
 				 "Let's make this a really big message box.",

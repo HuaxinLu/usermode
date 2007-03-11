@@ -116,7 +116,7 @@ pam_panel_icon_SOURCES = pam-panel-icon.c gsmclient.c gsmclient.h props.c \
 pam_panel_icon_LDADD = $(GTK_LIBS) $(X_LIBS) -lICE -lSM $(EFENCE_LIBS)
 
 test_userdialog_SOURCES = test-userdialog.c userdialogs.c userdialogs.h
-test_userdialog_LDADD = @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
+test_userdialog_LDADD = $(GTK_LIBS) $(EFENCE_LIBS)
 
 tag:
 	cd $(top_srcdir); cvs tag -cR $(CVSTAG) .
