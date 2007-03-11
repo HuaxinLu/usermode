@@ -1,5 +1,7 @@
 2007-03-11  Miloslav Trmac  <mitr@redhat.com>
 
+	* pam-panel-icon.c (main): Use LOCALEDIR.
+
 	* pam-panel-icon.c (child_io_source, child_watch_source): New variables.
 	(running_init_pid): Remove.
 	(handle_drop_response): Split from drop_menu_response_cb.  Don't

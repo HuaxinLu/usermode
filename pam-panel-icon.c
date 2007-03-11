@@ -454,7 +454,7 @@ main(int argc, char **argv)
 
 	/* Start up locales */
         setlocale(LC_ALL, "");
-        bindtextdomain(PACKAGE, DATADIR "/locale");
+        bindtextdomain(PACKAGE, LOCALEDIR);
         bind_textdomain_codeset(PACKAGE, "UTF-8");
         textdomain(PACKAGE);
 
