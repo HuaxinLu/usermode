@@ -1,7 +1,23 @@
 2007-03-11  Miloslav Trmac  <mitr@redhat.com>
 
+	* userdialogs.c (relay_value, create_query_box_i, create_query_box)
+	(create_invisible_query_box): Remove, the functions were used only in
+	test-userdialog.c.
+	* userdialogs.h: Remove unused includes.
+	(UD_OK_TEXT, UD_HELP_TEXT, UD_CANCEL_TEXT)
+	(UD_EXIT_TEXT): Remove unused macros.
+	(create_query_box, create_invisible_query_box): Remove declarations.
+	* userhelper-wrap.c
+	* userinfo.c: #include <glib/gi18n.h>.
+
+	* test-userdialog.c (hello_world): Make static.
+	(main): Remove create_query_box () and create_invisible_query_box ()
+	examples.
+	(hello_world2): Remove.
+
 	* test-userdialog.c (main): Use LOCALEDIR.  Don't unnecessarily call
 	gtk_set_locale ().  Remove all libglade references.
+
 	* Makefile.am (test_userdialog_LDADD): Use GTK_LIBS instead of
 	LIBGLADE_LIBS.  Clean up.
 

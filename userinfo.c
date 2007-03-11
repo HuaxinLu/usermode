@@ -42,6 +42,7 @@
 #include <sys/wait.h>
 #include <glade/glade.h>
 #include <glade/glade-xml.h>
+#include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include "userdialogs.h"
 #include "userhelper-wrap.h"

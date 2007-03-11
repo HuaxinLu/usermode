@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1997,2001 Red Hat, Inc.
+ * Copyright (C) 1997, 2001, 2007 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -54,60 +54,4 @@ create_error_box(gchar * error, gchar * title)
 	}
 	gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
 	return dialog;
-}
-
-static void
-relay_value(GtkWidget *dialog, GtkResponseType response, GtkSignalFunc func)
-{
-	void (*callback)(GtkWidget *dialog, GtkWidget *entry) = NULL;
-	callback = (void(*)(GtkWidget *dialog, GtkWidget *entry)) func;
-	if (response == GTK_RESPONSE_OK) {
-		GtkWidget *entry;
-		entry = g_object_get_data(G_OBJECT(dialog), "entry");
-		if (GTK_IS_WIDGET(entry)) {
-			callback(dialog, entry);
-		}
-	}
-}
-
-static GtkWidget *
-create_query_box_i(gchar * prompt, gchar * title, GtkSignalFunc func,
-		   gboolean visible)
-{
-	GtkWidget *dialog, *box, *entry;
-	dialog = gtk_message_dialog_new(NULL, 0,
-					GTK_MESSAGE_QUESTION,
-					GTK_BUTTONS_OK_CANCEL,
-					"%s", prompt);
-	if (title) {
-		gtk_window_set_title(GTK_WINDOW(dialog), title);
-	}
-	gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
-
-	box = (GTK_DIALOG(dialog))->vbox;
-
-	entry = gtk_entry_new();
-	g_object_set_data(G_OBJECT(dialog), "entry", entry);
-	gtk_entry_set_visibility(GTK_ENTRY(entry), visible);
-
-	gtk_box_pack_start_defaults(GTK_BOX(box), entry);
-
-	g_signal_connect(G_OBJECT(dialog), "response",
-			 GTK_SIGNAL_FUNC(relay_value), func);
-
-	gtk_widget_show_all(dialog);
-
-	return dialog;
-}
-
-GtkWidget *
-create_invisible_query_box(gchar *prompt, gchar *title, GtkSignalFunc func)
-{
-	return create_query_box_i(prompt, title, func, FALSE);
-}
-
-GtkWidget *
-create_query_box(gchar * prompt, gchar * title, GtkSignalFunc func)
-{
-	return create_query_box_i(prompt, title, func, TRUE);
 }

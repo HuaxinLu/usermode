@@ -19,22 +19,10 @@
 #ifndef __USERDIALOGS_H__
 #define __USERDIALOGS_H__
 
-#include <libintl.h>
-#include <locale.h>
-#include <glib/gi18n.h>
+#include "config.h"
 #include <gtk/gtk.h>
-#include <gdk/gdkx.h>
-
-#define UD_OK_TEXT N_("OK")
-#define UD_HELP_TEXT N_("Help")
-#define UD_CANCEL_TEXT N_("Cancel")
-#define UD_EXIT_TEXT N_("Exit")
-#define UD_FALLBACK_TEXT N_("Run Unprivileged")
 
 GtkWidget* create_message_box(gchar* message, gchar* title);
 GtkWidget* create_error_box(gchar* error, gchar* title);
-GtkWidget* create_query_box(gchar* prompt, gchar* title, GtkSignalFunc func);
-GtkWidget* create_invisible_query_box(gchar* prompt, gchar* title,
-				      GtkSignalFunc func);
 
 #endif /* __USERDIALOGS_H__ */
