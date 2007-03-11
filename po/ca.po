@@ -1,8 +1,8 @@
 # Catalan translations for usermode package.
-# Copyright © 2005 Free Software Fundation
+# Copyright © 2005-2007 The Free Software Fundation, Inc.
 # This file is distributed under the same license as the usermode package.
 # Ramon Gómez Vilar <ramongomezvilar@gmx.net>, 2005.
-# Josep Puigdemont <josep.puigdemont@gmail.com>, 2005.
+# Josep Puigdemont <josep.puigdemont@gmail.com>, 2005, 2007.
 #
 # This file is translated according to the glossary and style guide of
 #   Softcatalà. If you plan to modify this file, please read first the page
@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-11 03:33+0100\n"
-"PO-Revision-Date: 2005-11-18 19:19+0100\n"
+"PO-Revision-Date: 2007-03-11 04:32+0100\n"
 "Last-Translator: Josep Puigdemont <josep.puigdemont@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
 "MIME-Version: 1.0\n"
@@ -346,9 +346,8 @@ msgid "Placeholder text."
 msgstr "Text del marcador."
 
 #: ../../po/../userhelper-wrap.c:803
-#, fuzzy
 msgid "Changing password."
-msgstr "Canvieu la vostra contrasenya d'entrada"
+msgstr "S'està canviant la contrasenya."
 
 #: ../../po/../userhelper-wrap.c:805
 msgid "Changing personal information."
