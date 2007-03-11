@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-11 03:33+0100\n"
-"PO-Revision-Date: 2006-12-02 23:45+0100\n"
+"PO-Revision-Date: 2007-03-11 09:39-0000\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,28 +97,20 @@ msgstr "Neuspelo odbacivanje administratorskih povlastica: %s"
 
 #: ../../po/../pam-panel-icon.c:98
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
-"Neuspelo odbacivanje administratorskih povlastica: pam_timestamp_check je "
-"vratio šifru neuspeha %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Neuspelo odbacivanje administratorskih povlastica: pam_timestamp_check je vratio šifru neuspeha %d"
 
 #: ../../po/../pam-panel-icon.c:142
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"Trenutno ste ovlašćeni da podešavate sveobuhvatne sistemske postavke (koje "
-"utiču na sve korisnike) bez ponovnog ukucavanja lozinke administratora. "
-"Možete se odreći ovog ovlašćenja."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Trenutno ste ovlašćeni da podešavate sveobuhvatne sistemske postavke (koje utiču na sve korisnike) bez ponovnog ukucavanja lozinke administratora. Možete se odreći ovog ovlašćenja."
 
-#: ../../po/../pam-panel-icon.c:147 ../../po/../pam-panel-icon.c:173
+#: ../../po/../pam-panel-icon.c:147
+#: ../../po/../pam-panel-icon.c:173
 msgid "Keep Authorization"
 msgstr "Zadrži ovlašćenje"
 
-#: ../../po/../pam-panel-icon.c:150 ../../po/../pam-panel-icon.c:180
+#: ../../po/../pam-panel-icon.c:150
+#: ../../po/../pam-panel-icon.c:180
 msgid "Forget Authorization"
 msgstr "Zaboravi ovlašćenje"
 
@@ -161,13 +153,16 @@ msgstr "Neuspelo postavljanje IO kanala na neblokirajući: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: neuspelo povezivanje sa upravljačem seanse\n"
 
-#: ../../po/../userhelper.c:221 ../../po/../userhelper.c:295
+#: ../../po/../userhelper.c:221
+#: ../../po/../userhelper.c:295
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "Ne mogu da postavim podrazumevani kontekst za %s za program %s.\n"
 
-#: ../../po/../userhelper.c:239 ../../po/../userhelper.c:242
-#: ../../po/../userhelper.c:313 ../../po/../userhelper.c:316
+#: ../../po/../userhelper.c:239
+#: ../../po/../userhelper.c:242
+#: ../../po/../userhelper.c:313
+#: ../../po/../userhelper.c:316
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Ne mogu da postavim exec kontekst na %s.\n"
@@ -200,8 +195,7 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Pokušavate da pokrenete naredbu koja može imati koristi od "
-"administratorskih\n"
+"Pokušavate da pokrenete naredbu koja može imati koristi od administratorskih\n"
 "povlastica, ali je potrebno više podataka kako bi to uradili."
 
 #: ../../po/../userhelper.c:856
@@ -225,10 +219,8 @@ msgstr "userhelper mora biti setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2501
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Ne mogu da otvorim grafički prozor, i ne mogu da nađem kontrolni terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Ne mogu da otvorim grafički prozor, i ne mogu da nađem kontrolni terminal.\n"
 
 #: ../../po/../userhelper-wrap.c:181
 msgid "Unknown exit code."
@@ -314,11 +306,13 @@ msgstr "Došlo je do unutarnje PAM greške."
 msgid "Unknown error."
 msgstr "Nepoznata greška."
 
-#: ../../po/../userhelper-wrap.c:485 ../usermode.glade.h:8
+#: ../../po/../userhelper-wrap.c:485
+#: ../usermode.glade.h:8
 msgid "Query"
 msgstr "Upit"
 
-#: ../../po/../userhelper-wrap.c:578 ../../po/../userhelper-wrap.c:763
+#: ../../po/../userhelper-wrap.c:578
+#: ../../po/../userhelper-wrap.c:763
 msgid "Error"
 msgstr "Greška"
 
@@ -326,14 +320,14 @@ msgstr "Greška"
 msgid "Information"
 msgstr "Informacije"
 
-#: ../../po/../userhelper-wrap.c:755 ../usermode.glade.h:7
+#: ../../po/../userhelper-wrap.c:755
+#: ../usermode.glade.h:7
 msgid "Placeholder text."
 msgstr "Tekst za predviđeno mesto."
 
 #: ../../po/../userhelper-wrap.c:803
-#, fuzzy
 msgid "Changing password."
-msgstr "Promena Vaše lozinke za prijavu"
+msgstr "Menjam lozinku."
 
 #: ../../po/../userhelper-wrap.c:805
 msgid "Changing personal information."
@@ -345,37 +339,21 @@ msgstr "Menjam prijavnu ljusku."
 
 #: ../../po/../userhelper-wrap.c:812
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Pokušavate da pokrenete „%s“ što može imati koristi od administratorskih "
-"povlastica, ali je potrebno više podataka kako bi to uradili."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Pokušavate da pokrenete „%s“ što može imati koristi od administratorskih povlastica, ali je potrebno više podataka kako bi to uradili."
 
 #: ../../po/../userhelper-wrap.c:814
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"Pokušavate da pokrenete „%s“ što zahteva administratorske povlastice, ali je "
-"potrebno više podataka kako bi to uradili."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Pokušavate da pokrenete „%s“ što zahteva administratorske povlastice, ali je potrebno više podataka kako bi to uradili."
 
 #: ../../po/../userhelper-wrap.c:819
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Pokušavate da pokrenete naredbu koja može imati koristi od administratorskih "
-"povlastica, ali je potrebno više podataka kako bi to uradili."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Pokušavate da pokrenete naredbu koja može imati koristi od administratorskih povlastica, ali je potrebno više podataka kako bi to uradili."
 
 #: ../../po/../userhelper-wrap.c:821
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Pokušavate da pokrenete naredbu koja zahteva administratorske povlastice, "
-"ali je potrebno više podataka kako bi to uradili."
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Pokušavate da pokrenete naredbu koja zahteva administratorske povlastice, ali je potrebno više podataka kako bi to uradili."
 
 #: ../../po/../userhelper-wrap.c:831
 msgid "_Run Unprivileged"
@@ -391,7 +369,8 @@ msgstr "Greška cevi.\n"
 msgid "Cannot fork().\n"
 msgstr "Ne mogu da fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1069 ../../po/../userhelper-wrap.c:1073
+#: ../../po/../userhelper-wrap.c:1069
+#: ../../po/../userhelper-wrap.c:1073
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() greška.\n"
@@ -420,12 +399,8 @@ msgid "Un_mount"
 msgstr "De_montiraj"
 
 #: ../../po/../usermount.c:318
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"Sigurno želite da formatirate ovaj disk?  Uništićete bilo koje podatke koje "
-"trenutno sadrži."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Sigurno želite da formatirate ovaj disk?  Uništićete bilo koje podatke koje trenutno sadrži."
 
 #: ../../po/../usermount.c:329
 msgid "Perform a _low-level format."
@@ -440,12 +415,12 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Nema sistema datoteka nad kojima Vam je dozvoljeno montiranje ili "
-"demontiranje.\n"
+"Nema sistema datoteka nad kojima Vam je dozvoljeno montiranje ili demontiranje.\n"
 "Kontaktirajte Vašeg administratora."
 
 #. Create the dialog.
-#: ../../po/../usermount.c:541 ../../po/../usermount.c:553
+#: ../../po/../usermount.c:541
+#: ../../po/../usermount.c:553
 msgid "User Mount Tool"
 msgstr "Korisnički alat za montiranje"
 
@@ -523,8 +498,3 @@ msgstr "Promena Vaše lozinke za prijavu"
 msgid "Password"
 msgstr "Lozinka"
 
-#~ msgid "Help"
-#~ msgstr "Pomoć"
-
-#~ msgid "*"
-#~ msgstr "*"
