@@ -19,7 +19,6 @@ EXTRA_DIST = 	\
 	keys.xpm \
 	usermode.glade \
 	shutdown.pamd \
-	shutdown.pamd.6x \
 	admin/intltool-extract.in \
 	admin/intltool-merge.in \
 	admin/intltool-update.in \

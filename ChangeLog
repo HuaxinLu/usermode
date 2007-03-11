@@ -1,5 +1,8 @@
 2007-03-11  Miloslav Trmac  <mitr@redhat.com>
 
+	* shutdown.pamd.6x: Remove obsolete configuration.
+	* Makefile.am (EXTRA_DIST): Remove shutdown.pamd.6x.
+
 	* pam-panel-icon.c (main): Use LOCALEDIR.
 
 	* pam-panel-icon.c (child_io_source, child_watch_source): New variables.
