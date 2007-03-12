@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-11 03:33+0100\n"
+"POT-Creation-Date: 2006-11-29 16:09+0100\n"
 "PO-Revision-Date: 2005-11-09 15:42+0100\n"
 "Last-Translator: Keld Simonsen <keld@rap.dk>\n"
 "Language-Team:  <da@li.org>\n"
@@ -38,69 +38,69 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../../po/../dummy.h:21
+#: ../dummy.h:21 ../userdialogs.h:29
 msgid "OK"
 msgstr "OK"
 
-#: ../../po/../dummy.h:22
+#: ../dummy.h:22 ../userdialogs.h:32
 msgid "Exit"
 msgstr "Afslut"
 
-#: ../../po/../dummy.h:23
+#: ../dummy.h:23 ../userdialogs.h:31
 msgid "Cancel"
 msgstr "Annullér"
 
-#: ../../po/../dummy.h:24
+#: ../dummy.h:24 ../userdialogs.h:33
 msgid "Run Unprivileged"
 msgstr "Kør Upriviligeret"
 
-#: ../../po/../dummy.h:25
+#: ../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(nuværende) UNIX-adgangskode: "
 
-#: ../../po/../dummy.h:26
+#: ../dummy.h:26
 msgid "New UNIX password: "
 msgstr "Ny UNIX-adgangskode: "
 
-#: ../../po/../dummy.h:27
+#: ../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "Tast ny UNIX-adgangskode igen: "
 
-#: ../../po/../dummy.h:28
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "DÅRLIG ADGANGSKODE: den er ALT for kort"
 
-#: ../../po/../dummy.h:29
+#: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "DÅRLIG ADGANGSKODE: den er for kort"
 
-#: ../../po/../dummy.h:30
+#: ../dummy.h:30
 msgid "Password unchanged"
 msgstr "Adgangskode uændret"
 
-#: ../../po/../dummy.h:31
+#: ../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "Desværre, adgangskoder er ikke ens"
 
-#: ../../po/../dummy.h:32
+#: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr ""
 "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
-#: ../../po/../dummy.h:33
+#: ../dummy.h:33
 msgid "login: "
 msgstr "login: "
 
-#: ../../po/../dummy.h:34
+#: ../dummy.h:34
 msgid "Password: "
 msgstr "Adgangskode: "
 
-#: ../../po/../pam-panel-icon.c:89
+#: ../pam-panel-icon.c:98
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Kunne ikke frasige sig administrator-privilegier: %s"
 
-#: ../../po/../pam-panel-icon.c:98
+#: ../pam-panel-icon.c:114
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -109,7 +109,15 @@ msgstr ""
 "Kunne ikke frasige sig administrator-privilegier: pam_timestamp_check "
 "returnerede fejlkode %d"
 
-#: ../../po/../pam-panel-icon.c:142
+#: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
+msgid "Keep Authorization"
+msgstr "Behold tilladelse"
+
+#: ../pam-panel-icon.c:180 ../pam-panel-icon.c:212
+msgid "Forget Authorization"
+msgstr "Glem tilladelse"
+
+#: ../pam-panel-icon.c:202
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -119,70 +127,66 @@ msgstr ""
 "påvirker alle brugere) uden at indtaste administrator-adgangskoden igen. Du "
 "kan frasige dig denne tilladelse."
 
-#: ../../po/../pam-panel-icon.c:147 ../../po/../pam-panel-icon.c:173
-msgid "Keep Authorization"
-msgstr "Behold tilladelse"
-
-#: ../../po/../pam-panel-icon.c:150 ../../po/../pam-panel-icon.c:180
-msgid "Forget Authorization"
-msgstr "Glem tilladelse"
-
-#: ../../po/../pam-panel-icon.c:278
+#: ../pam-panel-icon.c:394
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check er ikke setuid root"
 
-#: ../../po/../pam-panel-icon.c:282
+#: ../pam-panel-icon.c:399
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "ingen styrende tty for pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:286
+#: ../pam-panel-icon.c:403
 msgid "user unknown to pam_timestamp_check"
 msgstr "bruger ukendt hos pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:290
+#: ../pam-panel-icon.c:407
 msgid "permissions error in pam_timestamp_check"
 msgstr "tilladelsesfejl i pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:294
+#: ../pam-panel-icon.c:411
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "ugyldig styrende tty i pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:312
+#: ../pam-panel-icon.c:429
 #, c-format
 msgid "Error: %s\n"
 msgstr "Fejl: %s\n"
 
-#: ../../po/../pam-panel-icon.c:377
+#: ../pam-panel-icon.c:506
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Kunne ikke køre kommando \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:389
+#: ../pam-panel-icon.c:519
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Kunne ikke sætte IO-kanal ikke-blokerende: %s\n"
 
-#: ../../po/../pam-panel-icon.c:470
+#: ../pam-panel-icon.c:598
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: kunne ikke koble op til sessionsstyring\n"
 
-#: ../../po/../userhelper.c:221 ../../po/../userhelper.c:295
+#: ../userdialogs.h:30
+msgid "Help"
+msgstr "Hjælp"
+
+#: ../userhelper.c:220 ../userhelper.c:294
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "Kunne ikke sætte standardkontekst til %s for program %s.\n"
 
-#: ../../po/../userhelper.c:239 ../../po/../userhelper.c:242
-#: ../../po/../userhelper.c:313 ../../po/../userhelper.c:316
+#: ../userhelper.c:238 ../userhelper.c:241 ../userhelper.c:312
+#: ../userhelper.c:315
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Kunne ikke sætte udførelseskontekst til %s.\n"
 
-#: ../../po/../userhelper.c:609
+#: ../userhelper.c:608
 #, c-format
 msgid "Password for %s"
 msgstr "Adgangskode for %s"
 
-#: ../../po/../userhelper.c:848
+#: ../userhelper.c:847
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -191,7 +195,7 @@ msgstr ""
 "Du forsøger at køre '%s', som kan have gavn af adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper.c:850
+#: ../userhelper.c:849
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -200,7 +204,7 @@ msgstr ""
 "Du forsøger at køre '%s', som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper.c:854
+#: ../userhelper.c:853
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -209,7 +213,7 @@ msgstr ""
 "rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper.c:856
+#: ../userhelper.c:855
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -217,33 +221,33 @@ msgstr ""
 "Du forsøger at køre en kommando, som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper.c:875
+#: ../userhelper.c:874
 #, c-format
 msgid "Password for %s: "
 msgstr "Adgangskode for %s:"
 
-#: ../../po/../userhelper.c:2403
+#: ../userhelper.c:2360
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper skal være setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2501
+#: ../userhelper.c:2458
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
-#: ../../po/../userhelper-wrap.c:181
+#: ../userhelper-wrap.c:179
 msgid "Unknown exit code."
 msgstr "Ukendt afslutningskode."
 
-#: ../../po/../userhelper-wrap.c:183
+#: ../userhelper-wrap.c:181
 msgid "Information updated."
 msgstr "Information opdateret."
 
-#: ../../po/../userhelper-wrap.c:185
+#: ../userhelper-wrap.c:183
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -251,7 +255,7 @@ msgstr ""
 "Adgangskoden som du indtastede er ugyldig.\n"
 "Venligst prøv igen."
 
-#: ../../po/../userhelper-wrap.c:187
+#: ../userhelper-wrap.c:185
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -261,11 +265,11 @@ msgstr ""
 "Dette er nok grundet enten kolonner eller kommaer i et af felterne,\n"
 "Fjern venligst disse og prøv igen."
 
-#: ../../po/../userhelper-wrap.c:189
+#: ../userhelper-wrap.c:187
 msgid "Password resetting error."
 msgstr "Fejl ved nulstilling af adgangskode."
 
-#: ../../po/../userhelper-wrap.c:191
+#: ../userhelper-wrap.c:189
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -273,19 +277,19 @@ msgstr ""
 "Nogle systemfiler er låst.\n"
 "Prøv venligst igen om et øjeblik."
 
-#: ../../po/../userhelper-wrap.c:193
+#: ../userhelper-wrap.c:191
 msgid "Unknown user."
 msgstr "Ukendt bruger."
 
-#: ../../po/../userhelper-wrap.c:195
+#: ../userhelper-wrap.c:193
 msgid "Insufficient rights."
 msgstr "Utilstrækkelige rettigheder-"
 
-#: ../../po/../userhelper-wrap.c:197
+#: ../userhelper-wrap.c:195
 msgid "Invalid call to subprocess."
 msgstr "Ugyldigt kald til underproces."
 
-#: ../../po/../userhelper-wrap.c:199
+#: ../userhelper-wrap.c:197
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -295,60 +299,61 @@ msgstr ""
 "Du har ikke lov til at ændre din skal.\n"
 "Henvend dig til din systemadministrator."
 
-#: ../../po/../userhelper-wrap.c:202
+#: ../userhelper-wrap.c:200
 msgid "Out of memory."
 msgstr "Tør for hukommelse"
 
-#: ../../po/../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:202
 msgid "The exec() call failed."
 msgstr "exec()-kaldet mislykkedes"
 
-#: ../../po/../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:204
 msgid "Failed to find selected program."
 msgstr "Det lykkedes ikke at finde det valgte program"
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../userhelper-wrap.c:207
 msgid "Request canceled."
 msgstr "Forespørgsel annulleret."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../userhelper-wrap.c:209
 msgid "Internal PAM error occured."
 msgstr "Intern PAM-fejl indtraf."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../userhelper-wrap.c:211
 msgid "Unknown error."
 msgstr "Ukendt fejl."
 
-#: ../../po/../userhelper-wrap.c:485 ../usermode.glade.h:8
+#.
+#. * Translatable strings file generated by Glade.
+#. * Add this file to your project's POTFILES.in.
+#. * DO NOT compile it as part of your application.
+#.
+#: ../userhelper-wrap.c:482 ../glade.strings.h:7 ../usermode.glade.h:9
 msgid "Query"
 msgstr "Forespørgsel"
 
-#: ../../po/../userhelper-wrap.c:578 ../../po/../userhelper-wrap.c:763
+#: ../userhelper-wrap.c:575 ../userhelper-wrap.c:755
 msgid "Error"
 msgstr "Fejl"
 
-#: ../../po/../userhelper-wrap.c:590
+#: ../userhelper-wrap.c:587
 msgid "Information"
 msgstr "Information"
 
-#: ../../po/../userhelper-wrap.c:755 ../usermode.glade.h:7
+#: ../userhelper-wrap.c:747 ../glade.strings.h:8 ../glade.strings.h:11
+#: ../usermode.glade.h:8
 msgid "Placeholder text."
 msgstr "Keldroy war hæer."
 
-#: ../../po/../userhelper-wrap.c:803
-#, fuzzy
-msgid "Changing password."
-msgstr "Skifter adgangskode for %s"
-
-#: ../../po/../userhelper-wrap.c:805
+#: ../userhelper-wrap.c:799
 msgid "Changing personal information."
 msgstr "Ændrer personlige oplysninger."
 
-#: ../../po/../userhelper-wrap.c:808
+#: ../userhelper-wrap.c:802
 msgid "Changing login shell."
 msgstr "Ændrer logind-skál."
 
-#: ../../po/../userhelper-wrap.c:812
+#: ../userhelper-wrap.c:808
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -357,7 +362,7 @@ msgstr ""
 "Du forsøger at køre '%s', som kan have gavn af adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../userhelper-wrap.c:810
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -366,7 +371,7 @@ msgstr ""
 "Du forsøger at køre '%s', som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../userhelper-wrap.c:819
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -375,7 +380,7 @@ msgstr ""
 "rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper-wrap.c:821
+#: ../userhelper-wrap.c:821
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -383,49 +388,49 @@ msgstr ""
 "Du forsøger at køre en kommando, som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper-wrap.c:831
+#: ../userhelper-wrap.c:838
 msgid "_Run Unprivileged"
 msgstr "_Kør upriviligeret"
 
-#: ../../po/../userhelper-wrap.c:983
+#: ../userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Fejl ved kanal.\n"
 
-#: ../../po/../userhelper-wrap.c:990
+#: ../userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kan ikke fork()\n"
 
-#: ../../po/../userhelper-wrap.c:1069 ../../po/../userhelper-wrap.c:1073
+#: ../userhelper-wrap.c:1075 ../userhelper-wrap.c:1079
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() fejl.\n"
 
-#: ../../po/../userhelper-wrap.c:1085
+#: ../userhelper-wrap.c:1091
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() fejl, errno=%d\n"
 
-#: ../../po/../userinfo.c:378
+#: ../userinfo.c:369
 #, c-format
 msgid "Unexpected argument"
 msgstr "Uventet argument"
 
-#: ../../po/../userinfo.c:405
+#: ../userinfo.c:396
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Du eksisterer ikke. Gå væk med dig.\n"
 
-#: ../../po/../usermount.c:60
+#: ../usermount.c:62
 msgid "_Mount"
 msgstr "_Montér"
 
-#: ../../po/../usermount.c:61
+#: ../usermount.c:63
 msgid "Un_mount"
 msgstr "_Afmontér"
 
-#: ../../po/../usermount.c:318
+#: ../usermount.c:321
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -433,15 +438,15 @@ msgstr ""
 "Er du sikker på at du vil formatere denne disk?\n"
 "Dette vil ødelægge alle data på disken."
 
-#: ../../po/../usermount.c:329
+#: ../usermount.c:332
 msgid "Perform a _low-level format."
 msgstr "Lav en formatering på _lavniveau."
 
-#: ../../po/../usermount.c:364
+#: ../usermount.c:375
 msgid "Select a _filesystem type to create:"
 msgstr "Vælg en _filsystemstype at oprette:"
 
-#: ../../po/../usermount.c:540
+#: ../usermount.c:549
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -450,59 +455,64 @@ msgstr ""
 "Kontakt din administrator."
 
 #. Create the dialog.
-#: ../../po/../usermount.c:541 ../../po/../usermount.c:553
+#: ../usermount.c:550 ../usermount.c:562
 msgid "User Mount Tool"
 msgstr "Bruger monteringsværktøj"
 
 #. Create the other buttons.
-#: ../../po/../usermount.c:570
+#: ../usermount.c:579
 msgid "_Format"
 msgstr "_Formatér"
 
-#: ../../po/../usermount.c:606
+#: ../usermount.c:615
 msgid "Device"
 msgstr "Enhed"
 
-#: ../../po/../usermount.c:612
+#: ../usermount.c:621
 msgid "Directory"
 msgstr "Katalog"
 
-#: ../../po/../usermount.c:618
+#: ../usermount.c:627
 msgid "Filesystem"
 msgstr "Filsystem"
 
-#: ../../po/../usermount.c:665
+#: ../usermount.c:674
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Enheden '%s' kan ikke formateres"
 
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "Fulde navn:"
+#: ../glade.strings.h:9 ../glade.strings.h:18 ../glade.strings.h:19
+#: ../glade.strings.h:20 ../glade.strings.h:21 ../usermode.glade.h:1
+msgid "*"
+msgstr "*"
 
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "Hjemmetelefon:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "Skál:"
-
-#: ../usermode.glade.h:4
+#: ../glade.strings.h:10 ../usermode.glade.h:5
 msgid "Message"
 msgstr "Besked"
 
-#: ../usermode.glade.h:5
-msgid "Office Phone Number:"
-msgstr "Kontortelefon:"
+#: ../glade.strings.h:12 ../usermode.glade.h:10
+msgid "User Information"
+msgstr "Brugerinformation"
 
-#: ../usermode.glade.h:6
+#: ../glade.strings.h:13 ../usermode.glade.h:2
+msgid "Full Name:"
+msgstr "Fulde navn:"
+
+#: ../glade.strings.h:14 ../usermode.glade.h:7
 msgid "Office:"
 msgstr "Kontor:"
 
-#: ../usermode.glade.h:9
-msgid "User Information"
-msgstr "Brugerinformation"
+#: ../glade.strings.h:15 ../usermode.glade.h:6
+msgid "Office Phone Number:"
+msgstr "Kontortelefon:"
+
+#: ../glade.strings.h:16 ../usermode.glade.h:3
+msgid "Home Phone Number:"
+msgstr "Hjemmetelefon:"
+
+#: ../glade.strings.h:17 ../usermode.glade.h:4
+msgid "Login Shell:"
+msgstr "Skál:"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -528,11 +538,9 @@ msgstr "Skifter din logind-adgangskode"
 msgid "Password"
 msgstr "Adgangskode"
 
-#~ msgid "Help"
-#~ msgstr "Hjælp"
-
-#~ msgid "*"
-#~ msgstr "*"
+#, fuzzy
+#~ msgid "Changing password."
+#~ msgstr "Skifter adgangskode for %s"
 
 #~ msgid "_Ok"
 #~ msgstr "_O.k."
