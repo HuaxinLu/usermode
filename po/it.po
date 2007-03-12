@@ -3,20 +3,20 @@
 #
 # Bettina De Monti <bdemonti@redhat.it>, 2001.
 # Francesco Valente <fvalen@redhat.com>, 2003, 2004.
-# Francesco Tombolini <tombo@adamantio.net>, 2005, 2006.
+# Francesco Tombolini <tombo@adamantio.net>, 2005, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-11 03:33+0100\n"
-"PO-Revision-Date: 2006-09-02 00:21+0100\n"
+"PO-Revision-Date: 2007-03-12 06:32+0100\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -83,8 +83,7 @@ msgstr "Spiacente, le password non corrispondono"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Apertura strumenti di configurazione globali del sistema senza una password."
+msgstr "Apertura strumenti di configurazione globali del sistema senza una password."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -168,8 +167,7 @@ msgstr "pam-panel-icon: collegamento al session manager fallito\n"
 #: ../../po/../userhelper.c:221 ../../po/../userhelper.c:295
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
-"Impossibile impostare il contesto predefinito per %s per il programma %s.\n"
+msgstr "Impossibile impostare il contesto predefinito per %s per il programma %s.\n"
 
 #: ../../po/../userhelper.c:239 ../../po/../userhelper.c:242
 #: ../../po/../userhelper.c:313 ../../po/../userhelper.c:316
@@ -230,8 +228,7 @@ msgstr "userhelper deve essere setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2501
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica, ed impossibile trovare il terminale "
 "di controllo.\n"
@@ -337,9 +334,8 @@ msgid "Placeholder text."
 msgstr "Contenitore testo"
 
 #: ../../po/../userhelper-wrap.c:803
-#, fuzzy
 msgid "Changing password."
-msgstr "Cambio della password di login"
+msgstr "Cambio della password."
 
 #: ../../po/../userhelper-wrap.c:805
 msgid "Changing personal information."
@@ -529,8 +525,3 @@ msgstr "Cambio della password di login"
 msgid "Password"
 msgstr "Password"
 
-#~ msgid "Help"
-#~ msgstr "Aiuto"
-
-#~ msgid "*"
-#~ msgstr "*"
