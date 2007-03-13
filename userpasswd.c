@@ -1,6 +1,6 @@
 /* -*-Mode: c-*- */
 /* Copyright (C) 1997 Red Hat Software, Inc.
- * Copyright (C) 2001 Red Hat, Inc.
+ * Copyright (C) 2001, 2007 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -18,8 +18,8 @@
  */
 
 #include "config.h"
+#include <libintl.h>
 #include <gtk/gtk.h>
-#include "userdialogs.h"
 #include "userhelper-wrap.h"
 
 void
@@ -31,11 +31,10 @@ userhelper_fatal_error(int ignored)
 int
 main(int argc, char *argv[])
 {
-	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bindtextdomain(PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 
-	gtk_set_locale();
 	gtk_init(&argc, &argv);
 
 	userhelper_run(TRUE, UH_PATH, UH_PATH, UH_PASSWD_OPT, 0);
