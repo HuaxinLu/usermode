@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-29 16:09+0100\n"
+"POT-Creation-Date: 2007-03-11 03:33+0100\n"
 "PO-Revision-Date: 2006-12-01 11:18+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
 "Language-Team: Chinese, Traditional <zh_TW@li.org>\n"
@@ -41,83 +41,75 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../dummy.h:21 ../userdialogs.h:29
+#: ../../po/../dummy.h:21
 msgid "OK"
 msgstr "確定"
 
-#: ../dummy.h:22 ../userdialogs.h:32
+#: ../../po/../dummy.h:22
 msgid "Exit"
 msgstr "離開"
 
-#: ../dummy.h:23 ../userdialogs.h:31
+#: ../../po/../dummy.h:23
 msgid "Cancel"
 msgstr "取消"
 
-#: ../dummy.h:24 ../userdialogs.h:33
+#: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
 msgstr "無特權的執行"
 
-#: ../dummy.h:25
+#: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(目前的) UNIX 密碼："
 
-#: ../dummy.h:26
+#: ../../po/../dummy.h:26
 msgid "New UNIX password: "
 msgstr "新設的 UNIX 密碼："
 
-#: ../dummy.h:27
+#: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "再輸入一次新設的 UNIX 密碼："
 
-#: ../dummy.h:28
+#: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "不當的密碼： 密碼太短"
 
-#: ../dummy.h:29
+#: ../../po/../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "不當的密碼： 密碼太短"
 
-#: ../dummy.h:30
+#: ../../po/../dummy.h:30
 msgid "Password unchanged"
 msgstr "密碼不變"
 
-#: ../dummy.h:31
+#: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "抱歉，密碼不符"
 
-#: ../dummy.h:32
+#: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "在不輸入密碼的情況下啟動全系統性的設定工具。"
 
-#: ../dummy.h:33
+#: ../../po/../dummy.h:33
 msgid "login: "
 msgstr "登入帳號: "
 
-#: ../dummy.h:34
+#: ../../po/../dummy.h:34
 msgid "Password: "
 msgstr "密碼: "
 
-#: ../pam-panel-icon.c:98
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "無法放棄管理者權限：%s"
 
-#: ../pam-panel-icon.c:114
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr "無法放棄管理者權限：pam_timestamp_check 傳回錯誤值 %d"
 
-#: ../pam-panel-icon.c:170 ../pam-panel-icon.c:208
-msgid "Keep Authorization"
-msgstr "保留授權"
-
-#: ../pam-panel-icon.c:180 ../pam-panel-icon.c:212
-msgid "Forget Authorization"
-msgstr "放棄授權"
-
-#: ../pam-panel-icon.c:202
+#: ../../po/../pam-panel-icon.c:142
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -126,66 +118,70 @@ msgstr ""
 "不需要再次輸入管理者密碼，您目前已授權可以設定系統全域設定（會影響所有使用"
 "者）。您可以放棄本次授權。"
 
-#: ../pam-panel-icon.c:394
+#: ../../po/../pam-panel-icon.c:147 ../../po/../pam-panel-icon.c:173
+msgid "Keep Authorization"
+msgstr "保留授權"
+
+#: ../../po/../pam-panel-icon.c:150 ../../po/../pam-panel-icon.c:180
+msgid "Forget Authorization"
+msgstr "放棄授權"
+
+#: ../../po/../pam-panel-icon.c:278
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check 並非 setuid root"
 
-#: ../pam-panel-icon.c:399
+#: ../../po/../pam-panel-icon.c:282
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check 沒有控制中的 tty "
 
-#: ../pam-panel-icon.c:403
+#: ../../po/../pam-panel-icon.c:286
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check 的使用者未知"
 
-#: ../pam-panel-icon.c:407
+#: ../../po/../pam-panel-icon.c:290
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check 的存取權限錯誤"
 
-#: ../pam-panel-icon.c:411
+#: ../../po/../pam-panel-icon.c:294
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check 的控制中 tty 錯誤"
 
-#: ../pam-panel-icon.c:429
+#: ../../po/../pam-panel-icon.c:312
 #, c-format
 msgid "Error: %s\n"
 msgstr "錯誤： %s\n"
 
-#: ../pam-panel-icon.c:506
+#: ../../po/../pam-panel-icon.c:377
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "執行 \"%s\" 失敗：%s\n"
 
-#: ../pam-panel-icon.c:519
+#: ../../po/../pam-panel-icon.c:389
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "將 IO 通道設為 nonblocking 失敗：%s\n"
 
-#: ../pam-panel-icon.c:598
+#: ../../po/../pam-panel-icon.c:470
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon：連接到 session 管理員失敗\n"
 
-#: ../userdialogs.h:30
-msgid "Help"
-msgstr "求助"
-
-#: ../userhelper.c:220 ../userhelper.c:294
+#: ../../po/../userhelper.c:221 ../../po/../userhelper.c:295
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "無法設定 %s 的預設本文（程式 %s）。\n"
 
-#: ../userhelper.c:238 ../userhelper.c:241 ../userhelper.c:312
-#: ../userhelper.c:315
+#: ../../po/../userhelper.c:239 ../../po/../userhelper.c:242
+#: ../../po/../userhelper.c:313 ../../po/../userhelper.c:316
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "無法設定執行上下文為 %s。\n"
 
-#: ../userhelper.c:608
+#: ../../po/../userhelper.c:609
 #, c-format
 msgid "Password for %s"
 msgstr "%s 的密碼"
 
-#: ../userhelper.c:847
+#: ../../po/../userhelper.c:848
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -194,7 +190,7 @@ msgstr ""
 "您試著要執行 \"%s\"，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: ../userhelper.c:849
+#: ../../po/../userhelper.c:850
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -203,7 +199,7 @@ msgstr ""
 "您試著要執行 \"%s\"，您需要有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: ../userhelper.c:853
+#: ../../po/../userhelper.c:854
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -211,7 +207,7 @@ msgstr ""
 "您試著要執行一個指令，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: ../userhelper.c:855
+#: ../../po/../userhelper.c:856
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -219,32 +215,32 @@ msgstr ""
 "您試著要執行一個指令，您需要有管理者的權限,\n"
 "但為了要如此做您需要更多資訊。"
 
-#: ../userhelper.c:874
+#: ../../po/../userhelper.c:875
 #, c-format
 msgid "Password for %s: "
 msgstr "%s 的密碼： "
 
-#: ../userhelper.c:2360
+#: ../../po/../userhelper.c:2403
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必須 setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2458
+#: ../../po/../userhelper.c:2501
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗，且找不到控制終端機。\n"
 
-#: ../userhelper-wrap.c:179
+#: ../../po/../userhelper-wrap.c:181
 msgid "Unknown exit code."
 msgstr "未知的離開碼(exit code)。"
 
-#: ../userhelper-wrap.c:181
+#: ../../po/../userhelper-wrap.c:183
 msgid "Information updated."
 msgstr "已更新的資訊。"
 
-#: ../userhelper-wrap.c:183
+#: ../../po/../userhelper-wrap.c:185
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -252,7 +248,7 @@ msgstr ""
 "您輸入的密碼無效。\n"
 "請再試一次。"
 
-#: ../userhelper-wrap.c:185
+#: ../../po/../userhelper-wrap.c:187
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -262,11 +258,11 @@ msgstr ""
 "也許是由於有冒號或逗號在欄位裡。\n"
 "請移除它們然後再試一次。"
 
-#: ../userhelper-wrap.c:187
+#: ../../po/../userhelper-wrap.c:189
 msgid "Password resetting error."
 msgstr "重設密碼錯誤。"
 
-#: ../userhelper-wrap.c:189
+#: ../../po/../userhelper-wrap.c:191
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -274,19 +270,19 @@ msgstr ""
 "某些系統檔已鎖住。\n"
 "請等會再試一次。"
 
-#: ../userhelper-wrap.c:191
+#: ../../po/../userhelper-wrap.c:193
 msgid "Unknown user."
 msgstr "不知名的使用者。"
 
-#: ../userhelper-wrap.c:193
+#: ../../po/../userhelper-wrap.c:195
 msgid "Insufficient rights."
 msgstr "沒有足夠的權力。"
 
-#: ../userhelper-wrap.c:195
+#: ../../po/../userhelper-wrap.c:197
 msgid "Invalid call to subprocess."
 msgstr "無效的子程序呼叫.."
 
-#: ../userhelper-wrap.c:197
+#: ../../po/../userhelper-wrap.c:199
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -296,61 +292,60 @@ msgstr ""
 "無法更改您的 shell.\n"
 "請求助您的系統管理員。"
 
-#: ../userhelper-wrap.c:200
+#: ../../po/../userhelper-wrap.c:202
 msgid "Out of memory."
 msgstr "記憶體不足。"
 
-#: ../userhelper-wrap.c:202
+#: ../../po/../userhelper-wrap.c:204
 msgid "The exec() call failed."
 msgstr "exec() 呼叫失敗。"
 
-#: ../userhelper-wrap.c:204
+#: ../../po/../userhelper-wrap.c:206
 msgid "Failed to find selected program."
 msgstr "找不到選取的程式。"
 
-#: ../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:209
 msgid "Request canceled."
 msgstr "要求取消。"
 
-#: ../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:211
 msgid "Internal PAM error occured."
 msgstr "內部 PAM 發生錯誤。"
 
-#: ../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:213
 msgid "Unknown error."
 msgstr "未知的錯誤。"
 
-#.
-#. * Translatable strings file generated by Glade.
-#. * Add this file to your project's POTFILES.in.
-#. * DO NOT compile it as part of your application.
-#.
-#: ../userhelper-wrap.c:482 ../glade.strings.h:7 ../usermode.glade.h:9
+#: ../../po/../userhelper-wrap.c:485 ../usermode.glade.h:8
 msgid "Query"
 msgstr "查詢"
 
-#: ../userhelper-wrap.c:575 ../userhelper-wrap.c:755
+#: ../../po/../userhelper-wrap.c:578 ../../po/../userhelper-wrap.c:763
 msgid "Error"
 msgstr "錯誤"
 
-#: ../userhelper-wrap.c:587
+#: ../../po/../userhelper-wrap.c:590
 msgid "Information"
 msgstr "資訊"
 
-#: ../userhelper-wrap.c:747 ../glade.strings.h:8 ../glade.strings.h:11
-#: ../usermode.glade.h:8
+#: ../../po/../userhelper-wrap.c:755 ../usermode.glade.h:7
 msgid "Placeholder text."
 msgstr "沒有加密過的文字。"
 
-#: ../userhelper-wrap.c:799
+#: ../../po/../userhelper-wrap.c:803
+#, fuzzy
+msgid "Changing password."
+msgstr "變更您的登入密碼"
+
+#: ../../po/../userhelper-wrap.c:805
 msgid "Changing personal information."
 msgstr "更改個人資訊。"
 
-#: ../userhelper-wrap.c:802
+#: ../../po/../userhelper-wrap.c:808
 msgid "Changing login shell."
 msgstr "更改登入 shell。"
 
-#: ../userhelper-wrap.c:808
+#: ../../po/../userhelper-wrap.c:812
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -358,7 +353,7 @@ msgid ""
 msgstr ""
 "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: ../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:814
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -366,77 +361,77 @@ msgid ""
 msgstr ""
 "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: ../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:819
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: ../userhelper-wrap.c:821
+#: ../../po/../userhelper-wrap.c:821
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: ../userhelper-wrap.c:838
+#: ../../po/../userhelper-wrap.c:831
 msgid "_Run Unprivileged"
 msgstr "無特權的執行(_R)"
 
-#: ../userhelper-wrap.c:990
+#: ../../po/../userhelper-wrap.c:983
 #, c-format
 msgid "Pipe error.\n"
 msgstr "程式的輸出導向錯誤.\n"
 
-#: ../userhelper-wrap.c:997
+#: ../../po/../userhelper-wrap.c:990
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "無法 fork().\n"
 
-#: ../userhelper-wrap.c:1075 ../userhelper-wrap.c:1079
+#: ../../po/../userhelper-wrap.c:1069 ../../po/../userhelper-wrap.c:1073
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() 錯誤.\n"
 
-#: ../userhelper-wrap.c:1091
+#: ../../po/../userhelper-wrap.c:1085
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: ../userinfo.c:369
+#: ../../po/../userinfo.c:378
 #, c-format
 msgid "Unexpected argument"
 msgstr "無預期的參數"
 
-#: ../userinfo.c:396
+#: ../../po/../userinfo.c:405
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "您不存在.  請離開.\n"
 
-#: ../usermount.c:62
+#: ../../po/../usermount.c:60
 msgid "_Mount"
 msgstr "掛載(_M)"
 
-#: ../usermount.c:63
+#: ../../po/../usermount.c:61
 msgid "Un_mount"
 msgstr "卸載（_m）"
 
-#: ../usermount.c:321
+#: ../../po/../usermount.c:318
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr "您確定要格式化磁碟嗎？您將摧毀它原有的資料。"
 
-#: ../usermount.c:332
+#: ../../po/../usermount.c:329
 msgid "Perform a _low-level format."
 msgstr "執行低階格式化(_l)。"
 
-#: ../usermount.c:375
+#: ../../po/../usermount.c:364
 msgid "Select a _filesystem type to create:"
 msgstr "選取要建立的檔案系統(_f)："
 
-#: ../usermount.c:549
+#: ../../po/../usermount.c:540
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -445,64 +440,59 @@ msgstr ""
 "請聯絡系統管理員。"
 
 #. Create the dialog.
-#: ../usermount.c:550 ../usermount.c:562
+#: ../../po/../usermount.c:541 ../../po/../usermount.c:553
 msgid "User Mount Tool"
 msgstr "使用者掛載工具"
 
 #. Create the other buttons.
-#: ../usermount.c:579
+#: ../../po/../usermount.c:570
 msgid "_Format"
 msgstr "格式化(_F)"
 
-#: ../usermount.c:615
+#: ../../po/../usermount.c:606
 msgid "Device"
 msgstr "裝置"
 
-#: ../usermount.c:621
+#: ../../po/../usermount.c:612
 msgid "Directory"
 msgstr "目錄"
 
-#: ../usermount.c:627
+#: ../../po/../usermount.c:618
 msgid "Filesystem"
 msgstr "檔案系統"
 
-#: ../usermount.c:674
+#: ../../po/../usermount.c:665
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "無法格式化「%s」裝置。"
 
-#: ../glade.strings.h:9 ../glade.strings.h:18 ../glade.strings.h:19
-#: ../glade.strings.h:20 ../glade.strings.h:21 ../usermode.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../glade.strings.h:10 ../usermode.glade.h:5
-msgid "Message"
-msgstr "信息"
-
-#: ../glade.strings.h:12 ../usermode.glade.h:10
-msgid "User Information"
-msgstr "使用者資訊"
-
-#: ../glade.strings.h:13 ../usermode.glade.h:2
+#: ../usermode.glade.h:1
 msgid "Full Name:"
 msgstr "全名："
 
-#: ../glade.strings.h:14 ../usermode.glade.h:7
-msgid "Office:"
-msgstr "辦公室："
-
-#: ../glade.strings.h:15 ../usermode.glade.h:6
-msgid "Office Phone Number:"
-msgstr "辦公室電話號碼:"
-
-#: ../glade.strings.h:16 ../usermode.glade.h:3
+#: ../usermode.glade.h:2
 msgid "Home Phone Number:"
 msgstr "自家電話號碼:"
 
-#: ../glade.strings.h:17 ../usermode.glade.h:4
+#: ../usermode.glade.h:3
 msgid "Login Shell:"
 msgstr "登入的 Shell:"
+
+#: ../usermode.glade.h:4
+msgid "Message"
+msgstr "信息"
+
+#: ../usermode.glade.h:5
+msgid "Office Phone Number:"
+msgstr "辦公室電話號碼:"
+
+#: ../usermode.glade.h:6
+msgid "Office:"
+msgstr "辦公室："
+
+#: ../usermode.glade.h:9
+msgid "User Information"
+msgstr "使用者資訊"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -528,6 +518,8 @@ msgstr "變更您的登入密碼"
 msgid "Password"
 msgstr "密碼"
 
-#, fuzzy
-#~ msgid "Changing password."
-#~ msgstr "變更您的登入密碼"
+#~ msgid "Help"
+#~ msgstr "求助"
+
+#~ msgid "*"
+#~ msgstr "*"
