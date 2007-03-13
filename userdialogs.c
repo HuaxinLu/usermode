@@ -20,7 +20,6 @@
 #include "config.h"
 #include <locale.h>
 #include <libintl.h>
-#include <glade/glade-xml.h>
 #include <gtk/gtk.h>
 #include "userdialogs.h"
 

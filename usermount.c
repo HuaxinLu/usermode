@@ -54,7 +54,6 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include "userdialogs.h"
 
 #define MOUNT_TEXT	_("_Mount")
@@ -677,8 +676,7 @@ main(int argc, char *argv[])
 	textdomain(PACKAGE);
 	gtk_set_locale();
 	gtk_init(&argc, &argv);
-	glade_init();
-        
+
         if (argc > 1) {
 		char *name = strrchr (argv[0], '/');
 		

@@ -98,10 +98,10 @@ userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c user
 userinfo_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 usermount_SOURCES = usermount.c userdialogs.c
-usermount_LDADD = @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
+usermount_LDADD = $(GTK_LIBS) $(EFENCE_LIBS)
 
 userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c reaper.c userhelper-wrap.h reaper.h marshal.c marshal.h
-userpasswd_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
+userpasswd_LDADD = $(SN_WNCK_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
 
 consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_LDADD = $(GLIB_LIBS) $(EFENCE_LIBS)

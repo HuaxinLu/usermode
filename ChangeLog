@@ -1,3 +1,12 @@
+2007-03-13  Miloslav Trmac  <mitr@redhat.com>
+
+	* Makefile.am (usermount_LDADD, userpasswd_LDADD): Use GTK_LIBS instead
+	of LIBGLADE_LIBS.  Clean up.
+	* userdialogs.c: Remove unnecessary #include.
+	* usermount.c: Remove all libglade references.
+	* usermode.glade (query_box, message_box): Remove unused dialogs.
+	* usermode.glade1: Remove obsolete file.
+
 2007-03-11  Miloslav Trmac  <mitr@redhat.com>
 
 	* userdialogs.c (relay_value, create_query_box_i, create_query_box)
