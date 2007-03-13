@@ -34,7 +34,7 @@
 
 enum {
 	RESPONSE_DROP = 0,
-	RESPONSE_DO_NOTHING = -1
+	RESPONSE_DO_NOTHING = 1
 };
 
 enum {

@@ -1,5 +1,8 @@
 2007-03-13  Miloslav Trmac  <mitr@redhat.com>
 
+	* pam-panel-icon.c (RESPONSE_DO_NOTHING): Use a positive number to
+	avoid conflicts with GTK+.
+
 	* Makefile.am (usermount_LDADD, userpasswd_LDADD): Use GTK_LIBS instead
 	of LIBGLADE_LIBS.  Clean up.
 	* userdialogs.c: Remove unnecessary #include.
