@@ -1,5 +1,23 @@
 2007-03-13  Miloslav Trmac  <mitr@redhat.com>
 
+	* usermount.c (ACTION_FORMAT, ACTION_MOUNT): Use an enum.
+	(struct mountinfo): Remove members mount, format, mount_label.  All
+	users updated.
+	(is_mounted): Replace check_is_mounted (), remove unnecessary checks,
+	modify to be usable from build_mountinfo_list ().
+	(build_mountinfo_list): Use libblkid for LABEL= and UUID= resolution.
+	Add support for "user" and "users".  Simplify and clean up.
+	(format): Remove copy&pasted info->mounted changes.  FIx memory leaks.
+	(response_callback): Use the correct prototype.  Remove info->mounted
+	changes, rely on changed_callback () instead.  Fix a memory leak.
+	(create_usermount_window): Use DATADIR.  Remove local variables
+	duplicating static variables.
+	(main) Use LOCALEDIR.  Remove unnecessary gtk_set_locale ().
+
+	* Makefile.am (usermount_LDADD): Link with libblkid.
+
+	* usermount.1: Fix a typo.
+
 	* pam-panel-icon.c (RESPONSE_DO_NOTHING): Use a positive number to
 	avoid conflicts with GTK+.
 

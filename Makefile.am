@@ -98,7 +98,7 @@ userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c user
 userinfo_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
 usermount_SOURCES = usermount.c userdialogs.c
-usermount_LDADD = $(GTK_LIBS) $(EFENCE_LIBS)
+usermount_LDADD = $(GTK_LIBS) -lblkid $(EFENCE_LIBS)
 
 userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c reaper.c userhelper-wrap.h reaper.h marshal.c marshal.h
 userpasswd_LDADD = $(SN_WNCK_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
