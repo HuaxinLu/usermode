@@ -242,9 +242,8 @@ child_io_func(GIOChannel *source, GIOCondition condition, void *data)
 		gsize bytes_read;
 
 		err = NULL;
-		g_io_channel_read_chars(child_io_channel,
-					buf, sizeof(buf),
-					&bytes_read, &err);
+		g_io_channel_read_chars(source, buf, sizeof(buf), &bytes_read,
+					&err);
 
 		if (err != NULL) {
 			g_printerr("Error reading from pam_timestamp_check: "

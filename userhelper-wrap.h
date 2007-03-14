@@ -19,36 +19,11 @@
 #ifndef __USERHELPER_WRAP_H__
 #define __USERHELPER_WRAP_H__
 
-/* lots 'o includes. */
-#include "userdialogs.h"
-#include <signal.h>
-#include <unistd.h>
-#include <errno.h>
-#include <string.h>
-#include <sys/time.h>
-#include <sys/wait.h>
-
-#include "userhelper.h"
-#define UH_ACTION_AREA "userhelper-action-area"
-
-typedef struct message {
-	int type;
-	char *message;
-	GtkWidget *entry;
-	GtkWidget *label;
-} message;
-
-struct response {
-	int responses, left, rows;
-	gboolean ready, fallback_allowed;
-	char *user, *service, *suggestion, *banner, *title;
-	GList *message_list; /* contains pointers to messages */
-	GtkWidget *dialog, *first, *last, *table;
-};
+#include "config.h"
+#include <glib.h>
 
 void userhelper_run(gboolean notify_success, char *path, ...);
 int userhelper_runv(gboolean notify_success, char *path, char **args);
-void userhelper_fatal_error(int ignored);
 void userhelper_main_quit(void);
 
 #endif /* __USERHELPER_WRAP_H__ */

@@ -20,13 +20,8 @@
 #include "config.h"
 #include <libintl.h>
 #include <gtk/gtk.h>
+#include "userhelper.h"
 #include "userhelper-wrap.h"
-
-void
-userhelper_fatal_error(int ignored)
-{
-	userhelper_main_quit();
-}
 
 int
 main(int argc, char *argv[])

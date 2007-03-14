@@ -1,5 +1,49 @@
 2007-03-14  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper-wrap.c (childout): Make local.
+	(childout_tag): Initialize to 0.
+	(struct message, struct response): Move from userhelper-wrap.h.
+	(struct message): Remove member message, it is an invalid pointer used
+	only for debugging.
+	(userhelper_fatal_error): Use a single static function.
+	(userhelper_parse_exitstatus): Use N_(), make the message list
+	a constant.
+	(userhelper_grab_keyboard): Move the #ifndef inside to avoid an #ifndef
+	at the caller.
+	(fake_respond_ok): Use the correct prototype.
+	(userhelper_parse_childout): Use isspace () correctly.  Use DATADIR.
+	Fix a memory leak.  Beautify.
+	(userhelper_child_exited): Update for g_child_watch_add ().
+	(userhelper_read_chilout): Update for GIOChannel usage.
+	(userhelper_runv): Use g_io_add_watch () instead of deprecated
+	gdk_input_add ().  Use g_child_watch_add () instead of VteReaper.  Only
+	call sysconf(_SC_OPEN_MAX) once.  Add a comment about STDIN_FILENO
+	validity.
+	(userhelper_run): Avoid unnecessary string copies.
+	* userhelper-wrap.h: Remove unnecessary #includes.
+	(UH_ACTION_AREA): Remove unused macro.
+	(userhelper_fatal_error): Remove prototype.
+	* marshal.list
+	* reaper.c
+	* reaper.h: Remove.
+	* Makefile.am (BUILT_SOURCES): Remove.
+	(EXTRA_DIST): Remove marshal.list.
+	(userhelper_LDADD): Clean up.
+	(consolehelper_gtk_SOURCES, userinfo_SOURCES, userpasswd_SOURCES): Drop
+	reaper.c, reaper.h, marshal.c and masshal.h.
+	(marshal.c, marshal.h): Remove.
+	* configure.in (GLIB_GENMARSHAL): Remove.
+	* consolehelper.c (userhelper_fatal_error)
+	* userinfo.c (userhelper_fatal_error)
+	* userpasswd.c (userhelper_fatal_error): Remove.
+
+	* Makefile.am (usermount_SOURCES): Add userdialogs.h.
+
+	* configure.in (SELINUX_LIBS): Remove unnecessary -lattr.
+
+	* pam-panel-icon.c (child_io_func): Use the parameter instead of
+	a global variable.
+
 	* userhelper.c: Remove unnecessary #includes.
 	(get_init_context): Avoid duplicate strlen() call.
 	(setup_selinux_exec): Gather common code from

@@ -60,9 +60,6 @@ if test "x$usedeprecation" = xyes ; then
 fi
 AC_MSG_RESULT([$usedeprecation])
 
-GLIB_GENMARSHAL=`$PKG_CONFIG --variable=glib_genmarshal glib-2.0`
-AC_SUBST([GLIB_GENMARSHAL])
-
 test "x$prefix" = xNONE && prefix=$ac_default_prefix
 test "x$exec_prefix" = xNONE && exec_prefix=${prefix}
 
@@ -107,7 +104,7 @@ AC_ARG_WITH([selinux],
 SELINUX_LIBS=
 if test "x$selinux" != xno ; then
 	AC_DEFINE([WITH_SELINUX], [1], [Use SELinux features])
-	SELINUX_LIBS="-lselinux -lattr"
+	SELINUX_LIBS="-lselinux"
 fi
 AC_SUBST([SELINUX_LIBS])
 AC_MSG_RESULT([$selinux])

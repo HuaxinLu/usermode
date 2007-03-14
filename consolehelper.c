@@ -24,21 +24,10 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <gtk/gtk.h>
-#include "userdialogs.h"
+#include "userhelper.h"
 #include "userhelper-wrap.h"
-
-#ifndef DISABLE_X11
-void
-userhelper_fatal_error(int signal)
-{
-	if (gtk_main_level() > 0) {
-		userhelper_main_quit();
-	} else {
-		_exit(0);
-	}
-}
-#endif
 
 int
 main(int argc, char *argv[])

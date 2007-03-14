@@ -1,7 +1,6 @@
 CVSTAG = usermode-$$(echo '$(VERSION)' | tr '.' '_')
 VENDOR=redhat
 
-BUILT_SOURCES = marshal.c marshal.h
 EXTRA_DIST = 	\
 	dummy.h \
 	shutdown \
@@ -14,7 +13,6 @@ EXTRA_DIST = 	\
 	userinfo.desktop.in \
 	usermount.desktop.in \
 	userpasswd.desktop.in \
-	marshal.list \
 	wrapped.console \
 	keys.xpm \
 	usermode.glade \
@@ -92,23 +90,24 @@ pkgdata_DATA = usermode.glade
 @INTLTOOL_DESKTOP_RULE@
 
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
-userhelper_LDADD = @LIBUSER_LIBS@ @GLIB_LIBS@ @PAM_LIBS@ $(SELINUX_LIBS) @EFENCE_LIBS@
+userhelper_LDADD = $(LIBUSER_LIBS) $(GLIB_LIBS) $(PAM_LIBS) $(SELINUX_LIBS) $(EFENCE_LIBS)
 
-userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c userhelper-wrap.h reaper.c reaper.h marshal.c marshal.h
+userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c \
+	userhelper-wrap.h
 userinfo_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
 
-usermount_SOURCES = usermount.c userdialogs.c
+usermount_SOURCES = usermount.c userdialogs.c userdialogs.h
 usermount_LDADD = $(GTK_LIBS) -lblkid $(EFENCE_LIBS)
 
-userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h userhelper-wrap.c reaper.c userhelper-wrap.h reaper.h marshal.c marshal.h
+userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h \
+	userhelper-wrap.c userhelper-wrap.h
 userpasswd_LDADD = $(SN_WNCK_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
 
 consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_LDADD = $(GLIB_LIBS) $(EFENCE_LIBS)
 
 consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userdialogs.h \
-	userhelper-wrap.c userhelper-wrap.h reaper.c reaper.h marshal.c \
-	marshal.h
+	userhelper-wrap.c userhelper-wrap.h
 consolehelper_gtk_LDADD = $(SN_WNCK_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
 
 pam_panel_icon_SOURCES = pam-panel-icon.c gsmclient.c gsmclient.h props.c \
@@ -132,7 +131,3 @@ archive:
 		./configure --sysconfdir=/etc --prefix=/usr; make dist
 	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.bz2 .
 	rm -fr /tmp/$(PACKAGE)-export-tmp
-
-marshal.c marshal.h: marshal.list
-	glib-genmarshal --prefix=_vte_marshal --body $^ > marshal.c
-	glib-genmarshal --prefix=_vte_marshal --header $^ > marshal.h

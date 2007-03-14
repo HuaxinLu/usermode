@@ -44,7 +44,7 @@
 #include <glade/glade-xml.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include "userdialogs.h"
+#include "userhelper.h"
 #include "userhelper-wrap.h"
 
 #define USERINFO_XML_NAME "userinfo-xml"
@@ -310,12 +310,6 @@ set_new_userinfo(struct UserInfo *userinfo)
 	argv[i++] = NULL;
 
 	userhelper_runv(TRUE, UH_PATH, argv);
-}
-
-void
-userhelper_fatal_error(int ignored)
-{
-	userhelper_main_quit();
 }
 
 static int
