@@ -1,2 +1,10 @@
+1.90
+* Support LABEL= and UUID= in usermount and userformat.
+* Fix an use of PAM data after free.
+* Add a dialog caption when changing user password.
+* Use less memory in pam-panel-icon until the icon is actually displayed.
+* Don't use deprecated GTK+ widgets.
+* Other minor bug fixes, clean-ups and optimizations.
+
 1.89
 * Preserve the exit status of processes executed by consolehelper.

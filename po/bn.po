@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-11 03:33+0100\n"
+"POT-Creation-Date: 2007-03-14 06:19+0100\n"
 "PO-Revision-Date: 2006-01-23 14:46+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bangla <redhat-translation@bengalinux.org>\n"
@@ -117,12 +117,12 @@ msgstr "লগ-ইন: "
 msgid "Password: "
 msgstr "পাসওয়ার্ড: "
 
-#: ../../po/../pam-panel-icon.c:89
+#: ../../po/../pam-panel-icon.c:88
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "অ্যাডমিনিস্ট্রেটরের অধিকার মুছে ফেলা যায়নি: %s"
 
-#: ../../po/../pam-panel-icon.c:98
+#: ../../po/../pam-panel-icon.c:97
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -131,7 +131,7 @@ msgstr ""
 "অ্যাডমিনিস্ট্রেটরের অধিকার মুছে ফেলা যায়নি: pam_timestamp_check'র ফলাফল হিসাবে "
 "ব্যর্থতার কোড %d উত্‍‌পন্ন হয়েছে"
 
-#: ../../po/../pam-panel-icon.c:142
+#: ../../po/../pam-panel-icon.c:141
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -141,71 +141,70 @@ msgstr ""
 "ব্যবহারকারীদের প্রভাবিত করবে) আপনি বর্তমানে কনফিগার করতে অনুমতিপ্রাপ্ত। আপনি এই "
 "অধিকার পরিত্যাগ করতে পারেন।"
 
-#: ../../po/../pam-panel-icon.c:147 ../../po/../pam-panel-icon.c:173
+#: ../../po/../pam-panel-icon.c:146 ../../po/../pam-panel-icon.c:172
 msgid "Keep Authorization"
 msgstr "অধিকার অপরিবর্তিত থাকবে"
 
-#: ../../po/../pam-panel-icon.c:150 ../../po/../pam-panel-icon.c:180
+#: ../../po/../pam-panel-icon.c:149 ../../po/../pam-panel-icon.c:179
 msgid "Forget Authorization"
 msgstr "অধিকার পরিত্যাগ করা হবে"
 
-#: ../../po/../pam-panel-icon.c:278
+#: ../../po/../pam-panel-icon.c:277
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check -র জন্য setuid root হিসাবে নির্ধারিত নয়"
 
-#: ../../po/../pam-panel-icon.c:282
+#: ../../po/../pam-panel-icon.c:281
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check থেকে tty নিয়ন্ত্রণ করা সম্ভব নয়"
 
-#: ../../po/../pam-panel-icon.c:286
+#: ../../po/../pam-panel-icon.c:285
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check-এ ব্যবহারকারী পরিচিত নন"
 
-#: ../../po/../pam-panel-icon.c:290
+#: ../../po/../pam-panel-icon.c:289
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check'র অনুমতি সংক্রান্ত সমস্যা ঘটেছে"
 
-#: ../../po/../pam-panel-icon.c:294
+#: ../../po/../pam-panel-icon.c:293
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check -তে অবৈধভাবে tty নিয়ন্ত্রণের চেষ্টা হয়েছে"
 
 # অস্পস্ট
-#: ../../po/../pam-panel-icon.c:312
+#: ../../po/../pam-panel-icon.c:311
 #, c-format
 msgid "Error: %s\n"
 msgstr "সমস্যা: %s\n"
 
-#: ../../po/../pam-panel-icon.c:377
+#: ../../po/../pam-panel-icon.c:376
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "\"%s\" কমান্ডটি চালাতে ব্যর্থ: %s\n"
 
-#: ../../po/../pam-panel-icon.c:389
+#: ../../po/../pam-panel-icon.c:388 ../../po/../userhelper-wrap.c:1023
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO চ্যানেল nonblocking নির্ধারণ করতে ব্যর্থ: %s\n"
 
-#: ../../po/../pam-panel-icon.c:470
+#: ../../po/../pam-panel-icon.c:464
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: সেশন পরিচালনব্যবস্থার সাথে সংযোগ করতে ব্যর্থ\n"
 
-#: ../../po/../userhelper.c:221 ../../po/../userhelper.c:295
+#: ../../po/../userhelper.c:201
 #, fuzzy, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "বিষয়বস্তু %s -এ exec করতে ব্যর্থ।\n"
 
-#: ../../po/../userhelper.c:239 ../../po/../userhelper.c:242
-#: ../../po/../userhelper.c:313 ../../po/../userhelper.c:316
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "বিষয়বস্তু %s -এ exec করতে ব্যর্থ।\n"
 
-#: ../../po/../userhelper.c:609
+#: ../../po/../userhelper.c:570
 #, c-format
 msgid "Password for %s"
 msgstr "%s-র পাসওয়ার্ড"
 
-#: ../../po/../userhelper.c:848
+#: ../../po/../userhelper.c:819
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -216,7 +215,7 @@ msgstr ""
 
 # বোঝা যাচ্ছে না ;-(
 # ........... প্রয়োজন আছে।
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:821
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -226,7 +225,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # আগেরটার মতই ;-(
-#: ../../po/../userhelper.c:854
+#: ../../po/../userhelper.c:825
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -236,7 +235,7 @@ msgstr ""
 
 # এভাবে লিখতে পারেন -" ........., কিন্তু প্রশাসনিক অধিকার পাওয়ার জন্য আপনাকে আরো তথ্য জানাতে হবে।"
 # ভাল কথা, Administrator শব্দটা যখন অনুবাদ করা হচ্ছে না তখন Administrative সম্ভবত অনুবাদ করার দরকার নাই।
-#: ../../po/../userhelper.c:856
+#: ../../po/../userhelper.c:827
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -244,12 +243,12 @@ msgstr ""
 "আপনি কমান্ড চালানোর চেষ্টা করছেন। এই ক্ষেত্রে প্রশাসনিক অধিকার থাকা আবশ্যক\n"
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: ../../po/../userhelper.c:875
+#: ../../po/../userhelper.c:846
 #, c-format
 msgid "Password for %s: "
 msgstr "%s'র পাসওয়ার্ড: "
 
-#: ../../po/../userhelper.c:2403
+#: ../../po/../userhelper.c:2367
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper'র ক্ষেত্রে setuid root হওয়া আবশ্যক\n"
@@ -258,22 +257,22 @@ msgstr "userhelper'র ক্ষেত্রে setuid root হওয়া আব�
 # Root বাংলায় লিখলে অনেকে নাও বুঝতে পারে।
 #  FIXME: print a warning here?
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2501
+#: ../../po/../userhelper.c:2465
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "গ্রাফিক্যাল উইন্ডো খোলা যায়নি এবং নিয়ন্ত্রণকারী টার্মিনাল পাওয়া যায়নি।\n"
 
 # ..........হতে যাচ্ছে
-#: ../../po/../userhelper-wrap.c:181
+#: ../../po/../userhelper-wrap.c:201
 msgid "Unknown exit code."
 msgstr "অজ্ঞাত প্রস্থান (Exit) কোড।"
 
-#: ../../po/../userhelper-wrap.c:183
+#: ../../po/../userhelper-wrap.c:203
 msgid "Information updated."
 msgstr "তথ্য পরিমার্জন করা হয়েছে।"
 
-#: ../../po/../userhelper-wrap.c:185
+#: ../../po/../userhelper-wrap.c:205
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -281,7 +280,7 @@ msgstr ""
 "আপনার লেখা পাসওয়ার্ড বৈধ নয়।\n"
 "অনুগ্রহ করে পুনরায় লিখুন।"
 
-#: ../../po/../userhelper-wrap.c:187
+#: ../../po/../userhelper-wrap.c:207
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -291,11 +290,11 @@ msgstr ""
 "সম্ভবত ভুলক্রমে কোলন অথবা বিরামচিহ্ন লেখার ফলে এই সমস্যা হয়েছে।\n"
 "অনুগ্রহ করে এই ধরনের চিহ্ন মুছে পুনরায় চেষ্টা করুন।"
 
-#: ../../po/../userhelper-wrap.c:189
+#: ../../po/../userhelper-wrap.c:209
 msgid "Password resetting error."
 msgstr "পাসওয়ার্ড পুনরায় নির্ধারণ করতে সমস্যা।"
 
-#: ../../po/../userhelper-wrap.c:191
+#: ../../po/../userhelper-wrap.c:211
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -304,19 +303,19 @@ msgstr ""
 "অনুগ্রহ করে কিছুক্ষণ পরে পুনরায় চেষ্টা করুন।"
 
 # লক (Lock)
-#: ../../po/../userhelper-wrap.c:193
+#: ../../po/../userhelper-wrap.c:213
 msgid "Unknown user."
 msgstr "অজানা ব্যবহারকারী।"
 
-#: ../../po/../userhelper-wrap.c:195
+#: ../../po/../userhelper-wrap.c:215
 msgid "Insufficient rights."
 msgstr "অপর্যাপ্ত অধিকার।"
 
-#: ../../po/../userhelper-wrap.c:197
+#: ../../po/../userhelper-wrap.c:217
 msgid "Invalid call to subprocess."
 msgstr "সাবপ্রসেস অবৈধ উপায়ে চালানোর চেষ্টা করা হয়েছে।"
 
-#: ../../po/../userhelper-wrap.c:199
+#: ../../po/../userhelper-wrap.c:219
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -327,64 +326,64 @@ msgstr ""
 "আপনার সিস্টেম অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
 
 # ২য় বাক্যটা.......
-#: ../../po/../userhelper-wrap.c:202
+#: ../../po/../userhelper-wrap.c:222
 msgid "Out of memory."
 msgstr "অপর্যাপ্ত মেমরি।"
 
 # মেমরী
-#: ../../po/../userhelper-wrap.c:204
+#: ../../po/../userhelper-wrap.c:224
 msgid "The exec() call failed."
 msgstr "exec() কার্যকর করার চেষ্টা ব্যর্থ হয়েছে।"
 
-#: ../../po/../userhelper-wrap.c:206
+#: ../../po/../userhelper-wrap.c:226
 msgid "Failed to find selected program."
 msgstr "নির্বাচিত প্রোগ্রাম পাওয়া যায়নি।"
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:229
 msgid "Request canceled."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:231
 msgid "Internal PAM error occured."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:233
 msgid "Unknown error."
 msgstr "অজানা সমস্যা।"
 
-#: ../../po/../userhelper-wrap.c:485 ../usermode.glade.h:8
+#: ../../po/../userhelper-wrap.c:504
 msgid "Query"
 msgstr "অনুসন্ধান"
 
 # অস্পস্ট
-#: ../../po/../userhelper-wrap.c:578 ../../po/../userhelper-wrap.c:763
+#: ../../po/../userhelper-wrap.c:593 ../../po/../userhelper-wrap.c:766
 msgid "Error"
 msgstr "সমস্যা"
 
-#: ../../po/../userhelper-wrap.c:590
+#: ../../po/../userhelper-wrap.c:605
 msgid "Information"
 msgstr "তথ্য"
 
-#: ../../po/../userhelper-wrap.c:755 ../usermode.glade.h:7
+#: ../../po/../userhelper-wrap.c:758
 msgid "Placeholder text."
 msgstr "অস্থায়ী টেক্সট।"
 
-#: ../../po/../userhelper-wrap.c:803
+#: ../../po/../userhelper-wrap.c:807
 #, fuzzy
 msgid "Changing password."
 msgstr "আপনার লগ-ইন অ্যাকাউন্টের পাসওয়ার্ড পরিবর্তন করুন"
 
-#: ../../po/../userhelper-wrap.c:805
+#: ../../po/../userhelper-wrap.c:809
 msgid "Changing personal information."
 msgstr "ব্যক্তিগত তথ্য পরিবর্তন প্রণালী।"
 
 # 'বদল' এর থিকে 'পরিবর্তন' অনেকে ভাল শোনায় না কি ?
-#: ../../po/../userhelper-wrap.c:808
+#: ../../po/../userhelper-wrap.c:812
 msgid "Changing login shell."
 msgstr "লগ-ইন শেল পরিবর্তন প্রণালী।"
 
 # msgstr "লগ-ইন শেল বদল করা হচ্ছে।"
-#: ../../po/../userhelper-wrap.c:812
+#: ../../po/../userhelper-wrap.c:816
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -394,7 +393,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # সেই আগের মত
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:818
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -404,7 +403,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # বাক্যটা ভুল হইছে
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:823
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -413,7 +412,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # বাক্যটা ভুল হইছে
-#: ../../po/../userhelper-wrap.c:821
+#: ../../po/../userhelper-wrap.c:825
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -421,51 +420,51 @@ msgstr ""
 "আপনি একটি কমান্ড চালানোর চেষ্টা করছেন। এই ক্ষেত্রে প্রশাসনিক অধিকার থাকা আবশ্যক\n"
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: ../../po/../userhelper-wrap.c:831
+#: ../../po/../userhelper-wrap.c:835
 msgid "_Run Unprivileged"
 msgstr "অধিকার বিনা চালানো হবে (_R)"
 
-#: ../../po/../userhelper-wrap.c:983
+#: ../../po/../userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "পাইপের সমস্যা।\n"
 
-#: ../../po/../userhelper-wrap.c:990
+#: ../../po/../userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() করা সম্ভব নয়।\n"
 
-#: ../../po/../userhelper-wrap.c:1069 ../../po/../userhelper-wrap.c:1073
+#: ../../po/../userhelper-wrap.c:1097 ../../po/../userhelper-wrap.c:1101
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-র সমস্যা।\n"
 
-#: ../../po/../userhelper-wrap.c:1085
+#: ../../po/../userhelper-wrap.c:1113
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "exec()-র সমস্যা, errno=%d\n"
 
-#: ../../po/../userinfo.c:378
+#: ../../po/../userinfo.c:373
 #, c-format
 msgid "Unexpected argument"
 msgstr ""
 
 # সমস্যা নম্বর =%d
-#: ../../po/../userinfo.c:405
+#: ../../po/../userinfo.c:398
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "আপনি আবার কে।  চলে যান।\n"
 
 # আপনি আবার কে ? ফুটেন মিয়া ;-)
-#: ../../po/../usermount.c:60
+#: ../../po/../usermount.c:61
 msgid "_Mount"
 msgstr "মাউন্ট করা হবে (_M)"
 
-#: ../../po/../usermount.c:61
+#: ../../po/../usermount.c:62
 msgid "Un_mount"
 msgstr "আনমাউন্ট করা হবে (_m)"
 
-#: ../../po/../usermount.c:318
+#: ../../po/../usermount.c:286
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -474,15 +473,15 @@ msgstr ""
 "যাবে।"
 
 # ফরম্যাটের ফলে ডিস্কে সংরক্ষিত সকল তথ্য মুছে যাবে। তখন খুব ভাল হবে।
-#: ../../po/../usermount.c:329
+#: ../../po/../usermount.c:297
 msgid "Perform a _low-level format."
 msgstr "নিম্ন স্তরের ফরম্যাট করা হবে (_l)"
 
-#: ../../po/../usermount.c:364
+#: ../../po/../usermount.c:335
 msgid "Select a _filesystem type to create:"
 msgstr "নির্মাণের উদ্দেশ্যে ফাইল-সিস্টেমের ধরন নির্বাচন করুন (_f):"
 
-#: ../../po/../usermount.c:540
+#: ../../po/../usermount.c:504
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -491,29 +490,29 @@ msgstr ""
 "আপনার অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
 
 #. Create the dialog.
-#: ../../po/../usermount.c:541 ../../po/../usermount.c:553
+#: ../../po/../usermount.c:505 ../../po/../usermount.c:517
 msgid "User Mount Tool"
 msgstr "মাউন্ট করার উদ্দেশ্যে ব্যবহারকারীর ব্যবহার্য সফ্টওয়্যারটুল"
 
 # মাউন্ট করার কাজে সাধারণ ব্যবহারকারীর ব্যবহার্য সফটওয়ার
 #. Create the other buttons.
-#: ../../po/../usermount.c:570
+#: ../../po/../usermount.c:535
 msgid "_Format"
 msgstr "ফরম্যাট (_F)"
 
-#: ../../po/../usermount.c:606
+#: ../../po/../usermount.c:571
 msgid "Device"
 msgstr "ডিভাইস"
 
-#: ../../po/../usermount.c:612
+#: ../../po/../usermount.c:577
 msgid "Directory"
 msgstr "ডিরেক্টরি"
 
-#: ../../po/../usermount.c:618
+#: ../../po/../usermount.c:583
 msgid "Filesystem"
 msgstr "ফাইল-সিস্টেম"
 
-#: ../../po/../usermount.c:665
+#: ../../po/../usermount.c:630
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr ""
@@ -532,20 +531,15 @@ msgstr "বাড়ির ফোন নম্বর:"
 msgid "Login Shell:"
 msgstr "লগ-ইন শেল:"
 
-# msgstr "বাতিল (_ব)"
 #: ../usermode.glade.h:4
-msgid "Message"
-msgstr "বার্তা"
-
-#: ../usermode.glade.h:5
 msgid "Office Phone Number:"
 msgstr "কর্মস্থলের ফোন নম্বর:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.glade.h:5
 msgid "Office:"
 msgstr "কার্যালয়:"
 
-#: ../usermode.glade.h:9
+#: ../usermode.glade.h:6
 msgid "User Information"
 msgstr "ব্যবহারকারীর পরিচিতি"
 
@@ -577,6 +571,10 @@ msgstr "আপনার লগ-ইন অ্যাকাউন্টের প�
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "পাসওয়ার্ড"
+
+# msgstr "বাতিল (_ব)"
+#~ msgid "Message"
+#~ msgstr "বার্তা"
 
 # msgstr "সিস্টেম-জোড়া কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঞ্চ করো।"
 # msgstr "সিস্টেম-জোড়া কনফিগারেশন টুলগুলো পাসওয়ার্ড ছাড়া লঙ্চ করো।ষ" <-- বানান

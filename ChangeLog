@@ -1,5 +1,11 @@
 2007-03-14  Miloslav Trmac  <mitr@redhat.com>
 
+	* configure.in: Release 1.90.
+	* NEWS: Update.
+
+	* Makefile.am (AM_CFLAGS): Remove redundant -DDATADIR.
+	* userhelper.c (converse_pipe): Remove a redundant if.
+
 	* Makefile.am (AM_CFLAGS, install-data-local, uninstall-local)
 	(userinfo_LDADD): Clean up.
 
@@ -41,7 +47,7 @@
 	(EXTRA_DIST): Remove marshal.list.
 	(userhelper_LDADD): Clean up.
 	(consolehelper_gtk_SOURCES, userinfo_SOURCES, userpasswd_SOURCES): Drop
-	reaper.c, reaper.h, marshal.c and masshal.h.
+	reaper.c, reaper.h, marshal.c and marshal.h.
 	(marshal.c, marshal.h): Remove.
 	* configure.in (GLIB_GENMARSHAL): Remove.
 	* consolehelper.c (userhelper_fatal_error)

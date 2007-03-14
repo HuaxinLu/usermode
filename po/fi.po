@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-11 03:33+0100\n"
+"POT-Creation-Date: 2007-03-14 06:19+0100\n"
 "PO-Revision-Date: 2007-03-13 01:47+0200\n"
 "Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: Finnish <Laatu@lokalisointi.org>\n"
@@ -94,12 +94,12 @@ msgstr "tunnus: "
 msgid "Password: "
 msgstr "Salasana: "
 
-#: ../../po/../pam-panel-icon.c:89
+#: ../../po/../pam-panel-icon.c:88
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Ylläpitäjän oikeuksista luopuminen epäonnistui: %s"
 
-#: ../../po/../pam-panel-icon.c:98
+#: ../../po/../pam-panel-icon.c:97
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -108,7 +108,7 @@ msgstr ""
 "Ylläpitäjän oikeuksista luopuminen epäonnistui: pam_timestamp_check palautti "
 "virhekoodin %d"
 
-#: ../../po/../pam-panel-icon.c:142
+#: ../../po/../pam-panel-icon.c:141
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -118,70 +118,69 @@ msgstr ""
 "käyttäjiä koskevia) asetuksia ilman ylläpitäjän salasanan antamista "
 "uudelleen. Voit luopua tästä valtuutuksesta."
 
-#: ../../po/../pam-panel-icon.c:147 ../../po/../pam-panel-icon.c:173
+#: ../../po/../pam-panel-icon.c:146 ../../po/../pam-panel-icon.c:172
 msgid "Keep Authorization"
 msgstr "Säilytä valtuutus"
 
-#: ../../po/../pam-panel-icon.c:150 ../../po/../pam-panel-icon.c:180
+#: ../../po/../pam-panel-icon.c:149 ../../po/../pam-panel-icon.c:179
 msgid "Forget Authorization"
 msgstr "Luovu valtuutuksesta"
 
-#: ../../po/../pam-panel-icon.c:278
+#: ../../po/../pam-panel-icon.c:277
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check ei toimi pääkäyttäjän oikeuksilla"
 
-#: ../../po/../pam-panel-icon.c:282
+#: ../../po/../pam-panel-icon.c:281
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "ei ohjaavaa tty:tä funktiolle pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:286
+#: ../../po/../pam-panel-icon.c:285
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check ei tunne käyttäjää"
 
-#: ../../po/../pam-panel-icon.c:290
+#: ../../po/../pam-panel-icon.c:289
 msgid "permissions error in pam_timestamp_check"
 msgstr "oikeusvirhe funktiossa pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:294
+#: ../../po/../pam-panel-icon.c:293
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "virheellinen ohjaava tty funktiossa pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:312
+#: ../../po/../pam-panel-icon.c:311
 #, c-format
 msgid "Error: %s\n"
 msgstr "Virhe: %s\n"
 
-#: ../../po/../pam-panel-icon.c:377
+#: ../../po/../pam-panel-icon.c:376
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Komennon ”%s” ajaminen epäonnistui: %s\n"
 
-#: ../../po/../pam-panel-icon.c:389
+#: ../../po/../pam-panel-icon.c:388 ../../po/../userhelper-wrap.c:1023
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO-kanavan asettaminen ei-pysäyttäväksi epäonnistui: %s\n"
 
-#: ../../po/../pam-panel-icon.c:470
+#: ../../po/../pam-panel-icon.c:464
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: yhdistäminen istunnonhallintaan epäonnistui\n"
 
-#: ../../po/../userhelper.c:221 ../../po/../userhelper.c:295
+#: ../../po/../userhelper.c:201
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "Oletuskontekstia ei voitu asettaa arvoon %s ohjelmalle %s.\n"
 
-#: ../../po/../userhelper.c:239 ../../po/../userhelper.c:242
-#: ../../po/../userhelper.c:313 ../../po/../userhelper.c:316
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Käynnistyskontekstia ei voitu asettaa arvoon %s.\n"
 
-#: ../../po/../userhelper.c:609
+#: ../../po/../userhelper.c:570
 #, c-format
 msgid "Password for %s"
 msgstr "Käyttäjän %s salasana"
 
-#: ../../po/../userhelper.c:848
+#: ../../po/../userhelper.c:819
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -190,7 +189,7 @@ msgstr ""
 "Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan\n"
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:821
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -199,7 +198,7 @@ msgstr ""
 "Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan\n"
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../../po/../userhelper.c:854
+#: ../../po/../userhelper.c:825
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -207,7 +206,7 @@ msgstr ""
 "Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan\n"
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../../po/../userhelper.c:856
+#: ../../po/../userhelper.c:827
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -215,33 +214,33 @@ msgstr ""
 "Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan\n"
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../../po/../userhelper.c:875
+#: ../../po/../userhelper.c:846
 #, c-format
 msgid "Password for %s: "
 msgstr "Käyttäjän %s salasana: "
 
-#: ../../po/../userhelper.c:2403
+#: ../../po/../userhelper.c:2367
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "Ohjelman userhelper on oltava ”setuid root”\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2501
+#: ../../po/../userhelper.c:2465
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Graafisen ikkunan avaaminen ei onnistunut, eikä ohjaavaa päätettä löydy.\n"
 
-#: ../../po/../userhelper-wrap.c:181
+#: ../../po/../userhelper-wrap.c:201
 msgid "Unknown exit code."
 msgstr "Tuntematon poistumiskoodi."
 
-#: ../../po/../userhelper-wrap.c:183
+#: ../../po/../userhelper-wrap.c:203
 msgid "Information updated."
 msgstr "Tiedot päivitetty."
 
-#: ../../po/../userhelper-wrap.c:185
+#: ../../po/../userhelper-wrap.c:205
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -249,7 +248,7 @@ msgstr ""
 "Annettu salasana on virheellinen.\n"
 "Yritä uudelleen."
 
-#: ../../po/../userhelper-wrap.c:187
+#: ../../po/../userhelper-wrap.c:207
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -259,11 +258,11 @@ msgstr ""
 "Tämä johtuu todennäköisesti jossakin kentässä olevista kaksoispisteistä\n"
 "tai pilkuista. Poista ne ja yritä uudelleen."
 
-#: ../../po/../userhelper-wrap.c:189
+#: ../../po/../userhelper-wrap.c:209
 msgid "Password resetting error."
 msgstr "Virhe salasanan tyhjennyksessä."
 
-#: ../../po/../userhelper-wrap.c:191
+#: ../../po/../userhelper-wrap.c:211
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -271,19 +270,19 @@ msgstr ""
 "Jotkut järjestelmätiedostot ovat lukittuina.\n"
 "Yritä uudelleen hetken kuluttua."
 
-#: ../../po/../userhelper-wrap.c:193
+#: ../../po/../userhelper-wrap.c:213
 msgid "Unknown user."
 msgstr "Tuntematon käyttäjä."
 
-#: ../../po/../userhelper-wrap.c:195
+#: ../../po/../userhelper-wrap.c:215
 msgid "Insufficient rights."
 msgstr "Riittämättömät oikeudet."
 
-#: ../../po/../userhelper-wrap.c:197
+#: ../../po/../userhelper-wrap.c:217
 msgid "Invalid call to subprocess."
 msgstr "Virheellinen kutsu aliprosessiin."
 
-#: ../../po/../userhelper-wrap.c:199
+#: ../../po/../userhelper-wrap.c:219
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -293,59 +292,59 @@ msgstr ""
 "Kuoren vaihtamiseen ei ole oikeuksia.\n"
 "Kysy neuvoa järjestelmänvalvojalta."
 
-#: ../../po/../userhelper-wrap.c:202
+#: ../../po/../userhelper-wrap.c:222
 msgid "Out of memory."
 msgstr "Muisti lopussa."
 
-#: ../../po/../userhelper-wrap.c:204
+#: ../../po/../userhelper-wrap.c:224
 msgid "The exec() call failed."
 msgstr "exec()-kutsu epäonnistui."
 
-#: ../../po/../userhelper-wrap.c:206
+#: ../../po/../userhelper-wrap.c:226
 msgid "Failed to find selected program."
 msgstr "Valittua ohjelmaa ei löytynyt."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:229
 msgid "Request canceled."
 msgstr "Pyyntö peruutettu."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:231
 msgid "Internal PAM error occured."
 msgstr "Tapahtui sisäinen PAM-virhe."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:233
 msgid "Unknown error."
 msgstr "Tuntematon virhe."
 
-#: ../../po/../userhelper-wrap.c:485 ../usermode.glade.h:8
+#: ../../po/../userhelper-wrap.c:504
 msgid "Query"
 msgstr "Kysely"
 
-#: ../../po/../userhelper-wrap.c:578 ../../po/../userhelper-wrap.c:763
+#: ../../po/../userhelper-wrap.c:593 ../../po/../userhelper-wrap.c:766
 msgid "Error"
 msgstr "Virhe"
 
-#: ../../po/../userhelper-wrap.c:590
+#: ../../po/../userhelper-wrap.c:605
 msgid "Information"
 msgstr "Tiedot"
 
-#: ../../po/../userhelper-wrap.c:755 ../usermode.glade.h:7
+#: ../../po/../userhelper-wrap.c:758
 msgid "Placeholder text."
 msgstr "Paikanpitäjäteksti."
 
-#: ../../po/../userhelper-wrap.c:803
+#: ../../po/../userhelper-wrap.c:807
 msgid "Changing password."
 msgstr "Vaihdetaan salasanaa."
 
-#: ../../po/../userhelper-wrap.c:805
+#: ../../po/../userhelper-wrap.c:809
 msgid "Changing personal information."
 msgstr "Muutetaan henkilötietoja."
 
-#: ../../po/../userhelper-wrap.c:808
+#: ../../po/../userhelper-wrap.c:812
 msgid "Changing login shell."
 msgstr "Vaihdetaan kirjautumiskuorta."
 
-#: ../../po/../userhelper-wrap.c:812
+#: ../../po/../userhelper-wrap.c:816
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -354,7 +353,7 @@ msgstr ""
 "Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan\n"
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:818
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -363,7 +362,7 @@ msgstr ""
 "Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan\n"
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:823
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -371,7 +370,7 @@ msgstr ""
 "Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan\n"
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../../po/../userhelper-wrap.c:821
+#: ../../po/../userhelper-wrap.c:825
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -379,63 +378,63 @@ msgstr ""
 "Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan\n"
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../../po/../userhelper-wrap.c:831
+#: ../../po/../userhelper-wrap.c:835
 msgid "_Run Unprivileged"
 msgstr "_Aja normaalioikeuksilla"
 
-#: ../../po/../userhelper-wrap.c:983
+#: ../../po/../userhelper-wrap.c:990
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Putkivirhe.\n"
 
-#: ../../po/../userhelper-wrap.c:990
+#: ../../po/../userhelper-wrap.c:997
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() ei onnistu.\n"
 
-#: ../../po/../userhelper-wrap.c:1069 ../../po/../userhelper-wrap.c:1073
+#: ../../po/../userhelper-wrap.c:1097 ../../po/../userhelper-wrap.c:1101
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-virhe.\n"
 
-#: ../../po/../userhelper-wrap.c:1085
+#: ../../po/../userhelper-wrap.c:1113
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-virhe, errno=%d\n"
 
-#: ../../po/../userinfo.c:378
+#: ../../po/../userinfo.c:373
 #, c-format
 msgid "Unexpected argument"
 msgstr "Odottamaton argumentti."
 
-#: ../../po/../userinfo.c:405
+#: ../../po/../userinfo.c:398
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Et ole olemassa. Mene pois.\n"
 
-#: ../../po/../usermount.c:60
+#: ../../po/../usermount.c:61
 msgid "_Mount"
 msgstr "_Liitä"
 
-#: ../../po/../usermount.c:61
+#: ../../po/../usermount.c:62
 msgid "Un_mount"
 msgstr "_Irrota"
 
-#: ../../po/../usermount.c:318
+#: ../../po/../usermount.c:286
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr "Haluatko varmasti alustaa tämän levyn? Kaikki sen sisältö tuhoutuu."
 
-#: ../../po/../usermount.c:329
+#: ../../po/../usermount.c:297
 msgid "Perform a _low-level format."
 msgstr "Suorita _matalan tason alustus."
 
-#: ../../po/../usermount.c:364
+#: ../../po/../usermount.c:335
 msgid "Select a _filesystem type to create:"
 msgstr "Valitse luotava _tiedostojärjestelmätyyppi:"
 
-#: ../../po/../usermount.c:540
+#: ../../po/../usermount.c:504
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -444,28 +443,28 @@ msgstr ""
 "oikeuksia. Kysy neuvoa järjestelmänvalvojalta."
 
 #. Create the dialog.
-#: ../../po/../usermount.c:541 ../../po/../usermount.c:553
+#: ../../po/../usermount.c:505 ../../po/../usermount.c:517
 msgid "User Mount Tool"
 msgstr "Käyttäjän liitostyökalu"
 
 #. Create the other buttons.
-#: ../../po/../usermount.c:570
+#: ../../po/../usermount.c:535
 msgid "_Format"
 msgstr "_Alusta"
 
-#: ../../po/../usermount.c:606
+#: ../../po/../usermount.c:571
 msgid "Device"
 msgstr "Laite"
 
-#: ../../po/../usermount.c:612
+#: ../../po/../usermount.c:577
 msgid "Directory"
 msgstr "Hakemisto"
 
-#: ../../po/../usermount.c:618
+#: ../../po/../usermount.c:583
 msgid "Filesystem"
 msgstr "Tiedostojärjestelmä"
 
-#: ../../po/../usermount.c:665
+#: ../../po/../usermount.c:630
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Laitetta '%s' ei voi alustaa."
@@ -483,18 +482,14 @@ msgid "Login Shell:"
 msgstr "Kirjautumiskuori:"
 
 #: ../usermode.glade.h:4
-msgid "Message"
-msgstr "Viesti"
-
-#: ../usermode.glade.h:5
 msgid "Office Phone Number:"
 msgstr "Toimiston puhelin:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.glade.h:5
 msgid "Office:"
 msgstr "Toimisto:"
 
-#: ../usermode.glade.h:9
+#: ../usermode.glade.h:6
 msgid "User Information"
 msgstr "Käyttäjän tiedot"
 
@@ -521,6 +516,9 @@ msgstr "Vaihda salasanasi"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Salasana"
+
+#~ msgid "Message"
+#~ msgstr "Viesti"
 
 #~ msgid "Help"
 #~ msgstr "Ohje"
