@@ -58,7 +58,6 @@ struct UserInfo {
 
 static void set_new_userinfo(struct UserInfo *userinfo);
 static gint on_ok_clicked(GtkWidget *widget, gpointer data);
-extern char **environ;
 
 static void
 shell_changed(GtkWidget *widget, gpointer data)
@@ -96,7 +95,9 @@ create_userinfo_window(struct UserInfo *userinfo)
 		window = glade_xml_get_widget(xml, "userinfo");
 		g_assert(window != NULL);
 
-		gtk_window_set_icon_from_file(GTK_WINDOW(window), "/usr/share/pixmaps/user_icon.png", NULL);
+		gtk_window_set_icon_from_file(GTK_WINDOW(window),
+					      DATADIR "/pixmaps/user_icon.png",
+					      NULL);
 
 		g_object_set_data(G_OBJECT(window),
 				  USERINFO_XML_NAME, xml);
@@ -284,17 +285,17 @@ set_new_userinfo(struct UserInfo *userinfo)
 
 	if (fullname) {
 		argv[i++] = UH_FULLNAME_OPT;
-		argv[i++] = (char *)(fullname ?: "");
+		argv[i++] = (char *)fullname;
 	}
 
 	if (office) {
 		argv[i++] = UH_OFFICE_OPT;
-		argv[i++] = (char *)(office ?: "");
+		argv[i++] = (char *)office;
 	}
 
 	if (officephone) {
 		argv[i++] = UH_OFFICEPHONE_OPT;
-		argv[i++] = (char *)(officephone ?: "");
+		argv[i++] = (char *)officephone;
 	}
 
 	if (homephone) {
@@ -388,11 +389,9 @@ main(int argc, char *argv[])
 	struct UserInfo *userinfo;
 	GtkWidget *window;
 
-	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bindtextdomain(PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
-
-	gtk_set_locale();
 
 	userinfo = parse_userinfo();
 	if (userinfo == NULL) {

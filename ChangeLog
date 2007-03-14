@@ -1,5 +1,13 @@
 2007-03-14  Miloslav Trmac  <mitr@redhat.com>
 
+	* Makefile.am (AM_CFLAGS, install-data-local, uninstall-local)
+	(userinfo_LDADD): Clean up.
+
+	* userinfo.c (environ): Remove unnecessary declaration.
+	(create_userinfo_window): Use DATADIR.
+	(set_new_userinfo): Remove duplicate conditionals.
+	(main): Use LOCALEDIR.  Remove unnecessary gtk_set_locale ().
+
 	* userhelper.c (converse_pipe): Handle startup notification data after
 	UH_FALLBACK.
 

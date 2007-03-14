@@ -24,7 +24,7 @@ EXTRA_DIST = 	\
 
 SUBDIRS=po
 
-AM_CFLAGS = @SN_WNCK_CFLAGS@ @LIBGLADE_CFLAGS@ @LIBUSER_CFLAGS@ @CFLAGS@ -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
+AM_CFLAGS = $(SN_WNCK_CFLAGS) $(LIBGLADE_CFLAGS) $(LIBUSER_CFLAGS) -DDATADIR=\"$(datadir)\" -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk pam-panel-icon
 bin_SCRIPTS = shutdown
@@ -36,30 +36,30 @@ pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png password.png disks.png keyring.png badge-small.png
 
 install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
-	mkdir -p $(DESTDIR)/$(datadir)/applications
+	mkdir -p $(DESTDIR)$(datadir)/applications
 	desktop-file-install --vendor=$(VENDOR) \
 		--add-category Settings \
 		--add-category AdvancedSettings \
 		--add-category Application \
-		--dir=$(DESTDIR)/$(datadir)/applications \
+		--dir=$(DESTDIR)$(datadir)/applications \
 		$(top_builddir)/userinfo.desktop
 	desktop-file-install --vendor=$(VENDOR) \
 		--add-category X-Red-Hat-Base \
 		--add-category System \
 		--add-category Application \
-		--dir=$(DESTDIR)/$(datadir)/applications \
+		--dir=$(DESTDIR)$(datadir)/applications \
 		$(top_builddir)/usermount.desktop
 	desktop-file-install --vendor=$(VENDOR) \
 		--add-category X-Red-Hat-Base \
 		--add-category Settings \
 		--add-category Application \
-		--dir=$(DESTDIR)/$(datadir)/applications \
+		--dir=$(DESTDIR)$(datadir)/applications \
 		$(top_builddir)/userpasswd.desktop
 
-uninstall-local: 
-	-rm -f $(DESTDIR)/$(datadir)/applications/$(VENDOR)-userinfo.desktop   \
-	       $(DESTDIR)/$(datadir)/applications/$(VENDOR)-usermount.desktop  \
-	       $(DESTDIR)/$(datadir)/applications/$(VENDOR)-userpasswd.desktop 
+uninstall-local:
+	-rm -f $(DESTDIR)$(datadir)/applications/$(VENDOR)-userinfo.desktop   \
+	       $(DESTDIR)$(datadir)/applications/$(VENDOR)-usermount.desktop  \
+	       $(DESTDIR)$(datadir)/applications/$(VENDOR)-userpasswd.desktop 
 
 consoleappdir = $(sysconfdir)/security/console.apps
 WRAPPED_APPS = halt poweroff reboot
@@ -94,7 +94,7 @@ userhelper_LDADD = $(LIBUSER_LIBS) $(GLIB_LIBS) $(PAM_LIBS) $(SELINUX_LIBS) $(EF
 
 userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c \
 	userhelper-wrap.h
-userinfo_LDADD = @SN_WNCK_LIBS@ @LIBGLADE_LIBS@ @LIBS@ @EFENCE_LIBS@
+userinfo_LDADD = $(SN_WNCK_LIBS) $(LIBGLADE_LIBS) $(EFENCE_LIBS)
 
 usermount_SOURCES = usermount.c userdialogs.c userdialogs.h
 usermount_LDADD = $(GTK_LIBS) -lblkid $(EFENCE_LIBS)
