@@ -17,12 +17,9 @@
  */
 
 #include "config.h"
-#include <sys/resource.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <assert.h>
-#include <ctype.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <grp.h>
@@ -30,6 +27,7 @@
 #include <locale.h>
 #include <pwd.h>
 #include <unistd.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -127,7 +125,6 @@ get_init_context(const char *context_file, security_context_t *context)
 {
 	FILE *fp;
 	char buf[LINE_MAX], *bufp;
-	int buf_len;
 
 	fp = fopen(context_file, "r");
 	if (fp == NULL) {
@@ -135,15 +132,17 @@ get_init_context(const char *context_file, security_context_t *context)
 	}
 
 	while ((fgets(buf, sizeof(buf), fp)) != NULL) {
+		size_t buf_len;
+
 		buf_len = strlen(buf);
 
 		/* trim off terminating newline */
-		if ((buf_len > 0) && (buf[buf_len - 1] == '\n')) {
-			buf[buf_len - 1] = '\0';
+		if (buf_len > 0 && buf[buf_len - 1] == '\n') {
+			buf_len--;
+			buf[buf_len] = '\0';
 		}
 
 		/* trim off terminating whitespace */
-		buf_len = strlen(buf);
 		while ((buf_len > 0) && (g_ascii_isspace(buf[buf_len - 1]))) {
 			buf[buf_len - 1] = '\0';
 			buf_len--;
@@ -171,6 +170,61 @@ out:
 	errno = EBADF;
 	return -1;
 }
+
+/*
+ * setup_selinux_exec()
+ *
+ * Set the new context to be transitioned to after the next exec(), or exit.
+ *
+ * in:		The context to transition from, a path name
+ * out:		nothing
+ * return:	0 on success, -1 on failure.
+ */
+static int
+setup_selinux_exec(security_context_t from_context, const char *filename)
+{
+	security_context_t con = NULL; /* our target security context */
+	security_context_t fcon = NULL;
+	int status;
+
+	if (getfilecon(filename, &fcon) < 0) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: unable to get context for %s\n", filename);
+#endif
+		goto err;
+	}
+
+	status = security_compute_create(from_context, fcon, SECCLASS_PROCESS,
+					 &con);
+	if (status != 0) {
+		syslog(LOG_NOTICE,
+		       _("Could not set default context for %s for program %s.\n"),
+		       from_context, fcon);
+		freecon(fcon);
+		goto err;
+	}
+	freecon(fcon);
+#ifdef DEBUG_USERHELPER
+	g_print("userhelper: exec \"%s\" with context %s\n", filename, con);
+#endif
+	syslog(LOG_NOTICE, "running '%s' with context %s\n", filename, con);
+	if (setexeccon(con) < 0) {
+		syslog(LOG_NOTICE, _("Could not set exec context to %s.\n"),
+		       con);
+		fprintf(stderr, _("Could not set exec context to %s.\n"), con);
+		freecon(con);
+		goto err;
+	}
+	freecon(con);
+	return 0;
+
+err:
+	if (security_getenforce() > 0)
+		exit(ERR_UNK_ERROR);
+	return -1;
+}
+#endif /* WITH_SELINUX */
+
 /*
  * setup_selinux_root_exec()
  *
@@ -181,21 +235,22 @@ out:
  * return:	0 on success, -1 on failure.
  */
 static int
-setup_selinux_root_exec(char *filename)
+setup_selinux_root_exec(const char *filename)
 {
-	security_context_t con = NULL; /* our target security context */
-	security_context_t def_context=NULL;
-	security_context_t fcon = NULL;
+#if WITH_SELINUX
+	security_context_t def_context = NULL;
 	char context_file[PATH_MAX];
-	int status=0;
-	if (! selinux_enabled) 
+	int ret;
+
+	if (!selinux_enabled)
 		return 0;
 
 	/* Assume userhelper's default context, if the context file
 	 * contains one.  Just in case policy changes, we read the
 	 * default context from a file instead of hard-coding it. */
-	snprintf(context_file, PATH_MAX, "%s/%s",selinux_contexts_path(), "userhelper_context");
-	
+	snprintf(context_file, PATH_MAX, "%s/userhelper_context",
+		 selinux_contexts_path());
+
 	if (get_init_context(context_file, &def_context) != 0) {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: i have def context\n");
@@ -203,51 +258,13 @@ setup_selinux_root_exec(char *filename)
 		if (security_getenforce() > 0)
 			exit(ERR_UNK_ERROR);
 		return -1;
-	} 
-	if (getfilecon(filename, &fcon) < 0) {
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: unable to get context for %s\n", filename);
-#endif
-		freecon(def_context);
-		if (security_getenforce() > 0)
-			exit(ERR_UNK_ERROR);
-		return -1;
-	} 
-
-	status = security_compute_create(def_context, fcon, SECCLASS_PROCESS, &con);
-
-	if (status != 0) {
-		syslog(LOG_NOTICE,
-		       _("Could not set default context for %s for program %s.\n"),
-		       def_context, fcon);
-		freecon(fcon);
-		freecon(def_context);
-		if (security_getenforce() > 0)
-			exit(ERR_UNK_ERROR);
-		return -1;
 	}
-	freecon(fcon);
+	ret = setup_selinux_exec(def_context, filename);
 	freecon(def_context);
-#ifdef DEBUG_USERHELPER
-	g_print("userhelper: exec \"%s\" with %s context\n",
-		filename, con);
-#endif
-	syslog(LOG_NOTICE, "running '%s' with %s context\n",
-	       filename, con);
-	if (setexeccon(con) < 0) {
-		syslog(LOG_NOTICE,
-		       _("Could not set exec context to %s.\n"),
-		       con);
-		fprintf(stderr,
-			_("Could not set exec context to %s.\n"),
-			con);
-		freecon(con);
-		if (security_getenforce() > 0)
-			exit(ERR_UNK_ERROR);
-		return -1;
-	}
-	freecon(con);
+	return ret;
+#else
 	return 0;
+#endif
 }
 
 /*
@@ -260,13 +277,13 @@ setup_selinux_root_exec(char *filename)
  * return:	0 on success, -1 on failure.
  */
 static int
-setup_selinux_user_exec(char *filename)
+setup_selinux_user_exec(const char *filename)
 {
-	security_context_t con = NULL; /* our target security context */
+#if WITH_SELINUX
 	security_context_t prev_context = NULL; /* our original securiy context */
-	security_context_t fcon = NULL;
-	int status=0;
-	if (! selinux_enabled) 
+	int ret;
+
+	if (!selinux_enabled)
 		return 0;
 
 	if (getprevcon(&prev_context) < 0) {
@@ -278,74 +295,34 @@ setup_selinux_user_exec(char *filename)
 		return -1;
 	}
 
-	if (getfilecon(filename, &fcon) < 0) {
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: unable to get context for %s\n", filename);
-#endif
-		freecon(prev_context);
-		if (security_getenforce() > 0)
-			exit(ERR_UNK_ERROR);
-		return -1;
-	} 
-
-	status = security_compute_create(prev_context, fcon, SECCLASS_PROCESS, &con);
-
-	if (status != 0) {
-		syslog(LOG_NOTICE,
-		       _("Could not set default context for %s for program %s.\n"),
-		       prev_context, fcon);
-		freecon(fcon);
-		freecon(prev_context);
-		if (security_getenforce() > 0)
-			exit(ERR_UNK_ERROR);
-		return -1;
-	}
-	freecon(fcon);
+	ret = setup_selinux_exec(prev_context, filename);
 	freecon(prev_context);
-#ifdef DEBUG_USERHELPER
-	g_print("userhelper: exec \"%s\" with %s context\n",
-		filename, con);
-#endif
-	syslog(LOG_NOTICE, "running '%s' with %s context\n",
-	       filename, con);
-	if (setexeccon(con) < 0) {
-		syslog(LOG_NOTICE,
-		       _("Could not set exec context to %s.\n"),
-		       con);
-		fprintf(stderr,
-			_("Could not set exec context to %s.\n"),
-			con);
-		freecon(con);
-		if (security_getenforce() > 0)
-			exit(ERR_UNK_ERROR);
-		return -1;
-	}
-	freecon(con);
+	return ret;
+#else
 	return 0;
+#endif
 }
-
-#endif /* WITH_SELINUX */
 
 /* Exit, returning the proper status code based on a PAM error code. */
 static int G_GNUC_NORETURN
 fail_exit(struct app_data *data, int pam_retval)
 {
+	int status;
+
 	/* This is a local error.  Bail. */
 	if (pam_retval == ERR_SHELL_INVALID) {
 		exit(ERR_SHELL_INVALID);
 	}
 
-	if (pam_retval != PAM_SUCCESS) {
-		/* Map the PAM error code to a local error code and return
-		 * it to the parent process.  Trust the canceled flag before
-		 * any PAM error codes. */
-		if (data->canceled) {
-#ifdef DEBUG_USERHELPER
-			g_print("userhelper: exiting with status %d.\n",
-				ERR_CANCELED);
-#endif
-			_exit(ERR_CANCELED);
-		}
+	if (pam_retval == PAM_SUCCESS)
+		/* Just exit. */
+		status = 0;
+	/* Map the PAM error code to a local error code and return it to the
+	   parent process.  Trust the canceled flag before any PAM error
+	   codes. */
+	else if (data->canceled)
+		status = ERR_CANCELED;
+	else {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: got PAM error %d.\n", pam_retval);
 #endif
@@ -355,62 +332,37 @@ fail_exit(struct app_data *data, int pam_retval)
 			case PAM_SERVICE_ERR:
 			case PAM_SYSTEM_ERR:
 			case PAM_BUF_ERR:
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: exiting with status %d.\n",
-					ERR_PAM_INT_ERROR);
-#endif
-				exit(ERR_PAM_INT_ERROR);
+				status = ERR_PAM_INT_ERROR;
 				break;
 			case PAM_AUTH_ERR:
 			case PAM_AUTHTOK_ERR:
 			case PAM_PERM_DENIED:
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: exiting with status %d.\n",
-					ERR_PASSWD_INVALID);
-#endif
-				exit(ERR_PASSWD_INVALID);
+				status = ERR_PASSWD_INVALID;
 				break;
 			case PAM_AUTHTOK_LOCK_BUSY:
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: exiting with status %d.\n",
-					ERR_LOCKS);
-#endif
-				exit(ERR_LOCKS);
+				status = ERR_LOCKS;
 				break;
 			case PAM_CRED_INSUFFICIENT:
 			case PAM_AUTHINFO_UNAVAIL:
 			case PAM_CRED_UNAVAIL:
 			case PAM_CRED_EXPIRED:
 			case PAM_AUTHTOK_EXPIRED:
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: exiting with status %d.\n",
-					ERR_NO_RIGHTS);
-#endif
-				exit(ERR_NO_RIGHTS);
+				status = ERR_NO_RIGHTS;
 				break;
 			case PAM_USER_UNKNOWN:
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: exiting with status %d.\n",
-					ERR_NO_USER);
-#endif
-				exit(ERR_NO_USER);
+				status = ERR_NO_USER;
 				break;
 			case PAM_ABORT:
 				/* fall through */
 			default:
-#ifdef DEBUG_USERHELPER
-				g_print("userhelper: exiting with status %d.\n",
-					ERR_UNK_ERROR);
-#endif
-				exit(ERR_UNK_ERROR);
+				status = ERR_UNK_ERROR;
 				break;
 		}
 	}
-	/* Just exit. */
 #ifdef DEBUG_USERHELPER
-	g_print("userhelper: exiting with status %d.\n", 0);
+	g_print("userhelper: exiting with status %d.\n", status);
 #endif
-	_exit(0);
+	exit(status);
 }
 
 /* Read a string from stdin, and return a freshly-allocated copy, without
@@ -419,27 +371,19 @@ fail_exit(struct app_data *data, int pam_retval)
 static char *
 read_reply(FILE *fp)
 {
-	char buffer[BUFSIZ], *check;
-	int slen = 0;
+	char buffer[BUFSIZ];
+	size_t slen;
 
-	memset(buffer, '\0', sizeof(buffer));
-
-	if (feof(fp)) {
+	if (feof(fp))
 		return NULL;
-	}
-	check = fgets(buffer, sizeof(buffer), fp);
-	if (check == NULL) {
+	if (fgets(buffer, sizeof(buffer), fp) == NULL)
 		return NULL;
-	}
 
 	slen = strlen(buffer);
-	if (slen > 0) {
-		while ((slen > 1) &&
-		       ((buffer[slen - 1] == '\n') ||
-			(buffer[slen - 1] == '\r'))) {
-			buffer[slen - 1] = '\0';
-			slen--;
-		}
+	while (slen > 1
+	       && (buffer[slen - 1] == '\n' || buffer[slen - 1] == '\r')) {
+		buffer[slen - 1] = '\0';
+		slen--;
 	}
 
 	return g_strdup(buffer);
@@ -455,9 +399,25 @@ silent_converse(int num_msg, const struct pam_message **msg,
 }
 
 static int
-get_pam_string_item(pam_handle_t *pamh, int item, const char **ret)
+get_pam_string_item(pam_handle_t *pamh, int item, const char **out)
 {
-	return pam_get_item(pamh, item, (const void**) ret);
+	const void *s;
+	int ret;
+
+	ret = pam_get_item(pamh, item, &s);
+	*out = s;
+	return ret;
+}
+
+/* Free the first COUNT entries of RESP, and RESP itself */
+static void
+free_reply(struct pam_response *resp, size_t count)
+{
+	size_t i;
+
+	for (i = 0; i < count; i++)
+		free(resp[i].resp);
+	free(resp);
 }
 
 /* A mixed-mode conversation function suitable for use with X. */
@@ -467,15 +427,14 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 {
 	int count, expected_responses, received_responses;
 	struct pam_response *reply;
-	char *noecho_message, *string;
+	char *string;
 	const char *user, *service;
 	struct app_data *data = appdata_ptr;
 
 	/* Pass on any hints we have to the consolehelper. */
 
-	/* Since PAM does not handle our cancel request well */
-	/* we have to do it ourself */
-	/* Don't bother user with messages if already canceled */
+	/* Since PAM does not handle our cancel request we'll we have to do it
+	   ourselves.  Don't bother user with messages if already canceled. */
 	if (data->canceled) {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper (cp): we were already canceled\n");
@@ -598,7 +557,9 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 					UH_ECHO_ON_PROMPT, msg[count]->msg);
 				expected_responses++;
 				break;
-			case PAM_PROMPT_ECHO_OFF:
+			case PAM_PROMPT_ECHO_OFF: {
+				char *noecho_message;
+
 				/* If the prompt is for the user's password,
 				 * indicate the user's name if we can.
 				 * Otherwise, just output the prompt as-is. */
@@ -620,6 +581,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 				g_free(noecho_message);
 				expected_responses++;
 				break;
+			}
 			case PAM_TEXT_INFO:
 				/* Text information strings are output
 				 * verbatim. */
@@ -669,27 +631,27 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 
 	/* Now, for the second pass, allocate space for the responses and read
 	 * the answers back. */
-	reply = g_malloc0((num_msg + 1) * sizeof(struct pam_response));
+	reply = calloc(num_msg, sizeof(*reply));
 	data->fallback_chosen = FALSE;
 
 	/* First, handle the items which don't require answers. */
-	count = 0;
-	while (count < num_msg) {
+	for (count = 0; count < num_msg; count++) {
 		switch (msg[count]->msg_style) {
 		case PAM_TEXT_INFO:
 		case PAM_ERROR_MSG:
 			/* Ignore it... */
+			/* reply[count].resp = NULL; set by the calloc ()
+			   above */
 			reply[count].resp_retcode = PAM_SUCCESS;
 			break;
 		default:
 			break;
 		}
-		count++;
 	}
 
 	/* Now read responses until we hit a sync point or an EOF. */
 	count = received_responses = 0;
-	do {
+	for (;;) {
 		string = read_reply(data->input);
 
 		/* If we got nothing, and we expected data, then we're done. */
@@ -700,7 +662,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 				received_responses, expected_responses);
 #endif
 			data->canceled = TRUE;
-			g_free(reply);
+			free_reply(reply, count);
 			return PAM_ABORT;
 		}
 
@@ -714,6 +676,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper (cp): received sync point\n");
 #endif
+			g_free(string);
 			if (received_responses != expected_responses) {
 				/* Whoa, not done yet! */
 #ifdef DEBUG_USERHELPER
@@ -721,26 +684,25 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 					"expected %d\n", received_responses,
 					expected_responses);
 #endif
-				g_free(reply);
+				free_reply(reply, count);
 				return PAM_CONV_ERR;
 			}
 			/* Okay, we're done. */
-			g_free(string);
 			break;
 		}
 
 #ifdef USE_STARTUP_NOTIFICATION
 		/* If we got a desktop startup ID, set it. */
 		if (string[0] == UH_SN_ID) {
+			const char *p;
+
 			if (data->sn_id) {
 				g_free(data->sn_id);
 			}
-			data->sn_id = string + 1;
-			while ((data->sn_id[0] != '\0') &&
-			       (g_ascii_isspace(data->sn_id[0]))) {
-				data->sn_id++;
-			}
-			data->sn_id = g_strdup(data->sn_id);
+			for (p = string + 1; *p != '\0' || g_ascii_isspace(*p);
+			     p++)
+				;
+			data->sn_id = g_strdup(p);
 			g_free(string);
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper (cp): startup id \"%s\"\n", data->sn_id);
@@ -753,7 +715,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		if (string[0] == UH_CANCEL) {
 			data->canceled = TRUE;
 			g_free(string);
-			g_free(reply);
+			free_reply(reply, count);
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper (cp): canceling with PAM_ABORT (%d)\n",
 				PAM_ABORT);
@@ -765,7 +727,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		if (string[0] == UH_FALLBACK) {
 			data->fallback_chosen = TRUE;
 			g_free(string);
-			g_free(reply);
+			free_reply(reply, count);
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper (cp): falling back\n");
 #endif
@@ -784,21 +746,25 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			g_print("userhelper (cp): got %d responses, expected < %d\n",
 				received_responses, num_msg);
 #endif
-			g_free(reply);
+			g_free(string);
+			free_reply(reply, count);
 			return PAM_CONV_ERR;
 		}
 
 		/* Save this response. */
-		reply[count].resp = string + 1;
-		reply[count].resp = g_strdup(reply[count].resp);
+		reply[count].resp = strdup(string + 1);
+		g_free(string);
+		if (reply[count].resp == NULL) {
+			free_reply(reply, count);
+			return PAM_BUF_ERR;
+		}
 		reply[count].resp_retcode = PAM_SUCCESS;
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper (cp): got `%s'\n", reply[count].resp);
 #endif
-		g_free(string);
 		count++;
 		received_responses++;
-	} while(TRUE);
+	}
 
 	/* Check that we got exactly the number of responses we were
 	 * expecting. */
@@ -808,14 +774,15 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		g_print("userhelper (cp): got %d responses, expected %d\n",
 			received_responses, expected_responses);
 #endif
-		g_free(reply);
+		free_reply(reply, count);
 		return PAM_CONV_ERR;
 	}
 
 	/* Return successfully. */
-	if (resp != NULL) {
+	if (resp != NULL)
 		*resp = reply;
-	}
+	else
+		free_reply(reply, count);
 	return PAM_SUCCESS;
 }
 
@@ -865,9 +832,9 @@ converse_console(int num_msg, const struct pam_message **msg,
 		banner++;
 	}
 
-	messages = g_malloc0(sizeof(struct pam_message) * (num_msg + 1));
+	messages = g_malloc(num_msg * sizeof(*messages));
 	for (i = 0; i < num_msg; i++) {
-		messages[i] = g_malloc(sizeof(struct pam_message));
+		messages[i] = g_malloc(sizeof(*(messages[i])));
 		*(messages[i]) = *(msg[i]);
 		if (msg[i]->msg != NULL) {
 			if ((strncasecmp(msg[i]->msg, "password", 8) == 0)) {
@@ -884,9 +851,7 @@ converse_console(int num_msg, const struct pam_message **msg,
 			resp, appdata_ptr);
 
 	for (i = 0; i < num_msg; i++) {
-		if (messages[i]->msg != NULL) {
-			g_free((char*)messages[i]->msg);
-		}
+		g_free((char*)messages[i]->msg);
 		g_free(messages[i]);
 	}
 	g_free(messages);
@@ -950,27 +915,26 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 	/* Now, for the second pass, allocate space for the responses and read
 	 * the answers back. */
 	i = 0;
-	do {
+	for (;;) {
 		string = read_reply(data->input);
 
 		if (string == NULL) {
 			/* EOF: the child isn't going to give us any more
 			 * information. */
 			data->canceled = TRUE;
-			return FALSE;
+			goto err_prompts;
 		}
 
 		/* If we finished, we're done. */
 		if (string[0] == UH_SYNC_POINT) {
+			g_free(string);
 			if (i < prompts_count) {
 				/* Not enough information. */
 #ifdef DEBUG_USERHELPER
 				g_print("userhelper: not enough responses\n");
 #endif
-				g_free(string);
-				return FALSE;
+				goto err_prompts;
 			}
-			g_free(string);
 			return TRUE;
 		}
 
@@ -981,7 +945,7 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 #endif
 			g_free(string);
 			data->canceled = TRUE;
-			return FALSE;
+			goto err_prompts;
 		}
 
 		/* If the user chose to fallback, do so. */
@@ -991,7 +955,7 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 #endif
 			g_free(string);
 			data->fallback_chosen = TRUE;
-			return FALSE;
+			goto err_prompts;
 		}
 
 		/* Save this response. */
@@ -1002,17 +966,24 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 #endif
 		g_free(string);
 		i++;
-	} while(1);
+	}
 
 	/* If we got an unexpected number of responses, bail. */
 	if (i != prompts_count) {
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: wrong number of responses\n");
 #endif
-		return FALSE;
+		goto err_prompts;
 	}
 
 	return TRUE;
+
+err_prompts:
+	while (i != 0) {
+		prompts[i].free_value(prompts[i].value);
+		i--;
+	}
+	return FALSE;
 }
 
 /* A sync point is expected on the input pipe.  Wait until it arrives. */
@@ -1082,11 +1053,11 @@ pipe_conv_exec_fail(const struct pam_conv *conv)
 	}
 }
 
-/* Parse the passed-in GECOS string and set the globals to its broken-down
- * contents.  Note that the string *is* modified here, and the parsing is
- * performed using the convention obeyed by BSDish finger(1) under Linux.  */
+/* Parse the passed-in GECOS string and set PARSED to its broken-down contents.
+   Note that the parsing is performed using the convention obeyed by BSDish
+   finger(1) under Linux. */
 static void
-gecos_parse(char *gecos, struct gecos_data *parsed)
+gecos_parse(const char *gecos, struct gecos_data *parsed)
 {
 	char **exploded, **dest;
 	int i;
@@ -1100,7 +1071,7 @@ gecos_parse(char *gecos, struct gecos_data *parsed)
 		return;
 	}
 
-	for (i = 0; (exploded != NULL) && (exploded[i] != NULL); i++) {
+	for (i = 0; exploded[i] != NULL; i++) {
 		dest = NULL;
 		switch (i) {
 			case 0:
@@ -1132,10 +1103,10 @@ gecos_parse(char *gecos, struct gecos_data *parsed)
 
 /* A simple function to compute the size of a gecos string containing the
  * data we have. */
-static int
+static size_t
 gecos_size(struct gecos_data *parsed)
 {
-	int len;
+	size_t len;
 
 	len = 4; /* commas! */
 	if (parsed->full_name != NULL) {
@@ -1163,7 +1134,8 @@ static char *
 gecos_assemble(struct gecos_data *parsed)
 {
 	char *ret;
-	int i;
+	size_t i;
+
 	/* Construct the basic version of the string. */
 	ret = g_strdup_printf("%s,%s,%s,%s,%s",
 			      parsed->full_name ?: "",
@@ -1180,6 +1152,17 @@ gecos_assemble(struct gecos_data *parsed)
 	return ret;
 }
 
+/* Free GECOS */
+static void
+gecos_free(struct gecos_data *gecos)
+{
+	g_free(gecos->full_name);
+	g_free(gecos->office);
+	g_free(gecos->office_phone);
+	g_free(gecos->home_phone);
+	g_free(gecos->site_info);
+}
+
 /* Check if the passed-in shell is a valid shell according to getusershell(),
  * which is usually back-ended by /etc/shells.  Treat NULL or the empty string
  * as "/bin/sh", as is traditional. */
@@ -1187,27 +1170,21 @@ static gboolean
 shell_valid(const char *shell_name)
 {
 	gboolean found;
-	char *shell;
 
 	found = FALSE;
 	if (shell_name != NULL) {
+		char *shell;
+
+		if (strlen(shell_name) == 0)
+			shell = "/bin/sh";
 		setusershell();
-		for (shell = getusershell();
-		     shell != NULL;
-		     shell = getusershell()) {
+		while ((shell = getusershell()) != NULL) {
 #ifdef DEBUG_USERHELPER
 			g_print("userhelper: got shell \"%s\"\n", shell);
 #endif
-			if ((shell_name != NULL) && (strlen(shell_name) > 0)) {
-				if (strcmp(shell_name, shell) == 0) {
-					found = TRUE;
-					break;
-				}
-			} else {
-				if (strcmp("/bin/sh", shell) == 0) {
-					found = TRUE;
-					break;
-				}
+			if (strcmp(shell_name, shell) == 0) {
+				found = TRUE;
+				break;
 			}
 		}
 		endusershell();
@@ -1297,9 +1274,7 @@ become_normal(const char *user)
 	}
 }
 
-/* Determine the name of the user who ran userhelper.  For SELinux, this is the
- * user from the previous context, but for everyone else, it's the user under
- * whose ruid we're running in. */
+/* Determine the name of the user who ran userhelper. */
 static char *
 get_invoking_user(void)
 {
@@ -1348,27 +1323,24 @@ get_user_for_auth(shvarFile *s)
 			ret = invoking_user;
 		} else
 		if (strcmp(configured_user, "<user>") == 0) {
-			free(configured_user);
+			g_free(configured_user);
 			ret = invoking_user;
 		} else if (configured_asusergroups != NULL) {
 			if (is_grouplist_member(invoking_user, configured_asusergroups)) {
-				free(configured_user);
+				g_free(configured_user);
 				ret = invoking_user;
-			} else {
+			} else
 				ret = configured_user;
-			}
-			free(configured_asusergroups);
 		} else if (strcmp(configured_user, "<none>") == 0) {
 			exit(ERR_NO_RIGHTS);
-		} else {
+		} else
 			ret = configured_user;
-		}
+		g_free(configured_asusergroups);
 	}
 
 	if (ret != NULL) {
-		if (invoking_user != ret) {
-			free(invoking_user);
-		}
+		if (invoking_user != ret)
+			g_free(invoking_user);
 #ifdef DEBUG_USERHELPER
 		g_print("userhelper: user for auth = '%s'\n", ret);
 #endif
@@ -1587,7 +1559,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	}
 	if (error != NULL) {
 #ifdef DEBUG_USERHELPER
-		g_print("userhelper: libuser startup error: %s\n",
+		g_print("userhelper: libuser doesn't know the user: %s\n",
 			lu_strerror(error));
 #endif
 		pam_end(data->pamh, PAM_ABORT);
@@ -1610,31 +1582,24 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 			parsed_gecos.home_phone,
 			parsed_gecos.site_info);
 #endif
+		g_free(old_gecos);
 	}
 
 	/* Override any new values we have. */
 	if (new_full_name != NULL) {
-		if (parsed_gecos.full_name != NULL) {
-			g_free(parsed_gecos.full_name);
-		}
+		g_free(parsed_gecos.full_name);
 		parsed_gecos.full_name = g_strdup(new_full_name);
 	}
 	if (new_office != NULL) {
-		if (parsed_gecos.office != NULL) {
-			g_free(parsed_gecos.office);
-		}
+		g_free(parsed_gecos.office);
 		parsed_gecos.office = g_strdup(new_office);
 	}
 	if (new_office_phone != NULL) {
-		if (parsed_gecos.office_phone != NULL) {
-			g_free(parsed_gecos.office_phone);
-		}
+		g_free(parsed_gecos.office_phone);
 		parsed_gecos.office_phone = g_strdup(new_office_phone);
 	}
 	if (new_home_phone != NULL) {
-		if (parsed_gecos.home_phone != NULL) {
-			g_free(parsed_gecos.home_phone);
-		}
+		g_free(parsed_gecos.home_phone);
 		parsed_gecos.home_phone = g_strdup(new_home_phone);
 	}
 #ifdef DEBUG_USERHELPER
@@ -1672,6 +1637,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	lu_ent_clear(ent, LU_GECOS);
 	g_value_set_string(&val, new_gecos);
 	lu_ent_add(ent, LU_GECOS, &val);
+	g_free(new_gecos);
 
 	/* While we're at it, set the individual data items as well. */
 	lu_ent_clear(ent, LU_COMMONNAME);
@@ -1689,6 +1655,8 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	lu_ent_clear(ent, LU_HOMEPHONE);
 	g_value_set_string(&val, parsed_gecos.home_phone);
 	lu_ent_add(ent, LU_HOMEPHONE, &val);
+
+	gecos_free(&parsed_gecos);
 
 	/* If we're here to change the user's shell, too, do that while we're
 	 * in here, assuming that chsh and chfn have identical PAM
@@ -1757,16 +1725,13 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 static char *
 construct_cmdline(const char *argv0, char **argv)
 {
-	int i;
 	char *ret, *tmp;
-	ret = g_strdup(argv0);
-	if ((argv != NULL) && (argv[0] != NULL)) {
-		for (i = 1; argv[i] != NULL; i++) {
-			tmp = g_strconcat(ret, " ", argv[i], NULL);
-			g_free(ret);
-			ret = tmp;
-		}
-	}
+
+	if (argv == NULL || argv[0] == NULL)
+		return NULL;
+	tmp = g_strjoinv(" ", argv + 1);
+	ret = g_strconcat(argv0, " ", tmp, NULL);
+	g_free(tmp);
 	return ret;
 }
 
@@ -1888,17 +1853,16 @@ wrap(const char *user, const char *program,
 	       1);
 
 	/* Set the LOGNAME and USER variables to the executing name. */
-	setenv("LOGNAME", g_strdup("root"), 1);
-	setenv("USER", g_strdup("root"), 1);
-	
+	setenv("LOGNAME", "root", 1);
+	setenv("USER", "root", 1);
+
 	/* Pass the original UID to the new program */
-	setenv("USERHELPER_UID", g_strdup_printf("%lu", (long)getuid()), 1);
+	setenv("USERHELPER_UID", g_strdup_printf("%jd", (intmax_t)getuid()), 1);
 
 	/* Open the console.apps configuration file for this wrapped program,
 	 * and read settings from it. */
-	apps_filename = g_strdup_printf(SYSCONFDIR
-					"/security/console.apps/%s",
-					program);
+	apps_filename = g_strconcat(SYSCONFDIR "/security/console.apps/",
+				    program, NULL);
 	s = svNewFile(apps_filename);
 
 	/* If the file is world-writable, or isn't a regular file, or couldn't
@@ -1913,6 +1877,7 @@ wrap(const char *user, const char *program,
 #endif
 		exit(ERR_UNK_ERROR);
 	}
+	g_free(apps_filename);
 
 	data = conv->appdata_ptr;
 	user_pam = get_user_for_auth(s);
@@ -1920,13 +1885,14 @@ wrap(const char *user, const char *program,
 	/* Read the path to the program to run. */
 	constructed_path = svGetValue(s, "PROGRAM");
 	if (!constructed_path || constructed_path[0] != '/') {
+		g_free(constructed_path);
 		/* Criminy....  The system administrator didn't give us an
 		 * absolute path to the program!  Guess either /usr/sbin or
 		 * /sbin, and then give up if we don't find anything by that
 		 * name in either of those directories.  FIXME: we're a setuid
 		 * app, so access() may not be correct here, as it may give
 		 * false negatives.  But then, it wasn't an absolute path. */
-		constructed_path = g_strdup_printf("/usr/sbin/%s", program);
+		constructed_path = g_strconcat("/usr/sbin/", program, NULL);
 		if (access(constructed_path, X_OK) != 0) {
 			/* Try the second directory. */
 			strcpy(constructed_path, "/sbin/");
@@ -1962,6 +1928,7 @@ wrap(const char *user, const char *program,
 				}
 			}
 		}
+		g_free(noxoption);
 	}
 
 	if (!gui) {
@@ -1986,19 +1953,18 @@ wrap(const char *user, const char *program,
 
 	/* If the user we're authenticating as has root's UID, then it's
 	 * safe to let them use HOME=~root. */
-	if (pwd->pw_uid == 0) {
-		setenv("HOME", g_strdup(pwd->pw_dir), 1);
-	} else {
+	if (pwd->pw_uid == 0)
+		setenv("HOME", pwd->pw_dir, 1);
+	else {
 		/* Otherwise, if they had a reasonable value for HOME, let them
 		 * use it. */
-		if (env_home != NULL) {
+		if (env_home != NULL)
 			setenv("HOME", env_home, 1);
-		} else {
+		else {
 			/* Otherwise, set HOME to the user's home directory. */
 			pwd = getpwuid(getuid());
-			if ((pwd != NULL) && (pwd->pw_dir != NULL)) {
-				setenv("HOME", g_strdup(pwd->pw_dir), 1);
-			}
+			if ((pwd != NULL) && (pwd->pw_dir != NULL))
+				setenv("HOME", pwd->pw_dir, 1);
 		}
 	}
 
@@ -2015,7 +1981,7 @@ wrap(const char *user, const char *program,
 	}
 	apps_domain = svGetValue(s, "DOMAIN");
 	if ((apps_domain != NULL) && (strlen(apps_domain) > 0)) {
-		bindtextdomain(apps_domain, DATADIR "/locale");
+		bindtextdomain(apps_domain, LOCALEDIR);
 		bind_textdomain_codeset(apps_domain, "UTF-8");
 		data->domain = apps_domain;
 	}
@@ -2023,7 +1989,7 @@ wrap(const char *user, const char *program,
 		apps_domain = svGetValue(s, "BANNER_DOMAIN");
 		if ((apps_domain != NULL) &&
 		    (strlen(apps_domain) > 0)) {
-			bindtextdomain(apps_domain, DATADIR "/locale");
+			bindtextdomain(apps_domain, LOCALEDIR);
 			bind_textdomain_codeset(apps_domain, "UTF-8");
 			data->domain = apps_domain;
 		}
@@ -2127,9 +2093,7 @@ wrap(const char *user, const char *program,
 				       data->sn_id, 1);
 			}
 #endif
-#ifdef WITH_SELINUX
 			setup_selinux_user_exec(constructed_path);
-#endif
 			execv(constructed_path, argv + optind - 1);
 			pipe_conv_exec_fail(conv);
 			exit(ERR_EXEC_FAILED);
@@ -2237,9 +2201,7 @@ wrap(const char *user, const char *program,
 				       data->sn_id, 1);
 			}
 #endif
-#ifdef WITH_SELINUX
 			setup_selinux_root_exec(constructed_path);
-#endif
 			cmdline = construct_cmdline(constructed_path,
 						    argv + optind - 1);
 #ifdef DEBUG_USERHELPER
@@ -2264,7 +2226,7 @@ wrap(const char *user, const char *program,
 		close(STDOUT_FILENO);
 		close(STDERR_FILENO);
 
-		wait4(child, &status, 0, NULL);
+		waitpid(child, &status, 0);
 
 		/* Close the session. */
 		retval = pam_close_session(data->pamh, 0);
@@ -2310,9 +2272,7 @@ wrap(const char *user, const char *program,
 			setenv("DESKTOP_STARTUP_ID", data->sn_id, 1);
 		}
 #endif
-#ifdef WITH_SELINUX
 		setup_selinux_root_exec(constructed_path);
-#endif
 		cmdline = construct_cmdline(constructed_path,
 					    argv + optind - 1);
 #ifdef DEBUG_USERHELPER
@@ -2390,7 +2350,7 @@ main(int argc, char **argv)
 	struct pam_conv *conv;
 
 	setlocale(LC_ALL, "");
-	bindtextdomain(PACKAGE, DATADIR "/locale");
+	bindtextdomain(PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 	openlog("userhelper", LOG_PID, LOG_AUTHPRIV);
@@ -2529,6 +2489,7 @@ main(int argc, char **argv)
 		if ((getuid() == 0) && (argc == optind + 1)) {
 			/* We were started by the superuser, so accept the
 			 * user's name. */
+			g_free(user_name);
 			user_name = g_strdup(argv[optind]);
 
 #ifdef WITH_SELINUX

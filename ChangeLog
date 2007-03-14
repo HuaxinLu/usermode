@@ -1,5 +1,34 @@
 2007-03-14  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper.c: Remove unnecessary #includes.
+	(get_init_context): Avoid duplicate strlen() call.
+	(setup_selinux_exec): Gather common code from
+	setup_selinux_root_exec () and setup_selinux_user_exec ().
+	(setup_selinux_root_exec, setup_selinux_user_exec): Transparently
+	handle !WITH_SELINUX to avoid #ifdefs in the callers.
+	(fail_exit): Avoid duplicated code.
+	(read_reply): Don't unnecessarily clean the buffer.  Simplify.
+	(get_pam_string_item): Fix an aliasing violation.
+	(free_reply): New function.
+	(converse_pipe): Don't use g_malloc0 () and g_strdup () for strings
+	that will be free ()'d.  Fix memory leaks.
+	(converse_console): Fix messages allocation.  Fix memory leaks.
+	(gecos_parse): Fix comment.  Simplify.
+	(gecos_size): Use size_t.
+	(gecos_assemble): Use size_t.
+	(gecos_free): New function.
+	(shell_valid): Simplify.
+	(get_invoking_user): Fix comment.
+	(get_user_for_auth): Don't use free () where g_free () should be used.
+	Fix a memory leak.
+	(chfn): Fix a debug message.  Fix memory leaks.
+	(construct_cmdline): Use g_strjoinv ().
+	(wrap): Don't allocate copies of data for setenv ().  Use intmax_t for
+	uid_t output.  Use g_strconcat () instead of g_strdup_printf (). Fix
+	some of the memory leaks.  Use LOCALEDIR.  Use waitpid () instead of
+	wait4 (), which is not specified by SUSv3.
+	(main): Use LOCALEDIR.  Fix a memory leak.
+
 	* usermount.c (build_mountinfo_list): Make dev a char *, it is passed
 	to free ().
 
