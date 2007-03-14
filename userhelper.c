@@ -703,9 +703,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		if (string[0] == UH_SN_ID) {
 			const char *p;
 
-			if (data->sn_id) {
-				g_free(data->sn_id);
-			}
+			g_free(data->sn_id);
 			for (p = string + 1; *p != '\0' || g_ascii_isspace(*p);
 			     p++)
 				;
