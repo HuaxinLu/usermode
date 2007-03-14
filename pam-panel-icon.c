@@ -55,7 +55,6 @@ static guint child_watch_source; /* = 0; */
 static void *tray_icon; /* = NULL; actually a GtkStatusIcon * */
 static void *drop_dialog; /* = NULL; actually a GtkWidget * */
 static GtkWidget *drop_menu = NULL;
-static GdkPixbuf *locked_pixbuf = NULL;
 
 static void launch_checker(void);
 
@@ -194,8 +193,14 @@ refresh_tray_icon(void)
 {
 	gboolean visible;
 
-	if (tray_icon == NULL) {
-		tray_icon = gtk_status_icon_new_from_pixbuf(locked_pixbuf);
+	if (current_status == STATUS_AUTHENTICATED
+	    && (getuid() != 0 || geteuid() != 0 || getgid() != 0
+		|| getegid() != 0))
+		visible = TRUE;
+	else
+		visible = FALSE;
+	if (visible && tray_icon == NULL) {
+		tray_icon = gtk_status_icon_new_from_file(DATADIR "/pixmaps/badge-small.png");
 
 		/* If the system tray goes away, our icon will get destroyed,
 		 * and we don't want to be left with a dangling pointer to it
@@ -207,13 +212,8 @@ refresh_tray_icon(void)
 		g_signal_connect(G_OBJECT(tray_icon), "popup-menu",
 				 G_CALLBACK(handle_popup), NULL);
 	}
-	if (current_status == STATUS_AUTHENTICATED
-	    && (getuid() != 0 || geteuid() != 0 || getgid() != 0
-		|| getegid() != 0))
-		visible = TRUE;
-	else
-		visible = FALSE;
-	gtk_status_icon_set_visible(GTK_STATUS_ICON(tray_icon), visible);
+	if (tray_icon != NULL)
+		gtk_status_icon_set_visible(GTK_STATUS_ICON(tray_icon), visible);
 }
 
  /* Interaction with pam_timestamp_check */
@@ -446,11 +446,6 @@ main(int argc, char **argv)
 		}
 		previous_id = argv[2];
 	}
-
-	/* Load the images. */
-	locked_pixbuf = gdk_pixbuf_new_from_file(DATADIR
-						 "/pixmaps/badge-small.png",
-						 NULL);
 
 	/* Start up locales */
         setlocale(LC_ALL, "");
