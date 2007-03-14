@@ -145,8 +145,8 @@ build_mountinfo_list(void)
 	while((fstab_entry = getmntent(fstab)) != NULL) {
 		struct stat dev_st;
 		struct mountinfo *tmp;
-		const char *dev, *mountpoint;
-		char *mkfs, *sbindir;
+		const char *mountpoint;
+		char *dev, *mkfs, *sbindir;
 		gboolean known_device, owner, usable;
 		int res;
 

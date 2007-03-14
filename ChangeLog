@@ -1,5 +1,8 @@
 2007-03-14  Miloslav Trmac  <mitr@redhat.com>
 
+	* usermount.c (build_mountinfo_list): Make dev a char *, it is passed
+	to free ().
+
 	* pam-panel-icon.c (main, refresh_tray_icon): Load the pixbuf when
 	initializing the status icon, not when starting the program.
 	(refresh_tray_icon): Only initialize the status icon when it needs to
