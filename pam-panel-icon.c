@@ -25,6 +25,7 @@
 #include <libintl.h>
 #include <locale.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <string.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
@@ -112,7 +113,7 @@ handle_drop_response(int response_id)
 static void
 drop_menu_response_cb(GtkMenuItem *item, gpointer data)
 {
-	handle_drop_response((int)data);
+	handle_drop_response((int)(intptr_t)data);
 }
 
 /* Respond to a button press in the drop dialog. */
