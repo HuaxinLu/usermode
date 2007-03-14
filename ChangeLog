@@ -1,5 +1,8 @@
 2007-03-14  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper.c (converse_pipe): Handle startup notification data after
+	UH_FALLBACK.
+
 	* userhelper-wrap.c (childout): Make local.
 	(childout_tag): Initialize to 0.
 	(struct message, struct response): Move from userhelper-wrap.h.

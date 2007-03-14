@@ -331,7 +331,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 #endif
 			write(childin[1], &byte, 1);
 			write(childin[1], "\n", 1);
-			startup = TRUE; /* FIXME: userhelper doesn't handle this */
+			startup = TRUE;
 			break;
 		case GTK_RESPONSE_CANCEL:
 			/* The user doesn't want to run this after all. */

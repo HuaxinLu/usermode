@@ -677,6 +677,13 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			g_print("userhelper (cp): received sync point\n");
 #endif
 			g_free(string);
+			if (data->fallback_chosen) {
+#ifdef DEBUG_USERHELPER
+				g_print("userhelper (cp): falling back\n");
+#endif
+				free_reply(reply, count);
+				return PAM_ABORT;
+			}
 			if (received_responses != expected_responses) {
 				/* Whoa, not done yet! */
 #ifdef DEBUG_USERHELPER
@@ -727,11 +734,10 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		if (string[0] == UH_FALLBACK) {
 			data->fallback_chosen = TRUE;
 			g_free(string);
-			free_reply(reply, count);
 #ifdef DEBUG_USERHELPER
-			g_print("userhelper (cp): falling back\n");
+			g_print("userhelper (cp): will fall back\n");
 #endif
-			return PAM_ABORT;
+			continue;
 		}
 
 		/* Find the first unanswered prompt. */
