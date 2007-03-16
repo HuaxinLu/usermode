@@ -66,21 +66,21 @@ static void
 handle_drop_response(int response_id)
 {
 	if (response_id == RESPONSE_DROP) {
+		static char *command[] = {
+			(char *)PAM_TIMESTAMP_CHECK_PATH, (char *)"-k",
+			(char *)"root", NULL
+		};
+
 		GError *err;
 		GtkWidget *dialog;
 		int exit_status;
-		char *argv[4];
-
-		argv[0] = (char *)PAM_TIMESTAMP_CHECK_PATH;
-		argv[1] = (char *)"-k";
-		argv[2] = (char *)"root";
-		argv[3] = NULL;
 
 		exit_status = 0;
 		err = NULL;
 		dialog = NULL;
-		if (!g_spawn_sync("/", argv, NULL, G_SPAWN_CHILD_INHERITS_STDIN,
-				  NULL, NULL, NULL, NULL, &exit_status, &err)) {
+		if (!g_spawn_sync("/", command, NULL,
+				  G_SPAWN_CHILD_INHERITS_STDIN, NULL, NULL,
+				  NULL, NULL, &exit_status, &err)) {
 			/* There was an error running the command. */
 			dialog = gtk_message_dialog_new(NULL,
 							GTK_DIALOG_DESTROY_WITH_PARENT,

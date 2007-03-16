@@ -1,5 +1,8 @@
 2007-03-17  Miloslav Trmac  <mitr@redhat.com>
 
+	* pam-panel-icon.c (handle_drop_response): Use a static variable for
+	the constant argv.
+
 	* configure.in: Add more warning flags.  Fix all "unused parameter"
 	warnings.  Add casts to silence all warnings caused by using char **
 	for argument lists.
@@ -7,6 +10,7 @@
 	* gsmclient.c (gsm_client_get_type): Add a missing initializer.
 	(replace_one_prop): Don't shadow link ().
 	* pam-panel-icon.c (child_io_func): Make "message" a const char *.
+
 	* userdialogs.c (crate_message_box, create_error_box): Use
 	const gchar * for input strings.
 	* userdialogs.h (create_message_box, create_error_box): Update
