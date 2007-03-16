@@ -107,16 +107,16 @@ main(int argc, char *argv[])
 	if (graphics_available) {
 		/* Set up args to tell userhelper to wrap the named program
 		 * using a consolehelper window to interact with the user. */
-		constructed_argv[0] = UH_PATH;
-		constructed_argv[1] = UH_WRAP_OPT;
+		constructed_argv[0] = (char *)UH_PATH;
+		constructed_argv[1] = (char *)UH_WRAP_OPT;
 		constructed_argv[2] = progname;
 		offset = 2;
 	} else {
 		/* Set up args to tell userhelper to wrap the named program
 		 * using a text-only interface. */
-		constructed_argv[0] = UH_PATH;
-		constructed_argv[1] = UH_TEXT_OPT;
-		constructed_argv[2] = UH_WRAP_OPT;
+		constructed_argv[0] = (char *)UH_PATH;
+		constructed_argv[1] = (char *)UH_TEXT_OPT;
+		constructed_argv[2] = (char *)UH_WRAP_OPT;
 		constructed_argv[3] = progname;
 		offset = 3;
 	}

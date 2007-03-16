@@ -395,6 +395,10 @@ static int
 silent_converse(int num_msg, const struct pam_message **msg,
 		struct pam_response **resp, void *appdata_ptr)
 {
+	(void)num_msg;
+	(void)msg;
+	(void)resp;
+	(void)appdata_ptr;
 	return PAM_CONV_ERR;
 }
 
@@ -926,6 +930,8 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 			/* EOF: the child isn't going to give us any more
 			 * information. */
 			data->canceled = TRUE;
+			lu_error_new(error, lu_error_generic,
+				     "Operation canceled by user");
 			goto err_prompts;
 		}
 
@@ -937,6 +943,9 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 #ifdef DEBUG_USERHELPER
 				g_print("userhelper: not enough responses\n");
 #endif
+				lu_error_new(error, lu_error_generic,
+					     "Not enough responses returned by "
+					     "parent");
 				goto err_prompts;
 			}
 			return TRUE;
@@ -949,6 +958,8 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 #endif
 			g_free(string);
 			data->canceled = TRUE;
+			lu_error_new(error, lu_error_generic,
+				     "Operation canceled by user");
 			goto err_prompts;
 		}
 
@@ -959,6 +970,9 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 #endif
 			g_free(string);
 			data->fallback_chosen = TRUE;
+			lu_error_new(error, lu_error_generic,
+				     "User has decided to use unprivileged "
+				     "mode");
 			goto err_prompts;
 		}
 
@@ -971,16 +985,6 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 		g_free(string);
 		i++;
 	}
-
-	/* If we got an unexpected number of responses, bail. */
-	if (i != prompts_count) {
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: wrong number of responses\n");
-#endif
-		goto err_prompts;
-	}
-
-	return TRUE;
 
 err_prompts:
 	while (i != 0) {
@@ -1180,7 +1184,7 @@ shell_valid(const char *shell_name)
 		char *shell;
 
 		if (strlen(shell_name) == 0)
-			shell = "/bin/sh";
+			shell_name = "/bin/sh";
 		setusershell();
 		while ((shell = getusershell()) != NULL) {
 #ifdef DEBUG_USERHELPER
@@ -1758,16 +1762,17 @@ wrap(const char *user, const char *program,
 	const char *apps_domain;
 	char *retry;
 	char **environ_save;
-	char *env_home, *env_term, *env_desktop_startup_id;
-	char *env_display, *env_shell;
-	char *env_lang, *env_language, *env_lcall, *env_lcmsgs;
-	char *env_xauthority;
+	const char *env_home, *env_term, *env_desktop_startup_id;
+	const char *env_display, *env_shell;
+	const char *env_lang, *env_language, *env_lcall, *env_lcmsgs;
+	const char *env_xauthority;
 	int session, tryagain, gui, retval;
 	struct stat sbuf;
 	struct passwd *pwd;
 	struct app_data *data;
 	shvarFile *s;
 
+	(void)prompt;
 	/* Find the basename of the command we're wrapping. */
 	if (strrchr(program, '/')) {
 		program = strrchr(program, '/') + 1;

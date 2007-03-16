@@ -1,3 +1,29 @@
+2007-03-17  Miloslav Trmac  <mitr@redhat.com>
+
+	* configure.in: Add more warning flags.  Fix all "unused parameter"
+	warnings.  Add casts to silence all warnings caused by using char **
+	for argument lists.
+	(gccwerror): Process only if using gcc.
+	* gsmclient.c (gsm_client_get_type): Add a missing initializer.
+	(replace_one_prop): Don't shadow link ().
+	* pam-panel-icon.c (child_io_func): Make "message" a const char *.
+	* userdialogs.c (crate_message_box, create_error_box): Use
+	const gchar * for input strings.
+	* userdialogs.h (create_message_box, create_error_box): Update
+	prototypes.
+	* userhelper-wrap.c (userhelper_parse_exitstatus).  Update codes.create
+	prototype.
+	(userhelper_runv, userhelper_run): Use const char * for "path".
+	* userhelper-wrap.h (userhelper_runv, userhelper_run): Update
+	prototypes.
+	* userhelper.c (prompt_pipe): Initialize "error" when returning FALSE.
+	Remove dead code after an infinite cycle.
+	(shell_valid): Fix a thinko, change the correct variable when handling
+	empty shell names.
+	(wrap): Use const char * for saved environment values.
+	* usermount.c (format): Rename variable "format" to "fdformat" to avoid
+	shadowing the function name.
+
 2007-03-14  Miloslav Trmac  <mitr@redhat.com>
 
 	* pam-panel-icon.c (drop_menu_response_cb): Workaround a warning about

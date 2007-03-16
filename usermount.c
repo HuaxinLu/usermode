@@ -251,6 +251,9 @@ static void
 changed_callback(GtkTreeSelection *ignored, gpointer also_ignored)
 {
 	struct mountinfo *info;
+
+	(void)ignored;
+	(void)also_ignored;
 	info = selected_info();
 	if (info != NULL) {
 		/* Enable/disable buttons based on whether the filesystem is
@@ -270,7 +273,7 @@ changed_callback(GtkTreeSelection *ignored, gpointer also_ignored)
 static void
 format(struct mountinfo *info)
 {
-	GtkWidget *dialog, *vbox, *format;
+	GtkWidget *dialog, *vbox, *fdformat;
 	GtkWidget *label, *options, *table;
 	GtkResponseType response;
 	char *command[6];
@@ -294,14 +297,13 @@ format(struct mountinfo *info)
 	/* If it's the kind of device we low-level format, let the user
 	 * disable that step. */
 	if (info->fdformat) {
-		format = gtk_check_button_new_with_mnemonic(_("Perform a "
-							      "_low-level "
-							      "format."));
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(format), TRUE);
-		gtk_widget_show(format);
-	} else {
-		format = NULL;
-	}
+		fdformat = gtk_check_button_new_with_mnemonic(_("Perform a "
+								"_low-level "
+								"format."));
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(fdformat), TRUE);
+		gtk_widget_show(fdformat);
+	} else
+		fdformat = NULL;
 
 	/* If it's a filesystem of type "auto", we also have to let the user
 	 * select a filesystem type to format it as. */
@@ -341,10 +343,9 @@ format(struct mountinfo *info)
 	}
 
 	/* Run the dialog. */
-	if (format) {
-		gtk_table_attach_defaults(GTK_TABLE(table), format,
+	if (fdformat)
+		gtk_table_attach_defaults(GTK_TABLE(table), fdformat,
 					  0, 2, 0, 1);
-	}
 	if (options && label) {
 		gtk_table_attach_defaults(GTK_TABLE(table), label,
 					  0, 1, 1, 2);
@@ -364,10 +365,10 @@ format(struct mountinfo *info)
 		int status;
 		char *fstype;
 
-		if (GTK_IS_CHECK_BUTTON(format)) {
-			GtkToggleButton *toggle = GTK_TOGGLE_BUTTON(format);
+		if (GTK_IS_CHECK_BUTTON(fdformat)) {
+			GtkToggleButton *toggle = GTK_TOGGLE_BUTTON(fdformat);
 			if (gtk_toggle_button_get_active(toggle)) {
-				command[0] = PATH_FDFORMAT;
+				command[0] = (char *)PATH_FDFORMAT;
 				command[1] = info->dev;
 				command[2] = NULL;
 				if (g_spawn_async("/",
@@ -388,18 +389,18 @@ format(struct mountinfo *info)
 			int fs;
 
 			fs = gtk_combo_box_get_active(GTK_COMBO_BOX(options));
-			if (fs != -1 && fs < results.gl_pathc)
+			if (fs >= 0 && (size_t)fs < results.gl_pathc)
 				fstype = results.gl_pathv[fs]
 					+ strlen(mkfs) - 1;
 		}
 		if (fstype == NULL) {
 			fstype = info->fstype;
 		}
-		command[0] = PATH_MKFS;
-		command[1] = "-t";
+		command[0] = (char *)PATH_MKFS;
+		command[1] = (char *)"-t";
 		command[2] = fstype;
 		if (!strcmp(fstype,"vfat") || !strcmp(fstype,"msdos")) {
-			command[3] = "-I";
+			command[3] = (char *)"-I";
 			command[4] = info->dev;
 			command[5] = NULL;
 		} else {
@@ -435,6 +436,7 @@ response_callback(GtkWidget *emitter, gint response, gpointer user_data)
 	GError *error = NULL;
 	GtkWidget *toplevel, *dialog;
 
+	(void)user_data;
 	info = selected_info();
 	switch (response) {
 		case GTK_RESPONSE_CLOSE:
@@ -455,7 +457,8 @@ response_callback(GtkWidget *emitter, gint response, gpointer user_data)
 		case ACTION_MOUNT:
 			/* Mount/unmount. */
 			g_return_if_fail(info != NULL);
-			command[0] = info->mounted ?  PATH_UMOUNT : PATH_MOUNT;
+			command[0] = info->mounted
+				? (char *)PATH_UMOUNT : (char *)PATH_MOUNT;
 			command[1] = info->dir;
 			command[2] = NULL;
 			if (g_spawn_sync("/",

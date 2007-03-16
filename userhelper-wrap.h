@@ -22,8 +22,8 @@
 #include "config.h"
 #include <glib.h>
 
-void userhelper_run(gboolean notify_success, char *path, ...);
-int userhelper_runv(gboolean notify_success, char *path, char **args);
+void userhelper_run(gboolean notify_success, const char *path, ...);
+int userhelper_runv(gboolean notify_success, const char *path, char **args);
 void userhelper_main_quit(void);
 
 #endif /* __USERHELPER_WRAP_H__ */

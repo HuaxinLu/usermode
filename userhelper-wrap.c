@@ -27,6 +27,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/wait.h>
 #include <unistd.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
@@ -182,8 +183,11 @@ userhelper_main_quit(void)
 }
 
 static void
-userhelper_fatal_error(GtkWidget *widget, GdkEvent *event , gpointer user_data)
+userhelper_fatal_error(GtkWidget *widget, GdkEvent *event, gpointer user_data)
 {
+	(void)widget;
+	(void)event;
+	(void)user_data;
 	userhelper_main_quit();
 }
 
@@ -194,7 +198,7 @@ userhelper_parse_exitstatus(int exitstatus)
 {
 	static const struct {
 		int code;
-		GtkWidget* (*create)(gchar*, gchar*);
+		GtkWidget* (*create)(const gchar*, const gchar*);
 		const char *message;
 	} codes[] = {
 		{-1, create_error_box,
@@ -286,6 +290,8 @@ userhelper_parse_exitstatus(int exitstatus)
 static void
 userhelper_grab_keyboard(GtkWidget *widget, GdkEvent *event, gpointer user_data)
 {
+	(void)event;
+	(void)user_data;
 #ifndef DEBUG_USERHELPER
 	GdkGrabStatus ret;
 
@@ -408,6 +414,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 static void
 fake_respond_ok(GtkWidget *widget, gpointer user_data)
 {
+	(void)widget;
 	gtk_dialog_response(GTK_DIALOG(user_data), GTK_RESPONSE_OK);
 }
 
@@ -902,6 +909,7 @@ userhelper_parse_childout(char *outline)
 static void
 userhelper_child_exited(GPid pid, int status, gpointer data)
 {
+	(void)data;
 #ifdef DEBUG_USERHELPER
 	fprintf(stderr, "Child %d exited (looking for %d).\n", pid, childpid);
 #endif
@@ -948,6 +956,7 @@ static gboolean
 userhelper_read_childout(GIOChannel *source, GIOCondition condition,
 			 gpointer data)
 {
+	(void)data;
 	if ((condition & (G_IO_ERR | G_IO_NVAL)) != 0) {
 		/* Serious error, this is.  Panic, we must. */
 		_exit(1);
@@ -981,7 +990,7 @@ userhelper_read_childout(GIOChannel *source, GIOCondition condition,
 }
 
 int
-userhelper_runv(gboolean dialog_success, char *path, char **args)
+userhelper_runv(gboolean dialog_success, const char *path, char **args)
 {
 	int childout[2];
 
@@ -1117,7 +1126,7 @@ userhelper_runv(gboolean dialog_success, char *path, char **args)
 }
 
 void
-userhelper_run(gboolean dialog_success, char *path, ...)
+userhelper_run(gboolean dialog_success, const char *path, ...)
 {
 	va_list ap;
 	char **argv;

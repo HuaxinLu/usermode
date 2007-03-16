@@ -71,9 +71,9 @@ handle_drop_response(int response_id)
 		int exit_status;
 		char *argv[4];
 
-		argv[0] = PAM_TIMESTAMP_CHECK_PATH;
-		argv[1] = "-k";
-		argv[2] = "root";
+		argv[0] = (char *)PAM_TIMESTAMP_CHECK_PATH;
+		argv[1] = (char *)"-k";
+		argv[2] = (char *)"root";
 		argv[3] = NULL;
 
 		exit_status = 0;
@@ -113,6 +113,7 @@ handle_drop_response(int response_id)
 static void
 drop_menu_response_cb(GtkMenuItem *item, gpointer data)
 {
+	(void)item;
 	handle_drop_response((int)(intptr_t)data);
 }
 
@@ -120,6 +121,7 @@ drop_menu_response_cb(GtkMenuItem *item, gpointer data)
 static void
 drop_dialog_response_cb(GtkWidget *dialog, gint response_id, gpointer data)
 {
+	(void)data;
 	gtk_widget_destroy(dialog);
 
 	handle_drop_response(response_id);
@@ -128,6 +130,8 @@ drop_dialog_response_cb(GtkWidget *dialog, gint response_id, gpointer data)
 static void
 handle_activate(GtkStatusIcon *icon, gpointer data)
 {
+	(void)icon;
+	(void)data;
 	/* If we're already authenticated, give the user the option of removing
 	   the timestamp. */
 	if (current_status != STATUS_AUTHENTICATED)
@@ -161,6 +165,7 @@ static void
 handle_popup(GtkStatusIcon *icon, guint button, guint activate_time,
 	     gpointer data)
 {
+	(void)data;
 	/* If we're already authenticated, give the user the option of removing
 	   the timestamp. */
 	if (current_status != STATUS_AUTHENTICATED)
@@ -224,9 +229,10 @@ child_io_func(GIOChannel *source, GIOCondition condition, void *data)
 {
 	gboolean respawn_child;
 	int output;
-	char *message;
+	const char *message;
 	int old_status;
 
+	(void)data;
 	output = 0;
 	respawn_child = FALSE;
 	old_status = current_status;
@@ -325,6 +331,8 @@ child_io_func(GIOChannel *source, GIOCondition condition, void *data)
 static void
 child_watch_func(GPid pid, gint status, gpointer data)
 {
+	(void)pid;
+	(void)data;
 	if (WIFSIGNALED(status))
 		g_printerr("pam_timestamp_check died on signal %d\n",
 			   WTERMSIG(status));
@@ -341,9 +349,7 @@ static void
 launch_checker(void)
 {
 	static char *command[] = {
-		PAM_TIMESTAMP_CHECK_PATH,
-		"-d",
-		"root",
+		(char *)PAM_TIMESTAMP_CHECK_PATH, (char *)"-d", (char *)"root",
 		NULL
 	};
 
@@ -410,6 +416,8 @@ session_save_callback(GsmClient *client, gboolean is_phase2, gpointer data)
 {
 	const char *argv[4];
 
+	(void)is_phase2;
+	(void)data;
 	argv[0] = BINDIR "/pam-panel-icon";
 	argv[1] = "--sm-client-id";
 	argv[2] = gsm_client_get_id(client);
@@ -427,6 +435,8 @@ session_save_callback(GsmClient *client, gboolean is_phase2, gpointer data)
 static void
 session_die_callback(GsmClient *client, gpointer data)
 {
+	(void)client;
+	(void)data;
 	gtk_main_quit();
 }
 

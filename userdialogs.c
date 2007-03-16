@@ -26,7 +26,7 @@
 #define DIALOG_XML_NAME "userdialog-xml"
 
 GtkWidget *
-create_message_box(gchar *message, gchar *title)
+create_message_box(const gchar *message, const gchar *title)
 {
 	GtkWidget *dialog;
 	dialog =  gtk_message_dialog_new(NULL, 0,
@@ -41,7 +41,7 @@ create_message_box(gchar *message, gchar *title)
 }
 
 GtkWidget *
-create_error_box(gchar * error, gchar * title)
+create_error_box(const gchar *error, const gchar *title)
 {
 	GtkWidget *dialog;
 	dialog =  gtk_message_dialog_new(NULL, 0,

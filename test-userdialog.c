@@ -27,6 +27,8 @@
 static void
 hello_world(GtkWidget *ignored, gpointer data)
 {
+	(void)ignored;
+	(void)data;
 	printf("Hello world, %s.\n", (char*) data);
 }
 
@@ -48,7 +50,7 @@ main(int argc, char *argv[])
 	g_signal_connect(G_OBJECT(msg), "destroy",
 			 G_CALLBACK(gtk_main_quit), NULL);
 	g_signal_connect(G_OBJECT(msg), "destroy",
-			 G_CALLBACK(hello_world), "otto");
+			 G_CALLBACK(hello_world), (gpointer)"otto");
 
 	msg = create_error_box("ERROR!\n"
 			       "Let's make this a really big message box.",

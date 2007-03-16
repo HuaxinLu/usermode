@@ -281,30 +281,30 @@ set_new_userinfo(struct UserInfo *userinfo)
 	homephone = userinfo->home_phone;
 	shell = userinfo->shell;
 
-	argv[i++] = UH_PATH;
+	argv[i++] = (char *)UH_PATH;
 
 	if (fullname) {
-		argv[i++] = UH_FULLNAME_OPT;
+		argv[i++] = (char *)UH_FULLNAME_OPT;
 		argv[i++] = (char *)fullname;
 	}
 
 	if (office) {
-		argv[i++] = UH_OFFICE_OPT;
+		argv[i++] = (char *)UH_OFFICE_OPT;
 		argv[i++] = (char *)office;
 	}
 
 	if (officephone) {
-		argv[i++] = UH_OFFICEPHONE_OPT;
+		argv[i++] = (char *)UH_OFFICEPHONE_OPT;
 		argv[i++] = (char *)officephone;
 	}
 
 	if (homephone) {
-		argv[i++] = UH_HOMEPHONE_OPT;
+		argv[i++] = (char *)UH_HOMEPHONE_OPT;
 		argv[i++] = (char *)homephone;
 	}
 
 	if (shell) {
-		argv[i++] = UH_SHELL_OPT;
+		argv[i++] = (char *)UH_SHELL_OPT;
 		argv[i++] = (char *)shell;
 	}
 

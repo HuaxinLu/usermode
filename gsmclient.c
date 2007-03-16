@@ -153,6 +153,7 @@ gsm_client_get_type (void)
         sizeof (GsmClient),
         0,              /* n_preallocs */
         (GInstanceInitFunc) gsm_client_init,
+	NULL
       };
       
       object_type = g_type_register_static (G_TYPE_OBJECT,
@@ -675,14 +676,14 @@ static void
 replace_one_prop (GsmClient *client,
                   SmProp    *new_prop)
 {
-  GList *link;
+  GList *l;
   
-  link = proplist_find_link_by_name (client->priv->properties,
+  l = proplist_find_link_by_name (client->priv->properties,
                                      new_prop->name);
-  if (link)
+  if (l)
     {
-      SmFreeProperty (link->data);
-      link->data = new_prop;
+      SmFreeProperty (l->data);
+      l->data = new_prop;
     }
   else
     {
@@ -945,6 +946,7 @@ client_save_phase_2_callback (SmcConn   smc_conn,
 {
   GsmClient *client;
 
+  (void)smc_conn;
   client = client_data;
 
   gsm_verbose ("Phase2 callback\n");
@@ -983,6 +985,7 @@ client_save_yourself_callback (SmcConn   smc_conn,
 {
   GsmClient *client;
 
+  (void)smc_conn;
   client = client_data;
 
   gsm_verbose ("SaveYourself callback\n");
@@ -1058,6 +1061,7 @@ client_die_callback (SmcConn   smc_conn,
 {
   GsmClient *client;
 
+  (void)smc_conn;
   client = client_data;
 
   gsm_verbose ("Die callback, emitting die signal\n");
@@ -1079,6 +1083,7 @@ client_save_complete_callback (SmcConn   smc_conn,
 {
   GsmClient *client;
 
+  (void)smc_conn;
   client = client_data;
 
   gsm_verbose ("SaveComplete callback\n");
@@ -1101,6 +1106,7 @@ client_shutdown_cancelled_callback (SmcConn   smc_conn,
 {
   GsmClient *client;
 
+  (void)smc_conn;
   client = client_data;
 
   gsm_verbose ("ShutdownCancelled callback\n");
@@ -1117,6 +1123,7 @@ client_interact_callback (SmcConn   smc_conn,
 {
   GsmClient *client;
 
+  (void)smc_conn;
   client = client_data;
 
   gsm_verbose ("Interact callback\n");
@@ -1157,6 +1164,8 @@ process_ice_messages (GIOChannel  *channel,
   IceConn connection = (IceConn) client_data;
   IceProcessMessagesStatus status;
 
+  (void)channel;
+  (void)condition;
   /* This blocks infinitely sometimes. I don't know what
    * to do about it. Checking "condition" just breaks
    * session management.
@@ -1186,6 +1195,7 @@ ice_connection_startup_or_shutdown (IceConn     connection,
 {
   guint input_id;
 
+  (void)client_data;
   if (opening)
     {
       GIOChannel *channel;

@@ -22,7 +22,7 @@
 #include "config.h"
 #include <gtk/gtk.h>
 
-GtkWidget* create_message_box(gchar* message, gchar* title);
-GtkWidget* create_error_box(gchar* error, gchar* title);
+GtkWidget* create_message_box(const gchar* message, const gchar* title);
+GtkWidget* create_error_box(const gchar* error, const gchar* title);
 
 #endif /* __USERDIALOGS_H__ */
