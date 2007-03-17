@@ -1,14 +1,15 @@
 # Swedish messages for usermode.
 # Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006 Christian Rose <menthos@menthos.com>.
-#
+# Copyright (C) 2007 Magnus Larsson <fedoratrans@gmail.com>.
 # $Id$
-#
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-14 06:19+0100\n"
-"PO-Revision-Date: 2006-01-02 00:13+0100\n"
+"PO-Revision-Date: 2007-03-16 16:55-0400\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -329,9 +330,8 @@ msgid "Placeholder text."
 msgstr "Utfyllnadstext."
 
 #: ../../po/../userhelper-wrap.c:807
-#, fuzzy
 msgid "Changing password."
-msgstr "Byt lösenord"
+msgstr "Byter lösenord."
 
 #: ../../po/../userhelper-wrap.c:809
 msgid "Changing personal information."
