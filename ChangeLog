@@ -1,5 +1,9 @@
 2007-03-17  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper.c (wrap): Preserve values of all environment variables
+	configured in KEEP_ENV_VARS.  Fix one of the memory leaks.
+	* userhelper.8.in (KEEP_ENV_VARS): Document variable.
+
 	* userhelper.c (wrap): Use a single "val" variable instead of
 	apps_banner, apps_sn, apps_domain, retry, noxoption.
 

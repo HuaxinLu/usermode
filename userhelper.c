@@ -1756,7 +1756,7 @@ wrap(const char *user, const char *program,
 	char *user_pam;
 	const char *auth_user;
 	char *val;
-	char **environ_save;
+	char **environ_save, **keep_env_names, **keep_env_values;
 	const char *env_home, *env_term, *env_desktop_startup_id;
 	const char *env_display, *env_shell;
 	const char *env_lang, *env_language, *env_lcall, *env_lcmsgs;
@@ -1772,6 +1772,27 @@ wrap(const char *user, const char *program,
 	if (strrchr(program, '/')) {
 		program = strrchr(program, '/') + 1;
 	}
+
+	/* Open the console.apps configuration file for this wrapped program,
+	 * and read settings from it. */
+	apps_filename = g_strconcat(SYSCONFDIR "/security/console.apps/",
+				    program, NULL);
+	s = svNewFile(apps_filename);
+
+	/* If the file is world-writable, or isn't a regular file, or couldn't
+	 * be opened, just exit.  We don't want to alert an attacker that the
+	 * service name is invalid. */
+	if ((s == NULL) ||
+	    (fstat(s->fd, &sbuf) == -1) ||
+	    !S_ISREG(sbuf.st_mode) ||
+	    (sbuf.st_mode & S_IWOTH)) {
+#ifdef DEBUG_USERHELPER
+		g_print("userhelper: bad file permissions: %s \n",
+			apps_filename);
+#endif
+		exit(ERR_UNK_ERROR);
+	}
+	g_free(apps_filename);
 
 	/* Save some of the current environment variables, because the
 	 * environment is going to be nuked shortly. */
@@ -1830,6 +1851,24 @@ wrap(const char *user, const char *program,
 	     strchr(env_xauthority , '%')))
 		env_xauthority = NULL;
 
+	val = svGetValue(s, "KEEP_ENV_VARS");
+	if (val != NULL) {
+		size_t i, num_names;
+
+		keep_env_names = g_strsplit(val, ",", -1);
+		g_free(val);
+		num_names = g_strv_length(keep_env_names);
+		keep_env_values = g_malloc0(num_names
+					    * sizeof (*keep_env_values));
+		for (i = 0; i < num_names; i++)
+			/* g_strdup(NULL) is defined to be NULL. */
+			keep_env_values[i]
+				= g_strdup(getenv(keep_env_names[i]));
+	} else {
+		keep_env_names = NULL;
+		keep_env_values = NULL;
+	}
+
 	/* Wipe out the current environment. */
 	environ_save = environ;
 	environ = g_malloc0(2 * sizeof(char *));
@@ -1860,28 +1899,26 @@ wrap(const char *user, const char *program,
 	setenv("LOGNAME", "root", 1);
 	setenv("USER", "root", 1);
 
+	/* Handle KEEP_ENV_VARS only after setting most of the variables above.
+	   This lets the config file to request keeping the value of an
+	   environment variable even if it would be otherwise overridden (e.g.
+	   PATH). */
+	if (keep_env_names != NULL) {
+		size_t i;
+
+		for (i = 0; keep_env_names[i] != NULL; i++) {
+			if (keep_env_values[i] != NULL) {
+				setenv(keep_env_names[i], keep_env_values[i],
+				       1);
+				g_free(keep_env_values[i]);
+			}
+		}
+		g_strfreev(keep_env_names);
+		g_free(keep_env_values);
+	}
+
 	/* Pass the original UID to the new program */
 	setenv("USERHELPER_UID", g_strdup_printf("%jd", (intmax_t)getuid()), 1);
-
-	/* Open the console.apps configuration file for this wrapped program,
-	 * and read settings from it. */
-	apps_filename = g_strconcat(SYSCONFDIR "/security/console.apps/",
-				    program, NULL);
-	s = svNewFile(apps_filename);
-
-	/* If the file is world-writable, or isn't a regular file, or couldn't
-	 * be opened, just exit.  We don't want to alert an attacker that the
-	 * service name is invalid. */
-	if ((s == NULL) ||
-	    (fstat(s->fd, &sbuf) == -1) ||
-	    !S_ISREG(sbuf.st_mode) ||
-	    (sbuf.st_mode & S_IWOTH)) {
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: bad file permissions: %s \n", apps_filename);
-#endif
-		exit(ERR_UNK_ERROR);
-	}
-	g_free(apps_filename);
 
 	data = conv->appdata_ptr;
 	user_pam = get_user_for_auth(s);
@@ -1975,6 +2012,7 @@ wrap(const char *user, const char *program,
 	data->fallback_allowed = svTrueValue(s, "FALLBACK", FALSE);
 	val = svGetValue(s, "RETRY"); /* default value is "2" */
 	tryagain = val ? atoi(val) + 1 : 3;
+	g_free(val);
 
 	/* Read any custom messages we might want to use. */
 	val = svGetValue(s, "BANNER");
