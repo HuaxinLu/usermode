@@ -1,4 +1,4 @@
-.\" Copyright (C) 1997,1999,2001,2003 Red Hat, Inc.
+.\" Copyright (C) 1997, 1999, 2001, 2003, 2007 Red Hat, Inc.
 .\"
 .\" This is free software; you can redistribute it and/or modify it
 .\" under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@
 .\" along with this program; if not, write to the Free Software
 .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 .\"
-.TH USERHELPER 8 "18 February 2003" "Red Hat, Inc."
+.TH USERHELPER 8 "March 17 2007" "Red Hat, Inc."
 .SH NAME
 userhelper \- A helper interface to pam.
 .SH SYNOPSIS
@@ -142,6 +142,13 @@ when running the program.  Typically this is needed if the PAM configuration
 uses a module such as \fIpam_xauth.so\fP to forward X11 authentication tokens
 for use by the program.
 Valid values are \fIyes\fP and \fIno\fP, with the default being \fIno\fP.
+.TP
+.I KEEP_ENV_VARS
+A comma-separated list of names of environment variables that should be kept
+in the environment of the wrapped program.
+The environment is cleard by default
+and only a few selected variables are kept in the environment
+if they do not contain any potentially dangerous substrings.
 .TP
 .I RETRY
 Specifies the number of times userhelper should attempt to authenticate the

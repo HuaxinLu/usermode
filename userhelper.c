@@ -1755,12 +1755,7 @@ wrap(const char *user, const char *program,
 	char *apps_filename;
 	char *user_pam;
 	const char *auth_user;
-	char *apps_banner;
-#ifdef USE_STARTUP_NOTIFICATION
-	char *apps_sn;
-#endif
-	const char *apps_domain;
-	char *retry;
+	char *val;
 	char **environ_save;
 	const char *env_home, *env_term, *env_desktop_startup_id;
 	const char *env_display, *env_shell;
@@ -1924,20 +1919,18 @@ wrap(const char *user, const char *program,
 	/* We can use a magic configuration file option to disable
 	 * the GUI, too. */
 	if (gui) {
-		char *noxoption;
-
-		noxoption = svGetValue(s, "NOXOPTION");
-		if (noxoption && (strlen(noxoption) > 1)) {
+		val = svGetValue(s, "NOXOPTION");
+		if (val != NULL && strlen(val) > 1) {
 			int i;
 
 			for (i = optind; i < argc; i++) {
-				if (strcmp(argv[i], noxoption) == 0) {
+				if (strcmp(argv[i], val) == 0) {
 					gui = FALSE;
 					break;
 				}
 			}
 		}
-		g_free(noxoption);
+		g_free(val);
 	}
 
 	if (!gui) {
@@ -1980,57 +1973,49 @@ wrap(const char *user, const char *program,
 	/* Read other settings. */
 	session = svTrueValue(s, "SESSION", FALSE);
 	data->fallback_allowed = svTrueValue(s, "FALLBACK", FALSE);
-	retry = svGetValue(s, "RETRY"); /* default value is "2" */
-	tryagain = retry ? atoi(retry) + 1 : 3;
+	val = svGetValue(s, "RETRY"); /* default value is "2" */
+	tryagain = val ? atoi(val) + 1 : 3;
 
 	/* Read any custom messages we might want to use. */
-	apps_banner = svGetValue(s, "BANNER");
-	if ((apps_banner != NULL) && (strlen(apps_banner) > 0)) {
-		data->banner = apps_banner;
-	}
-	apps_domain = svGetValue(s, "DOMAIN");
-	if ((apps_domain != NULL) && (strlen(apps_domain) > 0)) {
-		bindtextdomain(apps_domain, LOCALEDIR);
-		bind_textdomain_codeset(apps_domain, "UTF-8");
-		data->domain = apps_domain;
+	val = svGetValue(s, "BANNER");
+	if (val != NULL && strlen(val) > 0)
+		data->banner = val;
+	val = svGetValue(s, "DOMAIN");
+	if (val != NULL && strlen(val) > 0) {
+		bindtextdomain(val, LOCALEDIR);
+		bind_textdomain_codeset(val, "UTF-8");
+		data->domain = val;
 	}
 	if (data->domain == NULL) {
-		apps_domain = svGetValue(s, "BANNER_DOMAIN");
-		if ((apps_domain != NULL) &&
-		    (strlen(apps_domain) > 0)) {
-			bindtextdomain(apps_domain, LOCALEDIR);
-			bind_textdomain_codeset(apps_domain, "UTF-8");
-			data->domain = apps_domain;
+		val = svGetValue(s, "BANNER_DOMAIN");
+		if (val != NULL && strlen(val) > 0) {
+			bindtextdomain(val, LOCALEDIR);
+			bind_textdomain_codeset(val, "UTF-8");
+			data->domain = val;
 		}
 	}
 	if (data->domain == NULL) {
 		data->domain = program;
 	}
 #ifdef USE_STARTUP_NOTIFICATION
-	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_NAME");
-	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-		data->sn_name = apps_sn;
-	}
-	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_DESCRIPTION");
-	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-		data->sn_description = apps_sn;
-	}
-	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_WMCLASS");
-	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-		data->sn_wmclass = apps_sn;
-	}
-	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_BINARY_NAME");
-	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-		data->sn_binary_name = apps_sn;
-	}
-	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_ICON_NAME");
-	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-		data->sn_icon_name = apps_sn;
-	}
-	apps_sn = svGetValue(s, "STARTUP_NOTIFICATION_WORKSPACE");
-	if ((apps_sn != NULL) && (strlen(apps_sn) > 0)) {
-		data->sn_workspace = atoi(apps_sn);
-	}
+	val = svGetValue(s, "STARTUP_NOTIFICATION_NAME");
+	if (val != NULL && strlen(val) > 0)
+		data->sn_name = val;
+	val = svGetValue(s, "STARTUP_NOTIFICATION_DESCRIPTION");
+	if (val != NULL && strlen(val) > 0)
+		data->sn_description = val;
+	val = svGetValue(s, "STARTUP_NOTIFICATION_WMCLASS");
+	if (val != NULL && strlen(val) > 0)
+		data->sn_wmclass = val;
+	val = svGetValue(s, "STARTUP_NOTIFICATION_BINARY_NAME");
+	if (val != NULL && strlen(val) > 0)
+		data->sn_binary_name = val;
+	val = svGetValue(s, "STARTUP_NOTIFICATION_ICON_NAME");
+	if (val != NULL && strlen(val) > 0)
+		data->sn_icon_name = val;
+	val = svGetValue(s, "STARTUP_NOTIFICATION_WORKSPACE");
+	if (val != NULL && strlen(val) > 0)
+		data->sn_workspace = atoi(val);
 #endif
 
 	/* Now we're done reading the file. Close it. */

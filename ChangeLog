@@ -1,5 +1,8 @@
 2007-03-17  Miloslav Trmac  <mitr@redhat.com>
 
+	* userhelper.c (wrap): Use a single "val" variable instead of
+	apps_banner, apps_sn, apps_domain, retry, noxoption.
+
 	* pam-panel-icon.c (handle_drop_response): Use a static variable for
 	the constant argv.
 
