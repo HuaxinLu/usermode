@@ -1,3 +1,8 @@
+2007-03-19  Miloslav Trmac  <mitr@redhat.com>
+
+	* configure.in: Release 1.91.
+	* NEWS: Update.
+
 2007-03-17  Miloslav Trmac  <mitr@redhat.com>
 
 	* userhelper.c (wrap): Preserve values of all environment variables

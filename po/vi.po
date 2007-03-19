@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-14 06:19+0100\n"
+"POT-Creation-Date: 2007-03-19 23:03+0100\n"
 "PO-Revision-Date: 2003-07-26 21:35+0700\n"
 "Last-Translator: pclouds <pclouds@gmx.net>\n"
 "Language-Team: GnomeVI <gnomevi-list@lists.sourceforge.net>\n"
@@ -92,69 +92,69 @@ msgstr ""
 msgid "Password: "
 msgstr "Mật khẩu"
 
-#: ../../po/../pam-panel-icon.c:88
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:97
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:141
+#: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:146 ../../po/../pam-panel-icon.c:172
+#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:149 ../../po/../pam-panel-icon.c:179
+#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:277
+#: ../../po/../pam-panel-icon.c:284
 msgid "pam_timestamp_check is not setuid root"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:281
+#: ../../po/../pam-panel-icon.c:288
 msgid "no controlling tty for pam_timestamp_check"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:285
+#: ../../po/../pam-panel-icon.c:292
 msgid "user unknown to pam_timestamp_check"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:289
+#: ../../po/../pam-panel-icon.c:296
 msgid "permissions error in pam_timestamp_check"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:293
+#: ../../po/../pam-panel-icon.c:300
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:311
+#: ../../po/../pam-panel-icon.c:318
 #, fuzzy, c-format
 msgid "Error: %s\n"
 msgstr "Lỗi"
 
-#: ../../po/../pam-panel-icon.c:376
+#: ../../po/../pam-panel-icon.c:383
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:388 ../../po/../userhelper-wrap.c:1023
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr ""
 
-#: ../../po/../pam-panel-icon.c:464
+#: ../../po/../pam-panel-icon.c:475
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr ""
 
@@ -168,64 +168,64 @@ msgstr ""
 msgid "Could not set exec context to %s.\n"
 msgstr ""
 
-#: ../../po/../userhelper.c:570
+#: ../../po/../userhelper.c:574
 #, c-format
 msgid "Password for %s"
 msgstr "Mật khẩu của %s"
 
-#: ../../po/../userhelper.c:819
+#: ../../po/../userhelper.c:823
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper.c:821
+#: ../../po/../userhelper.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:829
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper.c:827
+#: ../../po/../userhelper.c:831
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper.c:846
+#: ../../po/../userhelper.c:850
 #, c-format
 msgid "Password for %s: "
 msgstr "Mật khẩu của %s: "
 
-#: ../../po/../userhelper.c:2367
+#: ../../po/../userhelper.c:2395
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper cần đặt setuid của root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2465
+#: ../../po/../userhelper.c:2493
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Không thể mở cửa sổ đồ họa, và không thể tìm thấy terminal điều khiển.\n"
 
-#: ../../po/../userhelper-wrap.c:201
+#: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
 msgstr "Mã thoát lạ."
 
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:207
 msgid "Information updated."
 msgstr "Đã cập nhật thông tin."
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:209
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -233,7 +233,7 @@ msgstr ""
 "Mật khẩu bạn nhập không hợp lệ.\n"
 "Vui lòng nhập lại."
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:211
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -243,11 +243,11 @@ msgstr ""
 "Có thể là do chứa dấu phẩy hoặc dấu hai chấm trong các trường đó.\n"
 "Vui lòng loại bỏ những dấu này và thử lại."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:213
 msgid "Password resetting error."
 msgstr "Lỗi đặt lại mật khẩu."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -255,20 +255,20 @@ msgstr ""
 "Vài tập tin hệ thống đang bị khóa.\n"
 "Vui lòng thử lại vài phút nữa."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:217
 msgid "Unknown user."
 msgstr "Người dùng lạ."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:219
 msgid "Insufficient rights."
 msgstr "Không đủ quyền."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:221
 #, fuzzy
 msgid "Invalid call to subprocess."
 msgstr "Lời gọi không hợp lệ đến tiến trình con.."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:223
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -278,106 +278,106 @@ msgstr ""
 "Bạn không được phép đổi shell.\n"
 "Hay liên lạc với quản trị hệ thống."
 
-#: ../../po/../userhelper-wrap.c:222
+#: ../../po/../userhelper-wrap.c:226
 msgid "Out of memory."
 msgstr "Hết bộ nhớ"
 
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:228
 msgid "The exec() call failed."
 msgstr "Lỗi gọi exec()."
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:230
 msgid "Failed to find selected program."
 msgstr "Lỗi tìm chương trình được chọn."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:233
 msgid "Request canceled."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:235
 #, fuzzy
 msgid "Internal PAM error occured."
 msgstr "Gặp lỗi PAM %d.\n"
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:237
 msgid "Unknown error."
 msgstr "Lỗi lạ."
 
-#: ../../po/../userhelper-wrap.c:504
+#: ../../po/../userhelper-wrap.c:511
 msgid "Query"
 msgstr "Truy vấn"
 
-#: ../../po/../userhelper-wrap.c:593 ../../po/../userhelper-wrap.c:766
+#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
 msgid "Error"
 msgstr "Lỗi"
 
-#: ../../po/../userhelper-wrap.c:605
+#: ../../po/../userhelper-wrap.c:612
 msgid "Information"
 msgstr "Thông tin"
 
-#: ../../po/../userhelper-wrap.c:758
+#: ../../po/../userhelper-wrap.c:765
 msgid "Placeholder text."
 msgstr "Placeholder text."
 
-#: ../../po/../userhelper-wrap.c:807
+#: ../../po/../userhelper-wrap.c:814
 #, fuzzy
 msgid "Changing password."
 msgstr "Đổi mật khẩu đăng nhập"
 
-#: ../../po/../userhelper-wrap.c:809
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
 msgstr "Đang đổi thông tin cá nhân."
 
-#: ../../po/../userhelper-wrap.c:812
+#: ../../po/../userhelper-wrap.c:819
 msgid "Changing login shell."
 msgstr "Đang đổi shell đăng nhập."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:823
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:818
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:830
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:835
+#: ../../po/../userhelper-wrap.c:842
 msgid "_Run Unprivileged"
 msgstr "_Chạy không có quyền ưu tiên"
 
-#: ../../po/../userhelper-wrap.c:990
+#: ../../po/../userhelper-wrap.c:999
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Lỗi Pipe.\n"
 
-#: ../../po/../userhelper-wrap.c:997
+#: ../../po/../userhelper-wrap.c:1006
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Không thể gọi fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1097 ../../po/../userhelper-wrap.c:1101
+#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Lỗi dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1113
+#: ../../po/../userhelper-wrap.c:1122
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Lỗi execl(), mã lỗi=%d\n"
@@ -400,22 +400,22 @@ msgstr "_Gắn kết"
 msgid "Un_mount"
 msgstr "_Tháo gắn kết"
 
-#: ../../po/../usermount.c:286
+#: ../../po/../usermount.c:289
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
 "Bạn có chắc muốn định dạng đĩa này không? Bạn sẽ hủy mọi dữ liệu trên đó."
 
-#: ../../po/../usermount.c:297
+#: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "Thực hiện định dạng _cấp thấp."
 
-#: ../../po/../usermount.c:335
+#: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "Chọn loại _hệ tập tin cần tạo:"
 
-#: ../../po/../usermount.c:504
+#: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -424,28 +424,28 @@ msgstr ""
 "Vui lòng liên lạc với quản trị hệ thống."
 
 #. Create the dialog.
-#: ../../po/../usermount.c:505 ../../po/../usermount.c:517
+#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Công cụ gắn kết của người dùng"
 
 #. Create the other buttons.
-#: ../../po/../usermount.c:535
+#: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "Định _dạng"
 
-#: ../../po/../usermount.c:571
+#: ../../po/../usermount.c:574
 msgid "Device"
 msgstr "Thiết bị"
 
-#: ../../po/../usermount.c:577
+#: ../../po/../usermount.c:580
 msgid "Directory"
 msgstr "Thư mục"
 
-#: ../../po/../usermount.c:583
+#: ../../po/../usermount.c:586
 msgid "Filesystem"
 msgstr "Hệ tập tin"
 
-#: ../../po/../usermount.c:630
+#: ../../po/../usermount.c:633
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr ""

@@ -1,3 +1,9 @@
+1.91
+* Preserve environment variables in consolehelper specified in the service
+  config file.
+* Fix handling of empty pw_shell.
+* Minor clean-ups and optimizations.
+
 1.90
 * Support LABEL= and UUID= in usermount and userformat.
 * Fix an use of PAM data after free.

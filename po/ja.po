@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-14 06:19+0100\n"
+"POT-Creation-Date: 2007-03-19 23:03+0100\n"
 "PO-Revision-Date: 2005-11-27 23:10+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
@@ -94,12 +94,12 @@ msgstr "ログイン: "
 msgid "Password: "
 msgstr "パスワード: "
 
-#: ../../po/../pam-panel-icon.c:88
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "管理者権限を破棄することに失敗しました: %s"
 
-#: ../../po/../pam-panel-icon.c:97
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -108,7 +108,7 @@ msgstr ""
 "管理者権限を破棄することに失敗しました: pam_timestamp_check はエラーコード %"
 "d を返しました"
 
-#: ../../po/../pam-panel-icon.c:141
+#: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -118,50 +118,50 @@ msgstr ""
 "ザーに対する設定) に現在認証されています。また、認証を解除することができま"
 "す。"
 
-#: ../../po/../pam-panel-icon.c:146 ../../po/../pam-panel-icon.c:172
+#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "認証を続行"
 
-#: ../../po/../pam-panel-icon.c:149 ../../po/../pam-panel-icon.c:179
+#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "認証を解除"
 
-#: ../../po/../pam-panel-icon.c:277
+#: ../../po/../pam-panel-icon.c:284
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check は setuid root ではありません。"
 
-#: ../../po/../pam-panel-icon.c:281
+#: ../../po/../pam-panel-icon.c:288
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check の制御不能な tty"
 
-#: ../../po/../pam-panel-icon.c:285
+#: ../../po/../pam-panel-icon.c:292
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check の不明なユーザー"
 
-#: ../../po/../pam-panel-icon.c:289
+#: ../../po/../pam-panel-icon.c:296
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check のパーミッションエラー"
 
-#: ../../po/../pam-panel-icon.c:293
+#: ../../po/../pam-panel-icon.c:300
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check の無効な制御の tty"
 
-#: ../../po/../pam-panel-icon.c:311
+#: ../../po/../pam-panel-icon.c:318
 #, c-format
 msgid "Error: %s\n"
 msgstr "エラー: %s\n"
 
-#: ../../po/../pam-panel-icon.c:376
+#: ../../po/../pam-panel-icon.c:383
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "コマンド \"%s\" の実行に失敗しました: %s\n"
 
-#: ../../po/../pam-panel-icon.c:388 ../../po/../userhelper-wrap.c:1023
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO チャンネルのブロック解除に失敗しました: %s\n"
 
-#: ../../po/../pam-panel-icon.c:464
+#: ../../po/../pam-panel-icon.c:475
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: セッションマネージャーの接続に失敗しました\n"
 
@@ -175,12 +175,12 @@ msgstr "%s にプログラム %s のデフォルト権限を与えられませ�
 msgid "Could not set exec context to %s.\n"
 msgstr "%s に実行権限を与えられませんでした。\n"
 
-#: ../../po/../userhelper.c:570
+#: ../../po/../userhelper.c:574
 #, c-format
 msgid "Password for %s"
 msgstr "%sのパスワード"
 
-#: ../../po/../userhelper.c:819
+#: ../../po/../userhelper.c:823
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -189,7 +189,7 @@ msgstr ""
 "スーパユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../../po/../userhelper.c:821
+#: ../../po/../userhelper.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -198,7 +198,7 @@ msgstr ""
 "スーパユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:829
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -206,7 +206,7 @@ msgstr ""
 "スーパユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../../po/../userhelper.c:827
+#: ../../po/../userhelper.c:831
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -215,18 +215,18 @@ msgstr ""
 "は\n"
 "追加情報が必要です。"
 
-#: ../../po/../userhelper.c:846
+#: ../../po/../userhelper.c:850
 #, c-format
 msgid "Password for %s: "
 msgstr "%s用のパスワード:"
 
-#: ../../po/../userhelper.c:2367
+#: ../../po/../userhelper.c:2395
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザーヘルパーはrootにsetuidされていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2465
+#: ../../po/../userhelper.c:2493
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -234,15 +234,15 @@ msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
 
-#: ../../po/../userhelper-wrap.c:201
+#: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
 msgstr "不明な終了コードです。"
 
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:207
 msgid "Information updated."
 msgstr "情報は更新されました。"
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:209
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -250,7 +250,7 @@ msgstr ""
 "入力したパスワードは間違っています。\n"
 "もう一度入力してください。"
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:211
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -260,11 +260,11 @@ msgstr ""
 "フィールドのどこかにコロンかコンマがあるかもしれません。\n"
 "それらを削除してもう一度入力してください。"
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:213
 msgid "Password resetting error."
 msgstr "パスワードのリセットでエラーが発生しました。"
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -272,19 +272,19 @@ msgstr ""
 "ロックされいているシステムファイルがあります。\n"
 "しばらく待ってからもう一度やってみてください。"
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:217
 msgid "Unknown user."
 msgstr "不明なユーザーです。"
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:219
 msgid "Insufficient rights."
 msgstr "権限がありません。"
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:221
 msgid "Invalid call to subprocess."
 msgstr "サブプロセスの呼び出し方が間違っています。"
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:223
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -294,60 +294,60 @@ msgstr ""
 " したがってシェルを変更することはできません。\n"
 "システム管理者に相談してみてください。"
 
-#: ../../po/../userhelper-wrap.c:222
+#: ../../po/../userhelper-wrap.c:226
 msgid "Out of memory."
 msgstr "メモリが足りません。"
 
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:228
 msgid "The exec() call failed."
 msgstr "exec()の呼び出しに失敗しました。"
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:230
 msgid "Failed to find selected program."
 msgstr "選択したプログラムは見つかりませんでした。"
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:233
 msgid "Request canceled."
 msgstr "要求はキャンセルされました。"
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:235
 msgid "Internal PAM error occured."
 msgstr "内部 PAM エラーが発生しました。"
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:237
 msgid "Unknown error."
 msgstr "不明なエラーです。"
 
-#: ../../po/../userhelper-wrap.c:504
+#: ../../po/../userhelper-wrap.c:511
 msgid "Query"
 msgstr "質問"
 
-#: ../../po/../userhelper-wrap.c:593 ../../po/../userhelper-wrap.c:766
+#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
 msgid "Error"
 msgstr "エラー"
 
-#: ../../po/../userhelper-wrap.c:605
+#: ../../po/../userhelper-wrap.c:612
 msgid "Information"
 msgstr "情報"
 
-#: ../../po/../userhelper-wrap.c:758
+#: ../../po/../userhelper-wrap.c:765
 msgid "Placeholder text."
 msgstr "プレースホルダテキスト。"
 
-#: ../../po/../userhelper-wrap.c:807
+#: ../../po/../userhelper-wrap.c:814
 #, fuzzy
 msgid "Changing password."
 msgstr "ログインパスワードを変更"
 
-#: ../../po/../userhelper-wrap.c:809
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
 msgstr "個人情報を変更しています。"
 
-#: ../../po/../userhelper-wrap.c:812
+#: ../../po/../userhelper-wrap.c:819
 msgid "Changing login shell."
 msgstr "ログイン シェルを変更中"
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:823
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -356,7 +356,7 @@ msgstr ""
 "スーパユーザー権限により有効になる\"%s\"を実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
-#: ../../po/../userhelper-wrap.c:818
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -365,7 +365,7 @@ msgstr ""
 "スーパユーザー権限を必要とする\"%s\"を実行しようとしていますが、実行するには"
 "追加情報が必要です。"
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:830
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -373,7 +373,7 @@ msgstr ""
 "スーパユーザー権限により有効になるコマンドを実行しようとしていますが、実行す"
 "るには追加情報が必要です。"
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -381,26 +381,26 @@ msgstr ""
 "スーパユーザー権限を必要とするコマンドを実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
-#: ../../po/../userhelper-wrap.c:835
+#: ../../po/../userhelper-wrap.c:842
 msgid "_Run Unprivileged"
 msgstr "権限なしで実行(_R)"
 
-#: ../../po/../userhelper-wrap.c:990
+#: ../../po/../userhelper-wrap.c:999
 #, c-format
 msgid "Pipe error.\n"
 msgstr "パイプエラー。\n"
 
-#: ../../po/../userhelper-wrap.c:997
+#: ../../po/../userhelper-wrap.c:1006
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork()できません。\n"
 
-#: ../../po/../userhelper-wrap.c:1097 ../../po/../userhelper-wrap.c:1101
+#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()エラー。\n"
 
-#: ../../po/../userhelper-wrap.c:1113
+#: ../../po/../userhelper-wrap.c:1122
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
@@ -423,7 +423,7 @@ msgstr "マウント(_M)"
 msgid "Un_mount"
 msgstr "マウント解除(_m)"
 
-#: ../../po/../usermount.c:286
+#: ../../po/../usermount.c:289
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -431,15 +431,15 @@ msgstr ""
 "本当にこのディスクをフォーマットしますか?ディスクに現在あるデータはすべて破壊"
 "されます。"
 
-#: ../../po/../usermount.c:297
+#: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "lowレベルフォーマットをする(_l)。"
 
-#: ../../po/../usermount.c:335
+#: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "作成するファイルシステムタイプの選択(_f):"
 
-#: ../../po/../usermount.c:504
+#: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -448,28 +448,28 @@ msgstr ""
 "管理者に相談してください。"
 
 #. Create the dialog.
-#: ../../po/../usermount.c:505 ../../po/../usermount.c:517
+#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "ユーザーマウントツール"
 
 #. Create the other buttons.
-#: ../../po/../usermount.c:535
+#: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "フォーマット(_F)"
 
-#: ../../po/../usermount.c:571
+#: ../../po/../usermount.c:574
 msgid "Device"
 msgstr "デバイス"
 
-#: ../../po/../usermount.c:577
+#: ../../po/../usermount.c:580
 msgid "Directory"
 msgstr "ディレクトリ"
 
-#: ../../po/../usermount.c:583
+#: ../../po/../usermount.c:586
 msgid "Filesystem"
 msgstr "ファイルシステム"
 
-#: ../../po/../usermount.c:630
+#: ../../po/../usermount.c:633
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "デバイス '%s' がフォーマットされていません。"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-14 06:19+0100\n"
+"POT-Creation-Date: 2007-03-19 23:03+0100\n"
 "PO-Revision-Date: 2006-12-04 09:53+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
@@ -95,12 +95,12 @@ msgstr "ലോഗിന്‍ ചെയ്യുക:"
 msgid "Password: "
 msgstr "പാസ്വേഡ്:"
 
-#: ../../po/../pam-panel-icon.c:88
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "അഡ്മിനിസ്ട്രേറ്ററുടെ അവകാശങ്ങള്‍ ലഭ്യമാക്കുന്നതില്‍ പരാജയം: %s"
 
-#: ../../po/../pam-panel-icon.c:97
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -109,7 +109,7 @@ msgstr ""
 "അഡ്മിനിസ്ട്രേറ്ററുടെ അവകാശങ്ങള്‍ ലഭ്യമാക്കുന്നതില്‍ പരാജയം: pam_timestamp_check പരാജയ കോഡ് %"
 "d തിരിച്ചു നല്‍കിയിരിക്കുന്നു"
 
-#: ../../po/../pam-panel-icon.c:141
+#: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -119,54 +119,54 @@ msgstr ""
 "ക്രമീകരണങ്ങള്‍ മാറ്റുന്നതിനായി(ഉപയോഗിക്കുന്ന ഏവര്‍ക്കും) അധികാരപ്പെ- ടുത്തിയിരിക്കുന്നു. നിങ്ങള്‍ക്ക് "
 "ആവശ്യമില്ലെങ്കില്‍ ഇത് ഉപേക്ഷിക്കാവുന്നതാണ്."
 
-#: ../../po/../pam-panel-icon.c:146 ../../po/../pam-panel-icon.c:172
+#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr ""
 "ആധികാരികത ഉറപ്പാക്കല്‍\n"
 "ആവശ്യമുണ്ട്"
 
-#: ../../po/../pam-panel-icon.c:149 ../../po/../pam-panel-icon.c:179
+#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr ""
 "ആധികാരികത ഉറപ്പാക്കല്‍\n"
 "ആവശ്യമില്ല"
 
-#: ../../po/../pam-panel-icon.c:277
+#: ../../po/../pam-panel-icon.c:284
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check is not setuid root"
 
-#: ../../po/../pam-panel-icon.c:281
+#: ../../po/../pam-panel-icon.c:288
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "no controlling tty for pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:285
+#: ../../po/../pam-panel-icon.c:292
 msgid "user unknown to pam_timestamp_check"
 msgstr "user unknown to pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:289
+#: ../../po/../pam-panel-icon.c:296
 msgid "permissions error in pam_timestamp_check"
 msgstr "permissions error in pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:293
+#: ../../po/../pam-panel-icon.c:300
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "invalid controlling tty in pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:311
+#: ../../po/../pam-panel-icon.c:318
 #, c-format
 msgid "Error: %s\n"
 msgstr "പിഴവ്: %s\n"
 
-#: ../../po/../pam-panel-icon.c:376
+#: ../../po/../pam-panel-icon.c:383
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "\"%s\" എന്ന കമ്ന്‍ഡ് പ്രവറ്‍ത്തിപ്പിക്കുന്നതില്‍ പരാജയപ്പെട്ടു: %s\n"
 
-#: ../../po/../pam-panel-icon.c:388 ../../po/../userhelper-wrap.c:1023
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO ചാനല്‍ നോണ്‍ബ്ളോക്കിങ് സെറ്റ് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു: %s\n"
 
-#: ../../po/../pam-panel-icon.c:464
+#: ../../po/../pam-panel-icon.c:475
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: സശന്‍ മാനേജറുമായി കണക്റ്റ് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു\n"
 
@@ -180,12 +180,12 @@ msgstr "%s പ്രോഗ്രാമിനുളള %sലേക്ക് ഡ�
 msgid "Could not set exec context to %s.\n"
 msgstr "%sലേക്ക് exec context സെറ്റ് ചെയ്യുവാന്‍ സാധിക്കില്ല.\n"
 
-#: ../../po/../userhelper.c:570
+#: ../../po/../userhelper.c:574
 #, c-format
 msgid "Password for %s"
 msgstr "%s-ന് പാസ്‍വേര്‍ഡ്"
 
-#: ../../po/../userhelper.c:819
+#: ../../po/../userhelper.c:823
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -194,7 +194,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../../po/../userhelper.c:821
+#: ../../po/../userhelper.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -203,7 +203,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:829
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -211,7 +211,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡ് പ്രവര്‍ത്തിപ്പിക്കുവാനാണ് നിങ്ങള്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../../po/../userhelper.c:827
+#: ../../po/../userhelper.c:831
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -219,32 +219,32 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡ് പ്രവര്‍ത്തിപ്പിക്കുവാനാണ് നിങ്ങള്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../../po/../userhelper.c:846
+#: ../../po/../userhelper.c:850
 #, c-format
 msgid "Password for %s: "
 msgstr "%s ന് പാസ്വേഡ്"
 
-#: ../../po/../userhelper.c:2367
+#: ../../po/../userhelper.c:2395
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelperന് setuid root ആവശ്യമാണ്\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2465
+#: ../../po/../userhelper.c:2493
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ഗ്രാഫിക്കല്‍ ജാലകം തുറക്കുവാനും കണ്ട്രോളിങ് ടര്‍മിനല്‍ കണ്ടുപിടിക്കുവാനും സാധിക്കുന്നില്ല.\n"
 
-#: ../../po/../userhelper-wrap.c:201
+#: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
 msgstr "അപരിചിതമായ എക്സിറ്റ് കോഡ്."
 
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:207
 msgid "Information updated."
 msgstr "വിശദാംശങ്ങളില്‍ മാറ്റം വരുത്തിയിരിക്കുന്നു."
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:209
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -252,7 +252,7 @@ msgstr ""
 "നിങ്ങള്‍ ടൈപ്പ് ചെയ്ത പാസ്വേഡ് തെറ്റാണ്.\n"
 "വീണ്ടും ശ്രമിക്കുക."
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:211
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -262,11 +262,11 @@ msgstr ""
 "ഏതെങ്കിലും ഫീല്‍ഡില്‍ ഉളള കോമയോ കോളണോ ഇതിന് കാരണമാവാം.\n"
 "അവ നീക്കം ചെയ്തശേഷം വീണ്ടും ശ്രമിക്കുക."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:213
 msgid "Password resetting error."
 msgstr "പാസ്വേഡ് റീസെറ്റ് ചെയ്യുന്നതില്‍ പിഴവ് സംഭവിച്ചിരിക്കുന്നു."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -274,19 +274,19 @@ msgstr ""
 "ചില സിസ്റ്റം ഫയലുകള്‍ ലോക്കാണ്.\n"
 "ദയവായി അല്പ സമയത്തിന് ശേഷം ശ്രമിക്കുക."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:217
 msgid "Unknown user."
 msgstr "അപരിചിതനായ യൂസറ്‍."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:219
 msgid "Insufficient rights."
 msgstr "മതിയാവാത്ത അവകാശങ്ങള്‍"
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:221
 msgid "Invalid call to subprocess."
 msgstr "സബ്പ്രൊസസ്സിലേക്ക് അസാധുവായ കോള്‍."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:223
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -296,60 +296,60 @@ msgstr ""
 "നിങ്ങള്‍ക്ക ഷെല്ല് മാറ്റുവാന്‍ അവകാശമില്ല.\n"
 "നിങ്ങളുടെ സിസ്റ്റം അഡ്മിനിസ്ട്രേറ്റരുമായി ബന്ധപ്പെടുക."
 
-#: ../../po/../userhelper-wrap.c:222
+#: ../../po/../userhelper-wrap.c:226
 msgid "Out of memory."
 msgstr "മെമ്മറി തികയില്ല."
 
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:228
 msgid "The exec() call failed."
 msgstr "exec() കോള്‍ പരാജയപ്പെട്ടിരിക്കുന്നു."
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:230
 msgid "Failed to find selected program."
 msgstr "സലക്ട് ചെയ്ത പ്രോഗ്രാം തിരയുന്നതില്‍ പരാജയപ്പെട്ടിരിക്കുന്നു."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:233
 msgid "Request canceled."
 msgstr "നിറ്‍ദ്ദേശം റദ്ദാക്കപ്പെട്ടു."
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:235
 msgid "Internal PAM error occured."
 msgstr "ഇന്‍റ്റേണല്‍ PAM ല്‍ തെറ്റ് സംഭവിച്ചിരിക്കുന്നു."
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:237
 msgid "Unknown error."
 msgstr "അപരിചിതമായ തെറ്റ് സംഭവിച്ചിരിക്കുന്നു."
 
-#: ../../po/../userhelper-wrap.c:504
+#: ../../po/../userhelper-wrap.c:511
 msgid "Query"
 msgstr "സംശയം"
 
-#: ../../po/../userhelper-wrap.c:593 ../../po/../userhelper-wrap.c:766
+#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
 msgid "Error"
 msgstr "തെറ്റ് സംഭവിച്ചിരിക്കുന്നു"
 
-#: ../../po/../userhelper-wrap.c:605
+#: ../../po/../userhelper-wrap.c:612
 msgid "Information"
 msgstr "വിവരങ്ങള്‍"
 
-#: ../../po/../userhelper-wrap.c:758
+#: ../../po/../userhelper-wrap.c:765
 msgid "Placeholder text."
 msgstr "പ്ളെയ്സ്ഹോള്‍ഡറ്‍ ടെക്സ്ഫറ്റ്."
 
-#: ../../po/../userhelper-wrap.c:807
+#: ../../po/../userhelper-wrap.c:814
 #, fuzzy
 msgid "Changing password."
 msgstr "നിങ്ങളുടെ ലോഗിന്‍ പാസ് വേര്‍ഡ് മാറ്റുക"
 
-#: ../../po/../userhelper-wrap.c:809
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
 msgstr "സ്വകാര്യ വിവരങ്ങള്‍ മാറ്റുക."
 
-#: ../../po/../userhelper-wrap.c:812
+#: ../../po/../userhelper-wrap.c:819
 msgid "Changing login shell."
 msgstr "ലോഗിന്‍ ഷെല്ല മാറ്റുന്നു."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:823
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -358,7 +358,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../../po/../userhelper-wrap.c:818
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -367,7 +367,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:830
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -375,7 +375,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡാണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -383,26 +383,26 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡാണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../../po/../userhelper-wrap.c:835
+#: ../../po/../userhelper-wrap.c:842
 msgid "_Run Unprivileged"
 msgstr "റണ്‍ അണ്‍പ്രവിലേജ്ഡ്(_R)"
 
-#: ../../po/../userhelper-wrap.c:990
+#: ../../po/../userhelper-wrap.c:999
 #, c-format
 msgid "Pipe error.\n"
 msgstr "പൈപ്പ് എററ്‍.\n"
 
-#: ../../po/../userhelper-wrap.c:997
+#: ../../po/../userhelper-wrap.c:1006
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() ചെയ്യുവാന്‍ കഴിയുന്നില്ല.\n"
 
-#: ../../po/../userhelper-wrap.c:1097 ../../po/../userhelper-wrap.c:1101
+#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() error.\n"
 
-#: ../../po/../userhelper-wrap.c:1113
+#: ../../po/../userhelper-wrap.c:1122
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
@@ -425,7 +425,7 @@ msgstr "മൌണ്ട്ട്(_M)"
 msgid "Un_mount"
 msgstr "അണ്‍മൌണ്ട്ട്(_m)"
 
-#: ../../po/../usermount.c:286
+#: ../../po/../usermount.c:289
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -433,15 +433,15 @@ msgstr ""
 "ഡിസ്ക്ക് ഫോറ്‍മാറ്റ് ചെയ്യണമെന്ന് നിങ്ങള്‍ക്ക് ഉറപ്പാണോ?  അതില്‍ ഇപ്പോള്‍ അടങ്ങിയിരിക്കുന്നതെല്ലാം "
 "നിങ്ങള്‍ക്ക് നഷ്ടമാകും."
 
-#: ../../po/../usermount.c:297
+#: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "ഒരു ലോ-ലവല്‍ ഫോറ്‍മാറ്റിംഗ്(_l) നടത്തുക."
 
-#: ../../po/../usermount.c:335
+#: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "ഒരു ഫയല്‍ സിസ്റ്റം (_f) ടൈപ്പ് തിരഞ്ഞെടുക്കുക:"
 
-#: ../../po/../usermount.c:504
+#: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -450,28 +450,28 @@ msgstr ""
 "നിങ്ങളുടെ അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക."
 
 #. Create the dialog.
-#: ../../po/../usermount.c:505 ../../po/../usermount.c:517
+#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "യൂസറ്‍ മൌണ്ട് ടൂള്‍"
 
 #. Create the other buttons.
-#: ../../po/../usermount.c:535
+#: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "ഫോറ്‍മാറ്റ(_F)"
 
-#: ../../po/../usermount.c:571
+#: ../../po/../usermount.c:574
 msgid "Device"
 msgstr "ഡിവൈസ്"
 
-#: ../../po/../usermount.c:577
+#: ../../po/../usermount.c:580
 msgid "Directory"
 msgstr "ഡൈറക്ടറി"
 
-#: ../../po/../usermount.c:583
+#: ../../po/../usermount.c:586
 msgid "Filesystem"
 msgstr "ഫൈല്‍സിസ്റ്റം"
 
-#: ../../po/../usermount.c:630
+#: ../../po/../usermount.c:633
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "ഡിവൈസ് %s ഫോര്‍മാറ്റ് ചെയ്യുവാന്‍ സാധ്യമല്ല."

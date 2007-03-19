@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-14 06:19+0100\n"
+"POT-Creation-Date: 2007-03-19 23:03+0100\n"
 "PO-Revision-Date: 2007-03-14 11:08-0300\n"
 "Last-Translator: Domingo Becker <beckerde@hotmail.com>\n"
 "Language-Team:  <es@li.org>\n"
@@ -94,67 +94,74 @@ msgstr "usuario: "
 msgid "Password: "
 msgstr "Contraseña: "
 
-#: ../../po/../pam-panel-icon.c:88
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Fallo al quitar privilegios de administrador: %s"
 
-#: ../../po/../pam-panel-icon.c:97
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
-msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
-msgstr "Fallo al quitar privilegios de administrador: pam_timestamp_check devolvió el código de error %d"
-
-#: ../../po/../pam-panel-icon.c:141
-msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
-msgstr "Usted no está actualmente autorizado a configurar parámetros globales del sistema (que afectan todos los usuarios) sin escribir la contraseña de administrador otra vez. Puede cancelar esta autorización."
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+"Fallo al quitar privilegios de administrador: pam_timestamp_check devolvió "
+"el código de error %d"
 
 #: ../../po/../pam-panel-icon.c:146
-#: ../../po/../pam-panel-icon.c:172
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+"Usted no está actualmente autorizado a configurar parámetros globales del "
+"sistema (que afectan todos los usuarios) sin escribir la contraseña de "
+"administrador otra vez. Puede cancelar esta autorización."
+
+#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "Mantener Autorización"
 
-#: ../../po/../pam-panel-icon.c:149
-#: ../../po/../pam-panel-icon.c:179
+#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "Olvidar Autorización"
 
-#: ../../po/../pam-panel-icon.c:277
+#: ../../po/../pam-panel-icon.c:284
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check no tiene setuid root"
 
-#: ../../po/../pam-panel-icon.c:281
+#: ../../po/../pam-panel-icon.c:288
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "ninguna terminal controla a pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:285
+#: ../../po/../pam-panel-icon.c:292
 msgid "user unknown to pam_timestamp_check"
 msgstr "usuario desconocido para pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:289
+#: ../../po/../pam-panel-icon.c:296
 msgid "permissions error in pam_timestamp_check"
 msgstr "errores de permisos en pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:293
+#: ../../po/../pam-panel-icon.c:300
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "la terminal que controla a pam_timestamp_check es inválida"
 
-#: ../../po/../pam-panel-icon.c:311
+#: ../../po/../pam-panel-icon.c:318
 #, c-format
 msgid "Error: %s\n"
 msgstr "Error: %s\n"
 
-#: ../../po/../pam-panel-icon.c:376
+#: ../../po/../pam-panel-icon.c:383
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Fallo al ejecutar el comando \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:388
-#: ../../po/../userhelper-wrap.c:1023
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Fallo al hacer no bloqueante el canal E/S: %s\n"
 
-#: ../../po/../pam-panel-icon.c:464
+#: ../../po/../pam-panel-icon.c:475
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: fallo al conectar con el administrador de sesiones\n"
 
@@ -165,18 +172,17 @@ msgstr ""
 "No se pudo establecer el contexto por defecto para %s \n"
 "en el programa %s \n"
 
-#: ../../po/../userhelper.c:212
-#: ../../po/../userhelper.c:214
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "No se pudo establecer el contexto de ejecución a %s.\n"
 
-#: ../../po/../userhelper.c:570
+#: ../../po/../userhelper.c:574
 #, c-format
 msgid "Password for %s"
 msgstr "Contraseña para %s"
 
-#: ../../po/../userhelper.c:819
+#: ../../po/../userhelper.c:823
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -186,7 +192,7 @@ msgstr ""
 "privilegios administrativos, pero se necesita más información\n"
 "para poder hacerlo."
 
-#: ../../po/../userhelper.c:821
+#: ../../po/../userhelper.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -195,7 +201,7 @@ msgstr ""
 "Está intentando ejecutar \"%s\" que requiere los privilegios\n"
 "de administrador,  pero se necesita más información para hacerlo."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:829
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -204,7 +210,7 @@ msgstr ""
 "privilegios de administrador, pero se necesita más información\n"
 "para hacerlo."
 
-#: ../../po/../userhelper.c:827
+#: ../../po/../userhelper.c:831
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -212,31 +218,33 @@ msgstr ""
 "Está intentando ejecutar un comando que requiere los privilegios\n"
 "de administrador, pero se necesita más información para hacerlo."
 
-#: ../../po/../userhelper.c:846
+#: ../../po/../userhelper.c:850
 #, c-format
 msgid "Password for %s: "
 msgstr "Contraseña para %s:"
 
-#: ../../po/../userhelper.c:2367
+#: ../../po/../userhelper.c:2395
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "El userhelper debe configurar la setuid de root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2465
+#: ../../po/../userhelper.c:2493
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Imposible abrir una ventana gráfica y encontrar una terminal de control.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Imposible abrir una ventana gráfica y encontrar una terminal de control.\n"
 
-#: ../../po/../userhelper-wrap.c:201
+#: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
 msgstr "Código de salida desconocido."
 
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:207
 msgid "Information updated."
 msgstr "Información actualizada."
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:209
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -244,7 +252,7 @@ msgstr ""
 "La contraseña que ha escrito es inválida.\n"
 "Por favor, inténtelo de nuevo."
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:211
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -254,11 +262,11 @@ msgstr ""
 "Esto se debe probablemente a los dos puntos o las comas en uno de los\n"
 "campos. Por favor, suprímalos e inténtelo de nuevo."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:213
 msgid "Password resetting error."
 msgstr "Error al restablecer la contraseña."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -266,19 +274,19 @@ msgstr ""
 "Algunos archivos del sistema están bloqueados.\n"
 "Por favor, inténtelo de nuevo más tarde."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:217
 msgid "Unknown user."
 msgstr "Usuario desconocido."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:219
 msgid "Insufficient rights."
 msgstr "Derechos insuficientes."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:221
 msgid "Invalid call to subprocess."
 msgstr "Llamada inválida a un subproceso."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:223
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -288,98 +296,112 @@ msgstr ""
 "No le está permitido cambiar su shell.\n"
 "Consulte con su administrador de sistema."
 
-#: ../../po/../userhelper-wrap.c:222
+#: ../../po/../userhelper-wrap.c:226
 msgid "Out of memory."
 msgstr "Falta Memoria."
 
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:228
 msgid "The exec() call failed."
 msgstr "La llamada a exec() falló."
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:230
 msgid "Failed to find selected program."
 msgstr "No se ha encontrado el programa seleccionado."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:233
 msgid "Request canceled."
 msgstr "Solicitud cancelada."
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:235
 msgid "Internal PAM error occured."
 msgstr "Ocurrió un error interno PAM."
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:237
 msgid "Unknown error."
 msgstr "Error desconocido."
 
-#: ../../po/../userhelper-wrap.c:504
+#: ../../po/../userhelper-wrap.c:511
 msgid "Query"
 msgstr "Preguntar"
 
-#: ../../po/../userhelper-wrap.c:593
-#: ../../po/../userhelper-wrap.c:766
+#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
 msgid "Error"
 msgstr "Error"
 
-#: ../../po/../userhelper-wrap.c:605
+#: ../../po/../userhelper-wrap.c:612
 msgid "Information"
 msgstr "Información"
 
-#: ../../po/../userhelper-wrap.c:758
+#: ../../po/../userhelper-wrap.c:765
 msgid "Placeholder text."
 msgstr "Texto que contiene espacio"
 
-#: ../../po/../userhelper-wrap.c:807
+#: ../../po/../userhelper-wrap.c:814
 msgid "Changing password."
 msgstr "Cambiando la contraseña."
 
-#: ../../po/../userhelper-wrap.c:809
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
 msgstr "Cambio de la informacion personal."
 
-#: ../../po/../userhelper-wrap.c:812
+#: ../../po/../userhelper-wrap.c:819
 msgid "Changing login shell."
 msgstr "Cambio del shell de ingreso."
 
-#: ../../po/../userhelper-wrap.c:816
-#, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Está intentado ejecutar \"%s\" que puede beneficiarse de los privilegios administrativos, pero se necesita más información para poder hacerlo."
-
-#: ../../po/../userhelper-wrap.c:818
-#, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Ha intentado ejecutar \"%s\" que requiere los privilegios administrativos, pero necesita más información para hacerlo. "
-
 #: ../../po/../userhelper-wrap.c:823
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Ha intentado ejecutar un comando que se beneficia de los privilegios administrativos,  pero se necesita más información para hacerlo."
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Está intentado ejecutar \"%s\" que puede beneficiarse de los privilegios "
+"administrativos, pero se necesita más información para poder hacerlo."
 
 #: ../../po/../userhelper-wrap.c:825
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Ha intentado ejecutar un comando que requiere los privilegios administrativos,  pero se necesita más información para hacerlo."
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"Ha intentado ejecutar \"%s\" que requiere los privilegios administrativos, "
+"pero necesita más información para hacerlo. "
 
-#: ../../po/../userhelper-wrap.c:835
+#: ../../po/../userhelper-wrap.c:830
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Ha intentado ejecutar un comando que se beneficia de los privilegios "
+"administrativos,  pero se necesita más información para hacerlo."
+
+#: ../../po/../userhelper-wrap.c:832
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Ha intentado ejecutar un comando que requiere los privilegios "
+"administrativos,  pero se necesita más información para hacerlo."
+
+#: ../../po/../userhelper-wrap.c:842
 msgid "_Run Unprivileged"
 msgstr "_Ejecutar sin privilegios"
 
-#: ../../po/../userhelper-wrap.c:990
+#: ../../po/../userhelper-wrap.c:999
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Error de canal.\n"
 
-#: ../../po/../userhelper-wrap.c:997
+#: ../../po/../userhelper-wrap.c:1006
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "No se puede crear un nuevo proceso con fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1097
-#: ../../po/../userhelper-wrap.c:1101
+#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Error en dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1113
+#: ../../po/../userhelper-wrap.c:1122
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Error execl(), errno=%d\n"
@@ -402,19 +424,23 @@ msgstr "_Montar"
 msgid "Un_mount"
 msgstr "Des_montar"
 
-#: ../../po/../usermount.c:286
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "¿Está seguro de que querer formatear este disco?  Destruirá cualquier dato existente."
+#: ../../po/../usermount.c:289
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"¿Está seguro de que querer formatear este disco?  Destruirá cualquier dato "
+"existente."
 
-#: ../../po/../usermount.c:297
+#: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "Ejecutar un formato a bajo nive_l."
 
-#: ../../po/../usermount.c:335
+#: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "Seleccione el tipo de sistema de archivos a crear:"
 
-#: ../../po/../usermount.c:504
+#: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -423,29 +449,28 @@ msgstr ""
 "desmontar. Contacte con su administrador."
 
 #. Create the dialog.
-#: ../../po/../usermount.c:505
-#: ../../po/../usermount.c:517
+#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Herramienta de montaje para el usuario"
 
 #. Create the other buttons.
-#: ../../po/../usermount.c:535
+#: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "_Formatear"
 
-#: ../../po/../usermount.c:571
+#: ../../po/../usermount.c:574
 msgid "Device"
 msgstr "Dispositivo"
 
-#: ../../po/../usermount.c:577
+#: ../../po/../usermount.c:580
 msgid "Directory"
 msgstr "Directorio"
 
-#: ../../po/../usermount.c:583
+#: ../../po/../usermount.c:586
 msgid "Filesystem"
 msgstr "Sistema de archivo"
 
-#: ../../po/../usermount.c:630
+#: ../../po/../usermount.c:633
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "El dispositivo '%s' no puede ser formateado"
@@ -500,8 +525,9 @@ msgstr "Contraseña"
 
 #~ msgid "Message"
 #~ msgstr "Mensaje"
+
 #~ msgid "Help"
 #~ msgstr "Ayuda"
+
 #~ msgid "*"
 #~ msgstr "*"
-
