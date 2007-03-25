@@ -1,21 +1,21 @@
 # Dutch translation of usermode.
-# Copyright (C) 2003, 2004, 2005 The Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005, 2007 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003.
-# Peter van Egdom <p.van.egdom@gmail.com>, 2004, 2005.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003.
+# Peter van Egdom <p.van.egdom@gmail.com>, 2004, 2005, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2005-11-23 22:50+0100\n"
+"PO-Revision-Date: 2007-03-25 21:07+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -82,11 +82,11 @@ msgstr "Sorry, wachtwoorden komen niet overeen"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Systeembrede configuratie-middelen opstarten zonder wachtwoord."
+msgstr "Systeembrede configuratiehulpmiddelen opstarten zonder wachtwoord."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
-msgstr "aanmelden: "
+msgstr "login: "
 
 #: ../../po/../dummy.h:34
 msgid "Password: "
@@ -95,7 +95,7 @@ msgstr "Wachtwoord: "
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr "Loslaten van beheerders-privileges mislukt: %s"
+msgstr "Loslaten van beheerdersprivileges mislukt: %s"
 
 #: ../../po/../pam-panel-icon.c:98
 #, c-format
@@ -103,7 +103,7 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Loslaten van beheerders-privileges mislukt: pam_timestamp_check gaf foutcode "
+"Loslaten van beheerdersprivileges mislukt: pam_timestamp_check gaf foutcode "
 "%d terug"
 
 #: ../../po/../pam-panel-icon.c:146
@@ -114,7 +114,7 @@ msgid ""
 msgstr ""
 "Op dit moment bent u geautoriseerd om systeembrede instellingen aan te "
 "passen (die gevolgen kunnen hebben voor alle gebruikers) zonder daarbij "
-"opnieuw het beheerderswachtwoord te hoeven invoeren. U kunt deze "
+"opnieuw het beheerderswachtwoord te moeten invoeren. U kunt deze "
 "autorisaties opheffen."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
@@ -187,7 +187,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerders-privileges\n"
+"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
 "nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: ../../po/../userhelper.c:825
@@ -196,7 +196,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerders-privileges\n"
+"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
 "benodigd zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: ../../po/../userhelper.c:829
@@ -204,7 +204,7 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerders-privileges\n"
+"U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
 "nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: ../../po/../userhelper.c:831
@@ -212,7 +212,7 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerders-privileges\n"
+"U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
 "benodigd zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: ../../po/../userhelper.c:850
@@ -336,18 +336,17 @@ msgid "Placeholder text."
 msgstr "Vervangende tekst."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Uw aanmeld-wachtwoord veranderen"
+msgstr "Veranderen van wachtwoord."
 
 # dit dekt de lading beter dan: persoonlijke informatie
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
-msgstr "Identiteitsgegevens veranderen."
+msgstr "Veranderen van identiteitsgegevens."
 
 #: ../../po/../userhelper-wrap.c:819
 msgid "Changing login shell."
-msgstr "Aanmeld-shell veranderen."
+msgstr "Veranderen van login-shell."
 
 #: ../../po/../userhelper-wrap.c:823
 #, c-format
@@ -355,7 +354,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerders-privileges nuttig kunnen "
+"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges nuttig kunnen "
 "zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: ../../po/../userhelper-wrap.c:825
@@ -364,7 +363,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerders-privileges benodigd zijn. "
+"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges benodigd zijn. "
 "Hiervoor is een root-wachtwoord vereist."
 
 #: ../../po/../userhelper-wrap.c:830
@@ -372,7 +371,7 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerders-privileges nuttig "
+"U probeert een opdracht uit te voeren waarbij beheerdersprivileges nuttig "
 "kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: ../../po/../userhelper-wrap.c:832
@@ -380,7 +379,7 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerders-privileges benodigd "
+"U probeert een opdracht uit te voeren waarbij beheerdersprivileges benodigd "
 "zijn. Hiervoor is een root-wachtwoord vereist."
 
 #: ../../po/../userhelper-wrap.c:842
@@ -439,7 +438,7 @@ msgstr "Een _low-level format uitvoeren."
 
 #: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
-msgstr "Een bestandssysteem selecteren om aan te maken:"
+msgstr "Selecteer het soort bestandssysteem om aan te maken:"
 
 #: ../../po/../usermount.c:507
 msgid ""
@@ -456,13 +455,13 @@ msgstr ""
 #. Create the dialog.
 #: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
-msgstr "Schijven aankoppelen"
+msgstr "Hulpmiddel voor aankoppelen schijven"
 
 # werkwoord of znw?
 #. Create the other buttons.
 #: ../../po/../usermount.c:538
 msgid "_Format"
-msgstr "_Format"
+msgstr "_Formatteren"
 
 #: ../../po/../usermount.c:574
 msgid "Device"
@@ -491,7 +490,7 @@ msgstr "Telefoonnummer privé:"
 
 #: ../usermode.glade.h:3
 msgid "Login Shell:"
-msgstr "Aanmeld-shell:"
+msgstr "Login-shell:"
 
 #: ../usermode.glade.h:4
 msgid "Office Phone Number:"
@@ -519,11 +518,11 @@ msgstr "Schijfbeheer"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Bestandssystemen aan en afkoppelen"
+msgstr "Bestandssystemen aankoppelen en afkoppelen"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Uw aanmeld-wachtwoord veranderen"
+msgstr "Uw login-wachtwoord veranderen"
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
