@@ -1,23 +1,22 @@
-# translation of bg.po to Български
-# translation of bg.po to Bulgarian
-# translation of usermode.po to Bulgarian
+# translation of usermode.pot to Bulgarian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
 # Doncho N. Gunchev <mr700@globalnet.bg>, 2004.
 # Николай Сърмаджиев <nikolayd@sarmadzhiev.tk>, 2004.
-#
+# Doncho N. Gunchev <gunchev@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: bg\n"
+"Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2004-10-04 12:06-0700\n"
-"Last-Translator: Николай Сърмаджиев <nikolayd@sarmadzhiev.tk>\n"
-"Language-Team: Български <bg@li.org>\n"
+"PO-Revision-Date: 2007-03-26 01:10+0300\n"
+"Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
+"Language-Team: Bulgarian <Bulgarian Translators' Team <dict@fsa-bg.org>>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -40,7 +39,7 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: ../../po/../dummy.h:21
 msgid "OK"
-msgstr "Добре"
+msgstr "Да"
 
 #: ../../po/../dummy.h:22
 msgid "Exit"
@@ -88,7 +87,7 @@ msgstr "Стартиране на инструменти за настройка
 
 #: ../../po/../dummy.h:33
 msgid "login: "
-msgstr "Име: "
+msgstr "потребител: "
 
 #: ../../po/../dummy.h:34
 msgid "Password: "
@@ -97,7 +96,7 @@ msgstr "Парола: "
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr "Провал при отнемането на администраторските привилегии: %s"
+msgstr "Неуспешна отмяна на административните права: %s"
 
 #: ../../po/../pam-panel-icon.c:98
 #, c-format
@@ -105,7 +104,7 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Провал при отнемането на администраторските привилегии: pam_timestamp_check "
+"Неуспешна отмяна на административните права: pam_timestamp_check "
 "върна код на грешка %d"
 
 #: ../../po/../pam-panel-icon.c:146
@@ -114,8 +113,8 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
-"В момента сте оторизиран да настройвате системни параметри (това се отразява "
-"на всички потребители) без отново да въвеждате администраторската парола. "
+"В момента сте оторизиран да настройвате системни параметри (това засяга "
+"всички потребители) без да въведете отново администраторската парола. "
 "Може да се откажете от тази привилегия."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
@@ -128,7 +127,7 @@ msgstr "Отказване оторизацията"
 
 #: ../../po/../pam-panel-icon.c:284
 msgid "pam_timestamp_check is not setuid root"
-msgstr "pam_timestamp_check  не е setuid руут"
+msgstr "pam_timestamp_check не е setuid root"
 
 #: ../../po/../pam-panel-icon.c:288
 msgid "no controlling tty for pam_timestamp_check"
@@ -159,16 +158,16 @@ msgstr "Провал при стартиране командата\"%s\":%s\n"
 #: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "Провал при установяването на деболкиране IO канала: %s\n"
+msgstr "Неуспех при настройка на IO канала в неблокиращ режим: %s\n"
 
 #: ../../po/../pam-panel-icon.c:475
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr "pam-panel-icon: провал при свързването с управителя на сесиите\n"
+msgstr "pam-panel-icon: неуспех при свързването с мениджъра на сесията\n"
 
 #: ../../po/../userhelper.c:201
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Неуспешно установяване контекста на изпълнение на %s.\n"
+msgstr "Неуспешно установяване подразбиращ се контекст %s за програмата %s.\n"
 
 #: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
@@ -227,11 +226,9 @@ msgstr "userhelper трябва да бъде setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Не може да бъде отворен графичен прозорец, а не може да бъде намерен и "
-"контролен терминал.\n"
+"Не може да бъде отворен графичен прозорец, а не може да бъде намерен и контролен терминал.\n"
 
 #: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
@@ -307,11 +304,11 @@ msgstr "Избраната програма не може да бъде наме
 
 #: ../../po/../userhelper-wrap.c:233
 msgid "Request canceled."
-msgstr ""
+msgstr "Заявката прекратена."
 
 #: ../../po/../userhelper-wrap.c:235
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Възникна вътрешна PAM грешка."
 
 #: ../../po/../userhelper-wrap.c:237
 msgid "Unknown error."
@@ -334,9 +331,8 @@ msgid "Placeholder text."
 msgstr "Място за текст."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Промяна на паролата за вход"
+msgstr "Промяна на паролата."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -407,7 +403,7 @@ msgstr "Грешка %d при извикване на execl()\n"
 #: ../../po/../userinfo.c:373
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Неочакван аргумент"
 
 #: ../../po/../userinfo.c:398
 #, c-format
@@ -471,7 +467,7 @@ msgstr "Файлова система"
 #: ../../po/../usermount.c:633
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Устройството '%s' не може да бъде форматирано."
 
 #: ../usermode.glade.h:1
 msgid "Full Name:"
@@ -521,11 +517,3 @@ msgstr "Промяна на паролата за вход"
 msgid "Password"
 msgstr "Парола"
 
-#~ msgid "Message"
-#~ msgstr "Съобщение"
-
-#~ msgid "Help"
-#~ msgstr "Помощ"
-
-#~ msgid "*"
-#~ msgstr "*"
