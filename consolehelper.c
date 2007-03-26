@@ -25,7 +25,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifndef DISABLE_X11
 #include <gtk/gtk.h>
+#endif
 #include "userhelper.h"
 #include "userhelper-wrap.h"
 

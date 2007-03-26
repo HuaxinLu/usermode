@@ -1,3 +1,8 @@
+2007-03-26  Miloslav Trmac  <mitr@redhat.com>
+
+	* consolehelper.c: Allow building consolehelper-nox.c without GTK+
+	headers.  Patch by Robert Scheck <redhat-bugzilla@linuxnetz.de>.
+
 2007-03-19  Miloslav Trmac  <mitr@redhat.com>
 
 	* configure.in: Release 1.91.
