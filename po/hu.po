@@ -1,25 +1,23 @@
-# translation of hu.po to hungarian
-# translation of hu.po to Hungarian
 # Hungarian translation of usermode.
-# Copyright (C) 2003-2004, 2005, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2003-2004, 2005, 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
+#
 # Tamas Szanto <tszanto@mol.hu>, 2003.
 # Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
-# Arpad Biro <biro_arpad@yahoo.com>, 2004, 2005.
+# Arpad Biro <biro_arpad@yahoo.com>, 2004, 2005, 2007.
 # Szentiványi Gábor <szentivanyi.gabor@ulx.hu>, 2006.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: hu\n"
+"Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-02-01 23:47+0100\n"
-"Last-Translator: Szentiványi Gábor <szentivanyi.gabor@ulx.hu>\n"
-"Language-Team: hungarian\n"
+"PO-Revision-Date: 2007-03-26 22:13+0200\n"
+"Last-Translator: Arpad Biro <biro_arpad@yahoo.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -233,8 +231,7 @@ msgstr "a userhelper programnak 'setuid root' beállításúnak kell lennie\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem "
 "található.\n"
@@ -341,7 +338,7 @@ msgstr "Alapértelmezett szöveg."
 
 #: ../../po/../userhelper-wrap.c:814
 msgid "Changing password."
-msgstr ""
+msgstr "Jelszó módosítása."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -432,8 +429,7 @@ msgstr "Le_választás"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
+msgstr "Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
 
 #: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
@@ -505,35 +501,25 @@ msgstr "Felhasználói adatok"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "Magamról"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "A személyes adatok megváltoztatása."
+msgstr "A személyes adatok megváltoztatása"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "Lemezkezelés"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "Fájlrendszerek csatolása és leválasztása"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "Bejelentkezési jelszó módosítása"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "Jelszó: "
+msgstr "Jelszó"
 
-#~ msgid "Message"
-#~ msgstr "Üzenet"
-
-#~ msgid "Help"
-#~ msgstr "Segítség"
-
-#~ msgid "*"
-#~ msgstr "*"
