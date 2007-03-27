@@ -1,6 +1,6 @@
 # Ukrainian translation of usermode
 # Previous translator: Yuriy Syrota <rasta@renome.rovno.ua
-# Maxim Dziumanenko <mvd@mylinux.com.ua>, 2003
+# Maxim Dziumanenko <dziumanenko@gmail.com>, 2003
 #
 msgid ""
 msgstr ""
@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
 "PO-Revision-Date: 2006-04-02 14:08+0200\n"
-"Last-Translator: Maxim Dzumanenko <mvd@mylinux.com.ua>\n"
+"Last-Translator: Maxim Dzumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -327,9 +327,8 @@ msgid "Placeholder text."
 msgstr "Місце для тексту."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Зміна власного паролю"
+msgstr "Зміна паролю."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
