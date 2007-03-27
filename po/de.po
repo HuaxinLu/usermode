@@ -1,10 +1,7 @@
-# translation of de.po to 
-# translation of de.po to
-# translation of de.po to German / Deutsch
 # translation of de.po to
 # translation of usermode.po to
-# translation of de.po to Deutsch
-# Copyright (C) 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+#
 # Ronny Buchmann <ronny-vlug@vlugnet.org>, 2004,2006.
 # Claudia Krug <fhonig@redhat.it>, YEAR.
 # Bernd Groh <bgroh@redhat.com>, 2003.
@@ -13,19 +10,19 @@
 # Marcus Gloeckner <mgloeckner@gmail.com>, 2005.
 # Severin Heiniger <severinheiniger@gmail.com>, 2005.
 # T^2 <ttrinks@redhat.com>, 2006.
-#
+# PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-12-01 09:01+1000\n"
-"Last-Translator: T^2 <ttrinks@redhat.com>\n"
-"Language-Team:  <en@li.org>\n"
+"PO-Revision-Date: 2007-03-27 14:28+1000\n"
+"Last-Translator: PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>\n"
+"Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #.
@@ -177,8 +174,7 @@ msgstr "pam-panel-icon: konnte nicht mit Session-Manager verbinden\n"
 #: ../../po/../userhelper.c:201
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
-"Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
+msgstr "Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
 
 #: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
@@ -237,8 +233,7 @@ msgstr "userhelper muss Setuid-Root sein\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -345,9 +340,8 @@ msgid "Placeholder text."
 msgstr "Platzhalter-Text."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Ihr Login-Passwort ändern"
+msgstr "Das Passwort ändern."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -532,11 +526,3 @@ msgstr "Ihr Login-Passwort ändern"
 msgid "Password"
 msgstr "Passwort"
 
-#~ msgid "Message"
-#~ msgstr "Meldung"
-
-#~ msgid "Help"
-#~ msgstr "Hilfe"
-
-#~ msgid "*"
-#~ msgstr "*"
