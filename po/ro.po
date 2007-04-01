@@ -1,22 +1,25 @@
+# translation of ro.po to
 # Romanian translation of usermode
 # Copyright (C) 2006usermode .
 # This file is distributed under the same license as the usermode package.
+#
+#
 # Marius Andreiana <marius galuna ro>, 2003.
 # Alexandru Szasz <alexxed@gmail.com>, 2006.
 # Marius Andreiana <marius galuna ro>, 2006.
-# 
-# 
+# MIrcea Daniel <visez.trance@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode cvs\n"
+"Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-11-16 23:03+0200\n"
-"Last-Translator: Alexandru Szasz <alexxed@gmail.com>\n"
-"Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2007-04-01 09:33+0300\n"
+"Last-Translator: MIrcea Daniel <visez.trance@gmail.com>\n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -228,8 +231,7 @@ msgstr "userhelper trebuie să fie setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Nu se poate deschide fereastra grafică şi nu se găseşte terminalul care "
 "controlează.\n"
@@ -336,9 +338,8 @@ msgid "Placeholder text."
 msgstr "Text înlocuitor."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Schimbă parola de login"
+msgstr "Schimb parola."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -524,29 +525,3 @@ msgstr "Schimbă parola de login"
 msgid "Password"
 msgstr "Parolă"
 
-#~ msgid "Message"
-#~ msgstr "Mesaj"
-
-#~ msgid "Help"
-#~ msgstr "Ajutor"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "_Ok"
-#~ msgstr "_Ok"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Renunţă"
-
-#~ msgid "_Close"
-#~ msgstr "_Închide"
-
-#~ msgid "Type"
-#~ msgstr "Tip"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Demontează"
-
-#~ msgid "E_xit"
-#~ msgstr "_Ieşire"
