@@ -11,12 +11,12 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-08-25 15:14+0100\n"
+"PO-Revision-Date: 2007-04-03 10:35+0200\n"
 "Last-Translator: Ján Ondrej <ondrejj@salstar.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -333,9 +333,8 @@ msgid "Placeholder text."
 msgstr "Miesto pre text."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Zmeniť vaše prihlasovacie heslo"
+msgstr "Mením heslo."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
