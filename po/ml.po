@@ -1,20 +1,20 @@
 # translation of ml.po to Malayalam
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Ani Peter <apeter@redhat.com>, 2006.
 #
+# Ani Peter <apeter@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-12-04 09:53+0530\n"
+"PO-Revision-Date: 2007-04-02 11:31+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
-"Language-Team: Malayalam\n"
+"Language-Team: Malayalam <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 "\n"
@@ -232,8 +232,7 @@ msgstr "userhelperന് setuid root ആവശ്യമാണ്\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ഗ്രാഫിക്കല്‍ ജാലകം തുറക്കുവാനും കണ്ട്രോളിങ് ടര്‍മിനല്‍ കണ്ടുപിടിക്കുവാനും സാധിക്കുന്നില്ല.\n"
 
 #: ../../po/../userhelper-wrap.c:205
@@ -337,9 +336,8 @@ msgid "Placeholder text."
 msgstr "പ്ളെയ്സ്ഹോള്‍ഡറ്‍ ടെക്സ്ഫറ്റ്."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "നിങ്ങളുടെ ലോഗിന്‍ പാസ് വേര്‍ഡ് മാറ്റുക"
+msgstr "പാസ്‌വേറ്‍ഡ് മാറ്റുന്നു."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -524,11 +522,3 @@ msgstr "നിങ്ങളുടെ ലോഗിന്‍ പാസ് വേര
 msgid "Password"
 msgstr "പാസ് വേര്‍ഡ്"
 
-#~ msgid "Message"
-#~ msgstr "സന്ദേശം"
-
-#~ msgid "Help"
-#~ msgstr "സഹായം"
-
-#~ msgid "*"
-#~ msgstr "*"
