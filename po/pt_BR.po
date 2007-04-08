@@ -1,5 +1,4 @@
-# translation of pt_BR.po to Português Brasil
-# translation of pt_BR.po to Portuguese
+# translation of pt_BR.po to Brazilian Portuguese
 # Brazilian Portuguese localization of Red Hat Linux
 # Originated from the Portuguese translation by
 # Pedro Morais <morais@kde.org>
@@ -8,14 +7,14 @@
 # Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>, 2005.
 # Diego Búrigo Zacarão <diegobz@gmail.com>, 2006.
 # Igor Pires Soares <igor@projetofedora.org>, 2006,2007.
-#
-#
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2007-03-11 12:50-0300\n"
+"PO-Revision-Date: 2007-04-08 06:52-0300\n"
 "Last-Translator: Igor Pires Soares <igor@projetofedora.org>\n"
 "Language-Team: Brazilian Portuguese <fedora-trans-pt_br@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +55,7 @@ msgstr "Cancelar"
 
 #: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
-msgstr "Executar sem privilégios"
+msgstr "Executar Sem Privilégios"
 
 #: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
@@ -158,16 +157,16 @@ msgstr "Erro: %s\n"
 #: ../../po/../pam-panel-icon.c:383
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr "Falha ao rodar o comando \"%s\": %s\n"
+msgstr "Falha ao executar o comando \"%s\": %s\n"
 
 #: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "Falha ao determinar o nonblocking do canal IO: %s\n"
+msgstr "Falha ao determinar o nonblocking do canal E/S: %s\n"
 
 #: ../../po/../pam-panel-icon.c:475
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr "pam-panel-icon: falha ao conectar com o administrado da sessão\n"
+msgstr "pam-panel-icon: falha ao conectar com o gerenciador de sessões\n"
 
 #: ../../po/../userhelper.c:201
 #, c-format
@@ -235,8 +234,7 @@ msgstr "userhelper deve ter o id do usuário configurado como root\n"
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Não foi possível abrir janela gráfica; e não foi possível encontrar terminal "
-"de controle.\n"
+"Não foi possível abrir uma janela gráfica; e não foi possível encontrar um terminal de controle.\n"
 
 #: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
@@ -261,7 +259,7 @@ msgid ""
 "Please remove those and try again."
 msgstr ""
 "Um ou mais dos campos alterados são inválidos.\n"
-"Normalmente isto deve-se ao uso de dois pontos ou vírgulas em um dos "
+"Normalmente isto deve-se ao uso de dois-pontos ou vírgulas em um dos "
 "campos.\n"
 "Por favor remova-os e tente novamente."
 
@@ -274,8 +272,8 @@ msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Alguns arquivos do sistema estão trancados.\n"
-"Por favor tente novamente dentro de instantes."
+"Alguns arquivos do sistema estão bloqueados.\n"
+"Por favor, tente novamente dentro de instantes."
 
 #: ../../po/../userhelper-wrap.c:217
 msgid "Unknown user."
@@ -296,12 +294,12 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "A sua janela de comandos atual não está listada em /etc/shells.\n"
-"Você não tem permissão para alterar sua janela de comandos.\n"
+"Você não tem permissão para alterar a sua janela de comandos.\n"
 "Consulte o administrador do seu sistema."
 
 #: ../../po/../userhelper-wrap.c:226
 msgid "Out of memory."
-msgstr "Acabou a memória."
+msgstr "Memória insuficiente."
 
 #: ../../po/../userhelper-wrap.c:228
 msgid "The exec() call failed."
@@ -317,7 +315,7 @@ msgstr "Pedido cancelado."
 
 #: ../../po/../userhelper-wrap.c:235
 msgid "Internal PAM error occured."
-msgstr "Erro interno PAM ocorrido."
+msgstr "Ocorreu um erro interno do PAM."
 
 #: ../../po/../userhelper-wrap.c:237
 msgid "Unknown error."
@@ -325,7 +323,7 @@ msgstr "Erro desconhecido."
 
 #: ../../po/../userhelper-wrap.c:511
 msgid "Query"
-msgstr "Pergunta"
+msgstr "Consulta"
 
 #: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
 msgid "Error"
@@ -337,7 +335,7 @@ msgstr "Informação"
 
 #: ../../po/../userhelper-wrap.c:765
 msgid "Placeholder text."
-msgstr "Texto para ocupar o espaço."
+msgstr "Texto reservado."
 
 #: ../../po/../userhelper-wrap.c:814
 msgid "Changing password."
@@ -345,11 +343,11 @@ msgstr "Alteração da senha."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
-msgstr "Alterando informações pessoais."
+msgstr "Alteração de informações pessoais."
 
 #: ../../po/../userhelper-wrap.c:819
 msgid "Changing login shell."
-msgstr "Alterando janela de login."
+msgstr "Alteração da janela de login."
 
 #: ../../po/../userhelper-wrap.c:823
 #, c-format
@@ -387,7 +385,7 @@ msgstr ""
 
 #: ../../po/../userhelper-wrap.c:842
 msgid "_Run Unprivileged"
-msgstr "_Executar sem Privilégios"
+msgstr "_Executar Sem Privilégios"
 
 #: ../../po/../userhelper-wrap.c:999
 #, c-format
@@ -412,7 +410,7 @@ msgstr "erro em execl(), errno=%d\n"
 #: ../../po/../userinfo.c:373
 #, c-format
 msgid "Unexpected argument"
-msgstr "Argumento inesperado "
+msgstr "Argumento inesperado"
 
 #: ../../po/../userinfo.c:398
 #, c-format
@@ -432,7 +430,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Você tem certeza que deseja formatar este disco?  Todos os dados contidos "
+"Você tem certeza de que deseja formatar este disco?  Todos os dados contidos "
 "nele serão destruídos."
 
 #: ../../po/../usermount.c:300
@@ -441,14 +439,14 @@ msgstr "Executar formatação de _baixo nível."
 
 #: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
-msgstr "Selecione um tipo de _sistema de arquivo a ser criado:"
+msgstr "Selecione o tipo de _sistema de arquivos a ser criado:"
 
 #: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Não há sistemas de arquivo que você possa montar ou desmontar.\n"
+"Não há sistemas de arquivos que você possa montar ou desmontar.\n"
 "Contate seu administrador de sistemas."
 
 #. Create the dialog.
@@ -476,7 +474,7 @@ msgstr "Sistema de Arquivos"
 #: ../../po/../usermount.c:633
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr "O dispositivo %s não pode ser fomatado."
+msgstr "O dispositivo \"%s\" não pode ser formatado."
 
 #: ../usermode.glade.h:1
 msgid "Full Name:"
@@ -508,19 +506,19 @@ msgstr "Sobre mim"
 
 #: ../userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Alterar informações pessoais."
+msgstr "Alterar informações pessoais"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Gerência de disco"
+msgstr "Gerenciamento do Disco"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "Monta de desmonta sistemas de arquivos"
+msgstr "Monta e desmonta sistemas de arquivos"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Altere seu usuário e senha"
+msgstr "Altere a senha do seu login"
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
