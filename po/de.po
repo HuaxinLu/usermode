@@ -9,7 +9,6 @@
 # Bernd Bartmann <Bernd.Bartmann@sohanet.de>, 2004.
 # Marcus Gloeckner <mgloeckner@gmail.com>, 2005.
 # Severin Heiniger <severinheiniger@gmail.com>, 2005.
-# T^2 <ttrinks@redhat.com>, 2006.
 # PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>, 2007.
 msgid ""
 msgstr ""
