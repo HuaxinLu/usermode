@@ -2,22 +2,23 @@
 # translation of ta.po to Tamil
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
 # Jayaradha N <jaya@pune.redhat.com>, 2004.
 # Jayaradha N <njaya@redhat.com>, 2004, 2006.
 # Felix <ifelix@redhat.com>, 2006.
-#
+# I felix <ifelix@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-12-01 14:06+0530\n"
-"Last-Translator: Felix <ifelix@redhat.com>\n"
-"Language-Team: Tamil <ta@li.org>\n"
+"PO-Revision-Date: 2007-04-12 15:38+0530\n"
+"Last-Translator: I felix <ifelix@redhat.com>\n"
+"Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 "\n"
@@ -233,8 +234,7 @@ msgstr "பயனர் உதவியாளர் setuid rootஆக இரு�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "வரைகலை சாளரத்தை திறக்க முடியவில்லை, மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
 "முடியவில்லை.\n"
@@ -340,9 +340,8 @@ msgid "Placeholder text."
 msgstr "இடம்பிடிப்பு உரை."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "உங்கள் புகுபதிவு கடவுச்சொல்லை மாற்றவும்"
+msgstr "கடவுச்சொல் மாற்றப்படுகிறது."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -525,11 +524,3 @@ msgstr "உங்கள் புகுபதிவு கடவுச்சொ�
 msgid "Password"
 msgstr "கடவுச்சொல்"
 
-#~ msgid "Message"
-#~ msgstr "செய்தி "
-
-#~ msgid "Help"
-#~ msgstr "உதவி"
-
-#~ msgid "*"
-#~ msgstr "*"
