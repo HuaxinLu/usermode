@@ -1,23 +1,23 @@
-# translation of da.po to 
+# translation of da.po to
 # translation of da.po to Danish
 # Danish translation of Eye of usermode
 # This file is distributed under the same license as the usermode package.
 # Keld Simonsen <keld@dkuug.dk>, 2002, 2003, 2004, 2005.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004.
-# Keld Simonsen <keld@rap.dk>, 2005.
+# Keld Simonsen <keld@rap.dk>, 2005, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2005-11-09 15:42+0100\n"
+"PO-Revision-Date: 2007-04-15 09:37+0200\n"
 "Last-Translator: Keld Simonsen <keld@rap.dk>\n"
 "Language-Team:  <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.10.2\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -40,7 +40,7 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: ../../po/../dummy.h:21
 msgid "OK"
-msgstr "OK"
+msgstr "O.k."
 
 #: ../../po/../dummy.h:22
 msgid "Exit"
@@ -84,8 +84,7 @@ msgstr "Desværre, adgangskoder er ikke ens"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
+msgstr "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -229,10 +228,8 @@ msgstr "userhelper skal være setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
 #: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
@@ -335,9 +332,8 @@ msgid "Placeholder text."
 msgstr "Keldroy war hæer."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Skifter adgangskode for %s"
+msgstr "Skifter adgangskode."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -523,110 +519,3 @@ msgstr "Skifter din logind-adgangskode"
 msgid "Password"
 msgstr "Adgangskode"
 
-#~ msgid "Message"
-#~ msgstr "Besked"
-
-#~ msgid "Help"
-#~ msgstr "Hjælp"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "_Ok"
-#~ msgstr "_O.k."
-
-#~ msgid "_Cancel"
-#~ msgstr "_Annullér"
-
-#~ msgid "_Close"
-#~ msgstr "_Luk"
-
-#~ msgid "Type"
-#~ msgstr "Type"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Afmontér"
-
-#~ msgid "E_xit"
-#~ msgstr "Af_slut"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "parat til at køre \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Behøver %d svar.\n"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du forsøger at køre '%s', som kan have gavn af superbruger-rettigheder,\n"
-#~ "men mere information er nødvendigt for at gøre dette."
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du forsøger at køre '%s', som kræver superbruger-rettigheder,\n"
-#~ "men mere information er nødvendigt for at gøre dette."
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du forsøger at køre en kommando, som kan have gavn af superbruger-"
-#~ "rettigheder,\n"
-#~ "men mere information er nødvendigt for at gøre dette."
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du forsøger at køre en kommando, som kræver superbruger-rettigheder,\n"
-#~ "men mere information er nødvendigt for at gøre dette."
-
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "skal til at verificere identiteten af \"%s\"\n"
-
-#~ msgid "PAM retval = %d (%s)\n"
-#~ msgstr "PAM returnerede = %d\n"
-
-#~ msgid "Yes"
-#~ msgstr "Ja"
-
-#~ msgid "No"
-#~ msgstr "Nej"
-
-#~ msgid "Prompt"
-#~ msgstr "Prompt"
-
-#~ msgid "Input"
-#~ msgstr "Inddata"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "For at køre \"%s\" med root's rettigheder, er yderligere information "
-#~ "nødvendig."
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "Du ønsker %d svar fra %d indgangsfelter!?!?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "Konsistenstjek er ikke tilsluttet."
-
-#~ msgid "Block is fine."
-#~ msgstr "Blok er fint."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Blok frigivet to gange"
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "Hukommelse før blokken var griset til."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "Hukommelse efter blokken var griset til."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Dette vil i fremtiden vise hjælp"
