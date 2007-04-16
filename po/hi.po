@@ -1,20 +1,21 @@
 # translation of hi.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rajesh Ranjan <rranjan@redhat.com>, 2004, 2005, 2006.
 #
+# Rajesh Ranjan <rranjan@redhat.com>, 2004, 2005, 2006.
+# hi <rranjan@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-12-01 12:20+0530\n"
-"Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
+"PO-Revision-Date: 2007-04-16 10:04+0530\n"
+"Last-Translator: hi <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "\n"
 "\n"
@@ -227,8 +228,7 @@ msgstr "यूजरहेल्पर को अवश्य ही setuid र�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखी विंडो को खोलने में असमर्थ, और नियंत्रक टर्मिनल को खोजने में असमर्थ.\n"
 
 #: ../../po/../userhelper-wrap.c:205
@@ -332,9 +332,8 @@ msgid "Placeholder text."
 msgstr "स्थानधारक पाठ्यांश."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "अपना लॉगिन शब्दकूट बदलें"
+msgstr "शब्दकूट बदल रहा है."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -519,11 +518,3 @@ msgstr "अपना लॉगिन शब्दकूट बदलें"
 msgid "Password"
 msgstr "शब्दकूट"
 
-#~ msgid "Message"
-#~ msgstr "संदेश"
-
-#~ msgid "Help"
-#~ msgstr "सहायता"
-
-#~ msgid "*"
-#~ msgstr "*"
