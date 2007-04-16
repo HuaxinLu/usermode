@@ -344,9 +344,8 @@ msgid "Placeholder text."
 msgstr "Θέση για κείμενο."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Αλλαγή του συνθηματικού σας"
+msgstr "Αλλαγή του συνθηματικού σας."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
