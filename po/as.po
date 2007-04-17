@@ -3,19 +3,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Amitakhya Phukan <amitakhya.phukan@gmail.com>, 2006.
-# Amitakhya Phukan <aphukan@redhat.com>, 2006.
+# Amitakhya Phukan <aphukan@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-12-01 18:24+0530\n"
+"PO-Revision-Date: 2007-04-17 15:43+0530\n"
 "Last-Translator: Amitakhya Phukan <aphukan@redhat.com>\n"
 "Language-Team: Assamese <assam@mm.assam-glug.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1)\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -102,8 +103,7 @@ msgstr "প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'ল
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'লৈ অক্ষম: pam_timestamp_check -এ অক্ষম হোৱা কোড দিলে %d"
+msgstr "প্ৰশাসকৰ অধিকাৰসমূহ এৰিব'লৈ অক্ষম: pam_timestamp_check -এ অক্ষম হোৱা কোড দিলে %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
@@ -226,8 +226,7 @@ msgstr "userhelper ৰূট setuid ত হ'ব লাগে\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2493
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "চিত্ৰালকিত পৰ্দ্দা খুলিব পৰা ন'গ'ল, আৰু নিয়ন্ত্ৰক টাৰ্মিনেল পোৱা ন'গ'ল ।\n"
 
 #: ../../po/../userhelper-wrap.c:205
@@ -331,9 +330,8 @@ msgid "Placeholder text."
 msgstr "অজ্ঞাত মান(Placeholder)ৰ লিপি ।"
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "আপোনাৰ প্ৰৱেশৰ গুপ্তশব্দ সলনি কৰক"
+msgstr "গুপ্তশব্দ সলনি কৰা হৈছে ।"
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -518,11 +516,3 @@ msgstr "আপোনাৰ প্ৰৱেশৰ গুপ্তশব্দ স
 msgid "Password"
 msgstr "গুপ্তশব্দ"
 
-#~ msgid "Message"
-#~ msgstr "সন্দেশ"
-
-#~ msgid "Help"
-#~ msgstr "সহায়"
-
-#~ msgid "*"
-#~ msgstr "*"
