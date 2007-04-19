@@ -1,3 +1,10 @@
+2007-04-19  Miloslav Trmac  <mitr@redhat.com>
+
+	* configure.in: Release 1.91.1.
+	* NEWS: Update.
+
+	* po/LINGUAS: Note that empty translations are removed.
+
 2007-03-26  Miloslav Trmac  <mitr@redhat.com>
 
 	* consolehelper.c: Allow building consolehelper-nox.c without GTK+
