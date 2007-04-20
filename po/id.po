@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-02-23 01:33+0700\n"
+"PO-Revision-Date: 2007-04-20 13:48+0700\n"
 "Last-Translator: Teguh DC <dheche@bradjamoesti.or.id>\n"
 "Language-Team: Bahasa Indonesia <viribus@traderweb.net>\n"
 "MIME-Version: 1.0\n"
@@ -347,9 +347,8 @@ msgid "Placeholder text."
 msgstr "Penempatan teks."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Ubah login password anda"
+msgstr "Ubah password."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
