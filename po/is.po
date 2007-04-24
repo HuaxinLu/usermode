@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.6\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Richard Allen <ra@ra.is>\n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2006-12-08 20:50+0000\n"
+"PO-Revision-Date: 2007-04-24 20:50+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: is <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -327,9 +327,8 @@ msgid "Placeholder text."
 msgstr "Þetta pláss autt."
 
 #: ../../po/../userhelper-wrap.c:814
-#, fuzzy
 msgid "Changing password."
-msgstr "Breyta lykilorði þínu"
+msgstr "Breyta lykilorði."
 
 #: ../../po/../userhelper-wrap.c:816
 msgid "Changing personal information."
@@ -513,12 +512,3 @@ msgstr "Breyta lykilorði þínu"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lykilorð"
-
-#~ msgid "Message"
-#~ msgstr "Skilaboð"
-
-#~ msgid "Help"
-#~ msgstr "Hjálp"
-
-#~ msgid "*"
-#~ msgstr "*"
