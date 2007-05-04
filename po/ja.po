@@ -5,13 +5,14 @@
 # James Hashida <khashida@redhat.com>, 2002
 # Noriko Mizumoto <noriko@redhat.com>, 2004
 # Hirofumi Saito <hi_saito@yk.rim.or.jp>, 2004, 2005.
+# Hyu_gabaru Ryu_ichi <hyu_gabaru@yahoo.co.jp>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2005-11-27 23:10+0900\n"
+"PO-Revision-Date: 2007-05-04 10:11+0900\n"
 "Last-Translator: Hyu_gabaru Ryu_ichi <hyu_gabaru@yahoo.co.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
