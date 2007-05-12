@@ -1,17 +1,15 @@
-# translation of fi.po to Finnish
 # Finnish messages for usermode.
-# Copyright (C) 2003 Lauri Nurmi.
 # This file is distributed under the same license as the usermode package.
 #
-# Lauri Nurmi <lanurmi@iki.fi>, 2003, 2005.
+# Lauri Nurmi <lanurmi@iki.fi>, 2003, 2005, 2007.
 # Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-19 23:03+0100\n"
-"PO-Revision-Date: 2007-03-13 01:47+0200\n"
-"Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
+"PO-Revision-Date: 2007-05-12 21:29+0300\n"
+"Last-Translator: Lauri Nurmi <lanurmi@iki.fi>\n"
 "Language-Team: Finnish <Laatu@lokalisointi.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -186,7 +184,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan\n"
+"Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan "
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper.c:825
@@ -195,7 +193,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan\n"
+"Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan "
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper.c:829
@@ -203,7 +201,7 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan\n"
+"Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan "
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper.c:831
@@ -211,7 +209,7 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan\n"
+"Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan "
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper.c:850
