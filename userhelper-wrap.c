@@ -426,21 +426,16 @@ userhelper_parse_childout(char *outline)
 	char *prompt;
 	int prompt_type;
 	static struct response *resp = NULL;
-	struct passwd *pwd;
 
 	if (resp == NULL) {
 		/* Allocate the response structure. */
 		resp = g_malloc0(sizeof(struct response));
 
-		/* Figure out who the invoking user is. */
-		pwd = getpwuid(getuid());
-		if (pwd == NULL) {
-			pwd = getpwuid(0);
-		}
-		resp->user = pwd ? g_strdup(pwd->pw_name) : g_strdup("root");
-
 		/* Create a table to hold the entry fields and labels. */
 		resp->table = gtk_table_new(2, 1, FALSE);
+		/* The First row is used for the "Authenticating as \"%s\""
+		   label. */
+		resp->rows = 1;
 	}
 
 	/* Now process items from the child. */
@@ -578,11 +573,8 @@ userhelper_parse_childout(char *outline)
 				break;
 			/* User name. Read it and save it for later. */
 			case UH_USER:
-				if ((strstr(prompt, "<user>") == NULL) && 
-				    (strstr(prompt, "<none>") == NULL)) {
-					g_free(resp->user);
-					resp->user = g_strdup(prompt);
-				}
+				g_free(resp->user);
+				resp->user = g_strdup(prompt);
 #ifdef DEBUG_USERHELPER
 				g_print("User is \"%s\".\n", resp->user);
 #endif
@@ -784,11 +776,21 @@ userhelper_parse_childout(char *outline)
 					      DATADIR "/pixmaps/password.png",
 					      NULL);
 
-		/* If we're asking questions, change the dialog's icon. */
+		/* If we're asking questions, change the dialog's icon... */
 		if (resp->responses > 0) {
 			image = (GTK_MESSAGE_DIALOG(resp->dialog))->image;
 			gtk_image_set_from_file(GTK_IMAGE(image),
 						DATADIR "/pixmaps/keyring.png");
+			/* ... and tell the user which user's passwords to
+			 * enter */
+			if (resp->user != NULL) {
+				text = g_strdup_printf(_("Authenticating as \"%s\""),
+						       resp->user);
+				label = gtk_label_new(text);
+				g_free(text);
+				gtk_table_attach(GTK_TABLE(resp->table), label,
+						 0, 2, 0, 1, 0, 0, PAD, PAD);
+			}
 		}
 
 		/* Pack the table into the dialog box. */

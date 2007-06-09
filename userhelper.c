@@ -561,31 +561,15 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 					UH_ECHO_ON_PROMPT, msg[count]->msg);
 				expected_responses++;
 				break;
-			case PAM_PROMPT_ECHO_OFF: {
-				char *noecho_message;
-
-				/* If the prompt is for the user's password,
-				 * indicate the user's name if we can.
-				 * Otherwise, just output the prompt as-is. */
-				if ((strncasecmp(msg[count]->msg,
-						 "password",
-						 8) == 0)) {
-					noecho_message =
-						g_strdup_printf(_("Password for %s"),
-								user);
-				} else {
-					noecho_message = g_strdup(msg[count]->msg);
-				}
+			case PAM_PROMPT_ECHO_OFF:
 #ifdef DEBUG_USERHELPER
-				g_print("userhelper (cp): sending prompt (no echo) ="
-					" \"%s\".\n", noecho_message);
+				g_print("userhelper (cp): sending prompt (no "
+					"echo) = \"%s\".\n", msg[count]->msg);
 #endif
 				fprintf(data->output, "%d %s\n",
-					UH_ECHO_OFF_PROMPT, noecho_message);
-				g_free(noecho_message);
+					UH_ECHO_OFF_PROMPT, msg[count]->msg);
 				expected_responses++;
 				break;
-			}
 			case PAM_TEXT_INFO:
 				/* Text information strings are output
 				 * verbatim. */
@@ -837,6 +821,11 @@ converse_console(int num_msg, const struct pam_message **msg,
 			fflush(stdout);
 			g_free(text);
 		}
+		if (user != NULL && strlen(user) != 0) {
+			fprintf(stdout, _("Authenticating as \"%s\""), user);
+			putchar('\n');
+			fflush(stdout);
+		}
 		banner++;
 	}
 
@@ -844,24 +833,15 @@ converse_console(int num_msg, const struct pam_message **msg,
 	for (i = 0; i < num_msg; i++) {
 		messages[i] = g_malloc(sizeof(*(messages[i])));
 		*(messages[i]) = *(msg[i]);
-		if (msg[i]->msg != NULL) {
-			if ((strncasecmp(msg[i]->msg, "password", 8) == 0)) {
-				messages[i]->msg =
-					g_strdup_printf(_("Password for %s: "),
-							user);
-			} else {
-				messages[i]->msg = g_strdup(_(msg[i]->msg));
-			}
-		}
+		if (msg[i]->msg != NULL)
+			messages[i]->msg = _(msg[i]->msg);
 	}
 
-	ret = misc_conv(num_msg, (const struct pam_message**)messages,
+	ret = misc_conv(num_msg, (const struct pam_message **)messages,
 			resp, appdata_ptr);
 
-	for (i = 0; i < num_msg; i++) {
-		g_free((char*)messages[i]->msg);
+	for (i = 0; i < num_msg; i++)
 		g_free(messages[i]);
-	}
 	g_free(messages);
 
 	return ret;

@@ -1,3 +1,12 @@
+2007-06-09  Miloslav Trmac  <mitr@redhat.com>
+
+	* userhelper.c (converse_console, converse_pipe): Don't replace
+	/.*password.*/i by "Password for %s".
+	(converse_console): Tell the user what user he should authenticate as.
+	* userhelper-wrap.c (userhelper_parse_childout): Don't initialize
+	resp->user from guessed data, always keep the UH_USER value.  Tell the
+	user what user he should authenticate as.
+
 2007-04-19  Miloslav Trmac  <mitr@redhat.com>
 
 	* configure.in: Release 1.91.1.
