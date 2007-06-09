@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-09 19:41+0200\n"
-"PO-Revision-Date: 2007-03-13 19:55+0200\n"
+"PO-Revision-Date: 2007-06-10 01:30+0200\n"
 "Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,25 +14,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
-#.
-#. * Copyright (C) 2001 Red Hat, Inc.
-#. *
-#. * This is free software; you can redistribute it and/or modify it
-#. * under the terms of the GNU General Public License as published by
-#. * the Free Software Foundation; either version 2 of the License, or
-#. * (at your option) any later version.
-#. *
-#. * This program is distributed in the hope that it will be useful, but
-#. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-#. * General Public License for more details.
-#. *
-#. * You should have received a copy of the GNU General Public License
-#. * along with this program; if not, write to the Free Software
-#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
-#. Just a dummy file for gettext, containing messages emmitted by various
-#. * commonly-used PAM modules.
 #: ../../po/../dummy.h:21
 msgid "OK"
 msgstr "OK"
@@ -75,7 +56,7 @@ msgstr "Hasło nie zostało zmienione"
 
 #: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Niestety, hasła nie są identyczne"
+msgstr "Przepraszam, hasła nie są identyczne"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
@@ -149,17 +130,17 @@ msgstr "Błąd: %s\n"
 #: ../../po/../pam-panel-icon.c:383
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
-msgstr "Nie powiodło się wydanie polecenia \"%s\": %s\n"
+msgstr "Uruchomienie polecenia \"%s\" nie powiodło się: %s\n"
 
 #: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr ""
-"Nie powiodło się ustawienie kanału wejścia/wyjścia w tryb bezblokowania: %s\n"
+"Ustawienie kanału wejścia/wyjścia w tryb bezblokowania nie powiodło się: %s\n"
 
 #: ../../po/../pam-panel-icon.c:475
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr "pam-panel-icon: nie powiodło się połączenie do menedżera sesji\n"
+msgstr "pam-panel-icon: połączenie się z menedżerem sesji nie powiodło się\n"
 
 #: ../../po/../userhelper.c:201
 #, c-format
@@ -169,7 +150,7 @@ msgstr "Nie można ustawić domyślnego kontekstu na %s dla programu %s.\n"
 #: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
 msgid "Could not set exec context to %s.\n"
-msgstr "Nie można ustawić kontekstu exec na %s.\n"
+msgstr "Nie można ustawić kontekstu wykonywania na %s.\n"
 
 #: ../../po/../userhelper.c:807
 #, c-format
@@ -208,14 +189,13 @@ msgstr ""
 #: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Uwierzytelnianie jako \"%s\""
 
 #: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid root\n"
 
-#. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2473
 #, c-format
 msgid ""
@@ -416,8 +396,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Czy aby na pewno chcesz sformatować dysk? Usuniesz wszystkie dane na nim "
-"zawarte."
+"Czy na pewno chcesz sformatować dysk? Usuniesz wszystkie dane na nim zawarte."
 
 #: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
@@ -432,15 +411,13 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Brak systemów plików do których montowania/odmontowywania miałbyś prawo.\n"
+"Brak systemów plików do których montowania/odmontowywania miałbyś uprawnienia.\n"
 "Skontaktuj się z administratorem."
 
-#. Create the dialog.
 #: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
-msgstr "Narzędzie montowania systemów plików"
+msgstr "Narzędzie montowania dla użytkowników"
 
-#. Create the other buttons.
 #: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "Sfo_rmatuj"
@@ -468,7 +445,7 @@ msgstr "Imię i nazwisko:"
 
 #: ../usermode.glade.h:2
 msgid "Home Phone Number:"
-msgstr "Nr telefonu do domu:"
+msgstr "Numer telefonu domowego:"
 
 #: ../usermode.glade.h:3
 msgid "Login Shell:"
@@ -476,7 +453,7 @@ msgstr "Powłoka logowania:"
 
 #: ../usermode.glade.h:4
 msgid "Office Phone Number:"
-msgstr "Nr telefonu do biura:"
+msgstr "Numer telefonu do biura:"
 
 #: ../usermode.glade.h:5
 msgid "Office:"
@@ -510,11 +487,3 @@ msgstr "Zmienianie hasła logowania"
 msgid "Password"
 msgstr "Hasło"
 
-#~ msgid "Password for %s"
-#~ msgstr "Hasło dla %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Hasło dla %s: "
-
-#~ msgid "Message"
-#~ msgstr "Komunikat"
