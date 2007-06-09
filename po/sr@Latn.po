@@ -8,12 +8,14 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-09 19:41+0200\n"
-"PO-Revision-Date: 2007-03-11 09:39-0000\n"
+"PO-Revision-Date: 2007-06-09 19:29-0000\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
-"Language-Team: Serbian (sr) <fedora@prevod.org>\n"
+"Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -209,7 +211,7 @@ msgstr ""
 #: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Autentifikujem kao „%s“"
 
 #: ../../po/../userhelper.c:2375
 #, c-format
@@ -281,8 +283,8 @@ msgid ""
 "Consult your system administrator."
 msgstr ""
 "Vaša tekuća ljuska nije navedena u /etc/shells.\n"
-"Nije Vam dozvoljeno da promenite Vašu ljusku.\n"
-"Posavetujte se sa Vašim administratorom sistema."
+"Nije dozvoljeno da promenite ljusku.\n"
+"Posavetujte se sa administratorom sistema."
 
 #: ../../po/../userhelper-wrap.c:226
 msgid "Out of memory."
@@ -433,9 +435,8 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Nema sistema datoteka nad kojima Vam je dozvoljeno montiranje ili "
-"demontiranje.\n"
-"Kontaktirajte Vašeg administratora."
+"Nema sistema datoteka za koje imate dozvolu da montirate ili demontirate.\n"
+"Kontaktirajte administratora."
 
 #. Create the dialog.
 #: ../../po/../usermount.c:508 ../../po/../usermount.c:520
@@ -506,17 +507,8 @@ msgstr "Montiranje i demontiranje sistema datoteka"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Promena Vaše lozinke za prijavu"
+msgstr "Promena lozinke za prijavu"
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lozinka"
-
-#~ msgid "Password for %s"
-#~ msgstr "Lozinka za %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Lozinka za %s: "
-
-#~ msgid "Message"
-#~ msgstr "Poruka"
