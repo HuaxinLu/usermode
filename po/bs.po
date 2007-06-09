@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-01-24 17:50+0100\n"
 "Last-Translator: Adnan Hodzic <AbsintheSyringe@gmail.com>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
@@ -152,7 +152,7 @@ msgstr "Greška: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Nije uspjelo pokretanje naredbe \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Nije uspjelo zadavanje ne-blokirajućeg IO kanala: %s\n"
@@ -171,12 +171,7 @@ msgstr "Nije moguće postaviti zadani kontekst za %s, namijenjen programu %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Nije moguće postaviti exec kontekst za %s.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Lozinka za %s"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -185,7 +180,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\". Pune mogućnosti može dobiti samo s\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -194,7 +189,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\", a za to su potrebne\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -202,7 +197,7 @@ msgstr ""
 "Pokušavate pokrenuti naredbu čije se pune mogućnosti mogu dobiti samo s\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -210,18 +205,18 @@ msgstr ""
 "Pokušavate pokrenuti naredbu za koju su potrebne\n"
 "administratorske privilegije. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "Lozinka za %s: "
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mora imati zadan setuid na root korisnika\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -313,36 +308,36 @@ msgstr "Došlo je do interne PAM pogreške."
 msgid "Unknown error."
 msgstr "Nepoznata greška."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Upit"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Greška"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Podaci"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Mjesto za teksta."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 #, fuzzy
 msgid "Changing password."
 msgstr "Promjena lozinke za prijavljivanje"
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Izmjene osobnih podataka."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Izmjena korisničke ljusku za prijavu."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -351,7 +346,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\", a pune mogućnosti može dobiti samo s "
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -360,7 +355,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\", a za to su potrebne administratorske "
 "privilegije. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -368,7 +363,7 @@ msgstr ""
 "Pokušavate pokrenuti naredbu čije se pune mogućnosti mogu dobiti samo s "
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -376,26 +371,26 @@ msgstr ""
 "Pokušavate pokrenuti naredbu za koju su potrebne administratorske "
 "privilegije. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "_Pokreni bez povlastica"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe greška.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nije moguće izraditi fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() greška.\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() greška, broj pogreške=%d\n"
@@ -517,6 +512,12 @@ msgstr "Promjena lozinke za prijavljivanje"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lozinka"
+
+#~ msgid "Password for %s"
+#~ msgstr "Lozinka za %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Lozinka za %s: "
 
 #~ msgid "Message"
 #~ msgstr "Poruka"

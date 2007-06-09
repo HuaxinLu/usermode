@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-04-20 13:48+0700\n"
 "Last-Translator: Teguh DC <dheche@bradjamoesti.or.id>\n"
 "Language-Team: Bahasa Indonesia <viribus@traderweb.net>\n"
@@ -169,7 +169,7 @@ msgstr "Kesalahan: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Gagal menjalankan perintah \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Gagal untuk menseting kanal IO nonblocking: %s\n"
@@ -188,12 +188,7 @@ msgstr "Tidak dapat men-set konteks default untuk %s untuk program %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Tidak dapat set konteks exec untuk %s.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Password untuk %s"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -202,7 +197,7 @@ msgstr ""
 "Anda mencoba menjalankan \"%s\" yang didapat dari kewenangan\n"
 "administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -211,7 +206,7 @@ msgstr ""
 "Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan\n"
 "administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -219,7 +214,7 @@ msgstr ""
 "Anda mencoba menjalankan sebuah perintah yang didapat dari \n"
 "kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -227,18 +222,18 @@ msgstr ""
 "Anda mencoba menjalankan sebuah perintah yang memerlukan \n"
 "kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "Password untuk %s: "
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper harus setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -330,35 +325,35 @@ msgstr "Terjadi kesalahan internal PAM."
 msgid "Unknown error."
 msgstr "Kesalahan tidak diketahui."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Query"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Kesalahan"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Informasi"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Penempatan teks."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing password."
 msgstr "Ubah password."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Merubah informasi pribadi."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Merubah login shell."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -367,7 +362,7 @@ msgstr ""
 "Anda mencoba menjalankan \"%s\" yang mungkin diperlukan kewenangan "
 "administratif, tapi diperlukan informasi lebihuntuk melaksanakannya."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -376,7 +371,7 @@ msgstr ""
 "Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan administratif, "
 "Tapi diperlukan informasi lebih untuk melaksanakannya."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -384,7 +379,7 @@ msgstr ""
 "Anda mencoba menjalankan sebuah perintah yang mungkin diperlukan kewenangan "
 "administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -392,26 +387,26 @@ msgstr ""
 "Anda mencoba menjalankan sebuah perintah yang memerlukan kewenangan "
 "administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "_Jalan Tanpa Kewenangan"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Kesalahan pipe.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Tidak dapat fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "kesalahan dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "kesalahan execl(), errno=%d\n"
@@ -532,6 +527,12 @@ msgstr "Ubah login password anda"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Password"
+
+#~ msgid "Password for %s"
+#~ msgstr "Password untuk %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Password untuk %s: "
 
 #~ msgid "Message"
 #~ msgstr "Pesan"

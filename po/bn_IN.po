@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-04-05 11:20+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali <en@li.org>\n"
@@ -108,7 +108,8 @@ msgstr "দুঃখিত, পাসওয়ার্ডগুলির মধ্
 # msgstr "দুক্ষিত, পাসওয়ার্ডগুলো মেলেনি" <-- দুঃখিত, আপনার বানানটা ভুল ছিল
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "সমগ্র-সিস্টেম-ব্যাপী কনফিগারেশন ব্যবস্থার সরঞ্জাম বিনা পাসওয়ার্ডে আরম্ভ করা হবে।"
+msgstr ""
+"সমগ্র-সিস্টেম-ব্যাপী কনফিগারেশন ব্যবস্থার সরঞ্জাম বিনা পাসওয়ার্ডে আরম্ভ করা হবে।"
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -182,7 +183,7 @@ msgstr "সমস্যা: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "\"%s\" কমান্ডটি চালাতে ব্যর্থ: %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO চ্যানেল nonblocking নির্ধারণ করতে ব্যর্থ: %s\n"
@@ -201,12 +202,7 @@ msgstr "%s'র ক্ষেত্রে ডিফল্ট কনটেক্স
 msgid "Could not set exec context to %s.\n"
 msgstr "%s কনটেক্সট-এ exec করতে ব্যর্থ।\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "%s-র পাসওয়ার্ড"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -217,7 +213,7 @@ msgstr ""
 
 # বোঝা যাচ্ছে না ;-(
 # ........... প্রয়োজন আছে।
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -227,7 +223,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # আগেরটার মতই ;-(
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -238,7 +234,7 @@ msgstr ""
 
 # এভাবে লিখতে পারেন -" ........., কিন্তু প্রশাসনিক অধিকার পাওয়ার জন্য আপনাকে আরো তথ্য জানাতে হবে।"
 # ভাল কথা, Administrator শব্দটা যখন অনুবাদ করা হচ্ছে না তখন Administrative সম্ভবত অনুবাদ করার দরকার নাই।
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -246,12 +242,12 @@ msgstr ""
 "আপনি কমান্ড সঞ্চালনের চেষ্টা করছেন। এই ক্ষেত্রে প্রশাসনিক অধিকার থাকা আবশ্যক\n"
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "%s'র পাসওয়ার্ড: "
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper'র ক্ষেত্রে setuid root হওয়া আবশ্যক\n"
@@ -260,9 +256,10 @@ msgstr "userhelper'র ক্ষেত্রে setuid root হওয়া আব�
 # Root বাংলায় লিখলে অনেকে নাও বুঝতে পারে।
 #  FIXME: print a warning here?
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "গ্রাফিক্যাল উইন্ডো খোলা যায়নি এবং নিয়ন্ত্রণকারী টার্মিনাল পাওয়া যায়নি।\n"
 
 # ..........হতে যাচ্ছে
@@ -353,38 +350,38 @@ msgstr "PAM সংক্রান্ত অভ্যন্তরীণ সমস
 msgid "Unknown error."
 msgstr "অজানা সমস্যা।"
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "অনুসন্ধান"
 
 # অস্পস্ট
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "সমস্যা"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "তথ্য"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "অস্থায়ী টেক্সট।"
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing password."
 msgstr "পাসওয়ার্ড পরিবর্তন"
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "ব্যক্তিগত তথ্য পরিবর্তন প্রণালী।"
 
 # 'বদল' এর থিকে 'পরিবর্তন' অনেকে ভাল শোনায় না কি ?
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "লগ-ইন শেল পরিবর্তন প্রণালী।"
 
 # msgstr "লগ-ইন শেল বদল করা হচ্ছে।"
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -394,7 +391,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # সেই আগের মত
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -404,7 +401,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # বাক্যটা ভুল হইছে
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -414,7 +411,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # বাক্যটা ভুল হইছে
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -422,26 +419,26 @@ msgstr ""
 "আপনি একটি কমান্ড সঞ্চালনের চেষ্টা করছেন। এই ক্ষেত্রে প্রশাসনিক অধিকার থাকা আবশ্যক\n"
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "অধিকার বিনা সঞ্চালিত হবে (_R)"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "পাইপের সমস্যা।\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() করা সম্ভব নয়।\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-র সমস্যা।\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "exec()-র সমস্যা, errno=%d\n"
@@ -570,3 +567,8 @@ msgstr "লগ-ইন পাসওয়ার্ড পরিবর্তন"
 msgid "Password"
 msgstr "পাসওয়ার্ড"
 
+#~ msgid "Password for %s"
+#~ msgstr "%s-র পাসওয়ার্ড"
+
+#~ msgid "Password for %s: "
+#~ msgstr "%s'র পাসওয়ার্ড: "

@@ -1,3 +1,8 @@
+2007-06-09  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Release 1.91.2.
+	* NEWS: Update.
+
 2007-06-09  Miloslav Trmac  <mitr@redhat.com>
 
 	* userhelper.c (converse_console, converse_pipe): Don't replace

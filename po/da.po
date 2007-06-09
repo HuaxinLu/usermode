@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-04-15 09:37+0200\n"
 "Last-Translator: Keld Simonsen <keld@rap.dk>\n"
 "Language-Team:  <da@li.org>\n"
@@ -84,7 +84,8 @@ msgstr "Desværre, adgangskoder er ikke ens"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
+msgstr ""
+"Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -156,7 +157,7 @@ msgstr "Fejl: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Kunne ikke køre kommando \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Kunne ikke sætte IO-kanal ikke-blokerende: %s\n"
@@ -175,12 +176,7 @@ msgstr "Kunne ikke sætte standardkontekst til %s for program %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Kunne ikke sætte udførelseskontekst til %s.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Adgangskode for %s"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -189,7 +185,7 @@ msgstr ""
 "Du forsøger at køre '%s', som kan have gavn af adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -198,7 +194,7 @@ msgstr ""
 "Du forsøger at køre '%s', som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -207,7 +203,7 @@ msgstr ""
 "rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -215,21 +211,23 @@ msgstr ""
 "Du forsøger at køre en kommando, som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "Adgangskode for %s:"
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper skal være setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
 #: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
@@ -315,35 +313,35 @@ msgstr "Intern PAM-fejl indtraf."
 msgid "Unknown error."
 msgstr "Ukendt fejl."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Forespørgsel"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Fejl"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Information"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Keldroy war hæer."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing password."
 msgstr "Skifter adgangskode."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Ændrer personlige oplysninger."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Ændrer logind-skál."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -352,7 +350,7 @@ msgstr ""
 "Du forsøger at køre '%s', som kan have gavn af adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -361,7 +359,7 @@ msgstr ""
 "Du forsøger at køre '%s', som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -370,7 +368,7 @@ msgstr ""
 "rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -378,26 +376,26 @@ msgstr ""
 "Du forsøger at køre en kommando, som kræver adminstrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "_Kør upriviligeret"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Fejl ved kanal.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kan ikke fork()\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() fejl.\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() fejl, errno=%d\n"
@@ -519,3 +517,8 @@ msgstr "Skifter din logind-adgangskode"
 msgid "Password"
 msgstr "Adgangskode"
 
+#~ msgid "Password for %s"
+#~ msgstr "Adgangskode for %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Adgangskode for %s:"

@@ -1,3 +1,6 @@
+1.91.2
+* Show the user we're authenticating as in an i18n-safe way.
+
 1.91.1
 * Update translations
 

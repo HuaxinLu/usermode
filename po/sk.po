@@ -10,13 +10,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-04-03 10:35+0200\n"
 "Last-Translator: Ján Ondrej <ondrejj@salstar.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -155,7 +155,7 @@ msgstr "Chyba: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Spustenie príkazu zlyhalo \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Zlyhalo nastavenie neblokujúceho V/V kanála: %s\n"
@@ -174,12 +174,7 @@ msgstr "Nepodarilo sa nastaviť predvolený kontext pre %s pre program %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Nepodarilo sa nastaviť kontext spúšťania na %s.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Heslo pre %s"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -188,7 +183,7 @@ msgstr ""
 "Pokúšate sa spustiť \"%s\", ktorý môže mať osoh zo správcovských práv.\n"
 "Je však potrebných viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -197,7 +192,7 @@ msgstr ""
 "Pokúšate sa spustiť \"%s\", ktorý vyžaduje správcovské práva.\n"
 "Je však potrebných viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -205,7 +200,7 @@ msgstr ""
 "Pokúšate sa spustiť príkaz, ktorý môže mať osoh zo správcovských práv.\n"
 "Je však potrebných viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -213,18 +208,18 @@ msgstr ""
 "Pokúšate sa spustiť príkaz, ktorý vyžaduje správcovské práva.\n"
 "Je však potrebných viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "Heslo pre %s: "
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí byť setuid správcu\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -316,35 +311,35 @@ msgstr "Vyskytla sa interná chyba PAM."
 msgid "Unknown error."
 msgstr "Neznáma chyba."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Otázka"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Chyba"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Informácie"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Miesto pre text."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing password."
 msgstr "Mením heslo."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Zmena osobných údajov."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Zmena prihlasovacieho shellu."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -353,7 +348,7 @@ msgstr ""
 "Pokúšate sa spustiť \"%s\", ktorý môže mať osoh z práv správcu. Je však "
 "potrebných viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -362,7 +357,7 @@ msgstr ""
 "Pokúšate sa spustiť \"%s\", ktorý vyžaduje práva správcu. Je však potrebných "
 "viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -370,7 +365,7 @@ msgstr ""
 "Pokúšate sa spustiť príkaz, ktorý môže mať osoh z práv správcu. Je však "
 "potrebných viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -378,26 +373,26 @@ msgstr ""
 "Pokúšate sa spustiť príkaz, ktorý vyžaduje práva správcu. Je však potrebných "
 "viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "_Spustiť bez práv"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Chyba rúry.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nepodarilo sa vykonať fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Chyba dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Chyba execl(), errno=%d\n"
@@ -519,6 +514,12 @@ msgstr "Zmeniť vaše prihlasovacie heslo"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Heslo"
+
+#~ msgid "Password for %s"
+#~ msgstr "Heslo pre %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Heslo pre %s: "
 
 #~ msgid "Message"
 #~ msgstr "Správa"

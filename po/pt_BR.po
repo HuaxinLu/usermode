@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-04-08 06:52-0300\n"
 "Last-Translator: Igor Pires Soares <igor@projetofedora.org>\n"
 "Language-Team: Brazilian Portuguese <fedora-trans-pt_br@redhat.com>\n"
@@ -159,7 +159,7 @@ msgstr "Erro: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Falha ao executar o comando \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Falha ao determinar o nonblocking do canal E/S: %s\n"
@@ -178,12 +178,7 @@ msgstr "Não pôde configurar o contexto padrão para %s para o programa %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Não pôde configurar contexto de execução para %s.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Senha para %s"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -192,7 +187,7 @@ msgstr ""
 "Você está tentando executar \"%s\", que pode se beneficiar de privilégios\n"
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -201,7 +196,7 @@ msgstr ""
 "Você está tentando executar \"%s\", que requer privilégios\n"
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -210,7 +205,7 @@ msgstr ""
 "privilégios\n"
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -218,23 +213,24 @@ msgstr ""
 "Você está tentando executar um comando que requer privilégios\n"
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "Senha para %s: "
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper deve ter o id do usuário configurado como root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"Não foi possível abrir uma janela gráfica; e não foi possível encontrar um terminal de controle.\n"
+"Não foi possível abrir uma janela gráfica; e não foi possível encontrar um "
+"terminal de controle.\n"
 
 #: ../../po/../userhelper-wrap.c:205
 msgid "Unknown exit code."
@@ -321,35 +317,35 @@ msgstr "Ocorreu um erro interno do PAM."
 msgid "Unknown error."
 msgstr "Erro desconhecido."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Consulta"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Erro"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Informação"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Texto reservado."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing password."
 msgstr "Alteração da senha."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Alteração de informações pessoais."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Alteração da janela de login."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -358,7 +354,7 @@ msgstr ""
 "Você está tentando executar \"%s\", que pode se beneficiar de privilégios "
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -367,7 +363,7 @@ msgstr ""
 "Você está tentando executar \"%s\" que requer privilégios administrativos, "
 "porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -375,7 +371,7 @@ msgstr ""
 "Você está tentando executar um comando que pode se beneficiar de privilégios "
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -383,26 +379,26 @@ msgstr ""
 "Você está tentando executar um comando que requer privilégios "
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "_Executar Sem Privilégios"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Erro de canalização.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Não foi possível executar fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Erro em dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "erro em execl(), errno=%d\n"
@@ -523,6 +519,12 @@ msgstr "Altere a senha do seu login"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Senha"
+
+#~ msgid "Password for %s"
+#~ msgstr "Senha para %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Senha para %s: "
 
 #~ msgid "Message"
 #~ msgstr "Mensagem"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-03-20 11:47+0100\n"
 "Last-Translator: Thomas Canniot <thomas.canniot@laposte.net>\n"
 "Language-Team: Francais <fedora-trans-fr@redhat.com>\n"
@@ -85,7 +85,8 @@ msgstr "Désolé, les mots de passe ne correspondent pas"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Démarrer les outils de configuration de tout le système sans mot de passe."
+msgstr ""
+"Démarrer les outils de configuration de tout le système sans mot de passe."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -158,7 +159,7 @@ msgstr "Erreur : %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Impossible d'exécuter la commande \"%s\" : %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Impossible de paramétrer l'option de non blocage du canal d'E/S : %s\n"
@@ -172,19 +173,15 @@ msgstr ""
 #: ../../po/../userhelper.c:201
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Impossible de régler le contexte par défaut de %s pour le programme %s.\n"
+msgstr ""
+"Impossible de régler le contexte par défaut de %s pour le programme %s.\n"
 
 #: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "Impossible de donner au contexte d'exec la valeur %s.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Mot de passe pour %s"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -194,7 +191,7 @@ msgstr ""
 "super-utilisateur. Une information supplémentaire est requise pour cette "
 "opération."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -203,7 +200,7 @@ msgstr ""
 "Vous essayez d'exécuter \"%s\" qui nécessite des privilèges du super-"
 "utilisateur. Une information supplémentaire est requise pour cette opération."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -212,7 +209,7 @@ msgstr ""
 "du super-utilisateur. Une information supplémentaire est requise pour cette "
 "opération."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -221,20 +218,21 @@ msgstr ""
 "super-utilisateur. Une information supplémentaire est requise pour cette "
 "opération."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "Mot de passe pour %s :"
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper doit être setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
 "contrôle.\n"
@@ -323,35 +321,35 @@ msgstr "Une erreur interne PAM est survenue."
 msgid "Unknown error."
 msgstr "Erreur inconnue."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Interroger"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Erreur"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Information"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Texte fictif."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing password."
 msgstr "Modifier le mot de passe."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Changement des informations personnelles."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Changement du shell de connexion."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -361,7 +359,7 @@ msgstr ""
 "super-utilisateur. Une information supplémentaire est requise pour cette "
 "opération."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -370,7 +368,7 @@ msgstr ""
 "Vous essayez d'exécuter \"%s\" qui nécessite des privilèges de super-"
 "utilisateur. Une information supplémentaire est requise pour cette opération."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -379,7 +377,7 @@ msgstr ""
 "de super-utilisateur. Une information supplémentaire est requise pour cette "
 "opération."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -387,26 +385,26 @@ msgstr ""
 "Vous essayez d'exécuter une commande qui nécessite des privilèges de super-"
 "utilisateur. Une information supplémentaire est requise pour cette opération."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "Exécute_r sans privilèges"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Erreur de tube.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Erreur fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Erreur dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Erreur execl(), errno=%d\n"
@@ -529,3 +527,8 @@ msgstr "Modifier le mot de passe de connexion"
 msgid "Password"
 msgstr "Mot de passe"
 
+#~ msgid "Password for %s"
+#~ msgstr "Mot de passe pour %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Mot de passe pour %s :"

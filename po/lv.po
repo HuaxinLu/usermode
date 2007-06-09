@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2006-11-22 22:05+0200\n"
 "Last-Translator: Gatis Kalnins <gatis.kalnins@metatrons.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -152,7 +152,7 @@ msgstr "Kļūda: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Kļūda izpildot komandu \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Kļūda uzstādot ievades-izvades kanālu nebloķējošā režīmā: %s\n"
@@ -171,12 +171,7 @@ msgstr "Nevar uzstādīt izpildes saturu uz %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Nevar uzstādīt izpildes saturu uz %s.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Parole priekš %s"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -186,7 +181,7 @@ msgstr ""
 "administratora režīmā,\n"
 "bet priekš tam ir nepieciešama papildus info."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -195,7 +190,7 @@ msgstr ""
 "Jūs cenšaties startēt \"%s\", kurai nepieciešamas administratora tiesības,\n"
 "bet priekš tam ir nepieciešama papildus info."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -204,7 +199,7 @@ msgstr ""
 "administratora režīmā,\n"
 "bet priekš tam ir nepieciešama papildus info."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -212,18 +207,18 @@ msgstr ""
 "Jūs cenšaties startēt komandu, kurai nepieciešamas administratora tiesības,\n"
 "bet priekš tam ir nepieciešama papildus info."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "Parole priekš %s:"
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper jābūt uzstādītam setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -314,36 +309,36 @@ msgstr "Konstatēta iekšēja PAM kļūda."
 msgid "Unknown error."
 msgstr "Nezināma kļūda."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Pieprasījums"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Kļūda"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Informācija"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Vieta tekstam."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 #, fuzzy
 msgid "Changing password."
 msgstr "Mainīt pieslēgšanās paroli"
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Personiskās informācijas maiņa."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Pieslēgšanās sistēmčaulas maiņa."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -352,7 +347,7 @@ msgstr ""
 "Jūs mēģinat startēt \"%s\", kas iegūst papildus privilēģijas, ja startēta  "
 "administratora režīmā, bet tam nepieciešams vairāk informācijas."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -361,7 +356,7 @@ msgstr ""
 "Jūs mēģinat startēt \"%s\", kas nepieciešamas administratora privilēģijas, "
 "bet tam nepieciešams vairāk informācijas."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -369,7 +364,7 @@ msgstr ""
 "Jūs mēģinat startēt komandu, kas iegūst papildus privilēģijas, ja startēta  "
 "administratora režīmā, bet tam nepieciešams vairāk informācijas."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -377,26 +372,26 @@ msgstr ""
 "Jūs mēģinat startēt komandu, kas nepieciešamas administratora privilēģijas, "
 "bet tam nepieciešams vairāk informācijas."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "Izpildīt bez privilēģijām"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Plūsmas kļūda.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nevar izsaukt fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() kļūda.\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() kļūda, errno=%d\n"
@@ -515,6 +510,12 @@ msgstr "Mainīt pieslēgšanās paroli"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Parole"
+
+#~ msgid "Password for %s"
+#~ msgstr "Parole priekš %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Parole priekš %s:"
 
 #~ msgid "Message"
 #~ msgstr "Paziņojums"

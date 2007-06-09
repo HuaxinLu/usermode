@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-03-16 16:55-0400\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -153,7 +153,7 @@ msgstr "Fel: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Misslyckades med att köra kommandot \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Misslyckades med att ställa IO-kanalen till ickeblockerande: %s\n"
@@ -172,12 +172,7 @@ msgstr "Kunde inte ställa in standardsammanhanget för %s för programmet %s.\n
 msgid "Could not set exec context to %s.\n"
 msgstr "Kunde inte ställa in körningssammanhang till %s.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Lösenord för %s"
-
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -186,7 +181,7 @@ msgstr ""
 "Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, "
 "men mer information krävs för att kunna göra det."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -195,7 +190,7 @@ msgstr ""
 "Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer "
 "information krävs för att kunna göra det."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -203,7 +198,7 @@ msgstr ""
 "Du försöker köra ett kommando som kan dra nytta av administrativa "
 "rättigheter, men mer information krävs för att kunna göra det."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -211,18 +206,18 @@ msgstr ""
 "Du försöker köra ett kommando som kräver administrativa rättigheter, men mer "
 "information krävs för att kunna göra det."
 
-#: ../../po/../userhelper.c:850
-#, c-format
-msgid "Password for %s: "
-msgstr "Lösenord för %s: "
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
+#, fuzzy, c-format
+msgid "Authenticating as \"%s\""
+msgstr "kommer att autentisera \"%s\"\n"
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper måste vara setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -313,35 +308,35 @@ msgstr "Internt PAM-fel inträffade."
 msgid "Unknown error."
 msgstr "Okänt fel."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Fråga"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Fel"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Information"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Utfyllnadstext."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing password."
 msgstr "Byter lösenord."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Ändrar personlig information."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Ändrar inloggningsskal."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -350,7 +345,7 @@ msgstr ""
 "Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, "
 "men mer information krävs för att kunna göra det."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -359,7 +354,7 @@ msgstr ""
 "Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer "
 "information krävs för att kunna göra det."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -367,7 +362,7 @@ msgstr ""
 "Du försöker köra ett kommando som kan dra nytta av administrativa "
 "rättigheter, men mer information krävs för att kunna göra det."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -375,26 +370,26 @@ msgstr ""
 "Du försöker köra ett kommando som kräver administrativa rättigheter, men mer "
 "information krävs för att kunna göra det."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "_Kör oprivilegierat"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Rörfel.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kan inte grena.\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-fel.\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-fel, felnummer=%d\n"
@@ -516,6 +511,12 @@ msgstr "Byt ditt inloggningslösenord"
 msgid "Password"
 msgstr "Lösenord"
 
+#~ msgid "Password for %s"
+#~ msgstr "Lösenord för %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Lösenord för %s: "
+
 #~ msgid "Message"
 #~ msgstr "Meddelande"
 
@@ -605,9 +606,6 @@ msgstr "Lösenord"
 #~ msgstr ""
 #~ "Du försöker köra ett kommando som kräver superanvändarrättigheter,\n"
 #~ "men mer information krävs för att kunna göra det."
-
-#~ msgid "about to authenticate \"%s\"\n"
-#~ msgstr "kommer att autentisera \"%s\"\n"
 
 #~ msgid "Yes"
 #~ msgstr "Ja"

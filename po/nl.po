@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-19 23:03+0100\n"
+"POT-Creation-Date: 2007-06-09 19:41+0200\n"
 "PO-Revision-Date: 2007-03-25 21:07+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
@@ -103,8 +103,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Loslaten van beheerdersprivileges mislukt: pam_timestamp_check gaf foutcode "
-"%d terug"
+"Loslaten van beheerdersprivileges mislukt: pam_timestamp_check gaf foutcode %"
+"d terug"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
@@ -155,7 +155,7 @@ msgstr "Fout: %s\n"
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Uitvoeren van commando \"%s\" mislukt: %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1032
+#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Instellen van IO channel nonblocking mislukt: %s\n"
@@ -174,14 +174,9 @@ msgstr "Instellen van 'standaard context' voor %s voor programma %s mislukt.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Instellen van 'exec context' naar %s mislukt.\n"
 
-#: ../../po/../userhelper.c:574
-#, c-format
-msgid "Password for %s"
-msgstr "Wachtwoord voor %s"
-
 # more information is needed... vervangen door root-wachtwoord vereist
 # omdat dat, voor zover ik weet, het enige is dat benodigd is.
-#: ../../po/../userhelper.c:823
+#: ../../po/../userhelper.c:807
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -190,7 +185,7 @@ msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
 "nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../../po/../userhelper.c:825
+#: ../../po/../userhelper.c:809
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -199,7 +194,7 @@ msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
 "benodigd zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../../po/../userhelper.c:829
+#: ../../po/../userhelper.c:813
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -207,7 +202,7 @@ msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
 "nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../../po/../userhelper.c:831
+#: ../../po/../userhelper.c:815
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -215,18 +210,18 @@ msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
 "benodigd zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../../po/../userhelper.c:850
+#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
 #, c-format
-msgid "Password for %s: "
-msgstr "Wachtwoord voor %s: "
+msgid "Authenticating as \"%s\""
+msgstr ""
 
-#: ../../po/../userhelper.c:2395
+#: ../../po/../userhelper.c:2375
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "gebruikershelper moet setuid root zijn\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2493
+#: ../../po/../userhelper.c:2473
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -319,36 +314,36 @@ msgstr "Er deed zich een interne PAM-fout voor."
 msgid "Unknown error."
 msgstr "Onbekende fout."
 
-#: ../../po/../userhelper-wrap.c:511
+#: ../../po/../userhelper-wrap.c:506
 msgid "Query"
 msgstr "Verzoek"
 
-#: ../../po/../userhelper-wrap.c:600 ../../po/../userhelper-wrap.c:773
+#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
 msgid "Error"
 msgstr "Fout"
 
-#: ../../po/../userhelper-wrap.c:612
+#: ../../po/../userhelper-wrap.c:604
 msgid "Information"
 msgstr "Informatie"
 
-#: ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:757
 msgid "Placeholder text."
 msgstr "Vervangende tekst."
 
-#: ../../po/../userhelper-wrap.c:814
+#: ../../po/../userhelper-wrap.c:816
 msgid "Changing password."
 msgstr "Veranderen van wachtwoord."
 
 # dit dekt de lading beter dan: persoonlijke informatie
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:818
 msgid "Changing personal information."
 msgstr "Veranderen van identiteitsgegevens."
 
-#: ../../po/../userhelper-wrap.c:819
+#: ../../po/../userhelper-wrap.c:821
 msgid "Changing login shell."
 msgstr "Veranderen van login-shell."
 
-#: ../../po/../userhelper-wrap.c:823
+#: ../../po/../userhelper-wrap.c:825
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -357,7 +352,7 @@ msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerdersprivileges nuttig kunnen "
 "zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:827
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -366,7 +361,7 @@ msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerdersprivileges benodigd zijn. "
 "Hiervoor is een root-wachtwoord vereist."
 
-#: ../../po/../userhelper-wrap.c:830
+#: ../../po/../userhelper-wrap.c:832
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -374,7 +369,7 @@ msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerdersprivileges nuttig "
 "kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:834
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -382,26 +377,26 @@ msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerdersprivileges benodigd "
 "zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../../po/../userhelper-wrap.c:842
+#: ../../po/../userhelper-wrap.c:844
 msgid "_Run Unprivileged"
 msgstr "_Zonder privileges uitvoeren"
 
-#: ../../po/../userhelper-wrap.c:999
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pijp-fout.\n"
 
-#: ../../po/../userhelper-wrap.c:1006
+#: ../../po/../userhelper-wrap.c:1008
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() lukt niet.\n"
 
-#: ../../po/../userhelper-wrap.c:1106 ../../po/../userhelper-wrap.c:1110
+#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-fout.\n"
 
-#: ../../po/../userhelper-wrap.c:1122
+#: ../../po/../userhelper-wrap.c:1124
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-fout, foutnr=%d\n"
@@ -527,6 +522,12 @@ msgstr "Uw login-wachtwoord veranderen"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Wachtwoord"
+
+#~ msgid "Password for %s"
+#~ msgstr "Wachtwoord voor %s"
+
+#~ msgid "Password for %s: "
+#~ msgstr "Wachtwoord voor %s: "
 
 #~ msgid "Message"
 #~ msgstr "Bericht"
