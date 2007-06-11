@@ -6,3 +6,4 @@ Exec=usermount
 Terminal=false
 Type=Application
 Icon=disks.png
+Categories=X-Red-Hat-Base;System;

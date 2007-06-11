@@ -6,3 +6,4 @@ Exec=userinfo
 Terminal=false
 Type=Application
 Icon=user_icon.png
+Categories=Settings;X-GNOME-PersonalSettings

@@ -6,3 +6,4 @@ Exec=userpasswd
 Terminal=false
 Type=Application
 Icon=password.png
+Categories=X-Red-Hat-Base;X-GNOME-PersonalSettings;Settings;

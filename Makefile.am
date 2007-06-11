@@ -7,8 +7,8 @@ EXTRA_DIST = 	\
 	userinfo.1 \
 	usermount.1 \
 	userpasswd.1 \
-	consolehelper.8 \
-	userhelper.8 \
+	consolehelper.8.in \
+	userhelper.8.in \
 	userhelper_context \
 	userinfo.desktop.in \
 	usermount.desktop.in \
@@ -35,7 +35,8 @@ bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk \
 bin_SCRIPTS = shutdown
 sbin_PROGRAMS = userhelper
 noinst_PROGRAMS = test-userdialog
-man_MANS = userinfo.1 usermount.1 userpasswd.1 consolehelper.8 userhelper.8
+man_MANS = userinfo.1 usermount.1 userpasswd.1
+dist_man_MANS = consolehelper.8 userhelper.8
 
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png \
@@ -43,29 +44,16 @@ pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png \
 
 install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 	mkdir -p $(DESTDIR)$(datadir)/applications
-	desktop-file-install --vendor=$(VENDOR) \
-		--add-category Settings \
-		--add-category AdvancedSettings \
-		--add-category Application \
-		--dir=$(DESTDIR)$(datadir)/applications \
-		$(top_builddir)/userinfo.desktop
-	desktop-file-install --vendor=$(VENDOR) \
-		--add-category X-Red-Hat-Base \
-		--add-category System \
-		--add-category Application \
-		--dir=$(DESTDIR)$(datadir)/applications \
-		$(top_builddir)/usermount.desktop
-	desktop-file-install --vendor=$(VENDOR) \
-		--add-category X-Red-Hat-Base \
-		--add-category Settings \
-		--add-category Application \
-		--dir=$(DESTDIR)$(datadir)/applications \
-		$(top_builddir)/userpasswd.desktop
+	for i in userinfo.desktop usermount.desktop userpasswd.desktop; do \
+		desktop-file-install --vendor=$(VENDOR)			   \
+			--dir=$(DESTDIR)$(datadir)/applications		   \
+			$(top_builddir)/$$i;				   \
+	done
 
 uninstall-local:
 	-rm -f $(DESTDIR)$(datadir)/applications/$(VENDOR)-userinfo.desktop   \
 	       $(DESTDIR)$(datadir)/applications/$(VENDOR)-usermount.desktop  \
-	       $(DESTDIR)$(datadir)/applications/$(VENDOR)-userpasswd.desktop 
+	       $(DESTDIR)$(datadir)/applications/$(VENDOR)-userpasswd.desktop
 
 consoleappdir = $(sysconfdir)/security/console.apps
 WRAPPED_APPS = halt poweroff reboot
@@ -73,6 +61,7 @@ consoleapp_DATA = $(WRAPPED_APPS)
 $(WRAPPED_APPS): wrapped.console
 	$(INSTALL) -m600 $^ $@
 
+CLEANFILES = $(dist_man_MANS)
 DISTCLEANFILES =            \
 	intltool-extract    \
 	intltool-merge      \

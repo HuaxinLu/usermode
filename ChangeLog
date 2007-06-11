@@ -1,5 +1,15 @@
 2007-06-11  Miloslav Trmač  <mitr@redhat.com>
 
+	* userinfo.desktop.in
+	* usermount.desktop.in
+	* userpasswd.desktop.in: Add the categories that are added by
+	(make install) or the Fedora spec file.
+	* Makefile.am (install-data-local): Don't add categories to desktop
+	files.  Simplify.
+
+	* Makefile.am (EXTRA_DIST, man_MANS, dist_man_MANS, CLEANFILES): Fix
+	distcheck.
+
 	* configure.in: Add AM_PROG_CC_C_O.
 	(BINDIR, SBINDIR, DATADIR, LOCALEDIR, SYSCONFDIR): Remove.  These
 	definitions are expanded at the wrong time and tend to be expanded
