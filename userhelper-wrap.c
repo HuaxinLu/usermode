@@ -21,8 +21,6 @@
 #include <ctype.h>
 #include <errno.h>
 #include <libintl.h>
-#include <locale.h>
-#include <pwd.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -318,70 +316,97 @@ userhelper_grab_keyboard(GtkWidget *widget, GdkEvent *event, gpointer user_data)
 #endif
 }
 
+/* Try to send a string encoded in UTF-8 to the child. */
+static void
+write_childin_string(const char *s)
+{
+	char *converted;
+	gsize s_len, converted_len;
+	GError *err;
+
+	s_len = strlen(s);
+
+	err = NULL;
+	converted = g_locale_from_utf8(s, s_len, NULL, &converted_len, &err);
+	if (err == NULL) {
+		write(childin[1], converted, converted_len);
+		g_free(converted);
+	} else {
+		g_error_free(err);
+		/* Oh well, some data is better than no data... */
+		write(childin[1], s, s_len);
+	}
+}
+
 /* Handle the executed dialog, writing responses back to the child when
  * possible. */
 static void
 userhelper_write_childin(GtkResponseType response, struct response *resp)
 {
-	const char *input;
-	guchar byte;
-	GList *message_list = resp->message_list;
+	static const unsigned char sync_point[] = { UH_SYNC_POINT, '\n' };
+	static const unsigned char eol = '\n';
+
 	gboolean startup = FALSE;
 
 	switch (response) {
-		case RESPONSE_FALLBACK:
-			/* The user wants to run unprivileged. */
-			byte = UH_FALLBACK;
+	case RESPONSE_FALLBACK: {
+		/* The user wants to run unprivileged. */
+		static const unsigned char cmd[] = { UH_FALLBACK, '\n' };
+
 #ifdef DEBUG_USERHELPER
-			fprintf(stderr, "Responding FALLBACK.\n");
+		fprintf(stderr, "Responding FALLBACK.\n");
 #endif
-			write(childin[1], &byte, 1);
-			write(childin[1], "\n", 1);
-			startup = TRUE;
-			break;
-		case GTK_RESPONSE_CANCEL:
-			/* The user doesn't want to run this after all. */
-			byte = UH_CANCEL;
+		write(childin[1], cmd, sizeof(cmd));
+		startup = TRUE;
+		break;
+	}
+	case GTK_RESPONSE_CANCEL: {
+		/* The user doesn't want to run this after all. */
+		static const unsigned char cmd[] = { UH_CANCEL, '\n' };
+
 #ifdef DEBUG_USERHELPER
-			fprintf(stderr, "Responding CANCEL.\n");
+		fprintf(stderr, "Responding CANCEL.\n");
 #endif
-			write(childin[1], &byte, 1);
-			write(childin[1], "\n", 1);
-			startup = FALSE;
-			break;
-		case GTK_RESPONSE_OK:
-			/* The user answered the questions. */
-			byte = UH_TEXT;
-			for (message_list = resp->message_list;
-			     (message_list != NULL) &&
-			     (message_list->data != NULL);
-			     message_list = g_list_next(message_list)) {
-				struct message *m = ((struct message *)
-						     message_list->data);
+		write(childin[1], cmd, sizeof(cmd));
+		startup = FALSE;
+		break;
+	}
+	case GTK_RESPONSE_OK: {
+		GList *message_list;
+
+		/* The user answered the questions. */
+		for (message_list = resp->message_list;
+		     message_list != NULL && message_list->data != NULL;
+		     message_list = g_list_next(message_list)) {
+			struct message *m = ((struct message *)
+					     message_list->data);
 #ifdef DEBUG_USERHELPER
-				fprintf(stderr, "message %d\n", m->type);
-				if (GTK_IS_ENTRY(m->entry)) {
-					fprintf(stderr, "Responding `%s'.\n",
-						gtk_entry_get_text(GTK_ENTRY(m->entry)));
-				}
-#endif
-				if (GTK_IS_ENTRY(m->entry)) {
-					input =
-					    gtk_entry_get_text(GTK_ENTRY
-							       (m->entry));
-					write(childin[1], &byte, 1);
-					write(childin[1], input, strlen(input));
-					write(childin[1], "\n", 1);
-				}
+			fprintf(stderr, "message %d\n", m->type);
+			if (GTK_IS_ENTRY(m->entry)) {
+				fprintf(stderr, "Responding `%s'.\n",
+					gtk_entry_get_text(GTK_ENTRY(m->entry)));
 			}
-			startup = TRUE;
-			break;
-		default:
-			/* We were closed, deleted, canceled, or something else
-			 * which we can treat as a cancellation. */
-			startup = FALSE;
-			_exit(1);
-			break;
+#endif
+			if (GTK_IS_ENTRY(m->entry)) {
+				static const unsigned char cmd = UH_TEXT;
+
+				const char *s;
+
+				s = gtk_entry_get_text(GTK_ENTRY (m->entry));
+				write(childin[1], &cmd, sizeof(cmd));
+				write_childin_string(s);
+				write(childin[1], &eol, sizeof(eol));
+			}
+		}
+		startup = TRUE;
+		break;
+	}
+	default:
+		/* We were closed, deleted, canceled, or something else which
+		   we can treat as a cancellation. */
+		startup = FALSE;
+		_exit(1);
+		break;
 	}
 #ifdef USE_STARTUP_NOTIFICATION
 	if (startup) {
@@ -391,14 +416,15 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		}
 		/* Tell the child what its ID is. */
 		if ((sn_name != NULL) && (sn_id != NULL)) {
+			static const unsigned char cmd = UH_SN_ID;
+
 #ifdef DEBUG_USERHELPER
 			fprintf(stderr, "Sending new window startup ID "
 				"\"%s\".\n", sn_id);
 #endif
-			byte = UH_SN_ID;
-			write(childin[1], &byte, 1);
-			write(childin[1], sn_id, strlen(sn_id));
-			write(childin[1], "\n", 1);
+			write(childin[1], &cmd, sizeof(cmd));
+			write_childin_string(sn_id);
+			write(childin[1], &eol, sizeof(eol));
 		}
 	}
 #endif
@@ -406,9 +432,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 #ifdef DEBUG_USERHELPER
 	fprintf(stderr, "Sending synchronization point.\n");
 #endif
-	byte = UH_SYNC_POINT;
-	write(childin[1], &byte, 1);
-	write(childin[1], "\n", 1);
+	write(childin[1], sync_point, sizeof(sync_point));
 }
 
 /* Glue. */
@@ -959,6 +983,7 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 	if (childpid > 0) {
 		GIOChannel *childout_channel;
 		GError *err;
+		const char *charset;
 
 		/* We're the parent; close the write-end of the reading pipe,
 		 * and the read-end of the writing pipe. */
@@ -973,11 +998,13 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 		   child. */
 		childout_channel = g_io_channel_unix_new(childout[0]);
 
+		(void)g_get_charset(&charset);
 		err = NULL;
-		g_io_channel_set_encoding(childout_channel, NULL, &err);
+		g_io_channel_set_encoding(childout_channel, charset, &err);
 		if (err != NULL) {
-			fprintf(stderr, _("Can't set binary encoding on an IO "
-					  "channel: %s\n"), err->message);
+			fprintf(stderr, _("Can't set charset %s on an IO "
+					  "channel: %s\n"),
+				charset, err->message);
 			_exit(1);
 		}
 		g_io_channel_set_line_term(childout_channel, "\n", -1);

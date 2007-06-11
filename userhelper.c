@@ -784,15 +784,11 @@ converse_console(int num_msg, const struct pam_message **msg,
 		 struct pam_response **resp, void *appdata_ptr)
 {
 	static int banner = 0;
-	const char *service = NULL, *user, *codeset;
+	const char *service = NULL, *user;
 	char *text;
 	struct app_data *data = appdata_ptr;
 	struct pam_message **messages;
 	int i, ret;
-
-	codeset = "C";
-	g_get_charset(&codeset);
-	bind_textdomain_codeset(PACKAGE, codeset);
 
 	get_pam_string_item(data->pamh, PAM_SERVICE, &service);
 	user = NULL;
@@ -2001,14 +1997,12 @@ wrap(const char *user, const char *program,
 	val = svGetValue(s, "DOMAIN");
 	if (val != NULL && strlen(val) > 0) {
 		bindtextdomain(val, LOCALEDIR);
-		bind_textdomain_codeset(val, "UTF-8");
 		data->domain = val;
 	}
 	if (data->domain == NULL) {
 		val = svGetValue(s, "BANNER_DOMAIN");
 		if (val != NULL && strlen(val) > 0) {
 			bindtextdomain(val, LOCALEDIR);
-			bind_textdomain_codeset(val, "UTF-8");
 			data->domain = val;
 		}
 	}
@@ -2363,7 +2357,6 @@ main(int argc, char **argv)
 
 	setlocale(LC_ALL, "");
 	bindtextdomain(PACKAGE, LOCALEDIR);
-	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 	openlog("userhelper", LOG_PID, LOG_AUTHPRIV);
 
