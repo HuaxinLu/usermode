@@ -1,3 +1,15 @@
+2007-06-11  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper-wrap.c (userhelper_parse_childout): Modify to handle only
+	one line.  Exit if the commmand code is invalid.
+	(userhelper_read_childout): Always read a complete line, not what
+	partial line happens to be read.  Repeat while there are lines left.
+	(userhelper_runv): Don't assume the communication is in UTF-8.  Set the
+	only expected line terminator.  Don't make the channel non-blocking to
+	make sure a partial line is always read until it is finished.
+
+	* userhelper-wrap.c (struct message): Remove typedef.
+
 2007-06-09  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.in: Release 1.91.2.

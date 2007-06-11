@@ -49,11 +49,11 @@ static int child_exit_status;
 static gboolean child_success_dialog = TRUE;
 static gboolean child_was_execed = FALSE;
 
-typedef struct message {
+struct message {
 	int type;
 	GtkWidget *entry;
 	GtkWidget *label;
-} message;
+};
 
 struct response {
 	int responses, rows;
@@ -356,7 +356,8 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 			     (message_list != NULL) &&
 			     (message_list->data != NULL);
 			     message_list = g_list_next(message_list)) {
-				message *m = (message *) message_list->data;
+				struct message *m = ((struct message *)
+						     message_list->data);
 #ifdef DEBUG_USERHELPER
 				fprintf(stderr, "message %d\n", m->type);
 				if (GTK_IS_ENTRY(m->entry)) {
@@ -418,14 +419,16 @@ fake_respond_ok(GtkWidget *widget, gpointer user_data)
 	gtk_dialog_response(GTK_DIALOG(user_data), GTK_RESPONSE_OK);
 }
 
-/* Parse requests from the child userhelper process and display them in a
- * message box. */
+/* Parse a request from the child userhelper process and display it in a
+   message box. */
 static void
 userhelper_parse_childout(char *outline)
 {
+	static struct response *resp = NULL;
+
 	char *prompt;
 	int prompt_type;
-	static struct response *resp = NULL;
+	struct message *msg;
 
 	if (resp == NULL) {
 		/* Allocate the response structure. */
@@ -438,275 +441,218 @@ userhelper_parse_childout(char *outline)
 		resp->rows = 1;
 	}
 
-	/* Now process items from the child. */
-	while ((outline != NULL) && isdigit(outline[0])) {
-		gboolean echo;
 
-		/* Allocate a structure to hold the message data. */
-		message *msg = g_malloc(sizeof(message));
+	/* Allocate a structure to hold the message data. */
+	msg = g_malloc(sizeof(*msg));
 
-		/* Read the prompt type. */
-		prompt_type = strtol(outline, &prompt, 10);
+	/* Read the prompt type. */
+	errno = 0;
+	prompt_type = strtol(outline, &prompt, 10);
+	if (errno != 0 || prompt == outline)
+		_exit(1);
 
-		/* The first character which wasn't a digit might be whitespace,
-		 * so skip over any whitespace before settling on the actual
-		 * prompt. */
-		if ((prompt != NULL) && (strlen(prompt) > 0)) {
-			while ((isspace((unsigned char)prompt[0]) &&
-			       (prompt[0] != '\0') &&
-			       (prompt[0] != '\n'))) {
-				prompt++;
-			}
-		}
-
-		/* Snip off terminating newlines in the prompt string and save
-		 * a pointer to interate the parser along. */
-		outline = strchr(prompt, '\n');
-		while (outline != NULL) {
-			if ((outline[1] == '\0') || (isdigit(outline[1]))) {
-				break;
-			} else {
-				outline = strchr(outline + 1, '\n');
-			}
-		}
-		if (outline != NULL) {
-			outline[0] = '\0';
-			outline++;
-			if (outline[0] == '\0') {
-				outline = NULL;
-			}
-		}
-
-#ifdef DEBUG_USERHELPER
-		g_print("Child message: (%d)/\"%s\"\n", prompt_type, prompt);
-#endif
-		msg->type = prompt_type;
-		msg->entry = NULL;
-
-		echo = TRUE;
-		switch (prompt_type) {
-			/* A suggestion for the next input. */
-			case UH_PROMPT_SUGGESTION:
-				g_free(resp->suggestion);
-				resp->suggestion = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("Suggested response \"%s\".\n",
-					resp->suggestion);
-#endif
-				break;
-			/* Prompts.  Create a label and entry field. */
-			case UH_ECHO_OFF_PROMPT:
-				echo = FALSE;
-				/* fall through */
-			case UH_ECHO_ON_PROMPT:
-				/* Only set the title to "Query" if it isn't
-				 * already set to "Error" or something else
-				 * more meaningful. */
-				if (resp->title == NULL) {
-					resp->title = _("Query");
-				}
-				/* Create a label to hold the prompt, and make
-				 * a feeble gesture at being accessible :(. */
-				msg->label =
-					gtk_label_new_with_mnemonic(_(prompt));
-				gtk_label_set_line_wrap(GTK_LABEL(msg->label),
-							TRUE);
-				gtk_misc_set_alignment(GTK_MISC(msg->label),
-						       1.0, 0.5);
-
-				/* Create an entry field to hold the answer. */
-				msg->entry = gtk_entry_new();
-				gtk_label_set_mnemonic_widget(GTK_LABEL(msg->label),
-							      GTK_WIDGET(msg->entry));
-				gtk_entry_set_visibility(GTK_ENTRY(msg->entry),
-							 echo);
-
-				/* If we had a suggestion, use it up. */
-				if (resp->suggestion) {
-					gtk_entry_set_text(GTK_ENTRY(msg->entry),
-							   resp->suggestion);
-					g_free(resp->suggestion);
-					resp->suggestion = NULL;
-				}
-
-				/* Keep track of the first entry field in the
-				 * dialog box. */
-				if (resp->first == NULL) {
-					resp->first = msg->entry;
-				}
-
-				/* Keep track of the last entry field in the
-				 * dialog box. */
-				resp->last = msg->entry;
-
-				/* Insert them. */
-				gtk_table_attach(GTK_TABLE(resp->table),
-						 msg->label, 0, 1,
-						 resp->rows, resp->rows + 1,
-						 GTK_EXPAND | GTK_FILL, 0,
-						 PAD, PAD);
-				gtk_table_attach(GTK_TABLE(resp->table),
-						 msg->entry, 1, 2,
-						 resp->rows, resp->rows + 1,
-						 GTK_EXPAND | GTK_FILL, 0,
-						 PAD, PAD);
-
-				/* Add this message to the list of messages. */
-				resp->message_list =
-					g_list_append(resp->message_list, msg);
-
-				/* Note that this one needs a response. */
-				resp->responses++;
-				resp->rows++;
-#ifdef DEBUG_USERHELPER
-				g_print("Now we need %d responses.\n",
-					resp->responses);
-#endif
-				break;
-			/* Fallback flag.  Read it and save it for later. */
-			case UH_FALLBACK_ALLOW:
-				resp->fallback_allowed = atoi(prompt) != 0;
-#ifdef DEBUG_USERHELPER
-				g_print("Fallback %sallowed.\n",
-					resp->fallback_allowed ? "" : "not ");
-#endif
-				break;
-			/* User name. Read it and save it for later. */
-			case UH_USER:
-				g_free(resp->user);
-				resp->user = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("User is \"%s\".\n", resp->user);
-#endif
-				break;
-			/* Service name. Read it and save it for later. */
-			case UH_SERVICE_NAME:
-				g_free(resp->service);
-				resp->service = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("Service is \"%s\".\n", resp->service);
-#endif
-				break;
-			/* An error message. */
-			case UH_ERROR_MSG:
-				resp->title = _("Error");
-				msg->label = gtk_label_new(_(prompt));
-				gtk_table_attach(GTK_TABLE(resp->table),
-						 msg->label, 0, 2,
-						 resp->rows, resp->rows + 1,
-						 0, 0, PAD, PAD);
-				resp->message_list =
-					g_list_append(resp->message_list, msg);
-				resp->rows++;
-				break;
-			/* An informational message. */
-			case UH_INFO_MSG:
-				resp->title = _("Information");
-				msg->label = gtk_label_new(_(prompt));
-				gtk_table_attach(GTK_TABLE(resp->table),
-						 msg->label, 0, 2,
-						 resp->rows, resp->rows + 1,
-						 0, 0, PAD, PAD);
-				resp->message_list =
-					g_list_append(resp->message_list, msg);
-				resp->rows++;
-				break;
-			/* An informative banner. */
-			case UH_BANNER:
-				g_free(resp->banner);
-				resp->banner = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("Banner is \"%s\".\n", resp->banner);
-#endif
-				break;
-			/* Userhelper is trying to exec. */
-			case UH_EXEC_START:
-				child_was_execed = TRUE;
-#ifdef DEBUG_USERHELPER
-				g_print("Child started.\n");
-#endif
-				break;
-			/* Userhelper failed to exec. */
-			case UH_EXEC_FAILED:
-				child_was_execed = FALSE;
-#ifdef DEBUG_USERHELPER
-				g_print("Child failed.\n");
-#endif
-				break;
-#ifdef USE_STARTUP_NOTIFICATION
-			/* Startup notification name. */
-			case UH_SN_NAME:
-				g_free(sn_name);
-				sn_name = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("SN Name is \"%s\".\n", sn_name);
-#endif
-				break;
-			/* Startup notification description. */
-			case UH_SN_DESCRIPTION:
-				g_free(sn_description);
-				sn_description = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("SN Description is \"%s\".\n",
-					sn_description);
-#endif
-				break;
-			/* Startup notification workspace. */
-			case UH_SN_WORKSPACE:
-				sn_workspace = atoi(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("SN Workspace is %d.\n", sn_workspace);
-#endif
-				break;
-			/* Startup notification wmclass. */
-			case UH_SN_WMCLASS:
-				g_free(sn_wmclass);
-				sn_wmclass = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("SN WMClass is \"%s\".\n", sn_wmclass);
-#endif
-				break;
-			/* Startup notification binary name. */
-			case UH_SN_BINARY_NAME:
-				g_free(sn_binary_name);
-				sn_binary_name = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("SN Binary name is \"%s\".\n",
-					sn_binary_name);
-#endif
-				break;
-			/* Startup notification icon name. */
-			case UH_SN_ICON_NAME:
-				g_free(sn_icon_name);
-				sn_icon_name = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-				g_print("SN Icon name is \"%s\".\n",
-					sn_icon_name);
-#endif
-				break;
-#endif
-			/* Sanity-check for the number of expected responses. */
-			case UH_EXPECT_RESP:
-				if (resp->responses != atoi(prompt)) {
-					fprintf(stderr,
-						"Protocol error (%d responses "
-						"expected from %d prompts)!\n",
-						atoi(prompt), resp->responses);
-					_exit(1);
-				}
-				break;
-			/* Synchronization point -- no more prompts. */
-			case UH_SYNC_POINT:
-				resp->ready = TRUE;
-				break;
-			default:
-				break;
-		}
+	/* The first character which wasn't a digit might be whitespace, so
+	  skip over any whitespace before settling on the actual prompt. */
+	if (prompt != NULL) {
+		while (*prompt != '\0' && isspace((unsigned char)*prompt))
+			prompt++;
 	}
 
-	/* Check that we used up all of the data. */
-	if (outline && (strlen(outline) > 0)) {
-		fprintf(stderr, "ERROR: unused data: `%s'.\n", outline);
+#ifdef DEBUG_USERHELPER
+	g_print("Child message: (%d)/\"%s\"\n", prompt_type, prompt);
+#endif
+	msg->type = prompt_type;
+	msg->entry = NULL;
+
+	switch (prompt_type) {
+	case UH_PROMPT_SUGGESTION:
+		/* A suggestion for the next input. */
+		g_free(resp->suggestion);
+		resp->suggestion = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("Suggested response \"%s\".\n", resp->suggestion);
+#endif
+		break;
+	case UH_ECHO_OFF_PROMPT: case UH_ECHO_ON_PROMPT:
+		/* Prompts.  Create a label and entry field. */
+		/* Only set the title to "Query" if it isn't already set to
+		  "Error" or something else more meaningful. */
+		if (resp->title == NULL)
+			resp->title = _("Query");
+		/* Create a label to hold the prompt, and make a feeble gesture
+		   at being accessible :(. */
+		msg->label = gtk_label_new_with_mnemonic(_(prompt));
+		gtk_label_set_line_wrap(GTK_LABEL(msg->label), TRUE);
+		gtk_misc_set_alignment(GTK_MISC(msg->label), 1.0, 0.5);
+
+		/* Create an entry field to hold the answer. */
+		msg->entry = gtk_entry_new();
+		gtk_label_set_mnemonic_widget(GTK_LABEL(msg->label),
+					      GTK_WIDGET(msg->entry));
+		gtk_entry_set_visibility(GTK_ENTRY(msg->entry),
+					 prompt_type == UH_ECHO_ON_PROMPT);
+
+		/* If we had a suggestion, use it up. */
+		if (resp->suggestion) {
+			gtk_entry_set_text(GTK_ENTRY(msg->entry),
+					   resp->suggestion);
+			g_free(resp->suggestion);
+			resp->suggestion = NULL;
+		}
+
+		/* Keep track of the first entry field in the dialog box. */
+		if (resp->first == NULL)
+			resp->first = msg->entry;
+
+		/* Keep track of the last entry field in the dialog box. */
+		resp->last = msg->entry;
+
+		/* Insert them. */
+		gtk_table_attach(GTK_TABLE(resp->table), msg->label, 0, 1,
+				 resp->rows, resp->rows + 1,
+				 GTK_EXPAND | GTK_FILL, 0, PAD, PAD);
+		gtk_table_attach(GTK_TABLE(resp->table), msg->entry, 1, 2,
+				 resp->rows, resp->rows + 1,
+				 GTK_EXPAND | GTK_FILL, 0, PAD, PAD);
+
+		/* Add this message to the list of messages. */
+		resp->message_list = g_list_append(resp->message_list, msg);
+
+		/* Note that this one needs a response. */
+		resp->responses++;
+		resp->rows++;
+#ifdef DEBUG_USERHELPER
+		g_print("Now we need %d responses.\n", resp->responses);
+#endif
+		break;
+	case UH_FALLBACK_ALLOW:
+		/* Fallback flag.  Read it and save it for later. */
+		resp->fallback_allowed = atoi(prompt) != 0;
+#ifdef DEBUG_USERHELPER
+		g_print("Fallback %sallowed.\n",
+			resp->fallback_allowed ? "" : "not ");
+#endif
+		break;
+	case UH_USER:
+		/* User name. Read it and save it for later. */
+		g_free(resp->user);
+		resp->user = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("User is \"%s\".\n", resp->user);
+#endif
+		break;
+	case UH_SERVICE_NAME:
+		/* Service name. Read it and save it for later. */
+		g_free(resp->service);
+		resp->service = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("Service is \"%s\".\n", resp->service);
+#endif
+		break;
+	case UH_ERROR_MSG:
+		/* An error message. */
+		resp->title = _("Error");
+		msg->label = gtk_label_new(_(prompt));
+		gtk_table_attach(GTK_TABLE(resp->table), msg->label, 0, 2,
+				 resp->rows, resp->rows + 1, 0, 0, PAD, PAD);
+		resp->message_list = g_list_append(resp->message_list, msg);
+		resp->rows++;
+		break;
+	case UH_INFO_MSG:
+		/* An informational message. */
+		resp->title = _("Information");
+		msg->label = gtk_label_new(_(prompt));
+		gtk_table_attach(GTK_TABLE(resp->table), msg->label, 0, 2,
+				 resp->rows, resp->rows + 1, 0, 0, PAD, PAD);
+		resp->message_list = g_list_append(resp->message_list, msg);
+		resp->rows++;
+		break;
+	case UH_BANNER:
+		/* An informative banner. */
+		g_free(resp->banner);
+		resp->banner = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("Banner is \"%s\".\n", resp->banner);
+#endif
+		break;
+	case UH_EXEC_START:
+		/* Userhelper is trying to exec. */
+		child_was_execed = TRUE;
+#ifdef DEBUG_USERHELPER
+		g_print("Child started.\n");
+#endif
+		break;
+	case UH_EXEC_FAILED:
+		/* Userhelper failed to exec. */
+		child_was_execed = FALSE;
+#ifdef DEBUG_USERHELPER
+		g_print("Child failed.\n");
+#endif
+		break;
+#ifdef USE_STARTUP_NOTIFICATION
+	case UH_SN_NAME:
+		/* Startup notification name. */
+		g_free(sn_name);
+		sn_name = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("SN Name is \"%s\".\n", sn_name);
+#endif
+		break;
+	case UH_SN_DESCRIPTION:
+		/* Startup notification description. */
+		g_free(sn_description);
+		sn_description = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("SN Description is \"%s\".\n", sn_description);
+#endif
+		break;
+	case UH_SN_WORKSPACE:
+		/* Startup notification workspace. */
+		sn_workspace = atoi(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("SN Workspace is %d.\n", sn_workspace);
+#endif
+		break;
+	case UH_SN_WMCLASS:
+		/* Startup notification wmclass. */
+		g_free(sn_wmclass);
+		sn_wmclass = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("SN WMClass is \"%s\".\n", sn_wmclass);
+#endif
+		break;
+	case UH_SN_BINARY_NAME:
+		/* Startup notification binary name. */
+		g_free(sn_binary_name);
+		sn_binary_name = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("SN Binary name is \"%s\".\n", sn_binary_name);
+#endif
+		break;
+	case UH_SN_ICON_NAME:
+		/* Startup notification icon name. */
+		g_free(sn_icon_name);
+		sn_icon_name = g_strdup(prompt);
+#ifdef DEBUG_USERHELPER
+		g_print("SN Icon name is \"%s\".\n", sn_icon_name);
+#endif
+		break;
+#endif
+	case UH_EXPECT_RESP:
+		/* Sanity-check for the number of expected responses. */
+		if (resp->responses != atoi(prompt)) {
+			fprintf(stderr, "Protocol error (%d responses expected "
+				"from %d prompts)!\n", atoi(prompt),
+				resp->responses);
+			_exit(1);
+		}
+		break;
+		/* Synchronization point -- no more prompts. */
+	case UH_SYNC_POINT:
+		resp->ready = TRUE;
+		break;
+	default:
+		break;
 	}
 
 #ifdef USE_STARTUP_NOTIFICATION
@@ -971,22 +917,23 @@ userhelper_read_childout(GIOChannel *source, GIOCondition condition,
 		childout_tag = 0;
 		return FALSE;
 	}
-	if ((condition & G_IO_IN) != 0) {
-		char output[LINE_MAX + 1];
-		gsize count;
+	while ((condition & G_IO_IN) != 0) {
+		char *line;
+		gsize end_pos;
 		GError *err;
 
 		err = NULL;
-		g_io_channel_read_chars(source, output, LINE_MAX, &count, &err);
-		if (err != NULL) {
+		g_io_channel_read_line(source, &line, NULL, &end_pos, &err);
+		if (err != NULL)
 			/* Error of some kind. */
 			_exit(0);
-		}
 		/* Parse the data and we're done. */
-		if (count > 0) {
-			output[count] = '\0';
-			userhelper_parse_childout(output);
+		if (line != NULL) {
+			line[end_pos] = '\0';
+			userhelper_parse_childout(line);
+			g_free(line);
 		}
+		condition = g_io_channel_get_buffer_condition(source);
 	}
 	return TRUE;
 }
@@ -1027,14 +974,13 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 		childout_channel = g_io_channel_unix_new(childout[0]);
 
 		err = NULL;
-		g_io_channel_set_flags(childout_channel, G_IO_FLAG_NONBLOCK,
-				       &err);
+		g_io_channel_set_encoding(childout_channel, NULL, &err);
 		if (err != NULL) {
-			fprintf(stderr,
-				_("Failed to set IO channel nonblocking: %s\n"),
-				err->message);
+			fprintf(stderr, _("Can't set binary encoding on an IO "
+					  "channel: %s\n"), err->message);
 			_exit(1);
 		}
+		g_io_channel_set_line_term(childout_channel, "\n", -1);
 
 		childout_tag = g_io_add_watch(childout_channel,
 					      G_IO_IN | G_IO_HUP | G_IO_ERR
