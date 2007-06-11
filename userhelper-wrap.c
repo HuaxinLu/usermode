@@ -452,7 +452,6 @@ userhelper_parse_childout(char *outline)
 
 	char *prompt;
 	int prompt_type;
-	struct message *msg;
 
 	if (resp == NULL) {
 		/* Allocate the response structure. */
@@ -465,9 +464,6 @@ userhelper_parse_childout(char *outline)
 		resp->rows = 1;
 	}
 
-
-	/* Allocate a structure to hold the message data. */
-	msg = g_malloc(sizeof(*msg));
 
 	/* Read the prompt type. */
 	errno = 0;
@@ -485,8 +481,6 @@ userhelper_parse_childout(char *outline)
 #ifdef DEBUG_USERHELPER
 	g_print("Child message: (%d)/\"%s\"\n", prompt_type, prompt);
 #endif
-	msg->type = prompt_type;
-	msg->entry = NULL;
 
 	switch (prompt_type) {
 	case UH_PROMPT_SUGGESTION:
@@ -497,8 +491,12 @@ userhelper_parse_childout(char *outline)
 		g_print("Suggested response \"%s\".\n", resp->suggestion);
 #endif
 		break;
-	case UH_ECHO_OFF_PROMPT: case UH_ECHO_ON_PROMPT:
+	case UH_ECHO_OFF_PROMPT: case UH_ECHO_ON_PROMPT: {
+		struct message *msg;
+
 		/* Prompts.  Create a label and entry field. */
+		msg = g_malloc(sizeof(*msg));
+		msg->type = prompt_type;
 		/* Only set the title to "Query" if it isn't already set to
 		  "Error" or something else more meaningful. */
 		if (resp->title == NULL)
@@ -549,6 +547,7 @@ userhelper_parse_childout(char *outline)
 		g_print("Now we need %d responses.\n", resp->responses);
 #endif
 		break;
+	}
 	case UH_FALLBACK_ALLOW:
 		/* Fallback flag.  Read it and save it for later. */
 		resp->fallback_allowed = atoi(prompt) != 0;
@@ -573,24 +572,22 @@ userhelper_parse_childout(char *outline)
 		g_print("Service is \"%s\".\n", resp->service);
 #endif
 		break;
-	case UH_ERROR_MSG:
-		/* An error message. */
-		resp->title = _("Error");
+	case UH_ERROR_MSG: case UH_INFO_MSG: {
+		struct message *msg;
+
+		/* An error/informational message. */
+		resp->title = (prompt_type == UH_ERROR_MSG
+			       ? _("Error") : _("Information"));
+		msg = g_malloc(sizeof(*msg));
+		msg->type = prompt_type;
+		msg->entry = NULL;
 		msg->label = gtk_label_new(_(prompt));
 		gtk_table_attach(GTK_TABLE(resp->table), msg->label, 0, 2,
 				 resp->rows, resp->rows + 1, 0, 0, PAD, PAD);
 		resp->message_list = g_list_append(resp->message_list, msg);
 		resp->rows++;
 		break;
-	case UH_INFO_MSG:
-		/* An informational message. */
-		resp->title = _("Information");
-		msg->label = gtk_label_new(_(prompt));
-		gtk_table_attach(GTK_TABLE(resp->table), msg->label, 0, 2,
-				 resp->rows, resp->rows + 1, 0, 0, PAD, PAD);
-		resp->message_list = g_list_append(resp->message_list, msg);
-		resp->rows++;
-		break;
+	}
 	case UH_BANNER:
 		/* An informative banner. */
 		g_free(resp->banner);

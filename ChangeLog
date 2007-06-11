@@ -1,5 +1,7 @@
 2007-06-11  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper-wrap.c (userhelper_parse_childout): Fix a memory leak.
+
 	* userhelper.c (wrap, main): Use the locale's charset.
 	(converse_console): Don't re-set the charset to the locale's charset,
 	it is now the default.
