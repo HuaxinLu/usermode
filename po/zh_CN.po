@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-09 19:41+0200\n"
+"POT-Creation-Date: 2007-06-11 23:29+0200\n"
 "PO-Revision-Date: 2006-12-01 10:28+1000\n"
 "Last-Translator: Xi Huang <xhuang@redhat.com>\n"
 "Language-Team:  <zh@li.org>\n"
@@ -127,42 +127,42 @@ msgstr "保留授权"
 msgid "Forget Authorization"
 msgstr "忘记授权"
 
-#: ../../po/../pam-panel-icon.c:284
+#: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check 的 setuid 不是根用户"
 
-#: ../../po/../pam-panel-icon.c:288
+#: ../../po/../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "没有控制 pam_timestamp_check 的 tty"
 
-#: ../../po/../pam-panel-icon.c:292
+#: ../../po/../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check 的用户未知"
 
-#: ../../po/../pam-panel-icon.c:296
+#: ../../po/../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check 中出现权限错误"
 
-#: ../../po/../pam-panel-icon.c:300
+#: ../../po/../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check 的控制 tty 无效"
 
-#: ../../po/../pam-panel-icon.c:318
+#: ../../po/../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "错误：%s\n"
 
-#: ../../po/../pam-panel-icon.c:383
+#: ../../po/../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "运行命令“%s”失败：%s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
+#: ../../po/../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "设置 IO 通道为非阻塞时出错：%s\n"
 
-#: ../../po/../pam-panel-icon.c:475
+#: ../../po/../pam-panel-icon.c:476
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon：连接到会话管理器时失败\n"
 
@@ -176,7 +176,7 @@ msgstr "无法为 %s （程序 %s）设置默认的上下文。\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "无法把 exec 环境设置为 %s。\n"
 
-#: ../../po/../userhelper.c:807
+#: ../../po/../userhelper.c:803
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -185,7 +185,7 @@ msgstr ""
 "您在试图运行“%s”。它可能会得益于超级用户的特权，\n"
 "但是这需要更多信息才能做到。"
 
-#: ../../po/../userhelper.c:809
+#: ../../po/../userhelper.c:805
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -194,7 +194,7 @@ msgstr ""
 "您在试图运行“%s”。它要求您拥有超级用户的特权，\n"
 "但是这需要更多信息才能做到。"
 
-#: ../../po/../userhelper.c:813
+#: ../../po/../userhelper.c:809
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -202,7 +202,7 @@ msgstr ""
 "您在试图运行一个可能会得益于超级用户特权的命令，\n"
 "但是这需要更多信息才能做到。"
 
-#: ../../po/../userhelper.c:815
+#: ../../po/../userhelper.c:811
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -210,32 +210,32 @@ msgstr ""
 "您在试图运行一个要求超级用户特权的命令，\n"
 "但是需要更多信息才能做到。"
 
-#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
 
-#: ../../po/../userhelper.c:2375
+#: ../../po/../userhelper.c:2368
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必须是 setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2473
+#: ../../po/../userhelper.c:2466
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:203
 msgid "Unknown exit code."
 msgstr "未知退出代号。"
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:205
 msgid "Information updated."
 msgstr "信息已更新。"
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:207
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -243,7 +243,7 @@ msgstr ""
 "您键入的口令无效。\n"
 "请重试。"
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:209
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -253,11 +253,11 @@ msgstr ""
 "这可能是字段中的逗号和冒号造成的。\n"
 "请删除那些标点后再重试。"
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:211
 msgid "Password resetting error."
 msgstr "口令重设出错。"
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:213
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -265,19 +265,19 @@ msgstr ""
 "某些系统文件被锁。\n"
 "请过一会儿再重试。"
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:215
 msgid "Unknown user."
 msgstr "未知用户。"
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:217
 msgid "Insufficient rights."
 msgstr "权限不够。"
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:219
 msgid "Invalid call to subprocess."
 msgstr "无效的子进程调用……"
 
-#: ../../po/../userhelper-wrap.c:223
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -287,60 +287,60 @@ msgstr ""
 "您没有改变 shell 的许可。\n"
 "请向您的系统管理员咨询。"
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:224
 msgid "Out of memory."
 msgstr "超出内存。"
 
-#: ../../po/../userhelper-wrap.c:228
+#: ../../po/../userhelper-wrap.c:226
 msgid "The exec() call failed."
 msgstr "调用 exec() 失败。"
 
-#: ../../po/../userhelper-wrap.c:230
+#: ../../po/../userhelper-wrap.c:228
 msgid "Failed to find selected program."
 msgstr "没有找到所选程序。"
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:231
 msgid "Request canceled."
 msgstr "请求取消。"
 
-#: ../../po/../userhelper-wrap.c:235
+#: ../../po/../userhelper-wrap.c:233
 msgid "Internal PAM error occured."
 msgstr "出现内部PAM错误。"
 
-#: ../../po/../userhelper-wrap.c:237
+#: ../../po/../userhelper-wrap.c:235
 msgid "Unknown error."
 msgstr "未知错误。"
 
-#: ../../po/../userhelper-wrap.c:506
+#: ../../po/../userhelper-wrap.c:503
 msgid "Query"
 msgstr "查询"
 
-#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "错误"
 
-#: ../../po/../userhelper-wrap.c:604
+#: ../../po/../userhelper-wrap.c:580
 msgid "Information"
 msgstr "信息"
 
-#: ../../po/../userhelper-wrap.c:757
+#: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
 msgstr "定位符文字。"
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:782
 #, fuzzy
 msgid "Changing password."
 msgstr "改变你的登录密码"
 
-#: ../../po/../userhelper-wrap.c:818
+#: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
 msgstr "正在改变个人信息。"
 
-#: ../../po/../userhelper-wrap.c:821
+#: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
 msgstr "正在改变登录 shell。"
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -348,7 +348,7 @@ msgid ""
 msgstr ""
 "您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
 
-#: ../../po/../userhelper-wrap.c:827
+#: ../../po/../userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -356,49 +356,54 @@ msgid ""
 msgstr ""
 "您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:798
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 "您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
 
-#: ../../po/../userhelper-wrap.c:834
+#: ../../po/../userhelper-wrap.c:800
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr "您在试图运行一个要求超级用户特权的命令，但是需要更多信息才能做到。"
 
-#: ../../po/../userhelper-wrap.c:844
+#: ../../po/../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "无特权地运行(_R)"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:968
 #, c-format
 msgid "Pipe error.\n"
 msgstr "管道错误。\n"
 
-#: ../../po/../userhelper-wrap.c:1008
+#: ../../po/../userhelper-wrap.c:975
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "无法 fork()。\n"
 
-#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
+#: ../../po/../userhelper-wrap.c:1001
+#, c-format
+msgid "Can't set charset %s on an IO channel: %s\n"
+msgstr ""
+
+#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() 错误。\n"
 
-#: ../../po/../userhelper-wrap.c:1124
+#: ../../po/../userhelper-wrap.c:1093
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 错误，errno=%d\n"
 
-#: ../../po/../userinfo.c:373
+#: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
 msgstr "不需要的参数"
 
-#: ../../po/../userinfo.c:398
+#: ../../po/../userinfo.c:395
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "您不存在。   走开。\n"

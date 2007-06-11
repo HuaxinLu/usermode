@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-09 19:41+0200\n"
+"POT-Creation-Date: 2007-06-11 23:29+0200\n"
 "PO-Revision-Date: 2005-11-04 09:29+0200\n"
 "Last-Translator: Allan Sims <allan.sims@eau.ee>\n"
 "Language-Team: Estonian <Eesti>\n"
@@ -124,42 +124,42 @@ msgstr "Hoia autoriseerimist"
 msgid "Forget Authorization"
 msgstr "Unusta autoriseerimine"
 
-#: ../../po/../pam-panel-icon.c:284
+#: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check ei ole juurkasutaja setuid"
 
-#: ../../po/../pam-panel-icon.c:288
+#: ../../po/../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "tty-d ei kontrollita pam_timestamp_check jaoks"
 
-#: ../../po/../pam-panel-icon.c:292
+#: ../../po/../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr "tundmatu kasutaja pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:296
+#: ../../po/../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr "õiguse viga pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:300
+#: ../../po/../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "tty vigane kontrollimine pam_timestamp_check jaoks"
 
-#: ../../po/../pam-panel-icon.c:318
+#: ../../po/../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "Viga: %s\n"
 
-#: ../../po/../pam-panel-icon.c:383
+#: ../../po/../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Ebaõnnestus käivitada käsku \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
+#: ../../po/../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Ebaõnnestus seadistada IO kanal mitte-blokeerivaks: %s\n"
 
-#: ../../po/../pam-panel-icon.c:475
+#: ../../po/../pam-panel-icon.c:476
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: ebaõnnestus ühendada sessioonihalduriga\n"
 
@@ -173,7 +173,7 @@ msgstr "Ei saa seada vaikekonteksti %s-le programmile %s.\n"
 msgid "Could not set exec context to %s.\n"
 msgstr "Ei saa seada exec konteksti %s-le.\n"
 
-#: ../../po/../userhelper.c:807
+#: ../../po/../userhelper.c:803
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -182,7 +182,7 @@ msgstr ""
 "Sa üritad käivitada \"%s\", mis õnnestub omades administratiivseid õigusi, "
 "kuid selle tegemiseks on vaja rohkem informatsiooni."
 
-#: ../../po/../userhelper.c:809
+#: ../../po/../userhelper.c:805
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -191,7 +191,7 @@ msgstr ""
 "Sa üritad käivitada \"%s\", mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: ../../po/../userhelper.c:813
+#: ../../po/../userhelper.c:809
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -199,7 +199,7 @@ msgstr ""
 "Sa üritad käivitada käsku, mis õnnestub omades administratiivseid õigusi, \n"
 "kuid selle tegemiseks on vaja rohkem informatsiooni."
 
-#: ../../po/../userhelper.c:815
+#: ../../po/../userhelper.c:811
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -207,33 +207,33 @@ msgstr ""
 "Sa üritad käivitada käsku, mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
 
-#: ../../po/../userhelper.c:2375
+#: ../../po/../userhelper.c:2368
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper peab olema seatud kui juurkasutaja\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2473
+#: ../../po/../userhelper.c:2466
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Ei suuda avada graafilist akent ja ei suuda leida kontrollimise terminali.\n"
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:203
 msgid "Unknown exit code."
 msgstr "Tundmatu väljumise kood."
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:205
 msgid "Information updated."
 msgstr "Info on uuendatud."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:207
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -241,7 +241,7 @@ msgstr ""
 "Trükitud parool on vigane.\n"
 "Proovi uuesti."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:209
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -251,11 +251,11 @@ msgstr ""
 "See võib olla tingitud koolonist või komast mõnes väljas.\n"
 "Palun eemalda see ja proovi uuesti."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:211
 msgid "Password resetting error."
 msgstr "Parooli seadmise viga."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:213
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -263,19 +263,19 @@ msgstr ""
 "Mõned süsteemi failid on lukus.\n"
 "Palun proovi mõned korrad veel."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:215
 msgid "Unknown user."
 msgstr "Tundmatu kasutaja."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:217
 msgid "Insufficient rights."
 msgstr "Ebapiisavad õigused."
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:219
 msgid "Invalid call to subprocess."
 msgstr "Vigane alamprotsessi kutsumine."
 
-#: ../../po/../userhelper-wrap.c:223
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -285,60 +285,60 @@ msgstr ""
 "Sul ei ole õigust muuta oma kesta.\n"
 "Konsulteeri oma süsteemi administraatoriga."
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:224
 msgid "Out of memory."
 msgstr "Mälust väljas."
 
-#: ../../po/../userhelper-wrap.c:228
+#: ../../po/../userhelper-wrap.c:226
 msgid "The exec() call failed."
 msgstr "exec() käivitus ebaõnnestus."
 
-#: ../../po/../userhelper-wrap.c:230
+#: ../../po/../userhelper-wrap.c:228
 msgid "Failed to find selected program."
 msgstr "Ebaõnnestus leida valitud programmi."
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:231
 msgid "Request canceled."
 msgstr "Päring tühistati."
 
-#: ../../po/../userhelper-wrap.c:235
+#: ../../po/../userhelper-wrap.c:233
 msgid "Internal PAM error occured."
 msgstr "Esines lisatava autentimismooduli sisemine viga."
 
-#: ../../po/../userhelper-wrap.c:237
+#: ../../po/../userhelper-wrap.c:235
 msgid "Unknown error."
 msgstr "Tundmatu viga."
 
-#: ../../po/../userhelper-wrap.c:506
+#: ../../po/../userhelper-wrap.c:503
 msgid "Query"
 msgstr "Päring"
 
-#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "Viga"
 
-#: ../../po/../userhelper-wrap.c:604
+#: ../../po/../userhelper-wrap.c:580
 msgid "Information"
 msgstr "Informatsioon"
 
-#: ../../po/../userhelper-wrap.c:757
+#: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
 msgstr "Kohahoidja tekst."
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:782
 #, fuzzy
 msgid "Changing password."
 msgstr "Muuda oma sisselogimise parool"
 
-#: ../../po/../userhelper-wrap.c:818
+#: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
 msgstr "Isikliku info muutmine."
 
-#: ../../po/../userhelper-wrap.c:821
+#: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
 msgstr "Logimise kesta muutmine."
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -348,7 +348,7 @@ msgstr ""
 "kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: ../../po/../userhelper-wrap.c:827
+#: ../../po/../userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -357,7 +357,7 @@ msgstr ""
 "Sa üritad käivitada \"%s\", mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:798
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -366,7 +366,7 @@ msgstr ""
 "kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: ../../po/../userhelper-wrap.c:834
+#: ../../po/../userhelper-wrap.c:800
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -374,36 +374,41 @@ msgstr ""
 "Sa üritad käivitada käsku, mis vajab administratiivseid õigusi, kuid selle\n"
 "tegemiseks on vaja rohkem informatsiooni."
 
-#: ../../po/../userhelper-wrap.c:844
+#: ../../po/../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "_Käivita õigusteta"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:968
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe viga.\n"
 
-#: ../../po/../userhelper-wrap.c:1008
+#: ../../po/../userhelper-wrap.c:975
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Ei saa fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
+#: ../../po/../userhelper-wrap.c:1001
+#, c-format
+msgid "Can't set charset %s on an IO channel: %s\n"
+msgstr ""
+
+#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() viga.\n"
 
-#: ../../po/../userhelper-wrap.c:1124
+#: ../../po/../userhelper-wrap.c:1093
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() viga, veanumber=%d\n"
 
-#: ../../po/../userinfo.c:373
+#: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
 msgstr ""
 
-#: ../../po/../userinfo.c:398
+#: ../../po/../userinfo.c:395
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Sind pole olemas. Mine ära.\n"

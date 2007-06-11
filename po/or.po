@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-09 19:41+0200\n"
+"POT-Creation-Date: 2007-06-11 23:29+0200\n"
 "PO-Revision-Date: 2007-06-11 11:40+0530\n"
 "Last-Translator: Subhransu Behera <arya_subhransu@yahoo.co.in>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -129,42 +130,42 @@ msgstr "ବୈଧିକରଣ କୁ ରକ୍ଷାକର"
 msgid "Forget Authorization"
 msgstr "ବୈଧିକରଣ କୁ ଭୂଲିଯାଅ"
 
-#: ../../po/../pam-panel-icon.c:284
+#: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check ଗୋଟିଏ setuid ମୂଖ୍ଯ ଚାଳକ ନୁହେଁ"
 
-#: ../../po/../pam-panel-icon.c:288
+#: ../../po/../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check କୌଣସି ନିୟନ୍ତ୍ରିତ tty ନାହିଁ"
 
-#: ../../po/../pam-panel-icon.c:292
+#: ../../po/../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr "pam_timestamp_check ପାଇଁ ଚାଳକ ଟି ଅଜଣା ଅଟେ"
 
-#: ../../po/../pam-panel-icon.c:296
+#: ../../po/../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check ରେ ଅନୁମତି ଜନିତ ତୃଟି ପରିଲିଖିତ ହେଲା"
 
-#: ../../po/../pam-panel-icon.c:300
+#: ../../po/../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check ରେ ଅବୈଧ ନିୟନ୍ତ୍ରିତ tty"
 
-#: ../../po/../pam-panel-icon.c:318
+#: ../../po/../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "ତୃଟି: %s\n"
 
-#: ../../po/../pam-panel-icon.c:383
+#: ../../po/../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "\"%s\" ନିର୍ଦ୍ଦେଶ କୁ ଚଳାଇବା ରେ ଅସଫଳ: %s\n"
 
-#: ../../po/../pam-panel-icon.c:395 ../../po/../userhelper-wrap.c:1034
+#: ../../po/../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "ଅଖଣ୍ଡିତ ଆଇ.ଓ. ଉପପଥ କୁ ସେଟ କରିବାରେ ଅସଫଳ: %s\n"
 
-#: ../../po/../pam-panel-icon.c:475
+#: ../../po/../pam-panel-icon.c:476
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: ଅଧିବେଶନ ପରିଚାଳକ କୁ ସଂଯୋଗ କରିବାରେ ଅସଫଳ\n"
 
@@ -178,7 +179,7 @@ msgstr "%s ର %s ପ୍ରୋଗ୍ରାମ ପାଇଁ ପୂର୍ବନି
 msgid "Could not set exec context to %s.\n"
 msgstr "%s ପାଇଁ ନିଷ୍ପାଦନ ପ୍ରସଙ୍ଗ କୁ ସେଟ କରିପାରିଲା ନାହିଁ \n"
 
-#: ../../po/../userhelper.c:807
+#: ../../po/../userhelper.c:803
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -188,7 +189,7 @@ msgstr ""
 "ହୋଇପାରିବ,\n"
 "କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper.c:809
+#: ../../po/../userhelper.c:805
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -197,7 +198,7 @@ msgstr ""
 "ଆପଣ \"%s\" କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଆବଶ୍ଯକ କରିଥାଏ, \n"
 "କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper.c:813
+#: ../../po/../userhelper.c:809
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -206,7 +207,7 @@ msgstr ""
 "ଉପଲବ୍ଧ ହୋଇପାରିବ, \n"
 "କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper.c:815
+#: ../../po/../userhelper.c:811
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -215,31 +216,32 @@ msgstr ""
 "କରିଥାଏ, \n"
 "କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper.c:825 ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" ଭାବରେ ବୈଧିକରଣ କରୁଅଛି"
 
-#: ../../po/../userhelper.c:2375
+#: ../../po/../userhelper.c:2368
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper ଗୋଟିଏ ମୂଖ୍ଯ ଚାଳକ ହେବା ଆବଶ୍ଯକ\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2473
+#: ../../po/../userhelper.c:2466
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ଆଲେଖୀକ ଓ୍ବେଣ୍ଡୋ କୁ ଖୋଲିବାରେ ଅସଫଳ, ଏବଂ ନିୟନ୍ତ୍ରିତ ଟର୍ମିନାଲ ଖୋଲିବାରେ ଅସଫଳ \n"
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:203
 msgid "Unknown exit code."
 msgstr "ଅଜଣା ପ୍ରସ୍ଥାନ ସଙ୍କେତ"
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:205
 msgid "Information updated."
 msgstr "ସୂଚନା ଅଦ୍ଯତିତ ହୋଇଗଲା"
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:207
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -247,7 +249,7 @@ msgstr ""
 "ଆପଣ ଟାଇପ କରିଥିବା ପ୍ରବେଶ ସଙ୍କେତ ଟି ଅବୈଧ ଅଟେ\n"
 "ଦୟାକରି ପୁନର୍ବାର ପ୍ରଚେଷ୍ଟା କରନ୍ତୁ"
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:209
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -257,11 +259,11 @@ msgstr ""
 "ଏହା ବୋଧହୁଏ କୌଣସି ଏକ କ୍ଷେତ୍ର ରେ ବିରାମ ଚିହ୍ନ କିମ୍ବା କମା ଥିବା ରୁ ହୋଇଅଛି\n"
 "ଦୟାକରି ସେମାନଙ୍କୁ କାଢିଦିଅ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କର"
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:211
 msgid "Password resetting error."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ ପୁନଃ ସ୍ଥାପନ କରିବା ସମୟ ରେ ତୃଟି"
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:213
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -269,19 +271,19 @@ msgstr ""
 "ତନ୍ତ୍ର ର କିଛିି ଫାଇଲ ଗୁଡିକ ଅପରିବର୍ତ୍ତନୀୟ ଅଛନ୍ତି \n"
 "ଦୟାକରି କିଛି ସମୟ ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ"
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:215
 msgid "Unknown user."
 msgstr "ଅଜଣା ଚାଳକ"
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:217
 msgid "Insufficient rights."
 msgstr "ଅପର୍ଯ୍ଯାପ୍ତ ଅଧୀକାର"
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:219
 msgid "Invalid call to subprocess."
 msgstr "ଉପ ସଂସାଧନ ପାଇଁ ଅବୈଧ ଡାକରା"
 
-#: ../../po/../userhelper-wrap.c:223
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -291,59 +293,59 @@ msgstr ""
 "ଆପଣଙ୍କୁ ଆପଣଙ୍କ ଆବରଣ ପରିବର୍ତ୍ତନ କରିବା ପାଇଁ ଅନୁମତି ପ୍ରଦାନ କରାଯାଉ ନୀହିଁ \n"
 "ଆପଣଙ୍କ ତନ୍ତ୍ର ପ୍ରଶାସକ ଙ୍କ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ"
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:224
 msgid "Out of memory."
 msgstr "ସ୍ମ୍ରୁତି ବହିର୍ଭୂତ"
 
-#: ../../po/../userhelper-wrap.c:228
+#: ../../po/../userhelper-wrap.c:226
 msgid "The exec() call failed."
 msgstr "exec() ଡାକରା ଟି ଅସଫଳ"
 
-#: ../../po/../userhelper-wrap.c:230
+#: ../../po/../userhelper-wrap.c:228
 msgid "Failed to find selected program."
 msgstr "ଚୟିତ ପ୍ରୋଗ୍ରାମ ଟି କୁ ଖୋଜିବାରେ ଅସଫଳ"
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:231
 msgid "Request canceled."
 msgstr "ଅନୁରୋଧ ଟି ବାତିଲ ହୋଇଗଲା"
 
-#: ../../po/../userhelper-wrap.c:235
+#: ../../po/../userhelper-wrap.c:233
 msgid "Internal PAM error occured."
 msgstr "ଆଭ୍ଯନ୍ତରୀଣ ପି.ଏ.ଏମ. ତୃଟି ପରିଲିଖିତ ହେଲା"
 
-#: ../../po/../userhelper-wrap.c:237
+#: ../../po/../userhelper-wrap.c:235
 msgid "Unknown error."
 msgstr "ଅଜଣା ତୃଟି"
 
-#: ../../po/../userhelper-wrap.c:506
+#: ../../po/../userhelper-wrap.c:503
 msgid "Query"
 msgstr "ପ୍ରଶ୍ନ"
 
-#: ../../po/../userhelper-wrap.c:592 ../../po/../userhelper-wrap.c:765
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "ତୃଟି"
 
-#: ../../po/../userhelper-wrap.c:604
+#: ../../po/../userhelper-wrap.c:580
 msgid "Information"
 msgstr "ସୂଚନା"
 
-#: ../../po/../userhelper-wrap.c:757
+#: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
 msgstr "ସ୍ଥାନ ଧାରଣକାରୀ ପାଠ୍ଯ।"
 
-#: ../../po/../userhelper-wrap.c:816
+#: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ ବଦଳାଇବା ବିଷୟରେ।"
 
-#: ../../po/../userhelper-wrap.c:818
+#: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
 msgstr "ବ୍ଯକ୍ତିଗତ ସୂଚନା କୁ ପରିବର୍ତ୍ତନ କରୁଅଛି"
 
-#: ../../po/../userhelper-wrap.c:821
+#: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
 msgstr "ଲଗଇନ୍ ଆବରଣ କୁ ପରିବର୍ତ୍ତନ କରୁଅଛି"
 
-#: ../../po/../userhelper-wrap.c:825
+#: ../../po/../userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -352,7 +354,7 @@ msgstr ""
 "ଆପଣ \"%s\" କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଦ୍ବାରା ଉପଲବ୍ଧ "
 "ହୋଇପାରିବ, କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper-wrap.c:827
+#: ../../po/../userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -361,7 +363,7 @@ msgstr ""
 "ଆପଣ   \"%s\" କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଆବଶ୍ଯକ କରିଥାଏ, "
 "କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper-wrap.c:832
+#: ../../po/../userhelper-wrap.c:798
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -369,7 +371,7 @@ msgstr ""
 "ଆପଣ ଗୋଟିଏ ନିର୍ଦ୍ଦେଶ କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଦ୍ବାରା "
 "ଉପଲବ୍ଧ ହୋଇପାରିବ,କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper-wrap.c:834
+#: ../../po/../userhelper-wrap.c:800
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -377,36 +379,41 @@ msgstr ""
 "ଆପଣ ଗୋଟିଏ ନିର୍ଦ୍ଦେଶ କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଆବଶ୍ଯକ "
 "କରିଥାଏ, କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper-wrap.c:844
+#: ../../po/../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "ବିଶେଷ ଅଧୀକାର ନଥିବା କାର୍ଯ୍ଯ କୁ ଚଲାନ୍ତୁ (_R)"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:968
 #, c-format
 msgid "Pipe error.\n"
 msgstr "ପାଇପ ଜନିତ ତୃଟି \n"
 
-#: ../../po/../userhelper-wrap.c:1008
+#: ../../po/../userhelper-wrap.c:975
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() କରି ପାରିବ ନାହିଁ \n"
 
-#: ../../po/../userhelper-wrap.c:1108 ../../po/../userhelper-wrap.c:1112
+#: ../../po/../userhelper-wrap.c:1001
+#, c-format
+msgid "Can't set charset %s on an IO channel: %s\n"
+msgstr ""
+
+#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() ତୃଟି \n"
 
-#: ../../po/../userhelper-wrap.c:1124
+#: ../../po/../userhelper-wrap.c:1093
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ତୃଟି, errno=%d\n"
 
-#: ../../po/../userinfo.c:373
+#: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
 msgstr "ଅପ୍ରତ୍ଯାଶିତ ସ୍ବତନ୍ତ୍ରଚର"
 
-#: ../../po/../userinfo.c:398
+#: ../../po/../userinfo.c:395
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "ଆପଣ ଏଠାରେ ଅବସ୍ଥିତ ନାହାଁନ୍ତି | ଚାଲି ଯାଅନ୍ତୁ \n"
@@ -517,4 +524,3 @@ msgstr "ଆପଣଙ୍କ ଲଗଇନ ପ୍ରବେଶ ସଙ୍କେତ �
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ"
-
