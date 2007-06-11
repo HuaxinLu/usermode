@@ -1,3 +1,10 @@
+1.92
+* Fix userhelper hangs in non-UTF8 locales.
+* Fix unexpandd {prefix} strings embedded in executables if some directory
+  variables were not explicitly passed to configure.
+* Add menu categories to desktop files
+* Minor clean-ups and optimizations.
+
 1.91.2
 * Show the user we're authenticating as in an i18n-safe way.
 
