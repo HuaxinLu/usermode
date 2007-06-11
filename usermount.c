@@ -532,7 +532,7 @@ create_usermount_window(void)
 
 	/* Set the window icon */
 	gtk_window_set_icon_from_file(GTK_WINDOW(dialog),
-				      DATADIR "/pixmaps/disks.png", NULL);
+				      PIXMAPDIR "/disks.png", NULL);
 
 	/* Create the other buttons. */
 	format_button = gtk_button_new_with_mnemonic(_("_Format"));

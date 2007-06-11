@@ -1,5 +1,22 @@
 2007-06-11  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.in: Add AM_PROG_CC_C_O.
+	(BINDIR, SBINDIR, DATADIR, LOCALEDIR, SYSCONFDIR): Remove.  These
+	definitions are expanded at the wrong time and tend to be expanded
+	incorrectly.
+	(AC_CONFIG_FILES): Remove consolehelper.8 and userhelper.8.
+	* Makefile.am (AM_CPPFLAGS, BINDIR_CPPFLAGS, PIXMAPDIR_CPPFLAGS)
+	(SBINDIR_CPPFLAGS, userhelper_CPPFLAGS, userinfo_CPPFLAGS)
+	(usermount_CPPFLAGS, userpasswd_CPPFLAGS, consolehelper_CPPFLAGS)
+	(consolehelper_gtk_CPPFLAGS, pam_panel_icon_CPPFLAGS): New variables.
+	(consolehelper.8, userhelper.8): New rules.
+	(AM_CFLAGS): Move -DGETTEXT_PACKAGE to pam_panel_icon_CPPFLAGS.
+	* userinfo.c (create_userinfo_window): Use PKGDATADIR.
+	* pam-panel-icon.c (refresh_tray_icon)
+	* userhelper-wrap.c (userhelper_parse_childout)
+	* userinfo.c (create_userinfo_window)
+	* usermount.c (create_usermount_window): Use PIXMAPDIR.
+
 	* userhelper-wrap.c (userhelper_parse_childout): Fix a memory leak.
 
 	* userhelper.c (wrap, main): Use the locale's charset.

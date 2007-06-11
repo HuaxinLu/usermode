@@ -737,17 +737,16 @@ userhelper_parse_childout(char *outline)
 
 		/* Set window to be always on top. */
 		gtk_window_set_keep_above(GTK_WINDOW(resp->dialog), TRUE);
-		
+
 		/* Set window icon */
 		gtk_window_set_icon_from_file(GTK_WINDOW(resp->dialog),
-					      DATADIR "/pixmaps/password.png",
-					      NULL);
+					      PIXMAPDIR "/password.png", NULL);
 
 		/* If we're asking questions, change the dialog's icon... */
 		if (resp->responses > 0) {
 			image = (GTK_MESSAGE_DIALOG(resp->dialog))->image;
 			gtk_image_set_from_file(GTK_IMAGE(image),
-						DATADIR "/pixmaps/keyring.png");
+						PIXMAPDIR "/keyring.png");
 			/* ... and tell the user which user's passwords to
 			 * enter */
 			if (resp->user != NULL) {

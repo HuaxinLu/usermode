@@ -206,7 +206,8 @@ refresh_tray_icon(void)
 	else
 		visible = FALSE;
 	if (visible && tray_icon == NULL) {
-		tray_icon = gtk_status_icon_new_from_file(DATADIR "/pixmaps/badge-small.png");
+		tray_icon = gtk_status_icon_new_from_file(PIXMAPDIR
+							  "/badge-small.png");
 
 		/* If the system tray goes away, our icon will get destroyed,
 		 * and we don't want to be left with a dangling pointer to it

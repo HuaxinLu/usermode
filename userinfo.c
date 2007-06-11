@@ -82,8 +82,8 @@ create_userinfo_window(struct UserInfo *userinfo)
 	GtkWidget *window = NULL;
 	char *shell;
 
-	xml = glade_xml_new(DATADIR "/" PACKAGE "/" PACKAGE ".glade",
-			    "userinfo", PACKAGE);
+	xml = glade_xml_new(PKGDATADIR "/" PACKAGE ".glade", "userinfo",
+			    PACKAGE);
 	if (xml) {
 		GtkWidget *entry, *shell_menu, *widget;
 		GtkListStore *shells;
@@ -94,8 +94,7 @@ create_userinfo_window(struct UserInfo *userinfo)
 		g_assert(window != NULL);
 
 		gtk_window_set_icon_from_file(GTK_WINDOW(window),
-					      DATADIR "/pixmaps/user_icon.png",
-					      NULL);
+					      PIXMAPDIR "/user_icon.png", NULL);
 
 		g_object_set_data(G_OBJECT(window),
 				  USERINFO_XML_NAME, xml);
