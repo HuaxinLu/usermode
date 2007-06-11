@@ -1,5 +1,7 @@
 2007-06-11  Miloslav Trmač  <mitr@redhat.com>
 
+	* userinfo.c: Remove unnecessary #includes.
+
 	* userhelper-wrap.c (userhelper_parse_childout): Modify to handle only
 	one line.  Exit if the commmand code is invalid.
 	(userhelper_read_childout): Always read a complete line, not what
