@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-03-12 10:24+0000\n"
+"PO-Revision-Date: 2007-06-14 15:16+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -210,7 +210,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "A autenticar-se como \"%s\""
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -390,7 +390,7 @@ msgstr "Não foi possível executar fork().\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Não é possível atribuir a codificação %s num canal de E/S: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
