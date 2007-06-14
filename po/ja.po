@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-05-04 10:11+0900\n"
+"PO-Revision-Date: 2007-06-14 21:11+0900\n"
 "Last-Translator: Hyu_gabaru Ryu_ichi <hyu_gabaru@yahoo.co.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -182,7 +182,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
+"スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
 #: ../../po/../userhelper.c:805
@@ -191,7 +191,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
+"スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
 #: ../../po/../userhelper.c:809
@@ -199,7 +199,7 @@ msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
+"スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
 #: ../../po/../userhelper.c:811
@@ -207,19 +207,19 @@ msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザー権限を必要とするコマンドを実行しようとしていますが、実行するに"
+"スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行するに"
 "は\n"
 "追加情報が必要です。"
 
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "\"%s\" として認証しています"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "ユーザーヘルパーはrootにsetuidされていなければなりません\n"
+msgstr "ユーザーヘルパーは root に setuid されていなければなりません\n"
 
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
@@ -348,7 +348,7 @@ msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザー権限により有効になる\"%s\"を実行しようとしていますが、実行する"
+"スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
 #: ../../po/../userhelper-wrap.c:793
@@ -357,7 +357,7 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"スーパユーザー権限を必要とする\"%s\"を実行しようとしていますが、実行するには"
+"スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、実行するには"
 "追加情報が必要です。"
 
 #: ../../po/../userhelper-wrap.c:798
@@ -365,7 +365,7 @@ msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザー権限により有効になるコマンドを実行しようとしていますが、実行す"
+"スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、実行す"
 "るには追加情報が必要です。"
 
 #: ../../po/../userhelper-wrap.c:800
@@ -373,7 +373,7 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"スーパユーザー権限を必要とするコマンドを実行しようとしていますが、実行するに"
+"スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
 #: ../../po/../userhelper-wrap.c:810
@@ -393,7 +393,7 @@ msgstr "fork()できません。\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "文字セット %s を IO チャネル: %s に設定できません\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
