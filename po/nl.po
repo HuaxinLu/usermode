@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-03-25 21:07+0200\n"
+"PO-Revision-Date: 2007-06-15 23:31+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -213,7 +213,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Authenticeren als \"%s\""
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -394,7 +394,7 @@ msgstr "fork() lukt niet.\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Instellen van tekenset %s op een IO-kanaal mislukt: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
