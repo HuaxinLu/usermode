@@ -1,4 +1,4 @@
-# translation of it.po to Italiano
+# translation of it.po to italiano
 # Copyright (C) 2001 Red Hat, Inc.
 #
 # Bettina De Monti <bdemonti@redhat.it>, 2001.
@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-03-12 06:32+0100\n"
+"PO-Revision-Date: 2007-06-18 05:59+0200\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
-"Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
+"Language-Team: italiano <fedora-trans-it@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,8 +83,7 @@ msgstr "Spiacente, le password non corrispondono"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Apertura strumenti di configurazione globali del sistema senza una password."
+msgstr "Apertura strumenti di configurazione globali del sistema senza una password."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -168,8 +167,7 @@ msgstr "pam-panel-icon: collegamento al session manager fallito\n"
 #: ../../po/../userhelper.c:201
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
-"Impossibile impostare il contesto predefinito per %s per il programma %s.\n"
+msgstr "Impossibile impostare il contesto predefinito per %s per il programma %s.\n"
 
 #: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
@@ -214,7 +212,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Autenticarsi come \"%s\""
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -224,8 +222,7 @@ msgstr "userhelper deve essere setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossibile aprire una finestra grafica, ed impossibile trovare il terminale "
 "di controllo.\n"
@@ -394,7 +391,7 @@ msgstr "Impossibile creare il processo figlio().\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Impossibile impostare i caratteri %s su un canale di IO: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -523,11 +520,3 @@ msgstr "Cambio della password di login"
 msgid "Password"
 msgstr "Password"
 
-#~ msgid "Password for %s"
-#~ msgstr "Password per %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Password per %s: "
-
-#~ msgid "Message"
-#~ msgstr "Messaggio"
