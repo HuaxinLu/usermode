@@ -1,4 +1,4 @@
-# translation of fr-wip.po to Francais
+# translation of fr.po to Français
 # Copyright (C) 2001 Red Hat, Inc.
 #
 # Nathalie Scholz <EMAIL@ADDRESS>, 2001.
@@ -7,14 +7,15 @@
 # Jean-Paul Aubry <jpaubry@redhat.com>, 2003,2004.
 # Stephane Raimbault <stephane.raimbault@free.fr>, 2004.
 # Thomas Canniot <thomas.canniot@laposte.net>, 2007.
+# Gauthier Ancelin <gauthier.ancelin@laposte.net>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-03-20 11:47+0100\n"
-"Last-Translator: Thomas Canniot <thomas.canniot@laposte.net>\n"
-"Language-Team: Francais <fedora-trans-fr@redhat.com>\n"
+"PO-Revision-Date: 2007-06-29 22:33+0200\n"
+"Last-Translator: Gauthier Ancelin <gauthier.ancelin@laposte.net>\n"
+"Language-Team: Français <fedora-trans-fr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -85,8 +86,7 @@ msgstr "Désolé, les mots de passe ne correspondent pas"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Démarrer les outils de configuration de tout le système sans mot de passe."
+msgstr "Démarrer les outils de configuration système sans mot de passe."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -173,8 +173,7 @@ msgstr ""
 #: ../../po/../userhelper.c:201
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
-"Impossible de régler le contexte par défaut de %s pour le programme %s.\n"
+msgstr "Impossible de régler le contexte par défaut de %s pour le programme %s.\n"
 
 #: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
@@ -221,7 +220,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Authentification en tant que « %s »"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -231,8 +230,7 @@ msgstr "userhelper doit être setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
 "contrôle.\n"
@@ -402,7 +400,7 @@ msgstr "Erreur fork().\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Impossible d'associer le jeu de caractères %s au canal d'entrées/sorties : %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -532,8 +530,3 @@ msgstr "Modifier le mot de passe de connexion"
 msgid "Password"
 msgstr "Mot de passe"
 
-#~ msgid "Password for %s"
-#~ msgstr "Mot de passe pour %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Mot de passe pour %s :"
