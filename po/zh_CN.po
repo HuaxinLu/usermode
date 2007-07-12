@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2006-12-01 10:28+1000\n"
-"Last-Translator: Xi Huang <xhuang@redhat.com>\n"
+"PO-Revision-Date: 2007-07-12 22:38+0800\n"
+"Last-Translator: zhangnan <znflint@126.com>\n"
 "Language-Team:  <zh@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -105,25 +105,20 @@ msgstr "放弃管理员特权失败：%s"
 
 #: ../../po/../pam-panel-icon.c:98
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
 msgstr "放弃管理员特权失败：pam_timestamp_check 返回了失败代码 %d"
 
 #: ../../po/../pam-panel-icon.c:146
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"您目前具备不必重新键入管理员口令就能够配置系统范围内设置的特权（会影响所有用"
-"户）。您可以放弃这个特权。"
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "您目前具备不必重新键入管理员口令就能够配置系统范围内设置的特权（会影响所有用户）。您可以放弃这个特权。"
 
-#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
+#: ../../po/../pam-panel-icon.c:151
+#: ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "保留授权"
 
-#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
+#: ../../po/../pam-panel-icon.c:154
+#: ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "忘记授权"
 
@@ -171,7 +166,8 @@ msgstr "pam-panel-icon：连接到会话管理器时失败\n"
 msgid "Could not set default context for %s for program %s.\n"
 msgstr "无法为 %s （程序 %s）设置默认的上下文。\n"
 
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#: ../../po/../userhelper.c:212
+#: ../../po/../userhelper.c:214
 #, c-format
 msgid "Could not set exec context to %s.\n"
 msgstr "无法把 exec 环境设置为 %s。\n"
@@ -210,10 +206,11 @@ msgstr ""
 "您在试图运行一个要求超级用户特权的命令，\n"
 "但是需要更多信息才能做到。"
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
+#: ../../po/../userhelper.c:821
+#: ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "鉴定为 \"%s\""
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -223,8 +220,7 @@ msgstr "userhelper 必须是 setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
 
 #: ../../po/../userhelper-wrap.c:203
@@ -315,7 +311,8 @@ msgstr "未知错误。"
 msgid "Query"
 msgstr "查询"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
+#: ../../po/../userhelper-wrap.c:580
+#: ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "错误"
 
@@ -328,9 +325,8 @@ msgid "Placeholder text."
 msgstr "定位符文字。"
 
 #: ../../po/../userhelper-wrap.c:782
-#, fuzzy
 msgid "Changing password."
-msgstr "改变你的登录密码"
+msgstr "改变密码"
 
 #: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
@@ -342,31 +338,20 @@ msgstr "正在改变登录 shell。"
 
 #: ../../po/../userhelper-wrap.c:791
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "您在试图运行 \"%s\" 。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper-wrap.c:793
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "您在试图运行 \"%s\" 。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper-wrap.c:798
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper-wrap.c:800
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr "您在试图运行一个要求超级用户特权的命令，但是需要更多信息才能做到。"
 
 #: ../../po/../userhelper-wrap.c:810
@@ -386,9 +371,10 @@ msgstr "无法 fork()。\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "不能设置字符集 %s在IO频道: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1077
+#: ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() 错误。\n"
@@ -417,9 +403,7 @@ msgid "Un_mount"
 msgstr "卸载(_M)"
 
 #: ../../po/../usermount.c:289
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
 msgstr "您确信要格式化该磁盘吗？这将破坏磁盘上全部当前信息。"
 
 #: ../../po/../usermount.c:300
@@ -439,7 +423,8 @@ msgstr ""
 "请联系您的系统管理员。"
 
 #. Create the dialog.
-#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
+#: ../../po/../usermount.c:508
+#: ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "用户挂载工具"
 
@@ -479,7 +464,7 @@ msgstr "登录 shell:"
 
 #: ../usermode.glade.h:4
 msgid "Office Phone Number:"
-msgstr "办公室电话号码:"
+msgstr "办公电话号码:"
 
 #: ../usermode.glade.h:5
 msgid "Office:"
@@ -511,19 +496,16 @@ msgstr "改变你的登录密码"
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
-msgstr "口令："
+msgstr "口令"
 
 #~ msgid "Password for %s"
 #~ msgstr "%s 的口令"
-
 #~ msgid "Password for %s: "
 #~ msgstr "%s 的口令："
-
 #~ msgid "Message"
 #~ msgstr "消息"
-
 #~ msgid "Help"
 #~ msgstr "帮助"
-
 #~ msgid "*"
 #~ msgstr "*"
+
