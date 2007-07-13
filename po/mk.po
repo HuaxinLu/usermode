@@ -1,19 +1,21 @@
-# translation of mk.po to Macedonian
+# translation of usermode.mk.po to Macedonian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER.
-# Arangel Angov <ufo@linux.net.mk>, 2004.
 #
+# Arangel Angov <ufo@linux.net.mk>, 2004.
+# Arangel Angov <arangel@linux.net.mk>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: mk\n"
+"Project-Id-Version: usermode.mk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2004-10-18 22:21+0200\n"
-"Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
+"PO-Revision-Date: 2007-07-12 23:31+0200\n"
+"Last-Translator: Arangel Angov <arangel@linux.net.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -52,15 +54,15 @@ msgstr "Изврши без привилегии"
 
 #: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(тековна UNIX) лозинка"
+msgstr "(тековна) UNIX лозинка: "
 
 #: ../../po/../dummy.h:26
 msgid "New UNIX password: "
-msgstr "Нова лозинка (UNIX): "
+msgstr "Нова UNIX лозинка: "
 
 #: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Повторете ја новата лозинка (UNIX): "
+msgstr "Повторете ја новата UNIX лозинка: "
 
 #: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -76,11 +78,11 @@ msgstr "Лозинката не е променета"
 
 #: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Лозинките не се совпаѓаат"
+msgstr "Извинете, лозинките не се совпаѓаат"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Отворај ги системскита конфигурациски алатки без лозинка."
+msgstr "Отворај ги системските конфигурациски алатки без лозинка."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -110,7 +112,7 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
-"Моментално сте авторизирани да ги конфигурирате системските подесувања (кои "
+"Моментално сте авторизирани да ги конфигурирате системските поставувања (кои "
 "што се применуваат врз сите корисници) без да ја внесувате "
 "администраторската лозинка. Можете да се откажете од авторизацијата."
 
@@ -136,7 +138,7 @@ msgstr "непознат корисник за pam_timestamp_check"
 
 #: ../../po/../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
-msgstr "погрешни пермисии за pam_timestamp_check"
+msgstr "погрешни дозволи за pam_timestamp_check"
 
 #: ../../po/../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
@@ -155,16 +157,16 @@ msgstr "Не можам да ја извршам командата \"%s\": %s\n
 #: ../../po/../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "Не можам да го наместам ИО каналот да деблокира: %s\n"
+msgstr "Не можам да го наместам IO каналот да деблокира: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: не може да се врзе со менаџерот на сесијата\n"
 
 #: ../../po/../userhelper.c:201
-#, fuzzy, c-format
+#, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Не можам да подесам exec контекст на %s.\n"
+msgstr "Не можам да подесам стандарден контекст за %s за програмата %s.\n"
 
 #: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
@@ -208,7 +210,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Ве пријавувам како „%s“"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -218,8 +220,7 @@ msgstr "userhelper мора да биде setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Не можам да отворам графички прозорец и не можам да најдам контролен "
 "терминал.\n"
@@ -273,7 +274,7 @@ msgstr "Недоволно привилегии."
 
 #: ../../po/../userhelper-wrap.c:219
 msgid "Invalid call to subprocess."
-msgstr "Невалиден повик до под-процесот."
+msgstr "Невалиден повик до подпроцесот."
 
 #: ../../po/../userhelper-wrap.c:221
 msgid ""
@@ -299,11 +300,11 @@ msgstr "Не можам да ја најдам одбраната програм
 
 #: ../../po/../userhelper-wrap.c:231
 msgid "Request canceled."
-msgstr ""
+msgstr "Барањето е откажано."
 
 #: ../../po/../userhelper-wrap.c:233
 msgid "Internal PAM error occured."
-msgstr ""
+msgstr "Се појави внатрешна PAM грешка."
 
 #: ../../po/../userhelper-wrap.c:235
 msgid "Unknown error."
@@ -311,7 +312,7 @@ msgstr "Непозната грешка."
 
 #: ../../po/../userhelper-wrap.c:503
 msgid "Query"
-msgstr "Слог"
+msgstr "Дијалог"
 
 #: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
 msgid "Error"
@@ -326,17 +327,16 @@ msgid "Placeholder text."
 msgstr "Место за текст."
 
 #: ../../po/../userhelper-wrap.c:782
-#, fuzzy
 msgid "Changing password."
-msgstr "Променете ја лозинката за најава"
+msgstr "Ја менувам лозинката."
 
 #: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
-msgstr "Промена на личните информации."
+msgstr "Ги менувам личните информации."
 
 #: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
-msgstr "Промена на школката за најава."
+msgstr "Ја менувам школката за најава."
 
 #: ../../po/../userhelper-wrap.c:791
 #, c-format
@@ -389,7 +389,7 @@ msgstr "form() е неуспешно.\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Не можам да го поставам сетот на знаци %s на IO канал: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -404,7 +404,7 @@ msgstr "грешка во execl(), errno=%d\n"
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "Неочекуван аргумент"
 
 #: ../../po/../userinfo.c:395
 #, c-format
@@ -468,7 +468,7 @@ msgstr "Датотечен систем"
 #: ../../po/../usermount.c:633
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "Уредот %s не може да биде форматиран."
 
 #: ../usermode.glade.h:1
 msgid "Full Name:"
@@ -480,7 +480,7 @@ msgstr "Тел. број (дома):"
 
 #: ../usermode.glade.h:3
 msgid "Login Shell:"
-msgstr "Школка:"
+msgstr "Школка за најава:"
 
 #: ../usermode.glade.h:4
 msgid "Office Phone Number:"
@@ -500,7 +500,7 @@ msgstr "За мене"
 
 #: ../userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Промени ги личните податоци"
+msgstr "Променете ги личните податоци"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
@@ -518,17 +518,3 @@ msgstr "Променете ја лозинката за најава"
 msgid "Password"
 msgstr "Лозинка"
 
-#~ msgid "Password for %s"
-#~ msgstr "Лозинката на %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Лозинката на %s: "
-
-#~ msgid "Message"
-#~ msgstr "Порака"
-
-#~ msgid "Help"
-#~ msgstr "Помош"
-
-#~ msgid "*"
-#~ msgstr "*"
