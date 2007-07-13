@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-03-16 16:55-0400\n"
+"PO-Revision-Date: 2007-07-13 13:05-0400\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -207,9 +207,9 @@ msgstr ""
 "information krävs för att kunna göra det."
 
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, fuzzy, c-format
+#, c-format
 msgid "Authenticating as \"%s\""
-msgstr "kommer att autentisera \"%s\"\n"
+msgstr "Autentiserar som \"%s\""
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -387,7 +387,7 @@ msgstr "Kan inte grena.\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Kan inte sätta teckenset %s på en IO-kanal: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
