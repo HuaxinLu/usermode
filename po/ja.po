@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-06-14 21:11+0900\n"
+"PO-Revision-Date: 2007-07-15 15:45+0900\n"
 "Last-Translator: Hyu_gabaru Ryu_ichi <hyu_gabaru@yahoo.co.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -332,15 +332,15 @@ msgstr "プレースホルダテキスト。"
 
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
-msgstr "パスワードを変更"
+msgstr "パスワードを変更中。"
 
 #: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
-msgstr "個人情報を変更しています。"
+msgstr "個人情報を変更中。"
 
 #: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
-msgstr "ログイン シェルを変更中"
+msgstr "ログイン シェルを変更中。"
 
 #: ../../po/../userhelper-wrap.c:791
 #, c-format
