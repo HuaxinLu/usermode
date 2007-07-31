@@ -1,22 +1,21 @@
 # translation of gu.po to Gujarati
-# translation of usermode.po to Gujarati
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Ankit Patel <ankit@redhat.com>, 2004, 2005, 2006, 2007.
 #
+# Ankit Patel <ankit@redhat.com>, 2004, 2005, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-03-14 13:09+0530\n"
+"PO-Revision-Date: 2007-07-31 15:27+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 "\n"
@@ -114,8 +113,7 @@ msgstr "સંચાલન પૂર્વધારણાઓ મૂકવામ�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"સંચાલન પૂર્વધારણાઓ મૂકવામાં નિષ્ફળ: pam_timestamp_check એ નિષ્ફળતા કોડ %d આપ્યો"
+msgstr "સંચાલન પૂર્વધારણાઓ મૂકવામાં નિષ્ફળ: pam_timestamp_check એ નિષ્ફળતા કોડ %d આપ્યો"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
@@ -220,7 +218,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "\"%s\" તરીકે સત્તાધિકારીત કરી રહ્યા છીએ"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -230,8 +228,7 @@ msgstr "વપરાશકર્તા મદદગાર માટે uid ર�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ગ્રાફિકવાળી વિન્ડો ખોલવા સમર્થ નથી, અને નિયંત્રક ટર્મિનલ ખોલવામાં અસમર્થ.\n"
 
 #: ../../po/../userhelper-wrap.c:203
@@ -397,7 +394,7 @@ msgstr "fork() કરી શકતા નથી.\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "અક્ષરસમૂહ %s ને IO ચેનલ પર સુયોજિત કરી શકતા નથી: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -526,8 +523,3 @@ msgstr "તમારો પ્રવેશ પાસવર્ડ બદલો"
 msgid "Password"
 msgstr "પાસવર્ડ"
 
-#~ msgid "Password for %s"
-#~ msgstr "%s માટેનો પાસવર્ડ"
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s માટેનો પાસવર્ડ: "
