@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.6\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Richard Allen <ra@ra.is>\n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-04-24 20:50+0000\n"
+"PO-Revision-Date: 2007-07-31 20:50+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: is <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -207,7 +207,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Auðkenni sem \"%s\""
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -384,7 +384,7 @@ msgstr "Get ekki notað fork().\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Get ekki stillt inntaksrásina á %s stafatöfluna: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -512,9 +512,3 @@ msgstr "Breyta lykilorði þínu"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lykilorð"
-
-#~ msgid "Password for %s"
-#~ msgstr "Aðgangsorð fyrir %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Aðgangsorð fyrir %s: "
