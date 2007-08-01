@@ -10,13 +10,14 @@
 # harmeet <harmeetphulewala@yahoo.com>, 2005.
 # Jaswinder Singh Phulewala <jaswinderphulewala@yahoo.com>, 2005.
 # A S Alam <apbrar@gmail.com>, 2006.
+# Jaswinder Singh <jsingh@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2006-12-07 11:11+0530\n"
-"Last-Translator: A S Alam <apbrar@gmail.com>\n"
+"PO-Revision-Date: 2007-08-01 10:56+0530\n"
+"Last-Translator: Jaswinder Singh <jsingh@redhat.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -233,7 +234,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "\"%s\" ਤੌਰ ਤੇ ਪ੍ਰਮਾਣਿਤ ਕਰਨਾ"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -243,8 +244,7 @@ msgstr "ਉਪਭੋਗੀ-ਸਹਾਇਕ ਦਾ ਸੈੱਟ-ਸ਼ੰਨ ਨ�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ਗਰਾਫਿਕਲ ਝਰੋਖਾ ਖੋਲਣ ਵਿੱਚ ਅਸਫਲ ਹੈ, ਅਤੇ ਕੰਟਰੋਲਿੰਗ ਟਰਮੀਨਲ ਨੂੰ ਲੱਭ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
 
 #: ../../po/../userhelper-wrap.c:203
@@ -348,9 +348,8 @@ msgid "Placeholder text."
 msgstr "ਥਾਂ ਲਈ ਪਾਠ ਹੈ।"
 
 #: ../../po/../userhelper-wrap.c:782
-#, fuzzy
 msgid "Changing password."
-msgstr "ਆਪਣਾ ਲਾਗਇਨ ਗੁਪਤ-ਕੋਡ ਬਦਲੋ"
+msgstr "ਗੁਪਤ-ਕੋਡ ਬਦਲਣਾ"
 
 #: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
@@ -411,7 +410,7 @@ msgstr "fork() ਨਹੀਂ ਸਕਦਾ ਹੈ।\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "charset %s ਨੂੰ ਇੱਕ IO ਚੈਨਲ ਉੱਪਰ ਸੈੱਟ ਨਹੀਂ ਕਰ ਸਕਦਾ: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -540,17 +539,3 @@ msgstr "ਆਪਣਾ ਲਾਗਇਨ ਗੁਪਤ-ਕੋਡ ਬਦਲੋ"
 msgid "Password"
 msgstr "ਗੁਪਤ-ਕੋਡ"
 
-#~ msgid "Password for %s"
-#~ msgstr "%s ਲਈ ਗੁਪਤ-ਕੋਡ"
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s ਲਈ ਗੁਪਤ-ਕੋਡ: "
-
-#~ msgid "Message"
-#~ msgstr "ਸੁਨੇਹਾ"
-
-#~ msgid "Help"
-#~ msgstr "ਸਹਾਇਤਾ"
-
-#~ msgid "*"
-#~ msgstr "*"
