@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-06-11 12:45+0530\n"
+"PO-Revision-Date: 2007-08-01 16:49+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -227,8 +227,7 @@ msgstr "userhelperന് setuid root ആവശ്യമാണ്\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ഗ്രാഫിക്കല്‍ ജാലകം തുറക്കുവാനും കണ്ട്രോളിങ് ടര്‍മിനല്‍ കണ്ടുപിടിക്കുവാനും സാധിക്കുന്നില്ല.\n"
 
 #: ../../po/../userhelper-wrap.c:203
@@ -394,7 +393,7 @@ msgstr "fork() ചെയ്യുവാന്‍ കഴിയുന്നില�
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "ഒരു IO ചാനലില്‍ %s എന്ന കാറ്‍സെറ്റ് ക്റമികരിക്കുവാന്‍ സാധ്യമല്ല: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -522,3 +521,4 @@ msgstr "നിങ്ങളുടെ ലോഗിന്‍ പാസ് വേര
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "പാസ് വേര്‍ഡ്"
+
