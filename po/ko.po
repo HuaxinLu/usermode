@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-08-02 20:50+1000\n"
+"PO-Revision-Date: 2007-08-03 11:04+1000\n"
 "Last-Translator: Eunju Kim <eukim@redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -117,11 +117,11 @@ msgstr ""
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
-msgstr "관리자 권한 유지하기"
+msgstr "관리자 권한 유지"
 
 #: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
-msgstr "관리자 권한 해제하기"
+msgstr "관리자 권한 해제"
 
 #: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
@@ -209,7 +209,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "\"%s\"로 인증"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -387,7 +387,7 @@ msgstr "fork() 할 수 없습니다.\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "IO 채널에 있는 문자 세트 %s을(를) 설정할 수 없습니다: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
