@@ -1,4 +1,4 @@
-# translation of bn_IN.po to Bengali
+# translation of bn_IN.po to Bengali INDIA
 # Bangla translation of Usermode.
 # Copyright (C) 2004 Red Hat In.
 # This file is distributed under the same license as the usermode package.
@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-04-05 11:20+0530\n"
+"PO-Revision-Date: 2007-08-08 15:52+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
-"Language-Team: Bengali <en@li.org>\n"
+"Language-Team: Bengali INDIA <fedora-trans-bn_in@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -108,8 +108,7 @@ msgstr "দুঃখিত, পাসওয়ার্ডগুলির মধ্
 # msgstr "দুক্ষিত, পাসওয়ার্ডগুলো মেলেনি" <-- দুঃখিত, আপনার বানানটা ভুল ছিল
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"সমগ্র-সিস্টেম-ব্যাপী কনফিগারেশন ব্যবস্থার সরঞ্জাম বিনা পাসওয়ার্ডে আরম্ভ করা হবে।"
+msgstr "সমগ্র-সিস্টেম-ব্যাপী কনফিগারেশন ব্যবস্থার সরঞ্জাম বিনা পাসওয়ার্ডে আরম্ভ করা হবে।"
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -245,7 +244,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "\"%s\" রূপে অনুমোদন করা হবে"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -258,8 +257,7 @@ msgstr "userhelper'র ক্ষেত্রে setuid root হওয়া আব�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "গ্রাফিক্যাল উইন্ডো খোলা যায়নি এবং নিয়ন্ত্রণকারী টার্মিনাল পাওয়া যায়নি।\n"
 
 # ..........হতে যাচ্ছে
@@ -436,7 +434,7 @@ msgstr "fork() করা সম্ভব নয়।\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "একটি IO চ্যানেলের মধ্যে charset %s নির্ধারণ করতে ব্যর্থ: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -572,8 +570,3 @@ msgstr "লগ-ইন পাসওয়ার্ড পরিবর্তন"
 msgid "Password"
 msgstr "পাসওয়ার্ড"
 
-#~ msgid "Password for %s"
-#~ msgstr "%s-র পাসওয়ার্ড"
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s'র পাসওয়ার্ড: "
