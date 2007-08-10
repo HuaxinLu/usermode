@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-04-12 15:38+0530\n"
+"PO-Revision-Date: 2007-08-10 17:02+0530\n"
 "Last-Translator: I felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n\n"
 "\n"
 "\n"
 "\n"
@@ -219,7 +219,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "\"%s\" ஆக அங்கீகரிக்கிறது"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -229,8 +229,7 @@ msgstr "பயனர் உதவியாளர் setuid rootஆக இரு�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "வரைகலை சாளரத்தை திறக்க முடியவில்லை, மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
 "முடியவில்லை.\n"
@@ -398,7 +397,7 @@ msgstr "fork() பிளக்க முடியவில்லை.\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "எழுத்து அமைவு %sஐ IO தடத்தில் அமைக்க முடியாது: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -525,8 +524,3 @@ msgstr "உங்கள் புகுபதிவு கடவுச்சொ�
 msgid "Password"
 msgstr "கடவுச்சொல்"
 
-#~ msgid "Password for %s"
-#~ msgstr "%s-க்கு கடவுச்சொல் "
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s- க்கான கடவுச்சொல்: "
