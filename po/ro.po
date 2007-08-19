@@ -288,9 +288,9 @@ msgid ""
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Shell-ul dvs. curent nu este listat în /etc/shells.\n"
+"Shell-ul dumneavoastră curent nu este listat în /etc/shells.\n"
 "Nu vă este permis să vă schimbați shell-ul.\n"
-"Contactați administratorul sistemului dvs.."
+"Contactați administratorul sistemului dumneavoastră."
 
 #: ../../po/../userhelper-wrap.c:224
 msgid "Out of memory."
@@ -448,7 +448,7 @@ msgid ""
 msgstr ""
 "Nu există nici un sistem de fișiere pe care să aveți drept de a le monta sau "
 "demonta.\n"
-"Contactați administratorul dvs.."
+"Contactați administratorul dumneavoastră."
 
 #. Create the dialog.
 #: ../../po/../usermount.c:508 ../../po/../usermount.c:520
