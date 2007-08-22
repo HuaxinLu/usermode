@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2006-04-02 14:08+0200\n"
+"PO-Revision-Date: 2007-08-20 14:08+0200\n"
 "Last-Translator: Maxim Dzumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgstr "Пароль не змінено"
 
 #: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Вибачте, але паролі не співпадають"
+msgstr "Вибачте, паролі не збігаються"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
@@ -207,7 +207,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Реєструватись як \"%s\""
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -299,7 +299,7 @@ msgstr "Запит скасовано."
 
 #: ../../po/../userhelper-wrap.c:233
 msgid "Internal PAM error occured."
-msgstr "Внутнішня помилка PAM."
+msgstr "Внутрішня помилка PAM."
 
 #: ../../po/../userhelper-wrap.c:235
 msgid "Unknown error."
@@ -384,7 +384,7 @@ msgstr "Неможливо виконати fork().\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Не вдається встановити кодування %s на каналі вводу-виводу: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -419,7 +419,7 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Ви впевнені, що хочете відформувати цей диск? Ви знищите всі дані на ньому."
+"Ви дійсно хочете відформатувати цей диск? Всі дані на ньому будуть знищені."
 
 #: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
@@ -512,17 +512,4 @@ msgstr "Зміна власного паролю"
 msgid "Password"
 msgstr "Пароль"
 
-#~ msgid "Password for %s"
-#~ msgstr "Пароль користувача %s"
 
-#~ msgid "Password for %s: "
-#~ msgstr "Пароль користувача %s: "
-
-#~ msgid "Message"
-#~ msgstr "Повідомлення"
-
-#~ msgid "Help"
-#~ msgstr "Довідка"
-
-#~ msgid "*"
-#~ msgstr "*"
