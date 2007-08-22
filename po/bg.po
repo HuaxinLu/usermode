@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2007-03-26 01:10+0300\n"
+"PO-Revision-Date: 2007-08-22 05:38+0300\n"
 "Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
-"Language-Team: Bulgarian <Bulgarian Translators' Team <dict@fsa-bg.org>>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -211,7 +211,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Удостоверяване като \"%s\""
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -221,8 +221,7 @@ msgstr "userhelper трябва да бъде setuid root\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Не може да бъде отворен графичен прозорец, а не може да бъде намерен и "
 "контролен терминал.\n"
@@ -390,7 +389,7 @@ msgstr "Неуспешно извикване на fork().\n"
 #: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "Не може да се зададе знаков набор %s за И/О канала: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
@@ -519,8 +518,3 @@ msgstr "Промяна на паролата за вход"
 msgid "Password"
 msgstr "Парола"
 
-#~ msgid "Password for %s"
-#~ msgstr "Парола за %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Парола за %s: "
