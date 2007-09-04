@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-11 23:29+0200\n"
+"POT-Creation-Date: 2007-09-05 02:05+0200\n"
 "PO-Revision-Date: 2007-06-12 10:55+1000\n"
 "Last-Translator: PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>\n"
 "Language-Team:  <de@li.org>\n"
@@ -173,7 +173,8 @@ msgstr "pam-panel-icon: konnte nicht mit Session-Manager verbinden\n"
 #: ../../po/../userhelper.c:201
 #, c-format
 msgid "Could not set default context for %s for program %s.\n"
-msgstr "Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
+msgstr ""
+"Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
 
 #: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
 #, c-format
@@ -214,7 +215,7 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
 "erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Als \"%s\" authentifizieren"
@@ -227,7 +228,8 @@ msgstr "userhelper muss Setuid-Root sein\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
 "gefunden werden.\n"
@@ -321,7 +323,7 @@ msgstr "Unbekannter Fehler."
 msgid "Query"
 msgstr "Abfrage"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
 msgid "Error"
 msgstr "Fehler"
 
@@ -329,23 +331,23 @@ msgstr "Fehler"
 msgid "Information"
 msgstr "Informationen"
 
-#: ../../po/../userhelper-wrap.c:724
+#: ../../po/../userhelper-wrap.c:725
 msgid "Placeholder text."
 msgstr "Platzhalter-Text."
 
-#: ../../po/../userhelper-wrap.c:782
+#: ../../po/../userhelper-wrap.c:783
 msgid "Changing password."
 msgstr "Das Passwort ändern."
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
 msgstr "Ändern der persönlichen Informationen."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:788
 msgid "Changing login shell."
 msgstr "Ändern der Login-Shell."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -354,7 +356,7 @@ msgstr ""
 "Sie versuchen \"%s\" auszuführen, das administrative Privilegien nutzen "
 "könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -363,7 +365,7 @@ msgstr ""
 "Sie versuchen \"%s\" auszuführen, das administrative Privilegien erfordert. "
 "Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:799
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -371,7 +373,7 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien "
 "nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:801
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -379,31 +381,31 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien "
 "erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:811
 msgid "_Run Unprivileged"
 msgstr "Ohne Rechte ausfüh_ren"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe-Fehler.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:976
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kann fork() nicht aufrufen.\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr "Kann Zeichensatz %s nicht auf einem IO-Channel setzen: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-Fehler.\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1094
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-Fehler, errno=%d\n"
@@ -524,4 +526,3 @@ msgstr "Ihr Login-Passwort ändern"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Passwort"
-

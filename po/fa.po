@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.80\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-11 23:29+0200\n"
+"POT-Creation-Date: 2007-09-05 02:05+0200\n"
 "PO-Revision-Date: 2006-05-06 22:06+0330\n"
 "Last-Translator: Elnaz Sarbar <elnaz@farsiweb.info>\n"
 "Language-Team: Persian\n"
@@ -206,7 +206,7 @@ msgstr ""
 "شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی \n"
 "نیاز دارد، برای این کار گذرواژه root لازم است."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
@@ -312,7 +312,7 @@ msgstr "خطای نامعلوم."
 msgid "Query"
 msgstr "پرس و جو"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
 msgid "Error"
 msgstr "خطا"
 
@@ -320,24 +320,24 @@ msgstr "خطا"
 msgid "Information"
 msgstr "اطلاعات"
 
-#: ../../po/../userhelper-wrap.c:724
+#: ../../po/../userhelper-wrap.c:725
 msgid "Placeholder text."
 msgstr "متن جانگهدار."
 
-#: ../../po/../userhelper-wrap.c:782
+#: ../../po/../userhelper-wrap.c:783
 #, fuzzy
 msgid "Changing password."
 msgstr "تغییر گذرواژهٔ ورود به سیستم شما"
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
 msgstr "در حال تغییر اطلاعات شخصی."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:788
 msgid "Changing login shell."
 msgstr "در حال تغییر پوستهٔ ورود به سیستم."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -346,7 +346,7 @@ msgstr ""
 "شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این "
 "کار گذرواژه root لازم است."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -355,7 +355,7 @@ msgstr ""
 "شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این "
 "کار گذرواژه root لازم است."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:799
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -363,7 +363,7 @@ msgstr ""
 "شما می‌خواهید فرمانی اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این کار "
 "گذرواژه root لازم است."
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:801
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -371,31 +371,31 @@ msgstr ""
 "شما می‌خواهید فرمانی اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این کار "
 "گذرواژه root لازم است."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:811
 msgid "_Run Unprivileged"
 msgstr "ا_جرا بدون امتیازات"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Pipe error.\n"
 msgstr "خطای لوله‌کشی.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:976
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "نمی‌توان fork() اجرا کرد.\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
 msgid "dup2() error.\n"
 msgstr "خطای dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1094
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "خطای execl()، شمارهٔ خطا=%Id\n"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-11 23:29+0200\n"
+"POT-Creation-Date: 2007-09-05 02:05+0200\n"
 "PO-Revision-Date: 2007-08-01 12:30+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <hindi.sf.net>\n"
@@ -16,7 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n\n\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -210,7 +212,7 @@ msgstr ""
 "आप एक निर्देश को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार\n"
 " की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" के रूप में प्रमाणित करें"
@@ -223,7 +225,8 @@ msgstr "यूजरहेल्पर को अवश्य ही setuid र�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखी विंडो को खोलने में असमर्थ, और नियंत्रक टर्मिनल को खोजने में असमर्थ.\n"
 
 #: ../../po/../userhelper-wrap.c:203
@@ -314,7 +317,7 @@ msgstr "अज्ञात त्रुटि."
 msgid "Query"
 msgstr "प्रश्न"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
 msgid "Error"
 msgstr "त्रुटि"
 
@@ -322,23 +325,23 @@ msgstr "त्रुटि"
 msgid "Information"
 msgstr "जानकारी"
 
-#: ../../po/../userhelper-wrap.c:724
+#: ../../po/../userhelper-wrap.c:725
 msgid "Placeholder text."
 msgstr "स्थानधारक पाठ्यांश."
 
-#: ../../po/../userhelper-wrap.c:782
+#: ../../po/../userhelper-wrap.c:783
 msgid "Changing password."
 msgstr "शब्दकूट बदल रहा है."
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
 msgstr "निजी जानकारी को बदल रहा है."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:788
 msgid "Changing login shell."
 msgstr "सत्रारंभ शैल को बदल रहा है."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -347,7 +350,7 @@ msgstr ""
 "आप \"%s\" को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से लाभ पा सकता है, लेकिन "
 "ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -356,7 +359,7 @@ msgstr ""
 "आप \"%s\" को चलाने का प्रयास कर रहे हैं जिसके लिये प्रशासनिक अधिकार जरूरी है, लेकिन ऐसा "
 "करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:799
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -364,7 +367,7 @@ msgstr ""
 "आप एक कमांड को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से लाभ पा सकता है, लेकिन "
 "ऐसा करने के लिए अधिक जानकारी की आवश्यकता है. "
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:801
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -372,31 +375,31 @@ msgstr ""
 "आप एक कमांड को चलाने का प्रयास कर रहे हैं जिसके लिये प्रशासनिक अधिकार जरूरी है, लेकिन "
 "ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:811
 msgid "_Run Unprivileged"
 msgstr "विशेषाधिकार के बिना चलाएँ (_R)"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Pipe error.\n"
 msgstr "पाइप त्रुटि.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:976
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() नहीं कर सकता.\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr "चारसेट %s को IO चैनल पर सेट नहीं कर सकता है: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() त्रुटि.\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1094
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() त्रुटि, errno=%d\n"
@@ -517,4 +520,3 @@ msgstr "अपना लॉगिन शब्दकूट बदलें"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "शब्दकूट"
-

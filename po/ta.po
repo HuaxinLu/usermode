@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-11 23:29+0200\n"
+"POT-Creation-Date: 2007-09-05 02:05+0200\n"
 "PO-Revision-Date: 2007-08-10 17:02+0530\n"
 "Last-Translator: I felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
@@ -19,7 +19,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n\n\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -216,7 +218,7 @@ msgstr ""
 "நிர்வாக உரிமைக்கு தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் சில "
 "தகவல்கள் தேவைப்படும்."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" ஆக அங்கீகரிக்கிறது"
@@ -229,7 +231,8 @@ msgstr "பயனர் உதவியாளர் setuid rootஆக இரு�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "வரைகலை சாளரத்தை திறக்க முடியவில்லை, மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
 "முடியவில்லை.\n"
@@ -322,7 +325,7 @@ msgstr "தெரியாத பிழை."
 msgid "Query"
 msgstr "வினா"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
 msgid "Error"
 msgstr "பிழை"
 
@@ -330,23 +333,23 @@ msgstr "பிழை"
 msgid "Information"
 msgstr "தகவல்"
 
-#: ../../po/../userhelper-wrap.c:724
+#: ../../po/../userhelper-wrap.c:725
 msgid "Placeholder text."
 msgstr "இடம்பிடிப்பு உரை."
 
-#: ../../po/../userhelper-wrap.c:782
+#: ../../po/../userhelper-wrap.c:783
 msgid "Changing password."
 msgstr "கடவுச்சொல் மாற்றப்படுகிறது."
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
 msgstr "தனிப்பட்ட தகவலை மாற்றுகிறது."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:788
 msgid "Changing login shell."
 msgstr "புகுபதிவு ஷெல்லை மாற்றுகிறது."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -355,7 +358,7 @@ msgstr ""
 "\"%s\"யால் நன்மை பெறும், நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
 "சில தகவல்கள் தேவைப்படுகிறது."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -364,7 +367,7 @@ msgstr ""
 "\"%s\"க்கு தேவைப்படும், நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
 "சில தகவல்கள் தேவைப்படுகிறது."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:799
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -372,7 +375,7 @@ msgstr ""
 "நிர்வாக உரிமையால் நன்மை பெறும் தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய "
 "இன்னும் சில தகவல்கள் தேவைப்படும்."
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:801
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -380,31 +383,31 @@ msgstr ""
 "நிர்வாக உரிமைக்கு தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் சில "
 "தகவல்கள் தேவைப்படும்."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:811
 msgid "_Run Unprivileged"
 msgstr "முக்கியமற்றதை இயக்கவும் (_R)"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Pipe error.\n"
 msgstr "பைப் பிழை.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:976
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() பிளக்க முடியவில்லை.\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr "எழுத்து அமைவு %sஐ IO தடத்தில் அமைக்க முடியாது: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() பிழை.\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1094
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() பிழை, errno=%d\n"
@@ -523,4 +526,3 @@ msgstr "உங்கள் புகுபதிவு கடவுச்சொ�
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "கடவுச்சொல்"
-

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.6\n"
-"Report-Msgid-Bugs-To: Richard Allen <ra@ra.is>\n"
-"POT-Creation-Date: 2007-06-11 23:29+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-05 02:05+0200\n"
 "PO-Revision-Date: 2007-07-31 20:50+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: is <kde-isl@molar.is>\n"
@@ -204,7 +204,7 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á\n"
 "frekari upplýsingum svo það sé hægt."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Auðkenni sem \"%s\""
@@ -309,7 +309,7 @@ msgstr "Óþekkt villa."
 msgid "Query"
 msgstr "Fyrirspurn"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
 msgid "Error"
 msgstr "Villa"
 
@@ -317,23 +317,23 @@ msgstr "Villa"
 msgid "Information"
 msgstr "Upplýsingar"
 
-#: ../../po/../userhelper-wrap.c:724
+#: ../../po/../userhelper-wrap.c:725
 msgid "Placeholder text."
 msgstr "Þetta pláss autt."
 
-#: ../../po/../userhelper-wrap.c:782
+#: ../../po/../userhelper-wrap.c:783
 msgid "Changing password."
 msgstr "Breyta lykilorði."
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
 msgstr "Breyti persónuupplýsingum."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:788
 msgid "Changing login shell."
 msgstr "Breyti skél."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -342,7 +342,7 @@ msgstr ""
 "Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér "
 "er þörf á frekari upplýsingum svo það sé hægt."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -351,7 +351,7 @@ msgstr ""
 "Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á "
 "frekari upplýsingum svo það sé hægt."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:799
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -359,7 +359,7 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér "
 "er þörf á frekari upplýsingum svo það sé hægt."
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:801
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -367,31 +367,31 @@ msgstr ""
 "Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á "
 "frekari upplýsingum svo það sé hægt."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:811
 msgid "_Run Unprivileged"
 msgstr "_Keyra án rótarheimilda"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pípuvilla.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:976
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Get ekki notað fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr "Get ekki stillt inntaksrásina á %s stafatöfluna: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
 msgid "dup2() error.\n"
 msgstr "villa í dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1094
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() villa, errno=%d\n"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-11 23:29+0200\n"
+"POT-Creation-Date: 2007-09-05 02:05+0200\n"
 "PO-Revision-Date: 2006-12-05 15:57+0530\n"
 "Last-Translator: Rahul Bhalerao <b.rahul.pm@gmail.com>\n"
 "Language-Team: Marathi\n"
@@ -209,7 +209,7 @@ msgstr ""
 "तुम्ही एक आदेश चालवण्याचा प्रयत्न करत आहात ज्यासाठी प्रशासकीय अधिकारांची\n"
 "आवश्यकता आहे, परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
@@ -314,7 +314,7 @@ msgstr "अज्ञात चूक."
 msgid "Query"
 msgstr "प्रश्न"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
 msgid "Error"
 msgstr "चूक"
 
@@ -322,24 +322,24 @@ msgstr "चूक"
 msgid "Information"
 msgstr "माहिती"
 
-#: ../../po/../userhelper-wrap.c:724
+#: ../../po/../userhelper-wrap.c:725
 msgid "Placeholder text."
 msgstr "स्थानधारक पाठ."
 
-#: ../../po/../userhelper-wrap.c:782
+#: ../../po/../userhelper-wrap.c:783
 #, fuzzy
 msgid "Changing password."
 msgstr "तुमचा लॉगीन गुप्तशब्द बदला"
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
 msgstr "वय्यक्तिक माहिती बदलत आहे."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:788
 msgid "Changing login shell."
 msgstr "लॉगीन शेल बदलत आहे."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -348,7 +348,7 @@ msgstr ""
 "तुम्ही \"%s\" चालवण्याचा प्रयत्न करत आहात जे प्रशासकीय अधिकारांपासून फायदेशीर असू \n"
 "शकते, परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -357,7 +357,7 @@ msgstr ""
 "तुम्ही \"%s\" चालवण्याचा प्रयत्न करत आहात ज्यासाठी प्रशासकीय अधिकारांची\n"
 "आवश्यकता आहे, परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:799
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -365,7 +365,7 @@ msgstr ""
 "तुम्ही एक आदेश चालवण्याचा प्रयत्न करत आहात जो प्रशासकीय अधिकारापासून फायदेशीर ठरू "
 "शकतो, परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:801
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -373,31 +373,31 @@ msgstr ""
 "तुम्ही एक आदेश चालवण्याचा प्रयत्न करत आहात ज्यासाठी प्रशासकीय अधिकारांची आवश्यकता आहे, "
 "परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:811
 msgid "_Run Unprivileged"
 msgstr "विशेषाधिकारांशिवाय चालवा(_R)"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Pipe error.\n"
 msgstr "पाइप चूक.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:976
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() करू शकत नाही.\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() चूक.\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1094
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() चूक, errno=%d\n"

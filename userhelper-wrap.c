@@ -684,7 +684,7 @@ userhelper_parse_childout(char *outline)
 	if (!resp->ready)
 		return;
 	/* If we're ready, do some last-minute changes and run the dialog. */
-	if (resp->responses == 0)
+	if (resp->responses == 0) {
 		/* No queries means that we've just processed a sync request
 		   for cases where we don't need any info for authentication.
 
@@ -697,7 +697,8 @@ userhelper_parse_childout(char *outline)
 		   of. output and we'll get an actual prompt (which will give
 		   us cause to open a dialog) later. */
 		userhelper_write_childin(GTK_RESPONSE_OK, resp);
-	else {
+		resp->ready = FALSE;
+	} else {
 		/* A non-zero number of queries demands an answer. */
 		char *text;
 		GtkWidget *label, *image, *vbox;

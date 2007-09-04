@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-11 23:29+0200\n"
+"POT-Creation-Date: 2007-09-05 02:05+0200\n"
 "PO-Revision-Date: 2007-06-12 12:00+0530\n"
 "Last-Translator: Subhransu Behera <arya_subhransu@yahoo.co.in>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -216,7 +217,7 @@ msgstr ""
 "କରିଥାଏ, \n"
 "କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" ଭାବରେ ବୈଧିକରଣ କରୁଅଛି"
@@ -229,7 +230,8 @@ msgstr "userhelper ଗୋଟିଏ ମୂଖ୍ଯ ଚାଳକ ହେବା ଆ
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ଆଲେଖୀକ ଓ୍ବେଣ୍ଡୋ କୁ ଖୋଲିବାରେ ଅସଫଳ, ଏବଂ ନିୟନ୍ତ୍ରିତ ଟର୍ମିନାଲ ଖୋଲିବାରେ ଅସଫଳ \n"
 
 #: ../../po/../userhelper-wrap.c:203
@@ -320,7 +322,7 @@ msgstr "ଅଜଣା ତୃଟି"
 msgid "Query"
 msgstr "ପ୍ରଶ୍ନ"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
+#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
 msgid "Error"
 msgstr "ତୃଟି"
 
@@ -328,23 +330,23 @@ msgstr "ତୃଟି"
 msgid "Information"
 msgstr "ସୂଚନା"
 
-#: ../../po/../userhelper-wrap.c:724
+#: ../../po/../userhelper-wrap.c:725
 msgid "Placeholder text."
 msgstr "ସ୍ଥାନ ଧାରଣକାରୀ ପାଠ୍ଯ।"
 
-#: ../../po/../userhelper-wrap.c:782
+#: ../../po/../userhelper-wrap.c:783
 msgid "Changing password."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ ବଦଳାଇବା ବିଷୟରେ।"
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
 msgstr "ବ୍ଯକ୍ତିଗତ ସୂଚନା କୁ ପରିବର୍ତ୍ତନ କରୁଅଛି"
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:788
 msgid "Changing login shell."
 msgstr "ଲଗଇନ୍ ଆବରଣ କୁ ପରିବର୍ତ୍ତନ କରୁଅଛି"
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:792
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -353,7 +355,7 @@ msgstr ""
 "ଆପଣ \"%s\" କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଦ୍ବାରା ଉପଲବ୍ଧ "
 "ହୋଇପାରିବ, କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:794
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -362,7 +364,7 @@ msgstr ""
 "ଆପଣ   \"%s\" କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଆବଶ୍ଯକ କରିଥାଏ, "
 "କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:799
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -370,7 +372,7 @@ msgstr ""
 "ଆପଣ ଗୋଟିଏ ନିର୍ଦ୍ଦେଶ କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଦ୍ବାରା "
 "ଉପଲବ୍ଧ ହୋଇପାରିବ,କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:801
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -378,31 +380,31 @@ msgstr ""
 "ଆପଣ ଗୋଟିଏ ନିର୍ଦ୍ଦେଶ କୁ ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରୁଛନ୍ତି ଯାହାକି ପ୍ରଶାସନ ବିଶେଷାଧୀକାର ଆବଶ୍ଯକ "
 "କରିଥାଏ, କିନ୍ତୁ ଏହା କରିବା ପାଇଁ ଅଧିକ ସୂଚନା ଆବଶ୍ଯକ"
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:811
 msgid "_Run Unprivileged"
 msgstr "ବିଶେଷ ଅଧୀକାର ନଥିବା କାର୍ଯ୍ଯ କୁ ଚଲାନ୍ତୁ (_R)"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Pipe error.\n"
 msgstr "ପାଇପ ଜନିତ ତୃଟି \n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:976
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() କରି ପାରିବ ନାହିଁ \n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr "ଗୋଟିଏ IO ଉପପଥରେ %s charset କୁ ବିନ୍ଯାସ କରିପାରିବ ନାହିଁ: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() ତୃଟି \n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1094
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ତୃଟି, errno=%d\n"
@@ -523,4 +525,3 @@ msgstr "ଆପଣଙ୍କ ଲଗଇନ ପ୍ରବେଶ ସଙ୍କେତ �
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ"
-

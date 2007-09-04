@@ -1,3 +1,6 @@
+1.93
+* Fix handling of PAM conversations with no questions
+
 1.92
 * Fix userhelper hangs in non-UTF8 locales.
 * Fix unexpanded {prefix} strings embedded in executables if some directory

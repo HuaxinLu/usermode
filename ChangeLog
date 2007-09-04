@@ -1,3 +1,12 @@
+2007-09-05  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Release 1.93.
+	* NEWS: Update.
+
+	* userhelper-wrap.c (userhelper_parse_childout): Only respond with
+	UH_SYNC_POINT once to an UH_SYNC_POINT with no responses requested,
+	not after each new message.
+
 2007-06-11  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.in: Release 1.92.
