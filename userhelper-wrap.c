@@ -55,7 +55,7 @@ struct message {
 
 struct response {
 	int responses, rows;
-	gboolean ready, fallback_allowed;
+	gboolean fallback_allowed;
 	char *user, *service, *suggestion, *banner, *title;
 	GList *message_list; /* contains pointers to messages */
 	void *dialog; /* Actually a GtkWidget * */
@@ -670,7 +670,6 @@ userhelper_parse_childout(char *outline)
 		break;
 		/* Synchronization point -- no more prompts. */
 	case UH_SYNC_POINT:
-		resp->ready = TRUE;
 		break;
 	default:
 		break;
@@ -681,10 +680,10 @@ userhelper_parse_childout(char *outline)
 	userhelper_startup_notification_launchee(NULL);
 #endif
 
-	if (!resp->ready)
+	if (prompt_type != UH_SYNC_POINT)
 		return;
 	/* If we're ready, do some last-minute changes and run the dialog. */
-	if (resp->responses == 0) {
+	if (resp->responses == 0)
 		/* No queries means that we've just processed a sync request
 		   for cases where we don't need any info for authentication.
 
@@ -697,8 +696,7 @@ userhelper_parse_childout(char *outline)
 		   of. output and we'll get an actual prompt (which will give
 		   us cause to open a dialog) later. */
 		userhelper_write_childin(GTK_RESPONSE_OK, resp);
-		resp->ready = FALSE;
-	} else {
+	else {
 		/* A non-zero number of queries demands an answer. */
 		char *text;
 		GtkWidget *label, *image, *vbox;
