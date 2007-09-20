@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # shankar Prasad <svenkate@redhat.com>, 2006.
+# Shankar Prasad <svenkate@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-05 02:05+0200\n"
-"PO-Revision-Date: 2006-12-12 20:29+0530\n"
-"Last-Translator: shankar Prasad <svenkate@redhat.com>\n"
+"PO-Revision-Date: 2007-09-20 15:13+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplural=2;plural=(n !=1);\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -211,7 +212,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "\"%s\" ಎಂದು ದೃಢೀಕರಿಸಲಾಗುತ್ತಿದೆ"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -221,8 +222,7 @@ msgstr "userhelper ಯು setuidಯ ಮೂಲವಾಗಿರ ಬೇಕು\n"
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ಚಿತ್ರಾತ್ಮಕ ವಿಂಡೊವನ್ನು ತೆಗೆಯಲಾಗುತ್ತಿಲ್ಲ, ಹಾಗು ನಿಯಂತ್ರಣ ಘಟಕವು ಪತ್ತೆಯಾಗುತ್ತಿಲ್ಲ.\n"
 
 #: ../../po/../userhelper-wrap.c:203
@@ -323,11 +323,11 @@ msgstr "ಮಾಹಿತಿ"
 
 #: ../../po/../userhelper-wrap.c:725
 msgid "Placeholder text."
-msgstr "Placeholder ಪಠ್ಯ.."
+msgstr "Placeholder ಪಠ್ಯ."
 
 #: ../../po/../userhelper-wrap.c:783
 msgid "Changing password."
-msgstr ""
+msgstr "ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸಲಾಗುತ್ತಿದೆ."
 
 #: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
@@ -388,7 +388,7 @@ msgstr "fork() ಸಾಧ್ಯವಾಗಿಲ್ಲ.\n"
 #: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "charset %s ಅನ್ನು ಒಂದು IO ಮಾರ್ಗಕ್ಕೆ ಹೊಂದಿಸಲಾಗಿಲ್ಲ: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
@@ -495,41 +495,25 @@ msgstr "ಗ್ರಾಹಕ ಮಾಹಿತಿ"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr ""
+msgstr "ನನ್ನ ಬಗ್ಗೆ"
 
 #: ../userinfo.desktop.in.h:2
-#, fuzzy
 msgid "Change personal information"
-msgstr "ವಯಕ್ತಿಕ ಮಾಹಿತಿಯ ಮಾರ್ಪಡಣೆಯಾಗುತ್ತಿದೆ."
+msgstr "ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಮಾರ್ಪಡಿಸು"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr ""
+msgstr "ಡಿಸ್ಕ್ ವ್ಯವಸ್ಥಾಪನೆ"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr ""
+msgstr "ಕಡತ ವ್ಯವಸ್ಥೆಗಳನ್ನು ಆರೋಹಿಸಿ ಹಾಗು ಅವರೋಹಿಸಿ"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr ""
+msgstr "ನಿಮ್ಮ ಪ್ರವೇಶ ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸಿ"
 
 #: ../userpasswd.desktop.in.h:2
-#, fuzzy
 msgid "Password"
-msgstr "ಗುಪ್ತಪದ: "
+msgstr "ಗುಪ್ತಪದ"
 
-#~ msgid "Password for %s"
-#~ msgstr "%s ಗೆ ಗುಪ್ತಪದ"
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s ಗೆ ಗುಪ್ತಪದ: "
-
-#~ msgid "Message"
-#~ msgstr "ಸಂದೇಶ"
-
-#~ msgid "Help"
-#~ msgstr "ಸಹಾಯ"
-
-#~ msgid "*"
-#~ msgstr "*"
