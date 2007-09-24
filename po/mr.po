@@ -1,24 +1,25 @@
-# translation of mr.po to Marathi
+# translation of mr.po to marathi
 # Marathi translations for PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+#
 # Automatically generated, 2004.
 # Rahul Bhalerao <rbhalera@redhat.com>, 2006.
 # Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
-#
+# sandeep shedmake <sandeep.shedmake@gmail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: mr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-05 02:05+0200\n"
-"PO-Revision-Date: 2006-12-05 15:57+0530\n"
-"Last-Translator: Rahul Bhalerao <b.rahul.pm@gmail.com>\n"
-"Language-Team: Marathi\n"
+"PO-Revision-Date: 2007-09-22 23:57+0530\n"
+"Last-Translator: sandeep shedmake <sandeep.shedmake@gmail.com>\n"
+"Language-Team: marathi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -61,11 +62,11 @@ msgstr "(चालू) UNIX गुप्तशब्द: "
 
 #: ../../po/../dummy.h:26
 msgid "New UNIX password: "
-msgstr "नविन UNIX गुप्तशब्द:"
+msgstr "नविन UNIX गुप्तशब्द: "
 
 #: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "नविन UNIX गुप्तशब्द पुन्हा टाइप करा:"
+msgstr "नविन UNIX गुप्तशब्द पुन्हा टाइप करा: "
 
 #: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -89,11 +90,11 @@ msgstr "प्रणाली-व्यापी व्यूहरचना उ
 
 #: ../../po/../dummy.h:33
 msgid "login: "
-msgstr "प्रवेश:"
+msgstr "प्रवेश: "
 
 #: ../../po/../dummy.h:34
 msgid "Password: "
-msgstr "गुप्तशब्द:"
+msgstr "गुप्तशब्द: "
 
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
@@ -105,8 +106,7 @@ msgstr "प्रशासकाचे अधिकार सोडण्या�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"प्रशासकाचे अधिकार सोडण्यास अयशस्वी: pam_timestamp_check ने %d हा अपयश संकेत दिला. "
+msgstr "प्रशासकाचे अधिकार सोडण्यास अयशस्वी: pam_timestamp_check ने %d हा अपयश संकेत दिला. "
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
@@ -212,7 +212,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "\"%s\" च्या स्वरूपास प्रमाणीत करत आहे"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
@@ -222,13 +222,12 @@ msgstr "उपयोक्ता सहाय्यक setuid रूट अस�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखीय खिडकी उघडण्यास असमर्थ, आणि नियंत्रक टर्मिनल शोधण्यास असमर्थ.\n"
 
 #: ../../po/../userhelper-wrap.c:203
 msgid "Unknown exit code."
-msgstr "अपरिचित बाहेर जाण्याचा कोड"
+msgstr "अपरिचित बाहेर जाण्याचा कोड."
 
 #: ../../po/../userhelper-wrap.c:205
 msgid "Information updated."
@@ -327,9 +326,8 @@ msgid "Placeholder text."
 msgstr "स्थानधारक पाठ."
 
 #: ../../po/../userhelper-wrap.c:783
-#, fuzzy
 msgid "Changing password."
-msgstr "तुमचा लॉगीन गुप्तशब्द बदला"
+msgstr "गुप्तशब्द बदलत आहे."
 
 #: ../../po/../userhelper-wrap.c:785
 msgid "Changing personal information."
@@ -390,7 +388,7 @@ msgstr "fork() करू शकत नाही.\n"
 #: ../../po/../userhelper-wrap.c:1002
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr " %s अक्षरसंच IO मार्गावर समर्थित करू शकत नाही: %s\n"
 
 #: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
 #, c-format
@@ -519,17 +517,3 @@ msgstr "तुमचा लॉगीन गुप्तशब्द बदला
 msgid "Password"
 msgstr "गुप्तशब्द"
 
-#~ msgid "Password for %s"
-#~ msgstr "%s साठी गुप्तशब्द"
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s साठी गुप्तशब्द: "
-
-#~ msgid "Message"
-#~ msgstr "संदेश"
-
-#~ msgid "Help"
-#~ msgstr "मदत"
-
-#~ msgid "*"
-#~ msgstr "*"
