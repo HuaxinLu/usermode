@@ -1,19 +1,23 @@
+# translation of si.po to Sinhala
 # Sinhalese translations for PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2004.
 #
+# Automatically generated, 2004.
+# Danishka Navin <snavin@redhat.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: si\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-11 23:29+0200\n"
-"PO-Revision-Date: 2004-03-31 15:31-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2007-09-24 13:18+0530\n"
+"Last-Translator: Danishka Navin <snavin@redhat.com>\n"
+"Language-Team: Sinhala <en@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -36,15 +40,15 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: ../../po/../dummy.h:21
 msgid "OK"
-msgstr ""
+msgstr "හරි"
 
 #: ../../po/../dummy.h:22
 msgid "Exit"
-msgstr ""
+msgstr "පිටවීම"
 
 #: ../../po/../dummy.h:23
 msgid "Cancel"
-msgstr ""
+msgstr "අවලංගු කරන්න"
 
 #: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
@@ -52,7 +56,7 @@ msgstr ""
 
 #: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(දැනට ඇති) UNIX රහස්පදය: "
 
 #: ../../po/../dummy.h:26
 msgid "New UNIX password: "
@@ -60,7 +64,7 @@ msgstr ""
 
 #: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "නව UNIX රහස්පදය නැවත ඇතුළත් කරන්න:"
 
 #: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -72,11 +76,11 @@ msgstr ""
 
 #: ../../po/../dummy.h:30
 msgid "Password unchanged"
-msgstr ""
+msgstr "රහස්පදය වෙනස් නොවුනී"
 
 #: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "සමාවන්න, රහස්පද නොගැලපේ"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
@@ -84,11 +88,11 @@ msgstr ""
 
 #: ../../po/../dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "පිවිසීම: "
 
 #: ../../po/../dummy.h:34
 msgid "Password: "
-msgstr ""
+msgstr "රහස්පදය: "
 
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
@@ -140,7 +144,7 @@ msgstr ""
 #: ../../po/../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "දෝෂය: %s\n"
 
 #: ../../po/../pam-panel-icon.c:384
 #, c-format
@@ -205,8 +209,7 @@ msgstr ""
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
 #: ../../po/../userhelper-wrap.c:203
@@ -285,15 +288,15 @@ msgstr ""
 
 #: ../../po/../userhelper-wrap.c:503
 msgid "Query"
-msgstr ""
+msgstr "විමසුම්"
 
 #: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:732
 msgid "Error"
-msgstr ""
+msgstr "දෝෂය"
 
 #: ../../po/../userhelper-wrap.c:580
 msgid "Information"
-msgstr ""
+msgstr "තොරතුරු"
 
 #: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
@@ -378,7 +381,7 @@ msgstr ""
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
-msgstr ""
+msgstr "ස්ඵාපනය (_M)"
 
 #: ../../po/../usermount.c:62
 msgid "Un_mount"
@@ -412,15 +415,15 @@ msgstr ""
 #. Create the other buttons.
 #: ../../po/../usermount.c:538
 msgid "_Format"
-msgstr ""
+msgstr "සංයුතිය (_F)"
 
 #: ../../po/../usermount.c:574
 msgid "Device"
-msgstr ""
+msgstr "මෙවලම්"
 
 #: ../../po/../usermount.c:580
 msgid "Directory"
-msgstr ""
+msgstr "බහලුම"
 
 #: ../../po/../usermount.c:586
 msgid "Filesystem"
@@ -453,7 +456,7 @@ msgstr ""
 
 #: ../usermode.glade.h:6
 msgid "User Information"
-msgstr ""
+msgstr "පරිශීලක තොරතුරු"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -477,4 +480,5 @@ msgstr ""
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
-msgstr ""
+msgstr "රහස්පදය"
+
