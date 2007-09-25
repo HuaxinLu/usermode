@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-05 02:05+0200\n"
-"PO-Revision-Date: 2007-09-15 00:32+0300\n"
+"PO-Revision-Date: 2007-09-25 23:14+0300\n"
 "Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: Finnish <Laatu@lokalisointi.org>\n"
 "MIME-Version: 1.0\n"
@@ -210,7 +210,7 @@ msgstr ""
 #: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr ""
+msgstr "Tunnistaudutaan käyttäjäksi ”%s”"
 
 #: ../../po/../userhelper.c:2368
 #, c-format
