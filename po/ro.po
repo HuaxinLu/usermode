@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 02:05+0200\n"
+"POT-Creation-Date: 2007-10-16 13:07+0200\n"
 "PO-Revision-Date: 2007-08-19 14:16+0300\n"
 "Last-Translator: Alexandru Szasz <alexxed@gmail.com>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
@@ -212,7 +212,7 @@ msgstr ""
 "Încercați să rulați o comandă care necesită privilegii administrative;\n"
 "pentru aceasta este nevoie de informații suplimentare."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Autentificare ca „%s”"
@@ -231,15 +231,15 @@ msgstr ""
 "Nu se poate deschide fereastra grafică și nu se găsește terminalul care "
 "controlează.\n"
 
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
 msgstr "Cod de ieșire necunoscut."
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:206
 msgid "Information updated."
 msgstr "Informație actualizată."
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:208
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -247,7 +247,7 @@ msgstr ""
 "Parola introdusă este invalidă.\n"
 "Vă rugăm să încercați din nou."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:210
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -258,11 +258,11 @@ msgstr ""
 "într-unul dintre câmpuri.\n"
 "Vă rugăm să le eliminați și să încercați din nou."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:212
 msgid "Password resetting error."
 msgstr "Eroare la resetarea parolei."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:214
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -270,19 +270,19 @@ msgstr ""
 "Câteva fișiere sistem sunt blocate.\n"
 "Vă rugăm încercați din nou în câteva momente."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:216
 msgid "Unknown user."
 msgstr "Utilizator necunoscut."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:218
 msgid "Insufficient rights."
 msgstr "Drepturi insuficiente."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:220
 msgid "Invalid call to subprocess."
 msgstr "Apel invalid către subproces."
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:222
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -292,59 +292,59 @@ msgstr ""
 "Nu vă este permis să vă schimbați shell-ul.\n"
 "Contactați administratorul sistemului dumneavoastră."
 
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:225
 msgid "Out of memory."
 msgstr "Memorie epuizată."
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:227
 msgid "The exec() call failed."
 msgstr "Apelul exec() a eșuat."
 
-#: ../../po/../userhelper-wrap.c:228
+#: ../../po/../userhelper-wrap.c:229
 msgid "Failed to find selected program."
 msgstr "Programul selectat nu a fost găsit."
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:232
 msgid "Request canceled."
 msgstr "Cerere anulată."
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:234
 msgid "Internal PAM error occured."
 msgstr "A apărut o eroare internă PAM."
 
-#: ../../po/../userhelper-wrap.c:235
+#: ../../po/../userhelper-wrap.c:236
 msgid "Unknown error."
 msgstr "Eroare necunoscută."
 
-#: ../../po/../userhelper-wrap.c:503
+#: ../../po/../userhelper-wrap.c:504
 msgid "Query"
 msgstr "Cerere"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
+#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "Eroare"
 
-#: ../../po/../userhelper-wrap.c:580
+#: ../../po/../userhelper-wrap.c:581
 msgid "Information"
 msgstr "Informație"
 
-#: ../../po/../userhelper-wrap.c:725
+#: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
 msgstr "Text înlocuitor."
 
-#: ../../po/../userhelper-wrap.c:783
+#: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "Schimb parola."
 
-#: ../../po/../userhelper-wrap.c:785
+#: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
 msgstr "Se schimbă informațiile personale."
 
-#: ../../po/../userhelper-wrap.c:788
+#: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
 msgstr "Se schimbă shell-ul de login."
 
-#: ../../po/../userhelper-wrap.c:792
+#: ../../po/../userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -353,7 +353,7 @@ msgstr ""
 "Pentru a rula „%s”, care ar putea beneficia de privilegii administrative, "
 "este nevoie de informații suplimentare."
 
-#: ../../po/../userhelper-wrap.c:794
+#: ../../po/../userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -362,7 +362,7 @@ msgstr ""
 "Pentru a rula „%s”, care necesită privilegii administrative, este nevoie de "
 "informații suplimentare."
 
-#: ../../po/../userhelper-wrap.c:799
+#: ../../po/../userhelper-wrap.c:798
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -370,7 +370,7 @@ msgstr ""
 "Încercați să rulați o comandă care ar putea beneficia de privilegii "
 "administrative; pentru aceasta e nevoie de informații suplimentare."
 
-#: ../../po/../userhelper-wrap.c:801
+#: ../../po/../userhelper-wrap.c:800
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -378,31 +378,31 @@ msgstr ""
 "Încercați să rulați o comandă care necesită privilegii administrative; "
 "pentru aceasta este nevoie de informații suplimentare."
 
-#: ../../po/../userhelper-wrap.c:811
+#: ../../po/../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "_Rulează neprivilegiat"
 
-#: ../../po/../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:968
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Eroare de pipe.\n"
 
-#: ../../po/../userhelper-wrap.c:976
+#: ../../po/../userhelper-wrap.c:975
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nu se poate efectua fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1002
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr "Nu se poate folosi setul de caractere %s pe un canal IO: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
+#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "eroare dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1094
+#: ../../po/../userhelper-wrap.c:1093
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "eroare execl(),·errno=%d\n"

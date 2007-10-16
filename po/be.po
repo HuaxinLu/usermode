@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 02:05+0200\n"
+"POT-Creation-Date: 2007-10-16 13:07+0200\n"
 "PO-Revision-Date: 2004-09-13 14:21+0300\n"
 "Last-Translator: Vital Khilko (aka dojlid) <vk@mova.org>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -201,7 +201,7 @@ msgstr ""
 "Вы спрабуеце выканаць праграму, якая патрабуе адміністратыўныя\n"
 "прывілеі. Для гэтага патрэбныя дадатковыя зьвесткі."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
@@ -218,15 +218,15 @@ msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Немагчыма адкрыць графічнае акно й адшукаць тэрмінал кіраваньня.\n"
 
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
 msgstr "Невядомы код выхаду."
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:206
 msgid "Information updated."
 msgstr "Зьвесткі абноўлены."
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:208
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -234,7 +234,7 @@ msgstr ""
 "Вы ўвялі памылковы пароль.\n"
 "Паспрабуйце яшчэ раз."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:210
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -244,11 +244,11 @@ msgstr ""
 "Верагодная прычына - наяўнасьць кропак ці косак у адным з палёў.\n"
 "Выдаліце іх і паспрабуйце яшчэ раз."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:212
 msgid "Password resetting error."
 msgstr "Памылка скіданьня пароля"
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:214
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -256,19 +256,19 @@ msgstr ""
 "Пэўныя сыстэмныя файлы заблякаваны.\n"
 "Паўтарыце праз некалькі хвілін."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:216
 msgid "Unknown user."
 msgstr "Невядомы карыстальнік."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:218
 msgid "Insufficient rights."
 msgstr "Недастаткова правоў."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:220
 msgid "Invalid call to subprocess."
 msgstr "Памылковы выклік падпрацэсу."
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:222
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -278,61 +278,61 @@ msgstr ""
 "Вам не дазволена зьмяняць вашу абалонку.\n"
 "Зьвяжыцеся з сыстэмным адміністратарам."
 
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:225
 msgid "Out of memory."
 msgstr "Нестае памяці."
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:227
 msgid "The exec() call failed."
 msgstr "Памылка выкліку exec()."
 
-#: ../../po/../userhelper-wrap.c:228
+#: ../../po/../userhelper-wrap.c:229
 msgid "Failed to find selected program."
 msgstr "Немагчыма адшукаць выбраную праграму."
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:232
 msgid "Request canceled."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:234
 #, fuzzy
 msgid "Internal PAM error occured."
 msgstr "Получена ошибка PAM %d.\n"
 
-#: ../../po/../userhelper-wrap.c:235
+#: ../../po/../userhelper-wrap.c:236
 msgid "Unknown error."
 msgstr "Невядомая памылка."
 
-#: ../../po/../userhelper-wrap.c:503
+#: ../../po/../userhelper-wrap.c:504
 msgid "Query"
 msgstr "Запыт"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
+#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "Памылка"
 
-#: ../../po/../userhelper-wrap.c:580
+#: ../../po/../userhelper-wrap.c:581
 msgid "Information"
 msgstr "Інфармацыя"
 
-#: ../../po/../userhelper-wrap.c:725
+#: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
 msgstr "Месца для тэксту."
 
-#: ../../po/../userhelper-wrap.c:783
+#: ../../po/../userhelper-wrap.c:782
 #, fuzzy
 msgid "Changing password."
 msgstr "Зьмяняе ваш пароль"
 
-#: ../../po/../userhelper-wrap.c:785
+#: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
 msgstr "Зьмена асабістых зьвестак."
 
-#: ../../po/../userhelper-wrap.c:788
+#: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
 msgstr "Зьмена абалонкі (shell)."
 
-#: ../../po/../userhelper-wrap.c:792
+#: ../../po/../userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -342,7 +342,7 @@ msgstr ""
 "пэўныя перавагі, калі будзе выканана з адміністратыўнымі\n"
 "прывілеямі, але для гэтага спатрэбяцца дадатковыя зьвесткі."
 
-#: ../../po/../userhelper-wrap.c:794
+#: ../../po/../userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -351,7 +351,7 @@ msgstr ""
 "Вы спрабуеце выканаць праграму \"%s\", якая патрабуе адміністратыўныя "
 "прывілеі. Для гэтага патрэбныя дадатковыя зьвесткі."
 
-#: ../../po/../userhelper-wrap.c:799
+#: ../../po/../userhelper-wrap.c:798
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -360,7 +360,7 @@ msgstr ""
 "выканана з адміністратыўнымі прывілеямі. Для гэтага патрабуецца дадатковыя "
 "зьвесткі."
 
-#: ../../po/../userhelper-wrap.c:801
+#: ../../po/../userhelper-wrap.c:800
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -368,31 +368,31 @@ msgstr ""
 "Вы спрабуеце выканаць праграму, якая патрабуе адміністратыўныя прывілеі. Для "
 "гэтага неабходны дадатковыя зьвесткі."
 
-#: ../../po/../userhelper-wrap.c:811
+#: ../../po/../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "Выканаць без прывілеяў"
 
-#: ../../po/../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:968
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Памылка плыні.\n"
 
-#: ../../po/../userhelper-wrap.c:976
+#: ../../po/../userhelper-wrap.c:975
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Немагчыма выклікаць fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1002
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
+#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "памылка dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1094
+#: ../../po/../userhelper-wrap.c:1093
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "памылка execl(), код памылкі %d\n"

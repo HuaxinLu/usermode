@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 02:05+0200\n"
+"POT-Creation-Date: 2007-10-16 13:07+0200\n"
 "PO-Revision-Date: 2007-06-11 23:46-0300\n"
 "Last-Translator: Igor Pires Soares <igor@projetofedora.org>\n"
 "Language-Team: Brazilian Portuguese <fedora-trans-pt_br@redhat.com>\n"
@@ -213,7 +213,7 @@ msgstr ""
 "Você está tentando executar um comando que requer privilégios\n"
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Autenticando como \"%s\""
@@ -232,15 +232,15 @@ msgstr ""
 "Não foi possível abrir uma janela gráfica; e não foi possível encontrar um "
 "terminal de controle.\n"
 
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
 msgstr "Código de saída desconhecido."
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:206
 msgid "Information updated."
 msgstr "Informações atualizadas."
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:208
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -248,7 +248,7 @@ msgstr ""
 "A senha digitada é inválida.\n"
 "Por favor tente novamente."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:210
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -259,11 +259,11 @@ msgstr ""
 "campos.\n"
 "Por favor remova-os e tente novamente."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:212
 msgid "Password resetting error."
 msgstr "Erro ao restaurar senha."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:214
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -271,19 +271,19 @@ msgstr ""
 "Alguns arquivos do sistema estão bloqueados.\n"
 "Por favor, tente novamente dentro de instantes."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:216
 msgid "Unknown user."
 msgstr "Usuário desconhecido."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:218
 msgid "Insufficient rights."
 msgstr "Privilégios insuficientes."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:220
 msgid "Invalid call to subprocess."
 msgstr "Chamada inválida ao sub-processo."
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:222
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -293,59 +293,59 @@ msgstr ""
 "Você não tem permissão para alterar a sua janela de comandos.\n"
 "Consulte o administrador do seu sistema."
 
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:225
 msgid "Out of memory."
 msgstr "Memória insuficiente."
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:227
 msgid "The exec() call failed."
 msgstr "A chamada exec() falhou."
 
-#: ../../po/../userhelper-wrap.c:228
+#: ../../po/../userhelper-wrap.c:229
 msgid "Failed to find selected program."
 msgstr "Não foi possível encontrar o programa selecionado."
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:232
 msgid "Request canceled."
 msgstr "Pedido cancelado."
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:234
 msgid "Internal PAM error occured."
 msgstr "Ocorreu um erro interno do PAM."
 
-#: ../../po/../userhelper-wrap.c:235
+#: ../../po/../userhelper-wrap.c:236
 msgid "Unknown error."
 msgstr "Erro desconhecido."
 
-#: ../../po/../userhelper-wrap.c:503
+#: ../../po/../userhelper-wrap.c:504
 msgid "Query"
 msgstr "Consulta"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
+#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "Erro"
 
-#: ../../po/../userhelper-wrap.c:580
+#: ../../po/../userhelper-wrap.c:581
 msgid "Information"
 msgstr "Informação"
 
-#: ../../po/../userhelper-wrap.c:725
+#: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
 msgstr "Texto reservado."
 
-#: ../../po/../userhelper-wrap.c:783
+#: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "Alteração da senha."
 
-#: ../../po/../userhelper-wrap.c:785
+#: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
 msgstr "Alteração de informações pessoais."
 
-#: ../../po/../userhelper-wrap.c:788
+#: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
 msgstr "Alteração da janela de login."
 
-#: ../../po/../userhelper-wrap.c:792
+#: ../../po/../userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -354,7 +354,7 @@ msgstr ""
 "Você está tentando executar \"%s\", que pode se beneficiar de privilégios "
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper-wrap.c:794
+#: ../../po/../userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -363,7 +363,7 @@ msgstr ""
 "Você está tentando executar \"%s\" que requer privilégios administrativos, "
 "porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper-wrap.c:799
+#: ../../po/../userhelper-wrap.c:798
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -371,7 +371,7 @@ msgstr ""
 "Você está tentando executar um comando que pode se beneficiar de privilégios "
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper-wrap.c:801
+#: ../../po/../userhelper-wrap.c:800
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -379,32 +379,32 @@ msgstr ""
 "Você está tentando executar um comando que requer privilégios "
 "administrativos, porém são necessárias mais informações para fazer isso."
 
-#: ../../po/../userhelper-wrap.c:811
+#: ../../po/../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "_Executar Sem Privilégios"
 
-#: ../../po/../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:968
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Erro de canalização.\n"
 
-#: ../../po/../userhelper-wrap.c:976
+#: ../../po/../userhelper-wrap.c:975
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Não foi possível executar fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1002
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr ""
 "Não é possível definir o conjunto de caracteres %s em um canal E/S: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
+#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Erro em dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1094
+#: ../../po/../userhelper-wrap.c:1093
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "erro em execl(), errno=%d\n"

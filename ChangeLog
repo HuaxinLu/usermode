@@ -1,5 +1,11 @@
 2007-10-16  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.in: Release 1.93.1.
+	* NEWS: Update.
+
+	* po/no.po: Remove (obsoleted by po/nb.po).
+	* po/LINGUAS: Remove "no".
+
 	* userhelper-wrap.c (trap_push, trap_pop): Avoid a warning.
 
 	* userhelper-wrap.c: Don't #include <libwnck/libwnck.h>.

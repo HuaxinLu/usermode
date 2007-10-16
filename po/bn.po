@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 02:05+0200\n"
+"POT-Creation-Date: 2007-10-16 13:07+0200\n"
 "PO-Revision-Date: 2006-01-23 14:46+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bangla <redhat-translation@bengalinux.org>\n"
@@ -238,7 +238,7 @@ msgstr ""
 "আপনি কমান্ড চালানোর চেষ্টা করছেন। এই ক্ষেত্রে প্রশাসনিক অধিকার থাকা আবশ্যক\n"
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
@@ -259,15 +259,15 @@ msgid ""
 msgstr "গ্রাফিক্যাল উইন্ডো খোলা যায়নি এবং নিয়ন্ত্রণকারী টার্মিনাল পাওয়া যায়নি।\n"
 
 # ..........হতে যাচ্ছে
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
 msgstr "অজ্ঞাত প্রস্থান (Exit) কোড।"
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:206
 msgid "Information updated."
 msgstr "তথ্য পরিমার্জন করা হয়েছে।"
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:208
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -275,7 +275,7 @@ msgstr ""
 "আপনার লেখা পাসওয়ার্ড বৈধ নয়।\n"
 "অনুগ্রহ করে পুনরায় লিখুন।"
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:210
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -285,11 +285,11 @@ msgstr ""
 "সম্ভবত ভুলক্রমে কোলন অথবা বিরামচিহ্ন লেখার ফলে এই সমস্যা হয়েছে।\n"
 "অনুগ্রহ করে এই ধরনের চিহ্ন মুছে পুনরায় চেষ্টা করুন।"
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:212
 msgid "Password resetting error."
 msgstr "পাসওয়ার্ড পুনরায় নির্ধারণ করতে সমস্যা।"
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:214
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -298,19 +298,19 @@ msgstr ""
 "অনুগ্রহ করে কিছুক্ষণ পরে পুনরায় চেষ্টা করুন।"
 
 # লক (Lock)
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:216
 msgid "Unknown user."
 msgstr "অজানা ব্যবহারকারী।"
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:218
 msgid "Insufficient rights."
 msgstr "অপর্যাপ্ত অধিকার।"
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:220
 msgid "Invalid call to subprocess."
 msgstr "সাবপ্রসেস অবৈধ উপায়ে চালানোর চেষ্টা করা হয়েছে।"
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:222
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -321,64 +321,64 @@ msgstr ""
 "আপনার সিস্টেম অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
 
 # ২য় বাক্যটা.......
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:225
 msgid "Out of memory."
 msgstr "অপর্যাপ্ত মেমরি।"
 
 # মেমরী
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:227
 msgid "The exec() call failed."
 msgstr "exec() কার্যকর করার চেষ্টা ব্যর্থ হয়েছে।"
 
-#: ../../po/../userhelper-wrap.c:228
+#: ../../po/../userhelper-wrap.c:229
 msgid "Failed to find selected program."
 msgstr "নির্বাচিত প্রোগ্রাম পাওয়া যায়নি।"
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:232
 msgid "Request canceled."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:234
 msgid "Internal PAM error occured."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:235
+#: ../../po/../userhelper-wrap.c:236
 msgid "Unknown error."
 msgstr "অজানা সমস্যা।"
 
-#: ../../po/../userhelper-wrap.c:503
+#: ../../po/../userhelper-wrap.c:504
 msgid "Query"
 msgstr "অনুসন্ধান"
 
 # অস্পস্ট
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
+#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "সমস্যা"
 
-#: ../../po/../userhelper-wrap.c:580
+#: ../../po/../userhelper-wrap.c:581
 msgid "Information"
 msgstr "তথ্য"
 
-#: ../../po/../userhelper-wrap.c:725
+#: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
 msgstr "অস্থায়ী টেক্সট।"
 
-#: ../../po/../userhelper-wrap.c:783
+#: ../../po/../userhelper-wrap.c:782
 #, fuzzy
 msgid "Changing password."
 msgstr "আপনার লগ-ইন অ্যাকাউন্টের পাসওয়ার্ড পরিবর্তন করুন"
 
-#: ../../po/../userhelper-wrap.c:785
+#: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
 msgstr "ব্যক্তিগত তথ্য পরিবর্তন প্রণালী।"
 
 # 'বদল' এর থিকে 'পরিবর্তন' অনেকে ভাল শোনায় না কি ?
-#: ../../po/../userhelper-wrap.c:788
+#: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
 msgstr "লগ-ইন শেল পরিবর্তন প্রণালী।"
 
 # msgstr "লগ-ইন শেল বদল করা হচ্ছে।"
-#: ../../po/../userhelper-wrap.c:792
+#: ../../po/../userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -388,7 +388,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # সেই আগের মত
-#: ../../po/../userhelper-wrap.c:794
+#: ../../po/../userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -398,7 +398,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # বাক্যটা ভুল হইছে
-#: ../../po/../userhelper-wrap.c:799
+#: ../../po/../userhelper-wrap.c:798
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -407,7 +407,7 @@ msgstr ""
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
 # বাক্যটা ভুল হইছে
-#: ../../po/../userhelper-wrap.c:801
+#: ../../po/../userhelper-wrap.c:800
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -415,31 +415,31 @@ msgstr ""
 "আপনি একটি কমান্ড চালানোর চেষ্টা করছেন। এই ক্ষেত্রে প্রশাসনিক অধিকার থাকা আবশ্যক\n"
 "কিন্তু এই কাজের জন্য অধিক তথ্য প্রয়োজন।"
 
-#: ../../po/../userhelper-wrap.c:811
+#: ../../po/../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "অধিকার বিনা চালানো হবে (_R)"
 
-#: ../../po/../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:968
 #, c-format
 msgid "Pipe error.\n"
 msgstr "পাইপের সমস্যা।\n"
 
-#: ../../po/../userhelper-wrap.c:976
+#: ../../po/../userhelper-wrap.c:975
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() করা সম্ভব নয়।\n"
 
-#: ../../po/../userhelper-wrap.c:1002
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
+#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-র সমস্যা।\n"
 
-#: ../../po/../userhelper-wrap.c:1094
+#: ../../po/../userhelper-wrap.c:1093
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "exec()-র সমস্যা, errno=%d\n"

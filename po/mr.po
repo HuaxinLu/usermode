@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 02:05+0200\n"
+"POT-Creation-Date: 2007-10-16 13:07+0200\n"
 "PO-Revision-Date: 2007-09-22 23:57+0530\n"
 "Last-Translator: sandeep shedmake <sandeep.shedmake@gmail.com>\n"
 "Language-Team: marathi\n"
@@ -19,7 +19,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -106,7 +107,8 @@ msgstr "प्रशासकाचे अधिकार सोडण्या�
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "प्रशासकाचे अधिकार सोडण्यास अयशस्वी: pam_timestamp_check ने %d हा अपयश संकेत दिला. "
+msgstr ""
+"प्रशासकाचे अधिकार सोडण्यास अयशस्वी: pam_timestamp_check ने %d हा अपयश संकेत दिला. "
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
@@ -209,7 +211,7 @@ msgstr ""
 "तुम्ही एक आदेश चालवण्याचा प्रयत्न करत आहात ज्यासाठी प्रशासकीय अधिकारांची\n"
 "आवश्यकता आहे, परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:754
+#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" च्या स्वरूपास प्रमाणीत करत आहे"
@@ -222,18 +224,19 @@ msgstr "उपयोक्ता सहाय्यक setuid रूट अस�
 #. FIXME: print a warning here?
 #: ../../po/../userhelper.c:2466
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "आलेखीय खिडकी उघडण्यास असमर्थ, आणि नियंत्रक टर्मिनल शोधण्यास असमर्थ.\n"
 
-#: ../../po/../userhelper-wrap.c:203
+#: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
 msgstr "अपरिचित बाहेर जाण्याचा कोड."
 
-#: ../../po/../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:206
 msgid "Information updated."
 msgstr "माहिती अद्ययावत झाली."
 
-#: ../../po/../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:208
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -241,7 +244,7 @@ msgstr ""
 "तुम्ही टाइप केलेला गुप्तशब्द अवैध आहे.\n"
 "कृपया पुन्हा प्रयत्न करा."
 
-#: ../../po/../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:210
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -251,11 +254,11 @@ msgstr ""
 "हे कदाचित एखाद्या क्षेत्रातील स्वल्पविराम किंवा विसर्गामुळे असू शकते.\n"
 "कृपया त्यांना काढून पुन्हा प्रयत्न करा."
 
-#: ../../po/../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:212
 msgid "Password resetting error."
 msgstr "गुप्तशब्द पुनर्निर्धारण चूक."
 
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:214
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -263,19 +266,19 @@ msgstr ""
 "काही प्रणाली फाइल ताळाबंद आहेत.\n"
 "कृपया काही वेळाने पुन्हा प्रयत्न करा."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:216
 msgid "Unknown user."
 msgstr "अज्ञात उपयोक्ता."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:218
 msgid "Insufficient rights."
 msgstr "अपुरे हक्क."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:220
 msgid "Invalid call to subprocess."
 msgstr "उपप्रक्रियेस अवैध कॉल."
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:222
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -285,59 +288,59 @@ msgstr ""
 "तुम्हास तुमचा शेल बदलण्याची संमती नाही.\n"
 "तुमच्या प्रणाली प्रशासकास संपर्क करा."
 
-#: ../../po/../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:225
 msgid "Out of memory."
 msgstr "स्मृती बाहेर."
 
-#: ../../po/../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:227
 msgid "The exec() call failed."
 msgstr "exec() कॉल अपयशी."
 
-#: ../../po/../userhelper-wrap.c:228
+#: ../../po/../userhelper-wrap.c:229
 msgid "Failed to find selected program."
 msgstr "निवडलेला कार्यक्रम शोधण्यात अपयशी."
 
-#: ../../po/../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:232
 msgid "Request canceled."
 msgstr "विनंती रद्द."
 
-#: ../../po/../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:234
 msgid "Internal PAM error occured."
 msgstr "अंतर्गत PAM चूक उद्भवली."
 
-#: ../../po/../userhelper-wrap.c:235
+#: ../../po/../userhelper-wrap.c:236
 msgid "Unknown error."
 msgstr "अज्ञात चूक."
 
-#: ../../po/../userhelper-wrap.c:503
+#: ../../po/../userhelper-wrap.c:504
 msgid "Query"
 msgstr "प्रश्न"
 
-#: ../../po/../userhelper-wrap.c:580 ../../po/../userhelper-wrap.c:733
+#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
 msgid "Error"
 msgstr "चूक"
 
-#: ../../po/../userhelper-wrap.c:580
+#: ../../po/../userhelper-wrap.c:581
 msgid "Information"
 msgstr "माहिती"
 
-#: ../../po/../userhelper-wrap.c:725
+#: ../../po/../userhelper-wrap.c:724
 msgid "Placeholder text."
 msgstr "स्थानधारक पाठ."
 
-#: ../../po/../userhelper-wrap.c:783
+#: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "गुप्तशब्द बदलत आहे."
 
-#: ../../po/../userhelper-wrap.c:785
+#: ../../po/../userhelper-wrap.c:784
 msgid "Changing personal information."
 msgstr "वय्यक्तिक माहिती बदलत आहे."
 
-#: ../../po/../userhelper-wrap.c:788
+#: ../../po/../userhelper-wrap.c:787
 msgid "Changing login shell."
 msgstr "लॉगीन शेल बदलत आहे."
 
-#: ../../po/../userhelper-wrap.c:792
+#: ../../po/../userhelper-wrap.c:791
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -346,7 +349,7 @@ msgstr ""
 "तुम्ही \"%s\" चालवण्याचा प्रयत्न करत आहात जे प्रशासकीय अधिकारांपासून फायदेशीर असू \n"
 "शकते, परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper-wrap.c:794
+#: ../../po/../userhelper-wrap.c:793
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -355,7 +358,7 @@ msgstr ""
 "तुम्ही \"%s\" चालवण्याचा प्रयत्न करत आहात ज्यासाठी प्रशासकीय अधिकारांची\n"
 "आवश्यकता आहे, परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper-wrap.c:799
+#: ../../po/../userhelper-wrap.c:798
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -363,7 +366,7 @@ msgstr ""
 "तुम्ही एक आदेश चालवण्याचा प्रयत्न करत आहात जो प्रशासकीय अधिकारापासून फायदेशीर ठरू "
 "शकतो, परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper-wrap.c:801
+#: ../../po/../userhelper-wrap.c:800
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -371,31 +374,31 @@ msgstr ""
 "तुम्ही एक आदेश चालवण्याचा प्रयत्न करत आहात ज्यासाठी प्रशासकीय अधिकारांची आवश्यकता आहे, "
 "परंतु तसे करण्यास अधिक माहितीची गरज आहे."
 
-#: ../../po/../userhelper-wrap.c:811
+#: ../../po/../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "विशेषाधिकारांशिवाय चालवा(_R)"
 
-#: ../../po/../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:968
 #, c-format
 msgid "Pipe error.\n"
 msgstr "पाइप चूक.\n"
 
-#: ../../po/../userhelper-wrap.c:976
+#: ../../po/../userhelper-wrap.c:975
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() करू शकत नाही.\n"
 
-#: ../../po/../userhelper-wrap.c:1002
+#: ../../po/../userhelper-wrap.c:1001
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr " %s अक्षरसंच IO मार्गावर समर्थित करू शकत नाही: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1078 ../../po/../userhelper-wrap.c:1082
+#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() चूक.\n"
 
-#: ../../po/../userhelper-wrap.c:1094
+#: ../../po/../userhelper-wrap.c:1093
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() चूक, errno=%d\n"
@@ -516,4 +519,3 @@ msgstr "तुमचा लॉगीन गुप्तशब्द बदला
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "गुप्तशब्द"
-

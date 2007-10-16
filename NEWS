@@ -1,3 +1,7 @@
+1.93.1
+* Allow building with startup notification support without libwnck
+* Update translations
+
 1.93
 * Fix handling of PAM conversations with no questions
 
