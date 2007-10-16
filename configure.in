@@ -29,15 +29,13 @@ PKG_CHECK_MODULES([LIBGLADE], [libglade-2.0])
 PKG_CHECK_MODULES([LIBUSER], [libuser])
 AC_CACHE_CHECK([for startup notification], [mitr_cv_lib_sn],
 [mitr_cv_lib_sn=no
-if pkg-config libstartup-notification-1.0 && pkg-config libwnck-1.0 ; then
+if pkg-config libstartup-notification-1.0 ; then
   mitr_cv_lib_sn=yes
 fi])
 if test $mitr_cv_lib_sn = yes; then
-	PKG_CHECK_MODULES([SN_WNCK], [libstartup-notification-1.0 libwnck-1.0])
+	PKG_CHECK_MODULES([SN], [libstartup-notification-1.0])
 	AC_DEFINE([USE_STARTUP_NOTIFICATION], [1],
 		  [Define if consolehelper should interact with startup notification.])
-	AC_DEFINE([WNCK_I_KNOW_THIS_IS_UNSTABLE], [1],
-		  [Define if you want to use libwnck, even though it is not yet API-stabilized, because we need to use it.])
 	AC_DEFINE([SN_API_NOT_YET_FROZEN], [1],
 		  [Define if you want to use libsn, even though it is not yet API-stabilized, because we need to use it.])
 fi

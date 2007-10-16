@@ -32,7 +32,6 @@
 #include <gdk/gdkx.h>
 #ifdef USE_STARTUP_NOTIFICATION
 #include <libsn/sn.h>
-#include <libwnck/libwnck.h>
 #endif
 #include "userdialogs.h"
 #include "userhelper.h"
@@ -75,6 +74,7 @@ static char *sn_icon_name = NULL;
 static void
 trap_push(SnDisplay *display, Display *xdisplay)
 {
+	(void)xdisplay;
 	sn_display_error_trap_push(display);
 	gdk_error_trap_push();
 }
@@ -83,6 +83,7 @@ trap_push(SnDisplay *display, Display *xdisplay)
 static void
 trap_pop(SnDisplay *display, Display *xdisplay)
 {
+	(void)xdisplay;
 	gdk_error_trap_pop();
 	sn_display_error_trap_pop(display);
 }

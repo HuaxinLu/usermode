@@ -25,7 +25,7 @@ EXTRA_DIST = 	\
 SUBDIRS=po
 
 AM_CPPFLAGS = -DLOCALEDIR='"$(localedir)"'
-AM_CFLAGS = $(SN_WNCK_CFLAGS) $(LIBGLADE_CFLAGS) $(LIBUSER_CFLAGS)
+AM_CFLAGS = $(SN_CFLAGS) $(LIBGLADE_CFLAGS) $(LIBUSER_CFLAGS)
 BINDIR_CPPFLAGS = -DBINDIR='"$(bindir)"'
 PIXMAPDIR_CPPFLAGS = -DPIXMAPDIR='"$(pixmapdir)"'
 SBINDIR_CPPFLAGS = -DSBINDIR='"$(sbindir)"'
@@ -92,7 +92,7 @@ userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c \
 	userhelper-wrap.h
 userinfo_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS) $(SBINDIR_CPPFLAGS) \
 	-DPKGDATADIR='"$(pkgdatadir)"'
-userinfo_LDADD = $(SN_WNCK_LIBS) $(LIBGLADE_LIBS) $(EFENCE_LIBS)
+userinfo_LDADD = $(SN_LIBS) $(LIBGLADE_LIBS) $(EFENCE_LIBS)
 
 usermount_SOURCES = usermount.c userdialogs.c userdialogs.h
 usermount_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS)
@@ -101,7 +101,7 @@ usermount_LDADD = $(GTK_LIBS) -lblkid $(EFENCE_LIBS)
 userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h \
 	userhelper-wrap.c userhelper-wrap.h
 userpasswd_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS) $(SBINDIR_CPPFLAGS)
-userpasswd_LDADD = $(SN_WNCK_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
+userpasswd_LDADD = $(SN_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
 
 consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_CPPFLAGS = $(AM_CPPFLAGS) $(BINDIR_CPPFLAGS) $(SBINDIR_CPPFLAGS)
@@ -111,7 +111,7 @@ consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userdialogs.h \
 	userhelper-wrap.c userhelper-wrap.h
 consolehelper_gtk_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS) \
 	$(SBINDIR_CPPFLAGS)
-consolehelper_gtk_LDADD = $(SN_WNCK_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
+consolehelper_gtk_LDADD = $(SN_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
 
 pam_panel_icon_SOURCES = pam-panel-icon.c gsmclient.c gsmclient.h props.c \
 	props.h
