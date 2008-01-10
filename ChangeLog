@@ -1,3 +1,12 @@
+2008-01-10  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.8.in: Beautify.
+
+	* shvar.c (relative_to, svInclude): New functions.
+	(svOpenFile): Add support for including other files.
+	Original patch by Carlo de Wolf <cdewolf@redhat.com>.
+	* userhelper.8.in: Document wrapper configuration file format.
+
 2007-10-16  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.in: Release 1.93.1.
