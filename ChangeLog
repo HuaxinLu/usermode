@@ -1,5 +1,8 @@
 2008-01-10  Miloslav Trmač  <mitr@redhat.com>
 
+	* po/sr@latin.po: Rename from po/sr@Latn.po.
+	* po/LINGUAS: Update.
+
 	* userhelper.8.in: Beautify.
 
 	* shvar.c (relative_to, svInclude): New functions.
