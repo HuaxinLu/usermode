@@ -1,3 +1,7 @@
+1.94
+* Add support for including files from wrapper configuration files.  Original
+  patch by Carlo de Wolf <cdewolf@redhat.com>.
+
 1.93.1
 * Allow building with startup notification support without libwnck
 * Update translations
