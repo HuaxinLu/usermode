@@ -35,8 +35,55 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <syslog.h>
 
 #include "shvar.h"
+
+static gchar * G_GNUC_MALLOC
+relative_to(const char *old_path, const char *relative_path)
+{
+    gchar *slash, *path, *res;
+
+    slash = strrchr(old_path, '/');
+    if (slash == NULL)
+	return g_strdup(relative_path);
+    path = g_strndup(old_path, (slash + 1) - old_path);
+    res = g_strconcat(path, relative_path, NULL);
+    g_free(path);
+    return res;
+}
+
+static gboolean
+svInclude(shvarFile *s, const gchar *path)
+{
+    gboolean result;
+    shvarFile *child;
+    gchar *allocated_path;
+
+    if (path[0] != '/') {
+	allocated_path = relative_to(s->fileName, path);
+	path = allocated_path;
+    } else
+	allocated_path = NULL;
+
+    child = svNewFile(path);
+    if (child != NULL) {
+	GList *l;
+
+	for (l = child->lineList; l != NULL; l = l->next)
+	    s->lineList = g_list_append(s->lineList, g_strdup(l->data));
+	svCloseFile(child);
+
+	result = TRUE;
+    } else {
+	syslog(LOG_ERR, "Can't open file %s\n", path);
+	result = FALSE;
+    }
+
+    g_free(allocated_path);
+
+    return result;
+}
 
 /* Open the file <name>, returning a shvarFile on success and NULL on failure.
    Add a wrinkle to let the caller specify whether or not to create the file
@@ -68,6 +115,16 @@ svOpenFile(const char *name, gboolean create)
 
 	/* we'd use g_strsplit() here, but we want a list, not an array */
 	for(p = s->arena; (q = strchr(p, '\n')) != NULL; p = q + 1) {
+	    if (p[0] == '.' && p[1] == ' ') {
+		gchar *path;
+		gboolean ok;
+
+		path = g_strndup(p + 2, q - (p + 2));
+		ok = svInclude(s, path);
+		g_free(path);
+		if (ok == FALSE)
+		    goto bail;
+	    } else
 		s->lineList = g_list_append(s->lineList, g_strndup(p, q - p));
 	}
 
@@ -79,10 +136,7 @@ svOpenFile(const char *name, gboolean create)
     }
 
 bail:
-    if (s->fd != -1) close(s->fd);
-    if (s->arena) g_free (s->arena);
-    if (s->fileName) g_free (s->fileName);
-    g_free (s);
+    svCloseFile(s);
     return NULL;
 }
 

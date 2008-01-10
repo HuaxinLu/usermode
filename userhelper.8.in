@@ -1,4 +1,4 @@
-.\" Copyright (C) 1997, 1999, 2001, 2003, 2007 Red Hat, Inc.
+.\" Copyright (C) 1997, 1999, 2001, 2003, 2007, 2008 Red Hat, Inc.
 .\"
 .\" This is free software; you can redistribute it and/or modify it
 .\" under the terms of the GNU General Public License as published by
@@ -14,9 +14,9 @@
 .\" along with this program; if not, write to the Free Software
 .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 .\"
-.TH USERHELPER 8 "March 17 2007" "Red Hat, Inc."
+.TH USERHELPER 8 "January 8 2008" "Red Hat, Inc."
 .SH NAME
-userhelper \- A helper interface to pam.
+userhelper \- A helper interface to PAM.
 .SH SYNOPSIS
 .B userhelper
 [\ -t\ ] [\ -w\ prog\ args\ ] [\ -c\ ] [\ \-f\ full-name\ ] [\ \-o\ office\ ] [\ \-p\ office-phone\ ] [\ \-h\ home-phone\ ] [\ \-s\ shell\ ] [\ username \]
@@ -30,15 +30,15 @@ or
 .IR chsh (1).
 .PP
 This program provides a basic interface to change a user's password, gecos
-information, and shell.  The main differnce between this program and
-its traditional equivilents is that prompts are written to standard out
+information, and shell.  The main difference between this program and
+its traditional equivalents is that prompts are written to standard out
 to make it easy for a GUI wrapper to interface to it as a child process.
 .PP
 The output is in the form of:
 .TP
 <number> <string>
 .PP
-Where the number is the type of prompt returned from pamlib, and the
+Where the number is the type of prompt returned from libpam, and the
 string is the prompt to give the user.
 .PP
 The prompt numbers are as follows:
@@ -93,7 +93,7 @@ instead.
 .I -c 
 Change the current user's password.  Note that this option cannot be
 used with any of the other options.  This is due to the limitation in
-the interface to pamlib.
+the interface to libpam.
 .TP
 .I -f
 Specify a new Full Name.
@@ -109,7 +109,44 @@ Specify a new Home Phone.
 .TP
 .I -s
 Specify a new shell.
-.SH VARIABLES
+.SH WRAPPER CONFIGURATION
+The wrapper configuration file used with \fI-w\fP contains variable assignments
+and file inclusions.
+
+A file inclusion line has the following form:
+.RS
+.B . \fIpath\fR
+.RE
+(that is a dot and a space, followed by \fIpath\fR).
+If
+.I path
+is relative, it is interpreted relative to the directory containing the current
+file.
+The file inclusion line is interpreted by inserting contents of
+.I path
+to the current file.
+Nested file inclusions are possible,
+recursive file inclusion results in undefined behavior.
+
+A variable assignment line has the following form:
+.RS
+\fIname\fB=\fIvalue\fR
+.RE
+No additional white space is allowed.
+If
+.I value
+is surrounded by a matching pair of
+.B """"
+or
+.B '
+quotes, the quotes are removed;
+otherwise, the
+.B \e
+characters are removed, except that
+.B \e\e
+is replaced by a single \fB\e\fP.
+
+The following variables are recognized:
 .TP
 .I USER
 The name of the user userhelper should attempt to authenticate the invoking
@@ -146,7 +183,7 @@ Valid values are \fIyes\fP and \fIno\fP, with the default being \fIno\fP.
 .I KEEP_ENV_VARS
 A comma-separated list of names of environment variables that should be kept
 in the environment of the wrapped program.
-The environment is cleard by default
+The environment is cleared by default
 and only a few selected variables are kept in the environment
 if they do not contain any potentially dangerous substrings.
 .TP
@@ -208,7 +245,7 @@ Specifies the startup notification binary name used for startup notification.
 Specifies the startup notification icon name used for startup notification.
 
 .SH EXIT STATUS
-A non-zero exit status indicates an error occured.  Those errors are:
+A non-zero exit status indicates an error occurred.  Those errors are:
 .TP
 1
 The authentication passwords was incorrect.
@@ -227,7 +264,7 @@ Some system files are locked.
 User unknown.
 .TP
 6
-Insufficent rights.
+Insufficient rights.
 .TP
 7
 Invalid call to this program.
