@@ -1,5 +1,7 @@
 2008-02-24  Miloslav Trmač  <mitr@redhat.com>
 
+	* po/POTFILES.in: Add gsmclient.c.  Sort alphabetically.
+
 	* Makefile.am (HGTAG): Replace CVSTAG.
 	(tag, forcetag, archive): Update to use Mercurial.
 

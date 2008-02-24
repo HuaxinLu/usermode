@@ -1,15 +1,15 @@
-consolehelper.c
 consolehelper-nox.c
+consolehelper.c
 dummy.h
+gsmclient.c
 pam-panel-icon.c
 userdialogs.h
-userhelper.c
 userhelper-wrap.c
-userinfo.c
-usermount.c
+userhelper.c
 userhelper.h
-# files added by intltool-prepare
-usermode.glade
+userinfo.c
 userinfo.desktop.in
+usermode.glade
+usermount.c
 usermount.desktop.in
 userpasswd.desktop.in
