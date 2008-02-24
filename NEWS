@@ -1,3 +1,8 @@
+1.95
+* New home page at https://fedoraproject.org/usermode/ .
+* Correctly preserve exit code when SESSION=yes
+* Fix minor errors in the .desktop files
+
 1.94
 * Add support for including files from wrapper configuration files.  Original
   patch by Carlo de Wolf <cdewolf@redhat.com>.

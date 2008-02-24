@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-06-15 23:31+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
@@ -92,6 +92,11 @@ msgstr "login: "
 msgid "Password: "
 msgstr "Wachtwoord: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: connectie maken met de sessie-manager is mislukt\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -161,73 +166,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Instellen van IO channel nonblocking mislukt: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: connectie maken met de sessie-manager is mislukt\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "Instellen van 'standaard context' voor %s voor programma %s mislukt.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "Instellen van 'exec context' naar %s mislukt.\n"
-
-# more information is needed... vervangen door root-wachtwoord vereist
-# omdat dat, voor zover ik weet, het enige is dat benodigd is.
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
-"nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
-"benodigd zijn. Hiervoor is een root-wachtwoord vereist."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
-"nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
-"benodigd zijn. Hiervoor is een root-wachtwoord vereist."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "Authenticeren als \"%s\""
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "gebruikershelper moet setuid root zijn\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Niet in staat een grafisch venster te openen, en niet in staat de\n"
-"controlerende terminal te vinden.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -330,6 +271,11 @@ msgstr "Informatie"
 msgid "Placeholder text."
 msgstr "Vervangende tekst."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "Authenticeren als \"%s\""
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "Veranderen van wachtwoord."
@@ -406,6 +352,68 @@ msgstr "dup2()-fout.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-fout, foutnr=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "Instellen van 'standaard context' voor %s voor programma %s mislukt.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "Instellen van 'exec context' naar %s mislukt.\n"
+
+# more information is needed... vervangen door root-wachtwoord vereist
+# omdat dat, voor zover ik weet, het enige is dat benodigd is.
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
+"nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
+"benodigd zijn. Hiervoor is een root-wachtwoord vereist."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
+"nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
+"benodigd zijn. Hiervoor is een root-wachtwoord vereist."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "gebruikershelper moet setuid root zijn\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Niet in staat een grafisch venster te openen, en niet in staat de\n"
+"controlerende terminal te vinden.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -415,6 +423,38 @@ msgstr "Onverwacht argument"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "U bestaat niet.   Ga weg!.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "Over mijzelf"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Identiteitsgegevens veranderen"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "Volledige naam:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "Telefoonnummer privé:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "Login-shell:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "Telefoonnummer werk:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "Werk:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "Gebruikersinformatie"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -479,38 +519,6 @@ msgstr "Bestandssysteem"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Het apparaat '%s' kan niet worden geformatteerd."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "Volledige naam:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "Telefoonnummer privé:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "Login-shell:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "Telefoonnummer werk:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "Werk:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "Gebruikersinformatie"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Over mijzelf"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Identiteitsgegevens veranderen"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

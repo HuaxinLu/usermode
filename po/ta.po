@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-08-10 17:02+0530\n"
 "Last-Translator: I felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
@@ -104,6 +104,11 @@ msgstr "புகுபதிவு:"
 msgid "Password: "
 msgstr "கடவுச்சொல்:"
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: அமர்வு மேலாளருடன் இணைக்க முடியவில்லை\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -171,71 +176,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO தடம் தடுக்கப்படாமல் அமைக்க முடியவில்லை: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: அமர்வு மேலாளருடன் இணைக்க முடியவில்லை\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s நிரலுக்கு %s க்கு முன்னிருப்பு சூழலை அமைக்க முடியவில்லை.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "%s க்கு exec சூழல் அமைக்க முடியவில்லை.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"\"%s\" யால் நன்மை பெற நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
-"சில தகவல்கள் தேவைப்படுகிறது."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"\"%s\" தேவைப்படுத்தும் நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
-"சில தகவல்கள் தேவைப்படுகிறது."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"நிர்வாக உரிமைக்கு நன்மை பெற தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய "
-"இன்னும் சில தகவல்கள் தேவைப்படும்."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"நிர்வாக உரிமைக்கு தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் சில "
-"தகவல்கள் தேவைப்படும்."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "\"%s\" ஆக அங்கீகரிக்கிறது"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "பயனர் உதவியாளர் setuid rootஆக இருக்க வேண்டும்\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"வரைகலை சாளரத்தை திறக்க முடியவில்லை, மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
-"முடியவில்லை.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -337,6 +280,11 @@ msgstr "தகவல்"
 msgid "Placeholder text."
 msgstr "இடம்பிடிப்பு உரை."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "\"%s\" ஆக அங்கீகரிக்கிறது"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "கடவுச்சொல் மாற்றப்படுகிறது."
@@ -412,6 +360,66 @@ msgstr "dup2() பிழை.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() பிழை, errno=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "%s நிரலுக்கு %s க்கு முன்னிருப்பு சூழலை அமைக்க முடியவில்லை.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "%s க்கு exec சூழல் அமைக்க முடியவில்லை.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"\"%s\" யால் நன்மை பெற நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
+"சில தகவல்கள் தேவைப்படுகிறது."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"\"%s\" தேவைப்படுத்தும் நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
+"சில தகவல்கள் தேவைப்படுகிறது."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"நிர்வாக உரிமைக்கு நன்மை பெற தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய "
+"இன்னும் சில தகவல்கள் தேவைப்படும்."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"நிர்வாக உரிமைக்கு தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் சில "
+"தகவல்கள் தேவைப்படும்."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "பயனர் உதவியாளர் setuid rootஆக இருக்க வேண்டும்\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"வரைகலை சாளரத்தை திறக்க முடியவில்லை, மற்றும் கட்டுப்பாட்டு முனையத்தினை கண்டுபிடிக்க "
+"முடியவில்லை.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -421,6 +429,38 @@ msgstr "எதிர்பாராத அளவுரு"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "நீங்கள் இல்லை. வெளியே செல்லவும்.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "என்னை பற்றி"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "தனிப்பட்ட தகவலை மாற்றுகிறது"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "முழுப் பெயர்:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "வீட்டு தொலைபேசி எண்: "
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "புகுபதிவு ஷெல்:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "அலுவலக தொலைபேசி எண்: "
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "அலுவலகம்: "
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "பயனர் தகவல்"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -478,38 +518,6 @@ msgstr "கோப்பு முறைமை "
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "சாதனம் '%s' ஐ வடிவமைக்க முடியவில்லை."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "முழுப் பெயர்:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "வீட்டு தொலைபேசி எண்: "
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "புகுபதிவு ஷெல்:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "அலுவலக தொலைபேசி எண்: "
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "அலுவலகம்: "
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "பயனர் தகவல்"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "என்னை பற்றி"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "தனிப்பட்ட தகவலை மாற்றுகிறது"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

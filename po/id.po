@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-09-09 01:23+0700\n"
 "Last-Translator: Teguh DC <dheche@songolimo.net>\n"
 "Language-Team: Bahasa Indonesia <viribus@traderweb.net>\n"
@@ -107,6 +107,11 @@ msgstr "login: "
 msgid "Password: "
 msgstr "Password: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: gagal melakukan koneksi sesi manager\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -175,71 +180,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Gagal untuk menseting kanal IO nonblocking: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: gagal melakukan koneksi sesi manager\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "Tidak dapat men-set konteks default untuk %s untuk program %s.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "Tidak dapat set konteks exec untuk %s.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda mencoba menjalankan \"%s\" yang didapat dari kewenangan\n"
-"administratif, tapi diperlukan informasi lebih untuk melakukannya."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan\n"
-"administratif, tapi diperlukan informasi lebih untuk melakukannya."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda mencoba menjalankan sebuah perintah yang didapat dari \n"
-"kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Anda mencoba menjalankan sebuah perintah yang memerlukan \n"
-"kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "Otentikasi sebagai \"%s\""
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "userhelper harus setuid root\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Tidak dapat membuka jendela grafis, dan tidak dapat menemukan terminal "
-"pengontrol.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -341,6 +284,11 @@ msgstr "Informasi"
 msgid "Placeholder text."
 msgstr "Penempatan teks."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "Otentikasi sebagai \"%s\""
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "Ubah password."
@@ -416,6 +364,66 @@ msgstr "kesalahan dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "kesalahan execl(), errno=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "Tidak dapat men-set konteks default untuk %s untuk program %s.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "Tidak dapat set konteks exec untuk %s.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda mencoba menjalankan \"%s\" yang didapat dari kewenangan\n"
+"administratif, tapi diperlukan informasi lebih untuk melakukannya."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan\n"
+"administratif, tapi diperlukan informasi lebih untuk melakukannya."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang didapat dari \n"
+"kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang memerlukan \n"
+"kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "userhelper harus setuid root\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Tidak dapat membuka jendela grafis, dan tidak dapat menemukan terminal "
+"pengontrol.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -425,6 +433,38 @@ msgstr "Argumen yang tidak diharapkan"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Anda tidak ada.  Harap pergi.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "Tentang Diri Saya"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Ubah informasi pribadi"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "Nama Lengkap:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "Nomor Telepon Rumah:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "Login Shell:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "Nomor Telepon Kantor:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "Kantor:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "Informasi Pemakai"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -484,38 +524,6 @@ msgstr "Filesystem"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Perangkat '%s' tidak dapat diformat."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "Nama Lengkap:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "Nomor Telepon Rumah:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "Login Shell:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "Nomor Telepon Kantor:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "Kantor:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "Informasi Pemakai"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Tentang Diri Saya"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Ubah informasi pribadi"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

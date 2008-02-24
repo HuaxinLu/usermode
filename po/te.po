@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-09-21 15:13+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu\n"
@@ -95,6 +95,11 @@ msgstr "ప్రవేశం: "
 msgid "Password: "
 msgstr "అనుమతిపదం: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: సెషన్ నిర్వాహకుడికి అనుసంధించటంలో వైఫల్యం\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -161,69 +166,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO చానల్ నాన్ బ్లాకింగుని అమర్చటంలో వైఫల్యం: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: సెషన్ నిర్వాహకుడికి అనుసంధించటంలో వైఫల్యం\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s కోసం %s పరిక్రమం కోసం సిద్ధ సందర్భాన్ని అమర్చలేము.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "%s కోసం అధిక సందర్భాన్ని అమర్చలేము.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"మీరు \"%s\" ఉపయోగించటానికి ప్రయత్నిస్తున్నారు ఇవి నిర్వహణా\n"
-"అదనపు హక్కులనుండీ లాభాన్ని పొందవచ్చు, కానీ దాన్ని చేయటానికి అధిక సమాచారం కూడా అవసరంకావచ్చు."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"మీరు \"%s\" ఉపయోగించటానికి ప్రయత్నిస్తున్నారు వీటికి నిర్వహణా\n"
-"అదనపు హక్కులు కావలసి ఉంది, కానీ దాన్ని చేయటానికి అధిక సమాచారం కూడా అవసరంకావచ్చు."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"మీరు ఇప్పుడు నిర్వహణ అదనపు హక్కులనుండీ లాభాలను పొందే\n"
-"ఆదేశాన్ని ఉపయోగించటానికి ప్రయత్నిస్తున్నారు, దాన్ని చేయటానికి అదనపు సమాచారంకూడా అవసరంకావచ్చు."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"మీరు ఇప్పుడు నిర్వహణ అదనపు హక్కులనుండీ లాభాలు అవసరమయ్యే\n"
-"ఆదేశాన్ని ఉపయోగించటానికి ప్రయత్నిస్తున్నారు, దాన్ని చేయటానికి అదనపు సమాచారంకూడా అవసరంకావచ్చు."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "\"%s\" లా ప్రామాణీకరించండి"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "వినియోగదారుని సహాయకుడు తప్పక రూట్ అమర్చాలి\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "చిత్ర విండోని తెరవటానికి కుదరదు, మరియూ టెర్మినలుని నియంత్రణను కనుగొనటం కుదరదు.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -325,6 +270,11 @@ msgstr "సమాచారం"
 msgid "Placeholder text."
 msgstr "స్థాన యజమాని పాఠం."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "\"%s\" లా ప్రామాణీకరించండి"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "అనుమతిపదాన్ని మార్చండి."
@@ -400,6 +350,64 @@ msgstr "డప్2() దీషం.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() దోషం, errno=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "%s కోసం %s పరిక్రమం కోసం సిద్ధ సందర్భాన్ని అమర్చలేము.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "%s కోసం అధిక సందర్భాన్ని అమర్చలేము.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"మీరు \"%s\" ఉపయోగించటానికి ప్రయత్నిస్తున్నారు ఇవి నిర్వహణా\n"
+"అదనపు హక్కులనుండీ లాభాన్ని పొందవచ్చు, కానీ దాన్ని చేయటానికి అధిక సమాచారం కూడా అవసరంకావచ్చు."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"మీరు \"%s\" ఉపయోగించటానికి ప్రయత్నిస్తున్నారు వీటికి నిర్వహణా\n"
+"అదనపు హక్కులు కావలసి ఉంది, కానీ దాన్ని చేయటానికి అధిక సమాచారం కూడా అవసరంకావచ్చు."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"మీరు ఇప్పుడు నిర్వహణ అదనపు హక్కులనుండీ లాభాలను పొందే\n"
+"ఆదేశాన్ని ఉపయోగించటానికి ప్రయత్నిస్తున్నారు, దాన్ని చేయటానికి అదనపు సమాచారంకూడా అవసరంకావచ్చు."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"మీరు ఇప్పుడు నిర్వహణ అదనపు హక్కులనుండీ లాభాలు అవసరమయ్యే\n"
+"ఆదేశాన్ని ఉపయోగించటానికి ప్రయత్నిస్తున్నారు, దాన్ని చేయటానికి అదనపు సమాచారంకూడా అవసరంకావచ్చు."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "వినియోగదారుని సహాయకుడు తప్పక రూట్ అమర్చాలి\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "చిత్ర విండోని తెరవటానికి కుదరదు, మరియూ టెర్మినలుని నియంత్రణను కనుగొనటం కుదరదు.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -409,6 +417,38 @@ msgstr "ఊహించని వాదన"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "మీరు బయటకు రావద్దు.  కొనసాగండి.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "నా గురించి"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "వ్యక్తిగత సమాచారం మార్చు"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "పూర్తి పేరు:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "ఇంటి ఫోను నెంబరు:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "షల్ ప్రవేశమ్:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "కార్యాలయ ఫోను నంబరు:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "కార్యాలయం:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "వినియోగదారుని సమాచారం"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -468,38 +508,6 @@ msgstr "ఫైళ్లవ్యవస్థ"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "ఈ '%s' సాధనం ఆకృతీకరించబడదు."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "పూర్తి పేరు:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "ఇంటి ఫోను నెంబరు:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "షల్ ప్రవేశమ్:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "కార్యాలయ ఫోను నంబరు:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "కార్యాలయం:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "వినియోగదారుని సమాచారం"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "నా గురించి"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "వ్యక్తిగత సమాచారం మార్చు"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-07-15 15:45+0900\n"
 "Last-Translator: Hyu_gabaru Ryu_ichi <hyu_gabaru@yahoo.co.jp>\n"
 "Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
@@ -95,6 +95,11 @@ msgstr "ログイン: "
 msgid "Password: "
 msgstr "パスワード: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: セッションマネージャーの接続に失敗しました\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -163,72 +168,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO チャンネルのブロック解除に失敗しました: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: セッションマネージャーの接続に失敗しました\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s にプログラム %s のデフォルト権限を与えられませんでした。\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "%s に実行権限を与えられませんでした。\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
-" 実行するには追加情報が必要です。"
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
-" 実行するには追加情報が必要です。"
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
-" 実行するには追加情報が必要です。"
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行する"
-"には\n"
-"追加情報が必要です。"
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "\"%s\" として認証しています"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "ユーザーヘルパーは root に setuid されていなければなりません\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
-"せんでした。\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -330,6 +272,11 @@ msgstr "情報"
 msgid "Placeholder text."
 msgstr "プレースホルダテキスト。"
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "\"%s\" として認証しています"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "パスワードを変更中。"
@@ -405,6 +352,67 @@ msgstr "dup2()エラー。\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "%s にプログラム %s のデフォルト権限を与えられませんでした。\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "%s に実行権限を与えられませんでした。\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行する"
+"には\n"
+"追加情報が必要です。"
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "ユーザーヘルパーは root に setuid されていなければなりません\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
+"せんでした。\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -414,6 +422,38 @@ msgstr "予期しない引数"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "あなたは存在しません。続けられません。\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "ユーザーの個人情報"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "個人情報を変更"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "フルネーム:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "自宅の電話番号:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "ログインシェル:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "オフィスの電話番号:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "オフィス:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "ユーザー情報"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -473,38 +513,6 @@ msgstr "ファイルシステム"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "デバイス '%s' がフォーマットされていません。"
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "フルネーム:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "自宅の電話番号:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "ログインシェル:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "オフィスの電話番号:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "オフィス:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "ユーザー情報"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "ユーザーの個人情報"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "個人情報を変更"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

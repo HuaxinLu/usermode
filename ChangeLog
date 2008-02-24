@@ -1,5 +1,8 @@
 2008-02-25  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.in: Version 1.95.
+	* NEWS: Update.
+
 	* userhelper.c (wrap): Fix returning the exit code of the child process
 	if (session).
 

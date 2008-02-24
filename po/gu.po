@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-07-31 15:27+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
@@ -104,6 +104,11 @@ msgstr "પ્રવેશો: "
 msgid "Password: "
 msgstr "પાસવર્ડ: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: સત્ર વ્યવસ્થાપક સાથે સંપર્ક કરવામાં નિષ્ફળ\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -170,69 +175,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO channel nonblocking સુયોજિત કરવામાં નિષ્ફળ: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: સત્ર વ્યવસ્થાપક સાથે સંપર્ક કરવામાં નિષ્ફળ\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s માટે કાર્યક્રમ %s માટે મૂળભૂત સંદર્ભ સુયોજિત કરી શક્યા નહિં.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "ચલાવોને %s સાથે સુયોજિત કરી શક્યા નથી.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
-"માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
-"જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
-"માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
-"જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "\"%s\" તરીકે સત્તાધિકારીત કરી રહ્યા છીએ"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "વપરાશકર્તા મદદગાર માટે uid રુટ જ સુયોજિત હોવું જોઈએ\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "ગ્રાફિકવાળી વિન્ડો ખોલવા સમર્થ નથી, અને નિયંત્રક ટર્મિનલ ખોલવામાં અસમર્થ.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -334,6 +279,11 @@ msgstr "જાણકારી"
 msgid "Placeholder text."
 msgstr "જગ્યા વાપરનાર લખાણ."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "\"%s\" તરીકે સત્તાધિકારીત કરી રહ્યા છીએ"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "પાસવર્ડો બદલી રહ્યા છીએ."
@@ -409,6 +359,64 @@ msgstr "dup2() ભૂલ.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ભૂલ, ભૂલ ક્રમાંક=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "%s માટે કાર્યક્રમ %s માટે મૂળભૂત સંદર્ભ સુયોજિત કરી શક્યા નહિં.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "ચલાવોને %s સાથે સુયોજિત કરી શક્યા નથી.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
+"માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"તમે \"%s\" ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
+"જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જે સંચાલન\n"
+"માટે લાભદાયક છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"તમે આદેશ ચલાવવાનું પસંદ કરવા જઈ રહ્યા છીએ કે જેના માટે સંચાલન\n"
+"જાણકારી જરુરી છે, પરંતુ એમ કરવા માટે વધુ જાણકારી જરુરી છે."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "વપરાશકર્તા મદદગાર માટે uid રુટ જ સુયોજિત હોવું જોઈએ\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "ગ્રાફિકવાળી વિન્ડો ખોલવા સમર્થ નથી, અને નિયંત્રક ટર્મિનલ ખોલવામાં અસમર્થ.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -418,6 +426,38 @@ msgstr "અનિચ્છનિય દલીલ"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "તમે અસ્તિત્વમાં નથી.  દૂર જતા રહો.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "મારા વિશે"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "ખાનગી જાણકારી બદલો"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "પુરુ નામ:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "ઘરનો ફોન નંબર:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "પ્રવેશ શેલ:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "ઓફિસ ફોન નંબર:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "ઓફિસ:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "વપરાશકર્તા જાણકારી"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -477,38 +517,6 @@ msgstr "ફાઈલસિસ્ટમ"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "ઉપકરણ '%s' નું બંધારણ ઘડી શકતા નથી."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "પુરુ નામ:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "ઘરનો ફોન નંબર:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "પ્રવેશ શેલ:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "ઓફિસ ફોન નંબર:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "ઓફિસ:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "વપરાશકર્તા જાણકારી"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "મારા વિશે"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "ખાનગી જાણકારી બદલો"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

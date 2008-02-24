@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-06-12 10:55+1000\n"
 "Last-Translator: PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>\n"
 "Language-Team:  <de@li.org>\n"
@@ -99,6 +99,11 @@ msgstr "Login: "
 msgid "Password: "
 msgstr "Passwort: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: konnte nicht mit Session-Manager verbinden\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -167,72 +172,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Fehler beim Setzen des E/A-Kanals auf nicht-blockierend: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: konnte nicht mit Session-Manager verbinden\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
-"Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "Konnte exec-Kontext nicht auf %s setzen.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
-"nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
-"erfordert. Dazu werden jedoch weitere Informationen benötigt."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
-"nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
-"erfordert. Dazu werden jedoch weitere Informationen benötigt."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "Als \"%s\" authentifizieren"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "userhelper muss Setuid-Root sein\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
-"gefunden werden.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -335,6 +277,11 @@ msgstr "Informationen"
 msgid "Placeholder text."
 msgstr "Platzhalter-Text."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "Als \"%s\" authentifizieren"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "Das Passwort ändern."
@@ -410,6 +357,67 @@ msgstr "dup2()-Fehler.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-Fehler, errno=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr ""
+"Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "Konnte exec-Kontext nicht auf %s setzen.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
+"nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
+"erfordert. Dazu werden jedoch weitere Informationen benötigt."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
+"nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
+"erfordert. Dazu werden jedoch weitere Informationen benötigt."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "userhelper muss Setuid-Root sein\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht "
+"gefunden werden.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -419,6 +427,38 @@ msgstr "Unerwartetes Argument"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Benutzer-ID existiert nicht.  Verlassen Sie den Bereich.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "Über mich"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Persönliche Informationen ändern."
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "Vollständiger Name:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "Telefonnummer Privat:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "Login-Shell:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "Telefonnummer Büro:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "Büro:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "Benutzerinformationen"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -478,38 +518,6 @@ msgstr "Dateisystem"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Das Gerät '%s' kann nicht formatiert werden."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "Vollständiger Name:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "Telefonnummer Privat:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "Login-Shell:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "Telefonnummer Büro:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "Büro:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "Benutzerinformationen"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Über mich"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Persönliche Informationen ändern."
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

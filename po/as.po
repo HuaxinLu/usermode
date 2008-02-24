@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-06-26 16:02+0530\n"
 "Last-Translator: Amitakhya Phukan <aphukan@redhat.com>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -93,6 +93,11 @@ msgstr "প্ৰৱেশ:"
 msgid "Password: "
 msgstr "গুপ্তশব্দ:"
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: অধিবেশন পৰিচালকলৈ সংযোগ কৰাত অক্ষম\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -160,71 +165,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO প্ৰবাহ প্ৰতিবন্ধনোহোৱালৈ নিৰ্দ্দিষ্ট কৰাত অক্ষম: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: অধিবেশন পৰিচালকলৈ সংযোগ কৰাত অক্ষম\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "কাৰ্য্যক্ৰম %s ৰ বাবে অবিকল্পিত পৃষ্ঠভূমি %s নিৰ্দ্দিষ্ট কৰিব নোৱাৰিলো ।\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "exec পৃষ্ঠভূমি %s লৈ নিৰ্দ্দিষ্ট কৰিব নোৱাৰিলো ।\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব "
-"পাৰে ,\n"
-"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন,\n"
-"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব "
-"পাৰে ,\n"
-"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন\n"
-"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "\"%s\" হিচাপে প্ৰমাণীকৰণ কৰা হৈছে"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "userhelper ৰূট setuid ত হ'ব লাগে\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "চিত্ৰালকিত পৰ্দ্দা খুলিব পৰা ন'গ'ল, আৰু নিয়ন্ত্ৰক টাৰ্মিনেল পোৱা ন'গ'ল ।\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -326,6 +269,11 @@ msgstr "তথ্য"
 msgid "Placeholder text."
 msgstr "অজ্ঞাত মান(Placeholder)ৰ লিপি ।"
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "\"%s\" হিচাপে প্ৰমাণীকৰণ কৰা হৈছে"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "গুপ্তশব্দ সলনি কৰা হৈছে ।"
@@ -401,6 +349,66 @@ msgstr "dup2() ভুল ।\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ভুল, ভুল সংখ্যা=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "কাৰ্য্যক্ৰম %s ৰ বাবে অবিকল্পিত পৃষ্ঠভূমি %s নিৰ্দ্দিষ্ট কৰিব নোৱাৰিলো ।\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "exec পৃষ্ঠভূমি %s লৈ নিৰ্দ্দিষ্ট কৰিব নোৱাৰিলো ।\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব "
+"পাৰে ,\n"
+"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"আপুনি \"%s\" চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন,\n"
+"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যিটো প্ৰশাসনিক অধিকাৰসমূহৰ পৰা উপকাৰিত হ'ব "
+"পাৰে ,\n"
+"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"আপুনি এটা আদেশ চলাবলৈ চেষ্টা কৰিছে যাৰ বাবে প্ৰশাসনিক অধিকাৰসমূহৰ প্ৰয়োজন\n"
+"কিন্তু ইয়াৰ বাবে আৰু তথ্যৰ প্ৰয়োজন ।"
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "userhelper ৰূট setuid ত হ'ব লাগে\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "চিত্ৰালকিত পৰ্দ্দা খুলিব পৰা ন'গ'ল, আৰু নিয়ন্ত্ৰক টাৰ্মিনেল পোৱা ন'গ'ল ।\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -410,6 +418,38 @@ msgstr "অপ্ৰত্যাসিত তৰ্ক"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "আপুনি বাস নকৰে । প্ৰস্থান কৰক ।\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "নিজৰ বিষয়ে"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "ব্যক্তিগত তথ্য সলনি কৰক"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "সম্পূৰ্ণ নাম:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "ঘৰৰ দূৰভাষ সংখ্যা:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "প্ৰৱেশৰ শ্বেল:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "কাৰ্য্যালয়ৰ দূৰভাষ সংখ্যা:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "ক্ৰ্য্যালয়:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "ব্যৱহাৰকৰ্তাৰ তথ্য"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -469,38 +509,6 @@ msgstr "নথি-পত্ৰৰ প্ৰণালী"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "'%s' যন্ত্ৰক পুনৰাকৃত কৰিব নোাৰি ।"
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "সম্পূৰ্ণ নাম:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "ঘৰৰ দূৰভাষ সংখ্যা:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "প্ৰৱেশৰ শ্বেল:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "কাৰ্য্যালয়ৰ দূৰভাষ সংখ্যা:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "ক্ৰ্য্যালয়:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "ব্যৱহাৰকৰ্তাৰ তথ্য"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "নিজৰ বিষয়ে"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "ব্যক্তিগত তথ্য সলনি কৰক"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

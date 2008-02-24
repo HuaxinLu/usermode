@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-08-03 11:04+1000\n"
 "Last-Translator: Eunju Kim <eukim@redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -93,6 +93,11 @@ msgstr "로그인: "
 msgid "Password: "
 msgstr "암호: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon : 세션 관리자와 연결하는데 실패했습니다\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -160,71 +165,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "입출력 채널 nonbloking 설정 실패: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon : 세션 관리자와 연결하는데 실패했습니다\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s 프로그램의 기본 문맥을 %s로 설정할 수 없습니다.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "exec 컨텍스트(context)를 %s로 설정할 수 없습니다.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, \n"
-"그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"관리자 권한이 필요한 \"%s\"(을)를 실행하셨습니다, \n"
-"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"관리자 권한으로 취할 수 있는 명령을 실행하셨습니다, \n"
-"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"관리자 권한이 필요한 명령을 실행하셨습니다, \n"
-"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "\"%s\"로 인증"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "userhelper는 setuid를 root로 해야 합니다\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
-"니다.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -326,6 +269,11 @@ msgstr "정보"
 msgid "Placeholder text."
 msgstr "Placeholder 형식의 text 입니다."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "\"%s\"로 인증"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "암호를 변경합니다."
@@ -401,6 +349,66 @@ msgstr "dup2() 오류입니다.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 오류입니다, 오류코드(errno)=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "%s 프로그램의 기본 문맥을 %s로 설정할 수 없습니다.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "exec 컨텍스트(context)를 %s로 설정할 수 없습니다.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, \n"
+"그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"관리자 권한이 필요한 \"%s\"(을)를 실행하셨습니다, \n"
+"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"관리자 권한으로 취할 수 있는 명령을 실행하셨습니다, \n"
+"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"관리자 권한이 필요한 명령을 실행하셨습니다, \n"
+"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "userhelper는 setuid를 root로 해야 합니다\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
+"니다.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -410,6 +418,38 @@ msgstr "예측하지 못한 인수"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "등록된 사용자가 아니군요.  이용하실 수 없습니다.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "개인 정보"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "개인 정보를 변경합니다"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "이름:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "집 전화 번호:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "로그인 쉘:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "사무실 전화 번호:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "사무실:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "사용자 정보"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -469,38 +509,6 @@ msgstr "파일시스템"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "'%s' 장치를 포맷할 수 없습니다."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "이름:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "집 전화 번호:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "로그인 쉘:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "사무실 전화 번호:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "사무실:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "사용자 정보"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "개인 정보"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "개인 정보를 변경합니다"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

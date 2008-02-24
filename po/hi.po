@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-08-01 12:30+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <hindi.sf.net>\n"
@@ -100,6 +100,11 @@ msgstr "लॉगिन: "
 msgid "Password: "
 msgstr "शब्दकूट: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: सत्र प्रबंधक से जोड़ने में विफल\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -165,69 +170,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO चैनल गैर ब्लॉकिंग सेट करने में विफल: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: सत्र प्रबंधक से जोड़ने में विफल\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "%s के लिये प्रोग्राम %s से मूलभूत संदर्भ सेट नहीं कर सका.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "%s से exec संदर्भ को व्यवस्थित नहीं कर सका.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"आप \"%s\" को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से चलते हैं,\n"
-"लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"आप \"%s\" को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार \n"
-"की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"आप एक निर्देश को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से चलता है,\n"
-"लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"आप एक निर्देश को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार\n"
-" की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "\"%s\" के रूप में प्रमाणित करें"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "यूजरहेल्पर को अवश्य ही setuid रूट होना चाहिए\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "आलेखी विंडो को खोलने में असमर्थ, और नियंत्रक टर्मिनल को खोजने में असमर्थ.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -329,6 +274,11 @@ msgstr "जानकारी"
 msgid "Placeholder text."
 msgstr "स्थानधारक पाठ्यांश."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "\"%s\" के रूप में प्रमाणित करें"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "शब्दकूट बदल रहा है."
@@ -404,6 +354,64 @@ msgstr "dup2() त्रुटि.\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() त्रुटि, errno=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "%s के लिये प्रोग्राम %s से मूलभूत संदर्भ सेट नहीं कर सका.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "%s से exec संदर्भ को व्यवस्थित नहीं कर सका.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"आप \"%s\" को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से चलते हैं,\n"
+"लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"आप \"%s\" को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार \n"
+"की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"आप एक निर्देश को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से चलता है,\n"
+"लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"आप एक निर्देश को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार\n"
+" की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "यूजरहेल्पर को अवश्य ही setuid रूट होना चाहिए\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "आलेखी विंडो को खोलने में असमर्थ, और नियंत्रक टर्मिनल को खोजने में असमर्थ.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -413,6 +421,38 @@ msgstr "अप्रत्याशित तर्क"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "आप मौजूद नहीं हैं. बाहर जाएँ.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "मेरे बारे में"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "निजी जानकारी बदलें."
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "पूरा नामः"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "निवास दूरभाष क्रमांकः"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "लॉगिन शैलः"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "कार्यालय दूरभाष क्रमांकः"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "कार्यालयः"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "उपयोक्ता जानकारी"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -472,38 +512,6 @@ msgstr "फाइलसिस्टम"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "युक्ति '%s' संरूपित नहीं किया जा सकता है."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "पूरा नामः"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "निवास दूरभाष क्रमांकः"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "लॉगिन शैलः"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "कार्यालय दूरभाष क्रमांकः"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "कार्यालयः"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "उपयोक्ता जानकारी"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "मेरे बारे में"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "निजी जानकारी बदलें."
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

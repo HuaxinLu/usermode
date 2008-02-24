@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode 1.81\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-10-04 15:57+0200\n"
 "Last-Translator: Espen Stefansen <espenas@gmail.com>\n"
 "Language-Team: Norwegian/Bokmaal <i18n-nb@lister.ping.uio.no>\n"
@@ -90,6 +90,11 @@ msgstr "Brukernavn: "
 msgid "Password: "
 msgstr "Passord: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: kunne ikke koble til sesjonshåndtereren\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -158,73 +163,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Kunne ikke sette IU-kanal til å ikke blokkere: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: kunne ikke koble til sesjonshåndtereren\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "Kunne ikke sette forvalgt kontekst for %s for program %s.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "Kunne ikke sette kjøringskonteksten til %s.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med\n"
-"rettigheter som superbruker, men du må oppgi mer informasjon for å kunne "
-"gjøre dette."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Du prøver å kjøre «%s» som krever rettigheter som superbruker, men du\n"
-"må oppgi mer informasjon for å kunne gjøre dette."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Du prøver å kjøre en kommando som med fordel kan kjøres med\n"
-"rettigheter som superbruker, men mer informasjon må oppgis for å kunne gjøre "
-"dette."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Du prøver å kjøre en kommando som krever rettigheter som superbruker\n"
-"men du må oppgi mer informasjon for å kunne gjøre dette."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "Autentiserer som «%s»"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "userhelper må være setuid root\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Kunne ikke åpne grafisk vindu; og er ute av stand til å finne en "
-"kontrollerende terminal.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -326,6 +267,11 @@ msgstr "Informasjon"
 msgid "Placeholder text."
 msgstr "Plassholdertekst"
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "Autentiserer som «%s»"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "Endre passord."
@@ -402,6 +348,68 @@ msgstr "feil ved kjøring av dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "execl() feil, errno=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "Kunne ikke sette forvalgt kontekst for %s for program %s.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "Kunne ikke sette kjøringskonteksten til %s.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Du prøver å kjøre «%s» og dette programmet kan med fordel kjøres med\n"
+"rettigheter som superbruker, men du må oppgi mer informasjon for å kunne "
+"gjøre dette."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Du prøver å kjøre «%s» som krever rettigheter som superbruker, men du\n"
+"må oppgi mer informasjon for å kunne gjøre dette."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"Du prøver å kjøre en kommando som med fordel kan kjøres med\n"
+"rettigheter som superbruker, men mer informasjon må oppgis for å kunne gjøre "
+"dette."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Du prøver å kjøre en kommando som krever rettigheter som superbruker\n"
+"men du må oppgi mer informasjon for å kunne gjøre dette."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "userhelper må være setuid root\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Kunne ikke åpne grafisk vindu; og er ute av stand til å finne en "
+"kontrollerende terminal.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -411,6 +419,38 @@ msgstr "Uventet argument"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Du eksisterer ikke. Ha deg vekk.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "Om meg selv"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Endre personlig informasjon"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "Fullt navn:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "Hjemmetelefon:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "Loginskall:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "Jobbtelefon:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "Kontor:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "Brukerinformasjon"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -470,38 +510,6 @@ msgstr "Filsystem"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Enhet «%s» kan ikke formatteres."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "Fullt navn:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "Hjemmetelefon:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "Loginskall:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "Jobbtelefon:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "Kontor:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "Brukerinformasjon"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Om meg selv"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Endre personlig informasjon"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"

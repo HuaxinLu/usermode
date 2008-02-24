@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-16 13:07+0200\n"
+"POT-Creation-Date: 2008-02-25 00:26+0100\n"
 "PO-Revision-Date: 2007-08-26 04:32+0100\n"
 "Last-Translator: Xavier Conde Rueda <xavi.conde@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
@@ -106,6 +106,11 @@ msgstr "entrada: "
 msgid "Password: "
 msgstr "Contrasenya: "
 
+#: ../../po/../gsmclient.c:362
+#, fuzzy, c-format
+msgid "%s failed to connect to the session manager: %s\n"
+msgstr "pam-panel-icon: ha fallat connectar al gestor de la sessió\n"
+
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
@@ -174,71 +179,9 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "No s'ha pogut establir el canal d'E/S a no blocar: %s\n"
 
 #: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: ha fallat connectar al gestor de la sessió\n"
-
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "No s'ha pogut establir el context de %s per al programa %s.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "No s'ha pogut definir el context exec com a %s.\n"
-
-#: ../../po/../userhelper.c:803
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Esteu intentant executar «%s», que pot aprofitar els privilegis\n"
-"d'administrador, però cal més informació per fer-ho."
-
-#: ../../po/../userhelper.c:805
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Esteu intentant executar «%s», que necessita privilegis\n"
-"d'administrador, però cal més informació per fer-ho."
-
-#: ../../po/../userhelper.c:809
-msgid ""
-"You are attempting to run a command which may benefit from\n"
-"administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Esteu intentant executar una ordre que pot aprofitar els privilegis\n"
-"d'administrador, però es necessita més informació per fer-ho."
-
-#: ../../po/../userhelper.c:811
-msgid ""
-"You are attempting to run a command which requires administrative\n"
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Esteu intentant executar una ordre que necessita privilegis\n"
-"d'administrador, però es necessita més informació per fer-ho."
-
-#: ../../po/../userhelper.c:821 ../../po/../userhelper-wrap.c:753
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr "S'està autenticant com a «%s»"
-
-#: ../../po/../userhelper.c:2368
-#, c-format
-msgid "userhelper must be setuid root\n"
-msgstr "L'userhelper ha de ser setuid root\n"
-
-#. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2466
-#, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"No s'ha pogut obrir la finestra gràfica, ni tampoc s'ha trobat cap terminal "
-"controlador.\n"
 
 #: ../../po/../userhelper-wrap.c:204
 msgid "Unknown exit code."
@@ -340,6 +283,11 @@ msgstr "Informació"
 msgid "Placeholder text."
 msgstr "Text del marcador."
 
+#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "S'està autenticant com a «%s»"
+
 #: ../../po/../userhelper-wrap.c:782
 msgid "Changing password."
 msgstr "S'està canviant la contrasenya."
@@ -415,6 +363,66 @@ msgstr "Error del dup2().\n"
 msgid "execl() error, errno=%d\n"
 msgstr "Error de l'execl(), errno=%d\n"
 
+#: ../../po/../userhelper.c:201
+#, c-format
+msgid "Could not set default context for %s for program %s.\n"
+msgstr "No s'ha pogut establir el context de %s per al programa %s.\n"
+
+#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
+#, c-format
+msgid "Could not set exec context to %s.\n"
+msgstr "No s'ha pogut definir el context exec com a %s.\n"
+
+#: ../../po/../userhelper.c:803
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar «%s», que pot aprofitar els privilegis\n"
+"d'administrador, però cal més informació per fer-ho."
+
+#: ../../po/../userhelper.c:805
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar «%s», que necessita privilegis\n"
+"d'administrador, però cal més informació per fer-ho."
+
+#: ../../po/../userhelper.c:809
+#, c-format
+msgid ""
+"You are attempting to run a command which may benefit from\n"
+"administrative privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar una ordre que pot aprofitar els privilegis\n"
+"d'administrador, però es necessita més informació per fer-ho."
+
+#: ../../po/../userhelper.c:811
+#, c-format
+msgid ""
+"You are attempting to run a command which requires administrative\n"
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Esteu intentant executar una ordre que necessita privilegis\n"
+"d'administrador, però es necessita més informació per fer-ho."
+
+#: ../../po/../userhelper.c:2372
+#, c-format
+msgid "userhelper must be setuid root\n"
+msgstr "L'userhelper ha de ser setuid root\n"
+
+#. FIXME: print a warning here?
+#: ../../po/../userhelper.c:2470
+#, c-format
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"No s'ha pogut obrir la finestra gràfica, ni tampoc s'ha trobat cap terminal "
+"controlador.\n"
+
 #: ../../po/../userinfo.c:370
 #, c-format
 msgid "Unexpected argument"
@@ -424,6 +432,38 @@ msgstr "No s'esperava l'argument"
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Vostè no existeix. Vagi-se'n.\n"
+
+#: ../userinfo.desktop.in.h:1
+msgid "About Myself"
+msgstr "Quant a Myself"
+
+#: ../userinfo.desktop.in.h:2
+msgid "Change personal information"
+msgstr "Canvieu la informació personal"
+
+#: ../usermode.glade.h:1
+msgid "Full Name:"
+msgstr "Nom complet:"
+
+#: ../usermode.glade.h:2
+msgid "Home Phone Number:"
+msgstr "Número de telèfon de casa:"
+
+#: ../usermode.glade.h:3
+msgid "Login Shell:"
+msgstr "Intèrpret d'ordres:"
+
+#: ../usermode.glade.h:4
+msgid "Office Phone Number:"
+msgstr "Número de telèfon de la feina:"
+
+#: ../usermode.glade.h:5
+msgid "Office:"
+msgstr "Feina:"
+
+#: ../usermode.glade.h:6
+msgid "User Information"
+msgstr "Informació de l'usuari"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -484,38 +524,6 @@ msgstr "Sistema de fitxers"
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "No es pot formatar el dispositiu «%s»."
-
-#: ../usermode.glade.h:1
-msgid "Full Name:"
-msgstr "Nom complet:"
-
-#: ../usermode.glade.h:2
-msgid "Home Phone Number:"
-msgstr "Número de telèfon de casa:"
-
-#: ../usermode.glade.h:3
-msgid "Login Shell:"
-msgstr "Intèrpret d'ordres:"
-
-#: ../usermode.glade.h:4
-msgid "Office Phone Number:"
-msgstr "Número de telèfon de la feina:"
-
-#: ../usermode.glade.h:5
-msgid "Office:"
-msgstr "Feina:"
-
-#: ../usermode.glade.h:6
-msgid "User Information"
-msgstr "Informació de l'usuari"
-
-#: ../userinfo.desktop.in.h:1
-msgid "About Myself"
-msgstr "Quant a Myself"
-
-#: ../userinfo.desktop.in.h:2
-msgid "Change personal information"
-msgstr "Canvieu la informació personal"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
