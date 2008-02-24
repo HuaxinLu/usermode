@@ -2243,7 +2243,11 @@ wrap(const char *user, const char *program,
 		}
 
 		pam_end(data->pamh, PAM_SUCCESS);
-		exit(status);
+		if (WIFEXITED(status))
+			exit(WEXITSTATUS(status));
+		if (WIFSIGNALED(status))
+			exit(WTERMSIG(status) + 128);
+		exit(255);
 	} else {
 		const char *cmdline;
 

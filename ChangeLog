@@ -1,5 +1,8 @@
 2008-02-25  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (wrap): Fix returning the exit code of the child process
+	if (session).
+
 	* README: Add some content.
 
 	* userinfo.desktop.in (Icon)
