@@ -1,4 +1,17 @@
+2008-02-25  Miloslav Trmač  <mitr@redhat.com>
+
+	* userinfo.desktop.in (Icon)
+	* usermount.desktop.in (Icon)
+	* userpasswd.desktop.in (Icon): Remove extension from the icon name
+	to allow non-PNG themes.
+
+	* userinfo.desktop.in (Encoding)
+	* usermount.desktop.in (Encoding)
+	* userpasswd.desktop.in (Encoding): Remove (the item is obsolete).
+
 2008-02-24  Miloslav Trmač  <mitr@redhat.com>
+
+	* userinfo.desktop.in (Categories): Add missing trailing semicolon.
 
 	* po/POTFILES.in: Add gsmclient.c.  Sort alphabetically.
 

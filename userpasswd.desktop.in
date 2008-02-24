@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 _Name=Password
 _Comment=Change your login password
 Exec=userpasswd
 Terminal=false
 Type=Application
-Icon=password.png
+Icon=password
 Categories=X-Red-Hat-Base;X-GNOME-PersonalSettings;Settings;

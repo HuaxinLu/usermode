@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 _Name=About Myself
 _Comment=Change personal information
 Exec=userinfo
 Terminal=false
 Type=Application
-Icon=user_icon.png
-Categories=Settings;X-GNOME-PersonalSettings
+Icon=user_icon
+Categories=Settings;X-GNOME-PersonalSettings;

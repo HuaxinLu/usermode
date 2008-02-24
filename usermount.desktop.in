@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 _Name=Disk Management
 _Comment=Mount and unmount filesystems
 Exec=usermount
 Terminal=false
 Type=Application
-Icon=disks.png
+Icon=disks
 Categories=X-Red-Hat-Base;System;
