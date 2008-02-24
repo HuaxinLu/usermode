@@ -1,5 +1,7 @@
 2008-02-25  Miloslav Trmač  <mitr@redhat.com>
 
+	* README: Add some content.
+
 	* userinfo.desktop.in (Icon)
 	* usermount.desktop.in (Icon)
 	* userpasswd.desktop.in (Icon): Remove extension from the icon name
