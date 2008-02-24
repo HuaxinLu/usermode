@@ -1,3 +1,8 @@
+2008-02-24  Miloslav Trmač  <mitr@redhat.com>
+
+	* Makefile.am (HGTAG): Replace CVSTAG.
+	(tag, forcetag, archive): Update to use Mercurial.
+
 2008-01-10  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.in: Release 1.94.
