@@ -1,13 +1,14 @@
 # translation of pl.po to Polish
 # Tom Berner <tom@man.lodz.pl>, 2004.
+# Piotr Drąg <piotrdrag@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-25 00:26+0100\n"
-"PO-Revision-Date: 2007-06-12 00:20+0200\n"
-"Last-Translator: Tom Berner <tom@man.lodz.pl>\n"
+"PO-Revision-Date: 2008-02-25 02:04+0200\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,9 +90,9 @@ msgid "Password: "
 msgstr "Hasło: "
 
 #: ../../po/../gsmclient.c:362
-#, fuzzy, c-format
+#, c-format
 msgid "%s failed to connect to the session manager: %s\n"
-msgstr "pam-panel-icon: połączenie się z menedżerem sesji nie powiodło się\n"
+msgstr "Połączenie %s z menedżerem sesji nie powiodło się: %s\n"
 
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
