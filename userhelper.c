@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1997-2003, 2007 Red Hat, Inc.  All rights reserved.
+ * Copyright (C) 1997-2003, 2007, 2008 Red Hat, Inc.  All rights reserved.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -47,9 +47,6 @@
 #include <selinux/selinux.h>
 #include <selinux/flask.h>
 #include <selinux/av_permissions.h>
-
-static gboolean selinux_enabled = FALSE;
-
 #endif
 
 #include "shvar.h"
@@ -110,198 +107,7 @@ static int checkAccess(unsigned int selaccess) {
   }
   return status;
 }
-
-/*
- * get_init_context()
- *
- * Read the name of a context from the given file.
- *
- * in:		The name of a file.
- * out:		The CONTEXT name listed in the file.
- * return:	0 on success, -1 on failure.
- */
-static int
-get_init_context(const char *context_file, security_context_t *context)
-{
-	FILE *fp;
-	char buf[LINE_MAX], *bufp;
-
-	fp = fopen(context_file, "r");
-	if (fp == NULL) {
-		return -1;
-	}
-
-	while ((fgets(buf, sizeof(buf), fp)) != NULL) {
-		size_t buf_len;
-
-		buf_len = strlen(buf);
-
-		/* trim off terminating newline */
-		if (buf_len > 0 && buf[buf_len - 1] == '\n') {
-			buf_len--;
-			buf[buf_len] = '\0';
-		}
-
-		/* trim off terminating whitespace */
-		while ((buf_len > 0) && (g_ascii_isspace(buf[buf_len - 1]))) {
-			buf[buf_len - 1] = '\0';
-			buf_len--;
-		}
-
-		/* skip initial whitespace */
-		bufp = buf;
-		while ((bufp < buf + sizeof(buf)) &&
-		       (*bufp != '\0') &&
-		       g_ascii_isspace(*bufp)) {
-			bufp++;
-		}
-
-		if (*bufp != '\0') {
-			*context = strdup(bufp);
-			if (*context == NULL) {
-				goto out;
-			}
-			fclose(fp);
-			return 0;
-		}
-	}
-out:
-	fclose(fp);
-	errno = EBADF;
-	return -1;
-}
-
-/*
- * setup_selinux_exec()
- *
- * Set the new context to be transitioned to after the next exec(), or exit.
- *
- * in:		The context to transition from, a path name
- * out:		nothing
- * return:	0 on success, -1 on failure.
- */
-static int
-setup_selinux_exec(security_context_t from_context, const char *filename)
-{
-	security_context_t con = NULL; /* our target security context */
-	security_context_t fcon = NULL;
-	int status;
-
-	if (getfilecon(filename, &fcon) < 0) {
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: unable to get context for %s\n", filename);
-#endif
-		goto err;
-	}
-
-	status = security_compute_create(from_context, fcon, SECCLASS_PROCESS,
-					 &con);
-	if (status != 0) {
-		syslog(LOG_NOTICE,
-		       _("Could not set default context for %s for program %s.\n"),
-		       from_context, fcon);
-		freecon(fcon);
-		goto err;
-	}
-	freecon(fcon);
-#ifdef DEBUG_USERHELPER
-	g_print("userhelper: exec \"%s\" with context %s\n", filename, con);
-#endif
-	syslog(LOG_NOTICE, "running '%s' with context %s\n", filename, con);
-	if (setexeccon(con) < 0) {
-		syslog(LOG_NOTICE, _("Could not set exec context to %s.\n"),
-		       con);
-		fprintf(stderr, _("Could not set exec context to %s.\n"), con);
-		freecon(con);
-		goto err;
-	}
-	freecon(con);
-	return 0;
-
-err:
-	if (security_getenforce() > 0)
-		exit(ERR_UNK_ERROR);
-	return -1;
-}
 #endif /* WITH_SELINUX */
-
-/*
- * setup_selinux_root_exec()
- *
- * Set the new context to be transitioned to after the next exec(), or exit.
- *
- * in:		The name of a path
- * out:		nothing
- * return:	0 on success, -1 on failure.
- */
-static int
-setup_selinux_root_exec(const char *filename)
-{
-#if WITH_SELINUX
-	security_context_t def_context = NULL;
-	char context_file[PATH_MAX];
-	int ret;
-
-	if (!selinux_enabled)
-		return 0;
-
-	/* Assume userhelper's default context, if the context file
-	 * contains one.  Just in case policy changes, we read the
-	 * default context from a file instead of hard-coding it. */
-	snprintf(context_file, PATH_MAX, "%s/userhelper_context",
-		 selinux_contexts_path());
-
-	if (get_init_context(context_file, &def_context) != 0) {
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: i have def context\n");
-#endif
-		if (security_getenforce() > 0)
-			exit(ERR_UNK_ERROR);
-		return -1;
-	}
-	ret = setup_selinux_exec(def_context, filename);
-	freecon(def_context);
-	return ret;
-#else
-	return 0;
-#endif
-}
-
-/*
- * setup_selinux_user_exec()
- *
- * Set the new context to be transitioned to after the next exec(), or exit.
- *
- * in:		The name of a path
- * out:		nothing
- * return:	0 on success, -1 on failure.
- */
-static int
-setup_selinux_user_exec(const char *filename)
-{
-#if WITH_SELINUX
-	security_context_t prev_context = NULL; /* our original securiy context */
-	int ret;
-
-	if (!selinux_enabled)
-		return 0;
-
-	if (getprevcon(&prev_context) < 0) {
-#ifdef DEBUG_USERHELPER
-		g_print("userhelper: i have no name\n");
-#endif
-		if (security_getenforce() > 0)
-			exit(ERR_UNK_ERROR);
-		return -1;
-	}
-
-	ret = setup_selinux_exec(prev_context, filename);
-	freecon(prev_context);
-	return ret;
-#else
-	return 0;
-#endif
-}
 
 /* Exit, returning the proper status code based on a PAM error code. */
 static int G_GNUC_NORETURN
@@ -2099,7 +1905,6 @@ wrap(const char *user, const char *program,
 				       data->sn_id, 1);
 			}
 #endif
-			setup_selinux_user_exec(constructed_path);
 			execv(constructed_path, argv + optind - 1);
 			pipe_conv_exec_fail(conv);
 			exit(ERR_EXEC_FAILED);
@@ -2207,7 +2012,6 @@ wrap(const char *user, const char *program,
 				       data->sn_id, 1);
 			}
 #endif
-			setup_selinux_root_exec(constructed_path);
 			cmdline = construct_cmdline(constructed_path,
 						    argv + optind - 1);
 #ifdef DEBUG_USERHELPER
@@ -2282,7 +2086,6 @@ wrap(const char *user, const char *program,
 			setenv("DESKTOP_STARTUP_ID", data->sn_id, 1);
 		}
 #endif
-		setup_selinux_root_exec(constructed_path);
 		cmdline = construct_cmdline(constructed_path,
 					    argv + optind - 1);
 #ifdef DEBUG_USERHELPER
@@ -2363,10 +2166,6 @@ main(int argc, char **argv)
 	bindtextdomain(PACKAGE, LOCALEDIR);
 	textdomain(PACKAGE);
 	openlog("userhelper", LOG_PID, LOG_AUTHPRIV);
-
-#ifdef WITH_SELINUX
-	selinux_enabled = (is_selinux_enabled() > 0);
-#endif
 
 	if (geteuid() != 0) {
 		fprintf(stderr, _("userhelper must be setuid root\n"));
@@ -2509,7 +2308,7 @@ main(int argc, char **argv)
 			else
 			  perm = PASSWD__CHFN;
 
-			if (selinux_enabled && 
+			if (is_selinux_enabled() > 0 &&
 			    checkAccess(perm)!= 0) {
 				security_context_t context = NULL;
 				getprevcon(&context);

@@ -1,3 +1,14 @@
+2008-02-29  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Version 1.96.
+	* NEWS: Update.
+
+	* userhelper.c (selinux_enabled, get_init_context, setup_selinux_exec)
+	(setup_selinux_root_exec, setup_selinux_user_exec): Remove.
+	(wrap): Don't override SELinux contexts of created processes.
+	(main): Inline the is_selinux_enabled() call now that selinux_enabled
+	is not used anywhere else.
+
 2008-02-25  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.in: Version 1.95.

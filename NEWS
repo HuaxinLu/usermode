@@ -1,3 +1,7 @@
+1.96
+* Remove code that overrides SELinux contexts of processes started by
+  userhelper.
+
 1.95
 * New home page at https://fedoraproject.org/usermode/ .
 * Correctly preserve exit code when SESSION=yes
