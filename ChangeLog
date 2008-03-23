@@ -1,3 +1,8 @@
+2008-03-23  Miloslav Trmač  <mitr@redhat.com>
+
+	* po/hu.po: Updated Hungarian translation by Lónyai Gergely
+	<aleph@mandriva.org>.
+
 2008-02-29  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.in: Version 1.96.
