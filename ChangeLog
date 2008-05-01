@@ -1,5 +1,8 @@
 2008-05-01  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.ac: Rename from configure.in.  Version 1.97.
+	* NEWS: Update.
+
 	* userhelper-wrap.c (userhelper_parse_childout): Don't interpret '_'
 	in prompts as mnemonic character markup.
 
