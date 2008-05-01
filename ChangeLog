@@ -1,3 +1,8 @@
+2008-05-01  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper-wrap.c (userhelper_parse_childout): Don't interpret '_'
+	in prompts as mnemonic character markup.
+
 2008-04-10  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.in: Version 1.96.1.

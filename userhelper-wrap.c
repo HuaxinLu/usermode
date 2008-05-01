@@ -502,14 +502,14 @@ userhelper_parse_childout(char *outline)
 		  "Error" or something else more meaningful. */
 		if (resp->title == NULL)
 			resp->title = _("Query");
-		/* Create a label to hold the prompt, and make a feeble gesture
-		   at being accessible :(. */
-		msg->label = gtk_label_new_with_mnemonic(_(prompt));
+		/* Create a label to hold the prompt */
+		msg->label = gtk_label_new(_(prompt));
 		gtk_label_set_line_wrap(GTK_LABEL(msg->label), TRUE);
 		gtk_misc_set_alignment(GTK_MISC(msg->label), 1.0, 0.5);
 
 		/* Create an entry field to hold the answer. */
 		msg->entry = gtk_entry_new();
+		/* Make a feeble gesture at being accessible. */
 		gtk_label_set_mnemonic_widget(GTK_LABEL(msg->label),
 					      GTK_WIDGET(msg->entry));
 		gtk_entry_set_visibility(GTK_ENTRY(msg->entry),
