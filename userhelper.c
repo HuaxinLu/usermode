@@ -1673,9 +1673,7 @@ wrap(const char *user, const char *program,
 	if (env_term) setenv("TERM", env_term, 1);
 
 	/* Set the PATH to a reasonaly safe list of directories. */
-	setenv("PATH",
-	       "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin:/root/bin",
-	       1);
+	setenv("PATH", "/usr/sbin:/usr/bin:/sbin:/bin:/root/bin", 1);
 
 	/* Set the LOGNAME and USER variables to the executing name. */
 	setenv("LOGNAME", "root", 1);

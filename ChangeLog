@@ -1,3 +1,8 @@
+2008-05-17  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.c (wrap): Remove /usr/X11R6/bin from the default path.
+	Original patch by Michel Samia <msamia@redhat.com>.
+
 2008-05-01  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Rename from configure.in.  Version 1.97.
