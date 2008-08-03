@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1997, 2001-2003, 2007 Red Hat, Inc.
+ * Copyright (C) 1997, 2001-2003, 2007, 2008 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -36,6 +36,12 @@
 #include "userdialogs.h"
 #include "userhelper.h"
 #include "userhelper-wrap.h"
+
+#ifdef DEBUG_USERHELPER
+#define debug_msg(...) fprintf(stderr, __VA_ARGS__)
+#else
+#define debug_msg(...) ((void)0)
+#endif
 
 #define  PAD 8
 #define  RESPONSE_FALLBACK 100
@@ -108,11 +114,9 @@ userhelper_startup_notification_launchee(const char *id)
 		ctx = sn_launchee_context_new(disp, screen, id);
 	}
 	if (ctx != NULL) {
-#ifdef DEBUG_USERHELPER
-		fprintf(stderr, "Completing startup notification for \"%s\".\n",
-			sn_launchee_context_get_startup_id(ctx) ?
-			sn_launchee_context_get_startup_id(ctx) : "?");
-#endif
+		debug_msg("Completing startup notification for \"%s\".\n",
+			  sn_launchee_context_get_startup_id(ctx) ?
+			  sn_launchee_context_get_startup_id(ctx) : "?");
 		sn_launchee_context_complete(ctx);
 		sn_launchee_context_unref(ctx);
 	}
@@ -157,10 +161,8 @@ userhelper_startup_notification_launcher(void)
 	if (sn_icon_name) {
 		sn_launcher_context_set_binary_name(ctx, sn_icon_name);
 	}
-#ifdef DEBUG_USERHELPER
-	fprintf(stderr, "Starting launch of \"%s\", id=\"%s\".\n",
-		sn_description ? sn_description : sn_name, sn_id);
-#endif
+	debug_msg("Starting launch of \"%s\", id=\"%s\".\n",
+		  sn_description ? sn_description : sn_name, sn_id);
 	sn_launcher_context_initiate(ctx, "userhelper", sn_name, CurrentTime);
 	if (sn_launcher_context_get_startup_id(ctx) != NULL) {
 		sn_id = g_strdup(sn_launcher_context_get_startup_id(ctx));
@@ -175,9 +177,7 @@ userhelper_startup_notification_launcher(void)
 void
 userhelper_main_quit(void)
 {
-#ifdef DEBUG_USERHELPER
-	fprintf(stderr, "Quitting main loop %d.\n", gtk_main_level());
-#endif
+	debug_msg("Quitting main loop %d.\n", gtk_main_level());
 	gtk_main_quit();
 }
 
@@ -239,13 +239,11 @@ userhelper_parse_exitstatus(int exitstatus)
 	GtkWidget *message_box;
 	size_t i, code;
 
-#ifdef DEBUG_USERHELPER
-	if (child_was_execed) {
-		fprintf(stderr, "Wrapped application returned exit status %d.\n", exitstatus);
-	} else {
-		fprintf(stderr, "Child returned exit status %d.\n", exitstatus);
-	}
-#endif
+	if (child_was_execed)
+		debug_msg("Wrapped application returned exit status %d.\n",
+			  exitstatus);
+	else
+		debug_msg("Child returned exit status %d.\n", exitstatus);
 
 	/* If the exit status came from what the child execed, then we don't
 	 * care about reporting it to the user. */
@@ -261,10 +259,7 @@ userhelper_parse_exitstatus(int exitstatus)
 		/* If entries past zero match this exit code, we'll use them. */
 		if (codes[i].code == exitstatus) {
 			code = i;
-#ifdef DEBUG_USERHELPER
-			fprintf(stderr, "Status is \"%s\".\n",
-				codes[i].message);
-#endif
+			debug_msg("Status is \"%s\".\n", codes[i].message);
 			break;
 		}
 	}
@@ -354,9 +349,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		/* The user wants to run unprivileged. */
 		static const unsigned char cmd[] = { UH_FALLBACK, '\n' };
 
-#ifdef DEBUG_USERHELPER
-		fprintf(stderr, "Responding FALLBACK.\n");
-#endif
+		debug_msg("Responding FALLBACK.\n");
 		write(childin[1], cmd, sizeof(cmd));
 		startup = TRUE;
 		break;
@@ -365,9 +358,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		/* The user doesn't want to run this after all. */
 		static const unsigned char cmd[] = { UH_CANCEL, '\n' };
 
-#ifdef DEBUG_USERHELPER
-		fprintf(stderr, "Responding CANCEL.\n");
-#endif
+		debug_msg("Responding CANCEL.\n");
 		write(childin[1], cmd, sizeof(cmd));
 		startup = FALSE;
 		break;
@@ -381,13 +372,11 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		     message_list = g_list_next(message_list)) {
 			struct message *m = ((struct message *)
 					     message_list->data);
-#ifdef DEBUG_USERHELPER
-			fprintf(stderr, "message %d\n", m->type);
-			if (GTK_IS_ENTRY(m->entry)) {
-				fprintf(stderr, "Responding `%s'.\n",
-					gtk_entry_get_text(GTK_ENTRY(m->entry)));
-			}
-#endif
+			debug_msg("message %d\n", m->type);
+			if (GTK_IS_ENTRY(m->entry))
+				debug_msg("Responding `%s'.\n",
+					  gtk_entry_get_text(GTK_ENTRY
+							     (m->entry)));
 			if (GTK_IS_ENTRY(m->entry)) {
 				static const unsigned char cmd = UH_TEXT;
 
@@ -419,10 +408,8 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		if ((sn_name != NULL) && (sn_id != NULL)) {
 			static const unsigned char cmd = UH_SN_ID;
 
-#ifdef DEBUG_USERHELPER
-			fprintf(stderr, "Sending new window startup ID "
-				"\"%s\".\n", sn_id);
-#endif
+			debug_msg("Sending new window startup ID \"%s\".\n",
+				  sn_id);
 			write(childin[1], &cmd, sizeof(cmd));
 			write_childin_string(sn_id);
 			write(childin[1], &eol, sizeof(eol));
@@ -430,9 +417,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 	}
 #endif
 	/* Tell the child we have no more to say. */
-#ifdef DEBUG_USERHELPER
-	fprintf(stderr, "Sending synchronization point.\n");
-#endif
+	debug_msg("Sending synchronization point.\n");
 	write(childin[1], sync_point, sizeof(sync_point));
 }
 
@@ -479,18 +464,14 @@ userhelper_parse_childout(char *outline)
 			prompt++;
 	}
 
-#ifdef DEBUG_USERHELPER
-	g_print("Child message: (%d)/\"%s\"\n", prompt_type, prompt);
-#endif
+	debug_msg("Child message: (%d)/\"%s\"\n", prompt_type, prompt);
 
 	switch (prompt_type) {
 	case UH_PROMPT_SUGGESTION:
 		/* A suggestion for the next input. */
 		g_free(resp->suggestion);
 		resp->suggestion = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("Suggested response \"%s\".\n", resp->suggestion);
-#endif
+		debug_msg("Suggested response \"%s\".\n", resp->suggestion);
 		break;
 	case UH_ECHO_OFF_PROMPT: case UH_ECHO_ON_PROMPT: {
 		struct message *msg;
@@ -544,34 +525,26 @@ userhelper_parse_childout(char *outline)
 		/* Note that this one needs a response. */
 		resp->responses++;
 		resp->rows++;
-#ifdef DEBUG_USERHELPER
-		g_print("Now we need %d responses.\n", resp->responses);
-#endif
+		debug_msg("Now we need %d responses.\n", resp->responses);
 		break;
 	}
 	case UH_FALLBACK_ALLOW:
 		/* Fallback flag.  Read it and save it for later. */
 		resp->fallback_allowed = atoi(prompt) != 0;
-#ifdef DEBUG_USERHELPER
-		g_print("Fallback %sallowed.\n",
-			resp->fallback_allowed ? "" : "not ");
-#endif
+		debug_msg("Fallback %sallowed.\n",
+			  resp->fallback_allowed ? "" : "not ");
 		break;
 	case UH_USER:
 		/* User name. Read it and save it for later. */
 		g_free(resp->user);
 		resp->user = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("User is \"%s\".\n", resp->user);
-#endif
+		debug_msg("User is \"%s\".\n", resp->user);
 		break;
 	case UH_SERVICE_NAME:
 		/* Service name. Read it and save it for later. */
 		g_free(resp->service);
 		resp->service = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("Service is \"%s\".\n", resp->service);
-#endif
+		debug_msg("Service is \"%s\".\n", resp->service);
 		break;
 	case UH_ERROR_MSG: case UH_INFO_MSG: {
 		struct message *msg;
@@ -593,71 +566,53 @@ userhelper_parse_childout(char *outline)
 		/* An informative banner. */
 		g_free(resp->banner);
 		resp->banner = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("Banner is \"%s\".\n", resp->banner);
-#endif
+		debug_msg("Banner is \"%s\".\n", resp->banner);
 		break;
 	case UH_EXEC_START:
 		/* Userhelper is trying to exec. */
 		child_was_execed = TRUE;
-#ifdef DEBUG_USERHELPER
-		g_print("Child started.\n");
-#endif
+		debug_msg("Child started.\n");
 		break;
 	case UH_EXEC_FAILED:
 		/* Userhelper failed to exec. */
 		child_was_execed = FALSE;
-#ifdef DEBUG_USERHELPER
-		g_print("Child failed.\n");
-#endif
+		debug_msg("Child failed.\n");
 		break;
 #ifdef USE_STARTUP_NOTIFICATION
 	case UH_SN_NAME:
 		/* Startup notification name. */
 		g_free(sn_name);
 		sn_name = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("SN Name is \"%s\".\n", sn_name);
-#endif
+		debug_msg("SN Name is \"%s\".\n", sn_name);
 		break;
 	case UH_SN_DESCRIPTION:
 		/* Startup notification description. */
 		g_free(sn_description);
 		sn_description = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("SN Description is \"%s\".\n", sn_description);
-#endif
+		debug_msg("SN Description is \"%s\".\n", sn_description);
 		break;
 	case UH_SN_WORKSPACE:
 		/* Startup notification workspace. */
 		sn_workspace = atoi(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("SN Workspace is %d.\n", sn_workspace);
-#endif
+		debug_msg("SN Workspace is %d.\n", sn_workspace);
 		break;
 	case UH_SN_WMCLASS:
 		/* Startup notification wmclass. */
 		g_free(sn_wmclass);
 		sn_wmclass = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("SN WMClass is \"%s\".\n", sn_wmclass);
-#endif
+		debug_msg("SN WMClass is \"%s\".\n", sn_wmclass);
 		break;
 	case UH_SN_BINARY_NAME:
 		/* Startup notification binary name. */
 		g_free(sn_binary_name);
 		sn_binary_name = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("SN Binary name is \"%s\".\n", sn_binary_name);
-#endif
+		debug_msg("SN Binary name is \"%s\".\n", sn_binary_name);
 		break;
 	case UH_SN_ICON_NAME:
 		/* Startup notification icon name. */
 		g_free(sn_icon_name);
 		sn_icon_name = g_strdup(prompt);
-#ifdef DEBUG_USERHELPER
-		g_print("SN Icon name is \"%s\".\n", sn_icon_name);
-#endif
+		debug_msg("SN Icon name is \"%s\".\n", sn_icon_name);
 		break;
 #endif
 	case UH_EXPECT_RESP:
@@ -706,8 +661,8 @@ userhelper_parse_childout(char *outline)
 #ifdef DEBUG_USERHELPER
 		{
 		int timeout = 2;
-		g_print("Ready to ask %d questions.\n", resp->responses);
-		g_print("Pausing for %d seconds for debugging.\n", timeout);
+		debug_msg("Ready to ask %d questions.\n", resp->responses);
+		debug_msg("Pausing for %d seconds for debugging.\n", timeout);
 		sleep(timeout);
 		}
 #endif
@@ -878,9 +833,7 @@ static void
 userhelper_child_exited(GPid pid, int status, gpointer data)
 {
 	(void)data;
-#ifdef DEBUG_USERHELPER
-	fprintf(stderr, "Child %d exited (looking for %d).\n", pid, childpid);
-#endif
+	debug_msg("Child %d exited (looking for %d).\n", pid, childpid);
 
 	if (pid == childpid) {
 #ifdef USE_STARTUP_NOTIFICATION
@@ -897,20 +850,14 @@ userhelper_child_exited(GPid pid, int status, gpointer data)
 			childout_tag = 0;
 		}
 		if (WIFEXITED(status)) {
-#ifdef DEBUG_USERHELPER
-			fprintf(stderr, "Child %d exited normally, ret = %d.\n",
-				pid, WEXITSTATUS(status));
-#endif
+			debug_msg("Child %d exited normally, ret = %d.\n", pid,
+				  WEXITSTATUS(status));
 			userhelper_parse_exitstatus(WEXITSTATUS(status));
 		} else {
-#ifdef DEBUG_USERHELPER
-			fprintf(stderr, "Child %d exited abnormally.\n", pid);
-#endif
+			debug_msg("Child %d exited abnormally.\n", pid);
 			if (WIFSIGNALED(status)) {
-#ifdef DEBUG_USERHELPER
-				fprintf(stderr, "Child %d died on signal %d.\n",
-					pid, WTERMSIG(status));
-#endif
+				debug_msg("Child %d died on signal %d.\n", pid,
+					  WTERMSIG(status));
 				userhelper_parse_exitstatus(ERR_UNK_ERROR);
 			}
 		}
@@ -931,9 +878,7 @@ userhelper_read_childout(GIOChannel *source, GIOCondition condition,
 	}
 	if ((condition & G_IO_HUP) != 0) {
 		/* EOF from the child. */
-#ifdef DEBUG_USERHELPER
-		g_print("EOF from child.\n");
-#endif
+		debug_msg("EOF from child.\n");
 		childout_tag = 0;
 		return FALSE;
 	}
@@ -1013,9 +958,7 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 		/* Watch for child exits. */
 		child_exit_status = 0;
 		g_child_watch_add(childpid, userhelper_child_exited, NULL);
-#ifdef DEBUG_USERHELPER
-		fprintf(stderr, "Running child pid=%ld.\n", (long) childpid);
-#endif
+		debug_msg("Running child pid=%ld.\n", (long) childpid);
 
 		/* Tell the child we're ready for it to run. */
 		write(childin[1], "Go", 1);
@@ -1027,9 +970,7 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 		userhelper_startup_notification_launchee(sn_id);
 #endif
 
-#ifdef DEBUG_USERHELPER
-		fprintf(stderr, "Child exited, continuing.\n");
-#endif
+		debug_msg("Child exited, continuing.\n");
 	} else {
 		int i, fd[4];
 		unsigned char byte;
@@ -1085,9 +1026,8 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 		close(fd[3]);
 
 #ifdef DEBUG_USERHELPER
-		for (i = 0; args[i] != NULL; i++) {
-			fprintf(stderr, "Exec arg %d = \"%s\".\n", i, args[i]);
-		}
+		for (i = 0; args[i] != NULL; i++)
+			debug_msg("Exec arg %d = \"%s\".\n", i, args[i]);
 #endif
 		execv(path, args);
 		fprintf(stderr, _("execl() error, errno=%d\n"), errno);

@@ -1,3 +1,10 @@
+2008-08-03  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper-wrap.c (debug_msg)
+	* userhelper.c (debug_msg)
+	* userinfo.c (debug_msg): New macro.  Use it instead of surrounding
+	debug prints with #ifdef DEBUG_USERHELPER.
+
 2008-05-17  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.c (wrap): Remove /usr/X11R6/bin from the default path.

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 1997 Red Hat Software, Inc.
- * Copyright (C) 2001, 2007 Red Hat, Inc.
+ * Copyright (C) 2001, 2007, 2008 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -44,6 +44,12 @@
 #include <gtk/gtk.h>
 #include "userhelper.h"
 #include "userhelper-wrap.h"
+
+#ifdef DEBUG_USERHELPER
+#define debug_msg(...) fprintf(stderr, __VA_ARGS__)
+#else
+#define debug_msg(...) ((void)0)
+#endif
 
 #define USERINFO_XML_NAME "userinfo-xml"
 struct UserInfo {
@@ -405,15 +411,11 @@ main(int argc, char *argv[])
 	window = create_userinfo_window(userinfo);
 	gtk_widget_show_all(window);
 
-#ifdef DEBUG_USERHELPER
-	fprintf(stderr, "Running.\n");
-#endif
+	debug_msg("Running.\n");
 
 	gtk_main();
 
-#ifdef DEBUG_USERHELPER
-	fprintf(stderr, "Exiting.\n");
-#endif
+	debug_msg("Exiting.\n");
 
 	return 0;
 }
