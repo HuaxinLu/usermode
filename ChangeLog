@@ -1,5 +1,12 @@
 2008-08-03  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper-wrap.c (struct response): Remove member user.  New memeber
+	user_label.
+	(userhelper_parse_childout): Create the "Authenticating as..." label
+	as soon as the user name is known, not only when creating the dialog
+	to ask questions.  (Also causes the label to be shown in non-modal
+	dialogs with no prompts.)
+
 	* userhelper-wrap.c (userhelper_parse_childout): Left-justify all
 	messages.
 

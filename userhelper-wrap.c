@@ -61,10 +61,10 @@ struct message {
 struct response {
 	int responses, rows;
 	gboolean fallback_allowed;
-	char *user, *service, *suggestion, *banner, *title;
+	char *service, *suggestion, *banner, *title;
 	GList *message_list; /* contains pointers to messages */
 	void *dialog; /* Actually a GtkWidget * */
-	GtkWidget *first, *last, *table;
+	GtkWidget *user_label, *first, *last, *table;
 	gulong dialog_response_handler;
 };
 
@@ -551,12 +551,21 @@ userhelper_parse_childout(char *outline)
 		debug_msg("Fallback %sallowed.\n",
 			  resp->fallback_allowed ? "" : "not ");
 		break;
-	case UH_USER:
-		/* User name. Read it and save it for later. */
-		g_free(resp->user);
-		resp->user = g_strdup(prompt);
-		debug_msg("User is \"%s\".\n", resp->user);
+	case UH_USER: {
+		char *text;
+
+		/* Tell the user which user's passwords to enter */
+		if (resp->user_label != NULL)
+			gtk_widget_destroy(resp->user_label);
+		debug_msg("User is \"%s\".\n", prompt);
+		text = g_strdup_printf(_("Authenticating as \"%s\""), prompt);
+		resp->user_label = gtk_label_new(text);
+		g_free(text);
+		gtk_misc_set_alignment(GTK_MISC(resp->user_label), 0.0, 0.5);
+		gtk_table_attach(GTK_TABLE(resp->table), resp->user_label, 0, 2,
+				 0, 1, GTK_EXPAND | GTK_FILL, 0, PAD, PAD);
 		break;
+	}
 	case UH_SERVICE_NAME:
 		/* Service name. Read it and save it for later. */
 		g_free(resp->service);
@@ -773,24 +782,10 @@ userhelper_parse_childout(char *outline)
 		}
 #endif
 
-		/* We're asking questions, change the dialog's icon... */
+		/* We're asking questions, change the dialog's icon. */
 		image = (GTK_MESSAGE_DIALOG(resp->dialog))->image;
 		gtk_image_set_from_file(GTK_IMAGE(image),
 					PIXMAPDIR "/keyring.png");
-		/* ... and tell the user which user's passwords to
-		 * enter */
-		if (resp->user != NULL) {
-			char *text;
-			GtkWidget *label;
-
-			text = g_strdup_printf(_("Authenticating as \"%s\""),
-					       resp->user);
-			label = gtk_label_new(text);
-			g_free(text);
-			gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.5);
-			gtk_table_attach(GTK_TABLE(resp->table), label, 0, 2, 0,
-					 1, GTK_EXPAND | GTK_FILL, 0, PAD, PAD);
-		}
 
 		/* Add an "unprivileged" button if we're allowed to offer
 		 * unprivileged execution as an option. */
@@ -831,7 +826,6 @@ userhelper_parse_childout(char *outline)
 		g_free(resp->banner);
 		g_free(resp->suggestion);
 		g_free(resp->service);
-		g_free(resp->user);
 		if (resp->message_list) {
 			GList *e;
 
