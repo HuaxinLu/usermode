@@ -1,5 +1,12 @@
 2008-08-03  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper-wrap.c (struct response): New member
+	dialog_response_handler.
+	(userhelper_dialog_response): New function.
+	(userhelper_parse_childout): Support non-modal dialogs with no prompts.
+	Keep resp->table alive across such dialogs.  Don't unnecessarily zero
+	members of resp before freeing it.
+
 	* userhelper-wrap.c (debug_msg)
 	* userhelper.c (debug_msg)
 	* userinfo.c (debug_msg): New macro.  Use it instead of surrounding

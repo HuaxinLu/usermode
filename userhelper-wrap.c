@@ -65,6 +65,7 @@ struct response {
 	GList *message_list; /* contains pointers to messages */
 	void *dialog; /* Actually a GtkWidget * */
 	GtkWidget *first, *last, *table;
+	gulong dialog_response_handler;
 };
 
 #ifdef USE_STARTUP_NOTIFICATION
@@ -429,6 +430,20 @@ fake_respond_ok(GtkWidget *widget, gpointer user_data)
 	gtk_dialog_response(GTK_DIALOG(user_data), GTK_RESPONSE_OK);
 }
 
+/* Used only when resp->dialog is displayed non-modally. */
+static void
+userhelper_dialog_response(GtkDialog *dialog, gint response, gpointer user_data)
+{
+	(void)dialog;
+	(void)user_data;
+	if (response == GTK_RESPONSE_CANCEL)
+		/* This is the best we can do because the child is not waiting
+		   for a reponse. */ {
+		g_print("cancel from response!\n");
+		userhelper_main_quit();
+	}
+}
+
 /* Parse a request from the child userhelper process and display it in a
    message box. */
 static void
@@ -445,6 +460,8 @@ userhelper_parse_childout(char *outline)
 
 		/* Create a table to hold the entry fields and labels. */
 		resp->table = gtk_table_new(2, 1, FALSE);
+		/* Hold to the table after gtk_box_pack_start_defaults(). */
+		g_object_ref_sink(resp->table);
 		/* The First row is used for the "Authenticating as \"%s\""
 		   label. */
 		resp->rows = 1;
@@ -638,98 +655,74 @@ userhelper_parse_childout(char *outline)
 
 	if (prompt_type != UH_SYNC_POINT)
 		return;
-	/* If we're ready, do some last-minute changes and run the dialog. */
-	if (resp->responses == 0)
-		/* No queries means that we've just processed a sync request
-		   for cases where we don't need any info for authentication.
 
-		   This can happens when the child needs to wait for
+	/* Destroy the dialog if a child is executing because userhelper
+	   already has all required information.  Destroy the dialog also if
+	   resp->responses != 0 because the dialog has a slightly different
+	   layout in that case, and if resp->dialog != NULL, it must have been
+	   created when resp->responses was 0. */
+	if (resp->dialog != NULL
+	    && (child_was_execed || resp->responses != 0)) {
+		GtkWidget *vbox;
+
+		/* Don't destroy anything inside resp->table. */
+		vbox = (GTK_DIALOG(resp->dialog))->vbox;
+		gtk_container_remove(GTK_CONTAINER(vbox), resp->table);
+		gtk_widget_destroy(resp->dialog);
+		resp->dialog = NULL;
+	}
+
+	/* Don't show any diaogs if a child is executing or there is nothing
+	   to show. */
+	if (child_was_execed || (resp->responses == 0 && resp->rows == 1)) {
+		/* This can happens when the child needs to wait for
 		   UH_EXEC_START or UH_EXEC_FAILED response to make sure the
-		   exit status is processed correctly.
-
-		   Otherwise, this might be just a module being stupid and
-		   calling the conversation callback once. for. every. chunk.
-		   of. output and we'll get an actual prompt (which will give
-		   us cause to open a dialog) later. */
+		   exit status is processed correctly. */
 		userhelper_write_childin(GTK_RESPONSE_OK, resp);
-	else {
-		/* A non-zero number of queries demands an answer. */
+		return;
+	}
+
+	/* Create and show the dialog if there is a message, even if no
+	   reponses are required.  The dialog might ask the user to do
+	   something else (e.g. insert a hardware token). */
+	if (resp->dialog == NULL) {
 		char *text;
-		GtkWidget *label, *image, *vbox;
-		GtkResponseType response;
+		GtkWidget *label, *vbox;
 
-#ifdef DEBUG_USERHELPER
-		{
-		int timeout = 2;
-		debug_msg("Ready to ask %d questions.\n", resp->responses);
-		debug_msg("Pausing for %d seconds for debugging.\n", timeout);
-		sleep(timeout);
-		}
-#endif
-
-		/* Create a new GTK dialog box. */
-		resp->dialog = gtk_message_dialog_new(NULL,
-						      0,
+		resp->dialog = gtk_message_dialog_new(NULL, 0,
 						      resp->responses > 0 ?
 						      GTK_MESSAGE_QUESTION :
 						      GTK_MESSAGE_INFO,
 						      resp->responses > 0 ?
 						      GTK_BUTTONS_OK_CANCEL :
-						      GTK_BUTTONS_CLOSE,
-						      _("Placeholder text."));
-
+						      GTK_BUTTONS_CANCEL,
+						      "Placeholder text.");
 		/* Ensure that we don't get dangling crap widget pointers. */
 		g_object_add_weak_pointer(G_OBJECT(resp->dialog),
 					  &resp->dialog);
-
 		/* If we didn't get a title from userhelper, assume badness. */
 		gtk_window_set_title(GTK_WINDOW(resp->dialog),
 				     resp->title ? resp->title : _("Error"));
-
-		/* Force GTK+ to try to center this dialog. */
 		gtk_window_set_position(GTK_WINDOW(resp->dialog),
 					GTK_WIN_POS_CENTER_ALWAYS);
-
-		/* Set window to be always on top. */
 		gtk_window_set_keep_above(GTK_WINDOW(resp->dialog), TRUE);
-
-		/* Set window icon */
 		gtk_window_set_icon_from_file(GTK_WINDOW(resp->dialog),
 					      PIXMAPDIR "/password.png", NULL);
-
-		/* If we're asking questions, change the dialog's icon... */
-		if (resp->responses > 0) {
-			image = (GTK_MESSAGE_DIALOG(resp->dialog))->image;
-			gtk_image_set_from_file(GTK_IMAGE(image),
-						PIXMAPDIR "/keyring.png");
-			/* ... and tell the user which user's passwords to
-			 * enter */
-			if (resp->user != NULL) {
-				text = g_strdup_printf(_("Authenticating as \"%s\""),
-						       resp->user);
-				label = gtk_label_new(text);
-				g_free(text);
-				gtk_table_attach(GTK_TABLE(resp->table), label,
-						 0, 2, 0, 1, 0, 0, PAD, PAD);
-			}
-		}
-
-		/* Pack the table into the dialog box. */
 		vbox = (GTK_DIALOG(resp->dialog))->vbox;
 		gtk_box_pack_start_defaults(GTK_BOX(vbox), resp->table);
 
-		/* Make sure we grab the keyboard focus when the window gets
-		 * an X window associated with it. */
-		g_signal_connect(G_OBJECT(resp->dialog), "map_event",
-				 G_CALLBACK(userhelper_grab_keyboard),
-				 NULL);
-
-		/* If the user closes the window, we bail. */
+		if (resp->responses > 0)
+			g_signal_connect(G_OBJECT(resp->dialog), "map_event",
+					 G_CALLBACK(userhelper_grab_keyboard),
+					 NULL);
 		g_signal_connect(G_OBJECT(resp->dialog), "delete_event",
 				 G_CALLBACK(userhelper_fatal_error),
 				 NULL);
+		resp->dialog_response_handler
+			= g_signal_connect(G_OBJECT(resp->dialog), "response",
+					   G_CALLBACK
+					   (userhelper_dialog_response), NULL);
 
-		/* Customize the label. */
 		if (resp->responses == 0)
 			text = g_strdup("");
 		else if (resp->service != NULL) {
@@ -746,21 +739,59 @@ userhelper_parse_childout(char *outline)
 				text = g_strdup_printf(_("You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."), resp->service);
 			else
 				text = g_strdup_printf(_("You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."), resp->service);
-		} else {
-			if (resp->banner)
-				text = g_strdup(resp->banner);
-			else if (resp->fallback_allowed)
-				text = g_strdup(_("You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."));
-			else
-				text = g_strdup(_("You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."));
-		}
+		} else if (resp->banner != NULL)
+			text = g_strdup(resp->banner);
+		else if (resp->fallback_allowed)
+			text = g_strdup(_("You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."));
+		else
+			text = g_strdup(_("You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."));
 		label = (GTK_MESSAGE_DIALOG(resp->dialog))->label;
 		gtk_label_set_text(GTK_LABEL(label), text);
 		g_free(text);
+	}
+	/* Do this every time to show widgets newly added to resp->table. */
+	gtk_widget_show_all(resp->dialog);
+
+	if (resp->responses == 0)
+		/* This might be just a module being stupid and calling the
+		   conversation callback once. for. every. chunk. of. output
+		   and we'll get an actual prompt later. */
+		userhelper_write_childin(GTK_RESPONSE_OK, resp);
+	else {
+		/* A non-zero number of queries demands an answer. */
+		GtkWidget *image;
+		GtkResponseType response;
+
+#ifdef DEBUG_USERHELPER
+		{
+		int timeout = 2;
+		debug_msg("Ready to ask %d questions.\n", resp->responses);
+		debug_msg("Pausing for %d seconds for debugging.\n", timeout);
+		sleep(timeout);
+		}
+#endif
+
+		/* We're asking questions, change the dialog's icon... */
+		image = (GTK_MESSAGE_DIALOG(resp->dialog))->image;
+		gtk_image_set_from_file(GTK_IMAGE(image),
+					PIXMAPDIR "/keyring.png");
+		/* ... and tell the user which user's passwords to
+		 * enter */
+		if (resp->user != NULL) {
+			char *text;
+			GtkWidget *label;
+
+			text = g_strdup_printf(_("Authenticating as \"%s\""),
+					       resp->user);
+			label = gtk_label_new(text);
+			g_free(text);
+			gtk_table_attach(GTK_TABLE(resp->table), label, 0, 2, 0,
+					 1, 0, 0, PAD, PAD);
+		}
 
 		/* Add an "unprivileged" button if we're allowed to offer
 		 * unprivileged execution as an option. */
-		if ((resp->fallback_allowed) && (resp->responses > 0)) {
+		if (resp->fallback_allowed) {
 			gtk_dialog_add_button(GTK_DIALOG(resp->dialog),
 					      _("_Run Unprivileged"),
 					      RESPONSE_FALLBACK);
@@ -781,6 +812,8 @@ userhelper_parse_childout(char *outline)
 		}
 
 		/* Run the dialog. */
+		g_signal_handler_disconnect(resp->dialog,
+					    resp->dialog_response_handler);
 		response = gtk_dialog_run(GTK_DIALOG(resp->dialog));
 
 		/* Release the keyboard. */
@@ -791,29 +824,11 @@ userhelper_parse_childout(char *outline)
 
 		/* Destroy the dialog box. */
 		gtk_widget_destroy(resp->dialog);
-		resp->table = NULL;
-		resp->last = NULL;
-		resp->first = NULL;
-		resp->dialog = NULL;
-		if (resp->title) {
-			resp->title = NULL;
-		}
-		if (resp->banner) {
-			g_free(resp->banner);
-			resp->banner = NULL;
-		}
-		if (resp->suggestion) {
-			g_free(resp->suggestion);
-			resp->suggestion = NULL;
-		}
-		if (resp->service) {
-			g_free(resp->service);
-			resp->service = NULL;
-		}
-		if (resp->user) {
-			g_free(resp->user);
-			resp->user = NULL;
-		}
+		g_object_unref(resp->table);
+		g_free(resp->banner);
+		g_free(resp->suggestion);
+		g_free(resp->service);
+		g_free(resp->user);
 		if (resp->message_list) {
 			GList *e;
 
@@ -821,7 +836,6 @@ userhelper_parse_childout(char *outline)
 			     e = g_list_next(e))
 				g_free(e->data);
 			g_list_free(resp->message_list);
-			resp->message_list = NULL;
 		}
 		g_free(resp);
 		resp = NULL;
