@@ -1,5 +1,8 @@
 2008-08-03  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.ac: Release 1.98.
+	* NEWS: Update.
+
 	* userhelper-wrap.c (struct response): Remove member user.  New memeber
 	user_label.
 	(userhelper_parse_childout): Create the "Authenticating as..." label
