@@ -573,8 +573,10 @@ userhelper_parse_childout(char *outline)
 		msg->type = prompt_type;
 		msg->entry = NULL;
 		msg->label = gtk_label_new(_(prompt));
+		gtk_misc_set_alignment(GTK_MISC(msg->label), 0.0, 0.5);
 		gtk_table_attach(GTK_TABLE(resp->table), msg->label, 0, 2,
-				 resp->rows, resp->rows + 1, 0, 0, PAD, PAD);
+				 resp->rows, resp->rows + 1,
+				 GTK_EXPAND | GTK_FILL, 0, PAD, PAD);
 		resp->message_list = g_list_append(resp->message_list, msg);
 		resp->rows++;
 		break;
@@ -785,8 +787,9 @@ userhelper_parse_childout(char *outline)
 					       resp->user);
 			label = gtk_label_new(text);
 			g_free(text);
+			gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.5);
 			gtk_table_attach(GTK_TABLE(resp->table), label, 0, 2, 0,
-					 1, 0, 0, PAD, PAD);
+					 1, GTK_EXPAND | GTK_FILL, 0, PAD, PAD);
 		}
 
 		/* Add an "unprivileged" button if we're allowed to offer
