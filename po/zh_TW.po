@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: usermode.tip\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-25 19:18+0000\n"
-"PO-Revision-Date: 2008-09-03 15:12+1000\n"
+"PO-Revision-Date: 2008-09-24 15:24+1000\n"
 "Last-Translator: Terry Chuang <tchuang@redhat.com>\n"
 "Language-Team: Traditional Chinese <zh@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "無特權的執行"
 
 #: ../dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(目前的) UNIX 密碼："
+msgstr "（目前的）UNIX 密碼："
 
 #: ../dummy.h:26
 msgid "New UNIX password: "
@@ -69,11 +69,11 @@ msgstr "再輸入一次新設的 UNIX 密碼："
 
 #: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "不當的密碼： 密碼太短"
+msgstr "不當的密碼：密碼太短"
 
 #: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "不當的密碼： 密碼太短"
+msgstr "不當的密碼：密碼太短"
 
 #: ../dummy.h:30
 msgid "Password unchanged"
@@ -89,11 +89,11 @@ msgstr "在不輸入密碼的情況下啟動全系統性的設定工具。"
 
 #: ../dummy.h:33
 msgid "login: "
-msgstr "登入帳號: "
+msgstr "登入帳號："
 
 #: ../dummy.h:34
 msgid "Password: "
-msgstr "密碼: "
+msgstr "密碼："
 
 #: ../gsmclient.c:362
 #, c-format
@@ -152,7 +152,7 @@ msgstr "pam_timestamp_check 的控制中 tty 錯誤"
 #: ../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
-msgstr "錯誤： %s\n"
+msgstr "錯誤：%s\n"
 
 #: ../pam-panel-icon.c:384
 #, c-format
@@ -170,7 +170,7 @@ msgstr "pam-panel-icon：連接到 session 管理員失敗\n"
 
 #: ../userhelper-wrap.c:205
 msgid "Unknown exit code."
-msgstr "未知的離開碼(exit code)。"
+msgstr "未知的離開碼（exit code）。"
 
 #: ../userhelper-wrap.c:207
 msgid "Information updated."
@@ -309,7 +309,7 @@ msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為�
 
 #: ../userhelper-wrap.c:794
 msgid "_Run Unprivileged"
-msgstr "無特權的執行(_R)"
+msgstr "無特權的執行（_R）"
 
 #: ../userhelper-wrap.c:924
 #, c-format
@@ -405,15 +405,15 @@ msgstr "全名："
 
 #: ../usermode.glade.h:2
 msgid "Home Phone Number:"
-msgstr "自家電話號碼:"
+msgstr "自家電話號碼："
 
 #: ../usermode.glade.h:3
 msgid "Login Shell:"
-msgstr "登入的 Shell:"
+msgstr "登入的 Shell："
 
 #: ../usermode.glade.h:4
 msgid "Office Phone Number:"
-msgstr "辦公室電話號碼:"
+msgstr "辦公室電話號碼："
 
 #: ../usermode.glade.h:5
 msgid "Office:"
@@ -425,7 +425,7 @@ msgstr "使用者資訊"
 
 #: ../usermount.c:61
 msgid "_Mount"
-msgstr "掛載(_M)"
+msgstr "掛載（_M）"
 
 #: ../usermount.c:62
 msgid "Un_mount"
@@ -439,11 +439,11 @@ msgstr "您確定要格式化磁碟嗎？您將摧毀它原有的資料。"
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
-msgstr "執行低階格式化(_l)。"
+msgstr "執行低階格式化（_l）。"
 
 #: ../usermount.c:337
 msgid "Select a _filesystem type to create:"
-msgstr "選取要建立的檔案系統(_f)："
+msgstr "選取要建立的檔案系統（_f）："
 
 #: ../usermount.c:507
 msgid ""
@@ -461,7 +461,7 @@ msgstr "使用者掛載工具"
 #. Create the other buttons.
 #: ../usermount.c:538
 msgid "_Format"
-msgstr "格式化(_F)"
+msgstr "格式化（_F）"
 
 #: ../usermount.c:574
 msgid "Device"
