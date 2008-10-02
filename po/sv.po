@@ -1,17 +1,18 @@
 # Swedish messages for usermode.
-# Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006 Christian Rose <menthos@menthos.com>.
-# Copyright (C) 2007 Magnus Larsson <fedoratrans@gmail.com>.
-# $Id$
-# 
-# 
+# Copyright © 2001, 2002, 2003, 2004, 2005, 2006 Christian Rose <menthos@menthos.com>.
+# Copyright © 2007 Magnus Larsson <fedoratrans@gmail.com>.
+# Göran Uddeborg <goeran@uddeborg.se>, 2008.
+#
+# $Id: usermode.po,v 1.2 2008-10-02 22:12:04+02 göran Exp $
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-25 00:26+0100\n"
-"PO-Revision-Date: 2007-07-13 13:05-0400\n"
-"Last-Translator: Christian Rose <menthos@menthos.com>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"POT-Creation-Date: 2008-08-25 19:18+0000\n"
+"PO-Revision-Date: 2008-10-02 22:11+0200\n"
+"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,73 +36,73 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../../po/../dummy.h:21
+#: ../dummy.h:21
 msgid "OK"
 msgstr "OK"
 
-#: ../../po/../dummy.h:22
+#: ../dummy.h:22
 msgid "Exit"
 msgstr "Avsluta"
 
-#: ../../po/../dummy.h:23
+#: ../dummy.h:23
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: ../../po/../dummy.h:24
+#: ../dummy.h:24
 msgid "Run Unprivileged"
 msgstr "Kör oprivilegierat"
 
-#: ../../po/../dummy.h:25
+#: ../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(nuvarande) UNIX-lösenord: "
 
-#: ../../po/../dummy.h:26
+#: ../dummy.h:26
 msgid "New UNIX password: "
 msgstr "Nytt UNIX-lösenord: "
 
-#: ../../po/../dummy.h:27
+#: ../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "Upprepa nytt UNIX-lösenord: "
 
-#: ../../po/../dummy.h:28
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "DÅLIGT LÖSENORD: det är ALLDELES för kort"
 
-#: ../../po/../dummy.h:29
+#: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "DÅLIGT LÖSENORD: det är för kort"
 
-#: ../../po/../dummy.h:30
+#: ../dummy.h:30
 msgid "Password unchanged"
 msgstr "Lösenordet ändrades inte"
 
-#: ../../po/../dummy.h:31
+#: ../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "Tyvärr, lösenorden stämmer inte överens"
 
-#: ../../po/../dummy.h:32
+#: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Starta systemglobala konfigurationsverktyg utan lösenord."
 
-#: ../../po/../dummy.h:33
+#: ../dummy.h:33
 msgid "login: "
 msgstr "inloggning: "
 
-#: ../../po/../dummy.h:34
+#: ../dummy.h:34
 msgid "Password: "
 msgstr "Lösenord: "
 
-#: ../../po/../gsmclient.c:362
-#, fuzzy, c-format
+#: ../gsmclient.c:362
+#, c-format
 msgid "%s failed to connect to the session manager: %s\n"
-msgstr "pam-panel-icon: misslyckades med att ansluta till sessionshanteraren\n"
+msgstr "%s misslyckades med att ansluta till sessionshanteraren: %s\n"
 
-#: ../../po/../pam-panel-icon.c:89
+#: ../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Misslyckades med att släppa administratörsprivilegier: %s"
 
-#: ../../po/../pam-panel-icon.c:98
+#: ../pam-panel-icon.c:98
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -110,7 +111,7 @@ msgstr ""
 "Misslyckades med att släppa administratörsprivilegier: pam_timestamp_check "
 "returnerade misslyckandekod %d"
 
-#: ../../po/../pam-panel-icon.c:146
+#: ../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -120,63 +121,62 @@ msgstr ""
 "(som påverkar alla användare) utan att behöva ange administratörslösenordet "
 "igen. Du kan ge upp denna auktorisering."
 
-#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
+#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "Behåll auktorisering"
 
-#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
+#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "Glöm auktorisering"
 
-#: ../../po/../pam-panel-icon.c:285
+#: ../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check är inte setuid root"
 
-#: ../../po/../pam-panel-icon.c:289
+#: ../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "ingen kontrollerande tty för pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:293
+#: ../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr "användaren okänd för pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:297
+#: ../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr "rättighetsfel i pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:301
+#: ../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "ogiltig kontrollerande tty i pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:319
+#: ../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "Fel: %s\n"
 
-#: ../../po/../pam-panel-icon.c:384
+#: ../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Misslyckades med att köra kommandot \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:396
+#: ../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Misslyckades med att ställa IO-kanalen till ickeblockerande: %s\n"
 
-#: ../../po/../pam-panel-icon.c:476
-#, c-format
+#: ../pam-panel-icon.c:476
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: misslyckades med att ansluta till sessionshanteraren\n"
 
-#: ../../po/../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:205
 msgid "Unknown exit code."
 msgstr "Okänd slutkod."
 
-#: ../../po/../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:207
 msgid "Information updated."
 msgstr "Informationen uppdaterad."
 
-#: ../../po/../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:209
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -184,7 +184,7 @@ msgstr ""
 "Lösenordet du angav är ogiltigt.\n"
 "Försök igen."
 
-#: ../../po/../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:211
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -194,11 +194,11 @@ msgstr ""
 "Detta beror antagligen på antingen kolon eller komman i ett av fälten.\n"
 "Ta bort dem och försök igen."
 
-#: ../../po/../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:213
 msgid "Password resetting error."
 msgstr "Fel vid nollställning av lösenord."
 
-#: ../../po/../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:215
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -206,19 +206,19 @@ msgstr ""
 "Några systemfiler är låsta.\n"
 "Försök igen om en kort stund."
 
-#: ../../po/../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:217
 msgid "Unknown user."
 msgstr "Okänd användare."
 
-#: ../../po/../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:219
 msgid "Insufficient rights."
 msgstr "Otillräckliga rättigheter."
 
-#: ../../po/../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:221
 msgid "Invalid call to subprocess."
 msgstr "Ogiltigt anrop av underprocess."
 
-#: ../../po/../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:223
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -228,64 +228,60 @@ msgstr ""
 "Du får inte lov att byta ditt skal.\n"
 "Tala med din systemadministratör."
 
-#: ../../po/../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:226
 msgid "Out of memory."
 msgstr "Slut på minne."
 
-#: ../../po/../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:228
 msgid "The exec() call failed."
 msgstr "exec()-anropet misslyckades."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:230
 msgid "Failed to find selected program."
 msgstr "Misslyckades med att hitta valt program."
 
-#: ../../po/../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:233
 msgid "Request canceled."
 msgstr "Begäran avbruten."
 
-#: ../../po/../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:235
 msgid "Internal PAM error occured."
 msgstr "Internt PAM-fel inträffade."
 
-#: ../../po/../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:237
 msgid "Unknown error."
 msgstr "Okänt fel."
 
-#: ../../po/../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:502
 msgid "Query"
 msgstr "Fråga"
 
-#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
-msgid "Error"
-msgstr "Fel"
-
-#: ../../po/../userhelper-wrap.c:581
-msgid "Information"
-msgstr "Information"
-
-#: ../../po/../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "Utfyllnadstext."
-
-#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#: ../userhelper-wrap.c:561 ../userhelper.c:576
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Autentiserar som \"%s\""
 
-#: ../../po/../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:580 ../userhelper-wrap.c:716
+msgid "Error"
+msgstr "Fel"
+
+#: ../userhelper-wrap.c:580
+msgid "Information"
+msgstr "Information"
+
+#: ../userhelper-wrap.c:741
 msgid "Changing password."
 msgstr "Byter lösenord."
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:743
 msgid "Changing personal information."
 msgstr "Ändrar personlig information."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:746
 msgid "Changing login shell."
 msgstr "Ändrar inloggningsskal."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:750
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -294,7 +290,7 @@ msgstr ""
 "Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, "
 "men mer information krävs för att kunna göra det."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:752
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -303,7 +299,7 @@ msgstr ""
 "Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer "
 "information krävs för att kunna göra det."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:756
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -311,7 +307,7 @@ msgstr ""
 "Du försöker köra ett kommando som kan dra nytta av administrativa "
 "rättigheter, men mer information krävs för att kunna göra det."
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:758
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -319,46 +315,36 @@ msgstr ""
 "Du försöker köra ett kommando som kräver administrativa rättigheter, men mer "
 "information krävs för att kunna göra det."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:794
 msgid "_Run Unprivileged"
 msgstr "_Kör oprivilegierat"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:924
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Rörfel.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:931
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kan inte grena.\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:957
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr "Kan inte sätta teckenset %s på en IO-kanal: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1029 ../userhelper-wrap.c:1033
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-fel.\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1044
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-fel, felnummer=%d\n"
 
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "Kunde inte ställa in standardsammanhanget för %s för programmet %s.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "Kunde inte ställa in körningssammanhang till %s.\n"
-
-#: ../../po/../userhelper.c:803
+#: ../userhelper.c:558
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -367,7 +353,7 @@ msgstr ""
 "Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, "
 "men mer information krävs för att kunna göra det."
 
-#: ../../po/../userhelper.c:805
+#: ../userhelper.c:560
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -376,8 +362,7 @@ msgstr ""
 "Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer "
 "information krävs för att kunna göra det."
 
-#: ../../po/../userhelper.c:809
-#, c-format
+#: ../userhelper.c:564
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -385,8 +370,7 @@ msgstr ""
 "Du försöker köra ett kommando som kan dra nytta av administrativa "
 "rättigheter, men mer information krävs för att kunna göra det."
 
-#: ../../po/../userhelper.c:811
-#, c-format
+#: ../userhelper.c:566
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -394,25 +378,25 @@ msgstr ""
 "Du försöker köra ett kommando som kräver administrativa rättigheter, men mer "
 "information krävs för att kunna göra det."
 
-#: ../../po/../userhelper.c:2372
+#: ../userhelper.c:2000
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper måste vara setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2470
+#: ../userhelper.c:2092
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kan inte öppna grafiskt fönster och kan inte hitta kontrollerande terminal.\n"
 
-#: ../../po/../userinfo.c:370
+#: ../userinfo.c:376
 #, c-format
 msgid "Unexpected argument"
 msgstr "Oväntat argument"
 
-#: ../../po/../userinfo.c:395
+#: ../userinfo.c:401
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Du finns inte. Försvinn.\n"
@@ -449,15 +433,15 @@ msgstr "Kontor:"
 msgid "User Information"
 msgstr "Användarinformation"
 
-#: ../../po/../usermount.c:61
+#: ../usermount.c:61
 msgid "_Mount"
 msgstr "_Montera"
 
-#: ../../po/../usermount.c:62
+#: ../usermount.c:62
 msgid "Un_mount"
 msgstr "Av_montera"
 
-#: ../../po/../usermount.c:289
+#: ../usermount.c:289
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -465,15 +449,15 @@ msgstr ""
 "Är du säker på att du vill formatera denna disk?\n"
 "Du kommer att förstöra all data som den för tillfället innehåller."
 
-#: ../../po/../usermount.c:300
+#: ../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "Utför en _lågnivåformatering."
 
-#: ../../po/../usermount.c:337
+#: ../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "Välj en typ av _filsystem att skapa:"
 
-#: ../../po/../usermount.c:507
+#: ../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -482,28 +466,28 @@ msgstr ""
 "Kontakta din administratör."
 
 #. Create the dialog.
-#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
+#: ../usermount.c:508 ../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Monteringsverktyg"
 
 #. Create the other buttons.
-#: ../../po/../usermount.c:538
+#: ../usermount.c:538
 msgid "_Format"
 msgstr "_Formatera"
 
-#: ../../po/../usermount.c:574
+#: ../usermount.c:574
 msgid "Device"
 msgstr "Enhet"
 
-#: ../../po/../usermount.c:580
+#: ../usermount.c:580
 msgid "Directory"
 msgstr "Katalog"
 
-#: ../../po/../usermount.c:586
+#: ../usermount.c:586
 msgid "Filesystem"
 msgstr "Filsystem"
 
-#: ../../po/../usermount.c:633
+#: ../usermount.c:633
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Enheten \"%s\" kan inte formateras."
@@ -523,151 +507,3 @@ msgstr "Byt ditt inloggningslösenord"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lösenord"
-
-#~ msgid "Password for %s"
-#~ msgstr "Lösenord för %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Lösenord för %s: "
-
-#~ msgid "Message"
-#~ msgstr "Meddelande"
-
-#~ msgid "Help"
-#~ msgstr "Hjälp"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "Request cancelled."
-#~ msgstr "Begäran avbruten."
-
-#~ msgid "Error: %s"
-#~ msgstr "Fel: %s"
-
-#~ msgid "Error:"
-#~ msgstr "Fel:"
-
-#~ msgid "_Ok"
-#~ msgstr "_Ok"
-
-#~ msgid "_Cancel"
-#~ msgstr "Av_bryt"
-
-#~ msgid "_Close"
-#~ msgstr "_Stäng"
-
-#~ msgid "Type"
-#~ msgstr "Typ"
-
-#~ msgid "_Unmount"
-#~ msgstr "_Avmontera"
-
-#~ msgid "E_xit"
-#~ msgstr "A_vsluta"
-
-#~ msgid "login"
-#~ msgstr "inloggning"
-
-#~ msgid "login:"
-#~ msgstr "inloggning:"
-
-#~ msgid "Login: "
-#~ msgstr "Inloggning: "
-
-#~ msgid "Login:"
-#~ msgstr "Inloggning:"
-
-#~ msgid "Login"
-#~ msgstr "Inloggning"
-
-#~ msgid "Password:"
-#~ msgstr "Lösenord:"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "kommer att köra \"%s\"\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "Behöver %d svar.\n"
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which may benefit from superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du försöker köra \"%s\" vilket kan dra nytta av\n"
-#~ "superanvändarrättigheter, men mer information krävs\n"
-#~ "för att kunna göra det."
-
-#~ msgid ""
-#~ "You are attempting to run \"%s\" which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du försöker köra \"%s\" som kräver superanvändarrättigheter,\n"
-#~ "men mer information krävs för att kunna göra det."
-
-#~ msgid ""
-#~ "You are attempting to run a command which may benefit from\n"
-#~ "superuser privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du försöker köra ett kommando vilket kan dra nytta av\n"
-#~ "superanvändarrättigheter, men mer information krävs för\n"
-#~ "att kunna göra det."
-
-#~ msgid ""
-#~ "You are attempting to run a command which requires superuser\n"
-#~ "privileges, but more information is needed in order to do so."
-#~ msgstr ""
-#~ "Du försöker köra ett kommando som kräver superanvändarrättigheter,\n"
-#~ "men mer information krävs för att kunna göra det."
-
-#~ msgid "Yes"
-#~ msgstr "Ja"
-
-#~ msgid "No"
-#~ msgstr "Nej"
-
-#~ msgid "Prompt"
-#~ msgstr "Fråga"
-
-#~ msgid "Input"
-#~ msgstr "Inmatning"
-
-#~ msgid ""
-#~ "In order to run \"%s\" with root's privileges, additional information is "
-#~ "required."
-#~ msgstr ""
-#~ "För att kunna köra \"%s\" med roots rättigheter krävs ytterligare "
-#~ "information."
-
-#~ msgid "Changing password for %s"
-#~ msgstr "Ändrar lösenordet för %s"
-
-#~ msgid "You want %d response(s) from %d entry fields!?!?!\n"
-#~ msgstr "Vill du ha %d svar från %d inmatningsfält!?!?!\n"
-
-#~ msgid "Consistency checking is not turned on."
-#~ msgstr "Konsistenskontroll är inte påslagen."
-
-#~ msgid "Block is fine."
-#~ msgstr "Blocket är okej."
-
-#~ msgid "Block freed twice."
-#~ msgstr "Blocket frigjort två gånger."
-
-#~ msgid "Memory before the block was clobbered."
-#~ msgstr "Minnet före blocket var nersablat."
-
-#~ msgid "Memory after the block was clobbered."
-#~ msgstr "Minnet efter blocket var nersablat."
-
-#~ msgid "This will be some help text."
-#~ msgstr "Det här kommer att vara någon hjälptext."
-
-#~ msgid "Full Name"
-#~ msgstr "Fullständigt namn"
-
-#~ msgid "Office"
-#~ msgstr "Kontor"
-
-#~ msgid "Change account information"
-#~ msgstr "Ändra kontoinformation"
