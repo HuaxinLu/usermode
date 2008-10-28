@@ -1,4 +1,4 @@
-AC_INIT([usermode], [1.98])
+AC_INIT([usermode], [1.98.1])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([userhelper.c])
 AC_CONFIG_AUX_DIR([admin])
