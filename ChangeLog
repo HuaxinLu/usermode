@@ -1,5 +1,8 @@
 2008-11-11  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.ac: Release 1.99.
+	* NEWS: Update.
+
 	* userhelper.h: Document request and response formats.
 	(UH_REQUEST_SIZE_DIGITS): New macro.
 	(UH_SN_ID): Use a printable character value.
