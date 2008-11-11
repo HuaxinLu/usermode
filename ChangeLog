@@ -1,3 +1,8 @@
+2008-11-11  Miloslav Trmač  <mitr@volny.cz>
+
+	* userhelper.c (send_request): Fix printf format mismatch.  Make sure
+	data is not too large.
+
 2008-11-11  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.99.

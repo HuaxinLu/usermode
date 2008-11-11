@@ -17,6 +17,7 @@
  */
 
 #include "config.h"
+#include <assert.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -25,8 +26,8 @@
 #include <grp.h>
 #include <libintl.h>
 #include <locale.h>
+#include <math.h>
 #include <pwd.h>
-#include <unistd.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -206,9 +207,8 @@ send_request(FILE *fp, char request_type, const char *data)
 	if (data == NULL)
 		data = "";
 	len = strlen(data);
-	if ((unsigned long)len != len)
-		exit(ERR_UNK_ERROR);
-	fprintf(fp, "%c%0*lu%s\n", request_type, UH_REQUEST_SIZE_DIGITS, len,
+	assert(len < powl(10.0, UH_REQUEST_SIZE_DIGITS));
+	fprintf(fp, "%c%0*zu%s\n", request_type, UH_REQUEST_SIZE_DIGITS, len,
 		data);
 }
 
