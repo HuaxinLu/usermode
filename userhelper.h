@@ -25,6 +25,13 @@
 #define UH_INFILENO 3
 #define UH_OUTFILENO 4
 
+/* Userhelper request format:
+   request code as a single character,
+   request data size as UH_REQUEST_SIZE_DIGITS decimal digits
+   request data
+   '\n' */
+#define UH_REQUEST_SIZE_DIGITS 8
+
 /* Synchronization point code. */
 #define UH_SYNC_POINT 32
 
@@ -52,13 +59,17 @@
 #define UH_SN_ICON_NAME 51
 #endif
 
+/* Consolehelper response format:
+   response code as a single character,
+   response data
+   '\n' */
+
 /* Consolehelper response codes. */
 #define UH_TEXT 33
 #define UH_CANCEL 34
 #define UH_FALLBACK 35
-
 #ifdef USE_STARTUP_NOTIFICATION
-#define UH_SN_ID 4
+#define UH_SN_ID 36
 #endif
 
 /* Valid userhelper error codes. */

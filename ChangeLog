@@ -1,3 +1,15 @@
+2008-11-11  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.h: Document request and response formats.
+	(UH_REQUEST_SIZE_DIGITS): New macro.
+	(UH_SN_ID): Use a printable character value.
+	* userhelper.c (send_request, send_request_int): New functions.
+	(converse_pipe, prompt_pipe): Use send_request and send_request_int.
+	* userhelper-wrap.c (userhelper_handle_childout): Rename from
+	userhelper_parse_childout.  Receive an already parsed message as
+	parameters.
+	(userhelper_read_childout): Handle the updated request format.
+
 2008-10-28  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.98.1.

@@ -197,6 +197,34 @@ read_reply(FILE *fp)
 	return g_strdup(buffer);
 }
 
+/* Send a request. */
+static void
+send_request(FILE *fp, char request_type, const char *data)
+{
+	size_t len;
+
+	if (data == NULL)
+		data = "";
+	len = strlen(data);
+	if ((unsigned long)len != len)
+		exit(ERR_UNK_ERROR);
+	fprintf(fp, "%c%0*lu%s\n", request_type, UH_REQUEST_SIZE_DIGITS, len,
+		data);
+}
+
+/* Send a request with an integer payload. */
+static void
+send_request_int(FILE *fp, char request_type, int data)
+{
+	/* log2(10) > 3, so sizeof(int) * CHAR_BIT / 3 digits are necessary
+	   to represent all values, + 1 to avoid rounding down "partial
+	   digits". */
+	char buf[sizeof(int) * CHAR_BIT / 3 + 1 + 1];
+
+	sprintf(buf, "%d", data);
+	send_request(fp, request_type, buf);
+}
+
 /* A text-mode conversation function suitable for use when there is no
  * controlling terminal. */
 static int
@@ -262,27 +290,27 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	debug_msg("userhelper (cp): converse_pipe_called(num_msg=%d, "
 		  "canceled=%d)\n", num_msg, data->canceled);
 	debug_msg("userhelper (cp): sending user `%s'\n", user);
-	fprintf(data->output, "%d %s\n", UH_USER, user);
+	send_request(data->output, UH_USER, user);
 
 	/* Service. */
 	if (get_pam_string_item(data->pamh, PAM_SERVICE,
 				&service) == PAM_SUCCESS) {
 		debug_msg("userhelper (cp): sending service `%s'\n", service);
-		fprintf(data->output, "%d %s\n", UH_SERVICE_NAME, service);
+		send_request(data->output, UH_SERVICE_NAME, service);
 	}
 
 	/* Fallback allowed? */
 	debug_msg("userhelper (cp): sending fallback = %d.\n",
 		  data->fallback_allowed ? 1 : 0);
-	fprintf(data->output, "%d %d\n",
-		UH_FALLBACK_ALLOW, data->fallback_allowed ? 1 : 0);
+	send_request_int(data->output, UH_FALLBACK_ALLOW,
+			 data->fallback_allowed ? 1 : 0);
 
 	/* Banner. */
 	if ((data->domain != NULL) && (data->banner != NULL)) {
 		debug_msg("userhelper (cp): sending banner `%s'\n",
 			  data->banner);
-		fprintf(data->output, "%d %s\n", UH_BANNER,
-			dgettext(data->domain, data->banner));
+		send_request(data->output, UH_BANNER,
+			     dgettext(data->domain, data->banner));
 	}
 
 #ifdef USE_STARTUP_NOTIFICATION
@@ -290,48 +318,48 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	if ((data->domain != NULL) && (data->sn_name != NULL)) {
 		debug_msg("userhelper (cp): sending sn name `%s'\n",
 			  data->sn_name);
-		fprintf(data->output, "%d %s\n", UH_SN_NAME,
-			dgettext(data->domain, data->sn_name));
+		send_request(data->output, UH_SN_NAME,
+			     dgettext(data->domain, data->sn_name));
 	}
 
 	/* SN Description. */
 	if ((data->domain != NULL) && (data->sn_description != NULL)) {
 		debug_msg("userhelper (cp): sending sn description `%s'\n",
 			  data->sn_description);
-		fprintf(data->output, "%d %s\n", UH_SN_DESCRIPTION,
-			dgettext(data->domain, data->sn_description));
+		send_request(data->output, UH_SN_DESCRIPTION,
+			     dgettext(data->domain, data->sn_description));
 	}
 
 	/* SN WM Class. */
 	if ((data->domain != NULL) && (data->sn_wmclass != NULL)) {
 		debug_msg("userhelper (cp): sending sn wm_class `%s'\n",
 			  data->sn_wmclass);
-		fprintf(data->output, "%d %s\n", UH_SN_WMCLASS,
-			dgettext(data->domain, data->sn_wmclass));
+		send_request(data->output, UH_SN_WMCLASS,
+			     dgettext(data->domain, data->sn_wmclass));
 	}
 
 	/* SN BinaryName. */
 	if ((data->domain != NULL) && (data->sn_binary_name != NULL)) {
 		debug_msg("userhelper (cp): sending sn binary name `%s'\n",
 			  data->sn_binary_name);
-		fprintf(data->output, "%d %s\n", UH_SN_BINARY_NAME,
-			dgettext(data->domain, data->sn_binary_name));
+		send_request(data->output, UH_SN_BINARY_NAME,
+			     dgettext(data->domain, data->sn_binary_name));
 	}
 
 	/* SN IconName. */
 	if ((data->domain != NULL) && (data->sn_icon_name != NULL)) {
 		debug_msg("userhelper (cp): sending sn icon name `%s'\n",
 			  data->sn_icon_name);
-		fprintf(data->output, "%d %s\n", UH_SN_ICON_NAME,
-			dgettext(data->domain, data->sn_icon_name));
+		send_request(data->output, UH_SN_ICON_NAME,
+			     dgettext(data->domain, data->sn_icon_name));
 	}
 
 	/* SN Workspace. */
 	if ((data->domain != NULL) && (data->sn_workspace != -1)) {
 		debug_msg("userhelper (cp): sending sn workspace %d.\n",
 			  data->sn_workspace);
-		fprintf(data->output, "%d %d\n", UH_SN_WORKSPACE,
-			data->sn_workspace);
+		send_request_int(data->output, UH_SN_WORKSPACE,
+				 data->sn_workspace);
 	}
 #endif
 
@@ -344,15 +372,15 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 				debug_msg("userhelper (cp): sending prompt "
 					  "(echo on) = \"%s\".\n",
 					  msg[count]->msg);
-				fprintf(data->output, "%d %s\n",
-					UH_ECHO_ON_PROMPT, msg[count]->msg);
+				send_request(data->output, UH_ECHO_ON_PROMPT,
+					     msg[count]->msg);
 				expected_responses++;
 				break;
 			case PAM_PROMPT_ECHO_OFF:
 				debug_msg("userhelper (cp): sending prompt (no "
 					  "echo) = \"%s\".\n", msg[count]->msg);
-				fprintf(data->output, "%d %s\n",
-					UH_ECHO_OFF_PROMPT, msg[count]->msg);
+				send_request(data->output, UH_ECHO_OFF_PROMPT,
+					     msg[count]->msg);
 				expected_responses++;
 				break;
 			case PAM_TEXT_INFO:
@@ -360,23 +388,23 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 				 * verbatim. */
 				debug_msg("userhelper (cp): sending text = "
 					  "\"%s\".\n", msg[count]->msg);
-				fprintf(data->output, "%d %s\n",
-					UH_INFO_MSG, msg[count]->msg);
+				send_request(data->output, UH_INFO_MSG,
+					     msg[count]->msg);
 				break;
 			case PAM_ERROR_MSG:
 				/* Error message strings are output verbatim. */
 				debug_msg("userhelper (cp): sending error = "
 					  "\"%s\".\n", msg[count]->msg);
-				fprintf(data->output, "%d %s\n",
-					UH_ERROR_MSG, msg[count]->msg);
+				send_request(data->output, UH_ERROR_MSG,
+					     msg[count]->msg);
 				break;
 			default:
 				/* Maybe the consolehelper can figure out what
 				 * to do with this, because we sure can't. */
 				debug_msg("userhelper (cp): sending ??? = "
 					  "\"%s\".\n", msg[count]->msg);
-				fprintf(data->output, "%d %s\n",
-					UH_UNKNOWN_PROMPT, msg[count]->msg);
+				send_request(data->output, UH_UNKNOWN_PROMPT,
+					     msg[count]->msg);
 				break;
 		}
 	}
@@ -385,11 +413,11 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 	 * receive responses. */
 	debug_msg("userhelper (cp): sending expected response count = %d.\n",
 		  expected_responses);
-	fprintf(data->output, "%d %d\n", UH_EXPECT_RESP, expected_responses);
+	send_request_int(data->output, UH_EXPECT_RESP, expected_responses);
 
 	/* Tell the consolehelper that we're ready for it to do its thing. */
 	debug_msg("userhelper (cp): sending sync point.\n");
-	fprintf(data->output, "%d\n", UH_SYNC_POINT);
+	send_request(data->output, UH_SYNC_POINT, NULL);
 	fflush(NULL);
 
 	/* Now, for the second pass, allocate space for the responses and read
@@ -609,8 +637,8 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 	struct app_data *data = callback_data;
 
 	/* Pass on any hints we have to the consolehelper. */
-	fprintf(data->output, "%d %d\n",
-		UH_FALLBACK_ALLOW, data->fallback_allowed ? 1 : 0);
+	send_request_int(data->output, UH_FALLBACK_ALLOW,
+			 data->fallback_allowed ? 1 : 0);
 
 	/* User. */
 	if ((get_pam_string_item(data->pamh, PAM_USER, &user) != PAM_SUCCESS) ||
@@ -619,12 +647,12 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 		user = "root";
 	}
 	debug_msg("userhelper: sending user `%s'\n", user);
-	fprintf(data->output, "%d %s\n", UH_USER, user);
+	send_request(data->output, UH_USER, user);
 
 	/* Service. */
 	if (get_pam_string_item(data->pamh, PAM_SERVICE,
 				&service) == PAM_SUCCESS) {
-		fprintf(data->output, "%d %s\n", UH_SERVICE_NAME, service);
+		send_request(data->output, UH_SERVICE_NAME, service);
 	}
 
 	/* We do first a pass on all items and output them, and then a second
@@ -632,21 +660,18 @@ prompt_pipe(struct lu_prompt *prompts, int prompts_count,
 	for (i = 0; i < prompts_count; i++) {
 		/* Spit out the prompt. */
 		if (prompts[i].default_value) {
-			fprintf(data->output, "%d %s\n",
-				UH_PROMPT_SUGGESTION,
-				prompts[i].default_value);
+			send_request(data->output, UH_PROMPT_SUGGESTION,
+				     prompts[i].default_value);
 		}
-		fprintf(data->output, "%d %s\n",
-			prompts[i].visible ?
-			UH_ECHO_ON_PROMPT :
-			UH_ECHO_OFF_PROMPT,
-			prompts[i].prompt);
+		send_request(data->output, prompts[i].visible
+			     ? UH_ECHO_ON_PROMPT : UH_ECHO_OFF_PROMPT,
+			     prompts[i].prompt);
 	}
 
 	/* Tell the consolehelper how many messages we expect to get
 	 * responses to. */
-	fprintf(data->output, "%d %d\n", UH_EXPECT_RESP, prompts_count);
-	fprintf(data->output, "%d\n", UH_SYNC_POINT);
+	send_request_int(data->output, UH_EXPECT_RESP, prompts_count);
+	send_request(data->output, UH_SYNC_POINT, NULL);
 	fflush(NULL);
 
 	/* Now, for the second pass, allocate space for the responses and read
@@ -746,8 +771,8 @@ pipe_conv_exec_start(const struct pam_conv *conv)
 		struct app_data *data;
 
 		data = conv->appdata_ptr;
-		fprintf(data->output, "%d\n", UH_EXEC_START);
-		fprintf(data->output, "%d\n", UH_SYNC_POINT);
+		send_request(data->output, UH_EXEC_START, NULL);
+		send_request(data->output, UH_SYNC_POINT, NULL);
 		fflush(data->output);
 #ifdef DEBUG_USERHELPER
 		{
@@ -770,8 +795,8 @@ pipe_conv_exec_fail(const struct pam_conv *conv)
 
 		data = conv->appdata_ptr;
 		debug_msg("userhelper: exec failed\n");
-		fprintf(data->output, "%d\n", UH_EXEC_FAILED);
-		fprintf(data->output, "%d\n", UH_SYNC_POINT);
+		send_request(data->output, UH_EXEC_FAILED, NULL);
+		send_request(data->output, UH_SYNC_POINT, NULL);
 		fflush(data->output);
 		/* It is important to keep the parent in sync with our state,
 		   even though there is no reliable way to inform it if this

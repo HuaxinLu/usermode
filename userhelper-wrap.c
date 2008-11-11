@@ -17,6 +17,7 @@
  */
 
 #include "config.h"
+#include <assert.h>
 #include <sys/types.h>
 #include <ctype.h>
 #include <errno.h>
@@ -444,15 +445,12 @@ userhelper_dialog_response(GtkDialog *dialog, gint response, gpointer user_data)
 	}
 }
 
-/* Parse a request from the child userhelper process and display it in a
+/* Handle a request from the child userhelper process and display it in a
    message box. */
 static void
-userhelper_parse_childout(char *outline)
+userhelper_handle_childout(char prompt_type, char *prompt)
 {
 	static struct response *resp = NULL;
-
-	char *prompt;
-	int prompt_type;
 
 	if (resp == NULL) {
 		/* Allocate the response structure. */
@@ -467,19 +465,6 @@ userhelper_parse_childout(char *outline)
 		resp->rows = 1;
 	}
 
-
-	/* Read the prompt type. */
-	errno = 0;
-	prompt_type = strtol(outline, &prompt, 10);
-	if (errno != 0 || prompt == outline)
-		_exit(1);
-
-	/* The first character which wasn't a digit might be whitespace, so
-	  skip over any whitespace before settling on the actual prompt. */
-	if (prompt != NULL) {
-		while (*prompt != '\0' && isspace((unsigned char)*prompt))
-			prompt++;
-	}
 
 	debug_msg("Child message: (%d)/\"%s\"\n", prompt_type, prompt);
 
@@ -894,21 +879,36 @@ userhelper_read_childout(GIOChannel *source, GIOCondition condition,
 		return FALSE;
 	}
 	while ((condition & G_IO_IN) != 0) {
-		char *line;
-		gsize end_pos;
+		char command, eol, buf[BUFSIZ], *end;
+		unsigned long request_size;
+		gsize bytes_read;
 		GError *err;
 
 		err = NULL;
-		g_io_channel_read_line(source, &line, NULL, &end_pos, &err);
-		if (err != NULL)
-			/* Error of some kind. */
-			_exit(0);
-		/* Parse the data and we're done. */
-		if (line != NULL) {
-			line[end_pos] = '\0';
-			userhelper_parse_childout(line);
-			g_free(line);
-		}
+		g_io_channel_read_chars(source, &command, 1, &bytes_read, &err);
+		if (err != NULL || bytes_read != 1)
+			_exit(0); /* EOF, or error of some kind. */
+		assert(UH_REQUEST_SIZE_DIGITS + 1 <= sizeof(buf));
+		g_io_channel_read_chars(source, buf, UH_REQUEST_SIZE_DIGITS,
+					&bytes_read, &err);
+		if (err != NULL || bytes_read != UH_REQUEST_SIZE_DIGITS
+		    || !g_ascii_isdigit(*buf))
+			_exit(1); /* Error of some kind. */
+		buf[bytes_read] = '\0';
+		errno = 0;
+		request_size = strtoul(buf, &end, 10);
+		if (errno != 0 || *end != 0 || end == buf ||
+		    request_size + 1 > sizeof(buf))
+			_exit(1); /* Error of some kind. */
+		g_io_channel_read_chars(source, buf, request_size, &bytes_read,
+					&err);
+		if (err != NULL || bytes_read != request_size)
+			_exit(1); /* Error of some kind. */
+		buf[bytes_read] = '\0';
+		g_io_channel_read_chars(source, &eol, 1, &bytes_read, &err);
+		if (err != NULL || bytes_read != 1 || eol != '\n')
+			_exit(0); /* EOF, or error of some kind. */
+		userhelper_handle_childout(command, buf);
 		condition = g_io_channel_get_buffer_condition(source);
 	}
 	return TRUE;
