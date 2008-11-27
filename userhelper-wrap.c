@@ -458,7 +458,7 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 
 		/* Create a table to hold the entry fields and labels. */
 		resp->table = gtk_table_new(2, 1, FALSE);
-		/* Hold to the table after gtk_box_pack_start_defaults(). */
+		/* Hold to the table after gtk_box_pack_start(). */
 		g_object_ref_sink(resp->table);
 		/* The First row is used for the "Authenticating as \"%s\""
 		   label. */
@@ -705,7 +705,7 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		gtk_window_set_icon_from_file(GTK_WINDOW(resp->dialog),
 					      PIXMAPDIR "/password.png", NULL);
 		vbox = (GTK_DIALOG(resp->dialog))->vbox;
-		gtk_box_pack_start_defaults(GTK_BOX(vbox), resp->table);
+		gtk_box_pack_start(GTK_BOX(vbox), resp->table, TRUE, TRUE, 0);
 
 		if (resp->responses > 0)
 			g_signal_connect(G_OBJECT(resp->dialog), "map_event",
@@ -784,7 +784,7 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		 * equivalent to hitting the default button. */
 		if (resp->last) {
 			g_signal_connect(G_OBJECT(resp->last), "activate",
-					 GTK_SIGNAL_FUNC(fake_respond_ok),
+					 G_CALLBACK(fake_respond_ok),
 					 resp->dialog);
 		}
 

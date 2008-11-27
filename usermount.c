@@ -354,7 +354,7 @@ format(struct mountinfo *info)
 	}
 	gtk_widget_show_all(table);
 	vbox = (GTK_DIALOG(dialog))->vbox;
-	gtk_box_pack_start_defaults(GTK_BOX(vbox), table);
+	gtk_box_pack_start(GTK_BOX(vbox), table, TRUE, TRUE, 0);
 
 	response = gtk_dialog_run(GTK_DIALOG(dialog));
 	gtk_widget_hide(dialog);
@@ -507,10 +507,10 @@ create_usermount_window(void)
 		dialog = create_error_box(_("There are no filesystems which you are allowed to mount or unmount.\nContact your administrator."),
 					  _("User Mount Tool"));
 		g_signal_connect_object(G_OBJECT(dialog), "destroy",
-					GTK_SIGNAL_FUNC(gtk_main_quit), NULL,
+					G_CALLBACK(gtk_main_quit), NULL,
 					G_CONNECT_AFTER);
 		g_signal_connect_object(G_OBJECT(dialog), "delete-event",
-					GTK_SIGNAL_FUNC(gtk_main_quit), NULL,
+					G_CALLBACK(gtk_main_quit), NULL,
 					G_CONNECT_AFTER);
 		gtk_dialog_run(GTK_DIALOG(dialog));
 		return FALSE;
@@ -525,10 +525,10 @@ create_usermount_window(void)
 					     NULL);
 
 	/* Connect default signal handlers. */
-	g_signal_connect(G_OBJECT(dialog), "destroy",
-			 GTK_SIGNAL_FUNC(gtk_main_quit), NULL);
+	g_signal_connect(G_OBJECT(dialog), "destroy", G_CALLBACK(gtk_main_quit),
+			 NULL);
 	g_signal_connect(G_OBJECT(dialog), "delete-event",
-			 GTK_SIGNAL_FUNC(gtk_main_quit), NULL);
+			 G_CALLBACK(gtk_main_quit), NULL);
 
 	/* Set the window icon */
 	gtk_window_set_icon_from_file(GTK_WINDOW(dialog),
@@ -548,7 +548,7 @@ create_usermount_window(void)
 
 	/* Set a signal handler to handle button presses. */
 	g_signal_connect(G_OBJECT(dialog), "response",
-			 GTK_SIGNAL_FUNC(response_callback), NULL);
+			 G_CALLBACK(response_callback), NULL);
 
 	/* Build a tree model with this data. */
 	model = gtk_list_store_new(4,
@@ -598,7 +598,7 @@ create_usermount_window(void)
 	selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(treeview));
 	tree_selection = selection;
 	g_signal_connect(G_OBJECT(selection), "changed",
-		         GTK_SIGNAL_FUNC(changed_callback), NULL);
+			 G_CALLBACK(changed_callback), NULL);
 
 	/* Pack it in and show the dialog. */
 	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), treeview,

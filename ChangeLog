@@ -1,3 +1,9 @@
+2008-11-27  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper-wrap.c (userhelper_handle_childout)
+	* usermount.c (format, create_usermount_window): Don't use interfaces
+	deprecated in GTK+ 2.14.
+
 2008-11-11  Miloslav Trmač  <mitr@volny.cz>
 
 	* userhelper.c (send_request): Fix printf format mismatch.  Make sure
