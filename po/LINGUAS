@@ -1,4 +1,4 @@
-# To regenerate: (cd po; ls *.po | sed 's/\.po$//').  Then remove languages with
+# To regenerate: (cd po; ls | sed -n 's/\.po$//p').  Then remove languages with
 # no translations.
 ar
 as
@@ -33,6 +33,7 @@ ka
 kn
 ko
 lv
+mai
 mk
 ml
 mr

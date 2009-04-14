@@ -17,9 +17,6 @@ EXTRA_DIST = 	\
 	keys.xpm \
 	usermode.glade \
 	shutdown.pamd \
-	admin/intltool-extract.in \
-	admin/intltool-merge.in \
-	admin/intltool-update.in \
 	$(pixmap_DATA)
 
 SUBDIRS=po
@@ -63,9 +60,6 @@ $(WRAPPED_APPS): wrapped.console
 
 CLEANFILES = $(dist_man_MANS)
 DISTCLEANFILES =            \
-	intltool-extract    \
-	intltool-merge      \
-	intltool-update     \
 	userinfo.desktop    \
 	usermount.desktop   \
 	userpasswd.desktop  \

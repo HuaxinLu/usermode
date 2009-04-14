@@ -4,9 +4,6 @@
 ^admin/config\.sub$
 ^admin/depcomp$
 ^admin/install-sh$
-^admin/intltool-extract\.in$
-^admin/intltool-merge\.in$
-^admin/intltool-update\.in$
 ^admin/missing$
 ^admin/mkinstalldirs$
 ^autom4te\.cache.*
@@ -17,3 +14,6 @@
 ^aclocal\.m4$
 ^config\.h\.in$
 ^configure$
+^intltool-extract\.in$
+^intltool-merge\.in$
+^intltool-update\.in$

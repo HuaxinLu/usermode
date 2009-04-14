@@ -1,10 +1,19 @@
+2009-04-14  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.100.
+	* NEWS: Update.
+	* po/LINGUAS: Update.
+
+	* autogen.sh
+	* Makefile.am (EXTRA_DIST, DISTCLEANFILES): Update for newer intltool.
+
 2008-11-27  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper-wrap.c (userhelper_handle_childout)
 	* usermount.c (format, create_usermount_window): Don't use interfaces
 	deprecated in GTK+ 2.14.
 
-2008-11-11  Miloslav Trmač  <mitr@volny.cz>
+2008-11-11  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.c (send_request): Fix printf format mismatch.  Make sure
 	data is not too large.

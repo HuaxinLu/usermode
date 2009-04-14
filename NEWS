@@ -1,3 +1,6 @@
+1.100
+* Don't use interfaces deprecated in GTK+ 2.14.
+
 1.99
 * Support multi-line prompts.
 
