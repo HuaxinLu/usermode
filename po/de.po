@@ -1,6 +1,6 @@
-# translation of de.po to
-# translation of usermode.po to
+# German translation of usermode
 # Copyright (C) 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the usermode package.
 #
 # Ronny Buchmann <ronny-vlug@vlugnet.org>, 2004,2006.
 # Claudia Krug <fhonig@redhat.it>, YEAR.
@@ -10,14 +10,14 @@
 # Marcus Gloeckner <mgloeckner@gmail.com>, 2005.
 # Severin Heiniger <severinheiniger@gmail.com>, 2005.
 # Timo Trinks <ttrinks@redhat.com>, 2007.
-# Fabian Affolter <fab@fedoraproject.org>, 2008.
+# Fabian Affolter <fab@fedoraproject.org>, 2008-2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-29 17:47+0000\n"
-"PO-Revision-Date: 2008-03-03 23:32+0100\n"
+"POT-Creation-Date: 2009-04-17 19:42+0000\n"
+"PO-Revision-Date: 2009-04-18 00:34+0100\n"
 "Last-Translator: Fabian Affolter <fab@fedoraproject.org>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Abbrechen"
 
 #: ../dummy.h:24
 msgid "Run Unprivileged"
-msgstr "Läuft nicht bevorrechtigt"
+msgstr "Läuft nicht unberechtigt"
 
 #: ../dummy.h:25
 msgid "(current) UNIX password: "
@@ -137,7 +137,7 @@ msgstr "pam_timestamp_check ist nicht setuid root"
 
 #: ../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
-msgstr "kein massgebendes Terminal für pam_timestamp_check"
+msgstr "kein maßgebendes Terminal für pam_timestamp_check"
 
 #: ../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
@@ -149,7 +149,7 @@ msgstr "Berechtigungsfehler in pam_timestamp_check"
 
 #: ../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr "Ungültiges massgebendes Terminal in pam_timestamp_check"
+msgstr "Ungültiges maßgebendes Terminal in pam_timestamp_check"
 
 #: ../pam-panel-icon.c:319
 #, c-format
@@ -167,18 +167,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Fehler beim Setzen des E/A-Kanals auf nicht-blockierend: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: konnte nicht mit Session-Manager verbinden\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:206
 msgid "Unknown exit code."
 msgstr "Unbekannter Exit-Code."
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:208
 msgid "Information updated."
 msgstr "Information aktualisiert."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:210
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -186,7 +187,7 @@ msgstr ""
 "Das eingegebene Passwort ist ungültig.\n"
 "Versuchen Sie es erneut."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:212
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -197,11 +198,11 @@ msgstr ""
 "Felder.\n"
 "Bitte entfernen Sie diese und versuchen Sie es erneut."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:214
 msgid "Password resetting error."
 msgstr "Fehler beim Zurücksetzen des Passworts."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:216
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -209,19 +210,19 @@ msgstr ""
 "Einige Systemdateien sind gesperrt.\n"
 "Bitte versuchen Sie es einen Augenblick später erneut."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:218
 msgid "Unknown user."
 msgstr "Unbekannter Benutzer."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:220
 msgid "Insufficient rights."
 msgstr "Nicht genügend Rechte."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:222
 msgid "Invalid call to subprocess."
 msgstr "Ungültiger Aufruf des Unterprozesses."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:224
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -231,114 +232,110 @@ msgstr ""
 "Das Ändern Ihrer Shell ist nicht zulässig.\n"
 "Setzen Sie sich mit Ihrem Systemadministrator in Verbindung."
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:227
 msgid "Out of memory."
 msgstr "Nicht genügend Speicher."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:229
 msgid "The exec() call failed."
 msgstr "Aufruf von exec() fehlgeschlagen."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:231
 msgid "Failed to find selected program."
 msgstr "Fehler beim Finden des ausgewählten Programms."
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:234
 msgid "Request canceled."
 msgstr "Anfrage abgebrochen."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:236
 msgid "Internal PAM error occured."
 msgstr "Interner PAM-Fehler aufgetreten."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:238
 msgid "Unknown error."
 msgstr "Unbekannter Fehler."
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:487
 msgid "Query"
 msgstr "Abfrage"
 
-#: ../userhelper-wrap.c:581
-#: ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "Fehler"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "Informationen"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "Platzhalter-Text."
-
-#: ../userhelper-wrap.c:753
-#: ../userhelper.c:627
+#: ../userhelper-wrap.c:546
+#: ../userhelper.c:604
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Als \"%s\" authentifizieren"
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:565
+#: ../userhelper-wrap.c:701
+msgid "Error"
+msgstr "Fehler"
+
+#: ../userhelper-wrap.c:565
+msgid "Information"
+msgstr "Informationen"
+
+#: ../userhelper-wrap.c:726
 msgid "Changing password."
 msgstr "Das Passwort ändern."
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:728
 msgid "Changing personal information."
 msgstr "Ändern der persönlichen Informationen."
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:731
 msgid "Changing login shell."
 msgstr "Ändern der Login-Shell."
 
-#: ../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:735
 #, c-format
 msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Sie versuchen \"%s\" auszuführen, das administrative Privilegien nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:737
 #, c-format
 msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Sie versuchen \"%s\" auszuführen, das administrative Privilegien erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:741
 msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Sie versuchen einen Befehl auszuführen, der administrative Privilegien nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:743
 msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Sie versuchen einen Befehl auszuführen, der administrative Privilegien erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:779
 msgid "_Run Unprivileged"
 msgstr "Ohne Rechte ausfüh_ren"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:924
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe-Fehler.\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:931
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kann fork() nicht aufrufen.\n"
 
-#: ../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:957
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "Kann Zeichensatz %s nicht auf einem IO-Channel setzen: %s\n"
+msgstr "Kann Zeichensatz %s nicht auf einem E/A-Kanal setzen: %s\n"
 
-#: ../userhelper-wrap.c:1077
-#: ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1029
+#: ../userhelper-wrap.c:1033
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-Fehler.\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1044
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-Fehler, errno=%d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:586
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -347,7 +344,7 @@ msgstr ""
 "Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
 "nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper.c:611
+#: ../userhelper.c:588
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -356,7 +353,8 @@ msgstr ""
 "Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
 "erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper.c:615
+#: ../userhelper.c:592
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -364,7 +362,8 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
 "nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper.c:617
+#: ../userhelper.c:594
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -372,23 +371,23 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
 "erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2025
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper muss Setuid-Root sein\n"
+msgstr "userhelper muss setuid-root sein\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2117
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht gefunden werden.\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:376
 #, c-format
 msgid "Unexpected argument"
 msgstr "Unerwartetes Argument"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:401
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Benutzer-ID existiert nicht. Verlassen Sie den Bereich.\n"
@@ -399,7 +398,7 @@ msgstr "Über mich"
 
 #: ../userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Persönliche Informationen ändern."
+msgstr "Persönliche Informationen ändern"
 
 #: ../usermode.glade.h:1
 msgid "Full Name:"
@@ -457,7 +456,7 @@ msgstr ""
 #: ../usermount.c:508
 #: ../usermount.c:520
 msgid "User Mount Tool"
-msgstr "Benutzer Mount-Tool"
+msgstr "Benutzer Einhänge-Werkzeug"
 
 #. Create the other buttons.
 #: ../usermount.c:538
@@ -497,6 +496,8 @@ msgstr "Ihr Login-Passwort ändern"
 msgid "Password"
 msgstr "Passwort"
 
+#~ msgid "Placeholder text."
+#~ msgstr "Platzhalter-Text."
 #~ msgid "Could not set default context for %s for program %s.\n"
 #~ msgstr ""
 #~ "Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
