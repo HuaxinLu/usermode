@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-17 08:03+0000\n"
-"PO-Revision-Date: 2009-02-17 20:59+0100\n"
+"POT-Creation-Date: 2009-05-15 08:41+0000\n"
+"PO-Revision-Date: 2009-05-15 15:58+0200\n"
 "Last-Translator: Kris Thomsen <lakristho@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,8 @@ msgstr "Desværre, adgangskoder er ikke ens"
 
 #: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
+msgstr ""
+"Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
 #: ../dummy.h:33
 msgid "login: "
@@ -132,7 +133,7 @@ msgstr "Glem tilladelse"
 
 #: ../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
-msgstr "pam_timestamp_check er ikke setuid root"
+msgstr "pam_timestamp_check er ikke setuid-rod"
 
 #: ../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
@@ -166,6 +167,7 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Kunne ikke sætte IO-kanal ikke-blokerende: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: kunne ikke koble op til sessionsstyring\n"
 
@@ -297,8 +299,8 @@ msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre \"%s\", som kræver administrator-rettigheder, "
-"men mere information er nødvendigt for at gøre dette."
+"Du forsøger at køre \"%s\", som kræver administrator-rettigheder, men mere "
+"information er nødvendigt for at gøre dette."
 
 #: ../userhelper-wrap.c:741
 msgid ""
@@ -313,8 +315,8 @@ msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Du forsøger at køre en kommando, som kræver administrator-rettigheder, "
-"men mere information er nødvendigt for at gøre dette."
+"Du forsøger at køre en kommando, som kræver administrator-rettigheder, men "
+"mere information er nødvendigt for at gøre dette."
 
 #: ../userhelper-wrap.c:779
 msgid "_Run Unprivileged"
@@ -364,6 +366,7 @@ msgstr ""
 "men mere information er nødvendigt for at gøre dette."
 
 #: ../userhelper.c:592
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -372,6 +375,7 @@ msgstr ""
 "rettigheder, men mere information er nødvendigt for at gøre dette."
 
 #: ../userhelper.c:594
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -382,7 +386,7 @@ msgstr ""
 #: ../userhelper.c:2025
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "userhelper skal være setuid root\n"
+msgstr "userhelper skal være setuid-rod\n"
 
 #. FIXME: print a warning here?
 #: ../userhelper.c:2117
