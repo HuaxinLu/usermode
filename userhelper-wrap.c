@@ -291,7 +291,8 @@ userhelper_grab_keyboard(GtkWidget *widget, GdkEvent *event, gpointer user_data)
 #ifndef DEBUG_USERHELPER
 	GdkGrabStatus ret;
 
-	ret = gdk_keyboard_grab(widget->window, TRUE, GDK_CURRENT_TIME);
+	ret = gdk_keyboard_grab(gtk_widget_get_window (widget), TRUE,
+				GDK_CURRENT_TIME);
 	if (ret != GDK_GRAB_SUCCESS) {
 		switch (ret) {
 		case GDK_GRAB_ALREADY_GRABBED:
@@ -662,7 +663,7 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		GtkWidget *vbox;
 
 		/* Don't destroy anything inside resp->table. */
-		vbox = (GTK_DIALOG(resp->dialog))->vbox;
+		vbox = gtk_dialog_get_content_area (GTK_DIALOG(resp->dialog));
 		gtk_container_remove(GTK_CONTAINER(vbox), resp->table);
 		gtk_widget_destroy(resp->dialog);
 		resp->dialog = NULL;
@@ -704,7 +705,7 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		gtk_window_set_keep_above(GTK_WINDOW(resp->dialog), TRUE);
 		gtk_window_set_icon_from_file(GTK_WINDOW(resp->dialog),
 					      PIXMAPDIR "/password.png", NULL);
-		vbox = (GTK_DIALOG(resp->dialog))->vbox;
+		vbox = gtk_dialog_get_content_area (GTK_DIALOG(resp->dialog));
 		gtk_box_pack_start(GTK_BOX(vbox), resp->table, TRUE, TRUE, 0);
 
 		if (resp->responses > 0)
@@ -768,7 +769,8 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 #endif
 
 		/* We're asking questions, change the dialog's icon. */
-		image = (GTK_MESSAGE_DIALOG(resp->dialog))->image;
+		image = gtk_message_dialog_get_image (GTK_MESSAGE_DIALOG
+						      (resp->dialog));
 		gtk_image_set_from_file(GTK_IMAGE(image),
 					PIXMAPDIR "/keyring.png");
 

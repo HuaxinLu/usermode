@@ -1,3 +1,11 @@
+2009-06-14  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper-wrap.c (userhelper_grab_keyboard)
+	(userhelper_handle_childout)
+	* usermount.c (format, create_usermount_window): Use accessor functions
+	instead or referencing the structure members directly (as detected using
+	-DGSEAL_ENABLE).
+
 2009-04-14  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.100.

@@ -353,7 +353,7 @@ format(struct mountinfo *info)
 					  1, 2, 1, 2);
 	}
 	gtk_widget_show_all(table);
-	vbox = (GTK_DIALOG(dialog))->vbox;
+	vbox = gtk_dialog_get_content_area (GTK_DIALOG(dialog));
 	gtk_box_pack_start(GTK_BOX(vbox), table, TRUE, TRUE, 0);
 
 	response = gtk_dialog_run(GTK_DIALOG(dialog));
@@ -601,8 +601,9 @@ create_usermount_window(void)
 			 G_CALLBACK(changed_callback), NULL);
 
 	/* Pack it in and show the dialog. */
-	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), treeview,
-			   TRUE, TRUE, 0);
+	gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area
+				   (GTK_DIALOG(dialog))),
+			   treeview, TRUE, TRUE, 0);
 
 	gtk_widget_show_all(dialog);
 
