@@ -24,8 +24,7 @@ AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL
 AC_PATH_XTRA
 PKG_CHECK_MODULES([GLIB], [glib-2.0])
-PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.9.0])
-PKG_CHECK_MODULES([LIBGLADE], [libglade-2.0])
+PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.12])
 PKG_CHECK_MODULES([LIBUSER], [libuser])
 AC_CACHE_CHECK([for startup notification], [mitr_cv_lib_sn],
 [mitr_cv_lib_sn=no

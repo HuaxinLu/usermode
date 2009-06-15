@@ -1,3 +1,25 @@
+2009-06-15  Miloslav Trmač  <mitr@redhat.com>
+
+	* userinfo.c (create_userinfo_window, on_ok_clicked, main): Port from
+	libglade to GtkBuilder.
+	* userinfo.ui: New file, replaces ...
+	* usermode.glade: ... this.
+	* Makefile.am (EXTRA_DIST): Remove usermode.glade.
+	(AM_CFLAGS): Use GTK_CFLAGS instead of LIBGLADE_CFLAGS.
+	(dist_pkgdata_DATA): Rename from pkgdata_DATA.  Ship usermode.ui instead
+	of usermode.glade
+	(userinfo_LDADD): Use with GTK_LIBS instead of LIBGLADE_LIBS.
+	* configure.ac: Remove check for libglade.  Update minimum gtk+ version
+	to 2.12.
+	* po/POTFILES.in: Replace usermode.glade with usermode.ui.
+
+	* Makefile.am (EXTRA_DIST): Remove files that are marked for
+	distribution using the dist_ prefix.
+	(dist_bin_SCRIPTS): Rename from bin_SCRIPTS.
+	(dist_man_MANS): Rename from man_MANS.
+	(man_MANS): Rename from dist_man_MANS.  Update CLEANFILES.
+	(dist_pixmap_DATA): Rename from pixmap_DATA.
+
 2009-06-14  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper-wrap.c (userhelper_grab_keyboard)

@@ -3,10 +3,6 @@ VENDOR=redhat
 
 EXTRA_DIST = 	\
 	dummy.h \
-	shutdown \
-	userinfo.1 \
-	usermount.1 \
-	userpasswd.1 \
 	consolehelper.8.in \
 	userhelper.8.in \
 	userhelper_context \
@@ -14,29 +10,26 @@ EXTRA_DIST = 	\
 	usermount.desktop.in \
 	userpasswd.desktop.in \
 	wrapped.console \
-	keys.xpm \
-	usermode.glade \
-	shutdown.pamd \
-	$(pixmap_DATA)
+	shutdown.pamd
 
 SUBDIRS=po
 
 AM_CPPFLAGS = -DLOCALEDIR='"$(localedir)"'
-AM_CFLAGS = $(SN_CFLAGS) $(LIBGLADE_CFLAGS) $(LIBUSER_CFLAGS)
+AM_CFLAGS = $(SN_CFLAGS) $(GTK_CFLAGS) $(LIBUSER_CFLAGS)
 BINDIR_CPPFLAGS = -DBINDIR='"$(bindir)"'
 PIXMAPDIR_CPPFLAGS = -DPIXMAPDIR='"$(pixmapdir)"'
 SBINDIR_CPPFLAGS = -DSBINDIR='"$(sbindir)"'
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk \
 	pam-panel-icon
-bin_SCRIPTS = shutdown
+dist_bin_SCRIPTS = shutdown
 sbin_PROGRAMS = userhelper
 noinst_PROGRAMS = test-userdialog
-man_MANS = userinfo.1 usermount.1 userpasswd.1
-dist_man_MANS = consolehelper.8 userhelper.8
+dist_man_MANS = userinfo.1 usermount.1 userpasswd.1
+man_MANS = consolehelper.8 userhelper.8
 
 pixmapdir = $(datadir)/pixmaps
-pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png \
+dist_pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png \
 	password.png disks.png keyring.png badge-small.png
 
 install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
@@ -58,7 +51,7 @@ consoleapp_DATA = $(WRAPPED_APPS)
 $(WRAPPED_APPS): wrapped.console
 	$(INSTALL) -m600 $^ $@
 
-CLEANFILES = $(dist_man_MANS)
+CLEANFILES = $(man_MANS)
 DISTCLEANFILES =            \
 	userinfo.desktop    \
 	usermount.desktop   \
@@ -74,7 +67,7 @@ debug-install:
 	$(INSTALL)  -m755 usermount         $(bindir)/
 	$(INSTALL)  -m755 userpasswd        $(bindir)/
 
-pkgdata_DATA = usermode.glade
+dist_pkgdata_DATA = usermode.ui
 
 @INTLTOOL_DESKTOP_RULE@
 
@@ -86,7 +79,7 @@ userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c \
 	userhelper-wrap.h
 userinfo_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS) $(SBINDIR_CPPFLAGS) \
 	-DPKGDATADIR='"$(pkgdatadir)"'
-userinfo_LDADD = $(SN_LIBS) $(LIBGLADE_LIBS) $(EFENCE_LIBS)
+userinfo_LDADD = $(SN_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
 
 usermount_SOURCES = usermount.c userdialogs.c userdialogs.h
 usermount_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS)

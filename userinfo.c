@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 1997 Red Hat Software, Inc.
- * Copyright (C) 2001, 2007, 2008 Red Hat, Inc.
+ * Copyright (C) 2001, 2007, 2008, 2009 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -38,8 +38,6 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/wait.h>
-#include <glade/glade.h>
-#include <glade/glade-xml.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include "userhelper.h"
@@ -84,51 +82,59 @@ shell_changed(GtkWidget *widget, gpointer data)
 static GtkWidget *
 create_userinfo_window(struct UserInfo *userinfo)
 {
-	GladeXML *xml = NULL;
+	GtkBuilder *builder;
 	GtkWidget *window = NULL;
+	GError *error;
 	char *shell;
 
-	xml = glade_xml_new(PKGDATADIR "/" PACKAGE ".glade", "userinfo",
-			    PACKAGE);
-	if (xml) {
+	builder = gtk_builder_new();
+	error = NULL;
+	if (gtk_builder_add_from_file(builder, PKGDATADIR "/usermode.ui",
+				      &error) == 0) {
+		g_warning("Error loading usermode.ui: %s", error->message);
+		g_error_free(error);
+	} else {
 		GtkWidget *entry, *shell_menu, *widget;
 		GtkListStore *shells;
 		GtkCellRenderer *cell;
 		gboolean saw_shell = FALSE;
 
-		window = glade_xml_get_widget(xml, "userinfo");
+		window = GTK_WIDGET(gtk_builder_get_object(builder,
+							   "userinfo"));
 		g_assert(window != NULL);
 
 		gtk_window_set_icon_from_file(GTK_WINDOW(window),
 					      PIXMAPDIR "/user_icon.png", NULL);
 
 		g_object_set_data(G_OBJECT(window),
-				  USERINFO_XML_NAME, xml);
+				  USERINFO_XML_NAME, builder);
 		g_signal_connect(window, "destroy",
 				 G_CALLBACK(userhelper_main_quit), window);
 
-		entry = glade_xml_get_widget(xml, "fullname");
+		entry = GTK_WIDGET(gtk_builder_get_object(builder, "fullname"));
 		g_assert(entry != NULL);
 		if (GTK_IS_ENTRY(entry) && userinfo->full_name) {
 			gtk_entry_set_text(GTK_ENTRY(entry),
 					   userinfo->full_name);
 		}
 
-		entry = glade_xml_get_widget(xml, "office");
+		entry = GTK_WIDGET(gtk_builder_get_object(builder, "office"));
 		g_assert(entry != NULL);
 		if (GTK_IS_ENTRY(entry) && userinfo->office) {
 			gtk_entry_set_text(GTK_ENTRY(entry),
 					   userinfo->office);
 		}
 
-		entry = glade_xml_get_widget(xml, "officephone");
+		entry = GTK_WIDGET(gtk_builder_get_object(builder,
+							  "officephone"));
 		g_assert(entry != NULL);
 		if (GTK_IS_ENTRY(entry) && userinfo->office_phone) {
 			gtk_entry_set_text(GTK_ENTRY(entry),
 					   userinfo->office_phone);
 		}
 
-		entry = glade_xml_get_widget(xml, "homephone");
+		entry = GTK_WIDGET(gtk_builder_get_object(builder,
+							  "homephone"));
 		g_assert(entry != NULL);
 		if (GTK_IS_ENTRY(entry) && userinfo->home_phone) {
 			gtk_entry_set_text(GTK_ENTRY(entry),
@@ -161,7 +167,8 @@ create_userinfo_window(struct UserInfo *userinfo)
 					   -1);
 		}
 
-		shell_menu = glade_xml_get_widget(xml, "shellmenu");
+		shell_menu = GTK_WIDGET(gtk_builder_get_object(builder,
+							       "shellmenu"));
 		g_assert(shell_menu != NULL);
 		gtk_combo_box_set_model(GTK_COMBO_BOX(shell_menu),
 					GTK_TREE_MODEL(shells));
@@ -175,11 +182,11 @@ create_userinfo_window(struct UserInfo *userinfo)
 		g_signal_connect(shell_menu, "changed",
 				 G_CALLBACK(shell_changed), userinfo);
 
-		widget = glade_xml_get_widget(xml, "apply");
+		widget = GTK_WIDGET(gtk_builder_get_object(builder, "apply"));
 		g_assert(widget != NULL);
 		g_signal_connect(widget, "clicked", G_CALLBACK(on_ok_clicked),
 				 userinfo);
-		widget = glade_xml_get_widget(xml, "close");
+		widget = GTK_WIDGET(gtk_builder_get_object(builder, "close"));
 		g_assert(widget != NULL);
 		g_signal_connect(widget, "clicked",
 				 G_CALLBACK(userhelper_main_quit), window);
@@ -228,31 +235,31 @@ on_ok_clicked(GtkWidget *widget, gpointer data)
 {
 	struct UserInfo *userinfo;
 	GtkWidget *toplevel, *entry;
-	GladeXML *xml;
+	GtkBuilder *builder;
 
 	toplevel = gtk_widget_get_toplevel(widget);
 	if (!GTK_WIDGET_TOPLEVEL(toplevel)) {
 		return FALSE;
 	}
 	userinfo = data;
-	xml = g_object_get_data(G_OBJECT(toplevel), USERINFO_XML_NAME);
+	builder = g_object_get_data(G_OBJECT(toplevel), USERINFO_XML_NAME);
 
-	entry = glade_xml_get_widget(xml, "fullname");
+	entry = GTK_WIDGET(gtk_builder_get_object(builder, "fullname"));
 	if (GTK_IS_ENTRY(entry)) {
 		userinfo->full_name = gtk_entry_get_text(GTK_ENTRY(entry));
 	}
 
-	entry = glade_xml_get_widget(xml, "office");
+	entry = GTK_WIDGET(gtk_builder_get_object(builder, "office"));
 	if (GTK_IS_ENTRY(entry)) {
 		userinfo->office = gtk_entry_get_text(GTK_ENTRY(entry));
 	}
 
-	entry = glade_xml_get_widget(xml, "officephone");
+	entry = GTK_WIDGET(gtk_builder_get_object(builder, "officephone"));
 	if (GTK_IS_ENTRY(entry)) {
 		userinfo->office_phone = gtk_entry_get_text(GTK_ENTRY(entry));
 	}
 
-	entry = glade_xml_get_widget(xml, "homephone");
+	entry = GTK_WIDGET(gtk_builder_get_object(builder, "homephone"));
 	if (GTK_IS_ENTRY(entry)) {
 		userinfo->home_phone = gtk_entry_get_text(GTK_ENTRY(entry));
 	}
@@ -403,8 +410,6 @@ main(int argc, char *argv[])
 	}
 
 	gtk_init(&argc, &argv);
-
-	glade_init();
 
 	parse_args (userinfo, argc, argv);
 

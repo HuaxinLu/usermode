@@ -9,7 +9,7 @@ userhelper.c
 userhelper.h
 userinfo.c
 userinfo.desktop.in
-usermode.glade
+[type: gettext/glade] usermode.ui
 usermount.c
 usermount.desktop.in
 userpasswd.desktop.in
