@@ -1,3 +1,9 @@
+2009-09-15  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.101.
+	* NEWS: Update.
+	* po/LINGUAS: Update.
+
 2009-06-15  Miloslav Trmač  <mitr@redhat.com>
 
 	* userinfo.c (create_userinfo_window, on_ok_clicked, main): Port from

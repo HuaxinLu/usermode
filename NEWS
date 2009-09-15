@@ -1,3 +1,8 @@
+1.101
+* Use GtkBuilder instead of libglade.
+* Avoid some obsolete GTK+ interfaces.
+* Update translations.
+
 1.100
 * Don't use interfaces deprecated in GTK+ 2.14.
 
