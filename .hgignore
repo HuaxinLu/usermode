@@ -9,6 +9,7 @@
 ^autom4te\.cache.*
 ^build.*$
 ^po/Makefile\.in\.in$
+^po/usermode.pot$
 ^INSTALL$
 ^Makefile\.in$
 ^aclocal\.m4$
