@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-29 17:47+0000\n"
-"PO-Revision-Date: 2008-03-23 10:42+0200\n"
+"POT-Creation-Date: 2009-09-22 08:49+0000\n"
+"PO-Revision-Date: 2009-09-24 16:04+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <pl@li.org>\n"
+"Language-Team: Polish <fedora-trans-pl@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,7 +47,7 @@ msgstr "Anuluj"
 
 #: ../dummy.h:24
 msgid "Run Unprivileged"
-msgstr "Uruchom bez dodatkowych uprawnień"
+msgstr "Uruchomienie bez dodatkowych uprawnień"
 
 #: ../dummy.h:25
 msgid "(current) UNIX password: "
@@ -59,7 +59,7 @@ msgstr "Nowe hasło UNIX: "
 
 #: ../dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Ponownie wpisz nowe hasło UNIX: "
+msgstr "Proszę ponownie podać nowe hasło UNIX: "
 
 #: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
@@ -75,11 +75,11 @@ msgstr "Hasło nie zostało zmienione"
 
 #: ../dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "Przepraszam, hasła nie są identyczne"
+msgstr "Hasła nie są identyczne"
 
 #: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Uruchom narzędzia konfigurujące system bez hasła."
+msgstr "Uruchomienie narzędzia konfigurującego system bez hasła."
 
 #: ../dummy.h:33
 msgid "login: "
@@ -106,7 +106,7 @@ msgid ""
 "failure code %d"
 msgstr ""
 "Rezygnacja z przywilejów administratora nie powiodła się: "
-"pam_timestamp_check zwrócił kod błędu %d"
+"pam_timestamp_check zwróciło kod błędu %d"
 
 #: ../pam-panel-icon.c:146
 msgid ""
@@ -114,9 +114,9 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
-"Jesteś aktualnie upoważniony w zakresie konfiguracji ustawień systemu (które "
-"dotyczą wszystkich użytkowników) bez konieczności wprowadzania ponownie "
-"hasła administratora. Można zrezygnować z tego upoważnienia."
+"Użytkownik jest aktualnie upoważniony w zakresie konfiguracji ustawień "
+"systemu (które dotyczą wszystkich użytkowników) bez konieczności podawania "
+"ponownie hasła administratora. Można zrezygnować z tego upoważnienia."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -163,26 +163,27 @@ msgstr ""
 "Ustawienie kanału wejścia/wyjścia w tryb bezblokowania nie powiodło się: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: połączenie się z menedżerem sesji nie powiodło się\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:206
 msgid "Unknown exit code."
 msgstr "Nieznany kod wyjścia."
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:208
 msgid "Information updated."
 msgstr "Informacje zostały zaktualizowane."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:210
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
 "Podane hasło jest nieprawidłowe.\n"
-"Spróbuj jeszcze raz."
+"Proszę spróbować ponownie."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:212
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -191,33 +192,33 @@ msgstr ""
 "Jedno lub więcej ze zmienionych pól ma nieprawidłową wartość.\n"
 "Prawdopodobną przyczyną jest wystąpienie w jednym z nich dwukropków lub "
 "przecinków.\n"
-"Usuń je i spróbuj ponownie."
+"Proszę je usunąć i spróbować ponownie."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:214
 msgid "Password resetting error."
 msgstr "Błąd podczas przywracania hasła."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:216
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
 "Niektóre pliki systemowe są zablokowane.\n"
-"Spróbuj ponownie za chwilę."
+"Proszę spróbować ponownie za chwilę."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:218
 msgid "Unknown user."
 msgstr "Nieznany użytkownik."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:220
 msgid "Insufficient rights."
 msgstr "Niewystarczające uprawnienia."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:222
 msgid "Invalid call to subprocess."
 msgstr "Nieprawidłowe wywołanie podprocesu."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:224
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -225,180 +226,179 @@ msgid ""
 msgstr ""
 "Aktualna powłoka nie jest wymieniona w /etc/shells.\n"
 "Nie można zmienić powłoki na inną.\n"
-"Skontaktuj się z administratorem systemu."
+"Proszę skontaktować się z administratorem systemu."
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:227
 msgid "Out of memory."
 msgstr "Brak pamięci."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:229
 msgid "The exec() call failed."
 msgstr "Wywołanie exec() nie powiodło się."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:231
 msgid "Failed to find selected program."
-msgstr "Nie znaleziono wybranego programu."
+msgstr "Nie odnaleziono wybranego programu."
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:234
 msgid "Request canceled."
 msgstr "Anulowano żądanie."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:236
 msgid "Internal PAM error occured."
 msgstr "Wystąpił wewnętrzny błąd PAM."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:238
 msgid "Unknown error."
 msgstr "Nieznany błąd."
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:488
 msgid "Query"
 msgstr "Zapytanie"
 
-#: ../userhelper-wrap.c:581 ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "Błąd"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "Informacja"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "Miejsce na tekst."
-
-#: ../userhelper-wrap.c:753 ../userhelper.c:627
+#: ../userhelper-wrap.c:547 ../userhelper.c:604
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Uwierzytelnianie jako \"%s\""
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+msgid "Error"
+msgstr "Błąd"
+
+#: ../userhelper-wrap.c:566
+msgid "Information"
+msgstr "Informacja"
+
+#: ../userhelper-wrap.c:727
 msgid "Changing password."
 msgstr "Zmienianie hasła."
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:729
 msgid "Changing personal information."
 msgstr "Zmienianie informacji osobistych."
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:732
 msgid "Changing login shell."
 msgstr "Zmienianie powłoki logowania."
 
-#: ../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:736
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz uruchomić program \"%s\", który może wykorzystywać uprawnienia "
+"Próbowano uruchomić program \"%s\", który może wykorzystywać uprawnienia "
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: ../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Próbujesz uruchomić program \"%s\", który wymaga uprawnień administratora, "
+"Próbowano uruchomić program \"%s\", który wymaga uprawnień administratora, "
 "niezbędne są dodatkowe informacje."
 
-#: ../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:742
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz wykonać polecenie, które może może wykorzystywać uprawnienia "
+"Próbowano wykonać polecenie, które może wykorzystywać uprawnienia "
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: ../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:744
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz wykonać polecenie, które wymaga uprawnień administratora, "
+"Próbowano wykonać polecenie, które wymaga uprawnień administratora, "
 "niezbędne są jednak dodatkowe informacje."
 
-#: ../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:781
 msgid "_Run Unprivileged"
 msgstr "U_ruchom bez dodatkowych uprawnień"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:926
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Błąd potoku.\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:933
 #, c-format
 msgid "Cannot fork().\n"
-msgstr "Nie można wywołać fork().\n"
+msgstr "Nie można wykonać fork().\n"
 
-#: ../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:959
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
 msgstr "Nie można ustawić zestawu znaków %s na kanale wejścia/wyjścia: %s\n"
 
-#: ../userhelper-wrap.c:1077 ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1031 ../userhelper-wrap.c:1035
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Błąd dup2().\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1046
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Błąd execl(), errno=%d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:586
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz uruchomić program \"%s\", który może wykorzystywać uprawnienia\n"
+"Próbowano uruchomić program \"%s\", który może wykorzystywać uprawnienia\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: ../userhelper.c:611
+#: ../userhelper.c:588
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz uruchomić program \"%s\", który wymaga uprawnień\n"
+"Próbowano uruchomić program \"%s\", który wymaga uprawnień\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: ../userhelper.c:615
+#: ../userhelper.c:592
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz wykonać polecenie, które może wykorzystywać uprawnienia\n"
+"Próbowano wykonać polecenie, które może wykorzystywać uprawnienia\n"
 "administratora, niezbędne są jednak dodatkowe informacje."
 
-#: ../userhelper.c:617
+#: ../userhelper.c:594
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Próbujesz wykonać polecenie, które wymaga uprawnień administratora,\n"
+"Próbowano wykonać polecenie, które wymaga uprawnień administratora,\n"
 "niezbędne są jednak dodatkowe informacje."
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2025
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2117
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Nie można otworzyć okna graficznego i znaleźć terminala sterującego.\n"
+msgstr ""
+"Nie można otworzyć okna graficznego i odnaleźć terminala sterującego.\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
-msgstr "Nieoczekiwany argument"
+msgstr "Nieoczekiwany parametr"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Nie istniejesz. Odejdź stąd.\n"
@@ -409,29 +409,29 @@ msgstr "O mnie"
 
 #: ../userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Zmienianie informacji osobistych"
+msgstr "Zmiana informacji osobistych"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Imię i nazwisko:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Numer telefonu domowego:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Powłoka logowania:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Numer telefonu do biura:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Biuro:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Informacje o użytkowniku"
 
@@ -448,24 +448,24 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Czy na pewno chcesz sformatować dysk? Usuniesz wszystkie dane na nim zawarte."
+"Na pewno sformatować dysk? Wszystkie zawarte na nim dane zostaną usunięte."
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
-msgstr "Przeprowadź formatowanie _niskopoziomowe."
+msgstr "Formatowanie _niskopoziomowe."
 
 #: ../usermount.c:337
 msgid "Select a _filesystem type to create:"
-msgstr "Wybierz _system plików do utworzenia:"
+msgstr "Proszę wybrać _system plików do utworzenia:"
 
 #: ../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Brak systemów plików do których montowania/odmontowywania miałbyś "
+"Brak systemów plików do których montowania/odmontowywania użytkownik ma "
 "uprawnienia.\n"
-"Skontaktuj się z administratorem."
+"Proszę skontaktować się z administratorem."
 
 #. Create the dialog.
 #: ../usermount.c:508 ../usermount.c:520
@@ -483,13 +483,13 @@ msgstr "Urządzenie"
 
 #: ../usermount.c:580
 msgid "Directory"
-msgstr "Folder"
+msgstr "Katalog"
 
 #: ../usermount.c:586
 msgid "Filesystem"
 msgstr "System plików"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Urządzenie \"%s\" nie może zostać sformatowane."
@@ -504,7 +504,7 @@ msgstr "Montowanie i odmontowywanie systemów plików"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Zmienianie hasła logowania"
+msgstr "Zmiana hasła logowania"
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
