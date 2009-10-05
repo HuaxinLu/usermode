@@ -1,5 +1,8 @@
 2009-10-05  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.ac: Release 1.102.
+	* NEWS: Update.
+
 	* consolehelper-gtk.8: New file, based on a Debian man page by
 	Christopher Cramer.
 	* pam-panel-icon.1: New file.

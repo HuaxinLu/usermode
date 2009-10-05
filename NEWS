@@ -1,3 +1,8 @@
+1.102:
+* Add more man pages for consolehelper-gtk and pam-panel-icon.
+* Minor fixes in other man pages.
+* Update translations.
+
 1.101
 * Use GtkBuilder instead of libglade.
 * Avoid some obsolete GTK+ interfaces.
