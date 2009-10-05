@@ -25,7 +25,8 @@ bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk \
 dist_bin_SCRIPTS = shutdown
 sbin_PROGRAMS = userhelper
 noinst_PROGRAMS = test-userdialog
-dist_man_MANS = userinfo.1 usermount.1 userpasswd.1
+dist_man_MANS = consolehelper-gtk.8 pam-panel-icon.1 \
+	userinfo.1 usermount.1 userpasswd.1
 man_MANS = consolehelper.8 userhelper.8
 
 pixmapdir = $(datadir)/pixmaps

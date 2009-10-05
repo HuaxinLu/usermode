@@ -52,8 +52,5 @@ This program has no command line options of its own; it passes all
 command line options on to the program it is calling.
 .SH "SEE ALSO"
 .IR userhelper (8)
-.SH BUGS
-No known bugs.  Report any you find at http://developer.redhat.com/
-at the BugTrack link.
 .SH AUTHOR
 Michael K. Johnson <johnsonm@redhat.com>

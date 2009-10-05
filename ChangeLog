@@ -1,3 +1,14 @@
+2009-10-05  Miloslav Trmač  <mitr@redhat.com>
+
+	* consolehelper-gtk.8: New file, based on a Debian man page by
+	Christopher Cramer.
+	* pam-panel-icon.1: New file.
+	* Makefile.am (dist_man_MANS): Add consolehelper-gtk.8 and
+	pam-panel-icon.1.
+	* usermount.1: Document userformat better.
+	* consolehelper.8.in (BUGS): Remove text referring to
+	developer.redhat.com.
+
 2009-09-15  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.101.
