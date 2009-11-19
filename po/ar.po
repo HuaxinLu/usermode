@@ -4,14 +4,14 @@
 # Ahmad Tarek <ahmadtarek@link.net>, 2004.
 # Ossama M. Khayat <okhayat@yahoo.com>, 2004.
 # Hicham Amaoui <amaoui@altern.org
-#
+# Tareq Al Jurf <taljurf@fedoraproject.org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: ar_new\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-25 00:26+0100\n"
-"PO-Revision-Date: 2005-05-22 23:58+0300\n"
-"Last-Translator: Munzir Taha <munzirtaha@newhorizons.com.sa>\n"
+"POT-Creation-Date: 2009-11-19 03:26+0000\n"
+"PO-Revision-Date: 2009-11-19 11:29+0300\n"
+"Last-Translator: Tareq Al Jurf <taljurf@fedoraproject.org>\n"
 "Language-Team: Arabic <fedora-trans-ar@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,80 +37,80 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../../po/../dummy.h:21
+#: ../dummy.h:21
 msgid "OK"
 msgstr "موافق"
 
-#: ../../po/../dummy.h:22
+#: ../dummy.h:22
 msgid "Exit"
 msgstr "خروج"
 
-#: ../../po/../dummy.h:23
+#: ../dummy.h:23
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: ../../po/../dummy.h:24
+#: ../dummy.h:24
 msgid "Run Unprivileged"
 msgstr "شغّل بوضع عادي"
 
-#: ../../po/../dummy.h:25
+#: ../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "كلمة مرور يونكس (الحاليّة): "
 
-#: ../../po/../dummy.h:26
+#: ../dummy.h:26
 msgid "New UNIX password: "
 msgstr "كلمة مرور يونكس الجديدة: "
 
-#: ../../po/../dummy.h:27
+#: ../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "أعد كتابة كلمة مرور يونكس الجديدة: "
 
-#: ../../po/../dummy.h:28
+#: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "كلمة مرور سيّئة: إنّها بالغة في القصر"
 
-#: ../../po/../dummy.h:29
+#: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "كلمة مرور سيّئة: إنها قصيرة جدّاً"
 
-#: ../../po/../dummy.h:30
+#: ../dummy.h:30
 msgid "Password unchanged"
 msgstr "لم يتم تغيير كلمة المرور"
 
-#: ../../po/../dummy.h:31
+#: ../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "عفواً، كلمات المرور غير متطابقة"
 
-#: ../../po/../dummy.h:32
+#: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "شغّل أدوات إعداد النّظام العامّة بدون كلمة مرور."
 
-#: ../../po/../dummy.h:33
+#: ../dummy.h:33
 msgid "login: "
 msgstr "اسم المستخدم: "
 
-#: ../../po/../dummy.h:34
+#: ../dummy.h:34
 msgid "Password: "
 msgstr "كلمة المرور: "
 
-#: ../../po/../gsmclient.c:362
-#, fuzzy, c-format
+#: ../gsmclient.c:362
+#, c-format
 msgid "%s failed to connect to the session manager: %s\n"
-msgstr "pam-panel-icon: فشل الإتصال بمدير الجلسة\n"
+msgstr "%s :فشل بالإتصال بمدير الجلسة %s\n"
 
-#: ../../po/../pam-panel-icon.c:89
+#: ../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "فشل ترك امتيازات المدير: %s"
 
-#: ../../po/../pam-panel-icon.c:98
+#: ../pam-panel-icon.c:98
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr "فشل ترك امتيازات المدير: pam_timestamp_check أعاد رمز الفشل %d"
 
-#: ../../po/../pam-panel-icon.c:146
+#: ../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -119,64 +119,64 @@ msgstr ""
 "مسموح لك الآن بتكوين الإعدادات على نطاق النظام (هذا يشمل كل المستخدمين) بدون "
 "ادخال كلمة سر للمدير مرة اخرى. يمكن لك التخلي عن هذا التفويض."
 
-#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
+#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "الإبقاء على التفويض"
 
-#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
+#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "نسيان التفويض"
 
-#: ../../po/../pam-panel-icon.c:285
+#: ../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr ""
 "إن pam_timestamp_check لا يتوفر على ترخيصsetuid بالنسبة للمستخدم الجذري"
 
-#: ../../po/../pam-panel-icon.c:289
+#: ../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "لا وحدة تحكم tty ل pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:293
+#: ../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr "المستخدم غير معروف ل pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:297
+#: ../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr "خطأ التراخيص في pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:301
+#: ../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "وحدة تحكم tty غير صالحة في pam_timestamp_check"
 
-#: ../../po/../pam-panel-icon.c:319
+#: ../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "خطأ:  %s\n"
 
-#: ../../po/../pam-panel-icon.c:384
+#: ../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "فشل إجراء الأمر \"%s\": %s\n"
 
-#: ../../po/../pam-panel-icon.c:396
+#: ../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "فشل جعل قناة الإدخال/الإخراج غير موقفة: %s\n"
 
-#: ../../po/../pam-panel-icon.c:476
+#: ../pam-panel-icon.c:476
 #, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: فشل الإتصال بمدير الجلسة\n"
 
-#: ../../po/../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:206
 msgid "Unknown exit code."
 msgstr "رمز خروج غير معروف."
 
-#: ../../po/../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:208
 msgid "Information updated."
 msgstr "تمّ تحديث المعلومات."
 
-#: ../../po/../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:210
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -184,7 +184,7 @@ msgstr ""
 "كلمة المرور التي أدخلتها غير صالحة.\n"
 "رجاء حاول مرّة أخرى."
 
-#: ../../po/../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:212
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -194,11 +194,11 @@ msgstr ""
 "هذا على الأرجح إمّا بسبب النّقطتين أو الفواصل في أحد الحقول.\n"
 "رجاء أزلها وحاول مرّة أخرى."
 
-#: ../../po/../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:214
 msgid "Password resetting error."
 msgstr "خطأ في إعادة وضع كلمة المرور."
 
-#: ../../po/../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:216
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -206,19 +206,19 @@ msgstr ""
 "بعض ملفّات النّظام مُقفلة.\n"
 "رجاء حاول مرّة أخرى خلال بضع دقائق."
 
-#: ../../po/../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:218
 msgid "Unknown user."
 msgstr "مستخدم غير معروف."
 
-#: ../../po/../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:220
 msgid "Insufficient rights."
 msgstr "حقوق غير كافية."
 
-#: ../../po/../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:222
 msgid "Invalid call to subprocess."
 msgstr "مناداة غير صالحة للعمليّة الفرعيّة."
 
-#: ../../po/../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:224
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -228,65 +228,60 @@ msgstr ""
 "لا يسمح لك بتغيير صدفتك.\n"
 "استشر مدير نظامك."
 
-#: ../../po/../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:227
 msgid "Out of memory."
 msgstr "نفذت الذّاكرة."
 
-#: ../../po/../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:229
 msgid "The exec() call failed."
 msgstr "فشل نداء exec()."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:231
 msgid "Failed to find selected program."
 msgstr "فشل العثور على البرنامج المحدّد."
 
-#: ../../po/../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:234
 msgid "Request canceled."
 msgstr "تم إلغاء الطلب."
 
-#: ../../po/../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:236
 msgid "Internal PAM error occured."
 msgstr "حدث خطأ داخلي في وحدات المصادقة (PAM)."
 
-#: ../../po/../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:238
 msgid "Unknown error."
 msgstr "خطأ غير معروف."
 
-#: ../../po/../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:488
 msgid "Query"
 msgstr "استعلام"
 
-#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#, c-format
+msgid "Authenticating as \"%s\""
+msgstr "جاري التحقق من الهوية كـ \"%s\""
+
+#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
 msgid "Error"
 msgstr "خطأ"
 
-#: ../../po/../userhelper-wrap.c:581
+#: ../userhelper-wrap.c:566
 msgid "Information"
 msgstr "معلومات"
 
-#: ../../po/../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "نص حاجز مكان."
-
-#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
-#, c-format
-msgid "Authenticating as \"%s\""
-msgstr ""
-
-#: ../../po/../userhelper-wrap.c:782
-#, fuzzy
+#: ../userhelper-wrap.c:727
 msgid "Changing password."
-msgstr "غيّر كلمة مرور اسم مستخدمك"
+msgstr "جاري تغيير كلمة المرور"
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:729
 msgid "Changing personal information."
 msgstr "جاري تغيير المعلومات الشّخصيّة."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:732
 msgid "Changing login shell."
 msgstr "جاري تغيير صدفة الدّخول."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:736
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -295,7 +290,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد "
 "من المعلومات مطلوبة للقيام بذلك."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -304,7 +299,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من "
 "المعلومات مطلوبة للقيام بذلك."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:742
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -312,7 +307,7 @@ msgstr ""
 "أنت تحاول تشغيل أمر قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد من "
 "المعلومات مطلوبة للقيام بذلك."
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:744
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -320,46 +315,36 @@ msgstr ""
 "أنت تحاول تشغيل أمر يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات "
 "مطلوبة للقيام بذلك."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:781
 msgid "_Run Unprivileged"
 msgstr "_شغّل بوضع عادي"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:926
 #, c-format
 msgid "Pipe error.\n"
 msgstr "خطأ في التّمرير.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:933
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "لم يمكن عمل fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:959
 #, c-format
 msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr ""
+msgstr "لم يمكن وضع المحارف %s على قناة الادخال/الاخراج: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1031 ../userhelper-wrap.c:1035
 #, c-format
 msgid "dup2() error.\n"
 msgstr "خطأ في dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1046
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "خطأ في execl()، errno=%d\n"
 
-#: ../../po/../userhelper.c:201
-#, fuzzy, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "لم يمكن وضْع سياق التّنفيذ %s.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "لم يمكن وضْع سياق التّنفيذ %s.\n"
-
-#: ../../po/../userhelper.c:803
+#: ../userhelper.c:586
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -368,7 +353,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: ../../po/../userhelper.c:805
+#: ../userhelper.c:588
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -377,7 +362,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: ../../po/../userhelper.c:809
+#: ../userhelper.c:592
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -386,7 +371,7 @@ msgstr ""
 "أنت تحاول تشغيل أمر قد يستفيد من\n"
 "الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: ../../po/../userhelper.c:811
+#: ../userhelper.c:594
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -395,25 +380,25 @@ msgstr ""
 "أنت تحاول تشغيل أمر يتطلّب الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: ../../po/../userhelper.c:2372
+#: ../userhelper.c:2025
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper يجب أن يكون setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2470
+#: ../userhelper.c:2117
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "لم يمكن فتح النّافذة الرّسوميّة، ولم يمكن العثور على الشّاشة الطّرفيّة المتحكّمة.\n"
 
-#: ../../po/../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
-msgstr ""
+msgstr "معطى غير متوقع"
 
-#: ../../po/../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "أنت غير موجود. ارحل عنّي.\n"
@@ -426,53 +411,53 @@ msgstr "نبذة عنّي"
 msgid "Change personal information"
 msgstr "غيّر المعلومات الشّخصيّة"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "الاسم الكامل:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "رقم هاتف المنزل:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "اسم الدّخول للصّدفة:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "رقم هاتف المكتب:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "المكتب:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "معلومات المستخدم"
 
-#: ../../po/../usermount.c:61
+#: ../usermount.c:61
 msgid "_Mount"
 msgstr "_جهّز"
 
-#: ../../po/../usermount.c:62
+#: ../usermount.c:62
 msgid "Un_mount"
 msgstr "أ_زل التّجهيز"
 
-#: ../../po/../usermount.c:289
+#: ../usermount.c:289
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr "هل أنت متأكّد من أنّك تريد تنسيق هذا القرص؟ سوف تدمّر أيّ بيانات يحتويها."
 
-#: ../../po/../usermount.c:300
+#: ../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "قُم بتنسيق _منخفض المستوى."
 
-#: ../../po/../usermount.c:337
+#: ../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "اختر نوع _نظام ملفّات لإنشائه:"
 
-#: ../../po/../usermount.c:507
+#: ../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -481,31 +466,31 @@ msgstr ""
 "اتصل بمديرك."
 
 #. Create the dialog.
-#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
+#: ../usermount.c:508 ../usermount.c:520
 msgid "User Mount Tool"
 msgstr "أداة المستخدم للتّجهيز"
 
 #. Create the other buttons.
-#: ../../po/../usermount.c:538
+#: ../usermount.c:538
 msgid "_Format"
 msgstr "_نسّق"
 
-#: ../../po/../usermount.c:574
+#: ../usermount.c:574
 msgid "Device"
 msgstr "جهاز"
 
-#: ../../po/../usermount.c:580
+#: ../usermount.c:580
 msgid "Directory"
 msgstr "دليل"
 
-#: ../../po/../usermount.c:586
+#: ../usermount.c:586
 msgid "Filesystem"
 msgstr "نظام ملفّات"
 
-#: ../../po/../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
-msgstr ""
+msgstr "الجهاز '%s' غير قابل للتنسيق"
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
@@ -522,6 +507,16 @@ msgstr "غيّر كلمة مرور اسم مستخدمك"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "كلمة المرور"
+
+#~ msgid "Placeholder text."
+#~ msgstr "نص حاجز مكان."
+
+#, fuzzy
+#~ msgid "Could not set default context for %s for program %s.\n"
+#~ msgstr "لم يمكن وضْع سياق التّنفيذ %s.\n"
+
+#~ msgid "Could not set exec context to %s.\n"
+#~ msgstr "لم يمكن وضْع سياق التّنفيذ %s.\n"
 
 #~ msgid "Password for %s"
 #~ msgstr "كلمة المرور لـ%s"
