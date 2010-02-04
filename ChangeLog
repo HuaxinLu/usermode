@@ -1,3 +1,11 @@
+2010-02-04  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.c (become_super): Check for failures of the system
+	calls in addition to verifying the expected results.
+	(become_normal): Check for failures of the system
+	calls in addition to verifying the expected results.  Call setregid()
+	as well.  Verify the real gid/uid values.
+
 2009-10-05  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.102.

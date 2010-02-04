@@ -985,17 +985,20 @@ is_grouplist_member(const char *username, const char * grouplist)
 static void
 become_super(void)
 {
-	/* Become the superuser. */
-	setgroups(0, NULL);
-	setregid(0, 0);
-	setreuid(0, 0);
-	/* Yes, setuid() and friends can fail, even for superusers. */
+	/* Become the superuser.
+	   Yes, setuid() and friends can fail, even for superusers. */
+	if (setgroups(0, NULL) != 0 ||
+	    setregid(0, 0) != 0 ||
+	    setreuid(0, 0) != 0) {
+		debug_msg("userhelper: set*id() failure: %s\n",
+			  strerror(errno));
+		exit(ERR_EXEC_FAILED);
+	}
 	if ((geteuid() != 0) ||
 	    (getuid() != 0) ||
 	    (getegid() != 0) ||
 	    (getgid() != 0)) {
-		debug_msg("userhelper: set*id() failure: %s\n",
-			  strerror(errno));
+		debug_msg("userhelper: set*id() didn't work\n");
 		exit(ERR_EXEC_FAILED);
 	}
 }
@@ -1003,17 +1006,26 @@ become_super(void)
 static void
 become_normal(const char *user)
 {
-	/* Join the groups of the user who invoked us. */
-	initgroups(user, getgid());
+	gid_t gid;
+	uid_t uid;
+
+	gid = getgid();
+	uid = getuid();
+	/* Become the user who invoked us. */
+	if (initgroups(user, gid) != 0 ||
+	    setregid(gid, gid) != 0 ||
+	    setreuid(uid, uid) != 0) {
+		debug_msg("userhelper: set*id() failure: %s\n",
+			  strerror(errno));
+		exit(ERR_EXEC_FAILED);
+	}
 	/* Verify that we're back to normal. */
-	if (getegid() != getgid()) {
+	if (getegid() != gid || getgid() != gid) {
 		debug_msg("userhelper: still setgid()\n");
 		exit(ERR_EXEC_FAILED);
 	}
-	/* Become the user who invoked us. */
-	setreuid(getuid(), getuid());
 	/* Yes, setuid() can fail. */
-	if (geteuid() != getuid()) {
+	if (geteuid() != uid || getuid() != uid) {
 		debug_msg("userhelper: still setuid()\n");
 		exit(ERR_EXEC_FAILED);
 	}
