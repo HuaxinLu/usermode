@@ -983,13 +983,21 @@ is_grouplist_member(const char *username, const char * grouplist)
 }
 
 static void
-become_super(void)
+become_super_supplementary_groups(void)
+{
+	if (initgroups("root", 0) != 0) {
+		debug_msg("userhelper: initgroups() failure: %s\n",
+			  strerror(errno));
+		exit(ERR_EXEC_FAILED);
+	}
+}
+
+static void
+become_super_other(void)
 {
 	/* Become the superuser.
 	   Yes, setuid() and friends can fail, even for superusers. */
-	if (initgroups("root", 0) != 0 ||
-	    setregid(0, 0) != 0 ||
-	    setreuid(0, 0) != 0) {
+	if (setregid(0, 0) != 0 || setreuid(0, 0) != 0) {
 		debug_msg("userhelper: set*id() failure: %s\n",
 			  strerror(errno));
 		exit(ERR_EXEC_FAILED);
@@ -1001,6 +1009,13 @@ become_super(void)
 		debug_msg("userhelper: set*id() didn't work\n");
 		exit(ERR_EXEC_FAILED);
 	}
+}
+
+static void
+become_super(void)
+{
+	become_super_supplementary_groups();
+	become_super_other();
 }
 
 static void
@@ -1855,6 +1870,14 @@ wrap(const char *user, const char *program,
 			fail_exit(data, retval);
 		}
 
+		become_super_supplementary_groups();
+
+		retval = pam_setcred(data->pamh, PAM_ESTABLISH_CRED);
+		if (retval != PAM_SUCCESS) {
+			pam_end(data->pamh, retval);
+			fail_exit(data, retval);
+		}
+
 		/* Start up a child process we can wait on. */
 		child = fork();
 		if (child == -1) {
@@ -1876,7 +1899,9 @@ wrap(const char *user, const char *program,
 			argv[optind - 1] = strdup(program);
 			debug_msg("userhelper: about to exec \"%s\"\n",
 				  constructed_path);
-			become_super();
+			/* become_super_supplementary_groups() called in the
+			   parent. */
+			become_super_other();
 			if (data->input != NULL) {
 				fflush(data->input);
 				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
@@ -1925,10 +1950,12 @@ wrap(const char *user, const char *program,
 		retval = pam_close_session(data->pamh, 0);
 		if (retval != PAM_SUCCESS) {
 			pipe_conv_exec_fail(conv);
+			pam_setcred(data->pamh, PAM_DELETE_CRED);
 			pam_end(data->pamh, retval);
 			fail_exit(data, retval);
 		}
 
+		pam_setcred(data->pamh, PAM_DELETE_CRED);
 		pam_end(data->pamh, PAM_SUCCESS);
 		if (WIFEXITED(status))
 			exit(WEXITSTATUS(status));

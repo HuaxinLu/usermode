@@ -1,5 +1,9 @@
 2010-02-05  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (become_super_supplementary_groups)
+	(become_super_other): Split from become_super().
+	(wrap): Use pam_setcred().
+
 	* userhelper.c (become_super): Use root's supplementary groups.
 
 	* userhelper.c (passwd, chfn, wrap): Use "data" instead of
