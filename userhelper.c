@@ -987,7 +987,7 @@ become_super(void)
 {
 	/* Become the superuser.
 	   Yes, setuid() and friends can fail, even for superusers. */
-	if (setgroups(0, NULL) != 0 ||
+	if (initgroups("root", 0) != 0 ||
 	    setregid(0, 0) != 0 ||
 	    setreuid(0, 0) != 0) {
 		debug_msg("userhelper: set*id() failure: %s\n",

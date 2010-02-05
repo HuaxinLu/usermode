@@ -1,5 +1,7 @@
 2010-02-05  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (become_super): Use root's supplementary groups.
+
 	* userhelper.c (passwd, chfn, wrap): Use "data" instead of
 	dereferencing conv->appdata_ptr again.
 
