@@ -1,3 +1,8 @@
+2010-02-05  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.c (set_pam_items): New function.
+	(passwd, chfn, wrap): Use pam_set_items.
+
 2010-02-04  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.c (become_super): Check for failures of the system

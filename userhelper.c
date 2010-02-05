@@ -1102,6 +1102,31 @@ get_user_for_auth(shvarFile *s)
 	return NULL;
 }
 
+/* Set various attributes of DATA, including the requesting user USER. */
+static void
+set_pam_items(struct app_data *data, const char *user)
+{
+	int retval;
+	char *tty;
+
+	retval = pam_set_item(data->pamh, PAM_RUSER, user);
+	if (retval != PAM_SUCCESS) {
+		debug_msg("userhelper: pam_set_item(PAM_RUSER) failed\n");
+		fail_exit(data, retval);
+	}
+
+	tty = ttyname(STDIN_FILENO);
+	if (tty != NULL) {
+		if (strncmp(tty, "/dev/", 5) == 0)
+			tty += 5;
+		retval = pam_set_item(data->pamh, PAM_TTY, tty);
+		if (retval != PAM_SUCCESS) {
+			debug_msg("userhelper: pam_set_item(PAM_TTY) failed\n");
+			fail_exit(data, retval);
+		}
+	}
+}
+
 /* Change the user's password using the indicated conversation function and
  * application data (which includes the ability to cancel if the user requests
  * it.  For this task, we don't retry on failure. */
@@ -1118,11 +1143,7 @@ passwd(const char *user, struct pam_conv *conv)
 		fail_exit(conv->appdata_ptr, retval);
 	}
 
-	retval = pam_set_item(data->pamh, PAM_RUSER, user);
-	if (retval != PAM_SUCCESS) {
-		debug_msg("userhelper: pam_set_item(PAM_RUSER) failed\n");
-		fail_exit(conv->appdata_ptr, retval);
-	}
+	set_pam_items(data, user);
 
 	debug_msg("userhelper: changing password for \"%s\"\n", user);
 	retval = pam_chauthtok(data->pamh, 0);
@@ -1195,12 +1216,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 		fail_exit(conv->appdata_ptr, retval);
 	}
 
-	/* Set the requesting user. */
-	retval = pam_set_item(data->pamh, PAM_RUSER, user);
-	if (retval != PAM_SUCCESS) {
-		debug_msg("userhelper: pam_set_item(PAM_RUSER) failed\n");
-		fail_exit(conv->appdata_ptr, retval);
-	}
+	set_pam_items(data, user);
 
 	/* Try to authenticate the user. */
 	do {
@@ -1742,12 +1758,7 @@ wrap(const char *user, const char *program,
 		fail_exit(conv->appdata_ptr, retval);
 	}
 
-	/* Set the requesting user. */
-	retval = pam_set_item(data->pamh, PAM_RUSER, user);
-	if (retval != PAM_SUCCESS) {
-		debug_msg("userhelper: pam_set_item(PAM_RUSER) failed\n");
-		fail_exit(conv->appdata_ptr, retval);
-	}
+	set_pam_items(data, user);
 
 	/* Try to authenticate the user. */
 	do {
