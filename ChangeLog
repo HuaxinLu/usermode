@@ -1,5 +1,8 @@
 2010-02-05  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (passwd, chfn, wrap): Use "data" instead of
+	dereferencing conv->appdata_ptr again.
+
 	* userhelper.c (set_pam_items): New function.
 	(passwd, chfn, wrap): Use pam_set_items.
 

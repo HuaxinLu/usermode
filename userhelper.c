@@ -1140,7 +1140,7 @@ passwd(const char *user, struct pam_conv *conv)
 	retval = pam_start("passwd", user, conv, &data->pamh);
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_start() failed\n");
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 
 	set_pam_items(data, user);
@@ -1152,13 +1152,13 @@ passwd(const char *user, struct pam_conv *conv)
 
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_chauthtok() failed\n");
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 
 	retval = pam_end(data->pamh, PAM_SUCCESS);
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_end() failed\n");
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 	exit(0);
 }
@@ -1213,7 +1213,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	retval = pam_start("chfn", user, conv, &data->pamh);
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_start() failed\n");
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 
 	set_pam_items(data, user);
@@ -1233,7 +1233,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam authentication failed\n");
 		pam_end(data->pamh, retval);
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 
 	/* Verify that the authenticated user is the user we started
@@ -1242,7 +1242,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: no pam user set\n");
 		pam_end(data->pamh, retval);
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 
 	/* At some point this check will go away. */
@@ -1258,23 +1258,22 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_acct_mgmt() failed\n");
 		pam_end(data->pamh, retval);
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 
 	/* Let's get to it.  Start up libuser. */
 	error = NULL;
-	context = lu_start(user, lu_user, NULL, NULL, prompt,
-			   conv->appdata_ptr, &error);
+	context = lu_start(user, lu_user, NULL, NULL, prompt, data, &error);
 	if (context == NULL) {
 		debug_msg("userhelper: libuser startup error\n");
 		pam_end(data->pamh, PAM_ABORT);
-		fail_exit(conv->appdata_ptr, PAM_ABORT);
+		fail_exit(data, PAM_ABORT);
 	}
 	if (error != NULL) {
 		debug_msg("userhelper: libuser startup error: %s\n",
 			  lu_strerror(error));
 		pam_end(data->pamh, PAM_ABORT);
-		fail_exit(conv->appdata_ptr, PAM_ABORT);
+		fail_exit(data, PAM_ABORT);
 	}
 
 	/* Look up the user's record. */
@@ -1284,13 +1283,13 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 		debug_msg("userhelper: libuser doesn't know the user \"%s\"\n",
 			  user);
 		pam_end(data->pamh, PAM_ABORT);
-		fail_exit(conv->appdata_ptr, PAM_ABORT);
+		fail_exit(data, PAM_ABORT);
 	}
 	if (error != NULL) {
 		debug_msg("userhelper: libuser doesn't know the user: %s\n",
 			  lu_strerror(error));
 		pam_end(data->pamh, PAM_ABORT);
-		fail_exit(conv->appdata_ptr, PAM_ABORT);
+		fail_exit(data, PAM_ABORT);
 	}
 
 	/* Pull up the user's GECOS data, and split it up. */
@@ -1399,7 +1398,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 			lu_ent_free(ent);
 			lu_end(context);
 			pam_end(data->pamh, PAM_ABORT);
-			fail_exit(conv->appdata_ptr, ERR_SHELL_INVALID);
+			fail_exit(data, ERR_SHELL_INVALID);
 		}
 
 		/* Set the shell to the new value. */
@@ -1416,7 +1415,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 		lu_end(context);
 		pam_end(data->pamh, PAM_ABORT);
 		debug_msg("userhelper: libuser save failed\n");
-		fail_exit(conv->appdata_ptr, PAM_ABORT);
+		fail_exit(data, PAM_ABORT);
 	}
 	if (error != NULL) {
 		debug_msg("userhelper: libuser save error: %s\n",
@@ -1424,7 +1423,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 		lu_ent_free(ent);
 		lu_end(context);
 		pam_end(data->pamh, PAM_ABORT);
-		fail_exit(conv->appdata_ptr, PAM_ABORT);
+		fail_exit(data, PAM_ABORT);
 	}
 
 	lu_ent_free(ent);
@@ -1755,7 +1754,7 @@ wrap(const char *user, const char *program,
 	retval = pam_start(program, user_pam, conv, &data->pamh);
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_start() failed\n");
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 
 	set_pam_items(data, user);
@@ -1773,7 +1772,7 @@ wrap(const char *user, const char *program,
 	if (retval != PAM_SUCCESS) {
 		pam_end(data->pamh, retval);
 		if (data->canceled) {
-			fail_exit(conv->appdata_ptr, retval);
+			fail_exit(data, retval);
 		} else
 		if (data->fallback_allowed) {
 			/* Reset the user's environment so that the
@@ -1806,7 +1805,7 @@ wrap(const char *user, const char *program,
 			exit(ERR_EXEC_FAILED);
 		} else {
 			/* Well, we tried. */
-			fail_exit(conv->appdata_ptr, retval);
+			fail_exit(data, retval);
 		}
 	}
 
@@ -1815,7 +1814,7 @@ wrap(const char *user, const char *program,
 	retval = get_pam_string_item(data->pamh, PAM_USER, &auth_user);
 	if (retval != PAM_SUCCESS) {
 		pam_end(data->pamh, retval);
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 	if (strcmp(user_pam, auth_user) != 0) {
 		exit(ERR_UNK_ERROR);
@@ -1826,7 +1825,7 @@ wrap(const char *user, const char *program,
 	retval = pam_acct_mgmt(data->pamh, 0);
 	if (retval != PAM_SUCCESS) {
 		pam_end(data->pamh, retval);
-		fail_exit(conv->appdata_ptr, retval);
+		fail_exit(data, retval);
 	}
 
 	/* We need to re-read the user's information -- libpam doesn't
@@ -1853,7 +1852,7 @@ wrap(const char *user, const char *program,
 		retval = pam_open_session(data->pamh, 0);
 		if (retval != PAM_SUCCESS) {
 			pam_end(data->pamh, retval);
-			fail_exit(conv->appdata_ptr, retval);
+			fail_exit(data, retval);
 		}
 
 		/* Start up a child process we can wait on. */
@@ -1927,7 +1926,7 @@ wrap(const char *user, const char *program,
 		if (retval != PAM_SUCCESS) {
 			pipe_conv_exec_fail(conv);
 			pam_end(data->pamh, retval);
-			fail_exit(conv->appdata_ptr, retval);
+			fail_exit(data, retval);
 		}
 
 		pam_end(data->pamh, PAM_SUCCESS);
