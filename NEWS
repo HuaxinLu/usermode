@@ -1,3 +1,9 @@
+1.103:
+* Supply TTY name to PAM.
+* Use root's supplementary groups.
+* Call pam_secred() (e.g. adds support for pam_group.so).
+* Update translations.
+
 1.102:
 * Add more man pages for consolehelper-gtk and pam-panel-icon.
 * Minor fixes in other man pages.
