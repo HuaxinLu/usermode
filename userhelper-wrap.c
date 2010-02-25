@@ -881,7 +881,7 @@ userhelper_read_childout(GIOChannel *source, GIOCondition condition,
 		return FALSE;
 	}
 	while ((condition & G_IO_IN) != 0) {
-		char command, eol, buf[BUFSIZ], *end;
+		char command, eol, buf[BUFSIZ], *end, *converted;
 		unsigned long request_size;
 		gsize bytes_read;
 		GError *err;
@@ -906,11 +906,15 @@ userhelper_read_childout(GIOChannel *source, GIOCondition condition,
 					&err);
 		if (err != NULL || bytes_read != request_size)
 			_exit(1); /* Error of some kind. */
-		buf[bytes_read] = '\0';
+		converted = g_locale_to_utf8(buf, request_size, &bytes_read,
+					     NULL, &err);
+		if (err != NULL || bytes_read != request_size)
+			_exit(1);
 		g_io_channel_read_chars(source, &eol, 1, &bytes_read, &err);
 		if (err != NULL || bytes_read != 1 || eol != '\n')
 			_exit(0); /* EOF, or error of some kind. */
-		userhelper_handle_childout(command, buf);
+		userhelper_handle_childout(command, converted);
+		g_free(converted);
 		condition = g_io_channel_get_buffer_condition(source);
 	}
 	return TRUE;
@@ -937,7 +941,6 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 	if (childpid > 0) {
 		GIOChannel *childout_channel;
 		GError *err;
-		const char *charset;
 
 		/* We're the parent; close the write-end of the reading pipe,
 		 * and the read-end of the writing pipe. */
@@ -952,13 +955,11 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 		   child. */
 		childout_channel = g_io_channel_unix_new(childout[0]);
 
-		(void)g_get_charset(&charset);
 		err = NULL;
-		g_io_channel_set_encoding(childout_channel, charset, &err);
+		g_io_channel_set_encoding(childout_channel, NULL, &err);
 		if (err != NULL) {
-			fprintf(stderr, _("Can't set charset %s on an IO "
-					  "channel: %s\n"),
-				charset, err->message);
+			fprintf(stderr, _("Can't set binary encoding on an IO "
+					  "channel: %s\n"), err->message);
 			_exit(1);
 		}
 		g_io_channel_set_line_term(childout_channel, "\n", -1);

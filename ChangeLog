@@ -1,3 +1,9 @@
+2010-02-25  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper-wrap.c (userhelper_read_childout): Handle messages in
+	non-UTF-8 encodings that use more bytes in UTF-8.
+	(userhelper_runv): Disable character set conversion in childout_channel.
+
 2010-02-16  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.103.
