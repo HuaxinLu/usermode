@@ -1,6 +1,7 @@
-# translation of cs.po to Czech
-# Copyright (C) 2002, 2003, 2004, 2005, 2007, 2008 usermode'S COPYRIGHT HOLDER
-# Miloslav Trmač <mitr@volny.cz>, 2002 - 2005, 2007, 2008.
+# translation of usermode to Czech
+# Copyright (C) 2002, 2003, 2004, 2005, 2007, 2008, 2010 usermode'S COPYRIGHT
+# HOLDER
+# Miloslav Trmač <mitr@volny.cz>, 2002 - 2005, 2007, 2008, 2010.
 # Nikola Štohanzl <niko@srnet.cz>, 2006.
 # Milan Kerslager <kerslage@linux.cz>, 2007.
 #
@@ -8,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-27 04:36+0100\n"
-"PO-Revision-Date: 2008-02-25 00:34+0100\n"
+"POT-Creation-Date: 2010-02-25 12:23+0100\n"
+"PO-Revision-Date: 2010-02-25 12:25+0100\n"
 "Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
 "Language-Team: Czech\n"
 "MIME-Version: 1.0\n"
@@ -254,36 +255,36 @@ msgstr "Došlo k interní chybě PAM."
 msgid "Unknown error."
 msgstr "Neznámá chyba."
 
-#: ../../po/../userhelper-wrap.c:487
+#: ../../po/../userhelper-wrap.c:488
 msgid "Query"
 msgstr "Otázka"
 
-#: ../../po/../userhelper-wrap.c:546 ../../po/../userhelper.c:604
+#: ../../po/../userhelper-wrap.c:547 ../../po/../userhelper.c:604
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Autentizuji uživatele \"%s\""
 
-#: ../../po/../userhelper-wrap.c:565 ../../po/../userhelper-wrap.c:701
+#: ../../po/../userhelper-wrap.c:566 ../../po/../userhelper-wrap.c:702
 msgid "Error"
 msgstr "Chyba"
 
-#: ../../po/../userhelper-wrap.c:565
+#: ../../po/../userhelper-wrap.c:566
 msgid "Information"
 msgstr "Informace"
 
-#: ../../po/../userhelper-wrap.c:726
+#: ../../po/../userhelper-wrap.c:727
 msgid "Changing password."
 msgstr "Změna hesla."
 
-#: ../../po/../userhelper-wrap.c:728
+#: ../../po/../userhelper-wrap.c:729
 msgid "Changing personal information."
 msgstr "Změna informací o uživateli."
 
-#: ../../po/../userhelper-wrap.c:731
+#: ../../po/../userhelper-wrap.c:732
 msgid "Changing login shell."
 msgstr "Změna přihlašovacího shellu."
 
-#: ../../po/../userhelper-wrap.c:735
+#: ../../po/../userhelper-wrap.c:736
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -292,7 +293,7 @@ msgstr ""
 "Pokoušíte se spustit \"%s\", což může využít administrátorská oprávnění, ale "
 "k tomu je potřeba více informací."
 
-#: ../../po/../userhelper-wrap.c:737
+#: ../../po/../userhelper-wrap.c:738
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -301,7 +302,7 @@ msgstr ""
 "Pokoušíte se spustit \"%s\", k čemuž jsou potřeba administrátorská "
 "oprávnění. Je potřeba více informací, aby bylo možné pokračovat."
 
-#: ../../po/../userhelper-wrap.c:741
+#: ../../po/../userhelper-wrap.c:742
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -309,7 +310,7 @@ msgstr ""
 "Pokoušíte se spustit příkaz, který může využít administrátorská oprávnění, "
 "ale k tomu je potřeba více informací."
 
-#: ../../po/../userhelper-wrap.c:743
+#: ../../po/../userhelper-wrap.c:744
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -317,31 +318,31 @@ msgstr ""
 "Pokoušíte se spustit příkaz, který potřebuje administrátorská oprávnění. Je "
 "potřeba více informací, aby bylo možné pokračovat."
 
-#: ../../po/../userhelper-wrap.c:779
+#: ../../po/../userhelper-wrap.c:781
 msgid "_Run Unprivileged"
 msgstr "_Spustit neprivilegovaně"
 
-#: ../../po/../userhelper-wrap.c:924
+#: ../../po/../userhelper-wrap.c:930
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Chyba roury.\n"
 
-#: ../../po/../userhelper-wrap.c:931
+#: ../../po/../userhelper-wrap.c:937
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nemohu provést fork().\n"
 
-#: ../../po/../userhelper-wrap.c:957
+#: ../../po/../userhelper-wrap.c:961
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "Nemohu nastavit znakovou sadu %s na IO kanálu: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Nemohu nastavit binární kódování na IO kanálu: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1029 ../../po/../userhelper-wrap.c:1033
+#: ../../po/../userhelper-wrap.c:1032 ../../po/../userhelper-wrap.c:1036
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Chyba při dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1044
+#: ../../po/../userhelper-wrap.c:1047
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Chyba při execl(), errno=%d\n"
@@ -383,24 +384,24 @@ msgstr ""
 "Pokoušíte se spustit příkaz, který potřebuje administrátorská oprávnění.\n"
 "Je potřeba více informací, aby bylo možné pokračovat."
 
-#: ../../po/../userhelper.c:2025
+#: ../../po/../userhelper.c:2074
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí být SUID root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2117
+#: ../../po/../userhelper.c:2166
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Nelze otevřít grafické okno a nelze najít řídící terminál.\n"
 
-#: ../../po/../userinfo.c:376
+#: ../../po/../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Neočekávaný argument"
 
-#: ../../po/../userinfo.c:401
+#: ../../po/../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "V systému neexistujete. Odejděte.\n"
@@ -413,27 +414,27 @@ msgstr "O mně:"
 msgid "Change personal information"
 msgstr "Změnit osobní informace"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Plné jméno:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Telefon domů:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Přihlašovací shell:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Telefon do kanceláře:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Kancelář:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Informace o uživateli"
 
@@ -492,7 +493,7 @@ msgstr "Adresář"
 msgid "Filesystem"
 msgstr "Systém souborů"
 
-#: ../../po/../usermount.c:633
+#: ../../po/../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Zařízení '%s' nemůže být zformátováno."
