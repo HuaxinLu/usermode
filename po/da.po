@@ -3,14 +3,14 @@
 # Keld Simonsen <keld@dkuug.dk>, 2002, 2003, 2004, 2005.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004.
 # Keld Simonsen <keld@rap.dk>, 2005, 2007.
-# Kris Thomsen <lakristho@gmail.com>, 2009.
+# Kris Thomsen <lakristho@gmail.com>, 2009, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-15 08:41+0000\n"
-"PO-Revision-Date: 2009-05-15 15:58+0200\n"
+"POT-Creation-Date: 2010-02-28 09:47+0000\n"
+"PO-Revision-Date: 2010-02-28 18:59+0100\n"
 "Last-Translator: Kris Thomsen <lakristho@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -255,36 +255,36 @@ msgstr "Intern PAM-fejl indtraf."
 msgid "Unknown error."
 msgstr "Ukendt fejl."
 
-#: ../userhelper-wrap.c:487
+#: ../userhelper-wrap.c:488
 msgid "Query"
 msgstr "Forespørgsel"
 
-#: ../userhelper-wrap.c:546 ../userhelper.c:604
+#: ../userhelper-wrap.c:547 ../userhelper.c:604
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Godkender som \"%s\""
 
-#: ../userhelper-wrap.c:565 ../userhelper-wrap.c:701
+#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
 msgid "Error"
 msgstr "Fejl"
 
-#: ../userhelper-wrap.c:565
+#: ../userhelper-wrap.c:566
 msgid "Information"
 msgstr "Information"
 
-#: ../userhelper-wrap.c:726
+#: ../userhelper-wrap.c:727
 msgid "Changing password."
 msgstr "Skifter adgangskode."
 
-#: ../userhelper-wrap.c:728
+#: ../userhelper-wrap.c:729
 msgid "Changing personal information."
 msgstr "Ændrer personlige oplysninger."
 
-#: ../userhelper-wrap.c:731
+#: ../userhelper-wrap.c:732
 msgid "Changing login shell."
 msgstr "Ændrer logind-skal."
 
-#: ../userhelper-wrap.c:735
+#: ../userhelper-wrap.c:736
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -293,7 +293,7 @@ msgstr ""
 "Du forsøger at køre \"%s\", som kan have gavn af administrator-rettigheder, "
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../userhelper-wrap.c:737
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -302,7 +302,7 @@ msgstr ""
 "Du forsøger at køre \"%s\", som kræver administrator-rettigheder, men mere "
 "information er nødvendigt for at gøre dette."
 
-#: ../userhelper-wrap.c:741
+#: ../userhelper-wrap.c:742
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -310,7 +310,7 @@ msgstr ""
 "Du forsøger at køre en kommando, som kan have gavn af administrator-"
 "rettigheder, men mere information er nødvendigt for at gøre dette."
 
-#: ../userhelper-wrap.c:743
+#: ../userhelper-wrap.c:744
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -318,31 +318,31 @@ msgstr ""
 "Du forsøger at køre en kommando, som kræver administrator-rettigheder, men "
 "mere information er nødvendigt for at gøre dette."
 
-#: ../userhelper-wrap.c:779
+#: ../userhelper-wrap.c:781
 msgid "_Run Unprivileged"
 msgstr "_Kør upriviligeret"
 
-#: ../userhelper-wrap.c:924
+#: ../userhelper-wrap.c:930
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Kanalfejl.\n"
 
-#: ../userhelper-wrap.c:931
+#: ../userhelper-wrap.c:937
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kan ikke fork()\n"
 
-#: ../userhelper-wrap.c:957
+#: ../userhelper-wrap.c:961
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "Kan ikke sætte tegnsæt %s på en IO-kanal: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Kan ikke sætte binært tegnsæt på en IO-kanal: %s\n"
 
-#: ../userhelper-wrap.c:1029 ../userhelper-wrap.c:1033
+#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() fejl.\n"
 
-#: ../userhelper-wrap.c:1044
+#: ../userhelper-wrap.c:1047
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() fejl, errno=%d\n"
@@ -383,25 +383,25 @@ msgstr ""
 "Du forsøger at køre en kommando, som kræver administrator-rettigheder,\n"
 "men mere information er nødvendigt for at gøre dette."
 
-#: ../userhelper.c:2025
+#: ../userhelper.c:2074
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper skal være setuid-rod\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2117
+#: ../userhelper.c:2166
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
-#: ../userinfo.c:376
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Uventet argument"
 
-#: ../userinfo.c:401
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Du eksisterer ikke. Gå væk med dig.\n"
@@ -414,27 +414,27 @@ msgstr "Om mig selv"
 msgid "Change personal information"
 msgstr "Ændr personlige oplysninger"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Fulde navn:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Hjemmetelefon:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Logind-skal:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Kontortelefon:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Kontor:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Brugerinformation"
 
@@ -492,7 +492,7 @@ msgstr "Katalog"
 msgid "Filesystem"
 msgstr "Filsystem"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Enheden '%s' kan ikke formateres."
