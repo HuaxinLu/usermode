@@ -1,3 +1,6 @@
+1.104.1:
+* Update translations.
+
 1.104:
 * Fix silent exit in some non-UTF-8 locales instead of PAM interaction.
 

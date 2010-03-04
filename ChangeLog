@@ -1,3 +1,12 @@
+2010-03-04  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.104.1.
+	* NEWS: Update.
+	* po/LINGUAS: Sort.
+
+	* Makefile.am (archive)
+	* configure.ac: Use xz to compress the distribution tarball.
+
 2010-02-25  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.104.

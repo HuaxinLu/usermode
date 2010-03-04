@@ -1,8 +1,8 @@
-AC_INIT([usermode], [1.104])
+AC_INIT([usermode], [1.104.1])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([userhelper.c])
 AC_CONFIG_AUX_DIR([admin])
-AM_INIT_AUTOMAKE([dist-bzip2 -Wall])
+AM_INIT_AUTOMAKE([no-dist-gzip dist-xz -Wall])
 AC_PREFIX_DEFAULT([/usr])
 
 AC_PROG_CC
