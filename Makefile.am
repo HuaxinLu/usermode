@@ -127,5 +127,5 @@ archive:
 	hg clone -r $(HGTAG) $(abs_top_srcdir) /tmp/$(PACKAGE)-export-tmp
 	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh ; \
 		./configure --sysconfdir=/etc --prefix=/usr; make dist
-	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.bz2 .
+	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.xz .
 	rm -fr /tmp/$(PACKAGE)-export-tmp
