@@ -1,17 +1,17 @@
 # translation of usermode.tip.po to Russian
 # Leonid Kanter <leon@geon.donetsk.ua>, 2003.
-# Andrew Martynov <andrewm@inventa.ru>, 2004, 2005, 2008.
+# Andrew Martynov <andrewm@inventa.ru>, 2004, 2005, 2008, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-29 17:47+0000\n"
-"PO-Revision-Date: 2008-04-07 11:15+0300\n"
+"POT-Creation-Date: 2010-03-08 04:09+0000\n"
+"PO-Revision-Date: 2010-03-08 12:12+0300\n"
 "Last-Translator: Andrew Martynov <andrewm@inventa.ru>\n"
 "Language-Team: Russian <fedora-trans-ru@redhat,com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -162,19 +162,20 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Сбой установки канала ввода-вывода в не блокируемый режим: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr ""
 "pam-panel-icon: сбой подключения к менеджеру сессий (session manager)\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:206
 msgid "Unknown exit code."
 msgstr "Неизвестный код выхода."
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:208
 msgid "Information updated."
 msgstr "Информация обновлена."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:210
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -182,7 +183,7 @@ msgstr ""
 "Вы ввели неверный пароль.\n"
 "Попробуйте еще раз."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:212
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -192,11 +193,11 @@ msgstr ""
 "Вероятная причина - наличие точек или запятых в одном из полей.\n"
 "Удалите их и попробуйте снова."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:214
 msgid "Password resetting error."
 msgstr "Ошибка сброса пароля"
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:216
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -204,19 +205,19 @@ msgstr ""
 "Некоторые системные файлы заблокированы.\n"
 "Повторите через несколько минут."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:218
 msgid "Unknown user."
 msgstr "Неизвестный пользователь."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:220
 msgid "Insufficient rights."
 msgstr "Недостаточно прав."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:222
 msgid "Invalid call to subprocess."
 msgstr "Ошибочный вызов подпроцесса."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:224
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -226,64 +227,60 @@ msgstr ""
 "Вам не разрешено сменить вашу оболочку.\n"
 "Свяжитесь с системным администратором."
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:227
 msgid "Out of memory."
 msgstr "Недостаточно памяти."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:229
 msgid "The exec() call failed."
 msgstr "Ошибка вызова exec()."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:231
 msgid "Failed to find selected program."
 msgstr "Невозможно найти выбранную программу."
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:234
 msgid "Request canceled."
 msgstr "Запрос отменен."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:236
 msgid "Internal PAM error occured."
 msgstr "Произошла внутренняя ошибка PAM."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:238
 msgid "Unknown error."
 msgstr "Неизвестная ошибка."
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:488
 msgid "Query"
 msgstr "Запрос"
 
-#: ../userhelper-wrap.c:581 ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "Ошибка"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "Информация"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "Место для текста."
-
-#: ../userhelper-wrap.c:753 ../userhelper.c:627
+#: ../userhelper-wrap.c:547 ../userhelper.c:604
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Проводится проверка подлинности как \"%s\""
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+msgid "Error"
+msgstr "Ошибка"
+
+#: ../userhelper-wrap.c:566
+msgid "Information"
+msgstr "Информация"
+
+#: ../userhelper-wrap.c:727
 msgid "Changing password."
 msgstr "Изменение пароля."
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:729
 msgid "Changing personal information."
 msgstr "Изменение личной информации."
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:732
 msgid "Changing login shell."
 msgstr "Изменение login shell."
 
-#: ../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:736
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -293,7 +290,7 @@ msgstr ""
 "преимущества, будучи запущенной с административными привилегиями, но для "
 "этого требуется дополнительная информация."
 
-#: ../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -302,7 +299,7 @@ msgstr ""
 "Вы пытаетесь выполнить программу \"%s\", которая требует административных "
 "привилегий. Для этого нужна дополнительная информация."
 
-#: ../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:742
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -311,7 +308,7 @@ msgstr ""
 "будучи запущенной с административными привилегиями. Для этого требуется "
 "дополнительная информация."
 
-#: ../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:744
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -319,36 +316,36 @@ msgstr ""
 "Вы пытаетесь выполнить программу, которая требует административных "
 "привилегий. Для этого необходима дополнительная информация."
 
-#: ../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:781
 msgid "_Run Unprivileged"
 msgstr "_Выполнить без привилегий"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:930
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Ошибка потока.\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:937
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Невозможно вызвать fork().\n"
 
-#: ../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:961
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "Невозможно установить кодировку %s канала ввода/вывода: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Не удается установить двоичное кодирование в канале ввода/вывода: %s\n"
 
-#: ../userhelper-wrap.c:1077 ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
 #, c-format
 msgid "dup2() error.\n"
 msgstr "ошибка dup2().\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1047
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "ошибка execl(), код ошибки %d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:586
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -358,7 +355,7 @@ msgstr ""
 "определенные преимущества, будучи запущенной с административными\n"
 "привилегиями, но для этого требуется дополнительная информация."
 
-#: ../userhelper.c:611
+#: ../userhelper.c:588
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -368,7 +365,8 @@ msgstr ""
 "административных привилегий, но для этого нужна\n"
 "дополнительная информация."
 
-#: ../userhelper.c:615
+#: ../userhelper.c:592
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -377,7 +375,8 @@ msgstr ""
 "преимущества, будучи запущенной с административными правами,\n"
 "но для этого требуется дополнительная информация."
 
-#: ../userhelper.c:617
+#: ../userhelper.c:594
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -385,24 +384,24 @@ msgstr ""
 "Вы пытаетесь выполнить программу, которая требует административных\n"
 "привилегий. Для этого нужна дополнительная информация."
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2074
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper должен быть setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2166
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Невозможно открыть графическое окно и найти управляющий терминал.\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Неожиданный аргумент"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Вы не существуете. Уходите.\n"
@@ -415,27 +414,27 @@ msgstr "О себе"
 msgid "Change personal information"
 msgstr "Изменение личной информации"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Полное имя:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Домашний телефон:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Login Shell:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Рабочий телефон:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Офис:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Информация о пользователе"
 
@@ -493,7 +492,7 @@ msgstr "Каталог"
 msgid "Filesystem"
 msgstr "Файловая система"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Устройство '%s' не может быть отформатировано."
@@ -513,6 +512,9 @@ msgstr "Изменяет ваш пароль"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Смена пароля"
+
+#~ msgid "Placeholder text."
+#~ msgstr "Место для текста."
 
 #~ msgid "Could not set default context for %s for program %s.\n"
 #~ msgstr "Не могу установить контекст по умолчанию для %s для программы %s.\n"
