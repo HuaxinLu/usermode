@@ -1,7 +1,7 @@
 # Hungarian translation of usermode.
 # Copyright (C) 2003-2004, 2005, 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
-#
+# 
 # Tamas Szanto <tszanto@mol.hu>, 2003.
 # Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
 # Arpad Biro <biro_arpad@yahoo.com>, 2004, 2005, 2007.
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 18:48+0000\n"
+"POT-Creation-Date: 2010-03-15 07:49+0000\n"
 "PO-Revision-Date: 2010-03-14 21:22+0100\n"
 "Last-Translator: Peter Bojtos <ptr@ulx.hu>\n"
 "Language-Team: \n"
@@ -19,7 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -35,7 +34,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -113,13 +112,11 @@ msgstr "Nem sikerült megválni a rendszergazdai jogosultságtól: a pam_timesta
 msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
 msgstr "Most jogosult a rendszerszintű beállítások megváltoztatására - amelyek minden felhasználóra érvényesek - a rendszergazdai jelszó újbóli megadása nélkül. Bármikor lemondhat erről a jogosultságáról."
 
-#: ../pam-panel-icon.c:151
-#: ../pam-panel-icon.c:178
+#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "A jogosultság megőrzése"
 
-#: ../pam-panel-icon.c:154
-#: ../pam-panel-icon.c:185
+#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "A jogosultság feladása"
 
@@ -251,14 +248,12 @@ msgstr "Ismeretlen hiba történt."
 msgid "Query"
 msgstr "Lekérdezés"
 
-#: ../userhelper-wrap.c:547
-#: ../userhelper.c:604
+#: ../userhelper-wrap.c:547 ../userhelper.c:604
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Azonosítás mint \"%s\""
 
-#: ../userhelper-wrap.c:566
-#: ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
 msgid "Error"
 msgstr "Hiba"
 
@@ -310,13 +305,7 @@ msgstr "Pipe (csővezeték)-kezelési hiba.\n"
 msgid "Cannot fork().\n"
 msgstr "Nem sikerült végrehajtani egy fork() hívást (programindítást).\n"
 
-#: ../userhelper-wrap.c:961
-#, fuzzy, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "Nem tudom beállítani a %s karakterkészletet ezen az IO csatornán: %s\n"
-
-#: ../userhelper-wrap.c:1032
-#: ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() hiba.\n"
@@ -446,8 +435,7 @@ msgstr ""
 "Kérjen segítséget a rendszergazdától."
 
 #. Create the dialog.
-#: ../usermount.c:508
-#: ../usermount.c:520
+#: ../usermount.c:508 ../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Lemezcsatlakoztatási segédprogram"
 
@@ -489,13 +477,16 @@ msgstr "Bejelentkezési jelszó megváltoztatása"
 msgid "Password"
 msgstr "Jelszó"
 
+#: ../userhelper-wrap.c:961
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Nem tudom beállítani a bináris kódolást egy IO csatornán: %s\n"
+
 #~ msgid "Placeholder text."
 #~ msgstr "Alapértelmezett szöveg."
 
 #~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr ""
-#~ "Nem sikerült beállítani az alapértelmezett kontextust erre: %s, az alábbi "
-#~ "program számára: %s\n"
+#~ msgstr "Nem sikerült beállítani az alapértelmezett kontextust erre: %s, az alábbi program számára: %s\n"
 
 #~ msgid "Could not set exec context to %s.\n"
 #~ msgstr "Nem sikerült beállítani a futtatási kontextust erre: %s.\n"
