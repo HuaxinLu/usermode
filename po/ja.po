@@ -1,24 +1,26 @@
 # translation of ja.po to Japanese
 # usermode Japanese translation
-# Copyright (C) 2001,2002,2004 Free Software Foundation, Inc.
+# Copyright (C) 2001,2002,2004, 2010 Free Software Foundation, Inc.
+#
 # Yukihiro Nakai <ynakai@redhat.com>, 2001.
-# James Hashida <khashida@redhat.com>, 2002
-# Noriko Mizumoto <noriko@redhat.com>, 2004
+# James Hashida <khashida@redhat.com>, 2002.
+# Noriko Mizumoto <noriko@redhat.com>, 2004.
 # Hirofumi Saito <hi_saito@yk.rim.or.jp>, 2004, 2005.
 # Hyu_gabaru Ryu_ichi <hyu_gabaru@yahoo.co.jp>, 2007.
-#
+# Kiyoto Hashida <khashida@redhat.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-29 10:14-0700\n"
-"PO-Revision-Date: 2007-07-15 15:45+0900\n"
-"Last-Translator: Hyu_gabaru Ryu_ichi <hyu_gabaru@yahoo.co.jp>\n"
-"Language-Team: Fedora Trans Japanese <fedora-trans-ja@redhat.com>\n"
+"POT-Creation-Date: 2010-03-23 01:51+0000\n"
+"PO-Revision-Date: 2010-03-23 11:13+0900\n"
+"Last-Translator: Kiyoto Hashida <khashida@redhat.com>\n"
+"Language-Team: Japanese <jp@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=1; plural=0;\n\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -168,18 +170,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO チャンネルのブロック解除に失敗しました: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: セッションマネージャーの接続に失敗しました\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:206
 msgid "Unknown exit code."
 msgstr "不明な終了コードです。"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:208
 msgid "Information updated."
 msgstr "情報は更新されました。"
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:210
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -187,7 +190,7 @@ msgstr ""
 "入力したパスワードは間違っています。\n"
 "もう一度入力してください。"
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:212
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -197,11 +200,11 @@ msgstr ""
 "フィールドのどこかにコロンかコンマがあるかもしれません。\n"
 "それらを削除してもう一度入力してください。"
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:214
 msgid "Password resetting error."
 msgstr "パスワードのリセットでエラーが発生しました。"
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:216
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -209,19 +212,19 @@ msgstr ""
 "ロックされいているシステムファイルがあります。\n"
 "しばらく待ってからもう一度やってみてください。"
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:218
 msgid "Unknown user."
 msgstr "不明なユーザーです。"
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:220
 msgid "Insufficient rights."
 msgstr "権限がありません。"
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:222
 msgid "Invalid call to subprocess."
 msgstr "サブプロセスの呼び出し方が間違っています。"
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:224
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -231,64 +234,60 @@ msgstr ""
 " したがってシェルを変更することはできません。\n"
 "システム管理者に相談してみてください。"
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:227
 msgid "Out of memory."
 msgstr "メモリが足りません。"
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:229
 msgid "The exec() call failed."
 msgstr "exec()の呼び出しに失敗しました。"
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:231
 msgid "Failed to find selected program."
 msgstr "選択したプログラムは見つかりませんでした。"
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:234
 msgid "Request canceled."
 msgstr "要求はキャンセルされました。"
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:236
 msgid "Internal PAM error occured."
 msgstr "内部 PAM エラーが発生しました。"
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:238
 msgid "Unknown error."
 msgstr "不明なエラーです。"
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:488
 msgid "Query"
 msgstr "質問"
 
-#: ../userhelper-wrap.c:581 ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "エラー"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "情報"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "プレースホルダテキスト。"
-
-#: ../userhelper-wrap.c:753 ../userhelper.c:627
+#: ../userhelper-wrap.c:547 ../userhelper.c:604
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" として認証しています"
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+msgid "Error"
+msgstr "エラー"
+
+#: ../userhelper-wrap.c:566
+msgid "Information"
+msgstr "情報"
+
+#: ../userhelper-wrap.c:727
 msgid "Changing password."
 msgstr "パスワードを変更中。"
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:729
 msgid "Changing personal information."
 msgstr "個人情報を変更中。"
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:732
 msgid "Changing login shell."
 msgstr "ログイン シェルを変更中。"
 
-#: ../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:736
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -297,7 +296,7 @@ msgstr ""
 "スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、実行す"
 "るには追加情報が必要です。"
 
-#: ../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -306,7 +305,7 @@ msgstr ""
 "スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
-#: ../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:742
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -314,7 +313,7 @@ msgstr ""
 "スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、実行"
 "するには追加情報が必要です。"
 
-#: ../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:744
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -322,36 +321,36 @@ msgstr ""
 "スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
-#: ../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:781
 msgid "_Run Unprivileged"
 msgstr "権限なしで実行(_R)"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:930
 #, c-format
 msgid "Pipe error.\n"
 msgstr "パイプエラー。\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:937
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork()できません。\n"
 
-#: ../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:961
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "文字セット %s を IO チャネル: %s に設定できません\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "バイナリエンコーディングを IO チャンネルにセットできません: %s\n"
 
-#: ../userhelper-wrap.c:1077 ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()エラー。\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1047
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:586
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -360,7 +359,7 @@ msgstr ""
 "スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../userhelper.c:611
+#: ../userhelper.c:588
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -369,7 +368,8 @@ msgstr ""
 "スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../userhelper.c:615
+#: ../userhelper.c:592
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -377,7 +377,8 @@ msgstr ""
 "スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../userhelper.c:617
+#: ../userhelper.c:594
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -386,26 +387,25 @@ msgstr ""
 "には\n"
 "追加情報が必要です。"
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2074
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザーヘルパーは root に setuid されていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2166
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられま"
 "せんでした。\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "予期しない引数"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "あなたは存在しません。続けられません。\n"
@@ -418,27 +418,27 @@ msgstr "ユーザーの個人情報"
 msgid "Change personal information"
 msgstr "個人情報を変更"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "フルネーム:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "自宅の電話番号:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "ログインシェル:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "オフィスの電話番号:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "オフィス:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "ユーザー情報"
 
@@ -496,7 +496,7 @@ msgstr "ディレクトリ"
 msgid "Filesystem"
 msgstr "ファイルシステム"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "デバイス '%s' がフォーマットされていません。"
@@ -517,47 +517,3 @@ msgstr "ログインパスワードを変更"
 msgid "Password"
 msgstr "パスワード"
 
-#~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr "%s にプログラム %s のデフォルト権限を与えられませんでした。\n"
-
-#~ msgid "Could not set exec context to %s.\n"
-#~ msgstr "%s に実行権限を与えられませんでした。\n"
-
-#~ msgid "Password for %s"
-#~ msgstr "%sのパスワード"
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s用のパスワード:"
-
-#~ msgid "Message"
-#~ msgstr "メッセージ"
-
-#~ msgid "Help"
-#~ msgstr "ヘルプ"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "_Ok"
-#~ msgstr "OK(_O)"
-
-#~ msgid "_Cancel"
-#~ msgstr "キャンセル(_C)"
-
-#~ msgid "_Close"
-#~ msgstr "閉じる(_C)"
-
-#~ msgid "Type"
-#~ msgstr "タイプ"
-
-#~ msgid "_Unmount"
-#~ msgstr "マウント解除(_U)"
-
-#~ msgid "E_xit"
-#~ msgstr "終了(_x)"
-
-#~ msgid "about to exec \"%s\"\n"
-#~ msgstr "\"%s\"を実行しようとしています\n"
-
-#~ msgid "Need %d responses.\n"
-#~ msgstr "%d 応答が必要です。\n"
