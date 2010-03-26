@@ -1,3 +1,8 @@
+2010-03-26  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.104.2.
+	* NEWS: Update.
+
 2010-03-04  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.104.1.
