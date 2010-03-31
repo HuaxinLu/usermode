@@ -163,6 +163,9 @@ fail_exit(struct app_data *data, int pam_retval)
 			case PAM_USER_UNKNOWN:
 				status = ERR_NO_USER;
 				break;
+			case PAM_MAXTRIES:
+				status = ERR_MAX_TRIES;
+				break;
 			case PAM_ABORT:
 				/* fall through */
 			default:

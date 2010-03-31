@@ -234,6 +234,8 @@ userhelper_parse_exitstatus(int exitstatus)
 		 N_("Request canceled.")},
 		{ERR_PAM_INT_ERROR, create_error_box,
 		 N_("Internal PAM error occured.")},
+		{ERR_MAX_TRIES, create_error_box,
+		 N_("No more retries allowed")},
 		{ERR_UNK_ERROR, create_error_box,
 		 N_("Unknown error.")},
 	};

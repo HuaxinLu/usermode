@@ -1,3 +1,10 @@
+2010-03-31  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.h (ERR_MAX_TRIES): New definition.
+	* userhelper.c (fail_exit): Convert PAM_MAXTRIES into ERR_MAX_TRIES.
+	* userhelper-wrap.c (userhelper_parse_exitstatus): Add error message for
+	ERR_MAX_TRIES.
+
 2010-03-26  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.104.2.
