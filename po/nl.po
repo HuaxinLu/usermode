@@ -4,17 +4,18 @@
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003.
 # Peter van Egdom <p.van.egdom@gmail.com>, 2004, 2005, 2007, 2008, 2010.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-26 12:04+0000\n"
-"PO-Revision-Date: 2010-02-26 15:13+0100\n"
-"Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
-"Language-Team: Dutch <fedora-trans-list@redhat.com>\n"
+"POT-Creation-Date: 2010-04-01 07:53+0000\n"
+"PO-Revision-Date: 2010-04-01 13:09+0200\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
+"Language-Team: nl <fedora-trans-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding:  \n"
 "X-Generator: KBabel 1.11.4\n"
 
 #.
@@ -252,40 +253,44 @@ msgid "Internal PAM error occured."
 msgstr "Er deed zich een interne PAM-fout voor."
 
 #: ../userhelper-wrap.c:238
+msgid "No more retries allowed"
+msgstr "Opnieuw proberen niet meer toegestaan"
+
+#: ../userhelper-wrap.c:240
 msgid "Unknown error."
 msgstr "Onbekende fout."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:490
 msgid "Query"
 msgstr "Verzoek"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:549 ../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Authenticeren als \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
 msgid "Error"
 msgstr "Fout"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:568
 msgid "Information"
 msgstr "Informatie"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:729
 msgid "Changing password."
 msgstr "Veranderen van wachtwoord."
 
 # dit dekt de lading beter dan: persoonlijke informatie
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:731
 msgid "Changing personal information."
 msgstr "Veranderen van persoonlijke informatie."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:734
 msgid "Changing login shell."
 msgstr "Veranderen van login-shell."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -294,7 +299,7 @@ msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerdersprivileges nuttig kunnen "
 "zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:740
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -303,7 +308,7 @@ msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerdersprivileges benodigd zijn. "
 "Hiervoor is een root-wachtwoord vereist."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:744
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -311,7 +316,7 @@ msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerdersprivileges nuttig "
 "kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:746
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -319,38 +324,38 @@ msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerdersprivileges benodigd "
 "zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:783
 msgid "_Run Unprivileged"
 msgstr "_Zonder privileges uitvoeren"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:932
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pijp-fout.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:939
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() lukt niet.\n"
 
-#: ../userhelper-wrap.c:961
+#: ../userhelper-wrap.c:963
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Instellen binaire codering op een IO-kanaal mislukt: %s\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-fout.\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1049
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-fout, foutnr=%d\n"
 
 # more information is needed... vervangen door root-wachtwoord vereist
 # omdat dat, voor zover ik weet, het enige is dat benodigd is.
-#: ../userhelper.c:586
+#: ../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -359,7 +364,7 @@ msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
 "nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -368,7 +373,7 @@ msgstr ""
 "U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
 "benodigd zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -377,7 +382,7 @@ msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
 "nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -386,13 +391,13 @@ msgstr ""
 "U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
 "benodigd zijn. Hiervoor is een root-wachtwoord vereist."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2077
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "gebruikershelper moet setuid root zijn\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2169
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
