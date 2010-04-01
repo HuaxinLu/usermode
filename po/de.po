@@ -1,7 +1,7 @@
 # German translation of usermode
 # Copyright (C) 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
-#
+# 
 # Ronny Buchmann <ronny-vlug@vlugnet.org>, 2004,2006.
 # Claudia Krug <fhonig@redhat.it>, YEAR.
 # Bernd Groh <bgroh@redhat.com>, 2003.
@@ -11,23 +11,22 @@
 # Severin Heiniger <severinheiniger@gmail.com>, 2005.
 # Timo Trinks <ttrinks@redhat.com>, 2007.
 # Fabian Affolter <fab@fedoraproject.org>, 2008-2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-02 04:09+0000\n"
+"POT-Creation-Date: 2010-04-01 01:51+0000\n"
 "PO-Revision-Date: 2010-03-02 10:34+0100\n"
 "Last-Translator: Fabian Affolter <fab@fedoraproject.org>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: German\n"
+"X-Generator: KBabel 1.11.4\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -43,7 +42,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -121,13 +120,11 @@ msgstr "Fehler beim Abgeben der Administrator-Privilegien: pam_timestamp_check m
 msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
 msgstr "Sie sind gegenwärtig berechtigt Systemeinstellungen (die alle Benutzer betreffen) zu konfigurieren, ohne das Administrator-Passwort noch einmal einzugeben. Sie können diese Autorisierung aufgeben."
 
-#: ../pam-panel-icon.c:151
-#: ../pam-panel-icon.c:178
+#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "Authorisierung beibehalten"
 
-#: ../pam-panel-icon.c:154
-#: ../pam-panel-icon.c:185
+#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "Authorisierung vergessen"
 
@@ -252,90 +249,87 @@ msgstr "Anfrage abgebrochen."
 msgid "Internal PAM error occured."
 msgstr "Interner PAM-Fehler aufgetreten."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:240
 msgid "Unknown error."
 msgstr "Unbekannter Fehler."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:490
 msgid "Query"
 msgstr "Abfrage"
 
-#: ../userhelper-wrap.c:547
-#: ../userhelper.c:604
+#: ../userhelper-wrap.c:549 ../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Als \"%s\" authentifizieren"
 
-#: ../userhelper-wrap.c:566
-#: ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
 msgid "Error"
 msgstr "Fehler"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:568
 msgid "Information"
 msgstr "Informationen"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:729
 msgid "Changing password."
 msgstr "Das Passwort ändern."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:731
 msgid "Changing personal information."
 msgstr "Ändern der persönlichen Informationen."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:734
 msgid "Changing login shell."
 msgstr "Ändern der Login-Shell."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Sie versuchen \"%s\" auszuführen, das administrative Privilegien nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:740
 #, c-format
 msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Sie versuchen \"%s\" auszuführen, das administrative Privilegien erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:744
 msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Sie versuchen einen Befehl auszuführen, der administrative Privilegien nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:746
 msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Sie versuchen einen Befehl auszuführen, der administrative Privilegien erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:783
 msgid "_Run Unprivileged"
 msgstr "Ohne Rechte ausfüh_ren"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:932
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe-Fehler.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:939
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kann fork() nicht aufrufen.\n"
 
-#: ../userhelper-wrap.c:961
+#: ../userhelper-wrap.c:963
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Kann binären Zeichensatz nicht auf einem E/A-Kanal setzen: %s\n"
 
-#: ../userhelper-wrap.c:1032
-#: ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-Fehler.\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1049
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-Fehler, errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -344,7 +338,7 @@ msgstr ""
 "Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
 "nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -353,7 +347,7 @@ msgstr ""
 "Sie versuchen \"%s\" auszuführen, das administrative Privilegien\n"
 "erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -362,7 +356,7 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
 "nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -371,13 +365,13 @@ msgstr ""
 "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
 "erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2077
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper muss setuid-root sein\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2169
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafisches Fenster kann nicht geöffnet und der Kontroll-Terminal nicht gefunden werden.\n"
@@ -453,8 +447,7 @@ msgstr ""
 "Setzen Sie sich mit Ihrem Administrator in Verbindung."
 
 #. Create the dialog.
-#: ../usermount.c:508
-#: ../usermount.c:520
+#: ../usermount.c:508 ../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Benutzer Einhänge-Werkzeug"
 
@@ -496,11 +489,15 @@ msgstr "Ihr Login-Passwort ändern"
 msgid "Password"
 msgstr "Passwort"
 
+#: ../userhelper-wrap.c:238
+msgid "No more retries allowed"
+msgstr "Keine weiteren Einträge erlaubt"
+
 #~ msgid "Placeholder text."
 #~ msgstr "Platzhalter-Text."
+
 #~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr ""
-#~ "Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
+#~ msgstr "Konnte standardmäßigen Kontext für %s für das Programm %s nicht setzen.\n"
+
 #~ msgid "Could not set exec context to %s.\n"
 #~ msgstr "Konnte exec-Kontext nicht auf %s setzen.\n"
-
