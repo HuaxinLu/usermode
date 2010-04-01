@@ -6,21 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 21:14+0000\n"
+"POT-Creation-Date: 2010-04-01 07:53+0000\n"
 "PO-Revision-Date: 2010-03-07 13:26+0100\n"
 "Last-Translator: Rui Gouveia <rui.gouveia@gmail.com>\n"
 "Language-Team: trans-pt@fedoraproject.org\n"
-"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.5.2\n"
+"Language: pt\n"
 "X-POFile-SpellExtra: exec userhelper dup icon pam panel\n"
-"X-POFile-IgnoreConsistency: User Information\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Bookmarks: -1,14,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-POFile-IgnoreConsistency: User Information\n"
+"X-Generator: Virtaal 0.5.2\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -36,7 +35,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -107,22 +106,12 @@ msgstr "Não foi possível deixar os privilégios de administrador: %s"
 
 #: ../pam-panel-icon.c:98
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
-"Não foi possível deixar os privilégios de administrador: pam_timestamp_check "
-"devolveu o código de erro %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Não foi possível deixar os privilégios de administrador: pam_timestamp_check devolveu o código de erro %d"
 
 #: ../pam-panel-icon.c:146
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"Está actualmente autorizado a configurar o sistema (afectando todos os "
-"utilizadores) sem voltar a indicar a senha de administrador. Pode desistir "
-"desta autorização."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Está actualmente autorizado a configurar o sistema (afectando todos os utilizadores) sem voltar a indicar a senha de administrador. Pode desistir desta autorização."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -195,8 +184,7 @@ msgid ""
 "Please remove those and try again."
 msgstr ""
 "Um ou mais dos campos alterados são inválidos.\n"
-"Normalmente isto deve-se à utilização de pontos ou virgulas em um dos "
-"campos.\n"
+"Normalmente isto deve-se à utilização de pontos ou virgulas em um dos campos.\n"
 "Por favor remova-os e tente novamente."
 
 #: ../userhelper-wrap.c:214
@@ -253,103 +241,87 @@ msgstr "Pedido cancelado."
 msgid "Internal PAM error occured."
 msgstr "Ocorreu um erro interno de PAM."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:240
 msgid "Unknown error."
 msgstr "Erro desconhecido."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:490
 msgid "Query"
 msgstr "Procurar"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:549 ../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "A autenticar-se como \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
 msgid "Error"
 msgstr "Erro"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:568
 msgid "Information"
 msgstr "Informação"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:729
 msgid "Changing password."
 msgstr "A mudar a senha."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:731
 msgid "Changing personal information."
 msgstr "A modificar as informações pessoais."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:734
 msgid "Changing login shell."
 msgstr "A modificar a 'shell' de ligação."
 
-#: ../userhelper-wrap.c:736
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Está a tentar executar \"%s\", o qual pode beneficiar de privilégios de "
-"super-utilizador, mas para os obter são necessárias mais informações."
-
 #: ../userhelper-wrap.c:738
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"Está a tentar executar \"%s\", o qual necessita de privilégios de super-"
-"utilizador, mas para os obter são necessárias mais informações."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Está a tentar executar \"%s\", o qual pode beneficiar de privilégios de super-utilizador, mas para os obter são necessárias mais informações."
 
-#: ../userhelper-wrap.c:742
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Está a tentar executar um comando que pode beneficiar de privilégios de "
-"super-utilizador, mas para os obter são necessárias mais informações."
+#: ../userhelper-wrap.c:740
+#, c-format
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Está a tentar executar \"%s\", o qual necessita de privilégios de super-utilizador, mas para os obter são necessárias mais informações."
 
 #: ../userhelper-wrap.c:744
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Está a tentar executar um comando que necessita de privilégios de super-"
-"utilizador, mas para os obter são necessárias mais informações."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Está a tentar executar um comando que pode beneficiar de privilégios de super-utilizador, mas para os obter são necessárias mais informações."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:746
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Está a tentar executar um comando que necessita de privilégios de super-utilizador, mas para os obter são necessárias mais informações."
+
+#: ../userhelper-wrap.c:783
 msgid "_Run Unprivileged"
 msgstr "Executa_r sem Privilégios"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:932
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Erro no 'pipe'.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:939
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Não foi possível executar fork().\n"
 
-#: ../userhelper-wrap.c:961
+#: ../userhelper-wrap.c:963
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Incapaz de definir uma codificação binária num canal de I/O: %s\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Erro no dup2().\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1049
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "erro no execl(), errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -358,7 +330,7 @@ msgstr ""
 "Está a tentar executar \"%s\", o qual pode beneficiar de privilégios\n"
 "de super-utilizador, mas para os obter são necessárias mais informações."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -367,7 +339,7 @@ msgstr ""
 "Está a tentar executar \"%s\", o qual necessita de privilégios\n"
 "de super-utilizador, mas para os obter são necessárias mais informações."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -376,7 +348,7 @@ msgstr ""
 "Está a tentar executar um comando que pode beneficiar de privilégios\n"
 "de super-utilizador, mas para os obter são necessárias mais informações."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -385,19 +357,16 @@ msgstr ""
 "Está a tentar executar um comando que necessita de privilégios\n"
 "de super-utilizador, mas para os obter são necessárias mais informações."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2077
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper tem que ser setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2169
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Não foi possível abrir janela e não foi possível encontrar terminal de "
-"controle.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Não foi possível abrir janela e não foi possível encontrar terminal de controle.\n"
 
 #: ../userinfo.c:383
 #, c-format
@@ -450,12 +419,8 @@ msgid "Un_mount"
 msgstr "Des_montar"
 
 #: ../usermount.c:289
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"Tem a certeza que quer formatar este disco? Vai destruir todos os dados que "
-"ele actualmente contenha."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Tem a certeza que quer formatar este disco? Vai destruir todos os dados que ele actualmente contenha."
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
@@ -516,12 +481,15 @@ msgstr "Mudar a sua senha de autenticação"
 msgid "Password"
 msgstr "Senha"
 
+#: ../userhelper-wrap.c:238
+msgid "No more retries allowed"
+msgstr "Não são permitidas mais tentativas"
+
 #~ msgid "Placeholder text."
 #~ msgstr "Texto para ocupar posição."
 
 #~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr ""
-#~ "Não foi possível mudar o contexto por omissão %s para o programa %s.\n"
+#~ msgstr "Não foi possível mudar o contexto por omissão %s para o programa %s.\n"
 
 #~ msgid "Could not set exec context to %s.\n"
 #~ msgstr "Não foi possível mudar o contexto de execução para %s.\n"
