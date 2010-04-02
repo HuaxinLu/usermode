@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-15 07:49+0000\n"
+"POT-Creation-Date: 2010-04-02 01:53+0000\n"
 "PO-Revision-Date: 2010-03-14 21:22+0100\n"
 "Last-Translator: Peter Bojtos <ptr@ulx.hu>\n"
 "Language-Team: \n"
@@ -240,82 +240,87 @@ msgstr "A kérés megszakítva."
 msgid "Internal PAM error occured."
 msgstr "Belső PAM-hiba történt."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:240
 msgid "Unknown error."
 msgstr "Ismeretlen hiba történt."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:490
 msgid "Query"
 msgstr "Lekérdezés"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:549 ../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Azonosítás mint \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
 msgid "Error"
 msgstr "Hiba"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:568
 msgid "Information"
 msgstr "Információ"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:729
 msgid "Changing password."
 msgstr "Jelszó módosítása."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:731
 msgid "Changing personal information."
 msgstr "A személyes adatok megváltoztatása."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:734
 msgid "Changing login shell."
 msgstr "A parancsértelmező megváltoztatása."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "\"%s\" indítását kezdeményezte. A programot érdemesebb lehet rendszergazdai jogosultsággal indítani, ehhez azonban további információ szükséges."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:740
 #, c-format
 msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr "\"%s\" indítását kezdeményezte. A program csak rendszergazdai jogosultsággal indítható el, ehhez azonban további információ szükséges."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:744
 msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Egy olyan parancs végrehajtását kezdeményezte, amelyet érdemesebb lehet rendszergazdai jogosultsággal végrehajtani - ehhez azonban további információ szükséges."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:746
 msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai jogosultság szükséges - ehhez azonban további információra van szükség."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:783
 msgid "_Run Unprivileged"
 msgstr "Futtatás n_ormál jogosultsággal"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:932
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe (csővezeték)-kezelési hiba.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:939
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nem sikerült végrehajtani egy fork() hívást (programindítást).\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:963
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Nem tudom beállítani a bináris kódolást egy IO csatornán: %s\n"
+
+#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() hiba.\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1049
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() hiba, errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -325,7 +330,7 @@ msgstr ""
 "rendszergazdai jogosultsággal indítani, ehhez azonban további\n"
 "információ szükséges."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -334,7 +339,7 @@ msgstr ""
 "\"%s\" indítását kezdeményezte. A program csak rendszergazdai\n"
 "jogosultsággal indítható el, ehhez azonban további információ szükséges."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -344,7 +349,7 @@ msgstr ""
 "rendszergazdai jogosultsággal végrehajtani - ehhez azonban további\n"
 "információ szükséges."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -353,13 +358,13 @@ msgstr ""
 "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai\n"
 "jogosultság szükséges - ehhez azonban további információra van szükség."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2077
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "a userhelper programnak 'setuid root' beállításúnak kell lennie\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2169
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "A grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem található.\n"
@@ -477,10 +482,9 @@ msgstr "Bejelentkezési jelszó megváltoztatása"
 msgid "Password"
 msgstr "Jelszó"
 
-#: ../userhelper-wrap.c:961
-#, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "Nem tudom beállítani a bináris kódolást egy IO csatornán: %s\n"
+#: ../userhelper-wrap.c:238
+msgid "No more retries allowed"
+msgstr "További újrapróbálkozás nem engedélyezett"
 
 #~ msgid "Placeholder text."
 #~ msgstr "Alapértelmezett szöveg."
