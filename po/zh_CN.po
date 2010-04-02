@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-25 07:49+0000\n"
+"POT-Creation-Date: 2010-04-02 01:53+0000\n"
 "PO-Revision-Date: 2008-03-28 15:12+1000\n"
 "Last-Translator: Leah Liu <lliu@redhat.com>\n"
 "Language-Team: Simplified Chinese <zh@li.org>\n"
@@ -242,82 +242,87 @@ msgstr "请求取消。"
 msgid "Internal PAM error occured."
 msgstr "出现内部PAM错误。"
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:240
 msgid "Unknown error."
 msgstr "未知错误。"
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:490
 msgid "Query"
 msgstr "查询"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:549 ../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "鉴定为 \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
 msgid "Error"
 msgstr "错误"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:568
 msgid "Information"
 msgstr "信息"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:729
 msgid "Changing password."
 msgstr "改变密码"
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:731
 msgid "Changing personal information."
 msgstr "正在改变个人信息。"
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:734
 msgid "Changing login shell."
 msgstr "正在改变登录 shell。"
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "您在试图运行 \"%s\" 。它可能会得益于超级用户的特权，但是这需要更多信息才能做到。"
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:740
 #, c-format
 msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr "您在试图运行 \"%s\" 。它要求您拥有超级用户的特权，但是这需要更多信息才能做到。"
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:744
 msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "您在试图运行一个可能会得益于超级用户特权的命令，但是这需要更多信息才能做到。"
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:746
 msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr "您在试图运行一个要求超级用户特权的命令，但是需要更多信息才能做到。"
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:783
 msgid "_Run Unprivileged"
 msgstr "无特权地运行(_R)"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:932
 #, c-format
 msgid "Pipe error.\n"
 msgstr "管道错误。\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:939
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "无法 fork()。\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:963
+#, fuzzy, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "不能在IO频道 %s 设置二进制编码\n"
+
+#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() 错误。\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1049
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 错误，errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -326,7 +331,7 @@ msgstr ""
 "您在试图运行“%s”。它可能会得益于超级用户的特权，\n"
 "但是这需要更多信息才能做到。"
 
-#: ../userhelper.c:588
+#: ../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -335,7 +340,7 @@ msgstr ""
 "您在试图运行“%s”。它要求您拥有超级用户的特权，\n"
 "但是这需要更多信息才能做到。"
 
-#: ../userhelper.c:592
+#: ../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -344,7 +349,7 @@ msgstr ""
 "您在试图运行一个可能会得益于超级用户特权的命令，\n"
 "但是这需要更多信息才能做到。"
 
-#: ../userhelper.c:594
+#: ../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -353,13 +358,13 @@ msgstr ""
 "您在试图运行一个要求超级用户特权的命令，\n"
 "但是需要更多信息才能做到。"
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2077
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必须是 setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2169
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "无法打开图形化窗口，无法找到控制终端。\n"
@@ -477,10 +482,9 @@ msgstr "改变你的登录密码"
 msgid "Password"
 msgstr "口令"
 
-#: ../userhelper-wrap.c:961
-#, fuzzy, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "不能在IO频道 %s 设置二进制编码\n"
+#: ../userhelper-wrap.c:238
+msgid "No more retries allowed"
+msgstr "不允许再试了"
 
 #~ msgid "Placeholder text."
 #~ msgstr "定位符文字。"
