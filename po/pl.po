@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-25 18:06+0000\n"
-"PO-Revision-Date: 2010-02-25 20:25+0100\n"
+"POT-Creation-Date: 2010-04-02 07:54+0000\n"
+"PO-Revision-Date: 2010-04-02 12:43+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <trans-pl@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
@@ -160,8 +160,8 @@ msgstr "Wykonanie polecenia \"%s\" nie powiodło się: %s\n"
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr ""
-"Ustawienie kanału wejścia/wyjścia w tryb bez blokowania nie powiodło się: "
-"%s\n"
+"Ustawienie kanału wejścia/wyjścia w tryb bez blokowania nie powiodło się: %"
+"s\n"
 
 #: ../pam-panel-icon.c:476
 #, c-format
@@ -250,39 +250,43 @@ msgid "Internal PAM error occured."
 msgstr "Wystąpił wewnętrzny błąd biblioteki PAM."
 
 #: ../userhelper-wrap.c:238
+msgid "No more retries allowed"
+msgstr "Więcej ponowień nie jest dozwolone"
+
+#: ../userhelper-wrap.c:240
 msgid "Unknown error."
 msgstr "Nieznany błąd."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:490
 msgid "Query"
 msgstr "Zapytanie"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:549 ../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Uwierzytelnianie jako \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
 msgid "Error"
 msgstr "Błąd"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:568
 msgid "Information"
 msgstr "Informacja"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:729
 msgid "Changing password."
 msgstr "Zmienianie hasła."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:731
 msgid "Changing personal information."
 msgstr "Zmienianie informacji osobistych."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:734
 msgid "Changing login shell."
 msgstr "Zmienianie powłoki logowania."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:738
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -291,7 +295,7 @@ msgstr ""
 "Próbowano uruchomić program \"%s\", który może wykorzystywać uprawnienia "
 "administratora. Niezbędne jest podanie dodatkowych informacji."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:740
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -300,7 +304,7 @@ msgstr ""
 "Próbowano uruchomić program \"%s\", który wymaga uprawnień administratora. "
 "Niezbędne jest podanie dodatkowych informacji."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:744
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -308,7 +312,7 @@ msgstr ""
 "Próbowano wykonać polecenie, które może wykorzystywać uprawnienia "
 "administratora. Niezbędne jest podanie dodatkowych informacji."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:746
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -316,36 +320,36 @@ msgstr ""
 "Próbowano wykonać polecenie, które wymaga uprawnień administratora. "
 "Niezbędne jest podanie dodatkowych informacji."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:783
 msgid "_Run Unprivileged"
 msgstr "U_ruchom bez dodatkowych uprawnień"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:932
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Błąd potoku.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:939
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nie można wykonać fork().\n"
 
-#: ../userhelper-wrap.c:961
+#: ../userhelper-wrap.c:963
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Nie można ustawić binarnego kodowania na kanale wejścia/wyjścia: %s\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Błąd dup2().\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1049
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Błąd execl(), errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -354,7 +358,7 @@ msgstr ""
 "Próbowano uruchomić program \"%s\", który może wykorzystywać uprawnienia\n"
 "administratora. Niezbędne jest podanie dodatkowych informacji."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -363,7 +367,7 @@ msgstr ""
 "Próbowano uruchomić program \"%s\", który wymaga uprawnień\n"
 "administratora. Niezbędne jest podanie dodatkowych informacji."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -372,7 +376,7 @@ msgstr ""
 "Próbowano wykonać polecenie, które może wykorzystywać uprawnienia\n"
 "administratora. Niezbędne jest podanie dodatkowych informacji."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -381,13 +385,13 @@ msgstr ""
 "Próbowano wykonać polecenie, które wymaga uprawnień administratora.\n"
 "Niezbędne jest podanie dodatkowych informacji."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2077
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid użytkownika root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2169
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
