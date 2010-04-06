@@ -1,23 +1,24 @@
-# translation of it.po to Italiano
+# translation of usermode.default.po to
 # Copyright (C) 2001 Red Hat, Inc.
-# 
+#
 # Bettina De Monti <bdemonti@redhat.it>, 2001.
 # Francesco Valente <fvalen@redhat.com>, 2003, 2004.
 # Francesco Tombolini <tombo@adamantio.net>, 2005, 2006, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: it\n"
+"Project-Id-Version: usermode.default\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-16 07:50+0000\n"
-"PO-Revision-Date: 2008-03-09 15:25+0100\n"
-"Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
-"Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
+"POT-Creation-Date: 2010-04-06 01:51+0000\n"
+"PO-Revision-Date: 2010-04-06 12:09+1000\n"
+"Last-Translator: \n"
+"Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
+#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -33,7 +34,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#. 
+#.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -104,12 +105,22 @@ msgstr "Abbandono dei privilegi di amministratore fallito: %s"
 
 #: ../pam-panel-icon.c:98
 #, c-format
-msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
-msgstr "Abbandono dei privilegi di amministratore fallito: pam_timestamp_check ha restituito il codice d'errore %d"
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+"Abbandono dei privilegi di amministratore fallito: pam_timestamp_check ha "
+"restituito il codice d'errore %d"
 
 #: ../pam-panel-icon.c:146
-msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
-msgstr "Sei attualmente autorizzato a configurare le impostazioni di sistema globali (che influenzano tutti gli utenti), senza dover digitare nuovamente la password di amministratore. Puoi rinunciare a questa autorizzazione."
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+"Sei attualmente autorizzato a configurare le impostazioni di sistema globali "
+"(che influenzano tutti gli utenti), senza dover digitare nuovamente la "
+"password di amministratore. Puoi rinunciare a questa autorizzazione."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -240,81 +251,107 @@ msgid "Internal PAM error occured."
 msgstr "E' avvenuto un errore PAM interno."
 
 #: ../userhelper-wrap.c:238
+msgid "No more retries allowed"
+msgstr "Nessun altro tentativo permesso"
+
+#: ../userhelper-wrap.c:240
 msgid "Unknown error."
 msgstr "Errore sconosciuto."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:490
 msgid "Query"
 msgstr "Interrogazione"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:549 ../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Autenticarsi come \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
 msgid "Error"
 msgstr "Errore"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:568
 msgid "Information"
 msgstr "Informazione"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:729
 msgid "Changing password."
 msgstr "Cambio della password."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:731
 msgid "Changing personal information."
 msgstr "Modifica informazioni personali."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:734
 msgid "Changing login shell."
 msgstr "Modifica shell di login."
 
-#: ../userhelper-wrap.c:736
-#, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
-
 #: ../userhelper-wrap.c:738
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi "
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
-#: ../userhelper-wrap.c:742
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire un comando che può trarre beneficio dai privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+#: ../userhelper-wrap.c:740
+#, c-format
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi, ma "
+"occorrono più informazioni per eseguire l'operazione."
 
 #: ../userhelper-wrap.c:744
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire un comando che richiede privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Si sta tentando di eseguire un comando che può trarre beneficio dai "
+"privilegi amministrativi, ma occorrono più informazioni per eseguire "
+"l'operazione."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:746
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Si sta tentando di eseguire un comando che richiede privilegi "
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+
+#: ../userhelper-wrap.c:783
 msgid "_Run Unprivileged"
 msgstr "_Eseguire in modalità non privilegiata"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:932
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Errore pipe.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:939
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Impossibile creare il processo figlio().\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:963
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Impossibile impostare la codifica bianria su un canale di I/O: %s\n"
+
+#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
 #, c-format
 msgid "dup2() error.\n"
 msgstr "errore dup2().\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1049
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "errore execl(), errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -323,7 +360,7 @@ msgstr ""
 "Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi\n"
 "amministrativi, ma occorrono maggiori informazioni per eseguire l'operazione."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -332,16 +369,17 @@ msgstr ""
 "Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi,\n"
 "ma occorrono più informazioni per eseguire l'operazione."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Si sta tentando di eseguire un comando che può trarre beneficio dai\n"
-"privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+"privilegi amministrativi, ma occorrono più informazioni per eseguire "
+"l'operazione."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -350,16 +388,18 @@ msgstr ""
 "Si sta tentando di eseguire un comando che richiede privilegi\n"
 "amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2077
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper deve essere setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2169
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Impossibile aprire una finestra grafica, ed impossibile trovare il terminale di controllo.\n"
+msgstr ""
+"Impossibile aprire una finestra grafica, ed impossibile trovare il terminale "
+"di controllo.\n"
 
 #: ../userinfo.c:383
 #, c-format
@@ -412,8 +452,12 @@ msgid "Un_mount"
 msgstr "_Smonta"
 
 #: ../usermount.c:289
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "Si è sicuri di voler formattare questo disco? Si distruggerà qualsiasi dato in esso contenuto."
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"Si è sicuri di voler formattare questo disco? Si distruggerà qualsiasi dato "
+"in esso contenuto."
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
@@ -474,10 +518,3 @@ msgstr "Cambio della password di login"
 msgid "Password"
 msgstr "Password"
 
-#: ../userhelper-wrap.c:961
-#, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "Impossibile impostare la codifica bianria su un canale di I/O: %s\n"
-
-#~ msgid "Placeholder text."
-#~ msgstr "Contenitore testo"
