@@ -1,5 +1,8 @@
 2010-04-08  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.ac: Release 1.105.
+	* NEWS: Update.
+
 	* userhelper.h
 	* userhelper.c
 	* userhelper-wrap.c: Remove #ifdef USE_STARTUP_NOTIFICATION where

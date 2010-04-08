@@ -1,3 +1,7 @@
+1.105:
+* Make startup notification work.
+* Use a better error message if the user runs out of attempts allowed by PAM.
+
 1.104.2:
 * Update translations.
 
