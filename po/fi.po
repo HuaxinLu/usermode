@@ -1,13 +1,13 @@
 # Finnish messages for usermode.
 # This file is distributed under the same license as the usermode package.
-#
+# 
 # Lauri Nurmi <lanurmi@iki.fi>, 2003, 2005, 2007.
 # Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2006-2008, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-24 13:51+0000\n"
+"POT-Creation-Date: 2010-04-08 18:52+0000\n"
 "PO-Revision-Date: 2010-03-24 16:32+0200\n"
 "Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: Finnish <Laatu@lokalisointi.org>\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -32,7 +31,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -103,22 +102,12 @@ msgstr "Ylläpitäjän oikeuksista luopuminen epäonnistui: %s"
 
 #: ../pam-panel-icon.c:98
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
-"Ylläpitäjän oikeuksista luopuminen epäonnistui: pam_timestamp_check palautti "
-"virhekoodin %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Ylläpitäjän oikeuksista luopuminen epäonnistui: pam_timestamp_check palautti virhekoodin %d"
 
 #: ../pam-panel-icon.c:146
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"Olet tällä hetkellä valtuutettu muuttamaan järjestelmänlaajuisia (kaikkia "
-"käyttäjiä koskevia) asetuksia ilman ylläpitäjän salasanan antamista "
-"uudelleen. Voit luopua tästä valtuutuksesta."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Olet tällä hetkellä valtuutettu muuttamaan järjestelmänlaajuisia (kaikkia käyttäjiä koskevia) asetuksia ilman ylläpitäjän salasanan antamista uudelleen. Voit luopua tästä valtuutuksesta."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -168,15 +157,15 @@ msgstr "IO-kanavan asettaminen ei-pysäyttäväksi epäonnistui: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: yhdistäminen istunnonhallintaan epäonnistui\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Tuntematon poistumiskoodi."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Tiedot päivitetty."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -184,7 +173,7 @@ msgstr ""
 "Annettu salasana on virheellinen.\n"
 "Yritä uudelleen."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -194,11 +183,11 @@ msgstr ""
 "Tämä johtuu todennäköisesti jossakin kentässä olevista kaksoispisteistä\n"
 "tai pilkuista. Poista ne ja yritä uudelleen."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Virhe salasanan tyhjennyksessä."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -206,19 +195,19 @@ msgstr ""
 "Jotkut järjestelmätiedostot ovat lukittuina.\n"
 "Yritä uudelleen hetken kuluttua."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Tuntematon käyttäjä."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Riittämättömät oikeudet."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Virheellinen kutsu aliprosessiin."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -228,170 +217,152 @@ msgstr ""
 "Kuoren vaihtamiseen ei ole oikeuksia.\n"
 "Kysy neuvoa järjestelmänvalvojalta."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Muisti lopussa."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec()-kutsu epäonnistui."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Valittua ohjelmaa ei löytynyt."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Pyyntö peruutettu."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Tapahtui sisäinen PAM-virhe."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Tuntematon virhe."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Kysely"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Tunnistaudutaan käyttäjäksi ”%s”"
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Virhe"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Tiedot"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Vaihdetaan salasanaa."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Muutetaan henkilötietoja."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Vaihdetaan kirjautumiskuorta."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan\n"
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan\n"
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../userhelper-wrap.c:742
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
+#: ../userhelper-wrap.c:752
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan\n"
 "oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../userhelper-wrap.c:744
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
+#: ../userhelper-wrap.c:754
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan\n"
 "oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Aja normaalioikeuksilla"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Putkivirhe.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() ei onnistu.\n"
 
-#: ../userhelper-wrap.c:961
+#: ../userhelper-wrap.c:969
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Binäärikoodausta ei voi asettaa IO-kanavalle: %s\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-virhe.\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-virhe, errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan "
-"oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr "Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan oikeudet. "
-"Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr "Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan "
-"oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr "Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan oikeudet. "
-"Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr "Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "Ohjelman userhelper on oltava ”setuid root”\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2162
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Graafisen ikkunan avaaminen ei onnistunut, eikä ohjaavaa päätettä löydy.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Graafisen ikkunan avaaminen ei onnistunut, eikä ohjaavaa päätettä löydy.\n"
 
 #: ../userinfo.c:383
 #, c-format
@@ -444,9 +415,7 @@ msgid "Un_mount"
 msgstr "_Irrota"
 
 #: ../usermount.c:289
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
 msgstr "Haluatko varmasti alustaa tämän levyn? Kaikki sen sisältö tuhoutuu."
 
 #: ../usermount.c:300
@@ -507,6 +476,10 @@ msgstr "Vaihda salasanasi"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Salasana"
+
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "Enempää yrityksiä ei sallita"
 
 #~ msgid "Placeholder text."
 #~ msgstr "Paikanpitäjäteksti."
