@@ -1,5 +1,8 @@
 2010-04-08  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper-wrap.c (userhelper_handle_childout): Clean up startup
+	notification if we open another dialog.
+
 	* consolehelper.c (main): Don't put garbage in DESKTOP_STARTUP_ID if it
 	was unset.
 

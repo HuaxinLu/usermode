@@ -688,6 +688,16 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		char *text;
 		GtkWidget *label, *vbox;
 
+#ifdef USE_STARTUP_NOTIFICATION
+		/* If we already set up startup notification for the child,
+		   something must have gone wrong (e.g. wrong password).  Clean
+		   it up, which will allow setting it up again. */
+		if (sn_id != NULL) {
+			userhelper_startup_notification_launchee(sn_id);
+			g_free(sn_id);
+			sn_id = NULL;
+		}
+#endif
 		resp->dialog = gtk_message_dialog_new(NULL, 0,
 						      resp->responses > 0 ?
 						      GTK_MESSAGE_QUESTION :
