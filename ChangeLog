@@ -1,5 +1,12 @@
 2010-04-08  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (send_sn_info): Split from converse_pipe().
+	(converse_pipe): Fix getting the value of UH_SN_ID.
+	(pipe_conv_wait_for_sync): Handle incoming UH_SN_ID.  Add a debug
+	message.
+	(pipe_conv_exec_start, pipe_conv_exec_fail): Send startup notification
+	information.
+
 	* userhelper-wrap.c (userhelper_handle_childout): Clean up startup
 	notification if we open another dialog.
 

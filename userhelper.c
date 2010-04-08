@@ -263,6 +263,36 @@ free_reply(struct pam_response *resp, size_t count)
 	free(resp);
 }
 
+/* Send startup notification-related information using DATA */
+static void
+send_sn_info(struct app_data *data)
+{
+#ifdef USE_STARTUP_NOTIFICATION
+#define S(OP, MEMBER, DESCRIPTION)					\
+	do {								\
+		if (data->domain != NULL && data->MEMBER != NULL) {	\
+			debug_msg("userhelper (cp): sending " DESCRIPTION \
+				  " `%s'\n", data->MEMBER);		\
+			send_request(data->output, OP,			\
+				     dgettext(data->domain, data->MEMBER)); \
+		}							\
+	} while (0)
+	S(UH_SN_NAME, sn_name, "sn name");
+	S(UH_SN_DESCRIPTION, sn_description, "sn description");
+	S(UH_SN_WMCLASS, sn_wmclass, "sn wm_class");
+	S(UH_SN_BINARY_NAME, sn_binary_name, "sn binary name");
+	S(UH_SN_ICON_NAME, sn_icon_name, "sn icon name");
+#undef S
+
+	if (data->sn_workspace != -1) {
+		debug_msg("userhelper (cp): sending sn workspace %d.\n",
+			  data->sn_workspace);
+		send_request_int(data->output, UH_SN_WORKSPACE,
+				 data->sn_workspace);
+	}
+#endif
+}
+
 /* A mixed-mode conversation function suitable for use with X. */
 static int
 converse_pipe(int num_msg, const struct pam_message **msg,
@@ -316,55 +346,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			     dgettext(data->domain, data->banner));
 	}
 
-#ifdef USE_STARTUP_NOTIFICATION
-	/* SN Name. */
-	if ((data->domain != NULL) && (data->sn_name != NULL)) {
-		debug_msg("userhelper (cp): sending sn name `%s'\n",
-			  data->sn_name);
-		send_request(data->output, UH_SN_NAME,
-			     dgettext(data->domain, data->sn_name));
-	}
-
-	/* SN Description. */
-	if ((data->domain != NULL) && (data->sn_description != NULL)) {
-		debug_msg("userhelper (cp): sending sn description `%s'\n",
-			  data->sn_description);
-		send_request(data->output, UH_SN_DESCRIPTION,
-			     dgettext(data->domain, data->sn_description));
-	}
-
-	/* SN WM Class. */
-	if ((data->domain != NULL) && (data->sn_wmclass != NULL)) {
-		debug_msg("userhelper (cp): sending sn wm_class `%s'\n",
-			  data->sn_wmclass);
-		send_request(data->output, UH_SN_WMCLASS,
-			     dgettext(data->domain, data->sn_wmclass));
-	}
-
-	/* SN BinaryName. */
-	if ((data->domain != NULL) && (data->sn_binary_name != NULL)) {
-		debug_msg("userhelper (cp): sending sn binary name `%s'\n",
-			  data->sn_binary_name);
-		send_request(data->output, UH_SN_BINARY_NAME,
-			     dgettext(data->domain, data->sn_binary_name));
-	}
-
-	/* SN IconName. */
-	if ((data->domain != NULL) && (data->sn_icon_name != NULL)) {
-		debug_msg("userhelper (cp): sending sn icon name `%s'\n",
-			  data->sn_icon_name);
-		send_request(data->output, UH_SN_ICON_NAME,
-			     dgettext(data->domain, data->sn_icon_name));
-	}
-
-	/* SN Workspace. */
-	if ((data->domain != NULL) && (data->sn_workspace != -1)) {
-		debug_msg("userhelper (cp): sending sn workspace %d.\n",
-			  data->sn_workspace);
-		send_request_int(data->output, UH_SN_WORKSPACE,
-				 data->sn_workspace);
-	}
-#endif
+	send_sn_info(data);
 
 	/* We do a first pass on all items and output them, and then a second
 	 * pass to read responses from the helper. */
@@ -486,13 +468,8 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 #ifdef USE_STARTUP_NOTIFICATION
 		/* If we got a desktop startup ID, set it. */
 		if (string[0] == UH_SN_ID) {
-			const char *p;
-
 			g_free(data->sn_id);
-			for (p = string + 1; *p != '\0' || g_ascii_isspace(*p);
-			     p++)
-				;
-			data->sn_id = g_strdup(p);
+			data->sn_id = g_strdup(string + 1);
 			g_free(string);
 			debug_msg("userhelper (cp): startup id \"%s\"\n",
 				  data->sn_id);
@@ -755,7 +732,24 @@ pipe_conv_wait_for_sync(struct app_data *data)
 		err = ERR_UNK_ERROR;
 		goto err;
 	}
+
+	if (reply[0] == UH_SN_ID) {
+		/* This happens even outside of converse_pipe; if PAM does not
+		   ask any questions at all, this might in fact be the only
+		   time UH_SN_ID is sent. */
+		g_free(data->sn_id);
+		data->sn_id = g_strdup(reply + 1);
+		g_free(reply);
+		reply = read_reply(data->input);
+		if (reply == NULL) {
+			err = ERR_UNK_ERROR;
+			goto err;
+		}
+	}
+
 	if (reply[0] != UH_SYNC_POINT) {
+		debug_msg("Unexpected reply type %d, \"%s\"\n", reply[0],
+			  reply[0] != 0 ? reply + 1 : "");
 		err = ERR_UNK_ERROR;
 		goto err_reply;
 	}
@@ -774,6 +768,9 @@ pipe_conv_exec_start(const struct pam_conv *conv)
 		struct app_data *data;
 
 		data = conv->appdata_ptr;
+		/* There might have been no converse_pipe() call, so send the
+		   information now. */
+		send_sn_info(data);
 		send_request(data->output, UH_EXEC_START, NULL);
 		send_request(data->output, UH_SYNC_POINT, NULL);
 		fflush(data->output);
@@ -798,6 +795,9 @@ pipe_conv_exec_fail(const struct pam_conv *conv)
 
 		data = conv->appdata_ptr;
 		debug_msg("userhelper: exec failed\n");
+		/* There might have been no converse_pipe() call, so send the
+		   information now, just to be sure. */
+		send_sn_info(data);
 		send_request(data->output, UH_EXEC_FAILED, NULL);
 		send_request(data->output, UH_SYNC_POINT, NULL);
 		fflush(data->output);
