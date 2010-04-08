@@ -1,3 +1,8 @@
+2010-04-08  Miloslav Trmač  <mitr@redhat.com>
+
+	* consolehelper.c (main): Don't put garbage in DESKTOP_STARTUP_ID if it
+	was unset.
+
 2010-03-31  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.h (ERR_MAX_TRIES): New definition.

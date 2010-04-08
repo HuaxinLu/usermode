@@ -98,7 +98,8 @@ main(int argc, char *argv[])
 #ifdef USE_STARTUP_NOTIFICATION
 		/* Restore DESKTOP_STARTUP_ID.  I'll think up something mean
 		 * to say about having to do this eventually. */
-		setenv("DESKTOP_STARTUP_ID", sn_id, 1);
+		if (sn_id != NULL)
+			setenv("DESKTOP_STARTUP_ID", sn_id, 1);
 #endif
 	}
 #endif
