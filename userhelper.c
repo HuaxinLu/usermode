@@ -82,12 +82,10 @@ struct app_data {
 	gboolean fallback_allowed, fallback_chosen, canceled;
 	FILE *input, *output;
 	const char *banner, *domain;
-#ifdef USE_STARTUP_NOTIFICATION
 	const char *sn_name, *sn_description, *sn_wmclass;
 	const char *sn_binary_name, *sn_icon_name;
 	char *sn_id;
 	int sn_workspace;
-#endif
 };
 
 #ifdef WITH_SELINUX
@@ -267,6 +265,7 @@ free_reply(struct pam_response *resp, size_t count)
 static void
 send_sn_info(struct app_data *data)
 {
+	(void)data;
 #ifdef USE_STARTUP_NOTIFICATION
 #define S(OP, MEMBER, DESCRIPTION)					\
 	do {								\
@@ -465,7 +464,6 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 			break;
 		}
 
-#ifdef USE_STARTUP_NOTIFICATION
 		/* If we got a desktop startup ID, set it. */
 		if (string[0] == UH_SN_ID) {
 			g_free(data->sn_id);
@@ -475,7 +473,6 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 				  data->sn_id);
 			continue;
 		}
-#endif
 
 		/* If the user chose to abort, do so. */
 		if (string[0] == UH_CANCEL) {
@@ -1744,7 +1741,6 @@ wrap(const char *user, const char *program,
 	if (data->domain == NULL) {
 		data->domain = program;
 	}
-#ifdef USE_STARTUP_NOTIFICATION
 	val = svGetValue(s, "STARTUP_NOTIFICATION_NAME");
 	if (val != NULL && strlen(val) > 0)
 		data->sn_name = val;
@@ -1763,7 +1759,6 @@ wrap(const char *user, const char *program,
 	val = svGetValue(s, "STARTUP_NOTIFICATION_WORKSPACE");
 	if (val != NULL && strlen(val) > 0)
 		data->sn_workspace = atoi(val);
-#endif
 
 	/* Now we're done reading the file. Close it. */
 	svCloseFile(s);
@@ -2045,11 +2040,9 @@ main(int argc, char **argv)
 		FALSE, FALSE, FALSE,
 		NULL, NULL,
 		NULL, NULL,
-#ifdef USE_STARTUP_NOTIFICATION
 		NULL, NULL, NULL,
 		NULL, NULL, NULL,
 		-1,
-#endif
 	};
 
 	/* PAM conversation structures containing the addresses of the

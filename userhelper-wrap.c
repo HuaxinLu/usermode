@@ -69,7 +69,6 @@ struct response {
 	gulong dialog_response_handler;
 };
 
-#ifdef USE_STARTUP_NOTIFICATION
 static char *sn_id = NULL;
 static char *sn_name = NULL;
 static char *sn_description = NULL;
@@ -78,6 +77,7 @@ static char *sn_wmclass = NULL;
 static char *sn_binary_name = NULL;
 static char *sn_icon_name = NULL;
 
+#ifdef USE_STARTUP_NOTIFICATION
 /* Push errors for the specified display. */
 static void
 trap_push(SnDisplay *display, Display *xdisplay)
@@ -95,11 +95,14 @@ trap_pop(SnDisplay *display, Display *xdisplay)
 	gdk_error_trap_pop();
 	sn_display_error_trap_pop(display);
 }
+#endif
 
 /* Complete startup notification for consolehelper. */
 static void
 userhelper_startup_notification_launchee(const char *id)
 {
+	(void)id;
+#ifdef USE_STARTUP_NOTIFICATION
 	GdkDisplay *gdisp;
 	GdkScreen *gscreen;
 	SnDisplay *disp;
@@ -123,12 +126,14 @@ userhelper_startup_notification_launchee(const char *id)
 		sn_launchee_context_unref(ctx);
 	}
 	sn_display_unref(disp);
+#endif
 }
 
 /* Setup startup notification for our child. */
 static void
 userhelper_startup_notification_launcher(void)
 {
+#ifdef USE_STARTUP_NOTIFICATION
 	GdkDisplay *gdisp;
 	GdkScreen *gscreen;
 	SnDisplay *disp;
@@ -172,8 +177,8 @@ userhelper_startup_notification_launcher(void)
 
 	sn_launcher_context_unref(ctx);
 	sn_display_unref(disp);
-}
 #endif
+}
 
 /* Call gtk_main_quit. */
 void
@@ -403,14 +408,13 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		_exit(1);
 		break;
 	}
-#ifdef USE_STARTUP_NOTIFICATION
-	if (startup) {
+	if (startup && sn_name != NULL) {
 		/* If we haven't set up notification yet, do so. */
-		if ((sn_name != NULL) && (sn_id == NULL)) {
+		if (sn_id == NULL)
 			userhelper_startup_notification_launcher();
-		}
+#ifdef USE_STARTUP_NOTIFICATION
 		/* Tell the child what its ID is. */
-		if ((sn_name != NULL) && (sn_id != NULL)) {
+		if (sn_id != NULL) {
 			static const unsigned char cmd = UH_SN_ID;
 
 			debug_msg("Sending new window startup ID \"%s\".\n",
@@ -419,8 +423,8 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 			write_childin_string(sn_id);
 			write(childin[1], &eol, sizeof(eol));
 		}
-	}
 #endif
+	}
 	/* Tell the child we have no more to say. */
 	debug_msg("Sending synchronization point.\n");
 	write(childin[1], sync_point, sizeof(sync_point));
@@ -594,7 +598,6 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		child_was_execed = FALSE;
 		debug_msg("Child failed.\n");
 		break;
-#ifdef USE_STARTUP_NOTIFICATION
 	case UH_SN_NAME:
 		/* Startup notification name. */
 		g_free(sn_name);
@@ -630,7 +633,6 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		sn_icon_name = g_strdup(prompt);
 		debug_msg("SN Icon name is \"%s\".\n", sn_icon_name);
 		break;
-#endif
 	case UH_EXPECT_RESP:
 		/* Sanity-check for the number of expected responses. */
 		if (resp->responses != atoi(prompt)) {
@@ -647,10 +649,8 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		break;
 	}
 
-#ifdef USE_STARTUP_NOTIFICATION
 	/* Complete startup notification for consolehelper. */
 	userhelper_startup_notification_launchee(NULL);
-#endif
 
 	if (prompt_type != UH_SYNC_POINT)
 		return;
@@ -688,7 +688,6 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 		char *text;
 		GtkWidget *label, *vbox;
 
-#ifdef USE_STARTUP_NOTIFICATION
 		/* If we already set up startup notification for the child,
 		   something must have gone wrong (e.g. wrong password).  Clean
 		   it up, which will allow setting it up again. */
@@ -697,7 +696,6 @@ userhelper_handle_childout(char prompt_type, char *prompt)
 			g_free(sn_id);
 			sn_id = NULL;
 		}
-#endif
 		resp->dialog = gtk_message_dialog_new(NULL, 0,
 						      resp->responses > 0 ?
 						      GTK_MESSAGE_QUESTION :
@@ -846,13 +844,11 @@ userhelper_child_exited(GPid pid, int status, gpointer data)
 	debug_msg("Child %d exited (looking for %d).\n", pid, childpid);
 
 	if (pid == childpid) {
-#ifdef USE_STARTUP_NOTIFICATION
 		/* If we're doing startup notification, clean it up just in
 		 * case the child didn't complete startup. */
 		if (sn_id != NULL) {
 			userhelper_startup_notification_launchee(sn_id);
 		}
-#endif
 		/* If we haven't lost the connection with the child, it's
 		 * gone now. */
 		if (childout_tag != 0) {
@@ -990,11 +986,9 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 		write(childin[1], "Go", 1);
 		gtk_main();
 
-#ifdef USE_STARTUP_NOTIFICATION
 		/* If we're doing startup notification, clean it up just in
 		 * case the child didn't complete startup. */
 		userhelper_startup_notification_launchee(sn_id);
-#endif
 
 		debug_msg("Child exited, continuing.\n");
 	} else {

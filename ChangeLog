@@ -1,5 +1,14 @@
 2010-04-08  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.h
+	* userhelper.c
+	* userhelper-wrap.c: Remove #ifdef USE_STARTUP_NOTIFICATION where
+	the clutter is not worth it.
+	* userhelper.c (converse_pipe, wrap)
+	* userhelper-wrap.c (userhelper_handle_childout): Remove #ifdef
+	USE_STARTUP_NOTIFICATION, adding some parsing and data movements.  The
+	actual functionality is still controlled by the #ifdef.
+
 	* userhelper.c (send_sn_info): Split from converse_pipe().
 	(converse_pipe): Fix getting the value of UH_SN_ID.
 	(pipe_conv_wait_for_sync): Handle incoming UH_SN_ID.  Add a debug

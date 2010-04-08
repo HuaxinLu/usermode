@@ -50,14 +50,12 @@
 #define UH_EXEC_START 44
 #define UH_EXEC_FAILED 45
 
-#ifdef USE_STARTUP_NOTIFICATION
 #define UH_SN_NAME 46
 #define UH_SN_DESCRIPTION 47
 #define UH_SN_WORKSPACE 48
 #define UH_SN_WMCLASS 49
 #define UH_SN_BINARY_NAME 50
 #define UH_SN_ICON_NAME 51
-#endif
 
 /* Consolehelper response format:
    response code as a single character,
@@ -68,9 +66,7 @@
 #define UH_TEXT 33
 #define UH_CANCEL 34
 #define UH_FALLBACK 35
-#ifdef USE_STARTUP_NOTIFICATION
 #define UH_SN_ID 36
-#endif
 
 /* Valid userhelper error codes. */
 #define ERR_PASSWD_INVALID      1       /* password is not right */
