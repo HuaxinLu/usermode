@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-21 01:50+0000\n"
-"PO-Revision-Date: 2010-03-21 14:08+0200\n"
+"POT-Creation-Date: 2010-04-10 13:50+0000\n"
+"PO-Revision-Date: 2010-04-10 14:08+0200\n"
 "Last-Translator: Maxim Dzumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,15 +166,15 @@ msgstr "Помилка встановлення каналу вводу-виво
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: не вдається підключитись до менеджера сеансів\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Невідомий код завершення."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Інформацію оновлено."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -182,7 +182,7 @@ msgstr ""
 "Ви ввели правильний пароль.\n"
 "Спробуйте знову."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -192,11 +192,11 @@ msgstr ""
 "Це напевно через двокрапки чи коми в одному з полів.\n"
 "Видаліть їх та спробуйте знову."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Помилка скидання паролю."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -204,19 +204,19 @@ msgstr ""
 "Деякі файлові системи блоковано.\n"
 "Спробуйте знову через декілька секунд."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Невідомий користувач."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Недостатньо прав."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Невірний виклик підпроцесу.."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -226,60 +226,64 @@ msgstr ""
 "Ви не можете змінити свою оболонку.\n"
 "Проконсультуйтесь із своїм системним адміністратором."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Недостатньо оперативної пам'яті."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "Помилка виклику exec()."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Неможливо знайти вибрану програму."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Запит скасовано."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Внутрішня помилка PAM."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "Досягнуто максимальну кількість спроб"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Невідома помилка."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Запит"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Проподиться перевірка автентичності як \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Помилка"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Інформація"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Зміна паролю."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Зміна персональної інформації."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Зміна початкової оболонки."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -288,7 +292,7 @@ msgstr ""
 "Ви намагаєтесь виконати програму \"%s\", яка може потребувати привілей "
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -297,7 +301,7 @@ msgstr ""
 "Ви намагаєтесь виконати \"%s\", яка вимагає привілей\n"
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -305,7 +309,7 @@ msgstr ""
 "Ви намагаєтесь виконати команду,  яка може потребувати привілей "
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -313,36 +317,36 @@ msgstr ""
 "Ви намагаєтесь виконати команду, яка вимагає привілей\n"
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Запустити без привілей"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Помилка каналу.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Неможливо виконати fork().\n"
 
-#: ../userhelper-wrap.c:961
+#: ../userhelper-wrap.c:969
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Не вдається встановити двійкове кодування в каналі вводу-виводу: %s\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "помилка dup2().\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "помилка execl(), код помилки %d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -351,7 +355,7 @@ msgstr ""
 "Ви намагаєтесь виконати програму \"%s\", яка може потребувати привілей "
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -360,7 +364,7 @@ msgstr ""
 "Ви намагаєтесь виконати програму \"%s\", яка вимагає привілей\n"
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -369,7 +373,7 @@ msgstr ""
 "Ви намагаєтесь виконати команду, яка може потребувати привілей "
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -378,13 +382,13 @@ msgstr ""
 "Ви намагаєтесь виконати команду, яка вимагає привілей\n"
 "адміністратора, але для цього потрібна додаткова інформація."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper повинен бути setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2162
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
