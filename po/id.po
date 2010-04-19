@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-24 18:21+0000\n"
+"POT-Creation-Date: 2010-04-19 13:50+0000\n"
 "PO-Revision-Date: 2008-04-04 18:25+0700\n"
 "Last-Translator: Dapid Candra <dapidc@gmail.com>\n"
 "Language-Team: Fedora Trans ID <fedora-trans-id@redhat.com>\n"
@@ -17,6 +17,24 @@ msgstr ""
 "X-Poedit-Language: Indonesian\n"
 "X-Poedit-Country: Indonesia\n"
 
+#. * Copyright (C) 2001 Red Hat, Inc.
+#. *
+#. * This is free software; you can redistribute it and/or modify it
+#. * under the terms of the GNU General Public License as published by
+#. * the Free Software Foundation; either version 2 of the License, or
+#. * (at your option) any later version.
+#. *
+#. * This program is distributed in the hope that it will be useful, but
+#. * WITHOUT ANY WARRANTY; without even the implied warranty of
+#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#. * General Public License for more details.
+#. *
+#. * You should have received a copy of the GNU General Public License
+#. * along with this program; if not, write to the Free Software
+#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#. 
+#. Just a dummy file for gettext, containing messages emmitted by various
+#. * commonly-used PAM modules.
 #  * Copyright (C) 2001 Red Hat, Inc.
 #  *
 #  * This is free software; you can redistribute it and/or modify it
@@ -34,25 +52,6 @@ msgstr ""
 #  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #  Just a dummy file for gettext, containing messages emmitted by various
 #  * commonly-used PAM modules.
-#.
-#. * Copyright (C) 2001 Red Hat, Inc.
-#. *
-#. * This is free software; you can redistribute it and/or modify it
-#. * under the terms of the GNU General Public License as published by
-#. * the Free Software Foundation; either version 2 of the License, or
-#. * (at your option) any later version.
-#. *
-#. * This program is distributed in the hope that it will be useful, but
-#. * WITHOUT ANY WARRANTY; without even the implied warranty of
-#. * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-#. * General Public License for more details.
-#. *
-#. * You should have received a copy of the GNU General Public License
-#. * along with this program; if not, write to the Free Software
-#. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
-#. Just a dummy file for gettext, containing messages emmitted by various
-#. * commonly-used PAM modules.
 #: ../dummy.h:21
 msgid "OK"
 msgstr "OK"
@@ -128,13 +127,11 @@ msgstr "Gagal mendrop privilege administrator:pam_timestamp_check kode pengembal
 msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
 msgstr "Anda diperkenankan untuk mengkonfigur seting menyeluruh (semua user) tanpa harus mengetikan password administrator lagi, Anda dapat menolak autorisasi ini."
 
-#: ../pam-panel-icon.c:151
-#: ../pam-panel-icon.c:178
+#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "Pertahankan Autorisasi"
 
-#: ../pam-panel-icon.c:154
-#: ../pam-panel-icon.c:185
+#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "Lupakan Autorisasi"
 
@@ -174,18 +171,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Gagal untuk menseting kanal IO nonblocking: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: gagal melakukan koneksi sesi manager\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Kode keluar tidak diketahui."
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Informasi diperbarui."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -193,7 +191,7 @@ msgstr ""
 "Password yang anda ketik tidak valid.\n"
 "Harap coba lagi."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -203,11 +201,11 @@ msgstr ""
 "Hal ini mungkin dikarenakan adanya colon atau koma disalah satu field.\n"
 "Harap diperbaiki dulu dan coba lagi."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Reset password salah."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -215,19 +213,19 @@ msgstr ""
 "Beberapa berkas sistem terkunci.\n"
 "Harap coba beberapa saat lagi."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Pemakai tidak dikenal."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Kewenangan tidak cukup."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Panggilan tidak valid ke subproses."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -237,114 +235,107 @@ msgstr ""
 "Anda tidak dibolehkan merubah shell anda.\n"
 "Konsultasikan ke administrator sistem anda."
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Kehabisan memori."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "Panggilan exec() gagal."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Gagal temukan program yang dipilih."
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Permintaan dibatalkan"
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Terjadi kesalahan internal PAM."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Kesalahan tidak diketahui."
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Query"
 
-#: ../userhelper-wrap.c:581
-#: ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "Kesalahan"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "Informasi"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "Penempatan teks."
-
-#: ../userhelper-wrap.c:753
-#: ../userhelper.c:627
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Otentikasi sebagai \"%s\""
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
+msgid "Error"
+msgstr "Kesalahan"
+
+#: ../userhelper-wrap.c:572
+msgid "Information"
+msgstr "Informasi"
+
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Ubah password."
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Merubah informasi pribadi."
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Merubah login shell."
 
-#: ../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Anda mencoba menjalankan \"%s\" yang mungkin diperlukan kewenangan administratif, tapi diperlukan informasi lebihuntuk melaksanakannya."
 
-#: ../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan administratif, Tapi diperlukan informasi lebih untuk melaksanakannya."
 
-#: ../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:752
 msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Anda mencoba menjalankan sebuah perintah yang mungkin diperlukan kewenangan administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
-#: ../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:754
 msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Anda mencoba menjalankan sebuah perintah yang memerlukan kewenangan administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
-#: ../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Jalan Tanpa Kewenangan"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Kesalahan pipe.\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Tidak dapat fork().\n"
 
-#: ../userhelper-wrap.c:1001
-#, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
+#: ../userhelper-wrap.c:969
+#, fuzzy, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Tidak dapat menset karakter set %s pada kanal IO: %s\n"
 
-#: ../userhelper-wrap.c:1077
-#: ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "kesalahan dup2().\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "kesalahan execl(), errno=%d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -353,7 +344,7 @@ msgstr ""
 "Anda mencoba menjalankan \"%s\" yang didapat dari kewenangan\n"
 "administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
-#: ../userhelper.c:611
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -362,7 +353,8 @@ msgstr ""
 "Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan\n"
 "administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
-#: ../userhelper.c:615
+#: ../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -370,7 +362,8 @@ msgstr ""
 "Anda mencoba menjalankan sebuah perintah yang didapat dari \n"
 "kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
-#: ../userhelper.c:617
+#: ../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -378,23 +371,23 @@ msgstr ""
 "Anda mencoba menjalankan sebuah perintah yang memerlukan \n"
 "kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper harus setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Tidak dapat membuka jendela grafis, dan tidak dapat menemukan terminal pengontrol.\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Argumen yang tidak diharapkan"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Anda tidak ada.  Harap pergi.\n"
@@ -407,27 +400,27 @@ msgstr "Tentang Diri Saya"
 msgid "Change personal information"
 msgstr "Ubah informasi pribadi"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Nama Lengkap:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Nomor Telepon Rumah:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Login Shell:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Nomor Telepon Kantor:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Kantor:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Informasi Pemakai"
 
@@ -460,8 +453,7 @@ msgstr ""
 "Hubungi administrator anda."
 
 #. Create the dialog.
-#: ../usermount.c:508
-#: ../usermount.c:520
+#: ../usermount.c:508 ../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Alat Pemasang Pengguna"
 
@@ -482,7 +474,7 @@ msgstr "Direktori"
 msgid "Filesystem"
 msgstr "Filesystem"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Perangkat '%s' tidak dapat diformat."
@@ -503,18 +495,31 @@ msgstr "Ubah login password anda"
 msgid "Password"
 msgstr "Password"
 
+#: ../userhelper-wrap.c:243
+#, fuzzy
+msgid "No more retries allowed"
+msgstr "Tidak ada pengulangan percobaan yang diperbolehkan."
+
+#~ msgid "Placeholder text."
+#~ msgstr "Penempatan teks."
+
 #~ msgid "Could not set default context for %s for program %s.\n"
 #~ msgstr "Tidak dapat men-set konteks default untuk %s untuk program %s.\n"
+
 #~ msgid "Could not set exec context to %s.\n"
 #~ msgstr "Tidak dapat set konteks exec untuk %s.\n"
+
 #~ msgid "Password for %s"
 #~ msgstr "Password untuk %s"
+
 #~ msgid "Password for %s: "
 #~ msgstr "Password untuk %s: "
+
 #~ msgid "Message"
 #~ msgstr "Pesan"
+
 #~ msgid "Help"
 #~ msgstr "Bantuan"
+
 #~ msgid "*"
 #~ msgstr "*"
-
