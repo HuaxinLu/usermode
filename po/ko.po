@@ -8,17 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-24 18:21+0000\n"
+"POT-Creation-Date: 2010-05-02 07:50+0000\n"
 "PO-Revision-Date: 2008-03-26 15:43+1000\n"
 "Last-Translator: Eunju Kim <eukim@redhat.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n!=1);\n\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -34,7 +34,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -106,20 +106,12 @@ msgstr "관리자 권한 취소 실패: %s"
 
 #: ../pam-panel-icon.c:98
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
 msgstr "관리자 권한 취소 실패 : pam_timestamp_check는 실패코드 %d 를 반환했습니다."
 
 #: ../pam-panel-icon.c:146
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"현재 관리자 암호를 입력할 필요 없이 모든 사용자들에게 영향을 미치는 시스템 전"
-"체 설정을 변경할 수 있는 권한을 가지고 계십니다. 이 관리자 권한은 언제든 포기"
-"할 수 있습니다."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "현재 관리자 암호를 입력할 필요 없이 모든 사용자들에게 영향을 미치는 시스템 전체 설정을 변경할 수 있는 권한을 가지고 계십니다. 이 관리자 권한은 언제든 포기할 수 있습니다."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -165,18 +157,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "입출력 채널 nonbloking 설정 실패: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon : 세션 관리자와 연결하는데 실패했습니다\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "알 수 없는 종료 코드입니다."
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "정보가 새로이 변경되었습니다."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -184,7 +177,7 @@ msgstr ""
 "입력하신 암호가 올바르지 않습니다.\n"
 "다시 입력해 주십시요."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -194,11 +187,11 @@ msgstr ""
 "변경하신 항목 중에 ':' 또는 ',' 가 포함되어 있는 것 같습니다.\n"
 "만일 포함되어 있다면, 삭제하신 후 다시 입력해 주십시요."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "암호를 재설정하는 도중 오류가 발생하였습니다."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -206,19 +199,19 @@ msgstr ""
 "몇몇 시스템 파일이 잠기었습니다.\n"
 "잠시 후에 다시 시도해 주십시요."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "알 수 없는 사용자"
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "권한이 없습니다."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "하부 프로세스 호출이 올바르지 않습니다.."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -228,127 +221,102 @@ msgstr ""
 "쉘을 변경할 수 없습니다.\n"
 "자세한 사항은 시스템 관리자에게 문의해 보시기 바랍니다."
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "메모리가 부족합니다."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec() 호출에 실패했습니다."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "선택하신 프로그램을 찾는데 실패했습니다."
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "요청을 취소함."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "내부 PAM 오류가 발생했습니다."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "알 수 없는 오류입니다."
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "질의"
 
-#: ../userhelper-wrap.c:581 ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "오류"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "정보"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "Placeholder 형식의 text 입니다."
-
-#: ../userhelper-wrap.c:753 ../userhelper.c:627
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\"로 인증"
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
+msgid "Error"
+msgstr "오류"
+
+#: ../userhelper-wrap.c:572
+msgid "Information"
+msgstr "정보"
+
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "암호를 변경합니다."
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "개인 정보를 변경합니다."
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "로그인 쉘을 변경합니다."
 
+#: ../userhelper-wrap.c:746
+#, c-format
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, 그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
+
+#: ../userhelper-wrap.c:748
+#, c-format
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하셨습니다, 그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+
+#: ../userhelper-wrap.c:752
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "슈퍼유저의 권한으로 취할 수 있는 명령을 실행하셨습니다, 그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+
+#: ../userhelper-wrap.c:754
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "슈퍼유저의 권한이 필요한 명령을 실행하셨습니다, 그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+
 #: ../userhelper-wrap.c:791
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, 그러나 이것을 "
-"실행하기 위해서는 정보가 더 필요합니다."
-
-#: ../userhelper-wrap.c:793
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하셨습니다, 그러나 이것을 실행하기 "
-"위해서는 더 자세한 정보가 필요합니다."
-
-#: ../userhelper-wrap.c:798
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"슈퍼유저의 권한으로 취할 수 있는 명령을 실행하셨습니다, 그러나 이것을 실행하"
-"기 위해서는 더 자세한 정보가 필요합니다."
-
-#: ../userhelper-wrap.c:800
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"슈퍼유저의 권한이 필요한 명령을 실행하셨습니다, 그러나 이것을 실행하기 위해서"
-"는 더 자세한 정보가 필요합니다."
-
-#: ../userhelper-wrap.c:810
 msgid "_Run Unprivileged"
 msgstr "권한없이 실행 (_R)"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "파이프 오류입니다.\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() 할 수 없습니다.\n"
 
-#: ../userhelper-wrap.c:1001
-#, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "IO 채널에 있는 문자 세트 %s을(를) 설정할 수 없습니다: %s\n"
-
-#: ../userhelper-wrap.c:1077 ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() 오류입니다.\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 오류입니다, 오류코드(errno)=%d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -357,7 +325,7 @@ msgstr ""
 "슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, \n"
 "그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: ../userhelper.c:611
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -366,7 +334,8 @@ msgstr ""
 "관리자 권한이 필요한 \"%s\"(을)를 실행하셨습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../userhelper.c:615
+#: ../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -374,7 +343,8 @@ msgstr ""
 "관리자 권한으로 취할 수 있는 명령을 실행하셨습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../userhelper.c:617
+#: ../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -382,25 +352,23 @@ msgstr ""
 "관리자 권한이 필요한 명령을 실행하셨습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습"
-"니다.\n"
+msgstr "그래픽 화면의 창을 열 수 없습니다, 또한 제어할 수 있는 터미널을 찾을 수 없습니다.\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "예측하지 못한 인수"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "등록된 사용자가 아니군요.  이용하실 수 없습니다.\n"
@@ -413,27 +381,27 @@ msgstr "개인 정보"
 msgid "Change personal information"
 msgstr "개인 정보를 변경합니다"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "이름:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "집 전화 번호:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "로그인 쉘:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "사무실 전화 번호:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "사무실:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "사용자 정보"
 
@@ -446,12 +414,8 @@ msgid "Un_mount"
 msgstr "장치연결 해제 (_m)"
 
 #: ../usermount.c:289
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"정말로 이 드라이브를 포맷하시겠습니까?  진행하실 경우 현재 저장되어 있는 모"
-"든 자료는 삭제됩니다."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "정말로 이 드라이브를 포맷하시겠습니까?  진행하실 경우 현재 저장되어 있는 모든 자료는 삭제됩니다."
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
@@ -491,7 +455,7 @@ msgstr "디렉토리"
 msgid "Filesystem"
 msgstr "파일시스템"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "'%s' 장치를 포맷할 수 없습니다."
@@ -512,3 +476,14 @@ msgstr "로그인 암호를 변경합니다"
 msgid "Password"
 msgstr "암호"
 
+#: ../userhelper-wrap.c:969
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "IO 채널에 있는 %s 인코딩을 설정할 수 없습니다.\n"
+
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "더 이상의 재시도는 허용되지 않습니다."
+
+#~ msgid "Placeholder text."
+#~ msgstr "Placeholder 형식의 text 입니다."
