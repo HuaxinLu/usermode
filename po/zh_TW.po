@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-18 13:52+0000\n"
+"POT-Creation-Date: 2010-05-06 13:57+0000\n"
 "PO-Revision-Date: 2008-09-24 15:24+1000\n"
 "Last-Translator: Terry Chuang <tchuang@redhat.com>\n"
 "Language-Team: Traditional Chinese <zh@li.org>\n"
@@ -161,15 +161,15 @@ msgstr "將 IO 通道設為 nonblocking 失敗：%s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon：連接到 session 管理員失敗\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "未知的離開碼（exit code）。"
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "已更新的資訊。"
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -177,7 +177,7 @@ msgstr ""
 "您輸入的密碼無效。\n"
 "請再試一次。"
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -187,11 +187,11 @@ msgstr ""
 "也許是由於有冒號或逗號在欄位裡。\n"
 "請移除它們然後再試一次。"
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "重設密碼錯誤。"
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -199,19 +199,19 @@ msgstr ""
 "某些系統檔已鎖住。\n"
 "請等會再試一次。"
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "不知名的使用者。"
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "沒有足夠的權力。"
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "無效的子程序呼叫.."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -221,107 +221,102 @@ msgstr ""
 "無法更改您的 shell.\n"
 "請求助您的系統管理員。"
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "記憶體不足。"
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec() 呼叫失敗。"
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "找不到選取的程式。"
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "要求取消。"
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "內部 PAM 發生錯誤。"
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "未知的錯誤。"
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "查詢"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "以「%s」來進行驗證"
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "錯誤"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "資訊"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "更改密碼。"
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "更改個人資訊。"
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "更改登入 shell。"
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "您試著要執行 \"%s\", 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr "您試著要執行 \"%s\", 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:752
 msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "您試著要執行一個指令, 這將使您有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:754
 msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為了要如此做您需要更多資訊。"
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "無特權的執行（_R）"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "程式的輸出導向錯誤.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "無法 fork().\n"
 
-#: ../userhelper-wrap.c:961
-#, fuzzy, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "無法將 charset %s 設置在 IO 頻道上：%s\n"
-
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() 錯誤.\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -330,7 +325,7 @@ msgstr ""
 "您試著要執行 \"%s\"，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -339,7 +334,7 @@ msgstr ""
 "您試著要執行 \"%s\"，您需要有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -348,7 +343,7 @@ msgstr ""
 "您試著要執行一個指令，這將使您有管理者的權限，\n"
 "但為了要如此做您需要更多資訊。"
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -357,13 +352,13 @@ msgstr ""
 "您試著要執行一個指令，您需要有管理者的權限,\n"
 "但為了要如此做您需要更多資訊。"
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper 必須 setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "無法開啟圖形視窗，且找不到控制終端機。\n"
@@ -480,3 +475,13 @@ msgstr "變更您的登入密碼"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "密碼"
+
+#: ../userhelper-wrap.c:969
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "無法在 IO 頻道上設置二進位編碼：%s\n"
+
+#: ../userhelper-wrap.c:243
+#, fuzzy
+msgid "No more retries allowed"
+msgstr "無法再重試"
