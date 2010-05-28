@@ -12,15 +12,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-23 01:51+0000\n"
-"PO-Revision-Date: 2010-03-23 11:13+0900\n"
+"POT-Creation-Date: 2010-05-28 01:54+0000\n"
+"PO-Revision-Date: 2010-05-28 11:16+0900\n"
 "Last-Translator: Kiyoto Hashida <khashida@redhat.com>\n"
 "Language-Team: Japanese <jp@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=1; plural=0;\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -174,15 +175,15 @@ msgstr "IO チャンネルのブロック解除に失敗しました: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: セッションマネージャーの接続に失敗しました\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "不明な終了コードです。"
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "情報は更新されました。"
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -190,7 +191,7 @@ msgstr ""
 "入力したパスワードは間違っています。\n"
 "もう一度入力してください。"
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -200,11 +201,11 @@ msgstr ""
 "フィールドのどこかにコロンかコンマがあるかもしれません。\n"
 "それらを削除してもう一度入力してください。"
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "パスワードのリセットでエラーが発生しました。"
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -212,19 +213,19 @@ msgstr ""
 "ロックされいているシステムファイルがあります。\n"
 "しばらく待ってからもう一度やってみてください。"
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "不明なユーザーです。"
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "権限がありません。"
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "サブプロセスの呼び出し方が間違っています。"
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -234,60 +235,64 @@ msgstr ""
 " したがってシェルを変更することはできません。\n"
 "システム管理者に相談してみてください。"
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "メモリが足りません。"
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec()の呼び出しに失敗しました。"
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "選択したプログラムは見つかりませんでした。"
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "要求はキャンセルされました。"
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "内部 PAM エラーが発生しました。"
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "再試行はもう許可されません"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "不明なエラーです。"
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "質問"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" として認証しています"
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "エラー"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "情報"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "パスワードを変更中。"
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "個人情報を変更中。"
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "ログイン シェルを変更中。"
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -296,7 +301,7 @@ msgstr ""
 "スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、実行す"
 "るには追加情報が必要です。"
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -305,7 +310,7 @@ msgstr ""
 "スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、実行するに"
 "は追加情報が必要です。"
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -313,7 +318,7 @@ msgstr ""
 "スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、実行"
 "するには追加情報が必要です。"
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -321,36 +326,36 @@ msgstr ""
 "スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行する"
 "には追加情報が必要です。"
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "権限なしで実行(_R)"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "パイプエラー。\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork()できません。\n"
 
-#: ../userhelper-wrap.c:961
+#: ../userhelper-wrap.c:969
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "バイナリエンコーディングを IO チャンネルにセットできません: %s\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()エラー。\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()エラー、errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -359,7 +364,7 @@ msgstr ""
 "スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -368,7 +373,7 @@ msgstr ""
 "スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -377,7 +382,7 @@ msgstr ""
 "スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
 " 実行するには追加情報が必要です。"
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -387,13 +392,13 @@ msgstr ""
 "には\n"
 "追加情報が必要です。"
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザーヘルパーは root に setuid されていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
