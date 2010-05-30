@@ -1,3 +1,9 @@
+2010-05-30  Miloslav Trmač  <mitr@redhat.com>
+
+	* userinfo.c (on_ok_clicked)
+	* usermount.c (response_callback): Use gtk_widget_is_toplevel () instead
+	of deprecated GTK_WIDGET_TOPLEVEL ().
+
 2010-04-08  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.105.

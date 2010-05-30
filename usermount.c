@@ -446,11 +446,11 @@ response_callback(GtkWidget *emitter, gint response, gpointer user_data)
 			/* Format. */
 			g_return_if_fail(info != NULL);
 			toplevel = gtk_widget_get_toplevel(emitter);
-			if (GTK_WIDGET_TOPLEVEL(toplevel)) {
+			if (gtk_widget_is_toplevel(toplevel)) {
 				gtk_widget_set_sensitive(toplevel, FALSE);
 			}
 			format(info);
-			if (GTK_WIDGET_TOPLEVEL(toplevel)) {
+			if (gtk_widget_is_toplevel(toplevel)) {
 				gtk_widget_set_sensitive(toplevel, TRUE);
 			}
 			break;

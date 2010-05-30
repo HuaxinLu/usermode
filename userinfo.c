@@ -238,7 +238,7 @@ on_ok_clicked(GtkWidget *widget, gpointer data)
 	GtkBuilder *builder;
 
 	toplevel = gtk_widget_get_toplevel(widget);
-	if (!GTK_WIDGET_TOPLEVEL(toplevel)) {
+	if (!gtk_widget_is_toplevel(toplevel)) {
 		return FALSE;
 	}
 	userinfo = data;
