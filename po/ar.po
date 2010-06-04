@@ -5,18 +5,21 @@
 # Ossama M. Khayat <okhayat@yahoo.com>, 2004.
 # Hicham Amaoui <amaoui@altern.org
 # Tareq Al Jurf <taljurf@fedoraproject.org>, 2009.
+# Abdalrahim G. Fakhouri <abdailra7eem@yahoo.com>, 2010.
+# Muhammed A. Al-Fakhori <mhmd.alfakhori@gmail.com>, 2010.
+
 msgid ""
 msgstr ""
-"Project-Id-Version: ar_new\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-19 03:26+0000\n"
-"PO-Revision-Date: 2009-11-19 11:29+0300\n"
-"Last-Translator: Tareq Al Jurf <taljurf@fedoraproject.org>\n"
+"Project-Id-Version: usermoda\n"
+"Report-Msgid-Bugs-To: http://bugzilla.redhat.com/bugzilla/\n"
+"POT-Creation-Date: 2010-05-30 18:54+0000\n"
+"PO-Revision-Date: 2010-5-31 1:35+0300\n"
+"Last-Translator: Abdalrahim G. Fakhouri <abdailra7eem@yahoo.com>\n"
 "Language-Team: Arabic <fedora-trans-ar@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: gedit\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -37,6 +40,8 @@ msgstr ""
 #.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
+
+
 #: ../dummy.h:21
 msgid "OK"
 msgstr "موافق"
@@ -168,15 +173,15 @@ msgstr "فشل جعل قناة الإدخال/الإخراج غير موقفة: 
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: فشل الإتصال بمدير الجلسة\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "رمز خروج غير معروف."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "تمّ تحديث المعلومات."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -184,7 +189,7 @@ msgstr ""
 "كلمة المرور التي أدخلتها غير صالحة.\n"
 "رجاء حاول مرّة أخرى."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -194,11 +199,11 @@ msgstr ""
 "هذا على الأرجح إمّا بسبب النّقطتين أو الفواصل في أحد الحقول.\n"
 "رجاء أزلها وحاول مرّة أخرى."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "خطأ في إعادة وضع كلمة المرور."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -206,19 +211,19 @@ msgstr ""
 "بعض ملفّات النّظام مُقفلة.\n"
 "رجاء حاول مرّة أخرى خلال بضع دقائق."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "مستخدم غير معروف."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "حقوق غير كافية."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "مناداة غير صالحة للعمليّة الفرعيّة."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -228,60 +233,64 @@ msgstr ""
 "لا يسمح لك بتغيير صدفتك.\n"
 "استشر مدير نظامك."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "نفذت الذّاكرة."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "فشل نداء exec()."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "فشل العثور على البرنامج المحدّد."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "تم إلغاء الطلب."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "حدث خطأ داخلي في وحدات المصادقة (PAM)."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "لم يعد هنالك إدخالات أخرى مسموحة"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "خطأ غير معروف."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "استعلام"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "جاري التحقق من الهوية كـ \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "خطأ"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "معلومات"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "جاري تغيير كلمة المرور"
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "جاري تغيير المعلومات الشّخصيّة."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "جاري تغيير صدفة الدّخول."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -290,7 +299,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد "
 "من المعلومات مطلوبة للقيام بذلك."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -299,7 +308,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من "
 "المعلومات مطلوبة للقيام بذلك."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -307,7 +316,7 @@ msgstr ""
 "أنت تحاول تشغيل أمر قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد من "
 "المعلومات مطلوبة للقيام بذلك."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -315,36 +324,35 @@ msgstr ""
 "أنت تحاول تشغيل أمر يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات "
 "مطلوبة للقيام بذلك."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_شغّل بوضع عادي"
 
-#: ../userhelper-wrap.c:926
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "خطأ في التّمرير.\n"
 
-#: ../userhelper-wrap.c:933
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "لم يمكن عمل fork().\n"
 
-#: ../userhelper-wrap.c:959
-#, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "لم يمكن وضع المحارف %s على قناة الادخال/الاخراج: %s\n"
+#: ../userhelper-wrap.c:969
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "لا يمكن ضبط ترميز ثنائيّ على قناة الادخال/الاخراج: %s\n"
 
-#: ../userhelper-wrap.c:1031 ../userhelper-wrap.c:1035
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "خطأ في dup2().\n"
 
-#: ../userhelper-wrap.c:1046
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "خطأ في execl()، errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -353,7 +361,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -362,7 +370,7 @@ msgstr ""
 "أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -371,7 +379,7 @@ msgstr ""
 "أنت تحاول تشغيل أمر قد يستفيد من\n"
 "الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -380,18 +388,17 @@ msgstr ""
 "أنت تحاول تشغيل أمر يتطلّب الصّلاحيات\n"
 "الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
-#: ../userhelper.c:2025
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper يجب أن يكون setuid root\n"
 
-#. FIXME: print a warning here?
-#: ../userhelper.c:2117
+#: ../userhelper.c:2162
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
-"لم يمكن فتح النّافذة الرّسوميّة، ولم يمكن العثور على الشّاشة الطّرفيّة المتحكّمة.\n"
+"تعذّر فتح نافذة رسوميّة، وتعذّر أيجاد طرفيّة متحكّمة.\n"
 
 #: ../userinfo.c:383
 #, c-format
@@ -508,27 +515,3 @@ msgstr "غيّر كلمة مرور اسم مستخدمك"
 msgid "Password"
 msgstr "كلمة المرور"
 
-#~ msgid "Placeholder text."
-#~ msgstr "نص حاجز مكان."
-
-#, fuzzy
-#~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr "لم يمكن وضْع سياق التّنفيذ %s.\n"
-
-#~ msgid "Could not set exec context to %s.\n"
-#~ msgstr "لم يمكن وضْع سياق التّنفيذ %s.\n"
-
-#~ msgid "Password for %s"
-#~ msgstr "كلمة المرور لـ%s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "كلمة المرور لـ%s: "
-
-#~ msgid "Message"
-#~ msgstr "رسالة"
-
-#~ msgid "Help"
-#~ msgstr "مساعدة"
-
-#~ msgid "*"
-#~ msgstr "*"
