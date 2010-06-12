@@ -4,7 +4,7 @@ mkdir -p admin
 glib-gettextize -f
 intltoolize --force
 
-aclocal
+aclocal -Wall
 autoconf -Wall
 autoheader -Wall
 automake -Wall --add-missing
