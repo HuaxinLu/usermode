@@ -1,4 +1,6 @@
-AC_INIT([usermode], [1.105])
+AC_INIT([usermode], [1.105], [mitr@redhat.com], ,
+        [https://fedorahosted.org/usermode/])
+AC_PREREQ([2.63b])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([userhelper.c])
 AC_CONFIG_AUX_DIR([admin])

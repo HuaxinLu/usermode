@@ -1,5 +1,7 @@
 2010-06-12  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.ac: Define PACKAGE_BUREPORT and PACKAGE_URL.
+
 	* autogen.sh: Run aclocal with -Wall.
 
 2010-05-30  Miloslav Trmač  <mitr@redhat.com>
