@@ -1,3 +1,9 @@
+2010-06-14  Miloslav Trmač  <mitr@redhat.com>
+
+	* consolehelper.c (main)
+	* userhelper-wrap.c (userhelper_run)
+	* userhelper.c (converse_console, wrap): Use g_malloc*_n ().
+
 2010-06-12  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Define PACKAGE_BUREPORT and PACKAGE_URL.

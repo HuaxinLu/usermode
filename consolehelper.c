@@ -77,7 +77,7 @@ main(int argc, char *argv[])
 		sn_id = g_strdup(getenv("DESKTOP_STARTUP_ID"));
 #endif
 		fake_argc = 1;
-		fake_argv = g_malloc0((fake_argc + 1) * sizeof(*fake_argv));
+		fake_argv = g_malloc0_n(fake_argc + 1, sizeof(*fake_argv));
 		fake_argv[0] = argv[0];
 		/* Redirect stderr to silence Xlib's "can't open display"
 		 * warning, which we don't mind. */
@@ -106,7 +106,7 @@ main(int argc, char *argv[])
 
 	/* Allocate space for a new argv array, with room for up to 3 more
 	 * items than we have in argv, plus the NULL-terminator. */
-	constructed_argv = g_malloc0((argc + 3 + 1) * sizeof(char *));
+	constructed_argv = g_malloc0_n(argc + 3 + 1, sizeof(char *));
 	if (graphics_available) {
 		/* Set up args to tell userhelper to wrap the named program
 		 * using a consolehelper window to interact with the user. */

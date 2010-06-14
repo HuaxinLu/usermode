@@ -1072,7 +1072,7 @@ userhelper_run(gboolean dialog_success, const char *path, ...)
 	va_end(ap);
 
 	/* Copy the arguments into a normal array. */
-	argv = g_malloc((argc + 1) * sizeof(*argv));
+	argv = g_malloc_n(argc + 1, sizeof(*argv));
 	va_start(ap, path);
 	for (i = 0; i < argc; i++)
 		argv[i] = va_arg(ap, char *);

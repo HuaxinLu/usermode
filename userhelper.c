@@ -585,7 +585,7 @@ converse_console(int num_msg, const struct pam_message **msg,
 		banner++;
 	}
 
-	messages = g_malloc(num_msg * sizeof(*messages));
+	messages = g_malloc_n(num_msg, sizeof(*messages));
 	for (i = 0; i < num_msg; i++) {
 		messages[i] = g_malloc(sizeof(*(messages[i])));
 		*(messages[i]) = *(msg[i]);
@@ -1572,8 +1572,8 @@ wrap(const char *user, const char *program,
 		keep_env_names = g_strsplit(val, ",", -1);
 		g_free(val);
 		num_names = g_strv_length(keep_env_names);
-		keep_env_values = g_malloc0(num_names
-					    * sizeof (*keep_env_values));
+		keep_env_values = g_malloc0_n(num_names,
+					      sizeof (*keep_env_values));
 		for (i = 0; i < num_names; i++)
 			/* g_strdup(NULL) is defined to be NULL. */
 			keep_env_values[i]
