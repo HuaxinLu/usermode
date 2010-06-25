@@ -1,4 +1,4 @@
-# translation of pa.po to Punjabi
+# translation of usermode.default.pa.po to Punjabi
 # Copyright (C) 2004 THE pa'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pa package.
 #
@@ -10,15 +10,15 @@
 # harmeet <harmeetphulewala@yahoo.com>, 2005.
 # Jaswinder Singh Phulewala <jaswinderphulewala@yahoo.com>, 2005.
 # A S Alam <apbrar@gmail.com>, 2006.
-# Jaswinder Singh <jsingh@redhat.com>, 2007, 2008.
+# Jaswinder Singh <jsingh@redhat.com>, 2007, 2008, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: pa\n"
+"Project-Id-Version: usermode.default.pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-29 17:47+0000\n"
-"PO-Revision-Date: 2008-03-31 11:02+0530\n"
+"POT-Creation-Date: 2010-06-25 07:53+0000\n"
+"PO-Revision-Date: 2010-06-25 16:27+0530\n"
 "Last-Translator: Jaswinder Singh <jsingh@redhat.com>\n"
-"Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
+"Language-Team: Punjabi <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -189,18 +189,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO ਚੈਨਲ ਨਾ-ਬਲਾਕਿੰਗ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: ਅਜਲਾਸ ਪ੍ਰਬੰਧਕ ਨਾਲ ਜੁੜਨ ਵਿੱਚ ਅਸਫਲ।\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "ਅਣਜਾਣ ਬਾਹਰ ਕੋਡ ਹੈ।"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "ਜਾਣਕਾਰੀ ਅੱਪਡੇਟ ਹੈ।"
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -208,7 +209,7 @@ msgstr ""
 "ਗੁਪਤ-ਕੋਡ ਜੋ ਤੁਸੀਂ ਦਿੱਤਾ ਹੈ, ਗਲਤ ਹੈ।\n"
 "ਕਿਰਪਾ ਕਰਕੇ ਮੁਡ਼ ਕੋਸ਼ਿਸ ਕਰੋ।"
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -218,11 +219,11 @@ msgstr ""
 "ਇਸ ਦਾ ਕਾਰਨ ਇੱਕ ਕਾਮਾ ਜਾਂ ਕਾਲਨ ਹੈ, ਜੋ ਕਿ ਖੇਤਰ ਵਿੱਚ ਦਿੱਤਾ ਗਿਆ ਹੈ।\n"
 "ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਨੂੰ ਹਟਾਕੇ ਮੁਡ਼-ਕੋਸ਼ਿਸ ਕਰੋ।"
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "ਗੁਪਤ-ਕੋਡ ਮੁਡ਼-ਸੈੱਟ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ।"
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -230,19 +231,19 @@ msgstr ""
 "ਕੁਝ ਸਿਸਟਮ ਫਾਇਲਾਂ ਲਾਕ ਹਨ।\n"
 "ਕਿਰਪਾ ਕਰਕੇ ਕੁਝ ਪਲਾਂ ਮਗਰੋਂ ਕੋਸ਼ਿਸ ਕਰੋ।"
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "ਅਣਜਾਣਾ ਉਪਭੋਗੀ ਹੈ।"
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "ਲੋਡ਼ੀਂਦੇ ਅਧਿਕਾਰ ਨਹੀਂ ਹਨ।"
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "ਸਬ-ਕਾਰਜ ਲਈ ਗਲਤ ਕਾਲ ਹੈ।"
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -252,64 +253,64 @@ msgstr ""
 "ਤੁਹਾਨੂੰ ਸ਼ੈਲ ਵਿੱਚ ਤਬਦੀਲੀ ਕਰਨ ਦੀ ਇਜ਼ਾਜ਼ਤ ਨਹੀਂ ਹੈ।\n"
 "ਆਪਣੇ ਸਿਸਟਮ-ਪਰਸ਼ਾਸ਼ਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "ਮੈਮੋਰੀ ਸੀਮਾ ਤੋਂ ਬਾਹਰ ਹੈ।"
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec() ਕਾਲ ਅਸਫਲ ਹੈ।"
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "ਚੁਣਿਆ ਕਾਰਜ ਲੱਭਣ ਤੋਂ ਅਸਫਲ ਹੈ।"
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "ਬੇਨਤੀ ਰੱਦ ਕੀਤੀ ਗਈ ਹੈ।"
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "ਅੰਦਰੂਨੀ PAM ਗਲਤੀ ਆਈ ਹੈ।"
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "ਕੋਈ ਐਂਟਰੀ ਪ੍ਰਾਪਤ ਕਰਨਾ ਮਨਜੂਰ ਨਹੀਂ ਹੈ"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "ਅਣਜਾਣੀ ਗਲਤੀ ਹੈ।"
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "ਸਵਾਲ"
 
-#: ../userhelper-wrap.c:581 ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "ਗਲਤੀ"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "ਜਾਣਕਾਰੀ"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "ਥਾਂ ਲਈ ਪਾਠ ਹੈ।"
-
-#: ../userhelper-wrap.c:753 ../userhelper.c:627
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" ਤੌਰ ਤੇ ਪ੍ਰਮਾਣਿਤ ਕਰਨਾ"
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
+msgid "Error"
+msgstr "ਗਲਤੀ"
+
+#: ../userhelper-wrap.c:572
+msgid "Information"
+msgstr "ਜਾਣਕਾਰੀ"
+
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "ਗੁਪਤ-ਕੋਡ ਬਦਲਣਾ"
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਤਬਦੀਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ।"
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "ਲਾਗਇਨ ਸ਼ੈੱਲ ਤਬਦੀਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ।"
 
-#: ../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -318,7 +319,7 @@ msgstr ""
 "ਤੁਸੀਂ \"%s\" ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜੋ ਕਿ ਪਰਸ਼ਾਸ਼ਕੀ ਮਨਜ਼ੂਰੀ ਤੋਂ ਲਾਭਦਾਇਕ ਹੈ, ਪਰ ਇਹ ਕਰਨ "
 "ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: ../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -327,7 +328,7 @@ msgstr ""
 "ਤੁਸੀਂ \"%s\" ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜਿਸ ਲਈ ਪਰਸ਼ਾਸ਼ਕੀ ਮਨਜ਼ੂਰੀ ਹੋਣੀ ਜ਼ਰੂਰੀ ਹੈ, ਪਰ ਇਹ ਕਰਨ "
 "ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: ../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -335,7 +336,7 @@ msgstr ""
 "ਤੁਸੀਂ ਇੱਕ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜੋ ਕਿ ਪਰਸ਼ਾਸਕ ਮਨਜ਼ੂਰੀ ਤੋਂ ਲਾਭਦਾਇਕ ਹੈ, ਪਰ ਇਹ ਕਰਨ "
 "ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: ../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -343,36 +344,36 @@ msgstr ""
 "ਤੁਸੀਂ ਇੱਕ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜਿਸ ਲਈ ਪਰਸ਼ਾਸਕੀ ਮਨਜ਼ੂਰੀ ਹੋਣੀ ਜ਼ਰੂਰੀ ਹੈ, ਪਰ ਇਹ "
 "ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: ../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "ਬਿਨਾਂ ਅਧਿਕਾਰ ਦੇ ਚਲਾਓ(_R)"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "ਪਾਇਪ ਗਲਤੀ ਹੈ।\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() ਨਹੀਂ ਸਕਦਾ ਹੈ।\n"
 
-#: ../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:969
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "charset %s ਨੂੰ ਇੱਕ IO ਚੈਨਲ ਉੱਪਰ ਸੈੱਟ ਨਹੀਂ ਕਰ ਸਕਦਾ: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "IO ਚੈਨਲ ਉੱਪਰ ਬਾਇਨਰੀ ਇਨਕੋਡਿੰਗ ਸੈੱਟ ਨਹੀਂ ਕਰ ਸਕਦਾ: %s\n"
 
-#: ../userhelper-wrap.c:1077 ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() ਗਲਤੀ ਹੈ।\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() ਗਲਤੀ, ਗਲਤੀ ਨੰ=%d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -381,7 +382,7 @@ msgstr ""
 "ਤੁਸੀਂ  \"%s\" ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜੋ ਕਿ ਪਰਸ਼ਾਸ਼ਕੀ ਮਨਜ਼ੂਰੀ\n"
 "ਤੋਂ ਲਾਭਦਾਇਕ ਹੈ, ਪਰ ਇਹ ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: ../userhelper.c:611
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -390,7 +391,8 @@ msgstr ""
 "ਤੁਸੀਂ \"%s\" ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜਿਸ ਲਈ ਪਰਸ਼ਾਸ਼ਕੀ ਮਨਜ਼ੂਰੀ\n"
 "ਹੋਣੀ ਜ਼ਰੂਰੀ ਹੈ, ਪਰ ਇਹ ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: ../userhelper.c:615
+#: ../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -398,7 +400,8 @@ msgstr ""
 "ਤੁਸੀਂ ਇੱਕ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜੋ ਕਿ ਪਰਸ਼ਾਸ਼ਕੀ ਮਨਜ਼ੂਰੀ\n"
 "ਤੋਂ ਲਾਭਦਾਇਕ ਹੈ, ਪਰ ਇਹ ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: ../userhelper.c:617
+#: ../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -406,23 +409,23 @@ msgstr ""
 "ਤੁਸੀਂ ਇੱਕ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਹੇ ਹੋ, ਜਿਸ ਲਈ ਪਰਸ਼ਾਸ਼ਕੀ ਮਨਜ਼ੂਰੀ\n"
 "ਹੋਣੀ ਜ਼ਰੂਰੀ ਹੈ, ਪਰ ਇਹ ਕਰਨ ਲਈ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਦੀ ਲੋਡ਼ ਹੈ।"
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "ਉਪਭੋਗੀ-ਸਹਾਇਕ ਦਾ ਸੈੱਟ-ਸ਼ੰਨ ਨੰ ਪ੍ਰਬੰਧਕ (root) ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ।\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ਗਰਾਫਿਕਲ ਝਰੋਖਾ ਖੋਲਣ ਵਿੱਚ ਅਸਫਲ ਹੈ, ਅਤੇ ਕੰਟਰੋਲਿੰਗ ਟਰਮੀਨਲ ਨੂੰ ਲੱਭ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "ਅਣਜਾਣ ਮੁੱਲ"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "ਤੁਸੀਂ ਬਾਹਰ ਨਹੀ ਜਾ ਸਕਦੇ ਹੋ।  ਹੋਰ ਕੁਝ ਕਰੋ।\n"
@@ -435,27 +438,27 @@ msgstr "ਮੇਰੇ ਬਾਰੇ"
 msgid "Change personal information"
 msgstr "ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਤਬਦੀਲ"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "ਪੂਰਾ-ਨਾਂ:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "ਘਰ ਦਫਤਰ ਫੋਨ-ਨੰਬਰ:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "ਲਾਗਇਨ ਸ਼ੈੱਲ:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "ਦਫਤਰ ਫੋਨ-ਨੰਬਰ:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "ਦਫਤਰ:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "ਉਪਭੋਗੀ ਜਾਣਕਾਰੀ"
 
@@ -513,7 +516,7 @@ msgstr "ਡਾਇਰੈਕਟਰੀ"
 msgid "Filesystem"
 msgstr "ਫਾਇਲ-ਸਿਸਟਮ"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "ਜੰਤਰ '%s' ਨੂੰ ਫਾਰਮੈਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।"
