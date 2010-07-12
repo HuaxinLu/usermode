@@ -1,7 +1,6 @@
 # Dutch translation of usermode.
 # Copyright (C) 2003, 2004, 2005, 2007, 2008 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
-#
 # Tino Meinen <a.t.meinen@chello.nl>, 2003.
 # Peter van Egdom <p.van.egdom@gmail.com>, 2004, 2005, 2007, 2008, 2010.
 # Geert Warrink <geert.warrink@onsnet.nu>, 2010.
@@ -9,14 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-01 07:53+0000\n"
-"PO-Revision-Date: 2010-04-01 13:09+0200\n"
+"POT-Creation-Date: 2010-07-12 13:55+0000\n"
+"PO-Revision-Date: 2010-07-12 17:29+0200\n"
 "Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
-"Language-Team: nl <fedora-trans-list@redhat.com>\n"
+"Language-Team: Fedora\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding:  \n"
-"X-Generator: KBabel 1.11.4\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.6.1\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -55,19 +56,19 @@ msgstr "Zonder privileges uitvoeren"
 
 #: ../dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(huidig) UNIX-wachtwoord: "
+msgstr "(huidig) UNIX wachtwoord: "
 
 #: ../dummy.h:26
 msgid "New UNIX password: "
-msgstr "Nieuw UNIX-wachtwoord: "
+msgstr "Nieuw UNIX wachtwoord: "
 
 #: ../dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "Nieuw UNIX-wachtwoord bevestigen: "
+msgstr "Nieuw UNIX wachtwoord bevestigen: "
 
 #: ../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "SLECHT WACHTWOORD: het is veel te kort"
+msgstr "SLECHT WACHTWOORD: het is VEEL te kort"
 
 #: ../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
@@ -83,11 +84,11 @@ msgstr "Sorry, wachtwoorden komen niet overeen"
 
 #: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Systeembrede configuratiehulpmiddelen opstarten zonder wachtwoord."
+msgstr "Systeem-brede configuratie gereedschappen opstarten zonder wachtwoord."
 
 #: ../dummy.h:33
 msgid "login: "
-msgstr "login: "
+msgstr "inlog: "
 
 #: ../dummy.h:34
 msgid "Password: "
@@ -96,12 +97,12 @@ msgstr "Wachtwoord: "
 #: ../gsmclient.c:362
 #, c-format
 msgid "%s failed to connect to the session manager: %s\n"
-msgstr "%s kon geen connectie maken met de sessie-manager: %s\n"
+msgstr "%s kon geen connectie maken met de sessie beheerder: %s\n"
 
 #: ../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
-msgstr "Loslaten van beheerdersprivileges mislukt: %s"
+msgstr "Loslaten van beheerder privileges mislukt: %s"
 
 #: ../pam-panel-icon.c:98
 #, c-format
@@ -109,8 +110,8 @@ msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
 msgstr ""
-"Loslaten van beheerdersprivileges mislukt: pam_timestamp_check gaf foutcode %"
-"d terug"
+"Loslaten van beheerder privileges mislukt: pam_timestamp_check gaf fout code "
+"%d terug"
 
 #: ../pam-panel-icon.c:146
 msgid ""
@@ -118,9 +119,9 @@ msgid ""
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
 msgstr ""
-"Op dit moment bent u geautoriseerd om systeembrede instellingen te "
+"Op dit moment ben je geautoriseerd om systeem-brede instellingen te "
 "configureren (die invloed hebben op alle gebruikers) zonder daarbij opnieuw "
-"het beheerderswachtwoord te moeten invoeren. U kunt deze autorisaties "
+"het beheerder wachtwoord te moeten invoeren. Je kunt deze autorisaties "
 "opheffen."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
@@ -145,11 +146,11 @@ msgstr "gebruiker onbekend voor pam_timestamp_check"
 
 #: ../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
-msgstr "fout met toegangsrechten in pam_timestamp_check"
+msgstr "fout met toegang rechten in pam_timestamp_check"
 
 #: ../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
-msgstr "ongeldige stuur-tty in pam_timestamp_check"
+msgstr "ongeldige stuur tty in pam_timestamp_check"
 
 #: ../pam-panel-icon.c:319
 #, c-format
@@ -164,30 +165,30 @@ msgstr "Uitvoeren van commando \"%s\" mislukt: %s\n"
 #: ../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
-msgstr "Instellen van IO channel nonblocking mislukt: %s\n"
+msgstr "Instellen van IO kanaal nonblocking mislukt: %s\n"
 
 #: ../pam-panel-icon.c:476
 #, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr "pam-panel-icon: connectie maken met de sessie-manager is mislukt\n"
+msgstr "pam-panel-icon: verbinding maken met de sessie beheerder is mislukt\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
-msgstr "Onbekende exit-code."
+msgstr "Onbekende exit code."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Informatie bijgewerkt."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"Het wachtwoord dat u invoerde is ongeldig.\n"
+"Het wachtwoord dat je invoerde is ongeldig.\n"
 "Probeer het opnieuw."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -198,11 +199,11 @@ msgstr ""
 "velden.\n"
 "Verwijder deze en probeer het opnieuw."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Fout bij resetten wachtwoord."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -210,194 +211,194 @@ msgstr ""
 "Sommige systeembestanden zijn vergrendeld.\n"
 "Probeer het over enkele ogenblikken opnieuw."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Onbekende gebruiker."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Onvoldoende rechten."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
-msgstr "Ongeldige aanroep naar subproces."
+msgstr "Ongeldige aanroep naar sub-proces."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"Uw huidige shell is niet genoemd in /etc/shells.\n"
-"U mag uw shell niet veranderen.\n"
-"Raadpleeg uw systeembeheerder."
+"Jouw huidige shell wordt niet genoemd in /etc/shells.\n"
+"Je kunt jouw shell niet veranderen.\n"
+"Raadpleeg jouw systeembeheerder."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Geheugen is op."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
-msgstr "De exec()-aanroep mislukte."
+msgstr "De exec() aanroep mislukte."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Kon het geselecteerde programma niet vinden."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Aanvraag geannuleerd."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
-msgstr "Er deed zich een interne PAM-fout voor."
+msgstr "Er deed zich een interne PAM fout voor."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:243
 msgid "No more retries allowed"
 msgstr "Opnieuw proberen niet meer toegestaan"
 
-#: ../userhelper-wrap.c:240
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Onbekende fout."
 
-#: ../userhelper-wrap.c:490
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Verzoek"
 
-#: ../userhelper-wrap.c:549 ../userhelper.c:607
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr "Authenticeren als \"%s\""
+msgstr "Authenticatie als \"%s\""
 
-#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Fout"
 
-#: ../userhelper-wrap.c:568
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Informatie"
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Veranderen van wachtwoord."
 
 # dit dekt de lading beter dan: persoonlijke informatie
-#: ../userhelper-wrap.c:731
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Veranderen van persoonlijke informatie."
 
-#: ../userhelper-wrap.c:734
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
-msgstr "Veranderen van login-shell."
+msgstr "Veranderen van inlog shell."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges nuttig kunnen "
-"zijn. Hiervoor is een root-wachtwoord vereist."
+"Je probeert \"%s\" uit te voeren waarbij beheerder privileges nuttig kunnen "
+"zijn. Hiervoor is een root wachtwoord vereist."
 
-#: ../userhelper-wrap.c:740
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges benodigd zijn. "
-"Hiervoor is een root-wachtwoord vereist."
+"Je probeert \"%s\" uit te voeren waarbij beheerder privileges benodigd zijn. "
+"Hiervoor is een root wachtwoord vereist."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerdersprivileges nuttig "
-"kunnen zijn. Hiervoor is een root-wachtwoord vereist."
+"Je probeert een opdracht uit te voeren waarbij beheerder privileges nuttig "
+"kunnen zijn. Hiervoor is een root wachtwoord vereist."
 
-#: ../userhelper-wrap.c:746
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerdersprivileges benodigd "
-"zijn. Hiervoor is een root-wachtwoord vereist."
+"Je probeert een opdracht uit te voeren waarbij beheerder privileges benodigd "
+"zijn. Hiervoor is een root wachtwoord vereist."
 
-#: ../userhelper-wrap.c:783
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Zonder privileges uitvoeren"
 
-#: ../userhelper-wrap.c:932
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
-msgstr "Pijp-fout.\n"
+msgstr "Pijp fout.\n"
 
-#: ../userhelper-wrap.c:939
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() lukt niet.\n"
 
-#: ../userhelper-wrap.c:963
+#: ../userhelper-wrap.c:969
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "Instellen binaire codering op een IO-kanaal mislukt: %s\n"
+msgstr "Instellen binaire codering op een IO kanaal mislukt: %s\n"
 
-#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
-msgstr "dup2()-fout.\n"
+msgstr "dup2() fout.\n"
 
-#: ../userhelper-wrap.c:1049
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
-msgstr "execl()-fout, foutnr=%d\n"
+msgstr "execl() fout, foutnr=%d\n"
 
 # more information is needed... vervangen door root-wachtwoord vereist
 # omdat dat, voor zover ik weet, het enige is dat benodigd is.
-#: ../userhelper.c:589
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
-"nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
+"Je probeert \"%s\" uit te voeren waarbij beheerder privileges\n"
+"nuttig kunnen zijn. Hiervoor is een root wachtwoord vereist."
 
-#: ../userhelper.c:591
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert \"%s\" uit te voeren waarbij beheerdersprivileges\n"
-"benodigd zijn. Hiervoor is een root-wachtwoord vereist."
+"Je probeert \"%s\" uit te voeren waarbij beheerder privileges\n"
+"benodigd zijn. Hiervoor is een root wachtwoord vereist."
 
-#: ../userhelper.c:595
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
-"nuttig kunnen zijn. Hiervoor is een root-wachtwoord vereist."
+"Je probeert een opdracht uit te voeren waarbij beheerder privileges\n"
+"nuttig kunnen zijn. Hiervoor is een root wachtwoord vereist."
 
-#: ../userhelper.c:597
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"U probeert een opdracht uit te voeren waarbij beheerdersprivileges\n"
-"benodigd zijn. Hiervoor is een root-wachtwoord vereist."
+"Je probeert een opdracht uit te voeren waarbij beheerder privileges\n"
+"benodigd zijn. Hiervoor is een root wachtwoord vereist."
 
-#: ../userhelper.c:2077
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "gebruikershelper moet setuid root zijn\n"
+msgstr "gebruiker helper moet setuid root zijn\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2169
+#: ../userhelper.c:2162
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -413,7 +414,7 @@ msgstr "Onverwacht argument"
 #: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
-msgstr "U bestaat niet.   Ga weg!.\n"
+msgstr "Je bestaat niet.   Ga weg!.\n"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -433,7 +434,7 @@ msgstr "Telefoonnummer privé:"
 
 #: ../usermode.ui.h:3
 msgid "Login Shell:"
-msgstr "Login-shell:"
+msgstr "Inlog shell:"
 
 #: ../usermode.ui.h:4
 msgid "Office Phone Number:"
@@ -445,7 +446,7 @@ msgstr "Werk:"
 
 #: ../usermode.ui.h:6
 msgid "User Information"
-msgstr "Gebruikersinformatie"
+msgstr "Gebruiker informatie"
 
 #: ../usermount.c:61
 msgid "_Mount"
@@ -460,8 +461,8 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Weet u zeker dat u deze schijf wilt formatteren?  U zult alle gegevens op de "
-"schijf vernietigen."
+"Weet je zeker dat je deze schijf wilt formatteren?  Je zult alle gegevens op "
+"de schijf vernietigen."
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
@@ -476,8 +477,8 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Er zijn geen bestandssystemen die u mag aankoppelen of afkoppelen.\n"
-"Raadpleeg uw systeembeheerder."
+"Er zijn geen bestandssystemen die je mag aankoppelen of afkoppelen.\n"
+"Raadpleeg jouw systeembeheerder."
 
 # User vervangen door Disk, omdat het zo duidelijk is wat je aankoppelt.
 # Dat dit programma het mogelijk maakt dat gebruikers dit mogen doen is
@@ -486,7 +487,7 @@ msgstr ""
 #. Create the dialog.
 #: ../usermount.c:508 ../usermount.c:520
 msgid "User Mount Tool"
-msgstr "Hulpmiddel voor aankoppelen schijven"
+msgstr "Gereedschap voor aankoppelen schijven"
 
 # werkwoord of znw?
 #. Create the other buttons.
@@ -513,7 +514,7 @@ msgstr "Het apparaat '%s' kan niet worden geformatteerd."
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "Schijfbeheer"
+msgstr "Schijf beheer"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
@@ -521,7 +522,7 @@ msgstr "Bestandssystemen aankoppelen en afkoppelen"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Change your login password"
-msgstr "Uw login-wachtwoord veranderen"
+msgstr "Jouw inlog wachtwoord veranderen"
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
