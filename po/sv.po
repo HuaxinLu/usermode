@@ -1,22 +1,22 @@
 # Swedish messages for usermode.
-# Copyright © 2001, 2002, 2003, 2004, 2005, 2006 Christian Rose <menthos@menthos.com>.
+# Copyright © 2001-2006 Christian Rose <menthos@menthos.com>.
 # Copyright © 2007 Magnus Larsson <fedoratrans@gmail.com>.
-# Göran Uddeborg <goeran@uddeborg.se>, 2008.
-# 
-# $Id: usermode.po,v 1.2 2008-10-02 22:12:04+02 göran Exp $
-# 
+# Göran Uddeborg <goeran@uddeborg.se>, 2008, 2010.
+#
+# $Revision: 1.4 $
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-13 13:49+0000\n"
-"PO-Revision-Date: 2008-10-02 22:11+0200\n"
+"POT-Creation-Date: 2010-08-21 18:36+0000\n"
+"PO-Revision-Date: 2010-08-21 20:38+0200\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -32,7 +32,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#. 
+#.
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -103,12 +103,22 @@ msgstr "Misslyckades med att släppa administratörsprivilegier: %s"
 
 #: ../pam-panel-icon.c:98
 #, c-format
-msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
-msgstr "Misslyckades med att släppa administratörsprivilegier: pam_timestamp_check returnerade misslyckandekod %d"
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+"Misslyckades med att släppa administratörsprivilegier: pam_timestamp_check "
+"returnerade misslyckandekod %d"
 
 #: ../pam-panel-icon.c:146
-msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
-msgstr "Du är för tillfället auktoriserad att konfigurera systemvida inställningar (som påverkar alla användare) utan att behöva ange administratörslösenordet igen. Du kan ge upp denna auktorisering."
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+"Du är för tillfället auktoriserad att konfigurera systemvida inställningar "
+"(som påverkar alla användare) utan att behöva ange administratörslösenordet "
+"igen. Du kan ge upp denna auktorisering."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -158,15 +168,15 @@ msgstr "Misslyckades med att ställa IO-kanalen till ickeblockerande: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: misslyckades med att ansluta till sessionshanteraren\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Okänd slutkod."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Informationen uppdaterad."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -174,7 +184,7 @@ msgstr ""
 "Lösenordet du angav är ogiltigt.\n"
 "Försök igen."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -184,11 +194,11 @@ msgstr ""
 "Detta beror antagligen på antingen kolon eller komman i ett av fälten.\n"
 "Ta bort dem och försök igen."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Fel vid nollställning av lösenord."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -196,19 +206,19 @@ msgstr ""
 "Några systemfiler är låsta.\n"
 "Försök igen om en kort stund."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Okänd användare."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Otillräckliga rättigheter."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Ogiltigt anrop av underprocess."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -218,139 +228,174 @@ msgstr ""
 "Du får inte lov att byta ditt skal.\n"
 "Tala med din systemadministratör."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Slut på minne."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec()-anropet misslyckades."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Misslyckades med att hitta valt program."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Begäran avbruten."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Internt PAM-fel inträffade."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "Inga fler upprepade försök tillåtna"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Okänt fel."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Fråga"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Autentiserar som \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Fel"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Information"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Byter lösenord."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Ändrar personlig information."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Ändrar inloggningsskal."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, men mer information krävs för att kunna göra det."
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, "
+"men mer information krävs för att kunna göra det."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer information krävs för att kunna göra det."
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer "
+"information krävs för att kunna göra det."
 
-#: ../userhelper-wrap.c:742
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Du försöker köra ett kommando som kan dra nytta av administrativa rättigheter, men mer information krävs för att kunna göra det."
+#: ../userhelper-wrap.c:752
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Du försöker köra ett kommando som kan dra nytta av administrativa "
+"rättigheter, men mer information krävs för att kunna göra det."
 
-#: ../userhelper-wrap.c:744
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Du försöker köra ett kommando som kräver administrativa rättigheter, men mer information krävs för att kunna göra det."
+#: ../userhelper-wrap.c:754
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Du försöker köra ett kommando som kräver administrativa rättigheter, men mer "
+"information krävs för att kunna göra det."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Kör oprivilegierat"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Rörfel.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kan inte grena.\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:969
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Kan inte sätta binärkodning på en IO-kanal: %s\n"
+
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2()-fel.\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl()-fel, felnummer=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, men mer information krävs för att kunna göra det."
+msgstr ""
+"Du försöker köra \"%s\" vilket kan dra nytta av administrativa rättigheter, "
+"men mer information krävs för att kunna göra det."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer information krävs för att kunna göra det."
+msgstr ""
+"Du försöker köra \"%s\" som kräver administrativa rättigheter, men mer "
+"information krävs för att kunna göra det."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Du försöker köra ett kommando som kan dra nytta av administrativa rättigheter, men mer information krävs för att kunna göra det."
+msgstr ""
+"Du försöker köra ett kommando som kan dra nytta av administrativa "
+"rättigheter, men mer information krävs för att kunna göra det."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Du försöker köra ett kommando som kräver administrativa rättigheter, men mer information krävs för att kunna göra det."
+msgstr ""
+"Du försöker köra ett kommando som kräver administrativa rättigheter, men mer "
+"information krävs för att kunna göra det."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper måste vara setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2162
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Kan inte öppna grafiskt fönster och kan inte hitta kontrollerande terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"Kan inte öppna grafiskt fönster och kan inte hitta kontrollerande terminal.\n"
 
 #: ../userinfo.c:383
 #, c-format
@@ -403,7 +448,9 @@ msgid "Un_mount"
 msgstr "Av_montera"
 
 #: ../usermount.c:289
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
 msgstr ""
 "Är du säker på att du vill formatera denna disk?\n"
 "Du kommer att förstöra all data som den för tillfället innehåller."
@@ -466,8 +513,3 @@ msgstr "Byt ditt inloggningslösenord"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lösenord"
-
-#: ../userhelper-wrap.c:961
-#, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "Kan inte sätta binärkodning på en IO-kanal: %s\n"
