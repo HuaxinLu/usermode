@@ -4,24 +4,24 @@
 # Ramon Gómez Vilar <ramongomezvilar@gmx.net>, 2005.
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2005, 2007.
 # Xavier Conde Rueda <xavi.conde@gmail.com>, 2007
-#
+# 
 # This file is translated according to the glossary and style guide of
 #   Softcatalà. If you plan to modify this file, please read first the page
 #   of the Catalan translation team for the Fedora project at:
 #   http://www.softcatala.org/projectes/fedora/
 #   and contact the previous translator
-#
+# 
 # Aquest fitxer s'ha de traduir d'acord amb el recull de termes i la guia
 #   d'estil de Softcatalà. Si voleu modificar aquest fitxer, llegiu si
 #   us plau la pàgina de catalanització del projecte Fedora a:
 #   http://www.softcatala.org/projectes/fedora/
 #   i contacteu l'anterior traductor/a.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-25 19:18+0000\n"
+"POT-Creation-Date: 2010-08-27 07:49+0000\n"
 "PO-Revision-Date: 2008-09-21 04:32+0100\n"
 "Last-Translator: Xavier Conde Rueda <xavi.conde@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
@@ -29,7 +29,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -45,7 +44,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -94,8 +93,7 @@ msgstr "Les contrasenyes no coincideixen"
 
 #: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Executa les eines de configuració generals del sistema sense contrasenya."
+msgstr "Executa les eines de configuració generals del sistema sense contrasenya."
 
 #: ../dummy.h:33
 msgid "login: "
@@ -117,22 +115,12 @@ msgstr "No s'han pogut abandonar els privilegis d'administrador: %s"
 
 #: ../pam-panel-icon.c:98
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
-"No s'han pogut abandonar els privilegis d'administrador: pam_timestamp_check "
-"ha retornat el codi d'error %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "No s'han pogut abandonar els privilegis d'administrador: pam_timestamp_check ha retornat el codi d'error %d"
 
 #: ../pam-panel-icon.c:146
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"Se us permet configurar paràmetres que afecten tot el sistema (i els seus "
-"usuaris), sense haver de tornar a escriure la contrasenya de "
-"l'administrador. Podeu abandonar aquesta autorització."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Se us permet configurar paràmetres que afecten tot el sistema (i els seus usuaris), sense haver de tornar a escriure la contrasenya de l'administrador. Podeu abandonar aquesta autorització."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -178,18 +166,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "No s'ha pogut establir el canal d'E/S a no blocar: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: ha fallat connectar al gestor de la sessió\n"
 
-#: ../userhelper-wrap.c:205
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "El codi de sortida és desconegut."
 
-#: ../userhelper-wrap.c:207
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "S'ha actualitzat la informació."
 
-#: ../userhelper-wrap.c:209
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -197,7 +186,7 @@ msgstr ""
 "La contrasenya que heu teclejat no és vàlida.\n"
 "Torneu-ho a intentar."
 
-#: ../userhelper-wrap.c:211
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -207,11 +196,11 @@ msgstr ""
 "Probablement és degut a que hi ha comes o dos punts en un dels camps.\n"
 "Suprimiu aquests signes i proveu-ho de nou."
 
-#: ../userhelper-wrap.c:213
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "S'ha produït un error en reiniciar la contrasenya."
 
-#: ../userhelper-wrap.c:215
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -219,19 +208,19 @@ msgstr ""
 "Alguns fitxers de sistema estan blocats.\n"
 "Torneu-ho a intentar d'aquí a una estona."
 
-#: ../userhelper-wrap.c:217
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Usuari desconegut."
 
-#: ../userhelper-wrap.c:219
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "No teniu prou privilegis."
 
-#: ../userhelper-wrap.c:221
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Crida de subprocés no vàlida."
 
-#: ../userhelper-wrap.c:223
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -241,123 +230,102 @@ msgstr ""
 "No està permès que canvieu el vostre intèrpret d'ordres.\n"
 "Consulteu a l'administrador del sistema."
 
-#: ../userhelper-wrap.c:226
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Sense memòria."
 
-#: ../userhelper-wrap.c:228
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "La crida exec() ha fallat."
 
-#: ../userhelper-wrap.c:230
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "No s'ha pogut trobar el programa seleccionat."
 
-#: ../userhelper-wrap.c:233
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "S'ha cancel·lat la sol·licitud."
 
-#: ../userhelper-wrap.c:235
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "S'ha produït un error intern del PAM."
 
-#: ../userhelper-wrap.c:237
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Error desconegut."
 
-#: ../userhelper-wrap.c:502
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Consulta"
 
-#: ../userhelper-wrap.c:561 ../userhelper.c:576
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "S'està autenticant com a «%s»"
 
-#: ../userhelper-wrap.c:580 ../userhelper-wrap.c:716
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Error"
 
-#: ../userhelper-wrap.c:580
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Informació"
 
-#: ../userhelper-wrap.c:741
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "S'està canviant la contrasenya."
 
-#: ../userhelper-wrap.c:743
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "S'està canviant la informació personal."
 
-#: ../userhelper-wrap.c:746
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "S'està canviant l'intèrpret d'ordres d'entrada."
 
-#: ../userhelper-wrap.c:750
+#: ../userhelper-wrap.c:746
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Esteu intentant executar «%s» que es pot beneficiar de privilegis "
-"d'administrador, però es necessita més informació per fer-ho."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Esteu intentant executar «%s» que es pot beneficiar de privilegis d'administrador, però es necessita més informació per fer-ho."
+
+#: ../userhelper-wrap.c:748
+#, c-format
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Esteu intentant executar «%s» que necessita privilegis d'administrador, però es necessita més informació per fer-ho."
 
 #: ../userhelper-wrap.c:752
-#, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"Esteu intentant executar «%s» que necessita privilegis d'administrador, però "
-"es necessita més informació per fer-ho."
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Esteu intentant executar una ordre que pot aprofitar-se dels privilegis d'administrador, però es necessita més informació per fer-ho."
 
-#: ../userhelper-wrap.c:756
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Esteu intentant executar una ordre que pot aprofitar-se dels privilegis "
-"d'administrador, però es necessita més informació per fer-ho."
+#: ../userhelper-wrap.c:754
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Esteu intentant executar una ordre que necessita privilegis d'administrador, però es necessita més informació per fer-ho."
 
-#: ../userhelper-wrap.c:758
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Esteu intentant executar una ordre que necessita privilegis d'administrador, "
-"però es necessita més informació per fer-ho."
-
-#: ../userhelper-wrap.c:794
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Executa sense privilegis"
 
-#: ../userhelper-wrap.c:924
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Error de conducte.\n"
 
-#: ../userhelper-wrap.c:931
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "No es pot executar el fork().\n"
 
-#: ../userhelper-wrap.c:957
-#, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "No es pot establir el conjunt de caràcters %s al canal d'E/S: %s\n"
-
-#: ../userhelper-wrap.c:1029 ../userhelper-wrap.c:1033
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Error del dup2().\n"
 
-#: ../userhelper-wrap.c:1044
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Error de l'execl(), errno=%d\n"
 
-#: ../userhelper.c:558
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -366,7 +334,7 @@ msgstr ""
 "Esteu intentant executar «%s», que pot aprofitar els privilegis\n"
 "d'administrador, però cal més informació per fer-ho."
 
-#: ../userhelper.c:560
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -375,7 +343,8 @@ msgstr ""
 "Esteu intentant executar «%s», que necessita privilegis\n"
 "d'administrador, però cal més informació per fer-ho."
 
-#: ../userhelper.c:564
+#: ../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -383,7 +352,8 @@ msgstr ""
 "Esteu intentant executar una ordre que pot aprofitar els privilegis\n"
 "d'administrador, però es necessita més informació per fer-ho."
 
-#: ../userhelper.c:566
+#: ../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -391,26 +361,23 @@ msgstr ""
 "Esteu intentant executar una ordre que necessita privilegis\n"
 "d'administrador, però es necessita més informació per fer-ho."
 
-#: ../userhelper.c:2000
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "L'userhelper ha de ser setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2092
+#: ../userhelper.c:2162
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"No s'ha pogut obrir la finestra gràfica, ni tampoc s'ha trobat cap terminal "
-"controlador.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "No s'ha pogut obrir la finestra gràfica, ni tampoc s'ha trobat cap terminal controlador.\n"
 
-#: ../userinfo.c:376
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "No s'esperava l'argument"
 
-#: ../userinfo.c:401
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Vostè no existeix. Vagi-se'n.\n"
@@ -423,27 +390,27 @@ msgstr "Quant a Myself"
 msgid "Change personal information"
 msgstr "Canvieu la informació personal"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Nom complet:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Número de telèfon de casa:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Intèrpret d'ordres:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Número de telèfon de la feina:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Feina:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Informació de l'usuari"
 
@@ -456,12 +423,8 @@ msgid "Un_mount"
 msgstr "Des_munta"
 
 #: ../usermount.c:289
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"Esteu segur que voleu formatar aquest disc? En destruireu tota la informació "
-"continguda."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Esteu segur que voleu formatar aquest disc? En destruireu tota la informació continguda."
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
@@ -476,8 +439,7 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"No hi ha sistemes de fitxers pels que tingueu permís per muntar o "
-"desmuntar.\n"
+"No hi ha sistemes de fitxers pels que tingueu permís per muntar o desmuntar.\n"
 "Contacteu l'administrador."
 
 #. Create the dialog.
@@ -502,7 +464,7 @@ msgstr "Directori"
 msgid "Filesystem"
 msgstr "Sistema de fitxers"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "No es pot formatar el dispositiu «%s»."
@@ -522,6 +484,15 @@ msgstr "Canvieu la vostra contrasenya d'entrada"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Contrasenya"
+
+#: ../userhelper-wrap.c:969
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "No es pot establir la codificació binària al canal d'E/S: %s\n"
+
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "No es permeten més re-intents"
 
 #~ msgid "Placeholder text."
 #~ msgstr "Text del marcador."
