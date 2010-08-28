@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-12 07:47+0000\n"
+"POT-Creation-Date: 2010-08-28 01:49+0000\n"
 "PO-Revision-Date: 2008-04-06 02:12+0300\n"
 "Last-Translator: Dimitris Glezos <dimitris@glezos.com>\n"
 "Language-Team: Greek Fedora team <fedora-trans-el@redhat.com>\n"
@@ -163,15 +163,15 @@ msgstr "Αποτυχία ορισμού καναλιού IO nonblocking: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: αποτυχία σύνδεσης στο διαχειριστή συνεδριών\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Άγνωστος κωδικός εξόδου."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Η πληροφορία ανανεώθηκε."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -179,7 +179,7 @@ msgstr ""
 "Το συνθηματικό που πληκτρολογήσατε δεν είναι έγκυρο.\n"
 "Παρακαλώ προσπαθήστε ξανά."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -190,11 +190,11 @@ msgstr ""
 "Παρακαλώ διαγράψτε τα και προσπαθήστε ξανά."
 
 # gconf/gconf-internals.c:2137
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Σφάλμα αρχικοποίησης συνθηματικού."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -202,19 +202,19 @@ msgstr ""
 "Μερικά από τα αρχεία συστήματος είναι κλειδωμένα.\n"
 "Παρακαλώ δοκιμάστε ξανά σε λίγη ώρα."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Άγνωστος χρήστης."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Ανεπαρκή δικαιώματα."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Μη έγκυρη κλήση σε θυγατρική διεργασία."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -224,103 +224,108 @@ msgstr ""
 "Δεν επιτρέπεται να αλλάξετε το φλοιό σας.\n"
 "Συμβουλευτείτε το διαχειριστή συστήματός σας."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Η μνήμη εξαντλήθηκε."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "Αποτυχία κλήσης της exec()."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Αποτυχία εύρεσης της επιλεγμένης εφαρμογής."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Η αίτηση ακυρώθηκε."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Συνέβη εσωτερικό σφάλμα στο PAM."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Άγνωστο σφάλμα."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Ερώτηση"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Πιστοποίηση ως \"%s\""
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Αλλαγή του συνθηματικού σας."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Αλλαγή προσωπικών πληροφοριών."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Αλλαγή φλοιού σύνδεσης."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Επιχειρείτε να εκτελέσετε το \"%s\", το οποίο μπορεί να επωφεληθεί από δικαιώματα διαχειριστή, ωστόσο χρειάζονται περισσότερες πληροφορίες για να γίνει αυτό."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Επιχειρείτε να εκτελέσετε το \"%s\", το οποίο απαιτεί δικαιώματα διαχειριστή, ωστόσο χρειάζονται περισσότερες πληροφορίες για να γίνει αυτό."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:752
 msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr "Επιχειρείτε να εκτελέσετε μια εντολή η οποία μπορεί να επωφεληθεί από δικαιώματα διαχειριστή, ωστόσο χρειάζονται περισσότερες πληροφορίες για να γίνει αυτό."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:754
 msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr "Επιχειρείτε να εκτελέσετε μια εντολή η οποία απαιτεί δικαιώματα διαχειριστή, ωστόσο χρειάζονται περισσότερες πληροφορίες για να γίνει αυτό."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Εκτέλεση χωρίς δικαιώματα"
 
 # gconf/gconf-internals.c:2137
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Σφάλμα σωλήνωσης.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Δε μπορεί να γίνει fork().\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:969
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Αδυναμία ορισμού binary encoding σε ένα κανάλι IO: %s\n"
+
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Σφάλμα dup2().\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -329,7 +334,7 @@ msgstr ""
 "Προσπαθείτε να τρέξετε το \"%s\" το οποίο μπορεί να ωφεληθεί από δικαιώματα\n"
 "διαχειριστή, ωστόσο για να γίνει αυτό χρειάζονται περισσότερες πληροφορίες."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -339,7 +344,7 @@ msgstr ""
 "δικαιώματα διαχειριστή συστήματος, χρειάζονται περισσότερες πληροφορίες\n"
 "για να ολοκληρώσετε αυτήν την ενέργεια."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -348,7 +353,7 @@ msgstr ""
 "Προσπαθείτε να τρέξετε μία εντολή η οποία μπορεί να ωφεληθεί από δικαιώματα\n"
 "διαχειριστή, ωστόσο για να γίνει αυτό χρειάζονται περισσότερες πληροφορίες."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -358,13 +363,13 @@ msgstr ""
 "δικαιώματα διαχειριστή συστήματος, χρειάζονται περισσότερες πληροφορίες\n"
 "για να ολοκληρώσετε αυτήν την ενέργεια."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "Το userhelper πρέπει να είναι setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Αδύνατο να άνοιγμα ενός γραφικού παραθύρου και αδύνατη η εύρεση τερματικού ελέγχου.\n"
@@ -484,10 +489,9 @@ msgstr "Αλλαγή του συνθηματικού σας"
 msgid "Password"
 msgstr "Συνθηματικό"
 
-#: ../userhelper-wrap.c:961
-#, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "Αδυναμία ορισμού binary encoding σε ένα κανάλι IO: %s\n"
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "Δεν επιτρέπονται επιπλέον προσπάθειες"
 
 #~ msgid "Placeholder text."
 #~ msgstr "Θέση για κείμενο."
