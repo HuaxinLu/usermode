@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode 1.96\n"
+"Project-Id-Version: usermode 1.106\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-15 15:52+0000\n"
-"PO-Revision-Date: 2010-03-15 18:40+0100\n"
+"POT-Creation-Date: 2010-08-30 07:49+0000\n"
+"PO-Revision-Date: 2010-08-30 15:21+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@broadpark.no>\n"
 "Language-Team: Norwegian/Bokmaal <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -166,15 +166,15 @@ msgstr "Kunne ikke sette IU-kanal til å ikke blokkere: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: kunne ikke koble til sesjonshåndtereren\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Ukjent avsluttingskode."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Informasjon oppdatert."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -182,7 +182,7 @@ msgstr ""
 "Passordet du oppga er ugyldig.\n"
 "Vennligst prøv igjen."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -192,11 +192,11 @@ msgstr ""
 "Dette skyldes sannsynligvis et kolon eller komma i ett av feltene.\n"
 "Vennligst fjern disse og prøv igjen."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Feil under nullstilling av passord."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -204,19 +204,19 @@ msgstr ""
 "Noen systemfiler er låst.\n"
 "Prøv igjen om et øyeblikk."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Ukjent bruker."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Utilstrekkelige rettigheter."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Ugyldig kall til underprosess."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -226,60 +226,64 @@ msgstr ""
 "Du kan ikke endre ditt skall.\n"
 "Kontakt din systemadministrator."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Ikke mer minne."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec()-kallet feilet."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Kunne ikke finne valgt program."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Forespørsel avbrutt"
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Intern feil oppsto i PAM."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "Tillater ingen flere forsøk"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Ukjent feil."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Spør"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Autentiserer som «%s»"
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Feil"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Informasjon"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Endre passord."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Endrer personlig informasjon."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Endrer innloggingsskall."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -289,7 +293,7 @@ msgstr ""
 "rettigheter som superbruker, men du må oppgi mer informasjon for å kunne "
 "gjøre dette."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -298,7 +302,7 @@ msgstr ""
 "Du prøver å kjøre «%s» som krever rettigheter som superbruker, men du må "
 "oppgi mer informasjon for å kunne gjøre dette."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -306,7 +310,7 @@ msgstr ""
 "Du prøver å kjøre en kommando som med fordel kan kjøres med rettigheter som "
 "superbruker, men mer informasjon må oppgis for å kunne gjøre dette."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -314,36 +318,36 @@ msgstr ""
 "Du prøver å kjøre en kommando som krever rettigheter som superbruker, men du "
 "må oppgi mer informasjon for å kunne gjøre dette."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "Kjø_r upriviligert"
 
-#: ../userhelper-wrap.c:930
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Feil med rør.\n"
 
-#: ../userhelper-wrap.c:937
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Kan ikke kjøre fork().\n"
 
-#: ../userhelper-wrap.c:961
+#: ../userhelper-wrap.c:969
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Kan ikke sette binærkoding på en IO-kanal: %s\n"
 
-#: ../userhelper-wrap.c:1032 ../userhelper-wrap.c:1036
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "feil ved kjøring av dup2().\n"
 
-#: ../userhelper-wrap.c:1047
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() feil, errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -353,7 +357,7 @@ msgstr ""
 "rettigheter som superbruker, men du må oppgi mer informasjon for å kunne "
 "gjøre dette."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -362,7 +366,7 @@ msgstr ""
 "Du prøver å kjøre «%s» som krever rettigheter som superbruker, men du\n"
 "må oppgi mer informasjon for å kunne gjøre dette."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -372,7 +376,7 @@ msgstr ""
 "rettigheter som superbruker, men mer informasjon må oppgis for å kunne gjøre "
 "dette."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -381,13 +385,13 @@ msgstr ""
 "Du prøver å kjøre en kommando som krever rettigheter som superbruker\n"
 "men du må oppgi mer informasjon for å kunne gjøre dette."
 
-#: ../userhelper.c:2074
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper må være setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2166
+#: ../userhelper.c:2162
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
