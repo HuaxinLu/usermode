@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-06 13:57+0000\n"
+"POT-Creation-Date: 2010-09-05 07:50+0000\n"
 "PO-Revision-Date: 2008-09-24 15:24+1000\n"
 "Last-Translator: Terry Chuang <tchuang@redhat.com>\n"
 "Language-Team: Traditional Chinese <zh@li.org>\n"
@@ -306,6 +306,11 @@ msgstr "程式的輸出導向錯誤.\n"
 msgid "Cannot fork().\n"
 msgstr "無法 fork().\n"
 
+#: ../userhelper-wrap.c:969
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "無法在 IO 頻道上設置二進位編碼：%s\n"
+
 #: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
@@ -476,12 +481,6 @@ msgstr "變更您的登入密碼"
 msgid "Password"
 msgstr "密碼"
 
-#: ../userhelper-wrap.c:969
-#, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "無法在 IO 頻道上設置二進位編碼：%s\n"
-
 #: ../userhelper-wrap.c:243
-#, fuzzy
 msgid "No more retries allowed"
-msgstr "無法再重試"
+msgstr "不允許再重試"
