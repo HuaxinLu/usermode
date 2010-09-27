@@ -294,7 +294,7 @@ msgstr "您試著要執行一個指令, 您需要有管理者的權限, 但為�
 
 #: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
-msgstr "無特權的執行（_R）"
+msgstr "無特權的執行(_R)"
 
 #: ../userhelper-wrap.c:938
 #, c-format
@@ -412,11 +412,11 @@ msgstr "使用者資訊"
 
 #: ../usermount.c:61
 msgid "_Mount"
-msgstr "掛載（_M）"
+msgstr "掛載(_M)"
 
 #: ../usermount.c:62
 msgid "Un_mount"
-msgstr "卸載（_m）"
+msgstr "卸載(_M)"
 
 #: ../usermount.c:289
 msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
@@ -424,11 +424,11 @@ msgstr "您確定要格式化磁碟嗎？您將摧毀它原有的資料。"
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
-msgstr "執行低階格式化（_l）。"
+msgstr "執行低階格式化(_L)。"
 
 #: ../usermount.c:337
 msgid "Select a _filesystem type to create:"
-msgstr "選取要建立的檔案系統（_f）："
+msgstr "選取要建立的檔案系統(_F)："
 
 #: ../usermount.c:507
 msgid ""
@@ -446,7 +446,7 @@ msgstr "使用者掛載工具"
 #. Create the other buttons.
 #: ../usermount.c:538
 msgid "_Format"
-msgstr "格式化（_F）"
+msgstr "格式化(_F)"
 
 #: ../usermount.c:574
 msgid "Device"
