@@ -6,13 +6,13 @@
 # dovix <dovix2003@yahoo.com>, 2003, 2004.
 # el-cuco <cuco3001@yahoo.com>, 2003.
 # Dotan kamber <kamberd@yahoo.com>, 2007.
-#
-#
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-06 14:49+0000\n"
+"POT-Creation-Date: 2010-11-15 01:49+0000\n"
 "PO-Revision-Date: 2009-12-06 19:01+0200\n"
 "Last-Translator: Elad <el.il@doom.co.il>\n"
 "Language-Team: Hebrew\n"
@@ -21,7 +21,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -37,7 +36,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -115,13 +114,11 @@ msgstr "כשל בהורדת הרשאות המנהל: pam_timestamp_check החז�
 msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
 msgstr "יש לך כעת הרשאות לשנות הגדרות כלל מערכתיות (כאלו שמשפיעות על כלל המשתמשים) ללא צורך בהקלדה נוספת של סיסמת מנהל המערכת. באפשרותך לוותר על הרשאה זו."
 
-#: ../pam-panel-icon.c:151
-#: ../pam-panel-icon.c:178
+#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "שמור הרשאות"
 
-#: ../pam-panel-icon.c:154
-#: ../pam-panel-icon.c:185
+#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "שכח הרשאות"
 
@@ -165,15 +162,15 @@ msgstr "כשל בהגדרת ערוץ ה-IO כלא-חוסם: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: כשל בהתחברות אל מנהל ההפעלה\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "קוד יציאה לא מוכר"
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "המידע עודכן."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -181,7 +178,7 @@ msgstr ""
 "הסיסמה שהקשת לא נכונה \n"
 "יש לנסות שנית."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -191,11 +188,11 @@ msgstr ""
 "ייתכן והשתמשת בנקודתיים (:) או בפסיק (,) באחד מהשדות.\n"
 "יש להסיר תווים אלו ולנסות שנית."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "חלה שגיאה בעת איפוס הסיסמה."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -203,19 +200,19 @@ msgstr ""
 "קבצי מערכת אחדים נעולים.\n"
 "יש לנסות שנית בעוד מספר דקות."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "משתמש לא ידוע."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "הרשאות לא מספיקות."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "קריאה לא תקפה לתהליך משנה."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -225,118 +222,115 @@ msgstr ""
 "אין לך הרשאה לשנות את המעטפת שלך.\n"
 "יש לפנות לעזרה למנהל המערכת שלך."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "לא נותר זיכרון פנוי."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "ביצוע קריאת ()exec נכשל."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "היישום שנבחר לא נמצא."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "הבקשה בוטלה."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "ארעה שגיאה פנימית ב-PAM."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "שגיאה לא מוכרת."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "שאילתה"
 
-#: ../userhelper-wrap.c:547
-#: ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "נא להזדהות כ-\"%s\""
 
-#: ../userhelper-wrap.c:566
-#: ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "שגיאה"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "מידע"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "משנה סיסמה."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "שינוי המידע האישי."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "שינוי מעטפת הכניסה (login shell)"
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "הנך מנסה להריץ את \"%s\" אשר עשוי ליהנות מקבלת הרשאות ניהול,\n"
 "אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "הנך מנסה להריץ את \"%s\" אשר דורש הרשאות ניהול,\n"
 "אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:752
 msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "הנך מנסה להריץ פקודה אשר עשויה ליהנות מקבלת הרשאות ניהול,\n"
 "אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:754
 msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
 msgstr ""
 "הנך מנסה להריץ פקודה אשר דורשת הרשאות ניהול,\n"
 "אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "הר_צה ללא הרשאות מיוחדות"
 
-#: ../userhelper-wrap.c:926
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "שגיאת שרשור (pipe).\n"
 
-#: ../userhelper-wrap.c:933
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "אין אפשרות לפצל את התהליך עם fork().\n"
 
-#: ../userhelper-wrap.c:959
-#, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
+#: ../userhelper-wrap.c:969
+#, fuzzy, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "לא ניתן להגדיר את מערך התווים %s על ערוץ IO: %s\n"
 
-#: ../userhelper-wrap.c:1031
-#: ../userhelper-wrap.c:1035
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "שגיאה ב dup2()\n"
 
-#: ../userhelper-wrap.c:1046
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "הפעלת execl() החזירה שגיאה מספר %d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -345,7 +339,7 @@ msgstr ""
 "הנך מנסה להריץ את \"%s\" אשר עשוי להנות מקבלת הרשאות ניהול,\n"
 "אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -354,7 +348,7 @@ msgstr ""
 "הנך מנסה להריץ את \"%s\" אשר דורש הרשאות ניהול,\n"
 "אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -363,7 +357,7 @@ msgstr ""
 "הנך מנסה להריץ פקודה אשר עשויה ליהנות מקבלת הרשאות ניהול,\n"
 "אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -372,13 +366,13 @@ msgstr ""
 "הנך מנסה להריץ פקודה אשר דורשת הרשאות ניהול,\n"
 "אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../userhelper.c:2025
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "כלי העזר userhelper דורש הגדרת setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2117
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "פתיחת חלון גרפי לא הצליחה, וכן לא נמצא מסוף שליטה.\n"
@@ -454,8 +448,7 @@ msgstr ""
 "יש לפנות לעזרה למנהל המערכת."
 
 #. Create the dialog.
-#: ../usermount.c:508
-#: ../usermount.c:520
+#: ../usermount.c:508 ../usermount.c:520
 msgid "User Mount Tool"
 msgstr "כלי חיבור עוגן למשתמש"
 
@@ -497,10 +490,15 @@ msgstr "שינוי סיסמת הכניסה למערכת"
 msgid "Password"
 msgstr "סיסמה"
 
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "לא ניתן לנסות שוב"
+
 #~ msgid "Placeholder text."
 #~ msgstr "טקסט מיקום."
+
 #~ msgid "Could not set default context for %s for program %s.\n"
 #~ msgstr "לא ניתן להגדיר את הקשר ברירת המחדל של %s לתוכנה %s.\n"
+
 #~ msgid "Could not set exec context to %s.\n"
 #~ msgstr "לא ניתן להגיד את ההקשר של exec ל-%s.\n"
-
