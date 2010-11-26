@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip.gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-28 01:54+0000\n"
+"POT-Creation-Date: 2010-11-26 01:55+0000\n"
 "PO-Revision-Date: 2008-03-11 17:07+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
@@ -497,11 +497,11 @@ msgstr "પાસવર્ડ"
 #: ../userhelper-wrap.c:969
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr ""
+msgstr "IO ચેનલ પર બાઇનરી સંગ્રહપદ્ધતિ સુયોજીત કરી શકતા નથી: %s\n"
 
 #: ../userhelper-wrap.c:243
 msgid "No more retries allowed"
-msgstr ""
+msgstr "હવે વધુ પ્રયાસો માન્ય નથી"
 
 #~ msgid "Placeholder text."
 #~ msgstr "જગ્યા વાપરનાર લખાણ."
