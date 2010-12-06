@@ -1,14 +1,14 @@
 # German translation of usermode
 # Copyright (C) 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the usermode package.
-#
+# 
 # Nils-Christoph Fiedler <ncfiedler@fedoraproject.org>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-04 01:49+0000\n"
+"POT-Creation-Date: 2010-12-06 13:51+0000\n"
 "PO-Revision-Date: 2010-12-04 19:14+0100\n"
 "Last-Translator: Nils-Christoph Fiedler <ncfiedler@gnome.org>\n"
 "Language-Team: Low German <nds-lowgerman@lists.sourceforge.net>\n"
@@ -19,7 +19,6 @@ msgstr ""
 "X-Poedit-Language: Low German\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -35,7 +34,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -49,38 +48,6 @@ msgstr "Sluten"
 #: ../dummy.h:23
 msgid "Cancel"
 msgstr "Avbreken"
-
-#: ../dummy.h:24
-msgid "Run Unprivileged"
-msgstr ""
-
-#: ../dummy.h:25
-msgid "(current) UNIX password: "
-msgstr ""
-
-#: ../dummy.h:26
-msgid "New UNIX password: "
-msgstr ""
-
-#: ../dummy.h:27
-msgid "Retype new UNIX password: "
-msgstr ""
-
-#: ../dummy.h:28
-msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
-
-#: ../dummy.h:29
-msgid "BAD PASSWORD: it is too short"
-msgstr ""
-
-#: ../dummy.h:30
-msgid "Password unchanged"
-msgstr ""
-
-#: ../dummy.h:31
-msgid "Sorry, passwords do not match"
-msgstr ""
 
 #: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
@@ -113,13 +80,7 @@ msgstr ""
 msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
 msgstr ""
 
-#: ../pam-panel-icon.c:151
-#: ../pam-panel-icon.c:178
-msgid "Keep Authorization"
-msgstr ""
-
-#: ../pam-panel-icon.c:154
-#: ../pam-panel-icon.c:185
+#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr ""
 
@@ -245,14 +206,12 @@ msgstr "Unbekannter Fehler."
 msgid "Query"
 msgstr "Avfrage"
 
-#: ../userhelper-wrap.c:553
-#: ../userhelper.c:581
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
 
-#: ../userhelper-wrap.c:572
-#: ../userhelper-wrap.c:712
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Fehler"
 
@@ -309,8 +268,7 @@ msgstr ""
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:1038
-#: ../userhelper-wrap.c:1042
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr ""
@@ -428,8 +386,7 @@ msgid ""
 msgstr ""
 
 #. Create the dialog.
-#: ../usermount.c:508
-#: ../usermount.c:520
+#: ../usermount.c:508 ../usermount.c:520
 msgid "User Mount Tool"
 msgstr ""
 
@@ -471,3 +428,38 @@ msgstr "Änner dien Anmellenpasswoord"
 msgid "Password"
 msgstr "Passwoord"
 
+#: ../dummy.h:25
+msgid "(current) UNIX password: "
+msgstr "(aktuelles) UNIX Passwoord:"
+
+#: ../dummy.h:24
+msgid "Run Unprivileged"
+msgstr "Ohne Rechte lööpen laten"
+
+#: ../dummy.h:27
+msgid "Retype new UNIX password: "
+msgstr "UNIX Passwoord nohmal ingeven:"
+
+#: ../dummy.h:26
+msgid "New UNIX password: "
+msgstr "Nejes UNIX Passwoord:"
+
+#: ../dummy.h:29
+msgid "BAD PASSWORD: it is too short"
+msgstr "Schlechtes Passwoord: Too koort"
+
+#: ../dummy.h:28
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr "Schlechtes Passwoord: Too koort"
+
+#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
+msgid "Keep Authorization"
+msgstr ""
+
+#: ../dummy.h:31
+msgid "Sorry, passwords do not match"
+msgstr "Passwöör passen nich övereen"
+
+#: ../dummy.h:30
+msgid "Password unchanged"
+msgstr "Passwoord nich ännert"
