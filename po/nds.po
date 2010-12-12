@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usermode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 13:51+0000\n"
+"POT-Creation-Date: 2010-12-11 13:49+0000\n"
 "PO-Revision-Date: 2010-12-04 19:14+0100\n"
 "Last-Translator: Nils-Christoph Fiedler <ncfiedler@gnome.org>\n"
 "Language-Team: Low German <nds-lowgerman@lists.sourceforge.net>\n"
@@ -49,6 +49,38 @@ msgstr "Sluten"
 msgid "Cancel"
 msgstr "Avbreken"
 
+#: ../dummy.h:24
+msgid "Run Unprivileged"
+msgstr "Ohne Rechte lööpen laten"
+
+#: ../dummy.h:25
+msgid "(current) UNIX password: "
+msgstr "(aktuelles) UNIX Passwoord:"
+
+#: ../dummy.h:26
+msgid "New UNIX password: "
+msgstr "Nejes UNIX Passwoord:"
+
+#: ../dummy.h:27
+msgid "Retype new UNIX password: "
+msgstr "UNIX Passwoord nohmal ingeven:"
+
+#: ../dummy.h:28
+msgid "BAD PASSWORD: it's WAY too short"
+msgstr "Schlechtes Passwoord: Too koort"
+
+#: ../dummy.h:29
+msgid "BAD PASSWORD: it is too short"
+msgstr "Schlechtes Passwoord: Too koort"
+
+#: ../dummy.h:30
+msgid "Password unchanged"
+msgstr "Passwoord nich ännert"
+
+#: ../dummy.h:31
+msgid "Sorry, passwords do not match"
+msgstr "Passwöör passen nich övereen"
+
 #: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr ""
@@ -78,6 +110,10 @@ msgstr ""
 
 #: ../pam-panel-icon.c:146
 msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr ""
+
+#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
+msgid "Keep Authorization"
 msgstr ""
 
 #: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
@@ -124,14 +160,6 @@ msgstr ""
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:211
-msgid "Unknown exit code."
-msgstr ""
-
-#: ../userhelper-wrap.c:213
-msgid "Information updated."
-msgstr ""
-
 #: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
@@ -143,10 +171,6 @@ msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-
-#: ../userhelper-wrap.c:219
-msgid "Password resetting error."
 msgstr ""
 
 #: ../userhelper-wrap.c:221
@@ -428,38 +452,14 @@ msgstr "Änner dien Anmellenpasswoord"
 msgid "Password"
 msgstr "Passwoord"
 
-#: ../dummy.h:25
-msgid "(current) UNIX password: "
-msgstr "(aktuelles) UNIX Passwoord:"
+#: ../userhelper-wrap.c:213
+msgid "Information updated."
+msgstr "Informatschoon opfrischt."
 
-#: ../dummy.h:24
-msgid "Run Unprivileged"
-msgstr "Ohne Rechte lööpen laten"
+#: ../userhelper-wrap.c:211
+msgid "Unknown exit code."
+msgstr "Unbekannter exit Code."
 
-#: ../dummy.h:27
-msgid "Retype new UNIX password: "
-msgstr "UNIX Passwoord nohmal ingeven:"
-
-#: ../dummy.h:26
-msgid "New UNIX password: "
-msgstr "Nejes UNIX Passwoord:"
-
-#: ../dummy.h:29
-msgid "BAD PASSWORD: it is too short"
-msgstr "Schlechtes Passwoord: Too koort"
-
-#: ../dummy.h:28
-msgid "BAD PASSWORD: it's WAY too short"
-msgstr "Schlechtes Passwoord: Too koort"
-
-#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
-msgid "Keep Authorization"
-msgstr ""
-
-#: ../dummy.h:31
-msgid "Sorry, passwords do not match"
-msgstr "Passwöör passen nich övereen"
-
-#: ../dummy.h:30
-msgid "Password unchanged"
-msgstr "Passwoord nich ännert"
+#: ../userhelper-wrap.c:219
+msgid "Password resetting error."
+msgstr "Künn Passwoord nich torüggsetten."
