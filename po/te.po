@@ -7,19 +7,21 @@
 #
 # Sree Ganesh <sthottem@redhat.com>, 2006.
 # Krishna Babu K <kkrothap@redhat.com>, 2007, 2008.
+# Krishnababu Krothapalli <kkrothap@redhat.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip.te\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-24 18:21+0000\n"
-"PO-Revision-Date: 2008-03-26 20:55+0530\n"
-"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"POT-Creation-Date: 2011-01-07 01:59+0000\n"
+"PO-Revision-Date: 2011-01-07 18:06+0530\n"
+"Last-Translator: Krishnababu Krothapalli <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 
 #.
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -166,18 +168,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO చానల్ నాన్ బ్లాకింగుని అమర్చటంలో వైఫల్యం: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: సెషన్ నిర్వాహకుడికి అనుసంధించటంలో వైఫల్యం\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "తెలియని బయటకు వచ్చే కోడు."
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "సమాచార నవీకరణ"
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -185,7 +188,7 @@ msgstr ""
 "మీరు టైపుచేసిన అనుమతిపదం సరైనదికాదు.\n"
 "దయచేసి మళ్లీ ప్రయత్నించండి."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -195,11 +198,11 @@ msgstr ""
 "ఈ సమస్య క్షేత్రంలో కోలన్లు లేదా కామాలవల్ల కావచ్చు.\n"
 "దయచేసి వాటిని తొలగించండి మరియూ ప్రయత్నించండి."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "అనుమతిపదాన్ని తిరిగి అమర్చటంలో దోషం."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -207,19 +210,19 @@ msgstr ""
 "కొన్ని సిస్టం ఫైళ్లు లాక్ చేయబడ్డాయి.\n"
 "కొన్ని సమయాల్లో తిరిగి ప్రయత్నించండి."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "తెలియని వినియోగదారుడు."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "చాలని హక్కులు."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "ఉపవిధానానికి చెల్లని పిలుపు."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -229,64 +232,64 @@ msgstr ""
 "మీరు మీ షల్ మార్పిడికి అనుమతించబడలేదు.\n"
 "మీ కంప్యూటరు నిర్వహణదారును సంప్రదించండి."
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "మెమోరీ లేదు."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec() పిలుపు విఫలమైంది."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "ఎన్నుకున్న పరిక్రమాన్ని కనుగొనటంలో వైఫల్యం."
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "విన్నపం రద్దయ్యింది."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "అంతర్గత PAM దీషం సంభవించింది."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "ఇంకా పునఃప్రయత్నాలు అనుమతించబడవు"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "తెలియని దోషం."
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "ప్రశ్న"
 
-#: ../userhelper-wrap.c:581 ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "దోషం"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "సమాచారం"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "స్థాన యజమాని పాఠం."
-
-#: ../userhelper-wrap.c:753 ../userhelper.c:627
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" లా ప్రామాణీకరించండి"
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
+msgid "Error"
+msgstr "దోషం"
+
+#: ../userhelper-wrap.c:572
+msgid "Information"
+msgstr "సమాచారం"
+
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "అనుమతిపదాన్ని మార్చండి."
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "వ్యక్తిగత సమాచారం మార్చుతోంది."
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "ప్రవేశ షల్ మార్చుతోంది."
 
-#: ../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -295,7 +298,7 @@ msgstr ""
 "మీరు \"%s\" ఉపయోగించటానికి ప్రయత్నిస్తున్నారు ఇవి నిర్వహణా\n"
 "అదనపు హక్కులనుండీ లాభాన్ని పొందవచ్చు, కానీ దాన్ని చేయటానికి అధిక సమాచారం కూడా అవసరంకావచ్చు."
 
-#: ../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -304,7 +307,7 @@ msgstr ""
 "మీరు \"%s\" ఉపయోగించటానికి ప్రయత్నిస్తున్నారు వీటికి నిర్వహణ\n"
 "అదనపు హక్కులు కావలసి ఉంది, కానీ దాన్ని చేయటానికి అధిక సమాచారం కూడా అవసరంకావచ్చు."
 
-#: ../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -312,7 +315,7 @@ msgstr ""
 "మీరు ఇప్పుడు నిర్వహణ అదనపు హక్కులనుండీ లాభాలు పొందేఆదేశాన్ని ఉపయోగించటానికి ప్రయత్నిస్తున్నారు, కానీ "
 "దాన్ని చేయటానికి అదనపు సమాచారంకూడా అవసరంకావచ్చు."
 
-#: ../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -320,36 +323,36 @@ msgstr ""
 "మీరు నిర్వహణ అదనపు హక్కులు కావలసి ఉన్న ఆదేశాన్ని ఉపయోగిస్తున్నారు, కానీ అది చేయటానికి అధిక సమాచారంకూడా "
 "అవసరంకావచ్చు."
 
-#: ../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "అదనపు హక్కులేనిదాన్ని ఉపయోగించు (_R)"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "పైప్ దోషం.\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() చేయలేదు.\n"
 
-#: ../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:969
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "charset %s ను IO చానల్: %s లో మార్చలేము \n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "IO చానల్ పై బైనరీ ఎన్కోడింగ్‌ను అమర్చలేము: %s\n"
 
-#: ../userhelper-wrap.c:1077 ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "డప్2() దీషం.\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() దోషం, errno=%d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -358,7 +361,7 @@ msgstr ""
 "మీరు \"%s\" ఉపయోగించటానికి ప్రయత్నిస్తున్నారు ఇవి నిర్వహణా\n"
 "అదనపు హక్కులనుండీ లాభాన్ని పొందవచ్చు, కానీ దాన్ని చేయటానికి అధిక సమాచారం కూడా అవసరంకావచ్చు."
 
-#: ../userhelper.c:611
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -367,7 +370,8 @@ msgstr ""
 "మీరు \"%s\" ఉపయోగించటానికి ప్రయత్నిస్తున్నారు వీటికి నిర్వహణా\n"
 "అదనపు హక్కులు కావలసి ఉంది, కానీ దాన్ని చేయటానికి అధిక సమాచారం కూడా అవసరంకావచ్చు."
 
-#: ../userhelper.c:615
+#: ../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -375,7 +379,8 @@ msgstr ""
 "మీరు ఇప్పుడు నిర్వహణ అదనపు హక్కులనుండీ లాభాలను పొందే\n"
 "ఆదేశాన్ని ఉపయోగించటానికి ప్రయత్నిస్తున్నారు, దాన్ని చేయటానికి అదనపు సమాచారంకూడా అవసరంకావచ్చు."
 
-#: ../userhelper.c:617
+#: ../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -383,23 +388,23 @@ msgstr ""
 "మీరు ఇప్పుడు నిర్వహణ అదనపు హక్కులనుండీ లాభాలు అవసరమయ్యే\n"
 "ఆదేశాన్ని ఉపయోగించటానికి ప్రయత్నిస్తున్నారు, దాన్ని చేయటానికి అదనపు సమాచారంకూడా అవసరంకావచ్చు."
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "వినియోగదారుని సహాయకుడు తప్పక రూట్ అమర్చాలి\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "చిత్ర విండోని తెరవటానికి కుదరదు, మరియూ టెర్మినలుని నియంత్రణను కనుగొనటం కుదరదు.\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "ఊహించని వాదన"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "మీరు బయటకు రావద్దు.  కొనసాగండి.\n"
@@ -412,27 +417,27 @@ msgstr "నా గురించి"
 msgid "Change personal information"
 msgstr "వ్యక్తిగత సమాచారం మార్చు"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "పూర్తి పేరు:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "ఇంటి ఫోను నెంబరు:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "షల్ ప్రవేశమ్:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "కార్యాలయ ఫోను నంబరు:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "కార్యాలయం:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "వినియోగదారుని సమాచారం"
 
@@ -490,7 +495,7 @@ msgstr "డైరెక్టరీ"
 msgid "Filesystem"
 msgstr "ఫైళ్లవ్యవస్థ"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "ఈ '%s' సాధనం ఆకృతీకరించబడదు."
@@ -511,3 +516,5 @@ msgstr "మీ ప్రవేశ అనుమతిపదాన్ని మా
 msgid "Password"
 msgstr "అనుమతిపదం"
 
+#~ msgid "Placeholder text."
+#~ msgstr "స్థాన యజమాని పాఠం."
