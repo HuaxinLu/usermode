@@ -1,3 +1,4 @@
+# translation of usermode.default.ml.po to
 # translation of ml.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -5,10 +6,10 @@
 # Ani Peter <apeter@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: ml\n"
+"Project-Id-Version: usermode.default.ml\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-29 10:14-0700\n"
-"PO-Revision-Date: 2008-03-12 13:17+0530\n"
+"POT-Creation-Date: 2011-01-05 14:42+0000\n"
+"PO-Revision-Date: 2011-01-05 21:57+0530\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,18 +173,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO ചാനല്‍ നോണ്‍ബ്ളോക്കിങ് സെറ്റ് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: സശന്‍ മാനേജറുമായി കണക്റ്റ് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു\n"
 
-#: ../userhelper-wrap.c:204
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "അപരിചിതമായ എക്സിറ്റ് കോഡ്."
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "വിശദാംശങ്ങളില്‍ മാറ്റം വരുത്തിയിരിക്കുന്നു."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -191,7 +193,7 @@ msgstr ""
 "നിങ്ങള്‍ ടൈപ്പ് ചെയ്ത പാസ്വേഡ് തെറ്റാണ്.\n"
 "വീണ്ടും ശ്രമിക്കുക."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -201,11 +203,11 @@ msgstr ""
 "ഏതെങ്കിലും ഫീല്‍ഡില്‍ ഉളള കോമയോ കോളണോ ഇതിന് കാരണമാവാം.\n"
 "അവ നീക്കം ചെയ്തശേഷം വീണ്ടും ശ്രമിക്കുക."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "പാസ്വേഡ് റീസെറ്റ് ചെയ്യുന്നതില്‍ പിഴവ് സംഭവിച്ചിരിക്കുന്നു."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -213,19 +215,19 @@ msgstr ""
 "ചില സിസ്റ്റം ഫയലുകള്‍ ലോക്കാണ്.\n"
 "ദയവായി അല്പ സമയത്തിന് ശേഷം ശ്രമിക്കുക."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "അപരിചിതനായ യൂസറ്‍."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "മതിയാവാത്ത അവകാശങ്ങള്‍"
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "സബ്പ്രൊസസ്സിലേക്ക് അസാധുവായ കോള്‍."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -235,64 +237,64 @@ msgstr ""
 "നിങ്ങള്‍ക്ക ഷെല്ല് മാറ്റുവാന്‍ അവകാശമില്ല.\n"
 "നിങ്ങളുടെ സിസ്റ്റം അഡ്മിനിസ്ട്രേറ്റരുമായി ബന്ധപ്പെടുക."
 
-#: ../userhelper-wrap.c:225
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "മെമ്മറി തികയില്ല."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec() കോള്‍ പരാജയപ്പെട്ടിരിക്കുന്നു."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "സലക്ട് ചെയ്ത പ്രോഗ്രാം തിരയുന്നതില്‍ പരാജയപ്പെട്ടിരിക്കുന്നു."
 
-#: ../userhelper-wrap.c:232
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "നിറ്‍ദ്ദേശം റദ്ദാക്കപ്പെട്ടു."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "ഇന്‍റ്റേണല്‍ PAM ല്‍ തെറ്റ് സംഭവിച്ചിരിക്കുന്നു."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "ഇനി ശ്രമിയ്ക്കുവാന്‍ സാധ്യമല്ല"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "അപരിചിതമായ തെറ്റ് സംഭവിച്ചിരിക്കുന്നു."
 
-#: ../userhelper-wrap.c:504
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "സംശയം"
 
-#: ../userhelper-wrap.c:581 ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "തെറ്റ് സംഭവിച്ചിരിക്കുന്നു"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "വിവരങ്ങള്‍"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "പ്ളെയ്സ്ഹോള്‍ഡറ്‍ ടെക്സ്ഫറ്റ്."
-
-#: ../userhelper-wrap.c:753 ../userhelper.c:627
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" ആയി ആധികാരം ഉറപ്പാക്കുന്നു"
 
-#: ../userhelper-wrap.c:782
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
+msgid "Error"
+msgstr "തെറ്റ് സംഭവിച്ചിരിക്കുന്നു"
+
+#: ../userhelper-wrap.c:572
+msgid "Information"
+msgstr "വിവരങ്ങള്‍"
+
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "പാസ്‌വേറ്‍ഡ് മാറ്റുന്നു."
 
-#: ../userhelper-wrap.c:784
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "സ്വകാര്യ വിവരങ്ങള്‍ മാറ്റുക."
 
-#: ../userhelper-wrap.c:787
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "ലോഗിന്‍ ഷെല്ല മാറ്റുന്നു."
 
-#: ../userhelper-wrap.c:791
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -301,7 +303,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../userhelper-wrap.c:793
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -310,7 +312,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../userhelper-wrap.c:798
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -318,7 +320,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡാണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../userhelper-wrap.c:800
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -326,36 +328,36 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡാണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../userhelper-wrap.c:810
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "റണ്‍ അണ്‍പ്രവിലേജ്ഡ്(_R)"
 
-#: ../userhelper-wrap.c:968
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "പൈപ്പ് എററ്‍.\n"
 
-#: ../userhelper-wrap.c:975
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() ചെയ്യുവാന്‍ കഴിയുന്നില്ല.\n"
 
-#: ../userhelper-wrap.c:1001
+#: ../userhelper-wrap.c:969
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "ഒരു IO ചാനലില്‍ %s എന്ന കാറ്‍സെറ്റ് ക്റമികരിക്കുവാന്‍ സാധ്യമല്ല: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "ഒരു IO ചാനലില്‍ ബൈനറി എന്‍കോഡിങ് സജ്ജമാക്കുവാന്‍ സാധ്യമല്ല: %s\n"
 
-#: ../userhelper-wrap.c:1077 ../userhelper-wrap.c:1081
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() error.\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() error, errno=%d\n"
 
-#: ../userhelper.c:609
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -364,7 +366,7 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../userhelper.c:611
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -373,7 +375,8 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള \"%s\" ആണ് നിങ്ങള്‍ പ്രവര്‍ത്തിപ്പിക്കുനവാന്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../userhelper.c:615
+#: ../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -381,7 +384,8 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡ് പ്രവര്‍ത്തിപ്പിക്കുവാനാണ് നിങ്ങള്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../userhelper.c:617
+#: ../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -389,23 +393,23 @@ msgstr ""
 "അഡ്മിനിസ്ടേറ്റീവ് അവകാശങ്ങള്‍ ആവശ്യമുളള ഒരു കമാന്‍ഡ് പ്രവര്‍ത്തിപ്പിക്കുവാനാണ് നിങ്ങള്‍\n"
 "ശ്രമിക്കുന്നത്, പക്ഷേ കൂടുതല്‍ വിവരങ്ങള്‍ ഇതിനായി ആവശ്യമുണ്ട്."
 
-#: ../userhelper.c:2171
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelperന് setuid root ആവശ്യമാണ്\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "ഗ്രാഫിക്കല്‍ ജാലകം തുറക്കുവാനും കണ്ട്രോളിങ് ടര്‍മിനല്‍ കണ്ടുപിടിക്കുവാനും സാധിക്കുന്നില്ല.\n"
 
-#: ../userinfo.c:370
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "അപ്രതീക്ഷിതമായ ആര്‍ഗ്യുമെന്‍റ്"
 
-#: ../userinfo.c:395
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "നിങ്ങള്‍ നിലവിലില്ല.  കടന്നു പോവുക.\n"
@@ -418,27 +422,27 @@ msgstr "എന്നെ സംബന്ധിച്ച്"
 msgid "Change personal information"
 msgstr "സ്വകാര്യ വിവരങ്ങള്‍ മാറ്റുക"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "മുഴുവന്‍ പേര്:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "വീട്ടിലെ ഫോണ്‍ നമ്ബറ്‍:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "ലോഗിന്‍ ഷെല്ല:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "ഓഫീസ് ഫോണ്‍ നമ്ബറ്‍:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "ഓഫീസ്:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "യൂസറിനെ സംബന്ധിച്ചുള്ള വിവരങ്ങള്‍"
 
@@ -496,7 +500,7 @@ msgstr "ഡൈറക്ടറി"
 msgid "Filesystem"
 msgstr "ഫൈല്‍സിസ്റ്റം"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "ഡിവൈസ് %s ഫോര്‍മാറ്റ് ചെയ്യുവാന്‍ സാധ്യമല്ല."
