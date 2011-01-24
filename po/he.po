@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-15 01:49+0000\n"
+"POT-Creation-Date: 2011-01-24 01:58+0000\n"
 "PO-Revision-Date: 2009-12-06 19:01+0200\n"
 "Last-Translator: Elad <el.il@doom.co.il>\n"
 "Language-Team: Hebrew\n"
@@ -242,6 +242,10 @@ msgstr "הבקשה בוטלה."
 msgid "Internal PAM error occured."
 msgstr "ארעה שגיאה פנימית ב-PAM."
 
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "לא ניתן לנסות שוב"
+
 #: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "שגיאה לא מוכרת."
@@ -314,11 +318,6 @@ msgstr "שגיאת שרשור (pipe).\n"
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "אין אפשרות לפצל את התהליך עם fork().\n"
-
-#: ../userhelper-wrap.c:969
-#, fuzzy, c-format
-msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "לא ניתן להגדיר את מערך התווים %s על ערוץ IO: %s\n"
 
 #: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
@@ -490,9 +489,10 @@ msgstr "שינוי סיסמת הכניסה למערכת"
 msgid "Password"
 msgstr "סיסמה"
 
-#: ../userhelper-wrap.c:243
-msgid "No more retries allowed"
-msgstr "לא ניתן לנסות שוב"
+#: ../userhelper-wrap.c:969
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "לא ניתן להגדיר קידוד בינרי על ערוץ IO: %s\n"
 
 #~ msgid "Placeholder text."
 #~ msgstr "טקסט מיקום."
