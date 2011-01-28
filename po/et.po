@@ -1,16 +1,13 @@
-# 
-#
-#
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Allan Sims <allsi@eau.ee>, 2004.
 # Marek Laane <bald@smail.ee>, 2007,2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-03 01:58+0000\n"
+"POT-Creation-Date: 2011-01-27 07:49+0000\n"
 "PO-Revision-Date: 2009-03-23 14:15+0200\n"
 "Last-Translator: Marek Laane <bald@smail.ee>\n"
 "Language-Team: Estonian <linux-et@lists.eenet.ee>\n"
@@ -18,7 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -34,7 +30,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../dummy.h:21
@@ -105,22 +101,12 @@ msgstr "Administraatori õigustest loobumine nurjus: %s"
 
 #: ../pam-panel-icon.c:98
 #, c-format
-msgid ""
-"Failed to drop administrator privileges: pam_timestamp_check returned "
-"failure code %d"
-msgstr ""
-"Administraatori õigustest loobumine nurjus: pam_timestamp_check tagastas "
-"veakoodi %d"
+msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgstr "Administraatori õigustest loobumine nurjus: pam_timestamp_check tagastas veakoodi %d"
 
 #: ../pam-panel-icon.c:146
-msgid ""
-"You're currently authorized to configure system-wide settings (that affect "
-"all users) without typing the administrator password again. You can give up "
-"this authorization."
-msgstr ""
-"Teil on praegu õigus muuta süsteemi seadistusi (need mõjutavad kõiki "
-"kasutajaid) ilma administraatori parooli andmata. Sellest õigusest võib ka "
-"loobuda."
+msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+msgstr "Teil on praegu õigus muuta süsteemi seadistusi (need mõjutavad kõiki kasutajaid) ilma administraatori parooli andmata. Sellest õigusest võib ka loobuda."
 
 #: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -166,18 +152,19 @@ msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "IO-kanali määramine mitteblokeerivaks nurjus: %s\n"
 
 #: ../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: seansihalduriga ei õnnestunud ühenduda\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Tundmatu väljumise kood."
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Info on uuendatud."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -185,7 +172,7 @@ msgstr ""
 "Kirjutatud parool oli vigane.\n"
 "Proovige uuesti."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -195,11 +182,11 @@ msgstr ""
 "See võib olla tingitud koolonist või komast mõnes väljas.\n"
 "Palun eemaldage see ja proovige uuesti."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Parooli seadmise viga."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -207,19 +194,19 @@ msgstr ""
 "Mõned süsteemi failid on lukus.\n"
 "Palun proovige mõne hetke pärast uuesti."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Tundmatu kasutaja."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Ebapiisavad õigused."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Vigane alamprotsessi väljakutsumine."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -229,132 +216,109 @@ msgstr ""
 "Teil ei ole õigust muuta oma kesta.\n"
 "Konsulteerige oma süsteemi administraatoriga."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Mälu napib."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec() väljakutsumine nurjus."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Valitud programmi ei leitud."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Päring tühistati."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Tekkis PAM-i sisemine viga."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Tundmatu viga."
 
-#: ../userhelper-wrap.c:487
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Päring"
 
-#: ../userhelper-wrap.c:546 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Autentimine kasutajana \"%s\""
 
-#: ../userhelper-wrap.c:565 ../userhelper-wrap.c:701
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Viga"
 
-#: ../userhelper-wrap.c:565
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Info"
 
-#: ../userhelper-wrap.c:726
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Parooli muutmine."
 
-#: ../userhelper-wrap.c:728
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Isikliku info muutmine."
 
-#: ../userhelper-wrap.c:731
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Sisselogimise kesta muutmine."
 
-#: ../userhelper-wrap.c:735
+#: ../userhelper-wrap.c:746
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada \"%s\", millele tuleks kasuks administraatori õigused, "
-"aga selleks on vaja rohkem infot."
+msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Püüdsite käivitada \"%s\", millele tuleks kasuks administraatori õigused, aga selleks on vaja rohkem infot."
 
-#: ../userhelper-wrap.c:737
+#: ../userhelper-wrap.c:748
 #, c-format
-msgid ""
-"You are attempting to run \"%s\" which requires administrative privileges, "
-"but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada \"%s\", mis vajab administraatori õigusi, aga selleks on "
-"vaja rohkem infot."
+msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Püüdsite käivitada \"%s\", mis vajab administraatori õigusi, aga selleks on vaja rohkem infot."
 
-#: ../userhelper-wrap.c:741
-msgid ""
-"You are attempting to run a command which may benefit from administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada käsku, millele tuleks kasuks administraatori õigused, aga "
-"selleks on vaja rohkem infot."
+#: ../userhelper-wrap.c:752
+msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+msgstr "Püüdsite käivitada käsku, millele tuleks kasuks administraatori õigused, aga selleks on vaja rohkem infot."
 
-#: ../userhelper-wrap.c:743
-msgid ""
-"You are attempting to run a command which requires administrative "
-"privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada käsku, mis vajab administraatori õigusi, aga selleks on "
-"vaja rohkem infot."
+#: ../userhelper-wrap.c:754
+msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+msgstr "Püüdsite käivitada käsku, mis vajab administraatori õigusi, aga selleks on vaja rohkem infot."
 
-#: ../userhelper-wrap.c:779
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Käivita õigusteta"
 
-#: ../userhelper-wrap.c:924
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Toru viga.\n"
 
-#: ../userhelper-wrap.c:931
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() nurjus.\n"
 
-#: ../userhelper-wrap.c:957
-#, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "Kodeeringu %s määramine IO-kanalile nurjus: %s\n"
-
-#: ../userhelper-wrap.c:1029 ../userhelper-wrap.c:1033
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() viga.\n"
 
-#: ../userhelper-wrap.c:1044
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() viga, veanumber=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada \"%s\", millele tuleks kasuks administraatori õigused, "
-"aga selleks on vaja rohkem infot."
+msgstr "Püüdsite käivitada \"%s\", millele tuleks kasuks administraatori õigused, aga selleks on vaja rohkem infot."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -363,7 +327,8 @@ msgstr ""
 "Püüdsite käivitada \"%s\", mis vajab administraatori õigusi,\n"
 "aga selleks on vaja rohkem infot."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -371,7 +336,8 @@ msgstr ""
 "Püüdsite käivitada käsku, millele tuleks kasuks administraatori õigused, \n"
 "aga selleks on vaja rohkem infot."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -379,24 +345,23 @@ msgstr ""
 "Püüdsite käivitada käsku, mis vajab administraatori õigusi,\n"
 "aga selleks on vaja rohkem infot."
 
-#: ../userhelper.c:2025
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper peab olema setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2117
+#: ../userhelper.c:2162
 #, c-format
-msgid ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Graafilise akna avamine nurjus ja kontrollivat terminali ei leitud.\n"
 
-#: ../userinfo.c:376
+#: ../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Ootamatu argument"
 
-#: ../userinfo.c:401
+#: ../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Teid ei ole olemas. Minge ära.\n"
@@ -409,27 +374,27 @@ msgstr "Minu info"
 msgid "Change personal information"
 msgstr "Isikliku info muutmine"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Täielik nimi:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Kodune telefoninumber:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Sisselogimise kest:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Töötelefoni number:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Töökoht:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Kasutaja info"
 
@@ -442,11 +407,8 @@ msgid "Un_mount"
 msgstr "La_huta"
 
 #: ../usermount.c:289
-msgid ""
-"Are you sure you want to format this disk?  You will destroy any data it "
-"currently contains."
-msgstr ""
-"Kas soovite tõesti seda ketast vormindada? Kõik sellel olevad andmed hävivad."
+msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+msgstr "Kas soovite tõesti seda ketast vormindada? Kõik sellel olevad andmed hävivad."
 
 #: ../usermount.c:300
 msgid "Perform a _low-level format."
@@ -486,7 +448,7 @@ msgstr "Kataloog"
 msgid "Filesystem"
 msgstr "Failisüsteem"
 
-#: ../usermount.c:633
+#: ../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Seadet '%s' ei saa vormindada."
@@ -506,6 +468,15 @@ msgstr "Oma sisselogimise parooli muutmine"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Parool"
+
+#: ../userhelper-wrap.c:969
+#, c-format
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "Binaarkodeeringu määramine IO-kanalile nurjus: %s\n"
+
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "Rohkem pole lubatud proovida"
 
 #~ msgid "Placeholder text."
 #~ msgstr "Kohahoidja tekst."
