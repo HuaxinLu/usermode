@@ -8,19 +8,21 @@
 # Felix <ifelix@redhat.com>, 2006.
 # I felix <ifelix@redhat.com>, 2007.
 # I. Felix <ifelix@redhat.com>, 2008, 2009.
+# I Felix <ifelix@redhat.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: usermode.tip.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-22 04:51+0000\n"
-"PO-Revision-Date: 2009-09-22 14:11+0530\n"
-"Last-Translator: I. Felix <ifelix@redhat.com>\n"
+"POT-Creation-Date: 2011-01-11 01:51+0000\n"
+"PO-Revision-Date: 2011-02-02 15:17+0530\n"
+"Last-Translator: I Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -183,15 +185,15 @@ msgstr "IO தடம் தடுக்கப்படாமல் அமைக�
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: அமர்வு மேலாளருடன் இணைக்க முடியவில்லை\n"
 
-#: ../userhelper-wrap.c:206
+#: ../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "தெரியாத வெளியேறும் குறியீடு"
 
-#: ../userhelper-wrap.c:208
+#: ../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "தகவல் மேம்படுத்தப்பட்டது."
 
-#: ../userhelper-wrap.c:210
+#: ../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -199,7 +201,7 @@ msgstr ""
 "நீங்கள் தட்டச்சு செய்த கடவுச்சொல் தவறானது.\n"
 "மீண்டும் முயற்சி செய்யவும்."
 
-#: ../userhelper-wrap.c:212
+#: ../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -209,11 +211,11 @@ msgstr ""
 "இதற்கு காரணம் ஒரு புலத்தில் முக்காற்புள்ளி அல்லது அரைப்புள்ளி இருக்கலாம்\n"
 "அவைகளை நீக்கிவிட்டு மீண்டும் முயற்சிக்கவும்."
 
-#: ../userhelper-wrap.c:214
+#: ../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "கடவுச்சொல் மறு அமைத்தல் பிழை."
 
-#: ../userhelper-wrap.c:216
+#: ../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -221,19 +223,19 @@ msgstr ""
 "சில கணினி கோப்புகள் பூட்டப்பட்டுள்ளன.\n"
 "சிறிது நேரம் கழித்து மீண்டும் முயற்சி செய்யவும்."
 
-#: ../userhelper-wrap.c:218
+#: ../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "தெரியாத பயனர்."
 
-#: ../userhelper-wrap.c:220
+#: ../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "உரிமைகள் போதவில்லை."
 
-#: ../userhelper-wrap.c:222
+#: ../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "துணை செயல்களுக்கு தவறான அழைப்பு."
 
-#: ../userhelper-wrap.c:224
+#: ../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -243,60 +245,66 @@ msgstr ""
 "உங்கள் ஷெல்லை மாற்ற உங்களுக்கு அனுமதி இல்லை\n"
 "உங்கள் கணினி நிர்வாகியை அணுகவும்."
 
-#: ../userhelper-wrap.c:227
+#: ../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "நினைவகத்தில் இடமில்லை."
 
-#: ../userhelper-wrap.c:229
+#: ../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec() அழைப்பு செயலிழக்கப்பட்டது."
 
-#: ../userhelper-wrap.c:231
+#: ../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "தேர்ந்தெடுக்கப்பட்ட நிரலை காண முடியவில்லை."
 
-#: ../userhelper-wrap.c:234
+#: ../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "கோரிக்கை ரத்து செய்யப்பட்டது."
 
-#: ../userhelper-wrap.c:236
+#: ../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "உள்ளார்ந்த PAM ல் பிழை ஏற்பட்டுள்ளது."
 
-#: ../userhelper-wrap.c:238
+#: ../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr ""
+"இனி எந்த மறுமுயற்சிகளும் அனுமதிக்கப்படுவதில்லைஇனி எந்த மறுமுயற்சிகளும் "
+"அனுமதிக்கப்படுவிதஇனி எந்த மறுமுயற்சிகும"
+
+#: ../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "தெரியாத பிழை."
 
-#: ../userhelper-wrap.c:488
+#: ../userhelper-wrap.c:494
 msgid "Query"
 msgstr "வினா"
 
-#: ../userhelper-wrap.c:547 ../userhelper.c:604
+#: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" ஆக அங்கீகரிக்கிறது"
 
-#: ../userhelper-wrap.c:566 ../userhelper-wrap.c:702
+#: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
 msgstr "பிழை"
 
-#: ../userhelper-wrap.c:566
+#: ../userhelper-wrap.c:572
 msgid "Information"
 msgstr "தகவல்"
 
-#: ../userhelper-wrap.c:727
+#: ../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "கடவுச்சொல் மாற்றப்படுகிறது."
 
-#: ../userhelper-wrap.c:729
+#: ../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "தனிப்பட்ட தகவலை மாற்றுகிறது."
 
-#: ../userhelper-wrap.c:732
+#: ../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "புகுபதிவு ஷெல்லை மாற்றுகிறது."
 
-#: ../userhelper-wrap.c:736
+#: ../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -305,7 +313,7 @@ msgstr ""
 "\"%s\"யால் நன்மை பெறும், நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
 "சில தகவல்கள் தேவைப்படுகிறது."
 
-#: ../userhelper-wrap.c:738
+#: ../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -314,7 +322,7 @@ msgstr ""
 "\"%s\"க்கு தேவைப்படும், நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
 "சில தகவல்கள் தேவைப்படுகிறது."
 
-#: ../userhelper-wrap.c:742
+#: ../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -322,7 +330,7 @@ msgstr ""
 "நிர்வாக உரிமையால் நன்மை பெறும் தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய "
 "இன்னும் சில தகவல்கள் தேவைப்படும்."
 
-#: ../userhelper-wrap.c:744
+#: ../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -330,36 +338,36 @@ msgstr ""
 "நிர்வாக உரிமைக்கு தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் சில "
 "தகவல்கள் தேவைப்படும்."
 
-#: ../userhelper-wrap.c:781
+#: ../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "முக்கியமற்றதை இயக்கவும் (_R)"
 
-#: ../userhelper-wrap.c:926
+#: ../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "பைப் பிழை.\n"
 
-#: ../userhelper-wrap.c:933
+#: ../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() பிளக்க முடியவில்லை.\n"
 
-#: ../userhelper-wrap.c:959
+#: ../userhelper-wrap.c:969
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "எழுத்து அமைவு %sஐ IO தடத்தில் அமைக்க முடியாது: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr "ஒரு IO தடத்தில்  பைனரி மறைகுறியாக்கத்த்தை அமைக்க முடியாது: %s\n"
 
-#: ../userhelper-wrap.c:1031 ../userhelper-wrap.c:1035
+#: ../userhelper-wrap.c:1038 ../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() பிழை.\n"
 
-#: ../userhelper-wrap.c:1046
+#: ../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() பிழை, errno=%d\n"
 
-#: ../userhelper.c:586
+#: ../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -368,7 +376,7 @@ msgstr ""
 "\"%s\" யால் நன்மை பெற நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
 "சில தகவல்கள் தேவைப்படுகிறது."
 
-#: ../userhelper.c:588
+#: ../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -377,7 +385,7 @@ msgstr ""
 "\"%s\" தேவைப்படுத்தும் நிர்வாக உரிமைகளை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் "
 "சில தகவல்கள் தேவைப்படுகிறது."
 
-#: ../userhelper.c:592
+#: ../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -386,7 +394,7 @@ msgstr ""
 "நிர்வாக உரிமைக்கு நன்மை பெற தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய "
 "இன்னும் சில தகவல்கள் தேவைப்படும்."
 
-#: ../userhelper.c:594
+#: ../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -395,13 +403,13 @@ msgstr ""
 "நிர்வாக உரிமைக்கு தேவையான கட்டளையை இயக்க முயற்சிக்கிறீர்கள். இவ்வாறு செய்ய இன்னும் சில "
 "தகவல்கள் தேவைப்படும்."
 
-#: ../userhelper.c:2025
+#: ../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "பயனர் உதவியாளர் setuid rootஆக இருக்க வேண்டும்\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2117
+#: ../userhelper.c:2162
 #, c-format
 msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
