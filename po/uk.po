@@ -79,7 +79,7 @@ msgstr "Вибачте, паролі не збігаються"
 
 #: ../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Запускає загально-системні утиліти налаштовування без паролю."
+msgstr "Запускає загальносистемні утиліти налаштовування без паролю."
 
 #: ../dummy.h:33
 msgid "login: "
@@ -261,7 +261,7 @@ msgstr "Запит"
 #: ../userhelper-wrap.c:553 ../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
-msgstr "Проподиться перевірка автентичності як \"%s\""
+msgstr "Виконується перевірка автентичності \"%s\""
 
 #: ../userhelper-wrap.c:572 ../userhelper-wrap.c:712
 msgid "Error"
