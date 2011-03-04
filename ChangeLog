@@ -1,3 +1,10 @@
+2011-03-04  Miloslav Trmač  <mitr@redhat.com>
+
+	* .tx/config: New file.
+	* Makefile.am (all-local, $(srcdir)/po/usermode.pot): Keep the .pot file
+	updated for Transifex.
+	* po/usermode.pot: Add to prepare for Transifex.
+
 2011-01-11  John Bradshaw <john@johnbradshaw.org>
 
 	* userpasswd.1: Fix a typo.
