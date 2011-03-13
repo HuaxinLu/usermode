@@ -404,10 +404,16 @@ svWriteFile(shvarFile *s, int mode)
         }
 	if (s->fd == -1)
 	    return -1;
-	if (ftruncate(s->fd, 0) < 0)
-	    return -1;
 
 	tmpfd = dup(s->fd);
+	if (tmpfd == -1)
+	    return -1;
+
+	if (ftruncate(s->fd, 0) < 0) {
+	    close(tmpfd);
+	    return -1;
+	}
+
 	f = fdopen(tmpfd, "w");
 	fseek(f, 0, SEEK_SET);
 	for (s->current = s->lineList; s->current; s->current = s->current->next) {

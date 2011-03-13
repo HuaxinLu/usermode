@@ -430,8 +430,7 @@ converse_pipe(int num_msg, const struct pam_message **msg,
 		string = read_reply(data->input);
 
 		/* If we got nothing, and we expected data, then we're done. */
-		if ((string == NULL) &&
-		    (received_responses < expected_responses)) {
+		if (string == NULL) {
 			debug_msg("userhelper (cp): got %d responses, expected "
 				  "%d\n", received_responses,
 				  expected_responses);
@@ -544,15 +543,17 @@ converse_console(int num_msg, const struct pam_message **msg,
 		 struct pam_response **resp, void *appdata_ptr)
 {
 	static int banner = 0;
-	const char *service = NULL, *user;
+	const char *service, *user;
 	char *text;
 	struct app_data *data = appdata_ptr;
 	struct pam_message **messages;
 	int i, ret;
 
-	get_pam_string_item(data->pamh, PAM_SERVICE, &service);
-	user = NULL;
-	get_pam_string_item(data->pamh, PAM_USER, &user);
+	if (get_pam_string_item(data->pamh, PAM_SERVICE, &service)
+	    != PAM_SUCCESS)
+		service = NULL;
+	if (get_pam_string_item(data->pamh, PAM_USER, &user) != PAM_SUCCESS)
+		user = NULL;
 
 	if (banner == 0) {
 		if ((data->banner != NULL) && (data->domain != NULL)) {

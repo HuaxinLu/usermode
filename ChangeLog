@@ -1,3 +1,12 @@
+2011-03-13  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.c (converse_console): Check return value of
+	get_pam_string_item ().
+	(converse_pipe): Handle NULL from read_reply when all responses were
+	received.
+	* shvar.c (svWriteFile): Check return value of dup(), don't truncate
+	the file if dup() fails.  (Note that this code is not used.)
+
 2011-03-04  Miloslav Trmač  <mitr@redhat.com>
 
 	* .tx/config: New file.
