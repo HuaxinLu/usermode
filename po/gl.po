@@ -1,29 +1,22 @@
-# translation of gl.po to 
-# , 2006.
-# , 2006.
-# , 2006.
-# , 2006.
-# , 2006.
-# , 2006.
-# , 2006.
-# , 2006.
-# , 2006.
-# , 2006.
-# , 2006.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: gl\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-25 00:26+0100\n"
-"PO-Revision-Date: 2006-07-19 20:38+0200\n"
-"Last-Translator: \n"
-"Language-Team:  <gl@li.org>\n"
+"Project-Id-Version: Usermode\n"
+"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"POT-Creation-Date: 2010-11-22 06:56+0100\n"
+"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"Last-Translator: glezos <glezos@indifex.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"Language: gl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -39,7 +32,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../../po/../dummy.h:21
@@ -48,7 +41,7 @@ msgstr "Aceptar"
 
 #: ../../po/../dummy.h:22
 msgid "Exit"
-msgstr "SaÌr"
+msgstr "Sa√≠r"
 
 #: ../../po/../dummy.h:23
 msgid "Cancel"
@@ -72,15 +65,15 @@ msgstr "Volva introducir o novo contrasinal de UNIX: "
 
 #: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr "CONTRASINAL INCORRECTO: È DEMASIADO curto"
+msgstr "CONTRASINAL INCORRECTO: √© DEMASIADO curto"
 
 #: ../../po/../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr "CONTRASINAL INCORRECTO: È curto de m·is"
+msgstr "CONTRASINAL INCORRECTO: √© curto de m√°is"
 
 #: ../../po/../dummy.h:30
 msgid "Password unchanged"
-msgstr "Contrasinal sen modificaciÛns"
+msgstr "Contrasinal sen modificaci√≥ns"
 
 #: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
@@ -89,7 +82,7 @@ msgstr "Os contrasinais non coinciden"
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr ""
-"Executar sen contrasinal ferramentas de configuraciÛn para todo o sistema."
+"Executar sen contrasinal ferramentas de configuraci√≥n para todo o sistema."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -152,9 +145,9 @@ msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
 #: ../../po/../pam-panel-icon.c:319
-#, fuzzy, c-format
+#, c-format
 msgid "Error: %s\n"
-msgstr "Erro"
+msgstr ""
 
 #: ../../po/../pam-panel-icon.c:384
 #, c-format
@@ -171,244 +164,232 @@ msgstr ""
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:204
+#: ../../po/../userhelper-wrap.c:211
 msgid "Unknown exit code."
-msgstr "CÛdigo de saÌda descoÒecido."
+msgstr "C√≥digo de sa√≠da desco√±ecido."
 
-#: ../../po/../userhelper-wrap.c:206
+#: ../../po/../userhelper-wrap.c:213
 msgid "Information updated."
-msgstr "InformaciÛn actualizada."
+msgstr "Informaci√≥n actualizada."
 
-#: ../../po/../userhelper-wrap.c:208
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
-"O contrasinal que introduciu non È v·lido.\n"
+"O contrasinal que introduciu non √© v√°lido.\n"
 "Tente de novo."
 
-#: ../../po/../userhelper-wrap.c:210
+#: ../../po/../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
-"Un ou m·is dos campos modificados non son v·lidos.\n"
-"Isto È probablemente por mor dalgunha coma ou dous puntos nalg˙n dos "
-"campos.\n"
-"QuÌteos e tente de novo."
+"Un ou m√°is dos campos modificados non son v√°lidos.\n"
+"Isto √© probablemente por mor dalgunha coma ou dous puntos nalg√∫n dos campos.\n"
+"Qu√≠teos e tente de novo."
 
-#: ../../po/../userhelper-wrap.c:212
+#: ../../po/../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:214
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
-"Alg˙ns ficheiros de sistema est·n bloqueados.\n"
+"Alg√∫ns ficheiros de sistema est√°n bloqueados.\n"
 "Tente de novo dentro dun intre."
 
-#: ../../po/../userhelper-wrap.c:216
+#: ../../po/../userhelper-wrap.c:223
 msgid "Unknown user."
-msgstr "Usuario descoÒecido."
+msgstr "Usuario desco√±ecido."
 
-#: ../../po/../userhelper-wrap.c:218
+#: ../../po/../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Permisos insuficientes."
 
-#: ../../po/../userhelper-wrap.c:220
+#: ../../po/../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
-msgstr "Chamada incorrecta Û subproceso."
+msgstr "Chamada incorrecta √≥ subproceso."
 
-#: ../../po/../userhelper-wrap.c:222
+#: ../../po/../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
-"A s˙a shell actual non est· listada en /etc/shells.\n"
-"Non lle est· permitido mudar a shell.\n"
+"A s√∫a shell actual non est√° listada en /etc/shells.\n"
+"Non lle est√° permitido mudar a shell.\n"
 "Consulte co administrador do seu sistema."
 
-#: ../../po/../userhelper-wrap.c:225
+#: ../../po/../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Memoria esgotada."
 
-#: ../../po/../userhelper-wrap.c:227
+#: ../../po/../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "A chamada a exec() fallou."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Non se atopou o programa seleccionado."
 
-#: ../../po/../userhelper-wrap.c:232
+#: ../../po/../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:234
+#: ../../po/../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:236
-msgid "Unknown error."
-msgstr "Erro descoÒecido."
+#: ../../po/../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr ""
 
-#: ../../po/../userhelper-wrap.c:504
+#: ../../po/../userhelper-wrap.c:245
+msgid "Unknown error."
+msgstr "Erro desco√±ecido."
+
+#: ../../po/../userhelper-wrap.c:494
 msgid "Query"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
-msgid "Error"
-msgstr "Erro"
-
-#: ../../po/../userhelper-wrap.c:581
-msgid "Information"
-msgstr "InformaciÛn"
-
-#: ../../po/../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr ""
-
-#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:782
-#, fuzzy
+#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
+msgid "Error"
+msgstr "Erro"
+
+#: ../../po/../userhelper-wrap.c:572
+msgid "Information"
+msgstr "Informaci√≥n"
+
+#: ../../po/../userhelper-wrap.c:737
 msgid "Changing password."
-msgstr "Cambie o seu contrasinal de entrada"
+msgstr ""
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:739
 msgid "Changing personal information."
-msgstr "Cambiando a informaciÛn persoal."
+msgstr "Cambiando a informaci√≥n persoal."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Cambiando a shell de entrada."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr ""
-"Est· tentando executar \"%s\" o cal require privilexios administrativos, "
-"pero para facelo È precisa m·is informaciÛn."
+"Est√° tentando executar \"%s\" o cal require privilexios administrativos, "
+"pero para facelo √© precisa m√°is informaci√≥n."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Est· tentando executar un comando que require privilexios administrativos, "
-"pero para facelo È precisa m·is informaciÛn."
+"Est√° tentando executar un comando que require privilexios administrativos, "
+"pero para facelo √© precisa m√°is informaci√≥n."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Executar sen privilexios"
 
-#: ../../po/../userhelper-wrap.c:968
-#, fuzzy, c-format
+#: ../../po/../userhelper-wrap.c:938
+#, c-format
 msgid "Pipe error.\n"
-msgstr "Erro na canalizaciÛn.\n"
+msgstr ""
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Non se pode facer fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Erro de dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Erro de execl(), errno=%d\n"
 
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr ""
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr ""
-
-#: ../../po/../userhelper.c:803
+#: ../../po/../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper.c:805
+#: ../../po/../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Est· tentando executar \"%s\" o cal require privilexios\n"
-"administrativos, pero para facelo È precisa m·is informaciÛn."
+"Est√° tentando executar \"%s\" o cal require privilexios\n"
+"administrativos, pero para facelo √© precisa m√°is informaci√≥n."
 
-#: ../../po/../userhelper.c:809
+#: ../../po/../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper.c:811
+#: ../../po/../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
-"Est· tentando executar un comando que require privilexios\n"
-"administrativos, pero para facelo È precisa m·is informaciÛn."
+"Est√° tentando executar un comando que require privilexios\n"
+"administrativos, pero para facelo √© precisa m√°is informaci√≥n."
 
-#: ../../po/../userhelper.c:2372
-#, fuzzy, c-format
+#: ../../po/../userhelper.c:2070
+#, c-format
 msgid "userhelper must be setuid root\n"
-msgstr "O userhelper ten que ser setuid root\n"
+msgstr ""
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2470
+#: ../../po/../userhelper.c:2162
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
-#: ../../po/../userinfo.c:370
+#: ../../po/../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr ""
 
-#: ../../po/../userinfo.c:395
+#: ../../po/../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Non existe.  Vaiase.\n"
@@ -419,31 +400,31 @@ msgstr "Sobre Min"
 
 #: ../userinfo.desktop.in.h:2
 msgid "Change personal information"
-msgstr "Cambiar a informaciÛn persoal"
+msgstr "Cambiar a informaci√≥n persoal"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Nome completo:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
-msgstr "TelÈfono da casa:"
+msgstr "Tel√©fono da casa:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Shell:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
-msgstr "TelÈfono da oficina:"
+msgstr "Tel√©fono da oficina:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Oficina:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
-msgstr "InformaciÛn de Usuario"
+msgstr "Informaci√≥n de Usuario"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -458,13 +439,12 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"øEst· seguro de que desexa formatar este disco?  Vai destruÌr tÛdolos datos "
-"que contÈn."
+"¬øEst√° seguro de que desexa formatar este disco?  Vai destru√≠r t√≥dolos datos "
+"que cont√©n."
 
 #: ../../po/../usermount.c:300
-#, fuzzy
 msgid "Perform a _low-level format."
-msgstr "Facer formato de baixo nivel."
+msgstr ""
 
 #: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
@@ -475,8 +455,7 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Non hai ning˙n sistema de ficheiros que o usuario poida montar ou "
-"desmontar.\n"
+"Non hai ning√∫n sistema de ficheiros que o usuario poida montar ou desmontar.\n"
 "Contacte co seu administrador."
 
 #. Create the dialog.
@@ -501,14 +480,14 @@ msgstr "Directorio"
 msgid "Filesystem"
 msgstr "Sistema de ficheiros"
 
-#: ../../po/../usermount.c:633
+#: ../../po/../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr ""
 
 #: ../usermount.desktop.in.h:1
 msgid "Disk Management"
-msgstr "AdministraciÛn de Discos"
+msgstr "Administraci√≥n de Discos"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
@@ -521,18 +500,3 @@ msgstr "Cambie o seu contrasinal de entrada"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Contrasinal"
-
-#~ msgid "Password for %s"
-#~ msgstr "Contrasinal de %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Contrasinal de %s: "
-
-#~ msgid "Message"
-#~ msgstr "Mensaxe"
-
-#~ msgid "Help"
-#~ msgstr "Axuda"
-
-#~ msgid "*"
-#~ msgstr "*"

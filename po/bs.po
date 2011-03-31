@@ -1,21 +1,22 @@
-# translation of bs.po to Bosnian
-# Adnan Hodzic <AbsintheSyringe@gmail.com>, 2007.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: bs\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-25 00:26+0100\n"
-"PO-Revision-Date: 2007-01-24 17:50+0100\n"
-"Last-Translator: Adnan Hodzic <AbsintheSyringe@gmail.com>\n"
-"Language-Team: Bosnian <lokal@linux.org.ba>\n"
+"Project-Id-Version: Usermode\n"
+"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"POT-Creation-Date: 2010-11-22 06:56+0100\n"
+"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"Last-Translator: glezos <glezos@indifex.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"X-Poedit-Language: Bosnian\n"
-"X-Poedit-Country: BOSNIA\n"
+"Language: bs\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -31,7 +32,7 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
 #: ../../po/../dummy.h:21
@@ -91,9 +92,9 @@ msgid "Password: "
 msgstr "Lozinka:"
 
 #: ../../po/../gsmclient.c:362
-#, fuzzy, c-format
+#, c-format
 msgid "%s failed to connect to the session manager: %s\n"
-msgstr "pam-panel-icon: povezivanje s upravljanjem sesija nije uspjelo\n"
+msgstr ""
 
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
@@ -167,15 +168,15 @@ msgstr "Nije uspjelo zadavanje ne-blokirajućeg IO kanala: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: povezivanje s upravljanjem sesija nije uspjelo\n"
 
-#: ../../po/../userhelper-wrap.c:204
+#: ../../po/../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Nepoznati izlazni kod."
 
-#: ../../po/../userhelper-wrap.c:206
+#: ../../po/../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Podaci ažurirani."
 
-#: ../../po/../userhelper-wrap.c:208
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -183,7 +184,7 @@ msgstr ""
 "Lozinka koju ste upisali nije važeća.\n"
 "Pokušajte ponovno."
 
-#: ../../po/../userhelper-wrap.c:210
+#: ../../po/../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -193,11 +194,11 @@ msgstr ""
 "Vjerojatno zbog prisutnosti dvotočke ili zareze u jednom od polja.\n"
 "Uklonite navedeno i pokušajte ponovo."
 
-#: ../../po/../userhelper-wrap.c:212
+#: ../../po/../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Greška pri povratku lozinke na izvornu."
 
-#: ../../po/../userhelper-wrap.c:214
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -205,19 +206,19 @@ msgstr ""
 "Neke su sistemske datoteke zaključane.\n"
 "Pokušajte ponovo za nekoliko trenutaka."
 
-#: ../../po/../userhelper-wrap.c:216
+#: ../../po/../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Nepoznati korisnik."
 
-#: ../../po/../userhelper-wrap.c:218
+#: ../../po/../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Nedovoljna prava."
 
-#: ../../po/../userhelper-wrap.c:220
+#: ../../po/../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Neispravan poziv prema potprocesu."
 
-#: ../../po/../userhelper-wrap.c:222
+#: ../../po/../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -227,65 +228,64 @@ msgstr ""
 "Nemate dopuštenja za izmjenu vašu ljuske.\n"
 "Konzultirajte vašeg administratora sustava."
 
-#: ../../po/../userhelper-wrap.c:225
+#: ../../po/../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Nedovoljno memorije."
 
-#: ../../po/../userhelper-wrap.c:227
+#: ../../po/../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "Poziv funkciji exec() nije uspio."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Traženje željenog programa nije uspjelo."
 
-#: ../../po/../userhelper-wrap.c:232
+#: ../../po/../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Zahtjev otkazan."
 
-#: ../../po/../userhelper-wrap.c:234
+#: ../../po/../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Došlo je do interne PAM pogreške."
 
-#: ../../po/../userhelper-wrap.c:236
+#: ../../po/../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr ""
+
+#: ../../po/../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Nepoznata greška."
 
-#: ../../po/../userhelper-wrap.c:504
+#: ../../po/../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Upit"
 
-#: ../../po/../userhelper-wrap.c:581 ../../po/../userhelper-wrap.c:732
-msgid "Error"
-msgstr "Greška"
-
-#: ../../po/../userhelper-wrap.c:581
-msgid "Information"
-msgstr "Podaci"
-
-#: ../../po/../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "Mjesto za teksta."
-
-#: ../../po/../userhelper-wrap.c:753 ../../po/../userhelper.c:821
+#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:782
-#, fuzzy
-msgid "Changing password."
-msgstr "Promjena lozinke za prijavljivanje"
+#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
+msgid "Error"
+msgstr "Greška"
 
-#: ../../po/../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:572
+msgid "Information"
+msgstr "Podaci"
+
+#: ../../po/../userhelper-wrap.c:737
+msgid "Changing password."
+msgstr ""
+
+#: ../../po/../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Izmjene osobnih podataka."
 
-#: ../../po/../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Izmjena korisničke ljusku za prijavu."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -294,7 +294,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\", a pune mogućnosti može dobiti samo s "
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -303,7 +303,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\", a za to su potrebne administratorske "
 "privilegije. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -311,7 +311,7 @@ msgstr ""
 "Pokušavate pokrenuti naredbu čije se pune mogućnosti mogu dobiti samo s "
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -319,46 +319,36 @@ msgstr ""
 "Pokušavate pokrenuti naredbu za koju su potrebne administratorske "
 "privilegije. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Pokreni bez povlastica"
 
-#: ../../po/../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe greška.\n"
 
-#: ../../po/../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nije moguće izraditi fork().\n"
 
-#: ../../po/../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:1077 ../../po/../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() greška.\n"
 
-#: ../../po/../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() greška, broj pogreške=%d\n"
 
-#: ../../po/../userhelper.c:201
-#, c-format
-msgid "Could not set default context for %s for program %s.\n"
-msgstr "Nije moguće postaviti zadani kontekst za %s, namijenjen programu %s.\n"
-
-#: ../../po/../userhelper.c:212 ../../po/../userhelper.c:214
-#, c-format
-msgid "Could not set exec context to %s.\n"
-msgstr "Nije moguće postaviti exec kontekst za %s.\n"
-
-#: ../../po/../userhelper.c:803
+#: ../../po/../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -367,7 +357,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\". Pune mogućnosti može dobiti samo s\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper.c:805
+#: ../../po/../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -376,7 +366,7 @@ msgstr ""
 "Pokušavate pokrenuti \"%s\", a za to su potrebne\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper.c:809
+#: ../../po/../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -385,7 +375,7 @@ msgstr ""
 "Pokušavate pokrenuti naredbu čije se pune mogućnosti mogu dobiti samo s\n"
 "administratorskim privilegijama. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper.c:811
+#: ../../po/../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -394,13 +384,13 @@ msgstr ""
 "Pokušavate pokrenuti naredbu za koju su potrebne\n"
 "administratorske privilegije. Potrebno je više podataka za tu aktivnost."
 
-#: ../../po/../userhelper.c:2372
+#: ../../po/../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper mora imati zadan setuid na root korisnika\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2470
+#: ../../po/../userhelper.c:2162
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -408,12 +398,12 @@ msgstr ""
 "Grafički prozor nije moguće otvoriti i nije moguće pronaći terminal koji ga "
 "kontrolira.\n"
 
-#: ../../po/../userinfo.c:370
+#: ../../po/../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Neočekivani argument"
 
-#: ../../po/../userinfo.c:395
+#: ../../po/../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Vi ne postojite u sustavu. Odlazite.\n"
@@ -426,27 +416,27 @@ msgstr "O meni"
 msgid "Change personal information"
 msgstr "Izmjena osobnih podataka"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Puno ime:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Broj kućnog telefona:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Korisnička ljuska za prijavu:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Broj uredskog telefona:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Ured:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Korisnički podaci"
 
@@ -463,8 +453,8 @@ msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Jeste li sigurni da želite preoblikovati ovaj disk? Izgubit ćete sve podatke "
-"koji se trenutno nalaze na njemu."
+"Jeste li sigurni da želite preoblikovati ovaj disk? Izgubit ćete sve podatke"
+" koji se trenutno nalaze na njemu."
 
 #: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
@@ -479,8 +469,7 @@ msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
-"Ne postoje datotečni sustavi za koje imate dopuštenja pristupa ili "
-"napuštanja.\n"
+"Ne postoje datotečni sustavi za koje imate dopuštenja pristupa ili napuštanja.\n"
 "Kontaktirajte vašeg administratora sustava."
 
 #. Create the dialog.
@@ -505,7 +494,7 @@ msgstr "Mapa"
 msgid "Filesystem"
 msgstr "Datotečni sustav"
 
-#: ../../po/../usermount.c:633
+#: ../../po/../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Uređaj '%s' nije moguće oblikovati."
@@ -525,18 +514,3 @@ msgstr "Promjena lozinke za prijavljivanje"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lozinka"
-
-#~ msgid "Password for %s"
-#~ msgstr "Lozinka za %s"
-
-#~ msgid "Password for %s: "
-#~ msgstr "Lozinka za %s: "
-
-#~ msgid "Message"
-#~ msgstr "Poruka"
-
-#~ msgid "Help"
-#~ msgstr "Pomoć"
-
-#~ msgid "*"
-#~ msgstr "*"

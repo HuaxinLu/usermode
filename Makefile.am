@@ -33,8 +33,6 @@ pixmapdir = $(datadir)/pixmaps
 dist_pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png \
 	password.png disks.png keyring.png badge-small.png
 
-all-local: $(srcdir)/po/usermode.pot
-
 install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 	mkdir -p $(DESTDIR)$(datadir)/applications
 	for i in userinfo.desktop usermount.desktop userpasswd.desktop; do \
@@ -117,9 +115,6 @@ consolehelper.8: $(srcdir)/consolehelper.8.in Makefile
 
 userhelper.8: $(srcdir)/userhelper.8.in Makefile
 	sed 's,@''SYSCONFDIR@,$(sysconfdir),g' < $(srcdir)/userhelper.8.in > $@
-
-$(srcdir)/po/usermode.pot: po/usermode.pot
-	cp po/usermode.pot $@
 
 tag:
 	cd $(top_srcdir); hg tag $(HGTAG)

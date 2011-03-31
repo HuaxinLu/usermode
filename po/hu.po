@@ -1,23 +1,21 @@
-# Hungarian translation of usermode.
-# Copyright (C) 2003-2004, 2005, 2006, 2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the usermode package.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Tamas Szanto <tszanto@mol.hu>, 2003.
-# Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
-# Arpad Biro <biro_arpad@yahoo.com>, 2004, 2005, 2007.
-# Szentiványi Gábor <szentivanyi.gabor@ulx.hu>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-02 01:53+0000\n"
-"PO-Revision-Date: 2010-03-14 21:22+0100\n"
-"Last-Translator: Peter Bojtos <ptr@ulx.hu>\n"
-"Language-Team: \n"
+"Project-Id-Version: Usermode\n"
+"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"POT-Creation-Date: 2010-11-22 06:56+0100\n"
+"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"Last-Translator: glezos <glezos@indifex.com>\n"
+"Language-Team: Hungarian <trans-hu@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
@@ -37,138 +35,148 @@ msgstr ""
 #. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../dummy.h:21
+#: ../../po/../dummy.h:21
 msgid "OK"
 msgstr "OK"
 
-#: ../dummy.h:22
+#: ../../po/../dummy.h:22
 msgid "Exit"
 msgstr "Kilépés"
 
-#: ../dummy.h:23
+#: ../../po/../dummy.h:23
 msgid "Cancel"
 msgstr "Mégsem"
 
-#: ../dummy.h:24
+#: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
 msgstr "Futtatás normál jogosultsággal"
 
-#: ../dummy.h:25
+#: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(a jelenlegi) UNIX-jelszó: "
 
-#: ../dummy.h:26
+#: ../../po/../dummy.h:26
 msgid "New UNIX password: "
 msgstr "Az új UNIX-jelszó: "
 
-#: ../dummy.h:27
+#: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "Az új UNIX-jelszó (még egyszer): "
 
-#: ../dummy.h:28
+#: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "HIBÁS JELSZÓ: túl rövid"
 
-#: ../dummy.h:29
+#: ../../po/../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "HIBÁS JELSZÓ: túl rövid"
 
-#: ../dummy.h:30
+#: ../../po/../dummy.h:30
 msgid "Password unchanged"
 msgstr "A jelszó nem változott"
 
-#: ../dummy.h:31
+#: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "A két jelszó nem egyezik meg"
 
-#: ../dummy.h:32
+#: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Adminisztrátori programok indítása jelszó nélkül."
 
-#: ../dummy.h:33
+#: ../../po/../dummy.h:33
 msgid "login: "
 msgstr "Név: "
 
-#: ../dummy.h:34
+#: ../../po/../dummy.h:34
 msgid "Password: "
 msgstr "Jelszó: "
 
-#: ../gsmclient.c:362
+#: ../../po/../gsmclient.c:362
 #, c-format
 msgid "%s failed to connect to the session manager: %s\n"
 msgstr "%s hibája a munkafolymat-kezelőhöz való csatlakozáskor: %s\n"
 
-#: ../pam-panel-icon.c:89
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Nem sikerült megválni a rendszergazdai jogosultságtól: %s"
 
-#: ../pam-panel-icon.c:98
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
-msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
-msgstr "Nem sikerült megválni a rendszergazdai jogosultságtól: a pam_timestamp_check ezt a hibakódot adta vissza: %d"
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+"Nem sikerült megválni a rendszergazdai jogosultságtól: a pam_timestamp_check"
+" ezt a hibakódot adta vissza: %d"
 
-#: ../pam-panel-icon.c:146
-msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
-msgstr "Most jogosult a rendszerszintű beállítások megváltoztatására - amelyek minden felhasználóra érvényesek - a rendszergazdai jelszó újbóli megadása nélkül. Bármikor lemondhat erről a jogosultságáról."
+#: ../../po/../pam-panel-icon.c:146
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+"Most jogosult a rendszerszintű beállítások megváltoztatására - amelyek "
+"minden felhasználóra érvényesek - a rendszergazdai jelszó újbóli megadása "
+"nélkül. Bármikor lemondhat erről a jogosultságáról."
 
-#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
+#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "A jogosultság megőrzése"
 
-#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
+#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "A jogosultság feladása"
 
-#: ../pam-panel-icon.c:285
+#: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr "a pam_timestamp_check nem Set UID root módban van"
 
-#: ../pam-panel-icon.c:289
+#: ../../po/../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "nincs vezérlő tty itt: pam_timestamp_check"
 
-#: ../pam-panel-icon.c:293
+#: ../../po/../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr "ismeretlen felhasználó ennél: pam_timestamp_check"
 
-#: ../pam-panel-icon.c:297
+#: ../../po/../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr "jogosultsági hiba itt: pam_timestamp_check"
 
-#: ../pam-panel-icon.c:301
+#: ../../po/../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "érvénytelen vezérlési tty itt: pam_timestamp_check"
 
-#: ../pam-panel-icon.c:319
+#: ../../po/../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "Hiba: %s\n"
 
-#: ../pam-panel-icon.c:384
+#: ../../po/../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Nem sikerült végrehajtani ezt a parancsot: \"%s\": %s\n"
 
-#: ../pam-panel-icon.c:396
+#: ../../po/../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Nem sikerült beállítani nem blokkolóra az IO csatornát: %s\n"
 
-#: ../pam-panel-icon.c:476
+#: ../../po/../pam-panel-icon.c:476
 #, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: nem sikerült csatlakozni a munkafolyamat-kezelőhöz\n"
 
-#: ../userhelper-wrap.c:206
+#: ../../po/../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Ismeretlen kilépési kód."
 
-#: ../userhelper-wrap.c:208
+#: ../../po/../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Az információ frissítése megtörtént."
 
-#: ../userhelper-wrap.c:210
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -176,7 +184,7 @@ msgstr ""
 "A megadott jelszó érvénytelen.\n"
 "Próbálja meg újra."
 
-#: ../userhelper-wrap.c:212
+#: ../../po/../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -186,11 +194,11 @@ msgstr ""
 "Valószínűleg kettőspont vagy vessző maradt valamelyik mezőben.\n"
 "Távolítsa el ezeket, majd próbálkozzon újra."
 
-#: ../userhelper-wrap.c:214
+#: ../../po/../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "A jelszó alapállapotba hozása nem sikerült."
 
-#: ../userhelper-wrap.c:216
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -198,19 +206,19 @@ msgstr ""
 "Néhány rendszerfájl zárolva van.\n"
 "Próbálkozzon újra néhány másodperc múlva."
 
-#: ../userhelper-wrap.c:218
+#: ../../po/../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Ismeretlen felhasználó."
 
-#: ../userhelper-wrap.c:220
+#: ../../po/../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Nincs megfelelő jogosultság."
 
-#: ../userhelper-wrap.c:222
+#: ../../po/../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Érvénytelen hívási kísérlet történt egy alfolyamatra."
 
-#: ../userhelper-wrap.c:224
+#: ../../po/../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -220,107 +228,128 @@ msgstr ""
 "A parancsértelmezőt ezért nem lehet megváltoztatni.\n"
 "Kérjen segítséget a rendszergazdától."
 
-#: ../userhelper-wrap.c:227
+#: ../../po/../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Nincs elég memória."
 
-#: ../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "Az exec() hívás végrehajtása nem sikerült."
 
-#: ../userhelper-wrap.c:231
+#: ../../po/../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "A kiválasztott program nem található."
 
-#: ../userhelper-wrap.c:234
+#: ../../po/../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "A kérés megszakítva."
 
-#: ../userhelper-wrap.c:236
+#: ../../po/../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Belső PAM-hiba történt."
 
-#: ../userhelper-wrap.c:240
+#: ../../po/../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr "További újrapróbálkozás nem engedélyezett"
+
+#: ../../po/../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Ismeretlen hiba történt."
 
-#: ../userhelper-wrap.c:490
+#: ../../po/../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Lekérdezés"
 
-#: ../userhelper-wrap.c:549 ../userhelper.c:607
+#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Azonosítás mint \"%s\""
 
-#: ../userhelper-wrap.c:568 ../userhelper-wrap.c:704
+#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Hiba"
 
-#: ../userhelper-wrap.c:568
+#: ../../po/../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Információ"
 
-#: ../userhelper-wrap.c:729
+#: ../../po/../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Jelszó módosítása."
 
-#: ../userhelper-wrap.c:731
+#: ../../po/../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "A személyes adatok megváltoztatása."
 
-#: ../userhelper-wrap.c:734
+#: ../../po/../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "A parancsértelmező megváltoztatása."
 
-#: ../userhelper-wrap.c:738
+#: ../../po/../userhelper-wrap.c:746
 #, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "\"%s\" indítását kezdeményezte. A programot érdemesebb lehet rendszergazdai jogosultsággal indítani, ehhez azonban további információ szükséges."
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"\"%s\" indítását kezdeményezte. A programot érdemesebb lehet rendszergazdai "
+"jogosultsággal indítani, ehhez azonban további információ szükséges."
 
-#: ../userhelper-wrap.c:740
+#: ../../po/../userhelper-wrap.c:748
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
-msgstr "\"%s\" indítását kezdeményezte. A program csak rendszergazdai jogosultsággal indítható el, ehhez azonban további információ szükséges."
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"\"%s\" indítását kezdeményezte. A program csak rendszergazdai jogosultsággal"
+" indítható el, ehhez azonban további információ szükséges."
 
-#: ../userhelper-wrap.c:744
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "Egy olyan parancs végrehajtását kezdeményezte, amelyet érdemesebb lehet rendszergazdai jogosultsággal végrehajtani - ehhez azonban további információ szükséges."
+#: ../../po/../userhelper-wrap.c:752
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Egy olyan parancs végrehajtását kezdeményezte, amelyet érdemesebb lehet "
+"rendszergazdai jogosultsággal végrehajtani - ehhez azonban további "
+"információ szükséges."
 
-#: ../userhelper-wrap.c:746
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
-msgstr "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai jogosultság szükséges - ehhez azonban további információra van szükség."
+#: ../../po/../userhelper-wrap.c:754
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai "
+"jogosultság szükséges - ehhez azonban további információra van szükség."
 
-#: ../userhelper-wrap.c:783
+#: ../../po/../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "Futtatás n_ormál jogosultsággal"
 
-#: ../userhelper-wrap.c:932
+#: ../../po/../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe (csővezeték)-kezelési hiba.\n"
 
-#: ../userhelper-wrap.c:939
+#: ../../po/../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Nem sikerült végrehajtani egy fork() hívást (programindítást).\n"
 
-#: ../userhelper-wrap.c:963
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Nem tudom beállítani a bináris kódolást egy IO csatornán: %s\n"
 
-#: ../userhelper-wrap.c:1034 ../userhelper-wrap.c:1038
+#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() hiba.\n"
 
-#: ../userhelper-wrap.c:1049
+#: ../../po/../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() hiba, errno=%d\n"
 
-#: ../userhelper.c:589
+#: ../../po/../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -330,7 +359,7 @@ msgstr ""
 "rendszergazdai jogosultsággal indítani, ehhez azonban további\n"
 "információ szükséges."
 
-#: ../userhelper.c:591
+#: ../../po/../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -339,7 +368,7 @@ msgstr ""
 "\"%s\" indítását kezdeményezte. A program csak rendszergazdai\n"
 "jogosultsággal indítható el, ehhez azonban további információ szükséges."
 
-#: ../userhelper.c:595
+#: ../../po/../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -349,7 +378,7 @@ msgstr ""
 "rendszergazdai jogosultsággal végrehajtani - ehhez azonban további\n"
 "információ szükséges."
 
-#: ../userhelper.c:597
+#: ../../po/../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -358,23 +387,26 @@ msgstr ""
 "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai\n"
 "jogosultság szükséges - ehhez azonban további információra van szükség."
 
-#: ../userhelper.c:2077
+#: ../../po/../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "a userhelper programnak 'setuid root' beállításúnak kell lennie\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2169
+#: ../../po/../userhelper.c:2162
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "A grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem található.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr ""
+"A grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem "
+"található.\n"
 
-#: ../userinfo.c:383
+#: ../../po/../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Váratlan argumentum"
 
-#: ../userinfo.c:408
+#: ../../po/../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Az Ön neve nem is létezik...\n"
@@ -411,27 +443,30 @@ msgstr "Munkahely:"
 msgid "User Information"
 msgstr "Felhasználói adatok"
 
-#: ../usermount.c:61
+#: ../../po/../usermount.c:61
 msgid "_Mount"
 msgstr "_Csatlakoztatás"
 
-#: ../usermount.c:62
+#: ../../po/../usermount.c:62
 msgid "Un_mount"
 msgstr "Le_választás"
 
-#: ../usermount.c:289
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
+#: ../../po/../usermount.c:289
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
 
-#: ../usermount.c:300
+#: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "Ala_csony szintű formázás végrehajtása."
 
-#: ../usermount.c:337
+#: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "Válassza ki _a létrehozandó fájlrendszertípust:"
 
-#: ../usermount.c:507
+#: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -440,28 +475,28 @@ msgstr ""
 "Kérjen segítséget a rendszergazdától."
 
 #. Create the dialog.
-#: ../usermount.c:508 ../usermount.c:520
+#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Lemezcsatlakoztatási segédprogram"
 
 #. Create the other buttons.
-#: ../usermount.c:538
+#: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "_Formázás"
 
-#: ../usermount.c:574
+#: ../../po/../usermount.c:574
 msgid "Device"
 msgstr "Eszköz"
 
-#: ../usermount.c:580
+#: ../../po/../usermount.c:580
 msgid "Directory"
 msgstr "Könyvtár"
 
-#: ../usermount.c:586
+#: ../../po/../usermount.c:586
 msgid "Filesystem"
 msgstr "Fájlrendszer"
 
-#: ../usermount.c:634
+#: ../../po/../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "A(z) %s eszközt nem lehet megformázni."
@@ -481,22 +516,3 @@ msgstr "Bejelentkezési jelszó megváltoztatása"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Jelszó"
-
-#: ../userhelper-wrap.c:238
-msgid "No more retries allowed"
-msgstr "További újrapróbálkozás nem engedélyezett"
-
-#~ msgid "Placeholder text."
-#~ msgstr "Alapértelmezett szöveg."
-
-#~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr "Nem sikerült beállítani az alapértelmezett kontextust erre: %s, az alábbi program számára: %s\n"
-
-#~ msgid "Could not set exec context to %s.\n"
-#~ msgstr "Nem sikerült beállítani a futtatási kontextust erre: %s.\n"
-
-#~ msgid "Password for %s"
-#~ msgstr "%s jelszava"
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s jelszava: "

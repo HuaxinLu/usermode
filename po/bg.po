@@ -1,24 +1,22 @@
-# translation of usermode.pot to Bulgarian
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER.
-#
-# Doncho N. Gunchev <mr700@globalnet.bg>, 2004.
-# Николай Сърмаджиев <nikolayd@sarmadzhiev.tk>, 2004.
-# Doncho N. Gunchev <gunchev@gmail.com>, 2007.
-# Alexander Todorov <atodorov@redhat.com>, 2008.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-29 17:47+0000\n"
-"PO-Revision-Date: 2008-03-10 21:57+0100\n"
-"Last-Translator: Alexander Todorov <atodorov@redhat.com>\n"
-"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Project-Id-Version: Usermode\n"
+"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"POT-Creation-Date: 2010-11-22 06:56+0100\n"
+"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"Last-Translator: glezos <glezos@indifex.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -34,76 +32,76 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../dummy.h:21
+#: ../../po/../dummy.h:21
 msgid "OK"
 msgstr "Да"
 
-#: ../dummy.h:22
+#: ../../po/../dummy.h:22
 msgid "Exit"
 msgstr "Изход"
 
-#: ../dummy.h:23
+#: ../../po/../dummy.h:23
 msgid "Cancel"
 msgstr "Отказ"
 
-#: ../dummy.h:24
+#: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
 msgstr "Изпълнение без привилегии"
 
-#: ../dummy.h:25
+#: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(текуща) ЮНИКС парола: "
 
-#: ../dummy.h:26
+#: ../../po/../dummy.h:26
 msgid "New UNIX password: "
 msgstr "Нова ЮНИКС парола: "
 
-#: ../dummy.h:27
+#: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "Повторете новата ЮНИКС парола: "
 
-#: ../dummy.h:28
+#: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "ЛОША ПАРОЛА: прекалено къса е"
 
-#: ../dummy.h:29
+#: ../../po/../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "ЛОША ПАРОЛА: много къса е"
 
-#: ../dummy.h:30
+#: ../../po/../dummy.h:30
 msgid "Password unchanged"
 msgstr "Паролата не е променена"
 
-#: ../dummy.h:31
+#: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "Грешка, паролите не съвпадат"
 
-#: ../dummy.h:32
+#: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Стартиране на инструменти за настройка на цялата система без парола."
 
-#: ../dummy.h:33
+#: ../../po/../dummy.h:33
 msgid "login: "
 msgstr "потребител: "
 
-#: ../dummy.h:34
+#: ../../po/../dummy.h:34
 msgid "Password: "
 msgstr "Парола: "
 
-#: ../gsmclient.c:362
+#: ../../po/../gsmclient.c:362
 #, c-format
 msgid "%s failed to connect to the session manager: %s\n"
 msgstr "%s неуспех при свързването с мениджъра на сесията: %s\n"
 
-#: ../pam-panel-icon.c:89
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Неуспешна отмяна на административните права: %s"
 
-#: ../pam-panel-icon.c:98
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
@@ -112,7 +110,7 @@ msgstr ""
 "Неуспешна отмяна на административните права: pam_timestamp_check върна код "
 "на грешка %d"
 
-#: ../pam-panel-icon.c:146
+#: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
@@ -122,62 +120,63 @@ msgstr ""
 "всички потребители) без да въведете отново администраторската парола. Може "
 "да се откажете от тази привилегия."
 
-#: ../pam-panel-icon.c:151 ../pam-panel-icon.c:178
+#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "Запазване оторизацията"
 
-#: ../pam-panel-icon.c:154 ../pam-panel-icon.c:185
+#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "Отказване оторизацията"
 
-#: ../pam-panel-icon.c:285
+#: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check не е setuid root"
 
-#: ../pam-panel-icon.c:289
+#: ../../po/../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "няма контролно tty за pam_timestamp_check"
 
-#: ../pam-panel-icon.c:293
+#: ../../po/../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr "потребителят е непознат на pam_timestamp_check"
 
-#: ../pam-panel-icon.c:297
+#: ../../po/../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr "грешка при правата в pam_timestamp_check"
 
-#: ../pam-panel-icon.c:301
+#: ../../po/../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "невалидно контролно tty за pam_timestamp_check"
 
-#: ../pam-panel-icon.c:319
+#: ../../po/../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "Грешка: %s\n"
 
-#: ../pam-panel-icon.c:384
+#: ../../po/../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Провал при стартиране командата\"%s\":%s\n"
 
-#: ../pam-panel-icon.c:396
+#: ../../po/../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Неуспех при настройка на IO канала в неблокиращ режим: %s\n"
 
-#: ../pam-panel-icon.c:476
+#: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: неуспех при свързването с мениджъра на сесията\n"
 
-#: ../userhelper-wrap.c:204
+#: ../../po/../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Неизвестен код на изход."
 
-#: ../userhelper-wrap.c:206
+#: ../../po/../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Информацията е обновена."
 
-#: ../userhelper-wrap.c:208
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -185,7 +184,7 @@ msgstr ""
 "Паролата, която въведохте, е невалидна.\n"
 "Моля опитайте отново."
 
-#: ../userhelper-wrap.c:210
+#: ../../po/../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -195,11 +194,11 @@ msgstr ""
 "Това вероятно се дължи на двоеточия или кавички в някое от тях.\n"
 "Моля премахнете ги и опитайте отново."
 
-#: ../userhelper-wrap.c:212
+#: ../../po/../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Грешка при промяна на паролата."
 
-#: ../userhelper-wrap.c:214
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -207,19 +206,19 @@ msgstr ""
 "Някои системни файлове са заключени.\n"
 "Моля опитайте след малко."
 
-#: ../userhelper-wrap.c:216
+#: ../../po/../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Непознат потребител."
 
-#: ../userhelper-wrap.c:218
+#: ../../po/../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Недостатъчни права."
 
-#: ../userhelper-wrap.c:220
+#: ../../po/../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Невалидно извикване на подпроцес."
 
-#: ../userhelper-wrap.c:222
+#: ../../po/../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -229,64 +228,64 @@ msgstr ""
 "Не Ви е разрешено да промените своя команден интерпретатор.\n"
 "Консултирайте се със системния си администратор."
 
-#: ../userhelper-wrap.c:225
+#: ../../po/../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Недостатъчно памет."
 
-#: ../userhelper-wrap.c:227
+#: ../../po/../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "Неуспешно извикване на exec()."
 
-#: ../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Избраната програма не може да бъде намерена."
 
-#: ../userhelper-wrap.c:232
+#: ../../po/../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Заявката прекратена."
 
-#: ../userhelper-wrap.c:234
+#: ../../po/../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Възникна вътрешна PAM грешка."
 
-#: ../userhelper-wrap.c:236
+#: ../../po/../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr ""
+
+#: ../../po/../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Неизвестна грешка."
 
-#: ../userhelper-wrap.c:504
+#: ../../po/../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Въпрос"
 
-#: ../userhelper-wrap.c:581 ../userhelper-wrap.c:732
-msgid "Error"
-msgstr "Грешка"
-
-#: ../userhelper-wrap.c:581
-msgid "Information"
-msgstr "Информация"
-
-#: ../userhelper-wrap.c:724
-msgid "Placeholder text."
-msgstr "Място за текст."
-
-#: ../userhelper-wrap.c:753 ../userhelper.c:627
+#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Удостоверяване като \"%s\""
 
-#: ../userhelper-wrap.c:782
+#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
+msgid "Error"
+msgstr "Грешка"
+
+#: ../../po/../userhelper-wrap.c:572
+msgid "Information"
+msgstr "Информация"
+
+#: ../../po/../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Промяна на паролата."
 
-#: ../userhelper-wrap.c:784
+#: ../../po/../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Промяна на личната информация."
 
-#: ../userhelper-wrap.c:787
+#: ../../po/../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Промяна на командния интерпретатор."
 
-#: ../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:746
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -295,7 +294,7 @@ msgstr ""
 "Опитвате се да стартирате \"%s\". В случая от полза могат да бъдат "
 "административни права, но за това е нужна повече информация."
 
-#: ../userhelper-wrap.c:793
+#: ../../po/../userhelper-wrap.c:748
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -304,7 +303,7 @@ msgstr ""
 "Опитвате се да стартирате \"%s\". За целта са необходими административни "
 "права, но за това е нужна повече информация."
 
-#: ../userhelper-wrap.c:798
+#: ../../po/../userhelper-wrap.c:752
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -312,7 +311,7 @@ msgstr ""
 "Опитвате се да стартирате команда, която може да се възползва от "
 "административни права, но за това е нужна повече информация."
 
-#: ../userhelper-wrap.c:800
+#: ../../po/../userhelper-wrap.c:754
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -320,36 +319,36 @@ msgstr ""
 "Опитвате се да стартирате команда, която изисква административни права, но "
 "за това е нужна повече информация."
 
-#: ../userhelper-wrap.c:810
+#: ../../po/../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Изпълнение без привилегии"
 
-#: ../userhelper-wrap.c:968
+#: ../../po/../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Грешка в програмен канал.\n"
 
-#: ../userhelper-wrap.c:975
+#: ../../po/../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Неуспешно извикване на fork().\n"
 
-#: ../userhelper-wrap.c:1001
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
-msgstr "Не може да се зададе знаков набор %s за И/О канала: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
+msgstr ""
 
-#: ../userhelper-wrap.c:1077 ../userhelper-wrap.c:1081
+#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "Грешка при извикване на dup2().\n"
 
-#: ../userhelper-wrap.c:1093
+#: ../../po/../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "Грешка %d при извикване на execl()\n"
 
-#: ../userhelper.c:609
+#: ../../po/../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -358,7 +357,7 @@ msgstr ""
 "Опитвате се да стартирате \"%s\". В случая от полза могат да бъдат\n"
 "административни права, но за това е нужна повече информация."
 
-#: ../userhelper.c:611
+#: ../../po/../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -367,7 +366,8 @@ msgstr ""
 "Опитвате се да стартирате \"%s\". За целта са необходими административни\n"
 "права, но за това е нужна повече информация."
 
-#: ../userhelper.c:615
+#: ../../po/../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
@@ -375,7 +375,8 @@ msgstr ""
 "Опитвате се да стартирате команда, която може да се възползва\n"
 "от административни права, но за това е нужна повече информация."
 
-#: ../userhelper.c:617
+#: ../../po/../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
@@ -383,13 +384,13 @@ msgstr ""
 "Опитвате се да стартирате команда, която изисква административни\n"
 "права, но за това е нужна повече информация."
 
-#: ../userhelper.c:2171
+#: ../../po/../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper трябва да бъде setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2269
+#: ../../po/../userhelper.c:2162
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -397,12 +398,12 @@ msgstr ""
 "Не може да бъде отворен графичен прозорец, а не може да бъде намерен и "
 "контролен терминал.\n"
 
-#: ../userinfo.c:370
+#: ../../po/../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Неочакван аргумент"
 
-#: ../userinfo.c:395
+#: ../../po/../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Вие не съществувате.  Вървете си.\n"
@@ -415,55 +416,55 @@ msgstr "За мен"
 msgid "Change personal information"
 msgstr "Промяна на личната информация"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Пълно име:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Домашен телефон:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Команден интерпретатор:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Служебен телефон:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Офис:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Потребителска информация"
 
-#: ../usermount.c:61
+#: ../../po/../usermount.c:61
 msgid "_Mount"
 msgstr "_Монтиране"
 
-#: ../usermount.c:62
+#: ../../po/../usermount.c:62
 msgid "Un_mount"
 msgstr "Де_монтиране"
 
-#: ../usermount.c:289
+#: ../../po/../usermount.c:289
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
-"Наистина ли искате да форматирате този диск?  Така ще унищожите всички данни "
-"които той съдържа."
+"Наистина ли искате да форматирате този диск?  Така ще унищожите всички данни"
+" които той съдържа."
 
-#: ../usermount.c:300
+#: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "Форматиране на _ниско ниво."
 
-#: ../usermount.c:337
+#: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "Изберете тип _файлова система:"
 
-#: ../usermount.c:507
+#: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -472,28 +473,28 @@ msgstr ""
 "Свържете се със своя администратор."
 
 #. Create the dialog.
-#: ../usermount.c:508 ../usermount.c:520
+#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Потребителски инструмент за монтиране"
 
 #. Create the other buttons.
-#: ../usermount.c:538
+#: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "_Форматиране"
 
-#: ../usermount.c:574
+#: ../../po/../usermount.c:574
 msgid "Device"
 msgstr "Устройство"
 
-#: ../usermount.c:580
+#: ../../po/../usermount.c:580
 msgid "Directory"
 msgstr "Директория"
 
-#: ../usermount.c:586
+#: ../../po/../usermount.c:586
 msgid "Filesystem"
 msgstr "Файлова система"
 
-#: ../usermount.c:633
+#: ../../po/../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Устройството '%s' не може да бъде форматирано."
@@ -513,10 +514,3 @@ msgstr "Промяна на паролата за вход"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Парола"
-
-#~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr ""
-#~ "Неуспешно установяване подразбиращ се контекст %s за програмата %s.\n"
-
-#~ msgid "Could not set exec context to %s.\n"
-#~ msgstr "Неуспешно установяване контекста на изпълнение на %s.\n"

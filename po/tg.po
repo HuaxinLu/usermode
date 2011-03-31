@@ -1,25 +1,22 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2008.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode.tip\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-17 01:50+0000\n"
-"PO-Revision-Date: 2008-10-18 05:25-0800\n"
-"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
-"Language-Team: Tajik Fedora and Software Localization Team <victor.ibragimov@gmail.com>\n"
+"Project-Id-Version: Usermode\n"
+"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"POT-Creation-Date: 2010-11-22 06:56+0100\n"
+"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"Last-Translator: glezos <glezos@indifex.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.2\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: Tajik\n"
-"X-Poedit-Country: TAJIKISTAN\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Language: tg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -35,336 +32,345 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../dummy.h:21
+#: ../../po/../dummy.h:21
 msgid "OK"
 msgstr "OK"
 
-#: ../dummy.h:22
+#: ../../po/../dummy.h:22
 msgid "Exit"
 msgstr "Хуруҷ"
 
-#: ../dummy.h:23
+#: ../../po/../dummy.h:23
 msgid "Cancel"
 msgstr "Бекор кардан"
 
-#: ../dummy.h:24
-#, fuzzy
+#: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
-msgstr "&Иҷро кардан"
+msgstr ""
 
-#: ../dummy.h:25
+#: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(ҷорӣ) Пароли UNIX: "
 
-#: ../dummy.h:26
+#: ../../po/../dummy.h:26
 msgid "New UNIX password: "
 msgstr "Пароли нави UNIX: "
 
-#: ../dummy.h:27
+#: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "Пароли нави UNIX*ро такрор кунед: "
 
-#: ../dummy.h:28
+#: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr ""
 
-#: ../dummy.h:29
+#: ../../po/../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr ""
 
-#: ../dummy.h:30
+#: ../../po/../dummy.h:30
 msgid "Password unchanged"
 msgstr "Парол тағйир дода шуд"
 
-#: ../dummy.h:31
+#: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr ""
 
-#: ../dummy.h:32
+#: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr ""
 
-#: ../dummy.h:33
+#: ../../po/../dummy.h:33
 msgid "login: "
 msgstr "вурудот: "
 
-#: ../dummy.h:34
+#: ../../po/../dummy.h:34
 msgid "Password: "
 msgstr "Парол:"
 
-#: ../gsmclient.c:362
-#, fuzzy, c-format
+#: ../../po/../gsmclient.c:362
+#, c-format
 msgid "%s failed to connect to the session manager: %s\n"
-msgstr "Оғознамоии Jabber Мудири Фиристодани Файл бо Нокомӣ анҷомид"
+msgstr ""
 
-#: ../pam-panel-icon.c:89
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr ""
 
-#: ../pam-panel-icon.c:98
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
-msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
 msgstr ""
 
-#: ../pam-panel-icon.c:146
-msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
+#: ../../po/../pam-panel-icon.c:146
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
 msgstr ""
 
-#: ../pam-panel-icon.c:151
-#: ../pam-panel-icon.c:178
+#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "Нигоҳ доштани муайянкунӣ"
 
-#: ../pam-panel-icon.c:154
-#: ../pam-panel-icon.c:185
+#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr ""
 
-#: ../pam-panel-icon.c:285
+#: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr ""
 
-#: ../pam-panel-icon.c:289
+#: ../../po/../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr ""
 
-#: ../pam-panel-icon.c:293
+#: ../../po/../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr ""
 
-#: ../pam-panel-icon.c:297
+#: ../../po/../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr ""
 
-#: ../pam-panel-icon.c:301
+#: ../../po/../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr ""
 
-#: ../pam-panel-icon.c:319
+#: ../../po/../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "Хато: %s\n"
 
-#: ../pam-panel-icon.c:384
+#: ../../po/../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Иҷроиши фармони \"%s\" қатъ карда шуд: %s\n"
 
-#: ../pam-panel-icon.c:396
+#: ../../po/../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr ""
 
-#: ../pam-panel-icon.c:476
+#: ../../po/../pam-panel-icon.c:476
+#, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:205
+#: ../../po/../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Хуруҷи рамзи номуайян."
 
-#: ../userhelper-wrap.c:207
+#: ../../po/../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Иттилоот нав карда шуд."
 
-#: ../userhelper-wrap.c:209
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
 
-#: ../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
 msgstr ""
 
-#: ../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Бозсозии парол кор нашуд."
 
-#: ../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
 
-#: ../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Корбари номаълум"
 
-#: ../userhelper-wrap.c:219
-#, fuzzy
+#: ../../po/../userhelper-wrap.c:225
 msgid "Insufficient rights."
-msgstr "Ҳуқуқҳои Дастрасӣ"
+msgstr ""
 
-#: ../userhelper-wrap.c:221
-#, fuzzy
+#: ../../po/../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
-msgstr "Хатоги: Хусусиятҳои номумкини фармонҳои %1.\n"
+msgstr ""
 
-#: ../userhelper-wrap.c:223
+#: ../../po/../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
 msgstr ""
 
-#: ../userhelper-wrap.c:226
+#: ../../po/../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Хотира кофӣ аст"
 
-#: ../userhelper-wrap.c:228
-#, fuzzy
+#: ../../po/../userhelper-wrap.c:234
 msgid "The exec() call failed."
-msgstr "Занг ба '%1' қатъ карда шуд."
+msgstr ""
 
-#: ../userhelper-wrap.c:230
+#: ../../po/../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Ҷустуҷӯи барномаи интихобшуда қатъ карда шуд."
 
-#: ../userhelper-wrap.c:233
+#: ../../po/../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "Дархост қатъ карда шуд."
 
-#: ../userhelper-wrap.c:235
-#, fuzzy
+#: ../../po/../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
-msgstr "хатогии дохилӣ - рамзи %1 номаълум аст"
+msgstr ""
 
-#: ../userhelper-wrap.c:237
+#: ../../po/../userhelper-wrap.c:243
+msgid "No more retries allowed"
+msgstr ""
+
+#: ../../po/../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Хатои номаълум."
 
-#: ../userhelper-wrap.c:502
+#: ../../po/../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Дархост"
 
-#: ../userhelper-wrap.c:561
-#: ../userhelper.c:576
+#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Муайянкунӣ ҳамчун \"%s\""
 
-#: ../userhelper-wrap.c:580
-#: ../userhelper-wrap.c:716
+#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Хато"
 
-#: ../userhelper-wrap.c:580
+#: ../../po/../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Иттилоот"
 
-#: ../userhelper-wrap.c:741
+#: ../../po/../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Парол тағйир шуда истодааст."
 
-#: ../userhelper-wrap.c:743
-#, fuzzy
+#: ../../po/../userhelper-wrap.c:739
 msgid "Changing personal information."
-msgstr "Мудири маълумоти шахсӣ"
+msgstr ""
 
-#: ../userhelper-wrap.c:746
+#: ../../po/../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr ""
 
-#: ../userhelper-wrap.c:750
+#: ../../po/../userhelper-wrap.c:746
 #, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../userhelper-wrap.c:752
+#: ../../po/../userhelper-wrap.c:748
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
 msgstr ""
 
-#: ../userhelper-wrap.c:756
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
+#: ../../po/../userhelper-wrap.c:752
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../userhelper-wrap.c:758
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
+#: ../../po/../userhelper-wrap.c:754
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../userhelper-wrap.c:794
-#, fuzzy
+#: ../../po/../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
-msgstr "&Иҷро кардан"
+msgstr ""
 
-#: ../userhelper-wrap.c:924
-#, fuzzy, c-format
+#: ../../po/../userhelper-wrap.c:938
+#, c-format
 msgid "Pipe error.\n"
-msgstr "Хатои Kickstart"
+msgstr ""
 
-#: ../userhelper-wrap.c:931
+#: ../../po/../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "Пайваст нашуд().\n"
 
-#: ../userhelper-wrap.c:957
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
-msgid "Can't set charset %s on an IO channel: %s\n"
+msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr ""
 
-#: ../userhelper-wrap.c:1029
-#: ../userhelper-wrap.c:1033
+#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() хато.\n"
 
-#: ../userhelper-wrap.c:1044
+#: ../../po/../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() хато, errno=%d\n"
 
-#: ../userhelper.c:558
+#: ../../po/../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../userhelper.c:560
+#: ../../po/../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../userhelper.c:564
+#: ../../po/../userhelper.c:569
+#, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../userhelper.c:566
+#: ../../po/../userhelper.c:571
+#, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../userhelper.c:2000
+#: ../../po/../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper бояд ҳамчун setuid root шавад\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2092
+#: ../../po/../userhelper.c:2162
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
-#: ../userinfo.c:376
+#: ../../po/../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Аргументи ногаҳонӣ"
 
-#: ../userinfo.c:401
+#: ../../po/../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Корбар мавҷуд нест. Ба ҳар ҳол давом диҳед.\n"
@@ -377,80 +383,81 @@ msgstr "Дар бораи худ"
 msgid "Change personal information"
 msgstr "Тағйири иттилооти шахсӣ"
 
-#: ../usermode.glade.h:1
+#: ../usermode.ui.h:1
 msgid "Full Name:"
 msgstr "Ному насаб:"
 
-#: ../usermode.glade.h:2
+#: ../usermode.ui.h:2
 msgid "Home Phone Number:"
 msgstr "Рақами телефони хона:"
 
-#: ../usermode.glade.h:3
+#: ../usermode.ui.h:3
 msgid "Login Shell:"
 msgstr "Ҷилди вуруд:"
 
-#: ../usermode.glade.h:4
+#: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Рақами телефони офис:"
 
-#: ../usermode.glade.h:5
+#: ../usermode.ui.h:5
 msgid "Office:"
 msgstr "Офис:"
 
-#: ../usermode.glade.h:6
+#: ../usermode.ui.h:6
 msgid "User Information"
 msgstr "Иттилооти корбар"
 
-#: ../usermount.c:61
+#: ../../po/../usermount.c:61
 msgid "_Mount"
 msgstr "_Оғози васл"
 
-#: ../usermount.c:62
+#: ../../po/../usermount.c:62
 msgid "Un_mount"
 msgstr "_Манъи васл"
 
-#: ../usermount.c:289
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
+#: ../../po/../usermount.c:289
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
 msgstr ""
 
-#: ../usermount.c:300
+#: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr ""
 
-#: ../usermount.c:337
+#: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "Интихоби навъи _системаи файлҳо:"
 
-#: ../usermount.c:507
+#: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
 
 #. Create the dialog.
-#: ../usermount.c:508
-#: ../usermount.c:520
+#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Системаи васлкунии корбар"
 
 #. Create the other buttons.
-#: ../usermount.c:538
+#: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "_Тағйир"
 
-#: ../usermount.c:574
+#: ../../po/../usermount.c:574
 msgid "Device"
 msgstr "Дастгоҳ"
 
-#: ../usermount.c:580
+#: ../../po/../usermount.c:580
 msgid "Directory"
 msgstr "Феҳраст"
 
-#: ../usermount.c:586
+#: ../../po/../usermount.c:586
 msgid "Filesystem"
 msgstr "Системаи файлҳо"
 
-#: ../usermount.c:633
+#: ../../po/../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Дастгоҳи '%s' тағйир дода намешавад."
@@ -470,4 +477,3 @@ msgstr "Пароли вурудотро тағйир кунед"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Парол"
-

@@ -1,24 +1,22 @@
-# translation of usermode_tr.po to
-# Nilgün Belma Bugüner <nilgun@superonline.com>, 2003.
-# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2004.
-# Hamdi Akoğuz <akoguzh@itu.edu.tr>, 2005, 2006.
-# Egemen Metin Turan <mturan@aegee-ankara.org>, 2006, 2007.
-# translation of tr.po to Turkish
-# $Id$
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: usermode\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-20 12:14+0000\n"
-"PO-Revision-Date: 2010-10-20 15:28+0200\n"
-"Last-Translator: Hasan Alp iNAN <hasanalpinan@gmail.com>\n"
-"Language-Team: Turkish <none>\n"
+"Project-Id-Version: Usermode\n"
+"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"POT-Creation-Date: 2010-11-22 06:56+0100\n"
+"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"Last-Translator: glezos <glezos@indifex.com>\n"
+"Language-Team: Turkish <None>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
-#.
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -34,143 +32,151 @@ msgstr ""
 #. * You should have received a copy of the GNU General Public License
 #. * along with this program; if not, write to the Free Software
 #. * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-#.
+#. 
 #. Just a dummy file for gettext, containing messages emmitted by various
 #. * commonly-used PAM modules.
-#: ../dummy.h:21
+#: ../../po/../dummy.h:21
 msgid "OK"
 msgstr "TAMAM"
 
-#: ../dummy.h:22
+#: ../../po/../dummy.h:22
 msgid "Exit"
 msgstr "Çık"
 
-#: ../dummy.h:23
+#: ../../po/../dummy.h:23
 msgid "Cancel"
 msgstr "İptal"
 
-#: ../dummy.h:24
+#: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
 msgstr "Yetkisiz çalıştırma"
 
-#: ../dummy.h:25
+#: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
 msgstr "(şu anki) UNIX parolası: "
 
-#: ../dummy.h:26
+#: ../../po/../dummy.h:26
 msgid "New UNIX password: "
 msgstr "Yeni UNIX parolası:"
 
-#: ../dummy.h:27
+#: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
 msgstr "Yeni UNIX parolanızı tekrarlayın: "
 
-#: ../dummy.h:28
+#: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
 msgstr "PAROLA KÖTÜ: çok kolay"
 
-#: ../dummy.h:29
+#: ../../po/../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
 msgstr "PAROLA KÖTÜ: çok kısa"
 
-#: ../dummy.h:30
+#: ../../po/../dummy.h:30
 msgid "Password unchanged"
 msgstr "Parola değişmedi"
 
-#: ../dummy.h:31
+#: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
 msgstr "Maalesef parolalar eşleşmedi"
 
-#: ../dummy.h:32
+#: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
 msgstr "Sistem yapılandırma araçlarını parolasız çalıştır."
 
-#: ../dummy.h:33
+#: ../../po/../dummy.h:33
 msgid "login: "
 msgstr "giriş: "
 
-#: ../dummy.h:34
+#: ../../po/../dummy.h:34
 msgid "Password: "
 msgstr "Parola: "
 
-#: ../gsmclient.c:362
+#: ../../po/../gsmclient.c:362
 #, c-format
 msgid "%s failed to connect to the session manager: %s\n"
 msgstr "%s oturum yöneticisi ile iletişime geçme başarısız oldu: %s\n"
 
-#: ../pam-panel-icon.c:89
+#: ../../po/../pam-panel-icon.c:89
 #, c-format
 msgid "Failed to drop administrator privileges: %s"
 msgstr "Administrator ayrıcalıkları iptal edilemedi: %s"
 
-#: ../pam-panel-icon.c:98
+#: ../../po/../pam-panel-icon.c:98
 #, c-format
-msgid "Failed to drop administrator privileges: pam_timestamp_check returned failure code %d"
-msgstr "Administrator ayrıcalıkları iptal edilemedi: pam_timestamp_check hata kodu döndürdü %d"
+msgid ""
+"Failed to drop administrator privileges: pam_timestamp_check returned "
+"failure code %d"
+msgstr ""
+"Administrator ayrıcalıkları iptal edilemedi: pam_timestamp_check hata kodu "
+"döndürdü %d"
 
-#: ../pam-panel-icon.c:146
-msgid "You're currently authorized to configure system-wide settings (that affect all users) without typing the administrator password again. You can give up this authorization."
-msgstr "Şu anda tekrar administrator şifrenizi yazmasanız da system-geneli (tüm kullanıcıları etkileyen) ayarları değiştirmekle yetkilisiniz. Bu yetkiyi bırakabilirsiniz."
+#: ../../po/../pam-panel-icon.c:146
+msgid ""
+"You're currently authorized to configure system-wide settings (that affect "
+"all users) without typing the administrator password again. You can give up "
+"this authorization."
+msgstr ""
+"Şu anda tekrar administrator şifrenizi yazmasanız da system-geneli (tüm "
+"kullanıcıları etkileyen) ayarları değiştirmekle yetkilisiniz. Bu yetkiyi "
+"bırakabilirsiniz."
 
-#: ../pam-panel-icon.c:151
-#: ../pam-panel-icon.c:178
+#: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
 msgstr "Yetkilendirmeyi Koru"
 
-#: ../pam-panel-icon.c:154
-#: ../pam-panel-icon.c:185
+#: ../../po/../pam-panel-icon.c:154 ../../po/../pam-panel-icon.c:185
 msgid "Forget Authorization"
 msgstr "Yetkilendirmeyi Unut"
 
-#: ../pam-panel-icon.c:285
+#: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
 msgstr "pam_timestamp_check root setuid değil"
 
-#: ../pam-panel-icon.c:289
+#: ../../po/../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
 msgstr "pam_timestamp_check için denetleyici tty yok"
 
-#: ../pam-panel-icon.c:293
+#: ../../po/../pam-panel-icon.c:293
 msgid "user unknown to pam_timestamp_check"
 msgstr "kullanıcı pam_timestamp_check tarafından bilinmiyor"
 
-#: ../pam-panel-icon.c:297
+#: ../../po/../pam-panel-icon.c:297
 msgid "permissions error in pam_timestamp_check"
 msgstr "pam_timestamp_check 'de izin hatası"
 
-#: ../pam-panel-icon.c:301
+#: ../../po/../pam-panel-icon.c:301
 msgid "invalid controlling tty in pam_timestamp_check"
 msgstr "pam_timestamp_check 'te geçersiz denetleyici tty"
 
-#: ../pam-panel-icon.c:319
+#: ../../po/../pam-panel-icon.c:319
 #, c-format
 msgid "Error: %s\n"
 msgstr "Hata: %s\n"
 
-#: ../pam-panel-icon.c:384
+#: ../../po/../pam-panel-icon.c:384
 #, c-format
 msgid "Failed to run command \"%s\": %s\n"
 msgstr "Komut çalıştırılamadı \"%s\": %s\n"
 
-#: ../pam-panel-icon.c:396
+#: ../../po/../pam-panel-icon.c:396
 #, c-format
 msgid "Failed to set IO channel nonblocking: %s\n"
 msgstr "Giriş/Çıkış kanalını tıkanmasız ayarlanamadı: %s\n"
 
-#: ../pam-panel-icon.c:476
+#: ../../po/../pam-panel-icon.c:476
 #, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: oturum yöneticisine bağlanılamadı\n"
 
-#: ../userhelper-wrap.c:211
+#: ../../po/../userhelper-wrap.c:211
 msgid "Unknown exit code."
 msgstr "Bilinmeyen çıkış kodu."
 
-#: ../userhelper-wrap.c:213
+#: ../../po/../userhelper-wrap.c:213
 msgid "Information updated."
 msgstr "Bilgiler güncellendi."
 
-#: ../userhelper-wrap.c:215
+#: ../../po/../userhelper-wrap.c:215
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -178,7 +184,7 @@ msgstr ""
 "Girilen parola geçersiz.\n"
 "Lütfen tekrar deneyin."
 
-#: ../userhelper-wrap.c:217
+#: ../../po/../userhelper-wrap.c:217
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -188,11 +194,11 @@ msgstr ""
 "Bu sorun alanlardaki iki nokta üstüsteler ya da virgüllerden dolayı olabilir.\n"
 "Bunları silip yeniden deneyin."
 
-#: ../userhelper-wrap.c:219
+#: ../../po/../userhelper-wrap.c:219
 msgid "Password resetting error."
 msgstr "Parola sıfırlama hatası."
 
-#: ../userhelper-wrap.c:221
+#: ../../po/../userhelper-wrap.c:221
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -200,19 +206,19 @@ msgstr ""
 "Bazı sistem dosyaları kilitli.\n"
 "Daha sonra tekrar deneyiniz."
 
-#: ../userhelper-wrap.c:223
+#: ../../po/../userhelper-wrap.c:223
 msgid "Unknown user."
 msgstr "Bilinmeyen kullanıcı."
 
-#: ../userhelper-wrap.c:225
+#: ../../po/../userhelper-wrap.c:225
 msgid "Insufficient rights."
 msgstr "Yetersiz hak."
 
-#: ../userhelper-wrap.c:227
+#: ../../po/../userhelper-wrap.c:227
 msgid "Invalid call to subprocess."
 msgstr "Alt sürece hatalı çağrı."
 
-#: ../userhelper-wrap.c:229
+#: ../../po/../userhelper-wrap.c:229
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -222,114 +228,127 @@ msgstr ""
 "Kabuk değiştirmeniz de mümkün değil. Lütfen\n"
 "sistem yöneticinize başvurun."
 
-#: ../userhelper-wrap.c:232
+#: ../../po/../userhelper-wrap.c:232
 msgid "Out of memory."
 msgstr "Bellek yetersiz."
 
-#: ../userhelper-wrap.c:234
+#: ../../po/../userhelper-wrap.c:234
 msgid "The exec() call failed."
 msgstr "exec() çağrısı başarısız."
 
-#: ../userhelper-wrap.c:236
+#: ../../po/../userhelper-wrap.c:236
 msgid "Failed to find selected program."
 msgstr "Seçilen program bulunamadı."
 
-#: ../userhelper-wrap.c:239
+#: ../../po/../userhelper-wrap.c:239
 msgid "Request canceled."
 msgstr "İstek iptal edildi."
 
-#: ../userhelper-wrap.c:241
+#: ../../po/../userhelper-wrap.c:241
 msgid "Internal PAM error occured."
 msgstr "Dahili PAM hatası oluştu."
 
-#: ../userhelper-wrap.c:243
+#: ../../po/../userhelper-wrap.c:243
 msgid "No more retries allowed"
 msgstr "Daha fazla denemeye izin verilmedi"
 
-#: ../userhelper-wrap.c:245
+#: ../../po/../userhelper-wrap.c:245
 msgid "Unknown error."
 msgstr "Bilinmeyen hata."
 
-#: ../userhelper-wrap.c:494
+#: ../../po/../userhelper-wrap.c:494
 msgid "Query"
 msgstr "Sorgu"
 
-#: ../userhelper-wrap.c:553
-#: ../userhelper.c:581
+#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" olarak kimliği doğrulanıyor"
 
-#: ../userhelper-wrap.c:572
-#: ../userhelper-wrap.c:712
+#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
 msgid "Error"
 msgstr "Hata"
 
-#: ../userhelper-wrap.c:572
+#: ../../po/../userhelper-wrap.c:572
 msgid "Information"
 msgstr "Bilgi"
 
-#: ../userhelper-wrap.c:737
+#: ../../po/../userhelper-wrap.c:737
 msgid "Changing password."
 msgstr "Parola değişiyor."
 
-#: ../userhelper-wrap.c:739
+#: ../../po/../userhelper-wrap.c:739
 msgid "Changing personal information."
 msgstr "Kişisel bilgiler değiştiriliyor."
 
-#: ../userhelper-wrap.c:742
+#: ../../po/../userhelper-wrap.c:742
 msgid "Changing login shell."
 msgstr "Giriş kabuğu değiştiriliyor."
 
-#: ../userhelper-wrap.c:746
+#: ../../po/../userhelper-wrap.c:746
 #, c-format
-msgid "You are attempting to run \"%s\" which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
+msgid ""
+"You are attempting to run \"%s\" which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
-#: ../userhelper-wrap.c:748
+#: ../../po/../userhelper-wrap.c:748
 #, c-format
-msgid "You are attempting to run \"%s\" which requires administrative privileges, but more information is needed in order to do so."
-msgstr "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
+msgid ""
+"You are attempting to run \"%s\" which requires administrative privileges, "
+"but more information is needed in order to do so."
+msgstr ""
+"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
-#: ../userhelper-wrap.c:752
-msgid "You are attempting to run a command which may benefit from administrative privileges, but more information is needed in order to do so."
-msgstr "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
+#: ../../po/../userhelper-wrap.c:752
+msgid ""
+"You are attempting to run a command which may benefit from administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama "
+"bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: ../userhelper-wrap.c:754
-msgid "You are attempting to run a command which requires administrative privileges, but more information is needed in order to do so."
-msgstr "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
+#: ../../po/../userhelper-wrap.c:754
+msgid ""
+"You are attempting to run a command which requires administrative "
+"privileges, but more information is needed in order to do so."
+msgstr ""
+"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
-#: ../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:791
 msgid "_Run Unprivileged"
 msgstr "_Yetkisiz Çalıştırma"
 
-#: ../userhelper-wrap.c:938
+#: ../../po/../userhelper-wrap.c:938
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Veri yolu hatası.\n"
 
-#: ../userhelper-wrap.c:945
+#: ../../po/../userhelper-wrap.c:945
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() çalıştırılamadı.\n"
 
-#: ../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:969
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "Bir IO yolunda ikili kodlama ayarlanamıyor: %s\n"
 
-#: ../userhelper-wrap.c:1038
-#: ../userhelper-wrap.c:1042
+#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() hatası.\n"
 
-#: ../userhelper-wrap.c:1053
+#: ../../po/../userhelper-wrap.c:1053
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() hatası, hatano=%d\n"
 
-#: ../userhelper.c:563
+#: ../../po/../userhelper.c:563
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -338,7 +357,7 @@ msgstr ""
 "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: ../userhelper.c:565
+#: ../../po/../userhelper.c:565
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -347,7 +366,7 @@ msgstr ""
 "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: ../userhelper.c:569
+#: ../../po/../userhelper.c:569
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -356,7 +375,7 @@ msgstr ""
 "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: ../userhelper.c:571
+#: ../../po/../userhelper.c:571
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -365,23 +384,24 @@ msgstr ""
 "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\n"
 "bunu yapmak için daha fazla bilgi gerekiyor."
 
-#: ../userhelper.c:2070
+#: ../../po/../userhelper.c:2070
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper programı setuid root olmalıdır.\n"
 
 #. FIXME: print a warning here?
-#: ../userhelper.c:2162
+#: ../../po/../userhelper.c:2162
 #, c-format
-msgid "Unable to open graphical window, and unable to find controlling terminal.\n"
+msgid ""
+"Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 
-#: ../userinfo.c:383
+#: ../../po/../userinfo.c:383
 #, c-format
 msgid "Unexpected argument"
 msgstr "Beklenmeyen argüman"
 
-#: ../userinfo.c:408
+#: ../../po/../userinfo.c:408
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Yok ol.  Defol.\n"
@@ -418,27 +438,30 @@ msgstr "İş Yeri:"
 msgid "User Information"
 msgstr "Kullanıcı Bilgisi"
 
-#: ../usermount.c:61
+#: ../../po/../usermount.c:61
 msgid "_Mount"
 msgstr "_Bağla"
 
-#: ../usermount.c:62
+#: ../../po/../usermount.c:62
 msgid "Un_mount"
 msgstr "_Ayır"
 
-#: ../usermount.c:289
-msgid "Are you sure you want to format this disk?  You will destroy any data it currently contains."
-msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+#: ../../po/../usermount.c:289
+msgid ""
+"Are you sure you want to format this disk?  You will destroy any data it "
+"currently contains."
+msgstr ""
+"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
-#: ../usermount.c:300
+#: ../../po/../usermount.c:300
 msgid "Perform a _low-level format."
 msgstr "_Düşük düzeyli biçimleme uygula."
 
-#: ../usermount.c:337
+#: ../../po/../usermount.c:337
 msgid "Select a _filesystem type to create:"
 msgstr "_Oluşturulacak dosya sistemi türünü seçiniz."
 
-#: ../usermount.c:507
+#: ../../po/../usermount.c:507
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -447,29 +470,28 @@ msgstr ""
 "bulunmuyor. Sistem yöneticinize başvurun."
 
 #. Create the dialog.
-#: ../usermount.c:508
-#: ../usermount.c:520
+#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
 msgid "User Mount Tool"
 msgstr "Bağlama Aracı"
 
 #. Create the other buttons.
-#: ../usermount.c:538
+#: ../../po/../usermount.c:538
 msgid "_Format"
 msgstr "_Biçemle"
 
-#: ../usermount.c:574
+#: ../../po/../usermount.c:574
 msgid "Device"
 msgstr "Aygıt"
 
-#: ../usermount.c:580
+#: ../../po/../usermount.c:580
 msgid "Directory"
 msgstr "Dizin"
 
-#: ../usermount.c:586
+#: ../../po/../usermount.c:586
 msgid "Filesystem"
 msgstr "Dosya sistemi"
 
-#: ../usermount.c:634
+#: ../../po/../usermount.c:634
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "'%s' aygıtı formatlanamaz."
@@ -489,27 +511,3 @@ msgstr "Giriş parolasını değiştir"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Parola"
-
-#~ msgid "Placeholder text."
-#~ msgstr "Yer ayırma metni."
-
-#~ msgid "Could not set default context for %s for program %s.\n"
-#~ msgstr "%s programı için %s öntanımlı içeriği ayarlanamıyor.\n"
-
-#~ msgid "Could not set exec context to %s.\n"
-#~ msgstr "Çalıştırma içeriği %s'ye ayarlanamıyor.\n"
-
-#~ msgid "Password for %s"
-#~ msgstr "%s için parola"
-
-#~ msgid "Password for %s: "
-#~ msgstr "%s için parola: "
-
-#~ msgid "Message"
-#~ msgstr "İleti"
-
-#~ msgid "Help"
-#~ msgstr "Yardım"
-
-#~ msgid "*"
-#~ msgstr "*"
