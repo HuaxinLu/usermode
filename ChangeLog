@@ -1,5 +1,7 @@
 2011-03-31  Miloslav Trmač  <mitr@redhat.com>
 
+	* NEWS: Fix a spectacular typo.
+
 	* configure.ac: Release 1.107.
 	* NEWS: Update.
 	* po/*: Update.
