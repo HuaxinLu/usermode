@@ -315,7 +315,7 @@ format(struct mountinfo *info)
 		mkfs = g_strconcat(sbindir, "/mkfs.*", NULL);
 		g_free(sbindir);
 
-		options = gtk_combo_box_new_text();
+		options = gtk_combo_box_text_new();
 
 		defaultfs = 0;
 		results_valid = glob(mkfs, 0, NULL, &results) == 0;
@@ -325,8 +325,8 @@ format(struct mountinfo *info)
 			const char *text;
 
 			text = results.gl_pathv[i] + strlen(mkfs) - 1;
-			gtk_combo_box_append_text(GTK_COMBO_BOX(options),
-						  text);
+			gtk_combo_box_text_append_text
+				(GTK_COMBO_BOX_TEXT(options), text);
 			if(strcmp(text, PREFERRED_FS) == 0)
 				defaultfs = i;
 		}
