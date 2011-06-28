@@ -121,7 +121,10 @@ err:
 /* This function parses /etc/fstab using getmntent() and uses other tricks
  * to fill in the info for all filesystems with the 'pamconsole' option...
  * unless, of course getuid() == 0, then we get them all.  No reason root
- * shouldn't be allowed to use this, right?.  */
+ * shouldn't be allowed to use this, right?.
+ *
+ * Returns a linked list, on unrecoverable error shows a dialog and exits.
+ */
 static struct mountinfo *
 build_mountinfo_list(void)
 {
@@ -139,8 +142,22 @@ build_mountinfo_list(void)
 	/* Open the /etc/fstab file (yes, the preprocessor define is named
 	 * with an "m", don't let that throw you. */
 	fstab = setmntent(_PATH_MNTTAB, "r");
-	ret = NULL;
+	if (fstab == NULL) {
+		GtkWidget *dialog;
+		int err;
 
+		err = errno;
+		dialog = create_error_box(_("Error loading list of file "
+					    "systems"), _("User Mount Tool"));
+		gtk_message_dialog_format_secondary_text
+			(GTK_MESSAGE_DIALOG(dialog), "%s", strerror(err));
+
+		gtk_dialog_run(GTK_DIALOG(dialog));
+		gtk_widget_destroy(dialog);
+		exit(EXIT_FAILURE);
+	}
+
+	ret = NULL;
 	/* Iterate over all of the entries. */
 	while((fstab_entry = getmntent(fstab)) != NULL) {
 		struct stat dev_st;

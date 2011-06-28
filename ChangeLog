@@ -1,7 +1,11 @@
 2011-06-28  Miloslav Trmač  <mitr@redhat.com>
 
+	* usermount.c (build_mountinfo_list): Don't crash when /etc/fstab can't
+	be opened.
+
 	* usermount.c (format): Use GtkComboBoxText instead of deprecated
 	gtk_combo_box_new_text() and gtk_combo_box_append_text().
+
 	* configure.ac: Update minimum GTK+ version.
 
 2011-03-31  Miloslav Trmač  <mitr@redhat.com>
