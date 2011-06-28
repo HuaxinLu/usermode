@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-31 22:23+0200\n"
+"POT-Creation-Date: 2011-06-28 02:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -416,49 +416,54 @@ msgstr ""
 msgid "Un_mount"
 msgstr ""
 
-#: ../../po/../usermount.c:289
+#: ../../po/../usermount.c:150
+msgid "Error loading list of file systems"
+msgstr ""
+
+#. Create the dialog.
+#: ../../po/../usermount.c:151 ../../po/../usermount.c:525
+#: ../../po/../usermount.c:537
+msgid "User Mount Tool"
+msgstr ""
+
+#: ../../po/../usermount.c:306
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr ""
 
-#: ../../po/../usermount.c:300
+#: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
 msgstr ""
 
-#: ../../po/../usermount.c:337
+#: ../../po/../usermount.c:354
 msgid "Select a _filesystem type to create:"
 msgstr ""
 
-#: ../../po/../usermount.c:507
+#: ../../po/../usermount.c:524
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
 msgstr ""
 
-#. Create the dialog.
-#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
-msgid "User Mount Tool"
-msgstr ""
-
 #. Create the other buttons.
-#: ../../po/../usermount.c:538
+#: ../../po/../usermount.c:555
 msgid "_Format"
 msgstr ""
 
-#: ../../po/../usermount.c:574
+#: ../../po/../usermount.c:591
 msgid "Device"
 msgstr ""
 
-#: ../../po/../usermount.c:580
+#: ../../po/../usermount.c:597
 msgid "Directory"
 msgstr ""
 
-#: ../../po/../usermount.c:586
+#: ../../po/../usermount.c:603
 msgid "Filesystem"
 msgstr ""
 
-#: ../../po/../usermount.c:634
+#: ../../po/../usermount.c:651
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr ""
