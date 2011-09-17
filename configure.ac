@@ -9,6 +9,7 @@ AC_PREFIX_DEFAULT([/usr])
 
 AC_PROG_CC
 AM_PROG_CC_C_O
+AC_PROG_RANLIB
 AC_PATH_PROG([MOUNT], [mount], [/bin/mount], [/sbin:/bin:/usr/sbin:/usr/bin])
 AC_PATH_PROG([UMOUNT], [umount], [/bin/umount], [/sbin:/bin:/usr/sbin:/usr/bin])
 AC_PATH_PROG([MKFS], [mkfs], [/sbin/mkfs], [/sbin:/bin:/usr/sbin:/usr/bin])

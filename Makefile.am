@@ -33,6 +33,8 @@ pixmapdir = $(datadir)/pixmaps
 dist_pixmap_DATA = keys.xpm status_lock.png status_unlocked.png user_icon.png \
 	password.png disks.png keyring.png badge-small.png
 
+noinst_LIBRARIES = libuh-dialogs.a libuh-wrap.a
+
 install-data-local: userinfo.desktop usermount.desktop userpasswd.desktop
 	mkdir -p $(DESTDIR)$(datadir)/applications
 	for i in userinfo.desktop usermount.desktop userpasswd.desktop; do \
@@ -76,30 +78,29 @@ userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_CPPFLAGS = $(AM_CPPFLAGS) -DSYSCONFDIR='"$(sysconfdir)"'
 userhelper_LDADD = $(LIBUSER_LIBS) $(GLIB_LIBS) $(PAM_LIBS) $(SELINUX_LIBS) $(EFENCE_LIBS)
 
-userinfo_SOURCES = userinfo.c userdialogs.c userdialogs.h userhelper-wrap.c \
-	userhelper-wrap.h
+userinfo_SOURCES = userinfo.c
 userinfo_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS) $(SBINDIR_CPPFLAGS) \
 	-DPKGDATADIR='"$(pkgdatadir)"'
-userinfo_LDADD = $(SN_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
+userinfo_LDADD = libuh-wrap.a libuh-dialogs.a $(SN_LIBS) $(GTK_LIBS) \
+	$(EFENCE_LIBS)
 
-usermount_SOURCES = usermount.c userdialogs.c userdialogs.h
+usermount_SOURCES = usermount.c
 usermount_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS)
-usermount_LDADD = $(GTK_LIBS) -lblkid $(EFENCE_LIBS)
+usermount_LDADD = libuh-dialogs.a $(GTK_LIBS) -lblkid $(EFENCE_LIBS)
 
-userpasswd_SOURCES = userpasswd.c userdialogs.c userdialogs.h \
-	userhelper-wrap.c userhelper-wrap.h
-userpasswd_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS) $(SBINDIR_CPPFLAGS)
-userpasswd_LDADD = $(SN_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
+userpasswd_SOURCES = userpasswd.c
+userpasswd_CPPFLAGS = $(AM_CPPFLAGS) $(SBINDIR_CPPFLAGS)
+userpasswd_LDADD = libuh-wrap.a libuh-dialogs.a $(SN_LIBS) $(GTK_LIBS) \
+	$(EFENCE_LIBS)
 
 consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_CPPFLAGS = $(AM_CPPFLAGS) $(BINDIR_CPPFLAGS) $(SBINDIR_CPPFLAGS)
 consolehelper_LDADD = $(GLIB_LIBS) $(EFENCE_LIBS)
 
-consolehelper_gtk_SOURCES = consolehelper.c userdialogs.c userdialogs.h \
-	userhelper-wrap.c userhelper-wrap.h
-consolehelper_gtk_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS) \
-	$(SBINDIR_CPPFLAGS)
-consolehelper_gtk_LDADD = $(SN_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
+consolehelper_gtk_SOURCES = consolehelper.c
+consolehelper_gtk_CPPFLAGS = $(AM_CPPFLAGS) $(SBINDIR_CPPFLAGS)
+consolehelper_gtk_LDADD = libuh-wrap.a libuh-dialogs.a $(SN_LIBS) $(GTK_LIBS) \
+	$(EFENCE_LIBS)
 
 pam_panel_icon_SOURCES = pam-panel-icon.c gsmclient.c gsmclient.h props.c \
 	props.h
@@ -107,8 +108,13 @@ pam_panel_icon_CPPFLAGS = $(AM_CPPFLAGS) $(BINDIR_CPPFLAGS) \
 	$(PIXMAPDIR_CPPFLAGS) -DGETTEXT_PACKAGE=\"$(PACKAGE)\"
 pam_panel_icon_LDADD = $(GTK_LIBS) $(X_LIBS) -lICE -lSM $(EFENCE_LIBS)
 
-test_userdialog_SOURCES = test-userdialog.c userdialogs.c userdialogs.h
-test_userdialog_LDADD = $(GTK_LIBS) $(EFENCE_LIBS)
+test_userdialog_SOURCES = test-userdialog.c
+test_userdialog_LDADD = libuh-dialogs.a $(GTK_LIBS) $(EFENCE_LIBS)
+
+libuh_wrap_a_SOURCES = userhelper-wrap.c userhelper-wrap.h
+libuh_wrap_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS)
+
+libuh_dialogs_a_SOURCES = userdialogs.c userdialogs.h
 
 consolehelper.8: $(srcdir)/consolehelper.8.in Makefile
 	sed 's,@''BINDIR@,$(bindir),g' < $(srcdir)/consolehelper.8.in > $@
