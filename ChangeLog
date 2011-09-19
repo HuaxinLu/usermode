@@ -1,5 +1,11 @@
 2011-09-19  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (struct app_data): New member conv.
+	(pipe_conv_exec_start, pipe_conv_exec_fail, passwd, chfn, wrap): Use
+	struct app_data, not struct pam_conv, as the primary context variable.
+	All users updated.
+	(main): Use app_data.conv instead of the separate conv variable.
+
 	* userhelper-messages.c
 	* userhelper-messages.h: New files.
 	* userhelper-wrap.c (userhelper_parse_exitstatus): Use

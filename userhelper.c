@@ -78,6 +78,7 @@ extern char **environ;
 
 /* A structure type which we use to carry psuedo-global data around with us. */
 struct app_data {
+	const struct pam_conv *conv;
 	pam_handle_t *pamh;
 	gboolean fallback_allowed, fallback_chosen, canceled;
 	FILE *input, *output;
@@ -760,12 +761,9 @@ err:
 }
 
 static int
-pipe_conv_exec_start(const struct pam_conv *conv)
+pipe_conv_exec_start(struct app_data *data)
 {
-	if (conv->conv == converse_pipe) {
-		struct app_data *data;
-
-		data = conv->appdata_ptr;
+	if (data->conv->conv == converse_pipe) {
 		/* There might have been no converse_pipe() call, so send the
 		   information now. */
 		send_sn_info(data);
@@ -786,12 +784,9 @@ pipe_conv_exec_start(const struct pam_conv *conv)
 }
 
 static void
-pipe_conv_exec_fail(const struct pam_conv *conv)
+pipe_conv_exec_fail(struct app_data *data)
 {
-	if (conv->conv == converse_pipe) {
-		struct app_data *data;
-
-		data = conv->appdata_ptr;
+	if (data->conv->conv == converse_pipe) {
 		debug_msg("userhelper: exec failed\n");
 		/* There might have been no converse_pipe() call, so send the
 		   information now, just to be sure. */
@@ -1147,13 +1142,11 @@ set_pam_items(struct app_data *data, const char *user)
  * application data (which includes the ability to cancel if the user requests
  * it.  For this task, we don't retry on failure. */
 static void G_GNUC_NORETURN
-passwd(const char *user, struct pam_conv *conv)
+passwd(const char *user, struct app_data *data)
 {
 	int retval;
-	struct app_data *data;
 
-	data = conv->appdata_ptr;
-	retval = pam_start("passwd", user, conv, &data->pamh);
+	retval = pam_start("passwd", user, data->conv, &data->pamh);
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_start() failed\n");
 		fail_exit(data, retval);
@@ -1183,7 +1176,7 @@ passwd(const char *user, struct pam_conv *conv)
  * provide an interface to do this, because it's not PAM's job to manage this
  * stuff, so farm it out to a different library. */
 static void G_GNUC_NORETURN
-chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
+chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
      const char *new_full_name, const char *new_office,
      const char *new_office_phone, const char *new_home_phone,
      const char *new_shell)
@@ -1197,7 +1190,6 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 	GValueArray *values;
 	GValue *value, val;
 	int tryagain = 3, retval;
-	struct app_data *data;
 	gboolean ret;
 
 	debug_msg("userhelper: chfn(\"%s\", \"%s\", \"%s\", \"%s\", "
@@ -1225,8 +1217,7 @@ chfn(const char *user, struct pam_conv *conv, lu_prompt_fn *prompt,
 
 	/* Start up PAM to authenticate the user, this time pretending
 	 * we're "chfn". */
-	data = conv->appdata_ptr;
-	retval = pam_start("chfn", user, conv, &data->pamh);
+	retval = pam_start("chfn", user, data->conv, &data->pamh);
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_start() failed\n");
 		fail_exit(data, retval);
@@ -1462,7 +1453,7 @@ construct_cmdline(const char *argv0, char **argv)
 
 static void G_GNUC_NORETURN
 wrap(const char *user, const char *program,
-     struct pam_conv *conv, struct pam_conv *text_conv, lu_prompt_fn *prompt,
+     struct app_data *data, struct pam_conv *text_conv, lu_prompt_fn *prompt,
      int argc, char **argv)
 {
 	/* We're here to wrap the named program.  After authenticating as the
@@ -1481,7 +1472,6 @@ wrap(const char *user, const char *program,
 	int session, tryagain, gui, retval;
 	struct stat sbuf;
 	struct passwd *pwd;
-	struct app_data *data;
 	shvarFile *s;
 
 	(void)prompt;
@@ -1633,7 +1623,6 @@ wrap(const char *user, const char *program,
 	/* Pass the original UID to the new program */
 	setenv("USERHELPER_UID", g_strdup_printf("%jd", (intmax_t)getuid()), 1);
 
-	data = conv->appdata_ptr;
 	user_pam = get_user_for_auth(s);
 
 	/* Read the path to the program to run. */
@@ -1685,10 +1674,10 @@ wrap(const char *user, const char *program,
 		/* We are not really executing anything yet, but this switches
 		   off the parent to a "pass exit code through" mode without
 		   displaying any unwanted GUI dialogs. */
-		retval = pipe_conv_exec_start(conv);
+		retval = pipe_conv_exec_start(data);
 		if (retval != 0)
 			exit(retval);
-		conv = text_conv;
+		data->conv = text_conv;
 	}
 
 	/* Verify that the user we need to authenticate as has a home
@@ -1765,7 +1754,7 @@ wrap(const char *user, const char *program,
 	svCloseFile(s);
 
 	/* Start up PAM to authenticate the specified user. */
-	retval = pam_start(program, user_pam, conv, &data->pamh);
+	retval = pam_start(program, user_pam, data->conv, &data->pamh);
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_start() failed\n");
 		fail_exit(data, retval);
@@ -1802,7 +1791,7 @@ wrap(const char *user, const char *program,
 				fflush(data->output);
 				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 			}
-			retval = pipe_conv_exec_start(conv);
+			retval = pipe_conv_exec_start(data);
 			if (retval != 0)
 				exit(retval);
 #ifdef USE_STARTUP_NOTIFICATION
@@ -1815,7 +1804,7 @@ wrap(const char *user, const char *program,
 			}
 #endif
 			execv(constructed_path, argv + optind - 1);
-			pipe_conv_exec_fail(conv);
+			pipe_conv_exec_fail(data);
 			exit(ERR_EXEC_FAILED);
 		} else {
 			/* Well, we tried. */
@@ -1909,7 +1898,7 @@ wrap(const char *user, const char *program,
 				fflush(data->output);
 				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 			}
-			retval = pipe_conv_exec_start(conv);
+			retval = pipe_conv_exec_start(data);
 			if (retval != 0)
 				exit(retval);
 #ifdef USE_STARTUP_NOTIFICATION
@@ -1933,7 +1922,7 @@ wrap(const char *user, const char *program,
 			syslog(LOG_ERR, "could not run '%s' with "
 			       "root privileges on behalf of '%s': %s",
 			       cmdline, user, strerror(errno));
-			pipe_conv_exec_fail(conv);
+			pipe_conv_exec_fail(data);
 			exit(ERR_EXEC_FAILED);
 		}
 		/* We're in the parent.  Wait for the child to exit.  The child
@@ -1948,7 +1937,7 @@ wrap(const char *user, const char *program,
 		/* Close the session. */
 		retval = pam_close_session(data->pamh, 0);
 		if (retval != PAM_SUCCESS) {
-			pipe_conv_exec_fail(conv);
+			pipe_conv_exec_fail(data);
 			pam_setcred(data->pamh, PAM_DELETE_CRED);
 			pam_end(data->pamh, retval);
 			fail_exit(data, retval);
@@ -1980,7 +1969,7 @@ wrap(const char *user, const char *program,
 			fflush(data->output);
 			fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
 		}
-		retval = pipe_conv_exec_start(conv);
+		retval = pipe_conv_exec_start(data);
 		if (retval != 0)
 			exit(retval);
 #ifdef USE_STARTUP_NOTIFICATION
@@ -2002,7 +1991,7 @@ wrap(const char *user, const char *program,
 		syslog(LOG_ERR, "could not run '%s' with "
 		       "root privileges on behalf of '%s': %s",
 		       cmdline, user, strerror(errno));
-		pipe_conv_exec_fail(conv);
+		pipe_conv_exec_fail(data);
 		exit(ERR_EXEC_FAILED);
 	}
 }
@@ -2038,6 +2027,7 @@ main(int argc, char **argv)
 	/* State variable we pass around. */
 	struct app_data app_data = {
 		NULL,
+		NULL,
 		FALSE, FALSE, FALSE,
 		NULL, NULL,
 		NULL, NULL,
@@ -2060,7 +2050,6 @@ main(int argc, char **argv)
 		converse_console,
 		&app_data,
 	};
-	struct pam_conv *conv;
 
 	setlocale(LC_ALL, "");
 	bindtextdomain(PACKAGE, LOCALEDIR);
@@ -2153,11 +2142,11 @@ main(int argc, char **argv)
 		if (isatty(STDIN_FILENO)) {
 			/* We have a controlling tty on which we can disable
 			 * echoing, so use the text conversation method. */
-			conv = &text_conv;
+			app_data.conv = &text_conv;
 		} else {
 			/* We have no controlling terminal -- being run from
 			 * cron or some other mechanism? */
-			conv = &silent_conv;
+			app_data.conv = &silent_conv;
 #if 0
 			/* FIXME: print a warning here? */
 			fprintf(stderr, _("Unable to open graphical window, "
@@ -2174,7 +2163,7 @@ main(int argc, char **argv)
 			debug_msg("userhelper: invalid call\n");
 			exit(ERR_INVALID_CALL);
 		}
-		conv = &pipe_conv;
+		app_data.conv = &pipe_conv;
 		prompt = &prompt_pipe;
 	}
 
@@ -2224,13 +2213,13 @@ main(int argc, char **argv)
 
 	/* Change password? */
 	if (c_flag) {
-		passwd(user_name, conv);
+		passwd(user_name, &app_data);
 		g_assert_not_reached();
 	}
 
 	/* Change GECOS data or shell? */
 	if (SHELL_FLAGS) {
-		chfn(user_name, conv, prompt,
+		chfn(user_name, &app_data, prompt,
 		     new_full_name, new_office,
 		     new_office_phone, new_home_phone,
 		     new_shell);
@@ -2239,7 +2228,7 @@ main(int argc, char **argv)
 
 	/* Wrap some other program? */
 	if (w_flag) {
-		wrap(user_name, wrapped_program, conv, &text_conv, prompt,
+		wrap(user_name, wrapped_program, &app_data, &text_conv, prompt,
 		     argc, argv);
 		g_assert_not_reached();
 	}
