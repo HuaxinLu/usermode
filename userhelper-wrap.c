@@ -36,6 +36,7 @@
 #endif
 #include "userdialogs.h"
 #include "userhelper.h"
+#include "userhelper-messages.h"
 #include "userhelper-wrap.h"
 
 #ifdef DEBUG_USERHELPER
@@ -202,51 +203,9 @@ userhelper_fatal_error(GtkWidget *widget, GdkEvent *event, gpointer user_data)
 static void
 userhelper_parse_exitstatus(int exitstatus)
 {
-	static const struct {
-		int code;
-		GtkWidget* (*create)(const gchar*, const gchar*);
-		const char *message;
-	} codes[] = {
-		{-1, create_error_box,
-		 N_("Unknown exit code.")},
-		{0, create_message_box,
-		 N_("Information updated.")},
-		{ERR_PASSWD_INVALID, create_error_box,
-		 N_("The password you typed is invalid.\nPlease try again.")},
-		{ERR_FIELDS_INVALID, create_error_box,
-		 N_("One or more of the changed fields is invalid.\nThis is probably due to either colons or commas in one of the fields.\nPlease remove those and try again.")},
-		{ERR_SET_PASSWORD, create_error_box,
-		 N_("Password resetting error.")},
-		{ERR_LOCKS, create_error_box,
-		 N_("Some systems files are locked.\nPlease try again in a few moments.")},
-		{ERR_NO_USER, create_error_box,
-		 N_("Unknown user.")},
-		{ERR_NO_RIGHTS, create_error_box,
-		 N_("Insufficient rights.")},
-		{ERR_INVALID_CALL, create_error_box,
-		 N_("Invalid call to subprocess.")},
-		{ERR_SHELL_INVALID, create_error_box,
-		 N_("Your current shell is not listed in /etc/shells.\nYou are not allowed to change your shell.\nConsult your system administrator.")},
-		/* well, this is unlikely to work, but at least we tried... */
-		{ERR_NO_MEMORY, create_error_box,
-		 N_("Out of memory.")},
-		{ERR_EXEC_FAILED, create_error_box,
-		 N_("The exec() call failed.")},
-		{ERR_NO_PROGRAM, create_error_box,
-		 N_("Failed to find selected program.")},
-		/* special no-display dialog */
-		{ERR_CANCELED, NULL,
-		 N_("Request canceled.")},
-		{ERR_PAM_INT_ERROR, create_error_box,
-		 N_("Internal PAM error occured.")},
-		{ERR_MAX_TRIES, create_error_box,
-		 N_("No more retries allowed")},
-		{ERR_UNK_ERROR, create_error_box,
-		 N_("Unknown error.")},
-	};
-
+	const char *message;
+	enum uh_message_type type;
 	GtkWidget *message_box;
-	size_t i, code;
 
 	if (child_was_execed)
 		debug_msg("Wrapped application returned exit status %d.\n",
@@ -262,21 +221,23 @@ userhelper_parse_exitstatus(int exitstatus)
 	}
 
 	/* Create a dialog suitable for displaying this code. */
-	message_box = NULL;
-	code = 0;
-	for (i = 1; i < G_N_ELEMENTS(codes); i++) {
-		/* If entries past zero match this exit code, we'll use them. */
-		if (codes[i].code == exitstatus) {
-			code = i;
-			debug_msg("Status is \"%s\".\n", codes[i].message);
-			break;
-		}
-	}
+	uh_exitstatus_message(exitstatus, &message, &type);
+	debug_msg("Status is \"%s\".\n", message);
 
 	/* If we recognize this code, create the error dialog for it if we
 	   need to display one. */
-	if ((code < G_N_ELEMENTS(codes)) && (codes[code].create != NULL)) {
-		message_box = codes[code].create(_(codes[code].message), NULL);
+	switch (type) {
+	case UHM_MESSAGE:
+		message_box = create_message_box(message, NULL);
+		break;
+	case UHM_ERROR:
+		message_box = create_error_box(message, NULL);
+		break;
+	case UHM_SILENT:
+		message_box = NULL;
+		break;
+	default:
+		g_assert_not_reached();
 	}
 
 	/* Run the dialog box. */

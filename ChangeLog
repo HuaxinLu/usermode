@@ -1,5 +1,13 @@
 2011-09-19  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper-messages.c
+	* userhelper-messages.h: New files.
+	* userhelper-wrap.c (userhelper_parse_exitstatus): Use
+	uh_existatus_message().
+	* po/POTFILES.in: Add userhelper-messages.c.
+	* Makefile.am (liblib_a_SOURCES): Add userhelper-messages.c and
+	userhelper-messages.h.
+
 	* Makefile.am (noinst_LIBRARIES): Replace libuh-dialogs.a and
 	libuh-wrap.a with a single liblib.a.
 	(userinfo_LDADD, usermount_LDADD, userpasswd_LDADD)

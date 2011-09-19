@@ -108,8 +108,8 @@ pam_panel_icon_LDADD = $(GTK_LIBS) $(X_LIBS) -lICE -lSM $(EFENCE_LIBS)
 test_userdialog_SOURCES = test-userdialog.c
 test_userdialog_LDADD = liblib.a $(GTK_LIBS) $(EFENCE_LIBS)
 
-liblib_a_SOURCES = userdialogs.c userdialogs.h userhelper-wrap.c \
-	userhelper-wrap.h
+liblib_a_SOURCES = userdialogs.c userdialogs.h userhelper-messages.c \
+	userhelper-messages.h userhelper-wrap.c userhelper-wrap.h
 liblib_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIXMAPDIR_CPPFLAGS)
 
 consolehelper.8: $(srcdir)/consolehelper.8.in Makefile
