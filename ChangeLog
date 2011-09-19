@@ -1,3 +1,14 @@
+2011-09-19  Miloslav Trmač  <mitr@redhat.com>
+
+	* Makefile.am (noinst_LIBRARIES): Replace libuh-dialogs.a and
+	libuh-wrap.a with a single liblib.a.
+	(userinfo_LDADD, usermount_LDADD, userpasswd_LDADD)
+	(consolehelper_gtk_LDADD, test_userdialog_LDADD): Use liblib.a instead
+	of libuh-wrap.a and libuh-dialogs.a.
+	(liblib_a_SOURCES, liblib_a_CPPFLAGS): New definitions, replacing...
+	(libuh_wrap_a_SOURCES, libuh_wrap_a_CPPFLAGS)
+	(libuh_dialogs_a_SOURCES): ... these removed definitions.
+
 2011-09-17  Miloslav Trmač  <mitr@redhat.com>
 
 	* Makefile.am (noinst_LIBRARIES, libuh_wrap_a_SOURCES)
