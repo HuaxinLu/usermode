@@ -52,6 +52,7 @@
 
 #include "shvar.h"
 #include "userhelper.h"
+#include "userhelper-messages.h"
 
 #ifdef DEBUG_USERHELPER
 #define debug_msg(...) g_print(__VA_ARGS__)
@@ -89,6 +90,12 @@ struct app_data {
 	int sn_workspace;
 };
 
+/* A mixed-mode conversation function suitable for use with X.
+   data->conv->conv == converse_pipe is used to check whether we are run
+   by userhelper_runv() which e.g. writes error messages for us. */
+static int converse_pipe(int num_msg, const struct pam_message **msg,
+			 struct pam_response **resp, void *appdata_ptr);
+
 #ifdef WITH_SELINUX
 static int checkAccess(unsigned int selaccess) {
   int status=-1;
@@ -115,16 +122,33 @@ static int checkAccess(unsigned int selaccess) {
 }
 #endif /* WITH_SELINUX */
 
-/* Exit, returning the proper status code based on a PAM error code. */
+/* Exit, optionally writing a message to stderr. */
+static void G_GNUC_NORETURN
+die(struct app_data *data, int status)
+{
+	/* Be silent when status == 0, UNIX convention is to only report
+	   errors. */
+	if (status != 0 && data->conv->conv != converse_pipe) {
+		const char *msg;
+		enum uh_message_type type;
+
+		uh_exitstatus_message(status, &msg, &type);
+		if (type != UHM_SILENT)
+			fprintf(stderr, "%s\n", msg);
+	}
+	exit(status);
+}
+
+/* Exit, returning the proper status code based on a PAM error code.
+   Optionally write a message to stderr. */
 static int G_GNUC_NORETURN
 fail_exit(struct app_data *data, int pam_retval)
 {
 	int status;
 
 	/* This is a local error.  Bail. */
-	if (pam_retval == ERR_SHELL_INVALID) {
-		exit(ERR_SHELL_INVALID);
-	}
+	if (pam_retval == ERR_SHELL_INVALID)
+		die(data, ERR_SHELL_INVALID);
 
 	if (pam_retval == PAM_SUCCESS)
 		/* Just exit. */
@@ -173,7 +197,7 @@ fail_exit(struct app_data *data, int pam_retval)
 		}
 	}
 	debug_msg("userhelper: exiting with status %d.\n", status);
-	exit(status);
+	die(data, status);
 }
 
 /* Read a string from stdin, and return a freshly-allocated copy, without
@@ -979,43 +1003,43 @@ is_grouplist_member(const char *username, const char * grouplist)
 }
 
 static void
-become_super_supplementary_groups(void)
+become_super_supplementary_groups(struct app_data *data)
 {
 	if (initgroups("root", 0) != 0) {
 		debug_msg("userhelper: initgroups() failure: %s\n",
 			  strerror(errno));
-		exit(ERR_EXEC_FAILED);
+		die(data, ERR_EXEC_FAILED);
 	}
 }
 
 static void
-become_super_other(void)
+become_super_other(struct app_data *data)
 {
 	/* Become the superuser.
 	   Yes, setuid() and friends can fail, even for superusers. */
 	if (setregid(0, 0) != 0 || setreuid(0, 0) != 0) {
 		debug_msg("userhelper: set*id() failure: %s\n",
 			  strerror(errno));
-		exit(ERR_EXEC_FAILED);
+		die(data, ERR_EXEC_FAILED);
 	}
 	if ((geteuid() != 0) ||
 	    (getuid() != 0) ||
 	    (getegid() != 0) ||
 	    (getgid() != 0)) {
 		debug_msg("userhelper: set*id() didn't work\n");
-		exit(ERR_EXEC_FAILED);
+		die(data, ERR_EXEC_FAILED);
 	}
 }
 
 static void
-become_super(void)
+become_super(struct app_data *data)
 {
-	become_super_supplementary_groups();
-	become_super_other();
+	become_super_supplementary_groups(data);
+	become_super_other(data);
 }
 
 static void
-become_normal(const char *user)
+become_normal(struct app_data *data, const char *user)
 {
 	gid_t gid;
 	uid_t uid;
@@ -1028,23 +1052,24 @@ become_normal(const char *user)
 	    setreuid(uid, uid) != 0) {
 		debug_msg("userhelper: set*id() failure: %s\n",
 			  strerror(errno));
-		exit(ERR_EXEC_FAILED);
+		die(data, ERR_EXEC_FAILED);
 	}
 	/* Verify that we're back to normal. */
 	if (getegid() != gid || getgid() != gid) {
 		debug_msg("userhelper: still setgid()\n");
-		exit(ERR_EXEC_FAILED);
+		die(data, ERR_EXEC_FAILED);
 	}
 	/* Yes, setuid() can fail. */
 	if (geteuid() != uid || getuid() != uid) {
 		debug_msg("userhelper: still setuid()\n");
-		exit(ERR_EXEC_FAILED);
+		die(data, ERR_EXEC_FAILED);
 	}
 }
 
-/* Determine the name of the user who ran userhelper. */
+/* Determine the name of the user who ran userhelper.
+   Exit on error, optionally writing to stderr. */
 static char *
-get_invoking_user(void)
+get_invoking_user(struct app_data *data)
 {
 	struct passwd *pwd;
 	char *ret=NULL;
@@ -1056,7 +1081,7 @@ get_invoking_user(void)
 	} else {
 		/* I have no name and I must have one. */
 		debug_msg("userhelper: i have no name\n");
-		exit(ERR_UNK_ERROR);
+		die(data, ERR_UNK_ERROR);
 	}
 
 	debug_msg("userhelper: ruid user = '%s'\n", ret);
@@ -1064,14 +1089,15 @@ get_invoking_user(void)
 	return ret;
 }
 
-/* Determine the name of the user as whom we must authenticate. */
+/* Determine the name of the user as whom we must authenticate.
+   Exit on error, optionally writing to stderr. */
 static char *
-get_user_for_auth(shvarFile *s)
+get_user_for_auth(struct app_data *data, shvarFile *s)
 {
 	char *ret;
 	char *invoking_user, *configured_user, *configured_asusergroups;
 
-	invoking_user = get_invoking_user();
+	invoking_user = get_invoking_user(data);
 
 	ret = NULL;
 
@@ -1095,9 +1121,9 @@ get_user_for_auth(shvarFile *s)
 				ret = invoking_user;
 			} else
 				ret = configured_user;
-		} else if (strcmp(configured_user, "<none>") == 0) {
-			exit(ERR_NO_RIGHTS);
-		} else
+		} else if (strcmp(configured_user, "<none>") == 0)
+			die(data, ERR_NO_RIGHTS);
+		else
 			ret = configured_user;
 		g_free(configured_asusergroups);
 	}
@@ -1113,7 +1139,8 @@ get_user_for_auth(shvarFile *s)
 	return NULL;
 }
 
-/* Set various attributes of DATA, including the requesting user USER. */
+/* Set various attributes of DATA, including the requesting user USER.
+   Exit on error, optionally writing to stderr. */
 static void
 set_pam_items(struct app_data *data, const char *user)
 {
@@ -1202,18 +1229,14 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 
 	/* Verify that the fields we were given on the command-line
 	 * are sane (i.e., contain no forbidden characters). */
-	if (new_full_name && strpbrk(new_full_name, ":,=")) {
-		exit(ERR_FIELDS_INVALID);
-	}
-	if (new_office && strpbrk(new_office, ":,=")) {
-		exit(ERR_FIELDS_INVALID);
-	}
-	if (new_office_phone && strpbrk(new_office_phone, ":,=")) {
-		exit(ERR_FIELDS_INVALID);
-	}
-	if (new_home_phone && strpbrk(new_home_phone, ":,=")) {
-		exit(ERR_FIELDS_INVALID);
-	}
+	if (new_full_name && strpbrk(new_full_name, ":,="))
+		die(data, ERR_FIELDS_INVALID);
+	if (new_office && strpbrk(new_office, ":,="))
+		die(data, ERR_FIELDS_INVALID);
+	if (new_office_phone && strpbrk(new_office_phone, ":,="))
+		die(data, ERR_FIELDS_INVALID);
+	if (new_home_phone && strpbrk(new_home_phone, ":,="))
+		die(data, ERR_FIELDS_INVALID);
 
 	/* Start up PAM to authenticate the user, this time pretending
 	 * we're "chfn". */
@@ -1256,7 +1279,7 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 	if (strcmp(user, authed_user) != 0) {
 		debug_msg("userhelper: username(%s) != authuser(%s)\n",
 			  user, authed_user);
-		exit(ERR_UNK_ERROR);
+		die(data, ERR_UNK_ERROR);
 	}
 
 	/* Check if the user is allowed to change her information at
@@ -1346,7 +1369,7 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 		lu_ent_free(ent);
 		lu_end(context);
 		pam_end(data->pamh, PAM_ABORT);
-		exit(ERR_FIELDS_INVALID);
+		die(data, ERR_FIELDS_INVALID);
 	}
 
 	/* Build a new value for the GECOS data. */
@@ -1495,7 +1518,7 @@ wrap(const char *user, const char *program,
 	    (sbuf.st_mode & S_IWOTH)) {
 		debug_msg("userhelper: bad file permissions: %s \n",
 			  apps_filename);
-		exit(ERR_UNK_ERROR);
+		die(data, ERR_UNK_ERROR);
 	}
 	g_free(apps_filename);
 
@@ -1623,33 +1646,6 @@ wrap(const char *user, const char *program,
 	/* Pass the original UID to the new program */
 	setenv("USERHELPER_UID", g_strdup_printf("%jd", (intmax_t)getuid()), 1);
 
-	user_pam = get_user_for_auth(s);
-
-	/* Read the path to the program to run. */
-	constructed_path = svGetValue(s, "PROGRAM");
-	if (!constructed_path || constructed_path[0] != '/') {
-		g_free(constructed_path);
-		/* Criminy....  The system administrator didn't give us an
-		 * absolute path to the program!  Guess either /usr/sbin or
-		 * /sbin, and then give up if we don't find anything by that
-		 * name in either of those directories.  FIXME: we're a setuid
-		 * app, so access() may not be correct here, as it may give
-		 * false negatives.  But then, it wasn't an absolute path. */
-		constructed_path = g_strconcat("/usr/sbin/", program, NULL);
-		if (access(constructed_path, X_OK) != 0) {
-			/* Try the second directory. */
-			strcpy(constructed_path, "/sbin/");
-			strcat(constructed_path, program);
-			if (access(constructed_path, X_OK)) {
-				/* Nope, not there, either. */
-				debug_msg("userhelper: couldn't find wrapped "
-					  "binary\n");
-				exit(ERR_NO_PROGRAM);
-			}
-		}
-	}
-
-
 	/* We can forcefully disable the GUI from the configuration
 	 * file (a la blah-nox applications). */
 	gui = svTrueValue(s, "GUI", TRUE);
@@ -1676,16 +1672,41 @@ wrap(const char *user, const char *program,
 		   displaying any unwanted GUI dialogs. */
 		retval = pipe_conv_exec_start(data);
 		if (retval != 0)
-			exit(retval);
+			die(data, retval);
 		data->conv = text_conv;
 	}
 
+	/* Read the path to the program to run. */
+	constructed_path = svGetValue(s, "PROGRAM");
+	if (!constructed_path || constructed_path[0] != '/') {
+		g_free(constructed_path);
+		/* Criminy....  The system administrator didn't give us an
+		 * absolute path to the program!  Guess either /usr/sbin or
+		 * /sbin, and then give up if we don't find anything by that
+		 * name in either of those directories.  FIXME: we're a setuid
+		 * app, so access() may not be correct here, as it may give
+		 * false negatives.  But then, it wasn't an absolute path. */
+		constructed_path = g_strconcat("/usr/sbin/", program, NULL);
+		if (access(constructed_path, X_OK) != 0) {
+			/* Try the second directory. */
+			strcpy(constructed_path, "/sbin/");
+			strcat(constructed_path, program);
+			if (access(constructed_path, X_OK)) {
+				/* Nope, not there, either. */
+				debug_msg("userhelper: couldn't find wrapped "
+					  "binary\n");
+				die(data, ERR_NO_PROGRAM);
+			}
+		}
+	}
+
+	user_pam = get_user_for_auth(data, s);
 	/* Verify that the user we need to authenticate as has a home
 	 * directory. */
 	pwd = getpwnam(user_pam);
 	if (pwd == NULL) {
 		debug_msg("userhelper: no user named %s exists\n", user_pam);
-		exit(ERR_NO_USER);
+		die(data, ERR_NO_USER);
 	}
 
 	/* If the user we're authenticating as has root's UID, then it's
@@ -1782,7 +1803,7 @@ wrap(const char *user, const char *program,
 			 * application can run normally. */
 			argv[optind - 1] = strdup(program);
 			environ = environ_save;
-			become_normal(user);
+			become_normal(data, user);
 			if (data->input != NULL) {
 				fflush(data->input);
 				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
@@ -1793,7 +1814,7 @@ wrap(const char *user, const char *program,
 			}
 			retval = pipe_conv_exec_start(data);
 			if (retval != 0)
-				exit(retval);
+				die(data, retval);
 #ifdef USE_STARTUP_NOTIFICATION
 			if (data->sn_id) {
 				debug_msg("userhelper: setting "
@@ -1805,7 +1826,7 @@ wrap(const char *user, const char *program,
 #endif
 			execv(constructed_path, argv + optind - 1);
 			pipe_conv_exec_fail(data);
-			exit(ERR_EXEC_FAILED);
+			die(data, ERR_EXEC_FAILED);
 		} else {
 			/* Well, we tried. */
 			fail_exit(data, retval);
@@ -1819,9 +1840,8 @@ wrap(const char *user, const char *program,
 		pam_end(data->pamh, retval);
 		fail_exit(data, retval);
 	}
-	if (strcmp(user_pam, auth_user) != 0) {
-		exit(ERR_UNK_ERROR);
-	}
+	if (strcmp(user_pam, auth_user) != 0)
+		die(data, ERR_UNK_ERROR);
 
 	/* Verify that the authenticated user is allowed to run this
 	 * service now. */
@@ -1836,7 +1856,7 @@ wrap(const char *user, const char *program,
 	pwd = getpwnam(user_pam);
 	if (pwd == NULL) {
 		debug_msg("userhelper: no user named %s exists\n", user_pam);
-		exit(ERR_NO_USER);
+		die(data, ERR_NO_USER);
 	}
 
 	/* What we do now depends on whether or not we need to open
@@ -1858,7 +1878,7 @@ wrap(const char *user, const char *program,
 			fail_exit(data, retval);
 		}
 
-		become_super_supplementary_groups();
+		become_super_supplementary_groups(data);
 
 		retval = pam_setcred(data->pamh, PAM_ESTABLISH_CRED);
 		if (retval != PAM_SUCCESS) {
@@ -1868,9 +1888,8 @@ wrap(const char *user, const char *program,
 
 		/* Start up a child process we can wait on. */
 		child = fork();
-		if (child == -1) {
-			exit(ERR_EXEC_FAILED);
-		}
+		if (child == -1)
+			die(data, ERR_EXEC_FAILED);
 		if (child == 0) {
 			/* We're in the child.  Make a few last-minute
 			 * preparations and exec the program. */
@@ -1889,7 +1908,7 @@ wrap(const char *user, const char *program,
 				  constructed_path);
 			/* become_super_supplementary_groups() called in the
 			   parent. */
-			become_super_other();
+			become_super_other(data);
 			if (data->input != NULL) {
 				fflush(data->input);
 				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
@@ -1900,7 +1919,7 @@ wrap(const char *user, const char *program,
 			}
 			retval = pipe_conv_exec_start(data);
 			if (retval != 0)
-				exit(retval);
+				die(data, retval);
 #ifdef USE_STARTUP_NOTIFICATION
 			if (data->sn_id) {
 				debug_msg("userhelper: setting "
@@ -1923,7 +1942,7 @@ wrap(const char *user, const char *program,
 			       "root privileges on behalf of '%s': %s",
 			       cmdline, user, strerror(errno));
 			pipe_conv_exec_fail(data);
-			exit(ERR_EXEC_FAILED);
+			die(data, ERR_EXEC_FAILED);
 		}
 		/* We're in the parent.  Wait for the child to exit.  The child
 		   is calling pipe_conv_exec_{start,fail} () to define the
@@ -1960,7 +1979,7 @@ wrap(const char *user, const char *program,
 		argv[optind - 1] = strdup(program);
 		debug_msg("userhelper: about to exec \"%s\"\n",
 			  constructed_path);
-		become_super();
+		become_super(data);
 		if (data->input != NULL) {
 			fflush(data->input);
 			fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
@@ -1971,7 +1990,7 @@ wrap(const char *user, const char *program,
 		}
 		retval = pipe_conv_exec_start(data);
 		if (retval != 0)
-			exit(retval);
+			die(data, retval);
 #ifdef USE_STARTUP_NOTIFICATION
 		if (data->sn_id) {
 			debug_msg("userhelper: setting "
@@ -1992,7 +2011,7 @@ wrap(const char *user, const char *program,
 		       "root privileges on behalf of '%s': %s",
 		       cmdline, user, strerror(errno));
 		pipe_conv_exec_fail(data);
-		exit(ERR_EXEC_FAILED);
+		die(data, ERR_EXEC_FAILED);
 	}
 }
 
@@ -2167,7 +2186,7 @@ main(int argc, char **argv)
 		prompt = &prompt_pipe;
 	}
 
-	user_name = get_invoking_user();
+	user_name = get_invoking_user(&app_data);
 	debug_msg("userhelper: current user is %s\n", user_name);
 
 	/* If we didn't get the -w flag, the last argument can be a user's
@@ -2195,7 +2214,7 @@ main(int argc, char **argv)
 				       "SELinux context %s is not allowed to change information for user \"%s\"\n",
 				       context, user_name);
 				g_free(user_name);
-				exit(ERR_NO_USER);
+				die(&app_data, ERR_NO_USER);
 			}
 #endif
 			debug_msg("userhelper: modifying account data for %s\n",
@@ -2207,7 +2226,7 @@ main(int argc, char **argv)
 		if ((pwd == NULL) || (pwd->pw_name == NULL)) {
 			debug_msg("userhelper: user %s doesn't exist\n",
 				  user_name);
-			exit(ERR_NO_USER);
+			die(&app_data, ERR_NO_USER);
 		}
 	}
 

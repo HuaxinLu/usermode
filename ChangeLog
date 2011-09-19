@@ -1,5 +1,15 @@
 2011-09-19  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (die): New function.
+	(fail_exit, become_super_supplementary_groups)
+	(become_super_other, become_super, become_normal)
+	(get_invoking_user, get_user_for_auth, chfn, wrap, main): Use die()
+	instead of exit().  New parameter `data' where necessary, all users
+	updated.
+	(wrap): Process GUI and NOXOPTION before other options that refer to
+	die().
+	* Makefile.am (userhelper_LDADD): Link with liblib.a.
+
 	* userhelper.c (struct app_data): New member conv.
 	(pipe_conv_exec_start, pipe_conv_exec_fail, passwd, chfn, wrap): Use
 	struct app_data, not struct pam_conv, as the primary context variable.
