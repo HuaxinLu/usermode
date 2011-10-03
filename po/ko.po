@@ -1,16 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Cr4S3T0n <cr4s3t0n@empal.com>, 2004.
+# Dimitris Glezos <glezos@indifex.com>, 2011.
+# Eunju Kim <eukim@redhat.com>, 2006, 2007, 2008.
+# Michelle Ji Yeen Kim <mkim@redhat.com>, 2005.
+# Michelle J Kim <mkim@redhat.com>, 2003, 2004.
+# Michelle Kim <mkim@redhat.com>, 2002.
 msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
-"POT-Creation-Date: 2010-11-22 06:56+0100\n"
-"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"POT-Creation-Date: 2011-09-20 18:03+0200\n"
+"PO-Revision-Date: 2011-06-29 00:33+0000\n"
 "Last-Translator: glezos <glezos@indifex.com>\n"
-"Language-Team: Korean <>\n"
+"Language-Team: Korean (http://www.transifex.net/projects/p/fedora/team/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -165,15 +171,11 @@ msgstr "입출력 채널 nonbloking 설정 실패: %s\n"
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon : 세션 관리자와 연결하는데 실패했습니다\n"
 
-#: ../../po/../userhelper-wrap.c:211
-msgid "Unknown exit code."
-msgstr "알 수 없는 종료 코드입니다."
-
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-messages.c:29
 msgid "Information updated."
 msgstr "정보가 새로이 변경되었습니다."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-messages.c:32
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -181,7 +183,7 @@ msgstr ""
 "입력하신 암호가 올바르지 않습니다.\n"
 "다시 입력해 주십시요."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -191,11 +193,11 @@ msgstr ""
 "변경하신 항목 중에 ':' 또는 ',' 가 포함되어 있는 것 같습니다.\n"
 "만일 포함되어 있다면, 삭제하신 후 다시 입력해 주십시요."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "암호를 재설정하는 도중 오류가 발생하였습니다."
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-messages.c:45
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -203,19 +205,19 @@ msgstr ""
 "몇몇 시스템 파일이 잠기었습니다.\n"
 "잠시 후에 다시 시도해 주십시요."
 
-#: ../../po/../userhelper-wrap.c:223
+#: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
 msgstr "알 수 없는 사용자"
 
-#: ../../po/../userhelper-wrap.c:225
+#: ../../po/../userhelper-messages.c:49
 msgid "Insufficient rights."
 msgstr "권한이 없습니다."
 
-#: ../../po/../userhelper-wrap.c:227
+#: ../../po/../userhelper-messages.c:50
 msgid "Invalid call to subprocess."
 msgstr "하부 프로세스 호출이 올바르지 않습니다.."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-messages.c:53
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -225,119 +227,126 @@ msgstr ""
 "쉘을 변경할 수 없습니다.\n"
 "자세한 사항은 시스템 관리자에게 문의해 보시기 바랍니다."
 
-#: ../../po/../userhelper-wrap.c:232
+#. well, this is unlikely to work, but at least we tried...
+#: ../../po/../userhelper-messages.c:58
 msgid "Out of memory."
 msgstr "메모리가 부족합니다."
 
-#: ../../po/../userhelper-wrap.c:234
+#: ../../po/../userhelper-messages.c:59
 msgid "The exec() call failed."
 msgstr "exec() 호출에 실패했습니다."
 
-#: ../../po/../userhelper-wrap.c:236
+#: ../../po/../userhelper-messages.c:60
 msgid "Failed to find selected program."
 msgstr "선택하신 프로그램을 찾는데 실패했습니다."
 
-#: ../../po/../userhelper-wrap.c:239
+#. special no-display dialog
+#: ../../po/../userhelper-messages.c:62
 msgid "Request canceled."
 msgstr "요청을 취소함."
 
-#: ../../po/../userhelper-wrap.c:241
+#: ../../po/../userhelper-messages.c:63
 msgid "Internal PAM error occured."
 msgstr "내부 PAM 오류가 발생했습니다."
 
-#: ../../po/../userhelper-wrap.c:243
+#: ../../po/../userhelper-messages.c:64
 msgid "No more retries allowed"
 msgstr "더 이상의 재시도는 허용되지 않습니다."
 
-#: ../../po/../userhelper-wrap.c:245
+#: ../../po/../userhelper-messages.c:65
 msgid "Unknown error."
 msgstr "알 수 없는 오류입니다."
 
-#: ../../po/../userhelper-wrap.c:494
+#. First entry is default
+#: ../../po/../userhelper-messages.c:67
+msgid "Unknown exit code."
+msgstr "알 수 없는 종료 코드입니다."
+
+#: ../../po/../userhelper-wrap.c:455
 msgid "Query"
 msgstr "질의"
 
-#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
+#: ../../po/../userhelper-wrap.c:514 ../../po/../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\"로 인증"
 
-#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
+#: ../../po/../userhelper-wrap.c:533 ../../po/../userhelper-wrap.c:673
 msgid "Error"
 msgstr "오류"
 
-#: ../../po/../userhelper-wrap.c:572
+#: ../../po/../userhelper-wrap.c:533
 msgid "Information"
 msgstr "정보"
 
-#: ../../po/../userhelper-wrap.c:737
+#: ../../po/../userhelper-wrap.c:698
 msgid "Changing password."
 msgstr "암호를 변경합니다."
 
-#: ../../po/../userhelper-wrap.c:739
+#: ../../po/../userhelper-wrap.c:700
 msgid "Changing personal information."
 msgstr "개인 정보를 변경합니다."
 
-#: ../../po/../userhelper-wrap.c:742
+#: ../../po/../userhelper-wrap.c:703
 msgid "Changing login shell."
 msgstr "로그인 쉘을 변경합니다."
 
-#: ../../po/../userhelper-wrap.c:746
+#: ../../po/../userhelper-wrap.c:707
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr "슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, 그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: ../../po/../userhelper-wrap.c:748
+#: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
 msgstr "슈퍼유저의 권한이 필요한 \"%s\"(을)를 실행하셨습니다, 그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../../po/../userhelper-wrap.c:752
+#: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
 msgstr "슈퍼유저의 권한으로 취할 수 있는 명령을 실행하셨습니다, 그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../../po/../userhelper-wrap.c:754
+#: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
 msgstr "슈퍼유저의 권한이 필요한 명령을 실행하셨습니다, 그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
 msgstr "권한없이 실행 (_R)"
 
-#: ../../po/../userhelper-wrap.c:938
+#: ../../po/../userhelper-wrap.c:899
 #, c-format
 msgid "Pipe error.\n"
 msgstr "파이프 오류입니다.\n"
 
-#: ../../po/../userhelper-wrap.c:945
+#: ../../po/../userhelper-wrap.c:906
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() 할 수 없습니다.\n"
 
-#: ../../po/../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:930
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "IO 채널에 있는 %s 인코딩을 설정할 수 없습니다.\n"
 
-#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
+#: ../../po/../userhelper-wrap.c:999 ../../po/../userhelper-wrap.c:1003
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() 오류입니다.\n"
 
-#: ../../po/../userhelper-wrap.c:1053
+#: ../../po/../userhelper-wrap.c:1014
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() 오류입니다, 오류코드(errno)=%d\n"
 
-#: ../../po/../userhelper.c:563
+#: ../../po/../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -346,7 +355,7 @@ msgstr ""
 "슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, \n"
 "그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
 
-#: ../../po/../userhelper.c:565
+#: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -355,7 +364,7 @@ msgstr ""
 "관리자 권한이 필요한 \"%s\"(을)를 실행하셨습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../../po/../userhelper.c:569
+#: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -364,7 +373,7 @@ msgstr ""
 "관리자 권한으로 취할 수 있는 명령을 실행하셨습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../../po/../userhelper.c:571
+#: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -373,13 +382,13 @@ msgstr ""
 "관리자 권한이 필요한 명령을 실행하셨습니다, \n"
 "그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
-#: ../../po/../userhelper.c:2070
+#: ../../po/../userhelper.c:2079
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper는 setuid를 root로 해야 합니다\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2162
+#: ../../po/../userhelper.c:2171
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -435,21 +444,31 @@ msgstr "장치연결 (_M)"
 msgid "Un_mount"
 msgstr "장치연결 해제 (_m)"
 
-#: ../../po/../usermount.c:289
+#: ../../po/../usermount.c:150
+msgid "Error loading list of file systems"
+msgstr ""
+
+#. Create the dialog.
+#: ../../po/../usermount.c:151 ../../po/../usermount.c:525
+#: ../../po/../usermount.c:537
+msgid "User Mount Tool"
+msgstr "사용자 장치연결 도구"
+
+#: ../../po/../usermount.c:306
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
 msgstr "정말로 이 드라이브를 포맷하시겠습니까?  진행하실 경우 현재 저장되어 있는 모든 자료는 삭제됩니다."
 
-#: ../../po/../usermount.c:300
+#: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
 msgstr "로우레벨 포맷을 실행합니다 (_l)."
 
-#: ../../po/../usermount.c:337
+#: ../../po/../usermount.c:354
 msgid "Select a _filesystem type to create:"
 msgstr "생성할 파일시스템 유형 선택 (_f):"
 
-#: ../../po/../usermount.c:507
+#: ../../po/../usermount.c:524
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -457,29 +476,24 @@ msgstr ""
 "장치에 연결 또는 해제할 파일시스템이 없습니다.\n"
 "시스템 관리자에게 문의하십시요."
 
-#. Create the dialog.
-#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
-msgid "User Mount Tool"
-msgstr "사용자 장치연결 도구"
-
 #. Create the other buttons.
-#: ../../po/../usermount.c:538
+#: ../../po/../usermount.c:555
 msgid "_Format"
 msgstr "포맷 (_F)"
 
-#: ../../po/../usermount.c:574
+#: ../../po/../usermount.c:591
 msgid "Device"
 msgstr "장치"
 
-#: ../../po/../usermount.c:580
+#: ../../po/../usermount.c:597
 msgid "Directory"
 msgstr "디렉토리"
 
-#: ../../po/../usermount.c:586
+#: ../../po/../usermount.c:603
 msgid "Filesystem"
 msgstr "파일시스템"
 
-#: ../../po/../usermount.c:634
+#: ../../po/../usermount.c:651
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "'%s' 장치를 포맷할 수 없습니다."
@@ -499,3 +513,5 @@ msgstr "로그인 암호를 변경합니다"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "암호"
+
+

@@ -1,14 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Dimitris Glezos <glezos@indifex.com>, 2011.
+# hi <rranjan@redhat.com>, 2007.
+# Rajesh Ranjan <rranjan@redhat.com>, 2004, 2005, 2006, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
-"POT-Creation-Date: 2010-11-22 06:56+0100\n"
-"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"POT-Creation-Date: 2011-09-20 18:03+0200\n"
+"PO-Revision-Date: 2011-06-29 00:33+0000\n"
 "Last-Translator: glezos <glezos@indifex.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -167,15 +170,11 @@ msgstr "IO चैनल गैर ब्लॉकिंग सेट करन�
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: सत्र प्रबंधक से जोड़ने में विफल\n"
 
-#: ../../po/../userhelper-wrap.c:211
-msgid "Unknown exit code."
-msgstr "अज्ञात निकास कूट."
-
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-messages.c:29
 msgid "Information updated."
 msgstr "जानकारी का अद्यतन हुआ."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-messages.c:32
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -183,7 +182,7 @@ msgstr ""
 "आपने अनुचित शब्दकूट टंकित किया.\n"
 "कृपया पुनःप्रयास करें."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -193,11 +192,11 @@ msgstr ""
 "इसका कारण है कि क्षेत्रों में से एक में विसर्ग या विराम हैं.\n"
 "कृपया उन्हें हटाएँ और पुनःप्रयास करें."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "शब्दकूट पुनःजमावट त्रुटि."
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-messages.c:45
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -205,19 +204,19 @@ msgstr ""
 "कुछ सिस्टम फाइल तालित हैं.\n"
 "कृपया कुछ क्षणों में पुनःप्रयास करें."
 
-#: ../../po/../userhelper-wrap.c:223
+#: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
 msgstr "अज्ञात उपयोक्ता"
 
-#: ../../po/../userhelper-wrap.c:225
+#: ../../po/../userhelper-messages.c:49
 msgid "Insufficient rights."
 msgstr "अपर्याप्त अधिकार"
 
-#: ../../po/../userhelper-wrap.c:227
+#: ../../po/../userhelper-messages.c:50
 msgid "Invalid call to subprocess."
 msgstr "उपप्रक्रिया में अवैध बुलावा."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-messages.c:53
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -227,64 +226,71 @@ msgstr ""
 "आपको अपने शैल बदलने की अनुमति नहीं है.\n"
 "अपने सिस्टम प्रशासक से विचारविमर्श करें."
 
-#: ../../po/../userhelper-wrap.c:232
+#. well, this is unlikely to work, but at least we tried...
+#: ../../po/../userhelper-messages.c:58
 msgid "Out of memory."
 msgstr "स्मृति से बाहर."
 
-#: ../../po/../userhelper-wrap.c:234
+#: ../../po/../userhelper-messages.c:59
 msgid "The exec() call failed."
 msgstr "exec() बुलावा असफल रहा."
 
-#: ../../po/../userhelper-wrap.c:236
+#: ../../po/../userhelper-messages.c:60
 msgid "Failed to find selected program."
 msgstr "चयनित कार्यक्रम को खोजने में असफल."
 
-#: ../../po/../userhelper-wrap.c:239
+#. special no-display dialog
+#: ../../po/../userhelper-messages.c:62
 msgid "Request canceled."
 msgstr "निवेदन रद्द."
 
-#: ../../po/../userhelper-wrap.c:241
+#: ../../po/../userhelper-messages.c:63
 msgid "Internal PAM error occured."
 msgstr "आंतरिक PAM त्रुटि पैदा हुई."
 
-#: ../../po/../userhelper-wrap.c:243
+#: ../../po/../userhelper-messages.c:64
 msgid "No more retries allowed"
 msgstr "अब कोई कोशिश अनुमतिप्राप्त नहीं"
 
-#: ../../po/../userhelper-wrap.c:245
+#: ../../po/../userhelper-messages.c:65
 msgid "Unknown error."
 msgstr "अज्ञात त्रुटि."
 
-#: ../../po/../userhelper-wrap.c:494
+#. First entry is default
+#: ../../po/../userhelper-messages.c:67
+msgid "Unknown exit code."
+msgstr "अज्ञात निकास कूट."
+
+#: ../../po/../userhelper-wrap.c:455
 msgid "Query"
 msgstr "प्रश्न"
 
-#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
+#: ../../po/../userhelper-wrap.c:514 ../../po/../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "\"%s\" के रूप में प्रमाणित करें"
 
-#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
+#: ../../po/../userhelper-wrap.c:533 ../../po/../userhelper-wrap.c:673
 msgid "Error"
 msgstr "त्रुटि"
 
-#: ../../po/../userhelper-wrap.c:572
+#: ../../po/../userhelper-wrap.c:533
 msgid "Information"
 msgstr "जानकारी"
 
-#: ../../po/../userhelper-wrap.c:737
+#: ../../po/../userhelper-wrap.c:698
 msgid "Changing password."
 msgstr "शब्दकूट बदल रहा है."
 
-#: ../../po/../userhelper-wrap.c:739
+#: ../../po/../userhelper-wrap.c:700
 msgid "Changing personal information."
 msgstr "निजी जानकारी को बदल रहा है."
 
-#: ../../po/../userhelper-wrap.c:742
+#: ../../po/../userhelper-wrap.c:703
 msgid "Changing login shell."
 msgstr "सत्रारंभ शैल को बदल रहा है."
 
-#: ../../po/../userhelper-wrap.c:746
+#: ../../po/../userhelper-wrap.c:707
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -293,7 +299,7 @@ msgstr ""
 "आप \"%s\" को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से लाभ पा सकता "
 "है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper-wrap.c:748
+#: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -302,7 +308,7 @@ msgstr ""
 "आप \"%s\" को चलाने का प्रयास कर रहे हैं जिसके लिये प्रशासनिक अधिकार जरूरी "
 "है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper-wrap.c:752
+#: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -310,7 +316,7 @@ msgstr ""
 "आप एक कमांड को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से लाभ पा सकता"
 " है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है. "
 
-#: ../../po/../userhelper-wrap.c:754
+#: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -318,36 +324,36 @@ msgstr ""
 "आप एक कमांड को चलाने का प्रयास कर रहे हैं जिसके लिये प्रशासनिक अधिकार जरूरी "
 "है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
 msgstr "विशेषाधिकार के बिना चलाएँ (_R)"
 
-#: ../../po/../userhelper-wrap.c:938
+#: ../../po/../userhelper-wrap.c:899
 #, c-format
 msgid "Pipe error.\n"
 msgstr "पाइप त्रुटि.\n"
 
-#: ../../po/../userhelper-wrap.c:945
+#: ../../po/../userhelper-wrap.c:906
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "fork() नहीं कर सकता.\n"
 
-#: ../../po/../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:930
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr "IO चैनल पर द्विपदयी एन्कोडिंग सेट नहीं कर सकता है: %s\n"
 
-#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
+#: ../../po/../userhelper-wrap.c:999 ../../po/../userhelper-wrap.c:1003
 #, c-format
 msgid "dup2() error.\n"
 msgstr "dup2() त्रुटि.\n"
 
-#: ../../po/../userhelper-wrap.c:1053
+#: ../../po/../userhelper-wrap.c:1014
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "execl() त्रुटि, errno=%d\n"
 
-#: ../../po/../userhelper.c:563
+#: ../../po/../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -356,7 +362,7 @@ msgstr ""
 "आप \"%s\" को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से चलते हैं,\n"
 "लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper.c:565
+#: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -365,7 +371,7 @@ msgstr ""
 "आप \"%s\" को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार \n"
 "की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper.c:569
+#: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -374,7 +380,7 @@ msgstr ""
 "आप एक निर्देश को चलाने का प्रयास कर रहे हैं जो प्रशासनिक अधिकार से चलता है,\n"
 "लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper.c:571
+#: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -383,13 +389,13 @@ msgstr ""
 "आप एक निर्देश को चलाने का प्रयास कर रहे हैं जिसको प्रशासनिक अधिकार\n"
 " की आवश्यकता है, लेकिन ऐसा करने के लिए अधिक जानकारी की आवश्यकता है."
 
-#: ../../po/../userhelper.c:2070
+#: ../../po/../userhelper.c:2079
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "यूजरहेल्पर को अवश्य ही setuid रूट होना चाहिए\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2162
+#: ../../po/../userhelper.c:2171
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -446,7 +452,17 @@ msgstr "आरोहित करें (_M)"
 msgid "Un_mount"
 msgstr "अनारोहित करें (_m)"
 
-#: ../../po/../usermount.c:289
+#: ../../po/../usermount.c:150
+msgid "Error loading list of file systems"
+msgstr ""
+
+#. Create the dialog.
+#: ../../po/../usermount.c:151 ../../po/../usermount.c:525
+#: ../../po/../usermount.c:537
+msgid "User Mount Tool"
+msgstr "उपयोक्ता आरोह उपकरण"
+
+#: ../../po/../usermount.c:306
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -454,15 +470,15 @@ msgstr ""
 "क्या आप निश्चित हैं कि आप इस डिस्क को संरूपित करना चाहते है? कोई भी आंकड़ा "
 "जो वर्तमान में है उसे आप नष्ट कर देंगे."
 
-#: ../../po/../usermount.c:300
+#: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
 msgstr "एक निम्नस्तर संरूप चलाएँ (_l)."
 
-#: ../../po/../usermount.c:337
+#: ../../po/../usermount.c:354
 msgid "Select a _filesystem type to create:"
 msgstr "निर्मित करने के लिए एक फाइल सिस्टम प्रकार चुनें (_f):"
 
-#: ../../po/../usermount.c:507
+#: ../../po/../usermount.c:524
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -470,29 +486,24 @@ msgstr ""
 "कोई फाइल सिस्टम नहीं है जो आपको आरोहण या अनारोहण करने की अनुमति देती है.\n"
 "अपने प्रशासक से संपर्क करें."
 
-#. Create the dialog.
-#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
-msgid "User Mount Tool"
-msgstr "उपयोक्ता आरोह उपकरण"
-
 #. Create the other buttons.
-#: ../../po/../usermount.c:538
+#: ../../po/../usermount.c:555
 msgid "_Format"
 msgstr "संरूपित करें (_F)"
 
-#: ../../po/../usermount.c:574
+#: ../../po/../usermount.c:591
 msgid "Device"
 msgstr "युक्ति"
 
-#: ../../po/../usermount.c:580
+#: ../../po/../usermount.c:597
 msgid "Directory"
 msgstr "निर्देशिका"
 
-#: ../../po/../usermount.c:586
+#: ../../po/../usermount.c:603
 msgid "Filesystem"
 msgstr "फाइलसिस्टम"
 
-#: ../../po/../usermount.c:634
+#: ../../po/../usermount.c:651
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "युक्ति '%s' संरूपित नहीं किया जा सकता है."
@@ -512,3 +523,5 @@ msgstr "अपना लॉगिन शब्दकूट बदलें"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "शब्दकूट"
+
+

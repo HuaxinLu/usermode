@@ -1,14 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Arangel Angov <arangel@linux.net.mk>, 2007.
+# Arangel Angov <ufo@linux.net.mk>, 2004.
+# Dimitris Glezos <glezos@indifex.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
-"POT-Creation-Date: 2010-11-22 06:56+0100\n"
-"PO-Revision-Date: 2011-03-22 15:40+0000\n"
+"POT-Creation-Date: 2011-09-20 18:03+0200\n"
+"PO-Revision-Date: 2011-06-29 00:33+0000\n"
 "Last-Translator: glezos <glezos@indifex.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -168,15 +171,11 @@ msgstr "Не можам да го наместам IO каналот да деб
 msgid "pam-panel-icon: failed to connect to session manager\n"
 msgstr "pam-panel-icon: не може да се врзе со менаџерот на сесијата\n"
 
-#: ../../po/../userhelper-wrap.c:211
-msgid "Unknown exit code."
-msgstr "Непознат код за излез."
-
-#: ../../po/../userhelper-wrap.c:213
+#: ../../po/../userhelper-messages.c:29
 msgid "Information updated."
 msgstr "Информациите се ажурирани."
 
-#: ../../po/../userhelper-wrap.c:215
+#: ../../po/../userhelper-messages.c:32
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
@@ -184,7 +183,7 @@ msgstr ""
 "Лозинката што ја внесовте не е точна.\n"
 "Обидете се повторно."
 
-#: ../../po/../userhelper-wrap.c:217
+#: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
@@ -194,11 +193,11 @@ msgstr ""
 "Најверојатно, ова е проблем поради некој знак (запирка, две точки и сл.) во едно од полињата.\n"
 "Ве молам отстранете ги и обидете се повторно."
 
-#: ../../po/../userhelper-wrap.c:219
+#: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Грешка при ресетирање на лозинката."
 
-#: ../../po/../userhelper-wrap.c:221
+#: ../../po/../userhelper-messages.c:45
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
@@ -206,19 +205,19 @@ msgstr ""
 "Некои системски датотеки се заклучени.\n"
 "Ве молам обидете се повторно малку подоцна."
 
-#: ../../po/../userhelper-wrap.c:223
+#: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
 msgstr "Непознат корисник."
 
-#: ../../po/../userhelper-wrap.c:225
+#: ../../po/../userhelper-messages.c:49
 msgid "Insufficient rights."
 msgstr "Недоволно привилегии."
 
-#: ../../po/../userhelper-wrap.c:227
+#: ../../po/../userhelper-messages.c:50
 msgid "Invalid call to subprocess."
 msgstr "Невалиден повик до подпроцесот."
 
-#: ../../po/../userhelper-wrap.c:229
+#: ../../po/../userhelper-messages.c:53
 msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
@@ -228,64 +227,71 @@ msgstr ""
 "Немате дозвола да ја промените школката.\n"
 "Советувајте се со администраторот на системот."
 
-#: ../../po/../userhelper-wrap.c:232
+#. well, this is unlikely to work, but at least we tried...
+#: ../../po/../userhelper-messages.c:58
 msgid "Out of memory."
 msgstr "Нема повеќе меморија."
 
-#: ../../po/../userhelper-wrap.c:234
+#: ../../po/../userhelper-messages.c:59
 msgid "The exec() call failed."
 msgstr "Повикот до exec() е неуспешен."
 
-#: ../../po/../userhelper-wrap.c:236
+#: ../../po/../userhelper-messages.c:60
 msgid "Failed to find selected program."
 msgstr "Не можам да ја најдам одбраната програма."
 
-#: ../../po/../userhelper-wrap.c:239
+#. special no-display dialog
+#: ../../po/../userhelper-messages.c:62
 msgid "Request canceled."
 msgstr "Барањето е откажано."
 
-#: ../../po/../userhelper-wrap.c:241
+#: ../../po/../userhelper-messages.c:63
 msgid "Internal PAM error occured."
 msgstr "Се појави внатрешна PAM грешка."
 
-#: ../../po/../userhelper-wrap.c:243
+#: ../../po/../userhelper-messages.c:64
 msgid "No more retries allowed"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:245
+#: ../../po/../userhelper-messages.c:65
 msgid "Unknown error."
 msgstr "Непозната грешка."
 
-#: ../../po/../userhelper-wrap.c:494
+#. First entry is default
+#: ../../po/../userhelper-messages.c:67
+msgid "Unknown exit code."
+msgstr "Непознат код за излез."
+
+#: ../../po/../userhelper-wrap.c:455
 msgid "Query"
 msgstr "Дијалог"
 
-#: ../../po/../userhelper-wrap.c:553 ../../po/../userhelper.c:581
+#: ../../po/../userhelper-wrap.c:514 ../../po/../userhelper.c:607
 #, c-format
 msgid "Authenticating as \"%s\""
 msgstr "Ве пријавувам како „%s“"
 
-#: ../../po/../userhelper-wrap.c:572 ../../po/../userhelper-wrap.c:712
+#: ../../po/../userhelper-wrap.c:533 ../../po/../userhelper-wrap.c:673
 msgid "Error"
 msgstr "Грешка"
 
-#: ../../po/../userhelper-wrap.c:572
+#: ../../po/../userhelper-wrap.c:533
 msgid "Information"
 msgstr "Информации"
 
-#: ../../po/../userhelper-wrap.c:737
+#: ../../po/../userhelper-wrap.c:698
 msgid "Changing password."
 msgstr "Ја менувам лозинката."
 
-#: ../../po/../userhelper-wrap.c:739
+#: ../../po/../userhelper-wrap.c:700
 msgid "Changing personal information."
 msgstr "Ги менувам личните информации."
 
-#: ../../po/../userhelper-wrap.c:742
+#: ../../po/../userhelper-wrap.c:703
 msgid "Changing login shell."
 msgstr "Ја менувам школката за најава."
 
-#: ../../po/../userhelper-wrap.c:746
+#: ../../po/../userhelper-wrap.c:707
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
@@ -294,7 +300,7 @@ msgstr ""
 "Се обидувате да ја отворите програмата \"%s\" која може да ги искористи и\n"
 "административните привилегии, но потребни се дополнителни информации."
 
-#: ../../po/../userhelper-wrap.c:748
+#: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
@@ -303,7 +309,7 @@ msgstr ""
 "Се обидувате да ја отворите програмата \"%s\" која бара административен\n"
 "пристап. Внесете ги дополнителните информации за тоа."
 
-#: ../../po/../userhelper-wrap.c:752
+#: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
@@ -311,7 +317,7 @@ msgstr ""
 "Се обидувате да извршите команда која може да ги искористи и\n"
 "административните привилегии, но потребни се дополнителни информации."
 
-#: ../../po/../userhelper-wrap.c:754
+#: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
@@ -319,36 +325,36 @@ msgstr ""
 "Се обидувате да извршите команда која бара административен пристап.\n"
 "Внесете ги дополнителните информации."
 
-#: ../../po/../userhelper-wrap.c:791
+#: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
 msgstr "_Изврши без привилегии"
 
-#: ../../po/../userhelper-wrap.c:938
+#: ../../po/../userhelper-wrap.c:899
 #, c-format
 msgid "Pipe error.\n"
 msgstr "Pipe грешка.\n"
 
-#: ../../po/../userhelper-wrap.c:945
+#: ../../po/../userhelper-wrap.c:906
 #, c-format
 msgid "Cannot fork().\n"
 msgstr "form() е неуспешно.\n"
 
-#: ../../po/../userhelper-wrap.c:969
+#: ../../po/../userhelper-wrap.c:930
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
 msgstr ""
 
-#: ../../po/../userhelper-wrap.c:1038 ../../po/../userhelper-wrap.c:1042
+#: ../../po/../userhelper-wrap.c:999 ../../po/../userhelper-wrap.c:1003
 #, c-format
 msgid "dup2() error.\n"
 msgstr "грешка во dup2().\n"
 
-#: ../../po/../userhelper-wrap.c:1053
+#: ../../po/../userhelper-wrap.c:1014
 #, c-format
 msgid "execl() error, errno=%d\n"
 msgstr "грешка во execl(), errno=%d\n"
 
-#: ../../po/../userhelper.c:563
+#: ../../po/../userhelper.c:589
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
@@ -357,7 +363,7 @@ msgstr ""
 "Се обидувате да ја отворите програмата \"%s\" која може да ги искористи и\n"
 "административните привилегии, но потребни се дополнителни информации."
 
-#: ../../po/../userhelper.c:565
+#: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
@@ -366,7 +372,7 @@ msgstr ""
 "Се обидувате да ја отворите програмата \"%s\" која бара административен\n"
 "пристап. Внесете ги дополнителните информации за тоа."
 
-#: ../../po/../userhelper.c:569
+#: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
@@ -375,7 +381,7 @@ msgstr ""
 "Се обидувате да извршите команда која може да ги искористи и\n"
 "административните привилегии, но потребни се дополнителни информации."
 
-#: ../../po/../userhelper.c:571
+#: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
@@ -384,13 +390,13 @@ msgstr ""
 "Се обидувате да извршите команда која бара администартивен пристап.\n"
 "Внесете ги дополнителните информации."
 
-#: ../../po/../userhelper.c:2070
+#: ../../po/../userhelper.c:2079
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper мора да биде setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2162
+#: ../../po/../userhelper.c:2171
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
@@ -448,7 +454,17 @@ msgstr "_Монтирај"
 msgid "Un_mount"
 msgstr "Де_монтирај"
 
-#: ../../po/../usermount.c:289
+#: ../../po/../usermount.c:150
+msgid "Error loading list of file systems"
+msgstr ""
+
+#. Create the dialog.
+#: ../../po/../usermount.c:151 ../../po/../usermount.c:525
+#: ../../po/../usermount.c:537
+msgid "User Mount Tool"
+msgstr "Алатка за монтирање"
+
+#: ../../po/../usermount.c:306
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
@@ -456,15 +472,15 @@ msgstr ""
 "Дали сте сигурни дека сакате да го форматирате овој диск? Сите податоци ќе "
 "бидат избришани."
 
-#: ../../po/../usermount.c:300
+#: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
 msgstr "Изврши _low-level форматирање."
 
-#: ../../po/../usermount.c:337
+#: ../../po/../usermount.c:354
 msgid "Select a _filesystem type to create:"
 msgstr "Одберете вид на _датотечен систем за креирање:"
 
-#: ../../po/../usermount.c:507
+#: ../../po/../usermount.c:524
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
@@ -472,29 +488,24 @@ msgstr ""
 "Нема датотечни системи кои можете да ги (де)монитрате.\n"
 "Контактирајте со администраторот."
 
-#. Create the dialog.
-#: ../../po/../usermount.c:508 ../../po/../usermount.c:520
-msgid "User Mount Tool"
-msgstr "Алатка за монтирање"
-
 #. Create the other buttons.
-#: ../../po/../usermount.c:538
+#: ../../po/../usermount.c:555
 msgid "_Format"
 msgstr "_Форматирај"
 
-#: ../../po/../usermount.c:574
+#: ../../po/../usermount.c:591
 msgid "Device"
 msgstr "Уред"
 
-#: ../../po/../usermount.c:580
+#: ../../po/../usermount.c:597
 msgid "Directory"
 msgstr "Директориум"
 
-#: ../../po/../usermount.c:586
+#: ../../po/../usermount.c:603
 msgid "Filesystem"
 msgstr "Датотечен систем"
 
-#: ../../po/../usermount.c:634
+#: ../../po/../usermount.c:651
 #, c-format
 msgid "The device '%s' can not be formatted."
 msgstr "Уредот %s не може да биде форматиран."
@@ -514,3 +525,5 @@ msgstr "Променете ја лозинката за најава"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Лозинка"
+
+

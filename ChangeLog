@@ -1,3 +1,9 @@
+2011-10-03  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.108.
+	* NEWS: Update.
+	* po/*: Update.
+
 2011-09-19  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.c (die): New function.
