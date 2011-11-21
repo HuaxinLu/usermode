@@ -1464,13 +1464,19 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 static char *
 construct_cmdline(const char *argv0, char **argv)
 {
-	char *ret, *tmp;
+	char *ret;
 
 	if (argv == NULL || argv[0] == NULL)
 		return NULL;
-	tmp = g_strjoinv(" ", argv + 1);
-	ret = g_strconcat(argv0, " ", tmp, NULL);
-	g_free(tmp);
+	if (argv[1] == NULL)
+		ret = g_strdup(argv0);
+	else {
+		char *tmp;
+
+		tmp = g_strjoinv(" ", argv + 1);
+		ret = g_strconcat(argv0, " ", tmp, NULL);
+		g_free(tmp);
+	}
 	return ret;
 }
 

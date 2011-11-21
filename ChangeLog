@@ -1,5 +1,8 @@
 2011-11-21  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (construct_cmdline): Don't end the command line with a
+	space when no arguments are used.
+
 	* gsmclient.h (gsm_client_get_id)
 	* gsmclient.c (gsm_client_get_id): Replace deprecated G_CONST_RETURN
 	by explicit `const'.
