@@ -108,8 +108,8 @@ void  gsm_client_connect    (GsmClient  *client,
                              const char *previous_id);
 void  gsm_client_disconnect (GsmClient *client);
 
-gboolean             gsm_client_get_connected (GsmClient *client);
-G_CONST_RETURN char* gsm_client_get_id        (GsmClient *client);
+gboolean    gsm_client_get_connected (GsmClient *client);
+const char* gsm_client_get_id        (GsmClient *client);
 
 
 gboolean gsm_client_get_save_is_logout  (GsmClient *client);

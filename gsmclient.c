@@ -457,7 +457,7 @@ gsm_client_get_connected (GsmClient *client)
   return client->priv->connection != NULL;
 }
 
-G_CONST_RETURN char*
+const char*
 gsm_client_get_id (GsmClient *client)
 {
   g_return_val_if_fail (GSM_IS_CLIENT (client), NULL);

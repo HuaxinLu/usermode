@@ -1,3 +1,9 @@
+2011-11-21  Miloslav Trmač  <mitr@redhat.com>
+
+	* gsmclient.h (gsm_client_get_id)
+	* gsmclient.c (gsm_client_get_id): Replace deprecated G_CONST_RETURN
+	by explicit `const'.
+
 2011-10-03  Miloslav Trmač  <mitr@redhat.com>
 
 	* configure.ac: Release 1.108.
