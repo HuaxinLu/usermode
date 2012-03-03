@@ -11,9 +11,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-08-31 17:54+0000\n"
-"Last-Translator: hasanalpinan <hasanalpinan@gmail.com>\n"
-"Language-Team: Turkish (http://www.transifex.net/projects/p/fedora/team/tr/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Hasan Alp İNAN <hasanalpinan@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.net/projects/p/fedora/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -109,19 +109,14 @@ msgstr "Administrator ayrıcalıkları iptal edilemedi: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Administrator ayrıcalıkları iptal edilemedi: pam_timestamp_check hata kodu "
-"döndürdü %d"
+msgstr "Administrator ayrıcalıkları iptal edilemedi: pam_timestamp_check hata kodu döndürdü %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Şu anda tekrar administrator şifrenizi yazmasanız da system-geneli (tüm "
-"kullanıcıları etkileyen) ayarları değiştirmekle yetkilisiniz. Bu yetkiyi "
-"bırakabilirsiniz."
+msgstr "Şu anda tekrar administrator şifrenizi yazmasanız da system-geneli (tüm kullanıcıları etkileyen) ayarları değiştirmekle yetkilisiniz. Bu yetkiyi bırakabilirsiniz."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -179,19 +174,14 @@ msgstr "Bilgiler güncellendi."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Girilen parola geçersiz.\n"
-"Lütfen tekrar deneyin."
+msgstr "Girilen parola geçersiz.\nLütfen tekrar deneyin."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Değiştirilen alanların bir ya da birden fazlası geçersiz.\n"
-"Bu sorun alanlardaki iki nokta üstüsteler ya da virgüllerden dolayı olabilir.\n"
-"Bunları silip yeniden deneyin."
+msgstr "Değiştirilen alanların bir ya da birden fazlası geçersiz.\nBu sorun alanlardaki iki nokta üstüsteler ya da virgüllerden dolayı olabilir.\nBunları silip yeniden deneyin."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -201,9 +191,7 @@ msgstr "Parola sıfırlama hatası."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Bazı sistem dosyaları kilitli.\n"
-"Daha sonra tekrar deneyiniz."
+msgstr "Bazı sistem dosyaları kilitli.\nDaha sonra tekrar deneyiniz."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -222,10 +210,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Kullandığınız kabuk /etc/shells dosyasında bulunmuyor.\n"
-"Kabuk değiştirmeniz de mümkün değil. Lütfen\n"
-"sistem yöneticinize başvurun."
+msgstr "Kullandığınız kabuk /etc/shells dosyasında bulunmuyor.\nKabuk değiştirmeniz de mümkün değil. Lütfen\nsistem yöneticinize başvurun."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -296,34 +281,26 @@ msgstr "Giriş kabuğu değiştiriliyor."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
-"yapmak için daha fazla bilgi gerekiyor."
+msgstr "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
-"yapmak için daha fazla bilgi gerekiyor."
+msgstr "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama "
-"bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu "
-"yapmak için daha fazla bilgi gerekiyor."
+msgstr "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -359,36 +336,28 @@ msgstr "execl() hatası, hatano=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
-"bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\nbunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
-"bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\nbunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama\n"
-"bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama\nbunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\n"
-"bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\nbunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -466,8 +435,7 @@ msgstr "Bağlama Aracı"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -481,9 +449,7 @@ msgstr "_Oluşturulacak dosya sistemi türünü seçiniz."
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Kullanıcının bağlayabileceği ya da ayırabileceği dosya sistemi\n"
-"bulunmuyor. Sistem yöneticinize başvurun."
+msgstr "Kullanıcının bağlayabileceği ya da ayırabileceği dosya sistemi\nbulunmuyor. Sistem yöneticinize başvurun."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -522,5 +488,3 @@ msgstr "Giriş parolasını değiştir"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Parola"
-
-

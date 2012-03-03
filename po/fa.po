@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-07-12 19:44+0000\n"
-"Last-Translator: nano <nanopqr@gmail.com>\n"
-"Language-Team: Persian (http://www.transifex.net/projects/p/fedora/team/fa/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Noori <nanopqr@gmail.com>\n"
+"Language-Team: Persian (http://www.transifex.net/projects/p/fedora/language/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -110,19 +110,14 @@ msgstr "کنار گذاشتن امتیازات مدیر شکست خورد: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"کنار گذاشتن امتیازات مدیر شکست خورد: pam_timestamp_check کد خطای %Id را "
-"برگرداند"
+msgstr "کنار گذاشتن امتیازات مدیر شکست خورد: pam_timestamp_check کد خطای %Id را برگرداند"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"شما در حال حاضر اختیار پیکربندی تنظیمات سیستمی (که همهٔ کاربران را تحت تأثیر"
-" قرار می‌دهد) بدون وارد کردن دوبارهٔ گذرواژهٔ مدیر را دارید. می‌توانید از "
-"این اختیارات چشم بپوشید."
+msgstr "شما در حال حاضر اختیار پیکربندی تنظیمات سیستمی (که همهٔ کاربران را تحت تأثیر قرار می‌دهد) بدون وارد کردن دوبارهٔ گذرواژهٔ مدیر را دارید. می‌توانید از این اختیارات چشم بپوشید."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -180,19 +175,14 @@ msgstr "اطلاعات به‌هنگام‌سازی شد."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"گذرواژه‌ای که وارد کردید نامعتبر است.\n"
-"لطفاً دوباره سعی کنید."
+msgstr "گذرواژه‌ای که وارد کردید نامعتبر است.\nلطفاً دوباره سعی کنید."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"یک یا چند فیلد تغییر داده شده نامعتبر است.\n"
-"دلیل این مسئله احتمالاً وجود دونقطه یا ویرگول در یکی از فیلدها است.\n"
-"لطفاً آن را حذف کرده و دوباره امتحان کنید."
+msgstr "یک یا چند فیلد تغییر داده شده نامعتبر است.\nدلیل این مسئله احتمالاً وجود دونقطه یا ویرگول در یکی از فیلدها است.\nلطفاً آن را حذف کرده و دوباره امتحان کنید."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -202,9 +192,7 @@ msgstr "خطای برگرداندن گذرواژه به مقدار پیش‌فر
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"بعضی پرونده‌های سیستمی قفل شده‌اند.\n"
-"لطفاً چند لحظهٔ دیگر دوباره امتحان کنید."
+msgstr "بعضی پرونده‌های سیستمی قفل شده‌اند.\nلطفاً چند لحظهٔ دیگر دوباره امتحان کنید."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -223,10 +211,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"پوستهٔ فعلی شما در ‎/etc/shells فهرست نشده است.\n"
-"شما اجازه ندارید پوسته‌تان را تغییر دهید.\n"
-"مسئله را با مدیر سیستم‌تان در میان بگذارید."
+msgstr "پوستهٔ فعلی شما در ‎/etc/shells فهرست نشده است.\nشما اجازه ندارید پوسته‌تان را تغییر دهید.\nمسئله را با مدیر سیستم‌تان در میان بگذارید."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -297,34 +282,26 @@ msgstr "در حال تغییر پوستهٔ ورود به سیستم."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این "
-"کار گذرواژه root لازم است."
+msgstr "شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این کار گذرواژه root لازم است."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این "
-"کار گذرواژه root لازم است."
+msgstr "شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این کار گذرواژه root لازم است."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"شما می‌خواهید فرمانی اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این "
-"کار گذرواژه root لازم است."
+msgstr "شما می‌خواهید فرمانی اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این کار گذرواژه root لازم است."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"شما می‌خواهید فرمانی اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این "
-"کار گذرواژه root لازم است."
+msgstr "شما می‌خواهید فرمانی اجرا کنید که به اختیارات مدیریتی نیاز دارد، برای این کار گذرواژه root لازم است."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -360,36 +337,28 @@ msgstr "خطای execl()، شمارهٔ خطا=%Id\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی \n"
-"نیاز دارد، برای این کار گذرواژه root لازم است."
+msgstr "شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی \nنیاز دارد، برای این کار گذرواژه root لازم است."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی \n"
-"نیاز دارد، برای این کار گذرواژه root لازم است."
+msgstr "شما می‌خواهید «%s» را اجرا کنید که به اختیارات مدیریتی \nنیاز دارد، برای این کار گذرواژه root لازم است."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"شما می‌خواهید فرمانی اجرا کنید که به اختیارات مدیریتی \n"
-"نیاز دارد، برای این کار گذرواژه root لازم است."
+msgstr "شما می‌خواهید فرمانی اجرا کنید که به اختیارات مدیریتی \nنیاز دارد، برای این کار گذرواژه root لازم است."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"شما تلاش می کند دستور را که نیاز به مجوز\n"
-" مدیریتی دارد اجرا کنید، اما برای انجام آن اطلاعات بیشتری نیاز است"
+msgstr "شما تلاش می کند دستور را که نیاز به مجوز\n مدیریتی دارد اجرا کنید، اما برای انجام آن اطلاعات بیشتری نیاز است"
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -401,8 +370,7 @@ msgstr "کمک‌کننده کاربر باید شناسه رووت باشد\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Unable to open graphical window, and unable to find controlling terminal.\n"
+msgstr "Unable to open graphical window, and unable to find controlling terminal.\n"
 
 #: ../../po/../userinfo.c:383
 #, c-format
@@ -468,9 +436,7 @@ msgstr "ابزار سوار کردن کاربر"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"آیا مطمئنید که می‌خواهید این دیسک را قالب‌بندی کنید؟ همهٔ داده‌هایی که در "
-"حال حاضر روی دیسک موجود است از بین خواهد رفت."
+msgstr "آیا مطمئنید که می‌خواهید این دیسک را قالب‌بندی کنید؟ همهٔ داده‌هایی که در حال حاضر روی دیسک موجود است از بین خواهد رفت."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -484,9 +450,7 @@ msgstr "انتخاب کنید چه نوع _سیستم پرونده‌ای ایج
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"سیستم پرونده‌ای‌ای که مجاز به سوار یا پیاده کردن آن باشید وجود ندارد.\n"
-"با مدیر سیستم‌تان تماس بگیرید."
+msgstr "سیستم پرونده‌ای‌ای که مجاز به سوار یا پیاده کردن آن باشید وجود ندارد.\nبا مدیر سیستم‌تان تماس بگیرید."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -525,5 +489,3 @@ msgstr "تغییر گذرواژهٔ ورود به سیستم شما"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "گذرواژه"
-
-

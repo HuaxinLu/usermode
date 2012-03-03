@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-06-29 00:33+0000\n"
-"Last-Translator: glezos <glezos@indifex.com>\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Dimitris Glezos <glezos@indifex.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -110,18 +110,14 @@ msgstr "Methu colli hawliau gweinyddwr: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Methu colli hawliau gweinyddwr: dychwelodd pam_timestamp_check côd methiant "
-"%d"
+msgstr "Methu colli hawliau gweinyddwr: dychwelodd pam_timestamp_check côd methiant %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Mae'r hawl gennych i fyrfweddu gosodiadau system-eang (sy'n effeithio pob "
-"defnyddiwr) heb teipio'r cyfrinair gwraidd eto. Gallwch ildio'r hawl yma. "
+msgstr "Mae'r hawl gennych i fyrfweddu gosodiadau system-eang (sy'n effeithio pob defnyddiwr) heb teipio'r cyfrinair gwraidd eto. Gallwch ildio'r hawl yma. "
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -179,19 +175,14 @@ msgstr "Diweddarwyd y wybodaeth"
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Mae'r gyfrinair a deipioch yn annilys\n"
-"Ceisiwch eto."
+msgstr "Mae'r gyfrinair a deipioch yn annilys\nCeisiwch eto."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Mae un neu fwy o'r meysydd sydd wedi newid yn annilys.\n"
-"Mae hyn oherwydd naill ai gorwahannodau neu atalnodau yn un o'r meysydd.\n"
-"Tynnwch rheini a cheisiwch eto."
+msgstr "Mae un neu fwy o'r meysydd sydd wedi newid yn annilys.\nMae hyn oherwydd naill ai gorwahannodau neu atalnodau yn un o'r meysydd.\nTynnwch rheini a cheisiwch eto."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -201,9 +192,7 @@ msgstr "Gwall wrth ailosod cyfrinair."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Mae rhai ffeiliau system wedi eu cloi.\n"
-"Ceisiwch eto mewn ychydig."
+msgstr "Mae rhai ffeiliau system wedi eu cloi.\nCeisiwch eto mewn ychydig."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -222,10 +211,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Nid yw eich plisgyn cyfredol wedi ei restri yn /etc/shells.\n"
-"Nid oes hawl gennych i newid eich plisgyn.\n"
-"Gofynnwch i'ch gweinyddwr system."
+msgstr "Nid yw eich plisgyn cyfredol wedi ei restri yn /etc/shells.\nNid oes hawl gennych i newid eich plisgyn.\nGofynnwch i'ch gweinyddwr system."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -296,34 +282,26 @@ msgstr "Newid plisgyn mewngofnodi"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Rydych yn ceisio rhedeg \"%s\"  a allai elwa o freintiau gweinyddol, ond mae"
-" angen rhagor o wybodaeth er mwyn gwneud hynny."
+msgstr "Rydych yn ceisio rhedeg \"%s\"  a allai elwa o freintiau gweinyddol, ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Rydych yn ceisio rhedeg \"%s\"  sy'n mynnu breintiau gweinyddol, ond mae "
-"angen rhagor o wybodaeth er mwyn gwneud hynny."
+msgstr "Rydych yn ceisio rhedeg \"%s\"  sy'n mynnu breintiau gweinyddol, ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Rydych yn ceisio rhedeg gorchymyn a allai elwa o freintiau gweinyddol, ond "
-"mae angen rhagor o wybodaeth er mwyn gwneud hynny."
+msgstr "Rydych yn ceisio rhedeg gorchymyn a allai elwa o freintiau gweinyddol, ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Rydych yn ceisio rhedeg gorchymyn sy'n mynnu breintiau gweinyddol, ond mae "
-"angen rhagor o wybodaeth er mwyn gwneud hynny."
+msgstr "Rydych yn ceisio rhedeg gorchymyn sy'n mynnu breintiau gweinyddol, ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -359,36 +337,28 @@ msgstr "gwall execl() , rhif gwall=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Rydych yn ceisio rhedeg \"%s\"  a allai elwa o freintiau gweinyddol,\n"
-"ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
+msgstr "Rydych yn ceisio rhedeg \"%s\"  a allai elwa o freintiau gweinyddol,\nond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Rydych yn ceisio rhedeg \"%s\"  sy'n mynnu breintiau gweinyddol,\n"
-"ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
+msgstr "Rydych yn ceisio rhedeg \"%s\"  sy'n mynnu breintiau gweinyddol,\nond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Rydych yn ceisio rhedeg gorchymyn a allai elwa o freintiau\n"
-"gweinyddol, ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
+msgstr "Rydych yn ceisio rhedeg gorchymyn a allai elwa o freintiau\ngweinyddol, ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Rydych yn ceisio rhedeg gorchymyn sy'n mynnu breintiau gweinyddol,\n"
-"ond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
+msgstr "Rydych yn ceisio rhedeg gorchymyn sy'n mynnu breintiau gweinyddol,\nond mae angen rhagor o wybodaeth er mwyn gwneud hynny."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -466,9 +436,7 @@ msgstr "Erfyn Gosod y Defnyddiwr"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Ydych chi'n siwr eich bod am fformadu'r ddisg?  Byddwch yn dinistrio unrhyw "
-"ddata arni."
+msgstr "Ydych chi'n siwr eich bod am fformadu'r ddisg?  Byddwch yn dinistrio unrhyw ddata arni."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -482,9 +450,7 @@ msgstr "Dewiswch math system _ffeil i'w chreu:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Nid oes systemau ffeil y mae gennych hawl i'w gosod neu eu dadosod.\n"
-"Gofynnwch i'ch gweinyddwr system."
+msgstr "Nid oes systemau ffeil y mae gennych hawl i'w gosod neu eu dadosod.\nGofynnwch i'ch gweinyddwr system."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -523,5 +489,3 @@ msgstr ""
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr ""
-
-

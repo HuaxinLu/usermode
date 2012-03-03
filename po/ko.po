@@ -6,6 +6,7 @@
 # Cr4S3T0n <cr4s3t0n@empal.com>, 2004.
 # Dimitris Glezos <glezos@indifex.com>, 2011.
 # Eunju Kim <eukim@redhat.com>, 2006, 2007, 2008.
+# Eun-Ju Kim <eukim@redhat.com>, 2012.
 # Michelle Ji Yeen Kim <mkim@redhat.com>, 2005.
 # Michelle J Kim <mkim@redhat.com>, 2003, 2004.
 # Michelle Kim <mkim@redhat.com>, 2002.
@@ -14,9 +15,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-06-29 00:33+0000\n"
-"Last-Translator: glezos <glezos@indifex.com>\n"
-"Language-Team: Korean (http://www.transifex.net/projects/p/fedora/team/ko/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: eukim <eukim@redhat.com>\n"
+"Language-Team: Korean (http://www.transifex.net/projects/p/fedora/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -119,9 +120,7 @@ msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"현재 관리자 암호를 입력할 필요 없이 모든 사용자들에게 영향을 미치는 시스템 전체 설정을 변경할 수 있는 권한을 가지고 계십니다. 이 "
-"관리자 권한은 언제든 포기할 수 있습니다."
+msgstr "현재 관리자 암호를 입력할 필요 없이 모든 사용자들에게 영향을 미치는 시스템 전체 설정을 변경할 수 있는 권한을 가지고 계십니다. 이 관리자 권한은 언제든 포기할 수 있습니다."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -179,19 +178,14 @@ msgstr "정보가 새로이 변경되었습니다."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"입력하신 암호가 올바르지 않습니다.\n"
-"다시 입력해 주십시요."
+msgstr "입력하신 암호가 올바르지 않습니다.\n다시 입력해 주십시요."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"변경하신 항목이 올바르지 않습니다.\n"
-"변경하신 항목 중에 ':' 또는 ',' 가 포함되어 있는 것 같습니다.\n"
-"만일 포함되어 있다면, 삭제하신 후 다시 입력해 주십시요."
+msgstr "변경하신 항목이 올바르지 않습니다.\n변경하신 항목 중에 ':' 또는 ',' 가 포함되어 있는 것 같습니다.\n만일 포함되어 있다면, 삭제하신 후 다시 입력해 주십시요."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -201,9 +195,7 @@ msgstr "암호를 재설정하는 도중 오류가 발생하였습니다."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"몇몇 시스템 파일이 잠기었습니다.\n"
-"잠시 후에 다시 시도해 주십시요."
+msgstr "몇몇 시스템 파일이 잠기었습니다.\n잠시 후에 다시 시도해 주십시요."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -222,10 +214,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"사용하시려는 쉘은 /etc/shells 목록에 포함되어 있지 않기 때문에.\n"
-"쉘을 변경할 수 없습니다.\n"
-"자세한 사항은 시스템 관리자에게 문의해 보시기 바랍니다."
+msgstr "사용하시려는 쉘은 /etc/shells 목록에 포함되어 있지 않기 때문에.\n쉘을 변경할 수 없습니다.\n자세한 사항은 시스템 관리자에게 문의해 보시기 바랍니다."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -351,36 +340,28 @@ msgstr "execl() 오류입니다, 오류코드(errno)=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, \n"
-"그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
+msgstr "슈퍼유저의 권한으로 취할 수 있는 \"%s\"(을)를 실행하셨습니다, \n그러나 이것을 실행하기 위해서는 정보가 더 필요합니다."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"관리자 권한이 필요한 \"%s\"(을)를 실행하셨습니다, \n"
-"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+msgstr "관리자 권한이 필요한 \"%s\"(을)를 실행하셨습니다, \n그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"관리자 권한으로 취할 수 있는 명령을 실행하셨습니다, \n"
-"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+msgstr "관리자 권한으로 취할 수 있는 명령을 실행하셨습니다, \n그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"관리자 권한이 필요한 명령을 실행하셨습니다, \n"
-"그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
+msgstr "관리자 권한이 필요한 명령을 실행하셨습니다, \n그러나 이것을 실행하기 위해서는 더 자세한 정보가 필요합니다."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -446,7 +427,7 @@ msgstr "장치연결 해제 (_m)"
 
 #: ../../po/../usermount.c:150
 msgid "Error loading list of file systems"
-msgstr ""
+msgstr "파일 시스템 목록을 불러오는 도중 오류 발생 "
 
 #. Create the dialog.
 #: ../../po/../usermount.c:151 ../../po/../usermount.c:525
@@ -472,9 +453,7 @@ msgstr "생성할 파일시스템 유형 선택 (_f):"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"장치에 연결 또는 해제할 파일시스템이 없습니다.\n"
-"시스템 관리자에게 문의하십시요."
+msgstr "장치에 연결 또는 해제할 파일시스템이 없습니다.\n시스템 관리자에게 문의하십시요."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -513,5 +492,3 @@ msgstr "로그인 암호를 변경합니다"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "암호"
-
-

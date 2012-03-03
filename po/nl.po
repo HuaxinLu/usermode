@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-06-29 12:44+0000\n"
-"Last-Translator: warrink <geert.warrink@onsnet.nu>\n"
-"Language-Team: Dutch (http://www.transifex.net/projects/p/fedora/team/nl/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
+"Language-Team: Dutch (http://www.transifex.net/projects/p/fedora/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -111,20 +111,14 @@ msgstr "Laten vallen van beheerprivileges mislukt: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Laten vallen van beheerprivileges mislukt: pam_timestamp_check gaf fout code"
-" %d terug"
+msgstr "Laten vallen van beheerprivileges mislukt: pam_timestamp_check gaf fout code %d terug"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Op dit moment ben je geautoriseerd om systeem-brede instellingen te "
-"configureren (die invloed hebben op alle gebruikers) zonder daarbij opnieuw "
-"het beheerder-wachtwoord te moeten invoeren. Je kunt deze autorisaties "
-"opheffen."
+msgstr "Op dit moment ben je geautoriseerd om systeem-brede instellingen te configureren (die invloed hebben op alle gebruikers) zonder daarbij opnieuw het beheerder-wachtwoord te moeten invoeren. Je kunt deze autorisaties opheffen."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -182,19 +176,14 @@ msgstr "Informatie bijgewerkt."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Het wachtwoord dat je invoerde is ongeldig.\n"
-"Probeer het opnieuw."
+msgstr "Het wachtwoord dat je invoerde is ongeldig.\nProbeer het opnieuw."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Een of meer van de veranderde velden is ongeldig.\n"
-"Dit is waarschijnlijk het gevolg van dubbele punten of komma's in een van de velden.\n"
-"Verwijder deze en probeer het opnieuw."
+msgstr "Een of meer van de veranderde velden is ongeldig.\nDit is waarschijnlijk het gevolg van dubbele punten of komma's in een van de velden.\nVerwijder deze en probeer het opnieuw."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -204,9 +193,7 @@ msgstr "Fout bij resetten wachtwoord."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Sommige systeembestanden zijn vergrendeld.\n"
-"Probeer het over enkele ogenblikken opnieuw."
+msgstr "Sommige systeembestanden zijn vergrendeld.\nProbeer het over enkele ogenblikken opnieuw."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -225,10 +212,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Jouw huidige shell wordt niet genoemd in /etc/shells.\n"
-"Je kunt jouw shell niet veranderen.\n"
-"Raadpleeg de systeembeheerder."
+msgstr "Jouw huidige shell wordt niet genoemd in /etc/shells.\nJe kunt jouw shell niet veranderen.\nRaadpleeg de systeembeheerder."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -299,34 +283,26 @@ msgstr "Veranderen van login-shell."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Je probeert \"%s\" uit te voeren waarbij beheerder privileges nuttig kunnen "
-"zijn. Hiervoor is een root wachtwoord vereist."
+msgstr "Je probeert \"%s\" uit te voeren waarbij beheerder privileges nuttig kunnen zijn. Hiervoor is een root wachtwoord vereist."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Je probeert \"%s\" uit te voeren waarbij beheerprivileges benodigd zijn. "
-"Hiervoor is een root wachtwoord vereist."
+msgstr "Je probeert \"%s\" uit te voeren waarbij beheerprivileges benodigd zijn. Hiervoor is een root wachtwoord vereist."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Je probeert een opdracht uit te voeren waarbij beheerprivileges nuttig "
-"kunnen zijn. Hiervoor is een root wachtwoord vereist."
+msgstr "Je probeert een opdracht uit te voeren waarbij beheerprivileges nuttig kunnen zijn. Hiervoor is een root wachtwoord vereist."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Je probeert een opdracht uit te voeren waarbij beheerprivileges benodigd "
-"zijn. Hiervoor is een root wachtwoord vereist."
+msgstr "Je probeert een opdracht uit te voeren waarbij beheerprivileges benodigd zijn. Hiervoor is een root wachtwoord vereist."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -362,36 +338,28 @@ msgstr "execl() fout, foutnr=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Je probeert \"%s\" uit te voeren waarbij beheerprivileges\n"
-"nuttig kunnen zijn. Hiervoor is een root wachtwoord vereist."
+msgstr "Je probeert \"%s\" uit te voeren waarbij beheerprivileges\nnuttig kunnen zijn. Hiervoor is een root wachtwoord vereist."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Je probeert \"%s\" uit te voeren waarbij beheerprivileges\n"
-"benodigd zijn. Hiervoor is een root wachtwoord vereist."
+msgstr "Je probeert \"%s\" uit te voeren waarbij beheerprivileges\nbenodigd zijn. Hiervoor is een root wachtwoord vereist."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Je probeert een opdracht uit te voeren waarbij beheerprivileges\n"
-"nuttig kunnen zijn. Hiervoor is een root wachtwoord vereist."
+msgstr "Je probeert een opdracht uit te voeren waarbij beheerprivileges\nnuttig kunnen zijn. Hiervoor is een root wachtwoord vereist."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Je probeert een opdracht uit te voeren waarbij beheerprivileges\n"
-"benodigd zijn. Hiervoor is een root wachtwoord vereist."
+msgstr "Je probeert een opdracht uit te voeren waarbij beheerprivileges\nbenodigd zijn. Hiervoor is een root wachtwoord vereist."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -403,9 +371,7 @@ msgstr "het programma userhelper moet setuid root zijn\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Niet in staat een grafisch venster te openen, en niet in staat de\n"
-"controlerende terminal te vinden.\n"
+msgstr "Niet in staat een grafisch venster te openen, en niet in staat de\ncontrolerende terminal te vinden.\n"
 
 #: ../../po/../userinfo.c:383
 #, c-format
@@ -471,9 +437,7 @@ msgstr "Gereedschap voor aankoppelen schijven"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Weet je zeker dat je deze schijf wilt formatteren?  Je zult alle gegevens op"
-" de schijf vernietigen."
+msgstr "Weet je zeker dat je deze schijf wilt formatteren?  Je zult alle gegevens op de schijf vernietigen."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -487,9 +451,7 @@ msgstr "Selecteer het soort _bestandssysteem om aan te maken:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Er zijn geen bestandssystemen die je mag aankoppelen of afkoppelen.\n"
-"Raadpleeg jouw systeembeheerder."
+msgstr "Er zijn geen bestandssystemen die je mag aankoppelen of afkoppelen.\nRaadpleeg jouw systeembeheerder."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -528,5 +490,3 @@ msgstr "Jouw inlog wachtwoord veranderen"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Wachtwoord"
-
-

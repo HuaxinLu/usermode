@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-10-03 15:17+0000\n"
+"PO-Revision-Date: 2011-01-28 22:33+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Urdu <trans-urdu@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
@@ -485,5 +485,3 @@ msgstr ""
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr ""
-
-

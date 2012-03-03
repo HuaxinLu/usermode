@@ -1,3 +1,9 @@
+2012-03-03  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.109.
+	* NEWS: Update.
+	* po/*: Update.
+
 2011-11-21  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.c (construct_cmdline): Don't end the command line with a

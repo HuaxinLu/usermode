@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-07-16 22:36+0000\n"
-"Last-Translator: kristho <lakristho@gmail.com>\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Kris Thomsen <lakristho@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,8 +86,7 @@ msgstr "Desværre, adgangskoder er ikke ens"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr ""
-"Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
+msgstr "Start konfigurationsværktøjer for hele systemet op uden en adgangskode."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -112,19 +111,14 @@ msgstr "Kunne ikke frasige sig administrator-privilegier: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Kunne ikke frasige sig administrator-privilegier: pam_timestamp_check "
-"returnerede fejlkode %d"
+msgstr "Kunne ikke frasige sig administrator-privilegier: pam_timestamp_check returnerede fejlkode %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Du har i øjeblikket tilladelse til at konfigurere systemopsætninger (som "
-"påvirker alle brugere) uden at indtaste administrator-adgangskoden igen. Du "
-"kan frasige dig denne tilladelse."
+msgstr "Du har i øjeblikket tilladelse til at konfigurere systemopsætninger (som påvirker alle brugere) uden at indtaste administrator-adgangskoden igen. Du kan frasige dig denne tilladelse."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -182,19 +176,14 @@ msgstr "Information opdateret."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Adgangskoden som du indtastede er ugyldig.\n"
-"Prøv venligst igen."
+msgstr "Adgangskoden som du indtastede er ugyldig.\nPrøv venligst igen."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"En eller flere af de ændrede felter er ugyldige.\n"
-"Dette er nok grundet enten kolonner eller kommaer i et af felterne,\n"
-"Fjern venligst disse og prøv igen."
+msgstr "En eller flere af de ændrede felter er ugyldige.\nDette er nok grundet enten kolonner eller kommaer i et af felterne,\nFjern venligst disse og prøv igen."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -204,9 +193,7 @@ msgstr "Fejl ved nulstilling af adgangskode."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Nogle systemfiler er låst.\n"
-"Prøv venligst igen om et øjeblik."
+msgstr "Nogle systemfiler er låst.\nPrøv venligst igen om et øjeblik."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -225,10 +212,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Din nuværende skal er ikke opført i /etc/shells.\n"
-"Du har ikke lov til at ændre din skal.\n"
-"Henvend dig til din systemadministrator."
+msgstr "Din nuværende skal er ikke opført i /etc/shells.\nDu har ikke lov til at ændre din skal.\nHenvend dig til din systemadministrator."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -299,34 +283,26 @@ msgstr "Ændrer logind-skal."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Du forsøger at køre \"%s\", som kan have gavn af administrator-rettigheder, "
-"men mere information er nødvendigt for at gøre dette."
+msgstr "Du forsøger at køre \"%s\", som kan have gavn af administrator-rettigheder, men mere information er nødvendigt for at gøre dette."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Du forsøger at køre \"%s\", som kræver administrator-rettigheder, men mere "
-"information er nødvendigt for at gøre dette."
+msgstr "Du forsøger at køre \"%s\", som kræver administrator-rettigheder, men mere information er nødvendigt for at gøre dette."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Du forsøger at køre en kommando, som kan have gavn af administrator-"
-"rettigheder, men mere information er nødvendigt for at gøre dette."
+msgstr "Du forsøger at køre en kommando, som kan have gavn af administrator-rettigheder, men mere information er nødvendigt for at gøre dette."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Du forsøger at køre en kommando, som kræver administrator-rettigheder, men "
-"mere information er nødvendigt for at gøre dette."
+msgstr "Du forsøger at køre en kommando, som kræver administrator-rettigheder, men mere information er nødvendigt for at gøre dette."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -362,36 +338,28 @@ msgstr "execl() fejl, errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Du forsøger at køre \"%s\", som kan have gavn af administrator-rettigheder,\n"
-"men mere information er nødvendigt for at gøre dette."
+msgstr "Du forsøger at køre \"%s\", som kan have gavn af administrator-rettigheder,\nmen mere information er nødvendigt for at gøre dette."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Du forsøger at køre \"%s\", som kræver administrator-rettigheder,\n"
-"men mere information er nødvendigt for at gøre dette."
+msgstr "Du forsøger at køre \"%s\", som kræver administrator-rettigheder,\nmen mere information er nødvendigt for at gøre dette."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Du forsøger at køre en kommando, som kan have gavn af administrator-"
-"rettigheder, men mere information er nødvendigt for at gøre dette."
+msgstr "Du forsøger at køre en kommando, som kan have gavn af administrator-rettigheder, men mere information er nødvendigt for at gøre dette."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Du forsøger at køre en kommando, som kræver administrator-rettigheder,\n"
-"men mere information er nødvendigt for at gøre dette."
+msgstr "Du forsøger at køre en kommando, som kræver administrator-rettigheder,\nmen mere information er nødvendigt for at gøre dette."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -403,8 +371,7 @@ msgstr "userhelper skal være setuid-rod\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
+msgstr "Kan ikke åbne et grafisk vindue, og kan ikke finde den styrende terminal.\n"
 
 #: ../../po/../userinfo.c:383
 #, c-format
@@ -470,9 +437,7 @@ msgstr "Bruger-monteringsværktøj"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Er du sikker på at du vil formatere denne disk?\n"
-"Dette vil ødelægge alle data på disken."
+msgstr "Er du sikker på at du vil formatere denne disk?\nDette vil ødelægge alle data på disken."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -486,9 +451,7 @@ msgstr "Vælg en _filsystemstype at oprette:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Der er ingen filsystemer som du har lov at montére eller afmontére.\n"
-"Kontakt din administrator."
+msgstr "Der er ingen filsystemer som du har lov at montére eller afmontére.\nKontakt din administrator."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -527,5 +490,3 @@ msgstr "Skift din logind-adgangskode"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Adgangskode"
-
-

@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-08-26 08:35+0000\n"
-"Last-Translator: Tranzistors <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian (http://www.transifex.net/projects/p/fedora/team/lv/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latvian (http://www.transifex.net/projects/p/fedora/language/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -111,19 +111,14 @@ msgstr "Neizdevās nomest administratora tiesības: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Neizdevās nomest administratora tiesības: pam_timestamp_check atgrieza "
-"kļūdas kodu %d"
+msgstr "Neizdevās nomest administratora tiesības: pam_timestamp_check atgrieza kļūdas kodu %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Jūs esat autorizēts režīmā, kas ļauj mainīt visas sistēmas iestatījumus "
-"(ietekmē visus lietotājus), bez atkārtotas administratora paroles ievades. "
-"Jūs varat atteikties no šādas autorizācijas."
+msgstr "Jūs esat autorizēts režīmā, kas ļauj mainīt visas sistēmas iestatījumus (ietekmē visus lietotājus), bez atkārtotas administratora paroles ievades. Jūs varat atteikties no šādas autorizācijas."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -181,19 +176,14 @@ msgstr "Informācija atjaunināta."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Jūsu ievadītā parole nav derīga.\n"
-"Lūdzu, mēģiniet vēlreiz."
+msgstr "Jūsu ievadītā parole nav derīga.\nLūdzu, mēģiniet vēlreiz."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Viens vai vairāki ievades lauki ir nekorekti.\n"
-"Iespējamais iemesls ir punktu vai komatu esamība.\n"
-"Lūdzu, izdzēsiet tos un mēģiniet vēlreiz."
+msgstr "Viens vai vairāki ievades lauki ir nekorekti.\nIespējamais iemesls ir punktu vai komatu esamība.\nLūdzu, izdzēsiet tos un mēģiniet vēlreiz."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -203,9 +193,7 @@ msgstr "Kļūda paroles atstatīšanā."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Daži sistēmas faili ir bloķēti.\n"
-"Lūdzu, mēģiniet pēc laika vēlreiz."
+msgstr "Daži sistēmas faili ir bloķēti.\nLūdzu, mēģiniet pēc laika vēlreiz."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -224,10 +212,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Jūsu izvēlētā čaula nav norādīta failā /etc/shells.\n"
-"Jums nav tiesību mainīt savu čaulu.\n"
-"Sazinieties ar sistēmas administratoru."
+msgstr "Jūsu izvēlētā čaula nav norādīta failā /etc/shells.\nJums nav tiesību mainīt savu čaulu.\nSazinieties ar sistēmas administratoru."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -298,34 +283,26 @@ msgstr "Maina ierakstīšanās čaulu."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Jūs mēģināt startēt \"%s\", kas iegūst papildus privilēģijas, ja startēta  "
-"administratora režīmā, bet tam nepieciešams vairāk informācijas."
+msgstr "Jūs mēģināt startēt \"%s\", kas iegūst papildus privilēģijas, ja startēta  administratora režīmā, bet tam nepieciešams vairāk informācijas."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Jūs mēģināt startēt \"%s\", kam nepieciešamas administratora privilēģijas, "
-"bet tam nepieciešams vairāk informācijas."
+msgstr "Jūs mēģināt startēt \"%s\", kam nepieciešamas administratora privilēģijas, bet tam nepieciešams vairāk informācijas."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Jūs mēģināt startēt komandu, kas iegūst papildus privilēģijas, ja startēta  "
-"administratora režīmā, bet tam nepieciešams vairāk informācijas."
+msgstr "Jūs mēģināt startēt komandu, kas iegūst papildus privilēģijas, ja startēta  administratora režīmā, bet tam nepieciešams vairāk informācijas."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Jūs mēģināt startēt komandu, kas nepieciešamas administratora privilēģijas, "
-"bet tam nepieciešams vairāk informācijas."
+msgstr "Jūs mēģināt startēt komandu, kas nepieciešamas administratora privilēģijas, bet tam nepieciešams vairāk informācijas."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -361,36 +338,28 @@ msgstr "execl() kļūda, errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Jūs mēģināt startēt \"%s\", kas iegūst papildus iespējas, ja startēta administratora režīmā,\n"
-"bet tam ir nepieciešama papildu informācija."
+msgstr "Jūs mēģināt startēt \"%s\", kas iegūst papildus iespējas, ja startēta administratora režīmā,\nbet tam ir nepieciešama papildu informācija."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Jūs mēģināt startēt \"%s\", kurai nepieciešamas administratora tiesības,\n"
-"bet priekš tam ir nepieciešama papildu informācija."
+msgstr "Jūs mēģināt startēt \"%s\", kurai nepieciešamas administratora tiesības,\nbet priekš tam ir nepieciešama papildu informācija."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Jūs mēģināt startēt komandu, kas iegūst papildus iespējas, ja startēta administratora režīmā,\n"
-"bet priekš tam ir nepieciešama papildu informācija."
+msgstr "Jūs mēģināt startēt komandu, kas iegūst papildus iespējas, ja startēta administratora režīmā,\nbet priekš tam ir nepieciešama papildu informācija."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Jūs mēģināt startēt komandu, kurai nepieciešamas administratora tiesības,\n"
-"bet priekš tam ir nepieciešama papildu informācija."
+msgstr "Jūs mēģināt startēt komandu, kurai nepieciešamas administratora tiesības,\nbet priekš tam ir nepieciešama papildu informācija."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -482,9 +451,7 @@ msgstr "Izvēlēties veidojamo failu sistēmu:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Nav failu sistēmu, kuras jūs drīkstat montēt vai nomontēt.\n"
-"Sazinieties ar administratoru."
+msgstr "Nav failu sistēmu, kuras jūs drīkstat montēt vai nomontēt.\nSazinieties ar administratoru."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -523,5 +490,3 @@ msgstr "Mainīt ierakstīšanās paroli"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Parole"
-
-

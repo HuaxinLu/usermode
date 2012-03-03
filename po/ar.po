@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-06-29 00:33+0000\n"
-"Last-Translator: munzirtaha <munzirtaha@gmail.com>\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Munzir Taha <munzirtaha@gmail.com>\n"
 "Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -117,9 +117,7 @@ msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"مسموح لك الآن بتكوين الإعدادات على نطاق النظام (هذا يشمل كل المستخدمين) بدون"
-" ادخال كلمة سر للمدير مرة اخرى. يمكن لك التخلي عن هذا التفويض."
+msgstr "مسموح لك الآن بتكوين الإعدادات على نطاق النظام (هذا يشمل كل المستخدمين) بدون ادخال كلمة سر للمدير مرة اخرى. يمكن لك التخلي عن هذا التفويض."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -131,8 +129,7 @@ msgstr "نسيان التفويض"
 
 #: ../../po/../pam-panel-icon.c:285
 msgid "pam_timestamp_check is not setuid root"
-msgstr ""
-"إن pam_timestamp_check لا يتوفر على ترخيصsetuid بالنسبة للمستخدم الجذري"
+msgstr "إن pam_timestamp_check لا يتوفر على ترخيصsetuid بالنسبة للمستخدم الجذري"
 
 #: ../../po/../pam-panel-icon.c:289
 msgid "no controlling tty for pam_timestamp_check"
@@ -178,19 +175,14 @@ msgstr "تمّ تحديث المعلومات."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"كلمة المرور التي أدخلتها غير صالحة.\n"
-"رجاء حاول مرّة أخرى."
+msgstr "كلمة المرور التي أدخلتها غير صالحة.\nرجاء حاول مرّة أخرى."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"أحد الحقول المعدّلة أو بعضها غير صالح.\n"
-"هذا على الأرجح إمّا بسبب النّقطتين أو الفواصل في أحد الحقول.\n"
-"رجاء أزلها وحاول مرّة أخرى."
+msgstr "أحد الحقول المعدّلة أو بعضها غير صالح.\nهذا على الأرجح إمّا بسبب النّقطتين أو الفواصل في أحد الحقول.\nرجاء أزلها وحاول مرّة أخرى."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -200,9 +192,7 @@ msgstr "خطأ في إعادة وضع كلمة المرور."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"بعض ملفّات النّظام مُقفلة.\n"
-"رجاء حاول مرّة أخرى خلال بضع دقائق."
+msgstr "بعض ملفّات النّظام مُقفلة.\nرجاء حاول مرّة أخرى خلال بضع دقائق."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -221,10 +211,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"الصَّدفة الحاليّة غير مسردة في /etc/shells.\n"
-"لا يسمح لك بتغيير صدفتك.\n"
-"استشر مدير نظامك."
+msgstr "الصَّدفة الحاليّة غير مسردة في /etc/shells.\nلا يسمح لك بتغيير صدفتك.\nاستشر مدير نظامك."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -295,34 +282,26 @@ msgstr "جاري تغيير صدفة الدّخول."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ "
-"المزيد من المعلومات مطلوبة للقيام بذلك."
+msgstr "أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة للقيام بذلك."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من "
-"المعلومات مطلوبة للقيام بذلك."
+msgstr "أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة للقيام بذلك."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"أنت تحاول تشغيل أمر قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد من "
-"المعلومات مطلوبة للقيام بذلك."
+msgstr "أنت تحاول تشغيل أمر قد يستفيد من الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة للقيام بذلك."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"أنت تحاول تشغيل أمر يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات"
-" مطلوبة للقيام بذلك."
+msgstr "أنت تحاول تشغيل أمر يتطلّب الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة للقيام بذلك."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -358,36 +337,28 @@ msgstr "خطأ في execl()، errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات\n"
-"الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
+msgstr "أنت تحاول تشغيل \"%s\" والذي قد يستفيد من الصّلاحيات\nالإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات\n"
-"الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
+msgstr "أنت تحاول تشغيل \"%s\" والذي يتطلّب الصّلاحيات\nالإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"أنت تحاول تشغيل أمر قد يستفيد من\n"
-"الصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
+msgstr "أنت تحاول تشغيل أمر قد يستفيد من\nالصّلاحيات الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"أنت تحاول تشغيل أمر يتطلّب الصّلاحيات\n"
-"الإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
+msgstr "أنت تحاول تشغيل أمر يتطلّب الصّلاحيات\nالإداريّة، إلا أنّ المزيد من المعلومات مطلوبة لعميل ذلك."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -465,8 +436,7 @@ msgstr "أداة المستخدم للتّجهيز"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"هل أنت متأكّد من أنّك تريد تنسيق هذا القرص؟ سوف تدمّر أيّ بيانات يحتويها."
+msgstr "هل أنت متأكّد من أنّك تريد تنسيق هذا القرص؟ سوف تدمّر أيّ بيانات يحتويها."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -480,9 +450,7 @@ msgstr "اختر نوع _نظام ملفّات لإنشائه:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"ليس هناك أنظمة ملفّات يُسمح لك بتجهيزها أو إزالة تجهيزها.\n"
-"اتصل بمديرك."
+msgstr "ليس هناك أنظمة ملفّات يُسمح لك بتجهيزها أو إزالة تجهيزها.\nاتصل بمديرك."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -521,5 +489,3 @@ msgstr "غيّر كلمة مرور اسم مستخدمك"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "كلمة المرور"
-
-

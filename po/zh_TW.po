@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-07-02 15:58+0000\n"
-"Last-Translator: zerng07 <pswo10680@gmail.com>\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <trans-zh_TW@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -177,19 +177,14 @@ msgstr "資訊已更新。"
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"您輸入的密碼無效。\n"
-"請重試。"
+msgstr "您輸入的密碼無效。\n請重試。"
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"一個或多個更改的欄位無效。\n"
-"也許是由於有冒號「:」或逗號「,」在欄位裡。\n"
-"請移除它們然後重試。"
+msgstr "一個或多個更改的欄位無效。\n也許是由於有冒號「:」或逗號「,」在欄位裡。\n請移除它們然後重試。"
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -199,9 +194,7 @@ msgstr "重設密碼時發生錯誤。"
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"某些系統檔案已上鎖。\n"
-"請稍候再重試。"
+msgstr "某些系統檔案已上鎖。\n請稍候再重試。"
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -220,10 +213,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"您目前的 shell 沒有列出在 /etc/shells 中。\n"
-"無法更改您的 shell。\n"
-"請諮詢您的系統管理員。"
+msgstr "您目前的 shell 沒有列出在 /etc/shells 中。\n無法更改您的 shell。\n請諮詢您的系統管理員。"
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -349,36 +339,28 @@ msgstr "execl() 錯誤，errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您正試圖執行可能受益於管理者特權的「%s」，\n"
-"但若要這麼做您需要更多資訊。"
+msgstr "您正試圖執行可能受益於管理者特權的「%s」，\n但若要這麼做您需要更多資訊。"
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您正試圖執行需要有管理者特權的「%s」，\n"
-"但若要這麼做您需要更多資訊。"
+msgstr "您正試圖執行需要有管理者特權的「%s」，\n但若要這麼做您需要更多資訊。"
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"您正試圖執行可能受益於管理者特權的指令，\n"
-"但若要這麼做您需要更多資訊。"
+msgstr "您正試圖執行可能受益於管理者特權的指令，\n但若要這麼做您需要更多資訊。"
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您正試圖執行需要有管理者特權的指令，\n"
-"但若要這麼做您需要更多資訊。"
+msgstr "您正試圖執行需要有管理者特權的指令，\n但若要這麼做您需要更多資訊。"
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -470,9 +452,7 @@ msgstr "選取要建立的檔案系統(_F)："
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"沒有任何檔案系統可被您掛載或卸載。\n"
-"請聯絡系統管理員。"
+msgstr "沒有任何檔案系統可被您掛載或卸載。\n請聯絡系統管理員。"
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -511,5 +491,3 @@ msgstr "變更您的登入密碼"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "密碼"
-
-

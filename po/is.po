@@ -5,14 +5,15 @@
 # Translators:
 # Dimitris Glezos <glezos@indifex.com>, 2011.
 # Richard Allen <ra@ra.is>, 2002.
+# Sveinn í Felli  <sveinki@nett.is>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-06-29 00:33+0000\n"
-"Last-Translator: glezos <glezos@indifex.com>\n"
-"Language-Team: Icelandic (http://www.transifex.net/projects/p/fedora/team/is/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
+"Language-Team: Icelandic (http://www.transifex.net/projects/p/fedora/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -108,19 +109,14 @@ msgstr "Gat ekki keyrt án kerfisstjóraheimilda: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Gat ekki keyrt án kerfisstjóraheimilda: pam_timestamp_check skilaði "
-"villuboðunum %d"
+msgstr "Gat ekki keyrt án kerfisstjóraheimilda: pam_timestamp_check skilaði villuboðunum %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Þú hefur leyfi til að breyta víðværum kerfisstillingum (sem hafa áhrif á "
-"alla notendur) án þess að slá inn rótarlykilorðið aftur.  Þú getur losað þig"
-" við þessi réttindi ef þú vilt."
+msgstr "Þú hefur leyfi til að breyta víðværum kerfisstillingum (sem hafa áhrif á alla notendur) án þess að slá inn rótarlykilorðið aftur.  Þú getur losað þig við þessi réttindi ef þú vilt."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -178,19 +174,14 @@ msgstr "Upplýsingar uppfærðar."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Lykilorðið sem þú gafst upp er ógilt.\n"
-"Vinsamlegast reyndu aftur."
+msgstr "Lykilorðið sem þú gafst upp er ógilt.\nVinsamlegast reyndu aftur."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Ein eða fleiri af færslunum sem var breytt eru ógildar.\n"
-"Orsökin er líklega að ein af færslunum inniheldur tvípunkt eða kommu.\n"
-"Fjarlægðu þær og reyndu aftur."
+msgstr "Ein eða fleiri af færslunum sem var breytt eru ógildar.\nOrsökin er líklega að ein af færslunum inniheldur tvípunkt eða kommu.\nFjarlægðu þær og reyndu aftur."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -200,9 +191,7 @@ msgstr "Villa við að frumstilla aðgangsorð."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Sumar kerfisskrárnar eru læstar.\n"
-"Reyndu aftur eftir smá stund."
+msgstr "Sumar kerfisskrárnar eru læstar.\nReyndu aftur eftir smá stund."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -221,10 +210,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Skélin þín er ekki í skránni /etc/shells.\n"
-"Þú mátt ekki skipta um skél.\n"
-"Hafðu samband við kerfisstjórann þinn."
+msgstr "Skélin þín er ekki í skránni /etc/shells.\nÞú mátt ekki skipta um skél.\nHafðu samband við kerfisstjórann þinn."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -295,34 +281,26 @@ msgstr "Skipti um innskráningarskel."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér "
-"er þörf á frekari upplýsingum svo það sé hægt."
+msgstr "Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér er þörf á frekari upplýsingum svo það sé hægt."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á "
-"frekari upplýsingum svo það sé hægt."
+msgstr "Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á frekari upplýsingum svo það sé hægt."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér "
-"er þörf á frekari upplýsingum svo það sé hægt."
+msgstr "Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér er þörf á frekari upplýsingum svo það sé hægt."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á "
-"frekari upplýsingum svo það sé hægt."
+msgstr "Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á frekari upplýsingum svo það sé hægt."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -358,36 +336,28 @@ msgstr "execl() villa, errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér\n"
-"er þörf á frekari upplýsingum svo það sé hægt."
+msgstr "Þú ert að fara að keyra \"%s\" sem gæti haft gagn af rótarheimildum, en hér\ner þörf á frekari upplýsingum svo það sé hægt."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á\n"
-"frekari upplýsingum svo það sé hægt."
+msgstr "Þú ert að fara að keyra \"%s\" sem þarf rótarheimildir, en hér er þörf á\nfrekari upplýsingum svo það sé hægt."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér\n"
-"er þörf á frekari upplýsingum svo það sé hægt."
+msgstr "Þú ert að fara að keyra skipun sem gæti haft gagn af rótarheimildum, en hér\ner þörf á frekari upplýsingum svo það sé hægt."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á\n"
-"frekari upplýsingum svo það sé hægt."
+msgstr "Þú ert að fara að keyra skipun sem þarf rótarheimildir, en hér er þörf á\nfrekari upplýsingum svo það sé hægt."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -453,7 +423,7 @@ msgstr "_Aftengja"
 
 #: ../../po/../usermount.c:150
 msgid "Error loading list of file systems"
-msgstr ""
+msgstr "Villa við að hlaða inn lista yfir skráakerfi"
 
 #. Create the dialog.
 #: ../../po/../usermount.c:151 ../../po/../usermount.c:525
@@ -465,9 +435,7 @@ msgstr "Tengitól fyrir notendur"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Ertu viss um að þú viljir forsníða þennan disk? Þú munt eyða öllum gögnum "
-"sem á honum eru."
+msgstr "Ertu viss um að þú viljir forsníða þennan disk? Þú munt eyða öllum gögnum sem á honum eru."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -481,9 +449,7 @@ msgstr "Veldu _skráarkerfi sem þú vilt búa til:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Það eru engin skráarkerfi sem þú mátt tengja eða aftengja.\n"
-"Hafðu samband við kerfisstjórann."
+msgstr "Það eru engin skráarkerfi sem þú mátt tengja eða aftengja.\nHafðu samband við kerfisstjórann."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -522,5 +488,3 @@ msgstr "Breyta lykilorðinu þínu"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Lykilorð"
-
-

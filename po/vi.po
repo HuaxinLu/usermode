@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-06-29 00:33+0000\n"
-"Last-Translator: glezos <glezos@indifex.com>\n"
-"Language-Team: Vietnamese (http://www.transifex.net/projects/p/fedora/team/vi/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Dimitris Glezos <glezos@indifex.com>\n"
+"Language-Team: Vietnamese (http://www.transifex.net/projects/p/fedora/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -173,19 +173,14 @@ msgstr "Đã cập nhật thông tin."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Mật khẩu bạn nhập không hợp lệ.\n"
-"Vui lòng nhập lại."
+msgstr "Mật khẩu bạn nhập không hợp lệ.\nVui lòng nhập lại."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Một hoặc nhiều trường bị thay đổi không hợp lệ.\n"
-"Có thể là do chứa dấu phẩy hoặc dấu hai chấm trong các trường đó.\n"
-"Vui lòng loại bỏ những dấu này và thử lại."
+msgstr "Một hoặc nhiều trường bị thay đổi không hợp lệ.\nCó thể là do chứa dấu phẩy hoặc dấu hai chấm trong các trường đó.\nVui lòng loại bỏ những dấu này và thử lại."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -195,9 +190,7 @@ msgstr "Lỗi đặt lại mật khẩu."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Vài tập tin hệ thống đang bị khóa.\n"
-"Vui lòng thử lại vài phút nữa."
+msgstr "Vài tập tin hệ thống đang bị khóa.\nVui lòng thử lại vài phút nữa."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -216,10 +209,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Shell hiện thời của bạn không có trong /etc/shells.\n"
-"Bạn không được phép đổi shell.\n"
-"Hay liên lạc với quản trị hệ thống."
+msgstr "Shell hiện thời của bạn không có trong /etc/shells.\nBạn không được phép đổi shell.\nHay liên lạc với quản trị hệ thống."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -378,8 +368,7 @@ msgstr "userhelper cần đặt setuid của root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Không thể mở cửa sổ đồ họa, và không thể tìm thấy terminal điều khiển.\n"
+msgstr "Không thể mở cửa sổ đồ họa, và không thể tìm thấy terminal điều khiển.\n"
 
 #: ../../po/../userinfo.c:383
 #, c-format
@@ -445,8 +434,7 @@ msgstr "Công cụ gắn kết của người dùng"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Bạn có chắc muốn định dạng đĩa này không? Bạn sẽ hủy mọi dữ liệu trên đó."
+msgstr "Bạn có chắc muốn định dạng đĩa này không? Bạn sẽ hủy mọi dữ liệu trên đó."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -460,9 +448,7 @@ msgstr "Chọn loại _hệ tập tin cần tạo:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Bạn không được gắn hoặc tháo gắn kết bất kỳ hệ tập tin nào.\n"
-"Vui lòng liên lạc với quản trị hệ thống."
+msgstr "Bạn không được gắn hoặc tháo gắn kết bất kỳ hệ tập tin nào.\nVui lòng liên lạc với quản trị hệ thống."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -501,5 +487,3 @@ msgstr "Đổi mật khẩu đăng nhập"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Mật khẩu"
-
-

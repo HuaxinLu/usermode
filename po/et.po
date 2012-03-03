@@ -11,9 +11,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-07-09 11:51+0000\n"
-"Last-Translator: mareklaane <bald@smail.ee>\n"
-"Language-Team: Estonian (http://www.transifex.net/projects/p/fedora/team/et/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian (http://www.transifex.net/projects/p/fedora/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -109,19 +109,14 @@ msgstr "Administraatori õigustest loobumine nurjus: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Administraatori õigustest loobumine nurjus: pam_timestamp_check tagastas "
-"veakoodi %d"
+msgstr "Administraatori õigustest loobumine nurjus: pam_timestamp_check tagastas veakoodi %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Teil on praegu õigus muuta süsteemi seadistusi (need mõjutavad kõiki "
-"kasutajaid) ilma administraatori parooli andmata. Sellest õigusest võib ka "
-"loobuda."
+msgstr "Teil on praegu õigus muuta süsteemi seadistusi (need mõjutavad kõiki kasutajaid) ilma administraatori parooli andmata. Sellest õigusest võib ka loobuda."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -179,19 +174,14 @@ msgstr "Info on uuendatud."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Kirjutatud parool oli vigane.\n"
-"Proovige uuesti."
+msgstr "Kirjutatud parool oli vigane.\nProovige uuesti."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Üks või mitu muudetud välja on vigased.\n"
-"See võib olla tingitud koolonist või komast mõnes väljas.\n"
-"Palun eemaldage see ja proovige uuesti."
+msgstr "Üks või mitu muudetud välja on vigased.\nSee võib olla tingitud koolonist või komast mõnes väljas.\nPalun eemaldage see ja proovige uuesti."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -201,9 +191,7 @@ msgstr "Parooli seadmise viga."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Mõned süsteemi failid on lukus.\n"
-"Palun proovige mõne hetke pärast uuesti."
+msgstr "Mõned süsteemi failid on lukus.\nPalun proovige mõne hetke pärast uuesti."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -222,10 +210,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Teie praegune kest ei ole kirjas failis /etc/shells.\n"
-"Teil ei ole õigust muuta oma kesta.\n"
-"Konsulteerige oma süsteemi administraatoriga."
+msgstr "Teie praegune kest ei ole kirjas failis /etc/shells.\nTeil ei ole õigust muuta oma kesta.\nKonsulteerige oma süsteemi administraatoriga."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -296,34 +281,26 @@ msgstr "Sisselogimise kesta muutmine."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada \"%s\", millele tuleks kasuks administraatori õigused, "
-"aga selleks on vaja rohkem infot."
+msgstr "Püüdsite käivitada \"%s\", millele tuleks kasuks administraatori õigused, aga selleks on vaja rohkem infot."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada \"%s\", mis vajab administraatori õigusi, aga selleks on "
-"vaja rohkem infot."
+msgstr "Püüdsite käivitada \"%s\", mis vajab administraatori õigusi, aga selleks on vaja rohkem infot."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada käsku, millele tuleks kasuks administraatori õigused, aga"
-" selleks on vaja rohkem infot."
+msgstr "Püüdsite käivitada käsku, millele tuleks kasuks administraatori õigused, aga selleks on vaja rohkem infot."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada käsku, mis vajab administraatori õigusi, aga selleks on "
-"vaja rohkem infot."
+msgstr "Püüdsite käivitada käsku, mis vajab administraatori õigusi, aga selleks on vaja rohkem infot."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -359,36 +336,28 @@ msgstr "execl() viga, veanumber=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada \"%s\", millele tuleks kasuks administraatori õigused, "
-"aga selleks on vaja rohkem infot."
+msgstr "Püüdsite käivitada \"%s\", millele tuleks kasuks administraatori õigused, aga selleks on vaja rohkem infot."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada \"%s\", mis vajab administraatori õigusi,\n"
-"aga selleks on vaja rohkem infot."
+msgstr "Püüdsite käivitada \"%s\", mis vajab administraatori õigusi,\naga selleks on vaja rohkem infot."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada käsku, millele tuleks kasuks administraatori õigused, \n"
-"aga selleks on vaja rohkem infot."
+msgstr "Püüdsite käivitada käsku, millele tuleks kasuks administraatori õigused, \naga selleks on vaja rohkem infot."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Püüdsite käivitada käsku, mis vajab administraatori õigusi,\n"
-"aga selleks on vaja rohkem infot."
+msgstr "Püüdsite käivitada käsku, mis vajab administraatori õigusi,\naga selleks on vaja rohkem infot."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -466,9 +435,7 @@ msgstr "Kasutaja ühendamistööriist"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Kas soovite tõesti seda ketast vormindada? Kõik sellel olevad andmed "
-"hävivad."
+msgstr "Kas soovite tõesti seda ketast vormindada? Kõik sellel olevad andmed hävivad."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -482,9 +449,7 @@ msgstr "Loodava _failisüsteemi tüüp:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Teil ei ole lubatud ühendada ega lahutada ühtegi failisüsteemi.\n"
-"Võtke ühendust oma süsteemi administraatoriga."
+msgstr "Teil ei ole lubatud ühendada ega lahutada ühtegi failisüsteemi.\nVõtke ühendust oma süsteemi administraatoriga."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -523,5 +488,3 @@ msgstr "Oma sisselogimise parooli muutmine"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Parool"
-
-

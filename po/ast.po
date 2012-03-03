@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-06-29 00:33+0000\n"
-"Last-Translator: glezos <glezos@indifex.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Dimitris Glezos <glezos@indifex.com>\n"
+"Language-Team: Asturian (http://www.transifex.net/projects/p/fedora/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,19 +107,14 @@ msgstr "Fallu al quitar privilexos d'alministrador: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Fallu al quitar privilexos d'alministrador: pam_timestamp_check devolvió'l "
-"códigu de fallu %d"
+msgstr "Fallu al quitar privilexos d'alministrador: pam_timestamp_check devolvió'l códigu de fallu %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Nun tas actualmente autorizáu a configurar parámetros globales del sistema "
-"(qu'afeuten a tolos usuarios) ensin escribir la contraseña d'alministrador "
-"otra vegada. Puedes encaboxar esta autorización."
+msgstr "Nun tas actualmente autorizáu a configurar parámetros globales del sistema (qu'afeuten a tolos usuarios) ensin escribir la contraseña d'alministrador otra vegada. Puedes encaboxar esta autorización."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -177,19 +172,14 @@ msgstr "Información anovada."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"La contraseña qu'escribiste nun ye válida.\n"
-"Por favor, inténtalo de nueves."
+msgstr "La contraseña qu'escribiste nun ye válida.\nPor favor, inténtalo de nueves."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Un o dalgún de los campos camudaos nun son correutos.\n"
-"Esto ye probablemente a los dos puntos o les comes nún de los\n"
-"campos. Por favor, desanícialos ya inténtalo de nueves."
+msgstr "Un o dalgún de los campos camudaos nun son correutos.\nEsto ye probablemente a los dos puntos o les comes nún de los\ncampos. Por favor, desanícialos ya inténtalo de nueves."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -199,9 +189,7 @@ msgstr "Fallu al reafitar la contraseña."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Dalgunos ficheros del sistema tan bloquiaos.\n"
-"Por favor, inténtalo de nueves más sero."
+msgstr "Dalgunos ficheros del sistema tan bloquiaos.\nPor favor, inténtalo de nueves más sero."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -220,10 +208,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"El to shell actual nun ta na llista /etc/shells.\n"
-"Nun tienes permitío camudar el to shell.\n"
-"Consulta col to alministrador de sistema."
+msgstr "El to shell actual nun ta na llista /etc/shells.\nNun tienes permitío camudar el to shell.\nConsulta col to alministrador de sistema."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -294,34 +279,26 @@ msgstr "Cambéu del shell d'identificación"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Tas intentado executar \"%s\" que puede beneficiase de los privilexos "
-"alministrativos, pero necesítase más información pa facelo."
+msgstr "Tas intentado executar \"%s\" que puede beneficiase de los privilexos alministrativos, pero necesítase más información pa facelo."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Intentaste executar \"%s\" que requier los privilexos alministrativos, pero "
-"necesites más información pa facelo."
+msgstr "Intentaste executar \"%s\" que requier los privilexos alministrativos, pero necesites más información pa facelo."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Intentaste executar un comandu que se beneficia de los privilexos "
-"alministrativos, pero necesites más información pa facelo."
+msgstr "Intentaste executar un comandu que se beneficia de los privilexos alministrativos, pero necesites más información pa facelo."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Intentaste executar un comandu que requier los privilexos alministrativos, "
-"pero necesitase más información pa facelo."
+msgstr "Intentaste executar un comandu que requier los privilexos alministrativos, pero necesitase más información pa facelo."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -357,38 +334,28 @@ msgstr "Fallu execl(), errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Tas intentado executar \"%s\" que puede ser beneficiáu polos\n"
-"privilexos alministrativos, pero necesítase más información\n"
-"pa facelo."
+msgstr "Tas intentado executar \"%s\" que puede ser beneficiáu polos\nprivilexos alministrativos, pero necesítase más información\npa facelo."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Tas intentado executar \"%s\" que requier los privilexos\n"
-"d'alministrador, pero necesítase más información pa facelo."
+msgstr "Tas intentado executar \"%s\" que requier los privilexos\nd'alministrador, pero necesítase más información pa facelo."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Tas intentado executar un comandu que se beneficia de los\n"
-"privilexos d'alministrador, pero necesítase más información\n"
-"pa facelo."
+msgstr "Tas intentado executar un comandu que se beneficia de los\nprivilexos d'alministrador, pero necesítase más información\npa facelo."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Tas intentado executar un comandu que requier los privilexos\n"
-"d'alministrador, pero necesítase más información pa facelo."
+msgstr "Tas intentado executar un comandu que requier los privilexos\nd'alministrador, pero necesítase más información pa facelo."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -400,8 +367,7 @@ msgstr "L'userhelper tien que configurar la setuid de root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Imposible abrir una ventana gráfica y alcontrar una terminal de control.\n"
+msgstr "Imposible abrir una ventana gráfica y alcontrar una terminal de control.\n"
 
 #: ../../po/../userinfo.c:383
 #, c-format
@@ -467,9 +433,7 @@ msgstr "Ferramienta de montaxe pal usuariu"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"¿De xuru que quies formatear esti discu?  Desaniciarás cualisquier datu "
-"esistente."
+msgstr "¿De xuru que quies formatear esti discu?  Desaniciarás cualisquier datu esistente."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -483,9 +447,7 @@ msgstr "Seleiciona la triba de sistema de ficheros a criar:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Nun esisten sistemes de ficheros que los usuarios puedan montar o\n"
-"desmontar. Contauta col to alministrador."
+msgstr "Nun esisten sistemes de ficheros que los usuarios puedan montar o\ndesmontar. Contauta col to alministrador."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -524,5 +486,3 @@ msgstr "Cambéu de la to contraseña d'identificación"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Contraseña"
-
-

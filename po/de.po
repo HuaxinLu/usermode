@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-07-03 14:14+0000\n"
-"Last-Translator: mariobl <mariobl@freenet.de>\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Mario Blättermann <mariobl@freenet.de>\n"
 "Language-Team: German <trans-de@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -115,19 +115,14 @@ msgstr "Fehler beim Abgeben der Administrator-Privilegien: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr ""
-"Fehler beim Abgeben der Administrator-Privilegien: pam_timestamp_check "
-"meldet Fehler-Code %d"
+msgstr "Fehler beim Abgeben der Administrator-Privilegien: pam_timestamp_check meldet Fehler-Code %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr ""
-"Sie sind gegenwärtig berechtigt Systemeinstellungen (die alle Benutzer "
-"betreffen) zu konfigurieren, ohne das Administrator-Passwort noch einmal "
-"einzugeben. Sie können diese Autorisierung aufgeben."
+msgstr "Sie sind gegenwärtig berechtigt Systemeinstellungen (die alle Benutzer betreffen) zu konfigurieren, ohne das Administrator-Passwort noch einmal einzugeben. Sie können diese Autorisierung aufgeben."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -175,9 +170,7 @@ msgstr "Fehler beim Setzen des E/A-Kanals auf nicht-blockierend: %s\n"
 #: ../../po/../pam-panel-icon.c:476
 #, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr ""
-"pam-panel-icon: Verbindung mit der Sitzungsverwaltung konnte nicht "
-"hergestellt werden\n"
+msgstr "pam-panel-icon: Verbindung mit der Sitzungsverwaltung konnte nicht hergestellt werden\n"
 
 #: ../../po/../userhelper-messages.c:29
 msgid "Information updated."
@@ -187,20 +180,14 @@ msgstr "Information aktualisiert."
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"Das eingegebene Passwort ist ungültig.\n"
-"Versuchen Sie es erneut."
+msgstr "Das eingegebene Passwort ist ungültig.\nVersuchen Sie es erneut."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"Eines oder mehrere der geänderten Felder sind ungültig.\n"
-"Die Gründe sind wahrscheinlich Doppelpunkte oder Kommata in einem der\n"
-"Felder.\n"
-"Bitte entfernen Sie diese und versuchen Sie es erneut."
+msgstr "Eines oder mehrere der geänderten Felder sind ungültig.\nDie Gründe sind wahrscheinlich Doppelpunkte oder Kommata in einem der\nFelder.\nBitte entfernen Sie diese und versuchen Sie es erneut."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -210,9 +197,7 @@ msgstr "Fehler beim Zurücksetzen des Passworts."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"Einige Systemdateien sind gesperrt.\n"
-"Bitte versuchen Sie es einen Augenblick später erneut."
+msgstr "Einige Systemdateien sind gesperrt.\nBitte versuchen Sie es einen Augenblick später erneut."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -231,10 +216,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"Ihre aktuelle Shell ist nicht in /etc/shells aufgelistet.\n"
-"Das Ändern Ihrer Shell ist nicht zulässig.\n"
-"Setzen Sie sich mit Ihrem Systemadministrator in Verbindung."
+msgstr "Ihre aktuelle Shell ist nicht in /etc/shells aufgelistet.\nDas Ändern Ihrer Shell ist nicht zulässig.\nSetzen Sie sich mit Ihrem Systemadministrator in Verbindung."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -305,34 +287,26 @@ msgstr "Ändern der Login-Shell."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen »%s« auszuführen, das administrative Privilegien nutzen "
-"könnte. Dafür werden jedoch weitere Informationen benötigt."
+msgstr "Sie versuchen »%s« auszuführen, das administrative Privilegien nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen »%s« auszuführen, das administrative Privilegien erfordert. "
-"Dazu werden jedoch weitere Informationen benötigt."
+msgstr "Sie versuchen »%s« auszuführen, das administrative Privilegien erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen einen Befehl auszuführen, der administrative Privilegien "
-"nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
+msgstr "Sie versuchen einen Befehl auszuführen, der administrative Privilegien nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen einen Befehl auszuführen, der administrative Privilegien "
-"erfordert. Dazu werden jedoch weitere Informationen benötigt."
+msgstr "Sie versuchen einen Befehl auszuführen, der administrative Privilegien erfordert. Dazu werden jedoch weitere Informationen benötigt."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -351,8 +325,7 @@ msgstr "fork() kann nicht aufgerufen werden.\n"
 #: ../../po/../userhelper-wrap.c:930
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr ""
-"Binäre Zeichenkodierung kann nicht auf einem E/A-Kanal gesetzt werden: %s\n"
+msgstr "Binäre Zeichenkodierung kann nicht auf einem E/A-Kanal gesetzt werden: %s\n"
 
 #: ../../po/../userhelper-wrap.c:999 ../../po/../userhelper-wrap.c:1003
 #, c-format
@@ -369,36 +342,28 @@ msgstr "execl()-Fehler, errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen »%s« auszuführen, das administrative Privilegien\n"
-"nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
+msgstr "Sie versuchen »%s« auszuführen, das administrative Privilegien\nnutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen »\"%s« auszuführen, das administrative Privilegien\n"
-"erfordert. Dazu werden jedoch weitere Informationen benötigt."
+msgstr "Sie versuchen »\"%s« auszuführen, das administrative Privilegien\nerfordert. Dazu werden jedoch weitere Informationen benötigt."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
-"nutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
+msgstr "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\nnutzen könnte. Dafür werden jedoch weitere Informationen benötigt."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"Sie versuchen einen Befehl auszuführen, der administrative Privilegien\n"
-"erfordert. Dazu werden jedoch weitere Informationen benötigt."
+msgstr "Sie versuchen einen Befehl auszuführen, der administrative Privilegien\nerfordert. Dazu werden jedoch weitere Informationen benötigt."
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -410,9 +375,7 @@ msgstr "userhelper muss setuid-root sein\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr ""
-"Grafisches Fenster kann nicht geöffnet und das  steuernde Terminal nicht "
-"gefunden werden.\n"
+msgstr "Grafisches Fenster kann nicht geöffnet und das  steuernde Terminal nicht gefunden werden.\n"
 
 #: ../../po/../userinfo.c:383
 #, c-format
@@ -478,9 +441,7 @@ msgstr "Benutzer-Einhänge-Werkzeug"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr ""
-"Möchten Sie diese Festplatte wirklich formatieren? Alle Daten, die diese "
-"Festplatte zur Zeit enthält, werden gelöscht."
+msgstr "Möchten Sie diese Festplatte wirklich formatieren? Alle Daten, die diese Festplatte zur Zeit enthält, werden gelöscht."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -494,9 +455,7 @@ msgstr "Wählen Sie den _Dateisystemtyp aus:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"Es gibt keine Dateisysteme, die Sie ein- oder aushängen können.\n"
-"Setzen Sie sich mit Ihrem Administrator in Verbindung."
+msgstr "Es gibt keine Dateisysteme, die Sie ein- oder aushängen können.\nSetzen Sie sich mit Ihrem Administrator in Verbindung."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -535,5 +494,3 @@ msgstr "Ihr Anmeldepasswort ändern"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Passwort"
-
-

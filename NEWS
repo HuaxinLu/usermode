@@ -1,3 +1,8 @@
+1.109:
+* Fix build with glib >= 2.30.
+* Remove a misleading space in from syslog records.
+* Updated translations.
+
 1.108:
 * Report errors in text-mode authentication to stderr.
 * Fix a rare crash in usermount.

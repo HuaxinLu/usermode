@@ -14,9 +14,9 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2011-09-01 07:10+0000\n"
-"Last-Translator: lovenemesis <lovenemesis@gmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.net/projects/p/fedora/team/zh_CN/)\n"
+"PO-Revision-Date: 2012-02-14 08:53+0000\n"
+"Last-Translator: Tommy He <lovenemesis@gmail.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.net/projects/p/fedora/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -177,19 +177,14 @@ msgstr "信息已更新。"
 msgid ""
 "The password you typed is invalid.\n"
 "Please try again."
-msgstr ""
-"您键入的口令无效。\n"
-"请重试。"
+msgstr "您键入的口令无效。\n请重试。"
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr ""
-"至少有一个改变的字段无效。\n"
-"这可能是字段中的逗号和冒号造成的。\n"
-"请删除那些标点后再重试。"
+msgstr "至少有一个改变的字段无效。\n这可能是字段中的逗号和冒号造成的。\n请删除那些标点后再重试。"
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
@@ -199,9 +194,7 @@ msgstr "口令重设出错。"
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr ""
-"某些系统文件被锁。\n"
-"请过一会儿再重试。"
+msgstr "某些系统文件被锁。\n请过一会儿再重试。"
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -220,10 +213,7 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr ""
-"您目前使用的 shell 没有在 /etc/shells 中列出。\n"
-"您没有改变 shell 的许可。\n"
-"请向您的系统管理员咨询。"
+msgstr "您目前使用的 shell 没有在 /etc/shells 中列出。\n您没有改变 shell 的许可。\n请向您的系统管理员咨询。"
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -349,36 +339,28 @@ msgstr "execl() 错误，errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它可能会得益于超级用户的特权，\n"
-"但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它可能会得益于超级用户的特权，\n但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行“%s”。它要求您拥有超级用户的特权，\n"
-"但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它要求您拥有超级用户的特权，\n但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行一个可能会得益于超级用户特权的命令，\n"
-"但是这需要更多信息才能做到。"
+msgstr "您在试图运行一个可能会得益于超级用户特权的命令，\n但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr ""
-"您在试图运行一个要求超级用户特权的命令，\n"
-"但是需要更多信息才能做到。"
+msgstr "您在试图运行一个要求超级用户特权的命令，\n但是需要更多信息才能做到。"
 
 #: ../../po/../userhelper.c:2079
 #, c-format
@@ -470,9 +452,7 @@ msgstr "选择要创建的文件类型(_F)："
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr ""
-"没有您允许挂载或卸载的文件系统。\n"
-"请联系您的系统管理员。"
+msgstr "没有您允许挂载或卸载的文件系统。\n请联系您的系统管理员。"
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
@@ -511,5 +491,3 @@ msgstr "改变你的登录密码"
 #: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "口令"
-
-
