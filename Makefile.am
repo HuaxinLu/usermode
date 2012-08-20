@@ -4,13 +4,13 @@ VENDOR=redhat
 EXTRA_DIST = 	\
 	dummy.h \
 	consolehelper.8.in \
+	sample/README sample/shutdown sample/wrapped.console \
+	sample/wrapped.pamd \
 	userhelper.8.in \
 	userhelper_context \
 	userinfo.desktop.in \
 	usermount.desktop.in \
-	userpasswd.desktop.in \
-	wrapped.console \
-	shutdown.pamd
+	userpasswd.desktop.in
 
 SUBDIRS=po
 
@@ -22,7 +22,6 @@ SBINDIR_CPPFLAGS = -DSBINDIR='"$(sbindir)"'
 
 bin_PROGRAMS = userinfo usermount userpasswd consolehelper consolehelper-gtk \
 	pam-panel-icon
-dist_bin_SCRIPTS = shutdown
 sbin_PROGRAMS = userhelper
 noinst_PROGRAMS = test-userdialog
 dist_man_MANS = consolehelper-gtk.8 pam-panel-icon.1 \
@@ -48,18 +47,11 @@ uninstall-local:
 	       $(DESTDIR)$(datadir)/applications/$(VENDOR)-usermount.desktop  \
 	       $(DESTDIR)$(datadir)/applications/$(VENDOR)-userpasswd.desktop
 
-consoleappdir = $(sysconfdir)/security/console.apps
-WRAPPED_APPS = halt poweroff reboot
-consoleapp_DATA = $(WRAPPED_APPS)
-$(WRAPPED_APPS): wrapped.console
-	$(INSTALL) -m600 $^ $@
-
 CLEANFILES = $(man_MANS)
 DISTCLEANFILES =            \
 	userinfo.desktop    \
 	usermount.desktop   \
-	userpasswd.desktop  \
-	$(WRAPPED_APPS)     
+	userpasswd.desktop
 
 
 debug-install:

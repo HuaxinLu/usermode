@@ -1,3 +1,20 @@
+2012-08-21  Miloslav Trmač  <mitr@redhat.com>
+
+	* sample/README: New file.
+	* sample/shutdown: Move from ...
+	* shutdown: ... here.
+	* sample/wrapped.console: Move from ...
+	* wrapped.console: ... here.
+	* sample/wrapped.pamd: Move from ...
+	* shutdown.pamd: ... here.
+	* Makefile.am (EXTRA_DIST): Ship contents of the "sample" subdirectory,
+	remove PAM and userhelper configuration from the main one.
+	(dist_bin_SCRIPTS): Remove, the script is now in the "sample"
+	subdirectory.
+	(consoleappdir, WRAPPED_APPS, consoleapp_DATA): Remove, the
+	configuration is now in the "sample" subdirectory.
+	(DISTCLEANFILES): Remove no longer generated configuration files.
+
 2012-08-20  Miloslav Trmač  <mitr@redhat.com>
 
 	* usermount.c (main): Reject running (userformat) without arguments
