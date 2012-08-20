@@ -1,5 +1,10 @@
 2012-08-20  Miloslav Trmač  <mitr@redhat.com>
 
+	* usermount.c (main): Reject running (userformat) without arguments
+	instead of treating it like (usermount).
+	* usermount.1: Clarify that the "device" argument to (userformat) is
+	required.
+
 	* userinfo.c (parse_args): Don't output an additional error message
 	when getopt() has already provided a more precise one.
 

@@ -657,25 +657,30 @@ format_one_device (const char *device)
 int
 main(int argc, char *argv[])
 {
+	char *name;
+
 	bindtextdomain(PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset(PACKAGE, "UTF-8");
 	textdomain(PACKAGE);
 	gtk_init(&argc, &argv);
 
-        if (argc > 1) {
-		char *name = strrchr (argv[0], '/');
-		
-		name = name ? name + 1: argv[0];
-		if (argc == 2 && !strcmp (name, "userformat")) {
-        		format_one_device (argv[1]);
-		} else {
+	name = strrchr (argv[0], '/');
+	name = name ? name + 1: argv[0];
+	if (strcmp(name, "userformat") == 0) {
+		if (argc != 2) {
 			fprintf(stderr,
 				_("Unexpected command-line arguments\n"));
 			return 1;
 		}
+		format_one_device(argv[1]);
         } else {
 		gboolean run_main;
 
+		if (argc != 1) {
+			fprintf(stderr,
+				_("Unexpected command-line arguments\n"));
+			return 1;
+		}
 		run_main = create_usermount_window();
 		if (run_main) {
 			gtk_main();
