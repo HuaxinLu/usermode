@@ -380,7 +380,6 @@ parse_args (struct UserInfo *userinfo, int argc, char *argv[])
 				x_flag = 1;
 				break;
 			default:
-				fprintf(stderr, _("Unexpected argument"));
 				exit(1);
 		}
 	}
