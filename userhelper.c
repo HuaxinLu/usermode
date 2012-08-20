@@ -2225,6 +2225,10 @@ main(int argc, char **argv)
 #endif
 			debug_msg("userhelper: modifying account data for %s\n",
 				  user_name);
+		} else if (optind != argc) {
+			fprintf(stderr,
+				_("Unexpected command-line arguments\n"));
+			exit(ERR_INVALID_CALL);
 		}
 
 		/* Verify that the user exists. */

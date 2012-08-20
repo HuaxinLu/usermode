@@ -384,6 +384,10 @@ parse_args (struct UserInfo *userinfo, int argc, char *argv[])
 				exit(1);
 		}
 	}
+	if (optind != argc) {
+		fprintf(stderr, _("Unexpected command-line arguments\n"));
+		exit(1);
+	}
 
 	if (x_flag) {
 		if (changed)

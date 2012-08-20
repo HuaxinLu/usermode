@@ -13,4 +13,5 @@ userinfo.desktop.in
 [type: gettext/glade] usermode.ui
 usermount.c
 usermount.desktop.in
+userpasswd.c
 userpasswd.desktop.in

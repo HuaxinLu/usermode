@@ -666,8 +666,12 @@ main(int argc, char *argv[])
 		char *name = strrchr (argv[0], '/');
 		
 		name = name ? name + 1: argv[0];
-		if ( !strcmp (name, "userformat") ) {
+		if (argc == 2 && !strcmp (name, "userformat")) {
         		format_one_device (argv[1]);
+		} else {
+			fprintf(stderr,
+				_("Unexpected command-line arguments\n"));
+			return 1;
 		}
         } else {
 		gboolean run_main;

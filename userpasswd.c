@@ -19,6 +19,7 @@
 
 #include "config.h"
 #include <libintl.h>
+#include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include "userhelper.h"
 #include "userhelper-wrap.h"
@@ -31,6 +32,11 @@ main(int argc, char *argv[])
 	textdomain(PACKAGE);
 
 	gtk_init(&argc, &argv);
+
+	if (argc != 1) {
+		fprintf(stderr, _("Unexpected command-line arguments\n"));
+		exit(1);
+	}
 
 	userhelper_run(TRUE, UH_PATH, UH_PATH, UH_PASSWD_OPT, 0);
 
