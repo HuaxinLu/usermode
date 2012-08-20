@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
-"POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2012-02-14 08:53+0000\n"
-"Last-Translator: Dimitris Glezos <glezos@indifex.com>\n"
+"POT-Creation-Date: 2012-08-21 00:32+0200\n"
+"PO-Revision-Date: 2012-08-20 22:33+0000\n"
+"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
 "Language-Team: Hebrew <he-users@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -361,24 +361,26 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr "הנך מנסה להריץ פקודה אשר דורשת הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
-#: ../../po/../userhelper.c:2079
+#: ../../po/../userhelper.c:2085
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "כלי העזר userhelper דורש הגדרת setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2171
+#: ../../po/../userhelper.c:2177
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "פתיחת חלון גרפי לא הצליחה, וכן לא נמצא מסוף שליטה.\n"
 
-#: ../../po/../userinfo.c:383
+#: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
+#: ../../po/../usermount.c:672 ../../po/../usermount.c:681
+#: ../../po/../userpasswd.c:37
 #, c-format
-msgid "Unexpected argument"
-msgstr "משתנה לא צפוי"
+msgid "Unexpected command-line arguments\n"
+msgstr ""
 
-#: ../../po/../userinfo.c:408
+#: ../../po/../userinfo.c:411
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "אינך קיים (קיימת?).  לך מפה.\n"
@@ -392,28 +394,28 @@ msgid "Change personal information"
 msgstr "שינוי המידע האישי"
 
 #: ../usermode.ui.h:1
+msgid "User Information"
+msgstr "מידע על המשתמש"
+
+#: ../usermode.ui.h:2
 msgid "Full Name:"
 msgstr "שם מלא:"
 
-#: ../usermode.ui.h:2
-msgid "Home Phone Number:"
-msgstr "מספר טלפון בבית:"
-
 #: ../usermode.ui.h:3
-msgid "Login Shell:"
-msgstr "מעטפת כניסה:"
+msgid "Office:"
+msgstr "משרד:"
 
 #: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "מספר טלפון במשרד:"
 
 #: ../usermode.ui.h:5
-msgid "Office:"
-msgstr "משרד:"
+msgid "Home Phone Number:"
+msgstr "מספר טלפון בבית:"
 
 #: ../usermode.ui.h:6
-msgid "User Information"
-msgstr "מידע על המשתמש"
+msgid "Login Shell:"
+msgstr "מעטפת כניסה:"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -484,9 +486,9 @@ msgid "Mount and unmount filesystems"
 msgstr "חיבור וניתוק נקודת חיבור אל מערכות הקבצים"
 
 #: ../userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "שינוי סיסמת הכניסה למערכת"
-
-#: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "סיסמה"
+
+#: ../userpasswd.desktop.in.h:2
+msgid "Change your login password"
+msgstr "שינוי סיסמת הכניסה למערכת"

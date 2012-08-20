@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
-"POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2012-02-14 08:53+0000\n"
-"Last-Translator: Hajime Taira <htaira@redhat.com>\n"
+"POT-Creation-Date: 2012-08-21 00:32+0200\n"
+"PO-Revision-Date: 2012-08-20 22:33+0000\n"
+"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
 "Language-Team: Japanese <trans-ja@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -364,24 +364,26 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr "スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行するには\n追加情報が必要です。"
 
-#: ../../po/../userhelper.c:2079
+#: ../../po/../userhelper.c:2085
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "ユーザーヘルパーは root に setuid されていなければなりません\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2171
+#: ../../po/../userhelper.c:2177
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "グラフィカルウィンドウを開けません。またコントロールターミナルを見つけられませんでした。\n"
 
-#: ../../po/../userinfo.c:383
+#: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
+#: ../../po/../usermount.c:672 ../../po/../usermount.c:681
+#: ../../po/../userpasswd.c:37
 #, c-format
-msgid "Unexpected argument"
-msgstr "予期しない引数"
+msgid "Unexpected command-line arguments\n"
+msgstr ""
 
-#: ../../po/../userinfo.c:408
+#: ../../po/../userinfo.c:411
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "あなたは存在しません。続けられません。\n"
@@ -395,28 +397,28 @@ msgid "Change personal information"
 msgstr "個人情報を変更"
 
 #: ../usermode.ui.h:1
+msgid "User Information"
+msgstr "ユーザー情報"
+
+#: ../usermode.ui.h:2
 msgid "Full Name:"
 msgstr "フルネーム:"
 
-#: ../usermode.ui.h:2
-msgid "Home Phone Number:"
-msgstr "自宅の電話番号:"
-
 #: ../usermode.ui.h:3
-msgid "Login Shell:"
-msgstr "ログインシェル:"
+msgid "Office:"
+msgstr "オフィス:"
 
 #: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "オフィスの電話番号:"
 
 #: ../usermode.ui.h:5
-msgid "Office:"
-msgstr "オフィス:"
+msgid "Home Phone Number:"
+msgstr "自宅の電話番号:"
 
 #: ../usermode.ui.h:6
-msgid "User Information"
-msgstr "ユーザー情報"
+msgid "Login Shell:"
+msgstr "ログインシェル:"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -487,9 +489,9 @@ msgid "Mount and unmount filesystems"
 msgstr "ファイルシステムをマウント/マウント解除をします"
 
 #: ../userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "ログインパスワードを変更"
-
-#: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "パスワード"
+
+#: ../userpasswd.desktop.in.h:2
+msgid "Change your login password"
+msgstr "ログインパスワードを変更"

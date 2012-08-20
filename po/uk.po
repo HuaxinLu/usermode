@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
-"POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2012-02-14 08:53+0000\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"POT-Creation-Date: 2012-08-21 00:32+0200\n"
+"PO-Revision-Date: 2012-08-20 22:33+0000\n"
+"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -359,24 +359,26 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr "Ви намагаєтесь виконати команду, яка вимагає привілей\nадміністратора, але для цього потрібна додаткова інформація."
 
-#: ../../po/../userhelper.c:2079
+#: ../../po/../userhelper.c:2085
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper повинен бути setuid root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2171
+#: ../../po/../userhelper.c:2177
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Неможливо відкрити графічне вікно та знайти керуючий термінал.\n"
 
-#: ../../po/../userinfo.c:383
+#: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
+#: ../../po/../usermount.c:672 ../../po/../usermount.c:681
+#: ../../po/../userpasswd.c:37
 #, c-format
-msgid "Unexpected argument"
-msgstr "Неочікуваний аргумент"
+msgid "Unexpected command-line arguments\n"
+msgstr ""
 
-#: ../../po/../userinfo.c:408
+#: ../../po/../userinfo.c:411
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Вас немає.  Ідіть звідси.\n"
@@ -390,28 +392,28 @@ msgid "Change personal information"
 msgstr "Зміна персональної інформації"
 
 #: ../usermode.ui.h:1
+msgid "User Information"
+msgstr "Користувач"
+
+#: ../usermode.ui.h:2
 msgid "Full Name:"
 msgstr "Повне ім'я:"
 
-#: ../usermode.ui.h:2
-msgid "Home Phone Number:"
-msgstr "Домашній телефон:"
-
 #: ../usermode.ui.h:3
-msgid "Login Shell:"
-msgstr "Оболонка:"
+msgid "Office:"
+msgstr "Офіс:"
 
 #: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Робочий телефон:"
 
 #: ../usermode.ui.h:5
-msgid "Office:"
-msgstr "Офіс:"
+msgid "Home Phone Number:"
+msgstr "Домашній телефон:"
 
 #: ../usermode.ui.h:6
-msgid "User Information"
-msgstr "Користувач"
+msgid "Login Shell:"
+msgstr "Оболонка:"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -482,9 +484,9 @@ msgid "Mount and unmount filesystems"
 msgstr "Монтування і демонтування файлових систем"
 
 #: ../userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Зміна власного паролю"
-
-#: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Зміна паролю"
+
+#: ../userpasswd.desktop.in.h:2
+msgid "Change your login password"
+msgstr "Зміна власного паролю"

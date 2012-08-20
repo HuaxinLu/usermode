@@ -11,10 +11,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
-"POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2012-02-14 08:53+0000\n"
-"Last-Translator: feonsu <feonsu@gmail.com>\n"
-"Language-Team: Slovak (http://www.transifex.net/projects/p/fedora/language/sk/)\n"
+"POT-Creation-Date: 2012-08-21 00:32+0200\n"
+"PO-Revision-Date: 2012-08-20 22:33+0000\n"
+"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/fedora/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -360,24 +360,26 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr "Pokúšate sa spustiť príkaz, ktorý vyžaduje správcovské práva.\nJe však potrebných viac informácií, aby sa tak mohlo stať."
 
-#: ../../po/../userhelper.c:2079
+#: ../../po/../userhelper.c:2085
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "program userhelper musí byť setuid správcu\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2171
+#: ../../po/../userhelper.c:2177
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Nepodarilo sa otvoriť grafické okno a nepodarilo sa nájsť riadiaci terminál.\n"
 
-#: ../../po/../userinfo.c:383
+#: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
+#: ../../po/../usermount.c:672 ../../po/../usermount.c:681
+#: ../../po/../userpasswd.c:37
 #, c-format
-msgid "Unexpected argument"
-msgstr "Neočakávaný argument"
+msgid "Unexpected command-line arguments\n"
+msgstr ""
 
-#: ../../po/../userinfo.c:408
+#: ../../po/../userinfo.c:411
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Neexistujete. Choďte preč.\n"
@@ -391,28 +393,28 @@ msgid "Change personal information"
 msgstr "Zmeniť osobné informácie"
 
 #: ../usermode.ui.h:1
+msgid "User Information"
+msgstr "Informácie o používateľovi"
+
+#: ../usermode.ui.h:2
 msgid "Full Name:"
 msgstr "Celé meno:"
 
-#: ../usermode.ui.h:2
-msgid "Home Phone Number:"
-msgstr "Telefónne číslo domov:"
-
 #: ../usermode.ui.h:3
-msgid "Login Shell:"
-msgstr "Prihlasovací shell:"
+msgid "Office:"
+msgstr "Kancelária:"
 
 #: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Telefónne číslo do kancelárie:"
 
 #: ../usermode.ui.h:5
-msgid "Office:"
-msgstr "Kancelária:"
+msgid "Home Phone Number:"
+msgstr "Telefónne číslo domov:"
 
 #: ../usermode.ui.h:6
-msgid "User Information"
-msgstr "Informácie o používateľovi"
+msgid "Login Shell:"
+msgstr "Prihlasovací shell:"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -483,9 +485,9 @@ msgid "Mount and unmount filesystems"
 msgstr "Pripojiť a odpojiť súborové systémy"
 
 #: ../userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Zmeniť vaše prihlasovacie heslo"
-
-#: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Heslo"
+
+#: ../userpasswd.desktop.in.h:2
+msgid "Change your login password"
+msgstr "Zmeniť vaše prihlasovacie heslo"

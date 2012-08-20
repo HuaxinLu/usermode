@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 18:03+0200\n"
+"POT-Creation-Date: 2012-08-21 00:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -357,24 +357,26 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr ""
 
-#: ../../po/../userhelper.c:2079
+#: ../../po/../userhelper.c:2085
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr ""
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2171
+#: ../../po/../userhelper.c:2177
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr ""
 
-#: ../../po/../userinfo.c:383
+#: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
+#: ../../po/../usermount.c:672 ../../po/../usermount.c:681
+#: ../../po/../userpasswd.c:37
 #, c-format
-msgid "Unexpected argument"
+msgid "Unexpected command-line arguments\n"
 msgstr ""
 
-#: ../../po/../userinfo.c:408
+#: ../../po/../userinfo.c:411
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr ""
@@ -388,15 +390,15 @@ msgid "Change personal information"
 msgstr ""
 
 #: ../usermode.ui.h:1
-msgid "Full Name:"
+msgid "User Information"
 msgstr ""
 
 #: ../usermode.ui.h:2
-msgid "Home Phone Number:"
+msgid "Full Name:"
 msgstr ""
 
 #: ../usermode.ui.h:3
-msgid "Login Shell:"
+msgid "Office:"
 msgstr ""
 
 #: ../usermode.ui.h:4
@@ -404,11 +406,11 @@ msgid "Office Phone Number:"
 msgstr ""
 
 #: ../usermode.ui.h:5
-msgid "Office:"
+msgid "Home Phone Number:"
 msgstr ""
 
 #: ../usermode.ui.h:6
-msgid "User Information"
+msgid "Login Shell:"
 msgstr ""
 
 #: ../../po/../usermount.c:61
@@ -480,9 +482,9 @@ msgid "Mount and unmount filesystems"
 msgstr ""
 
 #: ../userpasswd.desktop.in.h:1
-msgid "Change your login password"
+msgid "Password"
 msgstr ""
 
 #: ../userpasswd.desktop.in.h:2
-msgid "Password"
+msgid "Change your login password"
 msgstr ""

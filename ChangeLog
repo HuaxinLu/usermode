@@ -1,5 +1,9 @@
 2012-08-21  Miloslav Trmač  <mitr@redhat.com>
 
+	* configure.ac: Release 1.110.
+	* NEWS: Update.
+	* po/*: Update.
+
 	* sample/README: New file.
 	* sample/shutdown: Move from ...
 	* shutdown: ... here.

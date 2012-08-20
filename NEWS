@@ -1,3 +1,13 @@
+1.110:
+* INCOMPATIBLE CHANGE: The shutdown(8) wrapper script and the
+  $sysconfdir/security/console.apps/{halt,poweroff,reboot} configuration files
+  are not installed by this package.  The contents have been moved to a
+  "sample" subdirectory in the tarball.  Distributions are encouraged to
+  package such wrapping configuration along with the wrapped commands instead,
+  like they probably do for all other commmands.
+* All commands now terminate on unexpected arguments intead of silently ignoring
+  them.
+
 1.109:
 * Fix build with glib >= 2.30.
 * Remove a misleading space in from syslog records.

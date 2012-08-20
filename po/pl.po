@@ -10,10 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
-"POT-Creation-Date: 2011-09-20 18:03+0200\n"
-"PO-Revision-Date: 2012-02-14 08:53+0000\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.net/projects/p/fedora/language/pl/)\n"
+"POT-Creation-Date: 2012-08-21 00:32+0200\n"
+"PO-Revision-Date: 2012-08-20 22:33+0000\n"
+"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
+"Language-Team: Polish <trans-pl@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -359,24 +359,26 @@ msgid ""
 "privileges, but more information is needed in order to do so."
 msgstr "Próbowano wykonać polecenie, które wymaga uprawnień administratora.\nNiezbędne jest podanie dodatkowych informacji."
 
-#: ../../po/../userhelper.c:2079
+#: ../../po/../userhelper.c:2085
 #, c-format
 msgid "userhelper must be setuid root\n"
 msgstr "userhelper musi być setuid użytkownika root\n"
 
 #. FIXME: print a warning here?
-#: ../../po/../userhelper.c:2171
+#: ../../po/../userhelper.c:2177
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
 msgstr "Nie można otworzyć okna graficznego i odnaleźć terminala sterującego.\n"
 
-#: ../../po/../userinfo.c:383
+#: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
+#: ../../po/../usermount.c:672 ../../po/../usermount.c:681
+#: ../../po/../userpasswd.c:37
 #, c-format
-msgid "Unexpected argument"
-msgstr "Nieoczekiwany parametr"
+msgid "Unexpected command-line arguments\n"
+msgstr ""
 
-#: ../../po/../userinfo.c:408
+#: ../../po/../userinfo.c:411
 #, c-format
 msgid "You don't exist.  Go away.\n"
 msgstr "Nie istniejesz. Odejdź stąd.\n"
@@ -390,28 +392,28 @@ msgid "Change personal information"
 msgstr "Zmiana informacji osobistych"
 
 #: ../usermode.ui.h:1
+msgid "User Information"
+msgstr "Informacje o użytkowniku"
+
+#: ../usermode.ui.h:2
 msgid "Full Name:"
 msgstr "Imię i nazwisko:"
 
-#: ../usermode.ui.h:2
-msgid "Home Phone Number:"
-msgstr "Numer telefonu domowego:"
-
 #: ../usermode.ui.h:3
-msgid "Login Shell:"
-msgstr "Powłoka logowania:"
+msgid "Office:"
+msgstr "Biuro:"
 
 #: ../usermode.ui.h:4
 msgid "Office Phone Number:"
 msgstr "Numer telefonu do biura:"
 
 #: ../usermode.ui.h:5
-msgid "Office:"
-msgstr "Biuro:"
+msgid "Home Phone Number:"
+msgstr "Numer telefonu domowego:"
 
 #: ../usermode.ui.h:6
-msgid "User Information"
-msgstr "Informacje o użytkowniku"
+msgid "Login Shell:"
+msgstr "Powłoka logowania:"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
@@ -482,9 +484,9 @@ msgid "Mount and unmount filesystems"
 msgstr "Montowanie i odmontowywanie systemów plików"
 
 #: ../userpasswd.desktop.in.h:1
-msgid "Change your login password"
-msgstr "Zmiana hasła logowania"
-
-#: ../userpasswd.desktop.in.h:2
 msgid "Password"
 msgstr "Hasło"
+
+#: ../userpasswd.desktop.in.h:2
+msgid "Change your login password"
+msgstr "Zmiana hasła logowania"
