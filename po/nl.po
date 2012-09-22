@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Dimitris Glezos <glezos@indifex.com>, 2011.
-# Geert Warrink <geert.warrink@onsnet.nu>, 2010, 2011.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2010, 2011, 2012.
 # Peter van Egdom <p.van.egdom@gmail.com>, 2004, 2005, 2007, 2008, 2010.
 # Richard E. van der Luit <zuma@xs4all.nl>, 2011.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003.
@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
+"PO-Revision-Date: 2012-08-21 10:38+0000\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/fedora/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
@@ -378,7 +378,7 @@ msgstr "Niet in staat een grafisch venster te openen, en niet in staat de\ncontr
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Onverwachte commandoregel argumenten\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format

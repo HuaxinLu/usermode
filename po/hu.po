@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
+"PO-Revision-Date: 2012-09-04 20:23+0000\n"
+"Last-Translator: Zoltan Hoppár <hopparz@gmail.com>\n"
 "Language-Team: Hungarian <trans-hu@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hu\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
@@ -378,7 +378,7 @@ msgstr "A grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Váratlan parancssori paraméterek\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format

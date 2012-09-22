@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
+"PO-Revision-Date: 2012-09-03 07:10+0000\n"
+"Last-Translator: runa <runabh@gmail.com>\n"
 "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: bn_IN\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
@@ -378,7 +378,7 @@ msgstr "গ্রাফিক্যাল উইন্ডো খোলা যা
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "অপ্রত্যাশিত কমান্ড-লাইন আর্গুমেন্ট\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format

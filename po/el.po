@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Dimitrios Michelinakis <dimitris@michelinakis.gr>, 2006.
-# Dimitris Glaros <dimitrisglaros@gmail.com>, 2011.
+# Dimitris Glaros <dimitrisglaros@gmail.com>, 2011-2012.
 # Dimitris Glezos <dimitris@glezos.com>, 2006, 2008.
 # Dimitris Glezos <glezos@indifex.com>, 2011.
 # Simos Xenitellis <simos@hellug.gr>, 2002.
@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
+"PO-Revision-Date: 2012-09-22 17:20+0200\n"
+"Last-Translator: Dimitris Glaros <dimitrisglaros@gmail.com>\n"
 "Language-Team: Greek <trans-el@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: el\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
@@ -378,7 +378,7 @@ msgstr "Αδύνατο να άνοιγμα ενός γραφικού παραθ�
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Απροσδόκητα ορίσματα της γραμμής εντολών ⏎\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format

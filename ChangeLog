@@ -1,3 +1,10 @@
+2012-09-22  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.111.
+
+	* NEWS: Update.
+	* po/*: Update.
+
 2012-08-21  Miloslav Trmač  <mitr@redhat.com>
 
 	* userpasswd.c: Add missing includes.

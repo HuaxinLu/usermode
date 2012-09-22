@@ -1,3 +1,6 @@
+1.111:
+* Updated translations.
+
 1.110:
 * INCOMPATIBLE CHANGE: The shutdown(8) wrapper script and the
   $sysconfdir/security/console.apps/{halt,poweroff,reboot} configuration files

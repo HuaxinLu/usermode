@@ -9,6 +9,7 @@
 # Fabian Affolter <fab@fedoraproject.org>, 2008.
 # Marcus Gloeckner <mgloeckner@gmail.com>, 2005.
 # Mario Blättermann <mariobl@freenet.de>, 2011.
+# Roman Spirgi <bigant@fedoraproject.org>, 2012.
 # Ronny Buchmann <ronny-vlug@vlugnet.org>, 2004, 2006.
 # Severin Heiniger <severinheiniger@gmail.com>, 2005.
 # Timo Trinks <ttrinks@redhat.com>, 2007.
@@ -17,14 +18,14 @@ msgstr ""
 "Project-Id-Version: Usermode\n"
 "Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
+"PO-Revision-Date: 2012-08-22 08:05+0000\n"
+"Last-Translator: Roman Spirgi <bigant@fedoraproject.org>\n"
 "Language-Team: German <trans-de@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
@@ -197,7 +198,7 @@ msgstr "Fehler beim Zurücksetzen des Passworts."
 msgid ""
 "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Einige Systemdateien sind gesperrt.\nBitte versuchen Sie es einen Augenblick später erneut."
+msgstr "Einige Systemdateien sind gesperrt.\nBitte probieren Sie es später erneut."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -268,7 +269,7 @@ msgstr "Fehler"
 
 #: ../../po/../userhelper-wrap.c:533
 msgid "Information"
-msgstr "Informationen"
+msgstr "Information"
 
 #: ../../po/../userhelper-wrap.c:698
 msgid "Changing password."
@@ -375,14 +376,14 @@ msgstr "userhelper muss setuid-root sein\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Grafisches Fenster kann nicht geöffnet und das  steuernde Terminal nicht gefunden werden.\n"
+msgstr "Grafisches Fenster kann nicht geöffnet und das steuernde Terminal nicht gefunden werden.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Unerwartete Befehlszeilenargumente\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format
