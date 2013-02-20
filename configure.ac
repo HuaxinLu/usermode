@@ -21,6 +21,8 @@ AC_DEFINE_UNQUOTED([PATH_FDFORMAT], ["$FDFORMAT"],
 		   [Path to the fdformat command])
 AC_DEFINE_UNQUOTED([PATH_MKFS], ["$MKFS"], [Path to the mkfs command])
 
+AC_SYS_LARGEFILE
+
 GETTEXT_PACKAGE=usermode
 AC_SUBST([GETTEXT_PACKAGE])
 AM_GLIB_GNU_GETTEXT
