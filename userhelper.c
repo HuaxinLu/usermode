@@ -1214,8 +1214,6 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 	struct lu_context *context;
 	struct lu_ent *ent;
 	struct lu_error *error;
-	GValueArray *values;
-	GValue *value, val;
 	int tryagain = 3, retval;
 	gboolean ret;
 
@@ -1324,10 +1322,8 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 
 	/* Pull up the user's GECOS data, and split it up. */
 	memset(&parsed_gecos, 0, sizeof(parsed_gecos));
-	values = lu_ent_get(ent, LU_GECOS);
-	if (values != NULL) {
-		value = g_value_array_get_nth(values, 0);
-		old_gecos = lu_value_strdup(value);
+	old_gecos = lu_ent_get_first_value_strdup(ent, LU_GECOS);
+	if (old_gecos != NULL) {
 		gecos_parse(old_gecos, &parsed_gecos);
 		debug_msg("userhelper: old gecos string \"%s\"\n", old_gecos);
 		debug_msg("userhelper: old gecos \"'%s','%s','%s','%s','%s'\""
@@ -1376,33 +1372,16 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 	new_gecos = gecos_assemble(&parsed_gecos);
 	debug_msg("userhelper: new gecos string \"%s\"\n", new_gecos);
 
-	/* We don't need the user's current GECOS anymore, so clear
-	 * out the value and set our own in the in-memory structure. */
-	memset(&val, 0, sizeof(val));
-	g_value_init(&val, G_TYPE_STRING);
-
-	lu_ent_clear(ent, LU_GECOS);
-	g_value_set_string(&val, new_gecos);
-	lu_ent_add(ent, LU_GECOS, &val);
+	/* We don't need the user's current GECOS anymore, so set our own in
+	   the in-memory structure. */
+	lu_ent_set_string(ent, LU_GECOS, new_gecos);
 	g_free(new_gecos);
 
 	/* While we're at it, set the individual data items as well. */
-	lu_ent_clear(ent, LU_COMMONNAME);
-	g_value_set_string(&val, parsed_gecos.full_name);
-	lu_ent_add(ent, LU_COMMONNAME, &val);
-
-	lu_ent_clear(ent, LU_ROOMNUMBER);
-	g_value_set_string(&val, parsed_gecos.office);
-	lu_ent_add(ent, LU_ROOMNUMBER, &val);
-
-	lu_ent_clear(ent, LU_TELEPHONENUMBER);
-	g_value_set_string(&val, parsed_gecos.office_phone);
-	lu_ent_add(ent, LU_TELEPHONENUMBER, &val);
-
-	lu_ent_clear(ent, LU_HOMEPHONE);
-	g_value_set_string(&val, parsed_gecos.home_phone);
-	lu_ent_add(ent, LU_HOMEPHONE, &val);
-
+	lu_ent_set_string(ent, LU_COMMONNAME, parsed_gecos.full_name);
+	lu_ent_set_string(ent, LU_ROOMNUMBER, parsed_gecos.office);
+	lu_ent_set_string(ent, LU_TELEPHONENUMBER, parsed_gecos.office_phone);
+	lu_ent_set_string(ent, LU_HOMEPHONE, parsed_gecos.home_phone);
 	gecos_free(&parsed_gecos);
 
 	/* If we're here to change the user's shell, too, do that while we're
@@ -1411,13 +1390,9 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 	if (new_shell != NULL) {
 		/* Check that the user's current shell is valid, and that she
 		 * is not attempting to change to an invalid shell. */
-		values = lu_ent_get(ent, LU_LOGINSHELL);
-		if (values != NULL) {
-			value = g_value_array_get_nth(values, 0);
-			old_shell = lu_value_strdup(value);
-		} else {
+		old_shell = lu_ent_get_first_value_strdup(ent, LU_LOGINSHELL);
+		if (old_shell == NULL)
 			old_shell = g_strdup("/bin/sh");
-		}
 
 		debug_msg("userhelper: current shell \"%s\"\n", old_shell);
 		debug_msg("userhelper: new shell \"%s\"\n", new_shell);
@@ -1432,9 +1407,7 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 		}
 
 		/* Set the shell to the new value. */
-		lu_ent_clear(ent, LU_LOGINSHELL);
-		g_value_set_string(&val, new_shell);
-		lu_ent_add(ent, LU_LOGINSHELL, &val);
+		lu_ent_set_string(ent, LU_LOGINSHELL, new_shell);
 	}
 
 	/* Save the changes to the user's account to the password

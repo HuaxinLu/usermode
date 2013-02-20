@@ -1,5 +1,8 @@
 2013-02-20  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.c (chfn): Use helper functions provided by new libuser
+	instead of verbosely dealing with GValue-s.
+
 	* configure.ac: Enable large file support, in particular to enable
 	working with 64-bit inode numbers.
 
