@@ -1,3 +1,7 @@
+2013-04-02  Miloslav Trmač  <mitr@redhat.com>
+
+	* usermount.1: Fix a typo.  Patch by Tom London <selinux@gmail.com>.
+
 2013-02-20  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.c (chfn): Use helper functions provided by new libuser
