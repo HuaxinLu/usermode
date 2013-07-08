@@ -1,4 +1,5 @@
 .*~$
+^admin/ar-lib$
 ^admin/compile$
 ^admin/config\.guess$
 ^admin/config\.sub$

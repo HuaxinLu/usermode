@@ -1,3 +1,7 @@
+2013-07-08  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Add AM_PROG_AR to silence automake.
+
 2013-04-02  Miloslav Trmač  <mitr@redhat.com>
 
 	* usermount.1: Fix a typo.  Patch by Tom London <selinux@gmail.com>.
