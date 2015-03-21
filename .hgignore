@@ -1,4 +1,5 @@
 .*~$
+^\.zanata-cache/etag-cache\.xml$
 ^admin/ar-lib$
 ^admin/compile$
 ^admin/config\.guess$
