@@ -141,7 +141,7 @@ die(struct app_data *data, int status)
 
 /* Exit, returning the proper status code based on a PAM error code.
    Optionally write a message to stderr. */
-static int G_GNUC_NORETURN
+static void G_GNUC_NORETURN
 fail_exit(struct app_data *data, int pam_retval)
 {
 	int status;
