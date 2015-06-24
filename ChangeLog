@@ -1,3 +1,7 @@
+2015-06-25  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.c (chfn): Don’t pass NULL to lu_ent_set_string. 
+
 2015-03-21  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.c (fail_exit): Don't declare int return type for a 

@@ -1377,11 +1377,18 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 	lu_ent_set_string(ent, LU_GECOS, new_gecos);
 	g_free(new_gecos);
 
-	/* While we're at it, set the individual data items as well. */
-	lu_ent_set_string(ent, LU_COMMONNAME, parsed_gecos.full_name);
-	lu_ent_set_string(ent, LU_ROOMNUMBER, parsed_gecos.office);
-	lu_ent_set_string(ent, LU_TELEPHONENUMBER, parsed_gecos.office_phone);
-	lu_ent_set_string(ent, LU_HOMEPHONE, parsed_gecos.home_phone);
+	/* While we're at it, set the individual data items as well. Note that
+	 * this may modify old data if LU_GECOS and the individual components
+	 * weren’t in sync. */
+	if (parsed_gecos.full_name != NULL)
+		lu_ent_set_string(ent, LU_COMMONNAME, parsed_gecos.full_name);
+	if (parsed_gecos.office != NULL)
+		lu_ent_set_string(ent, LU_ROOMNUMBER, parsed_gecos.office);
+	if (parsed_gecos.office_phone != NULL)
+		lu_ent_set_string(ent, LU_TELEPHONENUMBER,
+				  parsed_gecos.office_phone);
+	if (parsed_gecos.home_phone != NULL)
+		lu_ent_set_string(ent, LU_HOMEPHONE, parsed_gecos.home_phone);
 	gecos_free(&parsed_gecos);
 
 	/* If we're here to change the user's shell, too, do that while we're
