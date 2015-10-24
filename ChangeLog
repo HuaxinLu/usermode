@@ -1,5 +1,8 @@
 2015-10-24  Miloslav Trmač  <mitr@redhat.com>
 
+	* userhelper.8.in: Be more precise about exec*() vs. higher-level
+	execution.  Use consistent capitalization.
+
 	* userhelper.c (string_has_forbidden_characters): New function.
 	(chfn): Refuse newline characters.  Use
 	string_has_forbidden_characters() to refuse control characters as well,
