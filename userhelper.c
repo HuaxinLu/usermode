@@ -21,6 +21,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <ctype.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <grp.h>
@@ -1199,6 +1200,25 @@ passwd(const char *user, struct app_data *data)
 	exit(0);
 }
 
+/* Does STRING contain control characters or characters from FORBIDDEN? */
+static gboolean
+string_has_forbidden_characters(const char *string, const char *forbidden)
+{
+	char c;
+
+	if (strpbrk(string, forbidden) != NULL)
+		return TRUE;
+	for (; (c = *string) != 0; string++) {
+		/* This is only a minimal sanity check, primarily to be
+		 * consistent with util-linux, not really a security
+		 * boundary. */
+		if (iscntrl((unsigned char)c))
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
 /* We're here to change the user's non-security information.  PAM doesn't
  * provide an interface to do this, because it's not PAM's job to manage this
  * stuff, so farm it out to a different library. */
@@ -1227,13 +1247,20 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 
 	/* Verify that the fields we were given on the command-line
 	 * are sane (i.e., contain no forbidden characters). */
-	if (new_full_name && strpbrk(new_full_name, ":,="))
+	if (new_full_name != NULL &&
+	    string_has_forbidden_characters(new_full_name, ":,=\n"))
 		die(data, ERR_FIELDS_INVALID);
-	if (new_office && strpbrk(new_office, ":,="))
+	if (new_office != NULL &&
+	    string_has_forbidden_characters(new_office, ":,=\n"))
 		die(data, ERR_FIELDS_INVALID);
-	if (new_office_phone && strpbrk(new_office_phone, ":,="))
+	if (new_office_phone != NULL &&
+	    string_has_forbidden_characters(new_office_phone, ":,=\n"))
 		die(data, ERR_FIELDS_INVALID);
-	if (new_home_phone && strpbrk(new_home_phone, ":,="))
+	if (new_home_phone != NULL &&
+	    string_has_forbidden_characters(new_home_phone, ":,=\n"))
+		die(data, ERR_FIELDS_INVALID);
+	if (new_shell != NULL &&
+	    string_has_forbidden_characters(new_shell, ":\n"))
 		die(data, ERR_FIELDS_INVALID);
 
 	/* Start up PAM to authenticate the user, this time pretending

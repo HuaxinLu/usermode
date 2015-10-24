@@ -1,3 +1,10 @@
+2015-10-24  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.c (string_has_forbidden_characters): New function.
+	(chfn): Refuse newline characters.  Use
+	string_has_forbidden_characters() to refuse control characters as well,
+	purely for consistency with util-linux. 
+
 2015-06-25  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.c (chfn): Don’t pass NULL to lu_ent_set_string. 
