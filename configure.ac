@@ -1,5 +1,5 @@
-AC_INIT([usermode], [1.111], [mitr@redhat.com], ,
-        [https://fedorahosted.org/usermode/])
+AC_INIT([usermode], [1.111], [https://pagure.io/usermode], ,
+        [https://pagure.io/usermode])
 AC_PREREQ([2.63b])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([userhelper.c])
