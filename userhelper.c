@@ -583,7 +583,7 @@ converse_console(int num_msg, const struct pam_message **msg,
 
 	if (banner == 0) {
 		if ((data->banner != NULL) && (data->domain != NULL)) {
-			text = g_strdup_printf(dgettext(data->domain, data->banner));
+			text = g_strdup (dgettext(data->domain, data->banner));
 		} else {
 			if ((service != NULL) && (strlen(service) > 0)) {
 				if (data->fallback_allowed) {
