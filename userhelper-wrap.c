@@ -315,7 +315,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 
 	gboolean startup = FALSE;
 
-	switch (response) {
+	switch ((int)response) { // The (int) cast silences a warning: case value ‘100’ not in enumerated type ‘GtkResponseType {aka enum <anonymous>}’
 	case RESPONSE_FALLBACK: {
 		/* The user wants to run unprivileged. */
 		static const unsigned char cmd[] = { UH_FALLBACK, '\n' };
