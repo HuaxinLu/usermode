@@ -6,20 +6,24 @@
 # Dimitris Glezos <glezos@indifex.com>, 2011.
 # Egemen Metin Turan <mturan@aegee-ankara.org>, 2006, 2007.
 # Hasan Alp İNAN <hasanalpinan@gmail.com>, 2011.
+# Altan Unsal <altanunsal@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/fedora/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-10-24 04:57-0400\n"
+"Last-Translator: Altan Unsal <altanunsal@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/fedora/language/"
+"tr/)\n"
 "Language: tr\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -109,14 +113,19 @@ msgstr "Administrator ayrıcalıkları iptal edilemedi: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Administrator ayrıcalıkları iptal edilemedi: pam_timestamp_check hata kodu döndürdü %d"
+msgstr ""
+"Administrator ayrıcalıkları iptal edilemedi: pam_timestamp_check hata kodu "
+"döndürdü %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Şu anda tekrar administrator şifrenizi yazmasanız da system-geneli (tüm kullanıcıları etkileyen) ayarları değiştirmekle yetkilisiniz. Bu yetkiyi bırakabilirsiniz."
+msgstr ""
+"Şu anda tekrar administrator şifrenizi yazmasanız da system-geneli (tüm "
+"kullanıcıları etkileyen) ayarları değiştirmekle yetkilisiniz. Bu yetkiyi "
+"bırakabilirsiniz."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -171,27 +180,31 @@ msgid "Information updated."
 msgstr "Bilgiler güncellendi."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Girilen parola geçersiz.\nLütfen tekrar deneyin."
+msgstr "Girilen parola geçersiz.\n"
+"Lütfen tekrar deneyin."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Değiştirilen alanların bir ya da birden fazlası geçersiz.\nBu sorun alanlardaki iki nokta üstüsteler ya da virgüllerden dolayı olabilir.\nBunları silip yeniden deneyin."
+msgstr ""
+"Değiştirilen alanların bir ya da birden fazlası geçersiz.\n"
+"Bu sorun alanlardaki iki nokta üstüsteler ya da virgüllerden dolayı olabilir."
+"\n"
+"Bunları silip yeniden deneyin."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Parola sıfırlama hatası."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Bazı sistem dosyaları kilitli.\nDaha sonra tekrar deneyiniz."
+msgstr "Bazı sistem dosyaları kilitli.\n"
+"Daha sonra tekrar deneyiniz."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -210,7 +223,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Kullandığınız kabuk /etc/shells dosyasında bulunmuyor.\nKabuk değiştirmeniz de mümkün değil. Lütfen\nsistem yöneticinize başvurun."
+msgstr ""
+"Kullandığınız kabuk /etc/shells dosyasında bulunmuyor.\n"
+"Kabuk değiştirmeniz de mümkün değil. Lütfen\n"
+"sistem yöneticinize başvurun."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -281,26 +297,34 @@ msgstr "Giriş kabuğu değiştiriliyor."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr ""
+"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr ""
+"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr ""
+"root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama "
+"bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu yapmak için daha fazla bilgi gerekiyor."
+msgstr ""
+"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama bunu "
+"yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -336,28 +360,36 @@ msgstr "execl() hatası, hatano=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\nbunu yapmak için daha fazla bilgi gerekiyor."
+msgstr ""
+"root yetkilerinden yaralanarak \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
+"bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\nbunu yapmak için daha fazla bilgi gerekiyor."
+msgstr ""
+"root yetkileri gerektiren \"%s\"i çalıştırmaya çalışıyorsunuz ama\n"
+"bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama\nbunu yapmak için daha fazla bilgi gerekiyor."
+msgstr ""
+"root yetkilerinden yaralanarak bir komut çalıştırmaya çalışıyorsunuz ama\n"
+"bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\nbunu yapmak için daha fazla bilgi gerekiyor."
+msgstr ""
+"root yetkileri gerektiren bir komut çalıştırmaya çalışıyorsunuz ama\n"
+"bunu yapmak için daha fazla bilgi gerekiyor."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -376,7 +408,7 @@ msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Beklenmeyen komut satırı argümanları"
 
 #: ../../po/../userinfo.c:411
 #, c-format
@@ -437,7 +469,8 @@ msgstr "Bağlama Aracı"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
+msgstr ""
+"Bu diski gerçekten biçemlemek istiyor musunuz? Diskteki tüm veri silinecek."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -451,7 +484,9 @@ msgstr "_Oluşturulacak dosya sistemi türünü seçiniz."
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Kullanıcının bağlayabileceği ya da ayırabileceği dosya sistemi\nbulunmuyor. Sistem yöneticinize başvurun."
+msgstr ""
+"Kullanıcının bağlayabileceği ya da ayırabileceği dosya sistemi\n"
+"bulunmuyor. Sistem yöneticinize başvurun."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

@@ -8,20 +8,23 @@
 # PrimaYogiLoviniltra  <jurankc0d3@gmail.com>, 2012.
 # Teguh DC <dheche@songolimo.net>, 2005.
 # Teguh Dwicaksana <dheche@songolimo.net>, 2011.
+# ekoikhyar <ekoikhyar@fedoraproject.org>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Indonesian <trans-id@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-04-01 10:23-0400\n"
+"Last-Translator: ekoikhyar <ekoikhyar@fedoraproject.org>\n"
+"Language-Team: Indonesian <trans-id@lists.fedoraproject.org>\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -111,14 +114,19 @@ msgstr "Gagal untuk mendrop privilege administrator: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Gagal mendrop privilege administrator:pam_timestamp_check kode pengembalian kesalahan %d"
+msgstr ""
+"Gagal mendrop privilege administrator:pam_timestamp_check kode pengembalian "
+"kesalahan %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Anda diperkenankan untuk mengkonfigur seting menyeluruh (semua user) tanpa harus mengetikan password administrator lagi, Anda dapat menolak autorisasi ini."
+msgstr ""
+"Anda diperkenankan untuk mengkonfigur seting menyeluruh (semua user) tanpa "
+"harus mengetikan password administrator lagi, Anda dapat menolak autorisasi "
+"ini."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -173,27 +181,30 @@ msgid "Information updated."
 msgstr "Informasi diperbarui."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Password yang anda ketik tidak valid.\nHarap coba lagi."
+msgstr "Password yang anda ketik tidak valid.\n"
+"Harap coba lagi."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Satu atau lebih field yang dirubah tidak valid.\nHal ini mungkin dikarenakan adanya colon atau koma disalah satu field.\nHarap diperbaiki dulu dan coba lagi."
+msgstr ""
+"Satu atau lebih field yang dirubah tidak valid.\n"
+"Hal ini mungkin dikarenakan adanya colon atau koma disalah satu field.\n"
+"Harap diperbaiki dulu dan coba lagi."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Reset password salah."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Beberapa berkas sistem terkunci.\nHarap coba beberapa saat lagi."
+msgstr "Beberapa berkas sistem terkunci.\n"
+"Harap coba beberapa saat lagi."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -212,7 +223,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "shell anda saat ini tidak terdaftar di /etc/shells.\nAnda tidak dibolehkan merubah shell anda.\nKonsultasikan ke administrator sistem anda."
+msgstr ""
+"shell anda saat ini tidak terdaftar di /etc/shells.\n"
+"Anda tidak dibolehkan merubah shell anda.\n"
+"Konsultasikan ke administrator sistem anda."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -283,26 +297,34 @@ msgstr "Merubah login shell."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Anda mencoba menjalankan \"%s\" yang mungkin diperlukan kewenangan administratif, tapi diperlukan informasi lebihuntuk melaksanakannya."
+msgstr ""
+"Anda mencoba menjalankan \"%s\" yang mungkin diperlukan kewenangan "
+"administratif, tapi diperlukan informasi lebihuntuk melaksanakannya."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan administratif, Tapi diperlukan informasi lebih untuk melaksanakannya."
+msgstr ""
+"Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan administratif, "
+"Tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Anda mencoba menjalankan sebuah perintah yang mungkin diperlukan kewenangan administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
+msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang mungkin diperlukan kewenangan "
+"administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Anda mencoba menjalankan sebuah perintah yang memerlukan kewenangan administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
+msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang memerlukan kewenangan "
+"administratif, tapi diperlukan informasi lebih untuk melaksanakannya."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -338,28 +360,38 @@ msgstr "kesalahan execl(), errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Anda mencoba menjalankan \"%s\" yang didapat dari kewenangan\nadministratif, tapi diperlukan informasi lebih untuk melakukannya."
+msgstr ""
+"Anda mencoba menjalankan \"%s\" yang didapat dari kewenangan\n"
+"administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan\nadministratif, tapi diperlukan informasi lebih untuk melakukannya."
+msgstr ""
+"Anda mencoba menjalankan \"%s\" yang memerlukan kewenangan\n"
+"administratif, tapi diperlukan informasi lebih untuk melakukannya."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Anda mencoba menjalankan sebuah perintah yang didapat dari \nkewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
+msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang didapat dari \n"
+"kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
+""
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Anda mencoba menjalankan sebuah perintah yang memerlukan \nkewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
+msgstr ""
+"Anda mencoba menjalankan sebuah perintah yang memerlukan \n"
+"kewenangan administratif, tapi diperlukan informasi lebih untuk melakukannya."
+""
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -371,14 +403,16 @@ msgstr "userhelper harus setuid root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Tidak dapat membuka jendela grafis, dan tidak dapat menemukan terminal pengontrol.\n"
+msgstr ""
+"Tidak dapat membuka jendela grafis, dan tidak dapat menemukan terminal "
+"pengontrol.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Argumen baris perintah yang takterduga\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format
@@ -439,7 +473,9 @@ msgstr "Alat Pemasang Pengguna"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Anda yakin ingin format disk ini?  Anda akan menghancurkan data yang ada didalamnya."
+msgstr ""
+"Anda yakin ingin format disk ini?  Anda akan menghancurkan data yang ada "
+"didalamnya."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -453,7 +489,9 @@ msgstr "Pilih sebuah tipe _filesystem untuk dibuat:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Tidak ada filesystems yang dibolehkan pasang atau lepas buat anda.\nHubungi administrator anda."
+msgstr ""
+"Tidak ada filesystems yang dibolehkan pasang atau lepas buat anda.\n"
+"Hubungi administrator anda."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

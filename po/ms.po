@@ -8,18 +8,20 @@
 # Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>, 2004.
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-21 02:45-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ms\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -109,14 +111,19 @@ msgstr "Gagal untuk mematikan kelebihan pentadbir: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Gagal untuk membuang kelebihan pentadbir: pam_timestamp_check memulangkan kod gagal %d"
+msgstr ""
+"Gagal untuk membuang kelebihan pentadbir: pam_timestamp_check memulangkan "
+"kod gagal %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Anda sekarang dibenarkan untuk menetapkan tetapan seluruh-sistem (yang memberi kesan pada semua pengguna) tanpa menaip kata laluan pentadbir lagi. Anda boleh melepaskan kebenaran ini."
+msgstr ""
+"Anda sekarang dibenarkan untuk menetapkan tetapan seluruh-sistem (yang "
+"memberi kesan pada semua pengguna) tanpa menaip kata laluan pentadbir lagi. "
+"Anda boleh melepaskan kebenaran ini."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -171,27 +178,30 @@ msgid "Information updated."
 msgstr "Maklumat dikemaskinikan."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Katalaluan yang anda taip tidak sah.\nSila cuba lagi."
+msgstr "Katalaluan yang anda taip tidak sah.\n"
+"Sila cuba lagi."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Satu atau lebih medan yang diubah adalah tidak sah.\nIni mungkin kerana samada titik bertindih atau koma pada salah satu medan.\nSila buang ia dan cuba lagi."
+msgstr ""
+"Satu atau lebih medan yang diubah adalah tidak sah.\n"
+"Ini mungkin kerana samada titik bertindih atau koma pada salah satu medan.\n"
+"Sila buang ia dan cuba lagi."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Ralat mengulangtetap katalaluan."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Beberapa fail sistem dikunci.\nSila cuba lagi seketika nanti."
+msgstr "Beberapa fail sistem dikunci.\n"
+"Sila cuba lagi seketika nanti."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -210,7 +220,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Shell semasa anda tidak disenarai di /etc/shells.\nAnda tidak boleh menukar shell anda.\nRujuk pentadbir sistem anda."
+msgstr ""
+"Shell semasa anda tidak disenarai di /etc/shells.\n"
+"Anda tidak boleh menukar shell anda.\n"
+"Rujuk pentadbir sistem anda."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -281,26 +294,34 @@ msgstr "Menukar shell logmasuk."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada kelebihan "
+"pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan \"%s\" yang memerlukan kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan \"%s\" yang memerlukan kelebihan pentadbir, tetapi "
+"maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan arahan yang mendapat faedah daripada kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan arahan yang mendapat faedah daripada kelebihan "
+"pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan arahan yang memerlukan kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan arahan yang memerlukan kelebihan pentadbir, tetapi "
+"maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -336,28 +357,37 @@ msgstr "execl() error, errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada kelebihan\npentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan \"%s\" yang mendapat faedah daripada kelebihan\n"
+"pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan \"%s\" yang memerlukan kelebihan\npentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan \"%s\" yang memerlukan kelebihan\n"
+"pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan arahan yang mendapat faedah daripada\nkelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan arahan yang mendapat faedah daripada\n"
+"kelebihan pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat "
+"demikian."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Anda cuba melaksanakan arahan yang yang memerlukan kelebihan\npentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
+msgstr ""
+"Anda cuba melaksanakan arahan yang yang memerlukan kelebihan\n"
+"pentadbir, tetapi maklumat lanjut diperlukan untuk berbuat demikian."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -369,7 +399,9 @@ msgstr "userhelper mesti setuid root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Tidak dapat membuka tetingkap bergrafik, dan tidak dapat menjumpai terminal yang mengawal.\n"
+msgstr ""
+"Tidak dapat membuka tetingkap bergrafik, dan tidak dapat menjumpai terminal "
+"yang mengawal.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
@@ -437,7 +469,9 @@ msgstr "Alat Pelekapan Pengguna"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Adakah anda pasti untuk memformat cakera ini? Ia akan memusnahkan sebarang data yang ia kandungi."
+msgstr ""
+"Adakah anda pasti untuk memformat cakera ini? Ia akan memusnahkan sebarang "
+"data yang ia kandungi."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -451,7 +485,9 @@ msgstr "Pilih satu jenis sistem _fail untuk dicipta:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Tiada sistemfail yang anda boleh izinkan untuk dilekap atau dinyahlekapkan.\nHubungi pentadbir sistem anda."
+msgstr ""
+"Tiada sistemfail yang anda boleh izinkan untuk dilekap atau dinyahlekapkan.\n"
+"Hubungi pentadbir sistem anda."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

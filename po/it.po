@@ -8,20 +8,23 @@
 # Francesco Tombolini <tombo@adamantio.net>, 2005, 2006, 2007, 2008.
 # Francesco Valente <fvalen@redhat.com>, 2003, 2004.
 # Luigi Votta <lewis41@fedoraproject.org>, 2011.
+# Andrea Masala <andrea.masala87@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Italian <trans-it@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-09-08 04:53-0400\n"
+"Last-Translator: Andrea Masala <andrea.masala87@gmail.com>\n"
+"Language-Team: Italian <trans-it@lists.fedoraproject.org>\n"
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -86,7 +89,8 @@ msgstr "Spiacente, le password non corrispondono"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Apertura strumenti di configurazione globali del sistema senza una password."
+msgstr ""
+"Apertura strumenti di configurazione globali del sistema senza una password."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -111,14 +115,19 @@ msgstr "Abbandono dei privilegi di amministratore fallito: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Abbandono dei privilegi di amministratore fallito: pam_timestamp_check ha restituito il codice d'errore %d"
+msgstr ""
+"Abbandono dei privilegi di amministratore fallito: pam_timestamp_check ha "
+"restituito il codice d'errore %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Sei attualmente autorizzato a configurare le impostazioni di sistema globali (che influenzano tutti gli utenti), senza dover digitare nuovamente la password di amministratore. Puoi rinunciare a questa autorizzazione."
+msgstr ""
+"Sei attualmente autorizzato a configurare le impostazioni di sistema globali "
+"(che influenzano tutti gli utenti), senza dover digitare nuovamente la "
+"password di amministratore. Puoi rinunciare a questa autorizzazione."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -173,27 +182,31 @@ msgid "Information updated."
 msgstr "Informazioni aggiornate."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "La password digitata non è valida.\nSi prega di provare nuovamente."
+msgstr "La password digitata non è valida.\n"
+"Si prega di provare nuovamente."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Uno o più campi modificati non sono validi.\nQuesto è probabilmente causato da due punti o virgole in uno dei campi.\nSi prega di rimuoverli e riprovare."
+msgstr ""
+"Uno o più campi modificati non sono validi.\n"
+"Questo è probabilmente causato da due punti o virgole in uno dei campi.\n"
+"Si prega di rimuoverli e riprovare."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Errore nel reset della password."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Alcuni file di sistema sono bloccati.\nSi prega di riprovare fra qualche momento."
+msgstr ""
+"Alcuni file di sistema sono bloccati.\n"
+"Si prega di riprovare fra qualche momento."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -212,7 +225,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "La shell corrente non è elencata in /etc/shells.\nNon si ha il permesso di cambiare la shell.\nRivolgersi all'amministratore del sistema."
+msgstr ""
+"La shell corrente non è elencata in /etc/shells.\n"
+"Non si ha il permesso di cambiare la shell.\n"
+"Rivolgersi all'amministratore del sistema."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -283,26 +299,35 @@ msgstr "Modifica shell di login."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+msgstr ""
+"Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi "
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+msgstr ""
+"Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi, ma "
+"occorrono più informazioni per eseguire l'operazione."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire un comando che può trarre beneficio dai privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+msgstr ""
+"Si sta tentando di eseguire un comando che può trarre beneficio dai "
+"privilegi amministrativi, ma occorrono più informazioni per eseguire "
+"l'operazione."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire un comando che richiede privilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+msgstr ""
+"Si sta tentando di eseguire un comando che richiede privilegi "
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -338,28 +363,38 @@ msgstr "errore execl(), errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi\namministrativi, ma occorrono maggiori informazioni per eseguire l'operazione."
+msgstr ""
+"Si sta tentando di eseguire \"%s\" che può trarre beneficio dai privilegi\n"
+"amministrativi, ma occorrono maggiori informazioni per eseguire l'operazione."
+""
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi,\nma occorrono più informazioni per eseguire l'operazione."
+msgstr ""
+"Si sta tentando di eseguire \"%s\" che richiede privilegi amministrativi,\n"
+"ma occorrono più informazioni per eseguire l'operazione."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire un comando che può trarre beneficio dai\nprivilegi amministrativi, ma occorrono più informazioni per eseguire l'operazione."
+msgstr ""
+"Si sta tentando di eseguire un comando che può trarre beneficio dai\n"
+"privilegi amministrativi, ma occorrono più informazioni per eseguire "
+"l'operazione."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Si sta tentando di eseguire un comando che richiede privilegi\namministrativi, ma occorrono più informazioni per eseguire l'operazione."
+msgstr ""
+"Si sta tentando di eseguire un comando che richiede privilegi\n"
+"amministrativi, ma occorrono più informazioni per eseguire l'operazione."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -371,14 +406,16 @@ msgstr "userhelper deve essere setuid root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Impossibile aprire una finestra grafica, ed impossibile trovare il terminale di controllo.\n"
+msgstr ""
+"Impossibile aprire una finestra grafica, ed impossibile trovare il terminale "
+"di controllo.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Argomenti della linea di comando inattesi\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format
@@ -439,7 +476,9 @@ msgstr "Strumento di montaggio per utenti"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Si è sicuri di voler formattare questo disco? Si distruggerà qualsiasi dato in esso contenuto."
+msgstr ""
+"Si è sicuri di voler formattare questo disco? Si distruggerà qualsiasi dato "
+"in esso contenuto."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -453,7 +492,9 @@ msgstr "Selezionare il tipo di _filesystem da creare:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Non ci sono filesystems che si ha il permesso di montare o smontare.\nContattare l'amministratore del sistema."
+msgstr ""
+"Non ci sono filesystems che si ha il permesso di montare o smontare.\n"
+"Contattare l'amministratore del sistema."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

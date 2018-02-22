@@ -14,18 +14,20 @@
 # Yukihiro Nakai <ynakai@redhat.com>, 2001.
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-25 06:49+0000\n"
-"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
-"Language-Team: Japanese <trans-ja@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-21 02:45-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Japanese <trans-ja@lists.fedoraproject.org>\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -122,7 +124,9 @@ msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "管理者のパスワードを再入力することなく、システム全体の設定 (すなわち全ユーザーに対する設定) に現在認証されています。また、認証を解除することができます。"
+msgstr ""
+"管理者のパスワードを再入力することなく、システム全体の設定 (すなわち全ユーザーに対する設定) "
+"に現在認証されています。また、認証を解除することができます。"
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -177,27 +181,30 @@ msgid "Information updated."
 msgstr "情報は更新されました。"
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "入力したパスワードは間違っています。\nもう一度入力してください。"
+msgstr "入力したパスワードは間違っています。\n"
+"もう一度入力してください。"
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "ひとつかそれ以上の変更されたフィールドが間違っています。\nフィールドのどこかにコロンかコンマがあるかもしれません。\nそれらを削除してもう一度入力してください。"
+msgstr ""
+"ひとつかそれ以上の変更されたフィールドが間違っています。\n"
+"フィールドのどこかにコロンかコンマがあるかもしれません。\n"
+"それらを削除してもう一度入力してください。"
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "パスワードのリセットでエラーが発生しました。"
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "ロックされいているシステムファイルがあります。\nしばらく待ってからもう一度やってみてください。"
+msgstr "ロックされいているシステムファイルがあります。\n"
+"しばらく待ってからもう一度やってみてください。"
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -216,7 +223,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "現在選択されているシェルは /etc/shells の中にありません。\nしたがってシェルを変更することはできません。\nシステム管理者にご相談ください。"
+msgstr ""
+"現在選択されているシェルは /etc/shells の中にありません。\n"
+"したがってシェルを変更することはできません。\n"
+"システム管理者にご相談ください。"
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -342,28 +352,32 @@ msgstr "execl()エラー、errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n 実行するには追加情報が必要です。"
+msgstr "スーパーユーザー権限により有効になる\"%s\"を実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n 実行するには追加情報が必要です。"
+msgstr "スーパーユーザー権限を必要とする\"%s\"を実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、\n 実行するには追加情報が必要です。"
+msgstr "スーパーユーザー権限により有効になるコマンドを実行しようとしていますが、\n"
+" 実行するには追加情報が必要です。"
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行するには\n追加情報が必要です。"
+msgstr "スーパーユーザー権限を必要とするコマンドを実行しようとしていますが、実行するには\n"
+"追加情報が必要です。"
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -457,7 +471,8 @@ msgstr "作成するファイルシステムタイプの選択(_f):"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "マウントが許可されているファイルシステムはありません。\n管理者に相談してください。"
+msgstr "マウントが許可されているファイルシステムはありません。\n"
+"管理者に相談してください。"
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

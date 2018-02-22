@@ -8,20 +8,23 @@
 # dovix <dovix2003@yahoo.com>, 2003, 2004.
 # nadav mavor <nadav@mavor.com>, 2003.
 # Ram Matityahu <linuxfun@email.com>, 2003.
+# Niv Baehr <bloop93@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Hebrew <he-users@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-09-24 05:34-0400\n"
+"Last-Translator: Niv Baehr <bloop93@gmail.com>\n"
+"Language-Team: Hebrew <he-users@lists.fedoraproject.org>\n"
 "Language: he\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -82,11 +85,11 @@ msgstr "לא חל שינוי בסיסמה"
 
 #: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr "מצטער, הסיסמאות לא תואמות"
+msgstr "סליחה, הססמאות אינן תואמות"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "הפעלת כלי תצורה כלל-מערכתיים ללא דרישת סיסמה."
+msgstr "הפעלת כלי תצורה כלל-מערכתיים ללא דרישת ססמה."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -94,7 +97,7 @@ msgstr "כניסה:"
 
 #: ../../po/../dummy.h:34
 msgid "Password: "
-msgstr "סיסמה:"
+msgstr "ססמה:"
 
 #: ../../po/../gsmclient.c:362
 #, c-format
@@ -118,7 +121,9 @@ msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "יש לך כעת הרשאות לשנות הגדרות כלל מערכתיות (כאלו שמשפיעות על כלל המשתמשים) ללא צורך בהקלדה נוספת של סיסמת מנהל המערכת. באפשרותך לוותר על הרשאה זו."
+msgstr ""
+"יש לך כעת הרשאות לשנות הגדרות כלל מערכתיות (כאלו שמשפיעות על כלל המשתמשים) "
+"ללא צורך בהקלדה נוספת של סיסמת מנהל המערכת. באפשרותך לוותר על הרשאה זו."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -173,27 +178,30 @@ msgid "Information updated."
 msgstr "המידע עודכן."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "הסיסמה שהקשת לא נכונה \nיש לנסות שנית."
+msgstr "הסיסמה שהקשת לא נכונה \n"
+"יש לנסות שנית."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "אחד או יותר מהשדות ששונו מכילים ערך לא תקין.\nייתכן והשתמשת בנקודתיים (:) או בפסיק (,) באחד מהשדות.\nיש להסיר תווים אלו ולנסות שנית."
+msgstr ""
+"אחד או יותר מהשדות ששונו מכילים ערך לא תקין.\n"
+"ייתכן והשתמשת בנקודתיים (:) או בפסיק (,) באחד מהשדות.\n"
+"יש להסיר תווים אלו ולנסות שנית."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "חלה שגיאה בעת איפוס הסיסמה."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "קבצי מערכת אחדים נעולים.\nיש לנסות שנית בעוד מספר דקות."
+msgstr "קבצי מערכת אחדים נעולים.\n"
+"יש לנסות שנית בעוד מספר דקות."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -212,7 +220,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "המעטפת (shell) המשמשת אותך לא רשומה ב /etc/shells.\nאין לך הרשאה לשנות את המעטפת שלך.\nיש לפנות לעזרה למנהל המערכת שלך."
+msgstr ""
+"המעטפת (shell) המשמשת אותך לא רשומה ב /etc/shells.\n"
+"אין לך הרשאה לשנות את המעטפת שלך.\n"
+"יש לפנות לעזרה למנהל המערכת שלך."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -268,7 +279,7 @@ msgstr "מידע"
 
 #: ../../po/../userhelper-wrap.c:698
 msgid "Changing password."
-msgstr "משנה סיסמה."
+msgstr "משנה ססמה."
 
 #: ../../po/../userhelper-wrap.c:700
 msgid "Changing personal information."
@@ -283,26 +294,34 @@ msgstr "שינוי מעטפת הכניסה (login shell)"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "הנך מנסה להריץ את \"%s\" אשר עשוי ליהנות מקבלת הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
+msgstr ""
+"הנך מנסה להריץ את \"%s\" אשר עשוי ליהנות מקבלת הרשאות ניהול,\n"
+"אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "הנך מנסה להריץ את \"%s\" אשר דורש הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
+msgstr ""
+"הנך מנסה להריץ את \"%s\" אשר דורש הרשאות ניהול,\n"
+"אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "הנך מנסה להריץ פקודה אשר עשויה ליהנות מקבלת הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
+msgstr ""
+"הנך מנסה להריץ פקודה אשר עשויה ליהנות מקבלת הרשאות ניהול,\n"
+"אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "הנך מנסה להריץ פקודה אשר דורשת הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
+msgstr ""
+"הנך מנסה להריץ פקודה אשר דורשת הרשאות ניהול,\n"
+"אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -338,28 +357,36 @@ msgstr "הפעלת execl() החזירה שגיאה מספר %d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "הנך מנסה להריץ את \"%s\" אשר עשוי להנות מקבלת הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
+msgstr ""
+"הנך מנסה להריץ את \"%s\" אשר עשוי להנות מקבלת הרשאות ניהול,\n"
+"אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "הנך מנסה להריץ את \"%s\" אשר דורש הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
+msgstr ""
+"הנך מנסה להריץ את \"%s\" אשר דורש הרשאות ניהול,\n"
+"אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "הנך מנסה להריץ פקודה אשר עשויה ליהנות מקבלת הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
+msgstr ""
+"הנך מנסה להריץ פקודה אשר עשויה ליהנות מקבלת הרשאות ניהול,\n"
+"אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "הנך מנסה להריץ פקודה אשר דורשת הרשאות ניהול,\nאבל נדרש מידע נוסף על-מנת לאפשר זאת."
+msgstr ""
+"הנך מנסה להריץ פקודה אשר דורשת הרשאות ניהול,\n"
+"אבל נדרש מידע נוסף על-מנת לאפשר זאת."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -387,7 +414,7 @@ msgstr "אינך קיים (קיימת?).  לך מפה.\n"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
-msgstr "אודות"
+msgstr "על אודותיי"
 
 #: ../userinfo.desktop.in.h:2
 msgid "Change personal information"
@@ -419,31 +446,31 @@ msgstr "מעטפת כניסה:"
 
 #: ../../po/../usermount.c:61
 msgid "_Mount"
-msgstr "נקודת _חיבור (mount)"
+msgstr "_עיגון"
 
 #: ../../po/../usermount.c:62
 msgid "Un_mount"
-msgstr "ניתו_ק נקודת חיבור"
+msgstr "ה_תרת עיגון"
 
 #: ../../po/../usermount.c:150
 msgid "Error loading list of file systems"
-msgstr ""
+msgstr "שגיאה בטעינת רשימת מערכות קבצים"
 
 #. Create the dialog.
 #: ../../po/../usermount.c:151 ../../po/../usermount.c:525
 #: ../../po/../usermount.c:537
 msgid "User Mount Tool"
-msgstr "כלי חיבור עוגן למשתמש"
+msgstr "כלי עיגון למשתמש"
 
 #: ../../po/../usermount.c:306
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "האם ברצונך לפרמט כונן זה? כל מידע השמור כל הכונן ייהרס."
+msgstr "האם לאתחל כונן זה? כל הנתונים בו ייהרסו."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
-msgstr "ביצוע פרמוט ברמה _נמוכה"
+msgstr "ביצוע אתחול ברמה _נמוכה."
 
 #: ../../po/../usermount.c:354
 msgid "Select a _filesystem type to create:"
@@ -453,12 +480,14 @@ msgstr "יש לבחור _מערכת קבצים שיש ליצור:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "לא נמצאו מערכות קבצים שיש לך הרשאה לחבר או לנתק אל נקודת עוגן.\nיש לפנות לעזרה למנהל המערכת."
+msgstr ""
+"לא נמצאו מערכות קבצים שיש לך הרשאה לחבר או לנתק אל נקודת עוגן.\n"
+"יש לפנות לעזרה למנהל המערכת."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
 msgid "_Format"
-msgstr "_פרמוט"
+msgstr "_אתחול"
 
 #: ../../po/../usermount.c:591
 msgid "Device"
@@ -483,12 +512,12 @@ msgstr "ניהול כונן"
 
 #: ../usermount.desktop.in.h:2
 msgid "Mount and unmount filesystems"
-msgstr "חיבור וניתוק נקודת חיבור אל מערכות הקבצים"
+msgstr "עיגון והתרה של מערכות קבצים"
 
 #: ../userpasswd.desktop.in.h:1
 msgid "Password"
-msgstr "סיסמה"
+msgstr "ססמה"
 
 #: ../userpasswd.desktop.in.h:2
 msgid "Change your login password"
-msgstr "שינוי סיסמת הכניסה למערכת"
+msgstr "שינוי ססמת הכניסה למערכת"

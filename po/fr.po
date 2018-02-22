@@ -14,18 +14,20 @@
 # Thomas Canniot <mrtom@fedoraproject.org>, 2007, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-22 11:12+0000\n"
-"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
-"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-21 02:44-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -103,7 +105,9 @@ msgstr "Mot de passe : "
 #: ../../po/../gsmclient.c:362
 #, c-format
 msgid "%s failed to connect to the session manager: %s\n"
-msgstr "%s n'a pas réussi à établir la connexion avec le gestionnaire de sessions : %s\n"
+msgstr ""
+"%s n'a pas réussi à établir la connexion avec le gestionnaire de sessions : "
+"%s\n"
 
 #: ../../po/../pam-panel-icon.c:89
 #, c-format
@@ -115,14 +119,20 @@ msgstr "Impossible d'abandonner les privilèges d'administrateur : %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Impossible d'abandonner les privilèges d'administrateur : pam_timestamp_check a renvoyé un code d'erreur %d"
+msgstr ""
+"Impossible d'abandonner les privilèges d'administrateur : "
+"pam_timestamp_check a renvoyé un code d'erreur %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Vous êtes actuellement autorisé à configurer des paramètres pour l'ensemble du système (qui touchent tous les utilisateurs) sans devoir saisir à nouveau le mot de passe de l'administrateur. Vous pouvez renoncer à cette autorisation."
+msgstr ""
+"Vous êtes actuellement autorisé à configurer des paramètres pour l'ensemble "
+"du système (qui touchent tous les utilisateurs) sans devoir saisir à nouveau "
+"le mot de passe de l'administrateur. Vous pouvez renoncer à cette "
+"autorisation."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -170,34 +180,40 @@ msgstr "Impossible de paramétrer l'option de non blocage du canal d'E/S : %s\n
 #: ../../po/../pam-panel-icon.c:476
 #, c-format
 msgid "pam-panel-icon: failed to connect to session manager\n"
-msgstr "pam-panel-icon : impossible d'établir la connexion avec le gestionnaire de sessions\n"
+msgstr ""
+"pam-panel-icon : impossible d'établir la connexion avec le gestionnaire de "
+"sessions\n"
 
 #: ../../po/../userhelper-messages.c:29
 msgid "Information updated."
 msgstr "Informations mises à jour."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Le mot de passe n'est pas valide.\nVeuillez essayer à nouveau."
+msgstr "Le mot de passe n'est pas valide.\n"
+"Veuillez essayer à nouveau."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Un ou plusieurs des champs modifiés ne sont pas valides.\nCela peut être dû à des caractères deux-points ou virgule dans\nl'un des champs. Veuillez les retirer et essayer à nouveau."
+msgstr ""
+"Un ou plusieurs des champs modifiés ne sont pas valides.\n"
+"Cela peut être dû à des caractères deux-points ou virgule dans\n"
+"l'un des champs. Veuillez les retirer et essayer à nouveau."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Erreur de réinitialisation du mot de passe."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Certains fichiers système sont verrouillés.\nVeuillez essayer à nouveau un peu plus tard."
+msgstr ""
+"Certains fichiers système sont verrouillés.\n"
+"Veuillez essayer à nouveau un peu plus tard."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -216,7 +232,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Votre shell actuel ne figure pas dans le fichier /etc/shells.\nVous n'êtes pas autorisé à changer votre shell.\nConsultez votre administrateur système."
+msgstr ""
+"Votre shell actuel ne figure pas dans le fichier /etc/shells.\n"
+"Vous n'êtes pas autorisé à changer votre shell.\n"
+"Consultez votre administrateur système."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -287,26 +306,38 @@ msgstr "Changement du shell de connexion."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Vous essayez d'exécuter « %s » qui pourrait nécessiter des privilèges de super-utilisateur. Des informations supplémentaires sont requises pour cette opération."
+msgstr ""
+"Vous essayez d'exécuter « %s » qui pourrait nécessiter des privilèges de "
+"super-utilisateur. Des informations supplémentaires sont requises pour cette "
+"opération."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Vous essayez d'exécuter « %s » qui nécessite des privilèges de super-utilisateur. Des informations supplémentaires sont requises pour cette opération."
+msgstr ""
+"Vous essayez d'exécuter « %s » qui nécessite des privilèges de super-"
+"utilisateur. Des informations supplémentaires sont requises pour cette "
+"opération."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges de super-utilisateur. Des informations supplémentaires sont requises pour cette opération."
+msgstr ""
+"Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges "
+"de super-utilisateur. Des informations supplémentaires sont requises pour "
+"cette opération."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Vous essayez d'exécuter une commande qui nécessite des privilèges de super-utilisateur. Des informations supplémentaires sont requises pour cette opération."
+msgstr ""
+"Vous essayez d'exécuter une commande qui nécessite des privilèges de super-"
+"utilisateur. Des informations supplémentaires sont requises pour cette "
+"opération."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -325,7 +356,8 @@ msgstr "Erreur fork().\n"
 #: ../../po/../userhelper-wrap.c:930
 #, c-format
 msgid "Can't set binary encoding on an IO channel: %s\n"
-msgstr "Impossible d'associer l'encodage binaire à un canal d'entrée/sortie : %s\n"
+msgstr ""
+"Impossible d'associer l'encodage binaire à un canal d'entrée/sortie : %s\n"
 
 #: ../../po/../userhelper-wrap.c:999 ../../po/../userhelper-wrap.c:1003
 #, c-format
@@ -342,28 +374,40 @@ msgstr "Erreur execl(), errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Vous essayez d'exécuter « %s » qui pourrait nécessiter des privilèges du super-utilisateur. Des informations supplémentaires sont requises pour cette opération."
+msgstr ""
+"Vous essayez d'exécuter « %s » qui pourrait nécessiter des privilèges du "
+"super-utilisateur. Des informations supplémentaires sont requises pour cette "
+"opération."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Vous essayez d'exécuter « %s » qui nécessite des privilèges du super-utilisateur. Des informations supplémentaires sont requises pour cette opération."
+msgstr ""
+"Vous essayez d'exécuter « %s » qui nécessite des privilèges du super-"
+"utilisateur. Des informations supplémentaires sont requises pour cette "
+"opération."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges\ndu super-utilisateur. Des informations supplémentaires sont requises pour cette opération."
+msgstr ""
+"Vous essayez d'exécuter une commande qui pourrait nécessiter des privilèges\n"
+"du super-utilisateur. Des informations supplémentaires sont requises pour "
+"cette opération."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Vous essayez d'exécuter une commande qui nécessite des privilèges du\nsuper-utilisateur. Des informations supplémentaires sont requises pour cette opération."
+msgstr ""
+"Vous essayez d'exécuter une commande qui nécessite des privilèges du\n"
+"super-utilisateur. Des informations supplémentaires sont requises pour cette "
+"opération."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -375,7 +419,9 @@ msgstr "userhelper doit être setuid root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de contrôle.\n"
+msgstr ""
+"Impossible d'ouvrir une fenêtre graphique et de trouver un terminal de "
+"contrôle.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
@@ -443,7 +489,9 @@ msgstr "Outil de montage de l'utilisateur"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Êtes-vous sûr de vouloir formater ce disque ? Vous détruiriez toutes les données qu'il contient."
+msgstr ""
+"Êtes-vous sûr de vouloir formater ce disque ? Vous détruiriez toutes les "
+"données qu'il contient."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -457,7 +505,10 @@ msgstr "Sélectionner un type de système de _fichiers à créer :"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Il n'y a pas de système de fichiers montable ou démontable par les utilisateurs.\nContactez votre administrateur."
+msgstr ""
+"Il n'y a pas de système de fichiers montable ou démontable par les "
+"utilisateurs.\n"
+"Contactez votre administrateur."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

@@ -4,20 +4,24 @@
 # 
 # Translators:
 # Dimitris Glezos <glezos@indifex.com>, 2011.
+# Momcilo Medic <medicmomcilo@gmail.com>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Serbian <trans-sr@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-04-29 12:36-0400\n"
+"Last-Translator: Momcilo Medic <medicmomcilo@gmail.com>\n"
+"Language-Team: Serbian <trans-sr@lists.fedoraproject.org>\n"
 "Language: sr\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -107,14 +111,19 @@ msgstr "Неуспело одбацивање администраторских
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Неуспело одбацивање администраторских повластица: pam_timestamp_check је вратио шифру неуспеха %d"
+msgstr ""
+"Неуспело одбацивање администраторских повластица: pam_timestamp_check је "
+"вратио шифру неуспеха %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Тренутно сте овлашћени да подешавате свеобухватне системске поставке (које утичу на све кориснике) без поновног укуцавања лозинке администратора. Можете се одрећи овог овлашћења."
+msgstr ""
+"Тренутно сте овлашћени да подешавате свеобухватне системске поставке (које "
+"утичу на све кориснике) без поновног укуцавања лозинке администратора. "
+"Можете се одрећи овог овлашћења."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -169,27 +178,31 @@ msgid "Information updated."
 msgstr "Подаци ажурирани."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Лозинка коју сте укуцали је неисправна.\nМолим покушајте поново."
+msgstr "Лозинка коју сте укуцали је неисправна.\n"
+"Молим покушајте поново."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Једно или више промењених поља је неисправно.\nОво је вероватно због двотачки или запета у једном од поља.\nМолим уклоните их па покушајте поново."
+msgstr ""
+"Једно или више промењених поља је неисправно.\n"
+"Ово је вероватно због двотачки или запета у једном од поља.\n"
+"Молим уклоните их па покушајте поново."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Грешка при поништавању лозинке."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Неке системске датотеке су закључане.\nМолим покушајте поново за неколико тренутака."
+msgstr ""
+"Неке системске датотеке су закључане.\n"
+"Молим покушајте поново за неколико тренутака."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -208,7 +221,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Ваша текућа љуска није наведена у /etc/shells.\nНије дозвољено да промените љуску.\nПосаветујте се са администратором система."
+msgstr ""
+"Ваша текућа љуска није наведена у /etc/shells.\n"
+"Није дозвољено да промените љуску.\n"
+"Посаветујте се са администратором система."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -279,26 +295,34 @@ msgstr "Мењам пријавну љуску."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Покушавате да покренете „%s“ што може имати користи од администраторских повластица, али је потребно више података како би то урадили."
+msgstr ""
+"Покушавате да покренете „%s“ што може имати користи од администраторских "
+"повластица, али је потребно више података како би то урадили."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Покушавате да покренете „%s“ што захтева администраторске повластице, али је потребно више података како би то урадили."
+msgstr ""
+"Покушавате да покренете „%s“ што захтева администраторске повластице, али је "
+"потребно више података како би то урадили."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Покушавате да покренете наредбу која може имати користи од администраторских повластица, али је потребно више података како би то урадили."
+msgstr ""
+"Покушавате да покренете наредбу која може имати користи од администраторских "
+"повластица, али је потребно више података како би то урадили."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Покушавате да покренете наредбу која захтева администраторске повластице, али је потребно више података како би то урадили."
+msgstr ""
+"Покушавате да покренете наредбу која захтева администраторске повластице, "
+"али је потребно више података како би то урадили."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -334,28 +358,36 @@ msgstr "execl() грешка, errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Покушавате да покренете „%s“ што може имати користи од администраторских\nповластица, али је потребно више података како би то урадили."
+msgstr ""
+"Покушавате да покренете „%s“ што може имати користи од администраторских\n"
+"повластица, али је потребно више података како би то урадили."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Покушавате да покренете „%s“ што захтева администраторске\nповластице, али је потребно више података како би то урадили."
+msgstr ""
+"Покушавате да покренете „%s“ што захтева администраторске\n"
+"повластице, али је потребно више података како би то урадили."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Покушавате да покренете наредбу која може имати користи од администраторских\nповластица, али је потребно више података како би то урадили."
+msgstr ""
+"Покушавате да покренете наредбу која може имати користи од администраторских\n"
+"повластица, али је потребно више података како би то урадили."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Покушавате да покренете наредбу која захтева администраторске\nповластице, али је потребно више података како би то урадили."
+msgstr ""
+"Покушавате да покренете наредбу која захтева администраторске\n"
+"повластице, али је потребно више података како би то урадили."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -367,14 +399,15 @@ msgstr "userhelper мора бити setuid root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Не могу да отворим графички прозор, и не могу да нађем контролни терминал.\n"
+msgstr ""
+"Не могу да отворим графички прозор, и не могу да нађем контролни терминал.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Неочекивани параметри командне линије\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format
@@ -423,7 +456,7 @@ msgstr "Де_монтирај"
 
 #: ../../po/../usermount.c:150
 msgid "Error loading list of file systems"
-msgstr ""
+msgstr "Грешка при учитавању списка система датотека"
 
 #. Create the dialog.
 #: ../../po/../usermount.c:151 ../../po/../usermount.c:525
@@ -435,7 +468,9 @@ msgstr "Кориснички алат за монтирање"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Сигурно желите да форматирате овај диск?  Уништићете било које податке које тренутно садржи."
+msgstr ""
+"Сигурно желите да форматирате овај диск?  Уништићете било које податке које "
+"тренутно садржи."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -449,7 +484,9 @@ msgstr "Изаберите систем да_тотека за прављење:
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Нема система датотека за које имате дозволу да монтирате или демонтирате.\nКонтактирајте администратора."
+msgstr ""
+"Нема система датотека за које имате дозволу да монтирате или демонтирате.\n"
+"Контактирајте администратора."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

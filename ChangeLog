@@ -1,3 +1,8 @@
+2018-02-22  Jiri Kucera  <jkucera@redhat.com>
+
+	* zanata.xml: Updated translations.
+	* po/*.po: Updated translations.
+
 2015-10-24  Miloslav Trmač  <mitr@redhat.com>
 
 	* userhelper.8.in: Be more precise about exec*() vs. higher-level

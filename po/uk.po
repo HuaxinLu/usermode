@@ -8,18 +8,21 @@
 # Yuri Chornoivan <yurchor@ukr.net>, 2011, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-22 06:05+0000\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-21 02:48-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -109,14 +112,19 @@ msgstr "Не вдається скинути привілеї адміністр
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Не вдається скинути привілеї адміністратора: pam_timestamp_check повернув код помилки %d"
+msgstr ""
+"Не вдається скинути привілеї адміністратора: pam_timestamp_check повернув "
+"код помилки %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Наразі ви авторизовані для виконання налаштовування параметрів для усієї системи (що впливає на усіх користувачів) без повторного набору пароля адміністратора. Ви можете відмовитись від такої авторизації."
+msgstr ""
+"Наразі ви авторизовані для виконання налаштовування параметрів для усієї "
+"системи (що впливає на усіх користувачів) без повторного набору пароля "
+"адміністратора. Ви можете відмовитись від такої авторизації."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -171,27 +179,31 @@ msgid "Information updated."
 msgstr "Інформацію оновлено."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Ви ввели правильний пароль.\nСпробуйте знову."
+msgstr "Ви ввели правильний пароль.\n"
+"Спробуйте знову."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Одне чи більше зі змінених полів неправильне.\nЦе напевно через двокрапки чи коми в одному з полів.\nВидаліть їх та спробуйте знову."
+msgstr ""
+"Одне чи більше зі змінених полів неправильне.\n"
+"Це напевно через двокрапки чи коми в одному з полів.\n"
+"Видаліть їх та спробуйте знову."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Помилка скидання паролю."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Деякі файлові системи блоковано.\nСпробуйте знову через декілька секунд."
+msgstr ""
+"Деякі файлові системи блоковано.\n"
+"Спробуйте знову через декілька секунд."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -210,7 +222,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Вашу поточну оболонку не вказано в списку /etc/shells.\nВи не можете змінити свою оболонку.\nПроконсультуйтесь із своїм системним адміністратором."
+msgstr ""
+"Вашу поточну оболонку не вказано в списку /etc/shells.\n"
+"Ви не можете змінити свою оболонку.\n"
+"Проконсультуйтесь із своїм системним адміністратором."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -281,26 +296,34 @@ msgstr "Зміна початкової оболонки."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Ви намагаєтесь виконати програму \"%s\", яка може потребувати привілей адміністратора, але для цього потрібна додаткова інформація."
+msgstr ""
+"Ви намагаєтесь виконати програму \"%s\", яка може потребувати привілей "
+"адміністратора, але для цього потрібна додаткова інформація."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Ви намагаєтесь виконати \"%s\", яка вимагає привілей\nадміністратора, але для цього потрібна додаткова інформація."
+msgstr ""
+"Ви намагаєтесь виконати \"%s\", яка вимагає привілей\n"
+"адміністратора, але для цього потрібна додаткова інформація."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Ви намагаєтесь виконати команду,  яка може потребувати привілей адміністратора, але для цього потрібна додаткова інформація."
+msgstr ""
+"Ви намагаєтесь виконати команду,  яка може потребувати привілей "
+"адміністратора, але для цього потрібна додаткова інформація."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Ви намагаєтесь виконати команду, яка вимагає привілей\nадміністратора, але для цього потрібна додаткова інформація."
+msgstr ""
+"Ви намагаєтесь виконати команду, яка вимагає привілей\n"
+"адміністратора, але для цього потрібна додаткова інформація."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -336,28 +359,36 @@ msgstr "помилка execl(), код помилки %d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Ви намагаєтесь виконати програму \"%s\", яка може потребувати привілей адміністратора, але для цього потрібна додаткова інформація."
+msgstr ""
+"Ви намагаєтесь виконати програму \"%s\", яка може потребувати привілей "
+"адміністратора, але для цього потрібна додаткова інформація."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Ви намагаєтесь виконати програму \"%s\", яка вимагає привілей\nадміністратора, але для цього потрібна додаткова інформація."
+msgstr ""
+"Ви намагаєтесь виконати програму \"%s\", яка вимагає привілей\n"
+"адміністратора, але для цього потрібна додаткова інформація."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Ви намагаєтесь виконати команду, яка може потребувати привілей адміністратора, але для цього потрібна додаткова інформація."
+msgstr ""
+"Ви намагаєтесь виконати команду, яка може потребувати привілей "
+"адміністратора, але для цього потрібна додаткова інформація."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Ви намагаєтесь виконати команду, яка вимагає привілей\nадміністратора, але для цього потрібна додаткова інформація."
+msgstr ""
+"Ви намагаєтесь виконати команду, яка вимагає привілей\n"
+"адміністратора, але для цього потрібна додаткова інформація."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -437,7 +468,8 @@ msgstr "Засіб монтування для користувачів"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Ви дійсно хочете відформатувати цей диск? Всі дані на ньому будуть знищені."
+msgstr ""
+"Ви дійсно хочете відформатувати цей диск? Всі дані на ньому будуть знищені."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -451,7 +483,9 @@ msgstr "Виберіть тип _файлової системи:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Немає файлових систем, які вам дозволено монтувати чи демонтувати.\nЗверніться до системного адміністратора."
+msgstr ""
+"Немає файлових систем, які вам дозволено монтувати чи демонтувати.\n"
+"Зверніться до системного адміністратора."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

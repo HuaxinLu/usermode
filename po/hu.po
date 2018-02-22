@@ -8,20 +8,23 @@
 # Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
 # Tamas Szanto <tszanto@mol.hu>, 2003.
 # Zoltan Hoppár <hopparz@gmail.com>, 2012.
+# Meskó Balázs <meskobalazs@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-09-04 20:23+0000\n"
-"Last-Translator: Zoltan Hoppár <hopparz@gmail.com>\n"
-"Language-Team: Hungarian <trans-hu@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-04-01 03:32-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Hungarian <trans-hu@lists.fedoraproject.org>\n"
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -50,7 +53,7 @@ msgstr "Kilépés"
 
 #: ../../po/../dummy.h:23
 msgid "Cancel"
-msgstr "Mégsem"
+msgstr "Mégse"
 
 #: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
@@ -111,14 +114,19 @@ msgstr "Nem sikerült megválni a rendszergazdai jogosultságtól: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Nem sikerült megválni a rendszergazdai jogosultságtól: a pam_timestamp_check ezt a hibakódot adta vissza: %d"
+msgstr ""
+"Nem sikerült megválni a rendszergazdai jogosultságtól: a pam_timestamp_check "
+"ezt a hibakódot adta vissza: %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Most jogosult a rendszerszintű beállítások megváltoztatására - amelyek minden felhasználóra érvényesek - a rendszergazdai jelszó újbóli megadása nélkül. Bármikor lemondhat erről a jogosultságáról."
+msgstr ""
+"Most jogosult a rendszerszintű beállítások megváltoztatására - amelyek "
+"minden felhasználóra érvényesek - a rendszergazdai jelszó újbóli megadása "
+"nélkül. Bármikor lemondhat erről a jogosultságáról."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -173,27 +181,31 @@ msgid "Information updated."
 msgstr "Az információ frissítése megtörtént."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "A megadott jelszó érvénytelen.\nPróbálja meg újra."
+msgstr "A megadott jelszó érvénytelen.\n"
+"Próbálja meg újra."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Egy vagy több módosított mező tartalma érvénytelen.\nValószínűleg kettőspont vagy vessző maradt valamelyik mezőben.\nTávolítsa el ezeket, majd próbálkozzon újra."
+msgstr ""
+"Egy vagy több módosított mező tartalma érvénytelen.\n"
+"Valószínűleg kettőspont vagy vessző maradt valamelyik mezőben.\n"
+"Távolítsa el ezeket, majd próbálkozzon újra."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "A jelszó alapállapotba hozása nem sikerült."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Néhány rendszerfájl zárolva van.\nPróbálkozzon újra néhány másodperc múlva."
+msgstr ""
+"Néhány rendszerfájl zárolva van.\n"
+"Próbálkozzon újra néhány másodperc múlva."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -212,7 +224,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "A mostani parancsértelmező nem szerepel az /etc/shells fájlban.\nA parancsértelmezőt ezért nem lehet megváltoztatni.\nKérjen segítséget a rendszergazdától."
+msgstr ""
+"A mostani parancsértelmező nem szerepel az /etc/shells fájlban.\n"
+"A parancsértelmezőt ezért nem lehet megváltoztatni.\n"
+"Kérjen segítséget a rendszergazdától."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -283,26 +298,35 @@ msgstr "A parancsértelmező megváltoztatása."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "\"%s\" indítását kezdeményezte. A programot érdemesebb lehet rendszergazdai jogosultsággal indítani, ehhez azonban további információ szükséges."
+msgstr ""
+"\"%s\" indítását kezdeményezte. A programot érdemesebb lehet rendszergazdai "
+"jogosultsággal indítani, ehhez azonban további információ szükséges."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "\"%s\" indítását kezdeményezte. A program csak rendszergazdai jogosultsággal indítható el, ehhez azonban további információ szükséges."
+msgstr ""
+"\"%s\" indítását kezdeményezte. A program csak rendszergazdai jogosultsággal "
+"indítható el, ehhez azonban további információ szükséges."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Egy olyan parancs végrehajtását kezdeményezte, amelyet érdemesebb lehet rendszergazdai jogosultsággal végrehajtani - ehhez azonban további információ szükséges."
+msgstr ""
+"Egy olyan parancs végrehajtását kezdeményezte, amelyet érdemesebb lehet "
+"rendszergazdai jogosultsággal végrehajtani - ehhez azonban további "
+"információ szükséges."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai jogosultság szükséges - ehhez azonban további információra van szükség."
+msgstr ""
+"Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai "
+"jogosultság szükséges - ehhez azonban további információra van szükség."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -338,28 +362,38 @@ msgstr "execl() hiba, errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "\"%s\" indítását kezdeményezte. A programot érdemesebb lehet\nrendszergazdai jogosultsággal indítani, ehhez azonban további\ninformáció szükséges."
+msgstr ""
+"\"%s\" indítását kezdeményezte. A programot érdemesebb lehet\n"
+"rendszergazdai jogosultsággal indítani, ehhez azonban további\n"
+"információ szükséges."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "\"%s\" indítását kezdeményezte. A program csak rendszergazdai\njogosultsággal indítható el, ehhez azonban további információ szükséges."
+msgstr ""
+"\"%s\" indítását kezdeményezte. A program csak rendszergazdai\n"
+"jogosultsággal indítható el, ehhez azonban további információ szükséges."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Egy olyan parancs végrehajtását kezdeményezte, amelyet érdemesebb lehet\nrendszergazdai jogosultsággal végrehajtani - ehhez azonban további\ninformáció szükséges."
+msgstr ""
+"Egy olyan parancs végrehajtását kezdeményezte, amelyet érdemesebb lehet\n"
+"rendszergazdai jogosultsággal végrehajtani - ehhez azonban további\n"
+"információ szükséges."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai\njogosultság szükséges - ehhez azonban további információra van szükség."
+msgstr ""
+"Egy olyan parancs végrehajtását kezdeményezte, amelyhez rendszergazdai\n"
+"jogosultság szükséges - ehhez azonban további információra van szükség."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -371,7 +405,9 @@ msgstr "a userhelper programnak 'setuid root' beállításúnak kell lennie\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "A grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem található.\n"
+msgstr ""
+"A grafikus ablakot nem sikerült megnyitni, vezérlőterminál pedig nem "
+"található.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
@@ -439,7 +475,8 @@ msgstr "Lemezcsatlakoztatási segédprogram"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
+msgstr ""
+"Biztosan formázza a lemezt? A rajta található adatok véglegesen elvesznek!"
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -453,7 +490,10 @@ msgstr "Válassza ki _a létrehozandó fájlrendszertípust:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Önnek nincs jogosultsága egyetlen fájlrendszer csatlakoztatására/leválasztására sem.\nKérjen segítséget a rendszergazdától."
+msgstr ""
+"Önnek nincs jogosultsága egyetlen fájlrendszer csatlakoztatására/"
+"leválasztására sem.\n"
+"Kérjen segítséget a rendszergazdától."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

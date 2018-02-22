@@ -7,18 +7,21 @@
 # Roman Maurer <roman@lugos.si>, 2002.
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-21 02:47-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -170,27 +173,31 @@ msgid "Information updated."
 msgstr "Podatek osvežen."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Geslo, ki ste ga podali, je neveljavno.\nProsimo, poskusite znova."
+msgstr "Geslo, ki ste ga podali, je neveljavno.\n"
+"Prosimo, poskusite znova."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Eno ali več spremenjenih polj je neveljavnih.\nVerjetno je to zaradi vejic ali podpičij v enem od polj.\nProsimo, odstranite jih in poskusite znova."
+msgstr ""
+"Eno ali več spremenjenih polj je neveljavnih.\n"
+"Verjetno je to zaradi vejic ali podpičij v enem od polj.\n"
+"Prosimo, odstranite jih in poskusite znova."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Napaka pri vnovičnem nastavljanju gesla."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Nekatere sistemske datoteke so zaklenjene.\nProsimo, poskusite znova čez nekaj časa."
+msgstr ""
+"Nekatere sistemske datoteke so zaklenjene.\n"
+"Prosimo, poskusite znova čez nekaj časa."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -209,7 +216,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Vaša trenutna ukazna lupina ni navedena v /etc/shells.\nNi vam je dovoljeno spremeniti.\nPosvetujte se s skrbnikom vašega sistema."
+msgstr ""
+"Vaša trenutna ukazna lupina ni navedena v /etc/shells.\n"
+"Ni vam je dovoljeno spremeniti.\n"
+"Posvetujte se s skrbnikom vašega sistema."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -280,26 +290,34 @@ msgstr "Sprememba prijavne lupine."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati \"%s\", ki lahko pridobi, če ga poženete kot skrbnik sistema, a za to je treba več podatkov."
+msgstr ""
+"Skušate pognati \"%s\", ki lahko pridobi, če ga poženete kot skrbnik "
+"sistema, a za to je treba več podatkov."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Skušate pognati \"%s\", ki zahteva, da ga poženete kot skrbnik sistema, a za to je treba več podatkov."
+msgstr ""
+"Skušate pognati \"%s\", ki zahteva, da ga poženete kot skrbnik sistema, a za "
+"to je treba več podatkov."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati ukaz, ki lahko pridobi, če ga poženete kot skrbnik sistema, a za to je treba več podatkov."
+msgstr ""
+"Skušate pognati ukaz, ki lahko pridobi, če ga poženete kot skrbnik sistema, "
+"a za to je treba več podatkov."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati ukaz, ki zahteva, da ga poženete kot skrbnik sistema, a za to je treba več podatkov."
+msgstr ""
+"Skušate pognati ukaz, ki zahteva, da ga poženete kot skrbnik sistema, a za "
+"to je treba več podatkov."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -335,28 +353,36 @@ msgstr "Napaka pri execl(), errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati \"%s\", ki lahko pridobi, če ga poženete kot skrbnik\nsistema, a za to je treba več podatkov."
+msgstr ""
+"Skušate pognati \"%s\", ki lahko pridobi, če ga poženete kot skrbnik\n"
+"sistema, a za to je treba več podatkov."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati \"%s\", ki zahteva, da ga poženete kot skrbnik sistema,\na za to je treba več podatkov."
+msgstr ""
+"Skušate pognati \"%s\", ki zahteva, da ga poženete kot skrbnik sistema,\n"
+"a za to je treba več podatkov."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati ukaz, ki lahko pridobi, če ga poženete kot skrbnik\nsistema, a za to je treba več podatkov."
+msgstr ""
+"Skušate pognati ukaz, ki lahko pridobi, če ga poženete kot skrbnik\n"
+"sistema, a za to je treba več podatkov."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Skušate pognati ukaz, ki zahteva, da ga poženete kot skrbnik sistema,\na za to je treba več podatkov."
+msgstr ""
+"Skušate pognati ukaz, ki zahteva, da ga poženete kot skrbnik sistema,\n"
+"a za to je treba več podatkov."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -436,7 +462,9 @@ msgstr "Orodje za uporabniški priklop"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Ste prepričani, da želite formatirati ta disk? Uničili boste vse podatke, ki jih trenutno vsebuje."
+msgstr ""
+"Ste prepričani, da želite formatirati ta disk? Uničili boste vse podatke, ki "
+"jih trenutno vsebuje."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -450,7 +478,9 @@ msgstr "Izberite vrsto _datotečnega sistema, ki naj se ustvari:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Ni datotečnih sistemov, ki jih smete priklopiti ali odklopiti.\nPosvetujte se s skrbnikom sistema."
+msgstr ""
+"Ni datotečnih sistemov, ki jih smete priklopiti ali odklopiti.\n"
+"Posvetujte se s skrbnikom sistema."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

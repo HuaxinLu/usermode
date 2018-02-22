@@ -7,20 +7,24 @@
 # feonsu <feonsu@gmail.com>, 2011.
 # Marcel Telka <marcel@telka.sk>, 2004, 2005.
 # Marek Mahut <mmahut@fedoraproject.org>, 2008.
+# feonsu <feonsu@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Slovak (http://www.transifex.com/projects/p/fedora/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-09-12 03:25-0400\n"
+"Last-Translator: feonsu <feonsu@gmail.com>\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/fedora/language/"
+"sk/)\n"
 "Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -110,14 +114,19 @@ msgstr "Zlyhalo vzdanie sa správcovských privilégií: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Zlyhalo vzdanie sa správcovských privilégií: pam_timestamp_check vrátil kód zlyhania %d"
+msgstr ""
+"Zlyhalo vzdanie sa správcovských privilégií: pam_timestamp_check vrátil kód "
+"zlyhania %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Práve ste autorizovaný na konfiguráciu systémových nastavení (ktoré ovplyvňujú všetkých používateľov) bez opätovného zadávania hesla správcu. Môžete sa vzdať tejto autorizácie."
+msgstr ""
+"Práve ste autorizovaný na konfiguráciu systémových nastavení (ktoré "
+"ovplyvňujú všetkých používateľov) bez opätovného zadávania hesla správcu. "
+"Môžete sa vzdať tejto autorizácie."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -172,27 +181,30 @@ msgid "Information updated."
 msgstr "Informácie aktualizované."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Heslo, ktoré ste zadali je neplatné.\nProsím, skúste znova."
+msgstr "Heslo, ktoré ste zadali je neplatné.\n"
+"Prosím, skúste znova."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Jedno alebo viacero zmenených polí je neplatných.\nJe to pravdepodobne kvôli dvojbodkám alebo čiarkám v jednom z polí.\nProsím, odstráňte ich a skúste znova."
+msgstr ""
+"Jedno alebo viacero zmenených polí je neplatných.\n"
+"Je to pravdepodobne kvôli dvojbodkám alebo čiarkám v jednom z polí.\n"
+"Prosím, odstráňte ich a skúste znova."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Chyba pri vynulovaní hesla."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Niektoré systémové súbory sú zamknuté.\nProsím, skúste o chvíľu znova."
+msgstr "Niektoré systémové súbory sú zamknuté.\n"
+"Prosím, skúste o chvíľu znova."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -211,7 +223,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Váš aktuálny shell nie je uvedený v /etc/shells.\nNemáte dovolené zmeniť si svoj shell.\nKonzultujte to s vašim správcom systému."
+msgstr ""
+"Váš aktuálny shell nie je uvedený v /etc/shells.\n"
+"Nemáte dovolené zmeniť si svoj shell.\n"
+"Konzultujte to s vašim správcom systému."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -282,26 +297,34 @@ msgstr "Zmena prihlasovacieho shellu."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Pokúšate sa spustiť \"%s\", ktorý môže mať osoh z práv správcu. Je však potrebných viac informácií, aby sa tak mohlo stať."
+msgstr ""
+"Pokúšate sa spustiť \"%s\", ktorý môže mať osoh z práv správcu. Je však "
+"potrebných viac informácií, aby sa tak mohlo stať."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Pokúšate sa spustiť \"%s\", ktorý vyžaduje práva správcu. Je však potrebných viac informácií, aby sa tak mohlo stať."
+msgstr ""
+"Pokúšate sa spustiť \"%s\", ktorý vyžaduje práva správcu. Je však potrebných "
+"viac informácií, aby sa tak mohlo stať."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Pokúšate sa spustiť príkaz, ktorý môže mať osoh z práv správcu. Je však potrebných viac informácií, aby sa tak mohlo stať."
+msgstr ""
+"Pokúšate sa spustiť príkaz, ktorý môže mať osoh z práv správcu. Je však "
+"potrebných viac informácií, aby sa tak mohlo stať."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Pokúšate sa spustiť príkaz, ktorý vyžaduje práva správcu. Je však potrebných viac informácií, aby sa tak mohlo stať."
+msgstr ""
+"Pokúšate sa spustiť príkaz, ktorý vyžaduje práva správcu. Je však potrebných "
+"viac informácií, aby sa tak mohlo stať."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -337,28 +360,36 @@ msgstr "Chyba execl(), errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Pokúšate sa spustiť \"%s\", ktorý môže mať osoh zo správcovských práv.\nJe však potrebných viac informácií, aby sa tak mohlo stať."
+msgstr ""
+"Pokúšate sa spustiť \"%s\", ktorý môže mať osoh zo správcovských práv.\n"
+"Je však potrebných viac informácií, aby sa tak mohlo stať."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Pokúšate sa spustiť \"%s\", ktorý vyžaduje správcovské práva.\nJe však potrebných viac informácií, aby sa tak mohlo stať."
+msgstr ""
+"Pokúšate sa spustiť \"%s\", ktorý vyžaduje správcovské práva.\n"
+"Je však potrebných viac informácií, aby sa tak mohlo stať."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Pokúšate sa spustiť príkaz, ktorý môže mať osoh zo správcovských práv.\nJe však potrebných viac informácií, aby sa tak mohlo stať."
+msgstr ""
+"Pokúšate sa spustiť príkaz, ktorý môže mať osoh zo správcovských práv.\n"
+"Je však potrebných viac informácií, aby sa tak mohlo stať."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Pokúšate sa spustiť príkaz, ktorý vyžaduje správcovské práva.\nJe však potrebných viac informácií, aby sa tak mohlo stať."
+msgstr ""
+"Pokúšate sa spustiť príkaz, ktorý vyžaduje správcovské práva.\n"
+"Je však potrebných viac informácií, aby sa tak mohlo stať."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -370,14 +401,16 @@ msgstr "program userhelper musí byť setuid správcu\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Nepodarilo sa otvoriť grafické okno a nepodarilo sa nájsť riadiaci terminál.\n"
+msgstr ""
+"Nepodarilo sa otvoriť grafické okno a nepodarilo sa nájsť riadiaci terminál."
+"\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr ""
+msgstr "Neočakávané parametre príkazového riadka\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format
@@ -426,7 +459,7 @@ msgstr "O_dpojiť"
 
 #: ../../po/../usermount.c:150
 msgid "Error loading list of file systems"
-msgstr ""
+msgstr "Chyba pri načítavaní zoznamu súborových systémov"
 
 #. Create the dialog.
 #: ../../po/../usermount.c:151 ../../po/../usermount.c:525
@@ -438,7 +471,9 @@ msgstr "Používateľský nástroj na pripájanie"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Ste si istý, že chcete naformátovať tento disk? Zničíte všetky údaje, ktoré teraz obsahuje."
+msgstr ""
+"Ste si istý, že chcete naformátovať tento disk? Zničíte všetky údaje, ktoré "
+"teraz obsahuje."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -452,7 +487,10 @@ msgstr "Vyberte si typ _súborového systému, ktorý chcete vytvoriť:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Neexistujú žiadne súborové systémy, ktoré máte dovolené pripájať alebo odpájať.\nKontaktujte svojho správcu."
+msgstr ""
+"Neexistujú žiadne súborové systémy, ktoré máte dovolené pripájať alebo "
+"odpájať.\n"
+"Kontaktujte svojho správcu."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

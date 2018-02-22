@@ -8,18 +8,20 @@
 # Valentin Laskov <laskov@festa.bg>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Bulgarian <trans-bg@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-21 02:43-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Bulgarian <trans-bg@lists.fedoraproject.org>\n"
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -109,14 +111,19 @@ msgstr "Неуспешна отмяна на административните 
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Неуспешна отмяна на административните права: pam_timestamp_check върна код на грешка %d"
+msgstr ""
+"Неуспешна отмяна на административните права: pam_timestamp_check върна код "
+"на грешка %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "В момента сте оторизиран да настройвате системни параметри (това засяга всички потребители) без да въведете отново администраторската парола. Може да се откажете от тази привилегия."
+msgstr ""
+"В момента сте оторизиран да настройвате системни параметри (това засяга "
+"всички потребители) без да въведете отново администраторската парола. Може "
+"да се откажете от тази привилегия."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -171,27 +178,30 @@ msgid "Information updated."
 msgstr "Информацията е обновена."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Паролата, която въведохте, е невалидна.\nМоля опитайте отново."
+msgstr "Паролата, която въведохте, е невалидна.\n"
+"Моля опитайте отново."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Едно или повече от променените полета не е валидно.\nТова вероятно се дължи на двоеточия или кавички в някое от тях.\nМоля премахнете ги и опитайте отново."
+msgstr ""
+"Едно или повече от променените полета не е валидно.\n"
+"Това вероятно се дължи на двоеточия или кавички в някое от тях.\n"
+"Моля премахнете ги и опитайте отново."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Грешка при промяна на паролата."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Някои системни файлове са заключени.\nМоля опитайте след малко."
+msgstr "Някои системни файлове са заключени.\n"
+"Моля опитайте след малко."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -210,7 +220,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Вашия команден интерпретатор не е указан в /etc/shells.\nНе Ви е разрешено да промените своя команден интерпретатор.\nКонсултирайте се със системния си администратор."
+msgstr ""
+"Вашия команден интерпретатор не е указан в /etc/shells.\n"
+"Не Ви е разрешено да промените своя команден интерпретатор.\n"
+"Консултирайте се със системния си администратор."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -281,26 +294,34 @@ msgstr "Промяна на командния интерпретатор."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Опитвате се да стартирате \"%s\". Може да са полезни административни права, но за това е нужна повече информация."
+msgstr ""
+"Опитвате се да стартирате \"%s\". Може да са полезни административни права, "
+"но за това е нужна повече информация."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Опитвате се да стартирате \"%s\". Необходими са административни права, но за това е нужна повече информация."
+msgstr ""
+"Опитвате се да стартирате \"%s\". Необходими са административни права, но за "
+"това е нужна повече информация."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Опитвате се да стартирате команда, която може да се възползва от административни права, но за това е нужна повече информация."
+msgstr ""
+"Опитвате се да стартирате команда, която може да се възползва от "
+"административни права, но за това е нужна повече информация."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Опитвате се да стартирате команда, която изисква административни права, но за това е нужна повече информация."
+msgstr ""
+"Опитвате се да стартирате команда, която изисква административни права, но "
+"за това е нужна повече информация."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -336,28 +357,36 @@ msgstr "Грешка %d при извикване на execl()\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Опитвате се да стартирате \"%s\". В случая от полза могат да бъдат\nадминистративни права, но за това е нужна повече информация."
+msgstr ""
+"Опитвате се да стартирате \"%s\". В случая от полза могат да бъдат\n"
+"административни права, но за това е нужна повече информация."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Опитвате се да стартирате \"%s\". За целта са необходими административни\nправа, но за това е нужна повече информация."
+msgstr ""
+"Опитвате се да стартирате \"%s\". За целта са необходими административни\n"
+"права, но за това е нужна повече информация."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Опитвате се да стартирате команда, която може да се възползва\nот административни права, но за това е нужна повече информация."
+msgstr ""
+"Опитвате се да стартирате команда, която може да се възползва\n"
+"от административни права, но за това е нужна повече информация."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Опитвате се да стартирате команда, която изисква административни\nправа, но за това е нужна повече информация."
+msgstr ""
+"Опитвате се да стартирате команда, която изисква административни\n"
+"права, но за това е нужна повече информация."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -369,7 +398,9 @@ msgstr "userhelper трябва да бъде setuid root\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Не може да бъде отворен графичен прозорец, а не може да бъде намерен и контролен терминал.\n"
+msgstr ""
+"Не може да бъде отворен графичен прозорец, а не може да бъде намерен и "
+"контролен терминал.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
@@ -437,7 +468,9 @@ msgstr "Потребителски инструмент за монтиране"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "Наистина ли искате да форматирате този диск?  Така ще унищожите всички данни които той съдържа."
+msgstr ""
+"Наистина ли искате да форматирате този диск?  Така ще унищожите всички данни "
+"които той съдържа."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -451,7 +484,9 @@ msgstr "Изберете тип на _файловата система:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Няма файлови системи, разрешени за монтиране или демонтиране от Вас.\nСвържете се със своя администратор."
+msgstr ""
+"Няма файлови системи, разрешени за монтиране или демонтиране от Вас.\n"
+"Свържете се със своя администратор."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

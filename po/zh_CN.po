@@ -9,20 +9,23 @@
 #   <lovenemesis@gmail.com>, 2011.
 # Sarah Wang <sarahs@redhat.com>, 2003, 2004.
 # Xi Huang <xhuang@redhat.com>, 2006.
+# Jerry Lee <lchopn@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Chinese (China) <trans-zh_cn@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2017-12-10 05:48-0500\n"
+"Last-Translator: Jerry Lee <lchopn@gmail.com>\n"
+"Language-Team: Chinese (China) <trans-zh_cn@lists.fedoraproject.org>\n"
+"Language: zh-CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -174,27 +177,29 @@ msgid "Information updated."
 msgstr "信息已更新。"
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "您键入的口令无效。\n请重试。"
+msgstr "您键入的口令无效。\n"
+"请重试。"
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "至少有一个改变的字段无效。\n这可能是字段中的逗号和冒号造成的。\n请删除那些标点后再重试。"
+msgstr "至少有一个改变的字段无效。\n"
+"这可能是字段中的逗号和冒号造成的。\n"
+"请删除那些标点后再重试。"
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "口令重设出错。"
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "某些系统文件被锁。\n请过一会儿再重试。"
+msgstr "某些系统文件被锁。\n"
+"请过一会儿再重试。"
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -213,7 +218,9 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "您目前使用的 shell 没有在 /etc/shells 中列出。\n您没有改变 shell 的许可。\n请向您的系统管理员咨询。"
+msgstr "您目前使用的 shell 没有在 /etc/shells 中列出。\n"
+"您没有改变 shell 的许可。\n"
+"请向您的系统管理员咨询。"
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -339,28 +346,32 @@ msgstr "execl() 错误，errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "您在试图运行“%s”。它可能会得益于超级用户的特权，\n但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它可能会得益于超级用户的特权，\n"
+"但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "您在试图运行“%s”。它要求您拥有超级用户的特权，\n但是这需要更多信息才能做到。"
+msgstr "您在试图运行“%s”。它要求您拥有超级用户的特权，\n"
+"但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "您在试图运行一个可能会得益于超级用户特权的命令，\n但是这需要更多信息才能做到。"
+msgstr "您在试图运行一个可能会得益于超级用户特权的命令，\n"
+"但是这需要更多信息才能做到。"
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "您在试图运行一个要求超级用户特权的命令，\n但是需要更多信息才能做到。"
+msgstr "您在试图运行一个要求超级用户特权的命令，\n"
+"但是需要更多信息才能做到。"
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -384,7 +395,7 @@ msgstr ""
 #: ../../po/../userinfo.c:411
 #, c-format
 msgid "You don't exist.  Go away.\n"
-msgstr "您不存在。   走开。\n"
+msgstr "您不存在。走开。\n"
 
 #: ../userinfo.desktop.in.h:1
 msgid "About Myself"
@@ -454,7 +465,8 @@ msgstr "选择要创建的文件类型(_F)："
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "没有您允许挂载或卸载的文件系统。\n请联系您的系统管理员。"
+msgstr "没有您允许挂载或卸载的文件系统。\n"
+"请联系您的系统管理员。"
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

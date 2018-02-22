@@ -9,18 +9,21 @@
 # Ville-Pekka Vainio <vpvainio@iki.fi>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-09-08 13:44+0000\n"
-"Last-Translator: Juhani Numminen <juhaninumminen0@gmail.com>\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/fedora/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-21 02:44-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/fedora/language/"
+"fi/)\n"
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -110,14 +113,19 @@ msgstr "Ylläpitäjän oikeuksista luopuminen epäonnistui: %s"
 msgid ""
 "Failed to drop administrator privileges: pam_timestamp_check returned "
 "failure code %d"
-msgstr "Ylläpitäjän oikeuksista luopuminen epäonnistui: pam_timestamp_check palautti virhekoodin %d"
+msgstr ""
+"Ylläpitäjän oikeuksista luopuminen epäonnistui: pam_timestamp_check palautti "
+"virhekoodin %d"
 
 #: ../../po/../pam-panel-icon.c:146
 msgid ""
 "You're currently authorized to configure system-wide settings (that affect "
 "all users) without typing the administrator password again. You can give up "
 "this authorization."
-msgstr "Olet tällä hetkellä valtuutettu muuttamaan järjestelmänlaajuisia (kaikkia käyttäjiä koskevia) asetuksia ilman ylläpitäjän salasanan antamista uudelleen. Voit luopua tästä valtuutuksesta."
+msgstr ""
+"Olet tällä hetkellä valtuutettu muuttamaan järjestelmänlaajuisia (kaikkia "
+"käyttäjiä koskevia) asetuksia ilman ylläpitäjän salasanan antamista "
+"uudelleen. Voit luopua tästä valtuutuksesta."
 
 #: ../../po/../pam-panel-icon.c:151 ../../po/../pam-panel-icon.c:178
 msgid "Keep Authorization"
@@ -172,27 +180,31 @@ msgid "Information updated."
 msgstr "Tiedot päivitetty."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "Annettu salasana on virheellinen.\nYritä uudelleen."
+msgstr "Annettu salasana on virheellinen.\n"
+"Yritä uudelleen."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Yksi tai useampi muutetuista kentistä on virheellinen.\nTämä johtuu todennäköisesti jossakin kentässä olevista kaksoispisteistä\ntai pilkuista. Poista ne ja yritä uudelleen."
+msgstr ""
+"Yksi tai useampi muutetuista kentistä on virheellinen.\n"
+"Tämä johtuu todennäköisesti jossakin kentässä olevista kaksoispisteistä\n"
+"tai pilkuista. Poista ne ja yritä uudelleen."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr "Virhe salasanan tyhjennyksessä."
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Jotkut järjestelmätiedostot ovat lukittuina.\nYritä uudelleen hetken kuluttua."
+msgstr ""
+"Jotkut järjestelmätiedostot ovat lukittuina.\n"
+"Yritä uudelleen hetken kuluttua."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -211,7 +223,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "Nykyistä kuorta ei ole lueteltu tiedostossa /etc/shells.\nKuoren vaihtamiseen ei ole oikeuksia.\nKysy neuvoa järjestelmänvalvojalta."
+msgstr ""
+"Nykyistä kuorta ei ole lueteltu tiedostossa /etc/shells.\n"
+"Kuoren vaihtamiseen ei ole oikeuksia.\n"
+"Kysy neuvoa järjestelmänvalvojalta."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -282,26 +297,34 @@ msgstr "Vaihdetaan kirjautumiskuorta."
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan\noikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr ""
+"Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan\n"
+"oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper-wrap.c:709
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan\noikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr ""
+"Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan\n"
+"oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
 "You are attempting to run a command which may benefit from administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan\noikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr ""
+"Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan\n"
+"oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper-wrap.c:715
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan\noikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr ""
+"Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan\n"
+"oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -337,28 +360,36 @@ msgstr "execl()-virhe, errno=%d\n"
 msgid ""
 "You are attempting to run \"%s\" which may benefit from administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr ""
+"Yritetään ajaa komentoa ”%s”, joka saattaa hyötyä järjestelmänvalvojan "
+"oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper.c:591
 #, c-format
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr ""
+"Yritetään ajaa komentoa ”%s”, joka vaatii järjestelmänvalvojan oikeudet. "
+"Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper.c:595
 #, c-format
 msgid ""
 "You are attempting to run a command which may benefit from\n"
 "administrative privileges, but more information is needed in order to do so."
-msgstr "Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr ""
+"Yritetään ajaa komentoa, joka saattaa hyötyä järjestelmänvalvojan "
+"oikeuksista. Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper.c:597
 #, c-format
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan oikeudet. Tarvitaan lisää tietoa tämän tekemiseksi."
+msgstr ""
+"Yritetään ajaa komentoa, joka vaatii järjestelmänvalvojan oikeudet. "
+"Tarvitaan lisää tietoa tämän tekemiseksi."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -370,7 +401,8 @@ msgstr "Ohjelman userhelper on oltava ”setuid root”\n"
 #, c-format
 msgid ""
 "Unable to open graphical window, and unable to find controlling terminal.\n"
-msgstr "Graafisen ikkunan avaaminen ei onnistunut, eikä ohjaavaa päätettä löydy.\n"
+msgstr ""
+"Graafisen ikkunan avaaminen ei onnistunut, eikä ohjaavaa päätettä löydy.\n"
 
 #: ../../po/../userhelper.c:2230 ../../po/../userinfo.c:387
 #: ../../po/../usermount.c:672 ../../po/../usermount.c:681
@@ -452,7 +484,9 @@ msgstr "Valitse luotava _tiedostojärjestelmätyyppi:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Minkään tiedostojärjestelmän liittämiseen tai irrottamiseen ei ole\noikeuksia. Kysy neuvoa järjestelmänvalvojalta."
+msgstr ""
+"Minkään tiedostojärjestelmän liittämiseen tai irrottamiseen ei ole\n"
+"oikeuksia. Kysy neuvoa järjestelmänvalvojalta."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555

@@ -6,18 +6,21 @@
 # Dimitris Glezos <glezos@indifex.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Galician (http://www.transifex.com/projects/p/fedora/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-21 02:44-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Galician (http://www.transifex.com/projects/p/fedora/language/"
+"gl/)\n"
 "Language: gl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -82,7 +85,8 @@ msgstr "Os contrasinais non coinciden"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
-msgstr "Executar sen contrasinal ferramentas de configuración para todo o sistema."
+msgstr ""
+"Executar sen contrasinal ferramentas de configuración para todo o sistema."
 
 #: ../../po/../dummy.h:33
 msgid "login: "
@@ -169,27 +173,31 @@ msgid "Information updated."
 msgstr "Información actualizada."
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
-msgstr "O contrasinal que introduciu non é válido.\nTente de novo."
+msgstr "O contrasinal que introduciu non é válido.\n"
+"Tente de novo."
 
 #: ../../po/../userhelper-messages.c:37
 msgid ""
 "One or more of the changed fields is invalid.\n"
 "This is probably due to either colons or commas in one of the fields.\n"
 "Please remove those and try again."
-msgstr "Un ou máis dos campos modificados non son válidos.\nIsto é probablemente por mor dalgunha coma ou dous puntos nalgún dos campos.\nQuíteos e tente de novo."
+msgstr ""
+"Un ou máis dos campos modificados non son válidos.\n"
+"Isto é probablemente por mor dalgunha coma ou dous puntos nalgún dos campos.\n"
+"Quíteos e tente de novo."
 
 #: ../../po/../userhelper-messages.c:42
 msgid "Password resetting error."
 msgstr ""
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
-msgstr "Algúns ficheiros de sistema están bloqueados.\nTente de novo dentro dun intre."
+msgstr ""
+"Algúns ficheiros de sistema están bloqueados.\n"
+"Tente de novo dentro dun intre."
 
 #: ../../po/../userhelper-messages.c:48
 msgid "Unknown user."
@@ -208,7 +216,10 @@ msgid ""
 "Your current shell is not listed in /etc/shells.\n"
 "You are not allowed to change your shell.\n"
 "Consult your system administrator."
-msgstr "A súa shell actual non está listada en /etc/shells.\nNon lle está permitido mudar a shell.\nConsulte co administrador do seu sistema."
+msgstr ""
+"A súa shell actual non está listada en /etc/shells.\n"
+"Non lle está permitido mudar a shell.\n"
+"Consulte co administrador do seu sistema."
 
 #. well, this is unlikely to work, but at least we tried...
 #: ../../po/../userhelper-messages.c:58
@@ -286,7 +297,9 @@ msgstr ""
 msgid ""
 "You are attempting to run \"%s\" which requires administrative privileges, "
 "but more information is needed in order to do so."
-msgstr "Está tentando executar \"%s\" o cal require privilexios administrativos, pero para facelo é precisa máis información."
+msgstr ""
+"Está tentando executar \"%s\" o cal require privilexios administrativos, "
+"pero para facelo é precisa máis información."
 
 #: ../../po/../userhelper-wrap.c:713
 msgid ""
@@ -298,7 +311,9 @@ msgstr ""
 msgid ""
 "You are attempting to run a command which requires administrative "
 "privileges, but more information is needed in order to do so."
-msgstr "Está tentando executar un comando que require privilexios administrativos, pero para facelo é precisa máis información."
+msgstr ""
+"Está tentando executar un comando que require privilexios administrativos, "
+"pero para facelo é precisa máis información."
 
 #: ../../po/../userhelper-wrap.c:752
 msgid "_Run Unprivileged"
@@ -341,7 +356,9 @@ msgstr ""
 msgid ""
 "You are attempting to run \"%s\" which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Está tentando executar \"%s\" o cal require privilexios\nadministrativos, pero para facelo é precisa máis información."
+msgstr ""
+"Está tentando executar \"%s\" o cal require privilexios\n"
+"administrativos, pero para facelo é precisa máis información."
 
 #: ../../po/../userhelper.c:595
 #, c-format
@@ -355,7 +372,9 @@ msgstr ""
 msgid ""
 "You are attempting to run a command which requires administrative\n"
 "privileges, but more information is needed in order to do so."
-msgstr "Está tentando executar un comando que require privilexios\nadministrativos, pero para facelo é precisa máis información."
+msgstr ""
+"Está tentando executar un comando que require privilexios\n"
+"administrativos, pero para facelo é precisa máis información."
 
 #: ../../po/../userhelper.c:2085
 #, c-format
@@ -435,7 +454,9 @@ msgstr "Ferramenta de Montaxe de Usuario"
 msgid ""
 "Are you sure you want to format this disk?  You will destroy any data it "
 "currently contains."
-msgstr "¿Está seguro de que desexa formatar este disco?  Vai destruír tódolos datos que contén."
+msgstr ""
+"¿Está seguro de que desexa formatar este disco?  Vai destruír tódolos datos "
+"que contén."
 
 #: ../../po/../usermount.c:317
 msgid "Perform a _low-level format."
@@ -449,7 +470,9 @@ msgstr "Seleccionar un tipo de sistema de _ficheiros para crear:"
 msgid ""
 "There are no filesystems which you are allowed to mount or unmount.\n"
 "Contact your administrator."
-msgstr "Non hai ningún sistema de ficheiros que o usuario poida montar ou desmontar.\nContacte co seu administrador."
+msgstr ""
+"Non hai ningún sistema de ficheiros que o usuario poida montar ou desmontar.\n"
+"Contacte co seu administrador."
 
 #. Create the other buttons.
 #: ../../po/../usermount.c:555
