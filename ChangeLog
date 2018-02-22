@@ -1,5 +1,6 @@
 2018-02-22  Jiri Kucera  <jkucera@redhat.com>
 
+	* configure.ac: Release 1.112.
 	* zanata.xml: Updated translations.
 	* po/*.po: Updated translations.
 
