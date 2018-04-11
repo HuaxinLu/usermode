@@ -408,7 +408,7 @@ msgstr "Grafik pencere açılamadı ve uçbirim denetimi bulunamadı.\n"
 #: ../../po/../userpasswd.c:37
 #, c-format
 msgid "Unexpected command-line arguments\n"
-msgstr "Beklenmeyen komut satırı argümanları"
+msgstr "Beklenmeyen komut satırı argümanları\n"
 
 #: ../../po/../userinfo.c:411
 #, c-format
