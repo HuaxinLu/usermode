@@ -1,8 +1,45 @@
+2018-08-07  Jiri Kucera  <jkucera@redhat.com>
+
+	* usermount.c: Added missing `#include <sys/sysmacros.h>`.
+	* consolehelper-gtk.8
+	* consolehelper.8.in
+	* consolehelper.c
+	* dummy.h
+	* gsmclient.c
+	* gsmclient.h
+	* pam-panel-icon.1
+	* pam-panel-icon.c
+	* props.c
+	* props.h
+	* shvar.c
+	* shvar.h
+	* test-userdialog.c
+	* userdialogs.c
+	* userdialogs.h
+	* userhelper-messages.c
+	* userhelper-messages.h
+	* userhelper-wrap.c
+	* userhelper-wrap.h
+	* userhelper.8.in
+	* userhelper.c
+	* userhelper.h
+	* userinfo.1
+	* userinfo.c
+	* usermount.1
+	* usermount.c
+	* userpasswd.1
+	* userpasswd.c: Fixed bad FSF address.
+
+2018-04-11  Jiri Kucera  <jkucera@redhat.com>
+
+	* po/tr.po: Added missing '\n'.
+
 2018-02-22  Jiri Kucera  <jkucera@redhat.com>
 
 	* configure.ac: Release 1.112.
 	* zanata.xml: Updated translations.
 	* po/*.po: Updated translations.
+	* NEWS: Update.
 
 2015-10-24  Miloslav Trmač  <mitr@redhat.com>
 
