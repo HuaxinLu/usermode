@@ -33,7 +33,7 @@ proplist_find_link_by_name (GList      *list,
   for (; list; list = list->next)
     {
       SmProp *prop = (SmProp *) list->data;
-      if (strcmp (prop->name, name) == 0)
+      if (prop && strcmp (prop->name, name) == 0)
 	return list;
     }
 
@@ -208,7 +208,8 @@ proplist_as_array (GList    *list,
   g_return_if_fail (n_props != NULL);
   
   *n_props = g_list_length (list);
-  *props = g_new (SmProp*, *n_props);
+  if ((*props = g_new (SmProp*, *n_props)) == NULL)
+    return;
 
   i = 0;
   tmp = list;
@@ -227,7 +228,8 @@ proplist_copy (GList *list)
   GList *copy;
   GList *tmp;
 
-  copy = g_list_copy (list);
+  if ((copy = g_list_copy (list)) == NULL)
+    return NULL;
   tmp = copy;
   while (tmp != NULL)
     {
@@ -245,7 +247,7 @@ smprop_get_card8  (SmProp   *prop,
 {
   g_return_val_if_fail (result != NULL, FALSE);
 
-  if (strcmp (prop->type, SmCARD8) == 0)
+  if (prop && strcmp (prop->type, SmCARD8) == 0)
     {
       /* card8 is an unsigned int */
       unsigned char *p;
@@ -263,15 +265,29 @@ smprop_get_string (SmProp   *prop,
 {
   g_return_val_if_fail (result != NULL, FALSE);
 
-  if (strcmp (prop->type, SmARRAY8) == 0)
+  if (prop && strcmp (prop->type, SmARRAY8) == 0)
     {
-      *result = g_malloc (prop->vals[0].length + 1);
+      if ((*result = g_malloc (prop->vals[0].length + 1)) == NULL)
+        return FALSE;
       memcpy (*result, prop->vals[0].value, prop->vals[0].length);
       (*result)[prop->vals[0].length] = '\0';
       return TRUE;
     }
   else
     return FALSE;
+}
+
+static void
+smpropi_free_vector(char ***argvp, int n)
+{
+	g_return_if_fail(argvp != NULL);
+
+	while (n > 0) {
+		n--;
+		g_free((*argvp)[n]);
+	}
+	g_free(*argvp);
+	*argvp = NULL;
 }
 
 gboolean
@@ -282,15 +298,21 @@ smprop_get_vector (SmProp   *prop,
   g_return_val_if_fail (argcp != NULL, FALSE);
   g_return_val_if_fail (argvp != NULL, FALSE);
 
-  if (strcmp (prop->type, SmLISTofARRAY8) == 0)
+  if (prop && strcmp (prop->type, SmLISTofARRAY8) == 0)
     {
       int i;
       
       *argcp = prop->num_vals;
-      *argvp = g_new0 (char *, *argcp + 1);
+      if ((*argvp = g_new0 (char *, *argcp + 1)) == NULL)
+        return FALSE;
       for (i = 0; i < *argcp; ++i)
         {
           (*argvp)[i] = g_malloc (prop->vals[i].length + 1);
+          if ((*argvp)[i] == NULL)
+            {
+				smpropi_free_vector(argvp, i);
+				return FALSE;
+			}
           memcpy ((*argvp)[i], prop->vals[i].value, prop->vals[i].length);
           (*argvp)[i][prop->vals[i].length] = '\0';
         }
@@ -306,6 +328,8 @@ smprop_copy (SmProp *prop)
 {
   int i;
   SmProp *copy;
+
+  g_return_val_if_fail (prop != NULL, NULL);
 
   /* This all uses malloc so we can use SmFreeProperty() */
   
@@ -327,6 +351,8 @@ smprop_copy (SmProp *prop)
   if (copy->num_vals > 0 && prop->vals)
     {
       copy->vals = msm_non_glib_malloc (sizeof (SmPropValue) * copy->num_vals);
+      /* Redundant, but it suppresses anoying Clang warnings. */
+      if (copy->vals == NULL) return copy;
       
       for (i = 0; i < copy->num_vals; i++)
         {
@@ -362,6 +388,8 @@ smprop_new_vector (const char  *name,
 
   prop->num_vals = argc;
   prop->vals = msm_non_glib_malloc (sizeof (SmPropValue) * prop->num_vals);
+  /* Redundant, but it suppresses anoying Clang warnings. */
+  if (prop->vals == NULL) return prop;
   i = 0;
   while (i < argc)
     {
@@ -422,6 +450,9 @@ void
 smprop_set_card8 (SmProp *prop,
                   int     value)
 {
+  g_return_if_fail (prop != NULL);
+  g_return_if_fail (prop->vals != NULL);
+  g_return_if_fail (prop->vals[0].value != NULL);
   g_return_if_fail (value >= 0);
   g_return_if_fail (value < 256);
   
@@ -433,6 +464,8 @@ smprop_set_string (SmProp      *prop,
                    const char  *str,
                    int          len)
 {
+  g_return_if_fail (prop != NULL);
+  g_return_if_fail (prop->vals != NULL);
   g_return_if_fail (str != NULL);
   
   if (len < 0)
@@ -451,6 +484,9 @@ smprop_set_vector (SmProp      *prop,
 {
   int i;  
 
+  g_return_if_fail (prop != NULL);
+  g_return_if_fail (argv != NULL);
+
   i = 0;
   while (i < prop->num_vals)
     {
@@ -464,6 +500,8 @@ smprop_set_vector (SmProp      *prop,
   
   prop->num_vals = argc;
   prop->vals = msm_non_glib_malloc (sizeof (SmPropValue) * prop->num_vals);
+  /* Redundant, but it suppresses anoying Clang warnings. */
+  if (prop->vals == NULL) return;
   i = 0;
   while (i < argc)
     {
@@ -478,6 +516,9 @@ void
 smprop_append_to_vector   (SmProp      *prop,
                            const char  *str)
 {
+  g_return_if_fail (prop != NULL);
+  g_return_if_fail (str != NULL);
+
   prop->num_vals += 1;
   prop->vals = realloc (prop->vals, prop->num_vals * sizeof (SmPropValue));
   if (prop->vals == NULL)
@@ -492,6 +533,9 @@ smprop_set_vector_element (SmProp      *prop,
                            int          i,
                            const char  *str)
 {
+  g_return_if_fail (prop != NULL);
+  g_return_if_fail (prop->vals != NULL);
+  g_return_if_fail (str != NULL);
   g_return_if_fail (i < prop->num_vals);
 
   if (prop->vals[i].value)
@@ -504,6 +548,8 @@ smprop_set_vector_element (SmProp      *prop,
 int
 smprop_get_vector_length (SmProp *prop)
 {
+  g_return_val_if_fail (prop != NULL, -1);
+
   return prop->num_vals;
 }
 

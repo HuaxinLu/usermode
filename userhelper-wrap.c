@@ -297,12 +297,16 @@ write_childin_string(const char *s)
 	err = NULL;
 	converted = g_locale_from_utf8(s, s_len, NULL, &converted_len, &err);
 	if (err == NULL) {
-		write(childin[1], converted, converted_len);
+		ssize_t nbytes = write(childin[1], converted, converted_len);
+		if (nbytes < 0 || (gsize)nbytes < converted_len)
+			g_warning("Unable to send data to child");
 		g_free(converted);
 	} else {
 		g_error_free(err);
 		/* Oh well, some data is better than no data... */
-		write(childin[1], s, s_len);
+		ssize_t nbytes = write(childin[1], s, s_len);
+		if (nbytes < 0 || (gsize)nbytes < converted_len)
+			g_warning("Unable to send data to child");
 	}
 }
 
@@ -313,6 +317,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 {
 	static const unsigned char sync_point[] = { UH_SYNC_POINT, '\n' };
 	static const unsigned char eol = '\n';
+	ssize_t nbytes;
 
 	gboolean startup = FALSE;
 
@@ -322,7 +327,9 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		static const unsigned char cmd[] = { UH_FALLBACK, '\n' };
 
 		debug_msg("Responding FALLBACK.\n");
-		write(childin[1], cmd, sizeof(cmd));
+		nbytes = write(childin[1], cmd, sizeof(cmd));
+		if (nbytes < 0 || (size_t)nbytes < sizeof(cmd))
+			g_warning("Unable to send data to child");
 		startup = TRUE;
 		break;
 	}
@@ -331,7 +338,9 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 		static const unsigned char cmd[] = { UH_CANCEL, '\n' };
 
 		debug_msg("Responding CANCEL.\n");
-		write(childin[1], cmd, sizeof(cmd));
+		nbytes = write(childin[1], cmd, sizeof(cmd));
+		if (nbytes < 0 || (size_t)nbytes < sizeof(cmd))
+			g_warning("Unable to send data to child");
 		startup = FALSE;
 		break;
 	}
@@ -355,9 +364,13 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 				const char *s;
 
 				s = gtk_entry_get_text(GTK_ENTRY (m->entry));
-				write(childin[1], &cmd, sizeof(cmd));
+				nbytes = write(childin[1], &cmd, sizeof(cmd));
+				if (nbytes < 0 || (size_t)nbytes < sizeof(cmd))
+					g_warning("Unable to send data to child");
 				write_childin_string(s);
-				write(childin[1], &eol, sizeof(eol));
+				nbytes = write(childin[1], &eol, sizeof(eol));
+				if (nbytes < 0 || (size_t)nbytes < sizeof(eol))
+					g_warning("Unable to send data to child");
 			}
 		}
 		startup = TRUE;
@@ -366,7 +379,7 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 	default:
 		/* We were closed, deleted, canceled, or something else which
 		   we can treat as a cancellation. */
-		startup = FALSE;
+		/*startup = FALSE;*/ /* this is not neccessary */
 		_exit(1);
 		break;
 	}
@@ -381,15 +394,21 @@ userhelper_write_childin(GtkResponseType response, struct response *resp)
 
 			debug_msg("Sending new window startup ID \"%s\".\n",
 				  sn_id);
-			write(childin[1], &cmd, sizeof(cmd));
+			nbytes = write(childin[1], &cmd, sizeof(cmd));
+			if (nbytes < 0 || (size_t)nbytes < sizeof(cmd))
+				g_warning("Unable to send data to child");
 			write_childin_string(sn_id);
-			write(childin[1], &eol, sizeof(eol));
+			nbytes = write(childin[1], &eol, sizeof(eol));
+			if (nbytes < 0 || (size_t)nbytes < sizeof(eol))
+				g_warning("Unable to send data to child");
 		}
 #endif
 	}
 	/* Tell the child we have no more to say. */
 	debug_msg("Sending synchronization point.\n");
-	write(childin[1], sync_point, sizeof(sync_point));
+	nbytes = write(childin[1], sync_point, sizeof(sync_point));
+	if (nbytes < 0 || (size_t)nbytes < sizeof(sync_point))
+		g_warning("Unable to send data to child");
 }
 
 /* Glue. */
@@ -945,7 +964,8 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 		debug_msg("Running child pid=%ld.\n", (long) childpid);
 
 		/* Tell the child we're ready for it to run. */
-		write(childin[1], "Go", 1);
+		if (write(childin[1], "Go", 1) < 1)
+			g_warning("Unable to send data to child");
 		gtk_main();
 
 		/* If we're doing startup notification, clean it up just in
@@ -965,7 +985,8 @@ userhelper_runv(gboolean dialog_success, const char *path, char **args)
 
 		/* Read one byte from the parent so that we know it's ready
 		 * to go. */
-		read(childin[0], &byte, 1);
+		if (read(childin[0], &byte, 1) < 1)
+			g_warning("Can't read from parent");
 
 		/* Close all of descriptors which aren't stdio or the two
 		 * pipe descriptors we'll be using. */

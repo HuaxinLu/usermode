@@ -62,6 +62,11 @@
 #define debug_msg(...) ((void)0)
 #endif
 
+/* Execute permissions. */
+#ifdef HAVE_FEXECVE
+#  define UH_S_IXALL (S_IXUSR | S_IXGRP | S_IXOTH)
+#endif
+
 /* A maximum GECOS field length.  There's no hard limit, so we guess. */
 #define GECOS_LENGTH			127
 
@@ -752,6 +757,10 @@ pipe_conv_wait_for_sync(struct app_data *data)
 	char *reply;
 	int err;
 
+	if (data->input == NULL) {
+		err = ERR_UNK_ERROR;
+		goto err;
+	}
 	reply = read_reply(data->input);
 	if (reply == NULL) {
 		err = ERR_UNK_ERROR;
@@ -792,6 +801,8 @@ pipe_conv_exec_start(struct app_data *data)
 	if (data->conv->conv == converse_pipe) {
 		/* There might have been no converse_pipe() call, so send the
 		   information now. */
+		if (data->output == NULL)
+			return ERR_UNK_ERROR;
 		send_sn_info(data);
 		send_request(data->output, UH_EXEC_START, NULL);
 		send_request(data->output, UH_SYNC_POINT, NULL);
@@ -1497,15 +1508,18 @@ wrap(const char *user, const char *program,
 	 * user given in the console.apps configuration file, execute the
 	 * command given in the console.apps file. */
 	char *constructed_path;
+#ifdef HAVE_FEXECVE
+	int fd;
+#endif
 	char *apps_filename;
 	char *user_pam;
 	const char *auth_user;
 	char *val;
 	char **environ_save, **keep_env_names, **keep_env_values;
-	const char *env_home, *env_term, *env_desktop_startup_id;
-	const char *env_display, *env_shell;
-	const char *env_lang, *env_language, *env_lcall, *env_lcmsgs;
-	const char *env_xauthority;
+	char *env_home, *env_term, *env_desktop_startup_id;
+	char *env_display, *env_shell;
+	char *env_lang, *env_language, *env_lcall, *env_lcmsgs;
+	char *env_xauthority;
 	int session, tryagain, gui, retval;
 	struct stat sbuf;
 	struct passwd *pwd;
@@ -1538,15 +1552,15 @@ wrap(const char *user, const char *program,
 
 	/* Save some of the current environment variables, because the
 	 * environment is going to be nuked shortly. */
-	env_desktop_startup_id = getenv("DESKTOP_STARTUP_ID");
-	env_display = getenv("DISPLAY");
-	env_home = getenv("HOME");
-	env_lang = getenv("LANG");
-	env_language = getenv("LANGUAGE");
-	env_lcall = getenv("LC_ALL");
-	env_lcmsgs = getenv("LC_MESSAGES");
-	env_shell = getenv("SHELL");
-	env_term = getenv("TERM");
+	env_desktop_startup_id = g_strdup(getenv("DESKTOP_STARTUP_ID"));
+	env_display = g_strdup(getenv("DISPLAY"));
+	env_home = g_strdup(getenv("HOME"));
+	env_lang = g_strdup(getenv("LANG"));
+	env_language = g_strdup(getenv("LANGUAGE"));
+	env_lcall = g_strdup(getenv("LC_ALL"));
+	env_lcmsgs = g_strdup(getenv("LC_MESSAGES"));
+	env_shell = g_strdup(getenv("SHELL"));
+	env_term = g_strdup(getenv("TERM"));
 	env_xauthority = getenv("XAUTHORITY");
 
 	/* Sanity-check the environment variables as best we can: those
@@ -1587,7 +1601,7 @@ wrap(const char *user, const char *program,
 	if (env_term &&
 	    (strstr(env_term, "..") ||
 	     strchr(env_term, '%')))
-		env_term = "dumb";
+		env_term = g_strdup("dumb");
 	if (env_xauthority &&
 	    (strstr(env_xauthority , "..") ||
 	     strchr(env_xauthority , '%')))
@@ -1620,17 +1634,40 @@ wrap(const char *user, const char *program,
 	 * get at others' X authority records -- we restore XAUTHORITY below
 	 * *after* successfully authenticating, or abandoning authentication in
 	 * order to run the wrapped program as the invoking user. */
-	if (env_display) setenv("DISPLAY", env_display, 1);
+	if (env_display) {
+		setenv("DISPLAY", env_display, 1);
+		g_free(env_display);
+	}
 
 	/* The rest of the environment variables are simpler. */
-	if (env_desktop_startup_id) setenv("DESKTOP_STARTUP_ID",
-					   env_desktop_startup_id, 1);
-	if (env_lang) setenv("LANG", env_lang, 1);
-	if (env_language) setenv("LANGUAGE", env_language, 1);
-	if (env_lcall) setenv("LC_ALL", env_lcall, 1);
-	if (env_lcmsgs) setenv("LC_MESSAGES", env_lcmsgs, 1);
-	if (env_shell) setenv("SHELL", env_shell, 1);
-	if (env_term) setenv("TERM", env_term, 1);
+	if (env_desktop_startup_id) {
+		setenv("DESKTOP_STARTUP_ID", env_desktop_startup_id, 1);
+		g_free(env_desktop_startup_id);
+	}
+	if (env_lang) {
+		setenv("LANG", env_lang, 1);
+		g_free(env_lang);
+	}
+	if (env_language) {
+		setenv("LANGUAGE", env_language, 1);
+		g_free(env_language);
+	}
+	if (env_lcall) {
+		setenv("LC_ALL", env_lcall, 1);
+		g_free(env_lcall);
+	}
+	if (env_lcmsgs) {
+		setenv("LC_MESSAGES", env_lcmsgs, 1);
+		g_free(env_lcmsgs);
+	}
+	if (env_shell) {
+		setenv("SHELL", env_shell, 1);
+		g_free(env_shell);
+	}
+	if (env_term) {
+		setenv("TERM", env_term, 1);
+		g_free(env_term);
+	}
 
 	/* Set the PATH to a reasonaly safe list of directories. */
 	setenv("PATH", "/usr/sbin:/usr/bin:/sbin:/bin:/root/bin", 1);
@@ -1685,14 +1722,25 @@ wrap(const char *user, const char *program,
 		   off the parent to a "pass exit code through" mode without
 		   displaying any unwanted GUI dialogs. */
 		retval = pipe_conv_exec_start(data);
-		if (retval != 0)
+		if (retval != 0) {
+			g_strfreev(environ);
+			environ = environ_save;
 			die(data, retval);
+		}
 		data->conv = text_conv;
 	}
 
 	/* Read the path to the program to run. */
 	constructed_path = svGetValue(s, "PROGRAM");
+#ifdef HAVE_FEXECVE
+	fd = constructed_path ? open(constructed_path, O_RDONLY) : -1;
+	if (!constructed_path || fd < 0 || constructed_path[0] != '/') {
+		struct stat statbuf;
+		
+		if (fd >= 0) close(fd);
+#else
 	if (!constructed_path || constructed_path[0] != '/') {
+#endif
 		g_free(constructed_path);
 		/* Criminy....  The system administrator didn't give us an
 		 * absolute path to the program!  Guess either /usr/sbin or
@@ -1701,18 +1749,57 @@ wrap(const char *user, const char *program,
 		 * app, so access() may not be correct here, as it may give
 		 * false negatives.  But then, it wasn't an absolute path. */
 		constructed_path = g_strconcat("/usr/sbin/", program, NULL);
+#ifdef HAVE_FEXECVE
+		if (
+			(fd = open(constructed_path, O_RDONLY)) < 0
+		    || fstat(fd, &statbuf) < 0
+		    || (statbuf.st_mode & UH_S_IXALL) != UH_S_IXALL
+		) {
+			if (fd >= 0) close(fd);
+#else
 		if (access(constructed_path, X_OK) != 0) {
+#endif
 			/* Try the second directory. */
 			strcpy(constructed_path, "/sbin/");
 			strcat(constructed_path, program);
+#ifdef HAVE_FEXECVE
+			if (
+				(fd = open(constructed_path, O_RDONLY)) < 0
+				|| fstat(fd, &statbuf) < 0
+				|| (statbuf.st_mode & UH_S_IXALL) != UH_S_IXALL
+			) {
+				if (fd >= 0) close(fd);
+#else
 			if (access(constructed_path, X_OK)) {
+#endif
 				/* Nope, not there, either. */
 				debug_msg("userhelper: couldn't find wrapped "
 					  "binary\n");
+				g_strfreev(environ);
+				environ = environ_save;
 				die(data, ERR_NO_PROGRAM);
 			}
 		}
 	}
+#ifdef HAVE_FEXECVE
+    {
+		char buf[2];
+		ssize_t nread;
+		int flags;
+
+        flags = fcntl(fd, F_GETFD);
+        if (flags < 0) {
+			g_warning("fcntl(%d, F_GETFD) < 0", fd);
+			flags = 0;
+		}
+		nread = read(fd, buf, sizeof(buf));
+		lseek(fd, 0, SEEK_SET);
+		/* fexecve(2): if executable is a script, don't close on exec */
+		if (nread < (ssize_t)sizeof(buf) || buf[0] != '#' || buf[1] != '!')
+			if (fcntl(fd, F_SETFD, flags | FD_CLOEXEC) < 0)
+				g_warning("fcntl(%d, F_SETFD, FD_CLOEXEC) < 0", fd);
+	}
+#endif
 
 	user_pam = get_user_for_auth(data, s);
 	/* Verify that the user we need to authenticate as has a home
@@ -1720,6 +1807,11 @@ wrap(const char *user, const char *program,
 	pwd = getpwnam(user_pam);
 	if (pwd == NULL) {
 		debug_msg("userhelper: no user named %s exists\n", user_pam);
+#ifdef HAVE_FEXECVE
+		close(fd);
+#endif
+		g_strfreev(environ);
+		environ = environ_save;
 		die(data, ERR_NO_USER);
 	}
 
@@ -1730,8 +1822,10 @@ wrap(const char *user, const char *program,
 	else {
 		/* Otherwise, if they had a reasonable value for HOME, let them
 		 * use it. */
-		if (env_home != NULL)
+		if (env_home != NULL) {
 			setenv("HOME", env_home, 1);
+			g_free(env_home);
+		}
 		else {
 			/* Otherwise, set HOME to the user's home directory. */
 			pwd = getpwuid(getuid());
@@ -1792,6 +1886,11 @@ wrap(const char *user, const char *program,
 	retval = pam_start(program, user_pam, data->conv, &data->pamh);
 	if (retval != PAM_SUCCESS) {
 		debug_msg("userhelper: pam_start() failed\n");
+#ifdef HAVE_FEXECVE
+		close(fd);
+#endif
+		g_strfreev(environ);
+		environ = environ_save;
 		fail_exit(data, retval);
 	}
 
@@ -1810,25 +1909,37 @@ wrap(const char *user, const char *program,
 	if (retval != PAM_SUCCESS) {
 		pam_end(data->pamh, retval);
 		if (data->canceled) {
+#ifdef HAVE_FEXECVE
+			close(fd);
+#endif
+			g_strfreev(environ);
+			environ = environ_save;
 			fail_exit(data, retval);
 		} else
 		if (data->fallback_allowed) {
 			/* Reset the user's environment so that the
 			 * application can run normally. */
 			argv[optind - 1] = strdup(program);
+			g_strfreev(environ);
 			environ = environ_save;
 			become_normal(data, user);
 			if (data->input != NULL) {
 				fflush(data->input);
-				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
+				if (fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC) < 0)
+					g_warning("fcntl(%d, F_SETFD, FD_CLOEXEC) < 0", UH_INFILENO);
 			}
 			if (data->output != NULL) {
 				fflush(data->output);
-				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
+				if (fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC) < 0)
+					g_warning("fcntl(%d, F_SETFD, FD_CLOEXEC) < 0", UH_OUTFILENO);
 			}
 			retval = pipe_conv_exec_start(data);
-			if (retval != 0)
+			if (retval != 0) {
+#ifdef HAVE_FEXECVE
+				close(fd);
+#endif
 				die(data, retval);
+			}
 #ifdef USE_STARTUP_NOTIFICATION
 			if (data->sn_id) {
 				debug_msg("userhelper: setting "
@@ -1838,11 +1949,22 @@ wrap(const char *user, const char *program,
 				       data->sn_id, 1);
 			}
 #endif
+#ifdef USE_FEXECVE
+			fexecve(fd, argv + optind - 1, environ);
+			close(fd);
+#else
 			execv(constructed_path, argv + optind - 1);
-			pipe_conv_exec_fail(data);
+#endif
+			if (data->output != NULL)
+				pipe_conv_exec_fail(data);
 			die(data, ERR_EXEC_FAILED);
 		} else {
 			/* Well, we tried. */
+#ifdef HAVE_FEXECVE
+			close(fd);
+#endif
+			g_strfreev(environ);
+			environ = environ_save;
 			fail_exit(data, retval);
 		}
 	}
@@ -1851,17 +1973,33 @@ wrap(const char *user, const char *program,
 	 * out trying to authenticate. */
 	retval = get_pam_string_item(data->pamh, PAM_USER, &auth_user);
 	if (retval != PAM_SUCCESS) {
+#ifdef HAVE_FEXECVE
+		close(fd);
+#endif
 		pam_end(data->pamh, retval);
+		g_strfreev(environ);
+		environ = environ_save;
 		fail_exit(data, retval);
 	}
-	if (strcmp(user_pam, auth_user) != 0)
+	if (strcmp(user_pam, auth_user) != 0) {
+#ifdef HAVE_FEXECVE
+		close(fd);
+#endif
+		g_strfreev(environ);
+		environ = environ_save;
 		die(data, ERR_UNK_ERROR);
+	}
 
 	/* Verify that the authenticated user is allowed to run this
 	 * service now. */
 	retval = pam_acct_mgmt(data->pamh, 0);
 	if (retval != PAM_SUCCESS) {
+#ifdef HAVE_FEXECVE
+		close(fd);
+#endif
 		pam_end(data->pamh, retval);
+		g_strfreev(environ);
+		environ = environ_save;
 		fail_exit(data, retval);
 	}
 
@@ -1870,6 +2008,11 @@ wrap(const char *user, const char *program,
 	pwd = getpwnam(user_pam);
 	if (pwd == NULL) {
 		debug_msg("userhelper: no user named %s exists\n", user_pam);
+#ifdef HAVE_FEXECVE
+		close(fd);
+#endif
+		g_strfreev(environ);
+		environ = environ_save;
 		die(data, ERR_NO_USER);
 	}
 
@@ -1888,7 +2031,12 @@ wrap(const char *user, const char *program,
 		/* Open a session. */
 		retval = pam_open_session(data->pamh, 0);
 		if (retval != PAM_SUCCESS) {
+#ifdef HAVE_FEXECVE
+			close(fd);
+#endif
 			pam_end(data->pamh, retval);
+			g_strfreev(environ);
+			environ = environ_save;
 			fail_exit(data, retval);
 		}
 
@@ -1896,14 +2044,25 @@ wrap(const char *user, const char *program,
 
 		retval = pam_setcred(data->pamh, PAM_ESTABLISH_CRED);
 		if (retval != PAM_SUCCESS) {
+#ifdef HAVE_FEXECVE
+			close(fd);
+#endif
 			pam_end(data->pamh, retval);
+			g_strfreev(environ);
+			environ = environ_save;
 			fail_exit(data, retval);
 		}
 
 		/* Start up a child process we can wait on. */
 		child = fork();
-		if (child == -1)
+		if (child == -1) {
+#ifdef HAVE_FEXECVE
+			close(fd);
+#endif
+			g_strfreev(environ);
+			environ = environ_save;
 			die(data, ERR_EXEC_FAILED);
+		}
 		if (child == 0) {
 			/* We're in the child.  Make a few last-minute
 			 * preparations and exec the program. */
@@ -1925,15 +2084,23 @@ wrap(const char *user, const char *program,
 			become_super_other(data);
 			if (data->input != NULL) {
 				fflush(data->input);
-				fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
+				if (fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC) < 0)
+					g_warning("fcntl(%d, F_SETFD, FD_CLOEXEC) < 0", UH_INFILENO);
 			}
 			if (data->output != NULL) {
 				fflush(data->output);
-				fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
+				if (fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC) < 0)
+					g_warning("fcntl(%d, F_SETFD, FD_CLOEXEC) < 0", UH_OUTFILENO);
 			}
 			retval = pipe_conv_exec_start(data);
-			if (retval != 0)
+			if (retval != 0) {
+#ifdef HAVE_FEXECVE
+				close(fd);
+#endif
+				g_strfreev(environ);
+				environ = environ_save;
 				die(data, retval);
+			}
 #ifdef USE_STARTUP_NOTIFICATION
 			if (data->sn_id) {
 				debug_msg("userhelper: setting "
@@ -1951,11 +2118,19 @@ wrap(const char *user, const char *program,
 			syslog(LOG_NOTICE, "running '%s' with "
 			       "root privileges on behalf of '%s'",
 			       cmdline, user);
+#ifdef HAVE_FEXECVE
+			fexecve(fd, argv + optind - 1, environ);
+			close(fd);
+#else
 			execv(constructed_path, argv + optind - 1);
+#endif
 			syslog(LOG_ERR, "could not run '%s' with "
 			       "root privileges on behalf of '%s': %s",
 			       cmdline, user, strerror(errno));
-			pipe_conv_exec_fail(data);
+			if (data->output != NULL)
+				pipe_conv_exec_fail(data);
+			g_strfreev(environ);
+			environ = environ_save;
 			die(data, ERR_EXEC_FAILED);
 		}
 		/* We're in the parent.  Wait for the child to exit.  The child
@@ -1973,11 +2148,21 @@ wrap(const char *user, const char *program,
 			pipe_conv_exec_fail(data);
 			pam_setcred(data->pamh, PAM_DELETE_CRED);
 			pam_end(data->pamh, retval);
+#ifdef HAVE_FEXECVE
+			close(fd);
+#endif
+			g_strfreev(environ);
+			environ = environ_save;
 			fail_exit(data, retval);
 		}
 
 		pam_setcred(data->pamh, PAM_DELETE_CRED);
 		pam_end(data->pamh, PAM_SUCCESS);
+#ifdef HAVE_FEXECVE
+		close(fd);
+#endif
+		g_strfreev(environ);
+		environ = environ_save;
 		if (WIFEXITED(status))
 			exit(WEXITSTATUS(status));
 		if (WIFSIGNALED(status))
@@ -1996,15 +2181,23 @@ wrap(const char *user, const char *program,
 		become_super(data);
 		if (data->input != NULL) {
 			fflush(data->input);
-			fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC);
+			if (fcntl(UH_INFILENO, F_SETFD, FD_CLOEXEC) < 0)
+				g_warning("fcntl(%d, F_SETFD, FD_CLOEXEC) < 0", UH_INFILENO);
 		}
 		if (data->output != NULL) {
 			fflush(data->output);
-			fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC);
+			if (fcntl(UH_OUTFILENO, F_SETFD, FD_CLOEXEC) < 0)
+				g_warning("fcntl(%d, F_SETFD, FD_CLOEXEC) < 0", UH_OUTFILENO);
 		}
 		retval = pipe_conv_exec_start(data);
-		if (retval != 0)
+		if (retval != 0) {
+#ifdef HAVE_FEXECVE
+			close(fd);
+#endif
+			g_strfreev(environ);
+			environ = environ_save;
 			die(data, retval);
+		}
 #ifdef USE_STARTUP_NOTIFICATION
 		if (data->sn_id) {
 			debug_msg("userhelper: setting "
@@ -2020,11 +2213,18 @@ wrap(const char *user, const char *program,
 		       "root privileges on behalf of '%s'",
 		       cmdline, user);
 
+#ifdef HAVE_FEXECVE
+		fexecve(fd, argv + optind -1, environ);
+		close(fd);
+#else
 		execv(constructed_path, argv + optind - 1);
+#endif
 		syslog(LOG_ERR, "could not run '%s' with "
 		       "root privileges on behalf of '%s': %s",
 		       cmdline, user, strerror(errno));
 		pipe_conv_exec_fail(data);
+		g_strfreev(environ);
+		environ = environ_save;
 		die(data, ERR_EXEC_FAILED);
 	}
 }

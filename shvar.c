@@ -92,6 +92,7 @@ svInclude(shvarFile *s, const gchar *path)
 static shvarFile *
 svOpenFile(const char *name, gboolean create)
 {
+	ssize_t nbytes = 0;
     shvarFile *s = NULL;
 
     s = g_malloc0(sizeof(shvarFile));
@@ -112,7 +113,11 @@ svOpenFile(const char *name, gboolean create)
 	if (fstat(s->fd, &buf) < 0) goto bail;
 	s->arena = g_malloc0(buf.st_size + 1);
 
-	if (read(s->fd, s->arena, buf.st_size) < 0) goto bail;
+	if ((nbytes = read(s->fd, s->arena, buf.st_size)) < 0) goto bail;
+#ifndef COVERITY_CSTR_FP_FIXED
+	/* this is not necessary since g_malloc0, but it makes Coverity Scan happy */
+	s->arena[nbytes] = '\0';
+#endif
 
 	/* we'd use g_strsplit() here, but we want a list, not an array */
 	for(p = s->arena; (q = strchr(p, '\n')) != NULL; p = q + 1) {

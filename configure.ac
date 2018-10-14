@@ -73,6 +73,25 @@ if test "x$debug" != xno ; then
 fi
 AC_MSG_RESULT([$debug])
 
+AC_MSG_CHECKING([whether we should use fexecve])
+AC_ARG_WITH([fexecve],
+		AS_HELP_STRING([--with-fexecve], [use fexecve instead of execv]),
+		[use_fexecve="$withval"], [use_fexecve=auto])
+fexecve_found=no
+if test "x$use_fexecve" = xno; then
+	AC_MSG_RESULT([no])
+else
+	AC_MSG_RESULT([testing])
+	AC_CHECK_FUNCS([fexecve], [fexecve_found=yes], [fexecve_found=no])
+	if test x$fexecve_found = xno; then
+		if test "x$use_fexecve" = xyes; then
+			AC_MSG_ERROR([fexecve is required but not found])
+		else
+			AC_MSG_WARN([fexecve is not found - execv will be used instead])
+		fi
+	fi
+fi
+
 AC_MSG_CHECKING([whether we should use ElectricFence])
 AC_ARG_WITH([efence],
 	    AS_HELP_STRING([--with-efence], [Enable use of ElectricFence]),

@@ -106,8 +106,8 @@ enum {
   LAST_SIGNAL
 };
 
-static void gsm_client_init        (GsmClient      *client);
-static void gsm_client_class_init  (GsmClientClass *klass);
+static void gsm_client_init        (GsmClient      *client, gpointer data);
+static void gsm_client_class_init  (GsmClientClass *klass, gpointer data);
 static void gsm_client_finalize    (GObject        *object);
 
 static void ice_init               (void);
@@ -138,7 +138,10 @@ gsm_client_get_type (void)
 {
   static GType object_type = 0;
 
+  /* Since GLib 2.36, the type system is initialised automatically */
+#if (!GLIB_CHECK_VERSION(2, 36, 0))
   g_type_init ();
+#endif
   
   if (!object_type)
     {
@@ -174,12 +177,13 @@ push_prop (GsmClient *client,
 }
 
 static void
-gsm_client_init (GsmClient *client)
+gsm_client_init (GsmClient *client, gpointer data)
 {
   char pid_str[64];
   int   empty_vector_len = 0;
   char *empty_vector[] = { NULL };
-  
+
+  (void)data;
   client->priv = g_new (GsmClientPrivate, 1);
   client->priv->state = GSM_CLIENT_STATE_DISCONNECTED;
   client->priv->properties = NULL;
@@ -216,9 +220,10 @@ gsm_client_init (GsmClient *client)
 }
 
 static void
-gsm_client_class_init (GsmClientClass *klass)
+gsm_client_class_init (GsmClientClass *klass, gpointer data)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
+  (void)data;
   
   parent_class = g_type_class_peek_parent (klass);
   
@@ -1199,14 +1204,19 @@ ice_connection_startup_or_shutdown (IceConn     connection,
   if (opening)
     {
       GIOChannel *channel;
+      int fd;
 
       gsm_verbose ("Opening new ICE connection\n");
       
       /* Make sure we don't pass on these file descriptors to any
        * exec'ed children
        */
-      fcntl (IceConnectionNumber (connection), F_SETFD,
-             fcntl (IceConnectionNumber (connection), F_GETFD, 0) | FD_CLOEXEC);
+      if ((fd = fcntl(IceConnectionNumber(connection), F_GETFD, 0)) < 0)
+        g_warning("Can't get ICE connection file descriptor\n");
+      else if (fcntl(
+        IceConnectionNumber(connection), F_SETFD, fd | FD_CLOEXEC
+      ) < 0)
+        g_warning("Can't add FD_CLOEXEC to ICE connection file descriptor\n");
 
       channel = g_io_channel_unix_new (IceConnectionNumber (connection));
       

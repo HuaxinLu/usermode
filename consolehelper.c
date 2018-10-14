@@ -35,18 +35,27 @@
 int
 main(int argc, char *argv[])
 {
-	char **constructed_argv;
+	char **constructed_argv, **sanitized_argv;
 	int offset, i;
 	char *progname;
-	gboolean graphics_available = FALSE;
+	volatile gboolean graphics_available = FALSE;
 #ifndef DISABLE_X11
 	char *display;
 #endif
 
+    if ((sanitized_argv = g_strdupv(argv)) == NULL) {
+		fputs("Error: g_strdupv\n", stderr);
+		return 1;
+	}
+
 #ifdef DISABLE_X11
 	/* We're in the non-X11 version.  If we have the X11-capable version
 	 * installed, try to let it worry about all of this. */
-	execv(UH_CONSOLEHELPER_X11_PATH, argv);
+	if (execv(UH_CONSOLEHELPER_X11_PATH, sanitized_argv) < 0) {
+		fprintf(stderr, "Error: execv(%s, ...)\n", UH_CONSOLEHELPER_X11_PATH);
+		g_strfreev(sanitized_argv);
+		return 1;
+	}
 #endif
 
 	/* Set up locales. */
@@ -56,17 +65,17 @@ main(int argc, char *argv[])
 	textdomain(PACKAGE);
 
 	/* Find the basename of the program we were invoked as. */
-	progname = strrchr(argv[0], '/');
+	progname = strrchr(sanitized_argv[0], '/');
 	if(progname) {
 		progname++;	/* Skip over the '/' character. */
 	} else {
-		progname = argv[0];
+		progname = sanitized_argv[0];
 	}
 
 #ifndef DISABLE_X11
 	/* If DISPLAY is set, or if stdin isn't a TTY, we have to check if we
 	 * can display in a window.  Otherwise, all is probably lost.  */
-	display = getenv("DISPLAY");
+	display = g_strdup(getenv("DISPLAY"));
 	if (((display != NULL) && (strlen(display) > 0)) ||
 	   !isatty(STDIN_FILENO)) {
 		int fake_argc, stderrfd, fd;
@@ -79,7 +88,8 @@ main(int argc, char *argv[])
 #endif
 		fake_argc = 1;
 		fake_argv = g_malloc0_n(fake_argc + 1, sizeof(*fake_argv));
-		fake_argv[0] = argv[0];
+		if (fake_argv != NULL)
+			fake_argv[0] = sanitized_argv[0];
 		/* Redirect stderr to silence Xlib's "can't open display"
 		 * warning, which we don't mind. */
 		stderrfd = dup(STDERR_FILENO);
@@ -89,8 +99,9 @@ main(int argc, char *argv[])
 				fd = open("/dev/null", O_WRONLY | O_APPEND);
 			} while((fd != -1) && (fd != STDERR_FILENO));
 		}
-		if (gtk_init_check(&fake_argc, &fake_argv))
+		if (fake_argv != NULL && gtk_init_check(&fake_argc, &fake_argv))
 			graphics_available = TRUE;
+		g_free(fake_argv);
 		/* Restore stderr. */
 		if (stderrfd != -1) {
 			dup2(stderrfd, STDERR_FILENO);
@@ -101,8 +112,10 @@ main(int argc, char *argv[])
 		 * to say about having to do this eventually. */
 		if (sn_id != NULL)
 			setenv("DESKTOP_STARTUP_ID", sn_id, 1);
+		g_free(sn_id);
 #endif
 	}
+	g_free(display);
 #endif
 
 	/* Allocate space for a new argv array, with room for up to 3 more
@@ -127,15 +140,26 @@ main(int argc, char *argv[])
 
 	/* Copy the command-line arguments, except for the program name. */
 	for (i = 1; i < argc; i++) {
-		constructed_argv[i + offset] = argv[i];
+		constructed_argv[i + offset] = sanitized_argv[i];
 	}
 
 	/* If we can open a window, use the graphical wrapper routine. */
 #ifndef DISABLE_X11
-	if (graphics_available)
-		return userhelper_runv(FALSE, UH_PATH, constructed_argv);
+	if (graphics_available) {
+		int r = userhelper_runv(FALSE, UH_PATH, constructed_argv);
+		g_free(constructed_argv);
+		g_strfreev(sanitized_argv);
+		return r;
+	}
 #endif
 	/* Text mode doesn't need the whole pipe thing. */
-	execv(UH_PATH, constructed_argv);
-	return 1;
+	if (execv(UH_PATH, constructed_argv) < 0) {
+		fprintf(stderr, "Error: execv(%s, ...)\n", UH_PATH);
+		g_free(constructed_argv);
+		g_strfreev(sanitized_argv);
+		return 1;
+	}
+	g_free(constructed_argv);
+	g_strfreev(sanitized_argv);
+	return 0;
 }

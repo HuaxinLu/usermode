@@ -247,6 +247,22 @@ build_mountinfo_list(void)
 	return ret;
 }
 
+/* Free mountinfo list. */
+static void
+free_mountinfo_list(struct mountinfo *info)
+{
+	while (info != NULL) {
+		struct mountinfo *i;
+		
+		i = info;
+		info = info->next;
+		g_free (i->dir);
+		g_free (i->dev);
+		g_free (i->fstype);
+		g_free (i);
+	}
+}
+
 /* Return the mountinfo struct associated with the currently-selected row in
  * the TreeView, which is stored in the fourth column in its model. */
 static struct mountinfo *
@@ -654,6 +670,8 @@ format_one_device (const char *device)
 						 device);
                 gtk_dialog_run(GTK_DIALOG(dialog));
 	}
+	
+	free_mountinfo_list (info);
 }
 
 int
