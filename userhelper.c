@@ -1399,7 +1399,7 @@ chfn(const char *user, struct app_data *data, lu_prompt_fn *prompt,
 
 	/* Verify that the strings we got passed are not too long. */
 	if (gecos_size(&parsed_gecos) > GECOS_LENGTH) {
-		debug_msg("userhelper: user gecos too long %d > %d\n",
+		debug_msg("userhelper: user gecos too long %zu > %d\n",
 			  gecos_size(&parsed_gecos), GECOS_LENGTH);
 		lu_ent_free(ent);
 		lu_end(context);
@@ -1561,7 +1561,7 @@ wrap(const char *user, const char *program,
 	env_lcmsgs = g_strdup(getenv("LC_MESSAGES"));
 	env_shell = g_strdup(getenv("SHELL"));
 	env_term = g_strdup(getenv("TERM"));
-	env_xauthority = getenv("XAUTHORITY");
+	env_xauthority = g_strdup(getenv("XAUTHORITY"));
 
 	/* Sanity-check the environment variables as best we can: those
 	 * which aren't path names shouldn't contain "/", and none of
@@ -1607,22 +1607,30 @@ wrap(const char *user, const char *program,
 	     strchr(env_xauthority , '%')))
 		env_xauthority = NULL;
 
+	keep_env_names = NULL;
+	keep_env_values = NULL;
 	val = svGetValue(s, "KEEP_ENV_VARS");
 	if (val != NULL) {
 		size_t i, num_names;
 
 		keep_env_names = g_strsplit(val, ",", -1);
 		g_free(val);
-		num_names = g_strv_length(keep_env_names);
-		keep_env_values = g_malloc0_n(num_names,
+		if (keep_env_names) {
+			num_names = g_strv_length(keep_env_names);
+			keep_env_values = g_malloc0_n(num_names,
 					      sizeof (*keep_env_values));
-		for (i = 0; i < num_names; i++)
-			/* g_strdup(NULL) is defined to be NULL. */
-			keep_env_values[i]
-				= g_strdup(getenv(keep_env_names[i]));
-	} else {
-		keep_env_names = NULL;
-		keep_env_values = NULL;
+			if (keep_env_values)
+				for (i = 0; i < num_names; i++)
+				/* g_strdup(NULL) is defined to be NULL. */
+				keep_env_values[i]
+					= g_strdup(getenv(keep_env_names[i]));
+		}
+		if (keep_env_names == NULL || keep_env_values == NULL) {
+			if (keep_env_names) g_strfreev(keep_env_names);
+			if (keep_env_values) g_strfreev(keep_env_values);
+			keep_env_names = NULL;
+			keep_env_values = NULL;
+		}
 	}
 
 	/* Wipe out the current environment. */
@@ -1732,6 +1740,7 @@ wrap(const char *user, const char *program,
 
 	/* Read the path to the program to run. */
 	constructed_path = svGetValue(s, "PROGRAM");
+	/* Prefer fexecve to prevent race contitions. */
 #ifdef HAVE_FEXECVE
 	fd = constructed_path ? open(constructed_path, O_RDONLY) : -1;
 	if (!constructed_path || fd < 0 || constructed_path[0] != '/') {
@@ -1825,6 +1834,7 @@ wrap(const char *user, const char *program,
 		if (env_home != NULL) {
 			setenv("HOME", env_home, 1);
 			g_free(env_home);
+			env_home = NULL;
 		}
 		else {
 			/* Otherwise, set HOME to the user's home directory. */
@@ -1833,6 +1843,7 @@ wrap(const char *user, const char *program,
 				setenv("HOME", pwd->pw_dir, 1);
 		}
 	}
+	if (env_home) g_free(env_home);
 
 	/* Read other settings. */
 	session = svTrueValue(s, "SESSION", FALSE);
@@ -2026,6 +2037,7 @@ wrap(const char *user, const char *program,
 		 * environment variable. */
 		if (env_xauthority) {
 			setenv("XAUTHORITY", env_xauthority, 1);
+			g_free(env_xauthority);
 		}
 
 		/* Open a session. */
@@ -2171,6 +2183,7 @@ wrap(const char *user, const char *program,
 	} else {
 		const char *cmdline;
 
+		if (env_xauthority) g_free(env_xauthority);
 		/* We're not opening a session, so we can just exec()
 		 * the program we're wrapping. */
 		pam_end(data->pamh, PAM_SUCCESS);

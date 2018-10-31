@@ -32,30 +32,35 @@
 #include "userhelper.h"
 #include "userhelper-wrap.h"
 
+#ifdef DEBUG_CONSOLEHELPER
+#define debug_msg(...) g_print(__VA_ARGS__)
+#else
+#define debug_msg(...) ((void)0)
+#endif
+
 int
 main(int argc, char *argv[])
 {
 	char **constructed_argv, **sanitized_argv;
 	int offset, i;
 	char *progname;
+	/* volatile here suppress warnings about unused local variable */
 	volatile gboolean graphics_available = FALSE;
 #ifndef DISABLE_X11
 	char *display;
 #endif
 
+    /* g_strdupv suppresses tainted string warnings */
     if ((sanitized_argv = g_strdupv(argv)) == NULL) {
-		fputs("Error: g_strdupv\n", stderr);
+		debug_msg("g_strdupv(argv) == NULL\n");
 		return 1;
 	}
 
 #ifdef DISABLE_X11
 	/* We're in the non-X11 version.  If we have the X11-capable version
 	 * installed, try to let it worry about all of this. */
-	if (execv(UH_CONSOLEHELPER_X11_PATH, sanitized_argv) < 0) {
-		fprintf(stderr, "Error: execv(%s, ...)\n", UH_CONSOLEHELPER_X11_PATH);
-		g_strfreev(sanitized_argv);
-		return 1;
-	}
+	if (execv(UH_CONSOLEHELPER_X11_PATH, sanitized_argv) < 0)
+		debug_msg("execv(%s, ...) < 0\n", UH_CONSOLEHELPER_X11_PATH);
 #endif
 
 	/* Set up locales. */
@@ -75,6 +80,7 @@ main(int argc, char *argv[])
 #ifndef DISABLE_X11
 	/* If DISPLAY is set, or if stdin isn't a TTY, we have to check if we
 	 * can display in a window.  Otherwise, all is probably lost.  */
+	/* g_strdup suppresses tainted string warnings */
 	display = g_strdup(getenv("DISPLAY"));
 	if (((display != NULL) && (strlen(display) > 0)) ||
 	   !isatty(STDIN_FILENO)) {
@@ -154,7 +160,7 @@ main(int argc, char *argv[])
 #endif
 	/* Text mode doesn't need the whole pipe thing. */
 	if (execv(UH_PATH, constructed_argv) < 0) {
-		fprintf(stderr, "Error: execv(%s, ...)\n", UH_PATH);
+		debug_msg("execv(%s, ...) < 0\n", UH_PATH);
 		g_free(constructed_argv);
 		g_strfreev(sanitized_argv);
 		return 1;
