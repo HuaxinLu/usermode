@@ -1,3 +1,16 @@
+2018-11-05  Jiri Kucera  <jkucera@redhat.com>
+
+	* configure.ac: Release 1.113.
+	* NEWS: Update.
+	* configure.ac: Added `--with-fexecve` option.
+	* consolehelper.c
+	* gsmclient.c
+	* props.c
+	* shvar.c
+	* userhelper-wrap.c
+	* userhelper.c
+	* usermount.c: Fixed static scanner issues.
+
 2018-08-07  Jiri Kucera  <jkucera@redhat.com>
 
 	* usermount.c: Added missing `#include <sys/sysmacros.h>`.
