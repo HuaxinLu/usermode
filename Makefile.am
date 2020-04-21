@@ -68,7 +68,7 @@ dist_pkgdata_DATA = usermode.ui
 
 userhelper_SOURCES = userhelper.c userhelper.h shvar.c shvar.h
 userhelper_CPPFLAGS = $(AM_CPPFLAGS) -DSYSCONFDIR='"$(sysconfdir)"'
-userhelper_LDADD = liblib.a $(LIBUSER_LIBS) $(GLIB_LIBS) $(PAM_LIBS) \
+userhelper_LDADD = liblib.a $(LIBUSER_LIBS) $(GLIB_LIBS) $(PAM_LIBS) -lm \
 	$(SELINUX_LIBS) $(EFENCE_LIBS)
 
 userinfo_SOURCES = userinfo.c
