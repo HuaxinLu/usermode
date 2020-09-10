@@ -1,22 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# 
-# Translators:
+# Namatullah Khan <khan.namatullah@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Usermode\n"
-"Report-Msgid-Bugs-To: https://fedorahosted.org/usermode/\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-21 00:32+0200\n"
-"PO-Revision-Date: 2012-08-20 22:33+0000\n"
-"Last-Translator: Miloslav Trmač <mitr@volny.cz>\n"
-"Language-Team: Urdu <trans-urdu@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-02-05 08:41-0500\n"
+"Last-Translator: Namatullah Khan <khan.namatullah@gmail.com>\n"
+"Language-Team: Urdu\n"
 "Language: ur\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
+#. 
 #. * Copyright (C) 2001 Red Hat, Inc.
 #. *
 #. * This is free software; you can redistribute it and/or modify it
@@ -37,39 +35,39 @@ msgstr ""
 #. * commonly-used PAM modules.
 #: ../../po/../dummy.h:21
 msgid "OK"
-msgstr ""
+msgstr "درست"
 
 #: ../../po/../dummy.h:22
 msgid "Exit"
-msgstr ""
+msgstr "اخراج"
 
 #: ../../po/../dummy.h:23
 msgid "Cancel"
-msgstr ""
+msgstr "منسوخ"
 
 #: ../../po/../dummy.h:24
 msgid "Run Unprivileged"
-msgstr ""
+msgstr "مراعات کے بنا چلائیں"
 
 #: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
-msgstr ""
+msgstr "(موجودہ) یونکس پاسورڈ:"
 
 #: ../../po/../dummy.h:26
 msgid "New UNIX password: "
-msgstr ""
+msgstr "(نیا) یونکس پاسورڈ:"
 
 #: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr ""
+msgstr "نیا یونکس پاسورڈ دوبارہ لکھیں"
 
 #: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"
-msgstr ""
+msgstr "برا پاسورڈ: یہ بھت مختصر ہے۔"
 
 #: ../../po/../dummy.h:29
 msgid "BAD PASSWORD: it is too short"
-msgstr ""
+msgstr "برا پاسورڈ: یہ بھت مختصر ہے۔"
 
 #: ../../po/../dummy.h:30
 msgid "Password unchanged"
@@ -77,7 +75,7 @@ msgstr ""
 
 #: ../../po/../dummy.h:31
 msgid "Sorry, passwords do not match"
-msgstr ""
+msgstr "معاف کیجئے گا۔ پاسورڈ میچ نھیں ہو رھا۔"
 
 #: ../../po/../dummy.h:32
 msgid "Launch system-wide configuration tools without a password."
@@ -85,11 +83,11 @@ msgstr ""
 
 #: ../../po/../dummy.h:33
 msgid "login: "
-msgstr ""
+msgstr "داخلے کی پھچان"
 
 #: ../../po/../dummy.h:34
 msgid "Password: "
-msgstr ""
+msgstr "پاسورڈ:"
 
 #: ../../po/../gsmclient.c:362
 #, c-format
@@ -168,8 +166,7 @@ msgid "Information updated."
 msgstr ""
 
 #: ../../po/../userhelper-messages.c:32
-msgid ""
-"The password you typed is invalid.\n"
+msgid "The password you typed is invalid.\n"
 "Please try again."
 msgstr ""
 
@@ -185,8 +182,7 @@ msgid "Password resetting error."
 msgstr ""
 
 #: ../../po/../userhelper-messages.c:45
-msgid ""
-"Some systems files are locked.\n"
+msgid "Some systems files are locked.\n"
 "Please try again in a few moments."
 msgstr ""
 

@@ -20,7 +20,7 @@ msgstr ""
 "et/)\n"
 "Language: et\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #. 
 #. * Copyright (C) 2001 Red Hat, Inc.

@@ -21,9 +21,9 @@ msgstr ""
 "PO-Revision-Date: 2017-01-14 06:06-0500\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <trans-zh_TW@lists.fedoraproject.org>\n"
-"Language: zh-TW\n"
+"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #. 
 #. * Copyright (C) 2001 Red Hat, Inc.

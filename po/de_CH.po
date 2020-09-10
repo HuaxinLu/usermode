@@ -22,9 +22,9 @@ msgstr ""
 "PO-Revision-Date: 2015-03-21 02:49-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: de-CH\n"
+"Language: de_CH\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #. 
 #. * Copyright (C) 2001 Red Hat, Inc.

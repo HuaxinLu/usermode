@@ -16,6 +16,7 @@
 # Jaswinder Singh Phulewala <jaswinderphulewala@yahoo.com>, 2005, 2006, 2012.
 # A S Alam <aalam@fedoraproject.org>, 2017. #zanata
 # A S Alam <aalam@fedoraproject.org>, 2018. #zanata
+# A S Alam <aalam@fedoraproject.org>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -24,12 +25,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-01-07 05:09-0500\n"
+"PO-Revision-Date: 2019-01-26 08:08-0500\n"
 "Last-Translator: A S Alam <aalam@fedoraproject.org>\n"
 "Language-Team: Panjabi (Punjabi) <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #. 
 #. * Copyright (C) 2001 Red Hat, Inc.
@@ -68,15 +69,15 @@ msgstr "ਬਿਨ-ਮਨਜ਼ੂਰੀ ਚਲਾਓ"
 
 #: ../../po/../dummy.h:25
 msgid "(current) UNIX password: "
-msgstr "(ਮੌਜੂਦਾ) ਯੂਨੈਕਸ (UNIX) ਪਾਸਵਰਡ: "
+msgstr "(ਮੌਜੂਦਾ) ਯੂਨੈਕਸ ਪਾਸਵਰਡ: "
 
 #: ../../po/../dummy.h:26
 msgid "New UNIX password: "
-msgstr "ਨਵਾਂ ਯੂਨੈਕਸ (UNIX) ਪਾਸਵਰਡ:"
+msgstr "ਨਵਾਂ ਯੂਨੈਕਸ ਪਾਸਵਰਡ:"
 
 #: ../../po/../dummy.h:27
 msgid "Retype new UNIX password: "
-msgstr "ਨਵਾਂ ਯੂਨੈਕਸ (UNIX) ਪਾਸਵਰਡ ਮੁੜ ਲਿਖੋ:"
+msgstr "ਨਵਾਂ ਯੂਨੈਕਸ ਪਾਸਵਰਡ ਮੁੜ ਲਿਖੋ:"
 
 #: ../../po/../dummy.h:28
 msgid "BAD PASSWORD: it's WAY too short"

@@ -14,7 +14,7 @@ msgstr ""
 "Last-Translator: Mariana Balla <marianaballa848@gmail.com>\n"
 "Language-Team: Albanian\n"
 "Language: sq\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. 

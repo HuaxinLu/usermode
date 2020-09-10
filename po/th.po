@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Sukit Arseanrapoj <sukit.arseanrapoj@gmail.com>\n"
 "Language-Team: Thai\n"
 "Language: th\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 #. 
