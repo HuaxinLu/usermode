@@ -30,7 +30,17 @@ AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL
 AC_PATH_XTRA
 PKG_CHECK_MODULES([GLIB], [glib-2.0])
-PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.23])
+
+AC_MSG_CHECKING([whether we should use GTK])
+AC_ARG_WITH([gtk],
+       AS_HELP_STRING([--without-gtk], [Disable GTK functionality]),
+       [gtk=${withval}], [gtk=yes])
+if test "x$gtk" != xno ; then
+       PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.23])
+fi
+AC_MSG_RESULT([$gtk])
+AM_CONDITIONAL([GTK], [test x$gtk != xno])
+
 PKG_CHECK_MODULES([LIBUSER], [libuser])
 AC_CACHE_CHECK([for startup notification], [mitr_cv_lib_sn],
 [mitr_cv_lib_sn=no
