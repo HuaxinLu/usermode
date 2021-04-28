@@ -1,3 +1,19 @@
+2021-04-28  Jiri Kucera  <jkucera@redhat.com>
+
+	* pam-panel-icon.1: Fix typo.
+
+2020-09-11  Jiri Kucera  <jkucera@redhat.com>
+
+	* po/*.po: Update.
+
+2020-04-21  Tom Stellard <tstellar@redhat.com>
+
+	* Makefile.am: Link against `-lm`.
+
+2020-04-07  Petr Lautrbach <plautrba@redhat.com>
+
+	* userhelper.c: selinux/{flask,av_permissions}.h deprecation.
+
 2018-11-05  Jiri Kucera  <jkucera@redhat.com>
 
 	* configure.ac: Release 1.113.
