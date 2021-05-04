@@ -1,6 +1,21 @@
+2021-05-04  Jiri Kucera  <jkucera@redhat.com>
+
+	* .gitignore
+	* zanata.xml: Remove zanata.xml config.
+	* .hgtags: Remove .hgtags.
+	* autogen.sh: Add `--archive` option.
+	* Makefile.am: Adjust GTK conditionals, remove Mercurial relicts.
+	* shvar.c
+	* userhelper.c: Fix resource leaks.
+
 2021-04-28  Jiri Kucera  <jkucera@redhat.com>
 
 	* pam-panel-icon.1: Fix typo.
+
+2020-12-06  Robert Scheck <robert@fedoraproject.org>
+
+	* Makefile.am
+	* configure.ac: Added `--without-gtk` option.
 
 2020-09-11  Jiri Kucera  <jkucera@redhat.com>
 
