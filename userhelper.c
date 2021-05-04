@@ -1566,44 +1566,62 @@ wrap(const char *user, const char *program,
 	 * them should contain ".." or "%". */
 	if (env_display &&
 	    (strstr(env_display, "..") ||
-	     strchr(env_display, '%')))
+	     strchr(env_display, '%'))) {
+		g_free(env_display);
 		env_display = NULL;
+	}
 	if (env_home &&
 	    (strstr(env_home, "..") ||
-	     strchr(env_home, '%')))
+	     strchr(env_home, '%'))) {
+		g_free(env_home);
 		env_home = NULL;
+	}
 	if (env_lang &&
 	    (strstr(env_lang, "/") ||
 	     strstr(env_lang, "..") ||
-	     strchr(env_lang, '%')))
+	     strchr(env_lang, '%'))) {
+		g_free(env_lang);
 		env_lang = NULL;
+	}
 	if (env_language &&
 	    (strstr(env_language, "/") ||
 	     strstr(env_language, "..") ||
-	     strchr(env_language, '%')))
+	     strchr(env_language, '%'))) {
+		g_free(env_language);
 		env_language = NULL;
+	}
 	if (env_lcall &&
 	    (strstr(env_lcall, "/") ||
 	     strstr(env_lcall, "..") ||
-	     strchr(env_lcall, '%')))
+	     strchr(env_lcall, '%'))) {
+		g_free(env_lcall);
 		env_lcall = NULL;
+	}
 	if (env_lcmsgs &&
 	    (strstr(env_lcmsgs, "/") ||
 	     strstr(env_lcmsgs, "..") ||
-	     strchr(env_lcmsgs, '%')))
+	     strchr(env_lcmsgs, '%'))) {
+		g_free(env_lcmsgs);
 		env_lcmsgs = NULL;
+	}
 	if (env_shell &&
 	    (strstr(env_shell, "..") ||
-	     strchr(env_shell, '%')))
+	     strchr(env_shell, '%'))) {
+		g_free(env_shell);
 		env_shell = NULL;
+	}
 	if (env_term &&
 	    (strstr(env_term, "..") ||
-	     strchr(env_term, '%')))
+	     strchr(env_term, '%'))) {
+		g_free(env_term);
 		env_term = g_strdup("dumb");
+	}
 	if (env_xauthority &&
 	    (strstr(env_xauthority , "..") ||
-	     strchr(env_xauthority , '%')))
+	     strchr(env_xauthority , '%'))) {
+		g_free(env_xauthority);
 		env_xauthority = NULL;
+	}
 
 	keep_env_names = NULL;
 	keep_env_values = NULL;
@@ -1701,7 +1719,9 @@ wrap(const char *user, const char *program,
 	}
 
 	/* Pass the original UID to the new program */
-	setenv("USERHELPER_UID", g_strdup_printf("%jd", (intmax_t)getuid()), 1);
+	val = g_strdup_printf("%jd", (intmax_t)getuid());
+	setenv("USERHELPER_UID", val, 1);
+	g_free(val);
 
 	/* We can forcefully disable the GUI from the configuration
 	 * file (a la blah-nox applications). */
@@ -1854,17 +1874,23 @@ wrap(const char *user, const char *program,
 	val = svGetValue(s, "BANNER");
 	if (val != NULL && strlen(val) > 0)
 		data->banner = val;
+	else if (val != NULL)
+		g_free(val);
 	val = svGetValue(s, "DOMAIN");
 	if (val != NULL && strlen(val) > 0) {
 		bindtextdomain(val, LOCALEDIR);
 		data->domain = val;
 	}
+	else if (val != NULL)
+		g_free(val);
 	if (data->domain == NULL) {
 		val = svGetValue(s, "BANNER_DOMAIN");
 		if (val != NULL && strlen(val) > 0) {
 			bindtextdomain(val, LOCALEDIR);
 			data->domain = val;
 		}
+		else if (val != NULL)
+			g_free(val);
 	}
 	if (data->domain == NULL) {
 		data->domain = program;
@@ -1872,18 +1898,28 @@ wrap(const char *user, const char *program,
 	val = svGetValue(s, "STARTUP_NOTIFICATION_NAME");
 	if (val != NULL && strlen(val) > 0)
 		data->sn_name = val;
+	else if (val != NULL)
+		g_free(val);
 	val = svGetValue(s, "STARTUP_NOTIFICATION_DESCRIPTION");
 	if (val != NULL && strlen(val) > 0)
 		data->sn_description = val;
+	else if (val != NULL)
+		g_free(val);
 	val = svGetValue(s, "STARTUP_NOTIFICATION_WMCLASS");
 	if (val != NULL && strlen(val) > 0)
 		data->sn_wmclass = val;
+	else if (val != NULL)
+		g_free(val);
 	val = svGetValue(s, "STARTUP_NOTIFICATION_BINARY_NAME");
 	if (val != NULL && strlen(val) > 0)
 		data->sn_binary_name = val;
+	else if (val != NULL)
+		g_free(val);
 	val = svGetValue(s, "STARTUP_NOTIFICATION_ICON_NAME");
 	if (val != NULL && strlen(val) > 0)
 		data->sn_icon_name = val;
+	else if (val != NULL)
+		g_free(val);
 	val = svGetValue(s, "STARTUP_NOTIFICATION_WORKSPACE");
 	if (val != NULL && strlen(val) > 0)
 		data->sn_workspace = atoi(val);

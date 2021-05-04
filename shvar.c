@@ -352,7 +352,7 @@ svSetValue(shvarFile *s, const char *key, const char *value)
     }
 
     if (!val1) {
-	if (val2 && !strcmp(val2, newval)) goto end;
+	if (val2 && !strcmp(val2, newval)) goto bail;
 	/* append line */
 	s->lineList = g_list_append(s->lineList, keyValue);
 	s->freeList = g_list_append(s->freeList, keyValue);
@@ -361,7 +361,7 @@ svSetValue(shvarFile *s, const char *key, const char *value)
     }
 
     /* deal with a whole line of noops */
-    if (val1 && !strcmp(val1, newval)) goto end;
+    if (val1 && !strcmp(val1, newval)) goto bail;
 
     /* At this point, val1 && val1 != value */
     if (val2 && !strcmp(val2, newval)) {
