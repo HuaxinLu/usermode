@@ -1,5 +1,11 @@
 #!/bin/sh
 set -ex
+
+if test x$1 == x--clean; then
+  git clean -fxd
+  exit
+fi
+
 mkdir -p admin
 glib-gettextize -f
 intltoolize --force
