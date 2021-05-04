@@ -9,7 +9,6 @@
 /admin/mkinstalldirs
 /autom4te.cache
 /build
-/po/Makefile.in.in
 /INSTALL
 /Makefile.in
 /aclocal.m4
