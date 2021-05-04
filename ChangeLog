@@ -1,5 +1,7 @@
 2021-05-04  Jiri Kucera  <jkucera@redhat.com>
 
+	* configure.ac: Release 1.114.
+	* NEWS: Update.
 	* .gitignore
 	* zanata.xml: Remove zanata.xml config.
 	* .hgtags: Remove .hgtags.

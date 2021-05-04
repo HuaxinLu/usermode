@@ -1,4 +1,4 @@
-AC_INIT([usermode], [1.113], [https://pagure.io/usermode], ,
+AC_INIT([usermode], [1.114], [https://pagure.io/usermode], ,
         [https://pagure.io/usermode])
 AC_PREREQ([2.63b])
 AC_CONFIG_HEADERS([config.h])

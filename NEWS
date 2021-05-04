@@ -1,3 +1,9 @@
+1.114:
+* Introduced --without-gtk option to ./configure to optionally disable GTK
+  functionality.
+* Fixed typo in pam-panel-icon manual page.
+* Updated translations.
+
 1.113:
 * Added support of --with-fexecve option to ./configure.  If found on a system,
   fexecve instead of exec* is used by userhelper.  This should avoid possible
