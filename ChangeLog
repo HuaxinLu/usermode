@@ -1,3 +1,10 @@
+2021-05-05  Jiri Kucera  <jkucera@redhat.com>
+
+	* autogen.sh: Add `--clean` option.
+	* .gitignore: Cleanup.
+	* po/.cvsignore: Rename to .gitignore.
+	* po/.gitignore: Ignore Makefile.in.in.
+
 2021-05-04  Jiri Kucera  <jkucera@redhat.com>
 
 	* configure.ac: Release 1.114.
