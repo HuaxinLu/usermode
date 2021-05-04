@@ -15,9 +15,13 @@ EXTRA_DIST = 	\
 SUBDIRS=po
 
 AM_CPPFLAGS = -DLOCALEDIR='"$(localedir)"'
+if GTK
 AM_CFLAGS = $(SN_CFLAGS) $(GTK_CFLAGS) $(LIBUSER_CFLAGS)
-BINDIR_CPPFLAGS = -DBINDIR='"$(bindir)"'
 PIXMAPDIR_CPPFLAGS = -DPIXMAPDIR='"$(pixmapdir)"'
+else
+AM_CFLAGS = $(SN_CFLAGS) $(LIBUSER_CFLAGS)
+endif
+BINDIR_CPPFLAGS = -DBINDIR='"$(bindir)"'
 SBINDIR_CPPFLAGS = -DSBINDIR='"$(sbindir)"'
 
 bin_PROGRAMS = consolehelper
@@ -100,11 +104,11 @@ consolehelper_SOURCES = consolehelper-nox.c
 consolehelper_CPPFLAGS = $(AM_CPPFLAGS) $(BINDIR_CPPFLAGS) $(SBINDIR_CPPFLAGS)
 consolehelper_LDADD = $(GLIB_LIBS) $(EFENCE_LIBS)
 
+if GTK
 consolehelper_gtk_SOURCES = consolehelper.c
 consolehelper_gtk_CPPFLAGS = $(AM_CPPFLAGS) $(SBINDIR_CPPFLAGS)
 consolehelper_gtk_LDADD = liblib.a $(SN_LIBS) $(GTK_LIBS) $(EFENCE_LIBS)
 
-if GTK
 pam_panel_icon_SOURCES = pam-panel-icon.c gsmclient.c gsmclient.h props.c \
 	props.h
 pam_panel_icon_CPPFLAGS = $(AM_CPPFLAGS) $(BINDIR_CPPFLAGS) \
