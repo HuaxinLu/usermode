@@ -1,5 +1,5 @@
 #!/bin/sh
-set -x -e
+set -ex
 mkdir -p admin
 glib-gettextize -f
 intltoolize --force
@@ -8,4 +8,8 @@ aclocal -Wall
 autoconf -Wall
 autoheader -Wall
 automake -Wall --add-missing
-#./configure --prefix=/usr --sysconfdir=/etc --enable-deprecation --with-selinux
+
+if test x$1 == x--archive; then
+  ./configure
+  make dist
+fi

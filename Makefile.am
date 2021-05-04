@@ -1,4 +1,3 @@
-HGTAG = 'usermode-$(VERSION)'
 VENDOR=redhat
 
 EXTRA_DIST = 	\
@@ -133,16 +132,5 @@ consolehelper.8: $(srcdir)/consolehelper.8.in Makefile
 userhelper.8: $(srcdir)/userhelper.8.in Makefile
 	sed 's,@''SYSCONFDIR@,$(sysconfdir),g' < $(srcdir)/userhelper.8.in > $@
 
-tag:
-	cd $(top_srcdir); hg tag $(HGTAG)
-
-forcetag:
-	cd $(top_srcdir); hg tag -f $(HGTAG)
-
 archive:
-	rm -fr /tmp/$(PACKAGE)-export-tmp
-	hg clone -r $(HGTAG) $(abs_top_srcdir) /tmp/$(PACKAGE)-export-tmp
-	cd /tmp/$(PACKAGE)-export-tmp; ./autogen.sh ; \
-		./configure --sysconfdir=/etc --prefix=/usr; make dist
-	mv /tmp/$(PACKAGE)-export-tmp/$(PACKAGE)-$(VERSION).tar.xz .
-	rm -fr /tmp/$(PACKAGE)-export-tmp
+	./autogen.sh --archive
